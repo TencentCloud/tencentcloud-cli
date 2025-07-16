@@ -108,6 +108,14 @@
         "title": "获取批量撤销签署流程链接部分成功"
       }
     ],
+    "CreateBatchInformationExtractionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchInformationExtractionTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDx************************xxx\"\n    },\n    \"ResourceIds\": [\n        \"yDx************************acc\"\n    ],\n    \"FieldTemplateId\": \"yDx************************yyy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskIds\": [\n            \"yDx************************ddd\"\n        ],\n        \"RequestId\": \"s1735294966632123121\"\n    }\n}",
+        "title": "使用字段模板批量创建合同智能提取任务"
+      }
+    ],
     "CreateBatchInitOrganizationUrl": [
       {
         "document": "",
@@ -1594,6 +1602,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowTemplates\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"ApplicationId\": \"\",\n    \"Filters\": [\n        {\n            \"Key\": \"template-id\",\n            \"Values\": [\n                \"yDRS4UUgygqdcjjhUuO4zjEBpXdcsHWw\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1695125479063466836\",\n        \"Templates\": [],\n        \"TotalCount\": 0\n    }\n}",
         "title": "模板查询接口-通过不存在的模板Id查询模板信息"
+      }
+    ],
+    "DescribeInformationExtractionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInformationExtractionTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDx************************xxx\"\n    },\n    \"TaskId\": \"yDx************************yyy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Fields\": [\n            {\n                \"Name\": \"甲方\",\n                \"Values\": [\n                    \"张三\",\n                    \"李四\"\n                ],\n                \"Type\": \"Text\",\n                \"Description\": \"提取甲方信息\"\n            }\n        ],\n        \"Status\": 3,\n        \"Url\": \"https://file.ess.tencent.cn/bresource/resource/resource/0/0.XLSX?hkey=c83cf852247f9075f675f350e6d6ebeda61fa2d74d136f8efccdde201dc72cb280dcd8992c91808c55817c57c4bf87f718adfa54bf152500e9a45beb6cc9f697a0c938dc46f2abe3288a77d1fddf145d4cd2027ed8e4b6030b2f95355be37221\",\n        \"RequestId\": \"s1735294966632123121\"\n    }\n}",
+        "title": "获取合同智能提取任务详情"
       }
     ],
     "DescribeIntegrationDepartments": [

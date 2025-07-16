@@ -17,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "974e52bf-1234-49bf-8bcd-fdeca9b2d290"
     }
 }
 ```

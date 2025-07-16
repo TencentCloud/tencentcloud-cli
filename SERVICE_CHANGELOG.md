@@ -1,14 +1,29 @@
-# Release 3.0.1242.1
+# Release 3.0.1243.1
 
-## 云服务器(cvm) 版本：2019-12-12
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 127 次发布
+
+发布时间：2025-07-17 01:13:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Machine](http://document.tencentcloudapi.woa.com/document/product/296/19867#Machine)
+
+	* 新增成员：AgentVersion
 
 
 
-## 云服务器(cvm) 版本：2017-03-12
 
-### 第 93 次发布
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-发布时间：2025-07-16 01:13:17
+### 第 134 次发布
+
+发布时间：2025-07-17 01:14:53
 
 本次发布包含了以下内容：
 
@@ -16,22 +31,50 @@
 
 修改接口：
 
-* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/213/15730)
+* [AddClusterSlaveZone](http://document.tencentcloudapi.woa.com/document/product/1003/75706)
 
-	* 新增入参：ElasticNetworkInterfaces
+	* 新增入参：SemiSyncTimeout
 
+* [ModifyClusterSlaveZone](http://document.tencentcloudapi.woa.com/document/product/1003/75705)
+
+	* 新增入参：SemiSyncTimeout
+
+
+修改数据结构：
+
+* [SlaveZoneAttrItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SlaveZoneAttrItem)
+
+	* 新增成员：SemiSyncTimeout
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 152 次发布
+
+发布时间：2025-07-17 01:18:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBatchInformationExtractionTask](http://document.tencentcloudapi.woa.com/document/product/1668/87220)
+* [DescribeInformationExtractionTask](http://document.tencentcloudapi.woa.com/document/product/1668/87219)
 
 新增数据结构：
 
-* [ElasticNetworkInterfaces](http://document.tencentcloudapi.woa.com/document/product/213/15753#ElasticNetworkInterfaces)
+* [ExtractionField](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ExtractionField)
 
 
 
 ## 云直播CSS(live) 版本：2018-08-01
 
-### 第 90 次发布
+### 第 91 次发布
 
-发布时间：2025-07-16 01:22:39
+发布时间：2025-07-17 01:24:11
 
 本次发布包含了以下内容：
 
@@ -39,75 +82,167 @@
 
 修改接口：
 
-* [CreateLiveTranscodeTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32646)
+* [CreateAuditKeywords](http://document.tencentcloudapi.woa.com/document/product/267/87199)
 
-	* 新增入参：IsAdaptiveBitRate, AdaptiveChildren
+	* 新增入参：Keywords, LibId
 
-* [ModifyLiveTranscodeTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32640)
+	* 新增出参：KeywordIds, DupInfos
 
-	* 新增入参：IsAdaptiveBitRate, AdaptiveChildren
+* [DeleteAuditKeywords](http://document.tencentcloudapi.woa.com/document/product/267/87198)
+
+	* 新增入参：KeywordIds, LibId
+
+	* 新增出参：SuccessCount, Infos
+
+* [DescribeAuditKeywords](http://document.tencentcloudapi.woa.com/document/product/267/87197)
+
+	* 新增入参：Offset, Limit, LibId, Content, Labels
+
+	* 新增出参：Total, Infos
+
+
+新增数据结构：
+
+* [AuditKeyword](http://document.tencentcloudapi.woa.com/document/product/267/20474#AuditKeyword)
+* [AuditKeywordDeleteDetail](http://document.tencentcloudapi.woa.com/document/product/267/20474#AuditKeywordDeleteDetail)
+* [AuditKeywordInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#AuditKeywordInfo)
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 29 次发布
+
+发布时间：2025-07-17 01:25:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetReconstructDocumentResult](http://document.tencentcloudapi.woa.com/document/product/1764/85632)
+
+	* 新增出参：Usage
+
+* [ReconstructDocumentSSE](http://document.tencentcloudapi.woa.com/document/product/1764/84923)
+
+	* 新增出参：FailPageNum, SuccessPageNum
+
+
+修改数据结构：
+
+* [CreateReconstructDocumentFlowConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#CreateReconstructDocumentFlowConfig)
+
+	* 新增成员：IgnoreFailedPage
+
+* [CreateSplitDocumentFlowConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#CreateSplitDocumentFlowConfig)
+
+	* 新增成员：IgnoreFailedPage
+
+* [DocumentUsage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#DocumentUsage)
+
+	* 新增成员：SuccessPageNum, FailPageNum
+
+* [ReconstructDocumentSSEConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#ReconstructDocumentSSEConfig)
+
+	* 新增成员：IgnoreFailedPage
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2023-06-16
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 104 次发布
+
+发布时间：2025-07-17 01:26:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ModifyConditionsTemplateRequestEventCondition](http://document.tencentcloudapi.woa.com/document/product/248/30354#ModifyConditionsTemplateRequestEventCondition)
+
+	* 新增成员：MetricName, Description
+
+	* <font color="#dd0000">**修改成员**：</font>AlarmNotifyPeriod, AlarmNotifyType, EventID
 
 
 
 
 ## 媒体处理(mps) 版本：2019-06-12
 
-### 第 101 次发布
+### 第 102 次发布
 
-发布时间：2025-07-16 01:25:03
+发布时间：2025-07-17 01:27:07
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [CreateMediaEvaluation](http://document.tencentcloudapi.woa.com/document/product/862/87202)
+* [DescribeWordSamples](http://document.tencentcloudapi.woa.com/document/product/862/39440)
 
-新增数据结构：
+	* 新增入参：ChannelInfo
 
-* [EvaluationMediaInputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#EvaluationMediaInputInfo)
+
+修改数据结构：
+
 * [EvaluationTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#EvaluationTaskInput)
-* [EvaluationTemplateInputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#EvaluationTemplateInputInfo)
+
+* [MediaProcessTaskTranscodeResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskTranscodeResult)
+
+	* <font color="#dd0000">**修改成员**：</font>FinishTime
 
 
 
-## 边缘安全加速平台(teo) 版本：2022-09-01
 
-### 第 63 次发布
+## 腾讯健康组学平台(omics) 版本：2022-11-28
 
-发布时间：2025-07-16 01:31:14
+### 第 19 次发布
+
+发布时间：2025-07-17 01:29:07
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [CreateMultiPathGateway](http://document.tencentcloudapi.woa.com/document/product/1738/87217)
-* [CreateMultiPathGatewayLine](http://document.tencentcloudapi.woa.com/document/product/1738/87216)
-* [CreateMultiPathGatewaySecretKey](http://document.tencentcloudapi.woa.com/document/product/1738/87215)
-* [DeleteMultiPathGateway](http://document.tencentcloudapi.woa.com/document/product/1738/87214)
-* [DeleteMultiPathGatewayLine](http://document.tencentcloudapi.woa.com/document/product/1738/87213)
-* [DescribeMultiPathGateway](http://document.tencentcloudapi.woa.com/document/product/1738/87212)
-* [DescribeMultiPathGatewayLine](http://document.tencentcloudapi.woa.com/document/product/1738/87211)
-* [DescribeMultiPathGatewayRegions](http://document.tencentcloudapi.woa.com/document/product/1738/87210)
-* [DescribeMultiPathGatewaySecretKey](http://document.tencentcloudapi.woa.com/document/product/1738/87209)
-* [DescribeMultiPathGateways](http://document.tencentcloudapi.woa.com/document/product/1738/87208)
-* [ModifyMultiPathGateway](http://document.tencentcloudapi.woa.com/document/product/1738/87207)
-* [ModifyMultiPathGatewayLine](http://document.tencentcloudapi.woa.com/document/product/1738/87206)
-* [ModifyMultiPathGatewaySecretKey](http://document.tencentcloudapi.woa.com/document/product/1738/87205)
-* [RefreshMultiPathGatewaySecretKey](http://document.tencentcloudapi.woa.com/document/product/1738/87204)
+* [ClusterOption](http://document.tencentcloudapi.woa.com/document/product/1725/80781#ClusterOption)
 
-新增数据结构：
-
-* [GatewayRegion](http://document.tencentcloudapi.woa.com/document/product/1738/81211#GatewayRegion)
-* [MultiPathGateway](http://document.tencentcloudapi.woa.com/document/product/1738/81211#MultiPathGateway)
-* [MultiPathGatewayLine](http://document.tencentcloudapi.woa.com/document/product/1738/81211#MultiPathGatewayLine)
+	* 新增成员：AutoUpgradeClusterLevel
 
 
 
-## 边缘安全加速平台(teo) 版本：2022-01-06
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 87 次发布
+
+发布时间：2025-07-17 01:34:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：ResourceGroupId
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
 
 
 

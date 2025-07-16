@@ -17751,44 +17751,58 @@
       "document": "ModifyConditionsTemplateRequestEventCondition",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "告警通知周期",
-          "example": "",
+          "example": "已不再使用",
           "member": "string",
           "name": "AlarmNotifyPeriod",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "告警通知方式",
-          "example": "",
+          "example": "已不再使用",
           "member": "string",
           "name": "AlarmNotifyType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "事件ID",
-          "example": "",
+          "example": "已不再使用",
           "member": "string",
           "name": "EventID",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "规则ID",
-          "example": "",
+          "example": "已不再使用",
           "member": "int64",
           "name": "RuleID",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重构后的eventType",
+          "example": "cvm:ErrorEvent:CvmPacketDropedByQ osConnectionSession",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件描述信息",
+          "example": "连接数超限导致丢包",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

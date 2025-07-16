@@ -93,7 +93,7 @@ Output:
             "CreateTime": "2018-10-01T10:00:00Z",
             "UpdateTime": "2018-10-01T10:00:00Z"
         },
-        "FailFaceInfoSet": null,
+        "FailFaceInfoSet": [],
         "RequestId": "33737bdf-e2ed-4eda-b09b-f3782d8a9710"
     }
 }
@@ -144,7 +144,7 @@ Output:
             "CreateTime": "2018-10-01T10:00:00Z",
             "UpdateTime": "2018-10-01T10:00:00Z"
         },
-        "FailFaceInfoSet": null,
+        "FailFaceInfoSet": [],
         "RequestId": "33737bdf-e2ed-4eda-b09b-f3782d8a9710"
     }
 }
@@ -190,7 +190,7 @@ Output:
             "CreateTime": "2018-10-01T10:00:00Z",
             "UpdateTime": "2018-10-01T10:00:00Z"
         },
-        "FailFaceInfoSet": null,
+        "FailFaceInfoSet": [],
         "RequestId": "33737bdf-e2ed-4eda-b09b-f3782d8a9710"
     }
 }

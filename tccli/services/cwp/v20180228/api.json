@@ -44766,6 +44766,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机安全agent版本",
+          "example": "2.0.1.1",
+          "member": "string",
+          "name": "AgentVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

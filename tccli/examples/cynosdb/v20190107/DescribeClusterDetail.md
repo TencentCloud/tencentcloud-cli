@@ -117,7 +117,8 @@ Output:
             "SlaveZoneAttr": [
                 {
                     "Zone": "ap-guangzhou-3",
-                    "BinlogSyncWay": "async"
+                    "BinlogSyncWay": "async",
+                    "SemiSyncTimeout": 10000
                 }
             ]
         },

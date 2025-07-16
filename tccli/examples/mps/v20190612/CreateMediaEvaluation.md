@@ -9,7 +9,7 @@ tccli mps CreateMediaEvaluation --cli-unfold-argument  \
     --InputInfo.Type URL \
     --InputInfo.UrlInputInfo.Url http://abc/reference.mp4 \
     --OutputStorage.Type COS \
-    --OutputStorage.CosOutputStorage.Bucket abc \
+    --OutputStorage.CosOutputStorage.Bucket mybucket \
     --OutputStorage.CosOutputStorage.Region ap-guangzhou \
     --OutputDir /output/ \
     --EvaluationTask.TaskType NORMAL \

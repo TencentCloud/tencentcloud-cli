@@ -25,3 +25,27 @@ Output:
 }
 ```
 
+**Example 2: 修改转码模板示例 2**
+
+
+
+Input: 
+
+```
+tccli mps ModifyTranscodeTemplate --cli-unfold-argument  \
+    --Definition 407020 \
+    --Name 转码模板12 \
+    --Comment 转码模板12 \
+    --RemoveVideo 0 \
+    --RemoveAudio 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "3bxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxd6"
+    }
+}
+```
+
