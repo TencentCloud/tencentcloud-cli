@@ -7196,6 +7196,15 @@
           "name": "SubUinList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "风险规则id列表",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "RiskRuleIDList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8300,8 +8309,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id 列表",
-          "example": "[{\"TaskId\":\"rmis-****\"}]",
+          "document": "任务id 和目标AppID列表",
+          "example": "[{\"TaskId\":\"rmis-****\",\"TargetAppId\": \"134312243\"}]",
           "member": "TaskIdListKey",
           "name": "TaskIdList",
           "required": true,
@@ -8310,7 +8319,7 @@
         {
           "disabled": false,
           "document": "集团账号的成员id",
-          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
           "required": false,
@@ -20508,6 +20517,15 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "APP ID",
+          "example": "130****",
+          "member": "string",
+          "name": "TargetAppId",
+          "required": false,
           "type": "string"
         }
       ],

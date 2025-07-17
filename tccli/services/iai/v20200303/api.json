@@ -1878,7 +1878,7 @@
         {
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。（图片的宽高比请接近3:4，不符合宽高比的图片返回的分值不具备参考意义）。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "无",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -1914,7 +1914,7 @@
           "example": "99",
           "member": "float",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1924,7 +1924,7 @@
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1934,7 +1934,7 @@
           "example": "1",
           "member": "bool",
           "name": "IsLiveness",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

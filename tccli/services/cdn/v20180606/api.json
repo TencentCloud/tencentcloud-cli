@@ -6859,7 +6859,6 @@
           "example": "无",
           "member": "Quota",
           "name": "UrlPurge",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6869,7 +6868,6 @@
           "example": "无",
           "member": "Quota",
           "name": "PathPurge",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7015,7 +7013,6 @@
           "example": "无",
           "member": "Quota",
           "name": "UrlPush",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

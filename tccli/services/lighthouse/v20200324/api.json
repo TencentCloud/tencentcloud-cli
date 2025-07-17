@@ -2565,6 +2565,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量是否无上限。",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficUnlimited",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带宽展示类型。\n<li>BANDWIDTH - 带宽</li>\n<li>PEAK_BANDWIDTH - 峰值带宽</li>",
+          "example": "PEAK_BANDWIDTH",
+          "member": "string",
+          "name": "BandwidthType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3167,6 +3187,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量是否无上限。",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficUnlimited",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带宽展示类型。\n<li>BANDWIDTH - 带宽</li>\n<li>PEAK_BANDWIDTH - 峰值带宽</li>",
+          "example": "PEAK_BANDWIDTH",
+          "member": "string",
+          "name": "BandwidthType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3330,6 +3370,26 @@
           "example": "\"1001\"\t",
           "member": "string",
           "name": "ActivityId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量是否无上限。",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficUnlimited",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带宽展示类型。\n<li>BANDWIDTH - 带宽</li>\n<li>PEAK_BANDWIDTH - 峰值带宽</li>",
+          "example": "PEAK_BANDWIDTH",
+          "member": "string",
+          "name": "BandwidthType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

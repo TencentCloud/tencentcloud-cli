@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateShortUrl": {
+      "document": "创建短链",
+      "input": "CreateShortUrlRequest",
+      "name": "创建短链",
+      "output": "CreateShortUrlResponse",
+      "status": "online"
+    },
     "ModifySendChannelOnMsgTypes": {
       "document": "批量修改消息接收渠道",
       "input": "ModifySendChannelOnMsgTypesRequest",
@@ -15,6 +22,60 @@
     "serviceShortName": "message"
   },
   "objects": {
+    "CreateShortUrlRequest": {
+      "document": "CreateShortUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要创建短链的链接。",
+          "example": "",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "短链有效期(单位为秒)，设置为-1表示永久有效。",
+          "example": "",
+          "member": "int64",
+          "name": "ValidPeriod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "创建者。",
+          "example": "",
+          "member": "string",
+          "name": "Creator",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateShortUrlResponse": {
+      "document": "CreateShortUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "短链。",
+          "example": "",
+          "member": "string",
+          "name": "ShortUrl",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySendChannelOnMsgTypesRequest": {
       "document": "ModifySendChannelOnMsgTypes请求参数结构体",
       "members": [

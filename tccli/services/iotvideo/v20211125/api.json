@@ -759,7 +759,7 @@
   },
   "metadata": {
     "apiVersion": "2021-11-25",
-    "api_brief": "介绍如何使用API对物联网智能视频服务进行操作，包括终端管理、OTA固件管理等。",
+    "api_brief": "介绍如何使用 API 对物联网智能视频服务进行操作，包括终端管理、OTA 固件管理等。",
     "serviceNameCN": "物联网智能视频服务",
     "serviceShortName": "iotvideo"
   },

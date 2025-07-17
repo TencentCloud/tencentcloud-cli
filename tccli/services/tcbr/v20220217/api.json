@@ -1428,6 +1428,15 @@
           "name": "GrayFlowRatio",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否同步结束灰度发布(仅GrayFlowRatio=100且GrayType=gray时有效)",
+          "example": "false",
+          "member": "bool",
+          "name": "CloseGrayRelease",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1894,6 +1903,16 @@
           "example": "FLOW",
           "member": "string",
           "name": "TrafficType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-03-09 14:00:00",
+          "member": "string",
+          "name": "CreateTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

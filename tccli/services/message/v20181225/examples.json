@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateShortUrl": [
+      {
+        "document": "",
+        "input": "https://message.tencentcloudapi.com/?Action=CreateShortUrl\n&Url=https://cloud.tencent.com/act/pro/cloudbase-discuzq11\n&ValidPeriod=3600\n&Creator=etherzhou\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ShortUrl\": \"https://mc.tencent.com/ZfWTo6Jb\",\n        \"RequestId\": \"a6642212-e83b-47bc-bf5c-8e22b32bd72f\"\n    }\n}",
+        "title": "创建短链"
+      }
+    ],
     "ModifySendChannelOnMsgTypes": [
       {
         "document": "",
