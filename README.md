@@ -376,7 +376,7 @@ tccli cvm DescribeInstancesStatus --region ap-hongkong --waiter "{'expr':'Instan
 
 您可以在配置文件中设置可选子参数的值，例如
 ```
-# 在default.configure文件中，您可以添加如下参数，设置系统超时时间为180诗，睡眠时间为5s
+# 在default.configure文件中，您可以添加如下参数，设置系统超时时间为180s，睡眠时间为5s
     "waiter": {
         "interval": 5,
         "timeout": 180
