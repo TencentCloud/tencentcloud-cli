@@ -3637,6 +3637,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标标签是否已被删除",
+          "example": "1",
+          "member": "int64",
+          "name": "TargetStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

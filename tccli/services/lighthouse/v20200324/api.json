@@ -1512,6 +1512,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量是否无上限。",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficUnlimited",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

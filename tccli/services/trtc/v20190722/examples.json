@@ -16,12 +16,28 @@
         "title": "发起基础审核任务"
       }
     ],
+    "CreateCloudModeration": [
+      {
+        "document": "启动SdkAppId 为 200806 指定房间（房间号为150）的云端审核任务。\n\n房间空闲等待时间设置为30秒。\n送审模式设置为，每隔5秒，送审一张视频截帧图片到ace审核商\n音频每隔15秒，送审一个15s长的音频到ace审核\n审核结果通过配置的回调url触达",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudSliceTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 200806,\n    \"RoomId\": \"150\",\n    \"RoomIdType\": 1,\n    \"UserId\": \"inspect\",\n    \"UserSig\": \"eJwszc3KgkAUxvF7Odv3xY6jx2KgRU1NPHMy3CnQIZEJBDxf1SulLZcs*pAAuveqIuFaeqrW2kMVyAFYogrTGbnBiScDmm2zf0*HdqoLAhxQ85dn4vMn4*N8zFT7f-aXIf3Zj0fWn78*ktBUUyJoEmHMS0ChM83AAD---1NMfA_\",\n    \"ModerationParams\": {\n        \"ModerationType\": 1,\n        \"MaxIdleTime\": 30,\n        \"SliceAudio\": 15,\n        \"SliceVideo\": 5,\n        \"ModerationSupplier\": \"ace\",\n        \"ModerationSupplierParam\": {\n            \"AppID\": \"2501\",\n            \"SecretId\": \"ace_ugc_20521\",\n            \"SecretKey\": \"637ae34f4069afb92xxxxxxx\",\n            \"AudioBizType\": \"2001\",\n            \"ImageBizType\": \"2002\"\n        },\n        \"SaveModerationFile\": 0,\n        \"CallbackAllResults\": 0\n    },\n    \"ModerationStorageParams\": {\n        \"CloudModerationStorage\": {\n            \"Vendor\": 0,\n            \"Region\": \"ap-guangzhou\",\n            \"Bucket\": \"av-recover-prod-1258344699\",\n            \"AccessKey\": \"AKIDiGYZYrugBPM3TbS2MO9dqmRp\",\n            \"SecretKey\": \"91w4wXswiDSQ7XfX8So31Bm6\",\n            \"FileNamePrefix\": [\n                \"testname\"\n            ]\n        }\n    },\n    \"ResourceExpiredHour\": 72\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c8eac0c-a46e-4002-893a-935160b43b34\",\n        \"TaskId\": \"-npVqpdU7qidKD61us+k9KlbamMCLrDbczWnLoK-2OqyoZWQndib8Ma8fbGq2JxnW26LgE.\"\n    }\n}",
+        "title": "创建云端审核任务"
+      }
+    ],
     "CreateCloudRecording": [
       {
         "document": "启动SdkAppId 为 1400188366 指定房间（房间号为3560）的云端录制。\n\n房间空闲等待时间设置为1分钟。\n录制模式为合流录制模式。\n录制的流类型为音视频。\n默认订阅所有用户的流。\n录制视频的宽度360，录制视频的高度640，帧率15，比特率500,000bps，默认背景色。\n录制视频布局模式为九宫格布局。\n存储至腾讯云点播VOD",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRecording\n<公共请求参数>\n\n{\n    \"StorageParams\": {\n        \"CloudVod\": {\n            \"TencentVod\": {\n                \"ExpireTime\": 0\n            }\n        }\n    },\n    \"UserSig\": \"eJw1jcEKgkAURX9FZlvYc3SaC***PiwmafL9rfNX4_\",\n    \"UserId\": \"10001\",\n    \"RecordParams\": {\n        \"MaxIdleTime\": 60,\n        \"StreamType\": 0,\n        \"RecordMode\": 2\n    },\n    \"RoomIdType\": 1,\n    \"MixTranscodeParams\": {\n        \"VideoParams\": {\n            \"Width\": 360,\n            \"BitRate\": 500000,\n            \"Fps\": 15,\n            \"Height\": 640,\n            \"Gop\": 10\n        }\n    },\n    \"MixLayoutParams\": {\n        \"MixLayoutMode\": 3\n    },\n    \"SdkAppId\": 1400188366,\n    \"RoomId\": \"3560\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"-gCTFWtU7t7DUlo7A8Isw***sdOEycyX4CnzhIm4RAQ..\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "启动云端录制"
+      }
+    ],
+    "CreateCloudSliceTask": [
+      {
+        "document": "启动SdkAppId 为 200806 指定房间（房间号为150）的云端切片任务。\n\n房间空闲等待时间设置为30秒。\n切片模式设置为音频切片+视频截帧\n音频隔15秒切片一次\n视频隔5秒，截帧一次",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudSliceTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 200806,\n    \"RoomId\": \"150\",\n    \"UserId\": \"inspect\",\n    \"UserSig\": \"eJxxxv3xY6jx2KgRU1NPHMy3CnQIZEJBDxf1SulLZcs*pAAuveqIuFaeqrW2kMVyAFYogrTGbnBiScDmm2zf0*HdqoLAhxQ85dn4vMn4*N8zFT7f-aXIf3Zj0fWn78*ktBUUyJoEmHMS0ChM83AAD---1NMfA_\",\n    \"SliceParams\": {\n        \"SliceType\": 3,\n        \"MaxIdleTime\": 30,\n        \"SliceAudio\": 15,\n        \"SliceVideo\": 5\n    },\n    \"SliceStorageParams\": {\n        \"CloudSliceStorage\": {\n            \"Vendor\": 0,\n            \"Region\": \"ap-guangzhou\",\n            \"Bucket\": \"av-recover-prod-1258344699\",\n            \"AccessKey\": \"AKIDiGYZYrugBPM3TbS2MO9dqxxx\",\n            \"SecretKey\": \"91w4wXswiDSQ7XfX8So31xxx\",\n            \"FileNamePrefix\": [\n                \"prefix1\"\n            ]\n        }\n    },\n    \"RoomIdType\": 1,\n    \"ResourceExpiredHour\": 72\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c8eac0c-a46e-4002-893a-935160b43b34\",\n        \"TaskId\": \"-npVqpdU7qidKD61us+k9KlbamMCLrDbczWnLoK-2OqyoZWQndib8Ma8fbGq2JxnW26LgE.\"\n    }\n}",
+        "title": "创建切片任务"
       }
     ],
     "CreatePicture": [
@@ -40,12 +56,28 @@
         "title": "停止基础审核任务"
       }
     ],
+    "DeleteCloudModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93186328-a0f6-4127-a0cb-72c85b6af982\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
+        "title": "停止云端审核任务"
+      }
+    ],
     "DeleteCloudRecording": [
       {
         "document": "停止SdkAppId 为 1400188366, TaskId 为 -m9-bVVU7gzdSqvsV***Y+QMYNee2QE. 的云端录制。",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.\",\n    \"SdkAppId\": 1400188366\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "停止云端录制"
+      }
+    ],
+    "DeleteCloudSliceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudSliceTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93186328-a0f6-4127-a0cb-72c85b6af982\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
+        "title": "停止云端切片任务"
       }
     ],
     "DeletePicture": [
@@ -88,12 +120,28 @@
         "title": "查询历史用户列表与通话指标"
       }
     ],
+    "DescribeCloudModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-npVoIhU7nVF+0aF9cAU08H4y253LKPbBX+UIoK-4pycoZWQndibGOPu9klhRT7bEDv5XoewCQE.\",\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"uis_mock\",\n        \"SubscribeStreamUserIds\": {\n            \"SubscribeAudioUserIds\": [],\n            \"UnSubscribeAudioUserIds\": [],\n            \"SubscribeVideoUserIds\": [],\n            \"UnSubscribeVideoUserIds\": []\n        }\n    }\n}",
+        "title": "查询云端审核任务信息"
+      }
+    ],
     "DescribeCloudRecording": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\",\n    \"SdkAppId\": 1400188366\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"StorageFileList\": [],\n        \"RequestId\": \"c4536bd1-c3ea-4e84-b2dd-a8491d2057e2\",\n        \"TaskId\": \"m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.\"\n    }\n}",
         "title": "查询SdkAppId 为 1400***366 TaskId 为 m9-bVVU7nhKM5X3GsED6KNGVG********ndibWSn631uT6pbhE4PcPDSsggE.的录制状态。"
+      }
+    ],
+    "DescribeCloudSliceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc45d9cd-f615-43a5-943e-89f559cb3f7b\",\n        \"Status\": \"InProgress\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
+        "title": "查询切片任务信息"
       }
     ],
     "DescribeMixTranscodingUsage": [
@@ -304,12 +352,28 @@
         "title": "解散房间"
       }
     ],
+    "ModifyCloudModeration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudModeration\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\",\n    \"SubscribeStreamUserIds\": {\n        \"SubscribeAudioUserIds\": [\n            \"user1\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4d09681-4413-4f21-972d-bba98422aa30\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
+        "title": "修改云端审核任务"
+      }
+    ],
     "ModifyCloudRecording": [
       {
         "document": "更新SdkAppId 为 1400188366 TaskId 为-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.的云端录制，设置视频流订阅白名单user1，user2，设置音频流订阅白名单user1，user2。设置自定义布局模式。",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudRecording\n<公共请求参数>\n\n{\n    \"SubscribeStreamUserIds\": {\n        \"SubscribeVideoUserIds\": [\n            \"user1\",\n            \"user2\"\n        ],\n        \"SubscribeAudioUserIds\": [\n            \"user1\",\n            \"user2\"\n        ]\n    },\n    \"TaskId\": \"-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.\",\n    \"SdkAppId\": 1400188366,\n    \"MixLayoutParams\": {\n        \"MixLayoutMode\": 4,\n        \"MixLayoutList\": [\n            {\n                \"Top\": 100,\n                \"UserId\": \"user1\",\n                \"Height\": 100,\n                \"Width\": 100,\n                \"Left\": 100\n            },\n            {\n                \"Top\": 200,\n                \"UserId\": \"user2\",\n                \"Height\": 100,\n                \"Width\": 100,\n                \"Left\": 200\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "更新云端录制"
+      }
+    ],
+    "ModifyCloudSliceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudSliceTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 20010806,\n    \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\",\n    \"SubscribeStreamUserIds\": {\n        \"SubscribeAudioUserIds\": [\n            \"555\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4d09681-4413-4f21-972d-bba98422aa30\",\n        \"TaskId\": \"-nHwQ8NU7t7Ps1bc3MXN7wTw1-BZVg7bbhyXLoK-mumNM6KipeAYnB3iUGIpBL-ajrCF-pd2AQ..\"\n    }\n}",
+        "title": "修改云端切片任务"
       }
     ],
     "ModifyPicture": [

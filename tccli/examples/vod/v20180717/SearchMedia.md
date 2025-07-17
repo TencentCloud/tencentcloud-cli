@@ -32,9 +32,9 @@ Output:
                     "ClassId": 123,
                     "ClassName": "音视频录播",
                     "ClassPath": "音视频录播",
-                    "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
+                    "CoverUrl": "http://example.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
-                    "MediaUrl": "http://xx.vod2.myqcloud.com/xxx/xx/f0.mp4",
+                    "MediaUrl": "http://example.com/xxx/xx/f0.mp4",
                     "TagSet": [
                         "tag1",
                         "tag2"
@@ -95,7 +95,7 @@ Output:
                 "TranscodeInfo": {
                     "TranscodeSet": [
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.mp4",
+                            "Url": "http://example.com/xx/xx/f0.mp4",
                             "Definition": 0,
                             "Bitrate": 563477,
                             "Height": 378,
@@ -129,7 +129,7 @@ Output:
                             "CopyRightWatermarkText": "None"
                         },
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
+                            "Url": "http://example.com/xx/xx/f0.f210.m3u8",
                             "Definition": 211,
                             "Bitrate": 563477,
                             "Height": 378,
@@ -163,7 +163,7 @@ Output:
                             "CopyRightWatermarkText": "None"
                         },
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
+                            "Url": "http://example.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
                             "Duration": 145,
                             "Size": 265,
@@ -201,7 +201,7 @@ Output:
                 "AnimatedGraphicsInfo": {
                     "AnimatedGraphicsSet": [
                         {
-                            "Url": "http://125xx.vod2.myqcloud.com/xx/xx/f20000.gif",
+                            "Url": "http://example.com/xx/xx/f20000.gif",
                             "Definition": 20000,
                             "Container": "gif",
                             "Height": 480,
@@ -224,16 +224,16 @@ Output:
                             ],
                             "Interval": 10,
                             "ImageUrlSet": [
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx1.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx2.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx3.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx4.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx5.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx6.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx7.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx8.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx9.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx10.png"
+                                "http://example.com/xx/xx/shotup/xx1.png",
+                                "http://example.com/xx/xx/shotup/xx2.png",
+                                "http://example.com/xx/xx/shotup/xx3.png",
+                                "http://example.com/xx/xx/shotup/xx4.png",
+                                "http://example.com/xx/xx/shotup/xx5.png",
+                                "http://example.com/xx/xx/shotup/xx6.png",
+                                "http://example.com/xx/xx/shotup/xx7.png",
+                                "http://example.com/xx/xx/shotup/xx8.png",
+                                "http://example.com/xx/xx/shotup/xx9.png",
+                                "http://example.com/xx/xx/shotup/xx10.png"
                             ]
                         }
                     ]
@@ -246,9 +246,9 @@ Output:
                             "Width": 1024,
                             "TotalCount": 100,
                             "ImageUrlSet": [
-                                "http://xx.vod2.myqcloud.com/xx/xx/imageSprite/xx.100_0.jpg"
+                                "http://example.com/xx/xx/imageSprite/xx.100_0.jpg"
                             ],
-                            "WebVttUrl": "http://xx.vod2.myqcloud.com/xxxx/xxxx/imageSprite/xx.vtt"
+                            "WebVttUrl": "http://example.com/xxxx/xxxx/imageSprite/xx.vtt"
                         }
                     ]
                 },
@@ -259,11 +259,13 @@ Output:
                             "PicInfoSet": [
                                 {
                                     "TimeOffset": 0,
-                                    "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
+                                    "Url": "http://example.com/xx/xx/snapshotByTime/xx1.jpg",
+                                    "WaterMarkDefinition": []
                                 },
                                 {
                                     "TimeOffset": 1000,
-                                    "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
+                                    "Url": "http://example.com/xx/xx/snapshotByTime/xx2.jpg",
+                                    "WaterMarkDefinition": []
                                 }
                             ]
                         }
@@ -396,9 +398,9 @@ Output:
                     "ClassId": 123,
                     "ClassName": "音视频录播",
                     "ClassPath": "音视频录播",
-                    "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
+                    "CoverUrl": "http://example.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
-                    "MediaUrl": "http://xx.vod2.myqcloud.com/xxx/xx/f0.mp4",
+                    "MediaUrl": "http://example.com/xxx/xx/f0.mp4",
                     "TagSet": [],
                     "SourceInfo": {
                         "SourceType": "Record",
@@ -456,7 +458,7 @@ Output:
                 "TranscodeInfo": {
                     "TranscodeSet": [
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.mp4",
+                            "Url": "http://example.com/xx/xx/f0.mp4",
                             "Definition": 0,
                             "Bitrate": 563477,
                             "Height": 378,
@@ -490,7 +492,7 @@ Output:
                             "CopyRightWatermarkText": "None"
                         },
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
+                            "Url": "http://example.com/xx/xx/f0.f210.m3u8",
                             "Definition": 211,
                             "Bitrate": 563477,
                             "Height": 378,
@@ -524,7 +526,7 @@ Output:
                             "CopyRightWatermarkText": "None"
                         },
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
+                            "Url": "http://example.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
                             "Duration": 145,
                             "Size": 265,
@@ -562,7 +564,7 @@ Output:
                 "AnimatedGraphicsInfo": {
                     "AnimatedGraphicsSet": [
                         {
-                            "Url": "http://125xx.vod2.myqcloud.com/xx/xx/f20000.gif",
+                            "Url": "http://example.com/xx/xx/f20000.gif",
                             "Definition": 20000,
                             "Container": "gif",
                             "Height": 480,
@@ -585,16 +587,16 @@ Output:
                             ],
                             "Interval": 10,
                             "ImageUrlSet": [
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx1.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx2.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx3.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx4.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx5.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx6.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx7.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx8.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx9.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx10.png"
+                                "http://example.com/xx/xx/shotup/xx1.png",
+                                "http://example.com/xx/xx/shotup/xx2.png",
+                                "http://example.com/xx/xx/shotup/xx3.png",
+                                "http://example.com/xx/xx/shotup/xx4.png",
+                                "http://example.com/xx/xx/shotup/xx5.png",
+                                "http://example.com/xx/xx/shotup/xx6.png",
+                                "http://example.com/xx/xx/shotup/xx7.png",
+                                "http://example.com/xx/xx/shotup/xx8.png",
+                                "http://example.com/xx/xx/shotup/xx9.png",
+                                "http://example.com/xx/xx/shotup/xx10.png"
                             ]
                         }
                     ]
@@ -607,9 +609,9 @@ Output:
                             "Width": 1024,
                             "TotalCount": 100,
                             "ImageUrlSet": [
-                                "http://xx.vod2.myqcloud.com/xx/xx/imageSprite/xx.100_0.jpg"
+                                "http://example.com/xx/xx/imageSprite/xx.100_0.jpg"
                             ],
-                            "WebVttUrl": "http://xx.vod2.myqcloud.com/xxxx/xxxx/imageSprite/xx.vtt"
+                            "WebVttUrl": "http://example.com/xxxx/xxxx/imageSprite/xx.vtt"
                         }
                     ]
                 },
@@ -620,11 +622,13 @@ Output:
                             "PicInfoSet": [
                                 {
                                     "TimeOffset": 0,
-                                    "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
+                                    "Url": "http://example.com/xx/xx/snapshotByTime/xx1.jpg",
+                                    "WaterMarkDefinition": []
                                 },
                                 {
                                     "TimeOffset": 1000,
-                                    "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
+                                    "Url": "http://example.com/xx/xx/snapshotByTime/xx2.jpg",
+                                    "WaterMarkDefinition": []
                                 }
                             ]
                         }
@@ -757,9 +761,9 @@ Output:
                     "ClassId": 123,
                     "ClassName": "音视频录播",
                     "ClassPath": "音视频录播",
-                    "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
+                    "CoverUrl": "http://example.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
-                    "MediaUrl": "http://xx.vod2.myqcloud.com/xxx/xx/f0.mp4",
+                    "MediaUrl": "http://example.com/xxx/xx/f0.mp4",
                     "TagSet": [],
                     "SourceInfo": {
                         "SourceType": "Record",
@@ -817,7 +821,7 @@ Output:
                 "TranscodeInfo": {
                     "TranscodeSet": [
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.mp4",
+                            "Url": "http://example.com/xx/xx/f0.mp4",
                             "Definition": 0,
                             "Bitrate": 563477,
                             "Height": 378,
@@ -851,7 +855,7 @@ Output:
                             "CopyRightWatermarkText": "None"
                         },
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
+                            "Url": "http://example.com/xx/xx/f0.f210.m3u8",
                             "Definition": 211,
                             "Bitrate": 563477,
                             "Height": 378,
@@ -885,7 +889,7 @@ Output:
                             "CopyRightWatermarkText": "None"
                         },
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
+                            "Url": "http://example.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
                             "Duration": 145,
                             "Size": 265,
@@ -923,7 +927,7 @@ Output:
                 "AnimatedGraphicsInfo": {
                     "AnimatedGraphicsSet": [
                         {
-                            "Url": "http://125xx.vod2.myqcloud.com/xx/xx/f20000.gif",
+                            "Url": "http://example.com/xx/xx/f20000.gif",
                             "Definition": 20000,
                             "Container": "gif",
                             "Height": 480,
@@ -946,16 +950,16 @@ Output:
                             ],
                             "Interval": 10,
                             "ImageUrlSet": [
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx1.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx2.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx3.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx4.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx5.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx6.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx7.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx8.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx9.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx10.png"
+                                "http://example.com/xx/xx/shotup/xx1.png",
+                                "http://example.com/xx/xx/shotup/xx2.png",
+                                "http://example.com/xx/xx/shotup/xx3.png",
+                                "http://example.com/xx/xx/shotup/xx4.png",
+                                "http://example.com/xx/xx/shotup/xx5.png",
+                                "http://example.com/xx/xx/shotup/xx6.png",
+                                "http://example.com/xx/xx/shotup/xx7.png",
+                                "http://example.com/xx/xx/shotup/xx8.png",
+                                "http://example.com/xx/xx/shotup/xx9.png",
+                                "http://example.com/xx/xx/shotup/xx10.png"
                             ]
                         }
                     ]
@@ -968,9 +972,9 @@ Output:
                             "Width": 1024,
                             "TotalCount": 100,
                             "ImageUrlSet": [
-                                "http://xx.vod2.myqcloud.com/xx/xx/imageSprite/xx.100_0.jpg"
+                                "http://example.com/xx/xx/imageSprite/xx.100_0.jpg"
                             ],
-                            "WebVttUrl": "http://xx.vod2.myqcloud.com/xxxx/xxxx/imageSprite/xx.vtt"
+                            "WebVttUrl": "http://example.com/xxxx/xxxx/imageSprite/xx.vtt"
                         }
                     ]
                 },
@@ -981,11 +985,13 @@ Output:
                             "PicInfoSet": [
                                 {
                                     "TimeOffset": 0,
-                                    "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
+                                    "Url": "http://example.com/xx/xx/snapshotByTime/xx1.jpg",
+                                    "WaterMarkDefinition": []
                                 },
                                 {
                                     "TimeOffset": 1000,
-                                    "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
+                                    "Url": "http://example.com/xx/xx/snapshotByTime/xx2.jpg",
+                                    "WaterMarkDefinition": []
                                 }
                             ]
                         }
@@ -1121,9 +1127,9 @@ Output:
                     "ClassId": 123,
                     "ClassName": "音视频录播",
                     "ClassPath": "音视频录播",
-                    "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
+                    "CoverUrl": "http://example.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
-                    "MediaUrl": "http://xx.vod2.myqcloud.com/xxx/xx/f0.mp4",
+                    "MediaUrl": "http://example.com/xxx/xx/f0.mp4",
                     "TagSet": [
                         "tag1",
                         "tag2"
@@ -1184,7 +1190,7 @@ Output:
                 "TranscodeInfo": {
                     "TranscodeSet": [
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.mp4",
+                            "Url": "http://example.com/xx/xx/f0.mp4",
                             "Definition": 0,
                             "Bitrate": 563477,
                             "Height": 378,
@@ -1218,7 +1224,7 @@ Output:
                             "CopyRightWatermarkText": "None"
                         },
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
+                            "Url": "http://example.com/xx/xx/f0.f210.m3u8",
                             "Definition": 211,
                             "Bitrate": 563477,
                             "Height": 378,
@@ -1252,7 +1258,7 @@ Output:
                             "CopyRightWatermarkText": "None"
                         },
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
+                            "Url": "http://example.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
                             "Duration": 145,
                             "Size": 265,
@@ -1290,7 +1296,7 @@ Output:
                 "AnimatedGraphicsInfo": {
                     "AnimatedGraphicsSet": [
                         {
-                            "Url": "http://125xx.vod2.myqcloud.com/xx/xx/f20000.gif",
+                            "Url": "http://example.com/xx/xx/f20000.gif",
                             "Definition": 20000,
                             "Container": "gif",
                             "Height": 480,
@@ -1313,16 +1319,16 @@ Output:
                             ],
                             "Interval": 10,
                             "ImageUrlSet": [
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx1.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx2.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx3.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx4.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx5.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx6.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx7.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx8.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx9.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx10.png"
+                                "http://example.com/xx/xx/shotup/xx1.png",
+                                "http://example.com/xx/xx/shotup/xx2.png",
+                                "http://example.com/xx/xx/shotup/xx3.png",
+                                "http://example.com/xx/xx/shotup/xx4.png",
+                                "http://example.com/xx/xx/shotup/xx5.png",
+                                "http://example.com/xx/xx/shotup/xx6.png",
+                                "http://example.com/xx/xx/shotup/xx7.png",
+                                "http://example.com/xx/xx/shotup/xx8.png",
+                                "http://example.com/xx/xx/shotup/xx9.png",
+                                "http://example.com/xx/xx/shotup/xx10.png"
                             ]
                         }
                     ]
@@ -1335,9 +1341,9 @@ Output:
                             "Width": 1024,
                             "TotalCount": 100,
                             "ImageUrlSet": [
-                                "http://xx.vod2.myqcloud.com/xx/xx/imageSprite/xx.100_0.jpg"
+                                "http://example.com/xx/xx/imageSprite/xx.100_0.jpg"
                             ],
-                            "WebVttUrl": "http://xx.vod2.myqcloud.com/xxxx/xxxx/imageSprite/xx.vtt"
+                            "WebVttUrl": "http://example.com/xxxx/xxxx/imageSprite/xx.vtt"
                         }
                     ]
                 },
@@ -1348,11 +1354,13 @@ Output:
                             "PicInfoSet": [
                                 {
                                     "TimeOffset": 0,
-                                    "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
+                                    "Url": "http://example.com/xx/xx/snapshotByTime/xx1.jpg",
+                                    "WaterMarkDefinition": []
                                 },
                                 {
                                     "TimeOffset": 1000,
-                                    "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
+                                    "Url": "http://example.com/xx/xx/snapshotByTime/xx2.jpg",
+                                    "WaterMarkDefinition": []
                                 }
                             ]
                         }
@@ -1489,7 +1497,7 @@ Output:
                     "ClassPath": "图标",
                     "CoverUrl": "",
                     "Type": "png",
-                    "MediaUrl": "http://xxx.com/Tmf3xphxGoUA.png",
+                    "MediaUrl": "http://example.com/Tmf3xphxGoUA.png",
                     "TagSet": [],
                     "StorageRegion": "ap-shanghai",
                     "SourceInfo": {

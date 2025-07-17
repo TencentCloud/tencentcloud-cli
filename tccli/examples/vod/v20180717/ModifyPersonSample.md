@@ -23,7 +23,7 @@ Output:
             "FaceInfoSet": [
                 {
                     "FaceId": "10023",
-                    "Url": "http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281553/face.jpeg"
+                    "Url": "http://example.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281553/face.jpeg"
                 }
             ],
             "TagSet": [],
@@ -68,11 +68,11 @@ Output:
             "FaceInfoSet": [
                 {
                     "FaceId": "10023",
-                    "Url": "http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281553/face.jpeg"
+                    "Url": "http://example.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281553/face.jpeg"
                 },
                 {
                     "FaceId": "10024",
-                    "Url": "http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281554/face.jpeg"
+                    "Url": "http://example.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281554/face.jpeg"
                 }
             ],
             "TagSet": [
@@ -120,11 +120,11 @@ Output:
             "FaceInfoSet": [
                 {
                     "FaceId": "10025",
-                    "Url": "http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281555/face.jpeg"
+                    "Url": "http://example.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281555/face.jpeg"
                 },
                 {
                     "FaceId": "10026",
-                    "Url": "http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281556/face.jpeg"
+                    "Url": "http://example.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281556/face.jpeg"
                 }
             ],
             "TagSet": [
@@ -172,7 +172,7 @@ Output:
             "FaceInfoSet": [
                 {
                     "FaceId": "10025",
-                    "Url": "http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281555/face.jpeg"
+                    "Url": "http://example.com/8b0dd2b5vodcq1256768367/001ac0735285890783753281555/face.jpeg"
                 }
             ],
             "TagSet": [

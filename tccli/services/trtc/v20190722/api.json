@@ -14,11 +14,25 @@
       "output": "CreateBasicModerationResponse",
       "status": "online"
     },
+    "CreateCloudModeration": {
+      "document": "接口说明：\n启动云端审核功能，完成房间内的音视频切片，视频截帧，或者录制音频流，送审到指定的审核商，完成审核。\n\n您可以通过此接口实现如下目标：\n* 指定审核参数（ModerationParams）来指定审核需要的详细参数。\n* 指定存储参数（ModerationStorageParams）将命中的审核文件指定上传到您希望的云存储，目前支持腾讯云（对象存储COS）和第三方AWS",
+      "input": "CreateCloudModerationRequest",
+      "name": "创建云端审核",
+      "output": "CreateCloudModerationResponse",
+      "status": "online"
+    },
     "CreateCloudRecording": {
       "document": "接口说明：\n启动云端录制功能，完成房间内的音视频录制，并上传到指定的云存储。您可以通过此 API 接口把TRTC 房间中的每一路音视频流做单独的录制又或者多路视频画面合流混成一路。\n\n您可以通过此接口实现如下目标：\n* 指定订阅流参数（RecordParams）来指定需要录制的主播的黑名单或者白名单。\n* 指定录制存储参数（StorageParams）来指定上传到您希望的云存储，目前支持腾讯云（云点播VOD、对象存储COS）和第三方AWS\n* 指定合流模式下的音视频转码详细参数（MixTranscodeParams），包括视频分辨率、视频码率、视频帧率、以及声音质量等\n* 指定合流模式各路画面的位置和布局或者也可以指定自动模板的方式来配置。\n\n关键名词：\n* 单流录制：分别录制房间的订阅UserId的音频和视频，录制服务会实时将录制文件上传至您指定的云存储。\n* 合流录制：将房间内订阅UserId的音视频混录成一个视频文件，并将录制文件上传至您指定的云存储。（录制结束后可前往云点播控制台https://console.cloud.tencent.com/vod/media 或 对象存储COS控制台https://console.cloud.tencent.com/cos/bucket查看文件）。",
       "input": "CreateCloudRecordingRequest",
       "name": "开始云端录制",
       "output": "CreateCloudRecordingResponse",
+      "status": "online"
+    },
+    "CreateCloudSliceTask": {
+      "document": "接口说明：\n启动云端切片功能，完成房间内的音视频切片，并上传到指定的云存储。\n\n您可以通过此接口实现如下目标：\n* 指定切片参数（SliceParams）来指定需要切片的主播的黑名单或者白名单。\n* 指定存储参数（SliceStorageParams）来指定上传到您希望的云存储，目前支持腾讯云（对象存储COS）和第三方AWS",
+      "input": "CreateCloudSliceTaskRequest",
+      "name": "创建云端切片任务",
+      "output": "CreateCloudSliceTaskResponse",
       "status": "online"
     },
     "CreatePicture": {
@@ -35,11 +49,25 @@
       "output": "DeleteBasicModerationResponse",
       "status": "online"
     },
+    "DeleteCloudModeration": {
+      "document": "成功开启云端审核任务后，可以使用此接口来停止送审。",
+      "input": "DeleteCloudModerationRequest",
+      "name": "停止云端审核",
+      "output": "DeleteCloudModerationResponse",
+      "status": "online"
+    },
     "DeleteCloudRecording": {
       "document": "成功开启录制后，可以使用此接口来停止录制任务。停止录制成功后不代表文件全部传输完成，如果未完成后台将会继续上传文件，成功后通过事件回调通知客户文件全部传输完成状态。",
       "input": "DeleteCloudRecordingRequest",
       "name": "停止云端录制任务",
       "output": "DeleteCloudRecordingResponse",
+      "status": "online"
+    },
+    "DeleteCloudSliceTask": {
+      "document": "成功开启切片任务后，可以使用此接口来停止任务。停止切片成功后不代表文件全部传输完成，如果未完成后台将会继续上传文件，成功后通过事件回调通知客户文件全部传输完成状态。",
+      "input": "DeleteCloudSliceTaskRequest",
+      "name": "停止云端切片任务",
+      "output": "DeleteCloudSliceTaskResponse",
       "status": "online"
     },
     "DeletePicture": {
@@ -77,11 +105,25 @@
       "output": "DescribeCallDetailInfoResponse",
       "status": "online"
     },
+    "DescribeCloudModeration": {
+      "document": "成功开启审核任务后，可以使用此接口来查询审核任务状态和订阅的黑白名单信息。仅在任务进行时有效，任务退出后查询将会返回错误。",
+      "input": "DescribeCloudModerationRequest",
+      "name": "查询云端审核信息",
+      "output": "DescribeCloudModerationResponse",
+      "status": "online"
+    },
     "DescribeCloudRecording": {
       "document": "成功开启录制后，可以使用此接口来查询录制状态。仅在录制任务进行时有效，录制退出后查询将会返回错误。\n录制文件上传到云点播VOD时，StorageFileList中不会返回录制文件信息，请订阅相关录制文件回调事件，获取录制文件信息。",
       "input": "DescribeCloudRecordingRequest",
       "name": "查询云端录制状态",
       "output": "DescribeCloudRecordingResponse",
+      "status": "online"
+    },
+    "DescribeCloudSliceTask": {
+      "document": "成功开启切片后，可以使用此接口来查询切片任务状态。仅在任务进行时有效，任务退出后查询将会返回错误。",
+      "input": "DescribeCloudSliceTaskRequest",
+      "name": "查询云端切片任务信息",
+      "output": "DescribeCloudSliceTaskResponse",
       "status": "online"
     },
     "DescribeMixTranscodingUsage": {
@@ -266,11 +308,25 @@
       "output": "DismissRoomByStrRoomIdResponse",
       "status": "online"
     },
+    "ModifyCloudModeration": {
+      "document": "成功开启云端审核任务后，可以使用此接口来更新订阅黑白名单。",
+      "input": "ModifyCloudModerationRequest",
+      "name": "修改云端审核",
+      "output": "ModifyCloudModerationResponse",
+      "status": "online"
+    },
     "ModifyCloudRecording": {
       "document": "成功开启录制后，可以使用此接口来更新录制任务。仅在录制任务进行时有效，录制退出后更新将会返回错误。更新操作是全量覆盖，并不是增量更新的模式，也就是说每次更新都需要携带全量的信息。",
       "input": "ModifyCloudRecordingRequest",
       "name": "更新云端录制任务",
       "output": "ModifyCloudRecordingResponse",
+      "status": "online"
+    },
+    "ModifyCloudSliceTask": {
+      "document": "成功开启切片任务后，可以使用此接口来更新任务。用于更新指定订阅流白名单或者黑名单。",
+      "input": "ModifyCloudSliceTaskRequest",
+      "name": "修改云端切片任务",
+      "output": "ModifyCloudSliceTaskResponse",
       "status": "online"
     },
     "ModifyPicture": {
@@ -937,6 +993,126 @@
       ],
       "usage": "in"
     },
+    "CloudModerationStorage": {
+      "document": "腾讯云对象存储COS以及第三方云存储的账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云对象存储COS以及第三方云存储账号信息\n0：腾讯云对象存储 COS\n1：AWS S3\n2: 阿里云 OSS\n示例值：0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Vendor",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云对象存储的[地域信息]（https://cloud.tencent.com/document/product/436/6224#.E5.9C.B0.E5.9F.9F）。\n示例值：cn-shanghai-1\n\nAWS S3[地域信息]（https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions）\n示例值：ap-southeast-3\t",
+          "example": "cn-shanghai-1",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储桶名称。",
+          "example": "test-bucket",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储的access_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。\n示例值：test-accesskey",
+          "example": "test-accesskey",
+          "member": "string",
+          "name": "AccessKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储的secret_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。\n示例值：test-secretkey",
+          "example": "test-secretkey",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储bucket 的指定位置，由字符串数组组成。合法的字符串范围az,AZ,0~9,'_'和'-'，举个例子，切片文件xxx.mp3在 [\"prefix1\", \"prefix2\"]作用下，音频切片文件会变成prefix1/prefix2/{taskId}/{userId}/audios/{sdkappid}_{roomId}_{userid}_{UTC时间}.ogg，视频截帧会变成prefix1/prefix2/{taskId}/{userId}/images/{sdkappid}_{roomId}_{userid}_{UTC时间}.png ",
+          "example": "[\"prefix1\", \"prefix2\"]",
+          "member": "string",
+          "name": "FileNamePrefix",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudSliceStorage": {
+      "document": "腾讯云对象存储COS以及第三方云存储的账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云对象存储COS以及第三方云存储账号信息\n0：腾讯云对象存储 COS\n1：AWS S3\n2: 阿里云 OSS\n示例值：0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Vendor",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云对象存储的[地域信息]（https://cloud.tencent.com/document/product/436/6224#.E5.9C.B0.E5.9F.9F）。\n示例值：cn-shanghai-1\n\nAWS S3[地域信息]（https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions）\n示例值：ap-southeast-3\t",
+          "example": "cn-shanghai-1",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储桶名称。",
+          "example": "test-bucket",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储的access_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。\n示例值：test-accesskey",
+          "example": "test-accesskey",
+          "member": "string",
+          "name": "AccessKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储的secret_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。\n示例值：test-secretkey",
+          "example": "test-secretkey",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储bucket 的指定位置，由字符串数组组成。合法的字符串范围az,AZ,0~9,'_'和'-'，举个例子，切片文件xxx.mp3在 [\"prefix1\", \"prefix2\"]作用下，音频切片文件会变成prefix1/prefix2/{taskId}/{userId}/audios/{sdkappid}_{roomId}_{userid}_{UTC时间}.ogg，视频截帧会变成prefix1/prefix2/{taskId}/{userId}/images/{sdkappid}_{roomId}_{userid}_{UTC时间}.png ",
+          "example": "[\"prefix1\", \"prefix2\"]",
+          "member": "string",
+          "name": "FileNamePrefix",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "CloudStorage": {
       "document": "腾讯云对象存储COS以及第三方云存储的账号信息",
       "members": [
@@ -1131,6 +1307,106 @@
       ],
       "type": "object"
     },
+    "CreateCloudModerationRequest": {
+      "document": "CreateCloudModeration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。",
+          "example": "1400188366",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，为TRTC房间所对应的RoomId。",
+          "example": "295212",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机器人的UserId，用于进房发起审核任务。【*注意】这个UserId不能与当前房间内的主播观众UserId重复。如果一个房间发起多个切片任务时，机器人的userid也不能相互重复，否则会中断前一个切片任务。建议可以把房间ID作为UserId的标识的一部分，即机器人UserId在房间内唯一。",
+          "example": "robot_1234",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算UserSig的方案。",
+          "example": "JwsjsHKgkAURt-lbv8fuXdyzAZauImIZBKDwJ3oKFdJhhkNI3r3yNx*B853XnA954GZLTsDiqSUAhH-l5VrM4zcsHGggAdvTTXCD-m6L63lGhSFiBTHmyhaCbegwIZ-WXfsu2kotauoccklT-Up0fOueN78pH15KFyrZZrtV*XI92-BNhSChKRV91jORYDw",
+          "member": "string",
+          "name": "UserSig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云端审核控制参数。",
+          "example": "无",
+          "member": "ModerationParams",
+          "name": "ModerationParams",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "云端审核文件上传到云存储的参数",
+          "example": "无",
+          "member": "ModerationStorageParams",
+          "name": "ModerationStorageParams",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC房间号的类型。 【*注意】必须和录制的房间所对应的RoomId类型相同: 0: 字符串类型的RoomId 1: 32位整型的RoomId（默认） 示例值：1",
+          "example": "1",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID可以调用的时效性，从成功开启任务并获得TaskID后开始计算，超时后无法调用查询、更新和停止等接口，但是切片任务不会停止。 参数的单位是小时，默认24小时（1天），最大可设置72小时（3天），最小设置6小时。举例说明：如果不设置该参数，那么开始切片成功后，查询、更新和停止切片的调用时效为24个小时。",
+          "example": "24",
+          "member": "uint64",
+          "name": "ResourceExpiredHour",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudModerationResponse": {
+      "document": "CreateCloudModeration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云端审核服务分配的任务ID。任务ID是对一次切片任务生命周期过程的唯一标识，结束任务时会失去意义。任务ID需要业务保存下来，作为下次针对这个任务操作的参数",
+          "example": "-npVqpdU7pr3JUbUasDy5PLPQaHPhkPbIkDILoK-2OqyoZWQndibCtH88ztBhkWAhZCH9DwE.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCloudRecordingRequest": {
       "document": "CreateCloudRecording请求参数结构体",
       "members": [
@@ -1243,6 +1519,115 @@
           "disabled": false,
           "document": "云录制服务分配的任务 ID。任务 ID 是对一次录制生命周期过程的唯一标识，结束录制时会失去意义。任务 ID需要业务保存下来，作为下次针对这个录制任务操作的参数。",
           "example": "-m9-bVVU7k801X-VX8gO***GrDFLaZwKKZ5-fTXqywE.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudSliceTaskRequest": {
+      "document": "CreateCloudSliceTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。",
+          "example": "1400704311",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，为TRTC房间所对应的RoomId。",
+          "example": "295212",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机器人的UserId，用于进房发起切片任务。【*注意】这个UserId不能与当前房间内的主播观众UserId重复。如果一个房间发起多个切片任务时，机器人的userid也不能相互重复，否则会中断前一个切片任务。建议可以把房间ID作为UserId的标识的一部分，即机器人UserId在房间内唯一。",
+          "example": "slice_robot_1",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算UserSig的方案。",
+          "example": "eJyrVgrxCdYrSy1SslIy0jNQ0gHzM1NS80oy0zLBwpl5xQWpySVQqeKU7MSCgswUJSsjAwNDAwsDM4h4axxx",
+          "member": "string",
+          "name": "UserSig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云端切片控制参数。",
+          "example": "无",
+          "member": "SliceParams",
+          "name": "SliceParams",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "云端切片文件上传到云存储的参数",
+          "example": "无",
+          "member": "SliceStorageParams",
+          "name": "SliceStorageParams",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC房间号的类型。 【*注意】必须和录制的房间所对应的RoomId类型相同: 0: 字符串类型的RoomId 1: 32位整型的RoomId（默认） 示例值：1",
+          "example": "1",
+          "member": "uint64",
+          "name": "RoomIdType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "接口可以调用的时效性，从成功开启录制并获得任务ID后开始计算，超时后无法调用查询、更新和停止等接口，但是录制任务不会停止。 参数的单位是小时，默认72小时（3天），最大可设置720小时（30天），最小设置6小时。举例说明：如果不设置该参数，那么开始录制成功后，查询、更新和停止录制的调用时效为72个小时。 示例值：24",
+          "example": "24",
+          "member": "uint64",
+          "name": "ResourceExpiredHour",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TRTC房间权限加密串，只有在TRTC控制台启用了高级权限控制的时候需要携带，在TRTC控制台如果开启高级权限控制后，TRTC 的后台服务系统会校验一个叫做 [PrivateMapKey] 的“权限票据”，权限票据中包含了一个加密后的 RoomId 和一个加密后的“权限位列表”。由于 PrivateMapKey 中包含 RoomId，所以只提供了 UserSig 没有提供 PrivateMapKey 时，并不能进入指定的房间。 示例值：eJw1jcEKgkAURX9FZlvY****fL9rfNX4_",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateMapKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudSliceTaskResponse": {
+      "document": "CreateCloudSliceTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云端切片服务分配的任务ID。任务ID是对一次切片任务生命周期过程的唯一标识，结束任务时会失去意义。任务ID需要业务保存下来，作为下次针对这个任务操作的参数",
+          "example": "-npVqpdU7pr3JUbUasDy5PLPQaHPhkPbIkDILoK-2OqyoZWQndibCtH88ztBhkWAhZCH9DwE.",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -1395,6 +1780,52 @@
       ],
       "type": "object"
     },
+    "DeleteCloudModerationRequest": {
+      "document": "DeleteCloudModeration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。",
+          "example": "1400188366",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "审核任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "-npVoIhU7nQhuIyPncW+12qkkV--KL3bBznoI4K-4pycoZWQndibFvKbEU+fxxvJzuc+2xqATAE.",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudModerationResponse": {
+      "document": "DeleteCloudModeration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "-npVoIhU7nQhuIyPncW+12qkkV--KL3bBznoI4K-4pycoZWQndibFvKbEU+fxxvJzuc+2xqATAE.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCloudRecordingRequest": {
       "document": "DeleteCloudRecording请求参数结构体",
       "members": [
@@ -1426,6 +1857,52 @@
           "disabled": false,
           "document": "云录制服务分配的任务 ID。任务 ID 是对一次录制生命周期过程的唯一标识，结束录制时会失去意义。",
           "example": "-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudSliceTaskRequest": {
+      "document": "DeleteCloudSliceTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。",
+          "example": "1400188366",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "切片任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "-nHwX3RU7h3eZ-9PYsqd+z8I1uU1tUnbTWClW4K-xuWiN6KipeCyXJ8ZJEFpWSZ5zZuyZUAuAQ..",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudSliceTaskResponse": {
+      "document": "DeleteCloudSliceTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "切片任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "-nHwX3RU7h3eZ-9PYsqd+z8I1uU1tUnbTWClW4K-xuWiN6KipeCyXJ8ZJEFpWSZ5zZuyZUAuAQ..",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -1794,6 +2271,72 @@
       ],
       "type": "object"
     },
+    "DescribeCloudModerationRequest": {
+      "document": "DescribeCloudModeration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。",
+          "example": "1400188366",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云端审核任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "-npVoIhU7uxalbjwbc-qxKyKqluNl93bUmLFI4K-4pycoZWQndibYzKsC3HkljEK3HikwogUxwE.",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudModerationResponse": {
+      "document": "DescribeCloudModeration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "切片任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "123",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云端切片任务的状态信息。Idle:表示当前任务空闲中,InProgress:表示当前任务正在进行中,Exited:表示当前任务正在退出的过程中。",
+          "example": "InProgress",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅黑白名单",
+          "example": "{\"SubscribeAudioUserIds\":[],\"UnSubscribeAudioUserIds\":[],\"SubscribeVideoUserIds\":[],\"UnSubscribeVideoUserIds\":[]}",
+          "member": "SubscribeModerationUserIds",
+          "name": "SubscribeStreamUserIds",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudRecordingRequest": {
       "document": "DescribeCloudRecording请求参数结构体",
       "members": [
@@ -1867,6 +2410,62 @@
           "member": "string",
           "name": "RecorderKey",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudSliceTaskRequest": {
+      "document": "DescribeCloudSliceTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。",
+          "example": "1400188366",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "切片任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "-nHwX3RU7h3eZ-9PYsqd+z8I1uU1tUnbTWClW4K-xuWiN6KipeCyXJ8ZJEFpWSZ5zZuyZUAuAQ..",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudSliceTaskResponse": {
+      "document": "DescribeCloudSliceTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "切片任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "123",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云端切片任务的状态信息。Idle:表示当前任务空闲中,InProgress:表示当前任务正在进行中,Exited:表示当前任务正在退出的过程中。",
+          "example": "InProgress",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5158,6 +5757,214 @@
       ],
       "usage": "in"
     },
+    "ModerationParams": {
+      "document": "云端审核的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核任务类型， 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核4:音频流式审核 5:音频流式+视频截帧审核  默认值1 （流式审核需要供应商支持才生效）",
+          "example": "1",
+          "member": "uint64",
+          "name": "ModerationType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间内持续没有用户（主播）上行推流的状态超过MaxIdleTime的时长，自动停止切片，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于1800秒(0.5小时)。示例值：30 ",
+          "example": "30",
+          "member": "uint64",
+          "name": "MaxIdleTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频切片时长，默认15s 示例值：15",
+          "example": "15",
+          "member": "uint64",
+          "name": "SliceAudio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "视频截帧间隔时长，默认5s",
+          "example": "5",
+          "member": "uint64",
+          "name": "SliceVideo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "供应商枚举，\ntianyu : 天御内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nace  : ACE内容安全 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nshumei : 数美审核（支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）\nyidun : 网易易盾审核 （支持 1:音频切片审核，2:视频截帧审核，3:音视切片审核+视频截帧审核）",
+          "example": "ace",
+          "member": "string",
+          "name": "ModerationSupplier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "第三方审核商送审需要配置信息",
+          "example": "无",
+          "member": "ModerationSupplierParam",
+          "name": "ModerationSupplierParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否保存命中文件 0 默认不保存  1 保存命中文件",
+          "example": "0",
+          "member": "uint64",
+          "name": "SaveModerationFile",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否回调所有审核结果:\u000b0 默认回调所有结果 \u000b1 仅回调命中结果 ",
+          "example": "0",
+          "member": "uint64",
+          "name": "CallbackAllResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定订阅流白名单或者黑名单。",
+          "example": "无",
+          "member": "SubscribeModerationUserIds",
+          "name": "SubscribeStreamUserIds",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModerationStorageParams": {
+      "document": "审核存储参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云对象存储COS以及第三方云存储的账号信息",
+          "example": "无",
+          "member": "CloudModerationStorage",
+          "name": "CloudModerationStorage",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModerationSupplierParam": {
+      "document": "送审到第三方审核供应商需要参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "供应审核商账号id，数美天御不为空，易盾为空",
+          "example": "\"24189\"",
+          "member": "string",
+          "name": "AppID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "供应审核商秘钥id",
+          "example": "\"ace_ugc_20521\"",
+          "member": "string",
+          "name": "SecretId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "供应审核商秘钥key",
+          "example": "\"637ae34f4069afb92e9c6a799b36xxxx\"",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音频场景，策略id或者businessId",
+          "example": "\"2001\"",
+          "member": "string",
+          "name": "AudioBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片场景，策略id或者businessId",
+          "example": "\"2001\"",
+          "member": "string",
+          "name": "ImageBizType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyCloudModerationRequest": {
+      "document": "ModifyCloudModeration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。",
+          "example": "1400188366",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "审核任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "-npVoIhU7uxalbjwbc-qxKyKqluNl93bUmLFI4K-4pycoZWQndibYzKsC3HkljEK3HikwogUxwE.",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定订阅流白名单或者黑名单。",
+          "example": "{\"SubscribeAudioUserIds\":[\"user1\"],\"SubscribeVideoUserIds\":[\"user2\"]}",
+          "member": "SubscribeStreamUserIds",
+          "name": "SubscribeStreamUserIds",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudModerationResponse": {
+      "document": "ModifyCloudModeration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "-npVoIhU7uxalbjwbc-qxKyKqluNl93bUmLFI4K-4pycoZWQndibYzKsC3HkljEK3HikwogUxwE.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyCloudRecordingRequest": {
       "document": "ModifyCloudRecording请求参数结构体",
       "members": [
@@ -5207,6 +6014,61 @@
           "disabled": false,
           "document": "云录制服务分配的任务 ID。任务 ID 是对一次录制生命周期过程的唯一标识，结束录制时会失去意义。",
           "example": "-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudSliceTaskRequest": {
+      "document": "ModifyCloudSliceTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。",
+          "example": "1400188366",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "切片任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "-nHwX3RU7h3eZ-9PYsqd+z8I1uU1tUnbTWClW4K-xuWiN6KipeCyXJ8ZJEFpWSZ5zZuyZUAuAQ..",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定订阅流白名单或者黑名单。",
+          "example": "无",
+          "member": "SubscribeStreamUserIds",
+          "name": "SubscribeStreamUserIds",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudSliceTaskResponse": {
+      "document": "ModifyCloudSliceTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "切片任务的唯一Id，在启动切片任务成功后会返回。",
+          "example": "-nHwX3RU7h3eZ-9PYsqd+z8I1uU1tUnbTWClW4K-xuWiN6KipeCyXJ8ZJEFpWSZ5zZuyZUAuAQ..",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -6413,6 +7275,81 @@
       ],
       "usage": "in"
     },
+    "SliceParams": {
+      "document": "云端切片的控制参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "切片任务类型:\n1:音频切片；\n2:视频截帧；\n3:音视切片+视频截帧\n示例值：1 ",
+          "example": "1",
+          "member": "uint64",
+          "name": "SliceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间内持续没有主播的状态超过MaxIdleTime的时长，自动停止录制，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于 86400秒(24小时)。\n示例值：30",
+          "example": "30",
+          "member": "uint64",
+          "name": "MaxIdleTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频切片时长，默认15s 示例值：15",
+          "example": "15",
+          "member": "uint64",
+          "name": "SliceAudio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "视频截帧间隔时长，默认5s， 示例值：5",
+          "example": "5",
+          "member": "uint64",
+          "name": "SliceVideo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定订阅流白名单或者黑名单。",
+          "example": "无",
+          "member": "SubscribeStreamUserIds",
+          "name": "SubscribeStreamUserIds",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "已废弃，从控制台配置回调url",
+          "example": "无",
+          "member": "string",
+          "name": "SliceCallbackUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "SliceStorageParams": {
+      "document": "切片存储参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云对象存储COS以及第三方云存储的账号信息",
+          "example": "无",
+          "member": "CloudSliceStorage",
+          "name": "CloudSliceStorage",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
     "SmallVideoLayoutParams": {
       "document": "画中画模板中有效，代表小画面的布局参数",
       "members": [
@@ -7544,6 +8481,56 @@
         }
       ],
       "usage": "in"
+    },
+    "SubscribeModerationUserIds": {
+      "document": "指定订阅流白名单或者黑名单，音频的白名单和音频黑名单不能同时设置，视频亦然。同时实际并发订阅的媒体流路数最大支持25路流，混流场景下视频的多画面最大支持24画面。支持通过设置\".*$\"通配符，来前缀匹配黑白名单的UserId，注意房间里不能有和通配符规则相同的用户，否则将视为订阅具体用户，前缀规则会失效。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅音频流白名单，指定订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表订阅UserId 1，2，3的音频流；[\"1.*$\"], 代表订阅UserId前缀为1的音频流。默认不填订阅房间内所有的音频流，订阅列表用户数不超过32。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123\",\"456\"]",
+          "member": "string",
+          "name": "SubscribeAudioUserIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅音频流黑名单，指定不订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表不订阅UserId 1，2，3的音频流；[\"1.*$\"], 代表不订阅UserId前缀为1的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过32。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123\",\"456\"]",
+          "member": "string",
+          "name": "UnSubscribeAudioUserIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅视频流白名单，指定订阅哪几个UserId的视频流，例如[\"1\", \"2\", \"3\"], 代表订阅UserId  1，2，3的视频流；[\"1.*$\"], 代表订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123\",\"456\"]",
+          "member": "string",
+          "name": "SubscribeVideoUserIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅视频流黑名单，指定不订阅哪几个UserId的视频流，例如[\"1\", \"2\", \"3\"], 代表不订阅UserId  1，2，3的视频流；[\"1.*$\"], 代表不订阅UserId前缀为1的视频流。默认不填订阅房间内所有视频流，订阅列表用户数不超过32。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123\",\"456\"]",
+          "member": "string",
+          "name": "UnSubscribeVideoUserIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SubscribeStreamUserIds": {
       "document": "指定订阅流白名单或者黑名单，音频的白名单和音频黑名单不能同时设置，视频亦然。同时实际并发订阅的媒体流路数最大支持25路流，混流场景下视频的多画面最大支持24画面。支持通过设置\".*$\"通配符，来前缀匹配黑白名单的UserId，注意房间里不能有和通配符规则相同的用户，否则将视为订阅具体用户，前缀规则会失效。",

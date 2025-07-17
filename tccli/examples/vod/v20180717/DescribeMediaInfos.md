@@ -26,9 +26,9 @@ Output:
                     "ClassId": 1,
                     "ClassName": "体育",
                     "ClassPath": "田径",
-                    "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
+                    "CoverUrl": "http://example.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
-                    "MediaUrl": "http://xx.vod2.myqcloud.com/xx/xx/f0.mp4",
+                    "MediaUrl": "http://example.com/xx/xx/f0.mp4",
                     "TagSet": [],
                     "SourceInfo": {
                         "SourceType": "Record",
@@ -79,7 +79,7 @@ Output:
                 "TranscodeInfo": {
                     "TranscodeSet": [
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.mp4",
+                            "Url": "http://example.com/xx/xx/f0.mp4",
                             "Definition": 0,
                             "Bitrate": 563477,
                             "Height": 378,
@@ -113,7 +113,7 @@ Output:
                             "CopyRightWatermarkText": ""
                         },
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
+                            "Url": "http://example.com/xx/xx/f0.f210.m3u8",
                             "Definition": 211,
                             "Bitrate": 563477,
                             "Height": 378,
@@ -147,7 +147,7 @@ Output:
                             "CopyRightWatermarkText": ""
                         },
                         {
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
+                            "Url": "http://example.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
                             "Duration": 145,
                             "Size": 265,
@@ -185,7 +185,7 @@ Output:
                 "AnimatedGraphicsInfo": {
                     "AnimatedGraphicsSet": [
                         {
-                            "Url": "http://125xx.vod2.myqcloud.com/xx/xx/f20000.gif",
+                            "Url": "http://example.com/xx/xx/f20000.gif",
                             "Definition": 20000,
                             "Container": "gif",
                             "Height": 480,
@@ -206,16 +206,16 @@ Output:
                             "WaterMarkDefinition": [],
                             "Interval": 10,
                             "ImageUrlSet": [
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx1.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx2.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx3.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx4.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx5.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx6.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx7.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx8.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx9.png",
-                                "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx10.png"
+                                "http://example.com/xx/xx/shotup/xx1.png",
+                                "http://example.com/xx/xx/shotup/xx2.png",
+                                "http://example.com/xx/xx/shotup/xx3.png",
+                                "http://example.com/xx/xx/shotup/xx4.png",
+                                "http://example.com/xx/xx/shotup/xx5.png",
+                                "http://example.com/xx/xx/shotup/xx6.png",
+                                "http://example.com/xx/xx/shotup/xx7.png",
+                                "http://example.com/xx/xx/shotup/xx8.png",
+                                "http://example.com/xx/xx/shotup/xx9.png",
+                                "http://example.com/xx/xx/shotup/xx10.png"
                             ]
                         }
                     ]
@@ -228,9 +228,9 @@ Output:
                             "Width": 1024,
                             "TotalCount": 100,
                             "ImageUrlSet": [
-                                "http://xx.vod2.myqcloud.com/xx/xx/imageSprite/xx.100_0.jpg"
+                                "http://example.com/xx/xx/imageSprite/xx.100_0.jpg"
                             ],
-                            "WebVttUrl": "http://xx.vod2.myqcloud.com/xxxx/xxxx/imageSprite/xx.vtt"
+                            "WebVttUrl": "http://example.com/xxxx/xxxx/imageSprite/xx.vtt"
                         }
                     ]
                 },
@@ -240,12 +240,18 @@ Output:
                             "Definition": 10,
                             "PicInfoSet": [
                                 {
+                                    "WaterMarkDefinition": [
+                                        725562
+                                    ],
                                     "TimeOffset": 0,
-                                    "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
+                                    "Url": "http://example.com/xx/xx/snapshotByTime/xx1.jpg"
                                 },
                                 {
+                                    "WaterMarkDefinition": [
+                                        725562
+                                    ],
                                     "TimeOffset": 1000,
-                                    "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
+                                    "Url": "http://example.com/xx/xx/snapshotByTime/xx2.jpg"
                                 }
                             ]
                         }
@@ -254,7 +260,7 @@ Output:
                 "MiniProgramReviewInfo": {
                     "MiniProgramReviewList": [
                         {
-                            "Url": "http://xx.vod2.myqcloud.com/xx/xx/f0.mp4",
+                            "Url": "http://example.com/xx/xx/f0.mp4",
                             "Definition": 0,
                             "ReviewResult": "pass",
                             "ReviewSummary": [
@@ -305,8 +311,8 @@ Output:
                         {
                             "Definition": 0,
                             "Package": "HLS",
-                            "DrmType": "None",
-                            "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
+                            "DrmType": "",
+                            "Url": "http://example.com/xx/xx/master_playlist.m3u8",
                             "Size": 0,
                             "DigitalWatermarkType": "",
                             "CopyRightWatermarkText": "",
@@ -333,7 +339,7 @@ Output:
                             "Name": "English",
                             "Language": "en-US",
                             "Format": "vtt",
-                            "Url": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/subtitles/subtitleId.vtt",
+                            "Url": "http://example.com/vodgzp123/15517123183853310575/subtitles/subtitleId.vtt",
                             "Source": "UserUploaded"
                         }
                     ]
@@ -385,9 +391,9 @@ Output:
                     "ClassId": 1,
                     "ClassName": "体育",
                     "ClassPath": "田径",
-                    "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
+                    "CoverUrl": "http://example.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
-                    "MediaUrl": "http://xx.vod2.myqcloud.com/xx/xx/f0.mp4",
+                    "MediaUrl": "http://example.com/xx/xx/f0.mp4",
                     "TagSet": [],
                     "SourceInfo": {
                         "SourceType": "Record",

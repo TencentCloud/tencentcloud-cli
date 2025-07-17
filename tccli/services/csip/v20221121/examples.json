@@ -51,7 +51,7 @@
     "DeleteRiskScanTask": [
       {
         "document": "删除风险中心扫描任务",
-        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRiskScanTask\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-********\"\n    ],\n    \"TaskIdList\": [\n        {\n            \"TaskId\": \"rmis-****\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRiskScanTask\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-********\"\n    ],\n    \"TaskIdList\": [\n        {\n            \"TaskId\": \"rmis-****\",\n            \"TargetAppId\": \"135641233\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7429061e-dabd-e1ee-e135-43364c7bb15d\"\n    }\n}",
         "title": "删除风险中心扫描任务"
       }

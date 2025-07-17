@@ -23,7 +23,7 @@ Output:
                     "Status": "FINISH",
                     "FileId": "5285890784246869930",
                     "FileName": "small",
-                    "FileUrl": "https://123.vod2.myqcloud.com/d042887avodtransgzp1256768367/c643347c5285890784246869930/1546950643_4191274987.100_0.jpg",
+                    "FileUrl": "https://example.com/d042887avodtransgzp1256768367/c643347c5285890784246869930/1546950643_4191274987.100_0.jpg",
                     "SessionContext": "",
                     "SessionId": "",
                     "OperationType": "",
@@ -89,7 +89,7 @@ Output:
                                     "EndTimeOffset": 3
                                 },
                                 "Output": {
-                                    "Url": "http://123.vod2.myqcloud.com/d042887avodtransgzp1256768367/c643347c5285890784246869930/v.f20.mp4",
+                                    "Url": "http://example.com/d042887avodtransgzp1256768367/c643347c5285890784246869930/v.f20.mp4",
                                     "Size": 4189073,
                                     "Container": "mov,mp4,m4a,3gp,3g2,mj2",
                                     "Height": 480,

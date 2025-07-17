@@ -6325,11 +6325,20 @@
         {
           "disabled": false,
           "document": "自定义制作镜像缓存过程中容器实例的宿主机上的 DNS。如：\n\"nameserver 4.4.4.4\\nnameserver 8.8.8.8\"",
-          "example": "8.8.8.8",
+          "example": "\"nameserver 8.8.8.8\"",
           "member": "string",
           "name": "ResolveConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云标签",
+          "example": "[{\"Key\": \"project\", \"Value\": \"tke-serverless\"}]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -17211,6 +17220,36 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像缓存保留时间天数，过期将会自动清理，默认为0，永不过期。",
+          "example": "7",
+          "member": "uint64",
+          "name": "RetentionDays",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像拉取凭证",
+          "example": "无",
+          "member": "ImageRegistryCredential",
+          "name": "ImageRegistryCredentials",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云标签",
+          "example": "[{\"Key\":\"project\",\"Value\":\"tke-serverless\"}]",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -26311,6 +26350,15 @@
           "example": "[\"sg-1cghduvc\"]",
           "member": "string",
           "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云标签",
+          "example": "[{\"Key\": \"project\", \"Value\": \"tke-serverless\"}]",
+          "member": "Tag",
+          "name": "Tags",
           "required": false,
           "type": "list"
         }

@@ -763,7 +763,7 @@
         {
           "disabled": false,
           "document": "参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)",
-          "example": "{   \"detail\": {     \"source-ip\": [ { \"cidr\": \"10.0.0.0/24\" } ]  ",
+          "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EventPattern",
           "required": true,
@@ -780,7 +780,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符",
+          "document": "事件规则名称，只能包含字母、中文、数字、下划线、连字符，以字母/中文开头，以数字、字母或中文结尾，2~60个字符",
           "example": "rule",
           "member": "string",
           "name": "RuleName",
@@ -798,7 +798,7 @@
         },
         {
           "disabled": false,
-          "document": "事件集描述，只能包含数字、中英文及常用标点符号，不超过200个字符",
+          "document": "事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符",
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
@@ -1839,6 +1839,7 @@
           "example": "eb-xxxxxxxx",
           "member": "string",
           "name": "EventBusId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1848,6 +1849,7 @@
           "example": "rule-xxxxxxxx",
           "member": "string",
           "name": "RuleId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1857,6 +1859,7 @@
           "example": "rule",
           "member": "string",
           "name": "RuleName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1866,6 +1869,7 @@
           "example": "Active",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1875,6 +1879,7 @@
           "example": "true",
           "member": "bool",
           "name": "Enable",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1884,15 +1889,17 @@
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "事件模式",
-          "example": "{   \"detail\": {     \"source-ip\": [ { \"cidr\": \"10.0.0.0/24\" } ]  ",
+          "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EventPattern",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1902,6 +1909,7 @@
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "AddTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1911,6 +1919,7 @@
           "example": "2021-04-27T14:34:19+08:00",
           "member": "datetime_iso",
           "name": "ModTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2066,8 +2075,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "根据哪个字段进行返回结果排序,支持以下字段：AddTime（创建时间）, ModTime（修改时间）",
-          "example": "ModTime",
+          "document": "根据哪个字段进行返回结果排序,支持以下字段：created_at（创建时间）, updated_at（修改时间）",
+          "example": "created_at",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -3548,7 +3557,7 @@
         },
         {
           "disabled": false,
-          "document": "规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符",
+          "document": "事件规则描述，只能包含数字、中英文及常用标点符号，不超过200个字符",
           "example": "这是一个描述",
           "member": "string",
           "name": "Description",
@@ -3558,7 +3567,7 @@
         {
           "disabled": false,
           "document": "参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)",
-          "example": "{   \"detail\": {     \"source-ip\": [ { \"cidr\": \"10.0.0.0/24\" } ]  ",
+          "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EventPattern",
           "required": false,

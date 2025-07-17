@@ -126,6 +126,13 @@
       "output": "BatchUpdateIntegrationTasksResponse",
       "status": "online"
     },
+    "BindProjectExecutorResource": {
+      "document": "商业化版本：执行资源组-资源包绑定项目",
+      "input": "BindProjectExecutorResourceRequest",
+      "name": "执行资源组-资源包绑定项目",
+      "output": "BindProjectExecutorResourceResponse",
+      "status": "online"
+    },
     "CheckAlarmRegularNameExist": {
       "document": "判断告警规则重名",
       "input": "CheckAlarmRegularNameExistRequest",
@@ -173,6 +180,13 @@
       "input": "CountOpsInstanceStateRequest",
       "name": "智能运维-统计任务实例状态",
       "output": "CountOpsInstanceStateResponse",
+      "status": "online"
+    },
+    "CreateBaseProject": {
+      "document": "创建项目 仅项目本身，不包含集群等信息",
+      "input": "CreateBaseProjectRequest",
+      "name": "创建项目本身",
+      "output": "CreateBaseProjectResponse",
       "status": "online"
     },
     "CreateCodeTemplate": {
@@ -460,6 +474,13 @@
       "input": "DeleteTaskDsRequest",
       "name": "删除编排空间任务",
       "output": "DeleteTaskDsResponse",
+      "status": "online"
+    },
+    "DeleteTaskLineage": {
+      "document": "删除任务血缘信息",
+      "input": "DeleteTaskLineageRequest",
+      "name": "删除任务血缘关系",
+      "output": "DeleteTaskLineageResponse",
       "status": "online"
     },
     "DeleteWorkflowById": {
@@ -1435,6 +1456,13 @@
       "output": "DiagnoseProResponse",
       "status": "online"
     },
+    "DisableProject": {
+      "document": "禁用项目",
+      "input": "DisableProjectRequest",
+      "name": "禁用项目",
+      "output": "DisableProjectResponse",
+      "status": "online"
+    },
     "DownloadLogByLine": {
       "document": "按行下载日志信息",
       "input": "DownloadLogByLineRequest",
@@ -1447,6 +1475,13 @@
       "input": "DryRunDIOfflineTaskRequest",
       "name": "调试运行集成任务",
       "output": "DryRunDIOfflineTaskResponse",
+      "status": "online"
+    },
+    "EnableProject": {
+      "document": "启用项目",
+      "input": "EnableProjectRequest",
+      "name": "启用项目",
+      "output": "EnableProjectResponse",
       "status": "online"
     },
     "FindAllFolder": {
@@ -1636,6 +1671,13 @@
       "input": "ModifyMonitorStatusRequest",
       "name": "更新监控状态",
       "output": "ModifyMonitorStatusResponse",
+      "status": "online"
+    },
+    "ModifyProject": {
+      "document": "修改项目基础信息。",
+      "input": "ModifyProjectRequest",
+      "name": "修改项目基础信息",
+      "output": "ModifyProjectResponse",
       "status": "online"
     },
     "ModifyRule": {
@@ -1916,6 +1958,13 @@
       "input": "TriggerManualTasksRequest",
       "name": "手动任务触发运行",
       "output": "TriggerManualTasksResponse",
+      "status": "online"
+    },
+    "UnboundProjectExecutorResource": {
+      "document": "商业化版本：执行资源组/资源包解除绑定项目",
+      "input": "UnboundProjectExecutorResourceRequest",
+      "name": "执行资源组-资源包解除绑定项目",
+      "output": "UnboundProjectExecutorResourceResponse",
       "status": "online"
     },
     "UnlockIntegrationTask": {
@@ -6017,6 +6066,70 @@
       ],
       "type": "object"
     },
+    "BindProjectExecutorResourceRequest": {
+      "document": "BindProjectExecutorResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行资源组id",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要绑定项目的资源包id集合，为空则绑定整个资源组",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorResourcePackageIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可选: 需要绑定的多个项目id, 若申明将带上ProjectId一起绑定",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectIdList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindProjectExecutorResourceResponse": {
+      "document": "BindProjectExecutorResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "绑定成功为true，其他为异常信息",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BizCatalogsInfo": {
       "document": "数据地图-数据类目信息",
       "members": [
@@ -8410,6 +8523,23 @@
       ],
       "usage": "out"
     },
+    "CreateBaseProjectRequest": {
+      "document": "CreateBaseProject请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateBaseProjectResponse": {
+      "document": "CreateBaseProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCodeTemplateRequest": {
       "document": "CreateCodeTemplate请求参数结构体",
       "members": [
@@ -8460,10 +8590,19 @@
         },
         {
           "disabled": false,
-          "document": "指定脚本内容",
-          "example": "select 1",
+          "document": "Base64转化的脚本内容",
+          "example": "cHJpbnQoMSk=",
           "member": "string",
           "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代码模板类型",
+          "example": "dev_git_template",
+          "member": "string",
+          "name": "ProductName",
           "required": false,
           "type": "string"
         }
@@ -13608,6 +13747,52 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskLineageRequest": {
+      "document": "DeleteTaskLineage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务信息",
+          "example": "无",
+          "member": "LineageTask",
+          "name": "Task",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "wedata内部任务默认SQL",
+          "example": "SQL",
+          "member": "string",
+          "name": "ChannelType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskLineageResponse": {
+      "document": "DeleteTaskLineage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -26407,6 +26592,52 @@
       ],
       "usage": "out"
     },
+    "DisableProjectRequest": {
+      "document": "DisableProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模块名称",
+          "example": "无",
+          "member": "string",
+          "name": "ModuleKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableProjectResponse": {
+      "document": "DisableProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "bool",
+          "name": "Data",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DlcDataGovernPolicy": {
       "document": "数据治理配置项",
       "members": [
@@ -27392,6 +27623,52 @@
         }
       ],
       "usage": "out"
+    },
+    "EnableProjectRequest": {
+      "document": "EnableProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模块名称",
+          "example": "无",
+          "member": "string",
+          "name": "ModuleKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableProjectResponse": {
+      "document": "EnableProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "bool",
+          "name": "Data",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EngineTaskInfo": {
       "document": "引擎任务信息",
@@ -38260,6 +38537,96 @@
       ],
       "type": "object"
     },
+    "ModifyProjectRequest": {
+      "document": "ModifyProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标修改的项目ID",
+          "example": "\"12312121231\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "true/false则修改，不带该参数不修改。",
+          "example": "true/false",
+          "member": "bool",
+          "name": "TaskSubmitApproval",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "资源池信息",
+          "example": "无",
+          "member": "ResourcePoolInfo",
+          "name": "ResourcePoolInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "项目管理员",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectManagers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "调度任务严格模式",
+          "example": "false",
+          "member": "bool",
+          "name": "TaskStrictMode",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "以后新增选项可以直接通过前端的json格式写入去实现",
+          "example": "无",
+          "member": "string",
+          "name": "ExtraOptions",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目类型，SIMPLE：简单模式 STANDARD：标准模式",
+          "example": "无",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目负责人",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectOwner",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectResponse": {
+      "document": "ModifyProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRuleGroupSubscriptionRequest": {
       "document": "ModifyRuleGroupSubscription请求参数结构体",
       "members": [
@@ -44251,6 +44618,62 @@
       ],
       "usage": "out"
     },
+    "ResourcePoolInfo": {
+      "document": "资源池信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源池id",
+          "example": "1,2",
+          "member": "string",
+          "name": "ResourcePools",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储空间大小，单位 MB",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储文件数大小",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageFileNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储类型，0 代表HDFS，1 代表OZONE",
+          "example": "hdfs",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ResumeIntegrationTaskRequest": {
       "document": "ResumeIntegrationTask请求参数结构体",
       "members": [
@@ -50171,6 +50594,15 @@
           "example": "10",
           "member": "string",
           "name": "VersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提交任务测试运行类型",
+          "example": "WEDATA",
+          "member": "string",
+          "name": "SubmitTaskTestRunType",
           "required": false,
           "type": "string"
         }
@@ -58861,6 +59293,70 @@
       ],
       "type": "object"
     },
+    "UnboundProjectExecutorResourceRequest": {
+      "document": "UnboundProjectExecutorResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行资源组id",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可选: 需要绑定的多个项目id, 若申明将带上ProjectId一起绑定",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要绑定项目的资源包id集合，为空则绑定整个资源组",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorResourcePackageIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnboundProjectExecutorResourceResponse": {
+      "document": "UnboundProjectExecutorResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否绑定成功，失败返回异常",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UnlockIntegrationTaskRequest": {
       "document": "UnlockIntegrationTask请求参数结构体",
       "members": [
@@ -58997,8 +59493,10 @@
           "example": "无",
           "member": "string",
           "name": "RequestFromSource",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,

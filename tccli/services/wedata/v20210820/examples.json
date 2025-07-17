@@ -156,6 +156,14 @@
         "title": "BatchUpdateIntegrationTasks"
       }
     ],
+    "BindProjectExecutorResource": [
+      {
+        "document": "支持绑定多个项目",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindProjectExecutorResource\n<公共请求参数>\n\n{\n    \"ExecutorGroupId\": \"20220706111614878854\",\n    \"ProjectId\": \"1091118890164248576\",\n    \"ExecutorResourcePackageIds\": [\n        \"20220706111615206649\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"a6bb0018-c093-4fb8-8984-1b7c212f47c5\"\n    }\n}",
+        "title": "资源绑定项目"
+      }
+    ],
     "CheckAlarmRegularNameExist": [
       {
         "document": "检查规则名称是否存在",
@@ -216,6 +224,20 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CountOpsInstanceState\n<公共请求参数>\n\n{\n    \"TaskId\": \"your taskId\",\n    \"ProjectId\": \"your projectId\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Success\": 1,\n            \"Running\": 1,\n            \"Waiting\": 1,\n            \"Depend\": 1,\n            \"Failed\": 1,\n            \"Stopped\": 1\n        },\n        \"RequestId\": \"40za5450-0fa4-49c9-b2f6-66232e84737c\"\n    }\n}",
         "title": "统计任务实例状态示例"
+      }
+    ],
+    "CreateBaseProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBaseProject\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "样例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBaseProject\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9d37065b-575c-457a-a96d-3d02f4a57d95\"\n    }\n}",
+        "title": "项目返回为string类型"
       }
     ],
     "CreateCodeTemplate": [
@@ -556,6 +578,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTaskDs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1470547050521227264\",\n    \"DeleteScript\": true,\n    \"OperateInform\": true,\n    \"TaskId\": \"20230523111838986\",\n    \"VirtualTaskId\": \"20230523111838986\",\n    \"VirtualFlag\": true,\n    \"DeleteMode\": true\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"77b63b69-b3c5-48ea-809e-d1bbfc1b3da0\"\n    }\n}",
         "title": "任务删除"
+      }
+    ],
+    "DeleteTaskLineage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTaskLineage\n<公共请求参数>\n\n{\n    \"ChannelType\": \"THIRD_REPORT\",\n    \"Task\": {\n        \"TaskId\": \"ceshi_task_32423213123\",\n        \"TaskSource\": \"third_\",\n        \"TaskType\": \"THIRD_REPORT\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "示例测试"
       }
     ],
     "DeleteWorkflowById": [
@@ -1766,6 +1796,14 @@
         "title": "实例诊断示例"
       }
     ],
+    "DisableProject": [
+      {
+        "document": "禁用项目",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"ModuleKey\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "禁用项目"
+      }
+    ],
     "DownloadLogByLine": [
       {
         "document": "",
@@ -1780,6 +1818,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DryRunDIOfflineTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"446569620893696\",\n    \"ResourceGroup\": \"mysql\",\n    \"ProjectId\": \"1486446569620893696\",\n    \"TaskTypeId\": 201\n}",
         "output": "{\n    \"Response\": {\n        \"CurrentRunDate\": \"2022-04-12 17:00:15\",\n        \"ProjectId\": \"1486446569620893696\",\n        \"Status\": \"running\",\n        \"TaskId\": \"446569620893696\",\n        \"TaskInstanceKey\": \"64893b7dff394c353ae305796ba2\",\n        \"RequestId\": \"as1cs2c123asyi23bh213cc\"\n    }\n}",
         "title": "调试运行集成任务"
+      }
+    ],
+    "EnableProject": [
+      {
+        "document": "启用项目",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"ModuleKey\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "启用项目"
       }
     ],
     "FindAllFolder": [
@@ -2002,6 +2048,32 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMonitorStatus\n<公共请求参数>\n\n{\n    \"ProjectId\": \"657890432\",\n    \"RuleGroupId\": 1,\n    \"MonitorStatus\": true\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"0ff4e8ae-ebea-4a41-8aa2-1f6bc4b68e69\"\n    }\n}",
         "title": "更新监控状态"
+      }
+    ],
+    "ModifyProject": [
+      {
+        "document": "modify project",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"TaskSubmitApproval\": true,\n    \"ProjectId\": \"111111111111\",\n    \"ResourcePoolInfo\": {\n        \"ResourcePools\": [\n            \"1234455555\"\n        ],\n        \"StorageSize\": 0,\n        \"StorageFileNum\": 0,\n        \"ClusterId\": \"123123123123\",\n        \"StorageType\": \"123123123\"\n    },\n    \"ProjectManagers\": [\n        \"12312312312\"\n    ],\n    \"TaskStrictMode\": true,\n    \"ExtraOptions\": \"12312312\",\n    \"Model\": \"123123123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "样例"
+      },
+      {
+        "document": "modify project",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"TaskSubmitApproval\": \"true\",\n    \"ProjectId\": \"978203585769070592\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72fda28b-e1c8-4017-9fd0-a67c79178bde\"\n    }\n}",
+        "title": "modify project"
+      },
+      {
+        "document": "升级到标准模式",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"2082166847290601472\",\n    \"Model\": \"STANDARD\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"059e6ab7-b35c-42be-b1a6-cc0fc1329441\"\n    }\n}",
+        "title": "升级到标准模式"
+      },
+      {
+        "document": "modify project",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"64f07492-8c96-4928-a06f-f37c61382e06\"\n    }\n}",
+        "title": "modify task script ready only"
       }
     ],
     "ModifyRule": [
@@ -2340,6 +2412,20 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerManualTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1464962169590902784\",\n    \"TriggerName\": \"test_name\",\n    \"TriggerScope\": \"ENTIRE_WORKFLOW\",\n    \"DataTimeList\": [\n        \"2025-01-14 00:00:00\",\n        \"2025-01-14 01:00:00\"\n    ],\n    \"WorkflowId\": \"d4d7e9a7-0649-4410-a2ae-89818043c58a\",\n    \"Remark\": \"\",\n    \"TaskIds\": [],\n    \"SchedulerResourceGroup\": \"20240703113703331017\",\n    \"IntegrationResourceGroup\": \"\",\n    \"ExecOrder\": \"RAND\",\n    \"CustomParams\": [\n        {\n            \"K\": \"param1\",\n            \"V\": \"10\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreateTime\": \"2025-01-14T17:42:37.069\",\n            \"DatetimeList\": [\n                \"2025-01-14 00:00:00\",\n                \"2025-01-14 01:00:00\"\n            ],\n            \"FinishedInstanceCnt\": null,\n            \"InstanceCnt\": null,\n            \"OwnerUin\": \"100028448903\",\n            \"ProjectId\": \"1464962169590902784\",\n            \"Remark\": \"\",\n            \"Status\": \"INIT\",\n            \"SuccessInstanceCnt\": null,\n            \"TaskCnt\": null,\n            \"TenantId\": \"1315051789\",\n            \"TriggerId\": \"9a350a12-40bd-4610-9d9e-445ee8730d6e\",\n            \"TriggerName\": \"test_name\",\n            \"TriggerParams\": \"{\\\"ProjectId\\\":\\\"1464962169590902784\\\",\\\"TriggerName\\\":\\\"test_name\\\",\\\"Remark\\\":\\\"\\\",\\\"TriggerScope\\\":\\\"ENTIRE_WORKFLOW\\\",\\\"WorkflowId\\\":\\\"d4d7e9a7-0649-4410-a2ae-89818043c58a\\\",\\\"TaskIds\\\":[\\\"20241223224113778\\\",\\\"20241224171752455\\\",\\\"20241223224056125\\\"],\\\"DataTimeList\\\":[\\\"2025-01-14 00:00:00\\\",\\\"2025-01-14 01:00:00\\\"],\\\"SchedulerResourceGroup\\\":\\\"20240703113703331017\\\",\\\"IntegrationResourceGroup\\\":\\\"\\\",\\\"ExecOrder\\\":\\\"RAND\\\",\\\"CustomParams\\\":[{\\\"K\\\":\\\"param1\\\",\\\"V\\\":\\\"10\\\"}],\\\"ExtraParams\\\":null}\",\n            \"UserName\": \"wenjieyao\",\n            \"UserUin\": \"100028579606\"\n        },\n        \"RequestId\": \"da12b6d9-fd32-4b3e-8716-5085722e06e5\"\n    }\n}",
         "title": "手动任务触发运行"
+      }
+    ],
+    "UnboundProjectExecutorResource": [
+      {
+        "document": "32",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnboundProjectExecutorResource\n<公共请求参数>\n\n{\n    \"ExecutorGroupId\": \"0\",\n    \"ProjectId\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation\",\n            \"Message\": \"未授权操作\"\n        },\n        \"RequestId\": \"ad1f4c7c-d84a-44ce-a2a9-308f236c0ed1\"\n    }\n}",
+        "title": "ewe"
+      },
+      {
+        "document": "解绑多个",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnboundProjectExecutorResource\n<公共请求参数>\n\n{\n    \"ExecutorGroupId\": \"20220706111614878854\",\n    \"ProjectId\": \"1091118890164248576\",\n    \"ExecutorResourcePackageIds\": [\n        \"20220706111615206649\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"a6bb0018-c093-4fb8-8984-1b7c212f47c5\"\n    }\n}",
+        "title": "解绑项目"
       }
     ],
     "UnlockIntegrationTask": [

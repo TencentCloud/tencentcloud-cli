@@ -10,8 +10,7 @@ tccli iai CreatePerson --cli-unfold-argument  \
     --PersonName Cheng \
     --PersonId 1001 \
     --Gender 2 \
-    --Url http://test.image.myqcloud.com/testD.jpg \
-    --Version 2018-03-01
+    --Url http://test.image.myqcloud.com/testD.jpg
 ```
 
 Output: 
@@ -39,8 +38,7 @@ tccli iai CreatePerson --cli-unfold-argument  \
     --PersonName Siccy \
     --PersonId 3001 \
     --Gender 2 \
-    --Url http://test.image.myqcloud.com/testC.jpg \
-    --Version 2018-03-01
+    --Url http://test.image.myqcloud.com/testC.jpg
 ```
 
 Output: 
@@ -76,8 +74,7 @@ tccli iai CreatePerson --cli-unfold-argument  \
     --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2 \
     --PersonExDescriptionInfos.2.PersonExDescription 15级 \
     --PersonExDescriptionInfos.3.PersonExDescriptionIndex 3 \
-    --PersonExDescriptionInfos.3.PersonExDescription 3150808 \
-    --Version 2018-03-01
+    --PersonExDescriptionInfos.3.PersonExDescription 3150808
 ```
 
 Output: 
@@ -116,8 +113,7 @@ tccli iai CreatePerson --cli-unfold-argument  \
     --PersonExDescriptionInfos.1.PersonExDescriptionIndex 1 \
     --PersonExDescriptionInfos.1.PersonExDescription 人工智能产品中心 \
     --PersonExDescriptionInfos.2.PersonExDescriptionIndex 2 \
-    --PersonExDescriptionInfos.2.PersonExDescription 人脸识别产品组 \
-    --Version 2018-03-01
+    --PersonExDescriptionInfos.2.PersonExDescription 人脸识别产品组
 ```
 
 Output: 

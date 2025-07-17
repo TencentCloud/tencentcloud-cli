@@ -266,7 +266,7 @@
     ],
     "DescribePurgeQuota": [
       {
-        "document": "",
+        "document": "查询账户刷新配额和每日可用量。",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribePurgeQuota\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aee6dbe4-f790-417e-8801-5a1894e8fdba\",\n        \"UrlPurge\": [\n            {\n                \"Area\": \"mainland\",\n                \"Batch\": 1000,\n                \"Total\": 10000,\n                \"Available\": 10000\n            },\n            {\n                \"Area\": \"overseas\",\n                \"Batch\": 1000,\n                \"Total\": 10000,\n                \"Available\": 10000\n            }\n        ],\n        \"PathPurge\": [\n            {\n                \"Area\": \"mainland\",\n                \"Batch\": 39,\n                \"Total\": 100,\n                \"Available\": 100\n            },\n            {\n                \"Area\": \"overseas\",\n                \"Batch\": 20,\n                \"Total\": 100,\n                \"Available\": 100\n            }\n        ]\n    }\n}",
         "title": "查询刷新用量配额"
@@ -282,7 +282,7 @@
     ],
     "DescribePushQuota": [
       {
-        "document": "",
+        "document": "用于查询预热配额和每日可用量。",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribePushQuota\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f5a231e-f629-42fa-a9f0-5a9ebc127c04\",\n        \"UrlPush\": [\n            {\n                \"Batch\": 1000,\n                \"Total\": 10000,\n                \"Available\": 10000,\n                \"Area\": \"mainland\"\n            }\n        ]\n    }\n}",
         "title": "查询预热用量配额"

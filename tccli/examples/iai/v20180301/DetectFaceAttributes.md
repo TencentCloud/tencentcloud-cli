@@ -1,6 +1,6 @@
-**Example 1: 人脸检测与属性分析**
+**Example 1: 人脸检测与属性分析成功示例**
 
-
+人脸检测与属性分析成功。
 
 Input: 
 
@@ -128,6 +128,31 @@ Output:
             }
         ],
         "RequestId": "b2c154b9-4620-4d37-8fd1-f6af3748f998"
+    }
+}
+```
+
+**Example 2: 人脸检测与属性分析失败示例**
+
+人脸检测与属性分析失败。
+
+Input: 
+
+```
+tccli iai DetectFaceAttributes --cli-unfold-argument  \
+    --Url http://test.image.myqcloud.com/testA.jpg \
+    --FaceAttributesType eye
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "ab0ebc1d-7a0e-4327-818b-3d24322a97dd",
+        "Error": {
+            "Code": "InvalidParameterValue.NoFaceInPhoto",
+            "Message": "图片中没有人脸。"
+        }
     }
 }
 ```

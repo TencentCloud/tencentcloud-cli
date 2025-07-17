@@ -2742,6 +2742,32 @@
       ],
       "type": "object"
     },
+    "ExstraPerformanceInfo": {
+      "document": "购买完额外性能之后的值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "fixed: 最终值固定",
+          "example": "fixed",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "额外购买的CFS性能值，单位MB/s。",
+          "example": "300",
+          "member": "int64",
+          "name": "Performance",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FileSystemByPolicy": {
       "document": "绑定快照策略的文件系统信息",
       "members": [
@@ -3143,6 +3169,26 @@
           "example": "v1.0",
           "member": "string",
           "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "额外性能信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Type\": \"fixed\", \"Performance\": 300",
+          "member": "ExstraPerformanceInfo",
+          "name": "ExstraPerformanceInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "basic：标准版元数据类型\nenhanced：增项版元数据类型",
+          "example": "basic",
+          "member": "string",
+          "name": "MetaType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

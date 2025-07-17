@@ -7,7 +7,8 @@ Input:
 ```
 tccli csip DeleteRiskScanTask --cli-unfold-argument  \
     --MemberId mem-******** \
-    --TaskIdList.0.TaskId rmis-****
+    --TaskIdList.0.TaskId rmis-**** \
+    --TaskIdList.0.TargetAppId 135641233
 ```
 
 Output: 

@@ -26,7 +26,7 @@ Output:
                             {
                                 "PersonGroupInfos": [
                                     {
-                                        "GroupId": "abc",
+                                        "GroupId": "1001",
                                         "PersonExDescriptions": [
                                             "description1",
                                             "description2"

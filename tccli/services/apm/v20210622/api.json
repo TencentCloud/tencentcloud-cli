@@ -101,7 +101,7 @@
   },
   "metadata": {
     "apiVersion": "2021-06-22",
-    "api_brief": "应用性能监控 API 文档\r\n主要包括\r\n1. 实例管理接口；\r\n2. 拓扑查询接口；\r\n3. 应用性能指标查询接口；\r\n4. 服务请求链路查询接口。",
+    "api_brief": "应用性能监控 API 文档\n主要包括\n1. 应用相关接口；\n2. 业务系统相关接口；\n3. 通用查询相关接口。",
     "serviceNameCN": "应用性能监控",
     "serviceShortName": "apm"
   },

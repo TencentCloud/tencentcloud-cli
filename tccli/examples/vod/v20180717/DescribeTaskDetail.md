@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DescribeTaskDetail --cli-unfold-argument  \
-    --TaskId 12530394xx-procedurev2-61c975da05662fd9d3bf9d89a63361c0t0
+    --TaskId 12530394xx-EditMedia-61c975da05662fd9d3bf9d89a63361c0t0
 ```
 
 Output: 
@@ -87,7 +87,10 @@ Output:
             "Output": {
                 "FileType": "mp4",
                 "FileId": "4565514956222184986",
-                "FileUrl": "http://12530394xx.vod2.myqcloud.com/9395476dvodcq1253039488/f0e1f8314565514956222184986/playlist.f9.mp4"
+                "FileUrl": "http://example.com/9395476dvodcq1253039488/f0e1f8314565514956222184986/playlist.f9.mp4",
+                "ExpireTime": "9999-12-31T23:59:59Z",
+                "ClassId": 0,
+                "MediaName": "editMediaGenfile"
             },
             "ProcedureTaskId": ""
         },
@@ -145,7 +148,7 @@ Output:
             "OperationType": "",
             "FileId": "5285890784246869930",
             "FileName": "small",
-            "FileUrl": "http://12567683xx.vod2.myqcloud.com/1c1ae5d2vodgzp12567683xx/c643347c5285890784246869930/AtUCmy6gmIYA.mp4",
+            "FileUrl": "http://example.com/1c1ae5d2vodgzp12567683xx/c643347c5285890784246869930/AtUCmy6gmIYA.mp4",
             "MetaData": {
                 "AudioDuration": 3601,
                 "VideoDuration": 3601,
@@ -241,17 +244,17 @@ Output:
             "FileId": "5285890784246869930",
             "FileName": "small",
             "Duration": 60,
-            "CoverUrl": "http://12567683xx.vod2.myqcloud.com/d042887avodtransgzp12567683xx/c643347c5285890784246869930/1546950643_4191274987.100_0.jpg",
+            "CoverUrl": "http://example.com/d042887avodtransgzp12567683xx/c643347c5285890784246869930/1546950643_4191274987.100_0.jpg",
             "PlayInfoSet": [
                 {
-                    "Url": "http://12567683xx.vod2.myqcloud.com/1c1ae5d2vodgzp12567683xx/c643347c5285890784246869930/AtUCmy6gmIYA.mp4",
+                    "Url": "http://example.com/1c1ae5d2vodgzp12567683xx/c643347c5285890784246869930/AtUCmy6gmIYA.mp4",
                     "Definition": 0,
                     "Bitrate": 1021028,
                     "Height": 480,
                     "Width": 640
                 },
                 {
-                    "Url": "http://12567683xx.vod2.myqcloud.com/d042887avodtransgzp12567683xx/c643347c5285890784246869930/v.f10.mp4",
+                    "Url": "http://example.com/d042887avodtransgzp12567683xx/c643347c5285890784246869930/v.f10.mp4",
                     "Definition": 10,
                     "Bitrate": 304695,
                     "Height": 240,

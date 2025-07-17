@@ -2805,7 +2805,7 @@
         {
           "disabled": false,
           "document": "事件配置的告警",
-          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
+          "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EbSubject",
           "required": false,
@@ -2913,7 +2913,7 @@
         {
           "disabled": false,
           "document": "事件配置的告警",
-          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
+          "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EbSubject",
           "required": false,
@@ -3608,7 +3608,7 @@
         {
           "disabled": false,
           "document": "事件配置的告警",
-          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应所选 云产品   \"type\": [ ",
+          "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EbSubject",
           "required": false,
@@ -16133,7 +16133,7 @@
         {
           "disabled": false,
           "document": "指标触发条件",
-          "example": "{     \"IsUnionRule\": 0,     \"Rules\": [       {         \"MetricName\": \"abc\",         \"AggregationDimensions\": [           \"abc\"         ],         \"Period\": 0,         \"AggregateType\": \"abc\",         \"Operator\": \"abc\",         \"Value\": \"abc\",         \"ContinuePeriod\": 0,         \"NoticeFrequency\": 0,         \"IsPowerNotice\": 0,         \"Filter\": {           \"Type\": \"abc\",           \"Expression\": \"abc\",           \"Dimensions\": \"abc\"         },         \"Description\": \"abc\",         \"Unit\": \"abc\",         \"RuleType\": \"abc\",         \"IsAdvanced\": 0,         \"IsOpen\": 0,         \"ProductId\": \"abc\",         \"ValueMax\": 0,         \"ValueMin\": 0,         \"HierarchicalValue\": {           \"Remind\": \"abc\",           \"Warn\": \"abc\",           \"Serious\": \"abc\"         }       }     ],     \"ComplexExpression\": \"abc\"   }",
+          "example": "{\"IsUnionRule\":0,\"Rules\":[{\"MetricName\":\"cpuusage\",\"AggregationDimensions\":[\"xxx\"],\"Period\":0,\"AggregateType\":\"stat\",\"Operator\":\"=\",\"Value\":\"val\",\"RuleType\":\"ruletype\"}],\"ComplexExpression\":\"complex\"}",
           "member": "AlarmPolicyCondition",
           "name": "Condition",
           "required": false,
@@ -16142,7 +16142,7 @@
         {
           "disabled": false,
           "document": "事件触发条件",
-          "example": "{         \"Rules\":[             {                 \"MetricName\":\"abc\",                 \"AggregationDimensions\":[                     \"abc\"                 ],                 \"Period\":0,                 \"AggregateType\":\"abc\",                 \"Operator\":\"abc\",                 \"Value\":\"abc\",                 \"ContinuePeriod\":0,                 \"NoticeFrequency\":0,                 \"IsPowerNotice\":0,                 \"Filter\":{                     \"Type\":\"abc\",                     \"Expression\":\"abc\",                     \"Dimensions\":\"abc\"                 },                 \"Description\":\"abc\",                 \"Unit\":\"abc\",                 \"RuleType\":\"abc\",                 \"IsAdvanced\":0,                 \"IsOpen\":0,                 \"ProductId\":\"abc\",                 \"ValueMax\":0,                 \"ValueMin\":0,                 \"HierarchicalValue\":{                     \"Remind\":\"abc\",                     \"Warn\":\"abc\",                     \"Serious\":\"abc\"                 }             }         ]     }",
+          "example": "{\"Rules\":[{\"MetricName\":\"cpu\"\"Period\":0,\"AggregateType\":\"stat\",\"Operator\":\"=\",\"Value\":\"val\",\"Unit\":\"unit\",\"RuleType\":\"rule\",\"IsAdvanced\":0,\"IsOpen\":0,\"ProductId\":\"abc\",\"ValueMax\":0,\"ValueMin\":0}]}",
           "member": "AlarmPolicyEventCondition",
           "name": "EventCondition",
           "required": false,
@@ -16205,7 +16205,7 @@
         {
           "disabled": false,
           "document": "事件配置的告警",
-          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
+          "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EbSubject",
           "required": false,
@@ -21490,7 +21490,7 @@
         {
           "disabled": false,
           "document": "事件配置的告警",
-          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
+          "example": "\"{\\\"source\\\":[\\\"cvm.cloud.tencent\\\"]}\"",
           "member": "string",
           "name": "EbSubject",
           "required": false,
