@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli igtm DescribeDetectPackageDetail --cli-unfold-argument  \
-    --ResourceId xxx
+    --ResourceId task-dsdd123xdo
 ```
 
 Output: 
@@ -25,7 +25,7 @@ Output:
         "IsExpire": 0,
         "Quota": 50,
         "Remark": "",
-        "RequestId": "aace8684-a8d6-454f-8fac-3e398f203620",
+        "RequestId": "8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0",
         "ResourceId": "task-hzxwlklfznla",
         "ResourceType": "TASK_NUM",
         "Status": "ENABLED",

@@ -1604,11 +1604,11 @@
       "status": "online"
     },
     "DescribeLdapGroup": {
-      "document": "获取导入架构的分组列表，用于架构管理上级分组显示,私有化调用path为：capi/Assets/Device/DescribeLdapGroup",
+      "document": "私有化和SaaS都无该接口（代码Review），且SaaS近一个月无该接口调用记录。\n\n获取导入架构的分组列表，用于架构管理上级分组显示,私有化调用path为：capi/Assets/Device/DescribeLdapGroup",
       "input": "DescribeLdapGroupRequest",
       "name": "获取导入架构的分组列表",
       "output": "DescribeLdapGroupResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeLdapUserSourceSwitch": {
       "document": "获取LDAP用户源的开关配置,私有化调用path为：capi/Auth/DescribeLdapUserSourceSwitch",
