@@ -1575,7 +1575,7 @@
         {
           "disabled": false,
           "document": "对查询指标进行排序：\nKey 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)\nValue 填写排序方式：     \n- asc：对查询指标进行升序排序\n- desc：对查询指标进行降序排序",
-          "example": "{ \t\"Key\": \"duration_avg\",         \"Value\": \"desc\"",
+          "example": "{ \t\"Key\": \"duration_avg\",         \"Value\": \"desc\" \t}",
           "member": "OrderBy",
           "name": "OrderBy",
           "required": false,

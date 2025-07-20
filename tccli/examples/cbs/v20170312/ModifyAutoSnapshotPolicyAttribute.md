@@ -7,7 +7,7 @@ Input:
 ```
 tccli cbs ModifyAutoSnapshotPolicyAttribute --cli-unfold-argument  \
     --AutoSnapshotPolicyId asp-01928374 \
-    --IsActivated true
+    --IsActivated True
 ```
 
 Output: 
@@ -21,7 +21,7 @@ Output:
 
 **Example 2: 修改定期快照策略属性**
 
-修改该定期快照策略的名称为data_disk_auto_snapshot，且将IsPermanent置为TRUE，通过该定期快照策略创建的快照为永久保留的快照。
+修改该定期快照策略的名称为data_disk_auto_snapshot，且将IsPermanent置为true，通过该定期快照策略创建的快照为永久保留的快照。
 
 Input: 
 
@@ -29,7 +29,7 @@ Input:
 tccli cbs ModifyAutoSnapshotPolicyAttribute --cli-unfold-argument  \
     --AutoSnapshotPolicyId asp-nqu08k2l \
     --AutoSnapshotPolicyName data_disk_auto_snapshot \
-    --IsPermanent TRUE
+    --IsPermanent True
 ```
 
 Output: 

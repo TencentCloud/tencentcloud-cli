@@ -486,7 +486,7 @@
   },
   "metadata": {
     "apiVersion": "2019-07-22",
-    "api_brief": "介绍如何使用API对实时音视频进行操作，如房间管理、通话质量监控等。",
+    "api_brief": "本文介绍如何使用 API 对实时音视频进行操作，例如房间管理、通话质量监控等。",
     "serviceNameCN": "实时音视频",
     "serviceShortName": "trtc"
   },

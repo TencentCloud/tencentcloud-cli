@@ -315,47 +315,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "地址池 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址池 id",
           "example": "5",
           "member": "uint64",
           "name": "PoolId",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地址池名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址池名",
           "example": "测试地址池2",
           "member": "string",
           "name": "PoolName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地址池地址类型：IPV4、IPV6、DOMAIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址池地址类型：IPV4、IPV6、DOMAIN",
           "example": "IPV4",
           "member": "string",
           "name": "AddrType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量策略: WEIGHT负载均衡，ALL解析全部\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量策略: WEIGHT负载均衡，ALL解析全部",
           "example": "ALL",
           "member": "string",
           "name": "TrafficStrategy",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -370,52 +370,52 @@
         },
         {
           "disabled": false,
-          "document": "OK正常，DOWN故障，WARN风险，UNKNOWN未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "OK正常，DOWN故障，WARN风险，UNKNOWN未知",
           "example": "OK",
           "member": "string",
           "name": "Status",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地址数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址数",
           "example": "1",
           "member": "int64",
           "name": "AddressNum",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "探点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "探点数",
           "example": "1",
           "member": "int64",
           "name": "MonitorGroupNum",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "探测任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "探测任务数",
           "example": "1",
           "member": "int64",
           "name": "MonitorTaskNum",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"InstanceId\":\"gtm-dsdd123xdo\",\"InstanceName\":\"测试实例\"}]",
           "member": "InstanceInfo",
           "name": "InstanceInfo",
           "output_required": false,
@@ -426,7 +426,7 @@
         {
           "disabled": false,
           "document": "地址池地址信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"AddressId\":32,\"Addr\":\"2.2.2.2\",\"Location\":\"\",\"Status\":\"UNKNOWN\",\"IsEnable\":\"ENABLED\",\"Weight\":null,\"CreatedOn\":\"2025-07-09 21:03:16\",\"UpdatedOn\":\"2025-07-09 21:03:16\"}]",
           "member": "Address",
           "name": "AddressSet",
           "output_required": false,
@@ -436,25 +436,25 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-08-17T17:32:23+08:00",
           "member": "datetime_iso",
           "name": "CreatedOn",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2021-08-17T17:32:23+08:00",
           "member": "datetime_iso",
           "name": "UpdatedOn",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1278,7 +1278,7 @@
         {
           "disabled": false,
           "document": "资源id",
-          "example": "task-aaa",
+          "example": "task-dsdd123xdo",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -1293,7 +1293,7 @@
         {
           "disabled": false,
           "document": "资源id",
-          "example": "task-aabbb",
+          "example": "task-dsdd123xdo",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -1362,7 +1362,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费0不1是",
+          "document": "是否自动续费：0否1是",
           "example": "1",
           "member": "uint64",
           "name": "AutoRenewFlag",
@@ -1716,13 +1716,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "探测规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "探测规则",
           "example": "无",
           "member": "MonitorDetail",
           "name": "MonitorDetail",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1804,7 +1804,7 @@
         {
           "disabled": false,
           "document": "接入域名",
-          "example": "无",
+          "example": "gtm-access.com",
           "member": "string",
           "name": "AccessDomain",
           "required": false,
@@ -1818,13 +1818,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "配额id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配额id",
           "example": "1",
           "member": "Quota",
           "name": "Quotas",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2926,7 +2926,7 @@
         {
           "disabled": false,
           "document": "集合中的地址池id与权重，数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"PoolId\":314,\"Weight\":1}]",
           "member": "MainPoolWeight",
           "name": "AddressPools",
           "output_required": false,
@@ -2936,36 +2936,36 @@
         },
         {
           "disabled": false,
-          "document": "地址池集合id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址池集合id",
           "example": "1",
           "member": "uint64",
           "name": "MainAddressPoolId",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "切换阀值，不能大于主力集合内地址总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "切换阀值，不能大于主力集合内地址总数",
           "example": "1",
           "member": "uint64",
           "name": "MinSurviveNum",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "切换策略:ALL解析所有地址；WEIGHT：负载均衡。当为ALL时，解析地址的权重值为1；当为WEIGHT时；权重为地址池权重*地址权重",
           "example": "ALL",
           "member": "string",
           "name": "TrafficStrategy",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3660,124 +3660,124 @@
       "members": [
         {
           "disabled": false,
-          "document": "探测任务配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "探测任务配额",
           "example": "2",
           "member": "uint64",
           "name": "TaskQuota",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地址池配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址池配额",
           "example": "20",
           "member": "uint64",
           "name": "PoolQuota",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地址配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址配额",
           "example": "25",
           "member": "uint64",
           "name": "AddressQuota",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "探点资源数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "探点资源数",
           "example": "1",
           "member": "uint64",
           "name": "MonitorQuota",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消息资源数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息资源数",
           "example": "1",
           "member": "uint64",
           "name": "MessageQuota",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已使用探测任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已使用探测任务数",
           "example": "1",
           "member": "uint64",
           "name": "UsedTaskQuota",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已使用体验实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已使用体验实例数",
           "example": "1",
           "member": "uint64",
           "name": "UsedFreeInstanceNum",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已使用付费实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已使用付费实例",
           "example": "1",
           "member": "uint64",
           "name": "UsedBillInstanceNum",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "体验套餐总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "体验套餐总数",
           "example": "1",
           "member": "uint64",
           "name": "FreePackageNum",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已使用付费套餐数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已使用付费套餐数",
           "example": "1",
           "member": "uint64",
           "name": "UsedBillPackageNum",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "付费套餐总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费套餐总数",
           "example": "1",
           "member": "uint64",
           "name": "BillPackageNum",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3831,14 +3831,14 @@
         },
         {
           "disabled": false,
-          "document": "解析请求来源线路名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析请求来源线路名",
           "example": "境外",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3848,25 +3848,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例id",
           "example": "gtminstance1",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名",
           "example": "第一条策略",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3881,25 +3881,25 @@
         },
         {
           "disabled": false,
-          "document": "策略id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略id",
           "example": "1",
           "member": "uint64",
           "name": "StrategyId",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "健康状态：ok健康、warn风险、down故障\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康状态：ok健康、warn风险、down故障",
           "example": "warn",
           "member": "string",
           "name": "Status",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3925,91 +3925,91 @@
         },
         {
           "disabled": false,
-          "document": "当前生效地址池集合类型：main主力；fallback兜底\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前生效地址池集合类型：main主力；fallback兜底",
           "example": "main",
           "member": "string",
           "name": "ActivePoolType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前生效地址池流量策略：all解析所有；weight负载均衡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前生效地址池流量策略：all解析所有；weight负载均衡",
           "example": "all",
           "member": "string",
           "name": "ActiveTrafficStrategy",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监控器数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监控器数量",
           "example": "1",
           "member": "uint64",
           "name": "MonitorNum",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启：ENABLED开启；DISABLED关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启：ENABLED开启；DISABLED关闭",
           "example": "ENABLED",
           "member": "string",
           "name": "IsEnabled",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否保留线路：enabled保留，disabled不保留，只保留默认线路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否保留线路：enabled保留，disabled不保留，只保留默认线路",
           "example": "enabled",
           "member": "string",
           "name": "KeepDomainRecords",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "调度模式：AUTO默认；PAUSE仅暂停不切换\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "调度模式：AUTO默认；PAUSE仅暂停不切换",
           "example": "AUTO",
           "member": "string",
           "name": "SwitchPoolType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-08-17T17:32:23+08:00",
           "member": "datetime_iso",
           "name": "CreatedOn",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2021-08-17T17:32:23+08:00",
           "member": "datetime_iso",
           "name": "UpdatedOn",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4019,36 +4019,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例id",
           "example": "gtminstance1",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略id",
           "example": "1",
           "member": "uint64",
           "name": "StrategyId",
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名",
           "example": "第一条策略",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4064,7 +4064,7 @@
         {
           "disabled": false,
           "document": "主力地址池集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"AddressPools\":[{\"PoolId\":1,\"Weight\":50},{\"PoolId\":2,\"Weight\":50}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3,\"Weight\":30},{\"PoolId\":4,\"Weight\":70}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"all\"}]",
+          "example": "[{\"MainAddressPoolId\":5,\"AddressPools\":[{\"PoolId\":314,\"Weight\":null}],\"MinSurviveNum\":1,\"TrafficStrategy\":\"WEIGHT\"}]",
           "member": "MainAddressPool",
           "name": "MainAddressPoolSet",
           "output_required": true,
@@ -4085,14 +4085,14 @@
         },
         {
           "disabled": false,
-          "document": "是否保留线路：enabled保留，disabled不保留，只保留默认线路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否保留线路：enabled保留，disabled不保留，只保留默认线路",
           "example": "enabled",
           "member": "string",
           "name": "KeepDomainRecords",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4107,36 +4107,36 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-08-17T17:32:23+08:00",
           "member": "datetime_iso",
           "name": "CreatedOn",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2021-08-17T17:32:23+08:00",
           "member": "datetime_iso",
           "name": "UpdatedOn",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "调度模式：AUTO默认；PAUSE仅暂停不切换\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "调度模式：AUTO默认；PAUSE仅暂停不切换",
           "example": "AUTO",
           "member": "string",
           "name": "SwitchPoolType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

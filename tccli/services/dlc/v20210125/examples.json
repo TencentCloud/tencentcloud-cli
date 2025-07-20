@@ -852,6 +852,14 @@
         "title": "test"
       }
     ],
+    "DescribeUserRegisterTime": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserRegisterTime\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"IsOldUser\": true,\n        \"RegisterTime\": 1736600000,\n        \"RequestId\": \"27ec9bda-4221-4ad0-8be5-28770caa7d1f\"\n    }\n}",
+        "title": "DescribeUserRegisterTime接口示例"
+      }
+    ],
     "DescribeUserRoles": [
       {
         "document": "",

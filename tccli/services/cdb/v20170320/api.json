@@ -239,7 +239,7 @@
       "status": "online"
     },
     "DeleteBackup": {
-      "document": "本接口(DeleteBackup)用于删除数据库备份。本接口只支持删除手动发起的备份。",
+      "document": "本接口（DeleteBackup）用于删除数据库备份。本接口只支持删除手动发起的备份。",
       "input": "DeleteBackupRequest",
       "name": "删除云数据库备份",
       "output": "DeleteBackupResponse",
@@ -3930,7 +3930,7 @@
         {
           "disabled": false,
           "document": "多可用区信息",
-          "example": "{}",
+          "example": "{\"BackupZone\": [\"ap-guangzhou-7\", \"ap-guangzhou-5\", \"ap-guangzhou-4\", \"ap-guangzhou-3\" ], \"DeployMode\": [0, 1 ], \"MasterZone\": [], \"SlaveZone\": [\"ap-guangzhou-7\", \"ap-guangzhou-5\", \"ap-guangzhou-4\", \"ap-guangzhou-3\" ] }",
           "member": "ZoneConf",
           "name": "ZoneConf",
           "output_required": true,
@@ -3990,7 +3990,7 @@
         {
           "disabled": false,
           "document": "独享型多可用区信息",
-          "example": "{}",
+          "example": "{\"BackupZone\": [\"ap-guangzhou-7\", \"ap-guangzhou-5\", \"ap-guangzhou-4\", \"ap-guangzhou-3\" ], \"DeployMode\": [0, 1 ], \"MasterZone\": [], \"SlaveZone\": [\"ap-guangzhou-7\", \"ap-guangzhou-5\", \"ap-guangzhou-4\", \"ap-guangzhou-3\" ] }",
           "member": "ZoneConf",
           "name": "ExClusterZoneConf",
           "output_required": true,
@@ -4000,7 +4000,7 @@
         {
           "disabled": false,
           "document": "售卖实例类型数组，其中configIds的值与configs结构体中的id一一对应。",
-          "example": "[]",
+          "example": "{\"ConfigIds\": [187 ], \"EngineVersion\": [\"5.7\", \"8.0\" ], \"TypeName\": \"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" }",
           "member": "CdbSellType",
           "name": "SellType",
           "output_required": true,
@@ -4034,6 +4034,26 @@
           "member": "string",
           "name": "EngineType",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示",
+          "example": "1",
+          "member": "int64",
+          "name": "CloudNativeClusterStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群版或者单节点基础型支持的磁盘类型。",
+          "example": "[{\"DeviceType\": \"basic_v2\", \"DiskType\": [\"CLOUD_SSD\", \"CLOUD_HSSD\" ] }, {\"DeviceType\": \"CLOUD_NATIVE_CLUSTER\", \"DiskType\": [\"CLOUD_SSD\", \"CLOUD_HSSD\", \"CLOUD_PREMIUM\" ] } ]",
+          "member": "DiskTypeConfigItem",
+          "name": "DiskTypeConf",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         }
@@ -13821,6 +13841,34 @@
       ],
       "type": "object"
     },
+    "DiskTypeConfigItem": {
+      "document": "磁盘售卖类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "磁盘对应的实例类型。仅支持单节点基础型和集群版。",
+          "example": "CLOUD_NATIVE_CLUSTER",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可以选择的磁盘类型列表。",
+          "example": "[\"CLOUD_SSD\",\"CLOUD_HSSD\"]",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DrInfo": {
       "document": "灾备实例信息",
       "members": [
@@ -15193,25 +15241,25 @@
       "type": "object"
     },
     "LocalBinlogConfig": {
-      "document": "本地binlog保留配置",
+      "document": "本地 binlog 保留配置",
       "members": [
         {
           "disabled": false,
-          "document": "本地binlog保留时长，可取值范围：[72,168]。",
+          "document": "本地 binlog 保留时长，可取值范围：[6,168]。",
           "example": "70",
           "member": "int64",
           "name": "SaveHours",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "本地binlog空间使用率，可取值范围：[30,50]。",
+          "document": "本地 binlog 空间使用率，可取值范围：[30,50]。",
           "example": "30",
           "member": "int64",
           "name": "MaxUsage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -15219,25 +15267,25 @@
       "usage": "out"
     },
     "LocalBinlogConfigDefault": {
-      "document": "本地binlog保留策略默认配置。",
+      "document": "本地 binlog 保留策略默认配置",
       "members": [
         {
           "disabled": false,
-          "document": "本地binlog保留时长，可取值范围：[72,168]。",
+          "document": "本地 binlog 保留时长，可取值范围：[6,168]。",
           "example": "70",
           "member": "int64",
           "name": "SaveHours",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "本地binlog空间使用率，可取值范围：[30,50]。",
+          "document": "本地 binlog 空间使用率，可取值范围：[30,50]。",
           "example": "30",
           "member": "int64",
           "name": "MaxUsage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -20522,8 +20570,8 @@
         },
         {
           "disabled": false,
-          "document": "备份快照时间，时间格式：2016-03-17 02:10:37",
-          "example": "2024-04-26 00:00:08",
+          "document": "备份快照时间，时间格式：2016-03-17",
+          "example": "2024-04-26",
           "member": "string",
           "name": "Date",
           "output_required": true,

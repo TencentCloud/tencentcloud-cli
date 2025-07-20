@@ -101,8 +101,8 @@
     "DescribeDetectPackageDetail": [
       {
         "document": "探测任务包详情",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDetectPackageDetail\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoRenewFlag\": 1,\n        \"CostItemList\": [\n            {\n                \"CostName\": \"sv_igtm_monitor_task_mt\",\n                \"CostValue\": 1\n            }\n        ],\n        \"CreateTime\": \"2024-03-13 15:41:10\",\n        \"CurrentDeadline\": \"2024-04-13 15:41:11\",\n        \"IsExpire\": 0,\n        \"Quota\": 50,\n        \"Remark\": \"\",\n        \"RequestId\": \"aace8684-a8d6-454f-8fac-3e398f203620\",\n        \"ResourceId\": \"task-hzxwlklfznla\",\n        \"ResourceType\": \"TASK_NUM\",\n        \"Status\": \"ENABLED\",\n        \"UsedNum\": 17\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDetectPackageDetail\n<公共请求参数>\n\n{\n    \"ResourceId\": \"task-dsdd123xdo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoRenewFlag\": 1,\n        \"CostItemList\": [\n            {\n                \"CostName\": \"sv_igtm_monitor_task_mt\",\n                \"CostValue\": 1\n            }\n        ],\n        \"CreateTime\": \"2024-03-13 15:41:10\",\n        \"CurrentDeadline\": \"2024-04-13 15:41:11\",\n        \"IsExpire\": 0,\n        \"Quota\": 50,\n        \"Remark\": \"\",\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\",\n        \"ResourceId\": \"task-hzxwlklfznla\",\n        \"ResourceType\": \"TASK_NUM\",\n        \"Status\": \"ENABLED\",\n        \"UsedNum\": 17\n    }\n}",
         "title": "探测任务包详情"
       }
     ],
@@ -125,8 +125,8 @@
     "DescribeDnsLineList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsLines\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DnsLineSet\": [\n            {\n                \"Parent\": 1,\n                \"LineName\": \"abc\",\n                \"LineId\": \"abc\",\n                \"Useful\": true,\n                \"SubGroup\": 1,\n                \"LinePackage\": 1,\n                \"Weight\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsLines\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-dsdd123xdo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DnsLineSet\": [\n            {\n                \"DnsLineId\": 1,\n                \"Parent\": 1,\n                \"LineName\": \"默认\",\n                \"LineId\": \"1\",\n                \"Useful\": true,\n                \"SubGroup\": 1,\n                \"LinePackage\": 1,\n                \"Weight\": 1\n            }\n        ],\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\"\n    }\n}",
         "title": "线路列表"
       }
     ],
@@ -158,7 +158,7 @@
       {
         "document": "查询监控器详情",
         "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthyCheckRule\n<公共请求参数>\n\n{\n    \"MonitorId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"MonitorDetail\": {\n            \"MonitorId\": 1,\n            \"MonitorName\": \"abc\",\n            \"Uin\": \"abc\",\n            \"DetectorGroupIds\": [\n                1\n            ],\n            \"CheckProtocol\": \"abc\",\n            \"CheckInterval\": 1,\n            \"PingNum\": 1,\n            \"TcpPort\": 1,\n            \"Host\": \"abc\",\n            \"Path\": \"abc\",\n            \"ReturnCodeThreshold\": 1,\n            \"EnableRedirect\": \"abc\",\n            \"EnableSni\": \"abc\",\n            \"PacketLossRate\": 1,\n            \"Timeout\": 1,\n            \"FailTimes\": 1,\n            \"FailRate\": 1,\n            \"DetectorStyle\": \"abc\"\n        },\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorDetail\": {\n            \"MonitorId\": 1,\n            \"MonitorName\": \"测试监控器\",\n            \"Uin\": \"10012894645\",\n            \"DetectorGroupIds\": [\n                1\n            ],\n            \"CheckProtocol\": \"HTTP\",\n            \"CheckInterval\": 300,\n            \"PingNum\": 20,\n            \"TcpPort\": 80,\n            \"Host\": \"gtmtest.com\",\n            \"Path\": \"/path\",\n            \"ReturnCodeThreshold\": 500,\n            \"EnableRedirect\": \"DISABLED\",\n            \"EnableSni\": \"DISABLED\",\n            \"PacketLossRate\": 50,\n            \"Timeout\": 15,\n            \"FailTimes\": 1,\n            \"FailRate\": 100,\n            \"CreatedOn\": \"2023-01-1 11:11:11\",\n            \"UpdatedOn\": \"2023-01-1 11:11:11\",\n            \"DetectorStyle\": \"INTERNAL\",\n            \"DetectNum\": 0,\n            \"ContinuePeriod\": 1\n        },\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\"\n    }\n}",
         "title": " 查询监控器详情"
       }
     ],
@@ -174,7 +174,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQuotas\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Quotas\": {\n            \"TaskQuota\": 1,\n            \"PoolQuota\": 1,\n            \"AddressQuota\": 1,\n            \"MonitorQuota\": 1,\n            \"MessageQuota\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Quotas\": {\n            \"TaskQuota\": 1,\n            \"PoolQuota\": 1,\n            \"AddressQuota\": 1,\n            \"MonitorQuota\": 1,\n            \"MessageQuota\": 1\n        },\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\"\n    }\n}",
         "title": "配额"
       }
     ],
