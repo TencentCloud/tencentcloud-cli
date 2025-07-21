@@ -13,8 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "Msg": "abc",
-        "RequestId": "abc"
+        "Msg": "success",
+        "RequestId": "8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0"
     }
 }
 ```

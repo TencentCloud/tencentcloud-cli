@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeClusters": [
+      {
+        "document": "查询实例列表",
+        "input": "POST / HTTP/1.1\nHost: ctsdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusters\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"cluster_id\",\n            \"Op\": \"=\",\n            \"Values\": [\n                \"ctsdbi-xxxxxxx\"\n            ]\n        }\n    ],\n    \"Orders\": [\n        {\n            \"Name\": \"created_at\",\n            \"Type\": \"DESC\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Clusters\": [\n            {\n                \"AppID\": 123456789,\n                \"ClusterID\": \"ctsdbi-xxxxxxx\",\n                \"AccountID\": \"xxxxxx==\",\n                \"Name\": \"测试实例\",\n                \"Region\": \"guangzhou\",\n                \"Zones\": \"guangzhou-3\",\n                \"Networks\": [\n                    {\n                        \"VIP\": \"10.0.0.x\",\n                        \"Port\": 8086,\n                        \"VpcId\": \"332211\",\n                        \"SubnetId\": \"55321\"\n                    }\n                ],\n                \"Spec\": {\n                    \"RequestUnit\": 1,\n                    \"PayMode\": 1,\n                    \"CpuLimit\": 1,\n                    \"MemoryLimit\": 4,\n                    \"DiskLimit\": 100,\n                    \"Shards\": 3,\n                    \"Replicas\": 1\n                },\n                \"Status\": 1,\n                \"Period\": {\n                    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"EndTime\": \"2020-09-22T00:00:00+00:00\"\n                },\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"Tenant\": {},\n                \"Tags\": [\n                    {\n                        \"Key\": \"test\",\n                        \"Value\": \"示例\"\n                    }\n                ],\n                \"Security\": [\n                    \"test\"\n                ]\n            }\n        ],\n        \"RequestId\": \"requestxxxxxxxxxx\"\n    }\n}",
+        "title": "查询实例列表"
+      }
+    ],
+    "DescribeDatabases": [
+      {
+        "document": "查询数据库列表",
+        "input": "POST / HTTP/1.1\nHost: ctsdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabases\n<公共请求参数>\n\n{\n    \"Database\": {\n        \"ClusterID\": \"ctsdbi-xxxxxxx\",\n        \"Name\": \"测试\",\n        \"CoolDownInDays\": 0,\n        \"RetentionInDays\": 0,\n        \"Remark\": \"\",\n        \"Status\": 0,\n        \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n        \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\"\n    },\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Databases\": [\n            {\n                \"ClusterID\": \"ctsdbi-xxxxxxx\",\n                \"Name\": \"testData\",\n                \"CoolDownInDays\": 0,\n                \"RetentionInDays\": 0,\n                \"Remark\": \"test\",\n                \"Status\": 0,\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"requestxxxxxxxxx\"\n    }\n}",
+        "title": "查询数据库列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

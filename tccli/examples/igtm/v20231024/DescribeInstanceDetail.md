@@ -1,8 +1,6 @@
 **Example 1: 实例详情**
 
-{
-  "InstanceId": "abc"
-}
+
 
 Input: 
 
@@ -14,29 +12,27 @@ Output:
 {
     "Response": {
         "Instance": {
-            "InstanceId": "abc",
-            "InstanceName": "abc",
-            "Domain": "abc",
-            "AccessType": "abc",
-            "AccessSubDomain": "abc",
-            "AccessDomain": "abc",
-            "GlobalTtl": 1,
-            "PackageType": "abc",
-            "WorkingStatus": "abc",
-            "Status": "abc",
-            "IsCnameConfigured": true,
-            "Remark": "abc",
+            "InstanceId": "gtm-dsdd123xdo",
+            "InstanceName": "测试实例",
+            "Domain": "gtmtest.com",
+            "AccessType": "CUSTOM",
+            "AccessSubDomain": "access-gtm",
+            "AccessDomain": "gtmtest.com",
+            "GlobalTtl": 600,
+            "PackageType": "ULTIMATE",
+            "WorkingStatus": "NORMAL",
+            "Status": "ENABLED",
+            "IsCnameConfigured": false,
+            "Remark": "备注信息",
             "StrategyNum": 0,
             "AddressPoolNum": 0,
             "MonitorNum": 0,
-            "ResourceId": "abc",
-            "NotifyEventSet": [
-                "abc"
-            ],
-            "CreatedOn": "abc",
-            "UpdatedOn": "abc"
+            "ResourceId": "ins-oxrvmnl4yrd",
+            "NotifyEventSet": [],
+            "CreatedOn": "2024-07-19 15:40:19",
+            "UpdatedOn": "2024-07-19 15:40:19"
         },
-        "RequestId": "abc"
+        "RequestId": "8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0"
     }
 }
 ```

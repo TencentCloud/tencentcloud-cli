@@ -2432,6 +2432,33 @@
           "name": "Variables",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型topP",
+          "example": "0.8",
+          "member": "float",
+          "name": "TopP",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。",
+          "example": "1",
+          "member": "uint64",
+          "name": "VadLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "衔接语",
+          "example": "无",
+          "member": "ToneWordInfo",
+          "name": "ToneWord",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -9510,6 +9537,30 @@
       ],
       "usage": "both"
     },
+    "ToneWordInfo": {
+      "document": "承接语气词信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "首句超时时间，单位秒",
+          "example": "0.4",
+          "member": "float",
+          "name": "FirstSentenceTimeout",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "承接语气词",
+          "example": "{\"Positive\":[\"真不错\",\"挺好的\"],\"Negative\":[\"好悲催\",\"太差劲了\"],\"Neutral\":[\"嘿嘿\",\"差不多\"]}",
+          "member": "ZHToneWordsInfo",
+          "name": "ZHToneWords",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
     "TransferToManualRequest": {
       "document": "TransferToManual请求参数结构体",
       "members": [
@@ -10008,6 +10059,45 @@
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ZHToneWordsInfo": {
+      "document": "承接语气词",
+      "members": [
+        {
+          "disabled": false,
+          "document": "中性词列表",
+          "example": "[\"嗯嗯\"]",
+          "member": "string",
+          "name": "Neutral",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正面词列表",
+          "example": "[\"嗯嗯\"]",
+          "member": "string",
+          "name": "Positive",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负面词列表",
+          "example": "[\"嗯嗯\"]",
+          "member": "string",
+          "name": "Negative",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

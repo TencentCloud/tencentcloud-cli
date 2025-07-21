@@ -18,27 +18,29 @@ Output:
         "MonitorDataSet": [
             {
                 "MonitorId": 1,
-                "MonitorName": "abc",
-                "Uin": "abc",
+                "MonitorName": "测试监控器",
+                "Uin": "10012894645",
                 "DetectorGroupIds": [
                     1
                 ],
-                "CheckProtocol": "abc",
+                "CheckProtocol": "HTTP",
                 "CheckInterval": 1,
                 "PingNum": 1,
                 "TcpPort": 1,
-                "Host": "abc",
-                "Path": "abc",
+                "Host": "igtmtest.com",
+                "Path": "/path",
                 "ReturnCodeThreshold": 1,
-                "EnableRedirect": "abc",
-                "EnableSni": "abc",
-                "PacketLossRate": 1,
-                "Timeout": 1,
-                "FailTimes": 1,
-                "FailRate": 1,
-                "CreatedOn": "abc",
-                "UpdatedOn": "abc",
-                "DetectorStyle": "abc"
+                "EnableRedirect": "DISABLED",
+                "EnableSni": "DISABLED",
+                "PacketLossRate": 50,
+                "Timeout": 15,
+                "FailTimes": 4,
+                "FailRate": 100,
+                "CreatedOn": "2025-02-25 20:24:49",
+                "UpdatedOn": "2025-02-25 20:24:49",
+                "DetectorStyle": "INTERNAL",
+                "DetectNum": 0,
+                "ContinuePeriod": 1
             }
         ],
         "RequestId": "398db591-8793-4a0f-aaa3-3a0131494184"

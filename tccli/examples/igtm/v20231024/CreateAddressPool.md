@@ -6,17 +6,14 @@ Input:
 
 ```
 tccli igtm CreateAddressPool --cli-unfold-argument  \
-    --PoolName abc \
-    --TrafficStrategy abc \
+    --PoolName 测试地址池 \
+    --TrafficStrategy ALL \
     --MonitorId 1 \
     --AddressSet.0.AddressId 1 \
-    --AddressSet.0.Addr abc \
-    --AddressSet.0.Location abc \
-    --AddressSet.0.Status abc \
-    --AddressSet.0.IsEnable abc \
-    --AddressSet.0.Weight 1 \
-    --AddressSet.0.CreatedOn 2020-09-22T00:00:00+00:00 \
-    --AddressSet.0.UpdatedOn 2020-09-22T00:00:00+00:00
+    --AddressSet.0.Addr 1.1.1.2 \
+    --AddressSet.0.Location 上海电信 \
+    --AddressSet.0.Status  \
+    --AddressSet.0.IsEnable ENABLED
 ```
 
 Output: 
@@ -24,7 +21,7 @@ Output:
 {
     "Response": {
         "AddressPoolId": 1,
-        "RequestId": "abc"
+        "RequestId": "8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0"
     }
 }
 ```

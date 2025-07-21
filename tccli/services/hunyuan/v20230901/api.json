@@ -2538,6 +2538,26 @@
         },
         {
           "disabled": false,
+          "document": "如果Url为图片地址，标识图片宽度。",
+          "example": "无",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果Url为图片地址，标识图片高度。",
+          "example": "无",
+          "member": "int64",
+          "name": "Height",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "多媒体详情地址。\n说明：\n1. 仅 type 为 image 时，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -2545,6 +2565,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缩略图地址。",
+          "example": "无",
+          "member": "string",
+          "name": "ThumbURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缩略图宽度",
+          "example": "无",
+          "member": "int64",
+          "name": "ThumbWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缩略图高度",
+          "example": "无",
+          "member": "int64",
+          "name": "ThumbHeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2585,6 +2635,36 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发布时间。",
+          "example": "无",
+          "member": "string",
+          "name": "PublishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点名称",
+          "example": "无",
+          "member": "string",
+          "name": "SiteName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点图标",
+          "example": "无",
+          "member": "string",
+          "name": "SiteIcon",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -15,7 +15,7 @@
       "status": "online"
     },
     "TextToVoice": {
-      "document": "腾讯云语音合成技术（TTS）可以将任意文本转化为语音，实现让机器和应用张口说话。\n腾讯TTS技术可以应用到很多场景，比如，移动APP语音播报新闻；智能设备语音提醒；依靠网上现有节目或少量录音，快速合成明星语音，降低邀约成本；支持车载导航语音合成的个性化语音播报。\n基础合成支持 SSML，语法详见 [SSML 标记语言](https://cloud.tencent.com/document/product/1073/49575)。\n默认接口请求频率限制：\n精品音色和标准音色：默认20并发\n大模型音色：默认20并发\n超自然大模型音色：暂不支持",
+      "document": "腾讯云语音合成技术（TTS）可以将任意文本转化为语音，实现让机器和应用张口说话。\n腾讯TTS技术可以应用到很多场景，比如，移动APP语音播报新闻；智能设备语音提醒；依靠网上现有节目或少量录音，快速合成明星语音，降低邀约成本；支持车载导航语音合成的个性化语音播报。\n基础合成支持 SSML，语法详见 [SSML 标记语言](https://cloud.tencent.com/document/product/1073/49575)。\n默认接口请求频率限制：\n精品音色和标准音色：默认20并发\n大模型音色：默认20并发\n超自然大模型音色：暂不支持\n一句话复刻音色：默认10并发",
       "input": "TextToVoiceRequest",
       "name": "基础语音合成",
       "output": "TextToVoiceResponse",
@@ -427,7 +427,7 @@
         },
         {
           "disabled": false,
-          "document": "音色 ID，包括标准音色、精品音色、大模型音色与基础版复刻音色。不同音色价格有差异，详情请参见[购买指南](https://cloud.tencent.com/document/product/1073/34112)。完整的音色 ID 列表请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)。\n",
+          "document": "音色 ID，包括标准音色、精品音色、大模型音色与基础版复刻音色。不同音色价格有差异，详情请参见[购买指南](https://cloud.tencent.com/document/product/1073/34112)。完整的音色 ID 列表请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)。<br>若使用一句话版声音复刻，请填入固定值“200000000”。",
           "example": "0",
           "member": "int64",
           "name": "VoiceType",
@@ -436,7 +436,7 @@
         },
         {
           "disabled": false,
-          "document": "一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。【已废弃】",
+          "document": "一句话版声音复刻音色ID，使用一句话版声音复刻音色时需填写。",
           "example": "无",
           "member": "string",
           "name": "FastVoiceType",

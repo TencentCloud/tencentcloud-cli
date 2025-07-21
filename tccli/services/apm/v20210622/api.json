@@ -1049,6 +1049,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "URL长分段收敛阈值",
+          "example": "40",
+          "member": "int64",
+          "name": "UrlLongSegmentThreshold",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "URL数字分段收敛阈值",
+          "example": "5",
+          "member": "int64",
+          "name": "UrlNumberSegmentThreshold",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2716,6 +2736,24 @@
           "example": "0",
           "member": "int64",
           "name": "IsDeserializationAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "URL长分段收敛阈值",
+          "example": "40",
+          "member": "int64",
+          "name": "UrlLongSegmentThreshold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "URL数字分段收敛阈值",
+          "example": "5",
+          "member": "int64",
+          "name": "UrlNumberSegmentThreshold",
           "required": false,
           "type": "int"
         }

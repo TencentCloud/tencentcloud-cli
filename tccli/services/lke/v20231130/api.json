@@ -15251,7 +15251,7 @@
         },
         {
           "disabled": false,
-          "document": "1: 点赞,  2: 点踩",
+          "document": "1: 点赞;  2: 点踩;   \n注：\n1) 评测端不支持点赞、点踩\n2) 消息回复类型为欢迎语、并发超限、实时文档，不支持点赞、点踩",
           "example": "1",
           "member": "uint64",
           "name": "Score",

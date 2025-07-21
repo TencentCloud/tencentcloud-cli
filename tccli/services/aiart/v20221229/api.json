@@ -151,7 +151,7 @@
   "metadata": {
     "apiVersion": "2022-12-29",
     "api_brief": "结合输入的文本或图片智能创作出与输入相关的图像内容。",
-    "serviceNameCN": "大模型图像创作引擎",
+    "serviceNameCN": "腾讯混元生图",
     "serviceShortName": "aiart"
   },
   "objects": {

@@ -4019,6 +4019,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前部署证书加密算法",
+          "example": "RSA",
+          "member": "string",
+          "name": "Algorithm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原证书加密算法",
+          "example": "RSA",
+          "member": "string",
+          "name": "OldAlgorithm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10846,6 +10866,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书加密算法",
+          "example": "RSA",
+          "member": "string",
+          "name": "Algorithm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11554,6 +11584,26 @@
           "example": "/zrh",
           "member": "string",
           "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新证书加密算法",
+          "example": "RSA",
+          "member": "string",
+          "name": "Algorithm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旧证书加密算法",
+          "example": "RSA",
+          "member": "string",
+          "name": "OldAlgorithm",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
