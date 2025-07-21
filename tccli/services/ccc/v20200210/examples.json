@@ -184,6 +184,14 @@
         "title": "创建SIP通道示例"
       }
     ],
+    "CreateSipTrunkRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSipTrunkRoute\n<公共请求参数>\n\n{\n    \"SipTrunkRoute\": {\n        \"SipTrunkId\": 1,\n        \"SdkAppId\": 1400000000,\n        \"Direction\": \"out\",\n        \"Prefix\": \"1\",\n        \"Length\": 6\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22590cbf-da98-4e81-a7bd-659140900268\",\n        \"Id\": 1\n    }\n}",
+        "title": "创建SIP通道路由策略"
+      }
+    ],
     "CreateStaff": [
       {
         "document": "创建客服示例",
@@ -230,6 +238,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSipTrunk\n<公共请求参数>\n\n{\n    \"Id\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3651cda6-6501-4482-9f4e-8d0c9548a4db\"\n    }\n}",
         "title": "删除SIP通道示例"
+      }
+    ],
+    "DeleteSipTrunkRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSipTrunkRoute\n<公共请求参数>\n\n{\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22590cbf-da98-4e81-a7bd-659140900268\"\n    }\n}",
+        "title": "删除SIP通道内线路由策略"
       }
     ],
     "DeleteStaff": [
@@ -424,6 +440,14 @@
         "title": "查询SIP通道列表示例"
       }
     ],
+    "DescribeSipTrunkRouteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSipTrunkRouteList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22590cbf-da98-4e81-a7bd-659140900268\",\n        \"TotalCount\": 1,\n        \"SipTrunkRouteList\": [\n            {\n                \"Id\": 1,\n                \"Uin\": \"xxxxx\",\n                \"AppId\": 111111,\n                \"SdkAppId\": 1400000000,\n                \"Direction\": \"out\",\n                \"Regex\": \"^1\\\\d{5}$\",\n                \"Prefix\": \"1\",\n                \"Length\": 6,\n                \"State\": 1\n            }\n        ]\n    }\n}",
+        "title": "查询SIP通道内线路由策略列表信息"
+      }
+    ],
     "DescribeSkillGroupInfoList": [
       {
         "document": "获取技能组列表示例",
@@ -534,6 +558,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySipTrunk\n<公共请求参数>\n\n{\n    \"SipTrunk\": {\n        \"AllowIpList\": [\n            {\n                \"Host\": \"11.11.xx.xx\",\n                \"Port\": 6001\n            }\n        ],\n        \"CheckHealth\": false,\n        \"Id\": 1,\n        \"InboundCalleeField\": \"TO\",\n        \"InboundCalleeFormat\": \"NUMBER\",\n        \"Mode\": \"IP-ALLOW-LIST\",\n        \"Name\": \"xxxxxxx\",\n        \"OutboundCallerFormat\": \"NUMBER\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3651cda6-6501-4482-9f4e-8d0c9548a4db\"\n    }\n}",
         "title": "修改SIP通道示例"
+      }
+    ],
+    "ModifySipTrunkRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySipTrunkRoute\n<公共请求参数>\n\n{\n    \"SipTrunkRoute\": {\n        \"Id\": 1,\n        \"SdkAppId\": 140000000,\n        \"Direction\": \"out\",\n        \"Prefix\": \"2\",\n        \"Length\": 6\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22590cbf-da98-4e81-a7bd-659140900268\"\n    }\n}",
+        "title": "修改SIP通道内线路由策略"
       }
     ],
     "ModifyStaff": [

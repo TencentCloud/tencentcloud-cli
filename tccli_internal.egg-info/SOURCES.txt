@@ -692,6 +692,8 @@ tccli/services/pds/__init__.py
 tccli/services/pds/pds_client.py
 tccli/services/pds/v20210701/api.json
 tccli/services/pds/v20210701/examples.json
+tccli/services/plm/__init__.py
+tccli/services/plm/plm_client.py
 tccli/services/portal/__init__.py
 tccli/services/portal/portal_client.py
 tccli/services/postgres/__init__.py

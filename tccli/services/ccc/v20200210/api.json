@@ -161,6 +161,13 @@
       "output": "CreateSipTrunkResponse",
       "status": "online"
     },
+    "CreateSipTrunkRoute": {
+      "document": "创建SIP通道路由策略",
+      "input": "CreateSipTrunkRouteRequest",
+      "name": "创建SIP通道内线路由规则",
+      "output": "CreateSipTrunkRouteResponse",
+      "status": "online"
+    },
     "CreateStaff": {
       "document": "创建客服账号。",
       "input": "CreateStaffRequest",
@@ -201,6 +208,13 @@
       "input": "DeleteSipTrunkRequest",
       "name": "删除SIP通道",
       "output": "DeleteSipTrunkResponse",
+      "status": "online"
+    },
+    "DeleteSipTrunkRoute": {
+      "document": "删除SIP通道内线路由策略",
+      "input": "DeleteSipTrunkRouteRequest",
+      "name": "删除SIP通道内线路由策略",
+      "output": "DeleteSipTrunkRouteResponse",
       "status": "online"
     },
     "DeleteStaff": {
@@ -371,6 +385,13 @@
       "output": "DescribeSipTrunkListResponse",
       "status": "online"
     },
+    "DescribeSipTrunkRouteList": {
+      "document": "查询SIP通道内线路由策略列表信息",
+      "input": "DescribeSipTrunkRouteListRequest",
+      "name": "查询SIP通道内线路由策略",
+      "output": "DescribeSipTrunkRouteListResponse",
+      "status": "online"
+    },
     "DescribeSkillGroupInfoList": {
       "document": "获取技能组信息列表",
       "input": "DescribeSkillGroupInfoListRequest",
@@ -467,6 +488,13 @@
       "input": "ModifySipTrunkRequest",
       "name": "修改SIP通道",
       "output": "ModifySipTrunkResponse",
+      "status": "online"
+    },
+    "ModifySipTrunkRoute": {
+      "document": "修改SIP通道内线路由策略",
+      "input": "ModifySipTrunkRouteRequest",
+      "name": "修改SIP通道内线路由规则",
+      "output": "ModifySipTrunkRouteResponse",
       "status": "online"
     },
     "ModifyStaff": {
@@ -2564,6 +2592,33 @@
           "name": "Variables",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型topP",
+          "example": "0.8",
+          "member": "float",
+          "name": "TopP",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。",
+          "example": "1",
+          "member": "uint64",
+          "name": "VadLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "衔接语",
+          "example": "无",
+          "member": "ToneWordInfo",
+          "name": "ToneWord",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3693,6 +3748,43 @@
       ],
       "type": "object"
     },
+    "CreateSipTrunkRouteRequest": {
+      "document": "CreateSipTrunkRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SIP通道路由信息",
+          "example": "无",
+          "member": "SipTrunkRouteInfo",
+          "name": "SipTrunkRoute",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSipTrunkRouteResponse": {
+      "document": "CreateSipTrunkRoute返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SIP通道路由策略ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateStaffRequest": {
       "document": "CreateStaff请求参数结构体",
       "members": [
@@ -3937,6 +4029,33 @@
     },
     "DeleteSipTrunkResponse": {
       "document": "DeleteSipTrunk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSipTrunkRouteRequest": {
+      "document": "DeleteSipTrunkRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SIP通道内线路由策略ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSipTrunkRouteResponse": {
+      "document": "DeleteSipTrunkRoute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6091,6 +6210,71 @@
       ],
       "type": "object"
     },
+    "DescribeSipTrunkRouteListRequest": {
+      "document": "DescribeSipTrunkRouteList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "2",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSipTrunkRouteListResponse": {
+      "document": "DescribeSipTrunkRouteList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SIP通道内线策略列表信息",
+          "example": "无",
+          "member": "SipTrunkRouteInfo",
+          "name": "SipTrunkRouteList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据总数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSkillGroupInfoListRequest": {
       "document": "DescribeSkillGroupInfoList请求参数结构体",
       "members": [
@@ -7573,6 +7757,33 @@
       ],
       "type": "object"
     },
+    "ModifySipTrunkRouteRequest": {
+      "document": "ModifySipTrunkRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SIP通道内线路由策略信息",
+          "example": "无",
+          "member": "SipTrunkRouteInfo",
+          "name": "SipTrunkRoute",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySipTrunkRouteResponse": {
+      "document": "ModifySipTrunkRoute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyStaffPasswordRequest": {
       "document": "ModifyStaffPassword请求参数结构体",
       "members": [
@@ -8864,7 +9075,7 @@
         },
         {
           "disabled": false,
-          "document": "SIP通道类型：IP-ALLOW-LIST | REGISTER | UAC-REGISTER | CREDENTIAL",
+          "document": "SIP通道类型：IP-ALLOW-LIST | REGISTER | UAC-REGISTER | CREDENTIAL | TCCC-IP-ALLOW-LIST",
           "example": "IP-ALLOW-LIST",
           "member": "string",
           "name": "Mode",
@@ -9157,6 +9368,133 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SipTrunkRouteInfo": {
+      "document": "SIP通道内线路由信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SIP通道ID",
+          "example": "1",
+          "member": "int64",
+          "name": "SipTrunkId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由方向： in | out",
+          "example": "out",
+          "member": "string",
+          "name": "Direction",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由策略：前缀",
+          "example": "1",
+          "member": "string",
+          "name": "Prefix",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由策略：长度",
+          "example": "6",
+          "member": "int64",
+          "name": "Length",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户Uin",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户AppId",
+          "example": "无",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由ID标识",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由策略：正则",
+          "example": "^1\\d{5}$",
+          "member": "string",
+          "name": "Regex",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态：0 - 停用 | 1 - 启用",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级排序ID",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderById",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -10162,6 +10500,30 @@
       ],
       "usage": "both"
     },
+    "ToneWordInfo": {
+      "document": "承接语气词信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "首句超时时间，单位秒",
+          "example": "0.4",
+          "member": "float",
+          "name": "FirstSentenceTimeout",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "承接语气词",
+          "example": "{\"Positive\":[\"真不错\",\"挺好的\"],\"Negative\":[\"好悲催\",\"太差劲了\"],\"Neutral\":[\"嘿嘿\",\"差不多\"]}",
+          "member": "ZHToneWordsInfo",
+          "name": "ZHToneWords",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
     "TransferToManualRequest": {
       "document": "TransferToManual请求参数结构体",
       "members": [
@@ -10660,6 +11022,45 @@
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ZHToneWordsInfo": {
+      "document": "承接语气词",
+      "members": [
+        {
+          "disabled": false,
+          "document": "中性词列表",
+          "example": "[\"嗯嗯\"]",
+          "member": "string",
+          "name": "Neutral",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正面词列表",
+          "example": "[\"嗯嗯\"]",
+          "member": "string",
+          "name": "Positive",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负面词列表",
+          "example": "[\"嗯嗯\"]",
+          "member": "string",
+          "name": "Negative",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

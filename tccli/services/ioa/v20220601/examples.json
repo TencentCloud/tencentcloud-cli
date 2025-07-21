@@ -2066,14 +2066,6 @@
         "title": "示例1"
       }
     ],
-    "DescribeLdapGroup": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLdapGroup\n<公共请求参数>\n\n{\n    \"OsType\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9174ff99-833a-4c07-8f44-ae8b6d454428\",\n        \"Data\": null\n    }\n}",
-        "title": "示例1"
-      }
-    ],
     "DescribeLdapUserSourceSwitch": [
       {
         "document": "",

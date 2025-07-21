@@ -330,11 +330,11 @@
       "status": "online"
     },
     "RollbackTables": {
-      "document": "表格数据回档",
+      "document": "不再使用\n\n表格数据回档",
       "input": "RollbackTablesRequest",
       "name": "表格数据回档",
       "output": "RollbackTablesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SetBackupExpireRule": {
       "document": "新增、删除、修改备份过期策略， ClusterId必须为具体的集群Id（appid）",

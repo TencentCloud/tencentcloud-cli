@@ -7,7 +7,7 @@ Input:
 ```
 tccli igtm ModifyMonitor --cli-unfold-argument  \
     --MonitorId 1 \
-    --MonitorName test \
+    --MonitorName 测试监控器 \
     --CheckProtocol PING \
     --CheckInterval 1 \
     --Timeout 1 \
@@ -30,7 +30,7 @@ Output:
 {
     "Response": {
         "Msg": "success",
-        "RequestId": "100-222"
+        "RequestId": "8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0"
     }
 }
 ```

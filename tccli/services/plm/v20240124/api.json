@@ -1,0 +1,455 @@
+{
+  "actions": {
+    "GetSaleTreesForIntl": {
+      "document": "获取销售树列表，节点名称优先使用国际站缩写",
+      "input": "GetSaleTreesForIntlRequest",
+      "name": "获取销售树列表-国际站",
+      "output": "GetSaleTreesForIntlResponse",
+      "status": "online"
+    },
+    "GetTreeList": {
+      "document": "【有白名单限制，需要的童鞋，请联系neilqiao或zanderfang配置白名单 更多接入问题请看 http://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661】\n#### 响应参数说明\n|参数名称|数据类型|备注|\n|:--|:--:|:--:|\n| Type | int32 |树类别,1:产业树,2:聚合树,3:销售树\n| StatusList | []int32 | 参考https://iwiki.woa.com/p/4010648957\n\n\n\n#### 返回参数说明参考\nhttps://iwiki.woa.com/p/4010648957",
+      "input": "GetTreeListRequest",
+      "name": "获取产业树,聚合树基本结构",
+      "output": "GetTreeListResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-01-24",
+    "api_brief": "plm",
+    "serviceNameCN": "产品库",
+    "serviceShortName": "plm"
+  },
+  "objects": {
+    "CenterInfo": {
+      "document": "中心信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "中心id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CenterId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中心名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CenterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DepartmentInfo": {
+      "document": "部门信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部门id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DepartmentId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetSaleTreesForIntlRequest": {
+      "document": "GetSaleTreesForIntl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登录id",
+          "example": "无",
+          "member": "string",
+          "name": "PortalStaffId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录状态",
+          "example": "无",
+          "member": "string",
+          "name": "PortalStaffUa",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录ip",
+          "example": "无",
+          "member": "string",
+          "name": "PortalStaffIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录名称",
+          "example": "无",
+          "member": "string",
+          "name": "PortalStaffName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已登记使用状态可以参看文档 : https://tapd.woa.com/TC_CSIG_OM/markdown_wikis/show/#1220403412002308975@toc0 -> status节点状态目录 本接口额外支持状态 9999:返回全量\t",
+          "example": "[1]",
+          "member": "int64",
+          "name": "StatusList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "状态array, 已登记使用状态可以参看文档 : https://tapd.woa.com/TC_CSIG_OM/markdown_wikis/show/#1220403412002308975@toc0 -> status节点状态目录 本接口额外支持状态 ",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSaleTreesForIntlResponse": {
+      "document": "GetSaleTreesForIntl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "销售树列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SaleTreeNodeIntl",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTreeListRequest": {
+      "document": "GetTreeList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "树类别,1:产业树,2:聚合树,3:销售树\n",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "登录id",
+          "example": "无",
+          "member": "string",
+          "name": "PortalStaffId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录ip",
+          "example": "无",
+          "member": "string",
+          "name": "PortalStaffIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录名称",
+          "example": "无",
+          "member": "string",
+          "name": "PortalStaffName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录状态",
+          "example": "无",
+          "member": "string",
+          "name": "PortalStaffUa",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参考文档 https://iwiki.woa.com/p/4010648957",
+          "example": "[38,39]",
+          "member": "int64",
+          "name": "StatusList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTreeListResponse": {
+      "document": "GetTreeList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表树结构",
+          "example": "无",
+          "member": "MinNodeList",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MinNodeList": {
+      "document": "MinNodeYunApi,返回数基本结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HA00001",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "聚合",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Level",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Weight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中心id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CenterIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "DepartmentIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MinNodeList",
+          "name": "Child",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NameEn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SaleTreeNodeIntl": {
+      "document": "销售树对外节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XA001001",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点中文名称，优先取国际站缩写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子树节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SaleTreeNodeIntl",
+          "name": "Child",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DepartmentInfo",
+          "name": "DepartmentList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中心信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CenterInfo",
+          "name": "CenterList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Modifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点英文名称,优先取国际站缩写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NameEn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文缩写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EnAbbreviation",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

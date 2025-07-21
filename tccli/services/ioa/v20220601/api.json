@@ -1603,13 +1603,6 @@
       "output": "DescribeLatestWeekdayMarkResponse",
       "status": "online"
     },
-    "DescribeLdapGroup": {
-      "document": "私有化和SaaS都无该接口（代码Review），且SaaS近一个月无该接口调用记录。\n\n获取导入架构的分组列表，用于架构管理上级分组显示,私有化调用path为：capi/Assets/Device/DescribeLdapGroup",
-      "input": "DescribeLdapGroupRequest",
-      "name": "获取导入架构的分组列表",
-      "output": "DescribeLdapGroupResponse",
-      "status": "deprecated"
-    },
     "DescribeLdapUserSourceSwitch": {
       "document": "获取LDAP用户源的开关配置,私有化调用path为：capi/Auth/DescribeLdapUserSourceSwitch",
       "input": "DescribeLdapUserSourceSwitchRequest",
@@ -5652,7 +5645,17 @@
     },
     "CreateAccountImportTaskRequest": {
       "document": "CreateAccountImportTask请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateAccountImportTaskResponse": {
@@ -14777,7 +14780,7 @@
         {
           "disabled": false,
           "document": "查询产品设备授权点数的业务响应结构\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "复杂类型的示例，参考接口示例部分",
           "member": "DescribeDeviceAuthorizationPointData",
           "name": "Data",
           "output_required": true,
@@ -19941,59 +19944,6 @@
         }
       ],
       "type": "object"
-    },
-    "DescribeLdapGroupRequest": {
-      "document": "DescribeLdapGroup请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
-          "example": "无",
-          "member": "int64",
-          "name": "OsType",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeLdapGroupResponse": {
-      "document": "DescribeLdapGroup返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "业务响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DescribeLdapGroupRspData",
-          "name": "Data",
-          "required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeLdapGroupRspData": {
-      "document": "业务响应数据",
-      "members": [
-        {
-          "disabled": false,
-          "document": "数据item\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "LdapGroupItem",
-          "name": "Item",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "DescribeLdapUserSourceSwitchRequest": {
       "document": "DescribeLdapUserSourceSwitch请求参数结构体",
@@ -34134,72 +34084,6 @@
           "name": "IsExist",
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "LdapGroupItem": {
-      "document": "数据item",
-      "members": [
-        {
-          "disabled": false,
-          "document": "分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "Name",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "分组ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "GroupId",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "设置信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "Setting",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "OS平台(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "OsType",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "表ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "Id",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "Utime",
-          "required": false,
-          "type": "string",
           "value_allowed_null": true
         }
       ],
