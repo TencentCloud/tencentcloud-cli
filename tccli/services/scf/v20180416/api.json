@@ -6565,6 +6565,39 @@
       ],
       "usage": "both"
     },
+    "MigrateTarget": {
+      "document": "触发器迁移目标信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标函数名字",
+          "example": "testfunc",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标函数版本或别名",
+          "example": "$LATEST",
+          "member": "string",
+          "name": "Qualifier",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "Namespace": {
       "document": "命名空间",
       "members": [
@@ -9167,6 +9200,15 @@
           "name": "CustomArgument",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发器迁移目标，只有cos触发器支持这个字段",
+          "example": "{\"FunctionName\":\"test\",\"Namespace\":\"default\",\"Qualifier\":\"$LATEST\"}",
+          "member": "MigrateTarget",
+          "name": "MigrateTarget",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

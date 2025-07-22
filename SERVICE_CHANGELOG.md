@@ -1,29 +1,84 @@
-# Release 3.0.1246.1
+# Release 3.0.1247.1
 
-## 弹性伸缩(as) 版本：2018-04-19
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 49 次发布
+### 第 147 次发布
 
-发布时间：2025-07-22 01:08:03
+发布时间：2025-07-23 01:14:59
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [InternetAccessible](http://document.tencentcloudapi.woa.com/document/product/377/20453#InternetAccessible)
-
-	* 新增成员：InternetServiceProvider, IPv4AddressType, AntiDDoSPackageId, IsKeepEIP
+* [ModifyRoGroupVipVport](http://document.tencentcloudapi.woa.com/document/product/236/87254)
 
 
 
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-## 云联络中心(ccc) 版本：2020-02-10
+### 第 135 次发布
+
+发布时间：2025-07-23 01:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ReplayInstanceAuditLog](http://document.tencentcloudapi.woa.com/document/product/1003/87255)
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 37 次发布
+
+发布时间：2025-07-23 01:37:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAndroidInstanceTasksStatus](http://document.tencentcloudapi.woa.com/document/product/1162/86016)
+
+	* 新增入参：RecentDays
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
 
 ### 第 92 次发布
 
-发布时间：2025-07-22 01:10:05
+发布时间：2025-07-23 01:47:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CallBackTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CallBackTemplateInfo)
+
+	* 新增成员：QualityCheckExceptionNotifyUrl, EvaluateThresholdExceptionNotifyUrl, EvaluateAverageExceptionNotifyUrl, IntelligentErasureNotifyUrl, SuppressSubtitleTextNotifyUrl
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2023-06-16
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 105 次发布
+
+发布时间：2025-07-23 01:50:25
 
 本次发布包含了以下内容：
 
@@ -31,186 +86,75 @@
 
 新增接口：
 
-* [CreateSipTrunkRoute](http://document.tencentcloudapi.woa.com/document/product/679/87253)
-* [DeleteSipTrunkRoute](http://document.tencentcloudapi.woa.com/document/product/679/87252)
-* [DescribeSipTrunkRouteList](http://document.tencentcloudapi.woa.com/document/product/679/87251)
-* [ModifySipTrunkRoute](http://document.tencentcloudapi.woa.com/document/product/679/87250)
+* [DescribeScrapeAgents](http://document.tencentcloudapi.woa.com/document/product/248/87256)
+
+新增数据结构：
+
+* [ScrapeAgent](http://document.tencentcloudapi.woa.com/document/product/248/30354#ScrapeAgent)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 103 次发布
+
+发布时间：2025-07-23 01:52:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AdaptiveDynamicStreamingTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AdaptiveDynamicStreamingTaskInput)
+
+	* 新增成员：SubtitleTemplate
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 64 次发布
+
+发布时间：2025-07-23 01:58:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改接口：
 
-* [CreateAICall](http://document.tencentcloudapi.woa.com/document/product/679/84920)
+* [UpdateTrigger](http://document.tencentcloudapi.woa.com/document/product/583/81657)
 
-	* 新增入参：TopP, VadLevel, ToneWord
+	* 新增入参：MigrateTarget
 
 
 新增数据结构：
 
-* [SipTrunkRouteInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#SipTrunkRouteInfo)
-* [ToneWordInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#ToneWordInfo)
-* [ZHToneWordsInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#ZHToneWordsInfo)
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 195 次发布
-
-发布时间：2025-07-22 01:18:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [CommonApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonApproverOption)
-
-	* 新增成员：NoRefuse, NoTransfer, HideOneKeySign, FlowReadLimit, ForbidAddSignDate
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 腾讯混元大模型(hunyuan) 版本：2023-09-01
-
-### 第 12 次发布
-
-发布时间：2025-07-22 01:19:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Multimedia](http://document.tencentcloudapi.woa.com/document/product/1744/85813#Multimedia)
-
-	* 新增成员：Width, Height, ThumbURL, ThumbWidth, ThumbHeight, PublishTime, SiteName, SiteIcon
-
-
-
-
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
-
-### 第 15 次发布
-
-发布时间：2025-07-22 01:21:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeLdapGroup
-
-修改接口：
-
-* [CreateAccountImportTask](http://document.tencentcloudapi.woa.com/document/product/1794/86290)
-
-	* 新增入参：DomainInstanceId
-
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* DescribeLdapGroupRspData
-* LdapGroupItem
-
-
-
-## 产品库(plm) 版本：2024-01-24
-
-### 第 1 次发布
-
-发布时间：2025-07-22 00:08:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [GetSaleTreesForIntl](http://document.tencentcloudapi.woa.com/document/product/1797/87235)
-* [GetTreeList](http://document.tencentcloudapi.woa.com/document/product/1797/87237)
-
-新增数据结构：
-
-* [CenterInfo](http://document.tencentcloudapi.woa.com/document/product/1797/87238#CenterInfo)
-* [DepartmentInfo](http://document.tencentcloudapi.woa.com/document/product/1797/87238#DepartmentInfo)
-* [MinNodeList](http://document.tencentcloudapi.woa.com/document/product/1797/87238#MinNodeList)
-* [SaleTreeNodeIntl](http://document.tencentcloudapi.woa.com/document/product/1797/87238#SaleTreeNodeIntl)
-
-
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 87 次发布
-
-发布时间：2025-07-22 01:29:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DeployRecordDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#DeployRecordDetail)
-
-	* 新增成员：Algorithm, OldAlgorithm
-
-* [TeoInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#TeoInstanceDetail)
-
-	* 新增成员：Algorithm
-
-* [UpdateRecordDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#UpdateRecordDetail)
-
-	* 新增成员：Algorithm, OldAlgorithm
-
-
-
-
-## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
-
-### 第 11 次发布
-
-发布时间：2025-07-22 01:30:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* RollbackTables
+* [MigrateTarget](http://document.tencentcloudapi.woa.com/document/product/583/17244#MigrateTarget)
 
 
 
 ## 边缘安全加速平台(teo) 版本：2022-09-01
 
-### 第 64 次发布
+### 第 65 次发布
 
-发布时间：2025-07-22 01:32:22
+发布时间：2025-07-23 02:08:03
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DescribeBillingData](http://document.tencentcloudapi.woa.com/document/product/1738/83242)
+* [DescribeDDoSProtection](http://document.tencentcloudapi.woa.com/document/product/1738/87258)
+* [ModifyDDoSProtection](http://document.tencentcloudapi.woa.com/document/product/1738/87257)
 
-	* 新增入参：GroupBy
+新增数据结构：
 
-
-修改数据结构：
-
-* [BillingData](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BillingData)
-
-	* 新增成员：ZoneId, Host, ProxyId, RegionId
-
+* [DDoSProtection](http://document.tencentcloudapi.woa.com/document/product/1738/81211#DDoSProtection)
+* [DomainDDoSProtection](http://document.tencentcloudapi.woa.com/document/product/1738/81211#DomainDDoSProtection)
 
 
 

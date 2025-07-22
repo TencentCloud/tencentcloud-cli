@@ -576,7 +576,7 @@
         },
         {
           "disabled": false,
-          "document": "故障标题：必填",
+          "document": "故障标题",
           "example": "无",
           "member": "string",
           "name": "Title",

@@ -8607,7 +8607,7 @@
         {
           "disabled": false,
           "document": "产品名称代码",
-          "example": "['p_clb']",
+          "example": "p_clb",
           "member": "string",
           "name": "BusinessCodes",
           "required": false,
@@ -8616,7 +8616,7 @@
         {
           "disabled": false,
           "document": "子产品名称代码",
-          "example": "['sp_clb']",
+          "example": "sp_clb",
           "member": "string",
           "name": "ProductCodes",
           "required": false,
@@ -8625,7 +8625,7 @@
         {
           "disabled": false,
           "document": "地域ID",
-          "example": "[1]",
+          "example": "1",
           "member": "int64",
           "name": "RegionIds",
           "required": false,
@@ -8634,7 +8634,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "[0]",
+          "example": "0",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -8643,7 +8643,7 @@
         {
           "disabled": false,
           "document": "付费模式，可选prePay和postPay",
-          "example": "['postPay']",
+          "example": "postPay",
           "member": "string",
           "name": "PayModes",
           "required": false,
@@ -8652,7 +8652,7 @@
         {
           "disabled": false,
           "document": "交易类型",
-          "example": "['postpay_deduct_h']",
+          "example": "postpay_deduct_h",
           "member": "string",
           "name": "ActionTypes",
           "required": false,
@@ -8688,7 +8688,7 @@
         {
           "disabled": false,
           "document": "组件编码",
-          "example": "['v_clb_ins']",
+          "example": "v_clb_ins",
           "member": "string",
           "name": "ComponentCodes",
           "required": false,
@@ -8706,7 +8706,7 @@
         {
           "disabled": false,
           "document": "文件类型",
-          "example": "[\"CustomizedDosage\"]",
+          "example": "CustomizedDosage",
           "member": "string",
           "name": "FileTypes",
           "required": false,
@@ -8715,7 +8715,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "[1]",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -14986,8 +14986,8 @@
         },
         {
           "disabled": false,
-          "document": "查询指定产品信息（暂时未开放获取）",
-          "example": "\"code\"",
+          "document": "查询指定产品信息",
+          "example": "sp_cls",
           "member": "string",
           "name": "ProductCode",
           "required": false,

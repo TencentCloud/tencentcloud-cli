@@ -3219,6 +3219,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间范围限制，以天数为单位",
+          "example": "7",
+          "member": "int64",
+          "name": "RecentDays",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
