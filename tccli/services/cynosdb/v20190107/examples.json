@@ -1198,6 +1198,14 @@
         "title": "续费集群"
       }
     ],
+    "ReplayInstanceAuditLog": [
+      {
+        "document": "回放实例审计日志",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"StartTime\": \"2025-06-26 14:00:00\",\n    \"EndTime\": \"2025-06-26 16:00:00\",\n    \"SourceClusterId\": \"cynosdbmysql-8j1jtwkv\",\n    \"SourceInstanceId\": \"cynosdbmysql-ins-2fbftt98\",\n    \"TargetClusterId\": \"cynosdbmysql-kwoft68f\",\n    \"TargetInstanceId\": \"cynosdbmysql-ins-431w3zh0\",\n    \"TargetUserName\": \"root\",\n    \"TargetPassword\": \"Calebzhao123.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"y7rtl807j00d80oid44s34c100ros3iy\",\n        \"TaskId\": 678\n    }\n}",
+        "title": "回放实例审计日志"
+      }
+    ],
     "ResetAccountPassword": [
       {
         "document": "修改数据库账号密码",

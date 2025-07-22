@@ -2795,7 +2795,7 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的对象维度信息",
+          "document": "需要绑定的对象维度信息，当为实例绑定渠道时，此处为必填信息",
           "example": "无",
           "member": "BindingPolicyObjectDimension",
           "name": "Dimensions",

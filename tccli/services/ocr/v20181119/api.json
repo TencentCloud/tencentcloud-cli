@@ -5418,6 +5418,15 @@
           "name": "ConfigAdvanced",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "cn时，添加的key为中文  \nen时，添加的key为英语",
+          "example": "cn",
+          "member": "string",
+          "name": "OutputLanguage",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

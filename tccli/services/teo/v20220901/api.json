@@ -490,6 +490,13 @@
       "output": "DescribeDDoSAttackTopDataResponse",
       "status": "online"
     },
+    "DescribeDDoSProtection": {
+      "document": "获取站点的独立 DDoS 防护信息。",
+      "input": "DescribeDDoSProtectionRequest",
+      "name": "查询站点的独立 DDoS 防护信息",
+      "output": "DescribeDDoSProtectionResponse",
+      "status": "online"
+    },
     "DescribeDefaultCertificates": {
       "document": "查询默认证书列表",
       "input": "DescribeDefaultCertificatesRequest",
@@ -943,6 +950,13 @@
       "input": "ModifyCustomErrorPageRequest",
       "name": "修改自定义响应页面",
       "output": "ModifyCustomErrorPageResponse",
+      "status": "online"
+    },
+    "ModifyDDoSProtection": {
+      "document": "修改站点的独立 DDoS 防护。",
+      "input": "ModifyDDoSProtectionRequest",
+      "name": "修改站点的独立 DDoS 防护",
+      "output": "ModifyDDoSProtectionResponse",
       "status": "online"
     },
     "ModifyDnsRecords": {
@@ -7604,6 +7618,45 @@
       ],
       "usage": "out"
     },
+    "DDoSProtection": {
+      "document": "独立 DDoS 防护配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定独立 DDoS 的防护范围。取值为：\n<li> protect_all_domains：独立 DDoS 防护对站点内全部域名生效，新接入域名自动开启独立 DDoS 防护，入参为 protect_all_domains 时，入参 DomainDDoSProtections 不作处理；</li>\n<li> protect_specified_domains：仅对指定域名生效，具体范围可通过 DomainDDoSProtection 参数指定。</li>",
+          "example": "protect_all_domains",
+          "member": "string",
+          "name": "ProtectionOption",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名的独立 DDoS 防护配置。在入参场景中：\n<li> 当 ProtectionOption 保持为 protect_specified_domains 时：未填写的域名维持原有独立 DDoS 防护配置不变，显式指定的域名​按传入参数更新；</li>\n<li> 当 ProtectionOption 由 protect_all_domains 切换为 protect_specified_domains 时：若 DomainDDoSProtections 传空，停用站点下全部域名的独立 DDoS 防护；若 DomainDDoSProtections 不为空，参数中指定的域名停用或保持独立 DDoS 防护，其余未列出的域名统一停用独立 DDoS 防护。</li>",
+          "example": "无",
+          "member": "DomainDDoSProtection",
+          "name": "DomainDDoSProtections",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享 CNAME 的独立 DDoS 防护配置。仅作为出参使用。",
+          "example": "无",
+          "member": "DomainDDoSProtection",
+          "name": "SharedCNAMEDDoSProtections",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DDosProtectionConfig": {
       "document": "适用于四层代理或 Web 站点服务的独立 DDoS 防护规格配置。",
       "members": [
@@ -9826,6 +9879,43 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSProtectionRequest": {
+      "document": "DescribeDDoSProtection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-25ryyvog1qih",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDDoSProtectionResponse": {
+      "document": "DescribeDDoSProtection返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "独立 DDoS 防护配置。用于控制独立 DDoS 防护的生效范围。",
+          "example": "无",
+          "member": "DDoSProtection",
+          "name": "DDoSProtection",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -13567,6 +13657,34 @@
         }
       ],
       "usage": "out"
+    },
+    "DomainDDoSProtection": {
+      "document": "域名的独立 DDoS 防护信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "www.qq.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名的独立 DDoS 开关，取值为：\n<li> on：已开启；</li>\n<li> off：已关闭。</li>",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DownloadL4LogsRequest": {
       "document": "DownloadL4Logs请求参数结构体",
@@ -17961,6 +18079,42 @@
     },
     "ModifyCustomErrorPageResponse": {
       "document": "ModifyCustomErrorPage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDDoSProtectionRequest": {
+      "document": "ModifyDDoSProtection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-25ryyvog1qih",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "独立 DDoS 防护配置。",
+          "example": "无",
+          "member": "DDoSProtection",
+          "name": "DDoSProtection",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDDoSProtectionResponse": {
+      "document": "ModifyDDoSProtection返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

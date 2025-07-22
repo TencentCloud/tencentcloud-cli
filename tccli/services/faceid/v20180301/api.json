@@ -529,7 +529,7 @@
         {
           "disabled": false,
           "document": "一比一时间时间戳，13位。",
-          "example": "无",
+          "example": "1638781186273",
           "member": "string",
           "name": "ReqTime",
           "output_required": true,
@@ -539,7 +539,7 @@
         {
           "disabled": false,
           "document": "一比一请求的唯一标记。",
-          "example": "无",
+          "example": "e594dc57-9ee3-409b-a8e4-7b46945887c3",
           "member": "string",
           "name": "Seq",
           "output_required": true,
@@ -549,7 +549,7 @@
         {
           "disabled": false,
           "document": "一比一时使用的、脱敏后的身份证号。",
-          "example": "无",
+          "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
           "output_required": true,
@@ -569,7 +569,7 @@
         {
           "disabled": false,
           "document": "一比一时使用的、脱敏后的姓名。",
-          "example": "无",
+          "example": "韦小宝",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -579,7 +579,7 @@
         {
           "disabled": false,
           "document": "一比一的相似度。0-100，保留2位小数。",
-          "example": "无",
+          "example": "100.00",
           "member": "string",
           "name": "Sim",
           "output_required": true,
@@ -589,7 +589,7 @@
         {
           "disabled": false,
           "document": "本次详情是否收费。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsNeedCharge",
           "output_required": true,
@@ -599,7 +599,7 @@
         {
           "disabled": false,
           "document": "收费类型，比对、核身、混合部署。",
-          "example": "无",
+          "example": "核身",
           "member": "string",
           "name": "ChargeType",
           "output_required": true,
@@ -609,7 +609,7 @@
         {
           "disabled": false,
           "document": "本次活体一比一最终结果。",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "ErrorCode",
           "output_required": true,
@@ -619,7 +619,7 @@
         {
           "disabled": false,
           "document": "本次活体一比一最终结果描述。",
-          "example": "无",
+          "example": "成功",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
@@ -1201,7 +1201,7 @@
         {
           "disabled": false,
           "document": "本接口不需要传递此参数。",
-          "example": "无",
+          "example": "本接口不需要传递此参数。",
           "member": "string",
           "name": "TerminalType",
           "required": false,
@@ -1264,7 +1264,7 @@
         {
           "disabled": false,
           "document": "意愿核身（朗读模式）使用的文案。\n- 若未使用意愿核身（朗读模式），则该字段无需传入。\n- 最长可接受120的字符串长度。",
-          "example": "无",
+          "example": "我同意办理该业务。",
           "member": "string",
           "name": "IntentionVerifyText",
           "required": false,
@@ -1338,7 +1338,7 @@
         {
           "disabled": false,
           "document": "请求时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1753091765496",
           "member": "string",
           "name": "ReqTime",
           "output_required": true,
@@ -1348,7 +1348,7 @@
         {
           "disabled": false,
           "document": "本次活体一比一请求的唯一标记。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "5139af2d-442c-4500-837f-9683baba76ae",
           "member": "string",
           "name": "Seq",
           "output_required": true,
@@ -1358,7 +1358,7 @@
         {
           "disabled": false,
           "document": "参与本次活体一比一的身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "440111199001010000",
           "member": "string",
           "name": "Idcard",
           "output_required": true,
@@ -1368,7 +1368,7 @@
         {
           "disabled": false,
           "document": "参与本次活体一比一的姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -1378,7 +1378,7 @@
         {
           "disabled": false,
           "document": "本次活体一比一的相似度。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100.00",
           "member": "string",
           "name": "Sim",
           "output_required": true,
@@ -1408,7 +1408,7 @@
         {
           "disabled": false,
           "document": "本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "成功",
           "member": "string",
           "name": "Errmsg",
           "output_required": true,
@@ -1428,7 +1428,7 @@
         {
           "disabled": false,
           "document": "本次活体结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "成功",
           "member": "string",
           "name": "Livemsg",
           "output_required": true,
@@ -1448,7 +1448,7 @@
         {
           "disabled": false,
           "document": "本次一比一结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "成功",
           "member": "string",
           "name": "Comparemsg",
           "output_required": true,
@@ -1458,7 +1458,7 @@
         {
           "disabled": false,
           "document": "比对库源类型。包括：\n公安商业库；\n业务方自有库（用户上传照片、客户的混合库、混合部署库）；\n二次验证库；\n人工审核库；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "公安商业库",
           "member": "string",
           "name": "CompareLibType",
           "output_required": true,
@@ -5248,10 +5248,10 @@
         {
           "disabled": false,
           "document": "token",
-          "example": "无",
+          "example": "14E43038-CC2F-4945-941E-AD6D5989AF9F",
           "member": "string",
           "name": "BizToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5261,7 +5261,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ChargeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5271,17 +5271,17 @@
           "example": "无",
           "member": "ChargeDetail",
           "name": "ChargeDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "业务RuleId",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

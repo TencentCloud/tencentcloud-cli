@@ -2406,7 +2406,7 @@
         {
           "disabled": false,
           "document": "混流回调 URL。(参数已弃用)。",
-          "example": "无",
+          "example": "http://abc.com/abc",
           "member": "string",
           "name": "StreamMixNotifyUrl",
           "output_required": true,

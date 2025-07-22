@@ -1212,6 +1212,14 @@
         "title": "重新均衡RO组内实例的权重"
       }
     ],
+    "ModifyRoGroupVipVport": [
+      {
+        "document": "修改Ro组的vip和vport",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoGroupVipVport\n<公共请求参数>\n\n{\n    \"UGroupId\": \"cdbrg-***\",\n    \"DstIp\": \"1.2.3.4\",\n    \"DstPort\": \"3307\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "修改Ro组的vip和vport"
+      }
+    ],
     "ModifyTimeWindow": [
       {
         "document": "",

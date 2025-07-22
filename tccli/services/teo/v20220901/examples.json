@@ -752,6 +752,14 @@
         "title": "DDoS攻击Top数据"
       }
     ],
+    "DescribeDDoSProtection": [
+      {
+        "document": "获取站点的独立 DDoS 防护信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSProtection\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2jaltqbdhq37\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1362c269-9931-4b12-b148-3d1df0818600\",\n        \"DDoSProtection\": {\n            \"ProtectionOption\": \"protect_specified_domains\",\n            \"DomainDDoSProtections\": [\n                {\n                    \"Domain\": \"www.example.com\",\n                    \"Switch\": \"on\"\n                }\n            ],\n            \"SharedCNAMEDDoSProtections\": [\n                {\n                    \"Domain\": \"a.example.com\",\n                    \"Switch\": \"off\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "获取站点的独立 DDoS 防护信息"
+      }
+    ],
     "DescribeDefaultCertificates": [
       {
         "document": "",
@@ -1408,6 +1416,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomErrorPage\n<公共请求参数>\n\n{\n    \"PageId\": \"p-2kplomhisdcb\",\n    \"ZoneId\": \"zone-2kplomhisdcb\",\n    \"Name\": \"web防护自定义错误页面\",\n    \"Description\": \"web防护自定义错误页面\",\n    \"ContentType\": \"application/json\",\n    \"Content\": \"{\\\"title\\\": \\\"自定义错误页面title\\\",\\\"content\\\": \\\"自定义错误页面内容\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
         "title": "修改自定义错误页面"
+      }
+    ],
+    "ModifyDDoSProtection": [
+      {
+        "document": "修改站点的独立 DDoS 防护。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDDoSProtection\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2jaltqbdhq37\",\n    \"DDoSProtection\": {\n        \"ProtectionOption\": \"protect_specified_domains\",\n        \"DomainDDoSProtections\": [\n            {\n                \"Domain\": \"www.example.com\",\n                \"Switch\": \"on\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1362c269-9931-4b12-b148-3d1df0818600\"\n    }\n}",
+        "title": "修改站点的独立 DDoS 防护"
       }
     ],
     "ModifyDnsRecords": [

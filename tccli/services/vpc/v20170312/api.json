@@ -24898,7 +24898,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC",
+          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC",
           "example": "3DES-CBC",
           "member": "string",
           "name": "PropoEncryAlgorithm",
@@ -24909,7 +24909,7 @@
         },
         {
           "disabled": false,
-          "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5",
+          "document": "认证算法：可选值：'MD5'，'SHA'，'SHA-256'，'SHA-512'， 默认为SHA。",
           "example": "MD5",
           "member": "string",
           "name": "PropoAuthenAlgorithm",
@@ -24920,7 +24920,7 @@
         },
         {
           "disabled": false,
-          "document": "协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN",
+          "document": "协商模式：可选值：'AGGRESSIVE'， 'MAIN'，默认为MAIN。",
           "example": "MAIN",
           "member": "string",
           "name": "ExchangeMode",
@@ -24997,8 +24997,8 @@
         },
         {
           "disabled": false,
-          "document": "DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，",
-          "example": "GOURP1",
+          "document": "DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，默认是GROUP1。",
+          "example": "GROUP1",
           "member": "string",
           "name": "DhGroupName",
           "output_required": false,
