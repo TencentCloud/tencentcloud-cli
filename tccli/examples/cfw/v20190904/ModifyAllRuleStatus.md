@@ -17,6 +17,7 @@ Output:
 {
     "Response": {
         "Status": 0,
+        "RuleLimitNum": 3000,
         "RequestId": "b21d7f7c-3191-41a2-bd13-9a5f6d86ab44"
     }
 }

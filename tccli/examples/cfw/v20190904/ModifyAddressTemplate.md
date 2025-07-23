@@ -19,6 +19,7 @@ Output:
 {
     "Response": {
         "Status": 0,
+        "RuleLimitNum": 3000,
         "Uuid": "mb_appid_1708504391199",
         "RequestId": "RequestId"
     }

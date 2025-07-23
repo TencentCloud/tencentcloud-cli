@@ -1764,7 +1764,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalLicense\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"35e653af-786f-4afb-9f33-3d4bf8708d5a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a56ce452-5d4c-4334-a9ba-50ba0aa6d2ed\"\n    }\n}",
         "title": "示例1"
       }
     ],

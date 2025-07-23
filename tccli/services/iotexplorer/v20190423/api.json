@@ -4392,6 +4392,15 @@
           "name": "SummaryQOS",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "摘要输出配置",
+          "example": "{\"OutputLang\": \"en\"}",
+          "member": "VisionSummaryConfig",
+          "name": "SummaryConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -12508,6 +12517,15 @@
           "name": "SummaryQOS",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "摘要输出配置",
+          "example": "无",
+          "member": "VisionSummaryConfig",
+          "name": "SummaryConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -17423,7 +17441,7 @@
         },
         {
           "disabled": false,
-          "document": "识别到的目标类型。可能取值：\n\n- `person`：人\n- `vehicle`：车辆\n- `dog`：狗\n- `cat`：猫\n- `fire`：火焰\n- `smoke`：烟雾\n- `package`：快递包裹\n- `license_plate`：车牌\n",
+          "document": "识别到的目标类型。可能取值：\n\n- `person`：人\n- `vehicle`：车辆\n- `dog`：狗\n- `cat`：猫\n- `fire`：火焰\n- `smoke`：烟雾\n- `package`：快递包裹\n- `license_plate`：车牌",
           "example": "[\"person\"]",
           "member": "string",
           "name": "DetectedClassifications",
@@ -17450,9 +17468,80 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，可能取值：\n\n- `DownloadFailed`：下载视频/图片文件失败\n- `ReadFailed`：读取视频/图片文件失败",
+          "example": "DownloadFailed",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详细描述文本",
+          "example": "一个穿着白色衣服的人在屋旁的水泥地面上行走",
+          "member": "string",
+          "name": "FullDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "VisionSummaryConfig": {
+      "document": "视频摘要配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主输出语言\n\n支持列表如下：\nzh 中文\nen 英语\nja 日语\nko 韩文\npt-BR 葡萄牙语（巴西）\nth 泰语\n",
+          "example": "zh",
+          "member": "string",
+          "name": "OutputLang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可选输出语言\n\n支持列表如下：\nzh 中文\nen 英语\nja 日语\nko 韩文\npt-BR 葡萄牙语（巴西）\nth 泰语\n",
+          "example": "en",
+          "member": "string",
+          "name": "AlternativeOutputLang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否输出视频详细描述，默认不开启（开启后响应时延增大）",
+          "example": "false",
+          "member": "bool",
+          "name": "WithFullDescription",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "多摄像头布局定义。可能取值：\n\n- 单摄（默认值）：`Single`\n\n- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`\n- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`\n- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`\n\n- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`\n- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`\n- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`\n- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`\n- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`\n- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`\n- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`",
+          "example": "Single",
+          "member": "string",
+          "name": "MultiCameraLayout",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否输出视频缩略图",
+          "example": "false",
+          "member": "bool",
+          "name": "WithThumbnail",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     },
     "WXDeviceInfo": {
       "document": "微信硬件设备信息",

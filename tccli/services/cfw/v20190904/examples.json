@@ -700,7 +700,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAddressTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"放通ip\",\n    \"Detail\": \"放通ip\",\n    \"IpString\": \"1.1.1.1\",\n    \"Type\": 1,\n    \"ProtocolType\": \"4\",\n    \"Uuid\": \"mb_appid_1708504391199\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Uuid\": \"mb_appid_1708504391199\",\n        \"RequestId\": \"RequestId\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RuleLimitNum\": 3000,\n        \"Uuid\": \"mb_appid_1708504391199\",\n        \"RequestId\": \"RequestId\"\n    }\n}",
         "title": "修改地址模板"
       }
     ],
@@ -716,7 +716,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllRuleStatus\n<公共请求参数>\n\n{\n    \"EdgeId\": \"edge-ppt3pi01\",\n    \"Status\": 1,\n    \"Direction\": 1,\n    \"Area\": \"ap-guangzhou\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RuleLimitNum\": 3000,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
         "title": "启用停用全部规则"
       }
     ],

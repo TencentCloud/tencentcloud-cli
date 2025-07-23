@@ -6399,6 +6399,24 @@
           "name": "AccessAddress",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "连接器本地网关启用状态",
+          "example": "无",
+          "member": "string",
+          "name": "AccessSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "连接器网关接入端口",
+          "example": "9443",
+          "member": "uint64",
+          "name": "AccessPort",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -38196,9 +38214,21 @@
         {
           "disabled": false,
           "document": "NGN账号并发数(公私有云)",
-          "example": "-",
+          "example": "12",
           "member": "uint64",
           "name": "NGNConcurrence",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "零信任网关数",
+          "example": "1",
+          "member": "uint64",
+          "name": "GatewayNum",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false

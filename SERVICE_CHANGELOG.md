@@ -1,42 +1,10 @@
-# Release 3.0.1247.1
+# Release 3.0.1248.1
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 147 次发布
+### 第 77 次发布
 
-发布时间：2025-07-23 01:14:59
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ModifyRoGroupVipVport](http://document.tencentcloudapi.woa.com/document/product/236/87254)
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 135 次发布
-
-发布时间：2025-07-23 01:26:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ReplayInstanceAuditLog](http://document.tencentcloudapi.woa.com/document/product/1003/87255)
-
-
-
-## 云游戏(gs) 版本：2019-11-18
-
-### 第 37 次发布
-
-发布时间：2025-07-23 01:37:46
+发布时间：2025-07-24 01:18:16
 
 本次发布包含了以下内容：
 
@@ -44,28 +12,73 @@
 
 修改接口：
 
-* [DescribeAndroidInstanceTasksStatus](http://document.tencentcloudapi.woa.com/document/product/1162/86016)
+* [ModifyAddressTemplate](http://document.tencentcloudapi.woa.com/document/product/1132/81903)
 
-	* 新增入参：RecentDays
+	* 新增出参：RuleLimitNum
+
+* [ModifyAllRuleStatus](http://document.tencentcloudapi.woa.com/document/product/1132/49063)
+
+	* 新增出参：RuleLimitNum
 
 
 
 
-## 云直播CSS(live) 版本：2018-08-01
+## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
 
-### 第 92 次发布
+### 第 16 次发布
 
-发布时间：2025-07-23 01:47:23
+发布时间：2025-07-24 01:39:31
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [CreateConnector](http://document.tencentcloudapi.woa.com/document/product/1794/86623)
+
+	* 新增入参：AccessSwitch, AccessPort
+
+
 修改数据结构：
 
-* [CallBackTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CallBackTemplateInfo)
+* [NGNAuthInfo](http://document.tencentcloudapi.woa.com/document/product/1794/86648#NGNAuthInfo)
 
-	* 新增成员：QualityCheckExceptionNotifyUrl, EvaluateThresholdExceptionNotifyUrl, EvaluateAverageExceptionNotifyUrl, IntelligentErasureNotifyUrl, SuppressSubtitleTextNotifyUrl
+	* 新增成员：GatewayNum
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 80 次发布
+
+发布时间：2025-07-24 01:42:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTWeSeeRecognitionTask](http://document.tencentcloudapi.woa.com/document/product/1081/86166)
+
+	* 新增入参：SummaryConfig
+
+* [InvokeTWeSeeRecognitionTask](http://document.tencentcloudapi.woa.com/document/product/1081/86165)
+
+	* 新增入参：SummaryConfig
+
+
+新增数据结构：
+
+* [VisionSummaryConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#VisionSummaryConfig)
+
+修改数据结构：
+
+* [VisionRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/1081/34988#VisionRecognitionResult)
+
+	* 新增成员：ErrorCode, FullDescription
 
 
 
@@ -76,9 +89,9 @@
 
 ## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
-### 第 105 次发布
+### 第 106 次发布
 
-发布时间：2025-07-23 01:50:25
+发布时间：2025-07-24 01:52:54
 
 本次发布包含了以下内容：
 
@@ -86,19 +99,19 @@
 
 新增接口：
 
-* [DescribeScrapeAgents](http://document.tencentcloudapi.woa.com/document/product/248/87256)
+* [DescribeRemoteWrites](http://document.tencentcloudapi.woa.com/document/product/248/87259)
 
 新增数据结构：
 
-* [ScrapeAgent](http://document.tencentcloudapi.woa.com/document/product/248/30354#ScrapeAgent)
+* [WriteDestination](http://document.tencentcloudapi.woa.com/document/product/248/30354#WriteDestination)
 
 
 
-## 媒体处理(mps) 版本：2019-06-12
+## TI-ONE 训练平台(tione) 版本：2021-11-11
 
-### 第 103 次发布
+### 第 88 次发布
 
-发布时间：2025-07-23 01:52:06
+发布时间：2025-07-24 02:11:47
 
 本次发布包含了以下内容：
 
@@ -106,18 +119,26 @@
 
 修改数据结构：
 
-* [AdaptiveDynamicStreamingTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AdaptiveDynamicStreamingTaskInput)
+* [HorizontalPodAutoscaler](http://document.tencentcloudapi.woa.com/document/product/851/74915#HorizontalPodAutoscaler)
 
-	* 新增成员：SubtitleTemplate
-
-
+	* 新增成员：ScaleUpStabilizationWindowSeconds, ScaleDownStabilizationWindowSeconds
 
 
-## 云函数(scf) 版本：2018-04-16
 
-### 第 64 次发布
 
-发布时间：2025-07-23 01:58:27
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 96 次发布
+
+发布时间：2025-07-24 02:12:43
 
 本次发布包含了以下内容：
 
@@ -125,40 +146,21 @@
 
 修改接口：
 
-* [UpdateTrigger](http://document.tencentcloudapi.woa.com/document/product/583/81657)
+* [DisableClusterAudit](http://document.tencentcloudapi.woa.com/document/product/457/73901)
 
-	* 新增入参：MigrateTarget
+	* 新增入参：ProductName
 
+* [EnableClusterAudit](http://document.tencentcloudapi.woa.com/document/product/457/73900)
 
-新增数据结构：
-
-* [MigrateTarget](http://document.tencentcloudapi.woa.com/document/product/583/17244#MigrateTarget)
-
+	* 新增入参：ProductName, WithoutCollection
 
 
-## 边缘安全加速平台(teo) 版本：2022-09-01
+修改数据结构：
 
-### 第 65 次发布
+* [SwitchInfo](http://document.tencentcloudapi.woa.com/document/product/457/31866#SwitchInfo)
 
-发布时间：2025-07-23 02:08:03
+	* 新增成员：ErrorMsg, Status
 
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeDDoSProtection](http://document.tencentcloudapi.woa.com/document/product/1738/87258)
-* [ModifyDDoSProtection](http://document.tencentcloudapi.woa.com/document/product/1738/87257)
-
-新增数据结构：
-
-* [DDoSProtection](http://document.tencentcloudapi.woa.com/document/product/1738/81211#DDoSProtection)
-* [DomainDDoSProtection](http://document.tencentcloudapi.woa.com/document/product/1738/81211#DomainDDoSProtection)
-
-
-
-## 边缘安全加速平台(teo) 版本：2022-01-06
 
 
 

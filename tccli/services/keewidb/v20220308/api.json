@@ -1810,7 +1810,7 @@
         {
           "disabled": false,
           "document": "根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。",
-          "example": "无",
+          "example": "[{\"TagKey\": \"key1\", \"TagValue\": \"value1\"}]",
           "member": "InstanceTagInfo",
           "name": "TagList",
           "required": false,
@@ -1835,7 +1835,7 @@
         {
           "disabled": false,
           "document": "实例详细信息列表",
-          "example": "无",
+          "example": "具体参考数据结构。",
           "member": "InstanceInfo",
           "name": "InstanceSet",
           "output_required": true,

@@ -199,7 +199,7 @@
   },
   "metadata": {
     "apiVersion": "2018-07-11",
-    "api_brief": "本文介绍如何使用API对游戏多媒体引擎进行操作，包括语音分析、用量等。",
+    "api_brief": "本文介绍如何使用 API 对游戏多媒体引擎进行操作，包括语音分析、用量等。",
     "serviceNameCN": "游戏多媒体引擎",
     "serviceShortName": "gme"
   },
