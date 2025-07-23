@@ -9091,7 +9091,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。",
+          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -9100,7 +9100,7 @@
         },
         {
           "disabled": false,
-          "document": "卡证背面图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "卡证背面图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "BackImageBase64",
@@ -9109,7 +9109,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。( 中国地区之外不支持这个字段 )\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。( 中国地区之外不支持这个字段 )支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -9118,7 +9118,7 @@
         },
         {
           "disabled": false,
-          "document": "卡证背面图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "卡证背面图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
           "member": "string",
           "name": "BackImageUrl",
@@ -9182,7 +9182,7 @@
         },
         {
           "disabled": true,
-          "document": "告警码\n-9103\t证照翻拍告警\n-9102\t证照复印件告警\n-9106       证件遮挡告警\n-9107       模糊图片告警",
+          "document": "该字段已废弃， 将固定返回空数组，不建议使用。",
           "example": "[-9103]",
           "member": "int64",
           "name": "Warn",
@@ -9201,8 +9201,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "此字段为扩展字段。\n返回字段识别结果的置信度，格式如下\n{\n  字段名:{\n    Confidence:0.9999\n  }\n}",
+          "disabled": true,
+          "document": "该字段已废弃， 将固定返回\"1\"，不建议使用。",
           "example": "{\"ID\":{\"Confidence\":\"1.0000\"},\"Name\":{\"Confidence\":\"0.9996\"},\"Address\":{\"Confidence\":\"0.9997\"},\"Sex\":{\"Confidence\":\"0.9999\"}}",
           "member": "string",
           "name": "AdvancedInfo",
@@ -9264,7 +9264,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。建议卡片部分占据图片2/3以上。",
+          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。建议卡片部分占据图片2/3以上。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -9282,7 +9282,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/MLIDPassportOCR/MLIDPassportOCR1.png",
           "member": "string",
           "name": "ImageUrl",
@@ -9366,8 +9366,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "告警码：\n-9103\t证照翻拍告警\n-9102\t证照复印件告警（包括黑白复印件、彩色复印件）\n-9106       证件遮挡告警",
+          "disabled": true,
+          "document": "该字段已废弃， 将固定返回空数组，不建议使用。\n",
           "example": "[-9103]",
           "member": "int64",
           "name": "Warn",
@@ -9386,8 +9386,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "扩展字段:\n{\n    ID:{\n        Confidence:0.9999\n    },\n    Name:{\n        Confidence:0.9996\n    }\n}",
+          "disabled": true,
+          "document": "该字段已废弃， 将固定返回\"1\"，不建议使用。\n",
           "example": "{\"IssuingCountry\":{\"Confidence\":\"0.9500\"}}",
           "member": "string",
           "name": "AdvancedInfo",
@@ -15138,8 +15138,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "字段置信度：\n{\n    \"ID\": {\n        \"Confidence\": 0.9999\n    },\n    \"ThaiName\": {\n        \"Confidence\": 0.9996\n    }\n}",
+          "disabled": true,
+          "document": "该字段已废弃， 将固定返回\"1\"，不建议使用。 ",
           "example": "{\"ID\":{\"Confidence\":\"0.9500\"},\"ThaiName\":{\"Confidence\":\"0.9500\"}}",
           "member": "string",
           "name": "AdvancedInfo",

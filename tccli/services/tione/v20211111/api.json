@@ -5842,6 +5842,28 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩容观察期，单位秒",
+          "example": "100",
+          "member": "int64",
+          "name": "ScaleUpStabilizationWindowSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缩容观察期，单位秒",
+          "example": "100",
+          "member": "int64",
+          "name": "ScaleDownStabilizationWindowSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

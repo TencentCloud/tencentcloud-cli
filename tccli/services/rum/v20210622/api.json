@@ -381,7 +381,7 @@
   },
   "metadata": {
     "apiVersion": "2021-06-22",
-    "api_brief": "介绍如何使用API对应用观测进行操作，包括查询监控数据、创建应用实例等。",
+    "api_brief": "介绍如何使用API对前端性能监控进行操作，包括查询监控数据、创建应用实例等。",
     "serviceNameCN": "前端性能监控",
     "serviceShortName": "rum"
   },

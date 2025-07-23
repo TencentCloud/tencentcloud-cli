@@ -3535,6 +3535,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "现病史",
+          "example": "\"现病史\"",
+          "member": "string",
+          "name": "DiseasePresent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14295,7 +14305,7 @@
         {
           "disabled": true,
           "document": "入院\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"入院\"",
           "member": "string",
           "name": "DmissionCondition",
           "output_required": false,
@@ -14313,7 +14323,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "现病史",
           "example": "“现病史”",
           "member": "string",

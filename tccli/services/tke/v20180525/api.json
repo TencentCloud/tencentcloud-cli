@@ -25301,22 +25301,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
-          "example": "cls-a0pa8wse",
-          "member": "string",
-          "name": "ClusterId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "审计开关的详细信息",
           "example": "{\"Enable\":false,\"LogsetId\":\"\",\"TopicId\":\"\",\"TopicRegion\":\"\",\"UpgradeAble\":false,\"Version\":\"\"}",
           "member": "SwitchInfo",
           "name": "Audit",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-a0pa8wse",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -25367,10 +25367,30 @@
         },
         {
           "disabled": false,
+          "document": "获取日志状态失败时，返回错误信息",
+          "example": "failed to get application",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "CLS日志集ID",
           "example": "d12706e7-ae3b-42cf-9dab-d41e71489j4d",
           "member": "string",
           "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题状态，opened表示已开启，opening开启中，closed表示已关闭，closing 表示关闭中",
+          "example": "opening",
+          "member": "string",
+          "name": "Status",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -25387,10 +25407,10 @@
         },
         {
           "disabled": false,
-          "document": "当前log-agent版本",
-          "example": "1.1.10",
+          "document": "CLS日志主题所属region",
+          "example": "ap-guangzhou",
           "member": "string",
-          "name": "Version",
+          "name": "TopicRegion",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -25407,10 +25427,10 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志主题所属region",
-          "example": "ap-guangzhou",
+          "document": "当前log-agent版本",
+          "example": "1.1.10",
           "member": "string",
-          "name": "TopicRegion",
+          "name": "Version",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

@@ -3680,7 +3680,7 @@
         {
           "disabled": false,
           "document": "资源配置描述数组",
-          "example": "[]",
+          "example": "[{}]",
           "member": "ResourceConfigItem",
           "name": "ResourceConfigSet",
           "output_required": true,
