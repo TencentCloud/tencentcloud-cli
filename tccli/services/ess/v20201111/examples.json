@@ -894,6 +894,14 @@
         "title": "获取创建法人章二维码成功"
       }
     ],
+    "CreateMiniAppPrepareFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMiniAppPrepareFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxjOUUgydjfxgnzUuO5zjEWA07rC5xl\"\n    },\n    \"ResourceId\": \"yDtIfUUckp9grxnsUyecoDMwRdhpe8IE\",\n    \"UserFlowTypeId\": \"\",\n    \"ResourceType\": 2,\n    \"FlowName\": \"小程序合同发起测试\",\n    \"Unordered\": true,\n    \"DeadlineAfterStartDays\": 3,\n    \"UserData\": \"VXNlckRhdGE=\",\n    \"FlowOption\": {\n        \"NeedCreateReview\": false,\n        \"FlowDisplayType\": 1\n    },\n    \"PageOption\": {\n        \"HideSignCodeAfterStart\": true\n    },\n    \"CcInfos\": [\n        {\n            \"CcType\": 0,\n            \"Name\": \"程某\",\n            \"Mobile\": \"18700000000\"\n        }\n    ],\n    \"Approvers\": [\n        {\n            \"ApproverType\": 0,\n            \"OrganizationName\": \"电子签测试企业\",\n            \"ApproverName\": \"何规\",\n            \"ApproverMobile\": \"18200000000\"\n        },\n        {\n            \"ApproverType\": 1,\n            \"ApproverName\": \"张某\",\n            \"ApproverMobile\": \"18200000000\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredOn\": 1761031031,\n        \"FlowId\": \"yDtGEUUckp95buvoUuQn9oeynYWruYTL\",\n        \"LongUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=CREATE_CONTRACT&shortKey=yDtGEUqBRu0a9TF5sO50\",\n        \"MiniAppPath\": \"pages/guide/index?to=CREATE_CONTRACT&shortKey=yDtGEUqBRu0a9TF5sO50\",\n        \"WeixinQrcodeUrl\": \"https://res.ess.tencent.cn/mp-gate/develop/CREATE_CONTRACT?shortKey=yDtGEUqBE5oBLdr2d590\",\n        \"QrcodeUrl\": \"https://dyn.test.ess.tencent.cn/imgs/qrcode_urls/create_contract/yDtGEUUckp95bu13UuQn9oe1FEBKizIN.png\",\n        \"RequestId\": \"s1753255031857612403\",\n        \"ShortUrl\": \"https://test.essurl.cn/t8c0UBN27z\"\n    }\n}",
+        "title": "文件发起"
+      }
+    ],
     "CreateModifyAdminAuthorizationUrl": [
       {
         "document": "平台审核因为照片不清晰原因，拒绝了超管授权书，\n此时用户重新上传超管授权书。\n生成的链接是小程序链接",

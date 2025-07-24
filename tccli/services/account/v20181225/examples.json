@@ -62,6 +62,14 @@
         "title": "添加白名单账号"
       }
     ],
+    "DescribeAgreementResult": [
+      {
+        "document": "查询用户选择结果示例",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgreementResult\n<公共请求参数>\n\n{\n    \"Scenario\": \"cvm_buy\",\n    \"FollowOption\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"OpUin\": \"800000324591\",\n        \"Option\": \"1\",\n        \"RequestId\": \"124b60ae-1272-4ed1-8369-165737487265\",\n        \"Result\": \"Agree\"\n    }\n}",
+        "title": "查询用户选择结果"
+      }
+    ],
     "DescribeBasicAuthForSaaS": [
       {
         "document": "",

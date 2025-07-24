@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DescribeIndustryTrees": {
+      "document": "【有白名单限制，需要的童鞋，请联系neilqiao或zanderfang配置白名单 更多接入问题请看 http://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661】\n\n#### 返回参数说明参考\nhttps://iwiki.woa.com/p/4010648957",
+      "input": "DescribeIndustryTreesRequest",
+      "name": "获取产业树列表",
+      "output": "DescribeIndustryTreesResponse",
+      "status": "online"
+    },
     "GetSaleTreesForIntl": {
       "document": "获取销售树列表，节点名称优先使用国际站缩写",
       "input": "GetSaleTreesForIntlRequest",
@@ -73,6 +80,52 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeIndustryTreesRequest": {
+      "document": "DescribeIndustryTrees请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参看https://iwiki.woa.com/p/4010648957  status 节点状态目录",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "参看https://iwiki.woa.com/p/4010648957  status 节点状态目录",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "StatusList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIndustryTreesResponse": {
+      "document": "DescribeIndustryTrees返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产业树列表，字段含义参考http://tapd.woa.com/TC_CSIG_OM/markdown_wikis/show/#1220403412002308975\n\n{\n  \"list\": [\n    {\n      \"child\": [\n        {\n          \"child\": [\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD003925\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"金融总集分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:18:04\"\n                }\n              ],\n              \"code\": \"CC003277\",\n              \"departmentIds\": [\n                41069\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"金融总集分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:15:10\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD003985\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"企点总集分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:18:18\"\n                }\n              ],\n              \"code\": \"CC003299\",\n              \"departmentIds\": [\n                19332\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"企点总集分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:15:16\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004632\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"政法总集指定分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:20:54\"\n                }\n              ],\n              \"code\": \"CC003598\",\n              \"departmentIds\": [\n                34543\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"政法总集指定分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:43\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004649\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"智慧交通总集分包\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:20:58\"\n                }\n              ],\n              \"code\": \"CC003605\",\n              \"departmentIds\": [\n                40930\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"智慧交通总集分包\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:45\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004655\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"智慧医保总集分包产品\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:20:59\"\n                }\n              ],\n              \"code\": \"CC003606\",\n              \"departmentIds\": [\n                28481\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"智慧医保总集分包产品\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:45\"\n            },\n            {\n              \"child\": [\n                {\n                  \"child\": [],\n                  \"code\": \"CD004662\",\n                  \"departmentIds\": [],\n                  \"desc\": \"\",\n                  \"level\": 4,\n                  \"modifier\": \"v_bettzheng\",\n                  \"name\": \"智慧医疗总集分包产品\",\n                  \"status\": 1,\n                  \"updateTime\": \"2022-04-15 15:21:01\"\n                }\n              ],\n              \"code\": \"CC003607\",\n              \"departmentIds\": [\n                28481\n              ],\n              \"desc\": \"\",\n              \"level\": 3,\n              \"modifier\": \"v_bettzheng\",\n              \"name\": \"智慧医疗总集分包产品\",\n              \"status\": 1,\n              \"updateTime\": \"2022-04-15 15:16:46\"\n            }\n          ],\n          \"code\": \"CB003145\",\n          \"departmentIds\": [],\n          \"desc\": \"\",\n          \"level\": 2,\n          \"modifier\": \"v_bettzheng\",\n          \"name\": \"总集分包\",\n          \"status\": 1,\n          \"updateTime\": \"2022-04-15 15:14:30\"\n        }\n      ],\n      \"code\": \"CA003062\",\n      \"departmentIds\": [],\n      \"desc\": \"\",\n      \"level\": 1,\n      \"modifier\": \"v_bettzheng\",\n      \"name\": \"总集分包\",\n      \"status\": 1,\n      \"updateTime\": \"2022-04-15 15:14:11\"\n    }\n  ]\n}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JsonString",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetSaleTreesForIntlRequest": {
       "document": "GetSaleTreesForIntl请求参数结构体",

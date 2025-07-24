@@ -49,6 +49,13 @@
       "output": "DeleteWhitelistUinResponse",
       "status": "online"
     },
+    "DescribeAgreementResult": {
+      "document": "读取用户选择的协议同意结果",
+      "input": "DescribeAgreementResultRequest",
+      "name": "查询用户选择协议结果",
+      "output": "DescribeAgreementResultResponse",
+      "status": "online"
+    },
     "DescribeBasicAuthForSaaS": {
       "document": "SaaS获取用户基础认证信息",
       "input": "DescribeBasicAuthForSaaSRequest",
@@ -646,6 +653,72 @@
     "DeleteWhitelistUinResponse": {
       "document": "DeleteWhitelistUin返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgreementResultRequest": {
+      "document": "DescribeAgreementResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "协议使用场景",
+          "example": "cvm_buy",
+          "member": "string",
+          "name": "Scenario",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果时，是否跟随主账号、其他子账号的选择结果",
+          "example": "0:不跟随，只查询当前账号。1:跟随主账号。2:跟随任意同意的账号",
+          "member": "int64",
+          "name": "FollowOption",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgreementResultResponse": {
+      "document": "DescribeAgreementResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户选择结果",
+          "example": "Agree/Disagree/Cancel",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展内容(透传)",
+          "example": "match",
+          "member": "string",
+          "name": "Option",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "选择人uin",
+          "example": "100111",
+          "member": "string",
+          "name": "OpUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

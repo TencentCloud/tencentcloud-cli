@@ -1032,7 +1032,7 @@
         {
           "disabled": false,
           "document": "查询指标 fields",
-          "example": "[[\\\"as\\\",[\\\"if\\\",[\\\"equals\\\",\\\"launch_cnt\\\",[\\\"toInt64\\\",0]],0,[",
+          "example": "\"[[\\\"as\\\",\\\"device_id\\\",\\\"device_id\\\"],\\\"entrance_time\\\",[\\\"as\\\",\\\"feature_md5\\\",\\\"feature_md5\\\"],[\\\"as\\\",\\\"version\\\",\\\"version\\\"],[\\\"as\\\",\\\"id\\\",\\\"id\\\"],[\\\"as\\\",\\\"user_id\\\",\\\"user_id\\\"]]\"",
           "member": "string",
           "name": "Fields",
           "required": true,
@@ -1041,7 +1041,7 @@
         {
           "disabled": false,
           "document": "查询的过滤条件",
-          "example": "[\\\"or\\\",[\\\"and\\\",[\\\"equals\\\",\\\"category\\\",\\\"'PERF_CRASH'\\\"],[\\\"i",
+          "example": "\"{\\\"category__in\\\":[\\\"PERF_CRASH\\\"]}\"",
           "member": "string",
           "name": "Filter",
           "required": true,
@@ -1050,7 +1050,7 @@
         {
           "disabled": false,
           "document": "查询简单过滤条件",
-          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\",\\\"PERF_MASTER_T",
+          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\"]}",
           "member": "string",
           "name": "FilterSimple",
           "required": false,
@@ -1110,7 +1110,7 @@
         {
           "disabled": false,
           "document": "查询数据返回",
-          "example": "{\\n    \\\"status\\\": \\\"ok\\\",\\n    \\\"code\\\": 10000,\\n    \\\"msg\\\": \\",
+          "example": "{\\\"status\\\":\\\"ok\\\",\\\"code\\\":10000,\\\"msg\\\":\\\"ok\\\",\\\"data\\\":[]}",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -1150,7 +1150,7 @@
         {
           "disabled": false,
           "document": "查询指标 field",
-          "example": "[[\\\"as\\\",[\\\"if\\\",[\\\"equals\\\",\\\"launch_cnt\\\",[\\\"toInt64\\\",0]],0,[",
+          "example": "\"[[\\\"as\\\",\\\"device_id\\\",\\\"device_id\\\"],\\\"entrance_time\\\",[\\\"as\\\",\\\"feature_md5\\\",\\\"feature_md5\\\"],[\\\"as\\\",\\\"version\\\",\\\"version\\\"],[\\\"as\\\",\\\"id\\\",\\\"id\\\"],[\\\"as\\\",\\\"user_id\\\",\\\"user_id\\\"]]\"",
           "member": "string",
           "name": "Fields",
           "required": true,
@@ -1159,7 +1159,7 @@
         {
           "disabled": false,
           "document": "查询的过滤条件",
-          "example": "[\\\"or\\\",[\\\"and\\\",[\\\"equals\\\",\\\"category\\\",\\\"'PERF_CRASH'\\\"],[\\\"i",
+          "example": "\"{\\\"category__in\\\":[\\\"PERF_CRASH\\\"]}\"",
           "member": "string",
           "name": "Filter",
           "required": true,
@@ -1168,7 +1168,7 @@
         {
           "disabled": false,
           "document": "查询简单过滤条件",
-          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\",\\\"PERF_MASTER_T",
+          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\"]}",
           "member": "string",
           "name": "FilterSimple",
           "required": false,
@@ -1228,7 +1228,7 @@
         {
           "disabled": false,
           "document": "查询数据返回",
-          "example": "{\\n    \\\"status\\\": \\\"ok\\\",\\n    \\\"code\\\": 10000,\\n    \\\"msg\\\": \\",
+          "example": "{\\\"status\\\":\\\"ok\\\",\\\"code\\\":10000,\\\"msg\\\":\\\"ok\\\",\\\"data\\\":[]}",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -1277,7 +1277,7 @@
         {
           "disabled": false,
           "document": "查询的过滤条件",
-          "example": "\"{\"category__in\\\":[\\\"PERF_CRASH\\\"]}\"",
+          "example": "\"{\\\"category__in\\\":[\\\"PERF_CRASH\\\"]}\"",
           "member": "string",
           "name": "Filter",
           "required": true,
@@ -1286,7 +1286,7 @@
         {
           "disabled": false,
           "document": "查询简单过滤条件",
-          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\",\\\"PERF_MASTER_T",
+          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\"]}",
           "member": "string",
           "name": "FilterSimple",
           "required": false,
@@ -1337,7 +1337,7 @@
         {
           "disabled": false,
           "document": "查询数据返回",
-          "example": "{\\n    \\\"status\\\": \\\"ok\\\",\\n    \\\"code\\\": 10000,\\n    \\\"msg\\\": \\",
+          "example": "{\\\"status\\\":\\\"ok\\\",\\\"code\\\":10000,\\\"msg\\\":\\\"ok\\\",\\\"data\\\":[]}",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -1377,7 +1377,7 @@
         {
           "disabled": false,
           "document": "查询指标 field",
-          "example": "[[\\\"as\\\",[\\\"if\\\",[\\\"equals\\\",\\\"launch_cnt\\\",[\\\"toInt64\\\",0]],0,[",
+          "example": "\"[[\\\"as\\\",\\\"device_id\\\",\\\"device_id\\\"],\\\"entrance_time\\\",[\\\"as\\\",\\\"feature_md5\\\",\\\"feature_md5\\\"],[\\\"as\\\",\\\"version\\\",\\\"version\\\"],[\\\"as\\\",\\\"id\\\",\\\"id\\\"],[\\\"as\\\",\\\"user_id\\\",\\\"user_id\\\"]]\"",
           "member": "string",
           "name": "Fields",
           "required": true,
@@ -1386,7 +1386,7 @@
         {
           "disabled": false,
           "document": "查询的过滤条件",
-          "example": "[\\\"or\\\",[\\\"and\\\",[\\\"equals\\\",\\\"category\\\",\\\"'PERF_CRASH'\\\"],[\\\"i",
+          "example": "\"{\\\"category__in\\\":[\\\"PERF_CRASH\\\"]}\"",
           "member": "string",
           "name": "Filter",
           "required": true,
@@ -1395,7 +1395,7 @@
         {
           "disabled": false,
           "document": "查询简单过滤条件",
-          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\",\\\"PERF_MASTER_T",
+          "example": "{\\\"category__in\\\":[\\\"PERF_CRASH\\\",\\\"APP_LAUNCH\\\"]}",
           "member": "string",
           "name": "FilterSimple",
           "required": false,
@@ -1446,7 +1446,7 @@
         {
           "disabled": false,
           "document": "查询数据返回",
-          "example": "{\\n    \\\"status\\\": \\\"ok\\\",\\n    \\\"code\\\": 10000,\\n    \\\"msg\\\": \\",
+          "example": "{\\\"status\\\":\\\"ok\\\",\\\"code\\\":10000,\\\"msg\\\":\\\"ok\\\",\\\"data\\\":[]}",
           "member": "string",
           "name": "Data",
           "output_required": true,
