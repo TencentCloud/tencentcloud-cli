@@ -77,7 +77,7 @@ Output:
                 },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
-                "AiRecognitionTask": null,
+                "AiRecognitionTaskSet": [],
                 "MiniProgramPublishTask": null,
                 "ReviewAudioVideoTask": null
             }
@@ -164,7 +164,7 @@ Output:
                 },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
-                "AiRecognitionTask": null,
+                "AiRecognitionTaskSet": [],
                 "MiniProgramPublishTask": null,
                 "ReviewAudioVideoTask": null
             },
@@ -230,7 +230,7 @@ Output:
                 },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
-                "AiRecognitionTask": null,
+                "AiRecognitionTaskSet": [],
                 "MiniProgramPublishTask": null,
                 "ReviewAudioVideoTask": null
             },
@@ -245,7 +245,7 @@ Output:
                     "Definition": 10
                 },
                 "AiAnalysisTask": null,
-                "AiRecognitionTask": null,
+                "AiRecognitionTaskSet": [],
                 "MiniProgramPublishTask": null,
                 "ReviewAudioVideoTask": null
             }

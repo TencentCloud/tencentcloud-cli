@@ -709,7 +709,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐资源id，必填",
+          "document": "套餐资源id",
           "example": "ins-sdsdad12x",
           "member": "string",
           "name": "ResourceId",

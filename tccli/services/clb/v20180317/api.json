@@ -2876,7 +2876,7 @@
         {
           "disabled": false,
           "document": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。",
-          "example": "无",
+          "example": "{\"CheckPort\": -1, \"CheckType\": \"TCP\", \"HealthNum\": 3, \"HealthSwitch\": 1, \"IntervalTime\": 5, \"SourceIpType\": 1, \"TimeOut\": 2, \"UnHealthNum\": 3}",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -2885,7 +2885,7 @@
         {
           "disabled": false,
           "document": "证书相关信息。参数限制如下：\n<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>\n<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>",
-          "example": "无",
+          "example": "{\"CertId\": \"PY6XAzZw\", \"SSLMode\": \"UNIDIRECTIONAL\"}",
           "member": "CertificateInput",
           "name": "Certificate",
           "required": false,
@@ -2956,7 +2956,7 @@
         },
         {
           "disabled": false,
-          "document": "解绑后端目标时，是否发RST给客户端，此参数仅适用于TCP监听器。",
+          "document": "解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。",
           "example": "False",
           "member": "bool",
           "name": "DeregisterTargetRst",
@@ -2966,7 +2966,7 @@
         {
           "disabled": false,
           "document": "证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：\n<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>\n<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>",
-          "example": "无",
+          "example": "{\"CertList\": [{\"CertId\": \"PY6XAzZw\"}, {\"CertId\": \"OMN6Gek7\"}], \"SSLMode\": \"UNIDIRECTIONAL\"}",
           "member": "MultiCertInfo",
           "name": "MultiCertInfo",
           "required": false,

@@ -700,7 +700,7 @@
         {
           "disabled": false,
           "document": "环境音设置",
-          "example": "无",
+          "example": "{\"Scene\": \"coffee_shops\", \"Volume\": 1.0}}",
           "member": "AmbientSound",
           "name": "AmbientSound",
           "output_required": false,
@@ -711,7 +711,7 @@
         {
           "disabled": false,
           "document": "声纹配置",
-          "example": "无",
+          "example": "{\"Mode\": 1, \"IdList\": [\"voiceprintid1\"]]}",
           "member": "VoicePrint",
           "name": "VoicePrint",
           "output_required": false,
@@ -722,12 +722,23 @@
         {
           "disabled": false,
           "document": "语义断句检测",
-          "example": "无",
+          "example": "{\"SemanticEagerness\": \"auto\"}}",
           "member": "TurnDetection",
           "name": "TurnDetection",
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器人字幕显示模式。\n- 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。\n- 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SubtitleMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -7422,7 +7433,7 @@
         {
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和开启转录任务的房间使用的SdkAppId相同。",
-          "example": "无",
+          "example": "14000000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -7431,7 +7442,7 @@
         {
           "disabled": false,
           "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，表示开启对话任务的房间号。",
-          "example": "无",
+          "example": "10000",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -7440,7 +7451,7 @@
         {
           "disabled": false,
           "document": "机器人参数",
-          "example": "无",
+          "example": "{     \"UserId\": \"user_12345\",     \"UserSig\": \"user_signature_example\",     \"MaxIdleTime\": 120,     \"TargetUserId\": \"target_user_54321\"   }",
           "member": "AgentConfig",
           "name": "AgentConfig",
           "required": true,
@@ -7458,7 +7469,7 @@
         {
           "disabled": false,
           "document": "TRTC房间号的类型，0代表数字房间号，1代表字符串房间号。不填默认是数字房间号。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "RoomIdType",
           "required": false,
@@ -7467,7 +7478,7 @@
         {
           "disabled": false,
           "document": "语音识别配置。",
-          "example": "无",
+          "example": " {     \"Language\": \"zh\"}",
           "member": "STTConfig",
           "name": "STTConfig",
           "required": false,
@@ -7476,7 +7487,7 @@
         {
           "disabled": false,
           "document": "LLM配置。需符合openai规范，为JSON字符串，示例如下：\n<pre> { <br> &emsp;  \"LLMType\": \"大模型类型\",  // String 必填，如：\"openai\" <br> &emsp;  \"Model\": \"您的模型名称\", // String 必填，指定使用的模型<br>    \"APIKey\": \"您的LLM API密钥\", // String 必填 <br> &emsp;  \"APIUrl\": \"https://api.xxx.com/chat/completions\", // String 必填，LLM API访问的URL<br> &emsp;  \"Streaming\": true // Boolean 非必填，指定是否使用流式传输<br> &emsp;} </pre>\n",
-          "example": "{\\\"LLMType\\\": \\\"openai\\\", \\\"Model\\\": \\\"gpt-xxx\", \\\"APIKey\\\": \\\"xxxxxxxx\\\", \\\"APIUrl\\\": \\\"https://api.xxx.com/v1\\\", \\\"Streaming\\\": true}",
+          "example": "{\\\"LLMType\\\": \\\"openai\\\", \\\"Model\\\": \\\"gpt-xxx\", \\\"APIKey\\\": \\\"xxxxxxxx\\\", \\\"APIUrl\\\": \\\"https://api.xxx.com/v1/chat/completions\\\", \\\"Streaming\\\": true}",
           "member": "string",
           "name": "LLMConfig",
           "required": false,
@@ -7503,7 +7514,7 @@
         {
           "disabled": false,
           "document": "实验性参数,联系后台使用",
-          "example": "无",
+          "example": "{\"internal\": \"xxx\"}",
           "member": "string",
           "name": "ExperimentalParams",
           "required": false,

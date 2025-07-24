@@ -1573,7 +1573,7 @@
         {
           "disabled": false,
           "document": "应用地址",
-          "example": "http://www.capi.woa.com",
+          "example": "http://www.address.com",
           "member": "string",
           "name": "Address",
           "output_required": false,
@@ -1583,7 +1583,7 @@
         {
           "disabled": false,
           "document": "应用logo",
-          "example": "无",
+          "example": "logo",
           "member": "ApplicationLogo",
           "name": "ApplicationLogo",
           "output_required": false,

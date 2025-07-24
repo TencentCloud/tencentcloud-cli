@@ -797,6 +797,15 @@
           "name": "LogoParam",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。",
+          "example": "360p",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -25939,7 +25939,7 @@
         {
           "disabled": false,
           "document": "旗舰版 配置信息",
-          "example": "1",
+          "example": "无",
           "member": "VersionWhiteConfig",
           "name": "FlagShip",
           "output_required": true,
@@ -25949,7 +25949,7 @@
         {
           "disabled": false,
           "document": "专业版 配置信息",
-          "example": "1",
+          "example": "无",
           "member": "VersionWhiteConfig",
           "name": "Professional",
           "output_required": true,
@@ -25959,10 +25959,20 @@
         {
           "disabled": false,
           "document": "轻量版 配置信息",
-          "example": "1",
+          "example": "无",
           "member": "VersionWhiteConfig",
           "name": "PrattWhitney",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重保授权包 配置信息",
+          "example": "无",
+          "member": "VersionWhiteConfig",
+          "name": "RASP",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },

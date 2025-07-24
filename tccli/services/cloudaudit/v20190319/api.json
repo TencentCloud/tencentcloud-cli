@@ -373,6 +373,15 @@
           "name": "TrackForAllMembers",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "20250707_163212_1hxWz5otqS7akePfoX1xlWem1AuUVUGP",
+          "member": "string",
+          "name": "ExportId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -1978,6 +1978,16 @@
         },
         {
           "disabled": false,
+          "document": "执行的命令的名称",
+          "example": "cleanDisk",
+          "member": "string",
+          "name": "CommandName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "执行任务状态。取值范围：\n\n- PENDING：等待下发\n- RUNNING：命令运行中\n- CANCELLING：取消中\n- SUCCESS：命令成功\n- TIMEOUT：命令超时\n- FAILED：命令失败\n- CANCELLED：命令全部取消\n- PARTIAL_FAILED：命令部分失败\n- PARTIAL_CANCELLED：命令部分取消",
           "example": "SUCCESS",
           "member": "string",

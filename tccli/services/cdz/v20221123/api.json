@@ -17,7 +17,7 @@
   },
   "metadata": {
     "apiVersion": "2022-11-23",
-    "api_brief": "介绍如何使用API对专属可用区进行操作，包括查看专属可用区的基本信息和订单数据，以及获取专属可用区内可用资源情况等。",
+    "api_brief": "可查询专属可用区CDZ中的资源情况，包括水位、母机等信息。",
     "serviceNameCN": "专属可用区",
     "serviceShortName": "cdz"
   },

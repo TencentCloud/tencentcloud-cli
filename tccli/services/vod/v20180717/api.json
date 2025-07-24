@@ -11077,6 +11077,15 @@
           "document": "AI 内容识别类型任务参数。",
           "example": "无",
           "member": "AiRecognitionTaskInput",
+          "name": "AiRecognitionTaskSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "该参数已不推荐使用，建议使用 AiRecognitionTaskSet。",
+          "example": "无",
+          "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
           "required": false,
           "type": "object"
@@ -29413,7 +29422,17 @@
         },
         {
           "disabled": false,
-          "document": "AI 内容识别类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AI 内容识别类型任务参数。",
+          "example": "无",
+          "member": "AiRecognitionTaskInput",
+          "name": "AiRecognitionTaskSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "该参数已不推荐使用，建议使用 AiRecognitionTaskSet。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
@@ -33320,6 +33339,15 @@
         {
           "disabled": false,
           "document": "AI 内容识别类型任务参数。",
+          "example": "无",
+          "member": "AiRecognitionTaskInput",
+          "name": "AiRecognitionTaskSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "该参数已不推荐使用，建议使用 AiRecognitionTaskSet。",
           "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",

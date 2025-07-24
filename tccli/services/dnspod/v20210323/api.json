@@ -392,6 +392,13 @@
       "output": "DescribeRecordTypeResponse",
       "status": "online"
     },
+    "DescribeResolveCount": {
+      "document": "查看域名的解析量",
+      "input": "DescribeResolveCountRequest",
+      "name": "查询域名解析量",
+      "output": "DescribeResolveCountResponse",
+      "status": "online"
+    },
     "DescribeSnapshotConfig": {
       "document": "查询解析快照配置",
       "input": "DescribeSnapshotConfigRequest",
@@ -5592,6 +5599,99 @@
       ],
       "type": "object"
     },
+    "DescribeResolveCountRequest": {
+      "document": "DescribeResolveCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要查询解析量的域名",
+          "example": "example.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的开始时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。",
+          "example": "2022-06-08",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的结束时间，格式：YYYY-MM-DD，最多允许查询最近32天的数据。",
+          "example": "2022-06-14",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据",
+          "example": "minute",
+          "member": "string",
+          "name": "DnsFormat",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "example": "435436",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResolveCountResponse": {
+      "document": "DescribeResolveCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解析量明细",
+          "example": "无",
+          "member": "ResolveCountDataItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析量统计信息",
+          "example": "无",
+          "member": "ResolveCountInfo",
+          "name": "Info",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "别名解析量明细",
+          "example": "无",
+          "member": "ResolveCountAliasItem",
+          "name": "AliasData",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSnapshotConfigRequest": {
       "document": "DescribeSnapshotConfig请求参数结构体",
       "members": [
@@ -10077,6 +10177,124 @@
           "name": "DefaultNS",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResolveCountAliasItem": {
+      "document": "域名别名解析量统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名解析量统计信息",
+          "example": "无",
+          "member": "ResolveCountInfo",
+          "name": "Info",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析量明细",
+          "example": "无",
+          "member": "ResolveCountDataItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResolveCountDataItem": {
+      "document": "解析量小计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解析量",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Num",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计的时间点",
+          "example": "2024-11-11 02:00:00",
+          "member": "string",
+          "name": "DateKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResolveCountInfo": {
+      "document": "域名解析量统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前统计周期解析量总计",
+          "example": "10000",
+          "member": "uint64",
+          "name": "DnsTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前查询的域名",
+          "example": "example.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前统计周期开始时间",
+          "example": "2022-06-08",
+          "member": "string",
+          "name": "StartDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前统计周期结束时间",
+          "example": "2022-06-14",
+          "member": "string",
+          "name": "EndDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前统计的子域名",
+          "example": "www",
+          "member": "string",
+          "name": "SubDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据统计格式，取值为minute、hour、day，分别表示按十分钟、小时、天统计数据",
+          "example": "hour",
+          "member": "string",
+          "name": "DnsFormat",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
