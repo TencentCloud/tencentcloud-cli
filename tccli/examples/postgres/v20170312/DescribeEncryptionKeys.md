@@ -20,6 +20,7 @@ Output:
                 "IsEnabled": 1,
                 "KeyAlias": "PGSQL-KMS",
                 "KeyId": " f4d88aa7-ae72-11ec-9fcc-5254007ffd46",
+                "KMSClusterId": "cls-hsm-tyoxxxx",
                 "KeyRegion": "ap-guangzhou"
             }
         ],

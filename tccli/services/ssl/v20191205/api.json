@@ -1854,6 +1854,15 @@
           "name": "CaType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签名算法",
+          "example": "SHA256",
+          "member": "string",
+          "name": "SignAlgo",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10365,7 +10374,7 @@
         },
         {
           "disabled": false,
-          "document": "类型，默认 Original。可选项：Original = 原证书 CSR，Upload = 手动上传，Online = 在线生成。",
+          "document": "类型，默认 original。可选项：original = 原证书 CSR，upload = 手动上传，online = 在线生成。",
           "example": "Upload",
           "member": "string",
           "name": "CsrType",
@@ -10414,6 +10423,15 @@
           "example": "2048",
           "member": "string",
           "name": "CertCSRKeyParameter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签名算法",
+          "example": "SHA256",
+          "member": "string",
+          "name": "SignAlgo",
           "required": false,
           "type": "string"
         }

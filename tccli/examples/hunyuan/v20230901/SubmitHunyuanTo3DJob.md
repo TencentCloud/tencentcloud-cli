@@ -7,7 +7,7 @@ Input:
 ```
 tccli hunyuan SubmitHunyuanTo3DJob --cli-unfold-argument  \
     --Prompt  \
-    --ImageUrl https://xxx.jpg
+    --ImageUrl https://cos.ap-guangzhou.myqcloud.com/***.jpg
 ```
 
 Output: 

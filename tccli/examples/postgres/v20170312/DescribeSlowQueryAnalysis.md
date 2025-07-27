@@ -7,11 +7,11 @@ Input:
 
 ```
 tccli postgres DescribeSlowQueryAnalysis --cli-unfold-argument  \
-    --StartTime 2021-06-17 20:00:07 \
-    --EndTime 2021-06-17 20:15:07 \
-    --Limit 10 \
+    --Limit 1 \
     --Offset 0 \
-    --DBInstanceId postgres-nbvqjlhf
+    --DBInstanceId postgres-1xm16x1d \
+    --StartTime 2025-07-21 20:00:00 \
+    --EndTime 2025-07-21 21:00:00
 ```
 
 Output: 
@@ -21,24 +21,26 @@ Output:
         "Detail": {
             "AnalysisItems": [
                 {
-                    "AvgCostTime": 101.01300048828125,
-                    "ClientAddr": "",
-                    "CostPercent": 11.703700311890035,
-                    "CostTime": 101.01300048828125,
+                    "AvgCostTime": 2016,
+                    "CallNum": 1,
+                    "CallPercent": 100,
+                    "ClientAddr": "11.141.188.142:57346",
+                    "CostPercent": 100,
+                    "CostTime": 2016,
                     "DatabaseName": "postgres",
-                    "FirstTime": "2021-07-27 03:12:01",
-                    "LastTime": "2021-07-27 03:12:01",
-                    "MaxCostTime": 101.01300048828125,
-                    "MinCostTime": 101.01300048828125,
-                    "NormalQuery": "select $1 from information_schema.tables where table_schema = $2 and table_name = $3",
-                    "UserName": "postgres"
+                    "FirstTime": "2025-07-21 20:56:13",
+                    "LastTime": "2025-07-21 20:56:13",
+                    "MaxCostTime": 2016,
+                    "MinCostTime": 2016,
+                    "NormalQuery": "SELECT pg_sleep($1);",
+                    "UserName": "admin"
                 }
             ],
-            "TotalCallNum": 6,
-            "TotalTime": 863.0860137939453
+            "TotalCallNum": 1,
+            "TotalTime": 2016
         },
-        "RequestId": "221334ddc4f",
-        "TotalCount": 5
+        "RequestId": "d7436dd0-155d-47c4-9b18-5318019a1706",
+        "TotalCount": 1
     }
 }
 ```

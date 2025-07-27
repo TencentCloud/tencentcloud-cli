@@ -1,86 +1,10 @@
-# Release 3.0.1249.1
+# Release 3.0.1250.1
 
-## 账号中心(account) 版本：2018-12-25
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 20 次发布
+### 第 148 次发布
 
-发布时间：2025-07-25 01:07:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeAgreementResult](http://document.tencentcloudapi.woa.com/document/product/1594/87260)
-
-
-
-## 操作审计(cloudaudit) 版本：2019-03-19
-
-### 第 11 次发布
-
-发布时间：2025-07-25 01:20:29
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAuditTrack](http://document.tencentcloudapi.woa.com/document/product/629/70383)
-
-	* 新增入参：ExportId
-
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 128 次发布
-
-发布时间：2025-07-25 01:23:57
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeLicenseWhiteConfig](http://document.tencentcloudapi.woa.com/document/product/296/82250)
-
-	* 新增出参：RASP
-
-
-
-
-## DNSPod(dnspod) 版本：2021-03-23
-
-### 第 54 次发布
-
-发布时间：2025-07-25 01:30:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeResolveCount](http://document.tencentcloudapi.woa.com/document/product/1427/87261)
-
-新增数据结构：
-
-* [ResolveCountAliasItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#ResolveCountAliasItem)
-* [ResolveCountDataItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#ResolveCountDataItem)
-* [ResolveCountInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#ResolveCountInfo)
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 108 次发布
-
-发布时间：2025-07-25 01:33:58
+发布时间：2025-07-28 01:14:58
 
 本次发布包含了以下内容：
 
@@ -88,56 +12,86 @@
 
 修改数据结构：
 
-* [StageInfoDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#StageInfoDetail)
+* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BackupInfo)
 
-	* 新增成员：Id
-
-
+	* 新增成员：CreateTime
 
 
-## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 153 次发布
 
-发布时间：2025-07-25 01:35:39
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 64 次发布
+
+发布时间：2025-07-28 01:18:12
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [CreateMiniAppPrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1668/87262)
+* CreateDiagnoseUrl
+* DescribeDiagnoseReport
+* GetDisableRecords
+* ListDiagnoseReport
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 38 次发布
+
+发布时间：2025-07-28 01:39:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCosCredential](http://document.tencentcloudapi.woa.com/document/product/1162/86148)
+
+	* 新增入参：AndroidAppFileCosInfo
+
 
 新增数据结构：
 
-* [MiniAppCreateApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#MiniAppCreateApproverInfo)
-* [MiniAppCreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#MiniAppCreateFlowOption)
-* [MiniAppCreateFlowPageOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#MiniAppCreateFlowPageOption)
+* [FileCosInfo](http://document.tencentcloudapi.woa.com/document/product/1162/40743#FileCosInfo)
 
 
 
-## 产品库(plm) 版本：2024-01-24
+## 云直播CSS(live) 版本：2018-08-01
 
-### 第 2 次发布
+### 第 93 次发布
 
-发布时间：2025-07-25 01:56:24
+发布时间：2025-07-28 01:49:47
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [DescribeIndustryTrees](http://document.tencentcloudapi.woa.com/document/product/1797/87263)
+* [DescribeLiveCloudEffectList](http://document.tencentcloudapi.woa.com/document/product/267/87066)
+
+	* 新增出参：EnableCreateNum, TotalNum
+
+
+修改数据结构：
+
+* [CloudEffectInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CloudEffectInfo)
+
+	* 新增成员：Status, Message
 
 
 
-## 实时音视频(trtc) 版本：2019-07-22
 
-### 第 98 次发布
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
-发布时间：2025-07-25 02:13:46
+### 第 65 次发布
+
+发布时间：2025-07-28 01:56:02
 
 本次发布包含了以下内容：
 
@@ -145,9 +99,32 @@
 
 修改数据结构：
 
-* [AgentConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentConfig)
+* [DescribeTreeJobsRsp](http://document.tencentcloudapi.woa.com/document/product/849/52010#DescribeTreeJobsRsp)
 
-	* 新增成员：SubtitleMode
+	* 新增成员：PageAttach, HasMore
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 88 次发布
+
+发布时间：2025-07-28 02:06:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CertificateInfoSubmit](http://document.tencentcloudapi.woa.com/document/product/400/85744)
+
+	* 新增入参：SignAlgo
+
+* [ReplaceCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41667)
+
+	* 新增入参：SignAlgo
 
 
 

@@ -2393,8 +2393,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Cos 密钥类型， Mobile 移动端, PC 桌面, AndroidApp 安卓应用",
-          "example": "\"PC|Mobile|AndroidApp\"",
+          "document": "Cos 密钥类型，取值： Mobile 云手游、PC 云端游、AndroidApp 云手机应用管理、AndroidAppFile 云手机文件管理、AndroidAppBackup 云手机备份还原",
+          "example": "AndroidApp",
           "member": "string",
           "name": "CosType",
           "required": true,
@@ -2402,10 +2402,19 @@
         },
         {
           "disabled": false,
-          "document": "云手机 Cos 数据",
-          "example": "无",
+          "document": "云手机应用管理 Cos 数据",
+          "example": "{\"AndroidAppId\": \"apk-a1b2c3\",\"FileName\": \"test.apk\"}",
           "member": "AndroidAppCosInfo",
           "name": "AndroidAppCosInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "云手机文件管理 Cos 数据",
+          "example": "{\"FileId\": \"file-a1b2c3\"}",
+          "member": "FileCosInfo",
+          "name": "AndroidAppFileCosInfo",
           "required": false,
           "type": "object"
         }
@@ -3913,6 +3922,21 @@
         }
       ],
       "type": "object"
+    },
+    "FileCosInfo": {
+      "document": "应用文件 Cos 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件 Id",
+          "example": "file-a1b2c3",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "Filter": {
       "document": "过滤",

@@ -7,7 +7,7 @@ Input:
 ```
 tccli postgres DisIsolateDBInstances --cli-unfold-argument  \
     --Period 1 \
-    --AutoVoucher false \
+    --AutoVoucher False \
     --DBInstanceIdSet postgres-xxxxxxxx
 ```
 

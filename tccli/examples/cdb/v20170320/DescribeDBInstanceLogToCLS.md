@@ -14,11 +14,13 @@ Output:
 {
     "Response": {
         "ErrorLog": {
+            "ClsRegion": "ap-guangzhou",
             "Status": "ON",
             "LogSetId": "8dff8d62-fa10-4d6c-bee0-6e31a0ade975",
             "LogTopicId": "09c3c2d1-ac46-4e4e-b688-b73950e64682"
         },
         "SlowLog": {
+            "ClsRegion": "ap-guangzhou",
             "Status": "OFF",
             "LogSetId": "8dff8d62-fa10-4d6c-bee0-6e31a0ade976",
             "LogTopicId": "09c3c2d1-ac46-4e4e-b688-b73950e64681"

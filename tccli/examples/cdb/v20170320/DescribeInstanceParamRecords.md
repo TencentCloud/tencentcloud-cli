@@ -13,8 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "1a42feb9-82087f71-6a0031ac-699a92a8",
-        "TotalCount": "28",
+        "TotalCount": 28,
         "Items": [
             {
                 "InstanceId": "cdb-1234asdf",
@@ -22,9 +21,11 @@ Output:
                 "OldValue": "0",
                 "NewValue": "1",
                 "IsSucess": true,
-                "ModifyTime": "2019-01-15 18:59:40"
+                "ModifyTime": "2019-01-15 18:59:40",
+                "IsSuccess": true
             }
-        ]
+        ],
+        "RequestId": "1a42feb9-82087f71-6a0031ac-699a92a8"
     }
 }
 ```

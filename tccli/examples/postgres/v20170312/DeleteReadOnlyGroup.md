@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli postgres DeleteReadOnlyGroup --cli-unfold-argument  \
-    --ReadOnlyGroupId "pgrogrp-k95qzetn"
+    --ReadOnlyGroupId pgrogrp-k95qzetn
 ```
 
 Output: 

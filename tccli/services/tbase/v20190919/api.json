@@ -317,7 +317,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "xx",
+          "example": "tdpg-751k9fi1",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -332,40 +332,40 @@
         {
           "disabled": false,
           "document": "回档允许的最早时间",
-          "example": "xx",
+          "example": "2025-07-21 10:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "回档允许的最晚时间",
-          "example": "xx",
+          "example": "2025-07-21 12:00:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "本次回档的任务id",
-          "example": "0",
+          "example": "12532",
           "member": "int64",
           "name": "RecoveryTaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前该实例的回档状态，success成功，init初始化中，running回档中，running状态下不允许再次发起回档请求",
-          "example": "xx",
+          "example": "init",
           "member": "string",
           "name": "RecoveryStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -427,7 +427,7 @@
         {
           "disabled": false,
           "document": "备份数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "「无」",
           "member": "BackupSpace",
           "name": "BackupSpaces",
           "output_required": true,
@@ -458,7 +458,7 @@
         {
           "disabled": false,
           "document": "备份开始时间，可为空，为空表示不过滤备份开始时间",
-          "example": "2020-03-16 19:09:17",
+          "example": "2025-07-16 19:09:17",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -467,7 +467,7 @@
         {
           "disabled": false,
           "document": "备份结束时间，可为空，为空表示不过滤备份结束时间",
-          "example": "2020-03-19 17:08:46",
+          "example": "2025-07-19 17:08:46",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -536,20 +536,20 @@
         {
           "disabled": false,
           "document": "结果总数",
-          "example": "10",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据备份列表",
-          "example": "无",
+          "example": "「无」",
           "member": "BaseBackup",
           "name": "BaseBackups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

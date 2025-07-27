@@ -9,7 +9,6 @@ tccli postgres InquiryPriceCreateDBInstances --cli-unfold-argument  \
     --InstanceCount 1 \
     --Zone ap-guangzhou-2 \
     --Storage 100 \
-    --Pid 11004 \
     --Period 1 \
     --SpecCode cdb.pg.z1.2g \
     --InstanceChargeType PREPAID

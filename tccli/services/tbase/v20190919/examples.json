@@ -3,8 +3,8 @@
     "DescribeAvailableRecoveryTime": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tbase.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableRecoveryTime\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RecoveryStatus\": \"xx\",\n        \"EndTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"StartTime\": \"xx\",\n        \"RecoveryTaskId\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tbase.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableRecoveryTime\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdpg-751k9fi1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RecoveryStatus\": \"init\",\n        \"EndTime\": \"2025-07-21 12:00:00\",\n        \"RequestId\": \"123e4567-e89b-12d3-a456-426614174000\",\n        \"StartTime\": \"2025-07-21 10:00:00\",\n        \"RecoveryTaskId\": 12345\n    }\n}",
         "title": "TbaseV2获取回档时间"
       }
     ],
@@ -19,8 +19,8 @@
     "DescribeBaseBackups": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tbase.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaseBackups\n<公共请求参数>\n\n{\n    \"OrderBy\": \"xx\",\n    \"BackupStrategy\": \"xx\",\n    \"PageSize\": 0,\n    \"InstanceId\": \"xx\",\n    \"BackupType\": \"xx\",\n    \"PageNumber\": 0,\n    \"StartTime\": \"xx\",\n    \"OrderByType\": \"xx\",\n    \"EndTime\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\",\n        \"BaseBackups\": [\n            {\n                \"BackupStrategy\": \"xx\",\n                \"InstanceId\": \"xx\",\n                \"BackupPattern\": \"xx\",\n                \"FileDir\": \"xx\",\n                \"BackupType\": \"xx\",\n                \"FileSize\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"BackupId\": 0,\n                \"EndTime\": \"xx\",\n                \"InstanceName\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tbase.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaseBackups\n<公共请求参数>\n\n{\n    \"OrderBy\": \"start_time\",\n    \"BackupStrategy\": \"Manual\",\n    \"PageSize\": 20,\n    \"InstanceId\": \"tdpg-mdi2stas\",\n    \"BackupType\": \"physical\",\n    \"PageNumber\": 1,\n    \"StartTime\": \"2025-07-01 17:09:17\",\n    \"OrderByType\": \"DESC\",\n    \"EndTime\": \"2025-07-24 19:09:17\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"80504340-ad95-4124-a1d8-e7442ac598b2\",\n        \"BaseBackups\": [\n            {\n                \"BackupId\": 49827,\n                \"BackupPattern\": \"full\",\n                \"BackupStrategy\": \"Auto\",\n                \"BackupType\": \"physical\",\n                \"EndTime\": \"2025-07-24 00:15:36\",\n                \"FileDir\": \"/backupDev/tdpg-f5jk3et8/base_bkp_2025_07_24\",\n                \"FileSize\": \"280.29 MB\",\n                \"InstanceId\": \"tdpg-f5jk3et8\",\n                \"InstanceName\": \"tdpg-f5jk3et8\",\n                \"StartTime\": \"2025-07-24 00:00:35\"\n            }\n        ]\n    }\n}",
         "title": "查询数据备份"
       }
     ],
