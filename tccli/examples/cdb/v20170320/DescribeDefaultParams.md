@@ -13,41 +13,29 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
-        "RequestId": "92131c95-aa65-44db-8c3c-e8cd67883b58",
+        "TotalCount": 0,
         "Items": [
             {
-                "CurrentValue": "utf8",
-                "Default": "LATIN1",
-                "Description": "Specify default server character set",
+                "Name": "character_set_server",
+                "ParamType": "enum",
+                "Default": "{MIN(DBInitMemory/4+500,1000000)}",
+                "Description": "The maximum permitted number of simultaneous client connections.",
+                "CurrentValue": "1600",
+                "NeedReboot": 0,
+                "Max": 0,
+                "Min": 0,
                 "EnumValue": [
                     "LATIN1",
                     "UTF8",
                     "GBK",
                     "UTF8MB4"
                 ],
-                "Max": 0,
-                "MaxFunc": "",
-                "Min": 0,
-                "MinFunc": "",
-                "Name": "character_set_server",
-                "NeedReboot": 1,
-                "ParamType": "enum"
-            },
-            {
-                "CurrentValue": "1600",
-                "Default": "{MIN(DBInitMemory/4+500,1000000)}",
-                "Description": "The maximum permitted number of simultaneous client connections.",
-                "EnumValue": [],
-                "Max": 100000,
-                "MaxFunc": "100000",
-                "Min": 1,
+                "MaxFunc": "64",
                 "MinFunc": "1",
-                "Name": "max_connections",
-                "NeedReboot": 0,
-                "ParamType": "func"
+                "IsNotSupportEdit": true
             }
-        ]
+        ],
+        "RequestId": "92131c95-aa65-44db-8c3c-e8cd67883b58"
     }
 }
 ```

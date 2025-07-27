@@ -161,7 +161,7 @@
         {
           "disabled": false,
           "document": "模特图片 Url。\n图片限制：单边分辨率小于3000，且大于512，转成 Base64 字符串后小于 8MB。\n输入要求：\n1、建议上传正面模特图片，至少完整露出应穿着输入指定服装的身体部位（全身、上半身或下半身），无大角度身体偏转或异常姿势。\n2、建议上传3:4比例的图片，生成效果更佳。\n3、建议模特图片中的原始服装和更换后的服装类别一致，或原始服装在身体上的覆盖范围小于等于更换后的服装（例如需要给模特换上短裤，则原始模特图片中也建议穿短裤，不建议穿长裤），否则会影响人像生成效果。\n",
-          "example": "https://xxx.com/model.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/model.jpg",
           "member": "string",
           "name": "ModelUrl",
           "required": true,
@@ -170,7 +170,7 @@
         {
           "disabled": false,
           "document": "服装图片 Url。\n图片限制：单边分辨率小于3000，大于512，转成 Base64 字符串后小于 8MB。\n输入要求：\n建议上传服装完整的正面平铺图片，仅包含1个服装主体，服装类型支持上衣、下装、连衣裙，三选一。算法将根据输入的图片，结合服装图片给模特换装。",
-          "example": "https://xxx.com/cloth.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/cloth.jpg",
           "member": "string",
           "name": "ClothesUrl",
           "required": true,
@@ -197,7 +197,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -243,7 +243,7 @@
         {
           "disabled": false,
           "document": "用户图 URL 列表",
-          "example": "[\"\"https://xxx.com/input.jpg\"\"]",
+          "example": "[\"https://cos.ap-guangzhou.myqcloud.com/input.jpg\"]",
           "member": "string",
           "name": "ImageUrls",
           "required": false,
@@ -327,7 +327,7 @@
         {
           "disabled": false,
           "document": "输入图 Url。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "InputUrl",
           "required": false,
@@ -354,7 +354,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -411,7 +411,7 @@
         {
           "disabled": false,
           "document": "图片Url",
-          "example": "https://123.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -437,7 +437,7 @@
         {
           "disabled": false,
           "document": "输入图 Url。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "InputUrl",
           "required": false,
@@ -455,7 +455,7 @@
         {
           "disabled": false,
           "document": "消除区域 Mask 图 Url。\nMask 为单通道灰度图，待消除部分呈白色区域，原图保持部分呈黑色区域。\nMask 的 Base64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：Mask 分辨率需要和输入原图保持一致，转成 Base64 字符串后小于 6MB。",
-          "example": "https://xxx.com/mask.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/mask.png",
           "member": "string",
           "name": "MaskUrl",
           "required": false,
@@ -482,7 +482,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -537,7 +537,7 @@
         {
           "disabled": false,
           "document": "输入图 Url。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "InputUrl",
           "required": false,
@@ -564,7 +564,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -610,7 +610,7 @@
         {
           "disabled": false,
           "document": "输入图 Url。\n算法将根据输入的图片，结合文本描述智能生成与之相关的图像。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "InputUrl",
           "required": false,
@@ -619,7 +619,7 @@
         {
           "disabled": false,
           "document": "文本描述。\n用于在输入图的基础上引导生成图效果，增加生成结果中出现描述内容的可能。\n推荐使用中文。最多支持256个 utf-8 字符。",
-          "example": "无",
+          "example": "清新自然",
           "member": "string",
           "name": "Prompt",
           "required": false,
@@ -628,7 +628,7 @@
         {
           "disabled": false,
           "document": "反向文本描述。\n用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。\n推荐使用中文。最多可传256个 utf-8 字符。",
-          "example": "无",
+          "example": "黑色",
           "member": "string",
           "name": "NegativePrompt",
           "required": false,
@@ -664,7 +664,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -737,7 +737,7 @@
         {
           "disabled": false,
           "document": "水印 Url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://xxx.com/logo.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/logo.jpg",
           "member": "string",
           "name": "LogoUrl",
           "output_required": false,
@@ -1291,7 +1291,7 @@
         {
           "disabled": false,
           "document": "输入图 Url。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "InputUrl",
           "required": false,
@@ -1346,7 +1346,7 @@
         {
           "disabled": false,
           "document": "商品原图 Url。\n图片限制：单边分辨率小于4000，长宽比在2:5 ~ 5:2之间，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "https://xxx.com/product.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/product.jpg",
           "member": "string",
           "name": "ProductUrl",
           "required": true,
@@ -1391,7 +1391,7 @@
         {
           "disabled": false,
           "document": "商品 Mask 图 Url，要求背景透明，保留商品主体。\n如果不传，将自动使用内置的商品分割算法得到 Mask。\n支持自定义上传 Mask，如果该参数不为空，则以实际上传的数据为准。\n图片限制：Mask 图必须和商品原图分辨率一致，转成 Base64 字符串后小于 6MB，格式仅支持 png。",
-          "example": "https://xxx.com/mask.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/mask.jpg",
           "member": "string",
           "name": "MaskUrl",
           "required": false,
@@ -1418,7 +1418,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -1509,7 +1509,7 @@
         {
           "disabled": false,
           "document": "线稿图 Url。\nBase64 和 Url 必须提供一个，如果都提供以Url 为准。\n图片限制：黑白线稿图片，单边分辨率小于5000且大于128（分辨率过小会导致效果受损），转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "InputUrl",
           "required": false,
@@ -1527,7 +1527,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -1609,7 +1609,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。 \n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -1655,7 +1655,7 @@
         {
           "disabled": false,
           "document": "美照模板图 URL。\n图片限制：模板图中最多出现5张人脸，单边分辨率大于300，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "TemplateUrl",
           "required": true,
@@ -1664,7 +1664,7 @@
         {
           "disabled": false,
           "document": "用户图 URL 列表，以及模板图中需要替换成用户的人脸框信息。\n一张美照中可包含1 ~ 5个用户形象。每个用户需上传1 ~ 6张照片，仅支持单人照。\n模板图中的人脸数量需要大于等于用户个数。如果不传每个用户在模板图中的人脸框位置，默认按照模板图人脸框从大到小的顺序进行替换。如需自定义顺序，需要依次上传每个用户在模板图中的人脸框位置。\n图片限制：每张图片转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。建议使用单人、正脸、脸部区域占比较大、脸部清晰无遮挡、无大角度偏转、无夸张表情的用户图。",
-          "example": "[     {         \"ImageUrls\": [             \"https://xxx.com/image.jpg\"         ]     } ]",
+          "example": "[{\"ImageUrls\": [\"https://cos.ap-guangzhou.myqcloud.com/image.jpg\"]}]",
           "member": "FaceInfo",
           "name": "FaceInfos",
           "required": false,
@@ -1718,7 +1718,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -1773,7 +1773,7 @@
         {
           "disabled": false,
           "document": "人像参考图 Url。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "InputUrl",
           "required": false,
@@ -1818,7 +1818,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -2009,7 +2009,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -2092,7 +2092,7 @@
         {
           "disabled": false,
           "document": "参考图。\n\n- Base64 和 Url 必须提供一个，如果都提供以 Url 为准。\n- 当传入Image参数时，Style和Resolution参数不生效，输出图分辨率将保持Image传入图分辨率。\n- 图片限制：单边分辨率大于128且小于2048；图片小于6M；格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "\"Image\":{\"Url\":\"https://***/test.png\", \"Base64\": \"\"}",
+          "example": "\"Image\":{\"Url\":\"https://cos.ap-guangzhou.myqcloud.com/image.jpg\", \"Base64\": \"\"}",
           "member": "Image",
           "name": "Image",
           "required": false,
@@ -2119,7 +2119,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -2184,7 +2184,7 @@
         {
           "disabled": false,
           "document": "写真模型训练用的基础图像 URL，用于固定写真模型可生成的人物。\n图片数量：1张。\n图片内容：单人，脸部清晰。\n图片限制：单边分辨率小于2000，转成 Base64 字符串后小于 5MB。\n",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "BaseUrl",
           "required": false,
@@ -2193,7 +2193,7 @@
         {
           "disabled": false,
           "document": "写真模型训练用的图像 URL 列表，仅常规训练模式需要上传。\n图片数量：19 - 24 张。\n图片内容：单人，脸部清晰，和基础图像中的人物为同一人。\n图片限制：单边分辨率小于2000，转成 Base64 字符串后小于 5MB。",
-          "example": "[\"https://xxx.com/image_1.jpg\"]",
+          "example": "[\"https://cos.ap-guangzhou.myqcloud.com/image1.jpg\"]",
           "member": "string",
           "name": "Urls",
           "required": false,

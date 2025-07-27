@@ -9,7 +9,7 @@ tccli postgres CreateDBInstanceNetworkAccess --cli-unfold-argument  \
     --SubnetId subnet-4s9dejli \
     --VpcId vpc-gaestjaf \
     --DBInstanceId postgres-6bwgamo3 \
-    --IsAssignVip false
+    --IsAssignVip False
 ```
 
 Output: 

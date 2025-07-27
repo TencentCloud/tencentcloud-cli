@@ -459,7 +459,7 @@
         {
           "disabled": false,
           "document": "图片Url",
-          "example": "https://123.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -476,7 +476,7 @@
         {
           "disabled": false,
           "document": "水印 Url",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/logo.jpg",
           "member": "string",
           "name": "LogoUrl",
           "output_required": false,
@@ -674,7 +674,7 @@
         {
           "disabled": false,
           "document": "传入音频URL地址，音频要求：\n- 音频时长：2秒 - 60秒\n- 音频格式：mp3、wav、m4a",
-          "example": "https://xxx.com/audio.mp3",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/audio.mp3",
           "member": "string",
           "name": "AudioUrl",
           "required": true,
@@ -683,7 +683,7 @@
         {
           "disabled": false,
           "document": "传入图片URL地址，图片要求：\n- 图片格式：jpg、jpeg、png、bmp、webp\n- 图片分辨率：192～4096\n- 图片大小：不超过10M\n- 图片宽高比：图片【宽：高】在1:2到2:1范围内\n- 图片内容：避免上传无人脸、无宠物脸或脸部过小、不完整、不清晰、偏转角度过大、嘴部被遮挡的图片。",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -728,7 +728,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。 默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "无",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -847,7 +847,7 @@
         {
           "disabled": false,
           "document": "输入视频URL。视频要求：\n- 视频格式：mp4、mov；\n- 视频时长：1～60秒；\n- 视频分辨率：540P~2056P，即长宽像素数均在540px～2056px范围内；\n- 视频大小：不超过200M；\n- 视频FPS：15～60fps。",
-          "example": "https://xxx.com/video.mp4",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/video.mp4",
           "member": "string",
           "name": "VideoUrl",
           "required": true,

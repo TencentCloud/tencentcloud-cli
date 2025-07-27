@@ -91,7 +91,7 @@
     "SubmitVideoStylizationJob": [
       {
         "document": "成功提交视频风格化任务",
-        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoStylizationJob\n<公共请求参数>\n\n{\n    \"StyleId\": \"2d_anime\",\n    \"VideoUrl\": \"http://xxxx.mp4\",\n    \"StyleStrength\": \"medium\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoStylizationJob\n<公共请求参数>\n\n{\n    \"StyleId\": \"2d_anime\",\n    \"VideoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/video.mp4\",\n    \"StyleStrength\": \"medium\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\",\n        \"RequestId\": \"b1990ba2-2d71-419d-8c9d-cab8e33f8352\"\n    }\n}",
         "title": "成功提交任务"
       }

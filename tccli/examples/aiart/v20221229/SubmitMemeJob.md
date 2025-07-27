@@ -7,7 +7,7 @@ Input:
 ```
 tccli aiart SubmitMemeJob --cli-unfold-argument  \
     --Pose aiyobudeliao \
-    --InputUrl https://xxx.com/image.jpg
+    --InputUrl https://cos.ap-guangzhou.myqcloud.com/image.jpg
 ```
 
 Output: 

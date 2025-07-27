@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli aiart ImageToImage --cli-unfold-argument  \
-    --InputUrl https://xxx.com/image.jpg \
+    --InputUrl https://cos.ap-guangzhou.myqcloud.com/image.jpg \
     --Prompt 女孩 \
     --Styles 201 \
     --ResultConfig.Resolution 768:768 \

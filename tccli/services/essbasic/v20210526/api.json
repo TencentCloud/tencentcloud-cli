@@ -358,7 +358,7 @@
       "status": "online"
     },
     "CreateBatchOrganizationRegistrationTasks": {
-      "document": "该接口用于批量创建企业认证链接， 可以支持PC浏览器，H5和小程序三种途径。\n此接口为异步提交任务接口，需要与[查询子企业批量认证链接](https://qcloudimg.tencent-cloud.cn/raw/1d3737991b2a3be78002bd78a47d6917.png)配合使用，整体流程如下图。\n![image](https://qcloudimg.tencent-cloud.cn/raw/654aa2a72ab7d42f06464ea33c50c3bb.png)\n\n\n\n**注意**\n\n1. 单次最多创建10个子企业。\n2. 一天内，同一家企业最多创建8000个子企业。\n3. 同一批创建的子客户不能重复，包括企业名称、企业统一信用代码和子客户经办人openId。\n4. 跳转到小程序的实现，请参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式）。如何配置跳转电子签小程序，可参考：<a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n\n\n\n**腾讯电子签小程序的AppID 和 原始Id如下:**\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
+      "document": "该接口用于批量创建企业认证链接， 可以支持PC浏览器，H5和小程序三种途径。\n此接口为异步提交任务接口，需要与[查询子企业批量认证链接](https://qian.tencent.com/developers/partnerApis/accounts/DescribeBatchOrganizationRegistrationTasks)配合使用，整体流程如下图。\n![image](https://qcloudimg.tencent-cloud.cn/raw/654aa2a72ab7d42f06464ea33c50c3bb.png)\n\n\n\n**注意**\n\n1. 单次最多创建10个子企业。\n2. 一天内，同一家企业最多创建8000个子企业。\n3. 同一批创建的子客户不能重复，包括企业名称、企业统一信用代码和子客户经办人openId。\n4. 跳转到小程序的实现，请参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式）。如何配置跳转电子签小程序，可参考：<a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n\n\n\n**腾讯电子签小程序的AppID 和 原始Id如下:**\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
       "input": "CreateBatchOrganizationRegistrationTasksRequest",
       "name": "创建企业批量认证链接任务",
       "output": "CreateBatchOrganizationRegistrationTasksResponse",
@@ -6793,7 +6793,7 @@
         {
           "disabled": false,
           "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n</ul>\n",
-          "example": "无",
+          "example": "{         \"ProxyOperator\": {             \"OpenId\": \"wangxiaoxiong_20250725001\"         },         \"ProxyOrganizationOpenId\": \"ess_open_organization_20250725001\",         \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\"     }",
           "member": "Agent",
           "name": "Agent",
           "required": true,
@@ -6802,7 +6802,7 @@
         {
           "disabled": false,
           "document": "当前应用下子企业的组织机构注册信息。最多支持查询10子企业。",
-          "example": "无",
+          "example": "\"无\"",
           "member": "RegistrationOrganizationInfo",
           "name": "RegistrationOrganizations",
           "required": true,

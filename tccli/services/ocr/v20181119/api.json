@@ -448,6 +448,13 @@
       "output": "RecognizeTableAccurateOCRResponse",
       "status": "online"
     },
+    "RecognizeTableMultiOCR": {
+      "document": "基于MLLM(多模态大语言模型)的表格识别能力，针对复杂表格的算法识别效果更佳，适配财务报表识别场景，并可输出直接对接业务系统的Excel数据。\n\n默认接口请求频率限制：1次/秒。",
+      "input": "RecognizeTableMultiOCRRequest",
+      "name": "表格识别（多模态版）",
+      "output": "RecognizeTableMultiOCRResponse",
+      "status": "online"
+    },
     "RecognizeTableOCR": {
       "document": "本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。\n\n默认接口请求频率限制：10次/秒。",
       "input": "RecognizeTableOCRRequest",
@@ -14809,6 +14816,79 @@
           "name": "Angle",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeTableMultiOCRRequest": {
+      "document": "RecognizeTableMultiOCR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片/PDF的 Base64 值。 要求图片/PDF经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。 图片支持的像素范围：需介于20-10000px之间。 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。 ",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片/PDF的 Url 地址。 要求图片/PDF经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。 图片支持的像素范围：需介于20-10000px之间。 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。 ",
+          "example": "https://xxx.com/document/xxx.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档的起始页码。  当传入文件是PDF型时，用来指定识别的起始页码，识别的页码包含当前值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PdfStartPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文档的结束页码。 当传入文件是PDF类型时，用来指定识别的结束页码，识别的页码包含当前值。单次调用最多支持识别3页内容，即PdfEndPageNumber-PdfStartPageNumber需要不大于3。",
+          "example": "3",
+          "member": "int64",
+          "name": "PdfEndPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "配置选项，支持配置输出数据格式。\n\n* **Mdbase64** 返回 base64 编码的 markdown 格式文本。\n* **Excelbase64** 返回 base64 编码的 excel 文件。",
+          "example": "Excelbase64",
+          "member": "string",
+          "name": "DataFormat",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeTableMultiOCRResponse": {
+      "document": "RecognizeTableMultiOCR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Base64 编码后的 Excel 数据或 Markdown 数据。  注意：此字段可能返回空，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "DataBase64",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {

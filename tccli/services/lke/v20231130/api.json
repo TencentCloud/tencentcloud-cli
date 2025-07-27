@@ -8882,7 +8882,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "接入类型， 5-API 访客",
+          "document": "接入类型， 5-API 访客，目前仅支持传5",
           "example": "5",
           "member": "int64",
           "name": "Type",
@@ -8901,7 +8901,7 @@
         {
           "disabled": false,
           "document": "访客ID（外部输入，建议唯一，标识当前接入会话的用户）\n长度限制： string(64)",
-          "example": "无",
+          "example": "K18PFhu16oZe0rnxesOomORA7omXwrri",
           "member": "string",
           "name": "VisitorBizId",
           "required": false,
@@ -8910,7 +8910,7 @@
         {
           "disabled": false,
           "document": "知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。",
-          "example": "无",
+          "example": "已废弃，请使用对话接口中的custom_variables",
           "member": "GetWsTokenReq_Label",
           "name": "VisitorLabels",
           "required": false,
@@ -8925,7 +8925,7 @@
         {
           "disabled": false,
           "document": "token值（有效期60s，仅一次有效，多次校验会报错）",
-          "example": "无",
+          "example": "32477330DC0AF2C5C1D99C8830C4A917",
           "member": "string",
           "name": "Token",
           "output_required": false,
@@ -8935,7 +8935,7 @@
         {
           "disabled": false,
           "document": "余额; 余额大于 0 时表示有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "float",
           "name": "Balance",
           "output_required": false,
@@ -8945,7 +8945,7 @@
         {
           "disabled": false,
           "document": "对话窗输入字符限制",
-          "example": "无",
+          "example": "3000",
           "member": "int64",
           "name": "InputLenLimit",
           "output_required": false,
@@ -8965,7 +8965,7 @@
         {
           "disabled": false,
           "document": "SingleWorkflow",
-          "example": "无",
+          "example": "{\"WorkflowDesc\":\"\",\"WorkflowId\":\"\",\"WorkflowName\":\"\",\"IsEnable\":false,\"Status\":\"\"}",
           "member": "KnowledgeQaSingleWorkflow",
           "name": "SingleWorkflow",
           "output_required": false,

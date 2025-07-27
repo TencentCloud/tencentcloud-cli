@@ -1054,7 +1054,7 @@
         {
           "disabled": false,
           "document": "文件的Url（有效期24小时）",
-          "example": "https://xxx.gif",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/gif.gif",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -2139,7 +2139,7 @@
         {
           "disabled": false,
           "document": "图片Url。",
-          "example": "https://xxx.com/image.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -2333,7 +2333,7 @@
         {
           "disabled": false,
           "document": "水印url",
-          "example": "https://xxx.com/logo.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/logo.jpg",
           "member": "string",
           "name": "LogoUrl",
           "required": false,
@@ -2776,7 +2776,7 @@
         {
           "disabled": false,
           "document": "生成图 URL 列表，有效期7天，请及时保存。",
-          "example": "[\"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731657113;1732261913&q-key-time=1731657113;1732261913&q-header-list=host&q-url-param-list=&q-signature=b9c4be16d763664d829d0bfa398f571aa0e75c0e\"]",
+          "example": "[\"https://cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731657113;1732261913&q-key-time=1731657113;1732261913&q-header-list=host&q-url-param-list=&q-signature=b9c4be16d763664d829d0bfa398f571aa0e75c0e\"]",
           "member": "string",
           "name": "ResultImage",
           "output_required": false,
@@ -2796,7 +2796,7 @@
         {
           "disabled": false,
           "document": "本轮对话前置的历史对话数据（不含生成图）。",
-          "example": "[       {         \"ChatId\": \"1248907282106990592\",         \"Prompt\": \"请画一个苹果在桌子上\",         \"RevisedPrompt\": \"风格为摄影风格，桌子上摆放着一个红润的苹果，镜头为近景镜头\",         \"Seed\": 1549130027       }     ]",
+          "example": "[{\"ChatId\": \"1248907282106990592\",\"Prompt\": \"请画一个苹果在桌子上\",\"RevisedPrompt\": \"风格为摄影风格，桌子上摆放着一个红润的苹果，镜头为近景镜头\",\"Seed\": 1549130027}]",
           "member": "History",
           "name": "History",
           "output_required": false,
@@ -2873,7 +2873,7 @@
         {
           "disabled": false,
           "document": "生成图 URL 列表，有效期1小时，请及时保存。\n",
-          "example": "[\"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731655045;1731658645&q-key-time=1731655045;1731658645&q-header-list=host&q-url-param-list=&q-signature=72776438be444f9a72e04e5e6376aadf51e65655\"]",
+          "example": "[\"https://cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731655045;1731658645&q-key-time=1731655045;1731658645&q-header-list=host&q-url-param-list=&q-signature=72776438be444f9a72e04e5e6376aadf51e65655\"]",
           "member": "string",
           "name": "ResultImage",
           "output_required": false,
@@ -2915,7 +2915,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "1434237894974230",
           "member": "string",
           "name": "JobId",
           "required": false,
@@ -2940,7 +2940,7 @@
         {
           "disabled": false,
           "document": "生成的3D文件数组",
-          "example": "无",
+          "example": "File3D数据结构",
           "member": "File3Ds",
           "name": "ResultFile3Ds",
           "output_required": false,
@@ -3481,7 +3481,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://***.cos.ap-guangzhou.myqcloud.com/***/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -3572,7 +3572,7 @@
         {
           "disabled": false,
           "document": "用于引导内容的参考图。\n图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "{\"ImageUrl\":\"https://xxx.com/image.jpg\"}",
+          "example": "{\"ImageUrl\":\"https://cos.ap-guangzhou.myqcloud.com/image.jpg\"}",
           "member": "Image",
           "name": "ContentImage",
           "required": false,
@@ -3608,7 +3608,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "{\"LogoUrl\": \"https://https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -3663,7 +3663,7 @@
         {
           "disabled": false,
           "document": "输入图Url。\n大小：单边分辨率要求不小于50，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过6m）\n格式：jpg，png，jpeg，webp。\nImageBase64/ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
-          "example": "https://****/imageurl.jpg",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/imageurl.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,

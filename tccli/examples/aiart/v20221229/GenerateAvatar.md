@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli aiart GenerateAvatar --cli-unfold-argument  \
-    --InputUrl https://xxx.com/image.jpg \
+    --InputUrl https://cos.ap-guangzhou.myqcloud.com/image.jpg \
     --Style water \
     --RspImgType url
 ```

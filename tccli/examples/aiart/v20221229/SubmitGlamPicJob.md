@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli aiart SubmitGlamPicJob --cli-unfold-argument  \
-    --TemplateUrl https://xxx.com/template.jpg \
-    --FaceInfos.0.ImageUrls https://xxx.com/input.jpg \
+    --TemplateUrl https://cos.ap-guangzhou.myqcloud.com/template.jpg \
+    --FaceInfos.0.ImageUrls https://cos.ap-guangzhou.myqcloud.com/image.jpg \
     --Num 1 \
     --Similarity 0.6
 ```

@@ -7,7 +7,7 @@ Input:
 ```
 tccli aiart UploadTrainPortraitImages --cli-unfold-argument  \
     --ModelId model_01 \
-    --BaseUrl https://xxx.com/image.jpg \
+    --BaseUrl https://cos.ap-guangzhou.myqcloud.com/image.jpg \
     --TrainMode 1
 ```
 

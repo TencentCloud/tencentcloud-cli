@@ -554,6 +554,14 @@
         "title": "RecognizeTableAccurateOCR调用"
       }
     ],
+    "RecognizeTableMultiOCR": [
+      {
+        "document": "调用成功示例",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeTableMultiOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xxx.com/1.pdf\",\n    \"PdfStartPageNumber\": 1,\n    \"PdfEndPageNumber\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43e5db77-ea0c-4b82-9f77-86387eb856e5\",\n        \"DataBase64\": \"fCDpobnnm64gfCAyMDI0IOW5tDkg5pyIMz...4LjQ0IHwK\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
     "RecognizeTableOCR": [
       {
         "document": "表格识别示例代码",

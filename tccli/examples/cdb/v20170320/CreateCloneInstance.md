@@ -10,7 +10,7 @@ tccli cdb CreateCloneInstance --cli-unfold-argument  \
     --InstanceId cdb-9303wd4x \
     --Volume 50 \
     --UniqSubnetId subnet-dz5pj862 \
-    --SpecifiedRollbackTime 2020-08-0116:27:43 \
+    --SpecifiedRollbackTime 2020-08-01 16:27:43 \
     --Memory 1000
 ```
 

@@ -8,8 +8,8 @@ Input:
 tccli postgres CreateReadOnlyGroupNetworkAccess --cli-unfold-argument  \
     --SubnetId subnet-4s9dejli \
     --VpcId vpc-gaestjaf \
-    --ReadOnlyGroupId pgro-4t9c6g7k \
-    --IsAssignVip false
+    --ReadOnlyGroupId pgrogrp-4t9c6g7k \
+    --IsAssignVip False
 ```
 
 Output: 

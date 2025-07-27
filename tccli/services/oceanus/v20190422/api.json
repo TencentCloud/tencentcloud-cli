@@ -3996,7 +3996,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "筛选条件字段",
+          "document": "筛选条件字段，使用了筛选字段后不支持分页，最多返回2000条记录",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4133,11 +4133,31 @@
         {
           "disabled": false,
           "document": "请求ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "ocs-111",
           "member": "string",
           "name": "RequestId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "attach-000\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "attach-000",
+          "member": "string",
+          "name": "PageAttach",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "bool\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "HasMore",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

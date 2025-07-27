@@ -134,7 +134,7 @@
       "status": "online"
     },
     "DeleteRoom": {
-      "document": "删除房间",
+      "document": "删除房间\n删除课堂前，请先删除该课堂下的各类资源（包括录制文件、板书等），并解绑相关课件。",
       "input": "DeleteRoomRequest",
       "name": "删除课堂",
       "output": "DeleteRoomResponse",
@@ -311,7 +311,7 @@
     "DescribeUser": {
       "document": "获取用户信息",
       "input": "DescribeUserRequest",
-      "name": "获取用户信息",
+      "name": "获取用户信息【已废弃】",
       "output": "DescribeUserResponse",
       "status": "online"
     },
@@ -323,7 +323,7 @@
       "status": "online"
     },
     "DescribeWhiteBoardSnapshot": {
-      "document": "查询白板板书截图",
+      "document": "查询白板板书截图\n课程结束后，可以查询和以图片的形式导出这些内容，方便后续查看、整理与分享。\n注意：不支持屏幕共享中的板书导出。",
       "input": "DescribeWhiteBoardSnapshotRequest",
       "name": "获取板书截图",
       "output": "DescribeWhiteBoardSnapshotResponse",
@@ -2335,7 +2335,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间ID",
+          "document": "课堂ID",
           "example": "301234567",
           "member": "uint64",
           "name": "RoomId",
@@ -4812,7 +4812,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间ID。",
+          "document": "课堂ID",
           "example": "3123456789",
           "member": "uint64",
           "name": "RoomId",
@@ -4974,7 +4974,7 @@
         },
         {
           "disabled": false,
-          "document": "房间ID。",
+          "document": "课堂ID",
           "example": "12333",
           "member": "uint64",
           "name": "RoomId",
@@ -7810,7 +7810,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间ID。",
+          "document": "课堂ID",
           "example": "3123456789",
           "member": "uint64",
           "name": "RoomId",
@@ -7846,7 +7846,7 @@
         },
         {
           "disabled": false,
-          "document": "房间ID",
+          "document": "课堂ID",
           "example": "31211232",
           "member": "uint64",
           "name": "RoomId",

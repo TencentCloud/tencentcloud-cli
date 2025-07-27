@@ -170,7 +170,7 @@
       {
         "document": "成功查询",
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanImageChatJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1253534368-1731657099-7276788a-a326-11ef-beeb-525400bba60c-0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ChatId\": \"1248907282106990592\",\n        \"History\": [\n            {\n                \"ChatId\": \"1248907282106990592\",\n                \"Prompt\": \"请画一个苹果在桌子上\",\n                \"RevisedPrompt\": \"风格为摄影风格，桌子上摆放着一个红润的苹果，镜头为近景镜头\",\n                \"Seed\": 1549130027\n            }\n        ],\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"54c4d31e-234b-44b8-802b-7d10fa2e77dc\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731657113;1732261913&q-key-time=1731657113;1732261913&q-header-list=host&q-url-param-list=&q-signature=b9c4be16d763664d829d0bfa398f571aa0e75c0e\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ChatId\": \"1248907282106990592\",\n        \"History\": [\n            {\n                \"ChatId\": \"1248907282106990592\",\n                \"Prompt\": \"请画一个苹果在桌子上\",\n                \"RevisedPrompt\": \"风格为摄影风格，桌子上摆放着一个红润的苹果，镜头为近景镜头\",\n                \"Seed\": 1549130027\n            }\n        ],\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"54c4d31e-234b-44b8-802b-7d10fa2e77dc\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https://cos.ap-guangzhou.myqcloud.com/***?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731657113;1732261913&q-key-time=1731657113;1732261913&q-header-list=host&q-url-param-list=&q-signature=b9c4be16d763664d829d0bfa398f571aa0e75c0e\"\n        ]\n    }\n}",
         "title": "成功查询"
       }
     ],
@@ -178,7 +178,7 @@
       {
         "document": "成功查询",
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanImageJob\n<公共请求参数>\n\n{\n    \"JobId\": \"251197749-1731412663-d4e1f224-fa21-40bc-9ee7-4bb13abece6e-0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"56b2ecae-46e4-4697-87d2-dc2b3bbbc2c6\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731655045;1731658645&q-key-time=1731655045;1731658645&q-header-list=host&q-url-param-list=&q-signature=72776438be444f9a72e04e5e6376aadf51e65655\"\n        ],\n        \"RevisedPrompt\": [\n            \"一条细长的小路穿梭在茂密的竹林中，天空下着细雨，雨水滴答落在翠绿的竹叶上，沿途的小路湿润且闪烁着水光，竹叶摇曳间洒下点点水珠，营造出静谧而清新的氛围\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"56b2ecae-46e4-4697-87d2-dc2b3bbbc2c6\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https://cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731655045;1731658645&q-key-time=1731655045;1731658645&q-header-list=host&q-url-param-list=&q-signature=72776438be444f9a72e04e5e6376aadf51e65655\"\n        ],\n        \"RevisedPrompt\": [\n            \"一条细长的小路穿梭在茂密的竹林中，天空下着细雨，雨水滴答落在翠绿的竹叶上，沿途的小路湿润且闪烁着水光，竹叶摇曳间洒下点点水珠，营造出静谧而清新的氛围\"\n        ]\n    }\n}",
         "title": "成功查询"
       }
     ],
@@ -186,7 +186,7 @@
       {
         "document": "任务完成",
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanTo3DJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1286221236421533696\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"6ea0ea36-ea27-4870-9b9b-6937f7cc7117\",\n        \"ResultFile3Ds\": [\n            {\n                \"File3D\": [\n                    {\n                        \"Type\": \"GIF\",\n                        \"Url\": \"https://hunyuan-prod-xxx.cos.ap-guangzhou.tencentcos.cn/3d/output/xxx.gif\"\n                    },\n                    {\n                        \"Type\": \"OBJ\",\n                        \"Url\": \"https://hunyuan-prod-xxx.cos.ap-guangzhou.tencentcos.cn/3d/output/2e56fc_0.zip\"\n                    }\n                ]\n            }\n        ],\n        \"Status\": \"DONE\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"6ea0ea36-ea27-4870-9b9b-6937f7cc7117\",\n        \"ResultFile3Ds\": [\n            {\n                \"File3D\": [\n                    {\n                        \"Type\": \"GIF\",\n                        \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/3d/output.gif\"\n                    },\n                    {\n                        \"Type\": \"OBJ\",\n                        \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/3d/output/2e56fc_0.zip\"\n                    }\n                ]\n            }\n        ],\n        \"Status\": \"DONE\"\n    }\n}",
         "title": "任务完成"
       }
     ],
@@ -225,7 +225,7 @@
     "SubmitHunyuanTo3DJob": [
       {
         "document": "成功提交图生3D任务",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"\",\n    \"ImageUrl\": \"https://xxx.jpg\"\n}",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"\",\n    \"ImageUrl\": \"https://cos.ap-guangzhou.myqcloud.com/***.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1286221236421533696\",\n        \"RequestId\": \"f4aac8ca-a79d-4431-81fd-7312f79bf91d\"\n    }\n}",
         "title": "成功提交任务"
       }

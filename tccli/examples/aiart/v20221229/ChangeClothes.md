@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli aiart ChangeClothes --cli-unfold-argument  \
-    --ModelUrl https://xxx.com/model.jpg \
-    --ClothesUrl https://xxx.com/cloth.jpg \
+    --ModelUrl https://cos.ap-guangzhou.myqcloud.com/model.jpg \
+    --ClothesUrl https://cos.ap-guangzhou.myqcloud.com/cloth.jpg \
     --ClothesType Upper-body \
     --RspImgType url
 ```

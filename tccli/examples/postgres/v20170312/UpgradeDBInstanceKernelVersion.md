@@ -8,7 +8,7 @@ Input:
 tccli postgres UpgradeDBInstanceKernelVersion --cli-unfold-argument  \
     --DBInstanceId pgro-g7w4itfg \
     --TargetDBKernelVersion v12.7_r1.5 \
-    --DryRun true
+    --DryRun True
 ```
 
 Output: 

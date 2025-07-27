@@ -3887,7 +3887,7 @@
         },
         {
           "disabled": false,
-          "document": "合规组ID列表，最多支持添加5个",
+          "document": "此参数必选。合规组ID列表，最多支持添加5个",
           "example": "[1,2]",
           "member": "int64",
           "name": "ComplianceGroupIds",

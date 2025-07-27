@@ -22,7 +22,7 @@ Output:
             "Success"
         ],
         "ResultImage": [
-            "https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731655045;1731658645&q-key-time=1731655045;1731658645&q-header-list=host&q-url-param-list=&q-signature=72776438be444f9a72e04e5e6376aadf51e65655"
+            "https://cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731655045;1731658645&q-key-time=1731655045;1731658645&q-header-list=host&q-url-param-list=&q-signature=72776438be444f9a72e04e5e6376aadf51e65655"
         ],
         "RevisedPrompt": [
             "一条细长的小路穿梭在茂密的竹林中，天空下着细雨，雨水滴答落在翠绿的竹叶上，沿途的小路湿润且闪烁着水光，竹叶摇曳间洒下点点水珠，营造出静谧而清新的氛围"

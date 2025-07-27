@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli aiart RefineImage --cli-unfold-argument  \
-    --InputUrl https://xxx.com/image.jpg \
+    --InputUrl https://cos.ap-guangzhou.myqcloud.com/image.jpg \
     --RspImgType url
 ```
 

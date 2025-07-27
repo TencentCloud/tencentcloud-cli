@@ -3978,6 +3978,28 @@
         },
         {
           "disabled": false,
+          "document": "云端特效生成状态。\n生成中 - GENERATING。\n处理中 - PROCESSING。\n生成失败 - FAILED。\n已完成 - FINISH。\n",
+          "example": "FINISH",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特效信息，生成失败时，此处返回失败原因。",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "云端特效预览图片。",
           "example": "http://preview.image.com/pic.jpg",
           "member": "string",
@@ -9486,7 +9508,7 @@
         {
           "disabled": false,
           "document": "云端特效类型, 默认不填，返回全部。PGC: 特效库中的特效；AICG : AI生成的特效；UGC：用户自定义上传的特效；",
-          "example": "system_preset",
+          "example": "UGC",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -9506,6 +9528,26 @@
           "name": "InfoList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "允许创建的云端特效个数。",
+          "example": "100",
+          "member": "int64",
+          "name": "EnableCreateNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前已有的特效总个数。",
+          "example": "30",
+          "member": "int64",
+          "name": "TotalNum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

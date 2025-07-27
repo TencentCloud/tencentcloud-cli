@@ -21,11 +21,11 @@ Output:
                 "File3D": [
                     {
                         "Type": "GIF",
-                        "Url": "https://hunyuan-prod-xxx.cos.ap-guangzhou.tencentcos.cn/3d/output/xxx.gif"
+                        "Url": "https://cos.ap-guangzhou.tencentcos.cn/3d/output.gif"
                     },
                     {
                         "Type": "OBJ",
-                        "Url": "https://hunyuan-prod-xxx.cos.ap-guangzhou.tencentcos.cn/3d/output/2e56fc_0.zip"
+                        "Url": "https://cos.ap-guangzhou.tencentcos.cn/3d/output/2e56fc_0.zip"
                     }
                 ]
             }

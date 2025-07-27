@@ -412,7 +412,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ForbidSendMsg\n<公共请求参数>\n\n{\n    \"SdkAppId\": 22303,\n    \"RoomId\": 12222,\n    \"MembersAccount\": [\n        \"2212jkih\"\n    ],\n    \"MuteTime\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8765789876-sdhags78\"\n    }\n}",
         "title": "设置禁言"
       }
     ],

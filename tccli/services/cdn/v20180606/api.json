@@ -22,11 +22,11 @@
       "status": "online"
     },
     "CreateDiagnoseUrl": {
-      "document": "### <font color=red>**该接口已废弃** </font><br>\nCreateDiagnoseUrl 用于添加域名诊断任务URL。",
+      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nCreateDiagnoseUrl 用于添加域名诊断任务URL。",
       "input": "CreateDiagnoseUrlRequest",
       "name": "添加诊断URL(已废弃)",
       "output": "CreateDiagnoseUrlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEdgePackTask": {
       "document": "动态打包任务提交接口",
@@ -141,11 +141,11 @@
       "status": "deprecated"
     },
     "DescribeDiagnoseReport": {
-      "document": "### <font color=red>**该接口已废弃** </font><br>\nDescribeDiagnoseReport 用于获取指定报告id的内容。",
+      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nDescribeDiagnoseReport 用于获取指定报告id的内容。",
       "input": "DescribeDiagnoseReportRequest",
       "name": "获取诊断报告(已废弃)",
       "output": "DescribeDiagnoseReportResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDistrictIspData": {
       "document": "查询指定域名的区域、运营商明细数据\n注意事项：接口尚未全面开放，未在内测名单中的账号不支持调用",
@@ -365,11 +365,11 @@
       "status": "online"
     },
     "GetDisableRecords": {
-      "document": "### <font color=red>**该接口已废弃** </font><br>\nGetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。",
+      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nGetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。",
       "input": "GetDisableRecordsRequest",
       "name": "禁用历史查询(已废弃)",
       "output": "GetDisableRecordsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListClsLogTopics": {
       "document": "ListClsLogTopics 用于显示日志主题列表。注意：一个日志集下至多含10个日志主题。",
@@ -386,11 +386,11 @@
       "status": "online"
     },
     "ListDiagnoseReport": {
-      "document": "### <font color=red>**该接口已废弃** </font><br>\nListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情。",
+      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情。",
       "input": "ListDiagnoseReportRequest",
       "name": "获取诊断任务列表(已废弃)",
       "output": "ListDiagnoseReportResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListScdnDomains": {
       "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nListScdnDomains 用于查询 SCDN 安全加速域名列表，及域名基本配置信息",

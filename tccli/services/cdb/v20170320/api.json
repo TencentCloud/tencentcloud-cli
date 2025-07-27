@@ -393,7 +393,7 @@
       "status": "online"
     },
     "DescribeBackupSummaries": {
-      "document": "本接口(DescribeBackupSummaries)用于查询备份的统计情况，返回以实例为维度的备份占用容量，以及每个实例的数据备份和日志备份的个数和容量（容量单位为字节）。",
+      "document": "本接口（DescribeBackupSummaries）用于查询备份的统计情况，返回以实例为维度的备份占用容量，以及每个实例的数据备份和日志备份的个数和容量（容量单位为字节）。",
       "input": "DescribeBackupSummariesRequest",
       "name": "查询备份实时统计",
       "output": "DescribeBackupSummariesResponse",
@@ -505,7 +505,7 @@
       "status": "online"
     },
     "DescribeDBInstanceLogToCLS": {
-      "document": "本接口(DescribeDBInstanceLogToCLS)用于查询实例慢日志、错误日志投递CLS的配置，通过AppId、Region以及实例ID过滤出当前实例日志投递CLS的配置。",
+      "document": "本接口（DescribeDBInstanceLogToCLS）用于查询实例慢日志、错误日志投递CLS的配置，通过AppId、Region以及实例ID过滤出当前实例日志投递CLS的配置。",
       "input": "DescribeDBInstanceLogToCLSRequest",
       "name": "查询实例日志投递CLS的配置",
       "output": "DescribeDBInstanceLogToCLSResponse",
@@ -694,7 +694,7 @@
       "status": "online"
     },
     "DescribeRollbackTaskDetail": {
-      "document": "本接口(DescribeRollbackTaskDetail)用于查询云数据库实例回档任务详情。",
+      "document": "本接口（DescribeRollbackTaskDetail）用于查询云数据库实例回档任务详情。",
       "input": "DescribeRollbackTaskDetailRequest",
       "name": "查询回档任务详情",
       "output": "DescribeRollbackTaskDetailResponse",
@@ -729,7 +729,7 @@
       "status": "online"
     },
     "DescribeTableColumns": {
-      "document": "本接口(DescribeTableColumns)用于查询云数据库实例的指定数据库表的列信息，仅支持主实例和灾备实例。",
+      "document": "本接口（DescribeTableColumns）用于查询云数据库实例的指定数据库表的列信息，仅支持主实例和灾备实例。",
       "input": "DescribeTableColumnsRequest",
       "name": "查询云数据库实例的列",
       "output": "DescribeTableColumnsResponse",
@@ -862,7 +862,7 @@
       "status": "online"
     },
     "ModifyBackupConfig": {
-      "document": "本接口(ModifyBackupConfig)用于修改数据库备份配置信息。",
+      "document": "本接口（ModifyBackupConfig）用于修改数据库备份配置信息。",
       "input": "ModifyBackupConfigRequest",
       "name": "修改数据库备份配置",
       "output": "ModifyBackupConfigResponse",
@@ -967,7 +967,7 @@
       "status": "online"
     },
     "ModifyLocalBinlogConfig": {
-      "document": "该接口用于修改实例本地binlog保留策略。",
+      "document": "本接口（ModifyLocalBinlogConfig）用于修改实例本地 binlog 保留策略。",
       "input": "ModifyLocalBinlogConfigRequest",
       "name": "修改本地binlog保留策略",
       "output": "ModifyLocalBinlogConfigResponse",
@@ -5205,7 +5205,7 @@
         },
         {
           "disabled": false,
-          "document": "手动备份别名",
+          "document": "手动备份别名，输入长度请在60个字符内。",
           "example": "手动备份1",
           "member": "string",
           "name": "ManualBackupName",
@@ -5214,8 +5214,8 @@
         },
         {
           "disabled": false,
-          "document": "是否需要加密物理备份， 当BackupMethod为physical 时，该值才有意义。 不指定则使用实例备份默认加密策略。",
-          "example": "no",
+          "document": "是否需要加密物理备份，可选值为：on - 是，off - 否。当 BackupMethod 为 physical 时，该值才有意义。不指定则使用实例备份默认加密策略，这里的默认加密策略指通过 [DescribeBackupEncryptionStatus](https://cloud.tencent.com/document/product/236/86508) 接口查询出的实例当前加密策略。",
+          "example": "on",
           "member": "string",
           "name": "EncryptionFlag",
           "required": false,
@@ -5559,7 +5559,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "克隆源实例Id。",
+          "document": "克隆源实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。",
           "example": "cdb-9303wd4x",
           "member": "string",
           "name": "InstanceId",
@@ -5622,7 +5622,7 @@
         },
         {
           "disabled": false,
-          "document": "新产生的克隆实例名称。",
+          "document": "新产生的克隆实例名称。支持输入最大60个字符。",
           "example": "Instance_andy",
           "member": "string",
           "name": "InstanceName",
@@ -6835,7 +6835,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板名称。",
+          "document": "参数模板名称。支持输入最大60个字符。",
           "example": "mysql1",
           "member": "string",
           "name": "Name",
@@ -6853,7 +6853,7 @@
         },
         {
           "disabled": false,
-          "document": "MySQL 版本号。",
+          "document": "MySQL 版本号。可选值：5.6、5.7、8.0。",
           "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
@@ -6862,7 +6862,7 @@
         },
         {
           "disabled": false,
-          "document": "源参数模板 ID。",
+          "document": "源参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。",
           "example": "17192",
           "member": "int64",
           "name": "TemplateId",
@@ -6889,7 +6889,7 @@
         },
         {
           "disabled": false,
-          "document": "实例引擎类型，默认为\"InnoDB\"，支持值包括：\"InnoDB\"，\"RocksDB\"。",
+          "document": "实例引擎类型，默认为\"InnoDB\"，支持值包括：\"InnoDB\"，\"RocksDB\"。\n说明：数据库版本 MySQL 5.7、MySQL 8.0才支持 RocksDB。",
           "example": "InnoDB",
           "member": "string",
           "name": "EngineType",
@@ -7454,7 +7454,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板ID。",
+          "document": "参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。",
           "example": "17192",
           "member": "int64",
           "name": "TemplateId",
@@ -8783,7 +8783,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "实例 ID，格式如：cdb-fybaegd8。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-fybaegd8",
           "member": "string",
           "name": "InstanceId",
@@ -8792,7 +8792,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的备份ID，可通过DescribeBackups接口查询备份的ID。",
+          "document": "实例的备份 ID，可通过 [DescribeBackups](https://cloud.tencent.com/document/api/236/15842) 接口查询备份的 ID。",
           "example": "12445233",
           "member": "int64",
           "name": "BackupId",
@@ -8801,7 +8801,7 @@
         },
         {
           "disabled": false,
-          "document": "备份类型 data: 数据备份 binlog:日志备份，默认为data",
+          "document": "备份类型。data-数据备份，binlog-日志备份，默认为 data。",
           "example": "binlog",
           "member": "string",
           "name": "BackupType",
@@ -8942,7 +8942,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询的云数据库产品类型，目前仅支持 \"mysql\"。",
+          "document": "需要查询备份概览的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点云盘版实例，mysql-cluster 指云盘版（原集群版）实例。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -9039,7 +9039,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询的云数据库产品类型，目前仅支持 \"mysql\"。",
+          "document": "需要查询备份实时统计的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点云盘版实例，mysql-cluster 指云盘版（原集群版）实例。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -9091,7 +9091,7 @@
         {
           "disabled": false,
           "document": "实例备份统计条目。",
-          "example": "无",
+          "example": "[{\"AutoBackupCount\": 5,\"AutoBackupVolume\": 10000,\"BackupVolume\": 50000,\"BinlogBackupCount\": 2,\"BinlogBackupVolume\": 20000,\"DataBackupCount\": 15,\"DataBackupVolume\": 30000,\"InstanceId\": \"cdb-01wa5l0v\",\"ManualBackupCount\": 10,\"ManualBackupVolume\": 20000}],",
           "member": "BackupSummaryItem",
           "name": "Items",
           "output_required": true,
@@ -9187,7 +9187,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询的云数据库产品类型，目前仅支持 \"mysql\"。",
+          "document": "需要查询日志备份概览的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点云盘版实例，mysql-cluster 指云盘版（原集群版）实例。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -9206,7 +9206,7 @@
           "example": "6000",
           "member": "int64",
           "name": "BinlogBackupVolume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9216,7 +9216,7 @@
           "example": "15",
           "member": "int64",
           "name": "BinlogBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9226,7 +9226,7 @@
           "example": "6000",
           "member": "int64",
           "name": "RemoteBinlogVolume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9236,7 +9236,7 @@
           "example": "1",
           "member": "int64",
           "name": "RemoteBinlogCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9246,7 +9246,7 @@
           "example": "1",
           "member": "int64",
           "name": "BinlogArchiveVolume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9256,7 +9256,7 @@
           "example": "1",
           "member": "int64",
           "name": "BinlogArchiveCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9266,7 +9266,7 @@
           "example": "1",
           "member": "int64",
           "name": "BinlogStandbyVolume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9276,7 +9276,7 @@
           "example": "1",
           "member": "int64",
           "name": "BinlogStandbyCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9546,7 +9546,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询指定源实例的克隆任务列表。",
+          "document": "查询指定源实例的克隆任务列表。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取实例 ID。",
           "example": "cdb-9303wd4x",
           "member": "string",
           "name": "InstanceId",
@@ -9564,7 +9564,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询时的每页条目数，默认值为20。",
+          "document": "分页查询时的每页条目数，默认值为20，建议最大取值100。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -9590,7 +9590,7 @@
         {
           "disabled": false,
           "document": "克隆任务列表。",
-          "example": "[\"SrcInstanceId\": \"cdb-4bblpca3\",\"RollbackTargetTime\": \"2019-11-15 12:34:56\",\"CloneJobId\": 80,\"SrcRegionId\": 0,\"TaskStatus\": \"initial\",\"NewRegionId\":8,\"RollbackStrategy\": \"timepoint\",\"StartTime\": \"2019-12-26 18:05:42\",\"DstInstanceId\": \"cdb-9ubfzt6x\",\"EndTime\": \"\"},{\"SrcInstanceId\": \"cdb-4bblpca3\",\"RollbackTargetTime\": \"2019-11-15 16:13:31\",\"CloneJobId\": 81,\"SrcRegionId\": 4,\"TaskStatus\": \"initial\", \"StartTime\": \"2019-12-26 17:16:58\",\"RollbackStrategy\": \"backupset\",\"NewRegionId\": 0,\"DstInstanceId\": \"cdb-awbsatzq\", \"EndTime\": \"\"}]",
+          "example": "无",
           "member": "CloneItem",
           "name": "Items",
           "output_required": true,
@@ -10247,7 +10247,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-r1ok5w15",
           "member": "string",
           "name": "InstanceId",
@@ -10272,7 +10272,7 @@
         {
           "disabled": false,
           "document": "错误日志投递CLS配置",
-          "example": "{\"Status\": \"ON\",\"LogSetId\":\"xxx\",\"LogTopicId\":\"xxx\"}",
+          "example": "{\"ClsRegion\": \"ap-guangzhou\",\"Status\": \"ON\",\"LogSetId\":\"xxx\",\"LogTopicId\":\"xxx\"}",
           "member": "LogToCLSConfig",
           "name": "ErrorLog",
           "output_required": false,
@@ -10282,7 +10282,7 @@
         {
           "disabled": false,
           "document": "慢日志投递CLS配置",
-          "example": "{\"Status\": \"ON\",\"LogSetId\":\"xxx\",\"LogTopicId\":\"xxx\"}",
+          "example": "{\"ClsRegion\": \"ap-guangzhou\",\"Status\": \"ON\",\"LogSetId\":\"xxx\",\"LogTopicId\":\"xxx\"}",
           "member": "LogToCLSConfig",
           "name": "SlowLog",
           "output_required": false,
@@ -11006,7 +11006,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询的云数据库产品类型，目前仅支持 \"mysql\"。",
+          "document": "需要查询数据备份概览的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点云盘版实例，mysql-cluster 指云盘版（原集群版）实例。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -11025,7 +11025,7 @@
           "example": "5000",
           "member": "int64",
           "name": "DataBackupVolume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11035,7 +11035,7 @@
           "example": "5",
           "member": "int64",
           "name": "DataBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11045,7 +11045,7 @@
           "example": "3000",
           "member": "int64",
           "name": "AutoBackupVolume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11055,7 +11055,7 @@
           "example": "3",
           "member": "int64",
           "name": "AutoBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11065,7 +11065,7 @@
           "example": "2000",
           "member": "int64",
           "name": "ManualBackupVolume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11075,7 +11075,7 @@
           "example": "2",
           "member": "int64",
           "name": "ManualBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11085,7 +11085,7 @@
           "example": "1000",
           "member": "int64",
           "name": "RemoteBackupVolume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11095,7 +11095,7 @@
           "example": "2",
           "member": "int64",
           "name": "RemoteBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11105,7 +11105,7 @@
           "example": "1",
           "member": "int64",
           "name": "DataBackupArchiveVolume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11115,7 +11115,7 @@
           "example": "1",
           "member": "int64",
           "name": "DataBackupArchiveCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11125,7 +11125,7 @@
           "example": "1",
           "member": "int64",
           "name": "DataBackupStandbyVolume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11135,7 +11135,7 @@
           "example": "1",
           "member": "int64",
           "name": "DataBackupStandbyCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11171,7 +11171,7 @@
         },
         {
           "disabled": false,
-          "document": "单次请求数量，默认值为20，最小值为1，最大值为100。",
+          "document": "单次请求数量，默认值为20，最小值为1，最大值为5000。",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -11205,8 +11205,8 @@
         },
         {
           "disabled": false,
-          "document": "返回的实例信息。",
-          "example": "[             \"information_schema\",             \"mysql\",        ",
+          "document": "实例中的数据库名称列表。",
+          "example": "[\"information_schema\",\"mysql\"]",
           "member": "string",
           "name": "Items",
           "output_required": true,
@@ -11237,7 +11237,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎版本，目前支持 [\"5.1\", \"5.5\", \"5.6\", \"5.7\", \"8.0\"]",
+          "document": "引擎版本，目前支持 [\"5.1\", \"5.5\", \"5.6\", \"5.7\", \"8.0\"]。\n说明：引擎版本为必填。",
           "example": "8.0",
           "member": "string",
           "name": "EngineVersion",
@@ -11246,7 +11246,7 @@
         },
         {
           "disabled": false,
-          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。",
+          "document": "默认参数模板类型。支持值包括：\"HIGH_STABILITY\" - 高稳定模板，\"HIGH_PERFORMANCE\" - 高性能模板。默认值为：HIGH_STABILITY。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "TemplateType",
@@ -11255,7 +11255,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模板引擎，默认值：InnoDB",
+          "document": "参数模板引擎，默认值：InnoDB，可取值：InnoDB、RocksDB。",
           "example": "InnoDB",
           "member": "string",
           "name": "EngineType",
@@ -11274,15 +11274,17 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数详情。",
-          "example": "无",
+          "example": "[{\"Name\": \"character_set_server\",\"ParamType\": \"enum\",\"Default\":***\"MaxFunc\": \"64\",\"MinFunc\": \"1\",\"SnapshotValue\": \"1\",\"IsSnapshotExist\": true,\"IsNotSupportEdit\": true}]",
           "member": "ParameterDetail",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11688,7 +11690,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认值：20。",
+          "document": "分页大小，默认值：20，最大值为100。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -11707,17 +11709,17 @@
           "example": "28",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数修改记录。",
-          "example": "无",
+          "example": "[\"InstanceId\": \"cdb-1234asdf\",\"ParamName\": \"lower_case_table_names\",\"OldValue\": \"0\",\"NewValue\": \"1\",\"IsSucess\": true,\"ModifyTime\": \"2019-01-15 18:59:40\",\"JobId\": 0,\"IsSuccess\": true}]",
           "member": "ParamRecord",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11754,7 +11756,7 @@
           "example": "72",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11764,7 +11766,7 @@
           "example": "无",
           "member": "ParameterDetail",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12641,7 +12643,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表，单个实例 ID 的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
-          "example": "[\"cdb-fix44sxh\\r\\n\",\"cdb-bdf7h3j1\\r\\n\"]",
+          "example": "[\"cdb-fix44sxh\",\"cdb-bdf7h3j1\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -12684,7 +12686,7 @@
         {
           "disabled": false,
           "document": "返回的参数信息。",
-          "example": "无",
+          "example": "[{\"InstanceId\":\"cdb-fix44sxh\",\"Message\":\"ok\",\"Code\":0,\"Times\":[{\"Begin\":\"2017-08-21 02:06:20\",\"End\":\"2017-08-25 17:52:05\"}]}]",
           "member": "InstanceRollbackRangeTime",
           "name": "Items",
           "output_required": true,
@@ -12715,7 +12717,7 @@
         {
           "disabled": false,
           "document": "异步任务 ID。",
-          "example": "\"aaa\"",
+          "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
           "required": false,
@@ -12723,7 +12725,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数，每次请求返回的记录数。默认值为 20，最大值为 100。",
+          "document": "分页参数，每次请求返回的记录数。默认值为20，建议最大取值为100。",
           "example": "1",
           "member": "int64",
           "name": "Limit",
@@ -13113,7 +13115,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -13122,7 +13124,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/236/17493)接口获得。",
+          "document": "数据库名称，可使用 [查询数据库](https://cloud.tencent.com/document/api/236/17493) 接口获得。",
           "example": "test_data_base",
           "member": "string",
           "name": "Database",
@@ -13157,7 +13159,7 @@
         {
           "disabled": false,
           "document": "返回的数据库列信息。",
-          "example": "[             \"TABLE_CATALOG\",             \"TABLE_SCHEMA\",      ",
+          "example": "[\"TABLE_CATALOG\",\"TABLE_SCHEMA\"]",
           "member": "string",
           "name": "Items",
           "output_required": true,
@@ -13205,7 +13207,7 @@
         },
         {
           "disabled": false,
-          "document": "单次请求返回的数量，默认值为20，最大值为2000。",
+          "document": "单次请求返回的数量，默认值为20，最大值为5000。",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -13240,7 +13242,7 @@
         {
           "disabled": false,
           "document": "返回的数据库表信息。",
-          "example": ":[             \"CHARACTER_SETS\",             \"COLLATIONS\",      ",
+          "example": "[\"CHARACTER_SETS\",\"COLLATIONS\"]",
           "member": "string",
           "name": "Items",
           "output_required": true,
@@ -13957,7 +13959,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误发生时间。",
+          "document": "错误发生时间。时间戳，秒级",
           "example": "1585142640 ",
           "member": "uint64",
           "name": "Timestamp",
@@ -16286,7 +16288,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -16295,7 +16297,7 @@
         },
         {
           "disabled": false,
-          "document": "备份文件的保留时间，单位为天。最小值为7天，最大值为1830天。",
+          "document": "数据备份文件的保留时间，单位为天。\n1. MySQL 双节点、三节点、云盘版数据备份文件可以保留7天 - 1830天。\n2. MySQL 单节点（云盘）数据备份文件可以保留7天 - 30天。",
           "example": "10",
           "member": "int64",
           "name": "ExpireDays",
@@ -16322,7 +16324,7 @@
         },
         {
           "disabled": false,
-          "document": "binlog的保留时间，单位为天。最小值为7天，最大值为1830天。该值的设置不能大于备份文件的保留时间。",
+          "document": "binlog 的保留时间，单位为天。\n1. MySQL 双节点、三节点、云盘版日志备份文件可以保留7天 - 3650天。\n2. MySQL 单节点（云盘）日志备份文件可以保留7天 - 30天。",
           "example": "8",
           "member": "int64",
           "name": "BinlogExpireDays",
@@ -16332,7 +16334,7 @@
         {
           "disabled": false,
           "document": "备份时间窗，比如要设置每周二和周日 10:00-14:00之间备份，该参数如下：{\"Monday\": \"\", \"Tuesday\": \"10:00-14:00\", \"Wednesday\": \"\", \"Thursday\": \"\", \"Friday\": \"\", \"Saturday\": \"\", \"Sunday\": \"10:00-14:00\"}    （注：可以设置一周的某几天备份，但是每天的备份时间需要设置为相同的时间段。 如果设置了该字段，将忽略StartTime字段的设置）",
-          "example": "无",
+          "example": "{\"Monday\": \"\", \"Tuesday\": \"10:00-14:00\", \"Wednesday\": \"\", \"Thursday\": \"\", \"Friday\": \"\", \"Saturday\": \"\", \"Sunday\": \"10:00-14:00\"}  ",
           "member": "CommonTimeWindow",
           "name": "BackupTimeWindow",
           "required": false,
@@ -16340,7 +16342,7 @@
         },
         {
           "disabled": false,
-          "document": "定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效",
+          "document": "定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。",
           "example": "off",
           "member": "string",
           "name": "EnableBackupPeriodSave",
@@ -16754,7 +16756,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID，可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-234rsta",
           "member": "string",
           "name": "InstanceId",
@@ -16763,7 +16765,7 @@
         },
         {
           "disabled": false,
-          "document": "日志类型：error/slowlog",
+          "document": "日志类型。error：错误日志，slowlog：慢日志。",
           "example": "error",
           "member": "string",
           "name": "LogType",
@@ -16772,7 +16774,7 @@
         },
         {
           "disabled": false,
-          "document": "投递状态：ON/OFF",
+          "document": "投递状态。ON：开启，OFF：关闭。",
           "example": "ON",
           "member": "string",
           "name": "Status",
@@ -16781,7 +16783,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要创建日志集",
+          "document": "是否需要创建日志集。默认为 false。",
           "example": "true",
           "member": "bool",
           "name": "CreateLogset",
@@ -16790,7 +16792,7 @@
         },
         {
           "disabled": false,
-          "document": "需要创建日志集时为日志集名称；选择已有日志集时，为日志集ID",
+          "document": "需要创建日志集时为日志集名称；选择已有日志集时，为日志集 ID。默认为空。\n说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。",
           "example": "my_test",
           "member": "string",
           "name": "Logset",
@@ -16799,7 +16801,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要创建日志主题",
+          "document": "是否需要创建日志主题。默认为 false。",
           "example": "true",
           "member": "bool",
           "name": "CreateLogTopic",
@@ -16808,7 +16810,7 @@
         },
         {
           "disabled": false,
-          "document": "需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题ID",
+          "document": "需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题 ID。默认为空。\n说明：当参数 Status 的值为 ON 时，Logset 和 LogTopic 参数必须填一个。",
           "example": "my_test",
           "member": "string",
           "name": "LogTopic",
@@ -16817,7 +16819,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题有效期，不填写时，默认30天",
+          "document": "日志主题有效期，不填写时，默认30天，最大值3600。",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -16826,7 +16828,7 @@
         },
         {
           "disabled": false,
-          "document": "创建日志主题时，是否创建索引",
+          "document": "创建日志主题时，是否创建索引，默认为 false。",
           "example": "true",
           "member": "bool",
           "name": "CreateIndex",
@@ -16835,7 +16837,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS所在地域",
+          "document": "CLS 所在地域，不填择默认为 Region 的参数值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ClsRegion",
@@ -17288,8 +17290,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同。",
-          "example": "cdb-xxx",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -17297,7 +17299,7 @@
         },
         {
           "disabled": false,
-          "document": "本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。",
+          "document": "本地 binlog 保留时长。不同实例的可取值如下：\n1. 云盘版实例、双节点实例、三节点实例的本地 binlog 保留时长（小时）默认为120，范围：6 - 168。\n2. 灾备实例的本地 binlog 保留时长（小时）默认为120，范围：120 - 168。\n3. 单节点云盘实例的本地 binlog 保留时长（小时）默认为120，范围：0 - 168。\n4. 若双节点实例、三节点实例下无灾备实例，则该主实例的本地 binlog 保留时长（小时）范围是：6 - 168；若双节点实例、三节点实例下有灾备实例，或者要为双节点实例、三节点实例添加灾备实例，为避免同步异常，该主实例的本地 binlog 保留时长（小时）不能设置低于120小时，范围是：120 - 168。",
           "example": "100",
           "member": "int64",
           "name": "SaveHours",
@@ -17306,8 +17308,8 @@
         },
         {
           "disabled": false,
-          "document": "本地binlog空间使用率，可取值范围：[30,50]。",
-          "example": "20",
+          "document": "本地 binlog 空间使用率，可取值范围：[30,50]。",
+          "example": "30",
           "member": "int64",
           "name": "MaxUsage",
           "required": true,
@@ -17378,7 +17380,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板 ID。",
+          "document": "模板 ID。可通过 [DescribeParamTemplateInfo](https://cloud.tencent.com/document/product/236/32660) 接口获取。",
           "example": "11231",
           "member": "int64",
           "name": "TemplateId",
@@ -17387,7 +17389,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称，长度不超过64。",
+          "document": "模板名称，仅支持数字、英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@,且长度不能超过60。",
           "example": "andy5.7",
           "member": "string",
           "name": "Name",
@@ -20025,7 +20027,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云数据库实例ID",
+          "document": "云数据库实例 ID。",
           "example": "cdb-aeti0q11",
           "member": "string",
           "name": "InstanceId",
@@ -20036,7 +20038,7 @@
         },
         {
           "disabled": false,
-          "document": "回档策略。可选值为：table、db、full；默认值为full。table - 极速回档模式，仅导入所选中表级别的备份和binlog，如有跨表操作，且关联表未被同时选中，将会导致回档失败，该模式下参数Databases必须为空；db - 快速模式，仅导入所选中库级别的备份和binlog，如有跨库操作，且关联库未被同时选中，将会导致回档失败；full - 普通回档模式，将导入整个实例的备份和binlog，速度较慢。",
+          "document": "回档策略。可选值为：table、db、full。table - 极速回档模式，仅导入所选中表级别的备份和binlog，如有跨表操作，且关联表未被同时选中，将会导致回档失败，该模式下参数Databases必须为空；db - 快速模式，仅导入所选中库级别的备份和binlog，如有跨库操作，且关联库未被同时选中，将会导致回档失败；full - 普通回档模式，将导入整个实例的备份和 binlog，速度较慢。",
           "example": "db",
           "member": "string",
           "name": "Strategy",
@@ -20047,7 +20049,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库回档时间，时间格式为：yyyy-mm-dd hh:mm:ss",
+          "document": "数据库回档时间，时间格式为：yyyy-mm-dd hh:mm:ss。",
           "example": "2024-09-09 16:40:30",
           "member": "string",
           "name": "RollbackTime",
@@ -20058,7 +20060,7 @@
         },
         {
           "disabled": false,
-          "document": "待回档的数据库信息，表示整库回档",
+          "document": "待回档的数据库信息，表示整库回档。",
           "example": "[{\"DatabaseName\": \"db1\",\"NewDatabaseName\": \"db2\"}]",
           "member": "RollbackDBName",
           "name": "Databases",
@@ -20069,7 +20071,7 @@
         },
         {
           "disabled": false,
-          "document": "待回档的数据库表信息，表示按表回档",
+          "document": "待回档的数据库表信息，表示按表回档。",
           "example": "[{\"Database\": \"db1\",\"Table\": [{\"TableName\": \"andytable1\",\"NewTableName\": \"andytable2\"}]}]",
           "member": "RollbackTables",
           "name": "Tables",
@@ -20668,7 +20670,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Sql的执行时间。",
+          "document": "Sql的执行时间。秒级时间戳。",
           "example": "1637894492",
           "member": "uint64",
           "name": "Timestamp",

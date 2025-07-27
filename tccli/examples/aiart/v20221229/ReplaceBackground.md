@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli aiart ReplaceBackground --cli-unfold-argument  \
-    --ProductUrl https://xxx.com/product.jpg \
-    --MaskUrl https://xxx.com/mask.jpg \
+    --ProductUrl https://cos.ap-guangzhou.myqcloud.com/product.jpg \
+    --MaskUrl https://cos.ap-guangzhou.myqcloud.com/mask.jpg \
     --Prompt backpack,real picture quality, fabric texture, fine, cartoon \
     --RspImgType url
 ```

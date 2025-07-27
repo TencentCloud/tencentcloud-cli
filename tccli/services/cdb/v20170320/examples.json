@@ -175,7 +175,7 @@
     "CreateCloneInstance": [
       {
         "document": "克隆实例并回档到指定时间",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloneInstance\n<公共请求参数>\n\n{\n    \"UniqVpcId\": \"vpc-594gwq4l\",\n    \"InstanceId\": \"cdb-9303wd4x\",\n    \"Volume\": \"50\",\n    \"UniqSubnetId\": \"subnet-dz5pj862\",\n    \"SpecifiedRollbackTime\": \"2020-08-0116:27:43\",\n    \"Memory\": \"1000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloneInstance\n<公共请求参数>\n\n{\n    \"UniqVpcId\": \"vpc-594gwq4l\",\n    \"InstanceId\": \"cdb-9303wd4x\",\n    \"Volume\": 50,\n    \"UniqSubnetId\": \"subnet-dz5pj862\",\n    \"SpecifiedRollbackTime\": \"2020-08-01 16:27:43\",\n    \"Memory\": 1000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
         "title": "克隆实例并回档到指定时间"
       }
@@ -247,7 +247,7 @@
     "CreateParamTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateType\": \"HIGH_STABILITY\",\n    \"Name\": \"mysql1\",\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"MIXED\",\n            \"Name\": \"binlog_format\"\n        },\n        {\n            \"CurrentValue\": \"1\",\n            \"Name\": \"auto_increment_increment\"\n        }\n    ],\n    \"EngineVersion\": \"5.7\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateType\": \"HIGH_STABILITY\",\n    \"Name\": \"mysql1\",\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"ROW\",\n            \"Name\": \"binlog_format\"\n        },\n        {\n            \"CurrentValue\": \"1\",\n            \"Name\": \"auto_increment_increment\"\n        }\n    ],\n    \"EngineVersion\": \"5.7\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"756bb037-a44a-4b4f-abe0-6efd34a6c792\",\n        \"TemplateId\": 2333\n    }\n}",
         "title": "创建参数模板"
       }
@@ -499,7 +499,7 @@
     "DescribeBackupSummaries": [
       {
         "document": "查询备份实时统计",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupSummaries\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\",\n    \"Limit\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupSummaries\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\",\n    \"Limit\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AutoBackupCount\": 5,\n                \"AutoBackupVolume\": 10000,\n                \"BackupVolume\": 50000,\n                \"BinlogBackupCount\": 2,\n                \"BinlogBackupVolume\": 20000,\n                \"DataBackupCount\": 15,\n                \"DataBackupVolume\": 30000,\n                \"InstanceId\": \"cdb-01wa5l0v\",\n                \"ManualBackupCount\": 10,\n                \"ManualBackupVolume\": 20000\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 50\n    }\n}",
         "title": "查询备份实时统计"
       }
@@ -628,7 +628,7 @@
       {
         "document": "实例日志管理中，慢日志、错误日志投递CLS的配置",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceLogToCLS\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-70zdmgg1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorLog\": {\n            \"Status\": \"ON\",\n            \"LogSetId\": \"8dff8d62-fa10-4d6c-bee0-6e31a0ade975\",\n            \"LogTopicId\": \"09c3c2d1-ac46-4e4e-b688-b73950e64682\"\n        },\n        \"SlowLog\": {\n            \"Status\": \"OFF\",\n            \"LogSetId\": \"8dff8d62-fa10-4d6c-bee0-6e31a0ade976\",\n            \"LogTopicId\": \"09c3c2d1-ac46-4e4e-b688-b73950e64681\"\n        },\n        \"RequestId\": \"8a96c7fec3c747adb83cb0868c0107d5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorLog\": {\n            \"ClsRegion\": \"ap-guangzhou\",\n            \"Status\": \"ON\",\n            \"LogSetId\": \"8dff8d62-fa10-4d6c-bee0-6e31a0ade975\",\n            \"LogTopicId\": \"09c3c2d1-ac46-4e4e-b688-b73950e64682\"\n        },\n        \"SlowLog\": {\n            \"ClsRegion\": \"ap-guangzhou\",\n            \"Status\": \"OFF\",\n            \"LogSetId\": \"8dff8d62-fa10-4d6c-bee0-6e31a0ade976\",\n            \"LogTopicId\": \"09c3c2d1-ac46-4e4e-b688-b73950e64681\"\n        },\n        \"RequestId\": \"8a96c7fec3c747adb83cb0868c0107d5\"\n    }\n}",
         "title": "查询实例日志投递CLS配置"
       }
     ],
@@ -698,7 +698,7 @@
       {
         "document": "查询默认的可设置参数列表",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDefaultParams\n&EngineVersion=5.7\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"92131c95-aa65-44db-8c3c-e8cd67883b58\",\n        \"Items\": [\n            {\n                \"CurrentValue\": \"utf8\",\n                \"Default\": \"LATIN1\",\n                \"Description\": \"Specify default server character set\",\n                \"EnumValue\": [\n                    \"LATIN1\",\n                    \"UTF8\",\n                    \"GBK\",\n                    \"UTF8MB4\"\n                ],\n                \"Max\": 0,\n                \"MaxFunc\": \"\",\n                \"Min\": 0,\n                \"MinFunc\": \"\",\n                \"Name\": \"character_set_server\",\n                \"NeedReboot\": 1,\n                \"ParamType\": \"enum\"\n            },\n            {\n                \"CurrentValue\": \"1600\",\n                \"Default\": \"{MIN(DBInitMemory/4+500,1000000)}\",\n                \"Description\": \"The maximum permitted number of simultaneous client connections.\",\n                \"EnumValue\": [],\n                \"Max\": 100000,\n                \"MaxFunc\": \"100000\",\n                \"Min\": 1,\n                \"MinFunc\": \"1\",\n                \"Name\": \"max_connections\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"func\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Items\": [\n            {\n                \"Name\": \"character_set_server\",\n                \"ParamType\": \"enum\",\n                \"Default\": \"{MIN(DBInitMemory/4+500,1000000)}\",\n                \"Description\": \"The maximum permitted number of simultaneous client connections.\",\n                \"CurrentValue\": \"1600\",\n                \"NeedReboot\": 0,\n                \"Max\": 0,\n                \"Min\": 0,\n                \"EnumValue\": [\n                    \"LATIN1\",\n                    \"UTF8\",\n                    \"GBK\",\n                    \"UTF8MB4\"\n                ],\n                \"MaxFunc\": \"64\",\n                \"MinFunc\": \"1\",\n                \"IsNotSupportEdit\": true\n            }\n        ],\n        \"RequestId\": \"92131c95-aa65-44db-8c3c-e8cd67883b58\"\n    }\n}",
         "title": "查询默认的可设置参数列表"
       }
     ],
@@ -738,7 +738,7 @@
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeInstanceParamRecords\n&InstanceId=cdb-f35wr6wj\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\",\n        \"TotalCount\": \"28\",\n        \"Items\": [\n            {\n                \"InstanceId\": \"cdb-1234asdf\",\n                \"ParamName\": \"lower_case_table_names\",\n                \"OldValue\": \"0\",\n                \"NewValue\": \"1\",\n                \"IsSucess\": true,\n                \"ModifyTime\": \"2019-01-15 18:59:40\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 28,\n        \"Items\": [\n            {\n                \"InstanceId\": \"cdb-1234asdf\",\n                \"ParamName\": \"lower_case_table_names\",\n                \"OldValue\": \"0\",\n                \"NewValue\": \"1\",\n                \"IsSucess\": true,\n                \"ModifyTime\": \"2019-01-15 18:59:40\",\n                \"IsSuccess\": true\n            }\n        ],\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "查询实例参数修改历史"
       }
     ],
@@ -746,7 +746,7 @@
       {
         "document": "查询实例的可设置参数列表",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ezq1vzem\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 72,\n        \"Items\": [\n            {\n                \"Name\": \"max_connections\",\n                \"ParamType\": \"integer\",\n                \"Default\": \"151\",\n                \"Description\": \"The maximum permitted number of simultaneous client connections.\",\n                \"CurrentValue\": \"800\",\n                \"NeedReboot\": 0,\n                \"Max\": 10240,\n                \"Min\": 1,\n                \"EnumValue\": [],\n                \"MinFunc\": \"\",\n                \"MaxFunc\": \"\"\n            },\n            {\n                \"Name\": \"character_set_server\",\n                \"ParamType\": \"enum\",\n                \"Default\": \"utf8\",\n                \"Description\": \"Specify default server character set.\",\n                \"CurrentValue\": \"utf8\",\n                \"NeedReboot\": 1,\n                \"EnumValue\": [\n                    \"utf8\",\n                    \"utf8mb4\",\n                    \"gbk\",\n                    \"latin1\"\n                ],\n                \"Max\": 0,\n                \"Min\": 0,\n                \"MinFunc\": \"\",\n                \"MaxFunc\": \"\"\n            },\n            {\n                \"Name\": \"lower_case_table_names\",\n                \"ParamType\": \"integer\",\n                \"Default\": \"0\",\n                \"Description\": \"If set to 0, table names are stored as specified and comparisons are case sensitive. If set to 1, they are stored in lowercase on disk and comparisons are not case sensitive.\",\n                \"CurrentValue\": \"0\",\n                \"NeedReboot\": 1,\n                \"Max\": 1,\n                \"Min\": 0,\n                \"EnumValue\": [],\n                \"MinFunc\": \"\",\n                \"MaxFunc\": \"\"\n            }\n        ],\n        \"RequestId\": \"92131c95-aa65-44db-8c3c-e8cd67883b58\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 72,\n        \"Items\": [\n            {\n                \"Name\": \"lower_case_table_names\",\n                \"ParamType\": \"integer\",\n                \"Default\": \"0\",\n                \"Description\": \"If set to 0, table names are stored as specified and comparisons are case sensitive. If set to 1, they are stored in lowercase on disk and comparisons are not case sensitive.\",\n                \"CurrentValue\": \"0\",\n                \"NeedReboot\": 1,\n                \"Max\": 1,\n                \"Min\": 0,\n                \"EnumValue\": [],\n                \"MaxFunc\": \"64\",\n                \"MinFunc\": \"1\",\n                \"IsNotSupportEdit\": true\n            }\n        ],\n        \"RequestId\": \"92131c95-aa65-44db-8c3c-e8cd67883b58\"\n    }\n}",
         "title": "查询实例的可设置参数列表"
       }
     ],
@@ -849,7 +849,7 @@
     "DescribeRollbackTaskDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRollbackTaskDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-qwer1234\",\n    \"Limit\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRollbackTaskDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-qwer1234\",\n    \"Limit\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"Items\": [\n            {\n                \"Info\": \"batch rollback success\",\n                \"Status\": \"SUCCESS\",\n                \"Progress\": 100,\n                \"StartTime\": \"2020-04-22 10:01:23\",\n                \"EndTime\": \"2020-04-22 10:06:25\",\n                \"Detail\": [\n                    {\n                        \"InstanceId\": \"cdb-qwer1234\",\n                        \"Strategy\": \"full\",\n                        \"RollbackTime\": \"2020-04-22 10:00:57\",\n                        \"Databases\": [],\n                        \"Tables\": [\n                            {\n                                \"Table\": [\n                                    {\n                                        \"TableName\": \"sbtest1\",\n                                        \"NewTableName\": \"sbtest1_bak\"\n                                    },\n                                    {\n                                        \"TableName\": \"sbtest2\",\n                                        \"NewTableName\": \"sbtest2_bak\"\n                                    }\n                                ],\n                                \"Database\": \"dbtest_bak\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"1ac120c8-744a-4c15-be4e-4431511c0233\"\n    }\n}",
         "title": "查询回档任务详情"
       }
@@ -1041,7 +1041,7 @@
     "ModifyBackupConfig": [
       {
         "document": "修改数据库备份配置",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"ExpireDays\": \"10\",\n    \"BinlogExpireDays\": \"8\",\n    \"BackupMethod\": \"logical\",\n    \"StartTime\": \"02:00-06:00\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"ExpireDays\": 10,\n    \"BinlogExpireDays\": 8,\n    \"BackupMethod\": \"logical\",\n    \"StartTime\": \"02:00-06:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改数据库备份配置"
       }
@@ -1089,7 +1089,7 @@
     "ModifyDBInstanceLogToCLS": [
       {
         "document": "CDB实例慢日志、错误日志投递到CLS",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceLogToCLS\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ewa3b\",\n    \"LogType\": \"error\",\n    \"Status\": \"ON\",\n    \"CreateLogset\": true,\n    \"Logset\": \"sub_fyrtjbqw\",\n    \"CreateLogTopic\": true,\n    \"LogTopic\": \"my_test\",\n    \"Period\": \"1\",\n    \"CreateIndex\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceLogToCLS\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ewa3b\",\n    \"LogType\": \"error\",\n    \"Status\": \"ON\",\n    \"CreateLogset\": true,\n    \"Logset\": \"sub_fyrtjbqw\",\n    \"CreateLogTopic\": true,\n    \"LogTopic\": \"my_test\",\n    \"Period\": 1,\n    \"CreateIndex\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "开启或关闭CDB日志投递CLS"
       }
@@ -1161,7 +1161,7 @@
     "ModifyLocalBinlogConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLocalBinlogConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"MaxUsage\": \"30\",\n    \"SaveHours\": \"72\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLocalBinlogConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"MaxUsage\": 30,\n    \"SaveHours\": 72\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改本地binlog保留策略"
       }

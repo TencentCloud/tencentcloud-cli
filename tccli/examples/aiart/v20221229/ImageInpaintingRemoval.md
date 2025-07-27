@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli aiart ImageInpaintingRemoval --cli-unfold-argument  \
-    --InputUrl https://xxx.com/image.jpg \
-    --MaskUrl https://xxx.com/mask.jpg \
+    --InputUrl hhttps://cos.ap-guangzhou.myqcloud.com/image.jpg \
+    --MaskUrl https://cos.ap-guangzhou.myqcloud.com/mask.png \
     --RspImgType url
 ```
 

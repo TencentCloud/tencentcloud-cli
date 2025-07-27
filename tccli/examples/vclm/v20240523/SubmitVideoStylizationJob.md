@@ -7,7 +7,7 @@ Input:
 ```
 tccli vclm SubmitVideoStylizationJob --cli-unfold-argument  \
     --StyleId 2d_anime \
-    --VideoUrl http://xxxx.mp4 \
+    --VideoUrl https://cos.ap-guangzhou.myqcloud.com/video.mp4 \
     --StyleStrength medium
 ```
 

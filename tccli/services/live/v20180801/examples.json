@@ -764,7 +764,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLiveCloudEffectList\n<公共请求参数>\n\n{\n    \"Prompt\": \"小狗\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"InfoList\": [\n            {\n                \"Id\": \"1001\",\n                \"Prompt\": \"小狗\",\n                \"Flag\": \"动物\",\n                \"PreviewImageUrl\": \"http://preview.image.com/pic.jpg\",\n                \"Type\": \"PGC\",\n                \"CreateTime\": \"2025-05-19T00:00:00Z\",\n                \"UpdateTime\": \"2025-05-20T00:00:00Z\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"EnableCreateNum\": 100,\n        \"TotalNum\": 30,\n        \"InfoList\": [\n            {\n                \"Id\": \"1001\",\n                \"Prompt\": \"小狗\",\n                \"Flag\": \"动物\",\n                \"Status\": \"FINISH\",\n                \"PreviewImageUrl\": \"http://preview.image.com/pic.jpg\",\n                \"Type\": \"PGC\",\n                \"CreateTime\": \"2025-05-19T00:00:00Z\",\n                \"UpdateTime\": \"2025-05-20T00:00:00Z\"\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],

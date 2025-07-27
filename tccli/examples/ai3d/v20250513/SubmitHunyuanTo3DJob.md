@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ai3d SubmitHunyuanTo3DJob --cli-unfold-argument  \
-    --ImageUrl https://xxx.png
+    --ImageUrl https://***.cos.ap-guangzhou.myqcloud.com/***.png
 ```
 
 Output: 

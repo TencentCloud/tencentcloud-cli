@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli aiart SketchToImage --cli-unfold-argument  \
-    --InputUrl https://xxx.com/image.jpg \
+    --InputUrl https://cos.ap-guangzhou.myqcloud.com/image.jpg \
     --Prompt backpack,real picture quality, fabric texture, fine, cartoon \
     --RspImgType url
 ```
