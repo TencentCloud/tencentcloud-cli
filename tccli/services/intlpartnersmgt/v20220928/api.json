@@ -85,7 +85,7 @@
       "status": "online"
     },
     "DescribeCustomerBillDetail": {
-      "document": "查询子客账单详情",
+      "document": "描述说明：查询子客账单详情\n可调用角色：经销商、一级经销商、二级经销商",
       "input": "DescribeCustomerBillDetailRequest",
       "name": "查询子客账单详情",
       "output": "DescribeCustomerBillDetailResponse",
@@ -1953,7 +1953,7 @@
         {
           "disabled": false,
           "document": "子客uin",
-          "example": "123456",
+          "example": "800000448824",
           "member": "uint64",
           "name": "CustomerUin",
           "required": true,
@@ -2031,13 +2031,13 @@
         },
         {
           "disabled": false,
-          "document": "数据详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据详情",
           "example": "{...}",
           "member": "BillDetailData",
           "name": "DetailSet",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2137,7 +2137,7 @@
         {
           "disabled": false,
           "document": "子客uin",
-          "example": "123456",
+          "example": "800000400309",
           "member": "uint64",
           "name": "CustomerUin",
           "required": true,
@@ -2191,6 +2191,7 @@
           "example": "123.45",
           "member": "float",
           "name": "TotalCost",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2381,13 +2382,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "子客uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子客uin",
           "example": "200000000000",
           "member": "string",
           "name": "CustomerUin",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2421,13 +2422,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "子客uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子客uin列表",
           "example": "[\"200000000000\",\" 200000000001\"]",
           "member": "DescribeCustomerUinData",
           "name": "Data",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "BackupDownloadURL": "******",
+        "BackupDownloadURL": "https://postgres-backup-gz-xxxx.cos.ap-guangzhou.myqcloud.com/pgsql/xxxx",
         "RequestId": "7c4e788e-5ec9-4125-bb80-7baabe2744dc"
     }
 }

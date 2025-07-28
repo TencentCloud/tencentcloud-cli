@@ -1111,6 +1111,16 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配期望数并发扩容功能，不能在InstanceAllocationPolicy为竞价混合模式时设置，也不能在ScalingMode为扩容优先开机模式时设置。目前仅支持两个匹配期望数扩容活动并发进行，不支持指定数量扩容、缩容等其他类型活动并发。默认值为FALSE，表示不开启。",
+          "example": "false",
+          "member": "bool",
+          "name": "ConcurrentScaleOutForDesiredCapacity",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1706,6 +1716,15 @@
           "name": "InstanceNameIndexSettings",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "匹配期望数并发扩容功能，不能在InstanceAllocationPolicy为竞价混合模式时设置，也不能在ScalingMode为扩容优先开机模式时设置。目前仅支持两个匹配期望数扩容活动并发进行，不支持指定数量扩容、缩容等其他类型活动并发。默认值为FALSE，表示不开启。",
+          "example": "false",
+          "member": "bool",
+          "name": "ConcurrentScaleOutForDesiredCapacity",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5573,6 +5592,15 @@
           "name": "AssertOriginDesiredCapacity",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "匹配期望数并发扩容功能，不能在InstanceAllocationPolicy为竞价混合模式时设置，也不能在ScalingMode为扩容优先开机模式时设置。目前仅支持两个匹配期望数扩容活动并发进行，不支持指定数量扩容、缩容等其他类型活动并发。设置为FALSE表示不开启。",
+          "example": "false",
+          "member": "bool",
+          "name": "ConcurrentScaleOutForDesiredCapacity",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

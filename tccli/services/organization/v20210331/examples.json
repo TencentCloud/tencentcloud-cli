@@ -64,6 +64,14 @@
         "title": "添加共享单元资源"
       }
     ],
+    "AddShareUnitsResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddShareUnitsResources\n<公共请求参数>\n\n{\n    \"ShareUnits\": [\n        {\n            \"UnitId\": \"shareUnit-2lc***zor\",\n            \"Area\": \"ap-guangzhou\"\n        }\n    ],\n    \"Type\": \"subnet\",\n    \"Resources\": [\n        {\n            \"ProductResourceId\": \"sub-eeu***\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f82ba7fa-5d8a-4ad0-bc5c-96c015b79fe7\"\n    }\n}",
+        "title": "批量添加共享单元资源"
+      }
+    ],
     "AddUserToGroup": [
       {
         "document": "为用户组添加用户",
@@ -414,6 +422,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdentityCenter\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2024-05-30 10:50:11\",\n        \"RequestId\": \"da9a32a5-f6d5-4ef5-be20-0ee16b63bb6d\",\n        \"ScimSyncStatus\": \"Disabled\",\n        \"ServiceStatus\": \"Enabled\",\n        \"UpdateTime\": \"2024-06-25 10:08:21\",\n        \"ZoneId\": \"z-vft38p2hq8tq\",\n        \"ZoneName\": \"testwu\"\n    }\n}",
         "title": "获取集团账号身份中心服务信息"
+      }
+    ],
+    "DescribeManagerShareResources": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DescribeManagerShareResources\n&Area=guangzhou\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2021-03-06 17:11:30\",\n                \"ResourceId\": \"shareResource-kfgfrd2e3xx\",\n                \"ProductResourceId\": \"subnet-ewd23dd\",\n                \"SharedMemberNum\": 0,\n                \"Type\": \"subnet\",\n                \"UnitId\": \"shareUnit-xhreofra2p\",\n                \"UnitName\": \"\",\n                \"SharedMemberUseNum\": 0\n            }\n        ],\n        \"RequestId\": \"2d82212e-63f5-4d1f-b703-d27122c4ea35\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取我的共享资源列表"
       }
     ],
     "DescribeOrganization": [

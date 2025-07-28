@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres ModifyReadOnlyDBInstanceWeight --cli-unfold-argument  \
-    --ReadOnlyGroupId "pgrogp-test" \
-    --DBInstanceId "pgro-e0tfm161" \
+    --ReadOnlyGroupId pgrogp-test \
+    --DBInstanceId pgro-e0tfm161 \
     --Weight 1
 ```
 

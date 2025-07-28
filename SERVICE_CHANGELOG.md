@@ -1,48 +1,40 @@
-# Release 3.0.1250.1
+# Release 3.0.1251.1
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 弹性伸缩(as) 版本：2018-04-19
 
-### 第 148 次发布
+### 第 50 次发布
 
-发布时间：2025-07-28 01:14:58
+发布时间：2025-07-29 01:09:49
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [CreateAutoScalingGroup](http://document.tencentcloudapi.woa.com/document/product/377/20440)
+
+	* 新增入参：ConcurrentScaleOutForDesiredCapacity
+
+* [ModifyAutoScalingGroup](http://document.tencentcloudapi.woa.com/document/product/377/20433)
+
+	* 新增入参：ConcurrentScaleOutForDesiredCapacity
+
+
 修改数据结构：
 
-* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BackupInfo)
+* [AutoScalingGroup](http://document.tencentcloudapi.woa.com/document/product/377/20453#AutoScalingGroup)
 
-	* 新增成员：CreateTime
+	* 新增成员：ConcurrentScaleOutForDesiredCapacity
 
 
 
 
 ## 内容分发网络 CDN(cdn) 版本：2018-06-06
 
-### 第 64 次发布
+### 第 65 次发布
 
-发布时间：2025-07-28 01:18:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* CreateDiagnoseUrl
-* DescribeDiagnoseReport
-* GetDisableRecords
-* ListDiagnoseReport
-
-
-
-## 云游戏(gs) 版本：2019-11-18
-
-### 第 38 次发布
-
-发布时间：2025-07-28 01:39:25
+发布时间：2025-07-29 01:16:39
 
 本次发布包含了以下内容：
 
@@ -50,67 +42,166 @@
 
 修改接口：
 
-* [CreateCosCredential](http://document.tencentcloudapi.woa.com/document/product/1162/86148)
+* [DescribeCdnIp](http://document.tencentcloudapi.woa.com/document/product/228/37868)
 
-	* 新增入参：AndroidAppFileCosInfo
+	* 新增入参：AllPlatformIp
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 154 次发布
+
+发布时间：2025-07-29 01:34:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateOrganizationAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83727)
+
+	* 新增入参：BankAccountNumber, BankAccountNumberSame
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 196 次发布
+
+发布时间：2025-07-29 01:35:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
+
+	* 新增入参：BankAccountNumber
+
+
+修改数据结构：
+
+* [OrganizationAuthorizationOptions](http://document.tencentcloudapi.woa.com/document/product/1595/75258#OrganizationAuthorizationOptions)
+
+	* 新增成员：BankAccountNumberSame
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 104 次发布
+
+发布时间：2025-07-29 01:58:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTasks](http://document.tencentcloudapi.woa.com/document/product/862/37613)
+
+	* 新增入参：StartTime, EndTime, ChannelInfo
 
 
 新增数据结构：
 
-* [FileCosInfo](http://document.tencentcloudapi.woa.com/document/product/1162/40743#FileCosInfo)
+* [ExecRuleTaskData](http://document.tencentcloudapi.woa.com/document/product/862/37615#ExecRuleTaskData)
+* [ExecRulesTask](http://document.tencentcloudapi.woa.com/document/product/862/37615#ExecRulesTask)
+* [QualityControlStrategy](http://document.tencentcloudapi.woa.com/document/product/862/37615#QualityControlStrategy)
+* [RuleConditionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#RuleConditionItem)
+* [Rules](http://document.tencentcloudapi.woa.com/document/product/862/37615#Rules)
+* [ScheduleExecRuleTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleExecRuleTaskResult)
+* [SubtitlePosition](http://document.tencentcloudapi.woa.com/document/product/862/37615#SubtitlePosition)
+* [TimeSpotCheck](http://document.tencentcloudapi.woa.com/document/product/862/37615#TimeSpotCheck)
+
+修改数据结构：
+
+* [ActivityPara](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityPara)
+
+	* 新增成员：ExecRulesTask
+
+* [ActivityResItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityResItem)
+
+	* 新增成员：ExecRuleTask
+
+* [ActivityResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityResult)
+
+	* 新增成员：SkipNode
+
+* [AdaptiveDynamicStreamingTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AdaptiveDynamicStreamingTaskInput)
+
+	* 新增成员：StdExtInfo
+
+* [AiAnalysisTaskDelLogoOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDelLogoOutput)
+
+	* 新增成员：SubtitlePos
+
+* [MediaAiAnalysisTagItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisTagItem)
+
+	* 新增成员：SpecialInfo
+
+* [QualityControlTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#QualityControlTemplate)
+
+	* 新增成员：Strategy
+
+* [ScheduleAnalysisTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleAnalysisTaskResult)
+
+	* <font color="#dd0000">**修改成员**：</font>BeginProcessTime, FinishTime
+
+* [ScheduleTask](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleTask)
+
+	* <font color="#dd0000">**修改成员**：</font>ErrCode, Message
+
+* [SmartSubtitlesTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitlesTaskInput)
+
+	* 新增成员：OutputStorage, OutputObjectPath
 
 
 
-## 云直播CSS(live) 版本：2018-08-01
 
-### 第 93 次发布
+## 集团账号管理(organization) 版本：2021-03-31
 
-发布时间：2025-07-28 01:49:47
+### 第 56 次发布
+
+发布时间：2025-07-29 02:01:12
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DescribeLiveCloudEffectList](http://document.tencentcloudapi.woa.com/document/product/267/87066)
+* [AddShareUnitsResources](http://document.tencentcloudapi.woa.com/document/product/850/87265)
+* [DescribeManagerShareResources](http://document.tencentcloudapi.woa.com/document/product/850/87266)
 
-	* 新增出参：EnableCreateNum, TotalNum
+新增数据结构：
 
-
-修改数据结构：
-
-* [CloudEffectInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#CloudEffectInfo)
-
-	* 新增成员：Status, Message
+* [ManagerShareResource](http://document.tencentcloudapi.woa.com/document/product/850/67060#ManagerShareResource)
+* [ShareUnitInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#ShareUnitInfo)
 
 
 
-
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
-
-### 第 65 次发布
-
-发布时间：2025-07-28 01:56:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DescribeTreeJobsRsp](http://document.tencentcloudapi.woa.com/document/product/849/52010#DescribeTreeJobsRsp)
-
-	* 新增成员：PageAttach, HasMore
-
+## 集团账号管理(organization) 版本：2018-12-25
 
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
 
-### 第 88 次发布
+### 第 89 次发布
 
-发布时间：2025-07-28 02:06:32
+发布时间：2025-07-29 02:08:54
 
 本次发布包含了以下内容：
 
@@ -118,13 +209,9 @@
 
 修改接口：
 
-* [CertificateInfoSubmit](http://document.tencentcloudapi.woa.com/document/product/400/85744)
+* [UploadCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41665)
 
-	* 新增入参：SignAlgo
-
-* [ReplaceCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41667)
-
-	* 新增入参：SignAlgo
+	* 新增入参：KeyPassword
 
 
 

@@ -5,154 +5,154 @@
       "input": "CreateRuleRequest",
       "name": "创建自动化规则",
       "output": "CreateRuleResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "CreateTactic": {
       "document": "产品下线\n\n创建云兔切换策略",
       "input": "CreateTacticRequest",
       "name": "创建云兔切换策略",
       "output": "CreateTacticResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "CreateTag": {
       "document": "产品下线\n\n创建标签",
       "input": "CreateTagRequest",
       "name": "创建标签",
       "output": "CreateTagResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DeleteRule": {
       "document": "产品下线\n\n删除自动化规则",
       "input": "DeleteRuleRequest",
       "name": "删除自动化规则",
       "output": "DeleteRuleResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DeleteTactic": {
       "document": "产品下线\n\n删除策略",
       "input": "DeleteTacticRequest",
       "name": "删除策略",
       "output": "DeleteTacticResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DeleteTag": {
       "document": "产品下线\n\n删除标签",
       "input": "DeleteTagRequest",
       "name": "删除标签",
       "output": "DeleteTagResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DescribeLink": {
       "document": "产品下线\n\n查询云兔连接详细信息",
       "input": "DescribeLinkRequest",
       "name": "查询云兔连接详细信息",
       "output": "DescribeLinkResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DescribeLinks": {
       "document": "产品下线\n\n查询云兔连接列表",
       "input": "DescribeLinksRequest",
       "name": "查询云兔连接列表",
       "output": "DescribeLinksResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DescribeOrders": {
       "document": "产品下线\n\n查询订单列表",
       "input": "DescribeOrdersRequest",
       "name": "查询订单列表",
       "output": "DescribeOrdersResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DescribeRule": {
       "document": "产品下线\n\n查询自动化规则",
       "input": "DescribeRuleRequest",
       "name": "查询自动化规则",
       "output": "DescribeRuleResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DescribeRules": {
       "document": "产品下线\n\n查询自动化规则列表",
       "input": "DescribeRulesRequest",
       "name": "查询自动化规则列表",
       "output": "DescribeRulesResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DescribeTactic": {
       "document": "产品下线\n\n查询云兔切换策略信息",
       "input": "DescribeTacticRequest",
       "name": "查询云兔切换策略信息",
       "output": "DescribeTacticResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DescribeTactics": {
       "document": "产品下线\n\n查询云兔切换策略列表",
       "input": "DescribeTacticsRequest",
       "name": "查询云兔切换策略列表",
       "output": "DescribeTacticsResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DescribeTags": {
       "document": "产品下线\n\n查询标签列表",
       "input": "DescribeTagsRequest",
       "name": "查询标签列表",
       "output": "DescribeTagsResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "ModifyLinkAdvancedLog": {
       "document": "产品下线\n\n编辑云兔高级日志状态",
       "input": "ModifyLinkAdvancedLogRequest",
       "name": "编辑云兔高级日志状态",
       "output": "ModifyLinkAdvancedLogResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "ModifyLinkTactic": {
       "document": "产品下线\n\n编辑云兔策略",
       "input": "ModifyLinkTacticRequest",
       "name": "编辑云兔策略",
       "output": "ModifyLinkTacticResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "ModifyLinkTele": {
       "document": "产品下架\n\n修改云兔运营商",
       "input": "ModifyLinkTeleRequest",
       "name": "修改云兔运营商",
       "output": "ModifyLinkTeleResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "ModifyRule": {
       "document": "产品下线\n\n编辑自动化规则",
       "input": "ModifyRuleRequest",
       "name": "编辑自动化规则",
       "output": "ModifyRuleResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "ModifyRuleStatus": {
       "document": "产品下线\n\n编辑自动化规则状态",
       "input": "ModifyRuleStatusRequest",
       "name": "编辑自动化规则状态",
       "output": "ModifyRuleStatusResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "ModifyTactic": {
       "document": "产品下线\n\n修改云兔切换策略",
       "input": "ModifyTacticRequest",
       "name": "修改策略",
       "output": "ModifyTacticResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "ModifyTag": {
       "document": "产品下线\n\n编辑标签",
       "input": "ModifyTagRequest",
       "name": "编辑标签",
       "output": "ModifyTagResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "RenewLinkInfo": {
       "document": "产品下架\n\n刷新云兔连接信息同步",
       "input": "RenewLinkInfoRequest",
       "name": "刷新云兔连接信息同步",
       "output": "RenewLinkInfoResponse",
-      "status": "deprecated"
+      "status": "offline"
     }
   },
   "metadata": {

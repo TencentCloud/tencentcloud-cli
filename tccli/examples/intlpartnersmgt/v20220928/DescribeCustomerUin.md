@@ -16,11 +16,11 @@ Output:
     "Response": {
         "Data": [
             {
-                "CustomerUin": "123"
+                "CustomerUin": "200000000000"
             }
         ],
-        "Total": "123",
-        "RequestId": "abc"
+        "Total": "1",
+        "RequestId": "b8fccb85-c0d2-46b7-a5ea-1d24fbd3b38c"
     }
 }
 ```

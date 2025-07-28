@@ -56,6 +56,13 @@
       "output": "AddShareUnitResourcesResponse",
       "status": "online"
     },
+    "AddShareUnitsResources": {
+      "document": "批量添加共享单元资源",
+      "input": "AddShareUnitsResourcesRequest",
+      "name": "批量添加共享单元资源",
+      "output": "AddShareUnitsResourcesResponse",
+      "status": "online"
+    },
     "AddUserToGroup": {
       "document": "为用户组添加用户",
       "input": "AddUserToGroupRequest",
@@ -362,6 +369,13 @@
       "input": "DescribeIdentityCenterRequest",
       "name": "获取集团账号身份中心服务信息",
       "output": "DescribeIdentityCenterResponse",
+      "status": "online"
+    },
+    "DescribeManagerShareResources": {
+      "document": "获取我的共享资源列表。",
+      "input": "DescribeManagerShareResourcesRequest",
+      "name": "获取我的共享资源列表",
+      "output": "DescribeManagerShareResourcesResponse",
       "status": "online"
     },
     "DescribeOrganization": {
@@ -1361,6 +1375,51 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddShareUnitsResourcesRequest": {
+      "document": "AddShareUnitsResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享单元。最大5个。",
+          "example": "[{\"UnitId\":\"shareUnit-2lcq***zor\",\"Area\":\"ap-guangzhou\"}]",
+          "member": "ShareUnitInfo",
+          "name": "ShareUnits",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)",
+          "example": "secret",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享资源列表。最大10个。",
+          "example": "[{\"ProductResourceId\":\"sec***002\"}]",
+          "member": "ProductResource",
+          "name": "Resources",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddShareUnitsResourcesResponse": {
+      "document": "AddShareUnitsResources返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3594,6 +3653,89 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeManagerShareResourcesRequest": {
+      "document": "DescribeManagerShareResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域，可通过接口：DescribeShareAreas获取",
+          "example": "guangzhou",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键字，支持资源ID搜索",
+          "example": "test",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，可通过接口：DescribeResourceTypes获取",
+          "example": "subnet",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeManagerShareResourcesResponse": {
+      "document": "DescribeManagerShareResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManagerShareResource",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8525,6 +8667,102 @@
       ],
       "type": "object"
     },
+    "ManagerShareResource": {
+      "document": "我的共享资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享资源ID",
+          "example": "shareResource-3432dfdf",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "vpc",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享单元ID",
+          "example": "shareUnit-1234erte",
+          "member": "string",
+          "name": "UnitId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享单元名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "UnitName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-03-06 21:23:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "共享单元成员数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SharedMemberNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品资源ID",
+          "example": "vpc-23kds",
+          "member": "string",
+          "name": "ProductResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用中共享单元成员数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "SharedMemberUseNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "共享单元地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Area",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ManagerShareUnit": {
       "document": "我的共享单元列表详情",
       "members": [
@@ -11326,6 +11564,30 @@
         }
       ],
       "usage": "both"
+    },
+    "ShareUnitInfo": {
+      "document": "共享单元信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享单元ID。",
+          "example": "shareUnit-xhre**ra2p",
+          "member": "string",
+          "name": "UnitId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享单元地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ShareUnitMember": {
       "document": "共享单元成员",

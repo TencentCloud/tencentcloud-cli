@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "TotalCost": 0,
-        "RequestId": "123456"
+        "RequestId": "b8fccb85-c0d2-46b7-a5ea-1d24fbd3b38c"
     }
 }
 ```
