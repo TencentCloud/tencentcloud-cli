@@ -1,6 +1,6 @@
 **Example 1: 查询参数模板信息**
 
-无
+
 
 Input: 
 
@@ -8,8 +8,8 @@ Input:
 tccli postgres DescribeParameterTemplates --cli-unfold-argument  \
     --Filters.0.Name TemplateName \
     --Filters.0.Values my_custom_template \
-    --Limit 0 \
-    --Offset 10 \
+    --Limit 10 \
+    --Offset 0 \
     --OrderBy CreateTime \
     --OrderByType desc
 ```

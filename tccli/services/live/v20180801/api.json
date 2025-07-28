@@ -12905,7 +12905,7 @@
         },
         {
           "disabled": false,
-          "document": "统计指标类型：\n“Bandwidth”：带宽\n“FluxPerSecond”：平均流量\n“Flux”：流量\n“Request”：请求数\n“Online”：并发连接数",
+          "document": "统计指标类型：\n“Bandwidth”：带宽\n“FluxPerSecond”：平均流量\n“Flux”：流量\n“Request”：请求数",
           "example": "Bandwidth",
           "member": "string",
           "name": "StatType",
@@ -12966,7 +12966,7 @@
         {
           "disabled": false,
           "document": "播放信息列表。",
-          "example": "无",
+          "example": "见DataInfoList",
           "member": "PlayStatInfo",
           "name": "DataInfoList",
           "output_required": true,

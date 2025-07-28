@@ -1206,6 +1206,18 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"MediaProcessTask\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"Definition\": \"30\"\n            },\n            {\n                \"Definition\": \"20\"\n            },\n            {\n                \"Definition\": \"40\"\n            }\n        ]\n    },\n    \"InputInfo\": {\n        \"Type\": \"COS\",\n        \"CosInputInfo\": {\n            \"Region\": \"ap-chongqing\",\n            \"Object\": \"/movie/201907/WildAnimal.mov\",\n            \"Bucket\": \"TopRankVideo-125xxx88\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "发起转码任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Type\": \"COS\",\n        \"CosInputInfo\": {\n            \"Bucket\": \"TopRankVideo-125xxx88\",\n            \"Region\": \"ap-shanghai\",\n            \"Object\": \"/image/lenna.jpeg\"\n        }\n    },\n    \"OutputStorage\": {\n        \"Type\": \"COS\",\n        \"CosOutputStorage\": {\n            \"Bucket\": \"TopRankVideo-125xxx88\",\n            \"Region\": \"ap-shanghai\"\n        }\n    },\n    \"OutputDir\": \"/data/share/\",\n    \"AiQualityControlTask\": {\n        \"Definition\": 30\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a72e698-ec27-4fc1-8e17-c1cbfce1a4a9\",\n        \"TaskId\": \"2600007696-WorkflowTask-67771a50b24d08baaf6165da23461e36tt7\"\n    }\n}",
+        "title": "发起媒体质检任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMedia\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Type\": \"COS\",\n        \"CosInputInfo\": {\n            \"Bucket\": \"TopRankVideo-125xxx88\",\n            \"Region\": \"ap-shanghai\",\n            \"Object\": \"/video/lego-city-vehicles.mp4\"\n        }\n    },\n    \"OutputDir\": \"/share/output/\",\n    \"MediaProcessTask\": {\n        \"AdaptiveDynamicStreamingTaskSet\": [\n            {\n                \"Definition\": 10,\n                \"OutputObjectPath\": \"{inputName}_adaptiveDynamicStreaming.{format}\",\n                \"SubStreamObjectName\": \"{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}.{format}\",\n                \"SegmentObjectName\": \"{inputName}_adaptiveDynamicStreaming_{definition}_{subStreamNumber}_{segmentNumber}.{format}\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be6954ba-1e0e-4b36-9da1-d79aaaaccb0d\",\n        \"TaskId\": \"2600007696-WorkflowTask-7bc4b70f5bda4b4fef4ad29d2d168bdftt7\"\n    }\n}",
+        "title": "发起自适应码流任务"
       }
     ],
     "RecognizeMediaForZhiXue": [

@@ -883,7 +883,7 @@
       "status": "online"
     },
     "ProcessMedia": {
-      "document": "对 URL视频链接 或 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（普通转码、极速高清转码、音视频增强）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、敏感信息检测）；\n8. 智能内容分析（标签、分类、封面、按帧标签、拆条、集锦、片头片尾、游戏打点）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音翻译、物体识别）。\n10. 媒体质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）\n11. 智能字幕（语音全文、语音热词、语音翻译）",
+      "document": "对 URL视频链接 或 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（普通转码、极速高清转码、音视频增强）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（例如鉴黄、敏感信息检测）；\n8. 智能内容分析（例如标签、分类、封面、按帧标签、拆条、集锦、片头片尾、游戏打点）；\n9. 智能内容识别（例如人脸、文本全文、文本关键词、语音全文、语音关键词、语音翻译、物体识别）；\n10. 媒体质检（例如媒体格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）；\n11. 智能字幕（例如语音全文、语音热词、语音翻译）；",
       "input": "ProcessMediaRequest",
       "name": "发起媒体处理",
       "output": "ProcessMediaResponse",
@@ -1186,7 +1186,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n<li>action-AIQualityControl：媒体质检</li>\n<li>action-SmartSubtitles：智能字幕</li>\n\n\n",
+          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n<li>action-AIQualityControl：媒体质检</li>\n<li>action-SmartSubtitles：智能字幕</li>\n<li>action-exec-rules：判断规则</li>\n\n\n",
           "example": "input",
           "member": "string",
           "name": "ActivityType",
@@ -1335,6 +1335,17 @@
         },
         {
           "disabled": false,
+          "document": "任务条件判断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecRulesTask",
+          "name": "ExecRulesTask",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "智能字幕任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SmartSubtitlesTaskInput",
@@ -1452,6 +1463,16 @@
         },
         {
           "disabled": false,
+          "document": "条件判断任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScheduleExecRuleTaskResult",
+          "name": "ExecRuleTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "智能字幕任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduleSmartSubtitleTaskResult",
@@ -1552,7 +1573,7 @@
         {
           "disabled": false,
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
-          "example": "无",
+          "example": "WatermarkSet",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
           "output_required": true,
@@ -1563,7 +1584,7 @@
         {
           "disabled": false,
           "document": "转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "OutputStorage",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
           "output_required": true,
@@ -1607,7 +1628,7 @@
         {
           "disabled": false,
           "document": "要插入的字幕文件。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "AddOnSubtitles",
           "member": "AddOnSubtitle",
           "name": "AddOnSubtitles",
           "output_required": false,
@@ -1618,7 +1639,7 @@
         {
           "disabled": false,
           "document": "Drm信息。",
-          "example": "无",
+          "example": "DrmInfo",
           "member": "DrmInfo",
           "name": "DrmInfo",
           "output_required": false,
@@ -1640,13 +1661,24 @@
         {
           "disabled": false,
           "document": "字幕参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "SubtitleTemplate",
           "member": "SubtitleTemplate",
           "name": "SubtitleTemplate",
           "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "转码参数扩展字段",
+          "example": "{\"audio_info\": {\"codec\": \"vivid\"}}",
+          "member": "string",
+          "name": "StdExtInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2285,6 +2317,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "擦除的字幕位置。**注意**：仅对字幕提取且开启返回字幕位置时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"CenterY\": 1200}",
+          "member": "SubtitlePosition",
+          "name": "SubtitlePos",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4435,10 +4477,10 @@
         {
           "disabled": false,
           "document": "文本关键词识别模板 ID。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -14851,7 +14893,7 @@
         {
           "disabled": false,
           "document": "编排 ID 过滤条件，数组长度限制：100。",
-          "example": "无",
+          "example": "[100]",
           "member": "int64",
           "name": "ScheduleIds",
           "required": false,
@@ -14860,7 +14902,7 @@
         {
           "disabled": false,
           "document": "编排触发类型，可选值：\n<li>CosFileUpload： 腾讯云 COS 文件上传触发</li>\n<li>AwsS3FileUpload：Aws S3 文件上传触发。</li>\n不填或者为空表示全部。",
-          "example": "无",
+          "example": "CosFileUpload",
           "member": "string",
           "name": "TriggerType",
           "required": false,
@@ -14869,7 +14911,7 @@
         {
           "disabled": false,
           "document": "状态，取值范围：\n<li>Enabled：已启用，</li>\n<li>Disabled：已禁用。</li>\n不填此参数，则不区编排状态。",
-          "example": "“”",
+          "example": "Disabled",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -16183,7 +16225,7 @@
         {
           "disabled": false,
           "document": "返回记录条数，默认值：10，最大值：100。",
-          "example": "5",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -16192,9 +16234,27 @@
         {
           "disabled": false,
           "document": "翻页标识，分批拉取时使用：当单次请求无法拉取所有数据，接口将会返回 ScrollToken，下一次请求携带该 Token，将会从下一条记录开始获取。",
-          "example": "\"\"",
+          "example": "531d5385xxxx",
           "member": "string",
           "name": "ScrollToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询任务开始时间",
+          "example": "2021-02-03T04:05:06Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询任务结束时间。",
+          "example": "2021-02-03T04:05:06Z",
+          "member": "string",
+          "name": "EndTime",
           "required": false,
           "type": "string"
         }
@@ -17496,6 +17556,39 @@
           "output_required": false,
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExecRuleTaskData": {
+      "document": "条件判断输出",
+      "members": [
+        {
+          "disabled": false,
+          "document": "质检条件判断需要执行的节点索引。",
+          "example": "[2,3]",
+          "member": "int64",
+          "name": "RearDriveIndex",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExecRulesTask": {
+      "document": "任务判断条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件判断信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Rules",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -18837,23 +18930,23 @@
         },
         {
           "disabled": false,
-          "document": "直播切片对应直播起始时间点，采用 ISO 日期格式。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "直播切片对应直播起始时间点，采用 ISO 日期格式。\t",
           "example": "2024-10-21T17:18:34+08:00\t",
           "member": "string",
           "name": "BeginTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "直播切片对应直播结束时间点，采用 ISO 日期格式。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "直播切片对应直播结束时间点，采用 ISO 日期格式。\t",
           "example": "2024-10-21T17:26:19+08:00\t",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19646,18 +19739,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型。\n<li>LiveRecord：直播录制。</li>\n<li>AiQualityControl：媒体质检。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "原子任务类型。\n<li>LiveRecord：直播录制。</li>\n<li>AiQualityControl：媒体质检。</li>",
+          "example": "LiveRecord",
           "member": "string",
           "name": "ActivityType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "原子任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "NULL",
           "member": "LiveActivityResItem",
           "name": "LiveActivityResItem",
           "output_required": false,
@@ -19965,58 +20058,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "直播编排任务 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "直播编排任务 ID。",
+          "example": "24xxxx-LiveScheduleTask-bd221bcc6xxxxxx",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "FINISH",
           "member": "string",
           "name": "Status",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源异常时返回对应异常Message，否则请使用各个具体任务的 Message。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "源异常时返回对应异常Message，否则请使用各个具体任务的 Message。",
+          "example": "record failed",
           "member": "string",
           "name": "Message",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "直播流 URL。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "直播流 URL。",
+          "example": "http://xxx.flv",
           "member": "string",
           "name": "Url",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "直播编排任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "NULL",
           "member": "LiveActivityResult",
           "name": "LiveActivityResultSet",
           "output_required": false,
@@ -21670,6 +21763,16 @@
           "output_required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "根据不同类型决定",
+          "example": "额外输出信息",
+          "member": "string",
+          "name": "SpecialInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -22639,13 +22742,13 @@
         },
         {
           "disabled": false,
-          "document": "对视频截雪碧图任务的输出。",
+          "document": "对视频截雪碧图任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaImageSpriteItem",
           "name": "Output",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -22742,70 +22845,70 @@
         {
           "disabled": false,
           "document": "任务的类型，可以取的值有：\n<li>Transcode：转码</li>\n<li>AnimatedGraphics：转动图</li>\n<li>SnapshotByTimeOffset：时间点截图</li>\n<li>SampleSnapshot：采样截图</li>\n<li>ImageSprites：雪碧图</li>\n<li>CoverBySnapshot：截图做封面</li>\n<li>AdaptiveDynamicStreaming：自适应码流</li>",
-          "example": "",
+          "example": "Transcode",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频转码任务的查询结果，当任务类型为 Transcode 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "MediaProcessTaskTranscodeResult",
           "name": "TranscodeTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "视频转动图任务的查询结果，当任务类型为 AnimatedGraphics 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "MediaProcessTaskAnimatedGraphicResult",
           "name": "AnimatedGraphicTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "对视频按时间点截图任务的查询结果，当任务类型为 SnapshotByTimeOffset 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "MediaProcessTaskSnapshotByTimeOffsetResult",
           "name": "SnapshotByTimeOffsetTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "对视频采样截图任务的查询结果，当任务类型为 SampleSnapshot 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "MediaProcessTaskSampleSnapshotResult",
           "name": "SampleSnapshotTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "对视频截雪碧图任务的查询结果，当任务类型为 ImageSprite 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "MediaProcessTaskImageSpriteResult",
           "name": "ImageSpriteTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "转自适应码流任务查询结果，当任务类型为 AdaptiveDynamicStreaming 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "MediaProcessTaskAdaptiveDynamicStreamingResult",
           "name": "AdaptiveDynamicStreamingTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -22867,13 +22970,13 @@
         },
         {
           "disabled": false,
-          "document": "对视频做采样截图任务输出。",
+          "document": "对视频做采样截图任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaSampleSnapshotItem",
           "name": "Output",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -22953,13 +23056,13 @@
         },
         {
           "disabled": false,
-          "document": "对视频按指定时间点截图任务输出。",
+          "document": "对视频按指定时间点截图任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "MediaSnapshotByTimeOffsetItem",
           "name": "Output",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -23132,30 +23235,30 @@
         {
           "disabled": false,
           "document": "指定时间点截图规格，参见[指定时间点截图参数模板](https://cloud.tencent.com/document/product/266/33480#.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF)。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "同一规格的截图信息集合，每个元素代表一张截图。",
-          "example": "",
+          "example": "无",
           "member": "MediaSnapshotByTimePicInfoItem",
           "name": "PicInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "指定时间点截图文件的存储位置。",
-          "example": "",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "Storage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -27061,6 +27164,15 @@
         },
         {
           "disabled": false,
+          "document": "智能字幕",
+          "example": "无",
+          "member": "SmartSubtitlesTaskInput",
+          "name": "SmartSubtitlesTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "任务的事件通知信息，不填代表不获取事件通知。",
           "example": "无",
           "member": "TaskNotifyConfig",
@@ -27107,20 +27219,11 @@
         {
           "disabled": false,
           "document": "资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。",
-          "example": "无",
+          "example": "vts-24000123-0",
           "member": "string",
           "name": "ResourceId",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "智能字幕",
-          "example": "无",
-          "member": "SmartSubtitlesTaskInput",
-          "name": "SmartSubtitlesTask",
-          "required": false,
-          "type": "object"
         },
         {
           "disabled": false,
@@ -27357,63 +27460,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "为true时表示视频无音频轨。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "为true时表示视频无音频轨。",
           "example": "true",
           "member": "bool",
           "name": "NoAudio",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "为true时表示视频无视频轨。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "为true时表示视频无视频轨。",
           "example": "true",
           "member": "bool",
           "name": "NoVideo",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "视频无参考质量评分，百分制。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频无参考质量评分，百分制。",
           "example": "95",
           "member": "int64",
           "name": "QualityEvaluationScore",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "视频无参考质量评分，MOS分数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频无参考质量评分，MOS分数。",
           "example": "4.75",
           "member": "float",
           "name": "QualityEvaluationMeanOpinionScore",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内容质检检出异常项。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容质检检出异常项。",
           "example": "无",
           "member": "QualityControlResult",
           "name": "QualityControlResultSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "格式诊断检出异常项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "格式诊断检出异常项。",
           "example": "无",
           "member": "ContainerDiagnoseResultItem",
           "name": "ContainerDiagnoseResultSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -27542,10 +27645,10 @@
         {
           "disabled": false,
           "document": "异常类型，取值范围：\nJitter：抖动，\nBlur：模糊，\nLowLighting：低光照，\nHighLighting：过曝，\nCrashScreen：花屏，\nBlackWhiteEdge：黑白边，\nSolidColorScreen：纯色屏，\nNoise：噪点，\nMosaic：马赛克，\nQRCode：二维码，\nAppletCode：小程序码，\nBarCode：条形码，\nLowVoice：低音，\nHighVoice：爆音，\nNoVoice：静音，\nLowEvaluation：无参考打分低于阈值。",
-          "example": "\"\"",
+          "example": "Jitter",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27555,12 +27658,40 @@
           "example": "无",
           "member": "QualityControlItem",
           "name": "QualityControlItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "QualityControlStrategy": {
+      "document": "媒体质检检测策略。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略类型。取值：\n- TimeSpotCheck",
+          "example": "TimeSpotCheck",
+          "member": "string",
+          "name": "StrategyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "根据时间的抽检策略。",
+          "example": "无",
+          "member": "TimeSpotCheck",
+          "name": "TimeSpotCheck",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "QualityControlTemplate": {
       "document": "媒体质检模板详情",
@@ -27634,6 +27765,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检的抽检策略。",
+          "example": " {         \"StrategyType\": \"TimeSpotCheck\",         \"TimeSpotCheck\": {             \"CheckDuration\": 50,             \"CheckInterval\": 10,             \"SkipDuration\": 10,             \"CirclesNumber\": 10         }     }",
+          "member": "QualityControlStrategy",
+          "name": "Strategy",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -27839,7 +27980,7 @@
         {
           "disabled": false,
           "document": "ASR热词库参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Switch\": \"OFF\"}",
           "member": "AsrHotWordsConfigure",
           "name": "AsrHotWordsConfigure",
           "output_required": false,
@@ -28242,6 +28383,84 @@
           "name": "BufferTime",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleConditionItem": {
+      "document": "规则条件配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "质检项条件对应的Key。",
+          "example": "Resolution-1",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件对应的Value。",
+          "example": "720",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Rules": {
+      "document": "任务判断条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "判断条件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rule1-or-result-true",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "判断条件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleConditionItem",
+          "name": "Conditions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "条件列表的链接符号，取值如下：\n\n- &&：逻辑与\n- ||：逻辑或",
+          "example": "\"&&\"",
+          "member": "string",
+          "name": "Linker",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "满足判断条件执行节点索引；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[3,4]",
+          "member": "int64",
+          "name": "RearDriveIndexs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -28717,20 +28936,20 @@
         {
           "disabled": false,
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "PROCESSING",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "\"\"",
+          "example": " InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -28740,58 +28959,114 @@
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "\"xx\"",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分析任务的输入。",
-          "example": "NULL",
+          "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分析任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "分析任务的输出。",
+          "example": "无",
           "member": "AiAnalysisResult",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ScheduleExecRuleTaskResult": {
+      "document": "媒体质检任务结果类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": " input",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件判断任务的输入。",
+          "example": "无",
+          "member": "ExecRulesTask",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件判断任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecRuleTaskData",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -28803,7 +29078,7 @@
         {
           "disabled": false,
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "PROCESSING",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -28813,7 +29088,7 @@
         {
           "disabled": false,
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "\"\"",
+          "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -28833,7 +29108,7 @@
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "\"xx\"",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -28843,7 +29118,7 @@
         {
           "disabled": false,
           "document": "媒体质检任务的输入。",
-          "example": "NULL",
+          "example": "无",
           "member": "AiQualityControlTaskInput",
           "name": "Input",
           "output_required": true,
@@ -28853,7 +29128,7 @@
         {
           "disabled": false,
           "document": "媒体质检任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "QualityControlData",
           "name": "Output",
           "output_required": true,
@@ -29127,40 +29402,40 @@
         {
           "disabled": false,
           "document": "编排任务 ID。",
-          "example": "NULL",
+          "example": "2xxxxx123-ScheduleTask-1sbhsbhbhactest3a3aacxxx123",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
-          "example": "NULL",
+          "example": "FAIL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。",
-          "example": "0",
+          "example": "70000",
           "member": "int64",
           "name": "ErrCode",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "源异常时返回对应异常Message，否则请使用各个具体任务的 Message。",
-          "example": "无",
+          "example": "source file err",
           "member": "string",
           "name": "Message",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29170,7 +29445,7 @@
           "example": "NULL",
           "member": "MediaInputInfo",
           "name": "InputInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -29180,7 +29455,7 @@
           "example": "NULL",
           "member": "MediaMetaData",
           "name": "MetaData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -29190,7 +29465,7 @@
           "example": "NULL",
           "member": "ActivityResult",
           "name": "ActivityResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -30302,7 +30577,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务的类型，取值范围：\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>TransTextRecognition：语音翻译。</li>",
+          "document": "任务的类型，取值范围： \n<li>AsrFullTextRecognition：语音全文识别，</li> \n<li>TransTextRecognition：语音翻译。</li>",
           "example": "AsrFullTextRecognition",
           "member": "string",
           "name": "Type",
@@ -30368,6 +30643,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "媒体处理输出文件的目标存储。不填则继承 InputInfo 中的存储位置。 \n**注意**：当InputInfo.Type为URL时，该参数是必填项。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{     \"Type\": \"COS\",     \"CosOutputStorage\": {         \"Bucket\": \"xxxx-yyy\",         \"Region\": \"region\"     } }",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生成字幕文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n\n相对路径示例:\n- 文件名_{变量名}.{format}\n- 文件名.{format}\n\n绝对路径示例：\n- /自定义路径/文件名_{变量名}.{format}\n\n如果不填，则默认为相对路径: `{inputName}_smartsubtitle_{definition}.{format}`。",
+          "example": "/storage/{inputName}_smartsubtitle_{definition}.{format}",
+          "member": "string",
+          "name": "OutputObjectPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -30733,6 +31030,22 @@
           "name": "Type",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SubtitlePosition": {
+      "document": "字幕位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "居中位置时Y的坐标值",
+          "example": "970",
+          "member": "int64",
+          "name": "CenterY",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -31592,6 +31905,56 @@
         }
       ],
       "usage": "in"
+    },
+    "TimeSpotCheck": {
+      "document": "媒体质检的检测策略。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "抽检策略的每次循环检测的时长。取值范围（单位s）：\n\n- 最小值：10\n- 最大值：86400\n",
+          "example": "30",
+          "member": "uint64",
+          "name": "CheckDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抽检测略的检测间隔，表示在一次检测结束后，等待多长时间后，再次检测。",
+          "example": "30",
+          "member": "uint64",
+          "name": "CheckInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "片头跳过时长。",
+          "example": "60",
+          "member": "uint64",
+          "name": "SkipDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "循环次数，该字段为空或 0 时，默认循环直至视频结束。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CirclesNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TrackInfo": {
       "document": "音轨信息",
@@ -33717,7 +34080,7 @@
         {
           "disabled": false,
           "document": "媒体处理的目标文件信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "NULL",
           "member": "MediaInputInfo",
           "name": "InputInfo",
           "output_required": true,
@@ -33727,7 +34090,7 @@
         {
           "disabled": false,
           "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "NULL",
           "member": "MediaMetaData",
           "name": "MetaData",
           "output_required": true,
@@ -33737,7 +34100,7 @@
         {
           "disabled": false,
           "document": "媒体处理任务的执行状态与结果。",
-          "example": "无",
+          "example": "NULL",
           "member": "MediaProcessTaskResult",
           "name": "MediaProcessResultSet",
           "output_required": true,
@@ -33747,7 +34110,7 @@
         {
           "disabled": false,
           "document": "视频内容审核任务的执行状态与结果。",
-          "example": "无",
+          "example": "NULL",
           "member": "AiContentReviewResult",
           "name": "AiContentReviewResultSet",
           "output_required": true,
@@ -33757,7 +34120,7 @@
         {
           "disabled": false,
           "document": "视频内容分析任务的执行状态与结果。",
-          "example": "无",
+          "example": "NULL",
           "member": "AiAnalysisResult",
           "name": "AiAnalysisResultSet",
           "output_required": true,
@@ -33767,7 +34130,7 @@
         {
           "disabled": false,
           "document": "视频内容识别任务的执行状态与结果。",
-          "example": "无",
+          "example": "NULL",
           "member": "AiRecognitionResult",
           "name": "AiRecognitionResultSet",
           "output_required": true,
@@ -33777,7 +34140,7 @@
         {
           "disabled": false,
           "document": "媒体质检任务的执行状态与结果。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "NULL",
           "member": "ScheduleQualityControlTaskResult",
           "name": "AiQualityControlTaskResult",
           "output_required": true,
@@ -33787,7 +34150,7 @@
         {
           "disabled": false,
           "document": "智能字幕任务的执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "NULL",
           "member": "SmartSubtitlesResult",
           "name": "SmartSubtitlesTaskResult",
           "output_required": false,

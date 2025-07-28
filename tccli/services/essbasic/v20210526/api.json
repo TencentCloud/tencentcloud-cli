@@ -7148,7 +7148,7 @@
         {
           "disabled": false,
           "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  <a href=\"https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png\" target=\"_blank\">Agent.AppId</a></li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>\n</ul>注:\n`1. 企业激活时， 此时的Agent.ProxyOrganizationOpenId将会是企业激活后企业的唯一标识，建议开发者保存企业ProxyOrganizationOpenId，后续各项接口调用皆需要此参数。 `\n`2. 员工认证时， 此时的Agent.ProxyOperator.OpenId将会是员工认证加入企业后的唯一标识，建议开发者保存此员工的OpenId，后续各项接口调用皆需要此参数。 `\n`3. 同渠道应用(Agent.AppId)下，企业唯一标识ProxyOrganizationOpenId需要保持唯一，员工唯一标识OpenId也要保持唯一 (而不是企业下唯一)。 `",
-          "example": "无",
+          "example": " \"Agent\": {         \"ProxyOperator\": {             \"OpenId\": \"n9527\"         },         \"ProxyOrganizationOpenId\": \"org_dianziqian\",         \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"     }",
           "member": "Agent",
           "name": "Agent",
           "required": true,
@@ -7245,15 +7245,6 @@
           "type": "list"
         },
         {
-          "disabled": true,
-          "document": "暂未开放",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": false,
-          "type": "object"
-        },
-        {
           "disabled": false,
           "document": "子客经办人身份证\n注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。",
           "example": "620000198802020000",
@@ -7328,9 +7319,27 @@
         {
           "disabled": false,
           "document": "企业认证时个性化能力信息",
-          "example": "无",
+          "example": "{\"OrganizationAuthorizationOptions\": {          \"BankAccountNumberSame\": true,      \"OrganizationNameSame\": true, \"LegalNameSame\": true, \"UniformSocialCreditCodeSame\": true }}",
           "member": "OrganizationAuthorizationOptions",
           "name": "OrganizationAuthorizationOptions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构对公打款 账号，账户名跟企业名称一致。\n\np.s.\n只有认证方式是授权书+对公打款时才生效。",
+          "example": "6222024060740816912",
+          "member": "string",
+          "name": "BankAccountNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "无",
+          "example": "    \"Operator\": {         \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"}",
+          "member": "UserInfo",
+          "name": "Operator",
           "required": false,
           "type": "object"
         }
@@ -12300,7 +12309,7 @@
       "usage": "out"
     },
     "OrganizationAuthorizationOptions": {
-      "document": "企业认证可选项，其中包括 社会信用代码是否一致，企业名称是否一致，法人是否一致等信息。\n代表生成链接的时候指定的这些信息不能被用户修改。\n\np.s. 注意这些选项一旦传递，相关的信息也不会被上传的营业执照里面包含的信息所覆盖。",
+      "document": "企业认证可选项，其中包括 社会信用代码是否一致，企业名称是否一致，法人是否一致， 对公打款账号是否一致等信息。\n代表生成链接的时候指定的这些信息不能被用户修改。\n\np.s. 注意这些选项一旦传递，相关的信息也不会被上传的营业执照里面包含的信息所覆盖。",
       "members": [
         {
           "disabled": false,
@@ -12326,6 +12335,15 @@
           "example": "false",
           "member": "bool",
           "name": "LegalNameSame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>p.s. 仅在对公打款账号不为空时有效",
+          "example": "false",
+          "member": "bool",
+          "name": "BankAccountNumberSame",
           "required": false,
           "type": "bool"
         }

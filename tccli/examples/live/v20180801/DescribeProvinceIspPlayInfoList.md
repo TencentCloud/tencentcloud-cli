@@ -20,7 +20,7 @@ Output:
         "DataInfoList": [
             {
                 "Time": "2019-02-01T00:00:00+08:00",
-                "Value": 500.0
+                "Value": 500
             }
         ],
         "StatType": "Bandwidth",

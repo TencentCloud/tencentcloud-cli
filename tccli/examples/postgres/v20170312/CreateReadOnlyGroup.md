@@ -7,13 +7,13 @@ Input:
 ```
 tccli postgres CreateReadOnlyGroup --cli-unfold-argument  \
     --MaxReplayLag 0 \
-    --VpcId "vpc-e0tfm161" \
-    --Name "test" \
+    --VpcId vpc-e0tfm161 \
+    --Name name \
     --ProjectId 0 \
-    --MasterDBInstanceId "postgres-k95qzetn" \
+    --MasterDBInstanceId postgres-k95qzetn \
     --MinDelayEliminateReserve 0 \
     --ReplayLagEliminate 0 \
-    --SubnetId "subnet-443a3lv6"
+    --SubnetId subnet-443a3lv6
 ```
 
 Output: 

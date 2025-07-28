@@ -7159,7 +7159,7 @@
         {
           "disabled": false,
           "document": "腾讯云主账号",
-          "example": "无",
+          "example": "[\"uin\":\"6000005624511\"]",
           "member": "string",
           "name": "UinAccount",
           "required": false,
@@ -7186,7 +7186,7 @@
         {
           "disabled": false,
           "document": "知识引擎子业务类型:  FileParse(文档解析)、Embedding、Rewrite(多轮改写)、 Concurrency(并发)、KnowledgeSummary(知识总结)   KnowledgeQA(知识问答)、KnowledgeCapacity(知识库容量)、SearchEngine(搜索引擎)",
-          "example": "无",
+          "example": "KonwledgeQA",
           "member": "string",
           "name": "SubBizType",
           "required": false,
@@ -7195,7 +7195,7 @@
         {
           "disabled": false,
           "document": "模型标识",
-          "example": "无",
+          "example": "cs-normal",
           "member": "string",
           "name": "ModelName",
           "required": false,
@@ -7204,7 +7204,7 @@
         {
           "disabled": false,
           "document": "开始时间戳, 单位为秒(默认值0)",
-          "example": "无",
+          "example": "\"7463235\"",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -7213,7 +7213,7 @@
         {
           "disabled": false,
           "document": "结束时间戳, 单位为秒(默认值0， 必须大于开始时间戳)",
-          "example": "无",
+          "example": "\"7463235\"",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -7222,7 +7222,7 @@
         {
           "disabled": false,
           "document": "应用id列表",
-          "example": "无",
+          "example": "appid",
           "member": "string",
           "name": "AppBizIds",
           "required": false,
@@ -7231,7 +7231,7 @@
         {
           "disabled": false,
           "document": "筛选子场景(文档解析场景使用)",
-          "example": "无",
+          "example": "KonwledgeQA",
           "member": "string",
           "name": "SubScenes",
           "required": false,
@@ -7255,7 +7255,7 @@
         {
           "disabled": false,
           "document": "总token消耗量",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "TotalTokenUsage",
           "output_required": false,
@@ -7265,7 +7265,7 @@
         {
           "disabled": false,
           "document": "输入token消耗",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "InputTokenUsage",
           "output_required": false,
@@ -7275,7 +7275,7 @@
         {
           "disabled": false,
           "document": "输出token消耗",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "OutputTokenUsage",
           "output_required": false,
@@ -7285,7 +7285,7 @@
         {
           "disabled": false,
           "document": "接口调用次数",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "ApiCallStats",
           "output_required": false,
@@ -7295,7 +7295,7 @@
         {
           "disabled": false,
           "document": "搜索服务调用次数",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "SearchUsage",
           "output_required": false,
@@ -7305,7 +7305,7 @@
         {
           "disabled": false,
           "document": "文档解析消耗页数",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "PageUsage",
           "output_required": false,
@@ -7315,7 +7315,7 @@
         {
           "disabled": false,
           "document": "拆分token消耗量",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "SplitTokenUsage",
           "output_required": false,
@@ -7325,7 +7325,7 @@
         {
           "disabled": false,
           "document": "Rag检索次数",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "RagSearchUsage",
           "output_required": false,
@@ -7335,9 +7335,29 @@
         {
           "disabled": false,
           "document": "联网搜索次数",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "InternetSearchUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dosage配额限制",
+          "example": "0",
+          "member": "float",
+          "name": "DosageTypeLimit",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dosage当前用量\t",
+          "example": "0",
+          "member": "float",
+          "name": "DosageTypeCurr",
           "output_required": false,
           "type": "float",
           "value_allowed_null": false

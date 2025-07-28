@@ -5466,7 +5466,7 @@
         {
           "disabled": false,
           "document": "查询的节点归属详情。",
-          "example": "无",
+          "example": "[{\"Ip\": \"1.1.1.1\", \"Platform\": \"no\", \"Location\": \"unknown\", \"City\": \"unknown\", \"History\": [], \"Area\": \"unknown\" }]",
           "member": "CdnIp",
           "name": "Ips",
           "output_required": true,

@@ -6318,7 +6318,7 @@
         {
           "disabled": false,
           "document": "操作人信息",
-          "example": "无",
+          "example": "{\"Operator\": {       \"UserId\": \"yDt33UU2ns3dahUE5lf4LSmTI0H5jnhi\"    } }",
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -6512,6 +6512,24 @@
           "name": "UserData",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构对公打款账号，账户名跟企业名称一致。\n\np.s.\n只有认证方式是授权书+对公打款时才生效。",
+          "example": "6222024060740816912",
+          "member": "string",
+          "name": "BankAccountNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对方打开链接认证时，对公打款账号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>\n\n\np.s. 仅在对公打款不为空时有效",
+          "example": "false",
+          "member": "bool",
+          "name": "BankAccountNumberSame",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

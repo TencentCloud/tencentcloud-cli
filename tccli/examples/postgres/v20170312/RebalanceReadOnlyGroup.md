@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli postgres RebalanceReadOnlyGroup --cli-unfold-argument  \
-    --ReadOnlyGroupId "pgrogrp-e0tfm161"
+    --ReadOnlyGroupId pgrogrp-e0tfm161
 ```
 
 Output: 

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli postgres DeleteBackupPlan --cli-unfold-argument  \
-    --DBInstanceId postgres-kwk4tq23 \
-    --PlanId 1111111
+    --DBInstanceId postgres-herclkx7 \
+    --PlanId 0ee6843a-475b-5514-bd29-c432b75bb036
 ```
 
 Output: 

@@ -41,8 +41,8 @@
     "CreateBackupPlan": [
       {
         "document": "创建一个名字为plan1的备份策略，每个月的1/2号的凌晨1点至2点进行数据备份，并且数据文件保留40天。",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackupPlan\n<公共请求参数>\n\n{\n    \"PlanName\": \"plan1\",\n    \"BackupPeriodType\": \"month\",\n    \"DBInstanceId\": \"postgres-kwk4tq23\",\n    \"MinBackupStartTime\": \"01:00:00\",\n    \"MaxBackupStartTime\": \"02:00:00\",\n    \"BackupPeriod\": [\n        \"1\",\n        \"2\"\n    ],\n    \"BaseBackupRetentionPeriod\": \"40\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\",\n        \"PlanId\": \"1111111\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackupPlan\n<公共请求参数>\n\n{\n    \"PlanName\": \"plan1\",\n    \"BackupPeriodType\": \"month\",\n    \"DBInstanceId\": \"postgres-kwk4tq23\",\n    \"MinBackupStartTime\": \"01:00:00\",\n    \"MaxBackupStartTime\": \"02:00:00\",\n    \"BackupPeriod\": [\n        \"1\",\n        \"2\"\n    ],\n    \"BaseBackupRetentionPeriod\": 40\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\",\n        \"PlanId\": \"dfea3bb4-8ca7-5e79-aefb-9d231f2b66b6\"\n    }\n}",
         "title": "创建月度制备份策略。"
       }
     ],
@@ -50,7 +50,7 @@
       {
         "document": "手动创建实例数据备份。",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBaseBackup\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-dzg9p3kb\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"BaseBackupId\": \"443c810b-53c6-5d8c-b6d2-1abbe5794529\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e3fde8a-b062-40f9-bcd0-954259f887df\",\n        \"BaseBackupId\": \"443c810b-53c6-5d8c-b6d2-1abbe5794529\"\n    }\n}",
         "title": "创建实例数据备份"
       }
     ],
@@ -99,7 +99,7 @@
     "CreateParameterTemplate": [
       {
         "document": "数据库版本为14，引擎为postgresql，参数模板名称和描述自定义。",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParameterTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"test_template\",\n    \"DBMajorVersion\": \"13\",\n    \"DBEngine\": \"postgresql\",\n    \"TemplateDescription\": \"This template is used for testing environment\"\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParameterTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"test_template\",\n    \"DBMajorVersion\": \"13\",\n    \"DBEngine\": \"postgresql\",\n    \"TemplateDescription\": \"ThisTemplateIsUsedForTestingEnvironment\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"TemplateId\": \"497857b4-4676-5583-8359-b697fe5968d9\"\n    }\n}",
         "title": "创建参数模板示例"
       }
@@ -115,7 +115,7 @@
     "CreateReadOnlyGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReadOnlyGroup\n<公共请求参数>\n\n{\n    \"MaxReplayLag\": 0,\n    \"VpcId\": \"\\\"vpc-e0tfm161\\\"\",\n    \"Name\": \"\\\"test\\\"\",\n    \"ProjectId\": 0,\n    \"MasterDBInstanceId\": \"\\\"postgres-k95qzetn\\\"\",\n    \"MinDelayEliminateReserve\": 0,\n    \"ReplayLagEliminate\": 0,\n    \"SubnetId\": \"\\\"subnet-443a3lv6\\\"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReadOnlyGroup\n<公共请求参数>\n\n{\n    \"MaxReplayLag\": 0,\n    \"VpcId\": \"vpc-e0tfm161\",\n    \"Name\": \"name\",\n    \"ProjectId\": 0,\n    \"MasterDBInstanceId\": \"postgres-k95qzetn\",\n    \"MinDelayEliminateReserve\": 0,\n    \"ReplayLagEliminate\": 0,\n    \"SubnetId\": \"subnet-443a3lv6\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\",\n        \"FlowId\": 912,\n        \"ReadOnlyGroupId\": \"pgrogrp-dh6873gz\"\n    }\n}",
         "title": "创建只读组"
       }
@@ -147,7 +147,7 @@
     "DeleteBackupPlan": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupPlan\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-kwk4tq23\",\n    \"PlanId\": \"1111111\"\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupPlan\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-herclkx7\",\n    \"PlanId\": \"0ee6843a-475b-5514-bd29-c432b75bb036\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\"\n    }\n}",
         "title": "删除备份策略"
       }
@@ -254,7 +254,7 @@
       {
         "document": "获取备份下载链接",
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDownloadURL\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-oamgybor\",\n    \"BackupType\": \"LogBackup\",\n    \"BackupId\": \"f9509fc2-2281-551c-b937-86d38cf79f3b\",\n    \"URLExpireTime\": 12\n}",
-        "output": "{\n    \"Response\": {\n        \"BackupDownloadURL\": \"******\",\n        \"RequestId\": \"7c4e788e-5ec9-4125-bb80-7baabe2744dc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupDownloadURL\": \"https://postgres-backup-gz-xxxx.cos.ap-guangzhou.myqcloud.com/pgsql/xxxx\",\n        \"RequestId\": \"7c4e788e-5ec9-4125-bb80-7baabe2744dc\"\n    }\n}",
         "title": "获取备份下载链接"
       }
     ],
@@ -269,8 +269,8 @@
     "DescribeBackupPlans": [
       {
         "document": "查询postgres-xxxxxxxx实例的所有备份计划",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupPlans\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-xxxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Plans\": [\n            {\n                \"BackupPeriod\": \"[\\\"monday\\\",\\\"thursday\\\",\\\"friday\\\"]\",\n                \"BaseBackupRetentionPeriod\": 3,\n                \"MaxBackupStartTime\": \"10:00:00\",\n                \"MinBackupStartTime\": \"08:00:00\"\n            }\n        ],\n        \"RequestId\": \"\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupPlans\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-1xm16x1d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Plans\": [\n            {\n                \"BackupPeriod\": \"[\\\"monday\\\",\\\"tuesday\\\",\\\"wednesday\\\",\\\"thursday\\\",\\\"friday\\\",\\\"saturday\\\",\\\"sunday\\\"]\",\n                \"BackupPeriodType\": \"week\",\n                \"BaseBackupRetentionPeriod\": 7,\n                \"LogBackupRetentionPeriod\": 7,\n                \"MaxBackupStartTime\": \"05:16:05\",\n                \"MinBackupStartTime\": \"01:16:05\",\n                \"PlanId\": \"422a5f4d-52af-5cb1-9474-324d63ccc62c\",\n                \"PlanName\": \"default\",\n                \"PlanType\": \"default\"\n            },\n            {\n                \"BackupPeriod\": \"[\\\"1\\\",\\\"2\\\"]\",\n                \"BackupPeriodType\": \"month\",\n                \"BaseBackupRetentionPeriod\": 40,\n                \"LogBackupRetentionPeriod\": 7,\n                \"MaxBackupStartTime\": \"02:00:00\",\n                \"MinBackupStartTime\": \"01:00:00\",\n                \"PlanId\": \"dfea3bb4-8ca7-5e79-aefb-9d231f2b66b6\",\n                \"PlanName\": \"plan_test\",\n                \"PlanType\": \"custom\"\n            }\n        ],\n        \"RequestId\": \"0b6c3429-6dfc-4ecd-ab80-b25631f0821e\"\n    }\n}",
         "title": "查询实例所有备份计划"
       }
     ],
@@ -522,8 +522,8 @@
     ],
     "DescribeParameterTemplates": [
       {
-        "document": "无",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParameterTemplates\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"TemplateName\",\n            \"Values\": [\n                \"my_custom_template\"\n            ]\n        }\n    ],\n    \"Limit\": 0,\n    \"Offset\": 10,\n    \"OrderBy\": \"CreateTime\",\n    \"OrderByType\": \"desc\"\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParameterTemplates\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"TemplateName\",\n            \"Values\": [\n                \"my_custom_template\"\n            ]\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"OrderBy\": \"CreateTime\",\n    \"OrderByType\": \"desc\"\n}",
         "output": "{\n    \"Response\": {\n        \"ParameterTemplateSet\": [\n            {\n                \"DBEngine\": \"postgresql\",\n                \"DBMajorVersion\": \"13\",\n                \"TemplateDescription\": \"my template1\",\n                \"TemplateId\": \"674538e8-4a03-5103-896c-9785c960bf02\",\n                \"TemplateName\": \"my_custom_template\"\n            },\n            {\n                \"DBEngine\": \"postgresql\",\n                \"DBMajorVersion\": \"13\",\n                \"TemplateDescription\": \"my template2\",\n                \"TemplateId\": \"423984bb-97fe-5693-a74f-63cc8dfb6c5d\",\n                \"TemplateName\": \"my_custom_template\"\n            }\n        ],\n        \"RequestId\": \"6224e7ed-d7d8-494c-835f-e1612345383f\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询参数模板信息"
       }
@@ -695,7 +695,7 @@
     "ModifyBackupPlan": [
       {
         "document": "将实例postgres-xxxxxxxx的备份计划修改为每周一、周二的01:00:00~02:00:00，且备份保留7天",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPeriod\": [\n        \"tuesday\",\n        \"monday\"\n    ],\n    \"BaseBackupRetentionPeriod\": \"7\",\n    \"DBInstanceId\": \"postgres-xxxxxxxx\",\n    \"MinBackupStartTime\": \"01:00:00\",\n    \"MaxBackupStartTime\": \"02:00:00\"\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPeriod\": [\n        \"tuesday\",\n        \"monday\"\n    ],\n    \"BaseBackupRetentionPeriod\": 7,\n    \"DBInstanceId\": \"postgres-xxxxxxxx\",\n    \"MinBackupStartTime\": \"01:00:00\",\n    \"MaxBackupStartTime\": \"02:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\"\n    }\n}",
         "title": "修改实例备份计划"
       }
@@ -843,7 +843,7 @@
     "ModifyParameterTemplate": [
       {
         "document": "修改模版中的参数项",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyParameterTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"497857b4-4676-5583-8359-b697fe5968d9\",\n    \"TemplateName\": \"test_template\",\n    \"TemplateDescription\": \"This template is used for testing environment\",\n    \"ModifyParamEntrySet\": [\n        {\n            \"Name\": \"max_wal_senders\",\n            \"ExpectedValue\": \"360\"\n        },\n        {\n            \"Name\": \"max_logical_replication_workers\",\n            \"ExpectedValue\": \"360\"\n        }\n    ],\n    \"DeleteParamSet\": [\n        \"wal_level\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyParameterTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"497857b4-4676-5583-8359-b697fe5968d9\",\n    \"TemplateName\": \"test_template\",\n    \"TemplateDescription\": \"ThisTemplateIsUsedForTestingEnvironment\",\n    \"ModifyParamEntrySet\": [\n        {\n            \"Name\": \"max_wal_senders\",\n            \"ExpectedValue\": \"360\"\n        },\n        {\n            \"Name\": \"max_logical_replication_workers\",\n            \"ExpectedValue\": \"360\"\n        }\n    ],\n    \"DeleteParamSet\": [\n        \"wal_level\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\"\n    }\n}",
         "title": "修改参数模板"
       }
@@ -851,7 +851,7 @@
     "ModifyReadOnlyDBInstanceWeight": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReadOnlyDBInstanceWeight\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupId\": \"\\\"pgrogp-test\\\"\",\n    \"DBInstanceId\": \"\\\"pgro-e0tfm161\\\"\",\n    \"Weight\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReadOnlyDBInstanceWeight\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupId\": \"pgrogp-test\",\n    \"DBInstanceId\": \"pgro-e0tfm161\",\n    \"Weight\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
         "title": "ModifyReadOnlyDBInstanceWeight"
       }
@@ -883,7 +883,7 @@
     "RebalanceReadOnlyGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebalanceReadOnlyGroup\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupId\": \"\\\"pgrogrp-e0tfm161\\\"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebalanceReadOnlyGroup\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupId\": \"pgrogrp-e0tfm161\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
         "title": "只读组内实例流量重新负载"
       }

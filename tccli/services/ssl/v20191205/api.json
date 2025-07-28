@@ -11893,7 +11893,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "无",
+          "example": "tag:tagvalue",
           "member": "Tags",
           "name": "Tags",
           "required": false,
@@ -11907,6 +11907,15 @@
           "name": "Repeatable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "私钥密码",
+          "example": "password",
+          "member": "string",
+          "name": "KeyPassword",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

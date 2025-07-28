@@ -1755,7 +1755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-herclkx7",
           "member": "string",
           "name": "DBInstanceId",
@@ -1809,7 +1809,7 @@
         },
         {
           "disabled": false,
-          "document": "数据备份保留时长，week默认是7,month为30。",
+          "document": "数据备份保留时长，单位：天。取值范围为：[0,30000)\nBackupPeriodType为week时默认是7,为month时默认为31。",
           "example": "30",
           "member": "uint64",
           "name": "BaseBackupRetentionPeriod",
@@ -1846,7 +1846,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "DBInstanceId",
@@ -2364,7 +2364,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库大版本号，例如：11，12，13",
+          "document": "数据库大版本号，例如：11，12，13。可通过[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)接口获取",
           "example": "13",
           "member": "string",
           "name": "DBMajorVersion",
@@ -3951,7 +3951,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。\t",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-herclkx7\t",
           "member": "string",
           "name": "DBInstanceId",
@@ -3960,7 +3960,7 @@
         },
         {
           "disabled": false,
-          "document": "备份计划的ID。",
+          "document": "备份计划的ID。可通过[DescribeBackupPlans](https://cloud.tencent.com/document/api/409/68069)接口获取",
           "example": "0ee6843a-475b-5514-bd29-c432b75bb036",
           "member": "string",
           "name": "PlanId",
@@ -3987,7 +3987,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
@@ -3996,7 +3996,7 @@
         },
         {
           "disabled": false,
-          "document": "数据备份ID。",
+          "document": "数据备份ID。可通过[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)接口获取。7天内自动备份集不允许删除。",
           "example": "4c144959-aca8-5266-bb96-7fb7aa2ca409",
           "member": "string",
           "name": "BaseBackupId",
@@ -4087,7 +4087,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-apzvwncr",
           "member": "string",
           "name": "DBInstanceId",
@@ -4096,7 +4096,7 @@
         },
         {
           "disabled": false,
-          "document": "日志备份ID。",
+          "document": "日志备份ID。可通过[DescribeLogBackups](https://cloud.tencent.com/document/api/409/89021)接口获取。注：7天内自动备份集不允许删除。",
           "example": "4c144959-aca8-5266-bb96-7fb7aa2ca409",
           "member": "string",
           "name": "LogBackupId",
@@ -4503,7 +4503,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "DBInstanceId",
@@ -4530,7 +4530,7 @@
         },
         {
           "disabled": false,
-          "document": "链接的有效时间，默认为12小时。",
+          "document": "链接的有效时间，取值为[0,36]，默认为12小时。",
           "example": "12",
           "member": "uint64",
           "name": "URLExpireTime",
@@ -4683,7 +4683,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "DBInstanceId",
@@ -4821,7 +4821,7 @@
         },
         {
           "disabled": false,
-          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。\nbase-backup-id：按照备份集ID过滤，类型为string。\ndb-instance-status：按实例状态过滤，类型为string。取值参考DBInstance结构的DBInstanceStatus字段。",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，支持模糊匹配，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。\nbase-backup-id：按照备份集ID过滤，类型为string。\ndb-instance-status：按实例状态过滤，类型为string。取值参考[DBInstance](https://cloud.tencent.com/document/api/409/16778#DBInstance)结构的DBInstanceStatus字段。",
           "example": "[     {         \"Values\": [             \"postgres-jdlmoll9\"         ],         \"Name\": \"db-instance-id\"     } ]",
           "member": "Filter",
           "name": "Filters",
@@ -4848,7 +4848,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，支持StartTime,FinishTime,Size。",
+          "document": "排序字段，支持StartTime,FinishTime,Size。默认值：StartTime。",
           "example": "StartTime",
           "member": "string",
           "name": "OrderBy",
@@ -4857,7 +4857,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，包括升序：asc，降序：desc。",
+          "document": "排序方式，包括升序：asc，降序：desc。默认值：desc。",
           "example": "asc",
           "member": "string",
           "name": "OrderByType",
@@ -4959,7 +4959,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-abcd1234",
           "member": "string",
           "name": "DBInstanceId",
@@ -4968,7 +4968,7 @@
         },
         {
           "disabled": false,
-          "document": "基础备份集ID，此入参和RecoveryTargetTime必须选择一个传入。如与RecoveryTargetTime参数同时设置，则以此参数为准。",
+          "document": "基础备份集ID，可通过[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)接口获取。此入参和RecoveryTargetTime必须选择一个传入。如与RecoveryTargetTime参数同时设置，则以此参数为准。",
           "example": "f22057d2-46c0-5808-ab8a-d0c3385afabc",
           "member": "string",
           "name": "BackupSetId",
@@ -6126,7 +6126,7 @@
         },
         {
           "disabled": false,
-          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。\ndb-instance-status：按实例状态过滤，类型为string。取值参考DBInstance结构的DBInstanceStatus字段。",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，支持模糊匹配，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。\ndb-instance-status：按实例状态过滤，类型为string。取值参考[DBInstance](https://cloud.tencent.com/document/api/409/16778#DBInstance)结构的DBInstanceStatus字段。",
           "example": "[     {         \"Values\": [             \"postgres-xxxxxxxx\"         ],         \"Name\": \"db-instance-id\"     } ]",
           "member": "Filter",
           "name": "Filters",
@@ -6153,7 +6153,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，支持StartTime,FinishTime,Size。",
+          "document": "排序字段，支持StartTime,FinishTime,Size。默认值：StartTime",
           "example": "StartTime",
           "member": "string",
           "name": "OrderBy",
@@ -6162,7 +6162,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，包括升序：asc，降序：desc。",
+          "document": "排序方式，包括升序：asc，降序：desc。默认值：desc。",
           "example": "asc",
           "member": "string",
           "name": "OrderByType",
@@ -6323,7 +6323,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板ID",
+          "document": "参数模板ID。可通过[DescribeParameterTemplates](https://tapd.woa.com/tapd_fe/20400322/story/detail/1020400322125673714)接口获取",
           "example": "423984bb-97fe-5693-a74f-63cc8dfb6c5d",
           "member": "string",
           "name": "TemplateId",
@@ -6399,7 +6399,7 @@
         {
           "disabled": false,
           "document": "参数模板描述",
-          "example": "this template use to test environment",
+          "example": "ThisTemplateIsUsedForTestingEnvironment",
           "member": "string",
           "name": "TemplateDescription",
           "output_required": true,
@@ -6420,8 +6420,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine",
-          "example": "[     {         \"Values\": [             \"postgres-jdlmoll9\"         ],         \"Name\": \"db-instance-id\"     } ]",
+          "document": "过滤条件，目前支持的过滤条件有：TemplateName, TemplateId，DBMajorVersion，DBEngine。TemplateName不支持模糊匹配。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -6447,7 +6447,7 @@
         },
         {
           "disabled": false,
-          "document": "排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion",
+          "document": "排序指标，枚举值，支持：CreateTime，TemplateName，DBMajorVersion。如果不指定该参数，默认将按照参数模板的编号倒序排列，也就是说最新添加的参数模板会排在最前面。",
           "example": "CreateTime",
           "member": "string",
           "name": "OrderBy",
@@ -6456,7 +6456,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，枚举值，支持：asc（升序） ，desc（降序）",
+          "document": "排序方式，枚举值，支持：asc（升序） ，desc（降序）。默认值为asc。当未指定OrderBy时，该参数失效，此时排序方式为OrderBy参数描述中给出的默认排序方式。",
           "example": "desc",
           "member": "string",
           "name": "OrderByType",
@@ -6482,7 +6482,7 @@
         {
           "disabled": false,
           "document": "参数模板列表",
-          "example": "[ {     \"DBEngine\": \"postgresql\",     \"DBMajorVersion\": \"13\",     \"TemplateDescription\": \"test1\",     \"TemplateId\": \"674538e8-4a03-5103-896c-9785c960bf02\",     \"TemplateName\": \"test1\" }, {     \"DBEngine\": \"postgresql\",     \"DBMajorVersion\": \"13\",     \"TemplateDescription\": \"test2\",     \"TemplateId\": \"423984bb-97fe-5693-a74f-63cc8dfb6c5d\",     \"TemplateName\": \"test2\" } ]",
+          "example": "无",
           "member": "ParameterTemplate",
           "name": "ParameterTemplateSet",
           "output_required": true,
@@ -8124,7 +8124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。",
+          "document": "备份文件下载限制类型，NONE 无限制，内外网都可以下载；INTRANET 只允许内网下载；CUSTOMIZE 自定义限制下载的vpc或ip。当该参数取值为CUSTOMIZE时，Vpc限制和Ip限制需要至少填写一项。",
           "example": "NONE",
           "member": "string",
           "name": "RestrictionType",
@@ -8187,7 +8187,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "DBInstanceId",
@@ -8223,7 +8223,7 @@
         },
         {
           "disabled": false,
-          "document": "实例备份周期，若是星期维度，格式为小写星期英文单词；若是按月维度，格式为数字字符，如[\"1\",\"2\"]。",
+          "document": "实例备份周期，若是星期维度，格式为小写星期英文单词，且至少设置两天备份；若是按月维度，格式为数字字符，如[\"1\",\"2\"]。",
           "example": "[\"monday\", \"tuesday\", \"wednesday\"]",
           "member": "string",
           "name": "BackupPeriod",
@@ -8277,7 +8277,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "DBInstanceId",
@@ -8286,7 +8286,7 @@
         },
         {
           "disabled": false,
-          "document": "数据备份ID。",
+          "document": "数据备份ID。可通过[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)接口获取",
           "example": "f6adc02a-432e-536f-a5f3-3dbf40ecd683",
           "member": "string",
           "name": "BaseBackupId",
@@ -8886,7 +8886,7 @@
         {
           "disabled": false,
           "document": "实例ID集合。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取。支持同时操作多个实例。",
-          "example": "[\"postgres-6bwgamo3\",\"postgres-lnp6j6172\\n\"]",
+          "example": "[\"postgres-6bwgamo3\",\"postgres-lnp6j6172\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
           "required": true,
@@ -8894,7 +8894,7 @@
         },
         {
           "disabled": false,
-          "document": "所属新项目的ID。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)获取",
+          "document": "所属新项目的ID。可通过[DescribeProjects](https://cloud.tencent.com/document/api/651/78725)获取",
           "example": "10467",
           "member": "string",
           "name": "ProjectId",
@@ -9030,7 +9030,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板ID，用于唯一确认参数模板，不可修改",
+          "document": "参数模板ID，用于唯一确认参数模板，不可修改。可通过[DescribeParameterTemplates](https://cloud.tencent.com/document/api/409/84067)接口获取",
           "example": "497857b4-4676-5583-8359-b697fe5968d9",
           "member": "string",
           "name": "TemplateId",
@@ -9049,7 +9049,7 @@
         {
           "disabled": false,
           "document": "参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若不传入该参数，则保持原参数模板描述",
-          "example": "This template is used for testing environment",
+          "example": "ThisTemplateIsUsedForTestingEnvironment",
           "member": "string",
           "name": "TemplateDescription",
           "required": false,
@@ -9132,7 +9132,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "pgro-xxxx",
           "member": "string",
           "name": "DBInstanceId",
@@ -9141,7 +9141,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组ID",
+          "document": "只读组ID。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取",
           "example": "pgrogp-xxx",
           "member": "string",
           "name": "ReadOnlyGroupId",
@@ -10405,8 +10405,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "只读组ID",
-          "example": "ReadOnlyGroupId",
+          "document": "只读组ID。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取",
+          "example": "pgrogrp-e0tfm161",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": true,
@@ -10680,7 +10680,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-abcd1234",
           "member": "string",
           "name": "DBInstanceId",
@@ -10698,7 +10698,7 @@
         },
         {
           "disabled": false,
-          "document": "恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。",
+          "document": "恢复所用备份集。BackupSetId与RestoreTargetTime有且只能传一个。可通过[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)接口获取",
           "example": "db468966-a8d8-5831-8596-763a7833e380",
           "member": "string",
           "name": "BackupSetId",

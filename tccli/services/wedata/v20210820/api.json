@@ -1330,6 +1330,13 @@
       "output": "DescribeTaskLockStatusResponse",
       "status": "online"
     },
+    "DescribeTaskParamDs": {
+      "document": "查询任务引用参数",
+      "input": "DescribeTaskParamDsRequest",
+      "name": "查询任务引用参数",
+      "output": "DescribeTaskParamDsResponse",
+      "status": "online"
+    },
     "DescribeTaskRunHistory": {
       "document": "分页查询任务运行历史",
       "input": "DescribeTaskRunHistoryRequest",
@@ -1545,6 +1552,13 @@
       "input": "GetIntegrationNodeColumnSchemaRequest",
       "name": "提取数据集成节点字段Schema",
       "output": "GetIntegrationNodeColumnSchemaResponse",
+      "status": "online"
+    },
+    "GetJobStatus": {
+      "document": "获取异步任务执行结果",
+      "input": "GetJobStatusRequest",
+      "name": "获取异步任务状态",
+      "output": "GetJobStatusResponse",
       "status": "online"
     },
     "GetOfflineDIInstanceList": {
@@ -1799,6 +1813,27 @@
       "output": "RegisterEventListenerResponse",
       "status": "online"
     },
+    "RemoveDatabase": {
+      "document": "移除database元数据",
+      "input": "RemoveDatabaseRequest",
+      "name": "移除database元数据",
+      "output": "RemoveDatabaseResponse",
+      "status": "online"
+    },
+    "RemoveSchema": {
+      "document": "移除schema元数据",
+      "input": "RemoveSchemaRequest",
+      "name": "移除schema元数据",
+      "output": "RemoveSchemaResponse",
+      "status": "online"
+    },
+    "RemoveTable": {
+      "document": "移除table元数据",
+      "input": "RemoveTableRequest",
+      "name": "移除table元数据",
+      "output": "RemoveTableResponse",
+      "status": "online"
+    },
     "RemoveWorkflowDs": {
       "document": "删除编排空间工作流",
       "input": "RemoveWorkflowDsRequest",
@@ -1818,6 +1853,27 @@
       "input": "RenewWorkflowSchedulerInfoDsRequest",
       "name": "更新工作流下任务调度信息",
       "output": "RenewWorkflowSchedulerInfoDsResponse",
+      "status": "online"
+    },
+    "ReportDatabase": {
+      "document": "上报database元数据",
+      "input": "ReportDatabaseRequest",
+      "name": "上报database元数据",
+      "output": "ReportDatabaseResponse",
+      "status": "online"
+    },
+    "ReportSchema": {
+      "document": "上报schema元数据",
+      "input": "ReportSchemaRequest",
+      "name": "上报schema元数据",
+      "output": "ReportSchemaResponse",
+      "status": "online"
+    },
+    "ReportTable": {
+      "document": "上报table元数据",
+      "input": "ReportTableRequest",
+      "name": "上报table元数据",
+      "output": "ReportTableResponse",
       "status": "online"
     },
     "ReportTaskLineage": {
@@ -14016,12 +14072,35 @@
       "members": [
         {
           "disabled": false,
-          "document": "等待（默认策略）或 执行\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "等待上游任务实例策略：EXECUTING（执行）；WAITING（等待）\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WAITING",
           "member": "string",
           "name": "PollingNullStrategy",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仅当PollingNullStrategy为EXECUTING时才需要填本字段，List类型：NOT_EXIST（默认，在分钟依赖分钟/小时依赖小时的情况下，父实例不在下游实例调度时间范围内）；PARENT_EXPIRED（父实例失败）；PARENT_TIMEOUT（父实例超时）。以上场景满足任一条件即可通过该父任务实例依赖判断，除以上场景外均需等待父实例。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"PARENT_EXPIRED\", \"PARENT_TIMEOUT\"]",
+          "member": "string",
+          "name": "TaskDependencyExecutingStrategies",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仅当TaskDependencyExecutingStrategies中包含PARENT_TIMEOUT时才需要填本字段，下游任务依赖父实例执行超时时间，单位：分钟。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskDependencyExecutingTimeoutValue",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -20269,6 +20348,15 @@
           "name": "KeyWord",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**时区** timeZone, 默认UTC+8",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "ScheduleTimeZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -25141,6 +25229,52 @@
           "name": "TaskLockStatus",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskParamDsRequest": {
+      "document": "DescribeTaskParamDs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskParamDsResponse": {
+      "document": "DescribeTaskParamDs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果集",
+          "example": "无",
+          "member": "ParameterTaskDsDto",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -31194,6 +31328,83 @@
       ],
       "type": "object"
     },
+    "GetJobStatusRequest": {
+      "document": "GetJobStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务id",
+          "example": "123",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetJobStatusResponse": {
+      "document": "GetJobStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务id",
+          "example": "754",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已完成",
+          "example": "true",
+          "member": "bool",
+          "name": "Completed",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态,Success:成功,Fail:失败,Cancel:取消,Running:运行中",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间时间戳,单位毫秒",
+          "example": "1750399557000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "数据库不存在",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetOfflineDIInstanceListRequest": {
       "document": "GetOfflineDIInstanceList请求参数结构体",
       "members": [
@@ -32431,6 +32642,17 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceGroup",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -34135,6 +34357,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑",
+          "example": "无",
+          "member": "string",
+          "name": "AllowRedoType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -34608,6 +34841,16 @@
         },
         {
           "disabled": false,
+          "document": "实例最近更新时间, 时间格式为 yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-19 00:00:00",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "执行资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20240821154428723333",
           "member": "string",
@@ -34622,6 +34865,16 @@
           "example": "测试资源组",
           "member": "string",
           "name": "ExecutorGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "简要的任务失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用户代码和执行环境存在异常",
+          "member": "string",
+          "name": "JobErrorMsg",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -35173,6 +35426,34 @@
         }
       ],
       "usage": "out"
+    },
+    "IntegrationTag": {
+      "document": "集成标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "负责人",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张三",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "IntegrationTaskInfo": {
       "document": "集成任务",
@@ -35747,6 +36028,28 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntegrationTag",
+          "name": "TagList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "error message",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -36629,6 +36932,24 @@
           "example": "UTC+8",
           "member": "string",
           "name": "ScheduleTimeZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**实例最近更新时间过滤条件**\n过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss",
+          "example": "2025-03-19 00:00:00",
+          "member": "string",
+          "name": "LastUpdateTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**实例最近更新时间过滤条件**\n过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss",
+          "example": "2025-03-20 00:00:00",
+          "member": "string",
+          "name": "LastUpdateTimeTo",
           "required": false,
           "type": "string"
         }
@@ -43883,6 +44204,171 @@
       ],
       "usage": "out"
     },
+    "RemoveDatabaseRequest": {
+      "document": "RemoveDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "123",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "database名称",
+          "example": "default",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveDatabaseResponse": {
+      "document": "RemoveDatabase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步删除的任务id,用于查询执行状态",
+          "example": "7542",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveSchemaRequest": {
+      "document": "RemoveSchema请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "123",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "database名称",
+          "example": "default",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "schema名称",
+          "example": "user",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveSchemaResponse": {
+      "document": "RemoveSchema返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步删除的任务id,用于查询执行状态",
+          "example": "7542",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveTableRequest": {
+      "document": "RemoveTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "123",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "database名称",
+          "example": "default",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "schema名称",
+          "example": "user",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名称",
+          "example": "table1",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveTableResponse": {
+      "document": "RemoveTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RemoveWorkflowDsRequest": {
       "document": "RemoveWorkflowDs请求参数结构体",
       "members": [
@@ -44227,6 +44713,342 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportColumnInfo": {
+      "document": "上报表元数据的字段结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称,字符长度128内",
+          "example": "column1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段类型,字符长度128内",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段位置,1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "Position",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段描述,字符长度256内",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间戳,毫秒,为空默认当前时间",
+          "example": "1750399557000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间戳,毫秒,为空默认当前时间",
+          "example": "1750399557000",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ReportDatabaseRequest": {
+      "document": "ReportDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "123",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "database名称,字符长度128内",
+          "example": "default",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述,字符长度3000内",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间戳,毫秒,为空默认当前时间",
+          "example": "1750399557000",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改时间戳,毫秒,为空默认当前时间",
+          "example": "1750399557000",
+          "member": "int64",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportDatabaseResponse": {
+      "document": "ReportDatabase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元数据唯一id",
+          "example": "ZxPE4RZ0cQnUCaDHz-awBw",
+          "member": "string",
+          "name": "Guid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportSchemaRequest": {
+      "document": "ReportSchema请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "123",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "database名称,字符长度128内",
+          "example": "default",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "schema名称,字符长度128内",
+          "example": "user",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述,字符长度3000内",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间戳,毫秒,为空默认当前时间",
+          "example": "1750399557000",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改时间戳,毫秒,为空默认当前时间",
+          "example": "1750399557000",
+          "member": "int64",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportSchemaResponse": {
+      "document": "ReportSchema返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元数据唯一id",
+          "example": "ZxPE4RZ0cQnUCaDHz-awBw",
+          "member": "string",
+          "name": "Guid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportTableRequest": {
+      "document": "ReportTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "123",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "database名称,字符长度128内",
+          "example": "default",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "table名称,字符长度128内",
+          "example": "table1",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表类型,VIEW/TABLE",
+          "example": "TABLE",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "schema名称,字符长度128内",
+          "example": "user",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述,字符长度1000内",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间戳,毫秒,为空默认当前时间",
+          "example": "1750399557000",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改时间戳,毫秒,为空默认当前时间",
+          "example": "1750399557000",
+          "member": "int64",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字段信息",
+          "example": "无",
+          "member": "ReportColumnInfo",
+          "name": "Columns",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportTableResponse": {
+      "document": "ReportTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元数据唯一id",
+          "example": "ZxPE4RZ0cQnUCaDHz-awBw",
+          "member": "string",
+          "name": "Guid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -47223,6 +48045,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UTC+13",
+          "member": "string",
+          "name": "ScheduleTimeZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -55413,6 +56246,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "允许重跑类 ALL 无论实例成功或者失败，都允许重跑 FAILURE 只有失败的实例允许重跑，成功的实例不允许重跑 NONE 无论成功或者失败，都不允许重跑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL",
+          "member": "string",
+          "name": "AllowRedoType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -57520,6 +58364,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "允许重跑类型，ALL 表示无论实例运行成功还是失败都允许重跑，NONE表示无论成功或者失败都不允许重跑，FAILURE 表示只有运行失败才能重跑",
+          "example": "无",
+          "member": "string",
+          "name": "AllowRedoType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -61167,6 +62022,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近更新人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "UpdateUser",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近更新人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "43234563",
+          "member": "string",
+          "name": "UpdateUserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -61310,6 +62187,16 @@
           "example": "无",
           "member": "string",
           "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jack",
+          "member": "string",
+          "name": "ModifyUser",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

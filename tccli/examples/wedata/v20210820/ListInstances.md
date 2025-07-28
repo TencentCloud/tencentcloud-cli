@@ -24,6 +24,8 @@ tccli wedata ListInstances --cli-unfold-argument  \
     --ExecutorGroupIdList 20240222212719833743 \
     --StartTimeFrom 2025-03-27 00:00:00 \
     --StartTimeTo 2025-03-28 23:59:59 \
+    --LastUpdateTimeFrom 2025-03-27 00:00:00 \
+    --LastUpdateTimeTo 2025-03-28 23:59:59 \
     --ScheduleTimeZone UTC+8
 ```
 
@@ -41,12 +43,14 @@ Output:
                     "ExecutorGroupName": "qfh_test",
                     "FolderId": "2493fc25-643d-11ef-8ec8-b8599f277de5",
                     "FolderName": "dylandlwu",
+                    "JobErrorMsg": null,
                     "InChargeList": [
                         "dylandlwu"
                     ],
                     "InstanceKey": "20250326150742906_2025-03-28 00:00:00",
                     "InstanceState": 2,
                     "InstanceType": null,
+                    "LastUpdateTime": "2025-03-28 00:21:09",
                     "ProjectId": "1460947878944567296",
                     "SchedulerTime": "2025-03-28 00:00:00",
                     "StartTime": "2025-03-28 00:18:43",
@@ -71,6 +75,7 @@ Output:
                     "ExecutorGroupId": "20240222212719833743",
                     "ExecutorGroupName": "qfh_test",
                     "FolderId": "2493fc25-643d-11ef-8ec8-b8599f277de5",
+                    "JobErrorMsg": null,
                     "FolderName": "dylandlwu",
                     "InChargeList": [
                         "dylandlwu"
@@ -78,6 +83,7 @@ Output:
                     "InstanceKey": "20250326150742906_2025-03-28 00:20:00",
                     "InstanceState": 2,
                     "InstanceType": null,
+                    "LastUpdateTime": "2025-03-28 00:40:30",
                     "ProjectId": "1460947878944567296",
                     "SchedulerTime": "2025-03-28 00:20:00",
                     "StartTime": "2025-03-28 00:20:46",
@@ -103,12 +109,14 @@ Output:
                     "ExecutorGroupName": "qfh_test",
                     "FolderId": "2493fc25-643d-11ef-8ec8-b8599f277de5",
                     "FolderName": "dylandlwu",
+                    "JobErrorMsg": null,
                     "InChargeList": [
                         "dylandlwu"
                     ],
                     "InstanceKey": "20250326150742906_2025-03-28 00:40:00",
                     "InstanceState": 2,
                     "InstanceType": null,
+                    "LastUpdateTime": "2025-03-28 00:40:30",
                     "ProjectId": "1460947878944567296",
                     "SchedulerTime": "2025-03-28 00:40:00",
                     "StartTime": "2025-03-28 00:40:21",
@@ -134,12 +142,14 @@ Output:
                     "ExecutorGroupName": "qfh_test",
                     "FolderId": "2493fc25-643d-11ef-8ec8-b8599f277de5",
                     "FolderName": "dylandlwu",
+                    "JobErrorMsg": null,
                     "InChargeList": [
                         "dylandlwu"
                     ],
                     "InstanceKey": "20250326150742906_2025-03-28 01:00:00",
                     "InstanceState": 2,
                     "InstanceType": null,
+                    "LastUpdateTime": "2025-03-28 01:12:16",
                     "ProjectId": "1460947878944567296",
                     "SchedulerTime": "2025-03-28 01:00:00",
                     "StartTime": "2025-03-28 01:12:07",
@@ -165,12 +175,14 @@ Output:
                     "ExecutorGroupName": "qfh_test",
                     "FolderId": "2493fc25-643d-11ef-8ec8-b8599f277de5",
                     "FolderName": "dylandlwu",
+                    "JobErrorMsg": null,
                     "InChargeList": [
                         "dylandlwu"
                     ],
                     "InstanceKey": "20250326150742906_2025-03-28 01:20:00",
                     "InstanceState": 2,
                     "InstanceType": null,
+                    "LastUpdateTime": "2025-03-28 01:20:21",
                     "ProjectId": "1460947878944567296",
                     "SchedulerTime": "2025-03-28 01:20:00",
                     "StartTime": "2025-03-28 01:20:11",
@@ -196,12 +208,14 @@ Output:
                     "ExecutorGroupName": "qfh_test",
                     "FolderId": "2493fc25-643d-11ef-8ec8-b8599f277de5",
                     "FolderName": "dylandlwu",
+                    "JobErrorMsg": null,
                     "InChargeList": [
                         "dylandlwu"
                     ],
                     "InstanceKey": "20250326150742906_2025-03-28 01:40:00",
                     "InstanceState": 2,
                     "InstanceType": null,
+                    "LastUpdateTime": "2025-03-28 01:40:27",
                     "ProjectId": "1460947878944567296",
                     "SchedulerTime": "2025-03-28 01:40:00",
                     "StartTime": "2025-03-28 01:40:19",
@@ -227,12 +241,14 @@ Output:
                     "ExecutorGroupName": "qfh_test",
                     "FolderId": "2493fc25-643d-11ef-8ec8-b8599f277de5",
                     "FolderName": "dylandlwu",
+                    "JobErrorMsg": null,
                     "InChargeList": [
                         "dylandlwu"
                     ],
                     "InstanceKey": "20250326150742906_2025-03-28 02:00:00",
                     "InstanceState": 2,
                     "InstanceType": null,
+                    "LastUpdateTime": "2025-03-28 02:00:34",
                     "ProjectId": "1460947878944567296",
                     "SchedulerTime": "2025-03-28 02:00:00",
                     "StartTime": "2025-03-28 02:00:26",
@@ -258,12 +274,14 @@ Output:
                     "ExecutorGroupName": "qfh_test",
                     "FolderId": "2493fc25-643d-11ef-8ec8-b8599f277de5",
                     "FolderName": "dylandlwu",
+                    "JobErrorMsg": null,
                     "InChargeList": [
                         "dylandlwu"
                     ],
                     "InstanceKey": "20250326150742906_2025-03-28 02:20:00",
                     "InstanceState": 2,
                     "InstanceType": null,
+                    "LastUpdateTime": "2025-03-28 02:20:22",
                     "ProjectId": "1460947878944567296",
                     "SchedulerTime": "2025-03-28 02:20:00",
                     "StartTime": "2025-03-28 02:20:12",
@@ -289,12 +307,14 @@ Output:
                     "ExecutorGroupName": "qfh_test",
                     "FolderId": "2493fc25-643d-11ef-8ec8-b8599f277de5",
                     "FolderName": "dylandlwu",
+                    "JobErrorMsg": null,
                     "InChargeList": [
                         "dylandlwu"
                     ],
                     "InstanceKey": "20250326150742906_2025-03-28 02:40:00",
                     "InstanceState": 2,
                     "InstanceType": null,
+                    "LastUpdateTime": "2025-03-28 02:40:31",
                     "ProjectId": "1460947878944567296",
                     "SchedulerTime": "2025-03-28 02:40:00",
                     "StartTime": "2025-03-28 02:40:17",
@@ -320,12 +340,14 @@ Output:
                     "ExecutorGroupName": "qfh_test",
                     "FolderId": "2493fc25-643d-11ef-8ec8-b8599f277de5",
                     "FolderName": "dylandlwu",
+                    "JobErrorMsg": null,
                     "InChargeList": [
                         "dylandlwu"
                     ],
                     "InstanceKey": "20250326150742906_2025-03-28 03:00:00",
                     "InstanceState": 2,
                     "InstanceType": null,
+                    "LastUpdateTime": "2025-03-28 03:00:30",
                     "ProjectId": "1460947878944567296",
                     "SchedulerTime": "2025-03-28 03:00:00",
                     "StartTime": "2025-03-28 03:00:20",
