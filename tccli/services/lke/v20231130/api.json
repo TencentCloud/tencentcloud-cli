@@ -16187,7 +16187,7 @@
         {
           "disabled": false,
           "document": "文档支持下面类型\npdf、doc、docx、ppt、mhtml、pptx、wps、ppsx，单个文件不超过200MB；\nxlsx、xls、md、txt、csv、html，单个文件不超过20MB；\n\n图片支持下面类型：\njpg、png、jpeg、tiff、bmp、gif，单个文件不超过50MB",
-          "example": "md",
+          "example": "docx",
           "member": "string",
           "name": "FileType",
           "required": true,
@@ -16241,7 +16241,7 @@
         {
           "disabled": false,
           "document": "来源（0 从本地文档导入），默认值为0",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Source",
           "required": false,
@@ -16250,7 +16250,7 @@
         {
           "disabled": false,
           "document": "自定义链接地址, IsRefer为true的时候，该值才有意义",
-          "example": "无",
+          "example": "https://cloud.tencent.com/",
           "member": "string",
           "name": "WebUrl",
           "required": false,
@@ -16259,7 +16259,7 @@
         {
           "disabled": false,
           "document": "标签引用",
-          "example": "无",
+          "example": "{\"Source\":1, \"AttributeBizId\":1947303675959394240,\"LabelBizIds\":[\"1947304029408340096\", \"1947303675967782849\"]}",
           "member": "AttrLabelRefer",
           "name": "AttrLabels",
           "required": false,
@@ -16276,8 +16276,8 @@
         },
         {
           "disabled": false,
-          "document": "有效开始时间，unix时间戳",
-          "example": "无",
+          "document": "有效开始时间，unix秒级时间戳",
+          "example": "1753278682",
           "member": "string",
           "name": "ExpireStart",
           "required": false,
@@ -16285,8 +16285,8 @@
         },
         {
           "disabled": false,
-          "document": "有效结束时间，unix时间戳，0代表永久有效",
-          "example": "无",
+          "document": "有效结束时间，unix秒级时间戳，0代表永久有效",
+          "example": "1753325001",
           "member": "string",
           "name": "ExpireEnd",
           "required": false,
@@ -16295,7 +16295,7 @@
         {
           "disabled": false,
           "document": "是否引用链接",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsRefer",
           "required": false,
@@ -16304,7 +16304,7 @@
         {
           "disabled": false,
           "document": "文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从腾讯云智能体开发平台页面下载excel模板",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "Opt",
           "required": false,
@@ -16313,7 +16313,7 @@
         {
           "disabled": false,
           "document": "分类ID",
-          "example": "无",
+          "example": "1946038907082162176",
           "member": "string",
           "name": "CateBizId",
           "required": false,
@@ -16322,7 +16322,7 @@
         {
           "disabled": false,
           "document": "是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsDownload",
           "required": false,
@@ -16337,7 +16337,7 @@
         {
           "disabled": false,
           "document": "文档ID",
-          "example": "无",
+          "example": "1948014277815314560",
           "member": "string",
           "name": "DocBizId",
           "output_required": false,
@@ -16347,7 +16347,7 @@
         {
           "disabled": false,
           "document": "导入错误信息",
-          "example": "无",
+          "example": "文件数据存在错误，请下载并查看错误标注文件",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": false,
@@ -16357,7 +16357,7 @@
         {
           "disabled": false,
           "document": "错误链接",
-          "example": "无",
+          "example": "https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fcorp/xxxx",
           "member": "string",
           "name": "ErrorLink",
           "output_required": false,
@@ -16367,7 +16367,7 @@
         {
           "disabled": false,
           "document": "错误链接文本",
-          "example": "无",
+          "example": "下载",
           "member": "string",
           "name": "ErrorLinkText",
           "output_required": false,

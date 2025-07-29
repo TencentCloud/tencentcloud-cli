@@ -47,22 +47,6 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6e9964d-26a3-49d0-adab-993e17d2f950\",\n        \"Ips\": [\n            {\n                \"Ip\": \"1.1.1.1\",\n                \"District\": \"广东\",\n                \"Isp\": \"电信\",\n                \"City\": \"深圳\",\n                \"Status\": \"online\",\n                \"CreateTime\": \"2019-10-12 00:00:00\"\n            }\n        ],\n        \"TotalCount\": 0\n    }\n}",
         "title": "查询域名节点信息"
       }
-    ],
-    "DescribePurgeTasks": [
-      {
-        "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribePurgeTasks\n&PurgeType=ur\n&TaskId=1234567\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"PurgeLogs\": [\n            {\n                \"TaskId\": \"153303185323131331\",\n                \"Url\": \"http://www.test.com/\",\n                \"Status\": \"Done\",\n                \"PurgeType\": \"url\",\n                \"FlushType\": \"flush\",\n                \"CreateTime\": \"2018-07-30 18:10:53\"\n            }\n        ],\n        \"TotalCount\": 20\n    }\n}",
-        "title": "刷新历史查询"
-      }
-    ],
-    "PurgeUrlsCache": [
-      {
-        "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=PurgeUrlsCache\n&Urls.0=http://www.test.com/1.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"TaskId\": \"1533045796-i60rfmzm\"\n    }\n}",
-        "title": "刷新Url"
-      }
     ]
   },
   "version": "1.0"

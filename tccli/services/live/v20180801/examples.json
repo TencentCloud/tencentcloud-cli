@@ -267,8 +267,8 @@
     "CreateLiveTimeShiftTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTimeShiftTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"name\",\n    \"Description\": \"timeshift\",\n    \"Area\": \"0\",\n    \"Duration\": 1,\n    \"ItemDuration\": 1,\n    \"RemoveWatermark\": true,\n    \"TranscodeTemplateIds\": [\n        0\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TemplateId\": 0,\n        \"RequestId\": \"3fefec28-3f95-4055-8a22-714cc271251e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTimeShiftTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"name\",\n    \"Description\": \"timeshift\",\n    \"Area\": \"0\",\n    \"Duration\": 604800,\n    \"ItemDuration\": 5,\n    \"RemoveWatermark\": false,\n    \"TranscodeTemplateIds\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": 58241,\n        \"RequestId\": \"3fefec28-3f95-4055-8a22-714cc271251e\"\n    }\n}",
         "title": "请求示例"
       }
     ],

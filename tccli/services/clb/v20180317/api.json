@@ -872,6 +872,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高级路由规则ID",
+          "example": "rule-kfgg89**",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3174,7 +3184,7 @@
         {
           "disabled": false,
           "document": "网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)",
-          "example": "无",
+          "example": "None",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -3192,7 +3202,7 @@
         {
           "disabled": false,
           "document": "购买负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。",
-          "example": "无",
+          "example": "None",
           "member": "TagInfo",
           "name": "Tags",
           "required": false,
@@ -3219,7 +3229,7 @@
         {
           "disabled": false,
           "document": "独占型实例信息。若创建独占型的内网负载均衡实例，则此参数必填。",
-          "example": "无",
+          "example": "None",
           "member": "ExclusiveCluster",
           "name": "ExclusiveCluster",
           "required": false,
@@ -3264,7 +3274,7 @@
         {
           "disabled": false,
           "document": "开启绑定跨地域/跨Vpc绑定IP的功能后，创建SnatIp。",
-          "example": "无",
+          "example": "None",
           "member": "SnatIp",
           "name": "SnatIps",
           "required": false,
@@ -3327,7 +3337,7 @@
         {
           "disabled": false,
           "document": "负载均衡实例的预付费相关属性，API接口购买包年包月实例还在灰度中，如您需要体验该功能，请通过 [工单申请](https://console.cloud.tencent.com/workorder/category)",
-          "example": "无",
+          "example": "None",
           "member": "LBChargePrepaid",
           "name": "LBChargePrepaid",
           "required": false,
@@ -3350,6 +3360,15 @@
           "name": "AccessLogTopicId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启七层高级路由",
+          "example": "false",
+          "member": "bool",
+          "name": "AdvancedRoute",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10870,8 +10889,18 @@
         },
         {
           "disabled": false,
+          "document": "高级路由规则ID",
+          "example": "rule-b6xw**lo",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "本规则上绑定的后端服务的健康检查状态",
-          "example": "无",
+          "example": "None",
           "member": "TargetHealth",
           "name": "Targets",
           "output_required": true,

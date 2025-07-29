@@ -1670,6 +1670,14 @@
         "title": "发起转码和采样截图任务"
       }
     ],
+    "ProcessMediaByMPS": [
+      {
+        "document": "对 fileId 为 5285485487985271487 的视频发起智能擦除任务。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessMediaByMPS\n<公共请求参数>\n\n{\n    \"FileId\": \"5285485487985271487\",\n    \"SubAppId\": 1500000001,\n    \"MPSProcessMediaParams\": \"{\\\"AiAnalysisTask\\\": {\\\"Definition\\\":25,\\\"ExtendedParameter\\\":\\\"{\\\\\\\"delogo\\\\\\\":{\\\\\\\"cluster_id\\\\\\\":\\\\\\\"gpu_zhiyan\\\\\\\",\\\\\\\"CustomerAppId\\\\\\\":\\\\\\\"subtitle_erase_fast\\\\\\\"}}\\\"}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-ProcessMediaByMPS-bffb15f07530b57bc1aab01fac74bca\"\n    }\n}",
+        "title": "发起智能擦除任务"
+      }
+    ],
     "ProcessMediaByProcedure": [
       {
         "document": "对 fileId 为 5285485487985271487 的发起任务，使用的任务流模板名为 TranscodeAndSnapshot。",

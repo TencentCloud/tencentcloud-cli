@@ -6323,7 +6323,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板ID。可通过[DescribeParameterTemplates](https://tapd.woa.com/tapd_fe/20400322/story/detail/1020400322125673714)接口获取",
+          "document": "参数模板ID。可通过[DescribeParameterTemplates](https://cloud.tencent.com/document/api/409/84067)接口获取",
           "example": "423984bb-97fe-5693-a74f-63cc8dfb6c5d",
           "member": "string",
           "name": "TemplateId",
@@ -6359,7 +6359,7 @@
         {
           "disabled": false,
           "document": "参数模板包含的参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "详见数据结构",
           "member": "ParamInfo",
           "name": "ParamInfoSet",
           "output_required": true,

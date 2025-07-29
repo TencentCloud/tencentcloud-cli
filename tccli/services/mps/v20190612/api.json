@@ -9416,7 +9416,7 @@
         {
           "disabled": false,
           "document": "输入的IP白名单，格式为CIDR。",
-          "example": "0.0.0.0/0",
+          "example": "[\"0.0.0.0/0\"]",
           "member": "string",
           "name": "AllowIpList",
           "required": false,
@@ -9425,7 +9425,7 @@
         {
           "disabled": false,
           "document": "输入的SRT配置信息。",
-          "example": "0",
+          "example": "无",
           "member": "CreateInputSRTSettings",
           "name": "SRTSettings",
           "required": false,
@@ -9434,7 +9434,7 @@
         {
           "disabled": false,
           "document": "输入的RTP配置信息。",
-          "example": "0",
+          "example": "无",
           "member": "CreateInputRTPSettings",
           "name": "RTPSettings",
           "required": false,
@@ -9520,6 +9520,15 @@
           "name": "InputRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "冷热备相关",
+          "example": "无",
+          "member": "FailOverOption",
+          "name": "FailOverOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -10418,6 +10427,15 @@
           "name": "RecordFormat",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检抽检策略。",
+          "example": "{         \"StrategyType\": \"TimeSpotCheck\",         \"TimeSpotCheck\": {             \"CheckDuration\": 50,             \"CheckInterval\": 10,             \"SkipDuration\": 10,             \"CirclesNumber\": 10         }     }",
+          "member": "QualityControlStrategy",
+          "name": "Strategy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10428,7 +10446,7 @@
         {
           "disabled": false,
           "document": "媒体质检模板唯一标识。",
-          "example": "31",
+          "example": "200096",
           "member": "int64",
           "name": "Definition",
           "output_required": true,
@@ -14685,7 +14703,7 @@
         {
           "disabled": false,
           "document": "媒体质检模板唯一标识过滤条件，数组长度限制：100。",
-          "example": "[\"1001\\n\"]",
+          "example": "[1001]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -14703,7 +14721,7 @@
         {
           "disabled": false,
           "document": "返回记录条数\n<li>默认值：10；</li>\n<li>最大值：100。</li>",
-          "example": "20",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -14721,7 +14739,7 @@
         {
           "disabled": false,
           "document": "媒体质检模板标识过滤条件，长度限制：64 个字符。",
-          "example": "\"\"",
+          "example": "质检模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -14736,7 +14754,7 @@
         {
           "disabled": false,
           "document": "符合过滤条件的记录总数。",
-          "example": "1",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -14745,13 +14763,13 @@
         },
         {
           "disabled": false,
-          "document": "媒体质检模板详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "媒体质检模板详情列表。",
           "example": "无",
           "member": "QualityControlTemplate",
           "name": "QualityControlTemplateSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17810,6 +17828,23 @@
           "required": false,
           "type": "float",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FailOverOption": {
+      "document": "type FailOverOption struct \n{ FailOverType string json:\"FailOverType\" // 新增 冷/热备 COLDSTANDBY、HOTSTANDBY }",
+      "members": [
+        {
+          "disabled": false,
+          "document": "热备",
+          "example": "HOTSTANDBY",
+          "member": "string",
+          "name": "FailOverType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -24262,7 +24297,7 @@
         {
           "disabled": false,
           "document": "SRT的配置信息。",
-          "example": "0",
+          "example": "无",
           "member": "CreateInputSRTSettings",
           "name": "SRTSettings",
           "required": true,
@@ -24271,7 +24306,7 @@
         {
           "disabled": false,
           "document": "RTP的配置信息。",
-          "example": "0",
+          "example": "无",
           "member": "CreateInputRTPSettings",
           "name": "RTPSettings",
           "required": true,
@@ -24298,7 +24333,7 @@
         {
           "disabled": false,
           "document": "RTMP_PULL的配置信息。",
-          "example": "0",
+          "example": "无",
           "member": "CreateInputRTMPPullSettings",
           "name": "RTMPPullSettings",
           "required": false,
@@ -24334,7 +24369,7 @@
         {
           "disabled": false,
           "document": "绑定的输入安全组 ID。 仅支持关联一组安全组。",
-          "example": "[\"019631fd7ab41ea506497cdedffg\"]",
+          "example": "[\"019631fd7ab41ea506497cedffg\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -24366,6 +24401,15 @@
           "name": "InputRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "冷热备相关",
+          "example": "无",
+          "member": "FailOverOption",
+          "name": "FailOverOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -24713,6 +24757,15 @@
           "name": "RecordFormat",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体质检抽检策略。",
+          "example": "{     \"StrategyType\": \"TimeSpotCheck\",     \"TimeSpotCheck\": {       \"CheckDuration\": 50,       \"CheckInterval\": 10,       \"SkipDuration\": 10,       \"CirclesNumber\": 10     }   }",
+          "member": "QualityControlStrategy",
+          "name": "Strategy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

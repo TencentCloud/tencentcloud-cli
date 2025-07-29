@@ -1120,6 +1120,13 @@
       "output": "ProcessMediaResponse",
       "status": "online"
     },
+    "ProcessMediaByMPS": {
+      "document": "使用媒体处理服务（MPS）的媒体处理能力，对点播中的视频发起媒体处理，任务发起时需将 MPS 相关参数以 JSON 格式填入 MPSProcessMediaParams 参数中。具体任务参数配置请参考[媒体处理 ProcessMedia 接口](https://cloud.tencent.com/document/api/862/37578)。\n当前支持的 MPS 功能：\n1. [智能擦除](https://cloud.tencent.com/document/product/862/101530)：能够对视频画面中的 Logo、字幕、人脸和车牌等元素进行模糊、马赛克或无痕化处理，从而便于内容的传播和分享。该任务产生的新视频将生成新的 FileId 存储在点播平台的子应用中。\n\n> 以该种方式发起的视频处理任务：\n> 1. 任务状态及结果的查询仍在点播平台中完成，使用 [DescribeTaskDetail](https://cloud.tencent.com/document/product/266/33431) 或 [DescribeTasks](https://cloud.tencent.com/document/product/266/33430) 查询任务。\n> 2. 相关功能的用量及账单将在 MPS 平台给出，因此在使用该功能前，首先需要开通 MPS 服务。\n> 3. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。",
+      "input": "ProcessMediaByMPSRequest",
+      "name": "使用 MPS 进行视频处理",
+      "output": "ProcessMediaByMPSResponse",
+      "status": "online"
+    },
     "ProcessMediaByProcedure": {
       "document": "使用任务流模板，对点播中的视频发起处理任务。\n有两种方式创建任务流模板：\n1. 在控制台上创建和修改任务流模板；\n2. 通过任务流模板接口创建任务流模板。\n\n如使用事件通知，除音视频审核任务外的事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)；音视频审核任务事件通知的类型为 [音视频审核完成](https://cloud.tencent.com/document/product/266/81258)。",
       "input": "ProcessMediaByProcedureRequest",
@@ -29750,6 +29757,61 @@
         }
       ],
       "usage": "out"
+    },
+    "ProcessMediaByMPSRequest": {
+      "document": "ProcessMediaByMPS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。",
+          "example": "5285485487985271487",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "example": "1500000001",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。\n视频处理参数详情请参考：[MPS 发起媒体处理](https://cloud.tencent.com/document/api/862/37578)。\n填写说明：\n1. 目前仅需要配置 MPS “发起媒体处理”接口中的 AiAnalysisTask 参数，其他参数无需填写，若包含其它参数，系统将自动忽略；\n2. 当前仅支持通过此方式发起智能擦除任务。若配置了其他任务类型的相关参数，系统将自动忽略这些参数。\n",
+          "example": "{\\\"AiAnalysisTask\\\":{\\\"Definition\\\":25,\\\"ExtendedParameter\\\":\\\"\\\"}}",
+          "member": "string",
+          "name": "MPSProcessMediaParams",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProcessMediaByMPSResponse": {
+      "document": "ProcessMediaByMPS返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ProcessMediaByProcedureRequest": {
       "document": "ProcessMediaByProcedure请求参数结构体",

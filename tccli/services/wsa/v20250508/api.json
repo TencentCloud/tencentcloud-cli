@@ -1,7 +1,7 @@
 {
   "actions": {
     "SearchPro": {
-      "document": "联网搜索API，以json形式向客户提供搜索结果数据，包含不仅限于标题、摘要、内容来源url等信息",
+      "document": "联网搜索API，以json形式向客户提供搜索结果数据，包含标题、摘要、内容来源url等信息",
       "input": "SearchProRequest",
       "name": "联网搜索API",
       "output": "SearchProResponse",
@@ -82,7 +82,7 @@
         {
           "disabled": false,
           "document": "搜索结果页面",
-          "example": "无",
+          "example": "[\"{\\\"passage\\\":\\\"aaa\\\"}\", \"{\\\"passage\\\":\\\"bbb\\\"}\"]",
           "member": "string",
           "name": "Pages",
           "output_required": false,
@@ -92,7 +92,7 @@
         {
           "disabled": false,
           "document": "提示信息",
-          "example": "无",
+          "example": "hit black query",
           "member": "string",
           "name": "Msg",
           "output_required": false,

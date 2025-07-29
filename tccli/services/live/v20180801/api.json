@@ -6238,8 +6238,8 @@
         },
         {
           "disabled": false,
-          "document": "时移时长。\n单位：s。",
-          "example": "1",
+          "document": "时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。",
+          "example": "604800",
           "member": "uint64",
           "name": "Duration",
           "required": true,

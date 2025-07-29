@@ -9159,6 +9159,15 @@
           "name": "CamRangerGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0: 灵活场景 1: 固定场景",
+          "example": "0",
+          "member": "int64",
+          "name": "ComputeGroupType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

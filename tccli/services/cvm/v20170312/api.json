@@ -5840,7 +5840,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群备注",
-          "example": "H20",
+          "example": "HCCPNV6",
           "member": "string",
           "name": "Remark",
           "output_required": true,
