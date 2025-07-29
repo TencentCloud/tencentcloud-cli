@@ -5,14 +5,14 @@
       "input": "DescribeSmsRequest",
       "name": "查询短信列表",
       "output": "DescribeSmsResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "SendMultiSms": {
       "document": "产品下线\n\n群发短信",
       "input": "SendMultiSmsRequest",
       "name": "群发短信接口",
       "output": "SendMultiSmsResponse",
-      "status": "deprecated"
+      "status": "offline"
     }
   },
   "metadata": {

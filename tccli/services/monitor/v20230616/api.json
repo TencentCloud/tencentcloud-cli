@@ -590,7 +590,7 @@
         {
           "disabled": false,
           "document": "维度组合",
-          "example": "[{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"9f25c238-4e82-46e4-a0fe-76443480c8db\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"d651829d-32c6-48fc-8902-e691e9c2046a\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"4d48043f-5d5f-4a1e-b4e6-195491231c36\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"120df06f-7890-4a1a-84e5-3a7515083efc\"}]}]\t",
+          "example": "[{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"9f25c238-4e82-46e4-a0fe-76443480c8db\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"d651829d-32c6-48fc-8902-e691e9c2046a\"}]}]",
           "member": "Instance",
           "name": "DimensionsList",
           "required": true,
@@ -604,6 +604,15 @@
           "name": "Expr",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "qcloud地域",
+          "example": "false",
+          "member": "bool",
+          "name": "GlobalRegion",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -634,7 +643,7 @@
         {
           "disabled": false,
           "document": "数据点数组",
-          "example": "无",
+          "example": "[{'Dimensions': [{'Name': 'bucket', 'Value': 'ta-cn-south-00001-1329476759'}, {'Name': 'appid', 'Value': '1329476759'}], 'Timestamps': [], 'Values': []}]",
           "member": "DataPoint",
           "name": "DataPoints",
           "output_required": true,
@@ -664,7 +673,7 @@
         {
           "disabled": false,
           "document": "返回信息",
-          "example": "无",
+          "example": "Success",
           "member": "string",
           "name": "Msg",
           "output_required": true,

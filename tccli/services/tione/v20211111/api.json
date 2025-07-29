@@ -2827,7 +2827,7 @@
         {
           "disabled": false,
           "document": "数据集名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "name1",
           "member": "string",
           "name": "DatasetName",
           "output_required": true,
@@ -2837,7 +2837,7 @@
         {
           "disabled": false,
           "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "user1",
           "member": "string",
           "name": "Creator",
           "output_required": true,
@@ -2847,7 +2847,7 @@
         {
           "disabled": false,
           "document": "数据集版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "v1",
           "member": "string",
           "name": "DatasetVersion",
           "output_required": true,
@@ -2857,7 +2857,7 @@
         {
           "disabled": false,
           "document": "数据集类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "TYPE_DATASET_LLM",
           "member": "string",
           "name": "DatasetType",
           "output_required": true,
@@ -2867,7 +2867,7 @@
         {
           "disabled": false,
           "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "[{\"TagKey\":\"k1\",\"TagValue\":\"v1\"}]",
           "member": "Tag",
           "name": "DatasetTags",
           "output_required": true,
@@ -2877,7 +2877,7 @@
         {
           "disabled": false,
           "document": "数据集标注任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "task1",
           "member": "string",
           "name": "DatasetAnnotationTaskName",
           "output_required": true,
@@ -2887,7 +2887,7 @@
         {
           "disabled": false,
           "document": "数据集标注任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "ds-123",
           "member": "string",
           "name": "DatasetAnnotationTaskId",
           "output_required": true,
@@ -2897,7 +2897,7 @@
         {
           "disabled": false,
           "document": "处理进度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "100",
           "member": "uint64",
           "name": "Process",
           "output_required": true,
@@ -2907,7 +2907,7 @@
         {
           "disabled": false,
           "document": "数据集状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "STATUS_DATASET_SUCCESS",
           "member": "string",
           "name": "DatasetStatus",
           "output_required": true,
@@ -2917,7 +2917,7 @@
         {
           "disabled": false,
           "document": "错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "msg1",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -2927,7 +2927,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2025-07-28 15:33:50",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -2937,7 +2937,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "2025-07-28 16:33:50",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -2947,7 +2947,7 @@
         {
           "disabled": false,
           "document": "外部关联TASKType\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "type1",
           "member": "string",
           "name": "ExternalTaskType",
           "output_required": true,
@@ -2957,7 +2957,7 @@
         {
           "disabled": false,
           "document": "数据集大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "1024",
           "member": "string",
           "name": "DatasetSize",
           "output_required": true,
@@ -2967,7 +2967,7 @@
         {
           "disabled": false,
           "document": "数据集数据量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "12",
           "member": "uint64",
           "name": "FileNum",
           "output_required": true,
@@ -2977,7 +2977,7 @@
         {
           "disabled": false,
           "document": "数据集源COS路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "{\"Path\":\"a1\"}",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
           "output_required": true,
@@ -2987,7 +2987,7 @@
         {
           "disabled": false,
           "document": "数据集标签存储路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "{\"Path\":\"a1\"}",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
           "output_required": true,
@@ -2997,7 +2997,7 @@
         {
           "disabled": false,
           "document": "数据集版本聚合详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "{\"DatasetVersion\":\"v1\"}",
           "member": "DatasetInfo",
           "name": "DatasetVersions",
           "output_required": true,
@@ -3007,7 +3007,7 @@
         {
           "disabled": false,
           "document": "数据集标注状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "STATUS_NON_ANNOTATED",
           "member": "string",
           "name": "AnnotationStatus",
           "output_required": true,
@@ -3017,7 +3017,7 @@
         {
           "disabled": false,
           "document": "数据集类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "ANNOTATION_TYPE_LLM",
           "member": "string",
           "name": "AnnotationType",
           "output_required": true,
@@ -3027,7 +3027,7 @@
         {
           "disabled": false,
           "document": "数据集标注格式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "format1",
           "member": "string",
           "name": "AnnotationFormat",
           "output_required": true,
@@ -3077,7 +3077,7 @@
         {
           "disabled": false,
           "document": "数据集建模类别。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test1",
           "member": "string",
           "name": "DatasetScene",
           "output_required": false,
@@ -3087,7 +3087,7 @@
         {
           "disabled": false,
           "document": "CFS配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test1",
           "member": "CFSConfig",
           "name": "CFSConfig",
           "output_required": false,
@@ -3097,7 +3097,7 @@
         {
           "disabled": false,
           "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test1",
           "member": "string",
           "name": "SceneTags",
           "output_required": false,
@@ -3107,7 +3107,7 @@
         {
           "disabled": false,
           "document": "已标注数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test1",
           "member": "uint64",
           "name": "NumAnnotated",
           "output_required": false,
@@ -3117,7 +3117,7 @@
         {
           "disabled": false,
           "document": "标注规范\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test1",
           "member": "string",
           "name": "AnnotationSpecification",
           "output_required": false,
@@ -3127,7 +3127,7 @@
         {
           "disabled": false,
           "document": "标注Schema是否配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test1",
           "member": "bool",
           "name": "AnnotationSchemaConfigured",
           "output_required": false,
@@ -3137,7 +3137,7 @@
         {
           "disabled": false,
           "document": "创建者名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test1",
           "member": "string",
           "name": "CreatorNickname",
           "output_required": false,
@@ -3263,7 +3263,7 @@
         {
           "disabled": false,
           "document": "错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "msg1",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -3293,7 +3293,7 @@
         {
           "disabled": false,
           "document": "外部任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "type1",
           "member": "string",
           "name": "ExternalTaskType",
           "output_required": true,
@@ -3323,7 +3323,7 @@
         {
           "disabled": false,
           "document": "数据集源cos 路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "{\"Path\":\"a1\"}",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
           "output_required": true,
@@ -3333,7 +3333,7 @@
         {
           "disabled": false,
           "document": "数据集输出cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "{\"Path\":\"a1\"}",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
           "output_required": true,
@@ -3343,7 +3343,7 @@
         {
           "disabled": false,
           "document": "数据集标注状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "STATUS_NON_ANNOTATED",
           "member": "string",
           "name": "AnnotationStatus",
           "output_required": true,
@@ -3353,7 +3353,7 @@
         {
           "disabled": false,
           "document": "数据集类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "ANNOTATION_TYPE_LLM",
           "member": "string",
           "name": "AnnotationType",
           "output_required": true,
@@ -3363,7 +3363,7 @@
         {
           "disabled": false,
           "document": "数据集标注格式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "format1",
           "member": "string",
           "name": "AnnotationFormat",
           "output_required": true,
@@ -3403,7 +3403,7 @@
         {
           "disabled": false,
           "document": "内容类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "type1",
           "member": "string",
           "name": "ContentType",
           "output_required": false,
@@ -3413,7 +3413,7 @@
         {
           "disabled": false,
           "document": "数据集建模类别。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "LLM",
           "member": "string",
           "name": "DatasetScene",
           "output_required": false,
@@ -3423,7 +3423,7 @@
         {
           "disabled": false,
           "document": "CFS配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Path\":\"a1\"}",
           "member": "CFSConfig",
           "name": "CFSConfig",
           "output_required": false,
@@ -3433,7 +3433,7 @@
         {
           "disabled": false,
           "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"tag1\"]",
           "member": "string",
           "name": "SceneTags",
           "output_required": false,
@@ -3443,7 +3443,7 @@
         {
           "disabled": false,
           "document": "已标注数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "NumAnnotated",
           "output_required": false,
@@ -3453,7 +3453,7 @@
         {
           "disabled": false,
           "document": "标注规范\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "doc1",
           "member": "string",
           "name": "AnnotationSpecification",
           "output_required": false,
@@ -3463,7 +3463,7 @@
         {
           "disabled": false,
           "document": "标注Schema是否配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "AnnotationSchemaConfigured",
           "output_required": false,
@@ -3473,7 +3473,7 @@
         {
           "disabled": false,
           "document": "创建者名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "name1",
           "member": "string",
           "name": "CreatorNickname",
           "output_required": false,

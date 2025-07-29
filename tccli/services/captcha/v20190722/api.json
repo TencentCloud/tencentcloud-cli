@@ -994,7 +994,7 @@
         {
           "disabled": false,
           "document": "数据数组",
-          "example": "{                 \"Cnt\": 0,                 \"Date\": \"2019112900\"",
+          "example": "{                 \"Cnt\": 0,                 \"Date\": \"2019112900\"}",
           "member": "CaptchaQueryData",
           "name": "Data",
           "output_required": false,
@@ -2042,7 +2042,7 @@
         {
           "disabled": false,
           "document": "验证码票据信息",
-          "example": "{                       \"DateKey\":\"20200909\",                   ",
+          "example": "{                       \"DateKey\":\"20200909\"}",
           "member": "CaptchaTicketDataRes",
           "name": "Data",
           "output_required": false,

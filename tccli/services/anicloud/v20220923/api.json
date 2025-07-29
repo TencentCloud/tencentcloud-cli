@@ -1,25 +1,25 @@
 {
   "actions": {
     "CheckAppidExist": {
-      "document": "查看appid是否存在",
+      "document": "产品退市\n\n查看appid是否存在",
       "input": "CheckAppidExistRequest",
       "name": "查看appid是否存在",
       "output": "CheckAppidExistResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryResource": {
-      "document": "查询购买资源",
+      "document": "产品退市\n\n查询购买资源",
       "input": "QueryResourceRequest",
       "name": "查询购买资源",
       "output": "QueryResourceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryResourceInfo": {
-      "document": "查询资源信息",
+      "document": "产品退市\n\n查询资源信息",
       "input": "QueryResourceInfoRequest",
       "name": "查询资源信息",
       "output": "QueryResourceInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {
