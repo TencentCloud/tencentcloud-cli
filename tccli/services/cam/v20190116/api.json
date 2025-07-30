@@ -112,6 +112,13 @@
       "output": "CreateServiceLinkedRoleResponse",
       "status": "online"
     },
+    "CreateSubAccountLoginIpPolicy": {
+      "document": "增加子账号登录IP策略",
+      "input": "CreateSubAccountLoginIpPolicyRequest",
+      "name": "增加子账号登录IP策略",
+      "output": "CreateSubAccountLoginIpPolicyResponse",
+      "status": "online"
+    },
     "CreateUserOIDCConfig": {
       "document": "创建用户OIDC配置。只能创建一个用户OIDC身份提供商，并且创建用户OIDC配置之后会自动关闭用户SAML SSO身份提供商。",
       "input": "CreateUserOIDCConfigRequest",
@@ -2106,6 +2113,69 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubAccountLoginIpPolicyRequest": {
+      "document": "CreateSubAccountLoginIpPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP策略集合",
+          "example": "无",
+          "member": "IpPolicy",
+          "name": "IpPolicies",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "审批人类型，目前支持的类型有：SubAccountLoginLimitApproval（子账号登录限制审批）",
+          "example": "SubAccountLoginLimitApproval",
+          "member": "string",
+          "name": "ApproverType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被添加为协助审批人的账号ID数组",
+          "example": "[\"20548499\"]",
+          "member": "uint64",
+          "name": "ApproverUin",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用策略：0：不禁用，1：禁用",
+          "example": "0",
+          "member": "uint64",
+          "name": "DisablePolicy",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型：1：更新IP策略，2：设置异地登录校验校验规则",
+          "example": "1",
+          "member": "uint64",
+          "name": "PolicyType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubAccountLoginIpPolicyResponse": {
+      "document": "CreateSubAccountLoginIpPolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4439,6 +4509,32 @@
         }
       ],
       "usage": "out"
+    },
+    "IpPolicy": {
+      "document": "IP限制策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP段",
+          "example": "",
+          "member": "string",
+          "name": "IP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略效力，Allow或Deny",
+          "example": "",
+          "member": "string",
+          "name": "Effect",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ListAccessKeysRequest": {
       "document": "ListAccessKeys请求参数结构体",

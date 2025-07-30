@@ -11,17 +11,17 @@
     "CreateDatasource": [
       {
         "document": "创建数据源",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatasource\n<公共请求参数>\n\n{\n    \"DbHost\": \"0.0.0.0\",\n    \"DbPort\": \"3307\",\n    \"ServiceType\": \"{\\\"Type\\\":\\\"Own\\\"}\",\n    \"DbType\": \"MONGODB\",\n    \"DataOrigin\": \"\",\n    \"Charset\": \"utf8\",\n    \"Catalog\": \"\",\n    \"DbUser\": \"username\",\n    \"DbName\": \"name\",\n    \"DbPwd\": \"password\",\n    \"SourceName\": \"测试vpc\",\n    \"VpcId\": \"vpcid\",\n    \"UniqVpcId\": \"vpc-\",\n    \"Vip\": \"\",\n    \"Vport\": \"\",\n    \"ExtraParam\": \"\",\n    \"DataOriginProjectId\": \"\",\n    \"DataOriginDatasourceId\": \"\",\n    \"UseVPC\": true,\n    \"RegionId\": \"gz\",\n    \"ProjectId\": 517\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatasource\n<公共请求参数>\n\n{\n    \"DbHost\": \"DbHost\",\n    \"DbPort\": 1982493789748932,\n    \"ServiceType\": \"ServiceType\",\n    \"DbType\": \"DbType\",\n    \"Charset\": \"Charset\",\n    \"DbUser\": \"DbUser\",\n    \"DbPwd\": \"DbPwd\",\n    \"DbName\": \"DbName\",\n    \"SourceName\": \"SourceName\",\n    \"ProjectId\": 1982493789748932,\n    \"Catalog\": \"Catalog\",\n    \"DataOrigin\": \"DataOrigin\",\n    \"DataOriginProjectId\": \"DataOriginProjectId\",\n    \"DataOriginDatasourceId\": \"DataOriginDatasourceId\",\n    \"ExtraParam\": \"ExtraParam\",\n    \"UniqVpcId\": \"UniqVpcId\",\n    \"Vip\": \"Vip\",\n    \"Vport\": \"Vport\",\n    \"VpcId\": \"VpcId\",\n    \"OperationAuthLimit\": [\n        \"OperationAuthLimit\"\n    ],\n    \"UseVPC\": false,\n    \"RegionId\": \"RegionId\"\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"服务器内部错误\",\n        \"RequestId\": \"xxx-xx-x\",\n        \"Extra\": \"\",\n        \"Data\": null,\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"服务器内部错误\",\n            \"ErrorMessage\": \"服务器内部错误\",\n            \"ErrorLevel\": \"ERROR\"\n        }\n    }\n}",
         "title": "创建数据源"
       }
     ],
     "CreateDatasourceCloud": [
       {
-        "document": "创建云数据库测示例",
+        "document": "创建云数据库示例",
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatasourceCloud\n<公共请求参数>\n\n{\n    \"ServiceType\": \"ServiceType\",\n    \"DbType\": \"DbType\",\n    \"Charset\": \"Charset\",\n    \"DbUser\": \"DbUser\",\n    \"DbPwd\": \"DbPwd\",\n    \"DbName\": \"DbName\",\n    \"SourceName\": \"SourceName\",\n    \"ProjectId\": \"ProjectId\",\n    \"Vip\": \"Vip\",\n    \"Vport\": \"Vport\",\n    \"VpcId\": \"VpcId\",\n    \"UniqVpcId\": \"UniqVpcId\",\n    \"RegionId\": \"RegionId\",\n    \"ExtraParam\": \"ExtraParam\",\n    \"InstanceId\": \"InstanceId\",\n    \"ProdDbName\": \"ProdDbName\",\n    \"DataOrigin\": \"DataOrigin\",\n    \"DataOriginProjectId\": \"DataOriginProjectId\",\n    \"DataOriginDatasourceId\": \"DataOriginDatasourceId\",\n    \"ClusterId\": \"ClusterId\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 0,\n            \"AccessKey\": \"AccessKey***AccessKey\",\n            \"ProjectId\": 1,\n            \"TranId\": \"jgvk213439\",\n            \"TranStatus\": 0\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"成功\",\n        \"RequestId\": \"RequestId-123\"\n    }\n}",
-        "title": "创建云数据库测示例"
+        "title": "创建云数据库示例"
       }
     ],
     "CreateEmbedToken": [
@@ -173,7 +173,7 @@
     "ModifyDatasource": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatasource\n<公共请求参数>\n\n{\n    \"DbHost\": \"0.0.0.0\",\n    \"DbPort\": \"3307\",\n    \"ServiceType\": \"{\\\"Type\\\":\\\"Own\\\"}\",\n    \"DbType\": \"MONGODB\",\n    \"DataOrigin\": \"\",\n    \"Charset\": \"utf8\",\n    \"Catalog\": \"\",\n    \"DbUser\": \"username\",\n    \"DbName\": \"name\",\n    \"DbPwd\": \"password\",\n    \"SourceName\": \"测试vpc\",\n    \"VpcId\": \"vpcid\",\n    \"UniqVpcId\": \"vpc-\",\n    \"Vip\": \"\",\n    \"Vport\": \"\",\n    \"ExtraParam\": \"\",\n    \"DataOriginProjectId\": \"\",\n    \"DataOriginDatasourceId\": \"\",\n    \"UseVPC\": true,\n    \"RegionId\": \"gz\",\n    \"ProjectId\": 517,\n    \"Id\": 134\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatasource\n<公共请求参数>\n\n{\n    \"DbHost\": \"DbHost\",\n    \"DbPort\": 1982493789748932,\n    \"ServiceType\": \"ServiceType\",\n    \"DbType\": \"DbType\",\n    \"Charset\": \"Charset\",\n    \"DbUser\": \"DbUser\",\n    \"DbPwd\": \"DbPwd\",\n    \"DbName\": \"DbName\",\n    \"SourceName\": \"SourceName\",\n    \"Id\": 1982493789748932,\n    \"ProjectId\": 1982493789748932,\n    \"Catalog\": \"Catalog\",\n    \"DataOrigin\": \"DataOrigin\",\n    \"DataOriginProjectId\": \"DataOriginProjectId\",\n    \"DataOriginDatasourceId\": \"DataOriginDatasourceId\",\n    \"ExtraParam\": \"ExtraParam\",\n    \"UniqVpcId\": \"UniqVpcId\",\n    \"Vip\": \"Vip\",\n    \"Vport\": \"Vport\",\n    \"VpcId\": \"VpcId\",\n    \"UseVPC\": false,\n    \"RegionId\": \"RegionId\"\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"服务器内部错误\",\n        \"RequestId\": \"xxx-xx-x\",\n        \"Extra\": \"\",\n        \"Data\": null,\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"服务器内部错误\",\n            \"ErrorMessage\": \"服务器内部错误\",\n            \"ErrorLevel\": \"ERROR\"\n        }\n    }\n}",
         "title": "更新数据源"
       }
@@ -181,7 +181,7 @@
     "ModifyDatasourceCloud": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatasourceCloud\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"ProjectId\": \"21313\",\n    \"SourceName\": \"数据库别名\",\n    \"Vport\": \"3306\",\n    \"VpcId\": \"2131314\",\n    \"Charset\": \"utf8\",\n    \"ExtraParam\": \"\",\n    \"DbUser\": \"root\",\n    \"ServiceType\": \"{\\\"Type\\\":\\\"Cloud\\\",\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"InstanceId\\\":\\\"cdb-bdb0juh5\\\"}\",\n    \"DbType\": \"MySQL\",\n    \"UniqVpcId\": \"vpc-54343\",\n    \"RegionId\": \"gz\",\n    \"DbName\": \"power-test\",\n    \"DbPwd\": \"2424***231312\",\n    \"Vip\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatasourceCloud\n<公共请求参数>\n\n{\n    \"ServiceType\": \"ServiceType\",\n    \"DbType\": \"DbType\",\n    \"Charset\": \"Charset\",\n    \"DbUser\": \"DbUser\",\n    \"DbPwd\": \"DbPwd\",\n    \"DbName\": \"DbName\",\n    \"SourceName\": \"SourceName\",\n    \"ProjectId\": \"ProjectId\",\n    \"Id\": 1982493789748932,\n    \"Vip\": \"Vip\",\n    \"Vport\": \"Vport\",\n    \"VpcId\": \"VpcId\",\n    \"UniqVpcId\": \"UniqVpcId\",\n    \"RegionId\": \"RegionId\",\n    \"ExtraParam\": \"ExtraParam\",\n    \"InstanceId\": \"InstanceId\",\n    \"ProdDbName\": \"ProdDbName\",\n    \"DataOrigin\": \"DataOrigin\",\n    \"DataOriginProjectId\": \"DataOriginProjectId\",\n    \"DataOriginDatasourceId\": \"DataOriginDatasourceId\",\n    \"ClusterId\": \"ClusterId\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"63f50c98-1e5b-41bc-9a6a-d630312f8de9\",\n        \"Extra\": \"\",\n        \"Data\": \"\",\n        \"Msg\": \"success\"\n    }\n}",
         "title": "更新云数据库示例"
       }

@@ -1,11 +1,27 @@
 {
   "actions": {
+    "CheckDeployApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDeployApp\n<公共请求参数>\n\n\n\n{\n    \"EnvId\": \"lowcode-5gzbnlvd9\",\n    \"Id\": \"app-k82WCPM\",\n    \"BuildId\": \"b62b-c1c6f403d6e1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b722653b-c49a-46bd-8ff0-6d8ba61a37d1\",\n        \"Status\": \"building\"\n    }\n}",
+        "title": "检查应用发布状态"
+      }
+    ],
     "CreateKnowledgeSet": [
       {
         "document": "创建微搭知识库",
         "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKnowledgeSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-1cf\",\n    \"Name\": \"the_name\",\n    \"Title\": \"the_title\",\n    \"Desc\": \"the_desc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde48f19-e0fb-490e-bf4c-150bcf7e3c91\"\n    }\n}",
         "title": "创建知识库"
+      }
+    ],
+    "DeleteAppBindWxApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAppBindWxApp\n<公共请求参数>\n\n{\n    \"WeappId\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e0b18129-45b8-4fc5-99ee-721d5ba79fcc\"\n    }\n}",
+        "title": "t1"
       }
     ],
     "DeleteKnowledgeDocumentSet": [
@@ -22,6 +38,14 @@
         "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKnowledgeSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-1cf\",\n    \"Name\": \"name\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde48f19-e0fb-490e-bf4c-150bcf7e3c91\"\n    }\n}",
         "title": "删除知识库"
+      }
+    ],
+    "DeployApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployApp\n<公共请求参数>\n\n\n\n{\n    \"BuildType\": \"web\",\n    \"Id\": \"app-k82WCM8\",\n    \"Mode\": \"upload\",\n    \"EnvId\": \"lowcode-5gzbnlv393348d\",\n    \"SubAppIds\": [\n        \"sub-7x2cST\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BuildId\": \"bcad608f-962b-c1c6f403d6e1\",\n        \"DeployErrCode\": 0,\n        \"DeployErrMsg\": \"\",\n        \"RequestId\": \"1cfaee37-93e8c08c47d\"\n    }\n}",
+        "title": "发布应用"
       }
     ],
     "DescribeDataSourceList": [
@@ -54,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeSetList\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-xxxx\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KnowledgeSets\": [\n                {\n                    \"Name\": \"name\",\n                    \"Title\": \"title\",\n                    \"Desc\": \"desc\",\n                    \"Active\": \"ENABLED\",\n                    \"CreateTime\": \"2024-06-04 18:07:38\",\n                    \"UpdateTime\": \"2024-06-04 18:09:29\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"f549082e-0cff-4026-96f6-a570d9f1c22d\"\n    }\n}",
         "title": "查询环境下的知识库列表"
+      }
+    ],
+    "PutWxAppIdToWeApp": [
+      {
+        "document": "请求成功成功",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutWxAppIdToWeApp\n<公共请求参数>\n\n{\n    \"WeAppId\": \"app-xxx\",\n    \"WxAppId\": \"wxappidinfo1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03178f\"\n    }\n}",
+        "title": "应用绑定微信ID"
       }
     ],
     "SearchDocList": [

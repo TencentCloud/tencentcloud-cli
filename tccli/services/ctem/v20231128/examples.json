@@ -114,10 +114,10 @@
     ],
     "DescribeHttps": [
       {
-        "document": "查看http数据",
-        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHttps\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Api\": \"\",\n                \"Code\": 200,\n                \"Content\": \"\",\n                \"ContentLength\": 0,\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-06 17:15:10\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"1879dc192f156097b5511fbf9b1bd145\",\n                    \"UpdateAt\": \"2024-06-06 17:15:10\"\n                },\n                \"Id\": 3248,\n                \"Ip\": \"1.1.1.1\",\n                \"ScreenshotThumbUrl\": \"\",\n                \"ScreenshotUrl\": \"\",\n                \"Ssl\": \"\",\n                \"SslExpiredTime\": \"\",\n                \"Title\": \"test\",\n                \"Url\": \"a.test.com\"\n            }\n        ],\n        \"RequestId\": \"f1935acd-4fcf-4972-9b9c-82d4661c2347\",\n        \"Total\": 1\n    }\n}",
-        "title": "查看http数据"
+        "document": "查询网站资产",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHttps\n<公共请求参数>\n\n{\n    \"CustomerIdList\": [\n        100275\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"b36ee1c7-f40e-4f17-8db7-6e14ee8ea556\",\n        \"Total\": 0\n    }\n}",
+        "title": "查询网站资产"
       }
     ],
     "DescribeJobRecordDetails": [
@@ -250,10 +250,10 @@
     ],
     "ModifyLabel": [
       {
-        "document": "编辑标签",
-        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLabel\n<公共请求参数>\n\n{\n    \"Id\": 8706,\n    \"CustomerId\": 100162,\n    \"Module\": \"asset\",\n    \"Labels\": \"{\\\"user_input_123\\\":[\\\"测试\\\"]}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe8d21e4-73e7-425a-aebf-4a97396af03b\"\n    }\n}",
-        "title": "编辑标签"
+        "document": "修改标签",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLabel\n<公共请求参数>\n\n{\n    \"Module\": \"asset\",\n    \"CustomerIdList\": [\n        100275\n    ],\n    \"Labels\": \"{}\",\n    \"Ids\": [\n        10097\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"24b299a2-e517-4225-bdc8-b7c16b5626fd\"\n    }\n}",
+        "title": "修改标签"
       }
     ],
     "StopJobRecord": [

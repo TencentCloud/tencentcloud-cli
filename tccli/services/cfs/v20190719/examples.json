@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ApplyPathLifecyclePolicy": [
+      {
+        "document": "",
+        "input": "https://cfs.tencentcloudapi.com/?Action=ApplyPathLifecyclePolicy\n&LifecyclePolicyID=policy-ek8aw4id\n&Paths.0.FileSystemId=cfs-4030acd30\n&Paths.0.Path=/data\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CheckResults\": [\n            {\n                \"LifecyclePolicyID\": \"policy-4cqyxcma\",\n                \"FileSystemId\": \"cfs-5ajk45jk8\",\n                \"Path\": \"/data/home/user00/\",\n                \"LifecycleRules\": [\n                    {\n                        \"StorageType\": \"InfrequentAccess\",\n                        \"Interval\": \"DEFAULT_ATIME_14\",\n                        \"FileType\": \"All\",\n                        \"Action\": \"Archive\",\n                        \"FileMaxSize\": \"1G\",\n                        \"FileMinSize\": \"1M\"\n                    }\n                ],\n                \"TargetPath\": \"/data/home/user00/\"\n            }\n        ],\n        \"RequestId\": \"a1b2c3-d4e5f6-g7h8j9\"\n    }\n}",
+        "title": "配置生命周期策略关联目录"
+      }
+    ],
     "BindAutoSnapshotPolicy": [
       {
         "document": "绑定文件系统快照策略",
@@ -56,6 +64,38 @@
         "title": "创建文件系统快照"
       }
     ],
+    "CreateDataFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataFlow\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-44d53b63e\",\n    \"SourceStorageType\": \"S3_COS\",\n    \"SourceStorageAddress\": \"https://aileen-data-flow-1251000004.cos.ap-guangzhou.myqcloud.com\",\n    \"SourcePath\": \"test3\",\n    \"TargetPath\": \"/cfs/test11\",\n    \"SecretId\": \"AKIDbzzYj65vue75sC1yg8P4cyBHBpLk\",\n    \"SecretKey\": \"onE8m9NN82ik6h3FCvXt2uc3Sjp\",\n    \"DataFlowName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataFlowId\": \"cfs-dataflow-4f827203\",\n        \"RequestId\": \"c5369436-a47c-4504-9cfa-f1f40c2c969f\"\n    }\n}",
+        "title": "创建数据流动"
+      }
+    ],
+    "CreateLifecycleDataTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecycleDataTask\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-4agcdretg\",\n    \"Type\": \"archive\",\n    \"TaskPath\": \"/cfs/data\",\n    \"TaskName\": \"dataarchive\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"task-abcdefg\",\n        \"RequestId\": \"req-gagagagagag\"\n    }\n}",
+        "title": "CreateLifecycleDataTask"
+      }
+    ],
+    "CreateLifecyclePolicy": [
+      {
+        "document": "创建文件存储生命周期策略",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecyclePolicy\n<公共请求参数>\n\n{\n    \"LifecyclePolicyName\": \"default\",\n    \"LifecycleRules\": [\n        {\n            \"StorageType\": \"InfrequentAccess\",\n            \"Interval\": \"DEFAULT_ATIME_14\",\n            \"FileType\": \"ALL\",\n            \"Action\": \"Release\",\n            \"FileMaxSize\": \"10240\",\n            \"FileMinSize\": \"64\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LifecyclePolicyID\": \"policy-13epvfrn\",\n        \"RequestId\": \"req-acb\"\n    }\n}",
+        "title": "创建文件存储生命周期策略"
+      }
+    ],
+    "CreateLifecyclePolicyDownloadTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecyclePolicyDownloadTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-202311gafgagl\",\n    \"Type\": \"FileTotalList\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadAddress\": \"https://cfs-migrate-xxxxx.cos.ap-chongqi\",\n        \"RequestId\": \"req-abcdefgh\"\n    }\n}",
+        "title": "下载生命周期任务中文件列表"
+      }
+    ],
     "CreateMigrationTask": [
       {
         "document": "用于创建数据迁移任务",
@@ -102,6 +142,22 @@
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCfsSnapshot\n<公共请求参数>\n\n{\n    \"SnapshotId\": \"snapcfs-12345\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"SnapshotId\": \"snapcfs-12345\"\n    }\n}",
         "title": "删除快照"
+      }
+    ],
+    "DeleteDataFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataFlow\n<公共请求参数>\n\n{\n    \"DataFlowId\": \"cfs-dataflow-4f827203\",\n    \"FileSystemId\": \"cfs-44d53b63e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ea860fd-e946-41a5-9c7e-72337d5084dc\"\n    }\n}",
+        "title": "删除数据流动"
+      }
+    ],
+    "DeleteLifecyclePolicy": [
+      {
+        "document": "删除生命周期管理策略",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLifecyclePolicy\n<公共请求参数>\n\n{\n    \"LifecyclePolicyID\": \"policy-13epvfrn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-aggagagag\"\n    }\n}",
+        "title": "删除生命周期管理策略"
       }
     ],
     "DeleteMigrationTask": [
@@ -208,6 +264,30 @@
         "title": "查询快照"
       }
     ],
+    "DescribeDataFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataFlow\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"DataFlows\": [\n            {\n                \"CreationTime\": \"2025-06-10 10:23:28\",\n                \"DataFlowId\": \"cfs-dataflow-23e12b77\",\n                \"DataFlowName\": \"aileen-test\",\n                \"FileSystemId\": \"cfs-4551ef87e\",\n                \"SourcePath\": \"test3\",\n                \"SourceStorageAddress\": \"https://aileen-data-flow-1251000004.cos.ap-guangzhou.myqcloud.com\",\n                \"SourceStorageType\": \"S3_COS\",\n                \"Status\": \"available\",\n                \"TargetPath\": \"/cfs/test3/\"\n            },\n            {\n                \"CreationTime\": \"2025-06-10 15:01:26\",\n                \"DataFlowId\": \"cfs-dataflow-dcee19a7\",\n                \"DataFlowName\": \"aileen-test\",\n                \"FileSystemId\": \"cfs-4551ef87e\",\n                \"SourcePath\": \"test4\",\n                \"SourceStorageAddress\": \"https://aileen-data-flow-1251000001.cos.ap-guangzhou.myqcloud.com\",\n                \"SourceStorageType\": \"S3_COS\",\n                \"Status\": \"available\",\n                \"TargetPath\": \"/cfs/test4/\"\n            },\n            {\n                \"CreationTime\": \"2025-06-10 15:01:45\",\n                \"DataFlowId\": \"cfs-dataflow-13ff99f9\",\n                \"DataFlowName\": \"aileen-test\",\n                \"FileSystemId\": \"cfs-44d53b63e\",\n                \"SourcePath\": \"test4\",\n                \"SourceStorageAddress\": \"https://aileen-data-flow-1251000001.cos.ap-guangzhou.myqcloud.com\",\n                \"SourceStorageType\": \"S3_COS\",\n                \"Status\": \"available\",\n                \"TargetPath\": \"/cfs/test8/\"\n            },\n            {\n                \"CreationTime\": \"2025-06-10 15:01:53\",\n                \"DataFlowId\": \"cfs-dataflow-7368df7c\",\n                \"DataFlowName\": \"aileen-test\",\n                \"FileSystemId\": \"cfs-44d53b63e\",\n                \"SourcePath\": \"test3\",\n                \"SourceStorageAddress\": \"https://aileen-data-flow-1251000001.cos.ap-guangzhou.myqcloud.com\",\n                \"SourceStorageType\": \"S3_COS\",\n                \"Status\": \"available\",\n                \"TargetPath\": \"/cfs/test9/\"\n            },\n            {\n                \"CreationTime\": \"2025-06-10 15:23:25\",\n                \"DataFlowId\": \"cfs-dataflow-4f827203\",\n                \"DataFlowName\": \"test\",\n                \"FileSystemId\": \"cfs-44d53b63e\",\n                \"SourcePath\": \"test3\",\n                \"SourceStorageAddress\": \"https://aileen-data-flow-1251000001.cos.ap-guangzhou.myqcloud.com\",\n                \"SourceStorageType\": \"S3_COS\",\n                \"Status\": \"available\",\n                \"TargetPath\": \"/cfs/test11/\"\n            }\n        ],\n        \"RequestId\": \"adf187c6-a557-4331-b103-dded23e9bfeb\",\n        \"TotalCount\": 5\n    }\n}",
+        "title": "查询数据流动"
+      }
+    ],
+    "DescribeLifecycleDataTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLifecycleDataTask\n<公共请求参数>\n\n{\n    \"StartTime\": \"2024-11-19 10:15:37\",\n    \"EndTime\": \"2024-10-19 10:15:37\",\n    \"TaskId\": \"task-c1a2b3f4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LifecycleDataTask\": [\n            {\n                \"TaskId\": \"task-c1a2b3f4\",\n                \"TaskStatus\": \"init\",\n                \"CreationTime\": \"2024-11-19 10:15:37\",\n                \"Type\": \"restore\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"req-abc\"\n    }\n}",
+        "title": "DescribeLifecycleDataTask"
+      }
+    ],
+    "DescribeLifecyclePolicies": [
+      {
+        "document": "",
+        "input": "https://cfs.tencentcloudapi.com/?Action=DescribeLifecyclePolicies\n&PageNumber=1\n&PageSize=10\n&LifecyclePolicyName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PageNumber\": 1,\n        \"PageSize\": 10,\n        \"TotalCount\": 2,\n        \"LifecyclePolicies\": [\n            {\n                \"CreateTime\": \"2022-03-01 10:38:54\",\n                \"LifecyclePolicyID\": \"policy-ek8aw4id\",\n                \"LifecyclePolicyName\": \"test\",\n                \"LifecycleRules\": [\n                    {\n                        \"StorageType\": \"InfrequentAccess\",\n                        \"Interval\": \"DEFAULT_ATIME_14\",\n                        \"FileType\": \"BIG_FILE\",\n                        \"Action\": \"noarchive\",\n                        \"FileMinSize\": \"\",\n                        \"FileMaxSize\": \"1G\"\n                    },\n                    {\n                        \"StorageType\": \"InfrequentAccess\",\n                        \"Interval\": \"DEFAULT_ATIME_14\",\n                        \"FileType\": \"ALL\",\n                        \"Action\": \"archive\",\n                        \"FileMinSize\": \"\",\n                        \"FileMaxSize\": \"\"\n                    }\n                ],\n                \"Paths\": [\n                    {\n                        \"FileSystemId\": \"cfs-4030acd30\",\n                        \"Path\": \"/data/log1/\"\n                    },\n                    {\n                        \"FileSystemId\": \"cfs-4030acd30\",\n                        \"Path\": \"/data/log2/\"\n                    }\n                ]\n            },\n            {\n                \"CreateTime\": \"2022-03-02 14:27:46\",\n                \"LifecyclePolicyID\": \"policy-phpizowr\",\n                \"LifecyclePolicyName\": \"test-jay\",\n                \"LifecycleRules\": [\n                    {\n                        \"StorageType\": \"InfrequentAccess\",\n                        \"Interval\": \"DEFAULT_ATIME_14\",\n                        \"FileType\": \"BIG_FILE\",\n                        \"Action\": \"noarchive\",\n                        \"FileMinSize\": \"\",\n                        \"FileMaxSize\": \"1G\"\n                    },\n                    {\n                        \"StorageType\": \"InfrequentAccess\",\n                        \"Interval\": \"DEFAULT_ATIME_14\",\n                        \"FileType\": \"ALL\",\n                        \"Action\": \"archive\",\n                        \"FileMinSize\": \"\",\n                        \"FileMaxSize\": \"\"\n                    }\n                ],\n                \"Paths\": []\n            }\n        ],\n        \"RequestId\": \"aaaa-bbbb-cccc-eeeee\"\n    }\n}",
+        "title": "查询生命周期管理策略"
+      }
+    ],
     "DescribeMigrationTasks": [
       {
         "document": "用于获取迁移任务列表",
@@ -240,12 +320,28 @@
         "title": "查询文件系统配额"
       }
     ],
+    "ModifyDataFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataFlow\n<公共请求参数>\n\n{\n    \"DataFlowId\": \"cfs-dataflow-9e911f3c\",\n    \"FileSystemId\": \"cfs-44d53b63e\",\n    \"DataFlowName\": \"testest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataFlowId\": \"cfs-dataflow-9e911f3c\",\n        \"RequestId\": \"948ff9b3-5950-4dff-841d-78796f21396c\"\n    }\n}",
+        "title": "修复数据流动相关参数"
+      }
+    ],
     "ModifyFileSystemAutoScaleUpRule": [
       {
         "document": "更新文件系统自动扩容策略",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCFSFileSystemAutoScaleRule\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-agaga\",\n    \"Status\": 1,\n    \"ScaleUpThreshold\": 85,\n    \"TargetThreshold\": 70\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"FileSystemId\": \"cfs-agaga\",\n        \"Status\": 1,\n        \"ScaleUpThreshold\": 85,\n        \"TargetThreshold\": 70\n    }\n}",
         "title": "更新文件系统自动扩容策略"
+      }
+    ],
+    "ModifyLifecyclePolicy": [
+      {
+        "document": "更新生命周期管理策略",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLifecyclePolicy\n<公共请求参数>\n\n{\n    \"LifecyclePolicyName\": \"mypolicy-abc\",\n    \"LifecycleRules\": [\n        {\n            \"StorageType\": \"InfrequentAccess\",\n            \"Interval\": \"DEFAULT_ATIME_14\",\n            \"FileType\": \"All\",\n            \"Action\": \"Archive\",\n            \"FileMaxSize\": \"1G\",\n            \"FileMinSize\": \"1M\"\n        }\n    ],\n    \"LifecyclePolicyID\": \"policy-4cqyxcma\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LifecyclePolicyID\": \"policy-4cqyxcma\",\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "更新生命周期管理策略"
       }
     ],
     "ScaleUpFileSystem": [
@@ -276,6 +372,14 @@
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SignUpCfsService\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"CfsServiceStatus\": \"creating\"\n    }\n}",
         "title": "开通CFS服务"
+      }
+    ],
+    "StopLifecycleDataTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecyclePolicy\n<公共请求参数>\n\n{\n    \"TaskId\": \"task-abcgefg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-abcdefg\"\n    }\n}",
+        "title": "StopLifecycleDataTask"
       }
     ],
     "StopMigrationTask": [

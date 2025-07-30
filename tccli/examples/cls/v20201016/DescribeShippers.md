@@ -7,7 +7,7 @@ Input:
 ```
 tccli cls DescribeShippers --cli-unfold-argument  \
     --Filters.0.Key shipperId \
-    --Filters.0.Values xxxx-xxx-xxxx \
+    --Filters.0.Values 0c2486ee-xxxx-xxxx-a10c-15f01573d928 \
     --Offset 0 \
     --Limit 10
 ```

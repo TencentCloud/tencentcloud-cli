@@ -8,7 +8,7 @@ Input:
 tccli wedata DescribeReportTaskList --cli-unfold-argument  \
     --PageNum 1 \
     --PageSize 10 \
-    --EngineTaskId 4dfedddfcc1611efa2b9525400942df5
+    --EngineTaskId xxxxxxx
 ```
 
 Output: 
@@ -20,18 +20,17 @@ Output:
             "PageSize": 10,
             "Rows": [
                 {
-                    "AppID": "1315051789",
                     "EngineExeEndTime": "2025-01-06 18:09:25",
                     "EngineExeStartTime": "2025-01-06 18:09:24",
                     "EngineExeStatus": "SUCCESS",
                     "EngineExeUser": null,
                     "EngineName": "DLC_Standard_Presto",
                     "EngineSubType": "DLC_Standard_Presto",
-                    "EngineTaskId": "4dfedddfcc1611efa2b9525400942df5",
+                    "EngineTaskId": "xxxxxxx",
                     "EngineType": "DLC",
                     "InChargeId": null,
-                    "InstanceId": "ffda85b9-5258-477c-a965-380b3d4d3f64",
-                    "JobId": "a93d192c-96f0-487e-9a81-7e7b964d22ef",
+                    "InstanceId": "xxxxxxx",
+                    "JobId": "xxxxxxx",
                     "OnwerUid": null,
                     "ProductSource": "DATA_EXPLORATION",
                     "ProjectId": "1460947878944567296",

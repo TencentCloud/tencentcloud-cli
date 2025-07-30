@@ -6473,7 +6473,7 @@
         },
         {
           "disabled": false,
-          "document": "关键帧间隔，单位：秒。\n默认原始的间隔\n范围2-6",
+          "document": "关键帧间隔，单位：秒。\n默认原始的间隔\n范围1-6",
           "example": "2",
           "member": "int64",
           "name": "Gop",

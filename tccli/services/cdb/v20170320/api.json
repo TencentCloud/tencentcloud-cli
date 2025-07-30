@@ -715,7 +715,7 @@
       "status": "online"
     },
     "DescribeSlowLogs": {
-      "document": "本接口(DescribeSlowLogs)用于获取云数据库实例的慢查询日志。说明：若单次查询数据量过大，则有可能响应超时，建议缩短单次查询时间范围，如一小时，避免导致超时。",
+      "document": "本接口（DescribeSlowLogs）用于获取云数据库实例的慢查询日志。\n说明：若单次查询数据量过大，则有可能响应超时，建议缩短单次查询时间范围，如一小时，避免导致超时。",
       "input": "DescribeSlowLogsRequest",
       "name": "查询慢查询日志",
       "output": "DescribeSlowLogsResponse",
@@ -3460,7 +3460,7 @@
         },
         {
           "disabled": false,
-          "document": "下载地址",
+          "document": "下载地址\n说明：此下载地址和参数 InternetUrl 的下载地址一样。",
           "example": "https://XXX",
           "member": "string",
           "name": "IntranetUrl",
@@ -3470,7 +3470,7 @@
         },
         {
           "disabled": false,
-          "document": "下载地址",
+          "document": "下载地址\n说明：此下载地址和参数 IntranetUrl 的下载地址一样。",
           "example": "https://XXX",
           "member": "string",
           "name": "InternetUrl",
@@ -3549,7 +3549,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
@@ -9122,7 +9122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -9140,7 +9140,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认值为20，最小值为1，最大值为100。",
+          "document": "分页大小，默认值为20，最小值为1，最大值为1000。",
           "example": "0",
           "member": "int64",
           "name": "Limit",
@@ -9312,7 +9312,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认值为20，最小值为1，最大值为100。",
+          "document": "分页大小，默认值为20，最小值为1，最大值为1000。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -11452,7 +11452,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -11461,7 +11461,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳。例如 1585142640 。",
+          "document": "开始时间戳。例如1585142640，秒级。",
           "example": "1585142640",
           "member": "uint64",
           "name": "StartTime",
@@ -11470,7 +11470,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳。例如 1585142640 。",
+          "document": "结束时间戳。例如1585142640，秒级。",
           "example": "1585142640",
           "member": "uint64",
           "name": "EndTime",
@@ -11479,8 +11479,8 @@
         },
         {
           "disabled": false,
-          "document": "要匹配的关键字列表，最多支持15个关键字。",
-          "example": "[\"keywords0\\n\"]",
+          "document": "要匹配的关键字列表，最多支持15个关键字，支持模糊匹配。",
+          "example": "[\"keywords\"]",
           "member": "string",
           "name": "KeyWords",
           "required": false,
@@ -12042,7 +12042,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板 ID。",
+          "document": "参数模板 ID。可通过 [DescribeParamTemplates](https://cloud.tencent.com/document/api/236/32659) 接口获取。",
           "example": "233",
           "member": "int64",
           "name": "TemplateId",
@@ -12077,7 +12077,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模板对应实例版本",
+          "document": "参数模板对应实例版本，可取值：5.5、5.6、5.7、8.0。",
           "example": "5.6",
           "member": "string",
           "name": "EngineVersion",
@@ -12149,7 +12149,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎版本，缺省则查询所有",
+          "document": "引擎版本，缺省则查询所有。可取值为：5.5、5.6、5.7、8.0。",
           "example": "[\"5.5\"]",
           "member": "string",
           "name": "EngineVersions",
@@ -12158,7 +12158,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎类型，缺省则查询所有",
+          "document": "引擎类型，缺省则查询所有。可取值为：InnoDB、RocksDB，不区分大小写。",
           "example": "[\"innodb\"]",
           "member": "string",
           "name": "EngineTypes",
@@ -12167,8 +12167,8 @@
         },
         {
           "disabled": false,
-          "document": "模板名称，缺省则查询所有",
-          "example": "[\"test\"]",
+          "document": "模板名称，缺省则查询所有。支持模糊匹配。",
+          "example": "[\"5.7\"]",
           "member": "string",
           "name": "TemplateNames",
           "required": false,
@@ -12176,8 +12176,8 @@
         },
         {
           "disabled": false,
-          "document": "模板id，缺省则查询所有",
-          "example": "[1]",
+          "document": "模板 ID，缺省则查询所有。",
+          "example": "[17008]",
           "member": "int64",
           "name": "TemplateIds",
           "required": false,
@@ -12202,7 +12202,7 @@
         {
           "disabled": false,
           "document": "参数模板详情。",
-          "example": "[{\"TemplateId\": 2333,\"Name\": \"andy_5.7\",\"Description\": \"一区参数\",\"EngineVersion\": \"5.7\",\"TemplateType\": \"HIGH_STABILITY\", \"EngineType\": \"InnoDB\"}]",
+          "example": "无",
           "member": "ParamTemplateInfo",
           "name": "Items",
           "output_required": true,
@@ -12837,7 +12837,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -12865,7 +12865,7 @@
         {
           "disabled": false,
           "document": "客户端 Host 列表。",
-          "example": "[\"userhosts0\\n\"]",
+          "example": "[\"userhosts\"]",
           "member": "string",
           "name": "UserHosts",
           "required": false,
@@ -12874,7 +12874,7 @@
         {
           "disabled": false,
           "document": "客户端 用户名 列表。",
-          "example": "[\"usename0\\n\"]",
+          "example": "[\"usename\"]",
           "member": "string",
           "name": "UserNames",
           "required": false,
@@ -12883,7 +12883,7 @@
         {
           "disabled": false,
           "document": "访问的 数据库 列表。",
-          "example": "[\"database0\\n\"]",
+          "example": "[\"database\"]",
           "member": "string",
           "name": "DataBases",
           "required": false,
@@ -12891,7 +12891,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段。当前支持：Timestamp,QueryTime,LockTime,RowsExamined,RowsSent 。",
+          "document": "排序字段，当前支持字段及含义如下，默认值为 Timestamp。\n1. Timestamp：SQL 的执行时间\n2. QueryTime：SQL 的执行时长（秒）\n3. LockTime：锁时长（秒）\n4. RowsExamined：扫描行数\n5. RowsSent：结果集行数",
           "example": "RowsSent",
           "member": "string",
           "name": "SortBy",
@@ -12900,7 +12900,7 @@
         },
         {
           "disabled": false,
-          "document": "升序还是降序排列。当前支持：ASC,DESC 。",
+          "document": "升序还是降序排列。当前支持值为 ASC - 升序，DESC - 降序 ，默认值为 ASC。",
           "example": "DESC",
           "member": "string",
           "name": "OrderBy",
@@ -12918,7 +12918,7 @@
         },
         {
           "disabled": false,
-          "document": "一次性返回的记录数量，默认为100，最大为400。",
+          "document": "一次性返回的记录数量，默认为100，最大为800。",
           "example": "400",
           "member": "int64",
           "name": "Limit",
@@ -12962,7 +12962,7 @@
         {
           "disabled": false,
           "document": "查询到的记录。",
-          "example": "无",
+          "example": "[{\"Database\": \"1231231\",\"LockTime\": 1,\"Md5\": \"23123123\",\"QueryTime\": 100,***,\"Timestamp\": 1585142640,\"UserHost\": \"localhost\",\"UserName\": \"marchzcma\"}]",
           "member": "SlowLogItem",
           "name": "Items",
           "output_required": true,
@@ -13001,7 +13001,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认值为20，最小值为1，最大值为100。",
+          "document": "分页大小，默认值为20，最小值为1，最大值为1000。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -13027,7 +13027,7 @@
         {
           "disabled": false,
           "document": "符合查询条件的慢查询日志详情。",
-          "example": "无",
+          "example": "[{\"Date\": \"2025-07-17\",\"InternetUrl\": \"https://gz-dl***\",\"IntranetUrl\": \"http://gz.dl***\",\"Name\": \"%E7%AB***.log\",\"Size\": 191,\"Type\": \"slowlog\"}]",
           "member": "SlowLogInfo",
           "name": "Items",
           "output_required": true,
@@ -18190,7 +18190,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板ID",
+          "document": "参数模板 ID",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
@@ -18220,7 +18220,7 @@
         },
         {
           "disabled": false,
-          "document": "实例引擎版本",
+          "document": "实例引擎版本，值为：5.5、5.6、5.7、8.0。",
           "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
@@ -18230,7 +18230,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模板类型",
+          "document": "参数模板类型，值为：HIGH_STABILITY、HIGH_PERFORMANCE。",
           "example": "HIGH_STABILITY",
           "member": "string",
           "name": "TemplateType",
@@ -18240,7 +18240,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模板引擎",
+          "document": "参数模板引擎，值为：InnoDB、RocksDB。",
           "example": "InnoDB",
           "member": "string",
           "name": "EngineType",

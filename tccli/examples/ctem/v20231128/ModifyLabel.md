@@ -1,22 +1,22 @@
-**Example 1: 编辑标签**
+**Example 1: 修改标签**
 
-编辑标签
+修改标签
 
 Input: 
 
 ```
 tccli ctem ModifyLabel --cli-unfold-argument  \
-    --Id 8706 \
-    --CustomerId 100162 \
     --Module asset \
-    --Labels {"user_input_123":["测试"]}
+    --CustomerIdList 100275 \
+    --Labels {} \
+    --Ids 10097
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "fe8d21e4-73e7-425a-aebf-4a97396af03b"
+        "RequestId": "24b299a2-e517-4225-bdc8-b7c16b5626fd"
     }
 }
 ```

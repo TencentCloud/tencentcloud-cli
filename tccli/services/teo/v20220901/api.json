@@ -25251,7 +25251,7 @@
         },
         {
           "disabled": false,
-          "document": "状态。取值有：\n<li>processing：处理中；</li>\n<li>success：成功；</li>\n<li> failed：失败；</li>\n<li>timeout：超时；</li>\n<li>canceled：已取消。</li>",
+          "document": "状态。取值有：\n<li>processing：处理中；</li>\n<li>success：成功；</li>\n<li>failed：失败；</li>\n<li>timeout：超时；</li>\n<li>canceled：已取消。</li>",
           "example": "状态",
           "member": "string",
           "name": "Status",
@@ -25276,6 +25276,26 @@
           "member": "datetime_iso",
           "name": "UpdateTime",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "刷新、预热失败类型。取值有：\n<li>taskFailed：任务失败；</li>\n<li>quotaExceeded：配额超限；</li>\n<li>downloadManifestFailed：下载描述文件失败；</li>\n<li>accessDenied：访问被拒绝。</li>\n<li>originPullFailed：回源失败。</li>",
+          "example": "originPullFailed",
+          "member": "string",
+          "name": "FailType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "刷新、预热失败描述。",
+          "example": "回源失败，可尝试重新提交，或检查源站是否出现以下问题：服务不可用、响应超时、触发限速策略、安全策略限制、网络故障、或达到带宽/连接数上限。",
+          "member": "string",
+          "name": "FailMessage",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

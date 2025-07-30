@@ -649,6 +649,24 @@
           "name": "ClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库schema",
+          "example": "DB2INST1",
+          "member": "string",
+          "name": "Schema",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "11.5",
+          "member": "string",
+          "name": "DbVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -659,7 +677,7 @@
         {
           "disabled": false,
           "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ErrorMessage\":\"错误提示消息\"}",
           "member": "ErrorInfo",
           "name": "ErrorInfo",
           "output_required": false,
@@ -905,6 +923,24 @@
           "name": "RegionId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库schema",
+          "example": "DB2INST1",
+          "member": "string",
+          "name": "Schema",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "11.5",
+          "member": "string",
+          "name": "DbVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -915,7 +951,7 @@
         {
           "disabled": false,
           "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ErrorMessage\":\"错误提示消息\"}",
           "member": "ErrorInfo",
           "name": "ErrorInfo",
           "output_required": false,
@@ -1876,6 +1912,26 @@
           "example": "测试用户",
           "member": "string",
           "name": "OwnerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库schema\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DB2INST1",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11.5",
+          "member": "string",
+          "name": "DbVersion",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3625,6 +3681,24 @@
           "name": "ClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库schema",
+          "example": "DB2INST1",
+          "member": "string",
+          "name": "Schema",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "11.5",
+          "member": "string",
+          "name": "DbVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3635,7 +3709,7 @@
         {
           "disabled": false,
           "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ErrorMessage\":\"错误提示消息\"}",
           "member": "ErrorInfo",
           "name": "ErrorInfo",
           "output_required": false,
@@ -3644,7 +3718,7 @@
         },
         {
           "disabled": false,
-          "document": "成功无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Data",
@@ -3881,6 +3955,24 @@
           "name": "RegionId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库schema",
+          "example": "DB2INST1",
+          "member": "string",
+          "name": "Schema",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "11.5",
+          "member": "string",
+          "name": "DbVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3891,7 +3983,7 @@
         {
           "disabled": false,
           "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ErrorMessage\":\"错误提示消息\"}",
           "member": "ErrorInfo",
           "name": "ErrorInfo",
           "output_required": false,

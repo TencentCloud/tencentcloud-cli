@@ -724,8 +724,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -815,7 +824,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -839,7 +848,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -849,7 +858,7 @@
         {
           "disabled": false,
           "document": "移动资产数组",
-          "example": "无",
+          "example": "[ ]",
           "member": "DisplayApp",
           "name": "List",
           "output_required": false,
@@ -868,6 +877,15 @@
     "DescribeAssetsRequest": {
       "document": "DescribeAssets请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "是否新增数据",
@@ -907,7 +925,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -961,7 +979,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1016,8 +1034,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否聚合数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -1062,7 +1089,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -1116,7 +1143,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1210,7 +1237,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1265,6 +1292,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否新增数据",
           "example": "false",
           "member": "bool",
@@ -1302,7 +1338,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -1356,7 +1392,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1411,6 +1447,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否新增数据",
           "example": "false",
           "member": "bool",
@@ -1448,7 +1493,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -1502,7 +1547,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1557,6 +1602,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否新增数据",
           "example": "false",
           "member": "bool",
@@ -1594,7 +1648,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -1648,7 +1702,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1712,6 +1766,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否新增数据",
           "example": "false",
           "member": "bool",
@@ -1749,7 +1812,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -1803,7 +1866,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1858,6 +1921,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否新增数据",
           "example": "false",
           "member": "bool",
@@ -1895,7 +1967,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -1949,7 +2021,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2004,6 +2076,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否新增数据",
           "example": "false",
           "member": "bool",
@@ -2041,7 +2122,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -2095,7 +2176,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2150,6 +2231,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否新增数据",
           "example": "false",
           "member": "bool",
@@ -2187,7 +2277,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -2241,7 +2331,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2333,7 +2423,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -2387,7 +2477,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2442,8 +2532,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否聚合数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -2488,7 +2587,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -2542,7 +2641,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2584,7 +2683,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -2594,7 +2693,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "无",
+          "example": "[ ]",
           "member": "DisplayHttp",
           "name": "List",
           "output_required": false,
@@ -2699,7 +2798,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2745,8 +2844,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否聚合数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -2791,7 +2899,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -2845,7 +2953,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2900,8 +3008,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否聚合数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -2946,7 +3063,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -3000,7 +3117,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3055,8 +3172,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否聚合数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -3101,7 +3227,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -3155,7 +3281,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3210,8 +3336,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否聚合数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -3256,7 +3391,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -3310,7 +3445,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3334,7 +3469,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -3344,7 +3479,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "无",
+          "example": "[ ]",
           "member": "DisplayManage",
           "name": "List",
           "output_required": false,
@@ -3363,6 +3498,15 @@
     "DescribeNetDisksRequest": {
       "document": "DescribeNetDisks请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "是否新增数据",
@@ -3402,7 +3546,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -3456,7 +3600,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3480,7 +3624,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -3490,7 +3634,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "无",
+          "example": "[ ]",
           "member": "DisplayNetDisk",
           "name": "List",
           "output_required": false,
@@ -3511,8 +3655,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否聚合数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -3557,7 +3710,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -3611,7 +3764,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3635,7 +3788,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -3645,7 +3798,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "无",
+          "example": "[ ]",
           "member": "DisplayPort",
           "name": "List",
           "output_required": false,
@@ -3666,8 +3819,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否聚合数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -3712,7 +3874,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -3766,7 +3928,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3790,7 +3952,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -3800,7 +3962,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "无",
+          "example": "[ ] ",
           "member": "DisplaySensitiveInfo",
           "name": "List",
           "output_required": false,
@@ -3819,6 +3981,15 @@
     "DescribeSubDomainsRequest": {
       "document": "DescribeSubDomains请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "是否新增数据",
@@ -3840,7 +4011,7 @@
         {
           "disabled": false,
           "document": "是否聚合数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -3867,7 +4038,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -3921,7 +4092,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3955,7 +4126,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "无",
+          "example": "[ ]",
           "member": "DisplaySubDomain",
           "name": "List",
           "output_required": false,
@@ -3976,8 +4147,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否聚合数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -4022,7 +4202,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -4076,7 +4256,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4100,7 +4280,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -4110,7 +4290,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "无",
+          "example": "[ ]",
           "member": "DisplaySuspiciousAsset",
           "name": "List",
           "output_required": false,
@@ -4129,6 +4309,15 @@
     "DescribeVulsRequest": {
       "document": "DescribeVuls请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "是否新增数据",
@@ -4168,7 +4357,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -4222,7 +4411,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4246,7 +4435,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -4256,7 +4445,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "无",
+          "example": "[ ]",
           "member": "DisplayVul",
           "name": "List",
           "output_required": false,
@@ -4275,6 +4464,15 @@
     "DescribeWeakPasswordsRequest": {
       "document": "DescribeWeakPasswords请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "是否新增数据",
@@ -4314,7 +4512,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -4368,7 +4566,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4392,7 +4590,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -4402,7 +4600,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "无",
+          "example": "[ ] ",
           "member": "DisplayWeakPassword",
           "name": "List",
           "output_required": false,
@@ -4421,6 +4619,15 @@
     "DescribeWechatAppletsRequest": {
       "document": "DescribeWechatApplets请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "企业ID",
@@ -4460,7 +4667,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -4514,7 +4721,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4538,7 +4745,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -4548,7 +4755,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "无",
+          "example": "[ ]",
           "member": "DisplayWechatApplet",
           "name": "List",
           "output_required": false,
@@ -4567,6 +4774,15 @@
     "DescribeWechatOfficialAccountsRequest": {
       "document": "DescribeWechatOfficialAccounts请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "是否新增数据",
@@ -4606,7 +4822,7 @@
         {
           "disabled": false,
           "document": "子公司ID列表",
-          "example": "无",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
           "member": "string",
           "name": "EnterpriseUidList",
           "required": false,
@@ -4660,7 +4876,7 @@
         {
           "disabled": false,
           "document": "查询数组",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4684,7 +4900,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -4694,7 +4910,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "无",
+          "example": "[ ]",
           "member": "DisplayWechatOfficialAccount",
           "name": "List",
           "output_required": false,
@@ -7669,24 +7885,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产或风险主键ID",
-          "example": "100",
-          "member": "int64",
-          "name": "Id",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "企业ID，在企业管理页面查看",
-          "example": "10001",
-          "member": "int64",
-          "name": "CustomerId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "模块，包括：enterprise：企业架构，domain：主域名，sub_domain：子域名，asset：IP资产，port：端口服务，http：HTTP资产，vul：漏洞信息，app：APP，wechat_applet：微信小程序，wechat_official_account：微信公众号，github：Github信息泄露，manage：管理后台暴露，config：目录爆破，dark_web：暗网泄露，net_disk：文库网盘泄露，supply_chain：供应链，weak_password：弱口令，sensitive_info：敏感信息泄露",
           "example": "asset",
           "member": "string",
@@ -7696,8 +7894,35 @@
         },
         {
           "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资产或风险主键ID",
+          "example": "100",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID，在企业管理页面查看",
+          "example": "10001",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "是否聚合数据",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAggregation",
           "required": false,
@@ -7711,6 +7936,15 @@
           "name": "Labels",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资产或风险主键ID列表",
+          "example": "[100]",
+          "member": "int64",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

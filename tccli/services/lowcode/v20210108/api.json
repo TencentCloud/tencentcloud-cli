@@ -1,10 +1,24 @@
 {
   "actions": {
+    "CheckDeployApp": {
+      "document": "检查应用发布状态",
+      "input": "CheckDeployAppRequest",
+      "name": "检查应用发布状态",
+      "output": "CheckDeployAppResponse",
+      "status": "online"
+    },
     "CreateKnowledgeSet": {
       "document": "创建知识库",
       "input": "CreateKnowledgeSetRequest",
       "name": "创建知识库",
       "output": "CreateKnowledgeSetResponse",
+      "status": "online"
+    },
+    "DeleteAppBindWxApp": {
+      "document": "删除应用绑定小程序",
+      "input": "DeleteAppBindWxAppRequest",
+      "name": "删除应用绑定小程序",
+      "output": "DeleteAppBindWxAppResponse",
       "status": "online"
     },
     "DeleteKnowledgeDocumentSet": {
@@ -19,6 +33,13 @@
       "input": "DeleteKnowledgeSetRequest",
       "name": "删除知识库",
       "output": "DeleteKnowledgeSetResponse",
+      "status": "online"
+    },
+    "DeployApp": {
+      "document": "发布应用",
+      "input": "DeployAppRequest",
+      "name": "发布应用",
+      "output": "DeployAppResponse",
       "status": "online"
     },
     "DescribeDataSourceList": {
@@ -47,6 +68,13 @@
       "input": "DescribeKnowledgeSetListRequest",
       "name": "查询环境下的知识库列表",
       "output": "DescribeKnowledgeSetListResponse",
+      "status": "online"
+    },
+    "PutWxAppIdToWeApp": {
+      "document": "接口提供应用绑定微信ID功能。",
+      "input": "PutWxAppIdToWeAppRequest",
+      "name": "应用绑定微信ID",
+      "output": "PutWxAppIdToWeAppResponse",
       "status": "online"
     },
     "SearchDocList": {
@@ -78,6 +106,61 @@
     "serviceShortName": "lowcode"
   },
   "objects": {
+    "CheckDeployAppRequest": {
+      "document": "CheckDeployApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-5gzbnlvd93",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "app-k82WCPM8",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "构建 Id",
+          "example": "4f12-b62b-c1c6f403d6e1",
+          "member": "string",
+          "name": "BuildId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDeployAppResponse": {
+      "document": "CheckDeployApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态：success、building、reviewFail、releaseSuccess、underReview",
+          "example": "building",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateKnowledgeSetRequest": {
       "document": "CreateKnowledgeSet请求参数结构体",
       "members": [
@@ -643,6 +726,33 @@
       ],
       "usage": "in"
     },
+    "DeleteAppBindWxAppRequest": {
+      "document": "DeleteAppBindWxApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "app-dfa",
+          "member": "string",
+          "name": "WeappId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAppBindWxAppResponse": {
+      "document": "DeleteAppBindWxApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteKnowledgeDocumentSetRequest": {
       "document": "DeleteKnowledgeDocumentSet请求参数结构体",
       "members": [
@@ -741,6 +851,99 @@
     "DeleteKnowledgeSetResponse": {
       "document": "DeleteKnowledgeSet返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployAppRequest": {
+      "document": "DeployApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-5gzbnlvd93",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "app-k82WCPM8",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发布体验preview/正式upload",
+          "example": "upload",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "构建类型：mp、pc、web、adminPortal",
+          "example": "web",
+          "member": "string",
+          "name": "BuildType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子包数组",
+          "example": "[\"sub-7x28cST\"]",
+          "member": "string",
+          "name": "SubAppIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployAppResponse": {
+      "document": "DeployApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "构建id",
+          "example": "bcad608f-9293-4f12-b62b",
+          "member": "string",
+          "name": "BuildId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布错误code",
+          "example": "0",
+          "member": "uint64",
+          "name": "DeployErrCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "发布错误",
+          "member": "string",
+          "name": "DeployErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1635,6 +1838,42 @@
         }
       ],
       "usage": "in"
+    },
+    "PutWxAppIdToWeAppRequest": {
+      "document": "PutWxAppIdToWeApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "app-xxx",
+          "member": "string",
+          "name": "WeAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "微信AppId",
+          "example": "无",
+          "member": "string",
+          "name": "WxAppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutWxAppIdToWeAppResponse": {
+      "document": "PutWxAppIdToWeApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QureyKnowledgeDocumentSet": {
       "document": "搜索数据的集合",

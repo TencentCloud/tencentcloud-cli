@@ -128,6 +128,14 @@
         "title": "创建服务相关角色"
       }
     ],
+    "CreateSubAccountLoginIpPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubAccountLoginIpPolicy\n<公共请求参数>\n\n{\n    \"ApproverType\": \"SubAccountLoginLimitApproval\",\n    \"IpPolicies\": [\n        {\n            \"IP\": \"192.168.1.171\",\n            \"Effect\": \"Allow\"\n        }\n    ],\n    \"PolicyType\": \"1\",\n    \"DisablePolicy\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ad60b60-222f-4e22-8350-3227bebaa3dd\"\n    }\n}",
+        "title": "增加子账号登录IP策略"
+      }
+    ],
     "CreateUserOIDCConfig": [
       {
         "document": "",
