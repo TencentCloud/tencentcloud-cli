@@ -20767,8 +20767,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "项目id",
+          "example": "2872196915042496512",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "分页号",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -20786,7 +20795,7 @@
         {
           "disabled": false,
           "document": "【过滤参数】自定义条件查询",
-          "example": "1",
+          "example": "无",
           "member": "FilterOptional",
           "name": "Filters",
           "required": false,
@@ -20795,7 +20804,7 @@
         {
           "disabled": false,
           "document": "【排序参数】排序字段",
-          "example": "1",
+          "example": "无",
           "member": "OrderFieldOptional",
           "name": "OrderFields",
           "required": false,
@@ -20804,7 +20813,7 @@
         {
           "disabled": false,
           "document": "是否项目管理员",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsProjectAdmin",
           "required": false,

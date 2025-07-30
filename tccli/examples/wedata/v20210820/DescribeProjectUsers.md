@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli wedata DescribeProjectUsers --cli-unfold-argument  \
+    --ProjectId 692447575408074752 \
     --PageNumber 0 \
     --PageSize 10
 ```
