@@ -4826,7 +4826,7 @@
         },
         {
           "disabled": false,
-          "document": "证书生效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书生效时间。时区为GMT+8:00\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-03 08:00:00",
           "member": "datetime",
           "name": "CertBeginTime",
@@ -4836,7 +4836,7 @@
         },
         {
           "disabled": false,
-          "document": "证书失效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书失效时间。时区为GMT+8:00\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-01-03 07:59:59",
           "member": "datetime",
           "name": "CertEndTime",
@@ -4856,7 +4856,7 @@
         },
         {
           "disabled": false,
-          "document": "证书申请时间。",
+          "document": "证书申请时间。时区为GMT+8:00",
           "example": "2024-12-03 19:38:47",
           "member": "datetime",
           "name": "InsertTime",

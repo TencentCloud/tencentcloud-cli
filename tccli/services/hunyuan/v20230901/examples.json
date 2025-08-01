@@ -182,14 +182,6 @@
         "title": "成功查询"
       }
     ],
-    "QueryHunyuanTo3DJob": [
-      {
-        "document": "任务完成",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanTo3DJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1286221236421533696\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"6ea0ea36-ea27-4870-9b9b-6937f7cc7117\",\n        \"ResultFile3Ds\": [\n            {\n                \"File3D\": [\n                    {\n                        \"Type\": \"GIF\",\n                        \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/3d/output.gif\"\n                    },\n                    {\n                        \"Type\": \"OBJ\",\n                        \"Url\": \"https://cos.ap-guangzhou.tencentcos.cn/3d/output/2e56fc_0.zip\"\n                    }\n                ]\n            }\n        ],\n        \"Status\": \"DONE\"\n    }\n}",
-        "title": "任务完成"
-      }
-    ],
     "RunThread": [
       {
         "document": "执行会话",
@@ -220,14 +212,6 @@
         "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanImageJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"雨中, 竹林, 小路\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"251197749-1731412663-d4e1f224-fa21-40bc-9ee7-4bb13abece6e-0\",\n        \"RequestId\": \"d4e1f224-fa21-40bc-9ee7-4bb13abece6e\"\n    }\n}",
         "title": "调用成功"
-      }
-    ],
-    "SubmitHunyuanTo3DJob": [
-      {
-        "document": "成功提交图生3D任务",
-        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"\",\n    \"ImageUrl\": \"https://cos.ap-guangzhou.myqcloud.com/***.jpg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"1286221236421533696\",\n        \"RequestId\": \"f4aac8ca-a79d-4431-81fd-7312f79bf91d\"\n    }\n}",
-        "title": "成功提交任务"
       }
     ],
     "TextToImageLite": [

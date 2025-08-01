@@ -42,6 +42,13 @@
       "output": "CreateBatchCancelFlowUrlResponse",
       "status": "online"
     },
+    "CreateBatchContractReviewTask": {
+      "document": "此接口（CreateBatchContractReviewTask）用来通过上传后的PDF资源编号来批量创建合同智能审查任务。\n\n适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。\n\n注: \n1. PDF格式限制大小为10M以下\n2. 仅支持5个PDF文件批量发起",
+      "input": "CreateBatchContractReviewTaskRequest",
+      "name": "批量创建合同审查任务",
+      "output": "CreateBatchContractReviewTaskResponse",
+      "status": "online"
+    },
     "CreateBatchInformationExtractionTask": {
       "document": "此接口（CreateBatchInformationExtractionTask）用来通过上传后的PDF资源编号来批量创建合同智能审查任务。<br/>\n\n适用场景：根据合同关键词（字段名称）来提取PDF合同文件的字段结果信息。\n\n注: \n1. PDF格式限制大小为10M以下\n2. 仅支持5个PDF文件批量发起",
       "input": "CreateBatchInformationExtractionTaskRequest",
@@ -421,7 +428,7 @@
       "status": "online"
     },
     "CreateUserVerifyUrl": {
-      "document": "生成个人用户实名认证链接，个人用户点击此链接进入实名流程（若用户已完成实名认证，则直接进入成功页面）。\n\n注： 调用此接口需要购买<font color=\"red\"><b>单独的实名套餐包</b></font>。使用前请联系对接的客户经理沟通。",
+      "document": "生成个人用户实名认证链接，个人用户点击此链接进入实名流程（若用户已完成实名认证，则直接进入成功页面）。用户点击此接口生成的链接完成实名认证后，其数据将通过[企业引导个人实名认证后回调](https://qian.tencent.com/developers/company/callback_types_staffs/#%E5%8D%81%E4%BA%8C-%E4%BC%81%E4%B8%9A%E5%BC%95%E5%AF%BC%E4%B8%AA%E4%BA%BA%E5%AE%9E%E5%90%8D%E8%AE%A4%E8%AF%81%E5%90%8E%E5%9B%9E%E8%B0%83)返回\n\n注： 调用此接口需要购买<font color=\"red\"><b>单独的实名套餐包</b></font>。使用前请联系对接的客户经理沟通。",
       "input": "CreateUserVerifyUrlRequest",
       "name": "获取个人用户实名链接",
       "output": "CreateUserVerifyUrlResponse",
@@ -516,6 +523,13 @@
       "input": "DescribeContractDiffTaskWebUrlRequest",
       "name": "获取合同对比结果web页面",
       "output": "DescribeContractDiffTaskWebUrlResponse",
+      "status": "online"
+    },
+    "DescribeContractReviewTask": {
+      "document": "本接口（DescribeContractReviewTask）用于获取合同审查任务详情，包括任务的状态和识别出的风险信息。",
+      "input": "DescribeContractReviewTaskRequest",
+      "name": "获取合同审查任务详情",
+      "output": "DescribeContractReviewTaskResponse",
       "status": "online"
     },
     "DescribeExtendedServiceAuthDetail": {
@@ -2493,6 +2507,88 @@
           "name": "TaskId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchContractReviewTaskRequest": {
+      "document": "CreateBatchContractReviewTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行合同审查任务的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同审查的PDF文件资源编号列表，通过[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获取PDF文件资源编号。 \n\n注:  `目前，此接口仅支持5个文件发起。每个文件限制在10M以下，文件必须是PDF格式`",
+          "example": "[\"yDRS4UUgygqdcj56UuO4zjExBQcOiB68\",\"yDRS4UUgygqdcj5pUuO4zjEu602GFIe6\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "合同审查的审查立场方。\n\n审查立场方如下：\n<ul>\n    <li>**0** - 【严格】以保护己方利益为核心，对合同条款进行严格把控，尽可能争取对己方有利的条款，同时对对方提出的不合理条款可进行坚决修改或删除。</li> \n    <li>**1** - 【中立】以公平合理为原则，平衡双方的权利义务，既不过分强调己方利益，也不过度让步，力求达成双方均可接受的条款。</li>   \n    <li>**2** - 【宽松】以促成交易为核心，对合同条款的修改要求较为宽松，倾向于接受对方提出的条款，以尽快达成合作。</li>  \n</ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "PolicyType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "合同审查中的角色信息，通过明确入参角色的名称和描述，可以提高合同审查的效率和准确性。",
+          "example": "无",
+          "member": "RiskIdentificationRoleInfo",
+          "name": "Role",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用户配置的审查清单ID，基于此清单ID批量创建合同审查任务，为32位字符串。\n[点击查看审查清单ID在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/2c6588549e28ca49bd8bb7f4a072b19e.png)",
+          "example": "yDtCMUUckpx3boo7UysNTh4vx0j0a6Ii",
+          "member": "string",
+          "name": "ChecklistId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchContractReviewTaskResponse": {
+      "document": "CreateBatchContractReviewTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同审查的任务ID列表，每个任务ID为32位字符串。\n建议开发者保存此任务ID，后续[查询合同审查任务取详情](https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/DescribeContractReviewTask/)需要此任务ID。\n\n注意：`返回的索引和ResourceIds数组一致`",
+          "example": "[\"yDtG8UUckp9law7sUrCBqByFZLtkJ7cz\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -9646,6 +9742,141 @@
       ],
       "type": "object"
     },
+    "DescribeContractReviewTaskRequest": {
+      "document": "DescribeContractReviewTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同审查任务ID，该参数通过调用接口[批量创建合同审查任务](https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchContractReviewTask)获取。",
+          "example": "yDtIFUU2tnsxz7UulGxxx4WkTq",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContractReviewTaskResponse": {
+      "document": "DescribeContractReviewTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于审查任务的审查清单ID。",
+          "example": "yDtCMUUckpx3boo7Uyxx4vx0j0a6Ii",
+          "member": "string",
+          "name": "ChecklistId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查任务创建时间。",
+          "example": "1753417470",
+          "member": "int64",
+          "name": "CreatedOn",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查任务完成时间。",
+          "example": "1753417470",
+          "member": "int64",
+          "name": "FinishedOn",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查的审查立场方。\n\n审查立场方如下：\n<ul>\n    <li>**0** - 【严格】以保护己方利益为核心，对合同条款进行严格把控，尽可能争取对己方有利的条款，同时对对方提出的不合理条款可进行坚决修改或删除。</li> \n    <li>**1** - 【中立】以公平合理为原则，平衡双方的权利义务，既不过分强调己方利益，也不过度让步，力求达成双方均可接受的条款。</li>   \n    <li>**2** - 【宽松】以促成交易为核心，对合同条款的修改要求较为宽松，倾向于接受对方提出的条款，以尽快达成合作。</li>  \n</ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "PolicyType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查的PDF文件资源ID。",
+          "example": "yDtCMUUckpx3boo7Uyxx4vx0j0a6Ii",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查识别出的PDF文件风险信息，如果是空数组表示无风险。\n\n注意：`审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。`",
+          "example": "无",
+          "member": "OutputRisk",
+          "name": "Risks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查中的角色信息。",
+          "example": "无",
+          "member": "RiskIdentificationRoleInfo",
+          "name": "Role",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查任务状态。\n状态如下：\n<ul>\n    <li>**1** - 合同审查任务创建成功</li>   \n    <li>**2** - 合同审查任务排队中</li>  \n    <li>**3** - 合同审查任务执行中</li>   \n    <li>**4** - 合同审查任务执行成功</li>\n    <li>**4** - 合同审查任务执行失败</li>\n</ul>",
+          "example": "4",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查任务ID",
+          "example": "yDtIFUU2tnsxz7UulGxxx4WkTq",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExtendedServiceAuthDetailRequest": {
       "document": "DescribeExtendedServiceAuthDetail请求参数结构体",
       "members": [
@@ -15234,6 +15465,100 @@
       ],
       "usage": "both"
     },
+    "OutputRisk": {
+      "document": "合同审查任务识别出的风险结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同审查风险结果ID",
+          "example": "yDtIFUU2tnsxzqUulGxxxx90kPaed0",
+          "member": "string",
+          "name": "RiskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险名称",
+          "example": "主体信息不完整",
+          "member": "string",
+          "name": "RiskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险描述",
+          "example": "合同首部甲方信息未填写企业名称和统一社会信用代码，可能导致合同主体资格存疑，影响法律效力认定。",
+          "member": "string",
+          "name": "RiskDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级。\n\n等级描述如下：\n<ul>\n    <li>**HIGH** - 高风险</li> \n    <li>**NORMAL** - 风险</li>   \n</ul>",
+          "example": "HIGH",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险建议",
+          "example": "建议在甲方信息部分补充完整：「甲方(用人单位)：广州晶东贸易有限公司 统一社会信用代码：XXXXXX 法定代表人：XXX」",
+          "member": "string",
+          "name": "RiskAdvice",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险评估",
+          "example": "[\"条款模糊\",                     \"条款缺失\", \"不符合清单要求\" ]",
+          "member": "string",
+          "name": "RiskPresentation",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "PDF风险原文内容",
+          "example": "第三十二条乙方应当保守甲方的商业秘密，商业秘密系指不为公众所知悉，能为甲方带来经济利益，具有实用性并经甲方采取保密措施的技术秘密和经营信息。包括但不限于下述内容:",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审查依据",
+          "example": "通用商业合同审查清单】{特殊类型合同补充要点}, 系统审查要求。",
+          "member": "string",
+          "name": "RiskBasis",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PdfVerifyResult": {
       "document": "合同文件验签单个结果结构体",
       "members": [
@@ -16235,6 +16560,34 @@
         }
       ],
       "usage": "in"
+    },
+    "RiskIdentificationRoleInfo": {
+      "document": "用于定义合同风险识别角色信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险识别角色的名称。用于唯一标识和区分不同的风险识别角色。\n\n注意：`最大长度应不超过200个字符`",
+          "example": "甲方（授权方）",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险识别角色的详细说明。\n\n注意： `最大长度应不超过500个字符`",
+          "example": "示例授权方公司",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SealInfo": {
       "document": "模板中指定的印章信息",

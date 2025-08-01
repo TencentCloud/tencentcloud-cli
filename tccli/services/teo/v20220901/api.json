@@ -112,6 +112,13 @@
       "output": "CreateFunctionRuleResponse",
       "status": "online"
     },
+    "CreateJustInTimeTranscodeTemplate": {
+      "document": "即时转码已经提供了预置转码模板，满足大部分的需求。如果有个性化的转码需求，可以通过本接口创建自定义的转码模板，最多可创建100个自定义转码模板。\n为了确保即时转码效果的一致性，避免因 EO 缓存或 M3U8 分片处理过程中的模板变更导致视频输出异常，模板在创建后不可进行修改。\n即时转码详细能力了解：[EdgeOne视频即时处理功能介绍](https://cloud.tencent.com/document/product/1552/111927)。",
+      "input": "CreateJustInTimeTranscodeTemplateRequest",
+      "name": "创建即时转码模板",
+      "output": "CreateJustInTimeTranscodeTemplateResponse",
+      "status": "online"
+    },
     "CreateL4Proxy": {
       "document": "用于创建四层代理实例。",
       "input": "CreateL4ProxyRequest",
@@ -210,11 +217,39 @@
       "output": "CreateRuleResponse",
       "status": "online"
     },
+    "CreateSecurityAPIResource": {
+      "document": "用于创建 API 资源。",
+      "input": "CreateSecurityAPIResourceRequest",
+      "name": "创建 API 资源",
+      "output": "CreateSecurityAPIResourceResponse",
+      "status": "online"
+    },
+    "CreateSecurityAPIService": {
+      "document": "用于创建 API 服务。",
+      "input": "CreateSecurityAPIServiceRequest",
+      "name": "创建 API 服务",
+      "output": "CreateSecurityAPIServiceResponse",
+      "status": "online"
+    },
+    "CreateSecurityClientAttester": {
+      "document": "创建客户端认证选项。",
+      "input": "CreateSecurityClientAttesterRequest",
+      "name": "创建客户端认证选项",
+      "output": "CreateSecurityClientAttesterResponse",
+      "status": "online"
+    },
     "CreateSecurityIPGroup": {
       "document": "创建安全 IP 组",
       "input": "CreateSecurityIPGroupRequest",
       "name": "创建安全 IP 组",
       "output": "CreateSecurityIPGroupResponse",
+      "status": "online"
+    },
+    "CreateSecurityJSInjectionRule": {
+      "document": "创建 JavaScript 注入规则。",
+      "input": "CreateSecurityJSInjectionRuleRequest",
+      "name": "创建 JavaScript 注入规则",
+      "output": "CreateSecurityJSInjectionRuleResponse",
       "status": "online"
     },
     "CreateSharedCNAME": {
@@ -301,6 +336,13 @@
       "output": "DeleteFunctionRulesResponse",
       "status": "online"
     },
+    "DeleteJustInTimeTranscodeTemplates": {
+      "document": "根据站点 id 下唯一的模板标识，删除相应的即时转码模板。",
+      "input": "DeleteJustInTimeTranscodeTemplatesRequest",
+      "name": "删除即时转码模版",
+      "output": "DeleteJustInTimeTranscodeTemplatesResponse",
+      "status": "online"
+    },
     "DeleteL4Proxy": {
       "document": "用于删除四层代理实例。",
       "input": "DeleteL4ProxyRequest",
@@ -364,11 +406,39 @@
       "output": "DeleteRulesResponse",
       "status": "online"
     },
+    "DeleteSecurityAPIResource": {
+      "document": "用于删除 API 资源。",
+      "input": "DeleteSecurityAPIResourceRequest",
+      "name": "删除 API 资源",
+      "output": "DeleteSecurityAPIResourceResponse",
+      "status": "online"
+    },
+    "DeleteSecurityAPIService": {
+      "document": "用于删除 API 服务。",
+      "input": "DeleteSecurityAPIServiceRequest",
+      "name": "删除 API 服务",
+      "output": "DeleteSecurityAPIServiceResponse",
+      "status": "online"
+    },
+    "DeleteSecurityClientAttester": {
+      "document": "删除客户端认证选项。",
+      "input": "DeleteSecurityClientAttesterRequest",
+      "name": "删除客户端认证选项",
+      "output": "DeleteSecurityClientAttesterResponse",
+      "status": "online"
+    },
     "DeleteSecurityIPGroup": {
       "document": "删除指定 IP 组，如果有规则引用了 IP 组情况，则不允许删除。",
       "input": "DeleteSecurityIPGroupRequest",
       "name": "删除安全 IP 组",
       "output": "DeleteSecurityIPGroupResponse",
+      "status": "online"
+    },
+    "DeleteSecurityJSInjectionRule": {
+      "document": "删除 JavaScript 注入规则。",
+      "input": "DeleteSecurityJSInjectionRuleRequest",
+      "name": "删除 JavaScript 注入规则",
+      "output": "DeleteSecurityJSInjectionRuleResponse",
       "status": "online"
     },
     "DeleteSharedCNAME": {
@@ -567,6 +637,13 @@
       "output": "DescribeIdentificationsResponse",
       "status": "online"
     },
+    "DescribeJustInTimeTranscodeTemplates": {
+      "document": "根据即时转码模板名字、模板类型或唯一标识，获取即时转码模板详情列表。返回结果包含符合条件的所有用户自定义模板及预置模板。",
+      "input": "DescribeJustInTimeTranscodeTemplatesRequest",
+      "name": "获取即时转码模版列表",
+      "output": "DescribeJustInTimeTranscodeTemplatesResponse",
+      "status": "online"
+    },
     "DescribeL4Proxy": {
       "document": "用于查询四层代理实例列表。",
       "input": "DescribeL4ProxyRequest",
@@ -714,6 +791,27 @@
       "output": "DescribeRulesSettingResponse",
       "status": "online"
     },
+    "DescribeSecurityAPIResource": {
+      "document": "查询站点下的 API 资源。",
+      "input": "DescribeSecurityAPIResourceRequest",
+      "name": "查询 API 资源",
+      "output": "DescribeSecurityAPIResourceResponse",
+      "status": "online"
+    },
+    "DescribeSecurityAPIService": {
+      "document": "查询站点下的 API 服务。",
+      "input": "DescribeSecurityAPIServiceRequest",
+      "name": "查询 API 服务",
+      "output": "DescribeSecurityAPIServiceResponse",
+      "status": "online"
+    },
+    "DescribeSecurityClientAttester": {
+      "document": "查询客户端认证选项配置。",
+      "input": "DescribeSecurityClientAttesterRequest",
+      "name": "查询客户端认证选项",
+      "output": "DescribeSecurityClientAttesterResponse",
+      "status": "online"
+    },
     "DescribeSecurityIPGroup": {
       "document": "查询安全 IP 组的配置信息，包括安全 IP 组的 ID、名称和内容。本接口的查询结果中，每个 IP 组最多只返回 2000 个 IP / 网段。如果存在超过 2000 个 IP / 网段的超大 IP 组，请调用 DescribeSecurityIPGroupContent 进行分页查询。",
       "input": "DescribeSecurityIPGroupRequest",
@@ -721,11 +819,25 @@
       "output": "DescribeSecurityIPGroupResponse",
       "status": "online"
     },
+    "DescribeSecurityIPGroupContent": {
+      "document": "该接口用于分页查询指定 IP 组中的 IP 地址列表。当 IP 组中的 IP 地址数量超过 2000 个时，可以使用此接口进行分页查询，以获取完整的 IP 地址列表。",
+      "input": "DescribeSecurityIPGroupContentRequest",
+      "name": "分页查询 IP 组中的 IP 列表",
+      "output": "DescribeSecurityIPGroupContentResponse",
+      "status": "online"
+    },
     "DescribeSecurityIPGroupInfo": {
       "document": "接口已废弃，将于 2024 年 6 月 30 日停止服务。请使用 [查询安全 IP 组\n](https://cloud.tencent.com/document/product/1552/105866) 接口。\n\n查询 IP 组的配置信息，包括 IP 组名称、 IP 组内容、 IP 组归属站点。",
       "input": "DescribeSecurityIPGroupInfoRequest",
       "name": "查询安全 IP 组（已废弃）",
       "output": "DescribeSecurityIPGroupInfoResponse",
+      "status": "online"
+    },
+    "DescribeSecurityJSInjectionRule": {
+      "document": "查询 JavaScript 注入规则。",
+      "input": "DescribeSecurityJSInjectionRuleRequest",
+      "name": "查询 JavaScript 注入规则",
+      "output": "DescribeSecurityJSInjectionRuleResponse",
       "status": "online"
     },
     "DescribeSecurityPolicy": {
@@ -1113,11 +1225,39 @@
       "output": "ModifyRuleResponse",
       "status": "online"
     },
+    "ModifySecurityAPIResource": {
+      "document": "该接口用于修改 API 资源。",
+      "input": "ModifySecurityAPIResourceRequest",
+      "name": "修改 API 资源",
+      "output": "ModifySecurityAPIResourceResponse",
+      "status": "online"
+    },
+    "ModifySecurityAPIService": {
+      "document": "该接口用于修改 API 服务。",
+      "input": "ModifySecurityAPIServiceRequest",
+      "name": "修改 API 服务",
+      "output": "ModifySecurityAPIServiceResponse",
+      "status": "online"
+    },
+    "ModifySecurityClientAttester": {
+      "document": "修改客户端认证选项。",
+      "input": "ModifySecurityClientAttesterRequest",
+      "name": "修改客户端认证选项",
+      "output": "ModifySecurityClientAttesterResponse",
+      "status": "online"
+    },
     "ModifySecurityIPGroup": {
       "document": "修改安全 IP 组。",
       "input": "ModifySecurityIPGroupRequest",
       "name": "修改安全 IP 组",
       "output": "ModifySecurityIPGroupResponse",
+      "status": "online"
+    },
+    "ModifySecurityJSInjectionRule": {
+      "document": "修改 JavaScript 注入规则。",
+      "input": "ModifySecurityJSInjectionRuleRequest",
+      "name": "修改 JavaScript 注入规则",
+      "output": "ModifySecurityJSInjectionRuleResponse",
       "status": "online"
     },
     "ModifySecurityPolicy": {
@@ -1191,6 +1331,117 @@
     "serviceShortName": "teo"
   },
   "objects": {
+    "APIResource": {
+      "document": "API 资源。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源 ID。",
+          "example": "\"eoapi-2184008405\"",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源名称。",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API 资源关联的 API 服务 ID 列表。",
+          "example": "\"fekafe\"",
+          "member": "string",
+          "name": "APIServiceIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源路径。",
+          "example": "\"/resource\"",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求方法列表。支持以下取值：GET, POST, PUT, HEAD, PATCH, OPTIONS, DELETE。",
+          "example": "\"PUT\"",
+          "member": "string",
+          "name": "Methods",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求内容匹配规则的具体内容，需符合表达式语法，详细规范参见产品文档。",
+          "example": "无",
+          "member": "string",
+          "name": "RequestConstraint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "APIService": {
+      "document": "API 服务配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API 服务 ID。",
+          "example": "\"eoapi-2184008405\"",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API 服务名称。",
+          "example": "“test”",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基础路径。",
+          "example": "\"aef\"",
+          "member": "string",
+          "name": "BasePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AccelerateMainland": {
       "document": "中国大陆加速优化配置。",
       "members": [
@@ -2624,6 +2875,34 @@
         }
       ],
       "usage": "out"
+    },
+    "AudioTemplateInfo": {
+      "document": "音频流配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频流的编码格式。可选值为：\n<li>libfdk_aac。</li>",
+          "example": "libfdk_aac",
+          "member": "string",
+          "name": "Codec",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频通道数，可选值：<li>2：双通道。</li>默认值：2。",
+          "example": "2",
+          "member": "uint64",
+          "name": "AudioChannel",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AuthenticationParameters": {
       "document": "Token 鉴权 配置参数。",
@@ -4382,6 +4661,89 @@
       ],
       "usage": "both"
     },
+    "ClientAttester": {
+      "document": "认证选项配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证选项 ID。",
+          "example": "\"challenge-21801232\"",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证选项名称。",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证规则类型。仅出参返回，取值有：\n<li>PRESET: 系统预置规则，仅允许修改 AttesterDuration；</li>\n<li>CUSTOM: 用户自定义规则。</li>",
+          "example": "\"customer\"",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证方法。取值有：\n<li>TC-RCE: 使用全栈式风控引擎进行认证；</li>\n<li>TC-CAPTCHA: 使用天御验证码进行认证。</li>",
+          "example": "\"turing-rce\"",
+          "member": "string",
+          "name": "AttesterSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证有效时间。默认为 60s，支持的单位有：\n<li>s：秒，取值范围 60～43200；</li>\n<li>m：分，取值范围 1～720；</li>\n<li>h：小时，取值范围 1～12。</li>",
+          "example": "300s",
+          "member": "string",
+          "name": "AttesterDuration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TC-RCE 认证的配置信息。\n<li>当 AttesterSource 参数值为 TC-RCE 时，此字段必填。</li>",
+          "example": "无",
+          "member": "TCRCEOption",
+          "name": "TCRCEOption",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TC-CAPTCHA 认证的配置信息。\n<li>当 AttesterSource 参数值为 TC-CAPTCHA 时，此字段必填。</li>",
+          "example": "无",
+          "member": "TCCaptchaOption",
+          "name": "TCCaptchaOption",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClientFiltering": {
       "document": "智能客户端过滤",
       "members": [
@@ -5701,6 +6063,97 @@
       ],
       "type": "object"
     },
+    "CreateJustInTimeTranscodeTemplateRequest": {
+      "document": "CreateJustInTimeTranscodeTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。",
+          "example": "zone-djuqmq",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "即时转码模板名称，长度限制：64 个字符。",
+          "example": "MyJustInTimeTranscodeTemplate",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息，长度限制：256 个字符。默认为空。",
+          "example": "my just in time transcode template",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "启用视频流开关，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>默认值：on。",
+          "example": "on",
+          "member": "string",
+          "name": "VideoStreamSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "启用音频流开关，取值：\n<li>on：开启；</li>\n<li>off：关闭。</li>默认值：on。",
+          "example": "on",
+          "member": "string",
+          "name": "AudioStreamSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频流配置参数，当 VideoStreamSwitch 为 on，该字段必填。",
+          "example": "无",
+          "member": "VideoTemplateInfo",
+          "name": "VideoTemplate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "音频流配置参数，当 AudioStreamSwitch 为 on，该字段必填。",
+          "example": "无",
+          "member": "AudioTemplateInfo",
+          "name": "AudioTemplate",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJustInTimeTranscodeTemplateResponse": {
+      "document": "CreateJustInTimeTranscodeTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "即时转码模板唯一标识，用于即时转码 URL 拼接。",
+          "example": "C1LZ7982VgTpYhJ7M",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateL4ProxyRequest": {
       "document": "CreateL4Proxy请求参数结构体",
       "members": [
@@ -6780,6 +7233,144 @@
       ],
       "type": "object"
     },
+    "CreateSecurityAPIResourceRequest": {
+      "document": "CreateSecurityAPIResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。\t",
+          "example": "\"zone-nqicqhasui\"\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " API 资源列表。",
+          "example": "无",
+          "member": "APIResource",
+          "name": "APIResources",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityAPIResourceResponse": {
+      "document": "CreateSecurityAPIResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API 资源 ID 列表。",
+          "example": "[\"eoapi-1232382313\"]",
+          "member": "string",
+          "name": "APIResourceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityAPIServiceRequest": {
+      "document": "CreateSecurityAPIService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。\t",
+          "example": "\"zone-nqicqhasui\"\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " API 服务列表。",
+          "example": "无",
+          "member": "APIService",
+          "name": "APIServices",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityAPIServiceResponse": {
+      "document": "CreateSecurityAPIService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API 服务 ID 列表。",
+          "example": "[\"apisrv-1232382313\"]",
+          "member": "string",
+          "name": "APIServiceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityClientAttesterRequest": {
+      "document": "CreateSecurityClientAttester请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-nqicqhasui\"\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证选项列表。",
+          "example": "无",
+          "member": "ClientAttester",
+          "name": "ClientAttesters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityClientAttesterResponse": {
+      "document": "CreateSecurityClientAttester返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证选项 ID 列表。",
+          "example": "[\"challenge-1233212341\"]",
+          "member": "string",
+          "name": "ClientAttesterIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSecurityIPGroupRequest": {
       "document": "CreateSecurityIPGroup请求参数结构体",
       "members": [
@@ -6815,6 +7406,52 @@
           "name": "GroupId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityJSInjectionRuleRequest": {
+      "document": "CreateSecurityJSInjectionRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。\t",
+          "example": "\"zone-nqicqhasui\"\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "JavaScript 注入规则列表。",
+          "example": "无",
+          "member": "JSInjectionRule",
+          "name": "JSInjectionRules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSecurityJSInjectionRuleResponse": {
+      "document": "CreateSecurityJSInjectionRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "JavaScript 注入规则 ID 列表。",
+          "example": "[\"123\"]",
+          "member": "string",
+          "name": "JSInjectionRuleIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -8145,6 +8782,42 @@
       ],
       "type": "object"
     },
+    "DeleteJustInTimeTranscodeTemplatesRequest": {
+      "document": "DeleteJustInTimeTranscodeTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。",
+          "example": "zone-djuqmq",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需删除的即时转码模板唯一标识数组，长度限制：100。",
+          "example": "[\"C1LZ7982VgTpYhJ7M\"]",
+          "member": "string",
+          "name": "TemplateIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteJustInTimeTranscodeTemplatesResponse": {
+      "document": "DeleteJustInTimeTranscodeTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteL4ProxyRequest": {
       "document": "DeleteL4Proxy请求参数结构体",
       "members": [
@@ -8487,6 +9160,114 @@
       ],
       "type": "object"
     },
+    "DeleteSecurityAPIResourceRequest": {
+      "document": "DeleteSecurityAPIResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。\t",
+          "example": "\"zone-nqicqhasui\"\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的 API 资源 ID 列表。",
+          "example": "[\"eoapi-1230001001\"]",
+          "member": "string",
+          "name": "APIResourceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityAPIResourceResponse": {
+      "document": "DeleteSecurityAPIResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityAPIServiceRequest": {
+      "document": "DeleteSecurityAPIService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。\t",
+          "example": "\"zone-nqicqhasui\"\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API 服务 ID 列表。",
+          "example": "[\"eoapi-1230001001\"]",
+          "member": "string",
+          "name": "APIServiceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityAPIServiceResponse": {
+      "document": "DeleteSecurityAPIService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityClientAttesterRequest": {
+      "document": "DeleteSecurityClientAttester请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-nqicqhasui\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端认证选项 ID。",
+          "example": "[\"attest-1233\"]",
+          "member": "string",
+          "name": "ClientAttesterIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityClientAttesterResponse": {
+      "document": "DeleteSecurityClientAttester返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteSecurityIPGroupRequest": {
       "document": "DeleteSecurityIPGroup请求参数结构体",
       "members": [
@@ -8513,6 +9294,42 @@
     },
     "DeleteSecurityIPGroupResponse": {
       "document": "DeleteSecurityIPGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityJSInjectionRuleRequest": {
+      "document": "DeleteSecurityJSInjectionRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-nqicqhasui\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "JavaScript 注入规则 ID 列表。",
+          "example": "[\"attest-1233\"]",
+          "member": "string",
+          "name": "JSInjectionRuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSecurityJSInjectionRuleResponse": {
+      "document": "DeleteSecurityJSInjectionRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10565,6 +11382,98 @@
       ],
       "type": "object"
     },
+    "DescribeJustInTimeTranscodeTemplatesRequest": {
+      "document": "DescribeJustInTimeTranscodeTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。",
+          "example": "zone-djuqmq",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters 的上限为 20，Filters.Values 的上限为 20。该参数不填写时，默认返回当前 ZoneId 下有权限的即时转码模板。详细的过滤条件如下：<li>template-name：按照模版名批量进行过滤。例如：mytemplate；</li><li>template-type：按照模板类型批量进行过滤。例如：preset 或 custom。</li><li>template-id：按照模板 ID 批量进行过滤。例如：C1LZ7982VgTpYhJ7M。</li>默认为空。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，取值有：<li>createTime：模板创建时间。</li>默认值为：createTime。",
+          "example": "createTime",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，取值有：<li>asc：升序方式；</li><li>desc：降序方式。</li>默认值为：desc。",
+          "example": "asc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认值：20，最大值：1000。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJustInTimeTranscodeTemplatesResponse": {
+      "document": "DescribeJustInTimeTranscodeTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板详情列表。",
+          "example": "无",
+          "member": "JustInTimeTranscodeTemplate",
+          "name": "TemplateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeL4ProxyRequest": {
       "document": "DescribeL4Proxy请求参数结构体",
       "members": [
@@ -11929,6 +12838,275 @@
       ],
       "type": "object"
     },
+    "DescribeSecurityAPIResourceRequest": {
+      "document": "DescribeSecurityAPIResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。\t",
+          "example": "\"zone-nqicqhasui\"\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAPIResourceResponse": {
+      "document": "DescribeSecurityAPIResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API 资源总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API 资源列表。\t",
+          "example": "无",
+          "member": "APIResource",
+          "name": "APIResources",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAPIServiceRequest": {
+      "document": "DescribeSecurityAPIService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。\t",
+          "example": "\"zone-nqicqhasui\"\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：100。",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAPIServiceResponse": {
+      "document": "DescribeSecurityAPIService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API 服务总数量。\t",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API 服务列表。\t",
+          "example": "无",
+          "member": "APIService",
+          "name": "APIServices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityClientAttesterRequest": {
+      "document": "DescribeSecurityClientAttester请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-nqicqhasui\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityClientAttesterResponse": {
+      "document": "DescribeSecurityClientAttester返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证选项总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证选项列表。",
+          "example": "无",
+          "member": "ClientAttester",
+          "name": "ClientAttesters",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityIPGroupContentRequest": {
+      "document": "DescribeSecurityIPGroupContent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-5a6y19cacf9u",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IP 组 ID。",
+          "example": "100121",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：2000，最大值：100000。",
+          "example": "2000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityIPGroupContentResponse": {
+      "document": "DescribeSecurityIPGroupContent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP 组中正在生效的 IP 或网段个数。",
+          "example": "1000",
+          "member": "int64",
+          "name": "IPTotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "满足查询条件的 IP 或网段列表。受 Limit 和 Offset 参数限制。",
+          "example": "[\"1.1.1.1\",\"1.2.3.0/24\"]",
+          "member": "string",
+          "name": "IPList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSecurityIPGroupInfoRequest": {
       "document": "DescribeSecurityIPGroupInfo请求参数结构体",
       "members": [
@@ -12028,6 +13206,71 @@
           "member": "IPGroup",
           "name": "IPGroups",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityJSInjectionRuleRequest": {
+      "document": "DescribeSecurityJSInjectionRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-nqicqhasui\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityJSInjectionRuleResponse": {
+      "document": "DescribeSecurityJSInjectionRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "JavaScript 注入规则总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "JavaScript 注入规则列表。",
+          "example": "无",
+          "member": "JSInjectionRule",
+          "name": "JSInjectionRules",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16363,6 +17606,173 @@
       ],
       "usage": "both"
     },
+    "JSInjectionRule": {
+      "document": "JavaScript 注入规则。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID。",
+          "example": "\"ch-12133123\"",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称。",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件内容。需符合表达式语法，详细规范参见产品文档。",
+          "example": "\"a\"",
+          "member": "string",
+          "name": "Condition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "JavaScript 注入选项。默认值为 run-attestations，取值有：\n<li> no-injection: 不注入 JavaScript;</li>\n<li> inject-sdk-only: 注入当前支持的所有认证方式的 SDK，当前支持：TC-RCE 和 TC-CAPTCHA。注意：若需执行认证检测，请配置挑战规则。</li>\n",
+          "example": "\"on\"",
+          "member": "string",
+          "name": "InjectJS",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "JustInTimeTranscodeTemplate": {
+      "document": "即时转码模板详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "即时转码模板唯一标识。",
+          "example": "C1LZ7982VgTpYhJ7M",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转码模板名称。",
+          "example": "TestTemplate",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息。",
+          "example": "测试模板",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板类型，取值：<li>preset：系统预置模板；</li><li>custom：用户自定义模板。</li>",
+          "example": "preset",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用视频流开关，取值：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "VideoStreamSwitch",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用音频流开关，取值：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "AudioStreamSwitch",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频流配置参数，仅当 VideoStreamSwitch 为 on，该字段有效。",
+          "example": "无",
+          "member": "VideoTemplateInfo",
+          "name": "VideoTemplate",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频流配置参数，仅当 AudioStreamSwitch 为 on，该字段有效。",
+          "example": "无",
+          "member": "AudioTemplateInfo",
+          "name": "AudioTemplate",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2020-09-07T00:00:00+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2020-09-07T00:00:00+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "L4OfflineLog": {
       "document": "离线日志详细信息",
       "members": [
@@ -19467,6 +20877,114 @@
       ],
       "type": "object"
     },
+    "ModifySecurityAPIResourceRequest": {
+      "document": "ModifySecurityAPIResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。\t",
+          "example": "\"zone-nqicqhasui\"\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API 资源列表。",
+          "example": "无",
+          "member": "APIResource",
+          "name": "APIResources",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityAPIResourceResponse": {
+      "document": "ModifySecurityAPIResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityAPIServiceRequest": {
+      "document": "ModifySecurityAPIService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。\t",
+          "example": "\"zone-nqicqhasui\"\t",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API 服务列表。",
+          "example": "无",
+          "member": "APIService",
+          "name": "APIServices",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityAPIServiceResponse": {
+      "document": "ModifySecurityAPIService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityClientAttesterRequest": {
+      "document": "ModifySecurityClientAttester请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-nqicqhasui\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证选项列表。",
+          "example": "无",
+          "member": "ClientAttester",
+          "name": "ClientAttesters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityClientAttesterResponse": {
+      "document": "ModifySecurityClientAttester返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySecurityIPGroupRequest": {
       "document": "ModifySecurityIPGroup请求参数结构体",
       "members": [
@@ -19502,6 +21020,42 @@
     },
     "ModifySecurityIPGroupResponse": {
       "document": "ModifySecurityIPGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityJSInjectionRuleRequest": {
+      "document": "ModifySecurityJSInjectionRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-nqicqhasui\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "JavaScript 注入规则列表。",
+          "example": "无",
+          "member": "JSInjectionRule",
+          "name": "JSInjectionRules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityJSInjectionRuleResponse": {
+      "document": "ModifySecurityJSInjectionRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -25150,6 +26704,51 @@
       ],
       "usage": "both"
     },
+    "TCCaptchaOption": {
+      "document": "验证码认证实例信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CaptchaAppId 信息。",
+          "example": "无",
+          "member": "string",
+          "name": "CaptchaAppId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AppSecretKey 信息。",
+          "example": "无",
+          "member": "string",
+          "name": "AppSecretKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TCRCEOption": {
+      "document": "RCE 认证选项实例信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Channel 信息。",
+          "example": "\"21332123\"",
+          "member": "string",
+          "name": "Channel",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TLSConfigParameters": {
       "document": "SSL/TLS 安全配置参数。",
       "members": [
@@ -26011,6 +27610,89 @@
         }
       ],
       "type": "object"
+    },
+    "VideoTemplateInfo": {
+      "document": "视频流配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频流的编码格式，可选值：<li>H.264: 使用 H.264 编码；</li><li>H.265: 使用 H.265 编码。</li>",
+          "example": "H.264",
+          "member": "string",
+          "name": "Codec",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频帧率，取值范围：[0, 30]，单位：Hz。\n取值为 0，表示帧率和原始视频保持一致，但最大不超过 30。\n默认值：0。",
+          "example": "25.0",
+          "member": "float",
+          "name": "Fps",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。\n取值为 0，表示自动根据视频画面和质量选择视频码率。\n默认值：0。",
+          "example": "500",
+          "member": "uint64",
+          "name": "Bitrate",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分辨率自适应，可选值：<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li><li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>默认值：open。",
+          "example": "open",
+          "member": "string",
+          "name": "ResolutionAdaptive",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 1920]，单位：px。<li>当 Width、Height 均为 0，则分辨率同源；</li><li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li><li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li><li>当 Width、Height 均非 0，则分辨率按用户指定。</li>默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Width",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 1080]，单位：px。<li>当 Width、Height 均为 0，则分辨率同源；</li><li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li><li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li><li>当 Width、Height 均非 0，则分辨率按用户指定。</li>默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Height",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁”或者“拉长”。</li><li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li><li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li><li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊填充。</li>默认值：black 。",
+          "example": "stretch",
+          "member": "string",
+          "name": "FillType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Waf": {
       "document": "无",

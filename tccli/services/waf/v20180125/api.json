@@ -98,6 +98,13 @@
       "output": "CreateIpAccessControlResponse",
       "status": "online"
     },
+    "CreateOwaspWhiteRule": {
+      "document": "添加规则引擎白名单",
+      "input": "CreateOwaspWhiteRuleRequest",
+      "name": "添加规则引擎白名单",
+      "output": "CreateOwaspWhiteRuleResponse",
+      "status": "online"
+    },
     "CreatePostCKafkaFlow": {
       "document": "创建CKafka投递流任务",
       "input": "CreatePostCKafkaFlowRequest",
@@ -201,6 +208,13 @@
       "input": "DeleteIpAccessControlV2Request",
       "name": "IP黑白名单删除接口",
       "output": "DeleteIpAccessControlV2Response",
+      "status": "online"
+    },
+    "DeleteOwaspWhiteRule": {
+      "document": "删除用户规则引擎白名单",
+      "input": "DeleteOwaspWhiteRuleRequest",
+      "name": "删除用户规则引擎白名单",
+      "output": "DeleteOwaspWhiteRuleResponse",
       "status": "online"
     },
     "DeleteSession": {
@@ -523,6 +537,13 @@
       "input": "DescribeObjectsRequest",
       "name": "查看防护对象列表",
       "output": "DescribeObjectsResponse",
+      "status": "online"
+    },
+    "DescribeOwaspWhiteRules": {
+      "document": "获取规则引擎白名单列表",
+      "input": "DescribeOwaspWhiteRulesRequest",
+      "name": "获取用户规则引擎白名单",
+      "output": "DescribeOwaspWhiteRulesResponse",
       "status": "online"
     },
     "DescribePeakPoints": {
@@ -999,6 +1020,13 @@
       "input": "ModifyObjectRequest",
       "name": "修改防护对象",
       "output": "ModifyObjectResponse",
+      "status": "online"
+    },
+    "ModifyOwaspWhiteRule": {
+      "document": "编辑规则引擎白名单",
+      "input": "ModifyOwaspWhiteRuleRequest",
+      "name": "编辑规则引擎白名单",
+      "output": "ModifyOwaspWhiteRuleResponse",
       "status": "online"
     },
     "ModifyProtectionStatus": {
@@ -6298,6 +6326,115 @@
       ],
       "type": "object"
     },
+    "CreateOwaspWhiteRuleRequest": {
+      "document": "CreateOwaspWhiteRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "rulename",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则匹配策略列表",
+          "example": "[{\"Field\": \"URL\",\"Arg\": \"\",\"CompareFunc\": \"eq\",\"Content\": \"/acl\"}]",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加白的规则ID列表",
+          "example": "[90501998,  90501999]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加白的类型，0:按照特定规则ID加白, 1:按照规则类型加白",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "{\"Timed\":[{\"StartDateTime\":1711618518,\"EndDateTime\":1711918518}],\"Cron\":[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}],\"TimeTZone\":\"UTC+8\"}",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则状态，0：关闭、1：开启，默认为开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOwaspWhiteRuleResponse": {
+      "document": "CreateOwaspWhiteRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "10011",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePostCKafkaFlowRequest": {
       "document": "CreatePostCKafkaFlow请求参数结构体",
       "members": [
@@ -7213,6 +7350,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOwaspWhiteRuleRequest": {
+      "document": "DeleteOwaspWhiteRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则白名单ID列表",
+          "example": "[100011,100023]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.waf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOwaspWhiteRuleResponse": {
+      "document": "DeleteOwaspWhiteRule返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11520,6 +11693,98 @@
           "example": "无",
           "member": "ClbObject",
           "name": "ClbObjects",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOwaspWhiteRulesRequest": {
+      "document": "DescribeOwaspWhiteRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的域名",
+          "example": "www.waf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页分页，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页容量，默认为10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序的字段，支持CreateTime：新建时间、UpdateTime：修改时间",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，支持asc、desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件，支持RuleId：加白规则ID、 Name：规则名称、RuleType：加白的规则类型、Status：规则开关状态、ValidStatus：规则生效状态、TimerType：生效方式、ID：具体的加白id，根据RuleType来判断是规则id还是类型id",
+          "example": " [{\"Name\": \"Name\", Values: [\"testname\"], \"ExactMatch\": true}]",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOwaspWhiteRulesResponse": {
+      "document": "DescribeOwaspWhiteRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则白名单列表",
+          "example": "[{}]",
+          "member": "OwaspWhiteRule",
+          "name": "List",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -20424,6 +20689,114 @@
       ],
       "type": "object"
     },
+    "ModifyOwaspWhiteRuleRequest": {
+      "document": "ModifyOwaspWhiteRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "10011",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "rulename",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则匹配策略列表",
+          "example": "[{\"Field\": \"URL\",\"Arg\": \"\",\"CompareFunc\": \"eq\",\"Content\": \"/acl\"}]",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加白的规则ID列表",
+          "example": "[90501998,  90501999]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "加白的类型，0:按照特定规则ID加白, 1:按照规则类型加白",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "{\"Timed\":[{\"StartDateTime\":1711618518,\"EndDateTime\":1711918518}],\"Cron\":[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}],\"TimeTZone\":\"UTC+8\"}",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则状态，0：关闭、1：开启，默认为开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOwaspWhiteRuleResponse": {
+      "document": "ModifyOwaspWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyProtectionStatusRequest": {
       "document": "ModifyProtectionStatus请求参数结构体",
       "members": [
@@ -21367,6 +21740,132 @@
         }
       ],
       "usage": "both"
+    },
+    "OwaspWhiteRule": {
+      "document": "规则引擎白名单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "白名单的规则ID",
+          "example": "10011",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名",
+          "example": "testRule",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加白的规则ID列表",
+          "example": "[10000030,10000032]",
+          "member": "uint64",
+          "name": "Ids",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "白名单规则的状态，0：关闭、1：开启",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加白的类型，0:按照特定规则ID加白、1:按照规则类型加白",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则匹配策略列表",
+          "example": "[{\"Field\": \"URL\",\"Arg\": \"\",\"CompareFunc\": \"eq\",\"Content\": \"/acl\"}]",
+          "member": "Strategy",
+          "name": "Strategies",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-11-19T19:53:53+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2021-11-19T19:53:53+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定时任务类型",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "{\"Timed\":[{\"StartDateTime\":1711618518,\"EndDateTime\":1711918518}],\"Cron\":[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}],\"TimeTZone\":\"UTC+8\"}",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期任务粒度",
+          "example": "week",
+          "member": "string",
+          "name": "CronType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前是否有效",
+          "example": "true",
+          "member": "bool",
+          "name": "ValidStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ParamCompareList": {
       "document": "bot-自定义规则请求参数比对结构体",

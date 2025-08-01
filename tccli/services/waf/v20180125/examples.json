@@ -124,6 +124,14 @@
         "title": "新增IP黑白名单"
       }
     ],
+    "CreateOwaspWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOwaspWhiteRule\n<公共请求参数>\n\n{\n    \"Name\": \"测试白名单\",\n    \"Domain\": \"owasp.saas3.testwaf.com\",\n    \"Strategies\": [\n        {\n            \"Field\": \"IP\",\n            \"CompareFunc\": \"eq\",\n            \"Content\": \"1.1.1.1\",\n            \"Arg\": \"GET\"\n        }\n    ],\n    \"Ids\": [\n        16\n    ],\n    \"Type\": 1,\n    \"JobType\": \"TimedJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 0,\n                \"EndDateTime\": 0\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\\t\"\n    },\n    \"ExpireTime\": 0,\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleId\": \"23123145\",\n        \"RequestId\": \"01006b52-0313-4771-83eb-968d7b592dfa\"\n    }\n}",
+        "title": "添加白名单"
+      }
+    ],
     "CreatePostCKafkaFlow": [
       {
         "document": "",
@@ -242,6 +250,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIpAccessControlV2\n<公共请求参数>\n\n{\n    \"Domain\": \"www.qcloudwaf.com\",\n    \"DeleteAll\": true,\n    \"SourceType\": \"log\",\n    \"ActionType\": 1,\n    \"RuleIds\": [\n        55102222,\n        55562222\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedCount\": 0,\n        \"RequestId\": \"46757c6e-786c-48ca-b5c4-9fa29ece1c9e\"\n    }\n}",
         "title": "删除IP黑白名单"
+      }
+    ],
+    "DeleteOwaspWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOwaspWhiteRule\n<公共请求参数>\n\n{\n    \"Ids\": [\n        1\n    ],\n    \"Domain\": \"owasp.saas3.testwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3223d5a-7dcc-4378-98dd-e4874b1c6f84\"\n    }\n}",
+        "title": "删除白名单"
       }
     ],
     "DeleteSession": [
@@ -628,6 +644,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeObjects\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"1\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ClbObjects\": [\n            {\n                \"ApiStatus\": 0,\n                \"BotStatus\": 0,\n                \"ClsStatus\": 0,\n                \"InstanceId\": \"waf_2kuil2ft02vqm7z3\",\n                \"InstanceLevel\": 3,\n                \"InstanceName\": \"gz-Default1\",\n                \"IpHeaders\": [\n                    \"spheader\",\n                    \"myheader\"\n                ],\n                \"NumericalVpcId\": -1,\n                \"ObjectFlowMode\": 1,\n                \"ObjectId\": \"lb-70mdt3it\",\n                \"ObjectName\": \"zunhua-multi-test_pjk1\",\n                \"PostCKafkaStatus\": 0,\n                \"PostCLSStatus\": 0,\n                \"PreciseDomains\": [],\n                \"PrivateIp\": [\n                    \"121.123.11.7\"\n                ],\n                \"Proxy\": 3,\n                \"PublicIp\": [\n                    \"139.186.100.71\"\n                ],\n                \"Region\": \"ap-chongqing\",\n                \"Status\": 1,\n                \"Type\": \"CLB\",\n                \"VirtualDomain\": \"lb-70mdt3it.clb-default.qcloudwaf.com\",\n                \"Vpc\": \"vpc-jl1cw1e9\",\n                \"VpcName\": \"Default-VPC\"\n            }\n        ],\n        \"RequestId\": \"6ceb784e-b440-4cac-81ee-0b87ffe81e6f\"\n    }\n}",
         "title": "查看对象列表"
+      }
+    ],
+    "DescribeOwaspWhiteRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOwaspWhiteRules\n<公共请求参数>\n\n{\n    \"Domain\": \"owasp.saas3.testwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"f04cbb2c-7276-49b3-8576-c6c9ff9eb7bb\",\n        \"Total\": 0\n    }\n}",
+        "title": "展示白名单"
       }
     ],
     "DescribePeakPoints": [
@@ -1202,6 +1226,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyObject\n<公共请求参数>\n\n{\n    \"ObjectId\": \"lb-vsf13vzg\",\n    \"Status\": 0,\n    \"InstanceId\": \"waf_vxj234vxcfnm\",\n    \"OpType\": \"Status\",\n    \"Proxy\": 1,\n    \"IpHeaders\": []\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改防护对象"
+      }
+    ],
+    "ModifyOwaspWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOwaspWhiteRule\n<公共请求参数>\n\n{\n    \"RuleId\": 10000,\n    \"Name\": \"测试白名单\",\n    \"Domain\": \"owasp.saas3.testwaf.com\",\n    \"Strategies\": [\n        {\n            \"Field\": \"IP\",\n            \"CompareFunc\": \"eq\",\n            \"Content\": \"1.1.1.1\",\n            \"Arg\": \"GET\",\n            \"CaseNotSensitive\": 1\n        }\n    ],\n    \"Ids\": [\n        10000\n    ],\n    \"Type\": 1,\n    \"JobType\": \"TimedJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 0,\n                \"EndDateTime\": 0\n            }\n        ],\n        \"Cron\": [\n            {\n                \"StartTime\": \"0\",\n                \"EndTime\": \"0\"\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\\t\"\n    },\n    \"ExpireTime\": 0,\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1955c61-d2de-40e2-a084-8fdfa871ceec\"\n    }\n}",
+        "title": "修改规则白名单"
       }
     ],
     "ModifyProtectionStatus": [

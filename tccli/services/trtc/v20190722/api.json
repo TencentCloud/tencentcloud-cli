@@ -1206,7 +1206,7 @@
         {
           "disabled": false,
           "document": "任务唯一标识",
-          "example": "无",
+          "example": "v2*****test",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1214,8 +1214,8 @@
         },
         {
           "disabled": false,
-          "document": "控制命令，目前支持命令如下：\n\n- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本",
-          "example": "无",
+          "document": "控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话",
+          "example": "ServerPushText",
           "member": "string",
           "name": "Command",
           "required": true,
@@ -1227,6 +1227,15 @@
           "example": "无",
           "member": "ServerPushText",
           "name": "ServerPushText",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM=\"1\"",
+          "example": "无",
+          "member": "InvokeLLM",
+          "name": "InvokeLLM",
           "required": false,
           "type": "object"
         }
@@ -4413,6 +4422,30 @@
       ],
       "usage": "out"
     },
+    "InvokeLLM": {
+      "document": "调用服务端主动发起请求到LLM",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求LLM的内容",
+          "example": "今天天气怎么样",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许该文本打断机器人说话",
+          "example": "false",
+          "member": "bool",
+          "name": "Interrupt",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
     "LayoutParams": {
       "document": "MCU混流布局参数",
       "members": [
@@ -7208,7 +7241,7 @@
         {
           "disabled": false,
           "document": "服务端推送播报文本",
-          "example": "无",
+          "example": "您好",
           "member": "string",
           "name": "Text",
           "required": false,
@@ -7217,7 +7250,7 @@
         {
           "disabled": false,
           "document": "是否允许该文本打断机器人说话",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "Interrupt",
           "required": false,
@@ -7226,7 +7259,7 @@
         {
           "disabled": false,
           "document": "播报完文本后，是否自动关闭对话任务",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "StopAfterPlay",
           "required": false,
@@ -7235,7 +7268,7 @@
         {
           "disabled": false,
           "document": "服务端推送播报音频\n    格式说明：音频必须为单声道，采样率必须跟对应TTS的采样率保持一致，编码为Base64字符串。\n    输入规则：当提供Audio字段时，将不接受Text字段的输入。系统将直接播放Audio字段中的音频内容。",
-          "example": "无",
+          "example": "音频base64字符串",
           "member": "string",
           "name": "Audio",
           "required": false,

@@ -3254,10 +3254,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "内容格式，支持json、csv",
+          "document": "内容格式，支持json，csv，parquet",
           "example": "json",
           "member": "string",
           "name": "Format",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3268,6 +3269,7 @@
           "example": "无",
           "member": "CsvInfo",
           "name": "Csv",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3278,6 +3280,7 @@
           "example": "无",
           "member": "JsonInfo",
           "name": "Json",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3288,6 +3291,7 @@
           "example": "无",
           "member": "ParquetInfo",
           "name": "Parquet",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -10266,8 +10270,8 @@
         },
         {
           "disabled": false,
-          "document": "元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[__SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__]",
+          "document": "元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。\n\n- __SOURCE__：日志采集的源 IP，示例：10.0.1.2\n- __FILENAME__：日志采集的文件名，示例：/data/log/nginx/access.log\n- __TIMESTAMP__：日志时间戳（毫秒级别 Unix 时间戳），按时间范围检索日志时，将自动使用该时间对日志进行检索，在控制台显示为“日志时间”，示例：1640005601188\n- __HOSTNAME__：日志来源机器名称，需使用2.7.4及以上版本的 Loglistener 才会采集该字段，示例：localhost\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"__SOURCE__\",\"__FILENAME__\",\"__TIMESTAMP__\",\"__HOSTNAME__\"]",
           "member": "string",
           "name": "MetaFields",
           "output_required": true,
@@ -15633,7 +15637,7 @@
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15643,7 +15647,7 @@
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "ShipperId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15653,7 +15657,7 @@
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15663,7 +15667,7 @@
           "example": "978653222",
           "member": "int64",
           "name": "RangeStart",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15673,7 +15677,7 @@
           "example": "978653222",
           "member": "int64",
           "name": "RangeEnd",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15683,7 +15687,7 @@
           "example": "978653222",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15693,17 +15697,17 @@
           "example": "978653222",
           "member": "int64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "本次投递的结果，\"success\",\"running\",\"failed\"",
+          "document": "本次投递的结果。\"success\"，\"running\"，\"failed\"\n\n- success：任务成功。\n- running：任务处理中。\n- failed：任务失败。",
           "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15713,7 +15717,7 @@
           "example": "success",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

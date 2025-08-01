@@ -40,30 +40,6 @@
         "title": "动态打包任务提交"
       }
     ],
-    "CreateScdnDomain": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=CreateScdnDomain\n&Domain=www.test.com\n&Waf.Switch=on\n&CC.Switch=on\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08b287d9-6342-4b70-9ec7-201efcd93b9d\",\n        \"Result\": \"Success\"\n    }\n}",
-        "title": "创建SCDN域名"
-      }
-    ],
-    "CreateScdnFailedLogTask": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=CreateScdnFailedLogTask\n&TaskId=835cac73-c7f5-4ef9-a52d-1a50bf11d2bd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Result\": \"Success\"\n    }\n}",
-        "title": "重新创建SCDN事件日志任务"
-      }
-    ],
-    "CreateScdnLogTask": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScdnLogTask\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"AttackType\": \"xss\",\n    \"Ip\": \"10.0.0.1\",\n    \"AttackTypes\": [\n        \"xss\"\n    ],\n    \"DefenceMode\": \"observe\",\n    \"Mode\": \"waf\",\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"Domains\": [\n        \"test.com\"\n    ],\n    \"EndTime\": \"2020-09-22 00:00:00\",\n    \"Conditions\": [\n        {\n            \"Operator\": \"include\",\n            \"Value\": \"10.0.0.1\",\n            \"Key\": \"ip\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"RequestId\": \"1abbe623-4b0e-4727-ab51-7624902d47f4\"\n    }\n}",
-        "title": "创建scdn日志事件任务"
-      }
-    ],
     "CreateVerifyRecord": [
       {
         "document": "正常回包",
@@ -88,28 +64,12 @@
         "title": "删除日志主题"
       }
     ],
-    "DeleteScdnDomain": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DeleteScdnDomain\n&Domain='www.test.com'\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Result\": \"Success\"\n    }\n}",
-        "title": "删除SCDN域名"
-      }
-    ],
     "DescribeBillingData": [
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeBillingData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"all\",\n                \"BillingData\": [\n                    {\n                        \"Metric\": \"flux\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"5min\"\n    }\n}",
         "title": "计费数据查询"
-      }
-    ],
-    "DescribeCcData": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeCcData\n&Domain=www.test.com\n&StartTime=2019-06-11 00:00:00\n&EndTime=2019-06-11 23:59:59\n&Interval=hour\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9b58c40-562c-4ac1-8aea-755547beefa3\",\n        \"Data\": [\n            {\n                \"Time\": \"2019-06-26 00:00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2019-06-26 01:00:00\",\n                \"Value\": 1\n            }\n        ],\n        \"InterceptQpsData\": [\n            {\n                \"Time\": \"2019-06-26 00:00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2019-06-26 01:00:00\",\n                \"Value\": 1\n            }\n        ],\n        \"ObserveQpsData\": [\n            {\n                \"Time\": \"2019-06-26 00:00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2019-06-26 01:00:00\",\n                \"Value\": 1\n            }\n        ],\n        \"RedirectQpsData\": [\n            {\n                \"Time\": \"2019-06-26 00:00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2019-06-26 01:00:00\",\n                \"Value\": 1\n            }\n        ],\n        \"Interval\": \"hour\"\n    }\n}",
-        "title": "CC统计数据查询"
       }
     ],
     "DescribeCdnData": [
@@ -152,14 +112,6 @@
         "title": "提取SSL证书中的可配置域名"
       }
     ],
-    "DescribeDDoSData": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeDDoSData\n&StartTime=2020-09-22 00:00:00\n&EndTime=2020-09-22 01:00:00\n&Interval=min\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"AttackBandwidthData\": [\n            {\n                \"Time\": \"2020-01-01 00:00:00\",\n                \"Value\": 0.0,\n                \"AttackType\": \"all\"\n            }\n        ],\n        \"Data\": [\n            {\n                \"Time\": \"2020-01-01 00:00:00\",\n                \"Value\": 1\n            },\n            {\n                \"Time\": \"2020-01-01 00:01:00\",\n                \"Value\": 1\n            }\n        ],\n        \"Interval\": \"min\"\n    }\n}",
-        "title": "DDoS统计数据查询"
-      }
-    ],
     "DescribeDiagnoseReport": [
       {
         "document": "",
@@ -198,14 +150,6 @@
         "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgePackTaskStatus\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-23T00:00:00+00:00\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EdgePackTaskStatusSet\": [\n            {\n                \"Apk\": \"test.apk\",\n                \"UploadTime\": \"2020-09-22T00:00:00+00:00\",\n                \"SrcDir\": [\n                    \"/src/\"\n                ],\n                \"DstDir\": \"/ext/\",\n                \"StatusDesc\": \"\",\n                \"Status\": \"done\"\n            }\n        ],\n        \"RequestId\": \"9b231c10-72a3-4a92-8498-ffxxxxxxx\"\n    }\n}",
         "title": "查询动态打包任务状态列"
-      }
-    ],
-    "DescribeEventLogData": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEventLogData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22 00:00:00\",\n    \"EndTime\": \"2020-09-22 00:10:00\",\n    \"Domain\": \"www.test.com\",\n    \"Url\": \"/1.jpg\",\n    \"Mode\": \"cc\",\n    \"ActionName\": \"intercept\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1abbe623-4b0e-4727-ab51-7624902d47f4\",\n        \"Results\": []\n    }\n}",
-        "title": "DescribeEventLogData 用于查询事件日志统计曲线"
       }
     ],
     "DescribeHttpsPackages": [
@@ -304,46 +248,6 @@
         "title": "查询报表数据"
       }
     ],
-    "DescribeScdnBotData": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnBotData\n&Domains.0=zc-test-a.qcloudwaf.com\n&StartTime=2020-04-20 00:00:00\n&EndTime=2020-04-20 23:59:59\n&Interval=2min\n&Area=overseas\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Metric\": \"bot\",\n                \"DetailData\": [\n                    {\n                        \"Time\": \"2020-04-24 00:00:00\",\n                        \"Value\": 735\n                    },\n                    {\n                        \"Time\": \"2020-04-24 01:00:00\",\n                        \"Value\": 1124\n                    }\n                ]\n            },\n            {\n                \"Metric\": \"total\",\n                \"DetailData\": [\n                    {\n                        \"Time\": \"2020-04-24 00:00:00\",\n                        \"Value\": 735\n                    },\n                    {\n                        \"Time\": \"2020-04-24 01:00:00\",\n                        \"Value\": 1124\n                    }\n                ]\n            },\n            {\n                \"Metric\": \"qps\",\n                \"DetailData\": [\n                    {\n                        \"Time\": \"2020-04-24 00:00:00\",\n                        \"Value\": 735\n                    },\n                    {\n                        \"Time\": \"2020-04-24 01:00:00\",\n                        \"Value\": 1124\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"2min\",\n        \"RequestId\": \"8d492352-67f4-4fac-a752-331b973b3dcc\"\n    }\n}",
-        "title": "获取bot统计曲线图( Bot流量统计)"
-      }
-    ],
-    "DescribeScdnBotRecords": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnBotRecords\n&BotType=TCB\n&Domain=123.com\n&StartTime=2020-04-20 12:00:00\n&EndTime=2020-04-20 23:59:59\n&Offset=0\n&Limit=20\n&SortBy.0.Key=timestamp\n&SortBy.0.Sequence=desc\n&Area=overseas\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Data\": [],\n        \"RequestId\": \"6d04373b-ba59-4a4f-a96e-9fe53b59a536\"\n    }\n}",
-        "title": "获取指定类型的BOT记录"
-      }
-    ],
-    "DescribeScdnConfig": [
-      {
-        "document": "查询SCDN域名配置",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScdnConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CC\": {\n            \"Rules\": [\n                {\n                    \"FrequencyLimit\": 1,\n                    \"RuleType\": \"file\",\n                    \"DetectionTime\": 1,\n                    \"RuleValue\": [\n                        \"html\"\n                    ],\n                    \"PunishmentTime\": 1,\n                    \"RedirectUrl\": \"https://test.com/redirect\",\n                    \"Action\": \"redirect\",\n                    \"Qps\": 1,\n                    \"PunishmentSwitch\": \"on\"\n                }\n            ],\n            \"Switch\": \"on\"\n        },\n        \"Waf\": {\n            \"Rules\": [\n                {\n                    \"Operate\": \"observe\",\n                    \"AttackType\": \"xss\"\n                }\n            ],\n            \"WebShellSwitch\": \"on\",\n            \"Switch\": \"on\",\n            \"ErrorPage\": {\n                \"RedirectUrl\": \"https://test.com/redirect\",\n                \"RedirectCode\": 302\n            },\n            \"Mode\": \"observe\"\n        },\n        \"Bot\": {\n            \"Switch\": \"on\",\n            \"BotJavaScript\": [\n                {\n                    \"RuleType\": \"file\",\n                    \"RuleValue\": [\n                        \"html\"\n                    ],\n                    \"UpdateTime\": \"2020-09-22 00:00:00\",\n                    \"RedirectUrl\": \"https://test.com/redirect\",\n                    \"Switch\": \"on\",\n                    \"Action\": \"monitor\"\n                }\n            ],\n            \"BotCookie\": [\n                {\n                    \"RuleType\": \"all\",\n                    \"RuleValue\": [\n                        \"*\"\n                    ],\n                    \"UpdateTime\": \"2020-09-22 00:00:00\",\n                    \"RedirectUrl\": \"https://test.com/redirect\",\n                    \"Switch\": \"on\",\n                    \"Action\": \"monitor\"\n                }\n            ]\n        },\n        \"Acl\": {\n            \"Switch\": \"on\",\n            \"ScriptData\": [\n                {\n                    \"Status\": \"active\",\n                    \"Configure\": [\n                        {\n                            \"MatchKey\": \"ip\",\n                            \"MatchValue\": \"10.0.0.1\",\n                            \"LogiOperator\": \"include\"\n                        }\n                    ],\n                    \"Result\": \"intercept\",\n                    \"RuleName\": \"rule1\"\n                }\n            ],\n            \"ErrorPage\": {\n                \"RedirectUrl\": \"https://test.com/redirect\",\n                \"RedirectCode\": 301\n            }\n        },\n        \"Status\": \"online\",\n        \"Ddos\": {\n            \"Switch\": \"on\"\n        },\n        \"RequestId\": \"1abbe623-4b0e-4727-ab51-7624902d47f4\"\n    }\n}",
-        "title": "查询SCDN域名配置"
-      }
-    ],
-    "DescribeScdnIpStrategy": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnIpStrategy\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4ac88a3-a159-47ac-9b87-19185d7deb09\",\n        \"IpStrategyList\": [\n            {\n                \"Domain\": \"www.test.com\",\n                \"StrategyId\": 1,\n                \"IpList\": [\n                    \"1.1.1.1\",\n                    \"2.2.2.2\"\n                ],\n                \"UpdateTime\": \"2020-09-22 15:00:00\",\n                \"Remark\": \"test\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查询SCDN的IP白名单列表"
-      }
-    ],
-    "DescribeScdnTopData": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeScdnTopData\n&Domain=www.test.com\n&Mode=waf\n&Filter=request\n&Metric=url\n&StartTime=2019-06-2600:00:00\n&EndTime=2019-06-2603:00:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f1bb066-524f-4857-87f4-0ae56439179b\",\n        \"TopTypeData\": [\n            {\n                \"AttackType\": \"xss\",\n                \"Value\": 20\n            },\n            {\n                \"AttackType\": \"sql\",\n                \"Value\": 831\n            }\n        ],\n        \"TopIpData\": [\n            {\n                \"Time\": \"2019-06-26 05:42:56\",\n                \"Value\": 18,\n                \"Isp\": \"中国电信\",\n                \"Ip\": \"222.186.20.85\"\n            }\n        ],\n        \"Mode\": \"waf\"\n    }\n}",
-        "title": "获取SCDN的Top数据"
-      }
-    ],
     "DescribeTopData": [
       {
         "document": "查询ua_device指标的数据",
@@ -366,14 +270,6 @@
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeUrlViolations\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ptplrss8qqf9x7534noql6\",\n        \"UrlRecordList\": [\n            {\n                \"Id\": 2256186,\n                \"RealUrl\": \"http://www.test.com/a.jpeg\",\n                \"DownloadUrl\": \"2019-11-18/2019-11-18-18-26-08-1794844604-29-21-a.jpeg\",\n                \"UrlStatus\": \"forbid\",\n                \"CreateTime\": \"2019-11-17 18:25:47\",\n                \"UpdateTime\": \"2019-11-18 18:06:47\"\n            }\n        ],\n        \"TotalCount\": 10\n    }\n}",
         "title": "违规历史查询"
-      }
-    ],
-    "DescribeWafData": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DescribeWafData\n&Domain=www.test.com\n&StartTime=2019-06-11 00:00:00\n&EndTime=2019-06-11 23:59:59\n&Interval=hour\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9b58c40-562c-4ac1-8aea-755547beefa3\",\n        \"Data\": [\n            {\n                \"Time\": \"2019-06-26 00:00:00\",\n                \"Value\": 0\n            },\n            {\n                \"Time\": \"2019-06-26 01:00:00\",\n                \"Value\": 1\n            },\n            {\n                \"Time\": \"2019-06-26 02:00:00\",\n                \"Value\": 2\n            },\n            {\n                \"Time\": \"2019-06-26 03:00:00\",\n                \"Value\": 9\n            },\n            {\n                \"Time\": \"2019-06-26 04:00:00\",\n                \"Value\": 0\n            }\n        ],\n        \"Interval\": \"hour\"\n    }\n}",
-        "title": "Waf统计数据查询"
       }
     ],
     "DisableCaches": [
@@ -448,46 +344,6 @@
         "title": "获取诊断任务列表"
       }
     ],
-    "ListScdnDomains": [
-      {
-        "document": "查询SCDN域名列表",
-        "input": "https://cdn.tencentcloudapi.com/?Action=ListScdnDomains\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"DomainList\": [\n            {\n                \"Domain\": \"www.test.com\",\n                \"Status\": \"online\",\n                \"Waf\": \"/\",\n                \"Acl\": \"yes\",\n                \"WafLevel\": 200,\n                \"CC\": \"close\",\n                \"Area\": \"global\",\n                \"AclRuleNumbers\": 3,\n                \"Ddos\": \"close\",\n                \"ProjectId\": \"0\",\n                \"Bot\": \"close\"\n            }\n        ],\n        \"TotalCount\": 11\n    }\n}",
-        "title": "查询SCDN域名列表"
-      }
-    ],
-    "ListScdnLogTasks": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListScdnLogTasks\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"TaskList\": [\n            {\n                \"Status\": \"created\",\n                \"Domain\": \"test.com\",\n                \"StartTime\": \"2020-09-22 00:00:00\",\n                \"Area\": \"mainland\",\n                \"DefenceMode\": \"observe\",\n                \"DownloadUrl\": \"https://downlaod.com\",\n                \"Mode\": \"waf\",\n                \"AttackType\": \"xss\",\n                \"TaskID\": \"taskId\",\n                \"EndTime\": \"2020-09-22 00:00:00\",\n                \"Conditions\": [\n                    {\n                        \"Operator\": \"include\",\n                        \"Value\": \"10.0.0.1\",\n                        \"Key\": \"ip\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"1abbe623-4b0e-4727-ab51-7624902d47f4\"\n    }\n}",
-        "title": "查询SCDN事件日志下载任务列表"
-      }
-    ],
-    "ListScdnTopBotData": [
-      {
-        "document": "查询bot的topN域名",
-        "input": "https://cdn.tencentcloudapi.com/?Action=ListScdnTopBotData\n&TopCount=10\n&StartTime=2020-04-20 12:00:00\n&EndTime=2020-04-20 23:59:00\n&Area=overseas\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Count\": 1,\n                \"Value\": \"110.242.68.66\",\n                \"Province\": \"广东\",\n                \"Country\": \"中国\",\n                \"Isp\": \"电信\"\n            }\n        ],\n        \"RequestId\": \"requestid0000000\"\n    }\n}",
-        "title": "查询bot的topN域名"
-      }
-    ],
-    "ListTopBotData": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTopBotData\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-04-20 23:59:00\",\n    \"StartTime\": \"2020-04-20 12:00:00\",\n    \"TopCount\": \"10\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Domain\": \"zc-work.qcloudwaf.com\",\n                \"Count\": 1,\n                \"Value\": \"\",\n                \"Isp\": \"dianxin\",\n                \"Province\": \"\",\n                \"Country\": \"\"\n            }\n        ],\n        \"RequestId\": \"requestid0000000\"\n    }\n}",
-        "title": "查询bot的topN域名"
-      }
-    ],
-    "ListTopCcData": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=ListTopCcData\n&Domain=www.test.com\n&StartTime=2020-09-22 00:00:00\n&EndTime=2020-09-22 01:00:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456\",\n        \"Data\": [\n            {\n                \"Ip\": \"1.1.1.1\",\n                \"Url\": \"/test.html?key=value\",\n                \"UserAgent\": \"\",\n                \"Value\": 1000,\n                \"Domain\": \"123.com\"\n            },\n            {\n                \"Ip\": \"2.2.2.2\",\n                \"Url\": \"/test.html\",\n                \"UserAgent\": \"\",\n                \"Value\": 900,\n                \"Domain\": \"123.com\"\n            }\n        ]\n    }\n}",
-        "title": "安全加速CC攻击Top N数据查询"
-      }
-    ],
     "ListTopClsLogData": [
       {
         "document": "",
@@ -496,28 +352,12 @@
         "title": "通过CLS日志计算Top信息"
       }
     ],
-    "ListTopDDoSData": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTopDDoSData\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-09-22 01:00:00\",\n    \"StartTime\": \"2020-09-22 00:00:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456\",\n        \"Data\": [\n            {\n                \"Value\": 1,\n                \"AttackType\": \"ddos\"\n            }\n        ],\n        \"IPData\": [\n            {\n                \"Province\": \"广东省\",\n                \"Country\": \"中国\",\n                \"Isp\": \"中国电信\",\n                \"AttackCount\": 100,\n                \"AttackIP\": \"10.32.1.3\"\n            }\n        ]\n    }\n}",
-        "title": "获取DDoS攻击Top数据"
-      }
-    ],
     "ListTopData": [
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListTopData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metric=Url\n&Filter=flux\n&Domains.0=www.test.com\n&Domains.1=www.test.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"www.test1.com\",\n                \"DetailData\": [\n                    {\n                        \"Name\": \"www.test1.com/1.jpg?abc=123\",\n                        \"Value\": 13838\n                    }\n                ]\n            },\n            {\n                \"Resource\": \"www.test2.com\",\n                \"DetailData\": [\n                    {\n                        \"Name\": \"http://www.test2.com/1.jpg?abc=123\",\n                        \"Value\": 2501\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询Top Url访问数据"
-      }
-    ],
-    "ListTopWafData": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=ListTopWafData\n&Domain=www.test.com\n&StartTime=2019-06-2600:00:00\n&EndTime=2019-06-2603:00:00\n&Metric=url\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f1bb066-524f-4857-87f4-0ae56439179b\",\n        \"TopTypeData\": [\n            {\n                \"AttackType\": \"xss\",\n                \"Value\": 20\n            },\n            {\n                \"AttackType\": \"sql\",\n                \"Value\": 831\n            }\n        ],\n        \"TopIpData\": [\n            {\n                \"Time\": \"2019-06-26 05:42:00\",\n                \"Value\": 18,\n                \"District\": \"江苏\",\n                \"Isp\": \"中国电信\",\n                \"Ip\": \"222.186.20.85\"\n            }\n        ],\n        \"TopUrlData\": [\n            {\n                \"Time\": \"2019-06-26 05:42:00\",\n                \"Value\": 18,\n                \"Domain\": \"www.test.com\",\n                \"Url\": \"/path\"\n            }\n        ],\n        \"TopDomainData\": [\n            {\n                \"Value\": 18,\n                \"Percent\": 0.0,\n                \"Domain\": \"www.test.com\"\n            },\n            {\n                \"Value\": 9,\n                \"Percent\": 0.0,\n                \"Domain\": \"www.123.com\"\n            }\n        ]\n    }\n}",
-        "title": "获取Waf攻击Top数据"
       }
     ],
     "ManageClsTopicDomains": [
@@ -602,28 +442,12 @@
         "title": "启用加速域名"
       }
     ],
-    "StartScdnDomain": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=StartScdnDomain\n&Domain=www.test.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"oe5xr2grk86h86sd842tq\",\n        \"Result\": \"Success\"\n    }\n}",
-        "title": "开启域名安全防护"
-      }
-    ],
     "StopCdnDomain": [
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=StopCdnDomain\n&Domain=www.test.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fa8b845-ca93-457a-a776-ea7915695648\"\n    }\n}",
         "title": "停用加速域名"
-      }
-    ],
-    "StopScdnDomain": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=StopScdnDomain\n&Domain=www.test.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"oe5xr2grk86h86sd842tq\",\n        \"Result\": \"Success\"\n    }\n}",
-        "title": "关闭域名安全防护"
       }
     ],
     "UpdateDomainConfig": [
@@ -648,14 +472,6 @@
         "input": "https://cdn.tencentcloudapi.com/?Action=UpdatePayType\n&Area=mainland\n&PayType=flux\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1732a0dd-48d8-4ff1-8dcb-7f04ca139825\"\n    }\n}",
         "title": "修改计费类型"
-      }
-    ],
-    "UpdateScdnDomain": [
-      {
-        "document": "SCDN域名配置变更",
-        "input": "https://cdn.tencentcloudapi.com/?Action=UpdateScdnDomain\n&Domain=www.test.com\n&Acl.Switch=on\n&Acl.ScriptData.0.RuleName=test\n&Acl.ScriptData.0.Result=refuse\n&Acl.ScriptData.0.Configure.0.MatchKey=params\n&Acl.ScriptData.0.Configure.0.LogiOperator=exclude\n&Acl.ScriptData.0.Configure.0.MatchValue=www.attatck.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08b287d9-6342-4b70-9ec7-201efcd93b9d\",\n        \"Result\": \"Success\"\n    }\n}",
-        "title": "SCDN域名配置变更"
       }
     ],
     "VerifyDomainRecord": [

@@ -31964,7 +31964,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "抽检策略的每次循环检测的时长。取值范围（单位s）：\n\n- 最小值：10\n- 最大值：86400\n",
+          "document": "每次循环检测的时长。取值范围（单位s）：\n\n- 最小值：10\n- 最大值：86400\n",
           "example": "30",
           "member": "uint64",
           "name": "CheckDuration",
@@ -31975,7 +31975,7 @@
         },
         {
           "disabled": false,
-          "document": "抽检测略的检测间隔，表示在一次检测结束后，等待多长时间后，再次检测。",
+          "document": "抽检间隔，表示在一次检测结束后，等待多长时间后，再次检测。取值范围（单位 s）：\n- 最小值：10\n- 最大值：3600",
           "example": "30",
           "member": "uint64",
           "name": "CheckInterval",
@@ -31986,7 +31986,7 @@
         },
         {
           "disabled": false,
-          "document": "片头跳过时长。",
+          "document": "片头跳过时长。取值范围（单位 s）：\n- 最小值：1\n- 最大值：1800",
           "example": "60",
           "member": "uint64",
           "name": "SkipDuration",
@@ -31997,8 +31997,8 @@
         },
         {
           "disabled": false,
-          "document": "循环次数，该字段为空或 0 时，默认循环直至视频结束。",
-          "example": "0",
+          "document": "循环次数。取值范围:\n- 最小值：0\n- 最大值：1000\n\n取值为 0 或为空时，表示循环至视频结束。",
+          "example": "10",
           "member": "uint64",
           "name": "CirclesNumber",
           "output_required": false,

@@ -56,6 +56,14 @@
         "title": "示例一"
       }
     ],
+    "AssociateDatasourceHouse": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateDatasourceHouse\n<公共请求参数>\n\n{\n    \"DatasourceConnectionName\": \"abc\",\n    \"DatasourceConnectionType\": \"abc\",\n    \"DatasourceConnectionConfig\": {\n        \"Mysql\": {\n            \"JdbcUrl\": \"abc\",\n            \"User\": \"abc\",\n            \"Password\": \"abc\",\n            \"Location\": {\n                \"VpcId\": \"abc\",\n                \"VpcCidrBlock\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"SubnetCidrBlock\": \"abc\"\n            },\n            \"DbName\": \"abc\",\n            \"InstanceId\": \"abc\",\n            \"InstanceName\": \"abc\"\n        },\n        \"Hive\": {\n            \"MetaStoreUrl\": \"abc\",\n            \"Type\": \"abc\",\n            \"User\": \"abc\",\n            \"HighAvailability\": true,\n            \"BucketUrl\": \"abc\",\n            \"HdfsProperties\": \"abc\",\n            \"Location\": {\n                \"VpcId\": \"abc\",\n                \"VpcCidrBlock\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"SubnetCidrBlock\": \"abc\"\n            },\n            \"Mysql\": {\n                \"JdbcUrl\": \"abc\",\n                \"User\": \"abc\",\n                \"Password\": \"abc\",\n                \"Location\": {\n                    \"VpcId\": \"abc\",\n                    \"VpcCidrBlock\": \"abc\",\n                    \"SubnetId\": \"abc\",\n                    \"SubnetCidrBlock\": \"abc\"\n                },\n                \"DbName\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\"\n            },\n            \"InstanceId\": \"abc\",\n            \"InstanceName\": \"abc\",\n            \"HiveVersion\": \"abc\",\n            \"KerberosInfo\": {\n                \"Krb5Conf\": \"abc\",\n                \"KeyTab\": \"abc\",\n                \"ServicePrincipal\": \"abc\"\n            },\n            \"KerberosEnable\": true\n        },\n        \"Kafka\": {\n            \"InstanceId\": \"abc\"\n        },\n        \"OtherDatasourceConnection\": {\n            \"Location\": {\n                \"VpcId\": \"abc\",\n                \"VpcCidrBlock\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"SubnetCidrBlock\": \"abc\"\n            }\n        },\n        \"PostgreSql\": {\n            \"InstanceId\": \"abc\",\n            \"InstanceName\": \"abc\",\n            \"JdbcUrl\": \"abc\",\n            \"User\": \"abc\",\n            \"Password\": \"abc\",\n            \"DbName\": \"abc\"\n        },\n        \"SqlServer\": {\n            \"InstanceId\": \"abc\",\n            \"InstanceName\": \"abc\",\n            \"JdbcUrl\": \"abc\",\n            \"User\": \"abc\",\n            \"Password\": \"abc\",\n            \"DbName\": \"abc\"\n        },\n        \"ClickHouse\": {\n            \"InstanceId\": \"abc\",\n            \"InstanceName\": \"abc\",\n            \"JdbcUrl\": \"abc\",\n            \"User\": \"abc\",\n            \"Password\": \"abc\",\n            \"DbName\": \"abc\"\n        },\n        \"Elasticsearch\": {\n            \"InstanceId\": \"abc\",\n            \"InstanceName\": \"abc\",\n            \"User\": \"abc\",\n            \"Password\": \"abc\",\n            \"DbName\": \"abc\",\n            \"ServiceInfo\": [\n                {\n                    \"Ip\": \"abc\",\n                    \"Port\": 0\n                }\n            ]\n        }\n    },\n    \"DataEngineNames\": [\n        \"abc\"\n    ],\n    \"NetworkConnectionType\": 0,\n    \"NetworkConnectionDesc\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "AttachUserPolicy": [
       {
         "document": "",
@@ -288,6 +296,14 @@
         "title": "提交SparkSubmit任务"
       }
     ],
+    "CreateStandardEngineResourceGroup": [
+      {
+        "document": "创建标准引擎资源组",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStandardEngineResourceGroup\n<公共请求参数>\n\n{\n    \"EngineResourceGroupName\": \"ricky\",\n    \"DataEngineName\": \"spark_common_two\",\n    \"AutoLaunch\": 1,\n    \"AutoPause\": 1,\n    \"AutoPauseTime\": 0,\n    \"DriverCuSpec\": \"small\",\n    \"ExecutorCuSpec\": \"small\",\n    \"MinExecutorNums\": 1,\n    \"MaxExecutorNums\": 1,\n    \"IsLaunchNow\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2fa37ab-dd67-4120-b3cd-386316be0d40\"\n    }\n}",
+        "title": "创建标准引擎资源组"
+      }
+    ],
     "CreateStoreLocation": [
       {
         "document": "",
@@ -336,6 +352,14 @@
         "title": "创建用户"
       }
     ],
+    "CreateUserVpcConnection": [
+      {
+        "document": "创建用户vpc连接到引擎网络",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserVpcConnection\n<公共请求参数>\n\n{\n    \"UserVpcId\": \"vpc-dk19yfij\",\n    \"UserSubnetId\": \"subnet-gne3mgsy\",\n    \"UserVpcEndpointName\": \"rickytest\",\n    \"EngineNetworkId\": \"DataEngine-Network-xxx\",\n    \"UserVpcEndpointVip\": \"10.0.0.13\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"515ee497-d527-4f05-b484-61b46522a408\"\n    }\n}",
+        "title": "创建用户vpc连接到引擎网络"
+      }
+    ],
     "CreateWorkGroup": [
       {
         "document": "",
@@ -360,6 +384,14 @@
         "title": "test"
       }
     ],
+    "DeleteNativeSparkSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNativeSparkSession\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-mui9yyku\",\n    \"ResourceGroupId\": \"rg-ih132ev34\",\n    \"EngineSessionName\": \"spark-ml-201c926634\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e6fa9fc3-d1ab-42f3-a9b3-9038bc9df590\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeleteNotebookSession": [
       {
         "document": "删除交互式session（notebook）",
@@ -382,6 +414,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DeleteSparkApp\n<公共请求参数>\n\n{\n    \"AppName\": \"spark-app\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
         "title": "删除spark作业"
+      }
+    ],
+    "DeleteStandardEngineResourceGroup": [
+      {
+        "document": "删除指定资源组",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStandardEngineResourceGroup\n<公共请求参数>\n\n{\n    \"EngineResourceGroupName\": \"rs-new\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5605a76b-1499-4f71-8227-e3f635ed5fca\"\n    }\n}",
+        "title": "删除指定资源组"
       }
     ],
     "DeleteTable": [
@@ -412,6 +452,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUser\n<公共请求参数>\n\n{\n    \"UserIds\": [\n        \"10003237654\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1081f6e9-2687-4426-a4fc-8ea3c6d285eb\"\n    }\n}",
         "title": "删除用户"
+      }
+    ],
+    "DeleteUserVpcConnection": [
+      {
+        "document": "删除用户网络连接",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserVpcConnection\n<公共请求参数>\n\n{\n    \"EngineNetworkId\": \"DataEngine-Network-xxx\",\n    \"UserVpcEndpointId\": \"vpce-n4xaqbi2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74ec8ab6-fe6b-4a6a-be29-9043c896ec69\"\n    }\n}",
+        "title": "删除用户网络连接"
       }
     ],
     "DeleteUsersFromWorkGroup": [
@@ -518,6 +566,14 @@
         "title": "获取PYSPARK镜像列表"
       }
     ],
+    "DescribeDataEngineSessionParameters": [
+      {
+        "document": "本接口用于获取指定小版本下的Session配置。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataEngineSessionParameters\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataEngineParameters\": [\n            {\n                \"ParameterType\": 1,\n                \"UpdateTime\": \"2020-01-01 01:01:01\",\n                \"ValueLengthLimit\": \"100\",\n                \"ValueType\": \"string\",\n                \"IsPublic\": 1,\n                \"ParameterId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n                \"KeyDescription\": \"默认分区数。\",\n                \"KeyName\": \"spark.sql.shuffle.partitions\",\n                \"ChildImageVersionId\": \"d30dfgsf4-9a7e-4f64-a3f4-f38507c69742\",\n                \"ValueRegexpLimit\": \"[0-9]+$\",\n                \"InsertTime\": \"2020-01-01 01:01:01\",\n                \"Operator\": \"admin\",\n                \"EngineType\": \"SparkSQL\",\n                \"ValueDefault\": \"200\",\n                \"SubmitMethod\": \"User\"\n            }\n        ],\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "获取指定小版本下的Session配置"
+      }
+    ],
     "DescribeDataEngines": [
       {
         "document": "查询DataEngines信息列表",
@@ -554,6 +610,22 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatasourceConnection\n<公共请求参数>\n\n{\n    \"DatasourceConnectionIds\": [\n        \"f329n1\"\n    ],\n    \"Filters\": [\n        {\n            \"Name\": \"filter\",\n            \"Values\": [\n                \"normal\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"SortBy\": \"time\",\n    \"Sorting\": \"desc\",\n    \"StartTime\": \"2006-01-02 15:04:05\",\n    \"EndTime\": \"2006-01-02 15:04:05\",\n    \"DatasourceConnectionNames\": [\n        \"connection_1\"\n    ],\n    \"DatasourceConnectionTypes\": [\n        \"connection_1\"\n    ],\n    \"HiveVersion\": [\n        \"2.1.1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ConnectionSet\": [\n            {\n                \"Id\": 0,\n                \"DatasourceConnectionId\": \"datasourceId\",\n                \"DatasourceConnectionName\": \"datasourceName\",\n                \"DatasourceConnectionDesc\": \"desc\",\n                \"DatasourceConnectionType\": \"noraml\",\n                \"DatasourceConnectionConfig\": {\n                    \"Mysql\": {\n                        \"JdbcUrl\": \"jdbc://xxxx:3306\",\n                        \"User\": \"userName\",\n                        \"Password\": \"sMKind1\",\n                        \"Location\": {\n                            \"VpcId\": \"g5i12\",\n                            \"VpcCidrBlock\": \"jk09\",\n                            \"SubnetId\": \"netJ098\",\n                            \"SubnetCidrBlock\": \"subnet109\"\n                        },\n                        \"DbName\": \"dev\",\n                        \"InstanceId\": \"instance2\",\n                        \"InstanceName\": \"instanceName\"\n                    },\n                    \"Hive\": {\n                        \"MetaStoreUrl\": \"jdbc://xxxmetasotre:3306\",\n                        \"Type\": \"normal\",\n                        \"User\": \"admin\",\n                        \"HighAvailability\": true,\n                        \"BucketUrl\": \"ins-1vogaxgk\",\n                        \"HdfsProperties\": \"hdfs\",\n                        \"Location\": {\n                            \"VpcId\": \"JO21Ijk\",\n                            \"VpcCidrBlock\": \"vpc908\",\n                            \"SubnetId\": \"sub1\",\n                            \"SubnetCidrBlock\": \"subblock1\"\n                        },\n                        \"Mysql\": {\n                            \"JdbcUrl\": \"ins-1vogaxgk\",\n                            \"Password\": \"admin\",\n                            \"Location\": {\n                                \"VpcId\": \"877d6fb03\",\n                                \"VpcCidrBlock\": \"77d6fb03\",\n                                \"SubnetId\": \"3c140219\",\n                                \"SubnetCidrBlock\": \"b241-90\"\n                            },\n                            \"DbName\": \"db1\",\n                            \"InstanceId\": \"3c103\",\n                            \"InstanceName\": \"417d6fb03\"\n                        },\n                        \"InstanceId\": \"77d6fb03\",\n                        \"InstanceName\": \"7d6fb03\",\n                        \"HiveVersion\": \"2.1.1\",\n                        \"KerberosInfo\": {\n                            \"Krb5Conf\": \"config\",\n                            \"KeyTab\": \"_t\",\n                            \"ServicePrincipal\": \"3c1403\"\n                        },\n                        \"KerberosEnable\": true\n                    },\n                    \"Kafka\": {\n                        \"InstanceId\": \"3c140219\"\n                    },\n                    \"OtherDatasourceConnection\": {\n                        \"Location\": {\n                            \"VpcId\": \"3c14b03\",\n                            \"VpcCidrBlock\": \"d6fb03\",\n                            \"SubnetId\": \"d8981h\",\n                            \"SubnetCidrBlock\": \"s8u1d\"\n                        }\n                    },\n                    \"PostgreSql\": {\n                        \"InstanceId\": \"3c103\",\n                        \"InstanceName\": \"0000154cb-10\",\n                        \"JdbcUrl\": \"xxx.tencentcloudapi.com\",\n                        \"User\": \"admin\",\n                        \"Password\": \"user\",\n                        \"DbName\": \"db1\",\n                        \"Location\": {\n                            \"VpcId\": \"vpc_h98f1\",\n                            \"VpcCidrBlock\": \"vpc_851\",\n                            \"SubnetId\": \"subnet_9hv48h7\",\n                            \"SubnetCidrBlock\": \"block_129fu2\"\n                        }\n                    },\n                    \"SqlServer\": {\n                        \"InstanceId\": \"instance_v984r\",\n                        \"InstanceName\": \"instance_v49n\",\n                        \"JdbcUrl\": \"xxx.tencentcloudapi.com\",\n                        \"User\": \"admin\",\n                        \"Password\": \"password\",\n                        \"DbName\": \"db1\"\n                    },\n                    \"ClickHouse\": {\n                        \"InstanceId\": \"instance_vn491\",\n                        \"InstanceName\": \"instacen_v49r\",\n                        \"JdbcUrl\": \"xxx.tencentcloudapi.com\",\n                        \"User\": \"user\",\n                        \"Password\": \"password\",\n                        \"DbName\": \"db1\",\n                        \"Location\": {\n                            \"VpcId\": \"vpc_v498n\",\n                            \"VpcCidrBlock\": \"block_vj489\",\n                            \"SubnetId\": \"subnet_c948\",\n                            \"SubnetCidrBlock\": \"cidr_c39n\"\n                        }\n                    },\n                    \"Elasticsearch\": {\n                        \"InstanceId\": \"instance_c49n\",\n                        \"InstanceName\": \"instance_m4c9\",\n                        \"User\": \"user\",\n                        \"Password\": \"password\",\n                        \"DbName\": \"db1\",\n                        \"Location\": {\n                            \"VpcId\": \"vpc_12em0\",\n                            \"VpcCidrBlock\": \"block_49n\",\n                            \"SubnetId\": \"subnet_c4n9n\",\n                            \"SubnetCidrBlock\": \"block_c49un\"\n                        },\n                        \"ServiceInfo\": [\n                            {\n                                \"Ip\": \"127.0.0.1\",\n                                \"Port\": 0\n                            }\n                        ]\n                    },\n                    \"TCHouseD\": {\n                        \"InstanceId\": \"instance_n59\",\n                        \"InstanceName\": \"instance_v49\",\n                        \"JdbcUrl\": \"xxx.tencentcloudapi.com\",\n                        \"User\": \"admin\",\n                        \"Password\": \"password\",\n                        \"DbName\": \"db1\",\n                        \"Location\": {\n                            \"VpcId\": \"vpc_d92n\",\n                            \"VpcCidrBlock\": \"cird_vm390\",\n                            \"SubnetId\": \"subnet_1d09\",\n                            \"SubnetCidrBlock\": \"block_v49j\"\n                        }\n                    },\n                    \"TDSQLPostgreSql\": {\n                        \"InstanceId\": \"instance_n59\",\n                        \"InstanceName\": \"instance_v49\",\n                        \"JdbcUrl\": \"xxx.tencentcloudapi.com\",\n                        \"User\": \"admin\",\n                        \"Password\": \"password\",\n                        \"DbName\": \"db1\",\n                        \"Location\": {\n                            \"VpcId\": \"vpc_d92n\",\n                            \"VpcCidrBlock\": \"cird_vm390\",\n                            \"SubnetId\": \"subnet_1d09\",\n                            \"SubnetCidrBlock\": \"block_v49j\"\n                        }\n                    }\n                },\n                \"State\": 0,\n                \"Region\": \"shanghai\",\n                \"AppId\": \"3jc9839n94n\",\n                \"CreateTime\": \"2006-01-02 15:04:05\",\n                \"UpdateTime\": \"2006-01-02 15:04:05\",\n                \"Message\": \"success\",\n                \"DataEngines\": [\n                    {\n                        \"DataEngineName\": \"engine_nuf1n9\",\n                        \"QuotaId\": \"quota_1j918\",\n                        \"EngineType\": \"normal\",\n                        \"ClusterType\": \"cluster_1\",\n                        \"State\": 0,\n                        \"CreateTime\": 0,\n                        \"UpdateTime\": 0,\n                        \"Size\": 0,\n                        \"Mode\": 0,\n                        \"MinClusters\": 0,\n                        \"MaxClusters\": 0,\n                        \"AutoResume\": true,\n                        \"SpendAfter\": 0,\n                        \"CidrBlock\": \"cidr_dm1oi\",\n                        \"DefaultDataEngine\": true,\n                        \"Message\": \"success\",\n                        \"DataEngineId\": \"engine_1md1\",\n                        \"SubAccountUin\": \"cj082j90n\",\n                        \"ExpireTime\": \"2006-01-02 15:04:05\",\n                        \"IsolatedTime\": \"2006-01-02 15:04:05\",\n                        \"ReversalTime\": \"2006-01-02 15:04:05\",\n                        \"UserAlias\": \"alis\",\n                        \"TagList\": [\n                            {\n                                \"TagKey\": \"mfoi1ji\",\n                                \"TagValue\": \"f1i00f\"\n                            }\n                        ],\n                        \"Permissions\": [\n                            \"suceess\"\n                        ],\n                        \"AutoSuspend\": true,\n                        \"CrontabResumeSuspend\": 0,\n                        \"CrontabResumeSuspendStrategy\": {\n                            \"ResumeTime\": \"2006-01-02 15:04:05\",\n                            \"SuspendTime\": \"2006-01-02 15:04:05\",\n                            \"SuspendStrategy\": 0\n                        },\n                        \"EngineExecType\": \"tpye1\",\n                        \"RenewFlag\": 0,\n                        \"AutoSuspendTime\": 0,\n                        \"NetworkConnectionSet\": [\n                            {\n                                \"Id\": 0,\n                                \"AssociateId\": \"f01j\",\n                                \"HouseId\": \"mv01n\",\n                                \"DatasourceConnectionId\": \"connect_vn94n\",\n                                \"State\": 0,\n                                \"CreateTime\": 0,\n                                \"UpdateTime\": 0,\n                                \"Appid\": 0,\n                                \"HouseName\": \"house_j9c82n\",\n                                \"DatasourceConnectionName\": \"connection_1m9dn1\",\n                                \"NetworkConnectionType\": 0,\n                                \"Uin\": \"x9982jz\",\n                                \"SubAccountUin\": \"m0cm9nxun20\",\n                                \"NetworkConnectionDesc\": \"noraml\",\n                                \"DatasourceConnectionVpcId\": \"vpc_19d8n1\",\n                                \"DatasourceConnectionSubnetId\": \"subnet_c19n\",\n                                \"DatasourceConnectionCidrBlock\": \"block_21j0\",\n                                \"DatasourceConnectionSubnetCidrBlock\": \"cidr_1m2in\"\n                            }\n                        ],\n                        \"UiURL\": \"xxx.tencentcloudapi.com\",\n                        \"ResourceType\": \"normal\",\n                        \"ImageVersionId\": \"2.1.1\",\n                        \"ChildImageVersionId\": \"2.1.1\",\n                        \"ImageVersionName\": \"2.1.1\",\n                        \"StartStandbyCluster\": true,\n                        \"ElasticSwitch\": true,\n                        \"ElasticLimit\": 0,\n                        \"DefaultHouse\": true,\n                        \"MaxConcurrency\": 0,\n                        \"TolerableQueueTime\": 0,\n                        \"UserAppId\": 0,\n                        \"UserUin\": \"vm0i2m\",\n                        \"SessionResourceTemplate\": {\n                            \"DriverSize\": \"200\",\n                            \"ExecutorSize\": \"6\",\n                            \"ExecutorNums\": 1,\n                            \"ExecutorMaxNumbers\": 1\n                        },\n                        \"AutoAuthorization\": true\n                    }\n                ],\n                \"UserAlias\": \"admin\",\n                \"NetworkConnectionSet\": [\n                    {\n                        \"Id\": 0,\n                        \"AssociateId\": \"4d7a-4f21\",\n                        \"HouseId\": \"cfb78a9\",\n                        \"DatasourceConnectionId\": \"7dbb774578a9\",\n                        \"State\": 0,\n                        \"CreateTime\": 0,\n                        \"UpdateTime\": 0,\n                        \"Appid\": 0,\n                        \"HouseName\": \"7cfb78a9\",\n                        \"DatasourceConnectionName\": \"connnction\",\n                        \"NetworkConnectionType\": 0,\n                        \"Uin\": \"ecfb78a9\",\n                        \"SubAccountUin\": \"78a9\",\n                        \"NetworkConnectionDesc\": \"normal\",\n                        \"DatasourceConnectionVpcId\": \"vpc_1md9\",\n                        \"DatasourceConnectionSubnetId\": \"subnet_101n1\",\n                        \"DatasourceConnectionCidrBlock\": \"block_vj9381\",\n                        \"DatasourceConnectionSubnetCidrBlock\": \"cird_bn29n\"\n                    }\n                ],\n                \"ConnectivityState\": 1,\n                \"ConnectivityTips\": \"admin\"\n            }\n        ],\n        \"RequestId\": \"7dbb7745-4d7a-4f21-b863-4971ecfb78a9\"\n    }\n}",
         "title": "test"
+      }
+    ],
+    "DescribeEngineNetworks": [
+      {
+        "document": "查询引擎网络",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEngineNetworks\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"EngineNetworkInfos\": [\n            {\n                \"CreateTime\": 1695210806,\n                \"EngineNetworkCidr\": \"10.255.0.0/22\",\n                \"EngineNetworkId\": \"DataEngine_Network-g1sxyw8v\",\n                \"EngineNetworkName\": \"test2\",\n                \"EngineNetworkState\": 0,\n                \"UpdateTime\": 1695210806\n            },\n            {\n                \"CreateTime\": 1647006129,\n                \"EngineNetworkCidr\": \"10.255.0.0/22\",\n                \"EngineNetworkId\": \"DataEngine-Network-xxx\",\n                \"EngineNetworkName\": \"test1\",\n                \"EngineNetworkState\": 2,\n                \"UpdateTime\": 1647006129\n            }\n        ],\n        \"RequestId\": \"89887fb3-892d-4cfd-87b1-03ad73ab846c\",\n        \"Total\": 2\n    }\n}",
+        "title": "查询引擎网络"
+      }
+    ],
+    "DescribeEngineNodeSpec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEngineNodeSpec\n<公共请求参数>\n\n{\n    \"DataEngineName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DriverSpec\": [\n            {\n                \"Name\": \"abc\",\n                \"Cu\": 0,\n                \"Cpu\": 0,\n                \"Memory\": 0\n            }\n        ],\n        \"ExecutorSpec\": [\n            {\n                \"Name\": \"abc\",\n                \"Cu\": 0,\n                \"Cpu\": 0,\n                \"Memory\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeEngineUsageInfo": [
@@ -594,6 +666,22 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLakeFsTaskResult\n<公共请求参数>\n\n{\n    \"FsPath\": \"lakefs://*@dlc7e43-*-*-*-*/*/.system/result/20250109/*\"\n}",
         "output": "{\n    \"Response\": {\n        \"AccessToken\": {\n            \"SecretId\": \"AKI***\",\n            \"SecretKey\": \"D7****y\",\n            \"Token\": \"lod\",\n            \"ExpiredTime\": 1736421897,\n            \"IssueTime\": 1736420097\n        },\n        \"RequestId\": \"09d82a50-abc7-419a-a719-1062713d459c\"\n    }\n}",
         "title": "实例一"
+      }
+    ],
+    "DescribeNativeSparkSessions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNativeSparkSessions\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-a4wvak8f\",\n    \"ResourceGroupId\": \"rg-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3cdfd934-10b7-402b-bacb-985d83c12aee\",\n        \"SparkSessionsList\": []\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeNetworkConnections": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetworkConnections\n<公共请求参数>\n\n{\n    \"NetworkConnectionType\": 4,\n    \"DataEngineName\": \"\",\n    \"DatasourceConnectionVpcId\": \"\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"NetworkConnectionSet\": [],\n        \"RequestId\": \"4adde011-5462-4100-91db-ede860819fa6\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "test"
       }
     ],
     "DescribeNotebookSession": [
@@ -668,6 +756,14 @@
         "title": "查询SQL脚本列表"
       }
     ],
+    "DescribeSessionImageVersion": [
+      {
+        "document": "当前引擎：DataEngine-b0jt6fvk\n框架类型选择：machine-learning",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionImageVersion\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-b0jt6fvk\",\n    \"FrameworkType\": \"machine-learning\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EngineSessionImages\": [\n            {\n                \"SparkImageId\": \"123e4567-e89b-12d3-a456-426614174001\",\n                \"SparkImageTag\": \"ccr.ccs.tencentyun.com/dlc_cloud/tensorflow:dev-v20241218\",\n                \"SparkImageType\": 1,\n                \"SparkImageVersion\": \"tensorflow-v2.18.0\"\n            },\n            {\n                \"SparkImageId\": \"1a2b3c4d-5e6f-7g8h-9i0j-k1l2m3n4o5p6\",\n                \"SparkImageTag\": \"ccr.ccs.tencentyun.com/dlc_cloud/scikit-learn:dev-v20241218\",\n                \"SparkImageType\": 1,\n                \"SparkImageVersion\": \"scikit-learn-v1.6.0\"\n            },\n            {\n                \"SparkImageId\": \"98765432-10fe-bcd1-9a8b-0123456789ab\",\n                \"SparkImageTag\": \"ccr.ccs.tencentyun.com/dlc_cloud/pytorch:dev-v20241218\",\n                \"SparkImageType\": 1,\n                \"SparkImageVersion\": \"pytorch-v2.5.1\"\n            }\n        ],\n        \"RequestId\": \"c06478c4-bbc6-4cec-934b-6f9e2ff121ae\"\n    }\n}",
+        "title": "内置镜像"
+      }
+    ],
     "DescribeSparkAppJob": [
       {
         "document": "查询spark作业信息",
@@ -714,6 +810,22 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSparkSessionBatchSqlLog\n<公共请求参数>\n\n{\n    \"BatchId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n}",
         "output": "{\n    \"Response\": {\n        \"State\": 0,\n        \"LogSet\": [\n            {\n                \"Step\": \"BEG\",\n                \"Time\": \"2023-03-20 12:12:12\",\n                \"Message\": \"集群名称\",\n                \"Operate\": [\n                    {\n                        \"Text\": \"dateEngine-1\",\n                        \"Operate\": \"COPY\",\n                        \"Supplement\": [\n                            {\n                                \"Key\": \"TASKID\",\n                                \"Value\": \"d0ds1sad4-9d7e-4f64-a3f4-f385dcs6742\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
         "title": "查询Spark SQL批任务日志"
+      }
+    ],
+    "DescribeStandardEngineResourceGroupConfigInfo": [
+      {
+        "document": "查询标准引擎资源组",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStandardEngineResourceGroupConfigInfo\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"engine-id\",\n            \"Values\": [\n                \"DataEngine-81iy0oxxx\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"90bcc66d-c102-4441-8987-7cc77a733f55\",\n        \"StandardEngineResourceGroupConfigInfos\": [\n            {\n                \"CreateTime\": 1715136398,\n                \"DataEngineId\": \"DataEngine-81iy0oxxx\",\n                \"DynamicConfigPairs\": [],\n                \"ResourceGroupId\": \"rg-fu11wgexxx\",\n                \"StaticConfigPairs\": [],\n                \"UpdateTime\": 1715136398\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "查询标准引擎资源组"
+      }
+    ],
+    "DescribeStandardEngineResourceGroups": [
+      {
+        "document": "查询指定资源组信息",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStandardEngineResourceGroups\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"engine-resource-group-id\",\n            \"Values\": [\n                \"rg-9y1f952gsss\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21f32ad0-941c-4515-970c-1658f2a19964\",\n        \"Total\": 1,\n        \"UserEngineResourceGroupInfos\": [\n            {\n                \"AutoLaunch\": 1,\n                \"AutoPause\": 1,\n                \"AutoPauseTime\": 0,\n                \"CreateTime\": 1705892615,\n                \"Creator\": \"100013032040\",\n                \"DataEngineId\": \"DataEngine-37sutfj4\",\n                \"DataEngineName\": \"spark_common_two\",\n                \"DriverCuSpec\": \"small\",\n                \"EngineResourceGroupId\": \"rg-9y1f952g\",\n                \"EngineResourceGroupName\": \"rg-test\",\n                \"ExecutorCuSpec\": \"small\",\n                \"MaxExecutorNums\": 1,\n                \"MinExecutorNums\": 1,\n                \"MaxConcurrency\": 5,\n                \"NeedRestart\": 0,\n                \"ResourceGroupState\": 0,\n                \"UpdateTime\": 1705892615\n            }\n        ]\n    }\n}",
+        "title": "查询指定资源组信息"
       }
     ],
     "DescribeStoreLocation": [
@@ -876,6 +988,14 @@
         "title": "获取用户类型"
       }
     ],
+    "DescribeUserVpcConnection": [
+      {
+        "document": "查询用户连接信息",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserVpcConnection\n<公共请求参数>\n\n{\n    \"EngineNetworkId\": \"DataEngine-Network-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac4fff9d-b8a8-429c-88fb-c9cfaac1ec5a\",\n        \"UserVpcConnectionInfos\": [\n            {\n                \"AccessConnectionInfos\": [\n                    \"jdbc:hive2://10.0.0.14:10009/?kyuubi.engine.type=TRINO;kyuubi.session.engine.trino.connection.url=http://127.0.0.1:8080;kyuubi.session.engine.trino.connection.catalog=hive;kyuubi.operation.incremental.collect=true\",\n                    \"jdbc:presto://10.0.0.14:10999/?sessionProperties=cluster:keyiliu_presto;region:{Region};database:{DatabaseName};catalog:hive&extraCredentials=secretkey:{SecretKey};secretid:{SecretId}\"\n                ],\n                \"UserVpcEndpointId\": \"vpce-7m3bgkj4\",\n                \"UserVpcEndpointName\": \"rickytest\",\n                \"UserVpcId\": \"vpc-dk19yfij\"\n            }\n        ]\n    }\n}",
+        "title": "查询用户连接信息"
+      }
+    ],
     "DescribeUsers": [
       {
         "document": "",
@@ -972,6 +1092,14 @@
         "title": "授权访问DLC元数据"
       }
     ],
+    "LaunchStandardEngineResourceGroups": [
+      {
+        "document": "启动指定资源组",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LaunchStandardEngineResourceGroups\n<公共请求参数>\n\n{\n    \"EngineResourceGroupNames\": [\n        \"test-rg\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"OperateEngineResourceGroupFailMessages\": [],\n        \"RequestId\": \"e8ec97bc-5a53-45e3-b35b-14145857e819\"\n    }\n}",
+        "title": "启动指定资源组"
+      }
+    ],
     "ListTaskJobLogDetail": [
       {
         "document": "查询spark 作业任务的日志详情",
@@ -1058,6 +1186,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkGroup\n<公共请求参数>\n\n{\n    \"WorkGroupId\": 112,\n    \"WorkGroupDescription\": \"my-test-2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6fd5c288-cfa1-4c7b-9229-7780d0a3e96f\"\n    }\n}",
         "title": "修改工作组信息"
+      }
+    ],
+    "PauseStandardEngineResourceGroups": [
+      {
+        "document": "暂停指定资源组",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseStandardEngineResourceGroups\n<公共请求参数>\n\n{\n    \"EngineResourceGroupNames\": [\n        \"test-session\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"OperateEngineResourceGroupFailMessages\": [],\n        \"RequestId\": \"b2a83c9e-ddf8-43b5-a308-3d0c743976d4\"\n    }\n}",
+        "title": "暂停指定资源组"
       }
     ],
     "QueryInternalTableWarehouse": [
@@ -1164,6 +1300,14 @@
         "title": "解绑用户上的用户组"
       }
     ],
+    "UnboundDatasourceHouse": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnboundDatasourceHouse\n<公共请求参数>\n\n{\n    \"NetworkConnectionName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "UnlockMetaData": [
       {
         "document": "",
@@ -1188,12 +1332,52 @@
         "title": "更新指定引擎的结果桶配置信息"
       }
     ],
+    "UpdateEngineResourceGroupNetworkConfigInfo": [
+      {
+        "document": "修改资源组网络配置",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEngineResourceGroupNetworkConfigInfo\n<公共请求参数>\n\n{\n    \"EngineResourceGroupId\": \"rg-b6fxxxxxx2a0\",\n    \"IsEffectiveNow\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b186332-1885-4161-8dfb-a8de667eb5c0\"\n    }\n}",
+        "title": "修改资源组网络配置"
+      }
+    ],
+    "UpdateNetworkConnection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateNetworkConnection\n<公共请求参数>\n\n{\n    \"NetworkConnectionDesc\": \"xx\",\n    \"NetworkConnectionName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "UpdateRowFilter": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRowFilter\n<公共请求参数>\n\n{\n    \"Policy\": {\n        \"Table\": \"TableName\",\n        \"Catalog\": \"COSDataCatalog\",\n        \"Operation\": \"ALL\",\n        \"Database\": \"DatabaseName\"\n    },\n    \"PolicyId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
         "title": "更新行过滤策略信息"
+      }
+    ],
+    "UpdateStandardEngineResourceGroupBaseInfo": [
+      {
+        "document": "更新资源组基础配置信息",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateStandardEngineResourceGroupBaseInfo\n<公共请求参数>\n\n{\n    \"EngineResourceGroupName\": \"test-rg\",\n    \"AutoLaunch\": 1,\n    \"AutoPause\": 1,\n    \"AutoPauseTime\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c3e5af77-11bd-4820-aa80-8a3014c4215b\"\n    }\n}",
+        "title": "更新资源组基础配置信息"
+      }
+    ],
+    "UpdateStandardEngineResourceGroupConfigInfo": [
+      {
+        "document": "增加指定配置到资源组",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateStandardEngineResourceGroupConfigInfo\n<公共请求参数>\n\n{\n    \"EngineResourceGroupName\": \"test-rg\",\n    \"UpdateConfContext\": [\n        {\n            \"ConfigType\": \"StaticConfigType\",\n            \"Params\": [\n                {\n                    \"ConfigItem\": \"spark.sql.shuffle.partitions\",\n                    \"ConfigValue\": \"300\",\n                    \"Operate\": \"ADD\"\n                }\n            ]\n        }\n    ],\n    \"IsEffectiveNow\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e844f50-46ae-422f-882c-e8f6c67cff13\"\n    }\n}",
+        "title": "增加指定配置到资源组"
+      }
+    ],
+    "UpdateStandardEngineResourceGroupResourceInfo": [
+      {
+        "document": "更新资源组资源配置",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateStandardEngineResourceGroupResourceInfo\n<公共请求参数>\n\n{\n    \"EngineResourceGroupName\": \"test-rg\",\n    \"DriverCuSpec\": \"small\",\n    \"ExecutorCuSpec\": \"small\",\n    \"MinExecutorNums\": 1,\n    \"MaxExecutorNums\": 1,\n    \"IsEffectiveNow\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b12eb63a-37d1-4b9c-ac9a-8995ccc89b58\"\n    }\n}",
+        "title": "更新资源组资源配置"
       }
     ],
     "UpdateUserDataEngineConfig": [

@@ -4475,7 +4475,7 @@
         },
         {
           "disabled": false,
-          "document": "线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。\n\n<li>BGP：常规 BGP 线路</li>\n已开通静态单线IP白名单的用户，可选值：\n\n<li>CMCC：中国移动</li>\n<li>CTCC：中国电信</li>\n<li>CUCC：中国联通</li>\n注意：仅部分地域支持静态单线IP。\n",
+          "document": "线路类型。各种线路类型及支持地区详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。\n\n<li>BGP：常规 BGP 线路</li>\n已开通静态单线IP白名单的用户，可选值：\n\n<li>CMCC：中国移动</li>\n<li>CTCC：中国电信</li>\n<li>CUCC：中国联通</li>\n注意：仅部分地域支持静态单线IP。\n",
           "example": "BGP",
           "member": "string",
           "name": "InternetServiceProvider",

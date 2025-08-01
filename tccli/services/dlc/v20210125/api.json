@@ -49,6 +49,13 @@
       "output": "AssignMangedTablePropertiesResponse",
       "status": "online"
     },
+    "AssociateDatasourceHouse": {
+      "document": "绑定数据源和队列",
+      "input": "AssociateDatasourceHouseRequest",
+      "name": "绑定数据源与队列",
+      "output": "AssociateDatasourceHouseResponse",
+      "status": "online"
+    },
     "AttachUserPolicy": {
       "document": "绑定鉴权策略到用户",
       "input": "AttachUserPolicyRequest",
@@ -248,8 +255,15 @@
     "CreateSparkSubmitTask": {
       "document": "本接口（CreateSparkSubmitTask）用于提交SparkSbumit批流任务。",
       "input": "CreateSparkSubmitTaskRequest",
-      "name": "提交SparkSbumit批流任务",
+      "name": "提交Spark批流任务",
       "output": "CreateSparkSubmitTaskResponse",
+      "status": "online"
+    },
+    "CreateStandardEngineResourceGroup": {
+      "document": "创建标准引擎资源组",
+      "input": "CreateStandardEngineResourceGroupRequest",
+      "name": "创建标准引擎资源组",
+      "output": "CreateStandardEngineResourceGroupResponse",
       "status": "online"
     },
     "CreateStoreLocation": {
@@ -294,6 +308,13 @@
       "output": "CreateUserResponse",
       "status": "online"
     },
+    "CreateUserVpcConnection": {
+      "document": "创建用户vpc连接到指定引擎网络",
+      "input": "CreateUserVpcConnectionRequest",
+      "name": "创建用户vpc连接",
+      "output": "CreateUserVpcConnectionResponse",
+      "status": "online"
+    },
     "CreateWorkGroup": {
       "document": "创建工作组",
       "input": "CreateWorkGroupRequest",
@@ -313,6 +334,13 @@
       "input": "DeleteDataEngineRequest",
       "name": "删除数据引擎",
       "output": "DeleteDataEngineResponse",
+      "status": "online"
+    },
+    "DeleteNativeSparkSession": {
+      "document": "根据spark session名称销毁eg spark session",
+      "input": "DeleteNativeSparkSessionRequest",
+      "name": "销毁EG SparkSession",
+      "output": "DeleteNativeSparkSessionResponse",
       "status": "online"
     },
     "DeleteNotebookSession": {
@@ -336,6 +364,13 @@
       "output": "DeleteSparkAppResponse",
       "status": "online"
     },
+    "DeleteStandardEngineResourceGroup": {
+      "document": "删除标准引擎资源组",
+      "input": "DeleteStandardEngineResourceGroupRequest",
+      "name": "删除标准引擎资源组",
+      "output": "DeleteStandardEngineResourceGroupResponse",
+      "status": "online"
+    },
     "DeleteTable": {
       "document": "删除表",
       "input": "DeleteTableRequest",
@@ -355,6 +390,13 @@
       "input": "DeleteUserRequest",
       "name": "删除用户",
       "output": "DeleteUserResponse",
+      "status": "online"
+    },
+    "DeleteUserVpcConnection": {
+      "document": "删除用户vpc到引擎网络的连接",
+      "input": "DeleteUserVpcConnectionRequest",
+      "name": "删除用户vpc连接",
+      "output": "DeleteUserVpcConnectionResponse",
       "status": "online"
     },
     "DeleteUsersFromWorkGroup": {
@@ -448,6 +490,13 @@
       "output": "DescribeDataEnginePythonSparkImagesResponse",
       "status": "online"
     },
+    "DescribeDataEngineSessionParameters": {
+      "document": "本接口（DescribeDataEngineSessionParameters）用于获取指定小版本下的Session配置。",
+      "input": "DescribeDataEngineSessionParametersRequest",
+      "name": "获取指定小版本下的Session配置",
+      "output": "DescribeDataEngineSessionParametersResponse",
+      "status": "online"
+    },
     "DescribeDataEngines": {
       "document": "本接口（DescribeDataEngines）用于查询DataEngines信息列表.",
       "input": "DescribeDataEnginesRequest",
@@ -474,6 +523,20 @@
       "input": "DescribeDatasourceConnectionRequest",
       "name": "查询数据源信息",
       "output": "DescribeDatasourceConnectionResponse",
+      "status": "online"
+    },
+    "DescribeEngineNetworks": {
+      "document": "查询引擎网络信息",
+      "input": "DescribeEngineNetworksRequest",
+      "name": "查询引擎网络信息",
+      "output": "DescribeEngineNetworksResponse",
+      "status": "online"
+    },
+    "DescribeEngineNodeSpec": {
+      "document": "查询引擎可用的节点规格",
+      "input": "DescribeEngineNodeSpecRequest",
+      "name": "获取引擎节点规格",
+      "output": "DescribeEngineNodeSpecResponse",
       "status": "online"
     },
     "DescribeEngineUsageInfo": {
@@ -509,6 +572,20 @@
       "input": "DescribeLakeFsTaskResultRequest",
       "name": "获取LakeFs上task执行结果访问信息",
       "output": "DescribeLakeFsTaskResultResponse",
+      "status": "online"
+    },
+    "DescribeNativeSparkSessions": {
+      "document": "根据资源组获取spark session列表",
+      "input": "DescribeNativeSparkSessionsRequest",
+      "name": "查询标准引擎spark session列表",
+      "output": "DescribeNativeSparkSessionsResponse",
+      "status": "online"
+    },
+    "DescribeNetworkConnections": {
+      "document": "查询网络配置列表",
+      "input": "DescribeNetworkConnectionsRequest",
+      "name": "查询网络配置列表",
+      "output": "DescribeNetworkConnectionsResponse",
       "status": "online"
     },
     "DescribeNotebookSession": {
@@ -574,6 +651,13 @@
       "output": "DescribeScriptsResponse",
       "status": "online"
     },
+    "DescribeSessionImageVersion": {
+      "document": "获取指定大版本下所有小版本的所有内置镜像",
+      "input": "DescribeSessionImageVersionRequest",
+      "name": "获取内置镜像信息",
+      "output": "DescribeSessionImageVersionResponse",
+      "status": "online"
+    },
     "DescribeSparkAppJob": {
       "document": "查询spark作业信息",
       "input": "DescribeSparkAppJobRequest",
@@ -614,6 +698,20 @@
       "input": "DescribeSparkSessionBatchSqlLogRequest",
       "name": "查询Spark SQL批任务日志",
       "output": "DescribeSparkSessionBatchSqlLogResponse",
+      "status": "online"
+    },
+    "DescribeStandardEngineResourceGroupConfigInfo": {
+      "document": "查询标准引擎资源组信息",
+      "input": "DescribeStandardEngineResourceGroupConfigInfoRequest",
+      "name": "查询标准引擎资源组的配置信息",
+      "output": "DescribeStandardEngineResourceGroupConfigInfoResponse",
+      "status": "online"
+    },
+    "DescribeStandardEngineResourceGroups": {
+      "document": "查询标准引擎资源组信息",
+      "input": "DescribeStandardEngineResourceGroupsRequest",
+      "name": "查询标准引擎资源组信息",
+      "output": "DescribeStandardEngineResourceGroupsResponse",
       "status": "online"
     },
     "DescribeStoreLocation": {
@@ -756,6 +854,13 @@
       "output": "DescribeUserTypeResponse",
       "status": "online"
     },
+    "DescribeUserVpcConnection": {
+      "document": "查询用户vpc到引擎网络的连接",
+      "input": "DescribeUserVpcConnectionRequest",
+      "name": "查询用户vpc连接信息",
+      "output": "DescribeUserVpcConnectionResponse",
+      "status": "online"
+    },
     "DescribeUsers": {
       "document": "获取用户列表信息",
       "input": "DescribeUsersRequest",
@@ -840,6 +945,13 @@
       "output": "GrantDLCCatalogAccessResponse",
       "status": "online"
     },
+    "LaunchStandardEngineResourceGroups": {
+      "document": "启动标准引擎资源组",
+      "input": "LaunchStandardEngineResourceGroupsRequest",
+      "name": "批量启动标准引擎资源组",
+      "output": "LaunchStandardEngineResourceGroupsResponse",
+      "status": "online"
+    },
     "ListTaskJobLogDetail": {
       "document": "本接口（ListTaskJobLogDetail）用于获取spark 作业任务日志详情",
       "input": "ListTaskJobLogDetailRequest",
@@ -915,6 +1027,13 @@
       "input": "ModifyWorkGroupRequest",
       "name": "修改工作组信息",
       "output": "ModifyWorkGroupResponse",
+      "status": "online"
+    },
+    "PauseStandardEngineResourceGroups": {
+      "document": "暂停标准引擎session",
+      "input": "PauseStandardEngineResourceGroupsRequest",
+      "name": "批量暂停标准引擎资源组",
+      "output": "PauseStandardEngineResourceGroupsResponse",
       "status": "online"
     },
     "QueryInternalTableWarehouse": {
@@ -1008,6 +1127,13 @@
       "output": "UnbindWorkGroupsFromUserResponse",
       "status": "online"
     },
+    "UnboundDatasourceHouse": {
+      "document": "解绑数据源与队列",
+      "input": "UnboundDatasourceHouseRequest",
+      "name": "解绑数据源与队列",
+      "output": "UnboundDatasourceHouseResponse",
+      "status": "online"
+    },
     "UnlockMetaData": {
       "document": "元数据解锁",
       "input": "UnlockMetaDataRequest",
@@ -1029,11 +1155,46 @@
       "output": "UpdateDataEngineConfigResponse",
       "status": "online"
     },
+    "UpdateEngineResourceGroupNetworkConfigInfo": {
+      "document": "更新标准引擎资源组网络配置信息",
+      "input": "UpdateEngineResourceGroupNetworkConfigInfoRequest",
+      "name": "更新标准引擎资源组网络配置信息",
+      "output": "UpdateEngineResourceGroupNetworkConfigInfoResponse",
+      "status": "online"
+    },
+    "UpdateNetworkConnection": {
+      "document": "更新网络配置",
+      "input": "UpdateNetworkConnectionRequest",
+      "name": "更新网络配置",
+      "output": "UpdateNetworkConnectionResponse",
+      "status": "online"
+    },
     "UpdateRowFilter": {
       "document": "此接口用于更新行过滤规则。注意只能更新过滤规则，不能更新规格对象catalog，database和table。",
       "input": "UpdateRowFilterRequest",
       "name": "更新行过滤规则",
       "output": "UpdateRowFilterResponse",
+      "status": "online"
+    },
+    "UpdateStandardEngineResourceGroupBaseInfo": {
+      "document": "更新标准引擎资源组基础信息",
+      "input": "UpdateStandardEngineResourceGroupBaseInfoRequest",
+      "name": "更新标准引擎资源组基础信息",
+      "output": "UpdateStandardEngineResourceGroupBaseInfoResponse",
+      "status": "online"
+    },
+    "UpdateStandardEngineResourceGroupConfigInfo": {
+      "document": "更新标准引擎资源组基础信息",
+      "input": "UpdateStandardEngineResourceGroupConfigInfoRequest",
+      "name": "更新标准引擎资源组参数配置信息",
+      "output": "UpdateStandardEngineResourceGroupConfigInfoResponse",
+      "status": "online"
+    },
+    "UpdateStandardEngineResourceGroupResourceInfo": {
+      "document": "更新标准引擎资源组基础信息",
+      "input": "UpdateStandardEngineResourceGroupResourceInfoRequest",
+      "name": "更新标准引擎资源组资源信息",
+      "output": "UpdateStandardEngineResourceGroupResourceInfoResponse",
       "status": "online"
     },
     "UpdateUserDataEngineConfig": {
@@ -1915,6 +2076,78 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateDatasourceHouseRequest": {
+      "document": "AssociateDatasourceHouse请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络配置名称",
+          "example": "test",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源网络配置",
+          "example": "无",
+          "member": "DatasourceConnectionConfig",
+          "name": "DatasourceConnectionConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称，只允许绑定一个引擎",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型，2-跨源型，4-增强型",
+          "example": "无",
+          "member": "int64",
+          "name": "NetworkConnectionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "网络配置描述",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkConnectionDesc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateDatasourceHouseResponse": {
+      "document": "AssociateDatasourceHouse返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4887,7 +5120,7 @@
         {
           "disabled": false,
           "document": "ai资源组名称",
-          "example": "无",
+          "example": "ai-resource",
           "member": "string",
           "name": "ResourceGroupName",
           "required": false,
@@ -4919,6 +5152,258 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStandardEngineResourceGroupRequest": {
+      "document": "CreateStandardEngineResourceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标准引擎资源组名称",
+          "example": "无",
+          "member": "string",
+          "name": "EngineResourceGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标准引擎名称",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动启动，（任务提交自动拉起资源组）0-自动启动，1-不自动启动",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoLaunch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动挂起资源组。0-自动挂起，1-不自动挂起",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoPause",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "driver的cu规格：\n当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu），内存型cu为cpu：men=1:8，m.small（1cu内存型）、m.medium（2cu内存型）、m.large（4cu内存型）、m.xlarge（8cu内存型）",
+          "example": "无",
+          "member": "string",
+          "name": "DriverCuSpec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "executor的cu规格：\n当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu），内存型cu为cpu：men=1:8，m.small（1cu内存型）、m.medium（2cu内存型）、m.large（4cu内存型）、m.xlarge（8cu内存型）",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorCuSpec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "executor最小数量，",
+          "example": "无",
+          "member": "int64",
+          "name": "MinExecutorNums",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "executor最大数量",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxExecutorNums",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "创建资源组后是否直接拉起，0-拉起，1-不拉起",
+          "example": "无",
+          "member": "int64",
+          "name": "IsLaunchNow",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动挂起时间，单位分钟，取值范围在1-999（在无任务AutoPauseTime后，资源组自动挂起）",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoPauseTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源组静态参数，需要重启资源组生效",
+          "example": "无",
+          "member": "EngineResourceGroupConfigPair",
+          "name": "StaticConfigPairs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资源组动态参数，下一个任务生效。",
+          "example": "无",
+          "member": "EngineResourceGroupConfigPair",
+          "name": "DynamicConfigPairs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务并发数，默人是5个",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "网络配置名称",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkConfigNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义镜像域名",
+          "example": "dlctcr.tencentcloud.com",
+          "member": "string",
+          "name": "PublicDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义镜像实例id",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "AI类型资源组的框架类型，machine-learning，python，spark-ml，不填默认为machine-learning",
+          "example": "machine-learning",
+          "member": "string",
+          "name": "FrameType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像类型，bulit-in：内置，custom：自定义，不填默认为bulit-in",
+          "example": "bulit-in",
+          "member": "string",
+          "name": "ImageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称",
+          "example": "image-xxx",
+          "member": "string",
+          "name": "ImageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像id",
+          "example": "Imageid-xxxx",
+          "member": "string",
+          "name": "ImageVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "AI资源组有效，资源组可用资源上限，该值需要小于引擎资源上限",
+          "example": "64",
+          "member": "int64",
+          "name": "Size",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源组场景",
+          "example": "SparkSQL",
+          "member": "string",
+          "name": "ResourceGroupScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义镜像所在地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "RegionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "python类型资源组python单机节点资源上限，该值要小于资源组的资源上限.small:1cu medium:2cu large:4cu xlarge:8cu 4xlarge:16cu 8xlarge:32cu 16xlarge:64cu，如果是高内存型资源，在类型前面加上m.",
+          "example": "small",
+          "member": "string",
+          "name": "PythonCuSpec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅SQL资源组资源配置模式，fast：快速模式，custom：自定义模式",
+          "example": "custom",
+          "member": "string",
+          "name": "SparkSpecMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅SQL资源组资源上限，仅用于快速模块",
+          "example": "64",
+          "member": "int64",
+          "name": "SparkSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStandardEngineResourceGroupResponse": {
+      "document": "CreateStandardEngineResourceGroup返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5302,6 +5787,69 @@
     },
     "CreateUserResponse": {
       "document": "CreateUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserVpcConnectionRequest": {
+      "document": "CreateUserVpcConnection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户vpcid",
+          "example": "无",
+          "member": "string",
+          "name": "UserVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户子网",
+          "example": "无",
+          "member": "string",
+          "name": "UserSubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户终端节点名称",
+          "example": "无",
+          "member": "string",
+          "name": "UserVpcEndpointName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎网络ID",
+          "example": "无",
+          "member": "string",
+          "name": "EngineNetworkId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手动指定vip，不填自动分配子网下的一个ip",
+          "example": "无",
+          "member": "string",
+          "name": "UserVpcEndpointVip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserVpcConnectionResponse": {
+      "document": "CreateUserVpcConnection返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6300,6 +6848,162 @@
         }
       ],
       "usage": "both"
+    },
+    "DataEngineImageSessionParameter": {
+      "document": "集群Session配置信息.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置id",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "ParameterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小版本镜像ID",
+          "example": "d30dfgsf4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "ChildImageVersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型：SparkSQL/PrestoSQL/SparkBatch",
+          "example": "SparkSQL",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数key",
+          "example": "spark.sql.shuffle.partitions",
+          "member": "string",
+          "name": "KeyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Key描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认分区数。",
+          "member": "string",
+          "name": "KeyDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value类型",
+          "example": "string",
+          "member": "string",
+          "name": "ValueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "value长度限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "ValueLengthLimit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value正则限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0-9]+$",
+          "member": "string",
+          "name": "ValueRegexpLimit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "string",
+          "name": "ValueDefault",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为公共版本：1：公共；2：私有",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsPublic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置类型：1：session配置（默认）；2：common配置；3：cluster配置",
+          "example": "1",
+          "member": "uint64",
+          "name": "ParameterType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提交方式：User(用户)、BackGround（后台）",
+          "example": "User",
+          "member": "string",
+          "name": "SubmitMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "插入时间",
+          "example": "2020-01-01 01:01:01",
+          "member": "string",
+          "name": "InsertTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2020-01-01 01:01:01",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DataEngineImageVersion": {
       "document": "集群大版本镜像信息。",
@@ -8013,6 +8717,51 @@
       ],
       "type": "object"
     },
+    "DeleteNativeSparkSessionRequest": {
+      "document": "DeleteNativeSparkSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎id",
+          "example": "DataEngine-tyyxbgs",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "rg-kldiothgf",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "spark session名称",
+          "example": "session-test",
+          "member": "string",
+          "name": "EngineSessionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNativeSparkSessionResponse": {
+      "document": "DeleteNativeSparkSession返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNotebookSessionRequest": {
       "document": "DeleteNotebookSession请求参数结构体",
       "members": [
@@ -8104,6 +8853,33 @@
       ],
       "type": "object"
     },
+    "DeleteStandardEngineResourceGroupRequest": {
+      "document": "DeleteStandardEngineResourceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标准引擎资源组名称",
+          "example": "无",
+          "member": "string",
+          "name": "EngineResourceGroupName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStandardEngineResourceGroupResponse": {
+      "document": "DeleteStandardEngineResourceGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTableRequest": {
       "document": "DeleteTable请求参数结构体",
       "members": [
@@ -8165,6 +8941,42 @@
     },
     "DeleteUserResponse": {
       "document": "DeleteUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserVpcConnectionRequest": {
+      "document": "DeleteUserVpcConnection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎网络ID",
+          "example": "无",
+          "member": "string",
+          "name": "EngineNetworkId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "终端节点ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserVpcEndpointId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserVpcConnectionResponse": {
+      "document": "DeleteUserVpcConnection返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9445,6 +10257,52 @@
       ],
       "type": "object"
     },
+    "DescribeDataEngineSessionParametersRequest": {
+      "document": "DescribeDataEngineSessionParameters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎id",
+          "example": "DataEngine-1",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称，当指定引擎名称后优先使用名称获取配置",
+          "example": "DataEngine-Name",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEngineSessionParametersResponse": {
+      "document": "DescribeDataEngineSessionParameters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Session配置列表",
+          "example": "复杂类型",
+          "member": "DataEngineImageSessionParameter",
+          "name": "DataEngineParameters",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDataEnginesRequest": {
       "document": "DescribeDataEngines请求参数结构体",
       "members": [
@@ -9893,6 +10751,136 @@
       ],
       "type": "object"
     },
+    "DescribeEngineNetworksRequest": {
+      "document": "DescribeEngineNetworks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升序，降序",
+          "example": "desc，asc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件可选，engine-network-id--引擎网络ID，engine-network-state--引擎网络状态",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据条数",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEngineNetworksResponse": {
+      "document": "DescribeEngineNetworks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎网络信息",
+          "example": "无",
+          "member": "EngineNetworkInfo",
+          "name": "EngineNetworkInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEngineNodeSpecRequest": {
+      "document": "DescribeEngineNodeSpec请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎名称",
+          "example": "test",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEngineNodeSpecResponse": {
+      "document": "DescribeEngineNodeSpec返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "driver可用的规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SpecInfo",
+          "name": "DriverSpec",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "executor可用的规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SpecInfo",
+          "name": "ExecutorSpec",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEngineUsageInfoRequest": {
       "document": "DescribeEngineUsageInfo请求参数结构体",
       "members": [
@@ -10037,6 +11025,144 @@
           "name": "AccessToken",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNativeSparkSessionsRequest": {
+      "document": "DescribeNativeSparkSessions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎ID",
+          "example": "DataEngine-xxxx",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组ID",
+          "example": "rg-xxxx",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNativeSparkSessionsResponse": {
+      "document": "DescribeNativeSparkSessions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "spark session列表",
+          "example": "无",
+          "member": "SparkSessionInfo",
+          "name": "SparkSessionsList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetworkConnectionsRequest": {
+      "document": "DescribeNetworkConnections请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络配置类型",
+          "example": "无",
+          "member": "int64",
+          "name": "NetworkConnectionType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "计算引擎名称",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源vpcid",
+          "example": "无",
+          "member": "string",
+          "name": "DatasourceConnectionVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "网络配置名称",
+          "example": "test",
+          "member": "string",
+          "name": "NetworkConnectionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetworkConnectionsResponse": {
+      "document": "DescribeNetworkConnections返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络配置列表",
+          "example": "xxx",
+          "member": "NetworkConnection",
+          "name": "NetworkConnectionSet",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -10762,6 +11888,52 @@
       ],
       "type": "object"
     },
+    "DescribeSessionImageVersionRequest": {
+      "document": "DescribeSessionImageVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎Id",
+          "example": "DataEngine-e482ijv6",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "框架类型：machine-learning、python、spark-ml",
+          "example": "machine-learning",
+          "member": "string",
+          "name": "FrameworkType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionImageVersionResponse": {
+      "document": "DescribeSessionImageVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩展镜像列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EngineSessionImage",
+          "name": "EngineSessionImages",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSparkAppJobRequest": {
       "document": "DescribeSparkAppJob请求参数结构体",
       "members": [
@@ -11179,6 +12351,172 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStandardEngineResourceGroupConfigInfoRequest": {
+      "document": "DescribeStandardEngineResourceGroupConfigInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升序，降序",
+          "example": "desc，asc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件可选，engine-resource-group-id--引擎资源组ID，engine-id---引擎ID",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据条数，默认10",
+          "example": "无，",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认0",
+          "example": "无，",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStandardEngineResourceGroupConfigInfoResponse": {
+      "document": "DescribeStandardEngineResourceGroupConfigInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标准引擎资源组，配置相关信息",
+          "example": "无",
+          "member": "StandardEngineResourceGroupConfigInfo",
+          "name": "StandardEngineResourceGroupConfigInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStandardEngineResourceGroupsRequest": {
+      "document": "DescribeStandardEngineResourceGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升序，降序",
+          "example": "desc，asc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件可选，app-id--用户appID，engine-resource-group-id--引擎资源组ID，data-engine-name--引擎名称，engine-resource-group-name---引擎资源组名称（模糊查询），engine-resource-group-state---引擎资源组状态engine-resource-group-name-unique --引擎资源组名称（完全匹配）",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据条数，默认10",
+          "example": "无，",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认0",
+          "example": "无，",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStandardEngineResourceGroupsResponse": {
+      "document": "DescribeStandardEngineResourceGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标准引擎资源组信息",
+          "example": "无",
+          "member": "StandardEngineResourceGroupInfo",
+          "name": "UserEngineResourceGroupInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12729,6 +14067,52 @@
       ],
       "type": "object"
     },
+    "DescribeUserVpcConnectionRequest": {
+      "document": "DescribeUserVpcConnection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎网络ID",
+          "example": "无",
+          "member": "string",
+          "name": "EngineNetworkId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎ID集合",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserVpcConnectionResponse": {
+      "document": "DescribeUserVpcConnection返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户vpc连接信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserVpcConnectionInfo",
+          "name": "UserVpcConnectionInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUsersRequest": {
       "document": "DescribeUsers请求参数结构体",
       "members": [
@@ -13495,6 +14879,180 @@
       ],
       "usage": "both"
     },
+    "EngineNetworkInfo": {
+      "document": "引擎网络信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎网络名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EngineNetworkName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎网络状态，0--初始化，2--可用，-1--已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EngineNetworkState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎网络cidr\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EngineNetworkCidr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EngineNetworkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有连接个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PrivateLinkNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算引擎个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "EngineNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GatewayInfo",
+          "name": "GateWayInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EngineResourceGroupConfigPair": {
+      "document": "引擎资源组参数 配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigItem",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置项的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EngineSessionImage": {
+      "document": "TensorFlow、Pytorch、SK-learn镜像信息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Spark镜像唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SparkImageId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Spark镜像版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SparkImageVersion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小版本镜像类型.1:TensorFlow、2:Pytorch、3:SK-learn\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SparkImageType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SparkImageTag",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Execution": {
       "document": "SQL语句对象",
       "members": [
@@ -13584,6 +15142,72 @@
         }
       ],
       "usage": "in"
+    },
+    "GatewayInfo": {
+      "document": "网关基础信息，包括id，名称，规格和状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DataEngine-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关名称，全局唯一\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default-gateway-1",
+          "member": "string",
+          "name": "GatewayName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关的规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中 5挂起中 6启动中 7隔离中 8隔离 9续费中 10变配中 11冲正中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "网关状态",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Mode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "GenerateCreateMangedTableSqlRequest": {
       "document": "GenerateCreateMangedTableSql请求参数结构体",
@@ -14291,6 +15915,43 @@
         }
       ],
       "usage": "out"
+    },
+    "LaunchStandardEngineResourceGroupsRequest": {
+      "document": "LaunchStandardEngineResourceGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标准引擎资源组名称",
+          "example": "无",
+          "member": "string",
+          "name": "EngineResourceGroupNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "LaunchStandardEngineResourceGroupsResponse": {
+      "document": "LaunchStandardEngineResourceGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量操作资源组时，操作失败的资源组相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OperateEngineResourceGroupFailMessage",
+          "name": "OperateEngineResourceGroupFailMessages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ListTaskJobLogDetailRequest": {
       "document": "ListTaskJobLogDetail请求参数结构体",
@@ -16241,6 +17902,32 @@
       ],
       "usage": "out"
     },
+    "OperateEngineResourceGroupFailMessage": {
+      "document": "操作资源组，返回的操作失败信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎资源组名称",
+          "example": "无",
+          "member": "string",
+          "name": "EngineResourceGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作失败的提示信息",
+          "example": "无",
+          "member": "string",
+          "name": "FailMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "OptimizerEngineInfo": {
       "document": "数据优化引擎信息",
       "members": [
@@ -16359,6 +18046,39 @@
       ],
       "usage": "both"
     },
+    "Param": {
+      "document": "对指定参数的更新、增加、删除",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数key，例如：",
+          "example": "spark.sql.shuffle.partitions",
+          "member": "string",
+          "name": "ConfigItem",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数值",
+          "example": "200",
+          "member": "string",
+          "name": "ConfigValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下发操作，支持：ADD、DELETE、MODIFY",
+          "example": "ADD",
+          "member": "string",
+          "name": "Operate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "Partition": {
       "document": "数据表分块信息。",
       "members": [
@@ -16430,6 +18150,43 @@
         }
       ],
       "usage": "both"
+    },
+    "PauseStandardEngineResourceGroupsRequest": {
+      "document": "PauseStandardEngineResourceGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标准引擎资源组名称",
+          "example": "无",
+          "member": "string",
+          "name": "EngineResourceGroupNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "PauseStandardEngineResourceGroupsResponse": {
+      "document": "PauseStandardEngineResourceGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量操作资源组时，操作失败的资源组相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OperateEngineResourceGroupFailMessage",
+          "name": "OperateEngineResourceGroupFailMessages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Policy": {
       "document": "权限对象",
@@ -18275,6 +20032,612 @@
           "name": "Supplement",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SparkSessionInfo": {
+      "document": "spark session详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "spark session id",
+          "example": "session-xxx",
+          "member": "string",
+          "name": "SparkSessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "spark session名称",
+          "example": "test_session",
+          "member": "string",
+          "name": "SparkSessionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "rg-xxxx",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "engine session id",
+          "example": "session-id",
+          "member": "string",
+          "name": "EngineSessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "engine session   \nname",
+          "example": "session-name",
+          "member": "string",
+          "name": "EngineSessionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动销毁时间",
+          "example": "1",
+          "member": "int64",
+          "name": "IdleTimeoutMin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "driver规格",
+          "example": "small(1CU)",
+          "member": "string",
+          "name": "DriverSpec",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "executor规格",
+          "example": "small(1CU)",
+          "member": "string",
+          "name": "ExecutorSpec",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "executor最小数量",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecutorNumMin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "executor最大数量",
+          "example": "3",
+          "member": "int64",
+          "name": "ExecutorNumMax",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总规格最小",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalSpecMin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总规格最大",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalSpecMax",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SpecInfo": {
+      "document": "节点规格信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "small",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前规格的cu数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "Cu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前规格的cpu数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前规格的内存数，单位G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "32",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StandardEngineResourceGroupConfigInfo": {
+      "document": "标准引擎资源组，配置相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎资源组 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎ID",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组静态参数，需要重启资源组生效",
+          "example": "无",
+          "member": "EngineResourceGroupConfigPair",
+          "name": "StaticConfigPairs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组动态参数，下一个任务生效。",
+          "example": "无",
+          "member": "EngineResourceGroupConfigPair",
+          "name": "DynamicConfigPairs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StandardEngineResourceGroupInfo": {
+      "document": "用户标准引擎资源组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标准引擎资源组ID",
+          "example": "无",
+          "member": "string",
+          "name": "EngineResourceGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标准引擎资源组名称，支持1-50个英文、汉字、数字、连接线-或下划线_",
+          "example": "无",
+          "member": "string",
+          "name": "EngineResourceGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者",
+          "example": "无",
+          "member": "string",
+          "name": "Creator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组 状态，-1--删除、0--启动中、2--运行、3--暂停、4--暂停中、7--切换引擎中、8--配置修改中。9--资源组重启中，10--因为变配导致资源组启动、11--因为隔离导致资源组挂起、12- 资源配置下发中、 13-接入点隔离导致资源组挂起中",
+          "example": "无",
+          "member": "int64",
+          "name": "ResourceGroupState",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动启动，（任务提交自动拉起资源组）0-自动启动，1-不自动启动",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoLaunch",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动挂起资源组。0-自动挂起，1-不自动挂起",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoPause",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动挂起时间，单位分钟，取值范围在1-999（在无任务AutoPauseTime后，资源组自动挂起）",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoPauseTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "driver的cu规格：\n当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu），内存型cu为cpu：men=1:8，m.small（1cu内存型）、m.medium（2cu内存型）、m.large（4cu内存型）、m.xlarge（8cu内存型）",
+          "example": "无",
+          "member": "string",
+          "name": "DriverCuSpec",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "executor的cu规格：\n当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu），内存型cu为cpu：men=1:8，m.small（1cu内存型）、m.medium（2cu内存型）、m.large（4cu内存型）、m.xlarge（8cu内存型）",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorCuSpec",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务并发数",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "executor最小数量，",
+          "example": "无",
+          "member": "int64",
+          "name": "MinExecutorNums",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "executor最大数量，",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxExecutorNums",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否待重启，作为有资源参数，静态参数修改未重启生效的标识；0-- 不需要重启、1--因为资源参数待重启、2--因静态参数重启、3--因资源和静态参数而待重启、4--因网络配置而待重启、5--因网络配置和资源配置而待重启、6--因网络配置和静态参数而待重启、7--因网络配置，资源参数和静态参数而待重启、",
+          "example": "无",
+          "member": "int64",
+          "name": "NeedRestart",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的引擎名称",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的引擎ID",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的引擎状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DataEngineState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessPointId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessPointName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AccessPointState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组类型，console/ default\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "ResourceGroupType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EngineNetworkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkConfigNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AI类型资源组的框架类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "python",
+          "member": "string",
+          "name": "FrameType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AI类型资源组的镜像类型，内置：bulit-in，自定义：custom\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bulit-in",
+          "member": "string",
+          "name": "ImageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "image-xxx",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "imageid-xxx",
+          "member": "string",
+          "name": "ImageVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AI资源组的可用资源上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是默认资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefault",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SparkSQL",
+          "member": "string",
+          "name": "ResourceGroupScene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "python类型资源组python单机节点资源上限，该值要小于资源组的资源上限.small:1cu medium:2cu large:4cu xlarge:8cu 4xlarge:16cu 8xlarge:32cu 16xlarge:64cu，如果是高内存型资源，在类型前面加上m.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "small",
+          "member": "string",
+          "name": "PythonCuSpec",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Spark类型资源组资源配置模式，fast：快速模式，custom：自定义模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "custom",
+          "member": "string",
+          "name": "SparkSpecMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Spark类型资源组资源上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64",
+          "member": "int64",
+          "name": "SparkSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Spark类型资源组资源最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "int64",
+          "name": "SparkMinSize",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -20246,6 +22609,33 @@
       ],
       "type": "object"
     },
+    "UnboundDatasourceHouseRequest": {
+      "document": "UnboundDatasourceHouse请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络配置名称",
+          "example": "test",
+          "member": "string",
+          "name": "NetworkConnectionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnboundDatasourceHouseResponse": {
+      "document": "UnboundDatasourceHouse返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UnlockMetaDataRequest": {
       "document": "UnlockMetaData请求参数结构体",
       "members": [
@@ -20281,6 +22671,30 @@
         }
       ],
       "type": "object"
+    },
+    "UpdateConfContext": {
+      "document": "配置下发参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数类型，可选：StaticConfigType，DynamicConfigType",
+          "example": "StaticConfigType",
+          "member": "string",
+          "name": "ConfigType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数的配置数组",
+          "example": "无",
+          "member": "Param",
+          "name": "Params",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "UpdateDataEngineConfigRequest": {
       "document": "UpdateDataEngineConfig请求参数结构体",
@@ -20489,6 +22903,87 @@
       ],
       "type": "object"
     },
+    "UpdateEngineResourceGroupNetworkConfigInfoRequest": {
+      "document": "UpdateEngineResourceGroupNetworkConfigInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎资源组ID",
+          "example": "无",
+          "member": "string",
+          "name": "EngineResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否立即重启资源组生效，0--立即生效，1--只保持不重启生效",
+          "example": "无",
+          "member": "int64",
+          "name": "IsEffectiveNow",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源组绑定的网络配置名称集合",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkConfigNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEngineResourceGroupNetworkConfigInfoResponse": {
+      "document": "UpdateEngineResourceGroupNetworkConfigInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateNetworkConnectionRequest": {
+      "document": "UpdateNetworkConnection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络配置描述",
+          "example": "test",
+          "member": "string",
+          "name": "NetworkConnectionDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络配置名称",
+          "example": "test",
+          "member": "string",
+          "name": "NetworkConnectionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateNetworkConnectionResponse": {
+      "document": "UpdateNetworkConnection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateRowFilterRequest": {
       "document": "UpdateRowFilter请求参数结构体",
       "members": [
@@ -20515,6 +23010,285 @@
     },
     "UpdateRowFilterResponse": {
       "document": "UpdateRowFilter返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateStandardEngineResourceGroupBaseInfoRequest": {
+      "document": "UpdateStandardEngineResourceGroupBaseInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎资源组名称",
+          "example": "无",
+          "member": "string",
+          "name": "EngineResourceGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动启动，（任务提交自动拉起资源组）0-自动启动，1-不自动启动",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoLaunch",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动挂起资源组。0-自动挂起，1-不自动挂起",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoPause",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动挂起时间，单位分钟，取值范围在1-999（在无任务AutoPauseTime后，资源组自动挂起）",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoPauseTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务并发数",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateStandardEngineResourceGroupBaseInfoResponse": {
+      "document": "UpdateStandardEngineResourceGroupBaseInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateStandardEngineResourceGroupConfigInfoRequest": {
+      "document": "UpdateStandardEngineResourceGroupConfigInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎资源组名称",
+          "example": "无",
+          "member": "string",
+          "name": "EngineResourceGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要更新的配置",
+          "example": "无",
+          "member": "UpdateConfContext",
+          "name": "UpdateConfContext",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否立即重启资源组生效，0--立即生效，1--只保持不重启生效",
+          "example": "无",
+          "member": "int64",
+          "name": "IsEffectiveNow",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateStandardEngineResourceGroupConfigInfoResponse": {
+      "document": "UpdateStandardEngineResourceGroupConfigInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateStandardEngineResourceGroupResourceInfoRequest": {
+      "document": "UpdateStandardEngineResourceGroupResourceInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎资源组名称",
+          "example": "无",
+          "member": "string",
+          "name": "EngineResourceGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "driver的cu规格：\n当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu），内存型cu为cpu：men=1:8，m.small（1cu内存型）、m.medium（2cu内存型）、m.large（4cu内存型）、m.xlarge（8cu内存型）",
+          "example": "无",
+          "member": "string",
+          "name": "DriverCuSpec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "executor的cu规格：\n当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu），内存型cu为cpu：men=1:8，m.small（1cu内存型）、m.medium（2cu内存型）、m.large（4cu内存型）、m.xlarge（8cu内存型）",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorCuSpec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "executor最小数量，",
+          "example": "无",
+          "member": "int64",
+          "name": "MinExecutorNums",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "executor最大数量",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxExecutorNums",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否立即重启资源组生效，0--立即生效，1--只保持不重启生效",
+          "example": "无",
+          "member": "int64",
+          "name": "IsEffectiveNow",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "AI资源组资源上限",
+          "example": "64",
+          "member": "int64",
+          "name": "Size",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "镜像类型，内置镜像：built-in，自定义镜像：custom",
+          "example": "built-in",
+          "member": "string",
+          "name": "ImageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称",
+          "example": "imagename-xxx",
+          "member": "string",
+          "name": "ImageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像版本，镜像id",
+          "example": "image-xxxx",
+          "member": "string",
+          "name": "ImageVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "框架类型",
+          "example": "spark-ml",
+          "member": "string",
+          "name": "FrameType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义镜像域名",
+          "example": "dlctcr.tencentcloud.com",
+          "member": "string",
+          "name": "PublicDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义镜像实例id",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义镜像所属地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "RegionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "python类型资源组python单机节点资源上限，该值要小于资源组的资源上限.small:1cu medium:2cu large:4cu xlarge:8cu 4xlarge:16cu 8xlarge:32cu 16xlarge:64cu，如果是高内存型资源，在类型前面加上m.",
+          "example": "small",
+          "member": "string",
+          "name": "PythonCuSpec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅SQL资源组资源配置模式，fast：快速模式，custom：自定义模式",
+          "example": "custom",
+          "member": "string",
+          "name": "SparkSpecMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅SQL资源组资源上限，仅用于快速模式",
+          "example": "64",
+          "member": "int64",
+          "name": "SparkSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateStandardEngineResourceGroupResourceInfoResponse": {
+      "document": "UpdateStandardEngineResourceGroupResourceInfo返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -21013,6 +23787,62 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserVpcConnectionInfo": {
+      "document": "用户vpc网络连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EngineNetworkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户vpcid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserVpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户终端节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserVpcEndpointId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户终端节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserVpcEndpointName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessConnectionInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

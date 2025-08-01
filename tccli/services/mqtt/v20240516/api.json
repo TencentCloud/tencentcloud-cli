@@ -3013,6 +3013,36 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "是否使用默认的服务端证书",
+          "example": "false",
+          "member": "bool",
+          "name": "UseDefaultServerCert",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端CA最大数量",
+          "example": "3",
+          "member": "int64",
+          "name": "TrustedCaLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端证书最大数量",
+          "example": "3",
+          "member": "int64",
+          "name": "ServerCertLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4055,6 +4085,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户属性",
+          "example": "无",
+          "member": "SubscriptionUserProperty",
+          "name": "UserProperties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5066,6 +5106,24 @@
           "name": "AuthorizationPolicy",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用默认的服务端证书",
+          "example": "false",
+          "member": "bool",
+          "name": "UseDefaultServerCert",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "TLS：单向认证\nmTLS；双向认证\nBYOC：一机一证",
+          "example": "BYOC",
+          "member": "string",
+          "name": "X509Mode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5825,6 +5883,32 @@
         }
       ],
       "type": "object"
+    },
+    "SubscriptionUserProperty": {
+      "document": "订阅的UserProperty结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅的UserProperty键",
+          "example": "UserProperty-key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅的UserProperty值",
+          "example": "UserProperty-value",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Tag": {
       "document": "标签数据",
