@@ -204,7 +204,7 @@
       "status": "online"
     },
     "CreateRealtimeLogDeliveryTask": {
-      "document": "通过本接口创建实时日志投递任务。本接口有如下限制：\n同一个实体（七层域名或者四层代理实例）在同种数据投递类型（LogType）和数据投递区域（Area）的组合下，只能被添加到一个实时日志投递任务中。建议先通过 [DescribeRealtimeLogDeliveryTasks](https://cloud.tencent.com/document/product/1552/104110)  接口根据实体查询实时日志投递任务列表，检查实体是否已经被添加到另一实时日志投递任务中。",
+      "document": "本接口用于创建实时日志投递任务。本接口有如下限制：\n- 当数据投递类型（LogType）为站点加速日志（七层访问日志）、四层代理日志、边缘函数运行日志时，同一个实体（七层域名、四层代理实例、边缘函数实例）在同种数据投递类型（LogType）和数据投递区域（Area）的组合下，只能被添加到如下实时日志投递任务类型（TaskType）组合中：\n    - 一个推送至腾讯云  CLS 的任务，加上另一个推送至自定义 HTTP(S) 地址的任务；\n    - 一个推送至腾讯云  CLS 的任务，加上另一个推送至 AWS S3 兼容对象存储的任务；\n- 当数据投递类型（LogType）为速率限制和 CC 攻击防护日志、托管规则日志、自定义规则日志、Bot 管理日志时，同一个实体在同种数据投递类型（LogType）和数据投递区域（Area）的组合下，只能被添加到一个实时日志投递任务中。\n\n建议先通过 [DescribeRealtimeLogDeliveryTasks](https://cloud.tencent.com/document/product/1552/104110)  接口根据实体查询实时日志投递任务列表，检查实体是否已经被添加到另一实时日志投递任务中。",
       "input": "CreateRealtimeLogDeliveryTaskRequest",
       "name": "创建实时日志投递任务",
       "output": "CreateRealtimeLogDeliveryTaskResponse",
@@ -7029,7 +7029,7 @@
         },
         {
           "disabled": false,
-          "document": "实时日志投递任务类型，取值有：\n<li>cls: 推送到腾讯云 CLS；</li>\n<li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>\n<li>s3：推送到 AWS S3 兼容存储桶地址。</li>",
+          "document": "实时日志投递任务类型，取值有：\n<li>cls: 推送到腾讯云 CLS；</li>\n<li>custom_endpoint：推送到自定义 HTTP(S) 地址；</li>\n<li>s3：推送到 AWS S3 兼容存储桶地址；</li>",
           "example": "cls",
           "member": "string",
           "name": "TaskType",
@@ -7038,7 +7038,7 @@
         },
         {
           "disabled": false,
-          "document": "实时日志投递任务对应的实体（七层域名或者四层代理实例）列表。取值示例如下：\n<li>七层域名：domain.example.com；</li>\n<li>四层代理实例：sid-2s69eb5wcms7。</li>",
+          "document": "实时日志投递任务对应的实体列表。取值示例如下：\n<li>七层域名：domain.example.com</li>\n<li>四层代理实例：sid-2s69eb5wcms7</li>\n<li>边缘函数实例：test-zone-2mxigizoh9l9-1257626257</li>",
           "example": "[\"domain.example.com\"]",
           "member": "string",
           "name": "EntityList",
@@ -7047,7 +7047,7 @@
         },
         {
           "disabled": false,
-          "document": "数据投递类型，取值有：\n<li>domain：站点加速日志；</li>\n<li>application：四层代理日志；</li>\n<li>web-rateLiming：速率限制和 CC 攻击防护日志；</li>\n<li>web-attack：托管规则日志；</li>\n<li>web-rule：自定义规则日志；</li>\n<li>web-bot：Bot管理日志。</li>",
+          "document": "数据投递类型，取值有：\n<li>domain：站点加速日志；</li>\n<li>application：四层代理日志；</li>\n<li>function：边缘函数运行日志；</li>\n<li>web-rateLiming：速率限制和 CC 攻击防护日志；</li>\n<li>web-attack：托管规则日志；</li>\n<li>web-rule：自定义规则日志；</li>\n<li>web-bot：Bot管理日志。</li>",
           "example": "domain",
           "member": "string",
           "name": "LogType",
@@ -7065,7 +7065,7 @@
         },
         {
           "disabled": false,
-          "document": "投递的预设字段列表。",
+          "document": "投递的预设字段列表。取值参考：\n<li>[站点加速日志（七层访问日志）](https://cloud.tencent.com/document/product/1552/105791)</li>\n<li>[四层代理日志](https://cloud.tencent.com/document/product/1552/105792)</li>\n<li>[边缘函数运行日志](https://cloud.tencent.com/document/product/1552/115585)</li>",
           "example": "[\"RequestID\",\"ClientIP\",\"RequestTime\"]",
           "member": "string",
           "name": "Fields",

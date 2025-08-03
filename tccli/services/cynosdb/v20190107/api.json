@@ -626,7 +626,7 @@
     "DescribeZones": {
       "document": "本接口（DescribeZones）用于查询可售卖地域可用区信息。",
       "input": "DescribeZonesRequest",
-      "name": "查询可售卖地域可用区信息。",
+      "name": "查询可售卖地域可用区信息",
       "output": "DescribeZonesResponse",
       "status": "online"
     },

@@ -1867,8 +1867,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "仓库名称",
-          "example": "nicokang/golang1",
+          "document": "仓库名称，格式为 {Namespace}/{lmageName}。",
+          "example": "namespace/image",
           "member": "string",
           "name": "RepoName",
           "required": true,

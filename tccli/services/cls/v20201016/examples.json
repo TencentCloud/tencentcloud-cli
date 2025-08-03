@@ -323,7 +323,7 @@
     "DeleteDashboardSubscribe": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDashboardSubscribe\n<公共请求参数>\n\n{\n    \"Id\": 10\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDashboardSubscribe\n<公共请求参数>\n\n{\n    \"Id\": 10000123\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建仪表盘订阅"
       }
@@ -961,7 +961,7 @@
     "UploadLog": [
       {
         "document": "上传日志",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadLog\n<公共请求参数>\n\n{\n    \"TopicId\": \"f6c4fa6f-xxxx-xxxx-8289-1ff6f77ed975\",\n    \"CompressType\": \"lz4\"\n}",
+        "input": "POST / HTTP/1.1\n{\n  \"X-TC-Action\": \"UploadLog\",\n  \"Host\": \"cls.tencentcloudapi.com\",\n  \"Content-Type\": \"application/x-protobuf\",\n  \"TopicId\": \"f6c4fa6f-xxxx-xxxx-8289-1ff6f77ed975\",\n  \"CompressType\": \"lz4\"\n}\n\n<LogGroupList 的 PB 格式压缩包内容>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-xxxx-xxxx-bb20-270359fb54a7\"\n    }\n}",
         "title": "上传日志"
       }

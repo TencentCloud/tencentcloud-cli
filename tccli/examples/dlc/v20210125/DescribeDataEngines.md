@@ -19,7 +19,8 @@ tccli dlc DescribeDataEngines --cli-unfold-argument  \
     --EngineType spark \
     --DatasourceConnectionNameSet net1111 \
     --EngineGeneration Native \
-    --EngineTypeDetail SparkSQL
+    --EngineTypeDetail SparkSQL \
+    --ListHasListener False
 ```
 
 Output: 
@@ -88,7 +89,8 @@ Output:
                         "DatasourceConnectionVpcId": "",
                         "DatasourceConnectionSubnetId": "",
                         "DatasourceConnectionCidrBlock": "",
-                        "DatasourceConnectionSubnetCidrBlock": ""
+                        "DatasourceConnectionSubnetCidrBlock": "",
+                        "EGSupport": 1
                     }
                 ],
                 "UiURL": "",

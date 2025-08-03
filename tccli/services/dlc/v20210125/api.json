@@ -7349,7 +7349,7 @@
         {
           "disabled": false,
           "document": "标签对集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"TagKey\":\"mark002\"}]",
+          "example": "无",
           "member": "TagInfo",
           "name": "TagList",
           "output_required": true,
@@ -7360,7 +7360,7 @@
         {
           "disabled": false,
           "document": "引擎拥有的权限\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[USE]",
+          "example": "[\"USE\"]",
           "member": "string",
           "name": "Permissions",
           "output_required": true,
@@ -7569,7 +7569,7 @@
         {
           "disabled": false,
           "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "125****081",
+          "example": "125111081",
           "member": "int64",
           "name": "UserAppId",
           "output_required": true,
@@ -7752,6 +7752,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎资源弹性伸缩策略",
+          "example": "无",
+          "member": "ScheduleElasticityConf",
+          "name": "ScheduleElasticityConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10372,7 +10383,7 @@
         {
           "disabled": false,
           "document": "参数应该为引擎权限类型，有效类型：\"USE\", \"MODIFY\", \"OPERATE\", \"MONITOR\", \"DELETE\"",
-          "example": "[USE]",
+          "example": "[\"USE\"]",
           "member": "string",
           "name": "AccessTypes",
           "required": false,
@@ -10399,7 +10410,7 @@
         {
           "disabled": false,
           "document": "网络配置列表，若传入该参数，则返回网络配置关联的计算引擎",
-          "example": "DLC_Kafka",
+          "example": "[\"DLC_Kafka\"]",
           "member": "string",
           "name": "DatasourceConnectionNameSet",
           "required": false,
@@ -10422,6 +10433,15 @@
           "name": "EngineTypeDetail",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认 false, 为 true 时仅列出具有洞察 listener 的引擎",
+          "example": "false",
+          "member": "bool",
+          "name": "ListHasListener",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14796,6 +14816,67 @@
       ],
       "type": "object"
     },
+    "ElasticPlan": {
+      "document": "引擎资源弹性伸缩计划",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最小集群数",
+          "example": "1",
+          "member": "int64",
+          "name": "MinElasticClusters",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大集群数",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxElasticClusters",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大排队时间",
+          "example": "10",
+          "member": "int64",
+          "name": "TolerableQueueTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，Once格式：yyyy-MM-dd HH:mm:ss; 非Once格式： HH:mm:ss",
+          "example": "21:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，Once格式：yyyy-MM-dd HH:mm:ss; 非Once格式： HH:mm:ss",
+          "example": "22:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ElasticsearchInfo": {
       "document": "Elasticsearch数据源的详细信息",
       "members": [
@@ -19092,6 +19173,67 @@
       ],
       "usage": "in"
     },
+    "ScheduleElasticityConf": {
+      "document": "引擎资源弹性伸缩策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启弹性伸缩：true/false",
+          "example": "true",
+          "member": "bool",
+          "name": "ScheduledElasticityEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度类型：ONCE（一次性调度），DAILY（每日调度），WEEKLY（每周调度），MONTHLY（每月调度）",
+          "example": "WEEKLY",
+          "member": "string",
+          "name": "ScheduleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度日期：WEEKLY传：1~7； MONTHLY传:1~31；其它类型不传",
+          "example": "1",
+          "member": "int64",
+          "name": "ScheduleDays",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度时区",
+          "example": "UTC+08:00（北京）",
+          "member": "string",
+          "name": "TimeZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性伸缩计划",
+          "example": "复杂类型",
+          "member": "ElasticPlan",
+          "name": "ElasticPlans",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Script": {
       "document": "script实例。",
       "members": [
@@ -22882,9 +23024,18 @@
         {
           "disabled": false,
           "document": "Spark批作业集群Session资源配置模板",
-          "example": "无",
+          "example": "{                 \"DriverSize\": \"large\",                 \"ExecutorMaxNumbers\": 3,                 \"ExecutorNums\": 3,                 \"ExecutorSize\": \"large\"             }",
           "member": "SessionResourceTemplate",
           "name": "SessionResourceTemplate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "引擎资源弹性伸缩策略",
+          "example": "{                 \"ScheduledElasticityEnabled\": \"true\",                 \"ScheduleType\": \"WEEKLY\"             }",
+          "member": "ScheduleElasticityConf",
+          "name": "ScheduleElasticityConf",
           "required": false,
           "type": "object"
         }

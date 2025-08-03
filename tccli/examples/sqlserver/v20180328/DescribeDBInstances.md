@@ -9,7 +9,7 @@ tccli sqlserver DescribeDBInstances --cli-unfold-argument  \
     --Status 2 \
     --SearchKey 172.17.0.12 \
     --VpcId vpc-mknbt351 \
-    --Zone ap-guangzhou-2 \
+    --Zone ap-guangzhou-3 \
     --VersionSet 2008R2 \
     --ProjectId 0 \
     --Offset 0 \

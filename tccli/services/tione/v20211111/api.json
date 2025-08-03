@@ -2115,7 +2115,7 @@
         {
           "disabled": false,
           "document": "资源配置，需填写对应算力规格ID和节点数量，算力规格ID查询接口为DescribeBillingSpecsPrice，eg：[{\"Role\":\"WORKER\", \"InstanceType\": \"TI.S.MEDIUM.POST\", \"InstanceNum\": 1}]",
-          "example": "[   {     \"Role\": \"WORKER\",     \"Cpu\": 1000,     \"Memory\": 1024,     \"GpuType\": \"\",     \"Gpu\": 0,     \"InstanceNum\": 1   } ]",
+          "example": "无",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfos",
           "required": true,
@@ -2151,7 +2151,7 @@
         {
           "disabled": false,
           "document": "预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询",
-          "example": "test",
+          "example": "rsg-1368bcxs",
           "member": "string",
           "name": "ResourceGroupId",
           "required": false,
@@ -2160,7 +2160,7 @@
         {
           "disabled": false,
           "document": "标签配置",
-          "example": "[   {     \"TagKey\": \"test_key\",     \"TagValue\": \"test_value\"   } ]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -2169,7 +2169,7 @@
         {
           "disabled": false,
           "document": "自定义镜像信息",
-          "example": "{   \"ImageType\": \"TCR\",   \"ImageUrl\": \"tione-live.tencentcloudcr.com/llm_picture/llm_picture_image:v1\",   \"RegistryRegion\": \"ap-shanghai\",   \"RegistryId\": \"tcr-f40c5gin\" }",
+          "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "required": false,
@@ -2178,7 +2178,7 @@
         {
           "disabled": false,
           "document": "COS代码包路径",
-          "example": "{   \"Bucket\": \"\",   \"Region\": \"\",   \"Paths\": [] }",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "CodePackagePath",
           "required": false,
@@ -2187,7 +2187,7 @@
         {
           "disabled": false,
           "document": "任务的启动命令，按任务训练模式输入，如遇特殊字符导致配置失败，可使用EncodedStartCmdInfo参数",
-          "example": "{\"StartCmd\":\"bash start.sh\"}",
+          "example": "无",
           "member": "StartCmdInfo",
           "name": "StartCmdInfo",
           "required": false,
@@ -2205,7 +2205,7 @@
         {
           "disabled": false,
           "document": "数据配置，依赖DataSource字段，数量不超过10个",
-          "example": "[   {     \"DataSourceType\": \"CFS\",     \"DataSourceUsage\": \"\",     \"MappingPath\": \"/opt/ml/input/data/\",     \"CFSSource\": {       \"Id\": \"cfs-2v0cr9jr\",       \"Path\": \"/\"     }   } ]",
+          "example": "无",
           "member": "DataConfig",
           "name": "DataConfigs",
           "required": false,
@@ -2232,7 +2232,7 @@
         {
           "disabled": false,
           "document": "COS训练输出路径",
-          "example": "{   \"Bucket\": \"\",   \"Region\": \"\",   \"Paths\": [] }",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "Output",
           "required": false,
@@ -2241,7 +2241,7 @@
         {
           "disabled": false,
           "document": "CLS日志配置",
-          "example": "{   \"LogsetId\": \"6c517622-a734-4d99-bfb8-1008c46d1108\",   \"TopicId\": \"3cfb6994-e3e9-4085-a624-a654245de6c5\" }",
+          "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
           "required": false,
@@ -2286,7 +2286,7 @@
         {
           "disabled": false,
           "document": "回调地址，用于创建/启动/停止训练任务的异步回调。回调格式&内容详见：[[TI-ONE接口回调说明]](https://cloud.tencent.com/document/product/851/84292)",
-          "example": "无",
+          "example": "http://callback.url",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -2295,7 +2295,7 @@
         {
           "disabled": false,
           "document": "编码后的任务启动命令，与StartCmdInfo同时配置时，仅当前参数生效",
-          "example": "{   \"StartCmdInfo\": \"eyJXb3JrZXJTdGFydENtZCI6InNsZWVwIDEwMDAifQ==\" }",
+          "example": "无",
           "member": "EncodedStartCmdInfo",
           "name": "EncodedStartCmdInfo",
           "required": false,
@@ -2304,7 +2304,7 @@
         {
           "disabled": false,
           "document": "代码仓库配置",
-          "example": "[{\"Id\":\"cr-1000669213287070080\",\"TargetPath\":\"/opt/ml/code\"}]",
+          "example": "无",
           "member": "CodeRepoConfig",
           "name": "CodeRepos",
           "required": false,
@@ -2319,7 +2319,7 @@
         {
           "disabled": false,
           "document": "训练任务ID",
-          "example": "12312313",
+          "example": "train-13766824497408",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -12122,7 +12122,7 @@
         {
           "disabled": false,
           "document": "训练任务ID",
-          "example": "train-123311",
+          "example": "train-2872332131",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -12132,7 +12132,7 @@
         {
           "disabled": false,
           "document": "训练任务名称",
-          "example": "test",
+          "example": "lora精调",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -12212,7 +12212,7 @@
         {
           "disabled": false,
           "document": "计费模式",
-          "example": "无",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
           "output_required": true,
@@ -12222,7 +12222,7 @@
         {
           "disabled": false,
           "document": "预付费专用资源组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "rsg-21husx",
           "member": "string",
           "name": "ResourceGroupId",
           "output_required": true,
@@ -12232,7 +12232,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": "[{\"Role\":\"WORKER\",\"Cpu\":1000,\"Memory\":1024,\"GpuType\":\"\",\"Gpu\":0,\"InstanceType\":\"\",\"InstanceTypeAlias\":\"\",\"InstanceNum\":1,\"RDMAConfig\":{\"Enable\":false},\"ExtendedResourceList\":{},\"ArchType\":\"\"}]",
+          "example": "无",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfos",
           "output_required": true,
@@ -12242,7 +12242,7 @@
         {
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"test\":\"test\"]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -12252,7 +12252,7 @@
         {
           "disabled": false,
           "document": "训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "DDP",
           "member": "string",
           "name": "TrainingMode",
           "output_required": true,
@@ -12292,7 +12292,7 @@
         {
           "disabled": false,
           "document": "数据配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"MappingPath\":\"/opt/ml/output/data\",\"DataSourceType\":\"CFS\",\"DataSourceUsage\":\"OUTPUT\",\"CFSSource\":{\"Id\":\"cfs-123abcd\",\"Path\":\"/exp1/output\"}}]",
+          "example": "无",
           "member": "DataConfig",
           "name": "DataConfigs",
           "output_required": true,
@@ -12302,7 +12302,7 @@
         {
           "disabled": false,
           "document": "调优参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\\n  \\\"Epoch\\\": \\\"2\\\",\\n  \\\"BatchSize\\\": \\\"1\\\"\\n}",
           "member": "string",
           "name": "TuningParameters",
           "output_required": true,
@@ -12342,7 +12342,7 @@
         {
           "disabled": false,
           "document": "VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "vpc-dk01hv",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -12352,7 +12352,7 @@
         {
           "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "subnet-rd571",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -12382,7 +12382,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2025-08-01T10:59:53+08",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -12392,7 +12392,7 @@
         {
           "disabled": false,
           "document": "训练开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-08-01T10:59:53+08",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
@@ -12402,7 +12402,7 @@
         {
           "disabled": false,
           "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中",
-          "example": "无",
+          "example": "BILLING",
           "member": "string",
           "name": "ChargeStatus",
           "output_required": true,
@@ -12412,7 +12412,7 @@
         {
           "disabled": false,
           "document": "最近一次实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "567233",
+          "example": "train-1376681210928497408-agjc33ds0q0",
           "member": "string",
           "name": "LatestInstanceId",
           "output_required": true,
@@ -12422,7 +12422,7 @@
         {
           "disabled": false,
           "document": "TensorBoard ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "tensorborad-123311",
+          "example": "tb-273hcds7",
           "member": "string",
           "name": "TensorBoardId",
           "output_required": true,
@@ -12432,7 +12432,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Remark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -12442,7 +12442,7 @@
         {
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "User Stop",
           "member": "string",
           "name": "FailureReason",
           "output_required": true,
@@ -12452,7 +12452,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2025-08-01T10:59:53+08",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -12462,7 +12462,7 @@
         {
           "disabled": false,
           "document": "训练结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-08-01T10:59:53+08",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -12482,7 +12482,7 @@
         {
           "disabled": false,
           "document": "预付费专用资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "测试资源组",
           "member": "string",
           "name": "ResourceGroupName",
           "output_required": true,
@@ -12492,7 +12492,7 @@
         {
           "disabled": false,
           "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "task message",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -12502,7 +12502,7 @@
         {
           "disabled": false,
           "document": "任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -12512,7 +12512,7 @@
         {
           "disabled": false,
           "document": "回调地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://callback.url",
           "member": "string",
           "name": "CallbackUrl",
           "output_required": true,
@@ -12522,7 +12522,7 @@
         {
           "disabled": false,
           "document": "任务关联的代码仓库配置",
-          "example": "[{\"Id\":\"cr-1000669213287070080\",\"TargetPath\":\"/opt/ml/code\"}]\t",
+          "example": "无",
           "member": "CodeRepoConfig",
           "name": "CodeRepos",
           "output_required": false,

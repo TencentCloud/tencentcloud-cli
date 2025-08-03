@@ -1230,7 +1230,7 @@
         {
           "disabled": false,
           "document": "该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>\n该字段与账号ID参数（UserId）配合使用可确定唯一账号。",
-          "example": "172300",
+          "example": "1",
           "member": "string",
           "name": "AccountType",
           "required": false,
@@ -1284,7 +1284,7 @@
         {
           "disabled": false,
           "document": "该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。<br>备注：头像图片**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时。",
-          "example": "https://cmstest-123.cos.ap-guangzhou.myqcloud.com/image.jpg",
+          "example": "https://cmstest.cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "HeadUrl",
           "required": false,

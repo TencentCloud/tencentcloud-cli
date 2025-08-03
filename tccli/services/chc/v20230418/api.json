@@ -269,7 +269,7 @@
   },
   "metadata": {
     "apiVersion": "2023-04-18",
-    "api_brief": "云托付物理服务器（CHC）API接口，对客户提供云托管服务平台的统一接口AIPI，主要包括服务申请和资源概览两个根据地。",
+    "api_brief": "IDC企业用户平台 API接口，协助客户提交现场服务工单申请与资源管理。",
     "serviceNameCN": "云托付物理服务器",
     "serviceShortName": "chc"
   },

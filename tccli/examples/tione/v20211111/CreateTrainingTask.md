@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione CreateTrainingTask --cli-unfold-argument  \
-    --Name test \
+    --Name zhangsan-lora \
     --FrameworkName PYTORCH \
     --FrameworkEnvironment tilearn-llm1.0-torch2.1-angel-vllm1.0-py3.10-cuda12.1-gpu \
     --TrainingMode DDP \

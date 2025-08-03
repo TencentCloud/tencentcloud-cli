@@ -6967,7 +6967,7 @@
           "example": "hye**hsh",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {

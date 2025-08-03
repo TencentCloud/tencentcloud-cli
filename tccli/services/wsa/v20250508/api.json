@@ -29,7 +29,7 @@
         },
         {
           "disabled": false,
-          "document": "返回结果类型，0-自然检索结果(默认)，1-垂类VR结果，2-混合结果（垂类VR结果+自然检索结果）",
+          "document": "返回结果类型，0-自然检索结果(默认)，1-多模态VR结果，2-混合结果（多模态VR结果+自然检索结果）",
           "example": "2",
           "member": "int64",
           "name": "Mode",
@@ -81,7 +81,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索结果页面",
+          "document": "搜索结果页面详情，格式为json字符串。\ntitle：结果标题\ndate：内容发布时间\nurl：内容发布源url\npassage：标准摘要\ncontent：动态摘要 （尊享版字段）\nsite：网站名称，部分不知名站点结果可能为空\nscore：相关性得分，取值0～1，越靠近1表示越相关\nimages：图片列表\nfavicon：网站图标链接，部分不知名站点结果可能为空",
           "example": "[\"{\\\"passage\\\":\\\"aaa\\\"}\", \"{\\\"passage\\\":\\\"bbb\\\"}\"]",
           "member": "string",
           "name": "Pages",

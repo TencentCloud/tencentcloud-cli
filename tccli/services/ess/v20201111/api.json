@@ -43,14 +43,14 @@
       "status": "online"
     },
     "CreateBatchContractReviewTask": {
-      "document": "此接口（CreateBatchContractReviewTask）用来通过上传后的PDF资源编号来批量创建合同智能审查任务。\n\n适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。\n\n注: \n1. PDF格式限制大小为10M以下\n2. 仅支持5个PDF文件批量发起",
+      "document": "此接口（CreateBatchContractReviewTask）用来通过上传后的PDF资源编号来批量创建合同智能审查任务。\n\n适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。\n\n注: \n1. PDF格式限制大小为10M以下\n2. 仅支持5份PDF文件批量发起（一份PDF对应一个审查任务）",
       "input": "CreateBatchContractReviewTaskRequest",
       "name": "批量创建合同审查任务",
       "output": "CreateBatchContractReviewTaskResponse",
       "status": "online"
     },
     "CreateBatchInformationExtractionTask": {
-      "document": "此接口（CreateBatchInformationExtractionTask）用来通过上传后的PDF资源编号来批量创建合同智能审查任务。<br/>\n\n适用场景：根据合同关键词（字段名称）来提取PDF合同文件的字段结果信息。\n\n注: \n1. PDF格式限制大小为10M以下\n2. 仅支持5个PDF文件批量发起",
+      "document": "此接口（CreateBatchInformationExtractionTask）用来通过上传后的PDF资源编号来批量创建合同智能审查任务。<br/>\n\n适用场景：根据合同关键词（字段名称）来提取PDF合同文件的字段结果信息。\n\n注: \n1. PDF格式限制大小为10M以下\n2. 仅支持5个PDF文件批量发起（一份PDF对应一个合同提取任务）",
       "input": "CreateBatchInformationExtractionTaskRequest",
       "name": "批量创建合同智能提取任务",
       "output": "CreateBatchInformationExtractionTaskResponse",
@@ -288,7 +288,7 @@
       "status": "online"
     },
     "CreateModifyAdminAuthorizationUrl": {
-      "document": "本接口（CreateModifyAdminAuthorizationUrl）用于重新上传超管授权书。\n\n注意:\n1. 重新上传超管授权书，必须是审核失败的情况下才能重新上传,可以通过回调[!授权书认证审核结果回调](https://qian.tencent.com/developers/company/callback_types_staffs#%E5%8D%81%E5%85%AD-%E6%8E%88%E6%9D%83%E4%B9%A6%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)得到",
+      "document": "本接口（CreateModifyAdminAuthorizationUrl）用于重新上传超管授权书。\n\n注意:\n1. 重新上传超管授权书，必须是审核失败的情况下才能重新上传,可以通过回调[!企业认证审核结果回调](https://qian.tencent.com/developers/company/callback_types_staffs#%E5%8D%81%E5%85%AD-%E6%8E%88%E6%9D%83%E4%B9%A6%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)得到授权书是否审核失败的结果。",
       "input": "CreateModifyAdminAuthorizationUrlRequest",
       "name": "生成变更超管授权书链接",
       "output": "CreateModifyAdminAuthorizationUrlResponse",
@@ -2614,7 +2614,7 @@
         },
         {
           "disabled": false,
-          "document": "合同智能提取的PDF文件资源编号列表，通过[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获取PDF文件资源编号。  注:  `目前，此接口仅支持5个文件发起。每个文件限制在10M以下`",
+          "document": "合同智能提取的PDF文件资源编号列表，通过[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获取PDF文件资源编号。\n\n 注:  `目前，此接口仅支持5个文件发起。每个文件限制在10M以下`",
           "example": "[\"yDRS4UUgygqdcj56UuO4zjExBQcOiB68\",\"yDRS4UUgygqdcj5pUuO4zjEu602GFIe6\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -9850,7 +9850,7 @@
         },
         {
           "disabled": false,
-          "document": "合同审查任务状态。\n状态如下：\n<ul>\n    <li>**1** - 合同审查任务创建成功</li>   \n    <li>**2** - 合同审查任务排队中</li>  \n    <li>**3** - 合同审查任务执行中</li>   \n    <li>**4** - 合同审查任务执行成功</li>\n    <li>**4** - 合同审查任务执行失败</li>\n</ul>",
+          "document": "合同审查任务状态。\n状态如下：\n<ul>\n    <li>**1** - 合同审查任务创建成功</li>   \n    <li>**2** - 合同审查任务排队中</li>  \n    <li>**3** - 合同审查任务执行中</li>   \n    <li>**4** - 合同审查任务执行成功</li>\n    <li>**5** - 合同审查任务执行失败</li>\n</ul>",
           "example": "4",
           "member": "int64",
           "name": "Status",
@@ -10158,7 +10158,7 @@
         {
           "disabled": true,
           "document": "暂不开放",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "CcToken",
           "required": false,
@@ -10167,7 +10167,7 @@
         {
           "disabled": true,
           "document": "暂不开放",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Scene",
           "required": false,

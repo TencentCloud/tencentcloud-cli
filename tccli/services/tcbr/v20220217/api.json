@@ -345,12 +345,21 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息",
+          "document": "服务配置信息(已废弃)",
           "example": "无",
           "member": "ServerBaseConfig",
           "name": "ServerConfig",
-          "required": true,
+          "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "服务配置信息",
+          "example": "无",
+          "member": "DiffConfigItem",
+          "name": "Items",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -815,6 +824,93 @@
         }
       ],
       "type": "object"
+    },
+    "DiffConfigItem": {
+      "document": "服务配置入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置项 Key\nMinNum 最小副本数\nMaxNum 最大副本数\nPolicyDetails 扩缩容策略\nAccessTypes 访问类型\nTimerScale 定时扩缩容\nInternalAccess 内网访问\nOperationMode 运行模式 noScale | condScale | alwaysScale | custom ｜ manualScale\nSessionAffinity 会话亲和性 open | close\nCpuSpecs cpu 规格\nMemSpecs mem规格\nEnvParam 环境变量\nLogPath 日志采集路径\nPort 端口\nDockerfile dockerfile 文件名\nBuildDir 目标目录\nTag 服务标签\nLogType 日志类型 none | default | custom \nLogSetId 日志集Id\nLogTopicId 日志主题ID\nLogParseType 日志解析类型 json ｜ line\nEntryPoint entrypoint 命令\nCmd cmd命令\nVpcConf 网络信息",
+          "example": "MinNum",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字符串类型配置项值\nInternalAccess、OperationMode、SessionAffinity、EnvParam、LogPath、Dockerfile、BuildDir、Tag、LogType、LogSetId、LogTopicId、LogParseType",
+          "example": "logs",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "int 类型配置项值\nMinNum、MaxNum、Port",
+          "example": "1",
+          "member": "int64",
+          "name": "IntValue",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "bool 类型配置项值",
+          "example": "false",
+          "member": "bool",
+          "name": "BoolValue",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "浮点型配置项值\nCpuSpecs、MemSpecs",
+          "example": "0.25",
+          "member": "float",
+          "name": "FloatValue",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "字符串数组配置项值\nAccessTypes，EntryPoint，Cmd",
+          "example": "[\"OA\", \"PUBLIC\"]",
+          "member": "string",
+          "name": "ArrayValue",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "扩缩容策略配置项值",
+          "example": "无",
+          "member": "HpaPolicy",
+          "name": "PolicyDetails",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "定时扩缩容配置项值",
+          "example": "无",
+          "member": "TimerScale",
+          "name": "TimerScale",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "配置内网访问时网络信息",
+          "example": "无",
+          "member": "VpcConf",
+          "name": "VpcConf",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
     },
     "EnvBaseInfo": {
       "document": "环境基础信息",
@@ -1508,7 +1604,7 @@
         {
           "disabled": false,
           "document": "是否开启公网访问",
-          "example": "[\"PUBLIC\", \"OA\", \"MINIAPP\", \"VPC\", \"\"]",
+          "example": "[\"PUBLIC\", \"OA\", \"MINIAPP\", \"VPC\"]",
           "member": "string",
           "name": "OpenAccessTypes",
           "output_required": true,
@@ -1563,7 +1659,7 @@
         {
           "disabled": false,
           "document": "扩缩容配置",
-          "example": "cpu, mem, cpu/mem",
+          "example": "无",
           "member": "HpaPolicy",
           "name": "PolicyDetails",
           "output_required": true,
@@ -1761,7 +1857,7 @@
         {
           "disabled": false,
           "document": "Dockerfile EntryPoint 参数",
-          "example": "[\"echo\", \"test\"]",
+          "example": "[\"echo\"]",
           "member": "string",
           "name": "EntryPoint",
           "output_required": false,
@@ -1772,7 +1868,7 @@
         {
           "disabled": false,
           "document": "Dockerfile Cmd 参数",
-          "example": "[\"echo\", \"test\"]",
+          "example": "[\"echo\"]",
           "member": "string",
           "name": "Cmd",
           "output_required": false,
@@ -1794,7 +1890,7 @@
         {
           "disabled": false,
           "document": "Vpc 配置参数",
-          "example": "{\"VpcId\": \"\", \"VpcCIDR\": \"\",\"SubnetId\": \"\",\"SubnetCIDR\":\"\"}",
+          "example": "无",
           "member": "VpcConf",
           "name": "VpcConf",
           "output_required": false,
@@ -2375,11 +2471,11 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息",
+          "document": "服务配置信息(已废弃)",
           "example": "无",
           "member": "ServerBaseConfig",
           "name": "ServerConfig",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
@@ -2390,6 +2486,15 @@
           "name": "Business",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务配置信息",
+          "example": "无",
+          "member": "DiffConfigItem",
+          "name": "Items",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

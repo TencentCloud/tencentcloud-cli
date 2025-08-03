@@ -7682,6 +7682,30 @@
       ],
       "usage": "out"
     },
+    "DuplicateFileHandle": {
+      "document": "重复文档处理方式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重复文档判断方式，1：按文档内容，即cos_hash字段判断是否重复",
+          "example": "1",
+          "member": "uint64",
+          "name": "CheckType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重复文档处理方式，1：返回报错，2：跳过，返回重复的文档业务ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "HandleType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "ExportAttributeLabelRequest": {
       "document": "ExportAttributeLabel请求参数结构体",
       "members": [
@@ -16196,7 +16220,7 @@
         {
           "disabled": false,
           "document": "平台cos路径，与DescribeStorageCredential接口查询UploadPath参数保持一致",
-          "example": "/corp/23432432/233432/doc/zeSOHIBjwcWoEmlMMXOp-1796022574489010176.docx",
+          "example": "/corp/1258039/doc/wcWoEmlMXOp.docx",
           "member": "string",
           "name": "CosUrl",
           "required": true,
@@ -16259,7 +16283,7 @@
         {
           "disabled": false,
           "document": "标签引用",
-          "example": "{\"Source\":1, \"AttributeBizId\":1947303675959394240,\"LabelBizIds\":[\"1947304029408340096\", \"1947303675967782849\"]}",
+          "example": "无",
           "member": "AttrLabelRefer",
           "name": "AttrLabels",
           "required": false,
@@ -16313,7 +16337,7 @@
         {
           "disabled": false,
           "document": "分类ID",
-          "example": "1946038907082162176",
+          "example": "1948014278153560",
           "member": "string",
           "name": "CateBizId",
           "required": false,
@@ -16327,6 +16351,15 @@
           "name": "IsDownload",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "重复文档处理方式，按顺序匹配第一个满足条件的方式处理",
+          "example": "无",
+          "member": "DuplicateFileHandle",
+          "name": "DuplicateFileHandles",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -16337,7 +16370,7 @@
         {
           "disabled": false,
           "document": "文档ID",
-          "example": "1948014277815314560",
+          "example": "1948014278153560",
           "member": "string",
           "name": "DocBizId",
           "output_required": false,
@@ -16372,6 +16405,16 @@
           "name": "ErrorLinkText",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重复类型，0：未重复，其他取值请参考入参DuplicateFileHandle结构体的CheckType字段",
+          "example": "0",
+          "member": "uint64",
+          "name": "DuplicateFileCheckType",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

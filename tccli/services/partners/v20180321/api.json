@@ -64,7 +64,7 @@
       "status": "online"
     },
     "DescribeAgentDealsByCache": {
-      "document": "供代理商拉取缓存的全量预付费客户订单",
+      "document": "供代理商拉取全量预付费普通客户订单\n（对应控制台：客户订单-预付费-普通订单）",
       "input": "DescribeAgentDealsByCacheRequest",
       "name": "代理商缓存订单查询接口（预付费）",
       "output": "DescribeAgentDealsByCacheResponse",
@@ -1860,7 +1860,7 @@
         {
           "disabled": false,
           "document": "下单人账号ID列表",
-          "example": "100001",
+          "example": "[\"100001\"]",
           "member": "string",
           "name": "OwnerUins",
           "required": false,
@@ -1869,7 +1869,7 @@
         {
           "disabled": false,
           "document": "子订单号列表",
-          "example": "[\"202001010000123456', '202001010000123457\"]",
+          "example": "[\"20250630941003020261651\", \"20250528341002900634981\"]",
           "member": "string",
           "name": "DealNames",
           "required": false,
@@ -1878,7 +1878,7 @@
         {
           "disabled": false,
           "document": "大订单号列表",
-          "example": "[\"202001010000123456', '202001010000123457\"]",
+          "example": "[\"20250630941003020261641\", \"20250528341002900634971\"]",
           "member": "string",
           "name": "BigDealIds",
           "required": false,
