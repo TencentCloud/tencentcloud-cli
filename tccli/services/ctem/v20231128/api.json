@@ -335,7 +335,7 @@
         {
           "disabled": false,
           "document": "授权文件id",
-          "example": "无",
+          "example": "d4621xxx",
           "member": "string",
           "name": "AuthFile",
           "required": false,
@@ -353,7 +353,7 @@
         {
           "disabled": false,
           "document": "企业相关的关键字",
-          "example": "无",
+          "example": "腾讯",
           "member": "string",
           "name": "Keywords",
           "required": false,
@@ -362,7 +362,7 @@
         {
           "disabled": false,
           "document": "图标",
-          "example": "无",
+          "example": "d4621xxx",
           "member": "string",
           "name": "Icon",
           "required": false,
@@ -371,7 +371,7 @@
         {
           "disabled": false,
           "document": "并发设置",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "Qps",
           "required": false,
@@ -380,7 +380,7 @@
         {
           "disabled": false,
           "document": "限制子公司层级，-1表示不限制",
-          "example": "-1",
+          "example": "1",
           "member": "int64",
           "name": "SubCompanyLevel",
           "required": false,

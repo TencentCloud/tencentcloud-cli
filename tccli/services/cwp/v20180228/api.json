@@ -484,9 +484,9 @@
       "status": "online"
     },
     "DescribeAccountStatistics": {
-      "document": "本接口 (DescribeAccountStatistics) 用于获取帐号统计列表数据。",
+      "document": "本接口 (DescribeAccountStatistics) 用于获取账号统计列表数据。",
       "input": "DescribeAccountStatisticsRequest",
-      "name": "获取帐号统计列表数据",
+      "name": "获取账号统计列表数据",
       "output": "DescribeAccountStatisticsResponse",
       "status": "online"
     },
@@ -1310,9 +1310,9 @@
       "status": "online"
     },
     "DescribeHistoryAccounts": {
-      "document": "本接口 (DescribeHistoryAccounts) 用于获取帐号变更历史列表数据。",
+      "document": "本接口 (DescribeHistoryAccounts) 用于获取账号变更历史列表数据。",
       "input": "DescribeHistoryAccountsRequest",
-      "name": "获取帐号变更历史列表",
+      "name": "获取账号变更历史列表",
       "output": "DescribeHistoryAccountsResponse",
       "status": "online"
     },
@@ -16396,7 +16396,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>Username - String - 是否必填：否 - 帐号用户名</li>",
-          "example": "[{\"Name\":\"Username\",\"Values\":[\"root\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -16410,7 +16410,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "帐号统计列表记录总数。",
+          "document": "账号统计列表记录总数。",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -16420,8 +16420,8 @@
         },
         {
           "disabled": false,
-          "document": "帐号统计列表。",
-          "example": "[       {         \"Username\": \"nginx\",         \"MachineNum\": 10            }     ]",
+          "document": "账号统计列表。",
+          "example": "无",
           "member": "AccountStatistics",
           "name": "AccountStatistics",
           "output_required": true,
@@ -24584,7 +24584,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>Username - String - 是否必填：否 - 帐号名</li>",
-          "example": "[{\"Name\":\"Username\",\"Values\":[\"dev\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -24598,7 +24598,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "帐号变更历史列表记录总数。",
+          "document": "账号变更历史列表记录总数。",
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
@@ -24608,8 +24608,8 @@
         },
         {
           "disabled": false,
-          "document": "帐号变更历史数据数组。",
-          "example": "[       {         \"Id\": 1,         \"Uuid\": \"6b6cd843-6bc1-4011-a74c-dc3fd26a7dd1\",         \"MachineName\": \"machine-name\",         \"MachineIp\": \"10.104.86.62\",         \"Username\": \"nginx\",         \"ModifyType\": \"CREATE\",         \"ModifyTime\": \"2018-01-01 12:12:12\"       }     ]",
+          "document": "账号变更历史数据数组。",
+          "example": "无",
           "member": "HistoryAccount",
           "name": "HistoryAccounts",
           "output_required": true,

@@ -6,6 +6,8 @@ Input:
 
 ```
 tccli wedata ModifyProject --cli-unfold-argument  \
+    --DisplayName bs_test \
+    --Description bs_test \
     --TaskSubmitApproval True \
     --ProjectId 111111111111 \
     --ResourcePoolInfo.ResourcePools 1234455555 \
@@ -37,7 +39,9 @@ Input:
 ```
 tccli wedata ModifyProject --cli-unfold-argument  \
     --TaskSubmitApproval true \
-    --ProjectId 978203585769070592
+    --ProjectId 978203585769070592 \
+    --DisplayName bs_test \
+    --Description bs_test
 ```
 
 Output: 

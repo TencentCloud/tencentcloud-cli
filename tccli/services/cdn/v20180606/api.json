@@ -2597,16 +2597,18 @@
           "example": "off",
           "member": "string",
           "name": "FullUrlCache",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否忽略大小写缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否忽略大小写缓存\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
           "member": "string",
           "name": "IgnoreCase",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2617,6 +2619,7 @@
           "example": "无",
           "member": "QueryStringKey",
           "name": "QueryString",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -2627,6 +2630,7 @@
           "example": "无",
           "member": "CookieKey",
           "name": "Cookie",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -2637,6 +2641,7 @@
           "example": "无",
           "member": "HeaderKey",
           "name": "Header",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -2647,6 +2652,7 @@
           "example": "无",
           "member": "CacheTagKey",
           "name": "CacheTag",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -2657,6 +2663,7 @@
           "example": "无",
           "member": "SchemeKey",
           "name": "Scheme",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -2667,6 +2674,7 @@
           "example": "无",
           "member": "KeyRule",
           "name": "KeyRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -8549,7 +8557,7 @@
         {
           "disabled": false,
           "document": "CacheType 对应类型下的匹配内容：\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "jpg",
+          "example": "[\"jpg\"]",
           "member": "string",
           "name": "RulePaths",
           "output_required": true,
@@ -8581,7 +8589,7 @@
         },
         {
           "disabled": false,
-          "document": "是否忽略大小写缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否忽略大小写缓存\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
           "member": "string",
           "name": "IgnoreCase",

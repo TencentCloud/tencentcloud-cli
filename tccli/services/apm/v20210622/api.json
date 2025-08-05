@@ -116,21 +116,23 @@
           "member": "string",
           "name": "Key",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Value 值定义",
-          "example": "CloudMonitor",
+          "example": "0.0",
           "member": "float",
           "name": "Value",
           "output_required": true,
+          "required": false,
           "type": "float",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "APMKVItem": {
       "document": "APM 通用 KV 结构",
@@ -477,7 +479,7 @@
         {
           "disabled": false,
           "document": "同比结果数组，推荐使用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[               {                 \"Key\": \"CompareByYesterday\",                 \"Value\": \"0.0%\"               }             ]",
+          "example": "无",
           "member": "APMKVItem",
           "name": "CompareVals",
           "output_required": true,
@@ -487,7 +489,7 @@
         {
           "disabled": false,
           "document": "同比上一个周期的具体指标数值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[               {                 \"Key\": \"CompareByYesterday\",                 \"Value\": 8.092753335107176               }             ]",
+          "example": "无",
           "member": "APMKV",
           "name": "LastPeriodValue",
           "output_required": true,
@@ -501,6 +503,16 @@
           "member": "string",
           "name": "CompareVal",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标中文名",
+          "example": "吞吐量",
+          "member": "string",
+          "name": "NameCN",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

@@ -632,7 +632,7 @@
       {
         "document": "查询数据引擎资源使用情况",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEngineUsageInfo\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-r0xxxkls\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Available\": 64,\n        \"RequestId\": \"6068a77d-5538-4e1d-a93f-cf5800c98e1b\",\n        \"Total\": 64,\n        \"Used\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Available\": 24,\n        \"RequestId\": \"6068a77d-5538-4e1d-a93f-cf5800c98e1b\",\n        \"Total\": 64,\n        \"Used\": 40,\n        \"AvailPercent\": 37\n    }\n}",
         "title": "查询数据引擎资源使用情况"
       }
     ],

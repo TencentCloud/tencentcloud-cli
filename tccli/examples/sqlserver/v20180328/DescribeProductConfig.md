@@ -1,4 +1,4 @@
-**Example 1: 查询广州二区的高可用版本售卖规格**
+**Example 1: 查询广州三区的高可用版本售卖规格**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver DescribeProductConfig --cli-unfold-argument  \
-    --Zone ap-guangzhou-2 \
+    --Zone ap-guangzhou-3 \
     --InstanceType HA
 ```
 

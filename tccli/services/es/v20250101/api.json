@@ -327,7 +327,7 @@
         {
           "disabled": false,
           "document": "文件信息。",
-          "example": "{\"FileType\":\"TXT\"}",
+          "example": "无",
           "member": "Document",
           "name": "Document",
           "required": true,
@@ -345,7 +345,7 @@
         {
           "disabled": false,
           "document": "文件切片配置。",
-          "example": "{\"MaxChunkSize\":\"20\"}",
+          "example": "无",
           "member": "ChunkConfigAsync",
           "name": "Config",
           "required": false,
@@ -382,7 +382,7 @@
         {
           "disabled": false,
           "document": "切片文件信息。",
-          "example": "Document",
+          "example": "无",
           "member": "ChunkDocument",
           "name": "Document",
           "required": true,
@@ -400,7 +400,7 @@
         {
           "disabled": false,
           "document": "文件切片配置。",
-          "example": "Config",
+          "example": "无",
           "member": "ChunkConfig",
           "name": "Config",
           "required": false,
@@ -943,7 +943,7 @@
         {
           "disabled": false,
           "document": "文件信息。",
-          "example": "{     \"FileType\": \"TXT\",     \"FileUrl\": \"\",     \"FileContent\": \"data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==\",     \"FileName\": \"test.txt\"   }",
+          "example": "无",
           "member": "Document",
           "name": "Document",
           "required": true,
@@ -989,7 +989,7 @@
         {
           "disabled": false,
           "document": "文件信息",
-          "example": "{     \"FileType\": \"TXT\",     \"FileUrl\": \"\",     \"FileContent\": \"data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==\",     \"FileName\": \"test.txt\"   }",
+          "example": "无",
           "member": "ParseDocument",
           "name": "Document",
           "required": true,

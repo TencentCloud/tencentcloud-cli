@@ -554,10 +554,10 @@
     ],
     "DescribeAccountStatistics": [
       {
-        "document": "获取帐号统计列表数据",
+        "document": "获取账号统计列表数据",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeAccountStatistics\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AccountStatistics\": [\n            {\n                \"Username\": \"nginx\",\n                \"MachineNum\": 10\n            }\n        ],\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"TotalCount\": 100\n    }\n}",
-        "title": "获取帐号统计列表数据"
+        "title": "获取账号统计列表数据"
       }
     ],
     "DescribeAgentInstallCommand": [
@@ -1504,10 +1504,10 @@
     ],
     "DescribeHistoryAccounts": [
       {
-        "document": "获取帐号变更历史列表",
+        "document": "获取账号变更历史列表",
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeHistoryAccounts\n&Uuid=6b6cd843-6bc1-4011-a74c-dc3fd26a7dd1\n&Filters.0.Name=MachineIp\n&Filters.0.Values.0=10.0.1.1\n&Limit=10\n&Offset=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"HistoryAccounts\": [\n            {\n                \"Id\": 1,\n                \"Uuid\": \"6b6cd843-6bc1-4011-a74c-dc3fd26a7dd1\",\n                \"MachineName\": \"machine-name\",\n                \"MachineIp\": \"10.104.86.62\",\n                \"Username\": \"nginx\",\n                \"ModifyType\": \"CREATE\",\n                \"ModifyTime\": \"2018-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"TotalCount\": 100\n    }\n}",
-        "title": "获取帐号变更历史列表"
+        "title": "获取账号变更历史列表"
       }
     ],
     "DescribeHistoryService": [

@@ -10,6 +10,8 @@ tccli es ParseDocumentAsync --cli-unfold-argument  \
     --Document.FileUrl  \
     --Document.FileContent data:text/plain;base64,SGVsbG8sIFdvcmxkIQ== \
     --Document.FileName test.txt \
+    --Document.FileStartPageNumber 1 \
+    --Document.FileEndPageNumber 1 \
     --ModelName doc-llm
 ```
 

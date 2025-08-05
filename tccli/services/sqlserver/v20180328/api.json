@@ -505,7 +505,7 @@
       "status": "online"
     },
     "DescribeProductConfig": {
-      "document": "本接口 (DescribeProductConfig) 用于查询售卖规格配置。",
+      "document": "本接口（DescribeProductConfig）用于查询售卖规格配置。",
       "input": "DescribeProductConfigRequest",
       "name": "查询售卖规格配置",
       "output": "DescribeProductConfigResponse",
@@ -638,7 +638,7 @@
       "status": "online"
     },
     "DescribeZones": {
-      "document": "本接口 (DescribeZones) 用于查询当前可售卖的可用区信息。",
+      "document": "本接口（DescribeZones）用于查询当前可售卖的可用区信息。",
       "input": "DescribeZonesRequest",
       "name": "查询售卖可用区",
       "output": "DescribeZonesResponse",
@@ -9867,8 +9867,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区英文ID，形如ap-guangzhou-1",
-          "example": "ap-guangzhou-2",
+          "document": "可用区英文 ID",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -11706,7 +11706,7 @@
           "example": "34",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11716,7 +11716,7 @@
           "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15695,7 +15695,7 @@
         {
           "disabled": false,
           "document": "只读组名称",
-          "example": "default_name",
+          "example": "andy_ReadOnlyGroup",
           "member": "string",
           "name": "ReadOnlyGroupName",
           "output_required": true,
@@ -15715,7 +15715,7 @@
         {
           "disabled": false,
           "document": "只读组的可用区ID，与主实例相同",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,
@@ -18368,21 +18368,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "规格地域",
-          "example": "ap-guangzhou-2",
+          "document": "规格可用区",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规格可用区",
+          "document": "规格地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18392,7 +18392,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

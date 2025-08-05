@@ -984,6 +984,22 @@
         "title": "查询泳道列表"
       }
     ],
+    "DescribeLicenses": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeLicenses\n&Offset=0\n&Limit=50\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d7e580e-4b1c-49a7-8ffd-21551f865643\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"LicenseId\": \"tsf-jhdas5d3\",\n                    \"Tags\": [\n                        {\n                            \"TagKey\": \"\",\n                            \"TagValue\": \"AAA\"\n                        },\n                        {\n                            \"TagKey\": \"\",\n                            \"TagValue\": \"BBB\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询许可列表"
+      }
+    ],
+    "DescribeLogCapacity": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeLogCapacity\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Capacity\": 5.0,\n        \"RequestId\": \"\",\n        \"UsedSpace\": 1.2\n    }\n}",
+        "title": "获取日志容量"
+      }
+    ],
     "DescribeMicroservice": [
       {
         "document": "",
@@ -1134,6 +1150,14 @@
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeRepository\r\n&RepositoryId=application-xxxxxxxx\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"66e97c87-16d0-4936-b639-fab2c06ab238\",\n        \"Result\": {\n            \"RepositoryId\": \"application-xxxxxxxx\",\n            \"RepositoryName\": \"test001\",\n            \"RepositoryType\": \"private\",\n            \"RepositoryDesc\": \"\",\n            \"IsUsed\": false,\n            \"CreateTime\": \"2020-05-26 10:52:20\",\n            \"BucketName\": \"apple\",\n            \"BucketRegion\": \"cq\",\n            \"Directory\": \"\"\n        }\n    }\n}",
         "title": "获取仓库信息"
+      }
+    ],
+    "DescribeResourceConfig": [
+      {
+        "document": "",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeResourceConfig\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5b8af5a9-bd6c-4e7b-91d4-813a41c71163\",\n        \"Result\": {\n            \"License\": {\n                \"Function\": [\n                    {\n                        \"Name\": \"vm\",\n                        \"Enable\": true\n                    },\n                    {\n                        \"Name\": \"container\",\n                        \"Enable\": true\n                    },\n                    {\n                        \"Name\": \"mesh\",\n                        \"Enable\": true\n                    },\n                    {\n                        \"Name\": \"scalable\",\n                        \"Enable\": true\n                    },\n                    {\n                        \"Name\": \"api-governance\",\n                        \"Enable\": true\n                    },\n                    {\n                        \"Name\": \"gateway\",\n                        \"Enable\": true\n                    },\n                    {\n                        \"Name\": \"transaction\",\n                        \"Enable\": true\n                    },\n                    {\n                        \"Name\": \"endpoint\",\n                        \"Enable\": true\n                    },\n                    {\n                        \"Name\": \"template\",\n                        \"Enable\": true\n                    }\n                ],\n                \"Resource\": [\n                    {\n                        \"Name\": \"instance\",\n                        \"Quota\": 20\n                    }\n                ],\n                \"ExpireTime\": 1583942400,\n                \"Countdown\": 24819257\n            },\n            \"Sts\": {\n                \"Uin\": \"91000000039\"\n            },\n            \"Instance\": {\n                \"Container\": {\n                    \"MasterNumLimit\": 0,\n                    \"NodeNumLimitPerSetup\": 0,\n                    \"ImportMode\": [\n                        \"R\"\n                    ]\n                },\n                \"Vm\": {\n                    \"ImportMode\": [\n                        \"M\",\n                        \"R\"\n                    ]\n                }\n            },\n            \"Group\": {\n                \"Container\": {\n                    \"AdditionalResourceRequirement\": {\n                        \"N\": {\n                            \"Cpu\": \"0.100\",\n                            \"Mem\": \"125\"\n                        },\n                        \"M\": {\n                            \"Cpu\": \"0.350\",\n                            \"Mem\": \"375\"\n                        }\n                    }\n                }\n            }\n        }\n    }\n}",
+        "title": "获取资源配置信息"
       }
     ],
     "DescribeResourceTaskStatus": [

@@ -4125,6 +4125,111 @@
       ],
       "usage": "out"
     },
+    "BaseProject": {
+      "document": "项目信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目标识，英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testpj",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目显示名称，可以为中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "项目a",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "beijing",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目的所在租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TenantId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目状态：0：禁用，1：启用，-3:禁用中，2：启用中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目类型，SIMPLE：简单模式 STANDARD：标准模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "BaseRole": {
       "document": "基础角色对象",
       "members": [
@@ -8588,7 +8693,17 @@
     },
     "CreateBaseProjectRequest": {
       "document": "CreateBaseProject请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目信息",
+          "example": "无",
+          "member": "BaseProject",
+          "name": "Project",
+          "required": true,
+          "type": "object"
+        }
+      ],
       "type": "object"
     },
     "CreateBaseProjectResponse": {
@@ -12049,6 +12164,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "禁止数据探查",
+          "example": "1",
+          "member": "bool",
+          "name": "ForbidProbe",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15992,7 +16117,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源类型，必选（如MYSQL、DLC等）",
+          "document": "数据源类型，MYSQL,TENCENT_MYSQL,TDSQL_MYSQL,HIVE,KAFKA,POSTGRE,CDW,ORACLE,SQLSERVER,FTP,HDFS,ICEBERG,HBASE,TDSQL,TDSQLC,SPARK,VIRTUAL,TBASE,DB2,DM,TDENGINE,GAUSSDB,GBASE,IMPALA,ES,TENCENT_ES,S3_DATAINSIGHT,GREENPLUM,PHOENIX,SAP_HANA,SFTP,OCEANBASE,CLICKHOUSE,TCHOUSE_C,KUDU,VERTICA,REDIS,COS,S3,DLC,DORIS,CKAFKA,TDMQ_PULSAR,MONGODB,TENCENT_MONGODB,FTP_FILE,HDFS_FILE,DTS_KAFKA,REST_API,FILE,TIDB,SYBASE,TCHOUSE_X,TDSQL_POSTGRE,TCHOUSE_P,TCHOUSE_D,STARROCKS,EMR_STARROCKS,TBDS_STARROCKS,TRINO,KYUUBI,GDB,INFLUXDB,BIG_QUERY,BLOB,FILESYSTEM,SHAREPOINT,KINGBASEES,HUDI等",
           "example": "MYSQL",
           "member": "string",
           "name": "Type",
@@ -38917,7 +39042,7 @@
         {
           "disabled": false,
           "document": "目标修改的项目ID",
-          "example": "\"12312121231\"",
+          "example": "\"1426\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -38925,8 +39050,26 @@
         },
         {
           "disabled": false,
+          "document": "项目显示名称，可以为中文名,需要租户范围内唯一",
+          "example": "testpj",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "true/false则修改，不带该参数不修改。",
-          "example": "true/false",
+          "example": "true",
           "member": "bool",
           "name": "TaskSubmitApproval",
           "required": false,
@@ -38944,7 +39087,7 @@
         {
           "disabled": false,
           "document": "项目管理员",
-          "example": "无",
+          "example": "[\"1001\"]",
           "member": "string",
           "name": "ProjectManagers",
           "required": false,
@@ -38962,7 +39105,7 @@
         {
           "disabled": false,
           "document": "以后新增选项可以直接通过前端的json格式写入去实现",
-          "example": "无",
+          "example": "\"无\"",
           "member": "string",
           "name": "ExtraOptions",
           "required": false,
@@ -38971,7 +39114,7 @@
         {
           "disabled": false,
           "document": "项目类型，SIMPLE：简单模式 STANDARD：标准模式",
-          "example": "无",
+          "example": "\"SIMPLE\"",
           "member": "string",
           "name": "Model",
           "required": false,
@@ -38980,11 +39123,20 @@
         {
           "disabled": false,
           "document": "项目负责人",
-          "example": "无",
+          "example": "[\"1001\"]",
           "member": "string",
           "name": "ProjectOwner",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "更新类型",
+          "example": "gitConfig",
+          "member": "string",
+          "name": "ModifyType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -40492,7 +40644,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，脚本内容 base64编码",
+          "document": "存在脚本的任务必填（shell任务、Hive任务、python任务等），脚本内容 base64编码",
           "example": "\"base64编码\"",
           "member": "string",
           "name": "ScriptContent",

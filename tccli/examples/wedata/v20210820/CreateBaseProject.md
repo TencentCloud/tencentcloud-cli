@@ -1,29 +1,16 @@
-**Example 1: 样例**
+**Example 1: 项目返回为string类型**
 
 
 
 Input: 
 
 ```
-tccli wedata CreateBaseProject --cli-unfold-argument ```
-
-Output: 
+tccli wedata CreateBaseProject --cli-unfold-argument  \
+    --Project.ProjectName singlepro \
+    --Project.Region chongqing \
+    --Project.DisplayName 落项目 \
+    --Project.Description 字符串
 ```
-{
-    "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
-    }
-}
-```
-
-**Example 2: 项目返回为string类型**
-
-
-
-Input: 
-
-```
-tccli wedata CreateBaseProject --cli-unfold-argument ```
 
 Output: 
 ```

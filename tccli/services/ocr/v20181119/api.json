@@ -686,40 +686,40 @@
         {
           "disabled": false,
           "document": "识别出的文本行内容",
-          "example": "",
+          "example": "永葆容颜",
           "member": "string",
           "name": "DetectedText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "置信度 0 ~100",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文本行坐标，以四个顶点坐标表示",
-          "example": "",
+          "example": "无",
           "member": "Coord",
           "name": "Polygon",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此字段为扩展字段。\nGeneralBasicOcr接口返回段落信息Parag，包含ParagNo。",
-          "example": "",
+          "example": "{\\\"Parag\\\":{\\\"ParagNo\\\":0}}",
           "member": "string",
           "name": "AdvancedInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2359,30 +2359,30 @@
         {
           "disabled": false,
           "document": "识别出的字段名称（关键字，可能重复，比如多个手机），能识别的字段名为：\n姓名、英文姓名、英文地址、公司、英文公司、职位、英文职位、部门、英文部门、手机、电话、传真、社交帐号、QQ、MSN、微信、微博、邮箱、邮编、网址、公司账号、其他。",
-          "example": "",
+          "example": "姓名",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段name对应的字符串结果。",
-          "example": "",
+          "example": "李明",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）",
-          "example": "",
+          "example": "无",
           "member": "ItemCoord",
           "name": "ItemCoord",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -2715,20 +2715,20 @@
         {
           "disabled": false,
           "document": "段落编号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "ParagNo",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "字体大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "25",
           "member": "int64",
           "name": "WordSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -2741,30 +2741,30 @@
         {
           "disabled": false,
           "document": "分类名称，包括：身份证、护照、名片、银行卡、行驶证、驾驶证、港澳台通行证、户口本、港澳台来往内地通行证、港澳台居住证、不动产证、营业执照",
-          "example": "",
+          "example": "银行卡",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分类类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "BankCard",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "位置坐标",
-          "example": "",
+          "example": "无",
           "member": "Rect",
           "name": "Rect",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -7329,7 +7329,7 @@
         },
         {
           "disabled": true,
-          "document": "该字段已废弃， 将固定返回空数组，不建议使用。\nThis field is deprecated and will always return an empty array. Usage is not recommended.",
+          "document": "该字段已废弃， 将固定返回空数组，不建议使用。\n",
           "example": "[-9102,-9103]",
           "member": "int64",
           "name": "WarningCode",
@@ -8417,20 +8417,20 @@
         {
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n【病案首页】\n姓名、性别、出生日期、出院诊断、疾病编码、入院病情等。\n【费用清单】\n医疗参保人员类别、身份证号、入院方式、结账日期、项目、金额等。\n【结算单】\n名称、单价、数量、金额、医保内、医保外等。\n【医疗发票】\n姓名、性别、住院时间、收费项目、金额、合计等。",
-          "example": "",
+          "example": "医保内",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Name对应的字符串结果。",
-          "example": "",
+          "example": "14.00",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -12402,20 +12402,20 @@
         {
           "disabled": false,
           "document": "宽",
-          "example": "",
+          "example": "800",
           "member": "int64",
           "name": "Wide",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "高",
-          "example": "",
+          "example": "800",
           "member": "int64",
           "name": "High",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -17396,100 +17396,100 @@
         {
           "disabled": false,
           "document": "单元格左上角的列索引",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "ColTl",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格左上角的行索引",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "RowTl",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格右下角的列索引",
-          "example": "",
+          "example": "9",
           "member": "int64",
           "name": "ColBr",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格右下角的行索引",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "RowBr",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格内识别出的字符串文本，若文本存在多行，以换行符\"\\n\"隔开",
-          "example": "",
+          "example": "五(1) 班卫生值日表",
           "member": "string",
           "name": "Text",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格类型",
-          "example": "",
+          "example": "body",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格置信度",
-          "example": "",
+          "example": "99.982088804245",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格在图像中的四点坐标",
-          "example": "",
+          "example": "无",
           "member": "Coord",
           "name": "Polygon",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此字段为扩展字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdvancedInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "单元格文本属性",
-          "example": "",
+          "example": "无",
           "member": "CellContent",
           "name": "Contents",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -17588,40 +17588,40 @@
         {
           "disabled": false,
           "document": "单元格内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TableCell",
           "name": "Cells",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "表格标题\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TableTitle",
           "name": "Titles",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "图像中的文本块类型，0 为非表格文本，\n1 为有线表格，2 为无线表格\n（接口暂不支持日文无线表格识别，若传入日文无线表格，返回0）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "表格主体四个顶点坐标（依次为左上角，\n右上角，右下角，左下角）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Coord",
           "name": "TableCoordPoint",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -17726,10 +17726,10 @@
         {
           "disabled": false,
           "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "值日表",
           "member": "string",
           "name": "Text",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -18462,70 +18462,70 @@
         {
           "disabled": false,
           "document": "识别出的文本行内容。",
-          "example": "",
+          "example": "No matter how long the",
           "member": "string",
           "name": "DetectedText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "置信度 0 ~100。",
-          "example": "",
+          "example": "99",
           "member": "int64",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文本行在原图中的四点坐标。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Coord",
           "name": "Polygon",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "此字段为扩展字段。目前EnglishOCR接口返回内容为空。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdvancedInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "英文单词在原图中的四点坐标。",
-          "example": "",
+          "example": "无",
           "member": "WordCoordPoint",
           "name": "WordCoordPoint",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "候选字符集(包含候选字Character以及置信度Confidence)。",
-          "example": "",
+          "example": "无",
           "member": "CandWord",
           "name": "CandWord",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别出来的单词信息（包括单词Character和单词置信度confidence）",
-          "example": "",
+          "example": "无",
           "member": "Words",
           "name": "Words",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -18538,30 +18538,30 @@
         {
           "disabled": false,
           "document": "识别出的字段名称（关键字）",
-          "example": "",
+          "example": "0",
           "member": "string",
           "name": "Item",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段Item对应的字符串结果",
-          "example": "",
+          "example": "\\\\frac { f ( x _ { 1 } ) - f ( x _ { 2 } ) } { x _ { 1 } - x _ { 2 } } &lt 0  ",
           "member": "string",
           "name": "DetectedText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文本行在旋转纠正之后的图像中的像素坐标，表示为（左上角x, 左上角y，宽width，高height）",
-          "example": "",
+          "example": "无",
           "member": "ItemCoord",
           "name": "Itemcoord",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -18574,10 +18574,10 @@
         {
           "disabled": false,
           "document": "识别出的文本行内容",
-          "example": "",
+          "example": "\\\\left\\\\lbrace\\\\begin{array}{l} { ( 3 - a ) x - 6 , x \\\\leq 1 0 , } \\\\\\\\ { a ^ { x - 9 } , x > 1 0 } , \\\\end{array}\\\\right.  ",
           "member": "string",
           "name": "DetectedText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -18616,50 +18616,50 @@
         {
           "disabled": false,
           "document": "识别出的文本行内容",
-          "example": "",
+          "example": "六习作表达30分",
           "member": "string",
           "name": "DetectedText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "置信度 0 - 100",
-          "example": "",
+          "example": "99",
           "member": "int64",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文本行坐标，以四个顶点坐标表示",
-          "example": "",
+          "example": "无",
           "member": "Coord",
           "name": "Polygon",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此字段为扩展字段。\n能返回文本行的段落信息，例如：{\\\"Parag\\\":{\\\"ParagNo\\\":2}}，\n其中ParagNo为段落行，从1开始。",
-          "example": "",
+          "example": "{\\\"Parag\\\":{\\\"ParagNo\\\":1}}",
           "member": "string",
           "name": "AdvancedInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "字的坐标数组，以四个顶点坐标表示\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Polygon",
           "name": "WordPolygon",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -18672,90 +18672,90 @@
         {
           "disabled": false,
           "document": "单元格左上角的列索引",
-          "example": "",
+          "example": "-1",
           "member": "int64",
           "name": "ColTl",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格左上角的行索引",
-          "example": "",
+          "example": "-1",
           "member": "int64",
           "name": "RowTl",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格右下角的列索引",
-          "example": "",
+          "example": "-1",
           "member": "int64",
           "name": "ColBr",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格右下角的行索引",
-          "example": "",
+          "example": "-1",
           "member": "int64",
           "name": "RowBr",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格文字",
-          "example": "",
+          "example": "项号商品",
           "member": "string",
           "name": "Text",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单元格类型，包含body（表格主体）、header（表头）、footer（表尾）三种",
-          "example": "",
+          "example": "header",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "置信度 0 ~100",
-          "example": "",
+          "example": "99",
           "member": "int64",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文本行坐标，以四个顶点坐标表示",
-          "example": "",
+          "example": "无",
           "member": "Coord",
           "name": "Polygon",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此字段为扩展字段",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdvancedInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -23354,20 +23354,20 @@
         {
           "disabled": false,
           "document": "识别出的字段名称(关键字)，支持以下字段：\n【注册登记页】\n车辆型号、车辆识别代号/车架号、发动机号、制造厂名称、轴距、轮胎数、总质量、外廓尺寸、轴数、车辆出厂日期、发证日期、使用性质、车辆获得方式、车辆类型、国产/进口、燃料种类、车身颜色、发动机型号、车辆品牌、编号、转向形式、\n机动车所有人1、身份证明名称1、号码1、登记机关1、登记日期1\n机动车所有人2、身份证明名称2、号码2、登记机关2、登记日期2\n机动车所有人3、身份证明名称3、号码3、登记机关3、登记日期3\n机动车所有人4、身份证明名称4、号码4、登记机关4、登记日期4\n机动车所有人5、身份证明名称5、号码5、登记机关5、登记日期5\n机动车所有人6、身份证明名称6、号码6、登记机关6、登记日期6\n机动车所有人7、身份证明名称7、号码7、登记机关7、登记日期7\n【抵押登记页】\n机动车登记证书编号、身份证明名称/号码、抵押权人姓名/名称、抵押登记日期。",
-          "example": "",
+          "example": "编号",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别出的字段名称对应的值，也就是字段name对应的字符串结果。",
-          "example": "",
+          "example": "*310005169880*",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -23790,10 +23790,10 @@
         {
           "disabled": false,
           "document": "识别出的文本行内容",
-          "example": "",
+          "example": "海购商品",
           "member": "string",
           "name": "Text",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -23894,20 +23894,20 @@
         {
           "disabled": false,
           "document": "置信度 0 ~100",
-          "example": "",
+          "example": "99",
           "member": "int64",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "候选字Character",
-          "example": "",
+          "example": "N",
           "member": "string",
           "name": "Character",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

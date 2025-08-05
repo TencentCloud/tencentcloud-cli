@@ -91,13 +91,6 @@
       "output": "CreateDatabaseWhiteListRulesResponse",
       "status": "online"
     },
-    "CreateIdsWhiteRule": {
-      "document": "CreateIdsWhiteRule\n\n创建入侵防御规则白名单接口",
-      "input": "CreateIdsWhiteRuleRequest",
-      "name": "创建入侵防御规则白名单接口",
-      "output": "CreateIdsWhiteRuleResponse",
-      "status": "deprecated"
-    },
     "CreateNatFwInstance": {
       "document": "创建NAT防火墙实例（Region参数必填）",
       "input": "CreateNatFwInstanceRequest",
@@ -160,13 +153,6 @@
       "name": "批量删除入侵防御封禁列表、放通列表规则（新）",
       "output": "DeleteBlockIgnoreRuleNewResponse",
       "status": "online"
-    },
-    "DeleteIdsWhiteRule": {
-      "document": "历史方案，业务已迁移，接口不再适用\n\n删除入侵防御规则白名单接口",
-      "input": "DeleteIdsWhiteRuleRequest",
-      "name": "删除入侵防御规则白名单接口",
-      "output": "DeleteIdsWhiteRuleResponse",
-      "status": "deprecated"
     },
     "DeleteNatFwInstance": {
       "document": "销毁防火墙实例",
@@ -335,13 +321,6 @@
       "name": "IP防护状态查询",
       "output": "DescribeIPStatusListResponse",
       "status": "online"
-    },
-    "DescribeIdsWhiteRule": {
-      "document": "历史方案，业务已迁移，接口不再适用\n\n查询入侵防御规则白名单接口",
-      "input": "DescribeIdsWhiteRuleRequest",
-      "name": "查询入侵防御规则白名单接口",
-      "output": "DescribeIdsWhiteRuleResponse",
-      "status": "deprecated"
     },
     "DescribeLogStorageStatistic": {
       "document": "租户日志存储统计",
@@ -2704,99 +2683,6 @@
       ],
       "type": "object"
     },
-    "CreateIdsWhiteRuleRequest": {
-      "document": "CreateIdsWhiteRule请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "入侵防御规则ID",
-          "example": "20006",
-          "member": "string",
-          "name": "IdsRuleId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "白名单类型：\nsrc 针对源放通\ndst 针对目的放通\nsrcdst 针对源和目的放通",
-          "example": "srcdst",
-          "member": "string",
-          "name": "WhiteRuleType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "白名单生效防火墙范围：\n1 边界防火墙\n2 nat防火墙\n4 vpc防火墙\n7 = 1+2+4  所有防火墙",
-          "example": "7",
-          "member": "int64",
-          "name": "FwType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "源IP",
-          "example": "10.33.11.2",
-          "member": "string",
-          "name": "SrcIp",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "目的IP",
-          "example": "10.33.11.4",
-          "member": "string",
-          "name": "DstIp",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateIdsWhiteRuleResponse": {
-      "document": "CreateIdsWhiteRule返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回状态码：\n0 成功\n非0 失败",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "返回信息：\nsuccess 成功\n其他",
-          "example": "success",
-          "member": "string",
-          "name": "ReturnMsg",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "返回状态码：\n0  处置成功\n-1 通用错误，不用处理",
-          "example": "0",
-          "member": "int64",
-          "name": "Status",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreateNatFwInstanceRequest": {
       "document": "CreateNatFwInstance请求参数结构体",
       "members": [
@@ -3918,63 +3804,6 @@
     "DeleteBlockIgnoreRuleNewResponse": {
       "document": "DeleteBlockIgnoreRuleNew返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteIdsWhiteRuleRequest": {
-      "document": "DeleteIdsWhiteRule请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "入侵防御白名单id\n参考DescribeIdsWhiteRule接口返回的Id字段",
-          "example": "50",
-          "member": "int64",
-          "name": "Id",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteIdsWhiteRuleResponse": {
-      "document": "DeleteIdsWhiteRule返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回状态码：\n0 成功\n非0 失败",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "返回信息：\nsuccess 成功\n其他",
-          "example": "success",
-          "member": "string",
-          "name": "ReturnMsg",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "返回状态码：\n0  处置成功\n-1 通用错误，不用处理",
-          "example": "0",
-          "member": "int64",
-          "name": "Status",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6416,109 +6245,6 @@
           "disabled": false,
           "document": "状态信息",
           "example": "Success",
-          "member": "string",
-          "name": "ReturnMsg",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeIdsWhiteRuleRequest": {
-      "document": "DescribeIdsWhiteRule请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "每页条数",
-          "example": "20",
-          "member": "uint64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "偏移值",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "过滤条件组合",
-          "example": "[{\"Name\":\"SrcIp\",\"Values\":[\"10.23.33.1\"],\"OperatorType\":9}]",
-          "member": "CommonFilter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
-          "example": "desc",
-          "member": "string",
-          "name": "Order",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "排序所用到的字段",
-          "example": "RuleId",
-          "member": "string",
-          "name": "By",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeIdsWhiteRuleResponse": {
-      "document": "DescribeIdsWhiteRule返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总条数",
-          "example": "1",
-          "member": "uint64",
-          "name": "Total",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "规则详情",
-          "example": "[{\"DstIp\":\"10.23.33.2\",\"FwType\":4,\"Id\":63,\"RuleId\":\"20006\",\"SrcIp\":\"10.23.33.1\",\"WhiteRuleType\":\"srcdst\"}]",
-          "member": "IdsWhiteInfo",
-          "name": "Data",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "返回状态码 0 成功 非0不成功",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "返回信息  success 成功 其他 不成功",
-          "example": "success",
           "member": "string",
           "name": "ReturnMsg",
           "output_required": true,
@@ -9507,72 +9233,6 @@
       ],
       "usage": "out"
     },
-    "IdsWhiteInfo": {
-      "document": "入侵防御规则白名单详情",
-      "members": [
-        {
-          "disabled": false,
-          "document": "白名单唯一ID",
-          "example": "50",
-          "member": "int64",
-          "name": "Id",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "源IP",
-          "example": "10.23.22.1",
-          "member": "string",
-          "name": "SrcIp",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "目的IP",
-          "example": "10.23.22.2",
-          "member": "string",
-          "name": "DstIp",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "规则类型",
-          "example": "srddst",
-          "member": "string",
-          "name": "WhiteRuleType",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "白名单生效防火墙范围： 1 边界防火墙 2 nat防火墙 4 vpc防火墙 7 = 1+2+4 所有防火墙",
-          "example": "7",
-          "member": "int64",
-          "name": "FwType",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "入侵防御规则ID",
-          "example": "20016",
-          "member": "string",
-          "name": "RuleId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "InstanceInfo": {
       "document": "实例详情结果",
       "members": [
@@ -10190,7 +9850,7 @@
         },
         {
           "disabled": false,
-          "document": "1 ip模板\n5 域名模板",
+          "document": "1 ip模板  5 域名模板",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -10230,6 +9890,16 @@
           "name": "Uuid",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则数上限配置",
+          "example": "8000",
+          "member": "int64",
+          "name": "RuleLimitNum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -10349,6 +10019,16 @@
           "member": "int64",
           "name": "Status",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则限制数量",
+          "example": "1000",
+          "member": "int64",
+          "name": "RuleLimitNum",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
