@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cls CreateLogset --cli-unfold-argument  \
-    --LogsetName testname \
+    --LogsetName 业务流日志集 \
     --Tags.0.Key test-tag \
     --Tags.0.Value test-value
 ```

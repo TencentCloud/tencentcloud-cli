@@ -6,45 +6,47 @@ Input:
 
 ```
 tccli cls DescribeIndex --cli-unfold-argument  \
-    --TopicId 826f8b26-b054-4a0d-8c8e-f3d609f5e0ea
+    --TopicId 75f531f6-3644-45e5-8717-af1dc294cc93
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TopicId": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
-        "Status": true,
+        "TopicId": "75f531f6-3644-45e5-8717-af1dc294cc93",
+        "Status": false,
         "Rule": {
             "FullText": {
-                "CaseSensitive": false,
-                "Tokenizer": "-=/?",
+                "CaseSensitive": true,
+                "Tokenizer": "@&?|#()='\",;:<>[]{}/ \n\t\r\\",
                 "ContainZH": false
             },
             "KeyValue": {
-                "CaseSensitive": false,
+                "CaseSensitive": true,
                 "KeyValues": [
                     {
                         "Key": "age",
                         "Value": {
                             "Type": "long",
-                            "SqlFlag": true,
                             "Tokenizer": "",
-                            "ContainZH": false
+                            "SqlFlag": false,
+                            "ContainZH": false,
+                            "Alias": ""
                         }
                     }
                 ]
             },
             "Tag": {
-                "CaseSensitive": false,
+                "CaseSensitive": true,
                 "KeyValues": [
                     {
-                        "Key": "__TAG__.timestamp",
+                        "Key": "tag",
                         "Value": {
-                            "Type": "long",
-                            "SqlFlag": true,
-                            "Tokenizer": "",
-                            "ContainZH": false
+                            "Type": "text",
+                            "Tokenizer": "@&?|#()='\",;:<>[]{}/ \n\t\r\\",
+                            "SqlFlag": false,
+                            "ContainZH": false,
+                            "Alias": ""
                         }
                     }
                 ]
@@ -53,10 +55,10 @@ Output:
                 "Status": false
             }
         },
-        "ModifyTime": "2021-01-13 21:00:08",
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7",
+        "ModifyTime": "2025-08-04 15:09:10",
+        "RequestId": "9cdcca5e-9d2b-41c1-8b69-6de7034e70ee",
         "IncludeInternalFields": true,
-        "MetadataFlag": 1
+        "MetadataFlag": 0
     }
 }
 ```

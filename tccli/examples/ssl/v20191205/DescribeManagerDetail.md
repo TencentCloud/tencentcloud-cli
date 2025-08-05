@@ -46,7 +46,14 @@ Output:
                 "Type": "ov",
                 "Status": "active",
                 "CreateTime": "2023-09-11 12:00:00",
-                "ExpireTime": "2024-09-11 12:00:00"
+                "ExpireTime": "2024-09-11 12:00:00",
+                "ManagerPreAuditDomains": [
+                    {
+                        "Domain": "tencent.com",
+                        "CreateTime": "2025-01-01 08:00:00",
+                        "ExpireTime": "2026-01-01 08:00:00"
+                    }
+                ]
             }
         ],
         "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"

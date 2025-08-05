@@ -18410,6 +18410,56 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自动创建主题",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoCreateTopicEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启集群Admin能力",
+          "example": "false",
+          "member": "bool",
+          "name": "AdminFeatureEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Admin AK\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ak5pe5ae0cca",
+          "member": "string",
+          "name": "AdminAccessKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Admin SK\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sk4ea181d5da",
+          "member": "string",
+          "name": "AdminSecretKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeletionProtection",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18632,7 +18682,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "消费TPS",
           "example": "100",
           "member": "uint64",
@@ -18642,7 +18692,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "总堆积数量",
           "example": "380",
           "member": "int64",
@@ -18780,6 +18830,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅的主题个数",
+          "example": "10",
+          "member": "int64",
+          "name": "SubscribeTopicNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

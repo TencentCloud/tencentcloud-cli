@@ -15561,8 +15561,8 @@
         },
         {
           "disabled": false,
-          "document": "License 类型，默认为 DRM 。目前支持的 License 类型包括：\n<li> DRM: DRM 加密播放 License</li>",
-          "example": "DRM",
+          "document": "License 类型，默认为 CommercialDRMLicense 。目前支持的 License 类型包括：\n<li> CommercialDRMLicense: 商业级 DRM License</li>\n<li> JITEncryptionDRMLicense: 即时加密 DRM License</li>",
+          "example": "CommercialDRMLicense",
           "member": "string",
           "name": "LicenseType",
           "required": false,
@@ -15772,7 +15772,7 @@
         },
         {
           "disabled": false,
-          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去除水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li> VideoHighlight: 视频智能集锦</li>\n<li> VideoTag: 视频智能标签</li>\n<li> VideoClassification:  视频智能分类</li>\n<li> VideoCover: 视频智能封面</li>\n<li> VideoSegment: 视频智能拆条</li>\n<li> VideoProduce: 视频制作</li>\n<li> MediaCast: 媒体转推</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>\n<li>VoiceTranslation: 语音翻译</li>\n<li>JITTranscoding: 即时转码</li>\n<li>VideoSnapshot: 视频截图</li>",
+          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去除水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li> VideoHighlight: 视频智能集锦</li>\n<li> VideoTag: 视频智能标签</li>\n<li> VideoClassification:  视频智能分类</li>\n<li> VideoCover: 视频智能封面</li>\n<li> VideoSegment: 视频智能拆条</li>\n<li> VideoProduce: 视频制作</li>\n<li> MediaCast: 媒体转推</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>\n<li>VoiceTranslation: 语音翻译</li>\n<li>JITTranscoding: 即时转码</li>\n<li>VideoSnapshot: 视频截图</li>\n<li>JITEncryption: 即时加密</li>\n",
           "example": "Transcoding-TESHD",
           "member": "string",
           "name": "Type",
@@ -15788,7 +15788,7 @@
         {
           "disabled": false,
           "document": "视频处理统计数据概览，展示所查询任务的概览以及详细数据。",
-          "example": "无",
+          "example": "[{\"TaskType\":\"JITEncryption\",\"Summary\":[{\"Time\":\"2025-07-20T00:00:00+08:00\",\"Count\":20,\"Usage\":50}],\"Details\":[{\"TaskType\":\"JITEncryption\",\"Specification\":\"JITEncryption\",\"Data\":[{\"Time\":\"2025-07-20T00:00:00+08:00\",\"Count\":20,\"Usage\":50}]}]}]",
           "member": "TaskStatData",
           "name": "MediaProcessDataSet",
           "output_required": true,
@@ -37107,7 +37107,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型。\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>\n<li>VoiceTranslation: 语音翻译</li>\n<li>JITTranscoding: 即时转码</li>\n<li>VideoSnapshot: 视频截图</li>",
+          "document": "任务类型。\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>\n<li>VoiceTranslation: 语音翻译</li>\n<li>JITTranscoding: 即时转码</li>\n<li>VideoSnapshot: 视频截图</li>\n<li>JITEncryption: 即时加密</li>",
           "example": "Transcoding",
           "member": "string",
           "name": "TaskType",

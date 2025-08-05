@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cls DeleteIndex --cli-unfold-argument  \
-    --TopicId 826f8b26-b054-4a0d-8c8e-f3d609f5e0ea
+    --TopicId 75f531f6-3644-45e5-8717-af1dc294cc93
 ```
 
 Output: 

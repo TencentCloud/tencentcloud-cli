@@ -56,6 +56,13 @@
       "output": "DeleteClusterStorageOptionResponse",
       "status": "online"
     },
+    "DeleteJob": {
+      "document": "本接口 (DeleteJob) 用于删除一个作业任务。",
+      "input": "DeleteJobRequest",
+      "name": "删除作业任务",
+      "output": "DeleteJobResponse",
+      "status": "online"
+    },
     "DeleteNodes": {
       "document": "本接口(DeleteNodes)用于删除指定集群中一个或者多个计算节点或者登录节点。",
       "input": "DeleteNodesRequest",
@@ -103,6 +110,27 @@
       "input": "DescribeInitNodeScriptsRequest",
       "name": "查询节点初始化脚本列表",
       "output": "DescribeInitNodeScriptsResponse",
+      "status": "online"
+    },
+    "DescribeJobSubmitInfo": {
+      "document": "本接口用于查询作业的提交信息。",
+      "input": "DescribeJobSubmitInfoRequest",
+      "name": "查询作业提交信息",
+      "output": "DescribeJobSubmitInfoResponse",
+      "status": "online"
+    },
+    "DescribeJobs": {
+      "document": "本接口 (DescribeJobs) 用于查询作业任务列表信息。",
+      "input": "DescribeJobsRequest",
+      "name": "查询作业任务",
+      "output": "DescribeJobsResponse",
+      "status": "online"
+    },
+    "DescribeJobsOverview": {
+      "document": "本接口 (DescribeJobs) 用于查询作业任务列表信息。",
+      "input": "DescribeJobsOverviewRequest",
+      "name": "查询集群下作业任务的概览信息",
+      "output": "DescribeJobsOverviewResponse",
       "status": "online"
     },
     "DescribeNodes": {
@@ -159,6 +187,20 @@
       "input": "SetAutoScalingConfigurationRequest",
       "name": "设置弹性伸缩配置信息",
       "output": "SetAutoScalingConfigurationResponse",
+      "status": "online"
+    },
+    "SubmitJob": {
+      "document": "本接口 (SubmitJob) 用于提交一个作业任务。",
+      "input": "SubmitJobRequest",
+      "name": "提交作业任务",
+      "output": "SubmitJobResponse",
+      "status": "online"
+    },
+    "TerminateJob": {
+      "document": "本接口 (TerminateJob) 用于终止一个作业任务。",
+      "input": "TerminateJobRequest",
+      "name": "终止作业任务",
+      "output": "TerminateJobResponse",
       "status": "online"
     },
     "TerminateWorkspaces": {
@@ -454,6 +496,78 @@
         }
       ],
       "type": "object"
+    },
+    "Application": {
+      "document": "任务的应用环境配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待执行脚本命令。",
+          "example": "无",
+          "member": "CommandItem",
+          "name": "Commands",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储目录挂载配置。",
+          "example": "无",
+          "member": "StorageMount",
+          "name": "StorageMounts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义环境变量。",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器配置信息。",
+          "example": "无",
+          "member": "Docker",
+          "name": "Docker",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "OutputRedirect",
+          "name": "OutputRedirect",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示所选训练框架，支持可选参数\n \n- PyTorch：表示提交PyTorch训练作业\n- Custom：表示用户自定义作业\n\n默认参数为：Custom",
+          "example": "Custom",
+          "member": "string",
+          "name": "JobType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AttachNodesRequest": {
       "document": "AttachNodes请求参数结构体",
@@ -911,6 +1025,23 @@
         }
       ],
       "usage": "out"
+    },
+    "CommandItem": {
+      "document": "任务执行命令脚本。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脚本命令",
+          "example": "echo hello world.",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ComputeNode": {
       "document": "计算节点信息。",
@@ -1556,6 +1687,33 @@
       ],
       "type": "object"
     },
+    "DeleteJobRequest": {
+      "document": "DeleteJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业任务ID",
+          "example": "job-xxx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteJobResponse": {
+      "document": "DeleteJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNodesRequest": {
       "document": "DeleteNodes请求参数结构体",
       "members": [
@@ -1902,6 +2060,154 @@
       ],
       "type": "object"
     },
+    "DescribeJobSubmitInfoRequest": {
+      "document": "DescribeJobSubmitInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业ID",
+          "example": "job-mudowi62",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobSubmitInfoResponse": {
+      "document": "DescribeJobSubmitInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "hpc-qjwi17gr",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "队列名称",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业信息",
+          "example": "无",
+          "member": "Job",
+          "name": "Job",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobsOverviewRequest": {
+      "document": "DescribeJobsOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeJobsOverviewResponse": {
+      "document": "DescribeJobsOverview返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobsRequest": {
+      "document": "DescribeJobs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业任务ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "JobIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。 关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。\t",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。\t",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobsResponse": {
+      "document": "DescribeJobs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业任务概览列表",
+          "example": "无",
+          "member": "JobView",
+          "name": "JobSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的作业任务数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNodesRequest": {
       "document": "DescribeNodes请求参数结构体",
       "members": [
@@ -2151,6 +2457,34 @@
       ],
       "type": "object"
     },
+    "Docker": {
+      "document": "容器配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "容器镜像地址",
+          "example": "test_image.tencentcloudcr.com/model_train_image/batch_docker_train_image_test:v1.0",
+          "member": "string",
+          "name": "Image",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器运行参数",
+          "example": "[\"--gpus all\",\"--privileged\",\"--cap-add=IPC_LOCK\",\"--net=host\",\"--ipc=host\",\"-itd\"]",
+          "member": "string",
+          "name": "RunArgs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EnhancedService": {
       "document": "描述了实例的增强服务启用情况与其设置，如云安全，腾讯云可观测平台等实例 Agent",
       "members": [
@@ -2185,6 +2519,34 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvVar": {
+      "document": "用户自定义环境变量。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ENV",
+          "example": "环境变量名",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "test",
+          "example": "环境变量值",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2542,6 +2904,173 @@
         }
       ],
       "usage": "both"
+    },
+    "Job": {
+      "document": "提交Job作业信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务配置信息。",
+          "example": "无",
+          "member": "Task",
+          "name": "Tasks",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业名称。",
+          "example": "test-job",
+          "member": "string",
+          "name": "JobName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业描述。",
+          "example": "test job",
+          "member": "string",
+          "name": "JobDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业优先级，数值越大，优先级越高，数值范围1～100。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Priority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述任务的依赖关系，DAG有向无环图。",
+          "example": "无",
+          "member": "TaskDependence",
+          "name": "TaskDependencies",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "JobView": {
+      "document": "作业概览信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业ID",
+          "example": "job-xxx",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业名称",
+          "example": "job-test",
+          "member": "string",
+          "name": "JobName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业描述",
+          "example": "job test",
+          "member": "string",
+          "name": "JobDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业优先级",
+          "example": "10",
+          "member": "uint64",
+          "name": "Priority",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业状态，包括CREATED, QUEING, STARTNG, RUNING, TERMINATING, TERMINATED, SUCCESS, \nFAILED\n",
+          "example": "CREATED",
+          "member": "string",
+          "name": "JobState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业所属集群ID",
+          "example": "hpc-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业所属队列名称",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "完成作业任务所需资源",
+          "example": "计算节点: 3",
+          "member": "string",
+          "name": "OccupyResources",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业任务创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业任务结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "LoginNode": {
       "document": "登录节点信息。",
@@ -3067,6 +3596,34 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OutputRedirect": {
+      "document": "输出重定向配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出driver类型",
+          "example": "local",
+          "member": "string",
+          "name": "Driver",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重定向配置参数",
+          "example": "[\"stderr=/tmp/train_err.log\"]",
+          "member": "string",
+          "name": "Options",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -3950,6 +4507,45 @@
       ],
       "usage": "both"
     },
+    "StorageMount": {
+      "document": "存储目录挂载配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "挂载源",
+          "example": "/data/",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标挂载位置",
+          "example": "/mnt/",
+          "member": "string",
+          "name": "Target",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂载的存储类型，目前仅支持：local",
+          "example": "local",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "StorageOption": {
       "document": "描述集群文件系统选项",
       "members": [
@@ -4021,6 +4617,23 @@
         }
       ],
       "usage": "out"
+    },
+    "SubmitJobRequest": {
+      "document": "SubmitJob请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SubmitJobResponse": {
+      "document": "SubmitJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SystemDisk": {
       "document": "描述了操作系统所在块设备即系统盘的信息",
@@ -4103,6 +4716,111 @@
         }
       ],
       "usage": "both"
+    },
+    "Task": {
+      "document": "作业任务配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业任务的应用环境配置信息。",
+          "example": "无",
+          "member": "Application",
+          "name": "Application",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业任务名称。",
+          "example": "test-task",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业任务所需的节点数/副本数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskInstanceNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务超时时间(单位：秒)。",
+          "example": "86400",
+          "member": "uint64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskDependence": {
+      "document": "任务的依赖关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "依赖关系的起点任务名称。",
+          "example": "task0",
+          "member": "string",
+          "name": "StartTask",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "依赖关系的终点任务名称。",
+          "example": "task1",
+          "member": "string",
+          "name": "EndTask",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TerminateJobRequest": {
+      "document": "TerminateJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业任务ID",
+          "example": "job-xxx",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateJobResponse": {
+      "document": "TerminateJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TerminateWorkspacesRequest": {
       "document": "TerminateWorkspaces请求参数结构体",

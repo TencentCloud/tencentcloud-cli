@@ -10738,8 +10738,17 @@
         },
         {
           "disabled": false,
+          "document": "（必填参数）指定脚本内容，base64编码",
+          "example": "c2VsZWN0IDE7",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "扩展属性",
-          "example": "sql.file.name=\"\"",
+          "example": "无",
           "member": "TaskExtInfo",
           "name": "TaskExt",
           "required": false,
@@ -10784,18 +10793,9 @@
         {
           "disabled": false,
           "document": "工作流目录ID",
-          "example": "bf8c8d93-da0b-4665-aec9-92890baa9a18",
+          "example": "bf8c8d93-da0b-4665",
           "member": "string",
           "name": "TaskFolderId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "（必填参数）指定脚本内容，base64编码",
-          "example": "c2VsZWN0IDE7",
-          "member": "string",
-          "name": "Content",
           "required": false,
           "type": "string"
         },
@@ -10817,7 +10817,7 @@
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "202508120923967",
           "member": "string",
           "name": "Data",
           "output_required": true,

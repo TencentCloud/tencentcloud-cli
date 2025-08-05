@@ -4917,8 +4917,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
-          "example": "3edc8551-xxxx-xxxx-9fc4-ed66e20dfa8a",
+          "document": "日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "75f531f6-3644-45e5-8717-af1dc294cc93",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -5107,8 +5107,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集名字，不能重名",
-          "example": "testname",
+          "document": "日志集名字。\n\n- 最大支持255个字符。不支持`|`字符。",
+          "example": "业务流日志集",
           "member": "string",
           "name": "LogsetName",
           "required": true,
@@ -5126,7 +5126,7 @@
         {
           "disabled": false,
           "document": "日志集ID，格式为：用户自定义部分-用户appid，用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符，尾部需要使用-拼接用户appid",
-          "example": "user-define-34534566",
+          "example": "user-diy-1254139626",
           "member": "string",
           "name": "LogsetId",
           "required": false,
@@ -6825,8 +6825,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
-          "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
+          "document": "日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "75f531f6-3644-45e5-8717-af1dc294cc93",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -6888,7 +6888,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。",
           "example": "eb6eafd9-1656-4d60-b3c2-0a5bf91c9b0d",
           "member": "string",
           "name": "LogsetId",
@@ -8104,8 +8104,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
-          "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
+          "document": "日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "75f531f6-3644-45e5-8717-af1dc294cc93",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -8119,7 +8119,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题Id",
           "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
           "member": "string",
           "name": "TopicId",
@@ -8129,7 +8129,7 @@
         },
         {
           "disabled": false,
-          "document": "是否生效",
+          "document": "索引状态。true：开启状态，false：关闭状态\n开启后可对日志进行检索分析，将产生索引流量、索引存储及相应费用。[费用详情](https://cloud.tencent.com/document/product/614/45802#.E8.AE.A1.E8.B4.B9.E9.A1.B9)",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -8149,7 +8149,7 @@
         },
         {
           "disabled": false,
-          "document": "索引修改时间，初始值为索引创建时间。",
+          "document": "索引修改时间，初始值为索引创建时间。格式 `YYYY-MM-DD HH:MM:SS`",
           "example": "2021-01-13 21:00:08 ",
           "member": "string",
           "name": "ModifyTime",
@@ -8554,7 +8554,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "logsetName\n- 按照【日志集名称】进行过滤。\n- 类型：String\n- 必选：否\n\nlogsetId\n- 按照【日志集ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "logsetName\n- 按照【日志集名称】进行过滤。\n- 类型：String\n- 必选：否\n- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集名称。\nlogsetId\n- 按照【日志集ID】进行过滤。\n- 类型：String\n- 必选：否\n- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -8591,6 +8591,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8600,6 +8601,7 @@
           "example": "无",
           "member": "LogsetInfo",
           "name": "Logsets",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11086,7 +11088,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间。格式 `YYYY-MM-DD HH:MM:SS`",
           "example": "2021-04-01 08:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -12844,7 +12846,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。",
           "example": "dc01b74a-49e4-11eb-b378-0242ac130002",
           "member": "string",
           "name": "LogsetId",
@@ -12853,8 +12855,8 @@
         },
         {
           "disabled": false,
-          "document": "日志集名称",
-          "example": "changename",
+          "document": "日志集名字。- 最大支持255个字符。不支持`|`字符。",
+          "example": "业务流日志集",
           "member": "string",
           "name": "LogsetName",
           "required": false,

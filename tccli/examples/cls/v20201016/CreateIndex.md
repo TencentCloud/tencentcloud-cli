@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cls CreateIndex --cli-unfold-argument  \
-    --TopicId 3edc8551-111b-473b-9fc4-ed66e20dfa8a \
+    --TopicId 75f531f6-3644-45e5-8717-af1dc294cc93 \
     --Status True \
     --Rule.FullText.CaseSensitive True \
     --Rule.FullText.Tokenizer @&?|#()='",;:<>[]{}/ 
@@ -18,7 +18,7 @@ tccli cls CreateIndex --cli-unfold-argument  \
     --Rule.KeyValue.KeyValues.0.Value.SqlFlag False \
     --Rule.Tag.CaseSensitive True \
     --Rule.Tag.KeyValues.0.Key tag \
-    --Rule.Tag.KeyValues.0.Value.Type string \
+    --Rule.Tag.KeyValues.0.Value.Type text \
     --Rule.Tag.KeyValues.0.Value.Tokenizer @&?|#()='",;:<>[]{}/ 
 	\ \
     --Rule.Tag.KeyValues.0.Value.SqlFlag False
@@ -28,7 +28,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6ef60bec-xxxx-xxxx-bb20-270359fb54a7"
+        "RequestId": "8d3c9e9e-0c2f-4d9a-bb17-71e4f42f89fd"
     }
 }
 ```

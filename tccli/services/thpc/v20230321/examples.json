@@ -64,6 +64,14 @@
         "title": "删除集群存储选项信息。"
       }
     ],
+    "DeleteJob": [
+      {
+        "document": "删除指定作业任务",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJob\n<公共请求参数>\n\n{\n    \"JobId\": \"job-7lbm9sss8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e8b3df3-0c0d-4f5a-b103-a9cf8sacs0865b\"\n    }\n}",
+        "title": "删除指定作业任务"
+      }
+    ],
     "DeleteNodes": [
       {
         "document": "批量删除节点。",
@@ -118,6 +126,30 @@
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInitNodeScripts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-5lyv94lq\"\n}",
         "output": "{\n    \"Response\": {\n        \"InitNodeScriptSet\": [\n            {\n                \"ScriptPath\": \"cos://test-xxxxxxxx.cos.ap-guangzhou.myqcloud.com/test/echo.sh\",\n                \"Timeout\": 30\n            }\n        ],\n        \"RequestId\": \"a40ac3ec-f0ac-4eee-8af8-ef2d93f37982\"\n    }\n}",
         "title": "查询节点初始化脚本信息"
+      }
+    ],
+    "DescribeJobSubmitInfo": [
+      {
+        "document": "查询指定作业的提交信息",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobSubmitInfo\n<公共请求参数>\n\n{\n    \"JobId\": \"job-7lbm9sss8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterId\": \"hpc-qjwi17gr\",\n        \"QueueName\": \"compute\",\n        \"Job\": {\n            \"JobName\": \"jobj-test\",\n            \"JobDescription\": \"demo\",\n            \"Priority\": 1,\n            \"Tasks\": [\n                {\n                    \"TaskInstanceNum\": 1,\n                    \"Application\": {\n                        \"Commands\": [\n                            {\n                                \"Command\": \"sleep 30\"\n                            }\n                        ],\n                        \"Docker\": {\n                            \"Image\": \"ccr.ccs.tencentyun.com/taco/taco-train:ngc24.03-ofed5.8-hccpnv6-v1.0\",\n                            \"RunArgs\": [\n                                \"--privileged\",\n                                \"--cap-add=IPC_LOCK\",\n                                \"--ulimit memlock=-1\",\n                                \"--ulimit stack=67108864\",\n                                \"--net=host\",\n                                \"--ipc=host\",\n                                \"--gpus all\"\n                            ]\n                        },\n                        \"JobType\": \"Custom\"\n                    },\n                    \"Timeout\": 86400,\n                    \"TaskName\": \"Task_1\"\n                }\n            ]\n        },\n        \"RequestId\": \"d00db282-3ebb-438d-82da-73e376ff9b31\"\n    }\n}",
+        "title": "查询指定作业的提交信息"
+      }
+    ],
+    "DescribeJobs": [
+      {
+        "document": "查询指定作业ID的任务列表信息",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobs\n<公共请求参数>\n\n{\n    \"JobIds\": [\n        \"job-mudo8mj\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobSet\": [\n            {\n                \"ClusterId\": \"hpc-59wddafa\",\n                \"CreateTime\": \"2024-12-17 15:31:14\",\n                \"EndTime\": \"1753-01-01 00:00:00\",\n                \"JobDescription\": \"job test\",\n                \"JobId\": \"job-mudo8mij\",\n                \"JobName\": \"nj-test\",\n                \"JobState\": \"RUNNING\",\n                \"Priority\": 1,\n                \"QueueName\": \"compute\"\n            }\n        ],\n        \"RequestId\": \"a0a8bfa0-43cd-424e-9b12-eb01fadfadc6c1\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询指定作业ID的任务列表信息"
+      }
+    ],
+    "DescribeJobsOverview": [
+      {
+        "document": "thpc查看集群下的作业概览信息",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0a8bfa0-43cd-424e-9b12-eb01fadfadc6c1\"\n    }\n}",
+        "title": "thpc查看集群下的作业概览信息"
       }
     ],
     "DescribeNodes": [
@@ -182,6 +214,22 @@
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAutoScalingConfiguration\n<公共请求参数>\n\n{\n    \"DryRun\": \"false\",\n    \"ShrinkIdleTime\": \"300\",\n    \"ExpansionBusyTime\": \"120\",\n    \"ClusterId\": \"hpc-5lyv94lq\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1d90874-f565-463d-ba1d-c707517eece1\"\n    }\n}",
         "title": "设置弹性伸缩配置"
+      }
+    ],
+    "SubmitJob": [
+      {
+        "document": "提交一个\"hello world\"作业任务",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitJob\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ef8a9572-db7f-450b-b736-265feffafda34\"\n    }\n}",
+        "title": "提交一个\"hello world\"作业任务"
+      }
+    ],
+    "TerminateJob": [
+      {
+        "document": "终止指定的作业任务",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"job-n27m0dx9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2781659-7d40-4d4e-bee6-40a1e5fdadfae3c\"\n    }\n}",
+        "title": "终止指定的作业任务"
       }
     ],
     "TerminateWorkspaces": [

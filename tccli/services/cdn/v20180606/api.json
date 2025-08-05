@@ -13810,9 +13810,10 @@
         {
           "disabled": false,
           "document": "重定向状态码，301 | 302",
-          "example": "no",
+          "example": "302",
           "member": "int64",
           "name": "RedirectStatusCode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -13823,6 +13824,7 @@
           "example": "no",
           "member": "string",
           "name": "Pattern",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13833,6 +13835,7 @@
           "example": "no",
           "member": "string",
           "name": "RedirectUrl",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13843,6 +13846,7 @@
           "example": "no",
           "member": "string",
           "name": "RedirectHost",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13853,6 +13857,7 @@
           "example": "false",
           "member": "bool",
           "name": "FullMatch",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true

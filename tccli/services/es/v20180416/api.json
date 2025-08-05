@@ -435,6 +435,89 @@
     "serviceShortName": "es"
   },
   "objects": {
+    "AutoScaleDiskInfo": {
+      "document": "cvm 自动扩盘参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点类型 hotData,warmData\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hotData",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0:百分比扩容;1:绝对值扩容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ScaleType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发阈值,单位%,例如80%\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "Threshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发持续时间,单位分钟,例如60\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每次扩容比例,单位%,例如20%\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "PercentSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绝对值扩容,单位GB,例如100GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "FixSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩容上限,单位GB,例如500GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500",
+          "member": "uint64",
+          "name": "MaxSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "BackingIndexMetaField": {
       "document": "后备索引元数据字段",
       "members": [
@@ -1363,7 +1446,7 @@
         {
           "disabled": false,
           "document": "代金券ID列表（目前仅支持指定一张代金券）",
-          "example": "[\"123a**********ccajoi\"]",
+          "example": "[\"1asdfa\"]",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -1584,6 +1667,24 @@
           "name": "EnableScheduleOperationDuration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自动扩盘参数列表",
+          "example": "无",
+          "member": "AutoScaleDiskInfo",
+          "name": "AutoScaleDiskInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启kibana公网访问，不传默认开启",
+          "example": "\"false\"",
+          "member": "string",
+          "name": "EnableKibanaPublicAccess",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1716,7 +1817,7 @@
         {
           "disabled": false,
           "document": "代金券ID列表（目前仅支持指定一张代金券）",
-          "example": "[\"\"]",
+          "example": "[\"sdffsd\"]",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -1725,7 +1826,7 @@
         {
           "disabled": false,
           "document": "自动续费标识<li>RENEW_FLAG_AUTO：自动续费</li><li>RENEW_FLAG_MANUAL：不自动续费，用户手动续费</li>ChargeType为PREPAID时需要设置，如不传递该参数，普通用户默认不自动续费，SVIP用户自动续费",
-          "example": "RENEW_FLAG_DEFAULT",
+          "example": "BIZ_RENEW_FLAG_AUTO",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
@@ -8576,6 +8677,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动扩容标识：0-非自动，1-自动",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoScaleTag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10983,6 +11094,24 @@
           "name": "EnableDestroyProtection",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动扩盘参数",
+          "example": "无",
+          "member": "AutoScaleDiskInfo",
+          "name": "AutoScaleDiskInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自动扩盘删除参数",
+          "example": "[\"hotData\",\"warmData\"]",
+          "member": "string",
+          "name": "AutoScaleDiskDeleteNodeTypeList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

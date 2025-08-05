@@ -59,7 +59,7 @@
   },
   "metadata": {
     "apiVersion": "2020-08-24",
-    "api_brief": "声音复刻的接口主要包括两部分，一是音频文件上传接口，用于客户上传音频到后台进行训练；二是tts服务调用接口，用于客户调用训练后的tts音色，接入到实际业务中。",
+    "api_brief": "## 概述\n\n声音复刻（Voice Cloning）为企业提供快速、批量、自动化的定制音色服务。声音复刻基于客户上传的少量录音数据进行模型训练，实现对发音人音色的定制。完成音色训练后，可通过调用[语音合成](https://cloud.tencent.com/product/tts)输出对应的音色音频。声音复刻广泛适用于数字人、语音社交、资讯播报、短视频制作等场景。 \n\n本章节介绍的声音复刻 API 接口均为 API 3.0接口。\n您可以调用 API 进行声音复刻操作，声音复刻支持的所有接口信息请参见 [API概览](https://cloud.tencent.com/document/product/1283/90075) 。\n\n## 术语表\n\n声音复刻 API 接口的常见术语请参见下表：\n\n| 术语 | 描述 | \n|---------|---------|\n| 音质检测 | 用于检测原始音频的清晰度、是否存在背景噪声及语义一致性。<br>注：为确保复刻音色的合成效果，需要提供音质良好，发音清晰，切无环境噪音的注册音频 |\n\n\t\n## 使用限制\n\n对于 API 接口的参数限制，请参考各接口文档中的参数说明。\n\n## API 快速入门\n\n您可以使用 API Explorer 工具在线调用 API。\n\n本文以声音复刻任务创建为例，通过 API Explorer 工具调用 API 接口的步骤如下：\n1、注册腾讯云账号并通过实名认证后，登录 [声音复刻控制台](https://console.cloud.tencent.com/vrs) ，阅读和同意服务条款，单击立即开通，即可获得声音复刻的 API 接口调用权限。\n2、进入[API Explorer](https://console.cloud.tencent.com/api/explorer?Product=vrs&Version=2020-08-24&Action=CreateVRSTask) 页面。更多 API Explorer 工具使用信息，请参见 [使用 API Explorer](https://cloud.tencent.com/document/product/1278/46697 ) 。\n3、调用 [API Explorer-声音复刻](https://console.cloud.tencent.com/api/explorer?Product=vrs&Version=2020-08-24&Action=CreateVRSTask) 接口。\n4、输入相应参数后在线调用查看响应结果。具体输入参数说明可见[声音复刻任务创建接口](https://cloud.tencent.com/document/product/1283/90064)",
     "serviceNameCN": "声音复刻",
     "serviceShortName": "vrs"
   },
