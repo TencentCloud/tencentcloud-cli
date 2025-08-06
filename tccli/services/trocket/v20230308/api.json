@@ -939,6 +939,15 @@
         },
         {
           "disabled": false,
+          "document": "集群绑定的VPC信息",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "备注信息",
           "example": "测试集群",
           "member": "string",
@@ -952,15 +961,6 @@
           "example": "无",
           "member": "Tag",
           "name": "TagList",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "集群绑定的VPC信息，必填",
-          "example": "无",
-          "member": "VpcInfo",
-          "name": "VpcList",
           "required": false,
           "type": "list"
         },

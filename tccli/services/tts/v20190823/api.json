@@ -24,7 +24,7 @@
   },
   "metadata": {
     "apiVersion": "2019-08-23",
-    "api_brief": "## 概述\n\n语音合成（Text To Speech，TTS）可以满足将文本转化成拟人化语音的需求，打通人机交互闭环。提供多种音色选择，支持自定义音量、语速，让发音更自然、更专业、更符合场景需求。语音合成广泛应用于智能体对话、语音助手、有声读物、新闻资讯播报等场景，提升人机交互体验，提高语音类应用构建效率。\n\n您可以调用 API 进行语音合成操作，例如超自然大模型语音合成、大模型语音合成等。\n语音合成支持的所有接口信息，请参见 [语音合成API概览](https://cloud.tencent.com/document/product/1073/37986) 。\n\n## 术语表\n\n语音合成 API 接口的常见术语请参见下表：\n\n| 术语 | 描述 | \n|---------|---------|\n| 采样率 | 采样率（Sampling Rate）是指在数字信号处理中，每秒钟对连续信号进行采样的次数，通常以赫兹（Hz）为单位表示。采样率越高，数字信号对原始模拟信号的还原度越高，声音或图像的质量也越好。但同时，采样率越高，数据量也越大。 |\n\n\t\n## 使用限制\n\n对于 API 接口的参数限制，请参考各接口文档中的参数说明。\n\n\n## API 快速入门\n\n您可以使用 API Explorer 工具在线调用 API。\n\n本文以基础语音合成为例，通过 API Explorer 工具调用 API 接口的步骤如下：\n1、注册腾讯云账号并通过实名认证后，登录 [语音合成控制台](https://console.cloud.tencent.com/tts)  ，阅读和同意服务条款，单击立即开通，即可获得语音合成的 API 接口调用权限。\n2、进入[API Explorer](https://console.cloud.tencent.com/api/explorer?Product=tts&Version=2019-08-23&Action=TextToVoice)  页面。更多 API Explorer 工具使用信息，请参见 [使用 API Explorer](https://cloud.tencent.com/document/product/1278/46697)  。\n3、调用 [API Explorer-语音合成](https://console.cloud.tencent.com/api/explorer?Product=tts&Version=2019-08-23&Action=TextToVoice)  接口。\n4、输入相应参数后在线调用查看响应结果。具体输入参数说明可见 [基础语音合成-API文档](https://cloud.tencent.com/document/product/1073/37995) \n\n更多操作指引请参考：[一分钟接入服务端 API](https://cloud.tencent.com/document/product/1073/56640)",
+    "api_brief": "介绍如何使用语音合成API合成音频",
     "serviceNameCN": "语音合成",
     "serviceShortName": "tts"
   },

@@ -9675,8 +9675,8 @@
         },
         {
           "disabled": false,
-          "document": "按照指定字段排序，可选值为tps，accumulative",
-          "example": "tps",
+          "document": "按照指定字段排序，可选值为 subscribeNum: 订阅 Topic 个数",
+          "example": "subscribeNum",
           "member": "string",
           "name": "SortedBy",
           "required": false,
@@ -17833,7 +17833,7 @@
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -17844,6 +17844,15 @@
           "name": "ResetTimestamp",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重置的是否是retry topic",
+          "example": "false",
+          "member": "bool",
+          "name": "RetryFlag",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

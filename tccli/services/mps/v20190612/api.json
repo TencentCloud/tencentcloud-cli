@@ -16327,7 +16327,7 @@
         {
           "disabled": false,
           "document": "转码模板唯一标识过滤条件，数组长度限制：100。",
-          "example": "10",
+          "example": "[10]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -20175,21 +20175,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果的类型，取值范围：\n<li>SegmentRecognition：拆条。</li>",
+          "document": "结果的类型，取值范围：\n<li>SegmentRecognition：拆条。</li>\n<li>Highlight ：集锦。</li>",
           "example": "SegmentRecognition",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "拆条结果，当 Type 为\nSegmentRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "SegmentRecognitionItem",
           "name": "SegmentResultSet",
-          "required": true,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集锦结果，当Type 为 Highlight 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaAiAnalysisHighlightItem",
+          "name": "HighlightResultSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

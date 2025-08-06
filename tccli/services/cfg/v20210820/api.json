@@ -595,6 +595,15 @@
           "name": "TaskPauseDuration",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "TagWithCreate",
+          "name": "TaskTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

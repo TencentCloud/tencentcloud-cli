@@ -1145,7 +1145,7 @@
         {
           "disabled": false,
           "document": "计费方式",
-          "example": "{\"ChargeType\":\"PREPAID\", \"RenewFlag\":1, \"TimeSpan\":1}",
+          "example": "无",
           "member": "Charge",
           "name": "ChargeProperties",
           "required": true,
@@ -1163,7 +1163,7 @@
         {
           "disabled": false,
           "document": "数据节点\nSpecName从DescribeSpec接口中返回的DataSpec.Name获取",
-          "example": "{\"SpecName\":\"S_16_64_H\", \"Count\":1, \"DiskSize\":200}",
+          "example": "无",
           "member": "NodeSpec",
           "name": "DataSpec",
           "required": true,
@@ -1172,7 +1172,7 @@
         {
           "disabled": true,
           "document": "标签列表（废弃）",
-          "example": "{\"TagKey\":\"test_key\",\"TagValue\":\"test_value\"}",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1216,8 +1216,8 @@
         },
         {
           "disabled": false,
-          "document": "ZK节点\nSpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取",
-          "example": "{\"SpecName\":\"S_4_16_P\", \"Count\":1, \"DiskSize\":200}",
+          "document": "ZK节点SpecName从DescribeSpec接口中返回的CommonSpec结构体的Name（ZK节点）获取",
+          "example": "无",
           "member": "NodeSpec",
           "name": "CommonSpec",
           "required": false,
@@ -1234,12 +1234,21 @@
         },
         {
           "disabled": false,
-          "document": "副可用去信息",
-          "example": "[   {     \"SecondaryZone\": \"ap-guangzhou-4\",     \"SecondarySubnet\": \"subnet-atpdmj7g\",     \"SecondaryUserSubnetIPNum\": 223   },   {     \"SecondaryZone\": \"ap-guangzhou-6\",     \"SecondarySubnet\": \"subnet-e4nl52om\",     \"SecondaryUserSubnetIPNum\": 4   } ]",
+          "document": "副可用区信息",
+          "example": "无",
           "member": "SecondaryZoneInfo",
           "name": "SecondaryZoneInfo",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "default账号登陆实例的密码。8-16个字符，至少包含大写字母、小写字母、数字和特殊字符!@#%^*中的三种，第一个字符不能为特殊字符",
+          "example": "Test@579",
+          "member": "string",
+          "name": "CkDefaultUserPwd",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

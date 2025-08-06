@@ -2035,7 +2035,7 @@
         },
         {
           "disabled": false,
-          "document": "支持查询的指标；当前支持查询的任务指标；\n\n- CpuUsage：cpu利用率，单位：%\n- MemUsage：内存利用率，单位：%\n- LanOuttraffic：内网出带宽，单位：Bytes/s\n- LanIntraffic：内网入带宽，单位：Bytes/s",
+          "document": "支持查询的指标；当前支持查询的任务指标；\n\n- CpuUsage：cpu利用率，单位：%\n- MemUsage：内存利用率，单位：%\n- LanOuttraffic：内网出带宽，单位：Bytes/s\n- LanIntraffic：内网入带宽，单位：Bytes/s\n- MaxDiskUsage：所有磁盘中的使用率最高的磁盘使用率，单位：%\n- TargetDiskUsage：指定磁盘的使用率，单位：%；配合Dimensions参数使用",
           "example": "CpuUsage",
           "member": "string",
           "name": "MetricName",
@@ -2059,6 +2059,15 @@
           "name": "EndTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询指标的扩展参数；当前只支持TargetDiskUsage;\n\n- TargetDiskUsage\n    -支持的查询维度diskname, 维度值为磁盘挂载名，例如vdb；如果不传此参数，默认查询vdb磁盘的使用率。\n    样例：[{\"Name\":\"diskname\", \"Value\":\"vdb\"}]",
+          "example": "无",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2768,6 +2777,30 @@
         }
       ],
       "type": "object"
+    },
+    "Dimension": {
+      "document": "Job资源监控查询维度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询指标的维度名称",
+          "example": "diskname",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询指标的维度值",
+          "example": "vdb",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "Docker": {
       "document": "Docker容器信息",

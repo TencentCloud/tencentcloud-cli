@@ -189,6 +189,13 @@
       "output": "DescribeClusterPodAssetsResponse",
       "status": "online"
     },
+    "DescribeConfigCheckRules": {
+      "document": "云资源配置风险规则列表示例",
+      "input": "DescribeConfigCheckRulesRequest",
+      "name": "云资源配置风险规则列表",
+      "output": "DescribeConfigCheckRulesResponse",
+      "status": "online"
+    },
     "DescribeDbAssetInfo": {
       "document": "db资产详情",
       "input": "DescribeDbAssetInfoRequest",
@@ -6691,7 +6698,7 @@
         },
         {
           "disabled": false,
-          "document": "用户类型\nCAMUser/root/AssumedRole\n",
+          "document": "用户类型CAMUser/root/AssumedRole\n",
           "example": "CAMUser",
           "member": "string",
           "name": "UserType",
@@ -6817,6 +6824,16 @@
           "name": "ISP",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号外vpc信息列表",
+          "example": "账号外vpc信息列表",
+          "member": "SourceIPVpcInfo",
+          "name": "VpcInfo",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -9662,8 +9679,17 @@
         },
         {
           "disabled": false,
+          "document": "访问账号uin",
+          "example": "100*001",
+          "member": "string",
+          "name": "AccUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "过滤器",
-          "example": "过滤器",
+          "example": "无",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -9678,7 +9704,7 @@
         {
           "disabled": false,
           "document": "调用记录列表",
-          "example": "调用记录列表",
+          "example": "无",
           "member": "CallRecord",
           "name": "Data",
           "output_required": true,
@@ -10005,6 +10031,138 @@
           "example": "[       {         \"Text\": \"1302396211\",         \"Value\": \"1302396211\"       }     ]",
           "member": "FilterDataObject",
           "name": "AppIdList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigCheckRulesRequest": {
+      "document": "DescribeConfigCheckRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "update_time",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigCheckRulesResponse": {
+      "document": "DescribeConfigCheckRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险规则数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险规则列表",
+          "example": "无",
+          "member": "RiskRuleInfo",
+          "name": "RuleList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商类型选项",
+          "example": "无",
+          "member": "AttributeOptionSet",
+          "name": "ProviderList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级类型选项",
+          "example": "无",
+          "member": "AttributeOptionSet",
+          "name": "RiskLevelList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置分类选项",
+          "example": "无",
+          "member": "AttributeOptionSet",
+          "name": "DispositionTypeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查类型选项",
+          "example": "无",
+          "member": "AttributeOptionSet",
+          "name": "CheckTypeList",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -14875,6 +15033,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExposureID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口开放数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "PortDetectCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口开放结果",
+          "example": "80,443",
+          "member": "string",
+          "name": "PortDetectResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17862,6 +18050,102 @@
       ],
       "usage": "out"
     },
+    "RiskRuleInfo": {
+      "document": "风险规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险检查项ID",
+          "example": "tc_001",
+          "member": "string",
+          "name": "RuleID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商名称",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "Provider",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "cvm_instance",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险名称",
+          "example": "子账号未开启登录保护",
+          "member": "string",
+          "name": "RiskTitle",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查类型",
+          "example": "数据安全",
+          "member": "string",
+          "name": "CheckType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "high",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险危害",
+          "example": "风险危害描述",
+          "member": "string",
+          "name": "RiskInfluence",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险修复指引报告链接",
+          "example": "https://cos.tencent.com",
+          "member": "string",
+          "name": "RiskFixAdvance",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "边界管控",
+          "example": "expose",
+          "member": "string",
+          "name": "DispositionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RiskRuleItem": {
       "document": "风险规则",
       "members": [
@@ -19257,6 +19541,52 @@
           "member": "string",
           "name": "ISP",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SourceIPVpcInfo": {
+      "document": "调用源IP 外部账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号名称",
+          "example": "乌龙声生",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc所属appid",
+          "example": "130**0618",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc id",
+          "example": "10001",
+          "member": "string",
+          "name": "VpcID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc 名称",
+          "example": "vpc-name1",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

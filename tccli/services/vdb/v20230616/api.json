@@ -237,6 +237,15 @@
         },
         {
           "disabled": false,
+          "document": "产品版本，0-标准版，1-容量增强版",
+          "example": "0",
+          "member": "int64",
+          "name": "ProductType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "实例类型。\n- base：免费测试版。\n- single：单机版。\n- cluster：高可用版。",
           "example": "cluster",
           "member": "string",
@@ -1739,7 +1748,7 @@
           "example": "4",
           "member": "float",
           "name": "Cpu",
-          "required": true,
+          "required": false,
           "type": "float"
         },
         {
@@ -1748,7 +1757,7 @@
           "example": "8",
           "member": "float",
           "name": "Memory",
-          "required": true,
+          "required": false,
           "type": "float"
         },
         {
@@ -1757,7 +1766,7 @@
           "example": "200",
           "member": "uint64",
           "name": "StorageSize",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {

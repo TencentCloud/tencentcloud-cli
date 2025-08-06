@@ -573,6 +573,24 @@
           "name": "Capacity",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启默认扩容，仅turbo类型文件存储支持",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableAutoScaleUp",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "turbo文件系统元数据属性，basic：标准型元数据；enhanced：增强型元数据",
+          "example": "basic",
+          "member": "string",
+          "name": "MetaType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3245,8 +3263,7 @@
           "member": "string",
           "name": "StorageType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3255,8 +3272,7 @@
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3265,8 +3281,25 @@
           "member": "uint64",
           "name": "Capacity",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启默认扩容，仅turbo类型文件存储支持",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableAutoScaleUp",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "turbo文件系统元数据属性，basic：标准型元数据；enhanced：增强型元数据",
+          "example": "basic",
+          "member": "string",
+          "name": "MetaType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3617,6 +3650,72 @@
           "name": "Status",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "turbo自动扩容策略",
+          "example": "无",
+          "member": "VolumeAutoScaleUpRule",
+          "name": "AutoScaleUpRule",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "turbo元数据属性",
+          "example": "basic",
+          "member": "string",
+          "name": "MetaType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VolumeAutoScaleUpRule": {
+      "document": "缓存卷自动扩容策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自动扩容策略开启，关闭\n示例值：open,close",
+          "example": "open",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群用量占比，到达这个值后开始扩容,范围[10-90]",
+          "example": "85",
+          "member": "int64",
+          "name": "ScaleThreshold",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩容后使用量跟集群总量比例,范围[10-90]",
+          "example": "70",
+          "member": "int64",
+          "name": "TargetThreshold",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

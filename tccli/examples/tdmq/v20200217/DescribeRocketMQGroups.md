@@ -26,6 +26,8 @@ Output:
         "TotalCount": 1,
         "Groups": [
             {
+                "InstanceId": "rocketmq-4k4orqgq",
+                "Namespace": "test_ns",
                 "Name": "test_group",
                 "ConsumerNum": 1,
                 "TotalAccumulative": 380,
@@ -40,7 +42,8 @@ Output:
                 "Remark": "测试消费组",
                 "ConsumerType": "PUSH",
                 "TPS": 20,
-                "GroupType": "TCP"
+                "GroupType": "TCP",
+                "SubscribeTopicNum": "1"
             }
         ]
     }

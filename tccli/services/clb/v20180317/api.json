@@ -2886,7 +2886,7 @@
         {
           "disabled": false,
           "document": "健康检查相关参数，此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。",
-          "example": "{\"CheckPort\": -1, \"CheckType\": \"TCP\", \"HealthNum\": 3, \"HealthSwitch\": 1, \"IntervalTime\": 5, \"SourceIpType\": 1, \"TimeOut\": 2, \"UnHealthNum\": 3}",
+          "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -2895,7 +2895,7 @@
         {
           "disabled": false,
           "document": "证书相关信息。参数限制如下：\n<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>\n<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>",
-          "example": "{\"CertId\": \"PY6XAzZw\", \"SSLMode\": \"UNIDIRECTIONAL\"}",
+          "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
           "required": false,
@@ -2912,7 +2912,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）、IP_HASH（按 IP 地址哈希）\n默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。",
+          "document": "监听器转发的方式。可选值：WRR（按权重轮询）、LEAST_CONN（按最小连接数）\n默认为 WRR。此参数仅适用于TCP/UDP/TCP_SSL/QUIC监听器。",
           "example": "WRR",
           "member": "string",
           "name": "Scheduler",
@@ -2967,7 +2967,7 @@
         {
           "disabled": false,
           "document": "解绑后端目标时，是否发RST给两端（客户端和服务器），此参数仅适用于TCP监听器。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "DeregisterTargetRst",
           "required": false,
@@ -2976,7 +2976,7 @@
         {
           "disabled": false,
           "document": "证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：\n<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>\n<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>",
-          "example": "{\"CertList\": [{\"CertId\": \"PY6XAzZw\"}, {\"CertId\": \"OMN6Gek7\"}], \"SSLMode\": \"UNIDIRECTIONAL\"}",
+          "example": "无",
           "member": "MultiCertInfo",
           "name": "MultiCertInfo",
           "required": false,
@@ -2985,7 +2985,7 @@
         {
           "disabled": false,
           "document": "监听器最大连接数，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。基础网络实例不支持该参数。",
-          "example": "-1",
+          "example": "1000",
           "member": "int64",
           "name": "MaxConn",
           "required": false,
@@ -2994,7 +2994,7 @@
         {
           "disabled": false,
           "document": "监听器最大新增连接数，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。基础网络实例不支持该参数。",
-          "example": "-1",
+          "example": "1000",
           "member": "int64",
           "name": "MaxCps",
           "required": false,
@@ -3012,7 +3012,7 @@
         {
           "disabled": false,
           "document": "TCP_SSL和QUIC是否支持PP",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ProxyProtocol",
           "required": false,
@@ -3021,7 +3021,7 @@
         {
           "disabled": false,
           "document": "是否开启SNAT，True（开启）、False（关闭）。\n默认为关闭。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "SnatEnable",
           "required": false,
@@ -3039,7 +3039,7 @@
         {
           "disabled": false,
           "document": "内网http监听器开启h2c开关，True（开启）、False（关闭）。\n默认为关闭。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "H2cSwitch",
           "required": false,
@@ -3048,7 +3048,7 @@
         {
           "disabled": false,
           "document": "TCP_SSL监听器支持关闭SSL后仍然支持混绑，此参数为关闭开关。True（关闭）、False（开启）.\n默认为关闭。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "SslCloseSwitch",
           "required": false,

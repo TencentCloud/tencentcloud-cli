@@ -6068,6 +6068,15 @@
           "name": "Type",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否包含具体参数建议等信息",
+          "example": "false",
+          "member": "bool",
+          "name": "MustHasContext",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
