@@ -1,0 +1,323 @@
+{
+  "actions": {
+    "ChatCompletionDemo": {
+      "document": "该接口支持与自行部署的大模型的聊天。",
+      "input": "ChatCompletionDemoRequest",
+      "name": "与大模型聊天",
+      "output": "ChatCompletionDemoResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-02-05",
+    "api_brief": "用于TI大模型对话服务SSE支持",
+    "serviceNameCN": "TI大模型对话服务",
+    "serviceShortName": "tichat"
+  },
+  "objects": {
+    "ChatCompletionDemoRequest": {
+      "document": "ChatCompletionDemo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话id，标识一组对话的唯一id，id变更则重置会话",
+          "example": "86eb3227-06f5-4e2f-8333-4d41ca30195b",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对话的目标模型ID。 自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-q7pfr29p。",
+          "example": "ms-q7pfr29p",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对话内容",
+          "example": "无",
+          "member": "Message",
+          "name": "Message",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": true,
+          "document": "问题",
+          "example": "你好",
+          "member": "string",
+          "name": "Question",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChatCompletionDemoResponse": {
+      "document": "ChatCompletionDemo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署的模型服务组ID，形如ms-q7pfr29p",
+          "example": "ms-q7pfr29p",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话Id",
+          "example": "86eb3227-06f5-4e2f-8333-4d41ca30195b",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型思考时长，单位ms",
+          "example": "30",
+          "member": "float",
+          "name": "ReasoningDuration",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对话状态，reasoning 思考中，generating 回答中，success 成功，failed 失败",
+          "example": "reasoning",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token统计",
+          "example": "无",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对话结果",
+          "example": "无",
+          "member": "ChatCompletionStreamChoice",
+          "name": "Choices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChatCompletionStreamChoice": {
+      "document": "大模型流式对话返回详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "大模型流式对话返回内容",
+          "example": "无",
+          "member": "ChatCompletionStreamChoiceDelta",
+          "name": "Delta",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束理由: stop, length, content_filter, null",
+          "example": "stop",
+          "member": "string",
+          "name": "FinishReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "序号",
+          "example": "0",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ChatCompletionStreamChoiceDelta": {
+      "document": "大模型流式对话返回内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对话回答内容",
+          "example": "你好",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色名",
+          "example": "assistant",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "思考内容",
+          "example": "你好",
+          "member": "string",
+          "name": "ReasoningContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageUrl": {
+      "document": "多模态对话图片信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片url",
+          "example": "https://cos-bucket.cos.ap-guangzhou.myqcloud.com/TI-ONE-release/IMG.jpg",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Message": {
+      "document": "对话内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名。支持三个角色：system、user、assistant，其中system仅开头可出现一次，也可忽略。",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对话输入内容。",
+          "example": "你好",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多模态对话输入内容，Content与MultiModalContents两者只需要填写其中一个即可，当对话中包含多模态对话信息时，则填写本参数",
+          "example": "无",
+          "member": "MultiModalContent",
+          "name": "MultiModalContents",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "MultiModalContent": {
+      "document": "多模态对话内容,支持图片与文字信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对话类型，text表示文本对话内容，image_url表示图片对话内容",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文本对话内容，当Type为text时需要填写该值",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片对话内容，当Type为image_url时需要填写该值",
+          "example": "无",
+          "member": "ImageUrl",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "Usage": {
+      "document": "大模型生成Token统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成的token数目",
+          "example": "12",
+          "member": "int64",
+          "name": "CompletionTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入的token数目",
+          "example": "4",
+          "member": "int64",
+          "name": "PromptTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总共token数目",
+          "example": "16",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -6,21 +6,27 @@ Input:
 
 ```
 tccli bi ModifyDatasourceCloud --cli-unfold-argument  \
-    --Id 1 \
-    --ProjectId 21313 \
-    --SourceName 数据库别名 \
-    --Vport 3306 \
-    --VpcId 2131314 \
-    --Charset utf8 \
-    --ExtraParam  \
-    --DbUser root \
-    --ServiceType {"Type":"Cloud","Region":"ap-guangzhou","InstanceId":"cdb-bdb0juh5"} \
-    --DbType MySQL \
-    --UniqVpcId vpc-54343 \
-    --RegionId gz \
-    --DbName power-test \
-    --DbPwd 2424***231312 \
-    --Vip 
+    --ServiceType ServiceType \
+    --DbType DbType \
+    --Charset Charset \
+    --DbUser DbUser \
+    --DbPwd DbPwd \
+    --DbName DbName \
+    --SourceName SourceName \
+    --ProjectId ProjectId \
+    --Id 1982493789748932 \
+    --Vip Vip \
+    --Vport Vport \
+    --VpcId VpcId \
+    --UniqVpcId UniqVpcId \
+    --RegionId RegionId \
+    --ExtraParam ExtraParam \
+    --InstanceId InstanceId \
+    --ProdDbName ProdDbName \
+    --DataOrigin DataOrigin \
+    --DataOriginProjectId DataOriginProjectId \
+    --DataOriginDatasourceId DataOriginDatasourceId \
+    --ClusterId ClusterId
 ```
 
 Output: 

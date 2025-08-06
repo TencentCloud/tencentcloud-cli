@@ -17,8 +17,9 @@ Output:
         "Description": "Success",
         "BestFrame": "AAAAHGZ0eXBtcDQyAAAAAWlzb2...",
         "Video": "/9j/4AAQSkZJRgABAQAASABIAAD/4QBMR...",
+        "ActionVideo": "AAAAHGZ0eXBtcDQyAAAAAWlzb21tcD...",
         "Similarity": 98.8,
-        "Extra": "abc",
+        "Extra": "",
         "RequestId": "aea12d62-b2b2-4634-9662-919a5ac729ab"
     }
 }

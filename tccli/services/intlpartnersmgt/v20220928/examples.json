@@ -172,12 +172,28 @@
         "title": "查询子客信息"
       }
     ],
+    "DescribeCustomerOwnVoucherList": [
+      {
+        "document": "查询成功",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerOwnVoucherList\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CustomerUin\": 800000234475,\n                \"EffectiveTime\": \"2025-07-29 10:59:39\",\n                \"ExpireTime\": \"2025-08-28 23:59:59\",\n                \"PaymentMode\": \"Prepaid\",\n                \"ProductScope\": \"SpecifyProductsBlacklist\",\n                \"RemainingAmount\": 2,\n                \"TotalAmount\": 2,\n                \"VoucherId\": 12348270,\n                \"VoucherStatus\": \"Invalidated\"\n            }\n        ],\n        \"RequestId\": \"e106fce6-7c1c-4d06-936b-e581ed07926b\",\n        \"TotalCount\": 11221\n    }\n}",
+        "title": "查询成功"
+      }
+    ],
     "DescribeCustomerUin": [
       {
         "document": "查询子客uin列表",
         "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerUin\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CustomerUin\": \"200000000000\"\n            }\n        ],\n        \"Total\": \"1\",\n        \"RequestId\": \"b8fccb85-c0d2-46b7-a5ea-1d24fbd3b38c\"\n    }\n}",
         "title": "查询子客uin列表"
+      }
+    ],
+    "DescribeCustomerVoucherList": [
+      {
+        "document": "查询成功",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerVoucherList\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"VoucherId\": 12342356\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ApplyReason\": \"接口测试使用，请勿审核，子客券\",\n                \"CustomerUin\": 800000183985,\n                \"EffectiveTime\": \"2025-07-21 06:10:24\",\n                \"ExpireTime\": \"2025-10-19 23:59:59\",\n                \"PaymentMode\": \"AllPayment\",\n                \"ProductScope\": \"AllProducts\",\n                \"RemainingAmount\": 0.797104,\n                \"TotalAmount\": 1,\n                \"Usage\": \"CustomerOffer\",\n                \"VoucherId\": 12342356,\n                \"VoucherStatus\": \"Canceled\"\n            }\n        ],\n        \"RequestId\": \"0849df12-3c82-4edb-a4be-18df464ce468\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询成功"
       }
     ],
     "DescribeRebateDownloadUrl": [

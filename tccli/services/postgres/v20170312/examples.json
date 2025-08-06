@@ -195,7 +195,7 @@
     "DeleteReadOnlyGroupNetworkAccess": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReadOnlyGroupNetworkAccess\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-4s9dejli\",\n    \"VpcId\": \"vpc-gaestjaf\",\n    \"Vip\": \"127.*.*.*\",\n    \"ReadOnlyGroupId\": \"pgro-4t9c6g7k\"\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReadOnlyGroupNetworkAccess\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-4s9dejli\",\n    \"VpcId\": \"vpc-gaestjaf\",\n    \"Vip\": \"127.*.*.*\",\n    \"ReadOnlyGroupId\": \"pgrogrp-4t9c6g7k\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"FlowId\": 912\n    }\n}",
         "title": "删除RO组网络"
       }
@@ -639,7 +639,7 @@
     "InquiryPriceRenewDBInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewDBInstance\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-6fego161\",\n    \"Period\": \"12\"\n}",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewDBInstance\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-6fego161\",\n    \"Period\": 12\n}",
         "output": "{\n    \"Response\": {\n        \"Price\": 210355,\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"OriginalPrice\": 253440,\n        \"Currency\": \"CNY\"\n    }\n}",
         "title": "查询实例postgres-6fego161续费价格"
       }

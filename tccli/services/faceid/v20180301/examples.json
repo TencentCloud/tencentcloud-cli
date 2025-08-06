@@ -1,13 +1,5 @@
 {
   "actions": {
-    "ApplyCardVerification": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyIDVerification\n<公共请求参数>\n\n{\n    \"ImageUrlFront\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\",\n    \"ImageUrlBack\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\",\n    \"Nationality\": \"HKG\",\n    \"CardType\": \"ID_CARD\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CardVerificationToken\": \"b607d0ad-edca-4b54-a35d-b72ef254dc11\",\n        \"AsyncCardVerificationMaxPollingTimes\": 60,\n        \"AsyncCardVerificationPollingWaitTime\": 5,\n        \"RequestId\": \"a498a726-9596-467c-88dc-c68ba51ab4c8\"\n    }\n}",
-        "title": "正常响应"
-      }
-    ],
     "ApplyLivenessToken": [
       {
         "document": "申请活体验证 token",
@@ -30,14 +22,6 @@
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWebFaceIDToken\n<公共请求参数>\n\n{\n    \"CompareImageBase64\": \"xhBQAAACBjSFJNAAB6****AAAASUVORK5CYII=\",\n    \"RedirectURL\": \"https://www.tencentcloud.com/products/faceid\",\n    \"Extra\": \"ExtraString\"\n}",
         "output": "{\n    \"Response\": {\n        \"VerificationURL\": \"https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442\",\n        \"BizToken\": \"81EEF678-28EE-4759-A82E-6CBBBE6BC442\",\n        \"RequestId\": \"b16194cd-8f52-4e66-882a-eb6bf15c016d\"\n    }\n}",
         "title": "申请Web核验服务Token"
-      }
-    ],
-    "ApplyWebVerificationToken": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyWebVerificationToken\n<公共请求参数>\n\n{\n    \"RedirectUrl\": \"https://www.domain.com/result/callback\",\n    \"CompareImageUrl\": \"https%3A%2F%2Fsingapore-1257237511.cos.ap-singapore.myqcloud.com%2Ffaceid%2F%2Ftest.png%3Fq-sign-algorithm%3Dsha1%26q-ak%3DAKIDpguZTmihib_W5VoMU1T07CvytjqfY6auKJN6akSM4tmgbmjHnwl2d7EW9TIUYxmK%26q-sign-time%3D1637288206%3B1637291806%26q-key-time%3D1637288206%3B1637291806%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D7b95d6494e30b05c493ea32db18bbded2e52cd20%26x-cos-security-token%3DkdihJH25E3bZ062DmV2DK1Hv7kE9LQgab4e9fcd283fe59181502e2e1cbecca83iCHquGrh0AClApqec56ahy-298Taz8DrfmRBHFlARDI1XytSLuMcSltSighEh-N7hRDmcug2POunRzWY5JIi7vYiSTxDj1QDZql5o1C6nraxlGkyM-EAZquEK1M6hUXFV6x1_C1G0CpUi3-TJl0cx5M1MUItmdx0h3vZ9u0IuEtZgrvGDrEAViW432lRrlSi\",\n    \"CompareImageMd5\": \"2455b660dfe11f7e00ddf4831603d897\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BizToken\": \"0AEEA2AE-7166-4EA4-BD82-3494ECF216BD\",\n        \"RequestId\": \"f3ef2ddf-c5a6-4e2a-9ac6-441231ba8a61\",\n        \"VerificationUrl\": \"https://sg.faceid.qq.com/reflect/?token=0AEEA2AE-7166-4EA4-BD82-3494ECF216BD\"\n    }\n}",
-        "title": "申请成功"
       }
     ],
     "BankCard2EVerification": [
@@ -296,14 +280,6 @@
         "title": "获取动作顺序失败示例"
       }
     ],
-    "GetCardVerificationResult": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCardVerificationResult\n<公共请求参数>\n\n{\n    \"CardVerificationToken\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"abc\",\n        \"WarnInfo\": [\n            \"abc\"\n        ],\n        \"Nationality\": \"abc\",\n        \"CardType\": \"abc\",\n        \"CardSubType\": \"abc\",\n        \"CardInfo\": {\n            \"HKIDCard\": {\n                \"CnName\": \"abc\",\n                \"EnName\": \"abc\",\n                \"TelexCode\": \"abc\",\n                \"Sex\": \"abc\",\n                \"Birthday\": \"abc\",\n                \"Permanent\": \"abc\",\n                \"IdNum\": \"abc\",\n                \"Symbol\": \"abc\",\n                \"FirstIssueDate\": \"abc\",\n                \"CurrentIssueDate\": \"abc\"\n            },\n            \"MLIDCard\": {\n                \"Name\": \"abc\",\n                \"ID\": \"abc\",\n                \"Sex\": \"abc\",\n                \"Address\": \"abc\",\n                \"Type\": \"abc\",\n                \"Birthday\": \"abc\"\n            },\n            \"PhilippinesVoteID\": {\n                \"VIN\": \"abc\",\n                \"FirstName\": \"abc\",\n                \"LastName\": \"abc\",\n                \"Birthday\": \"abc\",\n                \"CivilStatus\": \"abc\",\n                \"Citizenship\": \"abc\",\n                \"Address\": \"abc\",\n                \"PrecinctNo\": \"abc\"\n            },\n            \"IndonesiaIDCard\": {\n                \"NIK\": \"abc\",\n                \"Nama\": \"abc\",\n                \"TempatTglLahir\": \"abc\",\n                \"JenisKelamin\": \"abc\",\n                \"GolDarah\": \"abc\",\n                \"Alamat\": \"abc\",\n                \"RTRW\": \"abc\",\n                \"KelDesa\": \"abc\",\n                \"Kecamatan\": \"abc\",\n                \"Agama\": \"abc\",\n                \"StatusPerkawinan\": \"abc\",\n                \"Perkerjaan\": \"abc\",\n                \"KewargaNegaraan\": \"abc\",\n                \"BerlakuHingga\": \"abc\",\n                \"IssuedDate\": \"abc\",\n                \"Provinsi\": \"abc\",\n                \"Kota\": \"abc\"\n            },\n            \"PhilippinesDrivingLicense\": {\n                \"Name\": \"abc\",\n                \"LastName\": \"abc\",\n                \"FirstName\": \"abc\",\n                \"MiddleName\": \"abc\",\n                \"Nationality\": \"abc\",\n                \"Sex\": \"abc\",\n                \"Address\": \"abc\",\n                \"LicenseNo\": \"abc\",\n                \"ExpiresDate\": \"abc\",\n                \"AgencyCode\": \"abc\",\n                \"Birthday\": \"abc\"\n            },\n            \"PhilippinesTinID\": {\n                \"LicenseNumber\": \"abc\",\n                \"FullName\": \"abc\",\n                \"Address\": \"abc\",\n                \"Birthday\": \"abc\",\n                \"IssueDate\": \"abc\"\n            },\n            \"PhilippinesSSSID\": {\n                \"LicenseNumber\": \"abc\",\n                \"FullName\": \"abc\",\n                \"Birthday\": \"abc\"\n            },\n            \"PhilippinesUMID\": {\n                \"Surname\": \"abc\",\n                \"MiddleName\": \"abc\",\n                \"GivenName\": \"abc\",\n                \"Sex\": \"abc\",\n                \"Birthday\": \"abc\",\n                \"Address\": \"abc\",\n                \"CRN\": \"abc\"\n            },\n            \"InternationalIDPassport\": {\n                \"LicenseNumber\": \"abc\",\n                \"FullName\": \"abc\",\n                \"Surname\": \"abc\",\n                \"GivenName\": \"abc\",\n                \"Birthday\": \"abc\",\n                \"Sex\": \"abc\",\n                \"DateOfExpiration\": \"abc\",\n                \"IssuingCountry\": \"abc\",\n                \"NationalityCode\": \"abc\",\n                \"PassportCodeFirst\": \"abc\",\n                \"PassportCodeSecond\": \"abc\"\n            },\n            \"GeneralCard\": {\n                \"LicenseNumber\": \"abc\",\n                \"PersonalNumber\": \"abc\",\n                \"PassportCodeFirst\": \"abc\",\n                \"PassportCodeSecond\": \"abc\",\n                \"ExpirationDate\": \"abc\",\n                \"DueDate\": \"abc\",\n                \"IssuedDate\": \"abc\",\n                \"IssuedAuthority\": \"abc\",\n                \"IssuedCountry\": \"abc\",\n                \"FullName\": \"abc\",\n                \"FirstName\": \"abc\",\n                \"LastName\": \"abc\",\n                \"Sex\": \"abc\",\n                \"Age\": \"abc\",\n                \"Birthday\": \"abc\",\n                \"BirthPlace\": \"abc\",\n                \"Nationality\": \"abc\",\n                \"RegistrationNumber\": \"abc\",\n                \"Address\": {\n                    \"Country\": \"abc\",\n                    \"PostalCode\": \"abc\",\n                    \"Subdivision\": \"abc\",\n                    \"City\": \"abc\",\n                    \"FormattedAddress\": \"abc\",\n                    \"LineOne\": \"abc\",\n                    \"LineTwo\": \"abc\",\n                    \"LineThree\": \"abc\",\n                    \"LineFour\": \"abc\",\n                    \"LineFive\": \"abc\"\n                }\n            },\n            \"IndonesiaDrivingLicense\": {\n                \"LastName\": \"abc\",\n                \"FirstName\": \"abc\",\n                \"LicenseNumber\": \"abc\",\n                \"Birthday\": \"abc\",\n                \"Address\": \"abc\",\n                \"ExpirationDate\": \"abc\",\n                \"IssuedDate\": \"abc\",\n                \"IssuedCountry\": \"abc\"\n            },\n            \"ThailandIDCard\": {\n                \"LastName\": \"abc\",\n                \"FirstName\": \"abc\",\n                \"LicenseNumber\": \"abc\",\n                \"DateOfBirth\": \"abc\",\n                \"DateOfExpiry\": \"abc\",\n                \"DateOfIssue\": \"abc\",\n                \"IssuedCountry\": \"abc\"\n            },\n            \"SingaporeIDCard\": {\n                \"ChName\": \"abc\",\n                \"EnName\": \"abc\",\n                \"ID\": \"abc\",\n                \"Sex\": \"abc\",\n                \"CountryOfBirth\": \"abc\",\n                \"Birthday\": \"abc\",\n                \"Address\": \"abc\",\n                \"Race\": \"abc\",\n                \"NRICCode\": \"abc\",\n                \"PostCode\": \"abc\",\n                \"DateOfExpiration\": \"abc\",\n                \"DateOfIssue\": \"abc\"\n            }\n        },\n        \"IDVerificationToken\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "正常响应"
-      }
-    ],
     "GetDetectInfo": [
       {
         "document": "",
@@ -386,7 +362,7 @@
       {
         "document": "获取核身结果",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdResultIntl\n<公共请求参数>\n\n{\n    \"SdkToken\": \"aeee6d62-b2b2-4634-9662-919a5ac729ab\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"Success\",\n        \"BestFrame\": \"AAAAHGZ0eXBtcDQyAAAAAWlzb2...\",\n        \"Video\": \"/9j/4AAQSkZJRgABAQAASABIAAD/4QBMR...\",\n        \"Similarity\": 98.8,\n        \"Extra\": \"abc\",\n        \"RequestId\": \"aea12d62-b2b2-4634-9662-919a5ac729ab\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"Success\",\n        \"BestFrame\": \"AAAAHGZ0eXBtcDQyAAAAAWlzb2...\",\n        \"Video\": \"/9j/4AAQSkZJRgABAQAASABIAAD/4QBMR...\",\n        \"ActionVideo\": \"AAAAHGZ0eXBtcDQyAAAAAWlzb21tcD...\",\n        \"Similarity\": 98.8,\n        \"Extra\": \"\",\n        \"RequestId\": \"aea12d62-b2b2-4634-9662-919a5ac729ab\"\n    }\n}",
         "title": "获取结果成功"
       }
     ],
@@ -476,14 +452,6 @@
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWeChatBillDetails\n<公共请求参数>\n\n{\n    \"Date\": \"2020-09-22\",\n    \"Cursor\": 1873,\n    \"RuleId\": \"23\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.RuleIdNotExist\",\n            \"Message\": \"RuleId不存在，请到人脸核身控制台申请。\"\n        },\n        \"RequestId\": \"c5f6c7e4-2b4e-4a77-acc5-d111fffe8302\"\n    }\n}",
         "title": "获取后续页面数据异常示例"
-      }
-    ],
-    "GetWebVerificationResult": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWebVerificationResult\n<公共请求参数>\n\n{\n    \"BizToken\": \"EE13636D-1985-42CA-BD61-73F4C8B687E6\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"ErrorMsg\": \"Success\",\n        \"RequestId\": \"a6e62364-60d4-4eb6-8908-da3ff3d601f8\",\n        \"VerificationDetailList\": [\n            {\n                \"ErrorCode\": 0,\n                \"ErrorMsg\": \"Success\",\n                \"LivenessErrorCode\": 0,\n                \"LivenessErrorMsg\": \"Success\",\n                \"CompareErrorCode\": 0,\n                \"CompareErrorMsg\": \"Success\",\n                \"Similarity\": 100,\n                \"ReqTimestamp\": 1637291599353,\n                \"Seq\": \"7269e30e-c142-46ba-aa60-b5677bf69d24\"\n            }\n        ],\n        \"VideoBestFrameMd5\": \"30fa34052530d0ba033b956d06eb89b5\",\n        \"VideoBestFrameUrl\": \"https://xxx.cos.ap-singapore.myqcloud.com/faceid.png?q-sign-algorithm=sha1&q-ak=AKIDRPHPMw6HL4PeDO175x_vY2hjAja5nFelfAiy60n0irDQLQWYSZ0dfJ1tIrTjFOSJ&q-sign-time=1637637685;1637641285&q-key-time=1637637685;1637641285&q-header-list=host&q-url-param-list=&q-signature=bab269f6585d3f42a60d0ad4e94e229e6d3f8959&x-cos-security-token=ZR3Vx8aT4Dgb5c95F7FIMc9Pw6hC25baea5274fa45568cd34ca7c53a3867ec4aB5vbfkJ5tM3Td3p18cMurjkx1YsMN0WeEQFzoSTDpi9z0Y4UYktcEk6ewfErVQmuyX2za_xh0a1KhvWf7et0d0XHl4nHXhPTjzgUVazrdIRFhcfO0VKO12T2MoN-cN_Ltp5jasLW7PUTVRZFDvkXCxVSsvxb15W1gdX_7K8x2fORKSMjbQqAL51EB19SD4R2\",\n        \"VideoMd5\": \"30fa34052530d0ba033b956d06eb89b5\",\n        \"VideoUrl\": \"https://xxx.cos.ap-singapore.myqcloud.com/faceid.png?q-sign-algorithm=sha1&q-ak=AKIDRPHPMw6HL4PeDO175x_vY2hjAja5nFelfAiy60n0irDQLQWYSZ0dfJ1tIrTjFOSJ&q-sign-time=1637637685;1637641285&q-key-time=1637637685;1637641285&q-header-list=host&q-url-param-list=&q-signature=bab269f6585d3f42a60d0ad4e94e229e6d3f8959&x-cos-security-token=ZR3Vx8aT4Dgb5c95F7FIMc9Pw6hC25baea5274fa45568cd34ca7c53a3867ec4aB5vbfkJ5tM3Td3p18cMurjkx1YsMN0WeEQFzoSTDpi9z0Y4UYktcEk6ewfErVQmuyX2za_xh0a1KhvWf7et0d0XHl4nHXhPTjzgUVazrdIRFhcfO0VKO12T2MoN-cN_Ltp5jasLW7PUTVRZFDvkXCxVSsvxb15W1gdX_7K8x2fORKSMjbQqAL51EB19SD4R2\"\n    }\n}",
-        "title": "成功结果"
       }
     ],
     "GetWebVerificationResultIntl": [
@@ -696,14 +664,6 @@
         "input": "https://faceid.tencentcloudapi.com/?Action=PhoneVerificationCUCC\n&IdCard=11204416541220243X\n&Name=韦小宝\n&Phone=16137688175\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Description\": \"信息不一致\",\n        \"Isp\": \"联通\",\n        \"RequestId\": \"74182f34-cc90-40b6-b96d-e4189726f0ba\",\n        \"Result\": \"-4\"\n    }\n}",
         "title": "联通手机号三要素核验不一致示例"
-      }
-    ],
-    "VideoLivenessCompare": [
-      {
-        "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=VideoLivenessCompare\n&ImageUrl=<ImageUrl>\n&VideoUrl=<VideoUrl>\n&LivenessType=SILENT\n&ImageMd5=682e24b207acf1825286c1fceef5631c\n&VideoMd5=682e24b207acf1825286c1fceef5631c\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrame\": {\n            \"Url\": \"https://intl-reflect-h5-1257237511.cos.ap-guangzhou.myqcloud.com\",\n            \"MD5\": \"682e24b207acf1825286c1fceef5631c\",\n            \"Size\": 9430792\n        },\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
-        "title": "静默活体人脸比对"
       }
     ]
   },

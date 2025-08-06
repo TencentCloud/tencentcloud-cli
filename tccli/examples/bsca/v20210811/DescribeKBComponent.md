@@ -14,21 +14,39 @@ Output:
 {
     "Response": {
         "Component": {
-            "CodeLocationList": null,
+            "CodeLocationList": [
+                "https://github.com/openssl/openssl.git",
+                "https://android.googlesource.com/platform/external/openssl"
+            ],
             "Homepage": "https://www.openssl.org",
+            "LastUpdateTime": "2023-09-11 22:08:48.000000",
             "LicenseExpression": "openssl-ssleay",
             "NicknameList": null,
             "PURL": {
                 "Name": "openssl",
                 "Namespace": "",
                 "Protocol": "generic",
-                "Qualifiers": null,
+                "Qualifiers": [],
                 "Subpath": "",
-                "Version": ""
+                "Version": "1.0.0"
             },
-            "Summary": "OpenSSL is a toolkit for supporting cryptography. The openssl-static\npackage contains static libraries needed for static linking of\napplications which support various cryptographic algorithms and\nprotocols."
+            "Summary": "OpenSSL is a robust, commercial-grade, full-featured Open Source Toolkit for the Transport Layer Security (TLS) protocol formerly known as the Secure Sockets Layer (SSL) protocol. The protocol implementation is based on a full-strength general purpose cryptographic library, which can also be used stand-alone.",
+            "TagList": [
+                "network"
+            ],
+            "VersionInfo": {
+                "CopyrightList": [
+                    "Copyright (c) 1998-2008 The OpenSSL Project",
+                    "Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)",
+                    "holder is Tim Hudson (tjh@cryptsoft.com)"
+                ],
+                "PublishTime": "2015-01-22 09:46:52.000000",
+                "TagList": [
+                    "copyright_updated"
+                ]
+            }
         },
-        "RequestId": "56dabf5e-0887-4960-bf6f-595ea9a9a0d7"
+        "RequestId": "deadc0de-3ab7-45dd-9def-6b3e087dd354"
     }
 }
 ```

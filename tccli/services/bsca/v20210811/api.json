@@ -199,8 +199,8 @@
   },
   "metadata": {
     "apiVersion": "2021-08-11",
-    "api_brief": "介绍如何使用API对二进制软件成分分析进行操作，包括新建分析、查看分析列表、查看报告等。",
-    "serviceNameCN": "二进制软件成分分析",
+    "api_brief": "介绍如何使用API对软件成分分析进行操作，包括新建分析、查看分析列表、查看报告等。",
+    "serviceNameCN": "软件成分分析",
     "serviceShortName": "bsca"
   },
   "objects": {
@@ -365,7 +365,7 @@
           "example": "CVE-2018-1000500",
           "member": "string",
           "name": "CVEId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -375,7 +375,7 @@
           "example": "Busybox 安全漏洞",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -385,7 +385,7 @@
           "example": "7.8",
           "member": "float",
           "name": "CVSS",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -395,27 +395,27 @@
           "example": "CRITICAL",
           "member": "string",
           "name": "CVSSRank",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "包含该CVE的文件列表。",
-          "example": "[\"file1\",\"file2\"]",
+          "example": "[\"log4j-core.jar\"]",
           "member": "string",
           "name": "FileList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "CVE描述。",
-          "example": "cve description",
+          "example": " ApacheLog4j是美国阿帕奇（Apache）基金会的一款基于Java的开源日志记录工具。ApacheLog4J存在输入验证错误漏洞.Log4j-2中存在JNDI注入漏洞，当程序将用户输入的数据进行日志记录时，即可触发此漏洞，成功利用此漏洞可以在目标服务器上执行任意代码。",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -425,7 +425,7 @@
           "example": "升级到最新无漏洞版本",
           "member": "string",
           "name": "Solution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -435,17 +435,17 @@
           "example": "目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://git.busybox.net/busybox/tree/net",
           "member": "string",
           "name": "Defense",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "厂商链接列表。",
-          "example": "[\"reference1\",\"reference2\"]",
+          "example": "[\"https://logging.apache.org/log4j/2.x/security.html\",\"http://www.openwall.com/lists/oss-security/2021/12/10/1\"]",
           "member": "string",
           "name": "ReferenceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -455,7 +455,7 @@
           "example": "FIXED",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -465,7 +465,7 @@
           "example": "web应用漏洞",
           "member": "string",
           "name": "Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -475,7 +475,7 @@
           "example": "CNNVD-210905-434",
           "member": "string",
           "name": "CnnvdId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -485,7 +485,7 @@
           "example": "无",
           "member": "CVSSV3Info",
           "name": "CVSSV3Info",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -495,7 +495,7 @@
           "example": "无",
           "member": "CVSSV2Info",
           "name": "CVSSV2Info",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -505,7 +505,7 @@
           "example": "1.1.1a",
           "member": "string",
           "name": "AffectedVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -515,7 +515,7 @@
           "example": ">1.1.1b,>1.1.0j",
           "member": "string",
           "name": "FixedVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -525,7 +525,7 @@
           "example": "CNVD-2016-04233",
           "member": "string",
           "name": "CnvdId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -535,7 +535,7 @@
           "example": "CWE-678",
           "member": "string",
           "name": "CWEId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -545,7 +545,7 @@
           "example": "pcmgr-123456",
           "member": "string",
           "name": "VulId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -561,7 +561,7 @@
           "example": "busybox",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -571,17 +571,17 @@
           "example": "0.12.1",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "组件描述。",
-          "example": "component description",
+          "example": " ApacheLog4j是美国阿帕奇（Apache）基金会的一款基于Java的开源日志记录工具。ApacheLog4J存在输入验证错误漏洞.Log4j-2中存在JNDI注入漏洞，当程序将用户输入的数据进行日志记录时，即可触发此漏洞，成功利用此漏洞可以在目标服务器上执行任意代码。",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -591,7 +591,7 @@
           "example": "3",
           "member": "uint64",
           "name": "FileCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -601,7 +601,7 @@
           "example": "无",
           "member": "CVECount",
           "name": "CVECount",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -611,7 +611,7 @@
           "example": "runtime",
           "member": "string",
           "name": "FilePath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -957,17 +957,17 @@
           "example": "无",
           "member": "PURL",
           "name": "PURL",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "第三方组件的主页",
-          "example": "http://example.com",
+          "example": "https://www.openssl.org",
           "member": "string",
           "name": "Homepage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -977,27 +977,27 @@
           "example": "OpenSSL is a toolkit for supporting cryptography.",
           "member": "string",
           "name": "Summary",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "第三方组件的别名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"gmock\", \"googlemock\", \"gmock-gtest-all\"]",
           "member": "string",
           "name": "NicknameList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "第三方组件的代码位置列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"https://github.com/google/googletest.git\",\"https://github.com/abseil/googletest.git\"]",
           "member": "string",
           "name": "CodeLocationList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1007,9 +1007,39 @@
           "example": "apache-2.0",
           "member": "string",
           "name": "LicenseExpression",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第三方组件的版本信息(如果匹配到版本)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComponentVersionInfo",
+          "name": "VersionInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第三方组件的最后更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-10-03T11:12:40Z",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第三方组件的类型标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"hardware\"]",
+          "member": "string",
+          "name": "TagList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1066,8 +1096,32 @@
       ],
       "usage": "out"
     },
+    "ComponentTagFilter": {
+      "document": "筛选条件，同一个Tag不能同时出现在IncludeTags和ExcludeTags，可能的Tag包括：\"CopyrightUpdated\", \"LicenseUpdated\", \"ContainsVulnerability\"",
+      "members": [
+        {
+          "disabled": false,
+          "document": "包括的Tag\n",
+          "example": "[\"CopyrightUpdated\"]",
+          "member": "string",
+          "name": "IncludeTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排除的Tag",
+          "example": "[\"LicenseUpdated\"]",
+          "member": "string",
+          "name": "ExcludeTags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "ComponentVersion": {
-      "document": "描述组件的一条版本信息。",
+      "document": "描述一个组件版本。",
       "members": [
         {
           "disabled": false,
@@ -1087,6 +1141,52 @@
           "name": "LicenseExpression",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件的版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComponentVersionInfo",
+          "name": "VersionInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ComponentVersionInfo": {
+      "document": "描述组件版本的详情，包含组件发布时间、Copyright列表、组件描述Tag。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-04-17 08:50:11.000000",
+          "member": "string",
+          "name": "PublishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前版本的所有copyright\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Copyright (c) 1998-2018 The OpenSSL Project\",   \"Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)\",   \"holder is Tim Hudson (tjh@cryptsoft.com)\" ]",
+          "member": "string",
+          "name": "CopyrightList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ContainsVulnerability\", \"LicenseUpdated\"]",
+          "member": "string",
+          "name": "TagList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -1354,7 +1454,7 @@
           "example": "300",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1364,7 +1464,7 @@
           "example": "200",
           "member": "uint64",
           "name": "Balance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1374,7 +1474,7 @@
           "example": "无",
           "member": "TimeSubscription",
           "name": "AnalysisSubscription",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1384,7 +1484,7 @@
           "example": "无",
           "member": "TimeSubscription",
           "name": "KBSubscription",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1745,7 +1845,7 @@
           "example": "无",
           "member": "Component",
           "name": "Component",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1768,6 +1868,51 @@
           "member": "PURL",
           "name": "PURL",
           "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "页号",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，可以是\"ASC\"或\"DESC\"，默认\"DESC\"",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，可能的字段包括“Version”、\"PublishTime\"",
+          "example": "[\"PublishTime\",\"Version\"]",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Tag筛选",
+          "example": "无",
+          "member": "ComponentTagFilter",
+          "name": "Filter",
+          "required": false,
           "type": "object"
         }
       ],
@@ -1831,6 +1976,36 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件purl",
+          "example": "无",
+          "member": "PURL",
+          "name": "PURL",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推荐版本，最小无高危/严重漏洞的版本。无法升级到安全版本时的备选方案。",
+          "example": "1.1.12",
+          "member": "string",
+          "name": "RecommendedVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全版本（首选），最小无漏洞的版本。当无法升级到安全版本时可考虑使用推荐版本。",
+          "example": "1.1.13",
+          "member": "string",
+          "name": "SecureVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2175,20 +2350,20 @@
         {
           "disabled": false,
           "document": "组件关联的文件列表。",
-          "example": "无",
+          "example": "[\"busybox\"]",
           "member": "string",
           "name": "FileSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "组件关联的文件数量。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2198,7 +2373,7 @@
           "example": "无",
           "member": "ComponentFileInfo",
           "name": "FileInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2818,7 +2993,7 @@
         {
           "disabled": false,
           "document": "需查询的根域名。",
-          "example": "example.com",
+          "example": "google.com",
           "member": "string",
           "name": "RootDomain",
           "required": true,
@@ -2836,7 +3011,7 @@
           "example": "无",
           "member": "SensitiveDomainDetail",
           "name": "SensitiveDomainDetailSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3686,10 +3861,10 @@
         {
           "disabled": false,
           "document": "敏感域名。",
-          "example": "xxx@gmail.com",
+          "example": "example@gmail.com",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3699,7 +3874,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3709,7 +3884,7 @@
           "example": "无",
           "member": "SensitiveFileInfo",
           "name": "FileList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -3725,17 +3900,17 @@
           "example": "无",
           "member": "SensitiveFileInfo",
           "name": "File",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "敏感文件内容列表。",
-          "example": "[\"sensitive content\"]",
+          "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "ContentList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3745,7 +3920,7 @@
           "example": "Phone Number",
           "member": "string",
           "name": "SubClass",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3830,9 +4005,10 @@
         {
           "disabled": false,
           "document": "标签键。",
-          "example": "tagKey",
+          "example": "status",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3840,9 +4016,10 @@
         {
           "disabled": false,
           "document": "标签值。",
-          "example": "tagValue",
+          "example": "success",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3908,7 +4085,7 @@
         {
           "disabled": false,
           "document": "漏洞类别",
-          "example": "其他",
+          "example": "反序列化",
           "member": "string",
           "name": "Category",
           "output_required": true,
@@ -3928,7 +4105,7 @@
         {
           "disabled": false,
           "document": "漏洞描述",
-          "example": "漏洞描述",
+          "example": "ApacheLog4j是美国阿帕奇（Apache）基金会的一款基于Java的开源日志记录工具。ApacheLog4J存在输入验证错误漏洞.Log4j-2中存在JNDI注入漏洞，当程序将用户输入的数据进行日志记录时，即可触发此漏洞，成功利用此漏洞可以在目标服务器上执行任意代码。",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -3948,7 +4125,7 @@
         {
           "disabled": false,
           "document": "漏洞信息参考列表",
-          "example": "无",
+          "example": "[\"https://logging.apache.org/log4j/2.x/security.html\", \"http://www.openwall.com/lists/oss-security/2021/12/10/1\"]",
           "member": "string",
           "name": "ReferenceList",
           "output_required": true,
@@ -3991,6 +4168,16 @@
           "example": "2019-09-11 01:15:00",
           "member": "string",
           "name": "SubmitTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞更新时间",
+          "example": "2019-09-11 01:15:00",
+          "member": "string",
+          "name": "UpdateTime",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4064,7 +4251,7 @@
         {
           "disabled": false,
           "document": "漏洞所属CNVD编号",
-          "example": "CNVD-XXX",
+          "example": "CNVD-2021-100238",
           "member": "string",
           "name": "CNVDID",
           "output_required": true,
@@ -4074,7 +4261,7 @@
         {
           "disabled": false,
           "document": "漏洞所属CNNVD编号",
-          "example": "CNNVD-202012-579",
+          "example": "CNNVD-202112-799",
           "member": "string",
           "name": "CNNVDID",
           "output_required": true,
@@ -4084,7 +4271,7 @@
         {
           "disabled": false,
           "document": "来自国家网络安全威胁和漏洞信息共享平台-车联网产品安全漏洞专业库的公开漏洞编号",
-          "example": "NVDB-CAVD-XXXXXXXXXX",
+          "example": "NVDB-CAVD-2022022787",
           "member": "string",
           "name": "CAVDID",
           "output_required": true,
@@ -4130,6 +4317,36 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "架构信息，如x86、ARM等，废弃，请使用ArchitectureList\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"x86_64\"]",
+          "member": "string",
+          "name": "Architecture",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "架构信息，如x86、ARM等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"x86_64\"]",
+          "member": "string",
+          "name": "ArchitectureList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "patch链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"https://github.com/apache/logging-log4j2/commit/c77b3cb39312b83b053d23a2158b99ac7de44dd3\"]",
+          "member": "string",
+          "name": "PatchUrlList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

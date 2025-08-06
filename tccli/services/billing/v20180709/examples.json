@@ -388,6 +388,14 @@
         "title": "预算提醒记录"
       }
     ],
+    "DescribeCPQBillingMapping": [
+      {
+        "document": "查询报价产品名称与计费产品四层匹配关系",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCPQBillingMapping\n<公共请求参数>\n\n{\n    \"Offset\": \"1\",\n    \"Limit\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1aa76e23-91a1-40bc-a9b0-671f8a7c0489\",\n        \"ResourceSpuSet\": [\n            {\n                \"BusinessCode\": \"p_011691\",\n                \"BusinessNameEn\": \"Tencent Kubernetes Engine\",\n                \"BusinessNameZh\": \"容器服务 TKE\",\n                \"CategoryNameEn\": \"ResouceFee&ServiceFee\",\n                \"CategoryNameZh\": \"资源费+增值费模式（同一个机型，资源费+增值费模式或增值费模式二选一，不能重复选择）\",\n                \"ComponentCode\": \"\",\n                \"ComponentNameEn\": \"\",\n                \"ComponentNameZh\": \"\",\n                \"ItemCode\": \"\",\n                \"ItemNameEn\": \"\",\n                \"ItemNameZh\": \"\",\n                \"ProductCode\": \"sp_011691_tke_hn_c4\",\n                \"ProductNameEn\": \"TKE_NativeNode_C4\",\n                \"ProductNameZh\": \"容器服务TKE_原生节点_C4\",\n                \"SpuNameEn\": \"Postpaid TKE native node - Computing C4\",\n                \"SpuNameZh\": \"TKE原生节点-计算型C4-后付费\"\n            }\n        ],\n        \"Total\": 3819\n    }\n}",
+        "title": "查询报价产品名称与计费产品四层匹配关系"
+      }
+    ],
     "DescribeCostDetail": [
       {
         "document": "",

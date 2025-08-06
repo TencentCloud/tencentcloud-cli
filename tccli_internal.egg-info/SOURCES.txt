@@ -58,6 +58,8 @@ tccli/services/afc/__init__.py
 tccli/services/afc/afc_client.py
 tccli/services/afc/v20200226/api.json
 tccli/services/afc/v20200226/examples.json
+tccli/services/ai3d/__init__.py
+tccli/services/ai3d/ai3d_client.py
 tccli/services/aiart/__init__.py
 tccli/services/aiart/aiart_client.py
 tccli/services/ame/__init__.py
@@ -232,6 +234,8 @@ tccli/services/cfw/__init__.py
 tccli/services/cfw/cfw_client.py
 tccli/services/cfw/v20190904/api.json
 tccli/services/cfw/v20190904/examples.json
+tccli/services/chc/__init__.py
+tccli/services/chc/chc_client.py
 tccli/services/chdfs/__init__.py
 tccli/services/chdfs/chdfs_client.py
 tccli/services/chdfs/v20190718/api.json
@@ -290,6 +294,8 @@ tccli/services/cms/__init__.py
 tccli/services/cms/cms_client.py
 tccli/services/cms/v20190321/api.json
 tccli/services/cms/v20190321/examples.json
+tccli/services/cnb/__init__.py
+tccli/services/cnb/cnb_client.py
 tccli/services/config/__init__.py
 tccli/services/config/config_client.py
 tccli/services/controlcenter/__init__.py
@@ -304,6 +310,8 @@ tccli/services/csip/__init__.py
 tccli/services/csip/csip_client.py
 tccli/services/csxg/__init__.py
 tccli/services/csxg/csxg_client.py
+tccli/services/ctem/__init__.py
+tccli/services/ctem/ctem_client.py
 tccli/services/cube/__init__.py
 tccli/services/cube/cube_client.py
 tccli/services/cvm/__init__.py
@@ -896,6 +904,8 @@ tccli/services/tic/__init__.py
 tccli/services/tic/tic_client.py
 tccli/services/tic/v20201117/api.json
 tccli/services/tic/v20201117/examples.json
+tccli/services/tichat/__init__.py
+tccli/services/tichat/tichat_client.py
 tccli/services/tics/__init__.py
 tccli/services/tics/tics_client.py
 tccli/services/tics/v20181115/api.json
@@ -982,6 +992,8 @@ tccli/services/ump/v20200918/api.json
 tccli/services/ump/v20200918/examples.json
 tccli/services/vcg/__init__.py
 tccli/services/vcg/vcg_client.py
+tccli/services/vclm/__init__.py
+tccli/services/vclm/vclm_client.py
 tccli/services/vdb/__init__.py
 tccli/services/vdb/vdb_client.py
 tccli/services/vm/__init__.py

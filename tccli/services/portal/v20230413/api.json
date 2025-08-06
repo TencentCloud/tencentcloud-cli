@@ -28,6 +28,13 @@
       "output": "DescribeDocumentListResponse",
       "status": "online"
     },
+    "DescribeIntroductionPageDetail": {
+      "document": "获取官网介绍页详情信息",
+      "input": "DescribeIntroductionPageDetailRequest",
+      "name": "获取官网介绍页详情信息",
+      "output": "DescribeIntroductionPageDetailResponse",
+      "status": "online"
+    },
     "DescribeMenu": {
       "document": "描述目录层级",
       "input": "DescribeMenuRequest",
@@ -398,6 +405,143 @@
           "name": "List",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntroductionPageDetailRequest": {
+      "document": "DescribeIntroductionPageDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "介绍页唯一ID",
+          "example": "2000",
+          "member": "uint64",
+          "name": "EntryId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntroductionPageDetailResponse": {
+      "document": "DescribeIntroductionPageDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "介绍页唯一ID",
+          "example": "2001",
+          "member": "uint64",
+          "name": "EntryId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍页SEO标题",
+          "example": "GPU云服务器并行计算弹性计算人工智能深度学习-腾讯云",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍页中文标题",
+          "example": "GPU 云服务器",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍页描述信息",
+          "example": "腾讯GPU 云服务器是提供 GPU 算力的弹性计算服务，具有超强的并行计算能力，作为 IaaS 层的尖兵利器，服务于深度学习训练、科学计算、图形图像处理、视频编解码等场景。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍页关键词",
+          "example": "GPU云服务器, GPU服务器, 人工智能, 深度学习训练, 科学计算, 图形图像处理, 视频编解码, 云游戏, 并行计算, 异构计算, 云计算",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍页英文简称",
+          "example": "gpu",
+          "member": "string",
+          "name": "Slug",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍页链接",
+          "example": "https://cloud.tencent.com/product/gpu",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍页业务类型(product:产品;solution:解决方案)",
+          "example": "product",
+          "member": "string",
+          "name": "Business",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍页版本信息",
+          "example": "0.2.0",
+          "member": "string",
+          "name": "PageVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍页配置信息",
+          "example": "介绍页配置信息",
+          "member": "string",
+          "name": "Slate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "介绍页HTML信息",
+          "example": "介绍页HTML信息",
+          "member": "string",
+          "name": "Html",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

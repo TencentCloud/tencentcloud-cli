@@ -1,12 +1,5 @@
 {
   "actions": {
-    "ApplyCardVerification": {
-      "document": "海外证件识别接口\n\n支持的国家卡证类型以及是否需要卡证背面的说明如下列表：\n<table>\n          <thead>\n          <tr>\n              <td  style=\"width:200px\">国家Nationality</td>\n              <td style=\"width:200px\">卡证CardType</td>\n              <td style=\"width:200px\">是否需要背面</td>\n          </tr>\n      </thead>\n      <tbody>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>香港</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>中国澳门</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>中国台湾</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>孟加拉</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>尼日利亚</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>尼日利亚</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>巴基斯坦</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>巴基斯坦</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n    </tbody>\n    </table>",
-      "input": "ApplyCardVerificationRequest",
-      "name": "发起证件识别",
-      "output": "ApplyCardVerificationResponse",
-      "status": "online"
-    },
     "ApplyLivenessToken": {
       "document": "每次调用活体服务前，需要先调用本接口获取Token，需要保存此Token用来发起核验流程，并且在核验完成后获取结果信息。",
       "input": "ApplyLivenessTokenRequest",
@@ -26,13 +19,6 @@
       "input": "ApplyWebVerificationBizTokenIntlRequest",
       "name": "申请Web核验服务令牌（BizToken）",
       "output": "ApplyWebVerificationBizTokenIntlResponse",
-      "status": "online"
-    },
-    "ApplyWebVerificationToken": {
-      "document": "每次调用Web核验服务前，需要先调用本接口获取BizToken，需要保存此BizToken用来发起核验流程，并且在核验完成后获取结果信息。",
-      "input": "ApplyWebVerificationTokenRequest",
-      "name": "申请Web核验令牌",
-      "output": "ApplyWebVerificationTokenResponse",
       "status": "online"
     },
     "BankCard2EVerification": {
@@ -175,13 +161,6 @@
       "output": "GetActionSequenceResponse",
       "status": "online"
     },
-    "GetCardVerificationResult": {
-      "document": "获取证件识别结果",
-      "input": "GetCardVerificationResultRequest",
-      "name": "获取证件识别结果",
-      "output": "GetCardVerificationResultResponse",
-      "status": "online"
-    },
     "GetDetectInfo": {
       "document": "完成验证后，用BizToken调用本接口获取结果信息，BizToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
       "input": "GetDetectInfoRequest",
@@ -285,13 +264,6 @@
       "input": "GetWeChatBillDetailsRequest",
       "name": "查询账单明细（微信渠道）",
       "output": "GetWeChatBillDetailsResponse",
-      "status": "online"
-    },
-    "GetWebVerificationResult": {
-      "document": "完成Web核验流程后，用核验令牌（BizToken）调用本接口查询对应核验结果信息。BizToken申请后三天内（3\\*24\\*3,600秒）有效，可多次调用。",
-      "input": "GetWebVerificationResultRequest",
-      "name": "获取Web核验结果",
-      "output": "GetWebVerificationResultResponse",
       "status": "online"
     },
     "GetWebVerificationResultIntl": {
@@ -404,13 +376,6 @@
       "input": "PhoneVerificationCUCCRequest",
       "name": "手机号三要素核验（联通）",
       "output": "PhoneVerificationCUCCResponse",
-      "status": "online"
-    },
-    "VideoLivenessCompare": {
-      "document": "传入视频和照片地址，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。",
-      "input": "VideoLivenessCompareRequest",
-      "name": "视频活体人脸比对",
-      "output": "VideoLivenessCompareResponse",
       "status": "online"
     }
   },
@@ -526,118 +491,6 @@
         }
       ],
       "usage": "out"
-    },
-    "ApplyCardVerificationRequest": {
-      "document": "ApplyCardVerification请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "证件国家\nIDN：Indonesia;\nHKG: Hong Kong\nTHA: Thailand\nMYS: Malaysia\nSGP: Singapore\nJPN: Japan\nPHL: Philippines\nMAC: Macao\nCHN:ChinaPermit\nTWN:TaiWan\nBGD:Bangladesh\nNGA:Nigeria\nPAK:Pakistan\n\nAUTO:  支持200+国家的卡证，若有需求请联系商务",
-          "example": "IDN",
-          "member": "string",
-          "name": "Nationality",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "证件类型\nID_CARD; PASSPORT; DRIVING_LICENSE; AUTO 支持上述3类卡证的自动识别",
-          "example": "ID_CARD",
-          "member": "string",
-          "name": "CardType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "证件正面的 Base64 值。 支持的图片格式：PNG、JPEG，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 5M。图片下载时间不超过 3 秒。支持的图片分辨率：8000*8000。 图片的 ImageUrlFront、ImageBase64Front 必须提供一个，如果都提供，只使用 ImageUrlFront。",
-          "example": "无",
-          "member": "string",
-          "name": "ImageBase64Front",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "证件反面的 Base64 值。 支持的图片格式：PNG、JPEG，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 5M。图片下载时间不超过 3 秒。支持的最大图片分辨率：8000*8000。部分证件的ImageUrlBack、ImageBase64Back 必须提供一个，如果都提供，只使用 ImageUrlBack。",
-          "example": "无",
-          "member": "string",
-          "name": "ImageBase64Back",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "证件反面的 Url值。 支持的图片格式：PNG、JPEG，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 5M。图片下载时间不超过 3 秒。支持的最大图片分辨率：8000*8000。 图片的 ImageUrlFront、ImageBase64Front 必须提供一个，如果都提供，只使用 ImageUrlFront。",
-          "example": "无",
-          "member": "string",
-          "name": "ImageUrlFront",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "证件反面的 Url值。 支持的图片格式：PNG、JPEG，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 5M。图片下载时间不超过 3 秒。 支持的最大图片分辨率：8000*8000。 部分证件的ImageUrlBack、ImageBase64Back 必须提供一个，如果都提供，只使用 ImageUrlBack。",
-          "example": "无",
-          "member": "string",
-          "name": "ImageUrlBack",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ApplyCardVerificationResponse": {
-      "document": "ApplyCardVerification返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "流程唯一token，用于获取结果 ",
-          "example": "无",
-          "member": "string",
-          "name": "CardVerificationToken",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "调用拉取结果接口之前的建议等待时间",
-          "example": "无",
-          "member": "uint64",
-          "name": "AsyncCardVerificationWaitTime",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "调用拉取结果接口轮询的最大轮询次数",
-          "example": "无",
-          "member": "uint64",
-          "name": "AsyncCardVerificationMaxPollingTimes",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "调用拉取结果接口轮询的间隔时间，单位秒",
-          "example": "无",
-          "member": "uint64",
-          "name": "AsyncCardVerificationPollingWaitTime",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "ApplyLivenessTokenRequest": {
       "document": "ApplyLivenessToken请求参数结构体",
@@ -816,6 +669,15 @@
         },
         {
           "disabled": false,
+          "document": "控制台配置生成的Id",
+          "example": "1",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "自定义核验页面的相关配置。",
           "example": "{\"AutoSkip\": true,\"CheckMode\": 1,\"IdCardType\": \"HKIDCard\"}",
           "member": "WebVerificationConfigIntl",
@@ -856,71 +718,6 @@
           "member": "string",
           "name": "VerificationURL",
           "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ApplyWebVerificationTokenRequest": {
-      "document": "ApplyWebVerificationToken请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "核验结束后重定向的Web回跳地址。",
-          "example": "https://www.qq.com",
-          "member": "string",
-          "name": "RedirectUrl",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "人脸比对照片的腾讯云对象存储地址，可以使用以下两种方式：\n1. 调用CreateUploadUrl接口生成，确保成功上传照片后再调用此接口。\n2. 使用已有的腾讯云对象存储地址，如果是私有读写桶，请使用预签名URL授予下载权限，对象存储地域需要和入参Region保持一致。",
-          "example": "https://singapore-1257237511.cos.ap-singapore.myqcloud.com",
-          "member": "string",
-          "name": "CompareImageUrl",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "人脸比对照片（CompareImageUrl）内容的MD5散列值。",
-          "example": "1",
-          "member": "string",
-          "name": "CompareImageMd5",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ApplyWebVerificationTokenResponse": {
-      "document": "ApplyWebVerificationToken返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "用户浏览器需要打开此地址开始核验流程。",
-          "example": "无",
-          "member": "string",
-          "name": "VerificationUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "标识一次Web核验流程的令牌，有效时间为7,200秒。流程结束后可用该令牌获取核验结果信息。",
-          "example": "无",
-          "member": "string",
-          "name": "BizToken",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1053,7 +850,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码。\n- 计费结果码：\n  '0': '认证通过'。\n  '-1': '认证未通过'。\n '-4': '持卡人信息有误'。\n  '-5': '未开通无卡支付'。\n  '-6': '此卡被没收'。\n  '-7': '无效卡号'。\n  '-8': '此卡无对应发卡行'。\n  '-9': '该卡未初始化或睡眠卡'。\n  '-10': '作弊卡、吞卡'。\n  '-11': '此卡已挂失'。\n  '-12': '该卡已过期'。\n  '-13': '受限制的卡'。\n  '-14': '密码错误次数超限'。\n  '-15': '发卡行不支持此交易'。\n\n- 不计费结果码：\n  '-2': '姓名校验不通过'。\n  '-3': '银行卡号码有误'。\n  '-16': '验证中心服务繁忙'。\n  '-17': '验证次数超限，请次日重试'。\n",
+          "document": "认证结果码。\n- 计费结果码：\n  '0': '认证通过'。\n  '-1': '认证未通过'。\n '-4': '持卡人信息有误'。\n  '-5': '未开通无卡支付'。\n  '-6': '此卡被没收'。\n  '-7': '无效卡号'。\n  '-8': '此卡无对应发卡行'。\n  '-9': '该卡未初始化或睡眠卡'。\n  '-10': '作弊卡、吞卡'。\n  '-11': '此卡已挂失'。\n  '-12': '该卡已过期'。\n  '-13': '受限制的卡'。\n  '-14': '密码错误次数超限'。\n  '-15': '发卡行不支持此交易'。\n  '-18': '卡状态异常或卡号错误'。\n\n- 不计费结果码：\n  '-2': '姓名校验不通过'。\n  '-3': '银行卡号格式有误'。\n  '-16': '验证中心服务繁忙'。\n  '-17': '验证次数超限，请次日重试'。\n",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -1145,7 +942,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码。\n- 收费结果码：\n'0': '认证通过'。\n'-1': '认证未通过'。\n'-6': '持卡人信息有误'。\n'-7': '未开通无卡支付'。\n'-8': '此卡被没收'。\n'-9': '无效卡号'。\n'-10': '此卡无对应发卡行'。\n'-11': '该卡未初始化或睡眠卡'。\n'-12': '作弊卡、吞卡'。\n'-13': '此卡已挂失'。\n'-14': '该卡已过期'。\n'-15': '受限制的卡'。\n'-16': '密码错误次数超限'。\n'-17': '发卡行不支持此交易'。\n\n- 不收费结果码：\n'-2': '姓名校验不通过'。\n'-3': '身份证号码有误'。\n'-4': '银行卡号码有误'。\n'-5': '手机号码不合法'。\n'-18': '验证中心服务繁忙'。\n'-19': '验证次数超限，请次日重试'。\n'-20': '该证件号暂不支持核验，当前仅支持二代身份证'。",
+          "document": "认证结果码。\n- 收费结果码：\n'0': '认证通过'。\n'-1': '认证未通过'。\n'-6': '持卡人信息有误'。\n'-7': '未开通无卡支付'。\n'-8': '此卡被没收'。\n'-9': '无效卡号'。\n'-10': '此卡无对应发卡行'。\n'-11': '该卡未初始化或睡眠卡'。\n'-12': '作弊卡、吞卡'。\n'-13': '此卡已挂失'。\n'-14': '该卡已过期'。\n'-15': '受限制的卡'。\n'-16': '密码错误次数超限'。\n'-17': '发卡行不支持此交易'。\n'-21': '卡状态异常或卡号错误'。\n\n- 不收费结果码：\n'-2': '姓名校验不通过'。\n'-3': '身份证号码有误'。\n'-4': '银行卡号格式有误'。\n'-5': '手机号码不合法'。\n'-18': '验证中心服务繁忙'。\n'-19': '验证次数超限，请次日重试'。\n'-20': '该证件号暂不支持核验，当前仅支持二代身份证'。",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -1228,7 +1025,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码。\n- 收费结果码：\n'0': '认证通过'。\n'-1': '认证未通过'。\n'-5': '持卡人信息有误'。\n'-6': '未开通无卡支付'。\n'-7': '此卡被没收'。\n'-8': '无效卡号'。\n'-9': '此卡无对应发卡行'。\n'-10': '该卡未初始化或睡眠卡'。\n'-11': '作弊卡、吞卡'。\n'-12': '此卡已挂失'。\n'-13': '该卡已过期'。\n'-14': '受限制的卡'。\n'-15': '密码错误次数超限'。\n'-16': '发卡行不支持此交易'。\n\n- 不收费结果码：\n'-2': '姓名校验不通过'。\n'-3': '身份证号码有误'。\n'-4': '银行卡号码有误'。\n'-17': '验证中心服务繁忙'。\n'-18': '验证次数超限，请次日重试'。\n'-19': '该证件号暂不支持核验，当前仅支持二代身份证'。\t",
+          "document": "认证结果码。\n- 收费结果码：\n'0': '认证通过'。\n'-1': '认证未通过'。\n'-5': '持卡人信息有误'。\n'-6': '未开通无卡支付'。\n'-7': '此卡被没收'。\n'-8': '无效卡号'。\n'-9': '此卡无对应发卡行'。\n'-10': '该卡未初始化或睡眠卡'。\n'-11': '作弊卡、吞卡'。\n'-12': '此卡已挂失'。\n'-13': '该卡已过期'。\n'-14': '受限制的卡'。\n'-15': '密码错误次数超限'。\n'-16': '发卡行不支持此交易'。\n'-20': '卡状态异常或卡号错误'。\n\n- 不收费结果码：\n'-2': '姓名校验不通过'。\n'-3': '身份证号码有误'。\n'-4': '银行卡号格式有误'。\n'-17': '验证中心服务繁忙'。\n'-18': '验证次数超限，请次日重试'。\n'-19': '该证件号暂不支持核验，当前仅支持二代身份证'。\t",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -1593,7 +1390,7 @@
         {
           "disabled": false,
           "document": "一比一时间时间戳，13位。",
-          "example": "无",
+          "example": "1638781186273",
           "member": "string",
           "name": "ReqTime",
           "output_required": true,
@@ -1603,7 +1400,7 @@
         {
           "disabled": false,
           "document": "一比一请求的唯一标记。",
-          "example": "无",
+          "example": "e594dc57-9ee3-409b-a8e4-7b46945887c3",
           "member": "string",
           "name": "Seq",
           "output_required": true,
@@ -1613,7 +1410,7 @@
         {
           "disabled": false,
           "document": "一比一时使用的、脱敏后的身份证号。",
-          "example": "无",
+          "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
           "output_required": true,
@@ -1633,7 +1430,7 @@
         {
           "disabled": false,
           "document": "一比一时使用的、脱敏后的姓名。",
-          "example": "无",
+          "example": "韦小宝",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -1643,7 +1440,7 @@
         {
           "disabled": false,
           "document": "一比一的相似度。0-100，保留2位小数。",
-          "example": "无",
+          "example": "100.00",
           "member": "string",
           "name": "Sim",
           "output_required": true,
@@ -1653,7 +1450,7 @@
         {
           "disabled": false,
           "document": "本次详情是否收费。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsNeedCharge",
           "output_required": true,
@@ -1663,7 +1460,7 @@
         {
           "disabled": false,
           "document": "收费类型，比对、核身、混合部署。",
-          "example": "无",
+          "example": "核身",
           "member": "string",
           "name": "ChargeType",
           "output_required": true,
@@ -1673,7 +1470,7 @@
         {
           "disabled": false,
           "document": "本次活体一比一最终结果。",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "ErrorCode",
           "output_required": true,
@@ -1683,7 +1480,7 @@
         {
           "disabled": false,
           "document": "本次活体一比一最终结果描述。",
-          "example": "无",
+          "example": "成功",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
@@ -1722,7 +1519,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 查询成功\n-1: 未查到信息\n\n- 不收费结果码：\n-2：验证中心服务繁忙\n-3：银行卡不存在\n-4：认证次数超过当日限制，请次日重试\n",
+          "document": "认证结果码，收费情况如下。\n- 收费结果码：\n0: 查询成功\n-1: 未查到信息\n-5: 卡号无效\n\n- 不收费结果码：\n-2：验证中心服务繁忙\n-3：银行卡不存在\n-4：认证次数超过当日限制，请次日重试\n-6:   暂不支持该银行卡种\n",
           "example": "0",
           "member": "string",
           "name": "Result",
@@ -1881,7 +1678,7 @@
         },
         {
           "disabled": false,
-          "document": "业务错误码。\n- 成功情况返回Success,。\n- 错误情况请参考下方错误码 列表中FailedOperation部分",
+          "document": "业务错误码。- 成功情况返回Success。- 错误情况请参考下方错误码 列表中FailedOperation部分",
           "example": "FailedOperation.OcrWarningOccurred",
           "member": "string",
           "name": "Result",
@@ -2002,7 +1799,7 @@
         {
           "disabled": false,
           "document": "加密后的数据。",
-          "example": "无",
+          "example": "7a548b658cbe",
           "member": "string",
           "name": "EncryptedBody",
           "output_required": false,
@@ -2370,7 +2167,7 @@
           "example": "0",
           "member": "string",
           "name": "ErrorCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2380,27 +2177,37 @@
           "example": "success",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "本次活体SDK生成的活体算法数据包。",
-          "example": "无",
+          "example": "{ \"MD5\": \"b2852d5..\", \"Size\": 972506, \"Url\": \"https://faceid-intl-test-1258344699...\" }",
           "member": "FileInfo",
           "name": "LiveData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "本次用户认证视频文件的下载地址，下载链接有效期为10分钟。",
-          "example": "无",
+          "example": "{ \"MD5\": \"24d2fde9b...\", \"Size\": 407308, \"Url\": \"https://faceid-intl-test-1258344699...\" }",
           "member": "FileInfo",
           "name": "LiveVideo",
-          "required": true,
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录用户执行的特定动作文件的下载地址，用于AI人脸防护盾分析，下载链接有效期为10分钟。",
+          "example": "{ \"MD5\": \"ef179aa94f06b989...\", \"Size\": 191015, \"Url\": \"https://faceid-intl-test-1258344699.com....\" }",
+          "member": "FileInfo",
+          "name": "ActionVideo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2410,7 +2217,7 @@
           "example": "0",
           "member": "string",
           "name": "LiveErrorCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2420,27 +2227,27 @@
           "example": "success",
           "member": "string",
           "name": "LiveErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户认证过程中人像照片截图的下载地址，下载链接有效期为10分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{ \"MD5\": \"1c4a918dc..\", \"Size\": 243050, \"Url\": \"https://faceid-intl-test-1258344699...\" }",
           "member": "FileInfo",
           "name": "BestFrame",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "证件照头像截图的下载地址，下载地址链接有效期为10分钟。",
-          "example": "无",
+          "example": "{ \"MD5\": \"\", \"Size\": 0, \"Url\": \"\" }",
           "member": "FileInfo",
           "name": "ProfileImage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2450,7 +2257,7 @@
           "example": "0",
           "member": "string",
           "name": "CompareErrorCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2460,7 +2267,7 @@
           "example": "success",
           "member": "string",
           "name": "CompareErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2470,7 +2277,7 @@
           "example": "52.77",
           "member": "float",
           "name": "Sim",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -2480,27 +2287,27 @@
           "example": "true",
           "member": "bool",
           "name": "IsNeedCharge",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户编辑后的证件照信息。该参数暂不启用。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{ \"MD5\": \"\", \"Size\": 0, \"Url\": \"\" }",
           "member": "FileInfo",
           "name": "CardInfoInputJson",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "本次认证的请求标识。",
-          "example": "无",
+          "example": "94127d09-1490-4f23-baa4-1c8f4c0f4194",
           "member": "string",
           "name": "RequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2632,7 +2439,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "传入需要进行检测的带有人脸的图片或视频（当前仅支持单人脸检测），使用base64编码的形式。\n- 图片的Base64值：\n建议整体图像480x640的分辨率，脸部 大小 100X100 以上。\nBase64编码后的图片数据大小建议不超过3M、最大不可超过10M，仅支持jpg、png格式。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。\n\n- 视频的Base64值：\nBase64编码后的大小建议不超过8M、最大不可超过10M，支持mp4、avi、flv格式。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。\n视频时长最大支持20s，建议时长2～5s。\n建议视频分辨率为480x640，帧率在25fps~30fps之间。\n\n示例值：/9j/4AAQSkZJRg.....s97n//2Q==",
+          "document": "传入需要检测的人脸图片或人脸视频（当前仅支持单人脸检测），使用base64编码的形式，如您的场景视频和图片都有，我们更建议您使用视频进行检测，为了提供更好的检测效果，请您注意以下输入数据的限制与建议：\n\n- 图片的Base64值：\n建议整体图像480x640的分辨率，脸部大小在 100X100 以上，由手机前置摄像头拍摄。\nBase64编码后的图片数据大小建议不超过3M、最大不可超过10M，仅支持jpg、png格式。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。\n\n- 视频的Base64值：\nBase64编码后的大小建议在8M以内、最大不可超过10M，支持mp4、avi、flv格式，由手机前置摄像头拍摄。\n视频建议时长为2～5s，最大不可超过20s。\n视频分辨率建议为480x640（最大支持720p），帧率在25fps~30fps之间。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。\n\n示例值：/9j/4AAQSkZJRg.....s97n//2Q==",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "FaceInput",
@@ -2674,7 +2481,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测到的图片是否存在攻击。\n- Low：无攻击风险。\n- Mid：中度疑似攻击。\n- High：高度疑似攻击。",
+          "document": "对于输入图片/视频的检测结果，检测是否存在人脸攻击。\n- Low：低攻击风险。\n- Mid：中度疑似攻击。\n- High：高度疑似攻击。\n\n建议返回值为High时判断为拦截，Mid和Low判断为通过，以更好平衡安全性和通过率。",
           "example": "Mid",
           "member": "string",
           "name": "AttackRiskLevel",
@@ -2684,7 +2491,7 @@
         },
         {
           "disabled": false,
-          "document": "检测到疑似的攻击痕迹列表。\n- 说明：未检测到攻击痕迹时，返回空数组。\n- 此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。",
+          "document": "检测到的疑似攻击痕迹列表，仅当AttackRiskLevel为High或Mid时返回。\n- 说明：未检测到攻击痕迹时，返回空数组。\n- 此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。",
           "example": "[{ Type:\"SuspectedSpoofingAttack\" }]",
           "member": "AttackRiskDetail",
           "name": "AttackRiskDetailList",
@@ -2726,7 +2533,7 @@
         {
           "disabled": false,
           "document": "本接口不需要传递此参数。",
-          "example": "无",
+          "example": "本接口不需要传递此参数。",
           "member": "string",
           "name": "TerminalType",
           "required": false,
@@ -2789,7 +2596,7 @@
         {
           "disabled": false,
           "document": "意愿核身（朗读模式）使用的文案。\n- 若未使用意愿核身（朗读模式），则该字段无需传入。\n- 最长可接受120的字符串长度。",
-          "example": "无",
+          "example": "我同意办理该业务。",
           "member": "string",
           "name": "IntentionVerifyText",
           "required": false,
@@ -2863,7 +2670,7 @@
         {
           "disabled": false,
           "document": "请求时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1753091765496",
           "member": "string",
           "name": "ReqTime",
           "output_required": true,
@@ -2873,7 +2680,7 @@
         {
           "disabled": false,
           "document": "本次活体一比一请求的唯一标记。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "5139af2d-442c-4500-837f-9683baba76ae",
           "member": "string",
           "name": "Seq",
           "output_required": true,
@@ -2883,7 +2690,7 @@
         {
           "disabled": false,
           "document": "参与本次活体一比一的身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "440111199001010000",
           "member": "string",
           "name": "Idcard",
           "output_required": true,
@@ -2893,7 +2700,7 @@
         {
           "disabled": false,
           "document": "参与本次活体一比一的姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -2903,7 +2710,7 @@
         {
           "disabled": false,
           "document": "本次活体一比一的相似度。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100.00",
           "member": "string",
           "name": "Sim",
           "output_required": true,
@@ -2933,7 +2740,7 @@
         {
           "disabled": false,
           "document": "本次活体一比一最终结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "成功",
           "member": "string",
           "name": "Errmsg",
           "output_required": true,
@@ -2953,7 +2760,7 @@
         {
           "disabled": false,
           "document": "本次活体结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "成功",
           "member": "string",
           "name": "Livemsg",
           "output_required": true,
@@ -2973,7 +2780,7 @@
         {
           "disabled": false,
           "document": "本次一比一结果描述。（仅描述用，文案更新时不会通知。）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "成功",
           "member": "string",
           "name": "Comparemsg",
           "output_required": true,
@@ -2983,7 +2790,7 @@
         {
           "disabled": false,
           "document": "比对库源类型。包括：\n公安商业库；\n业务方自有库（用户上传照片、客户的混合库、混合部署库）；\n二次验证库；\n人工审核库；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "公安商业库",
           "member": "string",
           "name": "CompareLibType",
           "output_required": true,
@@ -3422,6 +3229,16 @@
           "name": "LivenessVideo",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当次token中所有用户活体视频的COS存储路径，仅当您开启数据存储服务且“IsReturnAllVideo”入参取值为true 时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoDetailData",
+          "name": "LivenessVideos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -3991,7 +3808,7 @@
         {
           "disabled": false,
           "document": "姓名",
-          "example": "-",
+          "example": "无",
           "member": "string",
           "name": "FullName",
           "output_required": true,
@@ -4031,7 +3848,7 @@
         {
           "disabled": false,
           "document": "年龄，为0表示未取到有效信息",
-          "example": "-",
+          "example": "无",
           "member": "string",
           "name": "Age",
           "output_required": true,
@@ -4087,6 +3904,36 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地化的姓名",
+          "example": "无",
+          "member": "string",
+          "name": "FullNameLocal",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本地化的名",
+          "example": "无",
+          "member": "string",
+          "name": "FirstNameLocal",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本地化的姓",
+          "example": "无",
+          "member": "string",
+          "name": "LastNameLocal",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4162,7 +4009,7 @@
         {
           "disabled": false,
           "document": "默认不需要使用。",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "ActionType",
           "required": false,
@@ -4181,103 +4028,6 @@
           "member": "string",
           "name": "ActionSequence",
           "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetCardVerificationResultRequest": {
-      "document": "GetCardVerificationResult请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "发起证件识别接口返回的唯一token",
-          "example": "无",
-          "member": "string",
-          "name": "CardVerificationToken",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetCardVerificationResultResponse": {
-      "document": "GetCardVerificationResult返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "通过状态",
-          "example": "0：PASSED 1：WARNING 2：REJECTED 3：PROCESSING",
-          "member": "string",
-          "name": "Status",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "鉴伪信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "WarnInfo",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "IDN：Indonesia HKG：Hong Kong THA：Thailand MYS：Malaysia SGP：Singapore  JPN：Japan  PHL：Philippines",
-          "member": "string",
-          "name": "Nationality",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "证件类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1：ID CARD; 2：PASSPORT;  3：DRIVING LICENSE;  4：VISA ; -1：UNSUPPORTED",
-          "member": "string",
-          "name": "CardType",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "证件子类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ID_CARD：-NATIONAL_ID -CONSULAR_ID -ELECTORAL_ID -RESIDENT_PERMIT_ID -TAX_ID -STUDENT_ID -PASSPORT_CARD_ID -MILITARY_ID -PUBLIC_SAFETY_ID -HEALTH_ID -OTHER_ID -VISA -UNKOWN   DRIVING_LICENSE: -REGULAR_DRIVING_LICENSE -LEARNING_DRIVING_LICENSE   PASSPORT: -E_PASSPORT(mobile only)",
-          "member": "string",
-          "name": "CardSubType",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "证件照的文字识别结果\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "CardInfo",
-          "name": "CardInfo",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "入参中的token",
-          "example": "无",
-          "member": "string",
-          "name": "IDVerificationToken",
-          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4371,6 +4121,15 @@
           "example": "false",
           "member": "bool",
           "name": "IsEncryptResponse",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要返回认证中间过程的刷脸重试视频，默认不开启，多段视频需要存储到COS空间中，因此开启后还需要额外开启数据存储服务才可生效。详见[数据存储指引](https://cloud.tencent.com/document/product/1007/104229)。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsReturnAllVideo",
           "required": false,
           "type": "bool"
         }
@@ -4935,6 +4694,7 @@
           "example": "0",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4944,24 +4704,37 @@
           "example": "Success",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户认证过程中截取的最佳帧图片，格式为base64。",
-          "example": "无",
+          "example": "AAAAHGZ0eXBtcDQyAAAAAWlzb2...",
           "member": "string",
           "name": "BestFrame",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户认证的视频文件，格式为base64。",
-          "example": "无",
+          "document": "用户认证的视频文件，用于身份验证，包含特定颜色反射效果，格式为base64。",
+          "example": "/9j/4AAQSkZJRgABAQAASABIAAD/4QBMR...",
           "member": "string",
           "name": "Video",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录用户执行的特定动作，用于AI人脸防护盾分析。",
+          "example": "...U7xu6UOzmKPxwaXscnaLGLGPG0zl....",
+          "member": "string",
+          "name": "ActionVideo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4971,15 +4744,17 @@
           "example": "89.99",
           "member": "float",
           "name": "Similarity",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "透传参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "“extra“",
           "member": "string",
           "name": "Extra",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5021,6 +4796,24 @@
           "name": "IsNeedBestFrame",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否对回包整体进行加密。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsEncryptResponse",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要对返回中的敏感信息进行加密。  \n只需指定加密算法Algorithm即可，其余字段传入默认值。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5110,8 +4903,8 @@
         },
         {
           "disabled": false,
-          "document": "plus版：描述当前请求所在设备的风险标签。\n- 详情如下：\n01-设备疑似被Root/设备疑似越狱。\n02-设备疑似被注入。\n03-设备疑似为模拟器。\n04-设备疑似存在风险操作。\n05-摄像头疑似被劫持。\n06-疑似黑产设备。\nnull-无设备风险。\n- 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "01",
+          "document": "plus版：描述当前请求所在设备的风险标签。\n- 详情如下：\n06-疑似黑产设备。\nnull-无设备风险。\n- 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "06",
           "member": "string",
           "name": "DeviceInfoTag",
           "output_required": true,
@@ -5145,6 +4938,26 @@
           "member": "string",
           "name": "DeviceInfoLevel",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "敏感数据加密信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密后的数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0hMvx6fX6n...gXE0adJA==",
+          "member": "string",
+          "name": "EncryptedBody",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5385,7 +5198,7 @@
         },
         {
           "disabled": false,
-          "document": "敏感数据加密信息。对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "document": "敏感数据加密信息。对传入信息（姓名、身份证号、自传照片）有加密需求的用户可使用此参数，详情请点击左侧链接。",
           "example": "无",
           "member": "Encryption",
           "name": "Encryption",
@@ -5813,103 +5626,6 @@
           "member": "string",
           "name": "Extra",
           "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetWebVerificationResultRequest": {
-      "document": "GetWebVerificationResult请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "Web核验令牌，由ApplyWebVerificationToken接口生成。",
-          "example": "C3451931-19A5-4E41-AB65-15E694A54F69",
-          "member": "string",
-          "name": "BizToken",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetWebVerificationResultResponse": {
-      "document": "GetWebVerificationResult返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "本次核验最终结果。0为核验通过，是同一人。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
-          "member": "int64",
-          "name": "ErrorCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "本次核验最终结果描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Success",
-          "member": "string",
-          "name": "ErrorMsg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "视频流中采集的最佳人脸照片临时地址，下载有效时间10分钟，如果需要存储请及时下载。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "VideoBestFrameUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "视频流中采集的最佳人脸照片内容MD5散列值，可以使用此值校验文件内容是否一致。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "VideoBestFrameMd5",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "本次核验流程的详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "VerificationDetail",
-          "name": "VerificationDetailList",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "视频流中采集的视频临时地址，下载有效时间10分钟，如果需要存储请及时下载。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "VideoUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "视频流中采集的视频内容MD5散列值，可以使用此值校验文件内容是否一致。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "VideoMd5",
-          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6355,7 +6071,7 @@
         {
           "disabled": false,
           "document": "本接口不需要传递此参数。",
-          "example": "无",
+          "example": "92424b",
           "member": "string",
           "name": "Optional",
           "required": false,
@@ -6448,7 +6164,7 @@
         {
           "disabled": false,
           "document": "本接口不需要传递此参数。",
-          "example": "无",
+          "example": "92424b",
           "member": "string",
           "name": "Optional",
           "required": false,
@@ -7846,7 +7562,7 @@
         {
           "disabled": false,
           "document": "参与校验的参数类型。\n0：使用手机号进行校验；\n1：使用姓名与身份证号进行校验。",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -7855,7 +7571,7 @@
         {
           "disabled": false,
           "document": "手机号，11位数字，\n特别提示：\n手机号验证只限制在腾讯健康守护可信模型覆盖的数据范围内，与手机号本身在运营商是否实名无关联，不在范围会提示“手机号未实名”，建议客户与传入姓名和身份证号信息组合使用。",
-          "example": "无",
+          "example": "16137688175",
           "member": "string",
           "name": "Mobile",
           "required": false,
@@ -7864,7 +7580,7 @@
         {
           "disabled": false,
           "document": "身份证号码。",
-          "example": "无",
+          "example": "11204416541220243X",
           "member": "string",
           "name": "IdCard",
           "required": false,
@@ -7873,7 +7589,7 @@
         {
           "disabled": false,
           "document": "姓名。",
-          "example": "无",
+          "example": "韦小宝",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -7897,30 +7613,30 @@
         {
           "disabled": false,
           "document": "结果码，收费情况如下。\n收费结果码：\n0: 成年\n-1: 未成年\n-3: 姓名和身份证号不一致\n\n不收费结果码：\n-2: 未查询到手机号信息\n-4: 非法身份证号（长度、校验位等不正确）\n-5: 非法姓名（长度、格式等不正确）\n-6: 权威数据源服务异常\n-7: 未查询到身份信息\n-8: 权威数据源升级中，请稍后再试",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "业务结果描述。",
-          "example": "无",
+          "example": "成年",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该字段的值为年龄区间。格式为[a,b)，\n[0,8)表示年龄小于8周岁区间，不包括8岁；\n[8,16)表示年龄8-16周岁区间，不包括16岁；\n[16,18)表示年龄16-18周岁区间，不包括18岁；\n[18,+)表示年龄大于18周岁。",
-          "example": "无",
+          "example": "[18,+)",
           "member": "string",
           "name": "AgeRange",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10089,7 +9805,7 @@
         {
           "disabled": false,
           "document": "业务结果详细信息。\n- 当VerifyMode配置\"详版\"，且Result为\"-4: 三要素信息不一致\"时返回。\n- 枚举值：\nPhoneIdCardMismatch：手机号码与姓名一致，与身份证号不一致。\nPhoneNameMismatch：手机号码身份证号一致，与姓名不一致。\nPhoneNameIdCardMismatch：手机号码与姓名和身份证号均不一致。\nNameIdCardMismatch：姓名和身份证号不一致。\nOtherMismatch：其他不一致。",
-          "example": "无",
+          "example": "PhoneIdCardMismatch",
           "member": "string",
           "name": "ResultDetail",
           "output_required": false,
@@ -10577,117 +10293,31 @@
       ],
       "usage": "out"
     },
-    "VideoLivenessCompareRequest": {
-      "document": "VideoLivenessCompare请求参数结构体",
+    "VideoDetailData": {
+      "document": "核身过程视频信息。",
       "members": [
         {
           "disabled": false,
-          "document": "用于人脸比对照片的URL地址；图片下载后经Base64编码后的数据大小不超过3M，仅支持jpg、png格式。\n\n图片仅支持腾讯云同region的Cos地址，可保障更高的下载速度和稳定性，可使用CreateUploadUrl生成或自行购买Cos。",
-          "example": "\"\"",
+          "document": "本次活体一比一请求的唯一标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AE13A3B3-F276-4C65-9BC9-1FE137851581",
           "member": "string",
-          "name": "ImageUrl",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "比对图片的32位Md5值。",
-          "example": "682e24b207acf1825286c1fceef5631c",
-          "member": "string",
-          "name": "ImageMd5",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用于活体检测的视频Url 地址。视频下载后经Base64编码后不超过 8M，视频下载耗时不超过4S，支持mp4、avi、flv格式。\n\n视频仅支持腾讯云同region的Cos地址，可保障更高的下载速度和稳定性，可使用CreateUploadUrl生成或自行购买Cos。",
-          "example": "\"\"",
-          "member": "string",
-          "name": "VideoUrl",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "视频的32位Md5值。",
-          "example": "682e24b207acf1825286c1fceef5631c",
-          "member": "string",
-          "name": "VideoMd5",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。",
-          "example": "\"\"",
-          "member": "string",
-          "name": "LivenessType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "数字模式传参：传数字验证码，需自定义四位数字验证码；\n动作模式传参：传动作顺序，需自定义动作顺序(2,1 or 1,2)；\n静默模式传参：空。",
-          "example": "\"\"",
-          "member": "string",
-          "name": "ValidateData",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "VideoLivenessCompareResponse": {
-      "document": "VideoLivenessCompare返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "相似度，取值范围 [0.00, 100.00]。推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）。",
-          "example": "\"\"",
-          "member": "float",
-          "name": "Sim",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
-          "example": "\"\"",
-          "member": "string",
-          "name": "Result",
-          "required": true,
+          "name": "Seq",
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "业务结果描述。",
-          "example": "\"\"",
-          "member": "string",
-          "name": "Description",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "验证通过后的视频最佳截图照片。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
-          "member": "FileInfo",
-          "name": "BestFrame",
-          "required": true,
-          "type": "object",
           "value_allowed_null": true
         },
         {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "disabled": false,
+          "document": "活体视频的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
-          "name": "RequestId",
-          "type": "string"
+          "name": "Video",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "type": "object"
+      "usage": "out"
     },
     "WeChatBillDetail": {
       "document": "账单详情",
@@ -10695,10 +10325,10 @@
         {
           "disabled": false,
           "document": "token",
-          "example": "无",
+          "example": "14E43038-CC2F-4945-941E-AD6D5989AF9F",
           "member": "string",
           "name": "BizToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10708,7 +10338,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ChargeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10718,17 +10348,17 @@
           "example": "无",
           "member": "ChargeDetail",
           "name": "ChargeDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "业务RuleId",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -10767,7 +10397,7 @@
         },
         {
           "disabled": false,
-          "document": "认证使用的卡证类型，当前支持:\n1.HKIDCard：中国香港身份证\n2.MLIDCard：马来西亚身份证\n3.IndonesiaIDCard：印度尼西亚身份证\n4.PhilippinesVoteID：菲律宾选民卡\n5.PhilippinesDrivingLicense：菲律宾驾驶证\n6.PhilippinesTinID：菲律宾TinID\n7.PhilippinesSSSID：菲律宾SSSID\n8.PhilippinesUMID：菲律宾UMID\n9.InternationalIDPassport：港澳台地区以及境外护照\n10.IndonesiaDrivingLicense：印度尼西亚驾驶证\n11.ThailandIDCard：泰国身份证\n12.ThailandDrivingLicense：泰国驾驶证\n13.MLDrivingLicense：马来西亚驾驶证\n14.SingaporeIDCard：新加坡身份证\n15.SingaporeDrivingLicense：新加坡驾驶证\n16.JapanIDCard：日本身份证\n17.JapanDrivingLicense：日本驾驶证\n18.PhilippinesIDCard：菲律宾身份证通用\n19.MainlandIDCard：大陆身份证 \n20.MacaoIDCard：澳门身份证",
+          "document": "认证使用的卡证类型，当前支持:\n1.HKIDCard：中国香港身份证\n2.MLIDCard：马来西亚身份证\n3.IndonesiaIDCard：印度尼西亚身份证\n4.PhilippinesVoteID：菲律宾选民卡\n5.PhilippinesDrivingLicense：菲律宾驾驶证\n6.PhilippinesTinID：菲律宾TinID\n7.PhilippinesSSSID：菲律宾SSSID\n8.PhilippinesUMID：菲律宾UMID\n9.InternationalIDPassport：港澳台地区以及境外护照\n10.ThailandIDCard：泰国身份证\n11.SingaporeIDCard：新加坡身份证\n12.MainlandIDCard：大陆身份证",
           "example": "HKIDCard",
           "member": "string",
           "name": "IDCardType",
@@ -10812,7 +10442,7 @@
         },
         {
           "disabled": false,
-          "document": "前端主题颜色，格式为RGB16进制颜色码。默认为“#2d72f1”，填如格式错误时使用默认值颜色。\n",
+          "document": "前端主题颜色，格式为RGB16进制颜色码。默认为“#2d72f1”，填写格式错误时使用默认值颜色。",
           "example": "#2d72f1",
           "member": "string",
           "name": "ThemeColor",
@@ -10852,6 +10482,15 @@
           "example": "3",
           "member": "int64",
           "name": "LivenessRetryLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "活体检测超时时间秒数，取值(0,600]",
+          "example": "45",
+          "member": "uint64",
+          "name": "LivenessTimeout",
           "required": false,
           "type": "int"
         }

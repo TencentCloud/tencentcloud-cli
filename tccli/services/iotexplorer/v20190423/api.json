@@ -14496,6 +14496,15 @@
           "name": "Config",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频摘要配置参数，不传则不修改",
+          "example": "{\"OutputLang\":\"zh\"}",
+          "member": "VisionSummaryConfig",
+          "name": "SummaryConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -17431,7 +17440,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）",
+          "document": "任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功；4：执行中）",
           "example": "3",
           "member": "int64",
           "name": "Status",

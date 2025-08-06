@@ -1,0 +1,101 @@
+{
+  "actions": {
+    "CheckAnimateImageJob": [
+      {
+        "document": "检测输入图成功案例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAnimateImageJob\n<公共请求参数>\n\n{\n    \"TemplateId\": \"ke3\",\n    \"ImageUrl\": \"https://tencent.cos.ap-guangzhou.myqcloud.com/image-animate/user_input/image.png\",\n    \"EnableBodyJoins\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"CheckPass\": true,\n        \"RequestId\": \"96c02249-a683-4c0b-ac1c-50a2dee71695\"\n    }\n}",
+        "title": "检测输入图成功案例"
+      }
+    ],
+    "DescribeImageAnimateJob": [
+      {
+        "document": "调用成功示例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageAnimateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1194931538865782784\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"a06a2134-0306-4554-aa9a-232271bfda4f\",\n        \"ResultVideoUrl\": \"\",\n        \"Status\": \"RUN\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "DescribePortraitSingJob": [
+      {
+        "document": "任务完成",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePortraitSingJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1199964964965990400\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1199964964965990400\",\n        \"RequestId\": \"2564192f-1af0-4d1d-ac92-fac0f5844f73\",\n        \"ResultVideoUrl\": \"https://***.mp4\",\n        \"StatusCode\": \"DONE\",\n        \"StatusMsg\": \"处理完成\"\n    }\n}",
+        "title": "调用成功-任务完成"
+      }
+    ],
+    "DescribeTemplateToVideoJob": [
+      {
+        "document": "任务成功完成，返回结果视频Url",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplateToVideoJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1305546906952867840\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"17288c38-8b83-4ad2-a818-ef2d2d87dfe7\",\n        \"ResultVideoUrl\": \"https://console.cloud.tencent.com/result.mp4\",\n        \"Status\": \"DONE\"\n    }\n}",
+        "title": "任务成功完成"
+      }
+    ],
+    "DescribeVideoStylizationJob": [
+      {
+        "document": "成功调用查询任务接口，任务完成。",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoStylizationJob\n<公共请求参数>\n\n{\n    \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\",\n        \"RequestId\": \"c048e3cf-79b3-4080-9892-15bb96a680e5\",\n        \"ResultVideoUrl\": \"https://vcg-prod-xxx.cos.ap-guangzhou.tencentcos.cn/xxx.mp4\",\n        \"StatusCode\": \"JobSuccess\",\n        \"StatusMsg\": \"处理完成\"\n    }\n}",
+        "title": "成功调用-任务完成"
+      }
+    ],
+    "SubmitImageAnimateJob": [
+      {
+        "document": "调用成功示例",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitImageAnimateJob\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://console.cloud.tencent.com/cos/image.png\",\n    \"TemplateId\": \"ke3\",\n    \"EnableAudio\": true,\n    \"EnableBodyJoins\": true,\n    \"EnableSegment\": true,\n    \"LogoAdd\": 1,\n    \"LogoParam\": {\n        \"LogoUrl\": \"https://console.cloud.tencent.com/cos/logo.png\",\n        \"LogoRect\": {\n            \"X\": -222,\n            \"Y\": -54,\n            \"Width\": 202,\n            \"Height\": 34\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1194931538865782784\",\n        \"RequestId\": \"4e6722ba-367b-454e-add0-681a5c50fe20\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
+    "SubmitPortraitSingJob": [
+      {
+        "document": "调用成功",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitPortraitSingJob\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://***/test.mp3\",\n    \"ImageUrl\": \"https://***/test.png\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1199964964965990400\",\n        \"RequestId\": \"79655032-c347-4f05-af23-ae80f7ff47eb\"\n    }\n}",
+        "title": "调用成功-图片url地址"
+      },
+      {
+        "document": "音频时长超限",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitPortraitSingJob\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://***/durationInvalid.m4a\",\n    \"ImageUrl\": \"https://***/aj.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidAudioDuration\",\n            \"Message\": \"音频时长超出限定范围。上传音频的时长要求：在1秒到60秒范围内\"\n        },\n        \"RequestId\": \"9d314f18-3670-4793-bf4b-619b43494ac7\"\n    }\n}",
+        "title": "调用失败-音频时长超限"
+      },
+      {
+        "document": "图片分辨率超限",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitPortraitSingJob\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://***/test.mp3\",\n    \"ImageUrl\": \"https://***/resolutionInvalid.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidImageResolution\",\n            \"Message\": \"图片分辨率超出限定范围。上传图片的长边分辨率要求：在0到2560范围内\"\n        },\n        \"RequestId\": \"29498231-20eb-43d1-bb3b-cc9e07978699\"\n    }\n}",
+        "title": "调用失败-图片分辨率超限"
+      },
+      {
+        "document": "图片宽高比超限",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitPortraitSingJob\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://***/test.mp3\",\n    \"ImageUrl\": \"https://***/ratioInvalid.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidImageAspectRatio\",\n            \"Message\": \"图片宽高比超出限定范围。上传图片的宽高比要求：在0.5到2.0范围内\"\n        },\n        \"RequestId\": \"3c9cb9bd-5b2a-4b18-a890-73f7712ca2ce\"\n    }\n}",
+        "title": "调用失败-图片宽高比超限"
+      },
+      {
+        "document": "图片大小超限",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitPortraitSingJob\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://***/test.mp3\",\n    \"ImageUrl\": \"https://***/storageInvalid.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidImageSize\",\n            \"Message\": \"图片大小超出限定范围。上传图片的大小要求：在0MB到10MB范围内\"\n        },\n        \"RequestId\": \"cd17e6bb-afdb-4bed-8a15-55c461333104\"\n    }\n}",
+        "title": "调用失败-图片大小超限"
+      }
+    ],
+    "SubmitTemplateToVideoJob": [
+      {
+        "document": "成功提交任务",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTemplateToVideoJob\n<公共请求参数>\n\n{\n    \"Template\": \"hug\",\n    \"Images\": [\n        {\n            \"Url\": \"https://test.jpg\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1305518294765740032\",\n        \"RequestId\": \"2392f73f-6436-4f79-85dc-6283d2ca78ef\"\n    }\n}",
+        "title": "成功提交"
+      }
+    ],
+    "SubmitVideoStylizationJob": [
+      {
+        "document": "成功提交视频风格化任务",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoStylizationJob\n<公共请求参数>\n\n{\n    \"StyleId\": \"2d_anime\",\n    \"VideoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/video.mp4\",\n    \"StyleStrength\": \"medium\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\",\n        \"RequestId\": \"b1990ba2-2d71-419d-8c9d-cab8e33f8352\"\n    }\n}",
+        "title": "成功提交任务"
+      }
+    ]
+  },
+  "version": "1.0"
+}

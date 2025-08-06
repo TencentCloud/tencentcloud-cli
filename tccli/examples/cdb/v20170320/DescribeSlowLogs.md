@@ -18,25 +18,25 @@ Output:
         "Items": [
             {
                 "Name": "ivansqwutestdr_slowlog_20170425.log",
-                "IntranetUrl": "",
-                "Date": "2017-04-26 00:00:08",
-                "InternetUrl": "",
+                "IntranetUrl": "http://gz.tencent.com***",
+                "Date": "2017-04-26",
+                "InternetUrl": "http://gz.tencent.com***",
                 "Type": "slowlog",
                 "Size": 0
             },
             {
                 "Name": "ivansqwutestdr_slowlog_20170426.log",
-                "IntranetUrl": "http://gz.xxxxxxxxxx",
-                "Date": "2017-04-27 00:00:07",
-                "InternetUrl": "http://gz.xxxxxxxxxx",
+                "IntranetUrl": "http://gz.tencent.com***",
+                "Date": "2017-04-27",
+                "InternetUrl": "http://gz.tencent.com***",
                 "Type": "slowlog",
                 "Size": 212
             },
             {
                 "Name": "ivansqwutestdr_slowlog_20170427.log",
-                "IntranetUrl": "",
-                "Date": "2017-04-28 00:00:09",
-                "InternetUrl": "",
+                "IntranetUrl": "http://gz.tencent.com***",
+                "Date": "2017-04-28",
+                "InternetUrl": "http://gz.tencent.com***",
                 "Type": "slowlog",
                 "Size": 0
             }

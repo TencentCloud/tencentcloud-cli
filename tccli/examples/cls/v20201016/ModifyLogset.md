@@ -7,7 +7,7 @@ Input:
 ```
 tccli cls ModifyLogset --cli-unfold-argument  \
     --LogsetId dc01b74a-49e4-11eb-b378-0242ac130002 \
-    --LogsetName changename
+    --LogsetName 业务流日志集
 ```
 
 Output: 

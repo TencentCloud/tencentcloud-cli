@@ -5,21 +5,21 @@
       "input": "CheckAppidExistRequest",
       "name": "查看appid是否存在",
       "output": "CheckAppidExistResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "QueryResource": {
       "document": "产品退市\n\n查询购买资源",
       "input": "QueryResourceRequest",
       "name": "查询购买资源",
       "output": "QueryResourceResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "QueryResourceInfo": {
       "document": "产品退市\n\n查询资源信息",
       "input": "QueryResourceInfoRequest",
       "name": "查询资源信息",
       "output": "QueryResourceInfoResponse",
-      "status": "deprecated"
+      "status": "offline"
     }
   },
   "metadata": {

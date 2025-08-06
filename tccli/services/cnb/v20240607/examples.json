@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "CreateBudget": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cnb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBudget\n<公共请求参数>\n\n{\n    \"StorageGit\": 1,\n    \"StorageObject\": 1,\n    \"ComputeBuild\": 1,\n    \"ComputeDevelop\": 1,\n    \"BudgetName\": \"test-name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4f1613e-7bb9-4fa2-bd75-a0a2c428bf39\",\n        \"ResourceId\": \"700001520516-700001520516-1934518265978839040\"\n    }\n}",
+        "title": "创建预算单"
+      }
+    ],
+    "GetBudgetAuthorization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cnb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetBudgetAuthorization\n<公共请求参数>\n\n{\n    \"ResourceId\": \"700001520516-700001898132-1932412765149609984\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": \"05ec16e5ac06733f0b3152d4d7b3634f8bf33c6bac4a155f13d38ecedcd8711f\",\n        \"Id\": \"1934519315787964416\",\n        \"RequestId\": \"3e24ce0f-cc93-4113-b6de-ca0f20c6a9f6\"\n    }\n}",
+        "title": "获取预算授权"
+      }
+    ],
+    "ListBudget": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cnb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListBudget\n<公共请求参数>\n\n{\n    \"GroupName\": \"test\",\n    \"PageSize\": 10,\n    \"PageNum\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppId\": 1300291954,\n                \"Bind\": false,\n                \"BudgetName\": \"test-name\",\n                \"Cost\": 225,\n                \"CreateTime\": \"2025-06-16 07:47:51\",\n                \"EstimatedCost\": {\n                    \"CnbComputeBuildEstimatedCost\": 0,\n                    \"CnbComputeDevelopEstimatedCost\": 0,\n                    \"CnbStorageGitEstimatedCost\": 0,\n                    \"CnbStorageObjectEstimatedCost\": 0,\n                    \"EsCost\": 0\n                },\n                \"Id\": 1934518265978839000,\n                \"OperateUin\": \"700001520516\",\n                \"OrgName\": \"\",\n                \"OrgUrl\": \"\",\n                \"RegionId\": 47,\n                \"ResourceId\": \"700001520516-700001520516-1934518265978839040\",\n                \"Status\": 1,\n                \"SvTotalAmount\": {\n                    \"CnbComputeBuild\": 1,\n                    \"CnbComputeDevelop\": 1,\n                    \"CnbStorageGit\": 1,\n                    \"CnbStorageObject\": 1\n                },\n                \"SvUsedAmount\": {\n                    \"CnbComputeBuildUsed\": \"0.000\",\n                    \"CnbComputeDevelopUsed\": \"0.000\",\n                    \"CnbStorageGitUsed\": \"0.000\",\n                    \"CnbStorageObjectUsed\": \"0.000\"\n                },\n                \"Tags\": [],\n                \"Uin\": \"700001520516\",\n                \"UpdateTime\": \"2025-06-16 07:47:51\",\n                \"ZoneId\": 470004\n            }\n        ],\n        \"RequestId\": \"fb2961a5-6108-437d-8463-b599a05feb4c\",\n        \"Total\": 32,\n        \"TotalCost\": 91725,\n        \"TotalEstimatedCost\": 1352370.6\n    }\n}",
+        "title": "获取预算列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

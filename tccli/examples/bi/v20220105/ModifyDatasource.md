@@ -6,28 +6,28 @@ Input:
 
 ```
 tccli bi ModifyDatasource --cli-unfold-argument  \
-    --DbHost 0.0.0.0 \
-    --DbPort 3307 \
-    --ServiceType {"Type":"Own"} \
-    --DbType MONGODB \
-    --DataOrigin  \
-    --Charset utf8 \
-    --Catalog  \
-    --DbUser username \
-    --DbName name \
-    --DbPwd password \
-    --SourceName 测试vpc \
-    --VpcId vpcid \
-    --UniqVpcId vpc- \
-    --Vip  \
-    --Vport  \
-    --ExtraParam  \
-    --DataOriginProjectId  \
-    --DataOriginDatasourceId  \
-    --UseVPC True \
-    --RegionId gz \
-    --ProjectId 517 \
-    --Id 134
+    --DbHost DbHost \
+    --DbPort 1982493789748932 \
+    --ServiceType ServiceType \
+    --DbType DbType \
+    --Charset Charset \
+    --DbUser DbUser \
+    --DbPwd DbPwd \
+    --DbName DbName \
+    --SourceName SourceName \
+    --Id 1982493789748932 \
+    --ProjectId 1982493789748932 \
+    --Catalog Catalog \
+    --DataOrigin DataOrigin \
+    --DataOriginProjectId DataOriginProjectId \
+    --DataOriginDatasourceId DataOriginDatasourceId \
+    --ExtraParam ExtraParam \
+    --UniqVpcId UniqVpcId \
+    --Vip Vip \
+    --Vport Vport \
+    --VpcId VpcId \
+    --UseVPC False \
+    --RegionId RegionId
 ```
 
 Output: 

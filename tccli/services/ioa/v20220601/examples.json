@@ -888,10 +888,10 @@
     ],
     "DescribeAccountLogInInfo": [
       {
-        "document": "查看用户登陆终端信息",
+        "document": "查看用户登录终端信息",
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountLogInInfo\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e0d01d6-6371-475c-a8ff-46361f5b8bb2\"\n    }\n}",
-        "title": "查看用户登陆终端信息"
+        "title": "查看用户登录终端信息"
       }
     ],
     "DescribeAccountSecurityPolicy": [

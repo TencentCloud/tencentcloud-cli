@@ -32,6 +32,14 @@
         "title": "检查待创建的实例名称是否符合规范"
       }
     ],
+    "CreateApplicationTokenPersonal": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateApplicationTokenPersonal\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79cf7b19-4ec9-4cb9-a521-2b7b29eacf29\",\n        \"Data\": true\n    }\n}",
+        "title": "创建第三方应用访问凭证"
+      }
+    ],
     "CreateApplicationTriggerPersonal": [
       {
         "document": "",
@@ -386,6 +394,14 @@
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWebhookTrigger\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"Namespace\": \"ns\",\n    \"Id\": 6\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"620fb647-fe86-4c25-866f-98bf867cd689\"\n    }\n}",
         "title": "删除触发器"
+      }
+    ],
+    "DescribeApplicationTokenPersonal": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeApplicationTokenPersonal\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79cf7b19-4ec9-4cb9-a521-2b7b29eacf29\",\n        \"Data\": {\n            \"ApplicationToken\": \"{ApplicationToken:1111111111111111111111111111}\"\n        }\n    }\n}",
+        "title": "获取第三方应用访问凭证"
       }
     ],
     "DescribeApplicationTriggerLogPersonal": [
@@ -914,6 +930,42 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=RenewInstance\n&RegistryId=tcr-12345\n&RegistryChargePrepaid.Period=1\n&RegistryChargePrepaid.RenewFlag=1\n&Flag=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-12345\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "续费企业版预付费实例"
+      }
+    ],
+    "UpdateApplicationTokenPermissionPersonal": [
+      {
+        "document": "修改访问凭证的权限为读写",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApplicationTokenPermissionPersonal\n<公共请求参数>\n\n{\n    \"Readonly\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d6a8c75-ae78-49d0-ace2-91033a8dffc3\"\n    }\n}",
+        "title": "更新访问凭证权限为读写"
+      },
+      {
+        "document": "修改访问凭证的权限为只读",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApplicationTokenPermissionPersonal\n<公共请求参数>\n\n{\n    \"Readonly\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec338283-91b9-40c2-a9a6-4593b1362951\"\n    }\n}",
+        "title": "更新访问凭证权限为只读"
+      }
+    ],
+    "UpdateApplicationTokenPersonal": [
+      {
+        "document": "轮转替换访问凭证，需要传入旧访问凭证",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApplicationTokenPersonal\n<公共请求参数>\n\n{\n    \"OldApplicationToken\": \"{ApplicationToken:mock00000000}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ApplicationToken\": \"{ApplicationToken:mock66666666}\"\n        },\n        \"RequestId\": \"57d4103b-6082-4589-9902-6076386ee07b\"\n    }\n}",
+        "title": "更新访问凭证"
+      },
+      {
+        "document": "轮转替换只读访问凭证，需要传入旧只读访问凭证",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApplicationTokenPersonal\n<公共请求参数>\n\n{\n    \"OldApplicationToken\": \"{RoToken:mock00000000}\",\n    \"Readonly\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ApplicationToken\": \"{RoToken:mock66666666}\"\n        },\n        \"RequestId\": \"faa9bec3-3cf4-4ea9-83fc-d5153e5ddb14\"\n    }\n}",
+        "title": "更新只读访问凭证"
+      }
+    ],
+    "ValidateApplicationTokenPersonal": [
+      {
+        "document": "",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ValidateApplicationTokenPersonal\r\n&ApplicationToken={ApplicationToken:1sadfasdfsad34234dfadrfqwerqwr}\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79cf7b19-4ec9-4cb9-a521-2b7b29eacf29\",\n        \"Data\": true\n    }\n}",
+        "title": "验证第三方应用访问凭证"
       }
     ],
     "ValidateNamespaceExistPersonal": [

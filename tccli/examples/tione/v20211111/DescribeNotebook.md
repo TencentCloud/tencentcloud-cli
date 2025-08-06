@@ -32,6 +32,7 @@ Output:
             "VolumeSourceType": "CFS",
             "ImageInfo": {
                 "ImageType": "SYSTEM",
+                "ImageId": "35551e3c-b0e3-40dc-8e91-cc10a5613cd3",
                 "ImageUrl": "tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0",
                 "ImageName": "tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu",
                 "RegistryId": "",

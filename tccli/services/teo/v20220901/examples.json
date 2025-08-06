@@ -158,6 +158,14 @@
         "title": "创建边缘函数规则"
       }
     ],
+    "CreateJustInTimeTranscodeTemplate": [
+      {
+        "document": "创建即时转码模板。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-djuqmq\",\n    \"TemplateName\": \"myTemplate\",\n    \"Comment\": \"This is my template.\",\n    \"VideoStreamSwitch\": \"on\",\n    \"AudioStreamSwitch\": \"on\",\n    \"VideoTemplate\": {\n        \"Codec\": \"H.264\",\n        \"Bitrate\": 2048,\n        \"Fps\": 25\n    },\n    \"AudioTemplate\": {\n        \"Codec\": \"libfdk_aac\",\n        \"AudioChannel\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": \"C1LZ7982VgTpYhJ7M\",\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建即时转码模板"
+      }
+    ],
     "CreateL4Proxy": [
       {
         "document": "在 ZoneId 为 zone-2jc2xy3hr7f7 的站点下创建一个名称为 test，加速区域为中国大陆可用区的四层实例。",
@@ -396,6 +404,30 @@
         "title": "修改源站为COS对象存储"
       }
     ],
+    "CreateSecurityAPIResource": [
+      {
+        "document": "新建一个 API 资源。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityAPIResource\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123sfakjf\",\n    \"APIResources\": [\n        {\n            \"Name\": \"test2\",\n            \"Path\": \"/ava\",\n            \"APIServiceIds\": [\n                \"apisrv-123233399\"\n            ],\n            \"Methods\": [\n                \"POST\",\n                \"PUT\"\n            ],\n            \"RequestConstraint\": \"${http.request.body.form['operationType']} in ['id.dana.order.listAl']\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"APIResourceIds\": [\n            \"apires-1232382313\"\n        ],\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "创建 API 资源"
+      }
+    ],
+    "CreateSecurityAPIService": [
+      {
+        "document": "新建一个 API 服务。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityAPIService\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123sfakjf\",\n    \"APIServices\": [\n        {\n            \"Name\": \"test\",\n            \"BasePath\": \"/tt\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"APIServiceIds\": [\n            \"apisrv-1232382313\"\n        ],\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "创建 API 服务"
+      }
+    ],
+    "CreateSecurityClientAttester": [
+      {
+        "document": "新建一个认证选项配置。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityClientAttester\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123123322\",\n    \"ClientAttesters\": [\n        {\n            \"Name\": \"test\",\n            \"AttesterSource\": \"TC-RCE\",\n            \"TCRCEOption\": {\n                \"Channel\": \"12399223\"\n            },\n            \"AttesterDuration\": \"300s\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientAttesterIds\": [\n            \"attest-2184008405\"\n        ],\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "创建认证选项配置"
+      }
+    ],
     "CreateSecurityIPGroup": [
       {
         "document": "创建安全 IP 组，并设置 2.2.2.2 为永久存在。",
@@ -408,6 +440,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 0,\n        \"Name\": \"test\",\n        \"Content\": [\n            \"1.1.1.1\",\n            \"3.3.3.3\"\n        ],\n        \"IPExpireInfo\": [\n            {\n                \"ExpireTime\": \"2026-03-24T16:03:00+08:00\",\n                \"IPList\": [\n                    \"1.1.1.1\"\n                ]\n            }\n        ]\n    },\n    \"ZoneId\": \"zone-j94jf0a1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"09ce3d28-1119-49cd-xxxx-27cb34dac669\",\n        \"GroupId\": 128\n    }\n}",
         "title": "创建安全 IP 组，并为 IP 配置过期时间"
+      }
+    ],
+    "CreateSecurityJSInjectionRule": [
+      {
+        "document": "创建一个 JavaScript 注入规则。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityJSInjectionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123123322\",\n    \"JSInjectionRules\": [\n        {\n            \"Name\": \"test\",\n            \"Condition\": \"${http.request.host} in ['www.test.com'] and ${http.request.uri.path} in ['/atteffa/geo-info']\",\n            \"InjectJS\": \"inject-sdk-only\",\n            \"Priority\": 2\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JSInjectionRuleIds\": [\n            \"injection-2184008405\"\n        ],\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "创建 JavaScript 注入规则"
       }
     ],
     "CreateSharedCNAME": [
@@ -518,6 +558,14 @@
         "title": "删除边缘函数规则"
       }
     ],
+    "DeleteJustInTimeTranscodeTemplates": [
+      {
+        "document": "删除已存在的转码模板。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJustInTimeTranscodeTemplates\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-djuqmq\",\n    \"TemplateIds\": [\n        \"C1LZ7982VgTpYhJ7M\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "删除转码模板"
+      }
+    ],
     "DeleteL4Proxy": [
       {
         "document": "删除 ZoneId 为 zone-24wjy25v1cwi 下，ProxyId 为 sid-2qwk27xf7j9g 的四层代理实例。",
@@ -590,12 +638,44 @@
         "title": "批量删除规则引擎规则"
       }
     ],
+    "DeleteSecurityAPIResource": [
+      {
+        "document": "删除某些已有的 API 资源。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityAPIResource\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123sfakjf\",\n    \"APIResourceIds\": [\n        \"apires-1232000001\",\n        \"apires-1232000002\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "删除指定 API 资源"
+      }
+    ],
+    "DeleteSecurityAPIService": [
+      {
+        "document": "删除某些已有的 API 服务。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityAPIService\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123sfakjf\",\n    \"APIServiceIds\": [\n        \"apisrv-1232382313\",\n        \"apisrv-1232382314\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "删除指定 API 服务"
+      }
+    ],
+    "DeleteSecurityClientAttester": [
+      {
+        "document": "删除某个已有的认证选项。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityClientAttester\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-nqicqhasui\",\n    \"ClientAttesterIds\": [\n        \"attest-2184008405\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "删除指定认证选项"
+      }
+    ],
     "DeleteSecurityIPGroup": [
       {
         "document": "正常删除安全 IP 组",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityIPGroup\n<公共请求参数>\n\n{\n    \"GroupId\": 85,\n    \"ZoneId\": \"zone-qdwibsa\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"09ce3d28-1119-49cd-xxxx-27cb34dac669\"\n    }\n}",
         "title": "删除安全 IP 组"
+      }
+    ],
+    "DeleteSecurityJSInjectionRule": [
+      {
+        "document": "删除某个 JavaScript 注入规则。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityJSInjectionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-nqicqhasui\",\n    \"JSInjectionRuleIds\": [\n        \"injection-2184008405\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "删除 JavaScript 注入规则"
       }
     ],
     "DeleteSharedCNAME": [
@@ -858,6 +938,14 @@
         "title": "查询站点的验证状态"
       }
     ],
+    "DescribeJustInTimeTranscodeTemplates": [
+      {
+        "document": "根据模板名获取转码模板。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJustInTimeTranscodeTemplates\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-djuqmq\",\n    \"Filters\": [\n        {\n            \"Name\": \"template-name\",\n            \"Values\": [\n                \"myTemplate\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TemplateSet\": [\n            {\n                \"TemplateId\": \"C1LZ7982VgTpYhJ7M\",\n                \"TemplateName\": \"myTemplate\",\n                \"Comment\": \"MyTranscodeTemplate\",\n                \"Type\": \"Custom\",\n                \"VideoStreamSwitch\": \"on\",\n                \"AudioStreamSwitch\": \"on\",\n                \"VideoTemplate\": {\n                    \"Codec\": \"H.264\",\n                    \"Fps\": 24,\n                    \"FillType\": \"black\",\n                    \"Bitrate\": 2048,\n                    \"ResolutionAdaptive\": \"open\",\n                    \"Width\": 0,\n                    \"Height\": 0\n                },\n                \"AudioTemplate\": {\n                    \"Codec\": \"libfdk_aac\",\n                    \"AudioChannel\": 2\n                },\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "获取转码模板"
+      }
+    ],
     "DescribeL4Proxy": [
       {
         "document": "查询站点 ID 为 zone-24wjy25v1cwi 的站点下四层代理实例列表。",
@@ -1062,6 +1150,30 @@
         "title": "DescribeRulesSetting"
       }
     ],
+    "DescribeSecurityAPIResource": [
+      {
+        "document": "分页查询某个站点的 API 资源。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityAPIResource\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123123232\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"APIResources\": [\n            {\n                \"Id\": \"apires-1230001002\",\n                \"Name\": \"test2\",\n                \"Path\": \"/ava\",\n                \"APIServiceIds\": [\n                    \"apisrv-123233399\"\n                ],\n                \"Methods\": [\n                    \"POST\",\n                    \"PUT\"\n                ],\n                \"RequestConstraint\": \"${http.request.body.form['operationType']} in ['id.dana.order.listAl']\"\n            }\n        ],\n        \"RequestId\": \"97f2dd9b-1624-4519-9ac6-13c95154d846\"\n    }\n}",
+        "title": "查询指定站点的 API 资源"
+      }
+    ],
+    "DescribeSecurityAPIService": [
+      {
+        "document": "分页查询指定站点的 API 服务。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityAPIService\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123123232\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"APIServices\": [\n            {\n                \"Id\": \"apisrv-1230001001\",\n                \"Name\": \"test1\",\n                \"BasePath\": \"/tt\"\n            }\n        ],\n        \"RequestId\": \"97f2dd9b-1624-4519-9ac6-13c95154d846\"\n    }\n}",
+        "title": "查询指定站点的 API 服务"
+      }
+    ],
+    "DescribeSecurityClientAttester": [
+      {
+        "document": "分页查询指定站点的客户端认证选项配置。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityClientAttester\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123123232\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClientAttesters\": [\n            {\n                \"Name\": \"test1\",\n                \"Id\": \"attest-2180001023\",\n                \"AttesterSource\": \"TC-RCE\",\n                \"Type\": \"CUSTOM\",\n                \"AttesterDuration\": \"300s\",\n                \"TCRCEOption\": {\n                    \"Channel\": \"12399223\"\n                }\n            }\n        ],\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "查询指定站点的客户端认证选项配置。"
+      }
+    ],
     "DescribeSecurityIPGroup": [
       {
         "document": "查询指定站点的所有安全 IP 分组的配置信息。",
@@ -1076,12 +1188,28 @@
         "title": "查询指定 ID 的安全 IP 分组的配置信息"
       }
     ],
+    "DescribeSecurityIPGroupContent": [
+      {
+        "document": "通过指定 GroupId 查询 IP 组中的 IP 或网段列表。如果 IP 或网段列表数量超过 100000，可以通过分页查询的方式逐步获取所有数据。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityIPGroupContent\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-nqicqhasui\",\n    \"GroupId\": 100121,\n    \"Limit\": 1000,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"IPTotalCount\": 5,\n        \"IPList\": [\n            \"1.1.1.1\",\n            \"1.2.3.1\",\n            \"1.2.4.1\",\n            \"1.5.3.1\",\n            \"6.2.3.1\"\n        ],\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "查询 IP 组中的 IP 或网段内容"
+      }
+    ],
     "DescribeSecurityIPGroupInfo": [
       {
         "document": "查询指定站点的 IP 分组配置信息，并按每页 10 条返回第 1 页内容。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityIPGroupInfo\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-20hyebgyfsko\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"IPGroups\": [\n            {\n                \"GroupId\": 123,\n                \"Name\": \"ExampleIpGroup\",\n                \"Content\": [\n                    \"123.123.123.0\",\n                    \"23.23.23.0/24\"\n                ]\n            }\n        ],\n        \"RequestId\": \"5e5a0d0f-52f3-4bad-9bd3-dcf1d5c954e7\"\n    }\n}",
         "title": "查询 IP 分组的配置信息"
+      }
+    ],
+    "DescribeSecurityJSInjectionRule": [
+      {
+        "document": "分页查询站点下 JavaScript 注入规则。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityJSInjectionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123123232\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"JSInjectionRules\": [\n            {\n                \"RuleId\": \"injection-123219329\",\n                \"Name\": \"test\",\n                \"Condition\": \"${http.request.host} in ['www.test.com'] and ${http.request.uri.path} in ['/atteffa/geo-info']\",\n                \"InjectJS\": \"inject-sdk-only\",\n                \"Priority\": 2\n            }\n        ],\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "查询 JavaScript 注入规则"
       }
     ],
     "DescribeSecurityPolicy": [
@@ -1668,6 +1796,30 @@
         "title": "ModifyRule"
       }
     ],
+    "ModifySecurityAPIResource": [
+      {
+        "document": "修改某个已有的 API 资源。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityAPIResource\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123sfakjf\",\n    \"APIResources\": [\n        {\n            \"Id\": \"apires-1230001002\",\n            \"Name\": \"test2\",\n            \"Path\": \"/ava\",\n            \"APIServiceIds\": [\n                \"apisrv-123233399\"\n            ],\n            \"Methods\": [\n                \"POST\",\n                \"PUT\"\n            ],\n            \"RequestConstraint\": \"${http.request.body.form['operationType']} in ['id.dana.order.listAl']\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "修改指定 API 资源"
+      }
+    ],
+    "ModifySecurityAPIService": [
+      {
+        "document": "修改某个已有的 API 服务的关联域名、规则名和基础路径。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityAPIService\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123sfakjf\",\n    \"APIServices\": [\n        {\n            \"Id\": \"apisrv-1230001001\",\n            \"Name\": \"test\",\n            \"BasePath\": \"/tt\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "修改指定 API 服务"
+      }
+    ],
+    "ModifySecurityClientAttester": [
+      {
+        "document": "修改某个已有的认证选项内容。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityClientAttester\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-12ekfafefe3\",\n    \"ClientAttesters\": [\n        {\n            \"Name\": \"test\",\n            \"Id\": \"attest-2180012392\",\n            \"AttesterSource\": \"TC-RCE\",\n            \"TCRCEOption\": {\n                \"Channel\": \"12399223\"\n            },\n            \"AttesterDuration\": \"300s\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "修改指定认证选项内容"
+      }
+    ],
     "ModifySecurityIPGroup": [
       {
         "document": "若向已存在的 IP 组中追加以下 IP 或网段：1.1.1.1、2.2.2.0/24。",
@@ -1710,6 +1862,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.1.1.1\",\n            \"2.2.2.0/24\",\n            \"3.3.3.3\"\n        ],\n        \"IPExpireInfo\": [\n            {\n                \"ExpireTime\": \"2022-01-01T00:00:00+08:00\",\n                \"IPList\": [\n                    \"1.1.1.1\"\n                ]\n            }\n        ]\n    },\n    \"Mode\": \"update\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"728cb059-8595-44c7-b6c6-b4a539ae823f\"\n    }\n}",
         "title": "全量更新安全 IP 组中的 IP 或网段以及对应的过期时间"
+      }
+    ],
+    "ModifySecurityJSInjectionRule": [
+      {
+        "document": "修改某个 JavaScript 注入规则。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityJSInjectionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123123322\",\n    \"JSInjectionRules\": [\n        {\n            \"RuleId\": \"injection-123219329\",\n            \"Name\": \"test\",\n            \"Condition\": \"${http.request.host} in ['www.test.com'] and ${http.request.uri.path} in ['/atteffa/geo-info']\",\n            \"InjectJS\": \"inject-sdk-only\",\n            \"Priority\": 2\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "修改 JavaScript 注入规则"
       }
     ],
     "ModifySecurityPolicy": [

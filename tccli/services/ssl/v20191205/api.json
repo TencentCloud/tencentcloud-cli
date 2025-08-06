@@ -2089,7 +2089,7 @@
         },
         {
           "disabled": false,
-          "document": "证书生效时间。",
+          "document": "证书生效时间。时区为GMT+8:00",
           "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "CertBeginTime",
@@ -2099,7 +2099,7 @@
         },
         {
           "disabled": false,
-          "document": "证书过期时间。",
+          "document": "证书过期时间。时区为GMT+8:00",
           "example": "2019-09-18 20:00:00",
           "member": "string",
           "name": "CertEndTime",
@@ -2119,7 +2119,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "创建时间。时区为GMT+8:00",
           "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "InsertTime",
@@ -2399,7 +2399,7 @@
         },
         {
           "disabled": false,
-          "document": "DV证书添加验证截止时间",
+          "document": "DV证书添加验证截止时间，时区为GMT+8:00",
           "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "DVAuthDeadline",
@@ -2409,7 +2409,7 @@
         },
         {
           "disabled": false,
-          "document": "域名验证通过时间",
+          "document": "域名验证通过时间，时区为GMT+8:00",
           "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "ValidationPassedTime",
@@ -2489,7 +2489,7 @@
         },
         {
           "disabled": false,
-          "document": "证书吊销完成时间",
+          "document": "证书吊销完成时间，时区为GMT+8:00",
           "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "CertRevokedTime",
@@ -4148,7 +4148,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -4158,7 +4158,7 @@
         {
           "disabled": false,
           "document": "成功总数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "SuccessTotalCount",
           "output_required": true,
@@ -4168,7 +4168,7 @@
         {
           "disabled": false,
           "document": "失败总数",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "FailedTotalCount",
           "output_required": true,
@@ -4178,7 +4178,7 @@
         {
           "disabled": false,
           "document": "部署中总数",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RunningTotalCount",
           "output_required": true,
@@ -4188,7 +4188,7 @@
         {
           "disabled": false,
           "document": "部署记录类型 0 为部署， 1 为回滚",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Type",
           "output_required": true,
@@ -4208,7 +4208,7 @@
         {
           "disabled": false,
           "document": "托管资源部署状态：0 等待部署， 1 部署成功， 2 部署失败 3 部署中， 4 回滚成功， 5 回滚失败",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -4218,7 +4218,7 @@
         {
           "disabled": false,
           "document": "托管资源创建时间",
-          "example": "无",
+          "example": "2025-07-16 08:05:41",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -4228,7 +4228,7 @@
         {
           "disabled": false,
           "document": "待部署总数",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PendingTotalCount",
           "output_required": false,
@@ -4477,6 +4477,16 @@
           "example": "RSA",
           "member": "string",
           "name": "OldAlgorithm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态，不同云产品状态不一样",
+          "example": "HEALTHY",
+          "member": "string",
+          "name": "InstanceStatus",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4782,7 +4792,7 @@
         {
           "disabled": false,
           "document": "部署资源类型",
-          "example": "无",
+          "example": "clb",
           "member": "string",
           "name": "ResourceType",
           "output_required": true,
@@ -4802,7 +4812,7 @@
         {
           "disabled": false,
           "document": "该部署资源总数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -5519,7 +5529,7 @@
         },
         {
           "disabled": false,
-          "document": "证书生效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书生效时间。时区为GMT+8:00\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-03 08:00:00",
           "member": "datetime",
           "name": "CertBeginTime",
@@ -5529,7 +5539,7 @@
         },
         {
           "disabled": false,
-          "document": "证书失效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书失效时间。时区为GMT+8:00\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-01-03 07:59:59",
           "member": "datetime",
           "name": "CertEndTime",
@@ -5549,7 +5559,7 @@
         },
         {
           "disabled": false,
-          "document": "证书申请时间。",
+          "document": "证书申请时间。时区为GMT+8:00",
           "example": "2024-12-03 19:38:47",
           "member": "datetime",
           "name": "InsertTime",
@@ -6070,7 +6080,7 @@
         },
         {
           "disabled": false,
-          "document": "证书生效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书生效时间。时区为GMT+8:00\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-11-27 08:00:00",
           "member": "string",
           "name": "CertBeginTime",
@@ -6080,7 +6090,7 @@
         },
         {
           "disabled": false,
-          "document": "证书失效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书失效时间。时区为GMT+8:00\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-02-26 07:59:59",
           "member": "string",
           "name": "CertEndTime",
@@ -6100,7 +6110,7 @@
         },
         {
           "disabled": false,
-          "document": "申请时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请时间。时区为GMT+8:00\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-11-27 17:44:36",
           "member": "string",
           "name": "InsertTime",
@@ -6290,7 +6300,7 @@
         },
         {
           "disabled": false,
-          "document": "CA证书所有的到期时间。仅证书类型CertificateType为CA有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CA证书所有的到期时间。仅证书类型CertificateType为CA有效，时区为GMT+8:00\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"2024-11-27 17:44:36\"]",
           "member": "string",
           "name": "CAEndTimes",
@@ -6642,7 +6652,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型:clb,cdn,live,waf,antiddos,teo",
+          "document": "资源类型:clb,cdn,live,vod,waf,antiddos,teo",
           "example": "clb",
           "member": "string",
           "name": "ResourceType",
@@ -7448,7 +7458,7 @@
         },
         {
           "disabled": false,
-          "document": "带部署总数",
+          "document": "待部署总数",
           "example": "0",
           "member": "int64",
           "name": "PendingTotalCount",
@@ -7695,7 +7705,7 @@
           "example": "hye**hsh",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -8112,7 +8122,7 @@
         {
           "disabled": false,
           "document": "托管记录ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "DeployRecordId",
           "required": true,
@@ -8121,7 +8131,7 @@
         {
           "disabled": false,
           "document": "每页数量，默认为10，最大为200， 超过200则为200",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -8130,7 +8140,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -8606,6 +8616,46 @@
           "name": "StatusInfo",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理员证件类型，SFZ代表身份证，HZ代表护照",
+          "example": "SFZ",
+          "member": "string",
+          "name": "ManagerIdType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理员证件号码",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerIdNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "联系人证件类型，SFZ代表身份证，HZ代表护照",
+          "example": "SFZ",
+          "member": "string",
+          "name": "ContactIdType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "联系人证件号码",
+          "example": "无",
+          "member": "string",
+          "name": "ContactIdNumber",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

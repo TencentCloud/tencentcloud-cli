@@ -1,5 +1,19 @@
 {
   "actions": {
+    "RequestIdPConnectorLogin": {
+      "document": "生成IdP连接器登录请求。",
+      "input": "RequestIdPConnectorLoginRequest",
+      "name": "生成IdP连接器登录请求",
+      "output": "RequestIdPConnectorLoginResponse",
+      "status": "online"
+    },
+    "VerifyIdPConnectionResponse": {
+      "document": "校验IdP登录响应。",
+      "input": "VerifyIdPConnectionResponseRequest",
+      "name": "校验IdP登录响应",
+      "output": "VerifyIdPConnectionResponseResponse",
+      "status": "online"
+    },
     "VerifyLicense": {
       "document": "从软件进程读取 LICENSE。",
       "input": "VerifyLicenseRequest",
@@ -15,6 +29,72 @@
     "serviceShortName": "cloudapp"
   },
   "objects": {
+    "IdPConnectorUserInfo": {
+      "document": "IdP连接器用户身份信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "100023122",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名称",
+          "example": "张三",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邮箱地址",
+          "example": "zhang3@qq.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电话号码",
+          "example": "13300000001",
+          "member": "string",
+          "name": "Phone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户角色",
+          "example": "role:readwrite:xxxx",
+          "member": "string",
+          "name": "UserRole",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "头像",
+          "example": "https://my.idp/user/zhang3/avatar.png",
+          "member": "string",
+          "name": "Avatar",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "License": {
       "document": "表示应用实例的软件授权，包含颁发信息、激活信息等内容。",
       "members": [
@@ -201,6 +281,53 @@
       ],
       "usage": "out"
     },
+    "RequestIdPConnectorLoginRequest": {
+      "document": "RequestIdPConnectorLogin请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云应用实例ID",
+          "example": "cloudapp-1m42xxxx",
+          "member": "string",
+          "name": "CloudappId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RequestIdPConnectorLoginResponse": {
+      "document": "RequestIdPConnectorLogin返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SAML Request请求，base64编码",
+          "example": "YXNkYXNkdmFzZHZiamhhYmRqYmFzamRiYXNkYmtqYXNiZGprYXNiZGpiYWtzamRiamtzYmRha2pic2Rqa2Jh...",
+          "member": "string",
+          "name": "SAMLRequestBase64",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IdP登录地址，将SAML Request做HTML form编码表单提交",
+          "example": "https://your.idp/login",
+          "member": "string",
+          "name": "SingleSignOnService",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SaleParam": {
       "document": "表示商品 SKU 的单个售卖参数",
       "members": [
@@ -261,6 +388,52 @@
         }
       ],
       "usage": "both"
+    },
+    "VerifyIdPConnectionResponseRequest": {
+      "document": "VerifyIdPConnectionResponse请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云应用实例ID",
+          "example": "cloudapp-1m42xxxx",
+          "member": "string",
+          "name": "CloudappId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IdP提交到ACS的SAML Response，base64编码",
+          "example": "Rpb249Imh0dHBzOi8vc2h...",
+          "member": "string",
+          "name": "SAMLResponseBase64",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyIdPConnectionResponseResponse": {
+      "document": "VerifyIdPConnectionResponse返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登录用户信息",
+          "example": "UserInfo",
+          "member": "IdPConnectorUserInfo",
+          "name": "UserInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VerifyLicenseRequest": {
       "document": "VerifyLicense请求参数结构体",

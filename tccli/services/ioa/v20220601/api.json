@@ -708,9 +708,9 @@
       "status": "online"
     },
     "DescribeAccountLogInInfo": {
-      "document": "DLP概览页风险员工查询用户最近登陆设备及登陆时间，私有化调用path为：capi/DlpOpenApi/DescribeAccountLogInInfo",
+      "document": "DLP概览页风险员工查询用户最近登录设备及登录时间，私有化调用path为：capi/DlpOpenApi/DescribeAccountLogInInfo",
       "input": "DescribeAccountLogInInfoRequest",
-      "name": "DLP概览页风险员工查询用户最近登陆设备及登陆时间",
+      "name": "DLP概览页风险员工查询用户最近登录设备及登录时间",
       "output": "DescribeAccountLogInInfoResponse",
       "status": "online"
     },
@@ -10854,7 +10854,17 @@
     },
     "DescribeAccountLogInInfoRequest": {
       "document": "DescribeAccountLogInInfo请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeAccountLogInInfoResponse": {
@@ -32940,6 +32950,24 @@
           "name": "InquireNum",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "登录态",
+          "example": "MD5",
+          "member": "string",
+          "name": "Skey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "渠道来源",
+          "example": "独立站",
+          "member": "string",
+          "name": "ChannelSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

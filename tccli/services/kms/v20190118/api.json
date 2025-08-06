@@ -827,7 +827,7 @@
         },
         {
           "disabled": false,
-          "document": "指定key的用途，默认为  \"ENCRYPT_DECRYPT\" 表示创建对称加解密密钥，其它支持用途 “ASYMMETRIC_DECRYPT_RSA_2048” 表示创建用于加解密的RSA2048非对称密钥，“ASYMMETRIC_DECRYPT_SM2” 表示创建用于加解密的SM2非对称密钥，“ASYMMETRIC_SIGN_VERIFY_SM2” 表示创建用于签名验签的SM2非对称密钥，“ASYMMETRIC_SIGN_VERIFY_ECC” 表示创建用于签名验签的ECC非对称密钥，“ASYMMETRIC_SIGN_VERIFY_RSA_2048” 表示创建用于签名验签的RSA_2048非对称密钥，“ASYMMETRIC_SIGN_VERIFY_ECDSA384”表示创建用于签名验签的 ECDSA384 非对称秘钥。完整的秘钥用途与算法支持列表可通过 ListAlgorithms 接口获取。",
+          "document": "指定key的用途，默认为  \"ENCRYPT_DECRYPT\" 表示创建对称加解密密钥，其它支持用途 “ASYMMETRIC_DECRYPT_RSA_2048” 表示创建用于加解密的RSA2048非对称密钥，“ASYMMETRIC_DECRYPT_SM2” 表示创建用于加解密的SM2非对称密钥，“ASYMMETRIC_SIGN_VERIFY_SM2” 表示创建用于签名验签的SM2非对称密钥，“ASYMMETRIC_SIGN_VERIFY_ECC” 表示创建用于签名验签的ECC非对称密钥，“ASYMMETRIC_SIGN_VERIFY_RSA_2048” 表示创建用于签名验签的RSA_2048非对称密钥，“ASYMMETRIC_SIGN_VERIFY_ECDSA384”表示创建用于签名验签的 ECDSA384 非对称密钥。完整的密钥用途与算法支持列表可通过 ListAlgorithms 接口获取。",
           "example": "ENCRYPT_DECRYPT",
           "member": "string",
           "name": "KeyUsage",
@@ -1516,7 +1516,7 @@
         {
           "disabled": false,
           "document": "密钥属性信息",
-          "example": "{\"Alias\":\"test11lzc\",\"CreateTime\":1730357927,\"CreatorUin\":700001224419,\"DeletionDate\":0,\"Description\":\"倒入外部密钥\",\"HsmClusterId\":\"\",\"KeyId\":\"93866e69-9755-11ef-8e65-52540089bc41\",\"KeyRotationEnabled\":false}",
+          "example": "无",
           "member": "KeyMetadata",
           "name": "KeyMetadata",
           "output_required": true,

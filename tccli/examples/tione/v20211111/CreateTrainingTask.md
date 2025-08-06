@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione CreateTrainingTask --cli-unfold-argument  \
-    --Name test \
+    --Name zhangsan-lora \
     --FrameworkName PYTORCH \
     --FrameworkEnvironment tilearn-llm1.0-torch2.1-angel-vllm1.0-py3.10-cuda12.1-gpu \
     --TrainingMode DDP \
@@ -37,7 +37,9 @@ tccli tione CreateTrainingTask --cli-unfold-argument  \
     --Output.Uin  \
     --LogEnable False \
     --VpcId vpc-a26qv3af \
-    --SubnetId subnet-m7xhqcyc
+    --SubnetId subnet-m7xhqcyc \
+    --SchedulePolicy.PriorityClass  \
+    --SchedulePolicy.BackOffLimit 0
 ```
 
 Output: 

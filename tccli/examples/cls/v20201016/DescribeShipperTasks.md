@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cls DescribeShipperTasks --cli-unfold-argument  \
-    --ShipperId xxxxx-xxx-xx-xxx-xxxxx \
-    --StartTime 978653222 \
-    --EndTime 978653333
+    --ShipperId 53d355bc-9814-43b4-b10a-4be50405095f \
+    --StartTime 1753766424000 \
+    --EndTime 1753780282000
 ```
 
 Output: 
@@ -17,13 +17,13 @@ Output:
     "Response": {
         "Tasks": [
             {
-                "TaskId": "xxxxx-xx-xx-xx",
-                "ShipperId": "xxxxx-xx-xx-xx",
-                "TopicId": "xxxxx-xx-xx-xx",
-                "RangeStart": "978653222",
-                "RangeEnd": "978653222",
-                "StartTime": "978653222",
-                "EndTime": "978653222",
+                "TaskId": "000000f3-1b0a-444b-bb64-2e64455239e4",
+                "ShipperId": "53d355bc-9814-43b4-b10a-4be50405095f",
+                "TopicId": "5b158596-d0ad-4da5-af92-4fac4cd662c4",
+                "RangeStart": "1753764300000",
+                "RangeEnd": "1753764600000",
+                "StartTime": "1753766424000",
+                "EndTime": "1753780282000",
                 "Status": "success",
                 "Message": "success"
             }

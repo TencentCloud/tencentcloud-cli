@@ -119,13 +119,6 @@
       "output": "QueryHunyuanImageJobResponse",
       "status": "online"
     },
-    "QueryHunyuanTo3DJob": {
-      "document": "查询混元生3D任务",
-      "input": "QueryHunyuanTo3DJobRequest",
-      "name": "查询混元生3D任务",
-      "output": "QueryHunyuanTo3DJobResponse",
-      "status": "online"
-    },
     "ReportUsage": {
       "document": "上报用量",
       "input": "ReportUsageRequest",
@@ -161,13 +154,6 @@
       "output": "SubmitHunyuanImageJobResponse",
       "status": "online"
     },
-    "SubmitHunyuanTo3DJob": {
-      "document": "提交混元生3D任务",
-      "input": "SubmitHunyuanTo3DJobRequest",
-      "name": "提交混元生3D任务",
-      "output": "SubmitHunyuanTo3DJobResponse",
-      "status": "online"
-    },
     "TextToImageLite": {
       "document": "文生图轻量版接口根据输入的文本描述，智能生成与之相关的结果图。\n文生图轻量版默认提供3个并发任务数，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "TextToImageLiteRequest",
@@ -178,7 +164,7 @@
   },
   "metadata": {
     "apiVersion": "2023-09-01",
-    "api_brief": "腾讯云大模型API（Tencent Cloud Large Model API）包含腾讯公司全链路自研的混元大模型系列，以及优秀的第三方大模型DeepSeek系列，为企业客户提供便捷、可靠的大模型推理服务。其中混元大模型在高质量的内容创作、数理逻辑、代码生成、多轮对话、图像与视频生产上表现优越，处于业界领先水平。",
+    "api_brief": "腾讯混元大模型（Tencent Hunyuan）由腾讯公司全链路自研，在高质量内容创作、数理逻辑、代码生成和多轮对话上性能表现卓越，处于业界领先水平。混元 API 支持 AI 搜索联网插件，通过整合腾讯优质的内容生态，提供强大的时新、深度内容获取和 AI 问答能力。\n腾讯混元大模型支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/1729/101848)。\n\n**术语表**\n\n| 术语 | 说明 | \n|---------|---------|\n| 并发任务数 | 并发任务数（并发）指能同时处理的任务数量，如果并发任务数为1，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。 | \n| API 密钥 | API 密钥是用户访问腾讯云 API 进行身份验证时需要用到的安全凭证，由 SecretId 和 SecretKey 一起组成。 | \n\n**使用限制**\n对于 API 接口的参数限制，请参考各接口文档中的参数说明。\n\n**API 快速入门**\n您可以使用 API Explorer 工具在线调用 API。\n本文以创建应用为例，通过 API Explorer 工具调用 API 接口的步骤如下：\n1.进入 [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions) 页面。更多 API Explorer 工具使用信息，请参见[文档](https://cloud.tencent.com/document/product/1278/46697) 。\n2.调用 [ChatCompletions](https://cloud.tencent.com/document/product/1729/105701) 接口，调用腾讯混元大模型。",
     "serviceNameCN": "腾讯混元大模型",
     "serviceShortName": "hunyuan"
   },
@@ -1157,51 +1143,6 @@
         }
       ],
       "usage": "out"
-    },
-    "File3D": {
-      "document": "3D文件",
-      "members": [
-        {
-          "disabled": false,
-          "document": "3D文件的格式。取值范围：GIF, OBJ",
-          "example": "GIF",
-          "member": "string",
-          "name": "Type",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文件的Url（有效期24小时）",
-          "example": "https://cos.ap-guangzhou.myqcloud.com/gif.gif",
-          "member": "string",
-          "name": "Url",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "File3Ds": {
-      "document": "3D文件列表",
-      "members": [
-        {
-          "disabled": false,
-          "document": "3D文件列表",
-          "example": "无",
-          "member": "File3D",
-          "name": "File3D",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
     },
     "FileObject": {
       "document": "已上传的文件对象。",
@@ -3063,73 +3004,6 @@
       ],
       "type": "object"
     },
-    "QueryHunyuanTo3DJobRequest": {
-      "document": "QueryHunyuanTo3DJob请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "1434237894974230",
-          "member": "string",
-          "name": "JobId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "QueryHunyuanTo3DJobResponse": {
-      "document": "QueryHunyuanTo3DJob返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
-          "example": "RUN",
-          "member": "string",
-          "name": "Status",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "生成的3D文件数组",
-          "example": "File3D数据结构",
-          "member": "File3Ds",
-          "name": "ResultFile3Ds",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "错误码",
-          "example": "InvalidParameter",
-          "member": "string",
-          "name": "ErrorCode",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "错误信息",
-          "example": "参数错误",
-          "member": "string",
-          "name": "ErrorMessage",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "Reference": {
       "document": "翻译对话参考示例",
       "members": [
@@ -3964,70 +3838,6 @@
           "disabled": false,
           "document": "任务 ID。",
           "example": "251197749-1731412663-5330d0c8-a0ed-11ef-b6bc-52540073409e-0",
-          "member": "string",
-          "name": "JobId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "SubmitHunyuanTo3DJobRequest": {
-      "document": "SubmitHunyuanTo3DJob请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "3D内容的描述，中文正向提示词。最多支持200个 utf-8 字符，ImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
-          "example": "一只小猫",
-          "member": "string",
-          "name": "Prompt",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "输入图 Base64 数据。\n大小：单边分辨率要求不小于50，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过6m）\n格式：jpg，png，jpeg，webp。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
-          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "输入图Url。\n大小：单边分辨率要求不小于50，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过6m）\n格式：jpg，png，jpeg，webp。\nImageBase64/ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
-          "example": "https://cos.ap-guangzhou.myqcloud.com/imageurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "生成数量。默认1，当前限制只能为1。",
-          "example": "1",
-          "member": "int64",
-          "name": "Num",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "SubmitHunyuanTo3DJobResponse": {
-      "document": "SubmitHunyuanTo3DJob返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务id（有效期24小时）",
-          "example": "1172498703139831808",
           "member": "string",
           "name": "JobId",
           "output_required": false,

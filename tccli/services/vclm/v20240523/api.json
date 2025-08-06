@@ -1,0 +1,892 @@
+{
+  "actions": {
+    "CheckAnimateImageJob": {
+      "document": "检查图片跳舞输入图",
+      "input": "CheckAnimateImageJobRequest",
+      "name": "校验图片跳舞输入图",
+      "output": "CheckAnimateImageJobResponse",
+      "status": "online"
+    },
+    "DescribeImageAnimateJob": {
+      "document": "用于查询图片跳舞任务。图片跳舞能力支持舞蹈动作结合图片生成跳舞视频，满足社交娱乐、互动营销等场景的需求。",
+      "input": "DescribeImageAnimateJobRequest",
+      "name": "查询图片跳舞任务",
+      "output": "DescribeImageAnimateJobResponse",
+      "status": "online"
+    },
+    "DescribePortraitSingJob": {
+      "document": "用于查询图片唱演任务。\n支持提交音频和图片生成唱演视频，满足社交娱乐、互动营销等场景的需求。",
+      "input": "DescribePortraitSingJobRequest",
+      "name": "查询图片唱演任务",
+      "output": "DescribePortraitSingJobResponse",
+      "status": "online"
+    },
+    "DescribeTemplateToVideoJob": {
+      "document": "用于查询视频特效任务。",
+      "input": "DescribeTemplateToVideoJobRequest",
+      "name": "查询视频特效任务",
+      "output": "DescribeTemplateToVideoJobResponse",
+      "status": "online"
+    },
+    "DescribeVideoStylizationJob": {
+      "document": "用于查询视频风格化任务。视频风格化支持将输入视频生成特定风格的视频。生成后的视频画面风格多样、流畅自然，能够满足社交娱乐、互动营销、视频素材制作等场景的需求。",
+      "input": "DescribeVideoStylizationJobRequest",
+      "name": "查询视频风格化任务",
+      "output": "DescribeVideoStylizationJobResponse",
+      "status": "online"
+    },
+    "SubmitImageAnimateJob": {
+      "document": "用于提交图片跳舞任务。图片跳舞能力支持舞蹈动作结合图片生成跳舞视频，满足社交娱乐、互动营销等场景的需求。",
+      "input": "SubmitImageAnimateJobRequest",
+      "name": "提交图片跳舞任务",
+      "output": "SubmitImageAnimateJobResponse",
+      "status": "online"
+    },
+    "SubmitPortraitSingJob": {
+      "document": "用于提交图片唱演任务。\n支持提交音频和图片生成唱演视频，满足社交娱乐、互动营销等场景的需求。",
+      "input": "SubmitPortraitSingJobRequest",
+      "name": "提交图片唱演任务",
+      "output": "SubmitPortraitSingJobResponse",
+      "status": "online"
+    },
+    "SubmitTemplateToVideoJob": {
+      "document": "提交视频特效任务接口",
+      "input": "SubmitTemplateToVideoJobRequest",
+      "name": "提交视频特效任务",
+      "output": "SubmitTemplateToVideoJobResponse",
+      "status": "online"
+    },
+    "SubmitVideoStylizationJob": {
+      "document": "用于提交视频风格化任务。支持将输入视频生成特定风格的视频。生成后的视频画面风格多样、流畅自然，能够满足社交娱乐、互动营销、视频素材制作等场景的需求。",
+      "input": "SubmitVideoStylizationJobRequest",
+      "name": "提交视频风格化任务",
+      "output": "SubmitVideoStylizationJobResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-05-23",
+    "api_brief": "是一款提供视频生成和视频处理能力的API技术服务。包括视频风格化、图片跳舞等多项视频创作能力，基于腾讯混元大模型等一系列领先的人工智能音视频处理技术，支持用户高质量生成视频并处理视频内容。",
+    "serviceNameCN": "腾讯混元生视频",
+    "serviceShortName": "vclm"
+  },
+  "objects": {
+    "CheckAnimateImageJobRequest": {
+      "document": "CheckAnimateImageJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动作模板ID。",
+          "example": "ke3",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；\n图片分辨率：长边分辨率范围【192，4096】；\n图片大小：不超过10M；\n图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内",
+          "example": "https://console.cloud.tencent.com/cos/image.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片base64数据。\n图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；\n图片分辨率：长边分辨率范围【192，4096】；\n图片大小：不超过10M；\n图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内",
+          "example": "MIIHNjCCBh6gAwIBAgIQCVe4E0h49mzI0NcSqMy1",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否对输入图采用加强检测方案。\n\n默认不加强检测（false），仅对输入图做必要的基础检测。\n\n开启加强检测（true）有助于提升效果稳定性，将根据选择的动作模板提取建议的人体关键点，并判断输入图中是否包含这些人体关键点。加强检测仅对人像输入图生效，对非人输入图不生效。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBodyJoins",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启人脸检测。\n\n默认开启人脸检测（true），拦截主体为人像但无人脸、人脸不完整或被遮挡的输入图。可选关闭人脸检测（false）。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableFace",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckAnimateImageJobResponse": {
+      "document": "CheckAnimateImageJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入图是否通过校验。",
+          "example": "true",
+          "member": "bool",
+          "name": "CheckPass",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageAnimateJobRequest": {
+      "document": "DescribeImageAnimateJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "11952663",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageAnimateJobResponse": {
+      "document": "DescribeImageAnimateJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "example": "RUN",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码。",
+          "example": "InvalidParameter",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "参数错误",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果视频URL。有效期 24 小时。",
+          "example": "https://aiar.com/xxx/result.mp4",
+          "member": "string",
+          "name": "ResultVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "掩码视频链接",
+          "example": "https://aiar.com/xxx/mask.mp4",
+          "member": "string",
+          "name": "MaskVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePortraitSingJobRequest": {
+      "document": "DescribePortraitSingJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1199999431088685056",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePortraitSingJobResponse": {
+      "document": "DescribePortraitSingJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1199999431088685056",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态码\n—RUN：处理中\n—FAIL：处理失败\n—STOP：处理终止\n—DONE：处理完成",
+          "example": "[\"RUN\",\"FAIL\",\"STOP\",\"DONE\"]",
+          "member": "string",
+          "name": "StatusCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态信息",
+          "example": "[\"处理中\",\"处理失败\",\"处理中止\",\"处理完成\"]",
+          "member": "string",
+          "name": "StatusMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误码。当任务状态不为FAIL时，该值为\"\"。",
+          "example": "FailedOperation.ModerationFailed",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误信息。当任务状态不为FAIL时，该值为\"\"。",
+          "example": "审核未通过",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成视频的URL地址。有效期24小时。",
+          "example": "https://vcg-prod-xxx.cos.ap-guangzhou.tencentcos.cn/xxx.mp4",
+          "member": "string",
+          "name": "ResultVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateToVideoJobRequest": {
+      "document": "DescribeTemplateToVideoJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "1305546906952867840",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateToVideoJobResponse": {
+      "document": "DescribeTemplateToVideoJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "example": "RUN",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误码。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "FailedOperation.DriverFailed",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误信息。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "驱动失败",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果视频 URL。有效期 24 小时。",
+          "example": "https://console.cloud.tencent.com/result.mp4",
+          "member": "string",
+          "name": "ResultVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoStylizationJobRequest": {
+      "document": "DescribeVideoStylizationJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "145fa4a42d9440d191b3035f1beafa01",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoStylizationJobResponse": {
+      "document": "DescribeVideoStylizationJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "145fa4a42d9440d191b3035f1beafa01",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态码。取值说明：\nJobInit:  \"初始化中\"；\nJobModerationFailed: \"审核失败\"；\nJobRunning: \"处理中\"；\nJobFailed: \"处理失败\"；\nJobSuccess: \"处理完成\"。",
+          "example": "JobSuccess",
+          "member": "string",
+          "name": "StatusCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态描述。取值说明：\nJobInit:  \"初始化中\"；\nJobModerationFailed: \"审核失败\"；\nJobRunning: \"处理中\"；\nJobFailed: \"处理失败\"；\nJobSuccess: \"处理完成\"。",
+          "example": "处理完成",
+          "member": "string",
+          "name": "StatusMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处理结果视频Url。URL有效期为24小时。",
+          "example": "https://vcg-prod-xxx.cos.ap-guangzhou.tencentcos.cn/xxx.mp4",
+          "member": "string",
+          "name": "ResultVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Image": {
+      "document": "图片",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片Base64",
+          "example": "MIIHNjCCBh6gAwIBAgIQCVe4E0h49mzI0NcSqMy1",
+          "member": "string",
+          "name": "Base64",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片Url",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LogoParam": {
+      "document": "logo参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "水印 Url",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/logo.jpg",
+          "member": "string",
+          "name": "LogoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印 Base64，Url 和 Base64 二选一传入，如果都提供以 Url 为准",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
+          "member": "string",
+          "name": "LogoImage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印图片位于生成结果图中的坐标及宽高，将按照坐标对标识图片进行位置和大小的拉伸匹配。",
+          "example": "{   \"X\": -222,   \"Y\": -54,   \"Width\": 202,   \"Height\": 34 }",
+          "member": "LogoRect",
+          "name": "LogoRect",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LogoRect": {
+      "document": "水印图输入框",
+      "members": [
+        {
+          "disabled": false,
+          "document": "水印图框X坐标值。当值大于0时，坐标轴原点位于原图左侧，方向指右；当值小于0时，坐标轴原点位于原图右侧，方向指左。",
+          "example": "-222",
+          "member": "int64",
+          "name": "X",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印图框Y坐标值。当值大于0时，坐标轴原点位于原图上侧，方向指下；当值小于0时，坐标轴原点位于原图下侧，方向指上。",
+          "example": "-54",
+          "member": "int64",
+          "name": "Y",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印图框宽度。",
+          "example": "202",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印图框高度。",
+          "example": "34",
+          "member": "int64",
+          "name": "Height",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SubmitImageAnimateJobRequest": {
+      "document": "SubmitImageAnimateJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；\n图片分辨率：长边分辨率范围【192，4096】；\n图片大小：不超过10M；\n图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内",
+          "example": "https://console.cloud.tencent.com/cos/image.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片base64数据。\n图片格式：支持PNG、JPG、JPEG、BMP、WEBP格式；\n图片分辨率：长边分辨率范围【192，4096】；\n图片大小：不超过10M；\n图片宽高比：【宽：高】数值在 1:2 到 1:1.2 范围内",
+          "example": "MIIHNjCCBh6gAwIBAgIQCVe4E0h49mzI0NcSqMy1+jANBgkqhkiG9w0BAQsFADB1 MQswCQYDVQQGEwJVUzEVMBMG",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "动作模板ID。取值说明：ke3 科目三；tuziwu 兔子舞；huajiangwu 划桨舞。\n",
+          "example": "ke3",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结果视频是否保留模板音频。默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableAudio",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否对输入图采用加强检测方案。\n\n默认不加强检测（false），仅对输入图做必要的基础检测。\n\n开启加强检测（true）有助于提升效果稳定性，将根据选择的动作模板提取建议的人体关键点，并判断输入图中是否包含这些人体关键点。加强检测仅对人像输入图生效，对非人输入图不生效。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableBodyJoins",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否对结果视频背景进行分割，默认值为false。\ntrue：分割结果视频，结果视频（ResultVideoUrl）将为去除背景的绿幕视频，并返回掩码视频（MaskVideoUrl）；\nfalse：不分割结果视频，结果视频（ResultVideoUrl）为带背景的视频，掩码视频（MaskVideoUrl）为空字符串。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSegment",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "为生成视频添加标识的开关，默认为0。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示，该视频是 AI 生成的视频。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。\n默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启人脸检测。\n\n默认开启人脸检测（true），拦截主体为人像但无人脸、人脸不完整或被遮挡的输入图。可选关闭人脸检测（false）。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableFace",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitImageAnimateJobResponse": {
+      "document": "SubmitImageAnimateJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片跳舞任务ID。",
+          "example": "1194931538865782784",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitPortraitSingJobRequest": {
+      "document": "SubmitPortraitSingJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "传入音频URL地址，音频要求：\n- 音频时长：2秒 - 60秒\n- 音频格式：mp3、wav、m4a",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/audio.mp3",
+          "member": "string",
+          "name": "AudioUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "传入图片URL地址，图片要求：\n- 图片格式：jpg、jpeg、png、bmp、webp\n- 图片分辨率：192～4096\n- 图片大小：不超过10M\n- 图片宽高比：图片【宽：高】在1:2到2:1范围内\n- 图片内容：避免上传无人脸、无宠物脸或脸部过小、不完整、不清晰、偏转角度过大、嘴部被遮挡的图片。",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "传入图片Base64编码，编码后请求体大小不超过10M。\n图片Base64编码与URL地址必传其一，如果都传以ImageBase64为准。",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "唱演模式，默认使用人像模式。\nPerson：人像模式，仅支持上传人像图片，人像生成效果更好，如果图中未检测到有效人脸将被拦截，生成时会将视频短边分辨率放缩至512。\nPet：宠物模式，支持宠物等非人像图片，固定生成512:512分辨率视频。",
+          "example": "Person",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成视频尺寸。可选取值：\"512:512\"。\n\n人像模式下，如果不传该参数，默认生成视频的短边分辨率为512，长边分辨率不固定、由模型根据生成效果自动适配得到。如需固定生成分辨率可传入512:512。\n\n宠物模式下，如果不传该参数，默认将脸部唱演视频回贴原图，生成视频分辨率与原图一致。如不需要脸部回贴，仅保留脸部唱演视频，可传入512:512。",
+          "example": "512:512",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成视频添加标识的开关，默认为1。 \n1：添加标识；\n 0：不添加标识；\n其他数值：默认按1处理。 \n建议您使用显著标识来提示，该视频是 AI 生成的视频。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。 默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitPortraitSingJobResponse": {
+      "document": "SubmitPortraitSingJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。任务有效期为48小时。",
+          "example": "1199999431088685056",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitTemplateToVideoJobRequest": {
+      "document": "SubmitTemplateToVideoJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "特效模板名称。请在 [视频特效模版列表](https://cloud.tencent.com/document/product/1616/119194)  中选择想要生成的特效对应的 template 名称。",
+          "example": "hug",
+          "member": "string",
+          "name": "Template",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参考图像，最多输入2张图。\n- 支持传入图片Base64编码或图片URL（确保可访问）\n- 图片格式：支持png、jpg、jpeg、webp、bmp、tiff\n- 图片文件：大小不能超过10MB（base64后），图片分辨率不小于300\\*300px，不大于4096\\*4096，图片宽高比应在1:4 ~ 4:1之间\n",
+          "example": "无",
+          "member": "Image",
+          "name": "Images",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "为生成视频添加标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示，该视频是 AI 生成的视频。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。\n默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频输出分辨率，默认值：360p  - 枚举值：  720p  360p。",
+          "example": "360p",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitTemplateToVideoJobResponse": {
+      "document": "SubmitTemplateToVideoJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "1194931538865782784",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitVideoStylizationJobRequest": {
+      "document": "SubmitVideoStylizationJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风格ID。取值说明：\n2d_anime：2D动漫；\n3d_cartoon：3D卡通；\n3d_china：3D国潮；\npixel_art：像素风。",
+          "example": "2d_anime, 3d_cartoon, 3d_china, pixel_art",
+          "member": "string",
+          "name": "StyleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输入视频URL。视频要求：\n- 视频格式：mp4、mov；\n- 视频时长：1～60秒；\n- 视频分辨率：540P~2056P，即长宽像素数均在540px～2056px范围内；\n- 视频大小：不超过200M；\n- 视频FPS：15～60fps。",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/video.mp4",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风格化强度。取值说明：\nlow：风格化强度弱；\nmedium：风格化强度中等；\nhigh：风格化强度强。\n默认值为medium。",
+          "example": "medium",
+          "member": "string",
+          "name": "StyleStrength",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitVideoStylizationJobResponse": {
+      "document": "SubmitVideoStylizationJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。任务有效期为48小时。",
+          "example": "c5daf8f7077d41a69c13aab31a7164f3",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

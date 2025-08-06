@@ -3595,10 +3595,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "内容格式，支持json、csv",
+          "document": "内容格式，支持json，csv，parquet",
           "example": "json",
           "member": "string",
           "name": "Format",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3609,6 +3610,7 @@
           "example": "无",
           "member": "CsvInfo",
           "name": "Csv",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3619,6 +3621,7 @@
           "example": "无",
           "member": "JsonInfo",
           "name": "Json",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3629,6 +3632,7 @@
           "example": "无",
           "member": "ParquetInfo",
           "name": "Parquet",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3691,7 +3695,7 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶所在地域",
+          "document": "COS存储桶所在地域。\n\n- 通过[地域和访问域名](https://cloud.tencent.com/document/product/436/6224)获取地域信息。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
@@ -3741,7 +3745,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间。时间格式：YYYY-MM-DD HH:mm:ss",
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "CreateTime",
@@ -3751,7 +3755,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "更新时间。时间格式：YYYY-MM-DD HH:mm:ss",
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "UpdateTime",
@@ -3771,7 +3775,7 @@
         },
         {
           "disabled": false,
-          "document": "supported: \"\", \"gzip\", \"lzop\", \"snappy”; 默认空",
+          "document": "压缩方式supported: \"\", \"gzip\", \"lzop\", \"snappy”;  默认空不压缩",
           "example": "gzip",
           "member": "string",
           "name": "Compress",
@@ -3782,7 +3786,7 @@
         {
           "disabled": false,
           "document": "见： ExtractRuleInfo 结构描述",
-          "example": "无",
+          "example": "{\"UnMatchLogKey\": null, \"UnMatchUpLoadSwitch\": false }",
           "member": "ExtractRuleInfo",
           "name": "ExtractRuleInfo",
           "output_required": true,
@@ -4968,7 +4972,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题 ID",
+          "document": "日志主题Id。\n\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "ae13f7db-00b5-41ac-916e-407802axxxxx",
           "member": "string",
           "name": "TopicId",
@@ -4977,7 +4981,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "日志集Id。\n\n- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。",
           "example": "0af7e6bb-fc91-4ee8-ad24-1129e9cxxxxx",
           "member": "string",
           "name": "LogsetId",
@@ -4986,7 +4990,7 @@
         },
         {
           "disabled": false,
-          "document": "投递任务名称",
+          "document": "COS导入任务名称,最大支持128个字节。",
           "example": "cos导入",
           "member": "string",
           "name": "Name",
@@ -4995,7 +4999,7 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。",
+          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。\t\n\n- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。",
           "example": "examplebucket-1250000000",
           "member": "string",
           "name": "Bucket",
@@ -5031,7 +5035,7 @@
         },
         {
           "disabled": false,
-          "document": "supported: \"\", \"gzip\", \"lzop\", \"snappy\"; 默认空",
+          "document": "supported: \"\", \"gzip\", \"lzop\", \"snappy\"。默认空，不压缩。",
           "example": "gzip",
           "member": "string",
           "name": "Compress",
@@ -5041,7 +5045,7 @@
         {
           "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
-          "example": "无",
+          "example": "{\"UnMatchLogKey\": null, \"UnMatchUpLoadSwitch\": false }",
           "member": "ExtractRuleInfo",
           "name": "ExtractRuleInfo",
           "required": false,
@@ -5584,8 +5588,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
-          "example": "3edc8551-xxxx-xxxx-9fc4-ed66e20dfa8a",
+          "document": "日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "75f531f6-3644-45e5-8717-af1dc294cc93",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -5792,8 +5796,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集名字，不能重名",
-          "example": "testname",
+          "document": "日志集名字。\n\n- 最大支持255个字符。不支持`|`字符。",
+          "example": "业务流日志集",
           "member": "string",
           "name": "LogsetName",
           "required": true,
@@ -5811,7 +5815,7 @@
         {
           "disabled": false,
           "document": "日志集ID，格式为：用户自定义部分-用户appid，用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符，尾部需要使用-拼接用户appid",
-          "example": "user-define-34534566",
+          "example": "user-diy-1254139626",
           "member": "string",
           "name": "LogsetId",
           "required": false,
@@ -6174,7 +6178,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的投递规则所属的日志主题ID",
+          "document": "创建的投递规则所属的日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "fadcc986-xxxx-xxxx-b766-9ce9c193da32",
           "member": "string",
           "name": "TopicId",
@@ -6183,7 +6187,7 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。",
+          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。\t\n\n- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。",
           "example": "examplebucket-1250000000",
           "member": "string",
           "name": "Bucket",
@@ -6201,7 +6205,7 @@
         },
         {
           "disabled": false,
-          "document": "投递规则的名字",
+          "document": "投递规则的名字。最大支持255个字符",
           "example": "testShipper",
           "member": "string",
           "name": "ShipperName",
@@ -6291,7 +6295,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。\n\n1. STANDARD_IA：低频存储；\n2. ARCHIVE：归档存储；\n3. DEEP_ARCHIVE：深度归档存储；\n4. STANDARD：标准存储；\n5. MAZ_STANDARD：标准存储（多 AZ）；\n6. MAZ_STANDARD_IA：低频存储（多 AZ）；\n7. INTELLIGENT_TIERING：智能分层存储。",
+          "document": "对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。\n参考值有：\n\n- STANDARD：标准存储\n- STANDARD_IA：低频存储\n- ARCHIVE：归档存储\n- DEEP_ARCHIVE：深度归档存储\n- MAZ_STANDARD：标准存储（多 AZ）\n- MAZ_STANDARD_IA：低频存储（多 AZ）\n- INTELLIGENT_TIERING：智能分层存储\n- MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）",
           "example": "STANDARD",
           "member": "string",
           "name": "StorageType",
@@ -6646,7 +6650,7 @@
         },
         {
           "disabled": false,
-          "document": "创建仪表盘的时间",
+          "document": "创建仪表盘的时间。格式：YYYY-MM-DD HH:MM:SS",
           "example": "2021-12-22 16:11:27",
           "member": "string",
           "name": "CreateTime",
@@ -6706,7 +6710,7 @@
         },
         {
           "disabled": false,
-          "document": "修改仪表盘的时间",
+          "document": "修改仪表盘的时间。格式：YYYY-MM-DD HH:MM:SS",
           "example": "2021-12-22 16:11:27",
           "member": "string",
           "name": "UpdateTime",
@@ -7031,7 +7035,7 @@
         },
         {
           "disabled": false,
-          "document": "topic所在的地域",
+          "document": "topic所在的地域。\n- 1:广州\n- 4:上海\n- 5:中国香港\n- 7:上海金融\n- 8:北京\n- 9:新加坡\n- 11:深圳金融\n- 15:硅谷\n- 16:成都\n- 17:法兰克福\n- 18:首尔\n- 19:重庆\n- 22:弗吉尼亚\n- 23:曼谷\n- 25:东京\n- 33:南京\n- 36:天津\n- 39:台北\n- 46:北京金融\n- 72:雅加达\n- 74:圣保罗\n- 78:上海自动驾驶云",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -7744,7 +7748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "COS导入配置Id",
+          "document": "COS导入配置Id。\n- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。",
           "example": "ca092608-98e8-4ad9-83c5-a6b3bbexxxxx",
           "member": "string",
           "name": "Id",
@@ -7753,7 +7757,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题Id",
+          "document": "日志主题Id。\n-  通过[获取日志主题列表](https://cloud.tencent.com/document/api/614/56454)获取日志主题Id。",
           "example": "ae13f7db-00b5-41ac-916e-407802axxxxx",
           "member": "string",
           "name": "TopicId",
@@ -7807,8 +7811,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "仪表盘订阅记录id。",
-          "example": "id",
+          "document": "仪表盘订阅记录id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。",
+          "example": "10000123",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -7888,8 +7892,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
-          "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
+          "document": "日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "75f531f6-3644-45e5-8717-af1dc294cc93",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -7951,7 +7955,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。",
           "example": "eb6eafd9-1656-4d60-b3c2-0a5bf91c9b0d",
           "member": "string",
           "name": "LogsetId",
@@ -8140,7 +8144,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递规则ID",
+          "document": "投递规则Id。\n- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "ShipperId",
@@ -8945,8 +8949,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题 ID",
-          "example": "xxx-xxx-xxx-xxx",
+          "document": "日志主题Id。\n-  通过[获取日志主题列表](https://cloud.tencent.com/document/api/614/56454)获取日志主题Id。",
+          "example": "ae13f7db-00b5-41ac-916e-407802axxxxx",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -8979,7 +8983,7 @@
         {
           "disabled": false,
           "document": "见: CosRechargeInfo 结构描述",
-          "example": "无",
+          "example": "[{\"BucketRegion\":\"ap-guangzhou\",\"ExtractRuleInfo\":{\"UnMatchLogKey\":null,\"UnMatchUpLoadSwitch\":false},\"Id\":\"cdee9f11-abe1-463a-8cd8-1f34906f1bfd\",\"TopicId\":\"fd7a3902-6cf0-4e89-bb66-d870c33f4f58\"}]",
           "member": "CosRechargeInfo",
           "name": "Data",
           "output_required": true,
@@ -9000,7 +9004,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<br><li/> dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否<br><br><li/> 每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否\n\n- 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9083,7 +9087,7 @@
         },
         {
           "disabled": false,
-          "document": "- dashboardId 按照【仪表盘id】进行过滤，类型：String， 必选：否。\n- dashboardName 按照【仪表盘名字】进行模糊搜索过滤，类型：String，必选：否。\n- dashboardRegion 按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性，类型：String，必选：否。\n- tagKey 按照【标签键】进行过滤，类型：String，必选：否。\n- tag:tagKey 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换，类型：String，必选：否，使用请参考[示例2](https://cloud.tencent.com/document/api/614/95636#4.-.E7.A4.BA.E4.BE.8B)。\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "- dashboardId 按照【仪表盘id】进行过滤，类型：String， 必选：否。\n- dashboardName 按照【仪表盘名字】进行模糊搜索过滤，类型：String，必选：否。\n- dashboardRegion 按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性，类型：String，必选：否。 [地域和访问域名](https://cloud.tencent.com/document/product/614/18940)，例如：ap-guangzhou\n- tagKey 按照【标签键】进行过滤，类型：String，必选：否。\n- tag:tagKey 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换，类型：String，必选：否，使用请参考[示例2](https://cloud.tencent.com/document/api/614/95636#4.-.E7.A4.BA.E4.BE.8B)。\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9092,7 +9096,7 @@
         },
         {
           "disabled": false,
-          "document": "按照topicId和regionId过滤。",
+          "document": "按照topicId和regionId过滤。\n\n- topicId:日志主题Id。\n    -  通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。\n- regionId\n    - 1:广州\n    - 4:上海\n    - 5:中国香港\n    - 7:上海金融\n    - 8:北京\n    - 9:新加坡\n    - 11:深圳金融\n    - 15:硅谷\n    - 16:成都\n    - 17:法兰克福\n    - 18:首尔\n    - 19:重庆\n    - 22:弗吉尼亚\n    - 23:曼谷\n    - 25:东京\n    - 33:南京\n    - 36:天津\n    - 39:台北\n    - 46:北京金融\n    - 72:雅加达\n    - 74:圣保罗\n    - 78:上海自动驾驶云\n",
           "example": "无",
           "member": "TopicIdAndRegion",
           "name": "TopicIdRegionFilter",
@@ -9287,8 +9291,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
-          "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
+          "document": "日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "75f531f6-3644-45e5-8717-af1dc294cc93",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -9302,7 +9306,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题Id",
           "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
           "member": "string",
           "name": "TopicId",
@@ -9312,7 +9316,7 @@
         },
         {
           "disabled": false,
-          "document": "是否生效",
+          "document": "索引状态。true：开启状态，false：关闭状态\n开启后可对日志进行检索分析，将产生索引流量、索引存储及相应费用。[费用详情](https://cloud.tencent.com/document/product/614/45802#.E8.AE.A1.E8.B4.B9.E9.A1.B9)",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -9332,7 +9336,7 @@
         },
         {
           "disabled": false,
-          "document": "索引修改时间，初始值为索引创建时间。",
+          "document": "索引修改时间，初始值为索引创建时间。格式 `YYYY-MM-DD HH:MM:SS`",
           "example": "2021-01-13 21:00:08 ",
           "member": "string",
           "name": "ModifyTime",
@@ -9786,7 +9790,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "logsetName\n- 按照【日志集名称】进行过滤。\n- 类型：String\n- 必选：否\n\nlogsetId\n- 按照【日志集ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "logsetName\n- 按照【日志集名称】进行过滤。\n- 类型：String\n- 必选：否\n- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集名称。\nlogsetId\n- 按照【日志集ID】进行过滤。\n- 类型：String\n- 必选：否\n- 通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9823,6 +9827,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9832,6 +9837,7 @@
           "example": "无",
           "member": "LogsetInfo",
           "name": "Logsets",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9951,7 +9957,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询的机器组ID",
+          "document": "查询的机器组ID。\n\n- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组ID。",
           "example": "ae0d14a7-94e1-461e-8f5d-7d66a0d56d35  ",
           "member": "string",
           "name": "GroupId",
@@ -9960,8 +9966,8 @@
         },
         {
           "disabled": false,
-          "document": "ip\n- 按照【ip】进行过滤。\n- 类型：String\n- 必选：否\n\ninstance\n- 按照【instance】进行过滤。\n- 类型：String\n- 必选：否\n\nversion\n- 按照【LogListener版本】进行过滤。\n- 类型：String\n- 必选：否\n\nstatus\n- 按照【状态】进行过滤。\n- 类型：String\n- 必选：否\n- 可选值：0：离线，1：正常\n\nofflineTime\n- 按照【机器离线时间】进行过滤。\n- 类型：String\n- 必选：否\n- - 可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
-          "example": "无",
+          "document": "ip\n- 按照ip进行过滤。\n- 类型：String\n- 必选：否\n\ninstance\n- 按照实例id进行过滤。\n- 类型：String\n- 必选：否\n\nversion\n- 按照LogListener版本进行过滤。\n- 类型：String\n- 必选：否\n\nstatus\n- 按照机器状态进行过滤。\n- 类型：String\n- 必选：否\n- 可选值：0：离线，1：正常\n\nofflineTime\n- 按照机器离线时间进行过滤。\n- 类型：String\n- 必选：否\n- -可选值：0：无离线时间，12：12小时内，24：一天内，48：两天内，99：两天前\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "example": "[{\"Key\":\"status\",\"Values\":[\"1\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -9994,7 +10000,7 @@
         {
           "disabled": false,
           "document": "机器状态信息组",
-          "example": "无",
+          "example": "[{\"AutoUpdate\":0,\"ErrCode\":0,\"ErrMsg\":\"OK\",\"InstanceID\":\"loglistener-90dbb1xxxxxxxdc43efdb3bcd8c3\",\"Ip\":\"11.0.0.25\",\"OfflineTime\":\"2025-07-16 16:47:34\",\"Status\":1,\"UpdateStatus\":0,\"Version\":\"3.4.3\"}]",
           "member": "MachineInfo",
           "name": "Machines",
           "output_required": true,
@@ -10429,8 +10435,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递规则ID",
-          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "document": "投递规则Id。\n\n- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。",
+          "example": "53d355bc-9814-43b4-b10a-4be50405095f",
           "member": "string",
           "name": "ShipperId",
           "required": true,
@@ -10439,7 +10445,7 @@
         {
           "disabled": false,
           "document": "查询的开始时间戳，支持最近3天的查询， 毫秒。\nStartTime必须小于EndTime",
-          "example": "978653222",
+          "example": "1753878541000",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -10448,7 +10454,7 @@
         {
           "disabled": false,
           "document": "查询的结束时间戳， 毫秒。\nStartTime必须小于EndTime",
-          "example": "978653222",
+          "example": "1753878621000",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -10484,7 +10490,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "- shipperName：按照【投递规则名称】进行过滤。\n    类型：String。\n    必选：否\n- shipperId：按照【投递规则ID】进行过滤。\n    类型：String。\n    必选：否\n- topicId：按照【日志主题】进行过滤。\n    类型：String。\n    必选：否\n- taskStatus\n按照【任务运行状态】进行过滤。 支持`0`：停止，`1`：运行中，`2`：异常\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为10。",
+          "document": "- shipperName：按照【投递规则名称】进行过滤。\n    类型：String。\n    必选：否\n- shipperId：按照【投递规则ID】进行过滤。\n    类型：String。\n    必选：否\n- topicId：按照【日志主题】进行过滤。\n    类型：String。\n    必选：否\n- taskStatus：按照【任务运行状态】进行过滤。 支持`0`：停止，`1`：运行中，`2`：异常\n    类型：String\n    必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为10。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -12032,8 +12038,8 @@
         },
         {
           "disabled": false,
-          "document": "元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[__SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__]",
+          "document": "元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。\n\n- __SOURCE__：日志采集的源 IP，示例：10.0.1.2\n- __FILENAME__：日志采集的文件名，示例：/data/log/nginx/access.log\n- __TIMESTAMP__：日志时间戳（毫秒级别 Unix 时间戳），按时间范围检索日志时，将自动使用该时间对日志进行检索，在控制台显示为“日志时间”，示例：1640005601188\n- __HOSTNAME__：日志来源机器名称，需使用2.7.4及以上版本的 Loglistener 才会采集该字段，示例：localhost\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"__SOURCE__\",\"__FILENAME__\",\"__TIMESTAMP__\",\"__HOSTNAME__\"]",
           "member": "string",
           "name": "MetaFields",
           "output_required": true,
@@ -12913,7 +12919,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间。格式 `YYYY-MM-DD HH:MM:SS`",
           "example": "2021-04-01 08:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -13153,7 +13159,7 @@
         },
         {
           "disabled": false,
-          "document": "机器离线时间，空为正常，异常返回具体时间",
+          "document": "机器离线时间，空为正常，异常返回具体时间。时间格式：YYYY-MM-DD HH:mm:ss",
           "example": "2021-01-12 20:14:10 ",
           "member": "string",
           "name": "OfflineTime",
@@ -14430,7 +14436,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "COS导入配置Id",
+          "document": "COS导入配置Id。\n\n- 通过[获取cos导入配置](https://cloud.tencent.com/document/product/614/88099)接口获取COS导入配置Id。",
           "example": "ca092608-98e8-4ad9-83c5-a6b3bbexxxxx",
           "member": "string",
           "name": "Id",
@@ -14439,7 +14445,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题Id",
+          "document": "日志主题Id。\n\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "ae13f7db-00b5-41ac-916e-407802axxxxx",
           "member": "string",
           "name": "TopicId",
@@ -14448,7 +14454,7 @@
         },
         {
           "disabled": false,
-          "document": "COS导入任务名称",
+          "document": "COS导入任务名称,最大支持128个字节。",
           "example": "导入任务1",
           "member": "string",
           "name": "Name",
@@ -14466,7 +14472,7 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。\t",
+          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。\t\n\n- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。",
           "example": "examplebucket-1250000000",
           "member": "string",
           "name": "Bucket",
@@ -14502,7 +14508,7 @@
         },
         {
           "disabled": false,
-          "document": "解析格式。supported: \"\", \"gzip\", \"lzop\", \"snappy\"; 默认空",
+          "document": "解析格式。supported: \"\", \"gzip\", \"lzop\", \"snappy\"。空串表示不压缩。",
           "example": "gzip",
           "member": "string",
           "name": "Compress",
@@ -14512,7 +14518,7 @@
         {
           "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
-          "example": "无",
+          "example": "{\"UnMatchLogKey\": null, \"UnMatchUpLoadSwitch\": false }",
           "member": "ExtractRuleInfo",
           "name": "ExtractRuleInfo",
           "required": false,
@@ -14556,8 +14562,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "仪表盘id",
-          "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
+          "document": "仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。",
+          "example": "dashboard-e7497a78-667f-45ee-b785-4ac8fca05dc6",
           "member": "string",
           "name": "DashboardId",
           "required": true,
@@ -14566,7 +14572,7 @@
         {
           "disabled": false,
           "document": "仪表盘名称",
-          "example": "testname",
+          "example": "主机指标监控预制仪表盘",
           "member": "string",
           "name": "DashboardName",
           "required": false,
@@ -14575,7 +14581,7 @@
         {
           "disabled": false,
           "document": "仪表盘配置数据",
-          "example": "testdata",
+          "example": "\"{\\\"timezone\\\":\\\"browser\\\",\\\"subType\\\":\\\"CLS_Host\\\"}\"",
           "member": "string",
           "name": "Data",
           "required": false,
@@ -14610,7 +14616,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "仪表盘订阅id。",
+          "document": "仪表盘订阅id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -14619,8 +14625,8 @@
         },
         {
           "disabled": false,
-          "document": "仪表盘id。",
-          "example": "xxx-xxx-xxx-xxx",
+          "document": "仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。",
+          "example": "dashboard-e7497a78-667f-45ee-b785-4ac8fca05dc6",
           "member": "string",
           "name": "DashboardId",
           "required": false,
@@ -14628,7 +14634,7 @@
         },
         {
           "disabled": false,
-          "document": "仪表盘订阅名称。",
+          "document": "仪表盘订阅名称。最大支持128个字符，且不支持'|'字符。",
           "example": "仪表盘-CLS-日报",
           "member": "string",
           "name": "Name",
@@ -15052,7 +15058,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。",
           "example": "dc01b74a-49e4-11eb-b378-0242ac130002",
           "member": "string",
           "name": "LogsetId",
@@ -15061,8 +15067,8 @@
         },
         {
           "disabled": false,
-          "document": "日志集名称",
-          "example": "changename",
+          "document": "日志集名字。- 最大支持255个字符。不支持`|`字符。",
+          "example": "业务流日志集",
           "member": "string",
           "name": "LogsetName",
           "required": false,
@@ -15466,7 +15472,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递规则ID",
+          "document": "投递规则Id。\n\n- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。",
           "example": "3f9562a7-xxxx-xxxx-b32a-d51a927226a7",
           "member": "string",
           "name": "ShipperId",
@@ -15475,7 +15481,7 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。",
+          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。\t\n\n- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。",
           "example": "examplebucket-1250000000",
           "member": "string",
           "name": "Bucket",
@@ -15574,7 +15580,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。\n\n1. STANDARD_IA：低频存储；\n2. ARCHIVE：归档存储；\n3. DEEP_ARCHIVE：深度归档存储；\n4. STANDARD：标准存储；\n5. MAZ_STANDARD：标准存储（多 AZ）；\n6. MAZ_STANDARD_IA：低频存储（多 AZ）；\n7. INTELLIGENT_TIERING：智能分层存储。",
+          "document": "对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。\n参考值有：\n\n- STANDARD：标准存储\n- STANDARD_IA：低频存储\n- ARCHIVE：归档存储\n- DEEP_ARCHIVE：深度归档存储\n- MAZ_STANDARD：标准存储（多 AZ）\n- MAZ_STANDARD_IA：低频存储（多 AZ）\n- INTELLIGENT_TIERING：智能分层存储\n- MAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）",
           "example": "STANDARD",
           "member": "string",
           "name": "StorageType",
@@ -16929,7 +16935,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递规则ID",
+          "document": "投递规则Id。\n\n- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745)获取ShipperId。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "ShipperId",
@@ -16938,8 +16944,8 @@
         },
         {
           "disabled": false,
-          "document": "投递任务ID",
-          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "document": "投递任务Id。\n\n- 通过 [获取投递任务列表](https://cloud.tencent.com/document/product/614/58745) 获取TaskId。",
+          "example": "6ef60bec-0242-43af-bb20-270359fb54a7",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -17371,8 +17377,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题 ID",
-          "example": "xxx-xxx-xxx-xxx",
+          "document": "日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "ae13f7db-00b5-41ac-916e-407802axxxxx",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -17380,8 +17386,8 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
-          "example": "xxx-xxx-xxx-xxx",
+          "document": "日志集Id。\n\n- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。",
+          "example": "0af7e6bb-fc91-4ee8-ad24-1129e9cxxxxx",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -17389,7 +17395,7 @@
         },
         {
           "disabled": false,
-          "document": "投递任务名称",
+          "document": "COS导入任务名称,最大支持128个字节。",
           "example": "cos导入任务",
           "member": "string",
           "name": "Name",
@@ -17398,7 +17404,7 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。",
+          "document": "COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。\t\n\n- 通过[GET Service（List Buckets）](https://cloud.tencent.com/document/product/436/8291)获取COS存储桶。",
           "example": "examplebucket-1-1250000000",
           "member": "string",
           "name": "Bucket",
@@ -17425,7 +17431,7 @@
         },
         {
           "disabled": false,
-          "document": "压缩模式:   \"\", \"gzip\", \"lzop\", \"snappy\";   默认\"\"",
+          "document": "压缩模式:   \"\", \"gzip\", \"lzop\", \"snappy\"。  默认：\"\" 不压缩",
           "example": "gzip",
           "member": "string",
           "name": "Compress",
@@ -17441,7 +17447,7 @@
         {
           "disabled": false,
           "document": "匹配到的存储桶下的某个文件的前几行数据",
-          "example": "[{\"metric\":{\"code\":\"InternalError\",\"region\":\"广州\",\"service_name\":\"service1\",\"url\":\"api1\"},\"values\":[[1735040190,\"100\"],[1735040205,\"91\"],[1735040310,\"98\"],[1735040325,\"85\"],[1735040340,\"76\"],[1735040730,\"100\"]]}]",
+          "example": "[\"{\\\"__SOURCE__\\\":\\\"11.149.174.232\\\",\\\"__TIMESTAMP__\\\":1690889917207509}\\n\"]",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -17480,7 +17486,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态。\n- 0：成功\n- 10000：参数错误，请确认参数\n- 10001：授权失败，请确认授权\n- 10002：获取文件列表失败，请稍后再试。若无法解决，请联系智能客服或提交工单\n- 10003：桶内无相应前缀文件，请使用正确的桶、文件前缀和压缩方式\n- 10004：文件下载失败，请稍后再试。若无法解决，请联系智能客服或提交工单\n- 10005：文件解压缩失败，请选择正确的压缩方式然后再试\n- 10006：读取文件内容失败，请确认文件可读\n- 10007：文件预览失败，请稍后再试。若无法解决，请联系智能客服或提交工单",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -17502,8 +17508,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "仪表盘id。",
-          "example": "dashboard-0d954d68-xxxx-xxxx-95a6-f9eff0db370f",
+          "document": "仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。",
+          "example": "dashboard-e7497a78-667f-45ee-b785-4ac8fca05dc6",
           "member": "string",
           "name": "DashboardId",
           "required": true,
@@ -17520,7 +17526,7 @@
         },
         {
           "disabled": false,
-          "document": "仪表盘订阅Id。",
+          "document": "仪表盘订阅Id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。",
           "example": "10001",
           "member": "uint64",
           "name": "Id",
@@ -17529,7 +17535,7 @@
         },
         {
           "disabled": false,
-          "document": "仪表盘订阅名称。",
+          "document": "仪表盘订阅名称。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Name。",
           "example": "仪表盘-CLS-日报",
           "member": "string",
           "name": "Name",
@@ -18029,7 +18035,7 @@
         },
         {
           "disabled": false,
-          "document": "投递日志的创建时间",
+          "document": "投递日志的创建时间。格式：YYYY-MM-DD HH:MM:SS",
           "example": "2023-08-22 22:02:52",
           "member": "string",
           "name": "CreateTime",
@@ -18099,7 +18105,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶类型",
+          "document": "对象存储类型，默认值为 STANDARD。枚举值请参见[ 存储类型概述](https://cloud.tencent.com/document/product/436/33417) 文档。\n参考值有：\nSTANDARD：标准存储\nSTANDARD_IA：低频存储\nARCHIVE：归档存储\nDEEP_ARCHIVE：深度归档存储\nMAZ_STANDARD：标准存储（多 AZ）\nMAZ_STANDARD_IA：低频存储（多 AZ）\nINTELLIGENT_TIERING：智能分层存储\nMAZ_INTELLIGENT_TIERING：智能分层存储（多 AZ）",
           "example": "MAZ_STANDARD",
           "member": "string",
           "name": "StorageType",
@@ -18119,7 +18125,7 @@
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18129,7 +18135,7 @@
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "ShipperId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18139,7 +18145,7 @@
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18149,7 +18155,7 @@
           "example": "978653222",
           "member": "int64",
           "name": "RangeStart",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18159,7 +18165,7 @@
           "example": "978653222",
           "member": "int64",
           "name": "RangeEnd",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18169,7 +18175,7 @@
           "example": "978653222",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18179,17 +18185,17 @@
           "example": "978653222",
           "member": "int64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "本次投递的结果，\"success\",\"running\",\"failed\"",
+          "document": "本次投递的结果。\"success\"，\"running\"，\"failed\"\n\n- success：任务成功。\n- running：任务处理中。\n- failed：任务失败。",
           "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18199,7 +18205,7 @@
           "example": "success",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

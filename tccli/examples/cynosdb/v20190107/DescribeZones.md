@@ -25,12 +25,12 @@ Output:
                 "RegionZh": "广州",
                 "ZoneSet": [
                     {
-                        "PhysicalZone": "ap-guangzhou-2",
-                        "Zone": "ap-guangzhou-2",
+                        "PhysicalZone": "ap-guangzhou-3",
+                        "Zone": "ap-guangzhou-3",
                         "IsSupportServerless": 0,
                         "ZoneId": 100003,
                         "IsSupportNormal": 0,
-                        "ZoneZh": "广州二区",
+                        "ZoneZh": "广州三区",
                         "HasPermission": true,
                         "IsWholeRdmaZone": "tcp",
                         "IsSupportCreateCluster": 1

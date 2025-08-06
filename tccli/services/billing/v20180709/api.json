@@ -287,6 +287,13 @@
       "output": "DescribeBudgetRemindRecordListResponse",
       "status": "online"
     },
+    "DescribeCPQBillingMapping": {
+      "document": "查询报价产品名称与计费产品四层匹配关系",
+      "input": "DescribeCPQBillingMappingRequest",
+      "name": "获取报价产品与计费产品四层匹配关系",
+      "output": "DescribeCPQBillingMappingResponse",
+      "status": "online"
+    },
     "DescribeCostDetail": {
       "document": "查询消耗明细\n\n注意事项：\n1. 对于消耗明细数据量级很大（例如每月消耗明细量级超过100w）的客户，通过 API 调用明细数据会有超时风险，建议您开通消耗账单数据存储功能，通过存储桶中获取账单文件进行分析。[账单存储至COS桶](https://cloud.tencent.com/document/product/555/61275)",
       "input": "DescribeCostDetailRequest",
@@ -14934,6 +14941,152 @@
       ],
       "type": "object"
     },
+    "DescribeCPQBillingMappingRequest": {
+      "document": "DescribeCPQBillingMapping请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "string",
+          "name": "Offset",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数量，最大值为100\t",
+          "example": "10",
+          "member": "string",
+          "name": "Limit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "报价子产品名称",
+          "example": "TKE原生节点-计算型C3-后付费",
+          "member": "string",
+          "name": "SpuName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "报价产品名称",
+          "example": "资源费+增值费模式（同一个机型，资源费+增值费模式或增值费模式二选一，不能重复选择）",
+          "member": "string",
+          "name": "CategoryName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "云桌面",
+          "member": "string",
+          "name": "BusinessName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称",
+          "example": "云桌面实例-图形G1.4核16G",
+          "member": "string",
+          "name": "ProductName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件类型名称",
+          "example": "云桌面实例系统盘",
+          "member": "string",
+          "name": "ComponentName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "云桌面实例系统盘SSD",
+          "member": "string",
+          "name": "ItemName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品编码",
+          "example": "p_011691",
+          "member": "string",
+          "name": "BusinessCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码",
+          "example": "sp_011691_tke_hn_c3",
+          "member": "string",
+          "name": "ProductCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件类型编码",
+          "example": "v_cvd_ins_rootdisk",
+          "member": "string",
+          "name": "ComponentCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件编码",
+          "example": "sv_cvd_ins_rootdisk_ssd",
+          "member": "string",
+          "name": "ItemCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCPQBillingMappingResponse": {
+      "document": "DescribeCPQBillingMapping返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据明细",
+          "example": "无",
+          "member": "ResourceSpuSet",
+          "name": "ResourceSpuSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "10",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCostDetailRequest": {
       "document": "DescribeCostDetail请求参数结构体",
       "members": [
@@ -23776,6 +23929,188 @@
         }
       ],
       "usage": "out"
+    },
+    "ResourceSpuSet": {
+      "document": "报价产品四层明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "报价子产品（中文）",
+          "example": "TKE原生节点-计算型C3-后付费",
+          "member": "string",
+          "name": "SpuNameZh",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报价子产品（英文）",
+          "example": "TKE Native Node - Computing C3 - Postpaid",
+          "member": "string",
+          "name": "SpuNameEn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报价产品（中文）",
+          "example": "资源费+增值费模式（同一个机型，资源费+增值费模式或增值费模式二选一，不能重复选择）",
+          "member": "string",
+          "name": "CategoryNameZh",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报价产品（英文）",
+          "example": "ResouceFee&ServiceFee",
+          "member": "string",
+          "name": "CategoryNameEn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品编码",
+          "example": "p_011691",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品名称（中文）",
+          "example": "容器服务 TKE",
+          "member": "string",
+          "name": "BusinessNameZh",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品名称（英文）",
+          "example": "Tencent Kubernetes Engine",
+          "member": "string",
+          "name": "BusinessNameEn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码",
+          "example": "sp_011691_tke_hn_c3",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称（中文）",
+          "example": "容器服务TKE_原生节点_C3",
+          "member": "string",
+          "name": "ProductNameZh",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称（英文）",
+          "example": "TKE_NativeNode_C3",
+          "member": "string",
+          "name": "ProductNameEn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件类型编码",
+          "example": "v_bgp_basic_prot",
+          "member": "string",
+          "name": "ComponentCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件类型名称（中文）",
+          "example": "保底防护",
+          "member": "string",
+          "name": "ComponentNameZh",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件类型名称（英文）",
+          "example": "basic Protection",
+          "member": "string",
+          "name": "ComponentNameEn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件编码",
+          "example": "sv_bgp_basic_prot_channel",
+          "member": "string",
+          "name": "ItemCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件名称（中文）",
+          "example": "DDoS防护-高防IP-保底防护-渠道-new",
+          "member": "string",
+          "name": "ItemNameZh",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件名称（英文）",
+          "example": "Anti-DDoS Advanced basic Protection channel_new",
+          "member": "string",
+          "name": "ItemNameEn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SavingPlanInfo": {
       "document": "sp共享详情描述",

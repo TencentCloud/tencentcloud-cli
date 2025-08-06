@@ -17,20 +17,27 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "1df9b437-4e92-4ad5-b422-abeb45bbaf03",
         "VersionList": [
             {
-                "LicenseExpression": "apache-2.0",
+                "LicenseExpression": "gpl-3.0",
                 "PURL": {
-                    "Name": "ristretto",
-                    "Namespace": "github.com/sergiub32",
-                    "Protocol": "golang",
+                    "Name": "xxl-job-core",
+                    "Namespace": "com.xuxueli",
+                    "Protocol": "maven",
                     "Qualifiers": [],
                     "Subpath": "",
-                    "Version": "v0.2.1"
+                    "Version": "2.4.1"
+                },
+                "VersionInfo": {
+                    "CopyrightList": [],
+                    "PublishTime": "2024-04-17 08:50:11.000000",
+                    "TagList": [
+                        "ContainsVulnerability"
+                    ]
                 }
             }
-        ]
+        ],
+        "RequestId": "101705d6-b972-4dbf-9d10-0b075d509d3d"
     }
 }
 ```

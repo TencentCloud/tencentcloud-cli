@@ -36,6 +36,7 @@ tccli tione CreateNotebook --cli-unfold-argument  \
     --DataConfigs.0.DataSourceType CLOUD_PREMIUM \
     --DataConfigs.0.CBSSource.VolumeSizeInGB 50 \
     --ImageInfo.ImageType SYSTEM \
+    --ImageInfo.ImageId 35551e3c-b0e3-40dc-8e91-cc10a5613cd3 \
     --ImageInfo.ImageUrl tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0 \
     --ImageInfo.ImageName tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu \
     --ImageType SYSTEM

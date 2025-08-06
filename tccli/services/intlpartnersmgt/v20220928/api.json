@@ -119,11 +119,25 @@
       "output": "DescribeCustomerInfoResponse",
       "status": "online"
     },
+    "DescribeCustomerOwnVoucherList": {
+      "document": "描述说明：子客查询自己的代金券列表 可调用角色：子客",
+      "input": "DescribeCustomerOwnVoucherListRequest",
+      "name": "子客查询自己的代金券列表",
+      "output": "DescribeCustomerOwnVoucherListResponse",
+      "status": "online"
+    },
     "DescribeCustomerUin": {
       "document": "查询子客uin列表",
       "input": "DescribeCustomerUinRequest",
       "name": "查询子客uin列表",
       "output": "DescribeCustomerUinResponse",
+      "status": "online"
+    },
+    "DescribeCustomerVoucherList": {
+      "document": "描述说明：当前接口用作一级经销商/二级经销商查询子客代金券。\n可调用角色：经销商、一级经销商、二级经销商",
+      "input": "DescribeCustomerVoucherListRequest",
+      "name": "查询子客的代金券列表",
+      "output": "DescribeCustomerVoucherListResponse",
       "status": "online"
     },
     "DescribeRebateDownloadUrl": {
@@ -2377,6 +2391,194 @@
       ],
       "type": "object"
     },
+    "DescribeCustomerOwnVoucherItem": {
+      "document": "代金券数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代金券id",
+          "example": "12342356",
+          "member": "int64",
+          "name": "VoucherId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子客uin",
+          "example": "800000183985",
+          "member": "int64",
+          "name": "CustomerUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代金券状态：Issued/Used/Expired/Invalidated",
+          "example": "Issued",
+          "member": "string",
+          "name": "VoucherStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余金额",
+          "example": "0.797104",
+          "member": "float",
+          "name": "RemainingAmount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "面额",
+          "example": "1",
+          "member": "float",
+          "name": "TotalAmount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费模式：AllPayment/Prepaid/Postpaid",
+          "example": "AllPayment",
+          "member": "string",
+          "name": "PaymentMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "适用产品:AllProducts/SpecifyProducts/SpecifyProductsBlacklist",
+          "example": "AllProducts",
+          "member": "string",
+          "name": "ProductScope",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-10-13 23:59:59",
+          "member": "string",
+          "name": "EffectiveTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2025-10-13 23:59:59",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCustomerOwnVoucherListRequest": {
+      "document": "DescribeCustomerOwnVoucherList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页数，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，范围1-100",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "代金券状态：Issued/Used/Expired/Invalidated",
+          "example": "Issused",
+          "member": "string",
+          "name": "VoucherStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "付费模式：AllPayment/Prepaid/Postpaid",
+          "example": "AllPayment",
+          "member": "string",
+          "name": "PaymentMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "适用产品:AllProducts/SpecifyProducts/SpecifyProductsBlacklist",
+          "example": "AllProducts",
+          "member": "string",
+          "name": "ProductScope",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券号",
+          "example": "12",
+          "member": "int64",
+          "name": "VoucherId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerOwnVoucherListResponse": {
+      "document": "DescribeCustomerOwnVoucherList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代金券信息详情",
+          "example": "[{}]",
+          "member": "DescribeCustomerOwnVoucherItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCustomerUinData": {
       "document": "子客uin列表",
       "members": [
@@ -2438,6 +2640,232 @@
           "name": "Total",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerVoucherItem": {
+      "document": "代金券数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代金券id",
+          "example": "12342356",
+          "member": "int64",
+          "name": "VoucherId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子客uin",
+          "example": "800000183985",
+          "member": "int64",
+          "name": "CustomerUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代金券状态：Issued/Used/Expired/Invalidated",
+          "example": "Issued",
+          "member": "string",
+          "name": "VoucherStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余金额",
+          "example": "0.797104",
+          "member": "float",
+          "name": "RemainingAmount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "面额",
+          "example": "1",
+          "member": "float",
+          "name": "TotalAmount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用途：ProductTrial/CustomerOffer",
+          "example": "CustomerOffer",
+          "member": "string",
+          "name": "Usage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费模式：AllPayment/Prepaid/Postpaid",
+          "example": "AllPayment",
+          "member": "string",
+          "name": "PaymentMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "适用产品:AllProducts/SpecifyProducts/SpecifyProductsBlacklist",
+          "example": "AllProducts",
+          "member": "string",
+          "name": "ProductScope",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-10-13 23:59:59",
+          "member": "string",
+          "name": "EffectiveTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2025-10-13 23:59:59",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请备注",
+          "example": "1",
+          "member": "string",
+          "name": "ApplyReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCustomerVoucherListRequest": {
+      "document": "DescribeCustomerVoucherList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页数，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，范围1-100",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子客uin",
+          "example": "800000163887",
+          "member": "int64",
+          "name": "CustomerUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "代金券状态：Issued/Used/Expired/Invalidated",
+          "example": "Issused",
+          "member": "string",
+          "name": "VoucherStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "付费模式：AllPayment/Prepaid/Postpaid",
+          "example": "AllPayment",
+          "member": "string",
+          "name": "PaymentMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用途：ProductTrial/CustomerOffer",
+          "example": "ProductTrial",
+          "member": "string",
+          "name": "Usage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "适用产品:AllProducts/SpecifyProducts/SpecifyProductsBlacklist",
+          "example": "AllProducts",
+          "member": "string",
+          "name": "ProductScope",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券号",
+          "example": "12",
+          "member": "int64",
+          "name": "VoucherId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerVoucherListResponse": {
+      "document": "DescribeCustomerVoucherList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代金券信息详情",
+          "example": "[{}]",
+          "member": "DescribeCustomerVoucherItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

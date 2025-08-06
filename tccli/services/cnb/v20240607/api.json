@@ -1,0 +1,1058 @@
+{
+  "actions": {
+    "CreateBudget": {
+      "document": "创建云原生构建预算单",
+      "input": "CreateBudgetRequest",
+      "name": "新建组织预算",
+      "output": "CreateBudgetResponse",
+      "status": "online"
+    },
+    "GetBudgetAuthorization": {
+      "document": "获取预算授权",
+      "input": "GetBudgetAuthorizationRequest",
+      "name": "获取预算授权",
+      "output": "GetBudgetAuthorizationResponse",
+      "status": "online"
+    },
+    "ListBudget": {
+      "document": "获取预算列表",
+      "input": "ListBudgetRequest",
+      "name": "获取预算列表",
+      "output": "ListBudgetResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-06-07",
+    "api_brief": "提供产品资源的增删改查能力",
+    "serviceNameCN": "云原生构建",
+    "serviceShortName": "cnb"
+  },
+  "objects": {
+    "Budget": {
+      "document": "预算信息详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "test",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号uin",
+          "example": "test",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账户uin",
+          "example": "test",
+          "member": "string",
+          "name": "OperateUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "1",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域id",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区Id",
+          "example": "1",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算名",
+          "example": "test",
+          "member": "string",
+          "name": "BudgetName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定组织名",
+          "example": "test",
+          "member": "string",
+          "name": "OrgName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定组织url",
+          "example": "test",
+          "member": "string",
+          "name": "OrgUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算费用",
+          "example": "无",
+          "member": "Cost",
+          "name": "Cost",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2023-08-10 16:20:20 +0000 UTC",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算绑定状态",
+          "example": "true",
+          "member": "bool",
+          "name": "Bind",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算预估费用",
+          "example": "无",
+          "member": "EstimatedCost",
+          "name": "EstimatedCost",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用用量",
+          "example": "无",
+          "member": "SvUsedAmount",
+          "name": "SvUsedAmount",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算总量",
+          "example": "无",
+          "member": "SvTotalAmount",
+          "name": "SvTotalAmount",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2023-08-10 16:20:20 +0000 UTC",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算单状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Cost": {
+      "document": "预算单总费用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算单折前费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "TotalCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "git存储实际费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbStorageGitRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储实际费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbStorageObjectRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建实际费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeBuildRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发实际费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeDevelopRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建-gpu实际费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeBuildGPURealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发-gpu实际费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeDevelopGPURealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "git存储单价",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbStorageGitPrice",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储单价",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbStorageObjectPrice",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建单价",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeBuildPrice",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发单价",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeDevelopPrice",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建-gpu单价",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeBuildGPUPrice",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发-gpu单价",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeDevelopGPUPrice",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "git存储折前费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbStorageGitCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储折前费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbStorageObjectCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建折前费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeBuildCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发折前费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeDevelopCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建-gpu折前费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeBuildGPUCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发-gpu折前费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "CnbComputeDevelopGPUCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算单实际费用",
+          "example": "1.00",
+          "member": "float",
+          "name": "TotalRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateBudgetRequest": {
+      "document": "CreateBudget请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Git存储预算，单位GiB",
+          "example": "100",
+          "member": "uint64",
+          "name": "StorageGit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "对象存储预算，单位GiB",
+          "example": "100",
+          "member": "uint64",
+          "name": "StorageObject",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建预算，单位核时",
+          "example": "100",
+          "member": "uint64",
+          "name": "ComputeBuild",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发预算，单位核时",
+          "example": "100",
+          "member": "uint64",
+          "name": "ComputeDevelop",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "预算名称",
+          "example": "Cnb组织预算",
+          "member": "string",
+          "name": "BudgetName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源标签",
+          "example": "[{\"TagKey\": \"march\",\"TagValue\": [\"march1\"]}]",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建-gpu预算，单位核时",
+          "example": "100",
+          "member": "uint64",
+          "name": "ComputeBuildGPU",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发-gpu预算，单位核时",
+          "example": "100",
+          "member": "uint64",
+          "name": "ComputeDevelopGPU",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBudgetResponse": {
+      "document": "CreateBudget返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算资源 id",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定失败的标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "FailedTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EstimatedCost": {
+      "document": "预算单预估费用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预估折前费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "EsCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "git存储预估折前费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbStorageGitEstimatedCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储预估折前费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbStorageObjectEstimatedCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建预估折前费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbComputeBuildEstimatedCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发预估折前费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbComputeDevelopEstimatedCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建-gpu预估折前费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbComputeBuildGPUEstimatedCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发-gpu预估折前费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbComputeDevelopGPUEstimatedCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "git存储预估费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbStorageGitEstimatedRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储预估费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbStorageObjectEstimatedRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建预估费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbComputeBuildEstimatedRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发预估费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbComputeDevelopEstimatedRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建-gpu预估费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbComputeBuildGPUEstimatedRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发-gpu预估费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "CnbComputeDevelopGPUEstimatedRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预估实际费用",
+          "example": "0.00",
+          "member": "float",
+          "name": "EsRealCost",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GetBudgetAuthorizationRequest": {
+      "document": "GetBudgetAuthorization请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算资源 id",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBudgetAuthorizationResponse": {
+      "document": "GetBudgetAuthorization返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权 id",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权码",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListBudgetRequest": {
+      "document": "ListBudget请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "搜索字段, 基于组织名过滤结果",
+          "example": "cnb",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页字段,每页数量, 默认10",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页字段,页数,默认1",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagFilter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ListBudgetResponse": {
+      "document": "ListBudget返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算列表",
+          "example": "无",
+          "member": "Budget",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上限预估费用",
+          "example": "10.00",
+          "member": "float",
+          "name": "TotalCost",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已用预估费用",
+          "example": "10.00",
+          "member": "float",
+          "name": "TotalEstimatedCost",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SvTotalAmount": {
+      "document": "预算单总量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "git存储总量",
+          "example": "10",
+          "member": "int64",
+          "name": "CnbStorageGit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储总量",
+          "example": "10",
+          "member": "int64",
+          "name": "CnbStorageObject",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建核时总量",
+          "example": "19",
+          "member": "int64",
+          "name": "CnbComputeBuild",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发核时总量",
+          "example": "10",
+          "member": "int64",
+          "name": "CnbComputeDevelop",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建-gpu核时总量",
+          "example": "10",
+          "member": "int64",
+          "name": "CnbComputeBuildGPU",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发-gpu核时总量",
+          "example": "10",
+          "member": "int64",
+          "name": "CnbComputeDevelopGPU",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SvUsedAmount": {
+      "document": "用户已使用用量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "git存储使用用量",
+          "example": "\"11\"",
+          "member": "string",
+          "name": "CnbStorageGitUsed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储使用用量",
+          "example": "\"11\"",
+          "member": "string",
+          "name": "CnbStorageObjectUsed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建使用核时",
+          "example": "\"11\"",
+          "member": "string",
+          "name": "CnbComputeBuildUsed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发使用核时",
+          "example": "\"11\"",
+          "member": "string",
+          "name": "CnbComputeDevelopUsed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生构建-gpu使用核时",
+          "example": "\"11\"",
+          "member": "string",
+          "name": "CnbComputeBuildGPUUsed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云原生开发-gpu使用核时",
+          "example": "\"11\"",
+          "member": "string",
+          "name": "CnbComputeDevelopGPUUsed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Tag": {
+      "document": "标签kv",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签key",
+          "example": "无",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签value",
+          "example": "无",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

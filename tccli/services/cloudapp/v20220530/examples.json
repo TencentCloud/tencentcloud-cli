@@ -1,5 +1,21 @@
 {
   "actions": {
+    "RequestIdPConnectorLogin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudapp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RequestIdPConnectorLogin\n<公共请求参数>\n\n{\n    \"CloudappId\": \"cloudapp-1m42xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72cc6463-0f4b-b376-2a19-6d936e7d10a2\",\n        \"SAMLRequestBase64\": \"9IiIgQXNzZXJ0aW9uQ29uc...\",\n        \"SingleSignOnService\": \"https://your.idp/login\"\n    }\n}",
+        "title": "生成IdP连接器登录请求"
+      }
+    ],
+    "VerifyIdPConnectionResponse": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudapp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyIdPConnectionResponse\n<公共请求参数>\n\n{\n    \"CloudappId\": \"cloudapp-1m42xxxx\",\n    \"SAMLResponseBase64\": \"W5hdGlvbj0iaHR0cHM6Ly9zaG...\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a83a1cb-598a-e607-a72c-8d4530b24796\",\n        \"UserInfo\": {\n            \"UserId\": \"100001201\",\n            \"UserName\": \"张三\",\n            \"Email\": \"zhang3@your.idp\",\n            \"Phone\": \"133000001\",\n            \"UserRole\": \"role:readwrite:xxx\",\n            \"Avatar\": \"https://your.idp/user/zhang3/avatar.png\"\n        }\n    }\n}",
+        "title": "校验IdP登录响应"
+      }
+    ],
     "VerifyLicense": [
       {
         "document": "软件进程对接 LICENSE 后，通过运行时角色申请临时密钥来调用，获取对应的 LICENSE 信息。\n\n获取到 LICENSE 后，请注意校验 LicenseStatus 是否有效，无效时软件可根据策略拒绝服务或者提供降级服务。同时，LICENSE 包含用户购买的规格信息，软件可根据规格来做运行的约束。\n\n对接 LICENSE 的详细方案，请参考文档：\n* [对接 LICENSE](https://cloud.tencent.com/document/product/1689/109428)\n* [通过运行时角色调用云 API](https://cloud.tencent.com/document/product/1689/109427)",

@@ -71,7 +71,7 @@
       "status": "online"
     },
     "ChannelCreateDynamicFlowApprover": {
-      "document": "接口（ChannelCreateDynamicFlowApprover）用来补充<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>发起的动态合同的签署人信息\n**注**: \n<ul>\n<li>此接口需要保证：渠道企业已开启：模块化计费能力，</li>\n<li>此接口需要保证：渠道应用已开启：动态签署人2.0能力</li>\n<li>此接口需要保证：合同发起时指定开启了动态合同</li>\n<li>此接口补充的动态签署人传参规则，请参考接口：<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>的签署人传参规则</li>\n<li>此接口补充的动态签署人暂不支持他方企业自动签署。</li>\n</ul>",
+      "document": "接口（ChannelCreateDynamicFlowApprover）用来补充<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>发起的动态合同的签署人信息\n**注**: \n<ul>\n<li>此接口需要保证：渠道应用已开启：动态签署人2.0能力</li>\n<li>此接口需要保证：合同发起时指定开启了动态合同</li>\n<li>此接口补充的动态签署人传参规则，请参考接口：<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>的签署人传参规则</li>\n<li>此接口补充的动态签署人暂不支持他方企业自动签署。</li>\n</ul>",
       "input": "ChannelCreateDynamicFlowApproverRequest",
       "name": "渠道版补充动态合同签署人接口",
       "output": "ChannelCreateDynamicFlowApproverResponse",
@@ -4862,7 +4862,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的关键字段，支持Key-Values查询。可选键值如下：\n<ul>\n  <li>Key:**\"Status\"**，Values: **[\"IsVerified\"]**, 查询已实名的员工</li>\n  <li>Key:**\"Status\"**，Values: **[\"QuiteJob\"]**, 查询离职员工</li>\n  <li>Key:**\"StaffOpenId\"**，Values: **[\"OpenId1\",\"OpenId2\",...]**, 根据第三方系统用户OpenId查询员工</li>\n</ul>\n注: `同名字的Key的过滤条件会冲突,  只能填写一个`",
+          "document": "查询的关键字段，支持Key-Values查询。可选键值如下：\n<ul>\n  <li>Key:**\"Status\"**，Values: **[\"IsVerified\"]**, 查询已实名的员工</li>\n  <li>Key:**\"Status\"**，Values: **[\"NotVerified\"]**, 查询未实名的员工</li>\n  <li>Key:**\"Status\"**，Values: **[\"QuiteJob\"]**, 查询离职员工</li>\n  <li>Key:**\"ExcludeQuiteJob\"**，Values: **[\"true\"]**, 查询排除离职员工</li>\n  <li>Key:**\"StaffOpenId\"**，Values: **[\"OpenId1\",\"OpenId2\",...]**, 根据第三方系统用户OpenId查询员工</li>\n</ul>\n注: `同名字的Key的过滤条件会冲突,  只能填写一个`",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

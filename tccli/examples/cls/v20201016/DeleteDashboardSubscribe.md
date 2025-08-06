@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cls DeleteDashboardSubscribe --cli-unfold-argument  \
-    --Id 10
+    --Id 10000123
 ```
 
 Output: 

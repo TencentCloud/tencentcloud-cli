@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "ChatCompletionDemo": [
+      {
+        "document": "发送多行业多场景大模型的异步推理请求",
+        "input": "POST / HTTP/1.1\nHost: tichat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatCompletionDemo\n<公共请求参数>\n\n{\n    \"SessionId\": \"6e85ab47-e2df-d139-3823-de3d3aa51cf2\",\n    \"Model\": \"ms-c8s6554k\",\n    \"Message\": {\n        \"Role\": \"user\",\n        \"Content\": \"你好\"\n    }\n}",
+        "output": "{\n  \"Choices\": [\n    {\n      \"Delta\": {\n        \"Content\": \"很高兴\"\n      }\n    }\n  ],\n  \"Model\": \"ms-c8s6554k\",\n  \"Id\": \"6e85ab47-e2df-d139-3823-de3d3aa51cf2\",\n  \"Usage\": {},\n  \"ReasoningDuration\": 502,\n  \"Status\": \"generating\"\n}",
+        "title": "发送多行业多场景大模型请求"
+      }
+    ]
+  },
+  "version": "1.0"
+}

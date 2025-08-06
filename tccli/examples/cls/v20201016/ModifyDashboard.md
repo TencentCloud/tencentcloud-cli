@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cls ModifyDashboard --cli-unfold-argument  \
-    --DashboardId dashboard-x-x-x-x \
+    --DashboardId dashboard-e7497a78-667f-45ee-b785-4ac8fca05dc6 \
     --DashboardName 修改仪表盘 \
-    --Data {} \
+    --Data {"timezone":"browser","subType":"CLS_Host"} \
     --Tags.0.Value tagValue \
     --Tags.0.Key tagKey
 ```
@@ -17,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx-xx-xx-xx"
+        "RequestId": "73b2ae74-f740-45f9-9202-b40392ad815f"
     }
 }
 ```

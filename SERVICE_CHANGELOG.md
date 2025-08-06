@@ -1,28 +1,90 @@
-# Release 3.0.1252.1
+# Release 3.0.1253.1
 
-## 动效素材服务(anicloud) 版本：2022-09-23
+## Elasticsearch Service(es) 版本：2018-04-16
 
-### 第 2 次发布
+### 第 87 次发布
 
-发布时间：2025-07-30 01:07:49
+发布时间：2025-08-06 01:35:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**预下线接口**：</font>
+修改接口：
 
-* CheckAppidExist
-* QueryResource
-* QueryResourceInfo
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
+
+	* 新增入参：AutoScaleDiskInfoList, EnableKibanaPublicAccess
+
+* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
+
+	* 新增入参：AutoScaleDiskInfoList, AutoScaleDiskDeleteNodeTypeList
+
+
+新增数据结构：
+
+* [AutoScaleDiskInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#AutoScaleDiskInfo)
+
+修改数据结构：
+
+* [Operation](http://document.tencentcloudapi.woa.com/document/product/845/30634#Operation)
+
+	* 新增成员：AutoScaleTag
 
 
 
-## 费用中心(billing) 版本：2018-07-09
 
-### 第 95 次发布
+## SSL 证书(ssl) 版本：2019-12-05
 
-发布时间：2025-07-30 01:11:39
+### 第 92 次发布
+
+发布时间：2025-08-06 02:02:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeManagerDetail](http://document.tencentcloudapi.woa.com/document/product/400/52673)
+
+	* 新增出参：ManagerIdType, ManagerIdNumber, ContactIdType, ContactIdNumber
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 154 次发布
+
+发布时间：2025-08-06 02:08:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InternalRocketMQInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InternalRocketMQInstance)
+
+	* 新增成员：AutoCreateTopicEnabled, AdminFeatureEnabled
+
+* [RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterInfo)
+
+	* 新增成员：AutoCreateTopicEnabled, AdminFeatureEnabled, AdminAccessKey, AdminSecretKey, EnableDeletionProtection
+
+* [RocketMQGroup](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQGroup)
+
+	* 新增成员：SubscribeTopicNum
+
+
+
+
+## 高性能计算平台(thpc) 版本：2023-03-21
+
+### 第 19 次发布
+
+发布时间：2025-08-06 02:11:30
 
 本次发布包含了以下内容：
 
@@ -30,59 +92,41 @@
 
 新增接口：
 
-* [DescribeMeasureResourceProductList](http://document.tencentcloudapi.woa.com/document/product/555/87267)
+* [DeleteJob](http://document.tencentcloudapi.woa.com/document/product/1701/87539)
+* [DescribeJobSubmitInfo](http://document.tencentcloudapi.woa.com/document/product/1701/87538)
+* [DescribeJobs](http://document.tencentcloudapi.woa.com/document/product/1701/87537)
+* [DescribeJobsOverview](http://document.tencentcloudapi.woa.com/document/product/1701/87536)
+* [SubmitJob](http://document.tencentcloudapi.woa.com/document/product/1701/87535)
+* [TerminateJob](http://document.tencentcloudapi.woa.com/document/product/1701/87534)
 
 新增数据结构：
 
-* [ProductCodes](http://document.tencentcloudapi.woa.com/document/product/555/19183#ProductCodes)
+* [Application](http://document.tencentcloudapi.woa.com/document/product/1701/80209#Application)
+* [CommandItem](http://document.tencentcloudapi.woa.com/document/product/1701/80209#CommandItem)
+* [Docker](http://document.tencentcloudapi.woa.com/document/product/1701/80209#Docker)
+* [EnvVar](http://document.tencentcloudapi.woa.com/document/product/1701/80209#EnvVar)
+* [Job](http://document.tencentcloudapi.woa.com/document/product/1701/80209#Job)
+* [JobView](http://document.tencentcloudapi.woa.com/document/product/1701/80209#JobView)
+* [OutputRedirect](http://document.tencentcloudapi.woa.com/document/product/1701/80209#OutputRedirect)
+* [StorageMount](http://document.tencentcloudapi.woa.com/document/product/1701/80209#StorageMount)
+* [Task](http://document.tencentcloudapi.woa.com/document/product/1701/80209#Task)
+* [TaskDependence](http://document.tencentcloudapi.woa.com/document/product/1701/80209#TaskDependence)
 
 
 
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
-
-### 第 67 次发布
-
-发布时间：2025-07-30 01:17:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#UserInfo)
-
-	* 新增成员：ComputeGroupType
+## 高性能计算平台(thpc) 版本：2022-04-01
 
 
 
-
-## 全站加速网络(ecdn) 版本：2019-10-12
-
-### 第 9 次发布
-
-发布时间：2025-07-30 01:32:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribePurgeTasks
-* PurgeUrlsCache
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* PurgeTask
+## 高性能计算平台(thpc) 版本：2021-11-09
 
 
 
-## 腾讯云可观测平台(monitor) 版本：2023-06-16
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
 
-### 第 2 次发布
+### 第 49 次发布
 
-发布时间：2025-07-30 01:51:28
+发布时间：2025-08-06 02:14:58
 
 本次发布包含了以下内容：
 
@@ -90,51 +134,16 @@
 
 修改接口：
 
-* [BatchGetStatisticsData](http://document.tencentcloudapi.woa.com/document/product/248/86906)
+* [DescribeConsumerGroupList](http://document.tencentcloudapi.woa.com/document/product/1739/82583)
 
-	* 新增入参：GlobalRegion
+	* 新增入参：SortedBy, SortOrder
 
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 105 次发布
-
-发布时间：2025-07-30 01:51:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateQualityControlTemplate](http://document.tencentcloudapi.woa.com/document/product/862/84209)
-
-	* 新增入参：Strategy
-
-* [ModifyQualityControlTemplate](http://document.tencentcloudapi.woa.com/document/product/862/84206)
-
-	* 新增入参：Strategy
-
-
-新增数据结构：
-
-* [FailOverOption](http://document.tencentcloudapi.woa.com/document/product/862/37615#FailOverOption)
 
 修改数据结构：
 
-* [CreateInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateInput)
+* [ConsumeGroupItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#ConsumeGroupItem)
 
-	* 新增成员：FailOverOption
-
-* [ModifyInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyInput)
-
-	* 新增成员：FailOverOption
+	* 新增成员：SubscribeTopicNum, CreateTime
 
 
 

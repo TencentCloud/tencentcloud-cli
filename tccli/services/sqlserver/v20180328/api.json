@@ -337,7 +337,7 @@
       "status": "online"
     },
     "DescribeDBInstances": {
-      "document": "本接口(DescribeDBInstances)用于查询实例列表。",
+      "document": "本接口（DescribeDBInstances）用于查询实例列表。",
       "input": "DescribeDBInstancesRequest",
       "name": "查询实例列表",
       "output": "DescribeDBInstancesResponse",
@@ -526,7 +526,7 @@
       "status": "online"
     },
     "DescribeProductConfig": {
-      "document": "本接口 (DescribeProductConfig) 用于查询售卖规格配置。",
+      "document": "本接口（DescribeProductConfig）用于查询售卖规格配置。",
       "input": "DescribeProductConfigRequest",
       "name": "查询售卖规格配置",
       "output": "DescribeProductConfigResponse",
@@ -659,7 +659,7 @@
       "status": "online"
     },
     "DescribeZones": {
-      "document": "本接口 (DescribeZones) 用于查询当前可售卖的可用区信息。",
+      "document": "本接口（DescribeZones）用于查询当前可售卖的可用区信息。",
       "input": "DescribeZonesRequest",
       "name": "查询售卖可用区",
       "output": "DescribeZonesResponse",
@@ -4713,7 +4713,7 @@
         {
           "disabled": false,
           "document": "实例所在可用区名称，如 ap-guangzhou-1",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -4853,7 +4853,7 @@
         {
           "disabled": false,
           "document": "实例绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "['Tag1']",
+          "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "output_required": true,
@@ -4883,7 +4883,7 @@
         {
           "disabled": false,
           "document": "备份周期",
-          "example": "1",
+          "example": "[1]",
           "member": "int64",
           "name": "BackupCycle",
           "output_required": true,
@@ -4923,7 +4923,7 @@
         {
           "disabled": false,
           "document": "跨地域备份目的地域，如果为空，则表示未开启跨地域备份",
-          "example": "[ap-guangzhou]",
+          "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "CrossRegions",
           "output_required": true,
@@ -5003,7 +5003,7 @@
         {
           "disabled": false,
           "document": "双节点实例备可用区信息",
-          "example": "[{\"SlaveZone\": \"ap-guangzhou-1\",\"SlaveZoneName\": \"广州一区\",\"DrInstanceId\": \"mssqldr-9ji781\"}]",
+          "example": "无",
           "member": "SlaveZones",
           "name": "SlaveZones",
           "output_required": true,
@@ -5033,7 +5033,7 @@
         {
           "disabled": false,
           "document": "多节点实例备可用区信息",
-          "example": "[{\"SlaveZone\": \"ap-guangzhou-2\",\"SlaveZoneName\": \"广州二区\",\"DrInstanceId\": \"mssqldr-9ji782\"}]",
+          "example": "无",
           "member": "SlaveZones",
           "name": "MultiSlaveZones",
           "output_required": true,
@@ -8036,8 +8036,8 @@
         },
         {
           "disabled": false,
-          "document": "实例可用区，格式如：ap-guangzhou-2",
-          "example": "ap-guangzhou-2",
+          "document": "实例可用区",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -8064,7 +8064,7 @@
         {
           "disabled": false,
           "document": "实例唯一Uid列表",
-          "example": "gamedb.gz1.cdb.db",
+          "example": "[\"gamedb.gz1.cdb.db\"]",
           "member": "string",
           "name": "UidSet",
           "required": false,
@@ -10191,8 +10191,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区英文ID，形如ap-guangzhou-1",
-          "example": "ap-guangzhou-2",
+          "document": "可用区英文 ID",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -12030,7 +12030,7 @@
           "example": "34",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12040,7 +12040,7 @@
           "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16073,7 +16073,7 @@
         {
           "disabled": false,
           "document": "只读组名称",
-          "example": "default_name",
+          "example": "andy_ReadOnlyGroup",
           "member": "string",
           "name": "ReadOnlyGroupName",
           "output_required": true,
@@ -16093,7 +16093,7 @@
         {
           "disabled": false,
           "document": "只读组的可用区ID，与主实例相同",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,
@@ -18920,21 +18920,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "规格地域",
-          "example": "ap-guangzhou-2",
+          "document": "规格可用区",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规格可用区",
+          "document": "规格地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18944,7 +18944,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
