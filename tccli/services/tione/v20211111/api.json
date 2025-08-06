@@ -7,6 +7,13 @@
       "output": "ChatCompletionResponse",
       "status": "online"
     },
+    "CreateBillingResourceInstanceHealthCheckTask": {
+      "document": "创建资源组节点健康检测任务",
+      "input": "CreateBillingResourceInstanceHealthCheckTaskRequest",
+      "name": "创建资源组节点健康检测任务",
+      "output": "CreateBillingResourceInstanceHealthCheckTaskResponse",
+      "status": "online"
+    },
     "CreateDataset": {
       "document": "创建数据集",
       "input": "CreateDatasetRequest",
@@ -1052,6 +1059,52 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateBillingResourceInstanceHealthCheckTaskRequest": {
+      "document": "CreateBillingResourceInstanceHealthCheckTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组节点id",
+          "example": "ersg-8jpj27jc",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组节点(一个或者多个)",
+          "example": "[\"sm-2z84hf49\"]",
+          "member": "string",
+          "name": "ResourceInstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBillingResourceInstanceHealthCheckTaskResponse": {
+      "document": "CreateBillingResourceInstanceHealthCheckTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测任务ID",
+          "example": "jkjc-hs862dk2",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDatasetRequest": {
       "document": "CreateDataset请求参数结构体",

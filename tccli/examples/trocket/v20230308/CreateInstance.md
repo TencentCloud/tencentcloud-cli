@@ -8,7 +8,9 @@ Input:
 tccli trocket CreateInstance --cli-unfold-argument  \
     --InstanceType BASIC \
     --Name test_instance \
-    --SkuCode basic_2k
+    --SkuCode basic_2k \
+    --VpcList.0.VpcId vpc-xxxx \
+    --VpcList.0.SubnetId subnet-xxxx
 ```
 
 Output: 

@@ -5,14 +5,14 @@
       "input": "TextProcessRequest",
       "name": "文本处理",
       "output": "TextProcessResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "TextReset": {
       "document": "历史产品（TBP）原有团队解散后维护一直挂在我们团队（wxg）。目前官网已经下线，当前希望完整下线服务。产品免费，已经挂了引导迁 移公告超过一年，已经通过电话和短信通知所有30 个存量用户\n\n会话重置接口。",
       "input": "TextResetRequest",
       "name": "会话重置",
       "output": "TextResetResponse",
-      "status": "deprecated"
+      "status": "offline"
     }
   },
   "metadata": {

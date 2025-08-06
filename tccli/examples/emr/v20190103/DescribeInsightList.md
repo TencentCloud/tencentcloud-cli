@@ -32,7 +32,8 @@ Output:
                 "RuleName": "HIVE-大表扫描",
                 "JobConf": "",
                 "Type": "HIVE",
-                "ID": "hadoop_20231206140857_1bbd81e2-b752-424b-aa61-a811a40c3099"
+                "ID": "hadoop_20231206140857_1bbd81e2-b752-424b-aa61-a811a40c3099",
+                "Context": "{\"allocatedMemMBSeconds\":118066,\"confMemSizeMB\":4096,\"minimumWastePercent\":48,\"suggestMemSizeMB\":3072,\"totalWastePercent\":48}"
             }
         ]
     }

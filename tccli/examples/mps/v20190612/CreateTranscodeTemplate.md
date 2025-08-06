@@ -8,7 +8,7 @@ Input:
 tccli mps CreateTranscodeTemplate --cli-unfold-argument  \
     --RemoveVideo 0 \
     --Container mp4 \
-    --Name test \
+    --Name trans_test \
     --AudioTemplate.SampleRate 44100 \
     --AudioTemplate.Codec aac \
     --AudioTemplate.Bitrate 200 \

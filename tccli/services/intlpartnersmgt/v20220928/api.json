@@ -923,6 +923,46 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品编码",
+          "example": "p_cbs",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码",
+          "example": "sp_cbs_premium",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件类型编码",
+          "example": "v_cbs_memspace",
+          "member": "string",
+          "name": "ComponentCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件编码",
+          "example": "sv_cbs_memspace_premium",
+          "member": "string",
+          "name": "ItemCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1579,6 +1619,46 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品编码",
+          "example": "p_cbs",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码",
+          "example": "sp_cbs_premium",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件类型编码",
+          "example": "v_cbs_memspace",
+          "member": "string",
+          "name": "ComponentCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件编码",
+          "example": "sv_cbs_memspace_premium",
+          "member": "string",
+          "name": "ItemCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1640,7 +1720,7 @@
         {
           "disabled": false,
           "document": "数据详情",
-          "example": "[...]",
+          "example": "无",
           "member": "CustomerBillDetailData",
           "name": "DetailSet",
           "output_required": false,
@@ -1752,7 +1832,7 @@
         {
           "disabled": false,
           "document": "通过API获取子客账单付费模式汇总值的付费模式详情",
-          "example": "{...}",
+          "example": "无",
           "member": "PayModeSummaryOverviewItem",
           "name": "SummaryOverview",
           "output_required": false,
@@ -1798,7 +1878,7 @@
         {
           "disabled": false,
           "document": "产品纬度的详细信息",
-          "example": "{...}",
+          "example": "无",
           "member": "BusinessSummaryOverviewItem",
           "name": "SummaryOverview",
           "output_required": false,
@@ -1844,7 +1924,7 @@
         {
           "disabled": false,
           "document": "通过API获取子客账单地域汇总值的地域账单详情",
-          "example": "[...]",
+          "example": "无",
           "member": "RegionSummaryOverviewItem",
           "name": "SummaryOverview",
           "output_required": false,
@@ -2046,7 +2126,7 @@
         {
           "disabled": false,
           "document": "数据详情",
-          "example": "{...}",
+          "example": "无",
           "member": "BillDetailData",
           "name": "DetailSet",
           "output_required": false,
