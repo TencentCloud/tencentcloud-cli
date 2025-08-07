@@ -422,6 +422,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "首页隐藏开关：1 显示，0隐藏",
+          "example": "1",
+          "member": "int64",
+          "name": "HomePortalShow",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

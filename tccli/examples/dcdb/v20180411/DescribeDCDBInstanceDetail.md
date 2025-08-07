@@ -131,7 +131,8 @@ Output:
         "WanStatus": 0,
         "WanStatusIpv6": 0,
         "WanVip": "",
-        "WanVipv6": ""
+        "WanVipv6": "",
+        "ProtectedProperty": 1
     }
 }
 ```

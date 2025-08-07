@@ -1,4 +1,4 @@
-**Example 1: demo**
+**Example 1: 集群快照手动创建**
 
 
 
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "InstanceId": "es-xxx",
-        "RequestId": "abc"
+        "RequestId": "16eaxxxx-xxxx-xxxx-xxxx-xxxxxe45ae3c"
     }
 }
 ```

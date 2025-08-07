@@ -7,7 +7,9 @@ Input:
 ```
 tccli tione CreateBillingResourceInstanceHealthCheckTask --cli-unfold-argument  \
     --ResourceGroupId ersg-rf6p8zb8 \
-    --ResourceInstanceIds sm-2z84hf49
+    --ResourceInstanceIds sm-2z84hf49 \
+    --SanityCheckConfig.SanityCheckItems.0.Item nccl-test \
+    --SanityCheckConfig.SanityCheckTimeoutInMin 2
 ```
 
 Output: 

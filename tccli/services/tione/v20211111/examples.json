@@ -11,7 +11,7 @@
     "CreateBillingResourceInstanceHealthCheckTask": [
       {
         "document": "创建资源组节点健康检测任务",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillingResourceInstanceHealthCheckTask\n<公共请求参数>\n\n{\n    \"ResourceGroupId\": \"ersg-rf6p8zb8\",\n    \"ResourceInstanceIds\": [\n        \"sm-2z84hf49\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBillingResourceInstanceHealthCheckTask\n<公共请求参数>\n\n{\n    \"ResourceGroupId\": \"ersg-rf6p8zb8\",\n    \"ResourceInstanceIds\": [\n        \"sm-2z84hf49\"\n    ],\n    \"SanityCheckConfig\": {\n        \"SanityCheckItems\": [\n            {\n                \"Item\": \"nccl-test\"\n            }\n        ],\n        \"SanityCheckTimeoutInMin\": \"2\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": \"jkjc-68wtg233\",\n        \"RequestId\": \"0191f5a9-3f60-4e39-86ab-fb87b225933e\"\n    }\n}",
         "title": "创建资源组节点健康检测任务"
       }

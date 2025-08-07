@@ -6563,6 +6563,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "按照消费组查询订阅的主题",
+          "example": "test_group",
+          "member": "string",
+          "name": "FromGroup",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

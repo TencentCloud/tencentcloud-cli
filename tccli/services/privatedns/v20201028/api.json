@@ -1069,6 +1069,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统帐户uin，需要加白使用",
+          "example": "100000000328",
+          "member": "string",
+          "name": "SystemUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1169,6 +1178,15 @@
           "name": "CnameSpeedupStatus",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统帐户uin，需要加白使用",
+          "example": "100000000328",
+          "member": "string",
+          "name": "SystemUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1178,8 +1196,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域ID, zone-12345678",
-          "example": "zone-12345678",
+          "document": "私有域ID, zone-12sa5ce78",
+          "example": "zone-12sa5ce78",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,
@@ -1341,6 +1359,15 @@
           "name": "RecordIdSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "系统帐户uin，需要加白使用",
+          "example": "100000000328",
+          "member": "string",
+          "name": "SystemUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1377,6 +1404,15 @@
           "name": "ZoneIdSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "系统帐户uin，需要加白使用",
+          "example": "100000000328",
+          "member": "string",
+          "name": "SystemUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2044,6 +2080,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "系统帐户uin，需要加白使用",
+          "example": "100000000328",
+          "member": "string",
+          "name": "SystemUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2085,8 +2130,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域ID: zone-xxxxxx",
-          "example": "zone-12345678",
+          "document": "私有域ID: zone-12c5a6e8",
+          "example": "zone-12c5a6e8",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -2118,6 +2163,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "系统帐户uin，需要加白使用",
+          "example": "100000000328",
+          "member": "string",
+          "name": "SystemUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3022,6 +3076,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统帐户uin，需要加白使用",
+          "example": "100000000328",
+          "member": "string",
+          "name": "SystemUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3098,7 +3161,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "zone-12345ds6",
+          "example": "zone-12e45ds6",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -3121,6 +3184,15 @@
           "name": "AccountVpcSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "系统帐户uin，需要加白使用",
+          "example": "100000000328",
+          "member": "string",
+          "name": "SystemUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3130,8 +3202,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域ID, zone-12345ds6",
-          "example": "zone-12345ds6",
+          "document": "私有域ID, zone-12e45ds6",
+          "example": "zone-12e45ds6",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,

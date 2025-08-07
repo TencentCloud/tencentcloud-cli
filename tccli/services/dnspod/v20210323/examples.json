@@ -94,6 +94,14 @@
         "title": "复制自定义线路分组"
       }
     ],
+    "CreatePackageOrder": [
+      {
+        "document": "开通国际站套餐",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePackageOrder\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\",\n    \"Grade\": \"DPG_ENTERPRISE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b944e8d-6ecd-4fa7-a413-1afeb70cff87\"\n    }\n}",
+        "title": "开通国际站套餐"
+      }
+    ],
     "CreateRecord": [
       {
         "document": " ",
