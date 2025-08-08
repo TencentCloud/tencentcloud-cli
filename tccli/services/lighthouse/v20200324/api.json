@@ -759,7 +759,7 @@
   },
   "metadata": {
     "apiVersion": "2020-03-24",
-    "api_brief": "介绍如何使用API对 lighthouse 实例资源进行相关操作，如启动实例、关闭实例、重启实例、查询实例列表等。",
+    "api_brief": "介绍如何使用API对 Lighthouse 资源和服务进行相关操作，如启动实例、关闭实例、重启实例、查询实例列表等。",
     "serviceNameCN": "轻量应用服务器",
     "serviceShortName": "lighthouse"
   },

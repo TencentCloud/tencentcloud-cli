@@ -2960,6 +2960,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例删除保护标签，1: 已开启删除保护，0: 未开启删除保护",
+          "example": "1",
+          "member": "int64",
+          "name": "ProtectedProperty",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5364,6 +5374,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "实例删除保护标签，1: 已开启删除保护，0: 未开启删除保护",
+          "example": "1",
+          "member": "int64",
+          "name": "ProtectedProperty",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7465,6 +7485,15 @@
           "name": "ShardSerialId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点ID，可指定主节点或者备节点进行kill。可选参数，不传默认为主节点。",
+          "example": "681390887981",
+          "member": "string",
+          "name": "NodeId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7922,7 +7951,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
+          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。<br>注意：该入参会全量替换存量已有安全组集合，并非增量更新。修改需传入全量的预期集合。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -8234,7 +8263,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "tdsql-xxx",
+          "example": "tdsqlshard-xxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,

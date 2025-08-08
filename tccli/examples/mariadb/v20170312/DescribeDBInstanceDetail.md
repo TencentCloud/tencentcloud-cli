@@ -87,7 +87,8 @@ Output:
         "WanStatusIpv6": 0,
         "WanVip": "",
         "WanVipv6": "",
-        "Zone": "ap-guangzhou-2"
+        "Zone": "ap-guangzhou-2",
+        "ProtectedProperty": 1
     }
 }
 ```

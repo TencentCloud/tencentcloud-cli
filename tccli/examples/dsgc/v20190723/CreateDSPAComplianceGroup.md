@@ -12,7 +12,7 @@ tccli dsgc CreateDSPAComplianceGroup --cli-unfold-argument  \
     --ComplianceGroupRules.0.CategoryId 3 \
     --ComplianceGroupRules.0.LevelId 2 \
     --Name task \
-    --Description 分类分级模版描述
+    --Description 分类分级模板描述
 ```
 
 Output: 

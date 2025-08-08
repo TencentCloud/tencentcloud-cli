@@ -400,7 +400,7 @@
       "status": "online"
     },
     "DescribeDSPAAssessmentTemplateControlItems": {
-      "document": "获取DSPA评估模版关联的评估控制项列表",
+      "document": "获取DSPA评估模板关联的评估控制项列表",
       "input": "DescribeDSPAAssessmentTemplateControlItemsRequest",
       "name": "获取DSPA评估模板关联控制项列表",
       "output": "DescribeDSPAAssessmentTemplateControlItemsResponse",
@@ -1397,7 +1397,7 @@
         {
           "disabled": false,
           "document": "关联模板列表",
-          "example": "[{\"TemplateId\":10,\"TemplateName\":\"风险模版\"}]",
+          "example": "[{\"TemplateId\":10,\"TemplateName\":\"风险模板\"}]",
           "member": "TemplateInfo",
           "name": "ReferTemplateList",
           "output_required": true,
@@ -3431,7 +3431,7 @@
         },
         {
           "disabled": false,
-          "document": "1代表模版开启，0代表模版关闭",
+          "document": "1代表模板开启，0代表模板关闭",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -8689,7 +8689,7 @@
         },
         {
           "disabled": false,
-          "document": "是否仅显示已开启模版",
+          "document": "是否仅显示已开启模板",
           "example": "false",
           "member": "bool",
           "name": "IsFilterCloseComplianceGroup",
@@ -8705,7 +8705,7 @@
         {
           "disabled": false,
           "document": "合规组列表",
-          "example": "[{                         \"ComplianceGroupId\": 15114,                         \"Name\": \"模板1\",                         \"Description\": \"\",                         \"ComplianceGroupType\": 2,                         \"ComplianceGroupRules\": null,                         \"LevelGroupId\": 1198,                         \"Disabled\": false,                         \"IsAlias\": false                     }]",
+          "example": "[{\"ComplianceGroupId\": 15114, \"Name\": \"模板1\", \"Description\": \"\", \"ComplianceGroupType\": 2, \"ComplianceGroupRules\": null, \"LevelGroupId\": 1198, \"Disabled\": false, \"IsAlias\": false}]",
           "member": "DspaDiscoveryComplianceGroupInfo",
           "name": "Items",
           "output_required": true,
@@ -12269,7 +12269,7 @@
         },
         {
           "disabled": false,
-          "document": "1代表模版开启，0代表模版关闭",
+          "document": "1代表模板开启，0代表模板关闭",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -12279,7 +12279,7 @@
         },
         {
           "disabled": false,
-          "document": "模版最后修改时间",
+          "document": "模板最后修改时间",
           "example": "2024-10-08 16:11:44",
           "member": "string",
           "name": "ModifyTime",
@@ -17632,7 +17632,7 @@
         },
         {
           "disabled": false,
-          "document": "报告模版名称",
+          "document": "报告模板名称",
           "example": "数据资产报告",
           "member": "string",
           "name": "ReportTemplateName",

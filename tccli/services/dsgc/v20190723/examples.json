@@ -99,7 +99,7 @@
     "CreateDSPAComplianceGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPAComplianceGroup\n<公共请求参数>\n\n{\n    \"LevelGroupId\": \"1\",\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceGroupRules\": [\n        {\n            \"RuleId\": 2,\n            \"CategoryId\": 3,\n            \"LevelId\": 2\n        }\n    ],\n    \"Name\": \"task\",\n    \"Description\": \"分类分级模版描述\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPAComplianceGroup\n<公共请求参数>\n\n{\n    \"LevelGroupId\": \"1\",\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceGroupRules\": [\n        {\n            \"RuleId\": 2,\n            \"CategoryId\": 3,\n            \"LevelId\": 2\n        }\n    ],\n    \"Name\": \"task\",\n    \"Description\": \"分类分级模板描述\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"ComplianceGroupId\": 1\n    }\n}",
         "title": "新增分类分级模板"
       }

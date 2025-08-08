@@ -701,8 +701,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域ID, zone-12345678",
-          "example": "zone-12345678",
+          "document": "私有域ID, zone-12sa5ce78",
+          "example": "zone-12sa5ce78",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,
@@ -1295,8 +1295,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域ID: zone-xxxxxx",
-          "example": "zone-12345678",
+          "document": "私有域ID: zone-12c5a6e8",
+          "example": "zone-12c5a6e8",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -1850,7 +1850,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "zone-12345ds6",
+          "example": "zone-12e45ds6",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -1882,8 +1882,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域ID, zone-12345ds6",
-          "example": "zone-12345ds6",
+          "document": "私有域ID, zone-12e45ds6",
+          "example": "zone-12e45ds6",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,

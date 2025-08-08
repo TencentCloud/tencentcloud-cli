@@ -21988,7 +21988,7 @@
         {
           "disabled": false,
           "document": "任务输出路径。",
-          "example": "cosn://test-bucket-123434324234/result/",
+          "example": "cosn://test-bucket-1/result/",
           "member": "string",
           "name": "OutputPath",
           "output_required": true,
@@ -22088,7 +22088,7 @@
         {
           "disabled": false,
           "document": "任务执行输出信息。",
-          "example": "Invalid compression codec: ,Available codecs are none,bzip2,gzip,deflate.",
+          "example": "Invalid compression codec: ,Available codecs are none,bzip2",
           "member": "string",
           "name": "OutputMessage",
           "output_required": true,
@@ -22318,7 +22318,7 @@
         {
           "disabled": false,
           "document": "任务公共指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "无",
           "member": "CommonMetrics",
           "name": "CommonMetrics",
           "output_required": true,
@@ -22328,7 +22328,7 @@
         {
           "disabled": false,
           "document": "spark任务指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "无",
           "member": "SparkMonitorMetrics",
           "name": "SparkMonitorMetrics",
           "output_required": true,
@@ -22373,6 +22373,16 @@
           "name": "ResourceGroupName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行耗时",
+          "example": "1206",
+          "member": "int64",
+          "name": "JobTimeSum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -12,8 +12,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterSnapshot\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxx\",\n    \"SnapshotName\": \"es-xxx-test_20240912\",\n    \"Indices\": \"kibana_sample_data_flights\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"es-xxx\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "demo"
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"es-xxx\",\n        \"RequestId\": \"16eaxxxx-xxxx-xxxx-xxxx-xxxxxe45ae3c\"\n    }\n}",
+        "title": "集群快照手动创建"
       }
     ],
     "CreateCosMigrateToServerlessInstance": [
@@ -356,7 +356,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreClusterSnapshot\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-qpzizjym\",\n    \"Password\": \"pass\",\n    \"RepositoryName\": \"ES_AUTO_BACKUP\",\n    \"SnapshotName\": \"test1\",\n    \"Indices\": \"testnew\",\n    \"Partial\": \"true\",\n    \"TargetInstanceId\": \"es-qpzizjym\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"es-qpzizjym\",\n        \"RequestId\": \"test\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"es-qpzizjym\",\n        \"RequestId\": \"test1\"\n    }\n}",
         "title": "RestoreClusterSnapshot 恢复快照数据到集群"
       }
     ],
