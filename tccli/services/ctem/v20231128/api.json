@@ -705,7 +705,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "CustomerId",
           "required": true,
@@ -741,7 +741,7 @@
         {
           "disabled": false,
           "document": "子公司",
-          "example": "无",
+          "example": "0cf85f4d362c10027acc6046035417fa",
           "member": "string",
           "name": "EnterpriseUid",
           "required": false,
@@ -750,7 +750,7 @@
         {
           "disabled": false,
           "document": "指定组件",
-          "example": "无",
+          "example": "ssh",
           "member": "string",
           "name": "Components",
           "required": false,
@@ -759,7 +759,7 @@
         {
           "disabled": false,
           "document": "指定域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -768,7 +768,7 @@
         {
           "disabled": false,
           "document": "扫描目录层级:level1,level2,level3,level4",
-          "example": "无",
+          "example": "level1",
           "member": "string",
           "name": "ScanDirLevel",
           "required": false,
@@ -786,7 +786,7 @@
         {
           "disabled": false,
           "document": "扫描池列表，若空表示取所有扫描节点",
-          "example": "无",
+          "example": "[1]",
           "member": "int64",
           "name": "AgentPoolIds",
           "required": false,
@@ -1263,7 +1263,7 @@
         {
           "disabled": false,
           "document": "移动资产数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayApp",
           "name": "List",
           "output_required": false,
@@ -13099,7 +13099,7 @@
         {
           "disabled": false,
           "document": "任务类型：即时任务/周期任务/手动漏洞扫描",
-          "example": "无",
+          "example": "即时任务",
           "member": "string",
           "name": "TaskType",
           "required": false,
@@ -13171,7 +13171,7 @@
         {
           "disabled": false,
           "document": "授权文件id",
-          "example": "11111111111",
+          "example": "0cf85f4d362c10027acc6046035417fa",
           "member": "string",
           "name": "AuthFile",
           "required": false,
@@ -13189,7 +13189,7 @@
         {
           "disabled": false,
           "document": "企业图标",
-          "example": "无",
+          "example": "0cf85f4d362c10027acc6046035417fa",
           "member": "string",
           "name": "Icon",
           "required": false,
@@ -13198,7 +13198,7 @@
         {
           "disabled": false,
           "document": "关键字",
-          "example": "无",
+          "example": "腾讯",
           "member": "string",
           "name": "Keywords",
           "required": false,
@@ -13207,7 +13207,7 @@
         {
           "disabled": false,
           "document": "子公司",
-          "example": "无",
+          "example": "0cf85f4d362c10027acc6046035417fa",
           "member": "string",
           "name": "EnterpriseUid",
           "required": false,
@@ -13225,7 +13225,7 @@
         {
           "disabled": false,
           "document": "指定组件",
-          "example": "无",
+          "example": "ssh",
           "member": "string",
           "name": "Components",
           "required": false,
@@ -13234,7 +13234,7 @@
         {
           "disabled": false,
           "document": "指定域名",
-          "example": "无",
+          "example": "test.com",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -13243,7 +13243,7 @@
         {
           "disabled": false,
           "document": "扫描目录层级:level1,level2,level3,level4",
-          "example": "无",
+          "example": "level1",
           "member": "string",
           "name": "ScanDirLevel",
           "required": false,
@@ -13252,7 +13252,7 @@
         {
           "disabled": false,
           "document": "子公司拓展层次",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "SubCompanyLevel",
           "required": false,
@@ -13261,7 +13261,7 @@
         {
           "disabled": false,
           "document": "是否包含完整的扫描",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsIncludeFullScan",
           "required": false,
@@ -13270,7 +13270,7 @@
         {
           "disabled": false,
           "document": "是否识别集团成员",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "EnableGroupMemberDiscovered",
           "required": false,
@@ -13460,7 +13460,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "CustomerId",
           "required": false,
@@ -13469,7 +13469,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "JobRecordId",
           "required": false,

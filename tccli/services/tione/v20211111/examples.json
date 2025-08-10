@@ -16,6 +16,14 @@
         "title": "创建资源组节点健康检测任务"
       }
     ],
+    "CreateCodeRepo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCodeRepo\n<公共请求参数>\n\n{\n    \"GitConfig\": {\n        \"RepositoryUrl\": \"abc\",\n        \"Branch\": \"master\"\n    },\n    \"GitSecret\": {\n        \"Secret\": \"test\",\n        \"NoSecret\": true\n    },\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"nb-123\",\n        \"RequestId\": \"test123\"\n    }\n}",
+        "title": "创建代码仓库"
+      }
+    ],
     "CreateDataset": [
       {
         "document": "CreateDataset",
@@ -86,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrainingTask\n<公共请求参数>\n\n{\n    \"Name\": \"zhangsan-lora\",\n    \"FrameworkName\": \"PYTORCH\",\n    \"FrameworkEnvironment\": \"tilearn-llm1.0-torch2.1-angel-vllm1.0-py3.10-cuda12.1-gpu\",\n    \"TrainingMode\": \"DDP\",\n    \"ChargeType\": \"PREPAID\",\n    \"ResourceConfigInfos\": [\n        {\n            \"Role\": \"WORKER\",\n            \"Cpu\": 1000,\n            \"Memory\": 1024,\n            \"GpuType\": \"\",\n            \"Gpu\": 0,\n            \"InstanceType\": \"\",\n            \"InstanceTypeAlias\": \"\",\n            \"InstanceNum\": 1\n        }\n    ],\n    \"ResourceGroupId\": \"ersg-rf6p8zb8\",\n    \"Tags\": [],\n    \"Remark\": \"\",\n    \"CodePackagePath\": {\n        \"Bucket\": \"test-gz-1256580188\",\n        \"Region\": \"ap-guangzhou\",\n        \"Paths\": [\n            \"test/\"\n        ],\n        \"Uin\": \"\"\n    },\n    \"EncodedStartCmdInfo\": {\n        \"StartCmdInfo\": \"eyJTdGFydENtZCI6IiIsIlBzU3RhcnRDbWQiOiIiLCJXb3JrZXJTdGFydENtZCI6InNsZWVwIDEwIn0=\"\n    },\n    \"DataConfigs\": [\n        {\n            \"DataSourceType\": \"CFS\",\n            \"MappingPath\": \"/opt/ml/input/data/\",\n            \"CFSSource\": {\n                \"Id\": \"cfs-pchxhlg9\",\n                \"Path\": \"/bin\"\n            }\n        }\n    ],\n    \"TuningParameters\": \"{\\\"test\\\":\\\"test\\\"}\",\n    \"Output\": {\n        \"Bucket\": \"test-gz-1256580188\",\n        \"Region\": \"ap-guangzhou\",\n        \"Paths\": [\n            \"cos_test/\"\n        ],\n        \"Uin\": \"\"\n    },\n    \"LogEnable\": false,\n    \"VpcId\": \"vpc-a26qv3af\",\n    \"SubnetId\": \"subnet-m7xhqcyc\",\n    \"SchedulePolicy\": {\n        \"PriorityClass\": \"\",\n        \"BackOffLimit\": 0\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": \"train-1208038387393233920\",\n        \"RequestId\": \"0161f5a9-3f60-4e39-86ab-fb87b225964d\"\n    }\n}",
         "title": "创建训练任务"
+      }
+    ],
+    "DeleteCodeRepo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCodeRepo\n<公共请求参数>\n\n{\n    \"Id\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test\"\n    }\n}",
+        "title": "删除代码仓库"
       }
     ],
     "DeleteDataset": [
@@ -206,6 +222,22 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBuildInImages\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"RequestId\",\n        \"BuildInImageInfos\": [\n            {\n                \"ImageName\": \"Name1\",\n                \"ImageType\": \"SYSTEM\",\n                \"ImageUrl\": \"ImageUrl1\",\n                \"RegistryRegion\": \"\",\n                \"RegistryId\": \"\",\n                \"AllowSaveAllContent\": false\n            },\n            {\n                \"ImageName\": \"Name2\",\n                \"ImageType\": \"SYSTEM\",\n                \"ImageUrl\": \"ImageUrl2\",\n                \"RegistryRegion\": \"\",\n                \"RegistryId\": \"\",\n                \"AllowSaveAllContent\": true\n            }\n        ]\n    }\n}",
         "title": "获取内置镜像列表"
+      }
+    ],
+    "DescribeCodeRepo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodeRepo\n<公共请求参数>\n\n{\n    \"Id\": \"cr-213214124142\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CodeRepoDetail\": {\n            \"UpdateTime\": \"2024-09-08 18:00:00\",\n            \"Name\": \"git_test\",\n            \"Id\": \"cr-213214124142\",\n            \"GitConfig\": {\n                \"RepositoryUrl\": \"https://test.git\",\n                \"Branch\": \"master\"\n            },\n            \"NoSecret\": true,\n            \"CreateTime\": \"2024-09-24 11:00:00\"\n        },\n        \"RequestId\": \"2313123123yt321y3y2312y\"\n    }\n}",
+        "title": "代码仓库详情"
+      }
+    ],
+    "DescribeCodeRepos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodeRepos\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"abcd\"\n            ],\n            \"Name\": \"cr-ewqnewq\",\n            \"Negative\": true\n        }\n    ],\n    \"Limit\": 0,\n    \"Order\": \"test\",\n    \"OrderField\": \"test\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"CodeRepoSet\": [\n            {\n                \"UpdateTime\": \"test\",\n                \"Name\": \"test\",\n                \"Id\": \"test\",\n                \"GitConfig\": {\n                    \"RepositoryUrl\": \"test\",\n                    \"Branch\": \"test\"\n                },\n                \"NoSecret\": true,\n                \"CreateTime\": \"test\"\n            }\n        ],\n        \"RequestId\": \"test\"\n    }\n}",
+        "title": "代码仓库列表"
       }
     ],
     "DescribeDatasets": [
@@ -374,6 +406,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrainingTasks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"string\"\n            ],\n            \"Name\": \"string\",\n            \"Negative\": true\n        }\n    ],\n    \"TagFilters\": [\n        {\n            \"TagValues\": [\n                \"string\"\n            ],\n            \"TagKey\": \"string\"\n        }\n    ],\n    \"Limit\": 1,\n    \"OrderField\": \"string\",\n    \"Offset\": 1,\n    \"Order\": \"string\"\n}",
         "output": "{\n    \"Response\": {\n        \"TrainingTaskSet\": [\n            {\n                \"Id\": \"abc\",\n                \"Name\": \"abc\",\n                \"FrameworkName\": \"abc\",\n                \"FrameworkVersion\": \"abc\",\n                \"FrameworkEnvironment\": \"abc\",\n                \"ChargeType\": \"abc\",\n                \"ChargeStatus\": \"abc\",\n                \"ResourceGroupId\": \"abc\",\n                \"ResourceConfigInfos\": [\n                    {\n                        \"Role\": \"abc\",\n                        \"Cpu\": 1,\n                        \"Memory\": 1,\n                        \"GpuType\": \"abc\",\n                        \"Gpu\": 1,\n                        \"InstanceType\": \"abc\",\n                        \"InstanceNum\": 1,\n                        \"InstanceTypeAlias\": \"abc\",\n                        \"RDMAConfig\": {\n                            \"Enable\": true\n                        }\n                    }\n                ],\n                \"TrainingMode\": \"abc\",\n                \"Status\": \"abc\",\n                \"RuntimeInSeconds\": 1,\n                \"CreateTime\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"EndTime\": \"abc\",\n                \"Output\": {\n                    \"Bucket\": \"abc\",\n                    \"Region\": \"abc\",\n                    \"Paths\": [\n                        \"abc\"\n                    ],\n                    \"Uin\": \"abc\"\n                },\n                \"FailureReason\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"BillingInfo\": \"abc\",\n                \"ResourceGroupName\": \"abc\",\n                \"ImageInfo\": {\n                    \"ImageType\": \"abc\",\n                    \"ImageUrl\": \"abc\",\n                    \"RegistryRegion\": \"abc\",\n                    \"RegistryId\": \"abc\"\n                },\n                \"Message\": \"abc\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ],\n                \"CallbackUrl\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "训练任务列表"
+      }
+    ],
+    "ModifyCodeRepo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCodeRepo\n<公共请求参数>\n\n{\n    \"Id\": \"test\",\n    \"GitSecret\": {\n        \"Secret\": \"test\",\n        \"NoSecret\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test\"\n    }\n}",
+        "title": "修改代码仓库"
       }
     ],
     "ModifyModelService": [

@@ -514,6 +514,14 @@
         "title": "资源包绑定策略查询"
       }
     ],
+    "DescribeMeasureConsoleDeductionDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeasureConsoleDeductionDetails\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"ProductCode\": \"p_cls\",\n    \"DeductionTimeBegin\": \"2025-08-04 00:00:00\",\n    \"DeductionTimeEnd\": \"2025-08-05 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Bills\": [\n                {\n                    \"ActualDosage\": \"0.00000559\",\n                    \"AfterDeductionRemain\": \"9.96193018\",\n                    \"BeforeDeductionRemain\": \"9.96193577\",\n                    \"DeductionFactor\": 0.15,\n                    \"DeductionProductName\": \"日志服务CLS\",\n                    \"DeductionSubBillName\": \"日志服务CLS-数据加工\",\n                    \"DeductionSubProductName\": \"日志服务CLS\",\n                    \"DeductionTime\": \"2025-08-04 13:35:45\",\n                    \"DeductionUin\": \"100001127678\",\n                    \"Dosage\": \"0.00003727\",\n                    \"DosageUnit\": \"U\",\n                    \"EndTime\": \"2025-08-04 10:00:00\",\n                    \"PackageName\": \"CLS 预付费包-10U\",\n                    \"PackageUnit\": \"U\",\n                    \"ProductName\": \"日志服务CLS\",\n                    \"ResourceId\": \"cls-a1weqa3test\",\n                    \"ResourceType\": 2,\n                    \"StartTime\": \"2025-08-04 09:00:00\",\n                    \"SubProductName\": \"日志服务CLS\",\n                    \"Uin\": \"100001127589\"\n                }\n            ],\n            \"TotalCount\": 9\n        },\n        \"RequestId\": \"882662d6-7473-495c-bce8-faa4e5457038\"\n    }\n}",
+        "title": "资源包抵扣明细查询"
+      }
+    ],
     "DescribeMeasureDeductionDetailFlow": [
       {
         "document": "无",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ctem CreateCustomer --cli-unfold-argument  \
-    --Name 测试 \
+    --Name 流云测试 \
     --ScanType 资产收集 \
     --Percent 55
 ```

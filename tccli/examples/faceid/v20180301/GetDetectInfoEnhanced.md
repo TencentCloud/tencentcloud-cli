@@ -60,6 +60,8 @@ Output:
             "IntentionVerifyBestFrame": null,
             "IntentionVerifyVideo": null
         },
+        "IsVerifyIntention": false,
+        "IntentionVerifyType": "",
         "RequestId": "91173d84-e461-4da4-a270-2b8d48a2e136",
         "Text": {
             "CompareLibType": "权威库",

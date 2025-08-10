@@ -21,7 +21,7 @@ Output:
                     "CreateAt": "2024-06-06 17:30:23",
                     "CustomerId": 100081,
                     "CustomerName": "5555",
-                    "Detail": "test",
+                    "Detail": "测试资产",
                     "EnterpriseName": "",
                     "EnterpriseUid": "",
                     "Ignored": false,
@@ -36,7 +36,7 @@ Output:
                 "DownloadUrl": "http://a.test.com",
                 "Id": 11,
                 "Logo": "",
-                "Name": "test",
+                "Name": "com.test",
                 "PackageName": "com.test",
                 "Platform": "android",
                 "ServerUrl": "http://test.com"

@@ -17435,6 +17435,30 @@
       ],
       "usage": "out"
     },
+    "VisionCustomDetectQuery": {
+      "document": "TWeSee 语义理解自定义标签请求",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义标签的标识符",
+          "example": "query1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义标签的描述文本",
+          "example": "快递员",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "VisionRecognitionResult": {
       "document": "TWeSee 语义理解结果",
       "members": [
@@ -17548,6 +17572,15 @@
           "name": "WithThumbnail",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "自定义检测标签",
+          "example": "无",
+          "member": "VisionCustomDetectQuery",
+          "name": "CustomDetectQueries",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

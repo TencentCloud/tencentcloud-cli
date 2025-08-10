@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli sqlserver RefreshCamPassword --cli-unfold-argument  \
-    --InstanceId abc \
-    --UserNames abc
+    --InstanceId instance \
+    --UserNames name
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "qwe12312"
     }
 }
 ```

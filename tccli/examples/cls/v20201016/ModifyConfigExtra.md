@@ -20,14 +20,13 @@ tccli cls ModifyConfigExtra --cli-unfold-argument  \
     --ExtractRule.LogRegex .* \
     --ExtractRule.BeginRegex ^ \
     --ExtractRule.Keys date  content \
-    --ExtractRule.FilterKeyRegex.0.Key xxx-xxx \
+    --ExtractRule.FilterKeyRegex.0.Key test-key \
     --ExtractRule.FilterKeyRegex.0.Regex ssss \
     --ExtractRule.UnMatchLogKey testlog \
     --ExtractRule.UnMatchUpLoadSwitch True \
     --ExtractRule.Backtracking -1 \
-    --ExcludePaths.0.Type xxx-xxx \
-    --ExcludePaths.0.Value xxx-xxx \
-    --UserDefineRule xxx-xxx
+    --ExcludePaths.0.Type path \
+    --ExcludePaths.0.Value /var/log
 ```
 
 Output: 
