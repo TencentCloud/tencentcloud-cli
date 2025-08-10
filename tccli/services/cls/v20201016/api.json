@@ -2049,7 +2049,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID。\nKafkaType为0时，KafkaInstance必填",
+          "document": "腾讯云CKafka实例ID。\nKafkaType为0时，KafkaInstance必填\n\n- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。",
           "example": "ckafka-5kysm8",
           "member": "string",
           "name": "KafkaInstance",
@@ -2091,7 +2091,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kafka集群可访问状态，0：可正常访问 ...",
+          "document": "Kafka集群可访问状态。\n\n- 0：可正常访问 \n- -1：broker 连接失败\n- -2：sasl 鉴权失败\n- -3：ckafka 角色未授权\n- -4：topic 列表不存在\n- -5：topic 内暂无数据\n- -6：用户没有 ckafka 权限\n- -7：消费组已经存在\n- -8：kafka 实例不存在或已销毁\n- -9：Broker 列表为空\n- -10：Broker 地址格式不正确\n- -11：Broker 端口非整型",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -3204,7 +3204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作负载的类型",
+          "document": "工作负载的类型，支持\n- deployment\n- statefulset\n- daemonset\n- job\n- cronjob",
           "example": "daemonset",
           "member": "string",
           "name": "Kind",
@@ -6852,7 +6852,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kafka导入配置ID",
+          "document": "Kafka导入配置Id。\n\n- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。\n- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。",
           "example": "06bdb6f6-ae6e-41f6-9e7b-fcab91cb0895",
           "member": "string",
           "name": "Id",
@@ -6861,7 +6861,7 @@
         },
         {
           "disabled": false,
-          "document": "导入CLS目标topic ID",
+          "document": "导入CLS目标日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "1014cc79-f006-48e4-8820-1dc727054111",
           "member": "string",
           "name": "TopicId",
@@ -9396,7 +9396,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件通道，支持Application，Security，Setup，System，ALL\n",
+          "document": "事件通道，支持\n- Application 应用日志\n- Security 安全日志\n- Setup 启动日志\n- System 系统日志\n- ALL 所有日志\n",
           "example": "Application",
           "member": "string",
           "name": "EventChannel",
@@ -9418,7 +9418,7 @@
         },
         {
           "disabled": false,
-          "document": "时间，用户选择自定义时间类型时，需要指定时间",
+          "document": "时间，用户选择自定义时间类型时，需要指定时间，单位秒",
           "example": "12345675",
           "member": "uint64",
           "name": "Timestamp",
@@ -9430,7 +9430,7 @@
         {
           "disabled": false,
           "document": "事件ID过滤列表\n\t\n选填，为空表示不做过滤\n支持正向过滤单个值（例：20）或范围（例：0-20），也支持反向过滤单个值(例：-20)\n多个过滤项之间可由逗号隔开，例：1-200,-100表示采集1-200范围内除了100以外的事件日志",
-          "example": "1-200,-100",
+          "example": "[\"1\",\"-100\"]",
           "member": "string",
           "name": "EventIDs",
           "output_required": true,
@@ -10462,7 +10462,7 @@
         {
           "disabled": false,
           "document": "服务地址",
-          "example": "kafkaconsumer-ap-chongqing.aaa.com:1234",
+          "example": "kafkaconsumer-ap-chongqing.aaa.com:1534",
           "member": "string",
           "name": "ServerAddr",
           "output_required": true,
@@ -10492,7 +10492,7 @@
         {
           "disabled": false,
           "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开",
-          "example": "1256238147-f3061593-cd5b-4321-1234-3ba507d43301",
+          "example": "1256238147-f3061593-cd5b-4321-1254-3ba507d43301",
           "member": "string",
           "name": "UserKafkaTopics",
           "output_required": true,
@@ -10531,7 +10531,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间。格式`YYYY-MM-DD HH:MM:SS`",
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "CreateTime",
@@ -10541,7 +10541,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "更新时间。格式`YYYY-MM-DD HH:MM:SS`",
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "UpdateTime",
@@ -11964,7 +11964,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集配置扩展信息id",
+          "document": "采集配置扩展信息id\n- 通过[获取特殊采集配置](https://cloud.tencent.com/document/api/614/71164)获取采集配置扩展信息id。",
           "example": "6ef60bec-0242-43af-bb20-270359fb54a8",
           "member": "string",
           "name": "ConfigExtraId",
@@ -11974,7 +11974,7 @@
         {
           "disabled": false,
           "document": "采集配置规程名称，最长63个字符，只能包含小写字符、数字及分隔符（“-”），且必须以小写字符开头，数字或小写字符结尾",
-          "example": "table-xxx1",
+          "example": "table-config1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -11982,7 +11982,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题id",
+          "document": "日志主题id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "6ef60bec-0242-43af-bb20-270359fb54a8",
           "member": "string",
           "name": "TopicId",
@@ -11991,7 +11991,7 @@
         },
         {
           "disabled": false,
-          "document": "节点文件配置信息",
+          "document": "自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息，详细参考https://cloud.tencent.com/document/api/614/56471#HostFileInfo",
           "example": "无",
           "member": "HostFileInfo",
           "name": "HostFile",
@@ -12009,7 +12009,7 @@
         },
         {
           "disabled": false,
-          "document": "容器标准输出信息",
+          "document": "自建k8s-容器标准输出信息，包括容器、命名空间等，详细参考https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo",
           "example": "无",
           "member": "ContainerStdoutInfo",
           "name": "ContainerStdout",
@@ -12063,7 +12063,7 @@
         },
         {
           "disabled": false,
-          "document": "类型：container_stdout、container_file、host_file",
+          "document": "容器场景，日志采集输入类型，支持以下三种类型\n- container_stdout 标准输出\n- container_file 容器文件\n- host_file 主机节点文件",
           "example": "container_stdout",
           "member": "string",
           "name": "Type",
@@ -12072,7 +12072,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组ID",
+          "document": "机器组ID\n- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。",
           "example": "6ef60bec-0242-43af-bb20-270359fb54a8",
           "member": "string",
           "name": "GroupId",
@@ -12090,7 +12090,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "日志集ID\n- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。",
           "example": "6ef60bec-0242-43af-bb20-270359fb54a8",
           "member": "string",
           "name": "LogsetId",
@@ -12099,7 +12099,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集name",
+          "document": "日志集名称\n- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集名称。",
           "example": "test-logset",
           "member": "string",
           "name": "LogsetName",
@@ -12108,7 +12108,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题name",
+          "document": "日志主题名称\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题名称。",
           "example": "test-topic",
           "member": "string",
           "name": "TopicName",
@@ -14157,7 +14157,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID，当KafkaType为0时参数KafkaInstance有效且必填。",
+          "document": "腾讯云CKafka实例ID，当KafkaType为0时参数KafkaInstance有效且必填。\n- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。",
           "example": "ckafka-k9m5vj11",
           "member": "string",
           "name": "KafkaInstance",
@@ -14193,8 +14193,8 @@
         },
         {
           "disabled": false,
-          "document": "用户Kafka消费组",
-          "example": "cls-xxxxx",
+          "document": "用户Kafka消费组。\n\n- 消费组是 Kafka 提供的可扩展且具有容错性的消费者机制，一个消费组中存在多个消费者，组内的所有消费者共同消费订阅 Topic 中的消息。一个消费者可同时消费多个 Partition，但一个 Partition 只能被消费组内的一个消费者消费。",
+          "example": "webevent_log-group",
           "member": "string",
           "name": "ConsumerGroupName",
           "required": false,
@@ -16090,7 +16090,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题id",
+          "document": "日志主题id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "f6c4fa6f-xxxx-xxxx-8289-1ff6f77ed975",
           "member": "string",
           "name": "TopicId",
@@ -16108,7 +16108,7 @@
         },
         {
           "disabled": false,
-          "document": "压缩方法",
+          "document": "压缩方法，目前支持\n- lz4\n- zstd",
           "example": "lz4",
           "member": "string",
           "name": "CompressType",

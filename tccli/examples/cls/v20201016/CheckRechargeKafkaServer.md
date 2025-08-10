@@ -7,7 +7,7 @@ Input:
 ```
 tccli cls CheckRechargeKafkaServer --cli-unfold-argument  \
     --KafkaType 1 \
-    --ServerAddr est.cls.tencentyun.com:9095 \
+    --ServerAddr test.cls.tencentyun.com:9095 \
     --IsEncryptionAddr False
 ```
 

@@ -13475,7 +13475,7 @@
         },
         {
           "disabled": false,
-          "document": "文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。\n建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。",
+          "document": "文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。\n注：此字段定义为数组，但仅支持单个文件",
           "example": "[\"yDt1JUUckp77a2omUyEmko88eg49PTsN\"]",
           "member": "string",
           "name": "FileIds",
@@ -13521,7 +13521,7 @@
         {
           "disabled": true,
           "document": "合同（流程）的回调地址",
-          "example": "无",
+          "example": "http://www.qq.com/callback",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -14164,6 +14164,15 @@
           "name": "IntentionActions",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "视频核身相关配置",
+          "example": "无",
+          "member": "RuleIdConfig",
+          "name": "RuleIdConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -16588,6 +16597,21 @@
         }
       ],
       "usage": "both"
+    },
+    "RuleIdConfig": {
+      "document": "视频核身相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "意愿核身语音播报速度，配置后问答模式和点头模式的语音播报环节都会生效，默认值为0：\n0-智能语速（根据播报文案的长度自动调整语音播报速度）\n1-固定1倍速\n2-固定1.2倍速\n3-固定1.5倍速",
+          "example": "0",
+          "member": "uint64",
+          "name": "Speed",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "SealInfo": {
       "document": "模板中指定的印章信息",

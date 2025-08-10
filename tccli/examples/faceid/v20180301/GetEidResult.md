@@ -35,6 +35,8 @@ Output:
             "ProcessedFrontImage": "",
             "WarnInfos": null
         },
+        "IsVerifyIntention": false,
+        "IntentionVerifyType": "",
         "IntentionActionResult": null,
         "IntentionQuestionResult": {
             "AsrResult": null,

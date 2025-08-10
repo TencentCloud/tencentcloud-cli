@@ -3,7 +3,7 @@
     "CreateCustomer": [
       {
         "document": "添加企业",
-        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomer\n<公共请求参数>\n\n{\n    \"Name\": \"测试\",\n    \"ScanType\": \"资产收集\",\n    \"Percent\": 55\n}",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomer\n<公共请求参数>\n\n{\n    \"Name\": \"流云测试\",\n    \"ScanType\": \"资产收集\",\n    \"Percent\": 55\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5458985-ef27-455e-a417-62e8001a4bd6\"\n    }\n}",
         "title": "添加企业"
       }
@@ -20,7 +20,7 @@
       {
         "document": "查看移动端资产",
         "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApps\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppVersion\": \"v1.1.1\",\n                \"Description\": \"\",\n                \"Developer\": \"tester\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-06 17:30:23\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"test\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"b5c10af2a904da1ce896da2800e4933b\",\n                    \"UpdateAt\": \"2024-06-06 17:30:23\"\n                },\n                \"DownloadUrl\": \"http://a.test.com\",\n                \"Id\": 11,\n                \"Logo\": \"\",\n                \"Name\": \"test\",\n                \"PackageName\": \"com.test\",\n                \"Platform\": \"android\",\n                \"ServerUrl\": \"http://test.com\"\n            }\n        ],\n        \"RequestId\": \"922257b7-c750-4d0c-8e74-3f4119551fee\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppVersion\": \"v1.1.1\",\n                \"Description\": \"\",\n                \"Developer\": \"tester\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-06 17:30:23\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"测试资产\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"b5c10af2a904da1ce896da2800e4933b\",\n                    \"UpdateAt\": \"2024-06-06 17:30:23\"\n                },\n                \"DownloadUrl\": \"http://a.test.com\",\n                \"Id\": 11,\n                \"Logo\": \"\",\n                \"Name\": \"com.test\",\n                \"PackageName\": \"com.test\",\n                \"Platform\": \"android\",\n                \"ServerUrl\": \"http://test.com\"\n            }\n        ],\n        \"RequestId\": \"922257b7-c750-4d0c-8e74-3f4119551fee\",\n        \"Total\": 1\n    }\n}",
         "title": "查看移动端资产"
       }
     ],

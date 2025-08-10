@@ -27,7 +27,7 @@
     "CheckRechargeKafkaServer": [
       {
         "document": "校验用户输入Kafka服务地址是否可访问",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"KafkaType\": 1,\n    \"ServerAddr\": \"est.cls.tencentyun.com:9095\",\n    \"IsEncryptionAddr\": false\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"KafkaType\": 1,\n    \"ServerAddr\": \"test.cls.tencentyun.com:9095\",\n    \"IsEncryptionAddr\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"Status\": 0\n    }\n}",
         "title": "校验用户输入Kafka服务地址是否可访问"
       }
@@ -743,7 +743,7 @@
     "ModifyConfigExtra": [
       {
         "document": "修改特殊采集配置任务",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfigExtra\n<公共请求参数>\n\n{\n    \"ConfigExtraId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\",\n    \"Name\": \"testname\",\n    \"TopicId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\",\n    \"Type\": \"host_file\",\n    \"HostFile\": {\n        \"LogPath\": \"/var/log/tmep\",\n        \"FilePattern\": \"*.log\",\n        \"CustomLabels\": [\n            \"key1=value1\",\n            \"key=value2\"\n        ]\n    },\n    \"LogType\": \"minimalist_log\",\n    \"ExtractRule\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"xxx-xxx\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    },\n    \"ExcludePaths\": [\n        {\n            \"Type\": \"xxx-xxx\",\n            \"Value\": \"xxx-xxx\"\n        }\n    ],\n    \"UserDefineRule\": \"xxx-xxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConfigExtra\n<公共请求参数>\n\n{\n    \"ConfigExtraId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\",\n    \"Name\": \"testname\",\n    \"TopicId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\",\n    \"Type\": \"host_file\",\n    \"HostFile\": {\n        \"LogPath\": \"/var/log/tmep\",\n        \"FilePattern\": \"*.log\",\n        \"CustomLabels\": [\n            \"key1=value1\",\n            \"key=value2\"\n        ]\n    },\n    \"LogType\": \"minimalist_log\",\n    \"ExtractRule\": {\n        \"TimeKey\": \"date\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S\",\n        \"Delimiter\": \"|\",\n        \"LogRegex\": \".*\",\n        \"BeginRegex\": \"^\",\n        \"Keys\": [\n            \"date\",\n            \"\",\n            \"content\"\n        ],\n        \"FilterKeyRegex\": [\n            {\n                \"Key\": \"test-key\",\n                \"Regex\": \"ssss\"\n            }\n        ],\n        \"UnMatchLogKey\": \"testlog\",\n        \"UnMatchUpLoadSwitch\": true,\n        \"Backtracking\": -1\n    },\n    \"ExcludePaths\": [\n        {\n            \"Type\": \"path\",\n            \"Value\": \"/var/log\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a8\"\n    }\n}",
         "title": "修改特殊采集配置任务"
       }
@@ -893,13 +893,13 @@
         "document": "源数据预览",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PreviewKafkaRecharge\n<公共请求参数>\n\n{\n    \"PreviewType\": 1,\n    \"KafkaType\": 0,\n    \"KafkaInstance\": \"ckafka-k9m5vj75\",\n    \"UserKafkaTopics\": \"topic_111b1f24-1ce6-45a3-a515-6e293429f111,topic_11161155-0ea3-4e53-9626-72b4837a4111,topic_111f125e-86f6-41c9-9dcc-360594290111\",\n    \"ConsumerGroupName\": \"\",\n    \"Offset\": -1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"LogData\": \"rmap[AvailIndexTraffic:0 AvailStore:0 ClusterAvailableTrafficCapacity:0...\",\n        \"LogSample\": \"\"\n    }\n}",
-        "title": "Kafka导入数据预览"
+        "title": "Kafka导入数据预览-源数据预览"
       },
       {
         "document": "导出结果预览",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PreviewKafkaRecharge\n<公共请求参数>\n\n{\n    \"PreviewType\": 2,\n    \"KafkaType\": 0,\n    \"KafkaInstance\": \"ckafka-l4rped7z\",\n    \"UserKafkaTopics\": \"topic_111b1f24-1ce6-45a3-a515-6e293429f111,topic_11161155-0ea3-4e53-9626-72b4837a4111,topic_111f125e-86f6-41c9-9dcc-360594290111\",\n    \"ConsumerGroupName\": \"\",\n    \"Offset\": -2,\n    \"LogRechargeRule\": {\n        \"RechargeType\": \"minimalist_log\",\n        \"LogRegex\": \"\",\n        \"UnMatchLogSwitch\": true,\n        \"UnMatchLogKey\": \"LogParseFailure\",\n        \"UnMatchLogTimeSrc\": 0,\n        \"EncodingFormat\": 0,\n        \"DefaultTimeSwitch\": true,\n        \"DefaultTimeSrc\": 0,\n        \"TimeKey\": \"\",\n        \"TimeRegex\": \"\",\n        \"TimeFormat\": \"\",\n        \"TimeZone\": \"UTC+08:00\",\n        \"Metadata\": [\n            \"kafka_topic\",\n            \"kafka_partition\",\n            \"kafka_offset\",\n            \"kafka_timestamp\"\n        ],\n        \"Keys\": []\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"LogSample\": \"{\\\"x-intranet-proxy-region\\\":\\\"sh\\\",\\\"x-intranet-proxy-socket-local-address\\\":\\\"::ffff:11.179.111.111\\\",\\\"x-intranet-proxy-socket-local-port\\\":\\\"8443\\\"\",\n        \"LogData\": \"{\\\"__CONTENT__\\\":\\\"{\\\\\\\"x-intranet-proxy-region\\\\\\\":\\\\\\\"sh\\\\\\\",\\\\\\\"x-intranet-proxy-socket-local-address\\\\\\\":\\\\\\\"::ffff:11.179.111.111\\\\\\\",\\\\\\\"x-intranet-proxy-socket-local-port\\\\\\\":\\\\\\\"8443\\\\\\\"\",\n        \"RequestId\": \"d3218ba6-4d98-480a-a97b-8db0ae87ef31\"\n    }\n}",
-        "title": "Kafaka导入数据预览"
+        "title": "Kafka导入数据预览-导出结果预览"
       }
     ],
     "QueryMetric": [

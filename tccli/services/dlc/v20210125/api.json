@@ -3609,7 +3609,7 @@
         },
         {
           "disabled": false,
-          "document": "资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1",
+          "document": "资源使用时长，后付费：固定填1，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -3618,7 +3618,7 @@
         },
         {
           "disabled": false,
-          "document": "资源使用时长的单位，后付费：s，预付费：m。默认为s",
+          "document": "资源使用时长的单位，后付费：h，预付费：m。默认为h",
           "example": "s",
           "member": "string",
           "name": "TimeUnit",
@@ -3672,7 +3672,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎执行任务类型，有效值：SQL/BATCH，默认为SQL",
+          "document": "引擎执行任务类型，有效值：SQL/BATCH，标准引擎默认为BATCH",
           "example": "SQL/BATCH",
           "member": "string",
           "name": "EngineExecType",

@@ -890,7 +890,7 @@
         {
           "disabled": false,
           "document": "Agent可转交的子AgentId列表",
-          "example": "[agent-id1, agent-id2]",
+          "example": "[\"agent-id1\", \"agent-id2\"]",
           "member": "string",
           "name": "Handoffs",
           "output_required": false,
@@ -18170,7 +18170,7 @@
         {
           "disabled": false,
           "document": "工作流画布Json",
-          "example": "无",
+          "example": "{\"WorkflowID\":\"xxx\",\"WorkflowName\":\"qwe\",\"WorkflowDesc\":\"135\",\"Nodes\":[]}",
           "member": "string",
           "name": "DialogJson",
           "output_required": false,
@@ -18203,7 +18203,7 @@
         {
           "disabled": false,
           "document": "API参数配置",
-          "example": "[{\"Name\": \"name\", \"Value\":\"张三\"}}]",
+          "example": "无",
           "member": "CustomVariable",
           "name": "CustomVariables",
           "output_required": false,

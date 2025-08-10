@@ -3602,7 +3602,7 @@
         {
           "disabled": false,
           "document": "数据库创建信息",
-          "example": "[{ \"DBName\": \"db1\",\"Charset\": \"Chinese_PRC_CI_AS\",\"Accounts\": [{\"UserName\": \"andy\",\"Privilege\": \"ReadOnly\",\"AccountType\": \"L1\"}],\"Remark\": \"andy\"}]",
+          "example": "无",
           "member": "DBCreateInfo",
           "name": "DBs",
           "required": true,
@@ -6047,7 +6047,7 @@
         {
           "disabled": false,
           "document": "账户信息列表",
-          "example": "[{\"Status\": 2,\"Remark\": \"--\",\"AccountType\": \"L0\",\"Host\": \"127.0.0.1\",\"Name\": \"xiaowei\",\"IsAdmin\": true,\"UpdateTime\": \"2020-09-22 00:00:00\",\"InternalStatus\": \"enable\",\"Authentication\": \"win-windows\",\"PassTime\": \"2020-09-22 00:00:00\",\"Dbs\": [{\"Privilege\": \"ReadOnly\",\"DBName\": \"db1\"}],\"CreateTime\": \"2020-09-22 00:00:00\"}]",
+          "example": "无",
           "member": "AccountDetail",
           "name": "Accounts",
           "output_required": true,
@@ -8121,15 +8121,17 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库权限列表",
-          "example": "[]",
+          "example": "无",
           "member": "DBPrivilege",
           "name": "DBList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10936,7 +10938,7 @@
         {
           "disabled": false,
           "document": "回档任务记录列表",
-          "example": "[{\"TargetInstanceId\": \"mssql-892932uiu\",\"TargetInstanceName\": \"andy\", \"TargetInstanceStatus\": 2,\"TargetRegion\": \"ap-guangzhou\",\"TargetType\": 0,\"EndTime\": \"0000-00-00 00:00:00\",\"RestoreId\": 1012,\"RestoreTime\": \"2023-01-12 16:22:48\",\"RestoreType\": 0,\"StartTime\": \"2023-01-12 16:22:55\",\"Status\": 0,\"FlowId\": 100}]",
+          "example": "无",
           "member": "RestoreTask",
           "name": "Tasks",
           "output_required": true,
@@ -11298,7 +11300,7 @@
         {
           "disabled": false,
           "document": "多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。",
-          "example": "[\"ap-guangzhou-6\"]",
+          "example": "无",
           "member": "DrZoneInfo",
           "name": "DrZones",
           "required": false,
@@ -13306,7 +13308,7 @@
         {
           "disabled": false,
           "document": "修改备注的账户信息",
-          "example": "[{\"Remark\":\"备注\",\"UserName\":\"userName\"}]",
+          "example": "无",
           "member": "AccountRemark",
           "name": "Accounts",
           "required": true,
@@ -16851,7 +16853,7 @@
         {
           "disabled": false,
           "document": "按照ReNameRestoreDatabase中的库进行重命名，仅在Type = 1重命名回档方式有效；不填则按照默认方式命名库，DBs参数确定要恢复的库",
-          "example": "[{\"OldName\": \"db1\",\"NewName\": \"db2\"}]",
+          "example": "无",
           "member": "RenameRestoreDatabase",
           "name": "RenameRestore",
           "required": false,
@@ -18242,7 +18244,7 @@
         {
           "disabled": false,
           "document": "代金券ID，目前单个订单只能使用一张代金券",
-          "example": "0",
+          "example": "[\"134\"]",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -18296,7 +18298,7 @@
         {
           "disabled": false,
           "document": "多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。\n",
-          "example": "[\"ap-guangzhou-3\"]",
+          "example": "无",
           "member": "DrZoneInfo",
           "name": "DrZones",
           "required": false,

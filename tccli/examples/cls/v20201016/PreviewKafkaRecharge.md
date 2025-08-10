@@ -1,4 +1,4 @@
-**Example 1: Kafka导入数据预览**
+**Example 1: Kafka导入数据预览-源数据预览**
 
 源数据预览
 
@@ -25,7 +25,7 @@ Output:
 }
 ```
 
-**Example 2: Kafaka导入数据预览**
+**Example 2: Kafka导入数据预览-导出结果预览**
 
 导出结果预览
 

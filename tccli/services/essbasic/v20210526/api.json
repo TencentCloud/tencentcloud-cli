@@ -11569,6 +11569,15 @@
           "name": "IntentionActions",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "视频核身相关配置",
+          "example": "无",
+          "member": "RuleIdConfig",
+          "name": "RuleIdConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -13605,6 +13614,21 @@
         }
       ],
       "usage": "out"
+    },
+    "RuleIdConfig": {
+      "document": "视频核身相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "意愿核身语音播报速度，配置后问答模式和点头模式的语音播报环节都会生效，默认值为0：\n0-智能语速（根据播报文案的长度自动调整语音播报速度）\n1-固定1倍速\n2-固定1.2倍速\n3-固定1.5倍速",
+          "example": "0",
+          "member": "uint64",
+          "name": "Speed",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "SignComponentConfig": {
       "document": "签署控件的配置信息，用在嵌入式发起的页面配置，包括 \n\n- 签署控件 是否默认展示日期.",

@@ -416,7 +416,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "CustomerId",
           "required": true,
@@ -858,7 +858,7 @@
         {
           "disabled": false,
           "document": "移动资产数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayApp",
           "name": "List",
           "output_required": false,
@@ -7804,7 +7804,7 @@
         {
           "disabled": false,
           "document": "授权文件id",
-          "example": "11111111111",
+          "example": "0cf85f4d362c10027acc6046035417fa",
           "member": "string",
           "name": "AuthFile",
           "required": false,
@@ -7822,7 +7822,7 @@
         {
           "disabled": false,
           "document": "企业图标",
-          "example": "无",
+          "example": "0cf85f4d362c10027acc6046035417fa",
           "member": "string",
           "name": "Icon",
           "required": false,
@@ -7840,7 +7840,7 @@
         {
           "disabled": false,
           "document": "子公司拓展层次",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "SubCompanyLevel",
           "required": false,
@@ -7849,7 +7849,7 @@
         {
           "disabled": false,
           "document": "是否包含完整的扫描",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsIncludeFullScan",
           "required": false,
@@ -7967,7 +7967,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "CustomerId",
           "required": false,
@@ -7976,7 +7976,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "JobRecordId",
           "required": false,
