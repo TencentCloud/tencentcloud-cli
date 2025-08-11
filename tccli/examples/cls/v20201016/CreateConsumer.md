@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cls CreateConsumer --cli-unfold-argument  \
-    --TopicId 3c38e5b1-xxxx-xxxx-8963-3af704e22e73 \
+    --TopicId 871710c5-35cd-4d1e-8e79-2fa92c35d612 \
     --Ckafka.Vip 10.0.0.0 \
     --Ckafka.Vport 8080 \
     --Ckafka.InstanceId ckafka-xxxx \
@@ -23,7 +23,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6ef60xxx-xxxx-xxxx-bxxx-270359fb5xxx"
+        "RequestId": "5beb8d61-93b9-417b-85a3-4d7db8f7618a"
     }
 }
 ```

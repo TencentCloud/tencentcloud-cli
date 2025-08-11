@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cls DescribeConfigMachineGroups --cli-unfold-argument  \
-    --ConfigId xxxxxxxxxx
+    --ConfigId 3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a
 ```
 
 Output: 

@@ -34,7 +34,7 @@ Output:
                 },
                 "Id": 12,
                 "Logo": "",
-                "Name": "测试",
+                "Name": "com.qq.test测试",
                 "QrCode": ""
             }
         ],

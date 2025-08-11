@@ -19,8 +19,8 @@ Output:
                 "DisplayToolCommon": {
                     "CreateAt": "2024-06-06 17:42:47",
                     "CustomerId": 100081,
-                    "CustomerName": "5555",
-                    "Detail": "test",
+                    "CustomerName": "腾讯test",
+                    "Detail": "com.qq.test测试",
                     "EnterpriseName": "",
                     "EnterpriseUid": "",
                     "Ignored": false,
@@ -34,7 +34,7 @@ Output:
                 },
                 "Id": 11,
                 "Logo": "",
-                "Name": "测试",
+                "Name": "com.qq.test",
                 "QrCode": ""
             }
         ],

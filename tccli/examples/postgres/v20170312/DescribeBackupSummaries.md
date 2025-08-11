@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli postgres DescribeBackupSummaries --cli-unfold-argument  \
-    --Limit 20 \
+    --Limit 1 \
     --Offset 0 \
     --OrderByType desc
 ```

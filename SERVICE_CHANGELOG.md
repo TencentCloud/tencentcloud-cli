@@ -1,69 +1,53 @@
-# Release 3.0.1256.1
+# Release 3.0.1257.1
 
-## 费用中心(billing) 版本：2018-07-09
+## DNSPod(dnspod) 版本：2021-03-23
 
-### 第 97 次发布
+### 第 56 次发布
 
-发布时间：2025-08-11 01:11:20
+发布时间：2025-08-12 01:44:01
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [DescribeMeasureConsoleDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/87544)
+* [WhoisInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#WhoisInfo)
 
-新增数据结构：
+	* 新增成员：RegistrarType
 
-* [DescribeMeasureConsoleDeductionDetailsData](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureConsoleDeductionDetailsData)
-* [DescribeMeasureConsoleDeductionDto](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureConsoleDeductionDto)
 
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 156 次发布
+### 第 157 次发布
 
-发布时间：2025-08-11 01:35:29
+发布时间：2025-08-12 01:51:14
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增数据结构：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [RuleIdConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#RuleIdConfig)
-
-修改数据结构：
-
-* [Intention](http://document.tencentcloudapi.woa.com/document/product/1668/79360#Intention)
-
-	* 新增成员：RuleIdConfig
-
+* RenewAutoSignLicense
 
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 197 次发布
+### 第 198 次发布
 
-发布时间：2025-08-11 01:36:33
+发布时间：2025-08-12 01:52:41
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增数据结构：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [RuleIdConfig](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RuleIdConfig)
-
-修改数据结构：
-
-* [Intention](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Intention)
-
-	* 新增成员：RuleIdConfig
-
+* ChannelRenewAutoSignLicense
 
 
 
@@ -71,11 +55,11 @@
 
 
 
-## 人脸核身(faceid) 版本：2018-03-01
+## 人脸识别(iai) 版本：2020-03-03
 
-### 第 82 次发布
+### 第 5 次发布
 
-发布时间：2025-08-11 01:37:31
+发布时间：2025-08-12 01:57:36
 
 本次发布包含了以下内容：
 
@@ -83,74 +67,125 @@
 
 修改接口：
 
-* [GetDetectInfoEnhanced](http://document.tencentcloudapi.woa.com/document/product/1007/41957)
+* [CompareFace](http://document.tencentcloudapi.woa.com/document/product/867/44987)
 
-	* 新增出参：IsVerifyIntention, IntentionVerifyType
-
-* [GetEidResult](http://document.tencentcloudapi.woa.com/document/product/1007/54090)
-
-	* 新增出参：IsVerifyIntention, IntentionVerifyType
+	* 新增入参：FaceMatchingStrategy
 
 
 
 
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
+## 人脸识别(iai) 版本：2018-03-01
 
-### 第 82 次发布
 
-发布时间：2025-08-11 01:43:53
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 45 次发布
+
+发布时间：2025-08-12 02:21:09
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增数据结构：
+<font color="#dd0000">**删除接口**：</font>
 
-* [VisionCustomDetectQuery](http://document.tencentcloudapi.woa.com/document/product/1081/34988#VisionCustomDetectQuery)
+* DescribeDBSlowlogs
 
-修改数据结构：
+<font color="#dd0000">**删除数据结构**：</font>
 
-* [VisionSummaryConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#VisionSummaryConfig)
+* NormalQueryItem
+* SlowlogDetail
 
-	* 新增成员：CustomDetectQueries
 
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 69 次发布
+
+发布时间：2025-08-12 02:38:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateOriginGroup](http://document.tencentcloudapi.woa.com/document/product/1738/81136)
+
+	* <font color="#dd0000">**修改入参**：</font>Records
+
+* [DeleteOriginGroup](http://document.tencentcloudapi.woa.com/document/product/1738/81135)
+
+	* <font color="#dd0000">**修改入参**：</font>GroupId
+
+* [ModifyOriginGroup](http://document.tencentcloudapi.woa.com/document/product/1738/81133)
+
+	* <font color="#dd0000">**修改入参**：</font>GroupId
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
 
 
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
 
-### 第 93 次发布
+### 第 94 次发布
 
-发布时间：2025-08-11 02:10:09
+发布时间：2025-08-12 02:41:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [CreateCodeRepo](http://document.tencentcloudapi.woa.com/document/product/851/87549)
-* [DeleteCodeRepo](http://document.tencentcloudapi.woa.com/document/product/851/87548)
-* [DescribeCodeRepo](http://document.tencentcloudapi.woa.com/document/product/851/87547)
-* [DescribeCodeRepos](http://document.tencentcloudapi.woa.com/document/product/851/87546)
-* [ModifyCodeRepo](http://document.tencentcloudapi.woa.com/document/product/851/87545)
+* [CreateNotebook](http://document.tencentcloudapi.woa.com/document/product/851/85842)
+
+	* 新增入参：ExposePortConfig
+
+* [DescribeBillingResourceGroup](http://document.tencentcloudapi.woa.com/document/product/851/82745)
+
+	* 新增出参：Supervisors
+
 
 新增数据结构：
 
-* [CodeRepoDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#CodeRepoDetail)
-* [GitConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#GitConfig)
-* [GitSecret](http://document.tencentcloudapi.woa.com/document/product/851/74915#GitSecret)
+* [ExposePortConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#ExposePortConfig)
+* [PortElement](http://document.tencentcloudapi.woa.com/document/product/851/74915#PortElement)
+* [ResourceGroupSupervisor](http://document.tencentcloudapi.woa.com/document/product/851/74915#ResourceGroupSupervisor)
 
 修改数据结构：
 
-* [VolumeMount](http://document.tencentcloudapi.woa.com/document/product/851/74915#VolumeMount)
+* [NotebookDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#NotebookDetail)
 
-	* 新增成员：CosPathInfo
+	* 新增成员：ExposePortConfig
 
 
 
 
 ## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## TSF-Polaris&ZK&网关(tse) 版本：2020-12-07
+
+### 第 93 次发布
+
+发布时间：2025-08-12 02:46:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEngine](http://document.tencentcloudapi.woa.com/document/product/1364/74907)
+
+	* 新增入参：ZoneIds, EngineRegionTag
+
 
 
 

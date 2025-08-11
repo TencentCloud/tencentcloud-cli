@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cls DeleteConfig --cli-unfold-argument  \
-    --ConfigId xxxxxxxxxx
+    --ConfigId 3581a3be-aa41-423b-995a-54ec84da6264
 ```
 
 Output: 

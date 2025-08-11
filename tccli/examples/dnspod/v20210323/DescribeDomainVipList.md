@@ -8,7 +8,7 @@ Input:
 tccli dnspod DescribeDomainVipList --cli-unfold-argument  \
     --Offset 0 \
     --Limit 20 \
-    --Keyword test
+    --Keyword dnspod
 ```
 
 Output: 

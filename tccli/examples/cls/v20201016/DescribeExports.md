@@ -29,6 +29,7 @@ Output:
                 "Status": "Completed",
                 "From": 1607499207000,
                 "To": 1607499207000,
+                "SyntaxRule": 0,
                 "CreateTime": "2020-08-08 12:12:12"
             }
         ],

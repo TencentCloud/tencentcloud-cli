@@ -127,7 +127,7 @@
       "status": "online"
     },
     "AssociateHaVipInstance": {
-      "document": "本接口（AssociateHaVipInstance）用于HAVIP绑定子机或网卡（限制HaVip的飘移范围）。",
+      "document": "本接口（AssociateHaVipInstance）用于HAVIP绑定子机或网卡（限制HaVip的漂移范围）。",
       "input": "AssociateHaVipInstanceRequest",
       "name": "HAVIP绑定子机或网卡",
       "output": "AssociateHaVipInstanceResponse",
@@ -6518,7 +6518,7 @@
         {
           "disabled": false,
           "document": "HaVip绑定的子机或网卡。最多支持10个实例。",
-          "example": "[{\"HaVipId\": \"havip-7tqt5jn6\", \"InstanceType\": \"CVM\", \"InstanceId\": \"ins-3qx9elib\"}]",
+          "example": "无",
           "member": "HaVipAssociation",
           "name": "HaVipAssociationSet",
           "required": true,

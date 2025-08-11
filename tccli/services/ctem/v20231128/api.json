@@ -4874,7 +4874,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayManage",
           "name": "List",
           "output_required": false,
@@ -5048,7 +5048,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayNetDisk",
           "name": "List",
           "output_required": false,
@@ -7975,7 +7975,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayVul",
           "name": "List",
           "output_required": false,
@@ -8149,7 +8149,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ] ",
+          "example": "无",
           "member": "DisplayWeakPassword",
           "name": "List",
           "output_required": false,
@@ -8323,7 +8323,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayWechatApplet",
           "name": "List",
           "output_required": false,
@@ -8497,7 +8497,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayWechatOfficialAccount",
           "name": "List",
           "output_required": false,

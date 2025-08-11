@@ -5028,6 +5028,24 @@
           "name": "AffinityConstraint",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定zone id列表",
+          "example": "[100006,100007]",
+          "member": "int64",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "地域特殊标签，用于区分相同地域，不通的业务属性",
+          "example": "ziyan_fit",
+          "member": "string",
+          "name": "EngineRegionTag",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

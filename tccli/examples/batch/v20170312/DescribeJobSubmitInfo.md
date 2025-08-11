@@ -1,6 +1,6 @@
 **Example 1: 获取作业的提交信息**
 
-
+获取作业的提交信息
 
 Input: 
 
@@ -23,10 +23,6 @@ Output:
                         "ImageId": "img-bd78fy2t"
                     }
                 },
-                "RedirectInfo": {
-                    "StdoutRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/",
-                    "StderrRedirectPath": "cos://bucket-appid..cosgz.myqcloud.com/hello2/logs/"
-                },
                 "Application": {
                     "Command": "python -c \"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\" ",
                     "DeliveryForm": "LOCAL"
@@ -43,10 +39,6 @@ Output:
                         "InstanceType": "S1.SMALL1",
                         "ImageId": "img-bd78fy2t"
                     }
-                },
-                "RedirectInfo": {
-                    "StdoutRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/",
-                    "StderrRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/"
                 },
                 "Application": {
                     "Command": "python -c \"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\" ",
@@ -65,10 +57,6 @@ Output:
                         "ImageId": "img-bd78fy2t"
                     }
                 },
-                "RedirectInfo": {
-                    "StdoutRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/",
-                    "StderrRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/"
-                },
                 "Application": {
                     "Command": "python -c \"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\" ",
                     "DeliveryForm": "LOCAL"
@@ -85,10 +73,6 @@ Output:
                         "InstanceType": "S1.SMALL1",
                         "ImageId": "img-bd78fy2t"
                     }
-                },
-                "RedirectInfo": {
-                    "StdoutRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/",
-                    "StderrRedirectPath": "cos://bucket-appid.cosgz.myqcloud.com/hello2/logs/"
                 },
                 "Application": {
                     "Command": "python -c \"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\" ",
@@ -119,7 +103,7 @@ Output:
         ],
         "JobName": "test job",
         "Priority": 1,
-        "JobDescription": "xxx",
+        "JobDescription": "demo job",
         "JobId": "job-97zcl3wt",
         "Tags": [
             {
