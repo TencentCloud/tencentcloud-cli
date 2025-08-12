@@ -4488,7 +4488,7 @@
         {
           "disabled": false,
           "document": "使用资源ID列表查询",
-          "example": "无",
+          "example": "[\"f815b34b\", \"a4ba8c4f\"]",
           "member": "string",
           "name": "ResourceIdList",
           "required": false,
@@ -6268,7 +6268,7 @@
         {
           "disabled": false,
           "document": "使用资源 ID 列表查询",
-          "example": "无",
+          "example": "[\"f815b34b\", \"a4ba8c4f\"]",
           "member": "string",
           "name": "ResourceIdList",
           "required": false,
@@ -8043,8 +8043,8 @@
         },
         {
           "disabled": false,
-          "document": "域名需要转入的账号，支持Uin或者邮箱格式",
-          "example": "test@gmail.com",
+          "document": "域名需要转入的账号Uin",
+          "example": "100000000328",
           "member": "string",
           "name": "Account",
           "required": true,
@@ -11498,6 +11498,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "腾讯注册商资质",
+          "example": "epp",
+          "member": "string",
+          "name": "RegistrarType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

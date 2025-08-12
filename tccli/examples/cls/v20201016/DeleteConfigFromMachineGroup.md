@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cls DeleteConfigFromMachineGroup --cli-unfold-argument  \
-    --GroupId xxx-xxx-xxxxxx \
-    --ConfigId xxxxxxxxxx
+    --GroupId 3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a \
+    --ConfigId 3581a3be-aa41-423b-995a-54ec84da6264
 ```
 
 Output: 

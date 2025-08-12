@@ -31,7 +31,7 @@ Output:
                 "Icon": "",
                 "Id": 31,
                 "Screenshot": "",
-                "Title": "test",
+                "Title": "RabbitMQ Management",
                 "Url": "http://test.cn",
                 "Host": "127.0.0.1"
             }

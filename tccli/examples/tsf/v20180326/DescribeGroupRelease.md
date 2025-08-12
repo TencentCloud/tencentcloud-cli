@@ -88,7 +88,7 @@ Output:
                     "ReleaseTime": "2024-12-24 18:36:54"
                 }
             ],
-            "RepoName": "tsf_100011910000/app-provider",
+            "RepoName": "tsf_001/app-provider",
             "TagName": "20241212161801"
         }
     }

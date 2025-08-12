@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli vpc AssociateHaVipInstance --cli-unfold-argument ```
+tccli vpc AssociateHaVipInstance --cli-unfold-argument  \
+    --HaVipAssociationSet.0.HaVipId havip-crb65sya \
+    --HaVipAssociationSet.0.InstanceId eni-pzrckpyd \
+    --HaVipAssociationSet.0.InstanceType ENI
+```
 
 Output: 
 ```
@@ -23,7 +27,11 @@ Output:
 Input: 
 
 ```
-tccli vpc AssociateHaVipInstance --cli-unfold-argument ```
+tccli vpc AssociateHaVipInstance --cli-unfold-argument  \
+    --HaVipAssociationSet.0.HaVipId havip-crb65sya \
+    --HaVipAssociationSet.0.InstanceId ins-nkgrfbic \
+    --HaVipAssociationSet.0.InstanceType CVM
+```
 
 Output: 
 ```

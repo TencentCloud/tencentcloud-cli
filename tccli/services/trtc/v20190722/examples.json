@@ -556,6 +556,22 @@
         "title": "停止页面录制任务"
       }
     ],
+    "TextToSpeech": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeech\n<公共请求参数>\n\n{\n  \"Text\": \"你好呀\",\n  \"SdkAppId\": 1466000000,\n  \"Voice\": {\n     \"VoiceId\": \"256\"\n  }\n}\n\n",
+        "output": "{\n    \"Response\": {\n        \"Audio\": \"inxxx\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "开始一个语音合成"
+      }
+    ],
+    "TextToSpeechSSE": [
+      {
+        "document": "启动一个SSE流式语音合成，注意在解析时，音频的Type为chunk，其他的Type 非音频",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSSE\n<公共请求参数>\n\n{\n   \"Text\": \"你好呀\",\n    \"SdkAppId\": 14600000000,\n    \"Voice\": {\n        \"VoiceId\": \"256\"\n    }\n}\n\n",
+        "output": "data: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_0\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 0, \"IsEnd\": false}\n\ndata: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_1\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 1, \"IsEnd\": false}\n\ndata: {\"Type\": \"chunk\", \"RequestId\": \"456e7890-e12b-34d5-a678-426614174000\", \"ChunkId\": \"chunk_2\", \"Audio\": \"base64编码的音频数据...\", \"Seq\": 2, \"IsEnd\": true}",
+        "title": "启动一个SSE流式语音合成"
+      }
+    ],
     "UpdateAIConversation": [
       {
         "document": "在对话过程中，想要动态更新tts的音色",
@@ -592,6 +608,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"20250605_9cc525c117ab4545b1ad21543e48412fSz4ZnwTZCW2tyePrHj0Y37WXz4QkUoLvT9P_eRVqiw\",\n    \"ReqTimestamp\": 1749120210000,\n    \"AudioFormat\": 0,\n    \"Audio\": \"The Base64 string of the entire WAV audio file, with valid audio content from 8 to 18 seconds.\",\n    \"AudioMetaInfo\": \"update_metainfo\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"40e323b2-f0e7-402c-be5d-b02aef40d887\"\n    }\n}",
         "title": "更新jackson的音频信息"
+      }
+    ],
+    "VoiceClone": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoiceClone\n<公共请求参数>\n\n{\n  \"SdkAppId\": 1466000000,\n  \"VoiceName\": \"xiaoming_02\",\n  \"APIKey\": \"sk-xxxxxx\",\n  \"PromptAudio\": \"ejxxxxxx\"\n}\n\n",
+        "output": "{\n    \"Response\": {\n        \"VoiceId\": \"xiaoming_02_aidniwqndq\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建一个声音克隆"
       }
     ]
   },

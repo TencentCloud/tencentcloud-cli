@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli cls ModifyConsumer --cli-unfold-argument  \
-    --TopicId fadcc986-xxxx-xxxx-b766-9ce9c193da32 \
-    --Ckafka.InstanceId ckafka-xxxx \
-    --Ckafka.TopicName xxxx_acl_test \
-    --Ckafka.Vip 10.0.0.1 \
+    --TopicId 871710c5-35cd-4d1e-8e79-2fa92c35d612 \
+    --Ckafka.InstanceId ckafka-8j4az592 \
+    --Ckafka.TopicName xxxx_acl_demo \
+    --Ckafka.Vip 127.0.0.1 \
     --Ckafka.Vport 8080 \
-    --Ckafka.InstanceName xxx_ckafka_test \
-    --Ckafka.TopicId topic-maoxxxxx
+    --Ckafka.InstanceName ckafka_test \
+    --Ckafka.TopicId topic-jmpmwe12
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1e5f008f-xxxx-xxxx-9636-ce13c618dfba"
+        "RequestId": "cfde6389-f546-4676-8900-ad3d304cbb54"
     }
 }
 ```
@@ -32,7 +32,7 @@ Input:
 
 ```
 tccli cls ModifyConsumer --cli-unfold-argument  \
-    --TopicId fadcc986-xxxx-xxxx-b766-9ce9c193da32 \
+    --TopicId 871710c5-35cd-4d1e-8e79-2fa92c35d612 \
     --Effective False
 ```
 
@@ -40,7 +40,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "25d826d2-xxxx-xxxx-a4b6-f5490e86ae81"
+        "RequestId": "24c19d3a-9444-4b0a-a1bd-53a87fa50bc5"
     }
 }
 ```

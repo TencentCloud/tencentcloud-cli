@@ -6,22 +6,22 @@ Input:
 
 ```
 tccli cls DescribeConsumer --cli-unfold-argument  \
-    --TopicId xxx-xxx-xxx-xxx
+    --TopicId 871710c5-35cd-4d1e-8e79-2fa92c35d612
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx",
+        "RequestId": "ef9e67c9-8437-477a-8629-06555a3afbbc",
         "Effective": true,
         "Ckafka": {
-            "Vip": "10.123.123.123",
-            "Vport": "8088",
-            "InstanceId": "xx-xx",
-            "InstanceName": "myname",
-            "TopicId": "xxxxx-xxx-xxx",
-            "TopicName": "name"
+            "Vip": "127.0.0.1",
+            "Vport": "9092",
+            "InstanceId": "ckafka-8b4az591",
+            "InstanceName": "kafka协议消费监控",
+            "TopicId": "topic-jmpmwejg",
+            "TopicName": "businesstest000"
         },
         "Content": {
             "EnableTag": true,

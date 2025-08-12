@@ -1,6 +1,6 @@
-**Example 1: 创建日志导出**
+**Example 1: 创建日志下载任务**
 
-本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。
+创建日志下载任务
 
 Input: 
 

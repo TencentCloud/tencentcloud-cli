@@ -13,7 +13,7 @@ Output:
     "Response": {
         "Data": [
             {
-                "AccessKey": "AKID******",
+                "AccessKey": "AKID*****",
                 "AccessKeyID": 10022,
                 "AccessKeyRemark": "",
                 "AppID": 100001,

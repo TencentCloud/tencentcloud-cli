@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "RequestId": "6281ddf9-1914-420b-afb8-93735ac3270a",
-        "Result": "batch-1234456"
+        "Result": "elog-hb6fg5d5"
     }
 }
 ```

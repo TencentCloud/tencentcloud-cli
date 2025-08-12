@@ -5977,7 +5977,7 @@
         },
         {
           "disabled": false,
-          "document": "必填选项，下载的服务类型: nginx tomcat apache iis jks other root",
+          "document": "下载的服务类型: nginx tomcat apache iis jks other root， 不传则默认下载nginx格式",
           "example": "nginx",
           "member": "string",
           "name": "ServiceType",

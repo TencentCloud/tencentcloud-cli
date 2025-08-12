@@ -8371,7 +8371,7 @@
         {
           "disabled": false,
           "document": "音频源的媒体 ID。固定取该媒体中的首个音频流，视频流和其它音频流（如有）将被忽略。",
-          "example": "1234567890",
+          "example": "5145403691207231260",
           "member": "string",
           "name": "FileId",
           "output_required": true,
@@ -8410,6 +8410,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音轨序号，表示选择音频源中的第几个音轨，从0开始计数。默认值为0，表示选择最靠前的音轨。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AudioTrackIdx",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

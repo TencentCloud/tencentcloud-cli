@@ -518,14 +518,6 @@
         "title": "ListApp"
       }
     ],
-    "ListAppCategory": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAppCategory\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Text\": \"知识库问答\",\n                \"Value\": \"knowledge_qa\",\n                \"Logo\": \"https://cdn.xiaowei.qq.com/static/lke/app-icon-knowledge_qa.png\"\n            }\n        ],\n        \"RequestId\": \"ee325589-ef62-4aab-8070-01792336d02a\"\n    }\n}",
-        "title": "获取应用类型列表"
-      }
-    ],
     "ListAppKnowledgeDetail": [
       {
         "document": "列表查询知识库容量详情",

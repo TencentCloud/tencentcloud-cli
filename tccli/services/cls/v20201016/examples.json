@@ -11,7 +11,7 @@
     "ApplyConfigToMachineGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyConfigToMachineGroup\n<公共请求参数>\n\n{\n    \"ConfigId\": \"xxxxxxxxxx\",\n    \"GroupId\": \"xxx-xxx-xxxxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyConfigToMachineGroup\n<公共请求参数>\n\n{\n    \"ConfigId\": \"3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a\",\n    \"GroupId\": \"3581a3be-aa41-423b-995a-54ec84da6264\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "应用采集配置到指定机器组"
       }
@@ -123,8 +123,8 @@
     "CreateConsumer": [
       {
         "document": "CLS 日志投递Ckafka之后，您可以对日志进行实时计算后入库。",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"3c38e5b1-xxxx-xxxx-8963-3af704e22e73\",\n    \"Ckafka\": {\n        \"Vip\": \"10.0.0.0\",\n        \"Vport\": \"8080\",\n        \"InstanceId\": \"ckafka-xxxx\",\n        \"InstanceName\": \"ckafka_test\",\n        \"TopicId\": \"topic-xxxx\",\n        \"TopicName\": \"topic_test\"\n    },\n    \"Content\": {\n        \"EnableTag\": true,\n        \"MetaFields\": [\n            \"__SOURCE__\"\n        ]\n    },\n    \"NeedContent\": true,\n    \"Compression\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-xxxx-xxxx-bxxx-270359fb5xxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"871710c5-35cd-4d1e-8e79-2fa92c35d612\",\n    \"Ckafka\": {\n        \"Vip\": \"10.0.0.0\",\n        \"Vport\": \"8080\",\n        \"InstanceId\": \"ckafka-xxxx\",\n        \"InstanceName\": \"ckafka_test\",\n        \"TopicId\": \"topic-xxxx\",\n        \"TopicName\": \"topic_test\"\n    },\n    \"Content\": {\n        \"EnableTag\": true,\n        \"MetaFields\": [\n            \"__SOURCE__\"\n        ]\n    },\n    \"NeedContent\": true,\n    \"Compression\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5beb8d61-93b9-417b-85a3-4d7db8f7618a\"\n    }\n}",
         "title": "创建投递Ckafka任务"
       }
     ],
@@ -162,10 +162,10 @@
     ],
     "CreateExport": [
       {
-        "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。",
+        "document": "创建日志下载任务",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExport\n<公共请求参数>\n\n{\n    \"TopicId\": \"ee20bb16-3025-4048-b81a-dd436373062e\",\n    \"Query\": \"status:200\",\n    \"Count\": 100,\n    \"Order\": \"desc\",\n    \"Format\": \"json\",\n    \"From\": 1607499107000,\n    \"To\": 1607499207000\n}",
         "output": "{\n    \"Response\": {\n        \"ExportId\": \"57196a6a-7622-47be-bc92-d2ebea959a0f\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "创建日志导出"
+        "title": "创建日志下载任务"
       }
     ],
     "CreateIndex": [
@@ -227,8 +227,8 @@
     "CreateTopic": [
       {
         "document": "创建日志主题",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"xxxxxx-xx-xx-xx-xxxxxxxx\",\n    \"TopicName\": \"testname\",\n    \"PartitionCount\": 1,\n    \"Tags\": [],\n    \"Period\": 12\n}",
-        "output": "{\n    \"Response\": {\n        \"TopicId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"PartitionCount\": 1,\n    \"Tags\": [],\n    \"Period\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建日志主题"
       }
     ],
@@ -268,14 +268,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudProductLogCollection\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-9edkkbdc\",\n    \"AssumerName\": \"CDB\",\n    \"LogType\": \"CDB-AUDIT\",\n    \"CloudProductRegion\": \"qy\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1f5a8e7-51ab-4a3e-8268-a0dc4aac8923\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 3,\n        \"RequestId\": \"f1f5a8e7-51ab-4a3e-8268-a0dc4aac8923\"\n    }\n}",
         "title": "删除云产品投递任务"
       }
     ],
     "DeleteConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"xxxxxxxxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"3581a3be-aa41-423b-995a-54ec84da6264\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除采集规则配置"
       }
@@ -291,7 +291,7 @@
     "DeleteConfigFromMachineGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfigFromMachineGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"xxx-xxx-xxxxxx\",\n    \"ConfigId\": \"xxxxxxxxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfigFromMachineGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a\",\n    \"ConfigId\": \"3581a3be-aa41-423b-995a-54ec84da6264\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除应用到机器组的采集配置"
       }
@@ -306,10 +306,10 @@
     ],
     "DeleteConsumer": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
-        "title": "删除投递配置"
+        "document": "删除投递Ckafka任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"871710c5-35cd-4d1e-8e79-2fa92c35d612\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5beb8d61-93b9-417b-85a3-4d7db8f7618a\"\n    }\n}",
+        "title": "删除投递Ckafka任务"
       }
     ],
     "DeleteCosRecharge": [
@@ -459,7 +459,7 @@
     "DescribeCloudProductLogTasks": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: DescribeCloudProductLogTasks\n      <公共请求参数>\n      \n      {\n  \"Offset\": 0,\n  \"Limit\": 0,\n  \"Filters\": [\n    {\n      \"Key\": \"AsummerName\",\n      \"Values\": [\n        \"cls\"\n      ]\n    }\n  ]\n}",
+        "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: DescribeCloudProductLogTasks\n      <公共请求参数>\n      \n      {\n  \"Offset\": 0,\n  \"Limit\": 0,\n  \"Filters\": [\n    {\n      \"Key\": \"asummerName\",\n      \"Values\": [\n        \"cls\"\n      ]\n    }\n  ]\n}",
         "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"ClsRegion\": \"ap-guangzhou\",\n                \"InstanceId\": \"ins-r8hr2upy\",\n                \"LogsetId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n                \"TopicId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n                \"Extend\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\"\n    }\n}",
         "title": "DescribeCloudProductLogTasks"
       }
@@ -467,7 +467,7 @@
     "DescribeConfigExtras": [
       {
         "document": "获取特殊采集配置",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigExtras\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"configExtraId\",\n            \"Values\": [\n                \"xxxx-xxx-xxxx\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigExtras\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"configExtraId\",\n            \"Values\": [\n                \"3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Configs\": [\n            {\n                \"AdvancedConfig\": \"{\\\"ClsAgentFileTimeout\\\":3600}\",\n                \"CollectInfos\": [\n                    {\n                        \"CollectConfigs\": [\n                            {\n                                \"Name\": \"container_name\"\n                            },\n                            {\n                                \"Name\": \"namespace\"\n                            },\n                            {\n                                \"Name\": \"pod_name\"\n                            },\n                            {\n                                \"Name\": \"pod_ip\"\n                            }\n                        ],\n                        \"Type\": 0\n                    },\n                    {\n                        \"CollectConfigs\": [],\n                        \"Type\": 1\n                    }\n                ],\n                \"ConfigExtraId\": \"26ea1681-dfef-4429-a84f-3450d5d46796\",\n                \"ConfigFlag\": \"label_k8s\",\n                \"ContainerFile\": {\n                    \"Container\": \"\",\n                    \"CustomLabels\": null,\n                    \"ExcludeLabels\": null,\n                    \"ExcludeNamespace\": \"\",\n                    \"FilePaths\": [],\n                    \"FilePattern\": \"\",\n                    \"IncludeLabels\": null,\n                    \"LogPath\": \"\",\n                    \"Namespace\": \"\",\n                    \"WorkLoad\": {\n                        \"Container\": \"\",\n                        \"Kind\": \"\",\n                        \"Name\": \"\",\n                        \"Namespace\": \"\"\n                    }\n                },\n                \"ContainerStdout\": {\n                    \"AllContainers\": true,\n                    \"Container\": \"\",\n                    \"CustomLabels\": null,\n                    \"ExcludeLabels\": null,\n                    \"ExcludeNamespace\": \"\",\n                    \"IncludeLabels\": null,\n                    \"Namespace\": \"name_1\",\n                    \"WorkLoads\": null\n                },\n                \"CreateTime\": \"2023-12-04 14:32:35\",\n                \"ExcludePaths\": null,\n                \"ExtractRule\": {\n                    \"Address\": \"\",\n                    \"AdvanceFilterRules\": null,\n                    \"Backtracking\": 0,\n                    \"BeginRegex\": \"\",\n                    \"Delimiter\": \"\",\n                    \"EventLogRules\": [],\n                    \"FilterKeyRegex\": [],\n                    \"IsGBK\": 0,\n                    \"JsonStandard\": 0,\n                    \"Keys\": [\n                        \"__CONTENT__\"\n                    ],\n                    \"LogRegex\": \"\",\n                    \"MetaTags\": [],\n                    \"MetadataType\": 0,\n                    \"ParseProtocol\": \"\",\n                    \"PathRegex\": \"\",\n                    \"Protocol\": \"\",\n                    \"TimeFormat\": \"\",\n                    \"TimeKey\": \"\",\n                    \"UnMatchLogKey\": null,\n                    \"UnMatchUpLoadSwitch\": false\n                },\n                \"GroupId\": \"886bf7a8-7340-4314-8d64-b360da0ffd78\",\n                \"HostFile\": {\n                    \"CustomLabels\": null,\n                    \"FilePattern\": \"\",\n                    \"LogPath\": \"\"\n                },\n                \"LogFormat\": \"\",\n                \"LogType\": \"minimalist_log\",\n                \"LogsetId\": \"40907915-faa6-46e0-985f-b2fa8c17a080\",\n                \"LogsetName\": \"logset-test\",\n                \"Name\": \"config-test-886bf7a8-7340-4314-8d64-b360da0ffd78\",\n                \"TopicId\": \"b2dcf2e5-9582-4c87-9286-cccccb53889d\",\n                \"TopicName\": \"topic-test\",\n                \"Type\": \"container_stdout\",\n                \"UpdateTime\": \"2023-12-04 14:32:34\",\n                \"UserDefineRule\": \"\"\n            }\n        ],\n        \"RequestId\": \"4e48c681-ebf8-4df1-bf0a-51f689117ac6\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取特殊采集配置"
       }
@@ -475,7 +475,7 @@
     "DescribeConfigMachineGroups": [
       {
         "document": "获取采集规则配置所绑定的机器组",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigMachineGroups\n<公共请求参数>\n\n{\n    \"ConfigId\": \"xxxxxxxxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigMachineGroups\n<公共请求参数>\n\n{\n    \"ConfigId\": \"3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a\"\n}",
         "output": "{\n    \"Response\": {\n        \"MachineGroups\": [\n            {\n                \"AutoUpdate\": \"\",\n                \"CreateTime\": \"2023-11-24 10:22:58\",\n                \"DelayCleanupTime\": 0,\n                \"GroupId\": \"59613f03-304e-492d-8bcc-af04716f4111\",\n                \"GroupName\": \"test-filter\",\n                \"MachineGroupType\": {\n                    \"Type\": \"ip\",\n                    \"Values\": [\n                        \"9.1.9.1\"\n                    ]\n                },\n                \"MetaTags\": [],\n                \"OSType\": 0,\n                \"ServiceLogging\": false,\n                \"Tags\": [],\n                \"UpdateEndTime\": \"\",\n                \"UpdateStartTime\": \"\"\n            }\n        ],\n        \"RequestId\": \"f32611a9-c1ff-48f3-97b3-32e28fe5b359\"\n    }\n}",
         "title": "获取采集规则配置所绑定的机器组"
       }
@@ -492,15 +492,15 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoleSharingList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ConsoleSharingInfos\": [\n            {\n                \"SharingId\": \"13cez28h\",\n                \"SharingUrl\": \"https://clsshare.tencent-cloud.com/s/13cez28h\",\n                \"SharingConfig\": {\n                    \"Name\": \"my-sharing\",\n                    \"Type\": 1,\n                    \"VerifyCode\": \"lEC0V0\",\n                    \"DurationMilliseconds\": 18000,\n                    \"NowTime\": 1706787306086,\n                    \"IsLockTimeRange\": true,\n                    \"IsLockQuery\": true,\n                    \"Params\": [],\n                    \"Resources\": [\n                        \"qcs::cls:ap-guangzhou:uin/10000000001:topic/c1306921-2180-3e45-9azb-31d12217871e6\"\n                    ]\n                },\n                \"ExpiredTime\": 1706789065000,\n                \"CreateTime\": 1706787264000,\n                \"UpdateTime\": 1706787264000\n            }\n        ],\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
         "title": "批量查询控制台检索页/仪表盘免登录分享站点示例"
       }
     ],
     "DescribeConsumer": [
       {
         "document": "获取投递配置",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"Effective\": true,\n        \"Ckafka\": {\n            \"Vip\": \"10.123.123.123\",\n            \"Vport\": \"8088\",\n            \"InstanceId\": \"xx-xx\",\n            \"InstanceName\": \"myname\",\n            \"TopicId\": \"xxxxx-xxx-xxx\",\n            \"TopicName\": \"name\"\n        },\n        \"Content\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\"\n            ],\n            \"TagJsonNotTiled\": true,\n            \"TimestampAccuracy\": 0,\n            \"JsonType\": 0\n        },\n        \"NeedContent\": true,\n        \"Compression\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"871710c5-35cd-4d1e-8e79-2fa92c35d612\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ef9e67c9-8437-477a-8629-06555a3afbbc\",\n        \"Effective\": true,\n        \"Ckafka\": {\n            \"Vip\": \"127.0.0.1\",\n            \"Vport\": \"9092\",\n            \"InstanceId\": \"ckafka-8b4az591\",\n            \"InstanceName\": \"kafka协议消费监控\",\n            \"TopicId\": \"topic-jmpmwejg\",\n            \"TopicName\": \"businesstest000\"\n        },\n        \"Content\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\"\n            ],\n            \"TagJsonNotTiled\": true,\n            \"TimestampAccuracy\": 0,\n            \"JsonType\": 0\n        },\n        \"NeedContent\": true,\n        \"Compression\": 0\n    }\n}",
         "title": "获取投递配置"
       }
     ],
@@ -546,7 +546,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExports\n<公共请求参数>\n\n{\n    \"TopicId\": \"ee20bb16-3025-4048-b81a-dd436373062e\",\n    \"Offset\": 0,\n    \"Limit\": 5\n}",
-        "output": "{\n    \"Response\": {\n        \"Exports\": [\n            {\n                \"TopicId\": \"ee20bb16-3025-4048-b81a-dd436373062e\",\n                \"ExportId\": \"export-57196a6a-7622-47be-bc92-d2ebea959a0f\",\n                \"Query\": \"status:200\",\n                \"FileName\": \"log_2075178708_ee20bb16-3025-4048-b81a-dd436373062f_20210107_xxxxxx_1610001073.tar.gz\",\n                \"CosPath\": \"https://clstest01-xxxxxx.cos.ap-shanghai.myqcloud.com/xxxxxx\",\n                \"FileSize\": 6112993,\n                \"Order\": \"desc\",\n                \"Format\": \"json\",\n                \"Count\": 100000,\n                \"Status\": \"Completed\",\n                \"From\": 1607499207000,\n                \"To\": 1607499207000,\n                \"CreateTime\": \"2020-08-08 12:12:12\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Exports\": [\n            {\n                \"TopicId\": \"ee20bb16-3025-4048-b81a-dd436373062e\",\n                \"ExportId\": \"export-57196a6a-7622-47be-bc92-d2ebea959a0f\",\n                \"Query\": \"status:200\",\n                \"FileName\": \"log_2075178708_ee20bb16-3025-4048-b81a-dd436373062f_20210107_xxxxxx_1610001073.tar.gz\",\n                \"CosPath\": \"https://clstest01-xxxxxx.cos.ap-shanghai.myqcloud.com/xxxxxx\",\n                \"FileSize\": 6112993,\n                \"Order\": \"desc\",\n                \"Format\": \"json\",\n                \"Count\": 100000,\n                \"Status\": \"Completed\",\n                \"From\": 1607499207000,\n                \"To\": 1607499207000,\n                \"SyntaxRule\": 0,\n                \"CreateTime\": \"2020-08-08 12:12:12\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "获取日志导出列表"
       }
     ],
@@ -642,7 +642,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledSqlInfo\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1700c27-xxxx-xxxx-806f-eece0a0e756e\",\n        \"ScheduledSqlTaskInfos\": [\n            {\n                \"CreateTime\": \"2024-12-25 15:07:41\",\n                \"DstResource\": {\n                    \"BizType\": 0,\n                    \"CustomMetricLabels\": [],\n                    \"CustomTime\": \"\",\n                    \"MetricLabels\": [],\n                    \"MetricName\": \"\",\n                    \"Region\": \"ap-chengdu\",\n                    \"TopicId\": \"d30a5165-xxxx-xxxx-9e94-fb733d2c1c0e\"\n                },\n                \"EnableFlag\": 1,\n                \"HasServicesLog\": 2,\n                \"Name\": \"scheduler_sql_delete_task\",\n                \"ProcessDelay\": 60,\n                \"ProcessEndTime\": \"\",\n                \"ProcessPeriod\": 1,\n                \"ProcessStartTime\": \"2024-12-25 15:07:00\",\n                \"ProcessTimeWindow\": \"@m-1m,@m\",\n                \"ProcessType\": 1,\n                \"ScheduledSqlContent\": \"* | select count(*) as c limit 10000\",\n                \"SrcTopicId\": \"fe4e7d35-xxxx-xxxx-82e1-2762471b0928\",\n                \"SrcTopicName\": \"\",\n                \"SrcTopicRegion\": \"ap-chengdu\",\n                \"Status\": 1,\n                \"SyntaxRule\": 1,\n                \"TaskId\": \"44bb210d-xxxx-xxxx-8f7d-7fc5170553d4\",\n                \"UpdateTime\": \"2024-12-25 15:07:41\"\n            }\n        ],\n        \"TotalCount\": 15\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1700c27-xxxx-xxxx-806f-eece0a0e756e\",\n        \"ScheduledSqlTaskInfos\": [\n            {\n                \"CreateTime\": \"2024-12-25 15:07:41\",\n                \"DstResource\": {\n                    \"BizType\": 0,\n                    \"CustomMetricLabels\": [],\n                    \"CustomTime\": \"\",\n                    \"MetricLabels\": [],\n                    \"MetricName\": \"\",\n                    \"Region\": \"ap-chengdu\",\n                    \"TopicId\": \"d30a5165-xxxx-xxxx-9e94-fb733d2c1c0e\"\n                },\n                \"EnableFlag\": 1,\n                \"FullQuery\": 1,\n                \"HasServicesLog\": 2,\n                \"Name\": \"scheduler_sql_delete_task\",\n                \"ProcessDelay\": 60,\n                \"ProcessEndTime\": \"\",\n                \"ProcessPeriod\": 1,\n                \"ProcessStartTime\": \"2024-12-25 15:07:00\",\n                \"ProcessTimeWindow\": \"@m-1m,@m\",\n                \"ProcessType\": 1,\n                \"ScheduledSqlContent\": \"* | select count(*) as c limit 10000\",\n                \"SrcTopicId\": \"fe4e7d35-xxxx-xxxx-82e1-2762471b0928\",\n                \"SrcTopicName\": \"\",\n                \"SrcTopicRegion\": \"ap-chengdu\",\n                \"Status\": 1,\n                \"SyntaxRule\": 1,\n                \"TaskId\": \"44bb210d-xxxx-xxxx-8f7d-7fc5170553d4\",\n                \"UpdateTime\": \"2024-12-25 15:07:41\"\n            }\n        ],\n        \"TotalCount\": 15\n    }\n}",
         "title": "获取ScheduledSql任务列表"
       }
     ],
@@ -687,7 +687,7 @@
       },
       {
         "document": "查询指定告警策略和告警对象的告警历史记录",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAlarmLog\n<公共请求参数>\n\n{\n    \"From\": 1702569600000,\n    \"To\": 1702655999999,\n    \"Query\": \"alert_id:\\\"alarm-5ce45495-09e8-4d58-8f36-768134bf330c\\\" AND monitored_object:\\\"3c514e84-6f1f-46ec-afbf-05de6163f7fe\\\"\",\n    \"Limit\": 1,\n    \"Context\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAlarmLog\n<公共请求参数>\n\n{\n    \"From\": 1702569600000,\n    \"To\": 1702655999999,\n    \"Query\": \"alert_id:\\\"alarm-5ce45495-09e8-4d58-8f36-768134bf330c\\\" AND monitored_object:\\\"3c514e84-6f1f-46ec-afbf-05de6163f7fe\\\"\",\n    \"Limit\": 1,\n    \"Context\": \"Y29udGxxxxC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy\"\n}",
         "output": "{\n    \"Response\": {\n        \"Analysis\": false,\n        \"AnalysisRecords\": null,\n        \"AnalysisResults\": [],\n        \"ColNames\": [],\n        \"Columns\": null,\n        \"Context\": \"Y29udGV4dC0yNmJkYjY1ZS1lODdjLTQ5Y2ItODdiYy0xNmUwNWFlYTYwM2MxNzAyNjEyMzA4MTU1\",\n        \"ListOver\": false,\n        \"RequestId\": \"aefbd480-35c5-43b7-b1df-d625727abebf\",\n        \"Results\": [\n            {\n                \"FileName\": \"\",\n                \"HighLights\": [],\n                \"HostName\": \"\",\n                \"IndexStatus\": \"\",\n                \"LogJson\": \"{\\\"reach_trigger\\\":\\\"false\\\",\\\"label_string\\\":\\\"\\\",\\\"fire_time\\\":1702612278007,\\\"reach_notify\\\":\\\"false\\\",\\\"record_group_id\\\":\\\"\\\",\\\"topic_type\\\":\\\"log\\\",\\\"alert_threshold\\\":15,\\\"trigger_result\\\":\\\"success\\\",\\\"monitored_object\\\":\\\"3c514e84-6f1f-46ec-afbf-05de6163f7fe\\\",\\\"duration\\\":0,\\\"condition_evaluate_result\\\":\\\"QueryResultUnmatch\\\",\\\"notify_type\\\":2,\\\"summary_en\\\":\\\"The trigger condition is not met\\\",\\\"notification_send_result\\\":\\\"NotSend\\\",\\\"trigger_time\\\":1702612278,\\\"notify_template\\\":\\\"notice-8e0660a4-197d-46b0-b1ef-e63571b7a438\\\",\\\"summary_cn\\\":\\\"执行语句结果不满足触发条件\\\",\\\"alert_id\\\":\\\"alarm-5ce45495-09e8-4d58-8f36-768134bf330c\\\",\\\"notify_result\\\":\\\"success\\\",\\\"topic_name\\\":\\\"dyltest2\\\",\\\"process_result\\\":\\\"fail\\\",\\\"notify_failed_reason\\\":\\\"\\\",\\\"object_param\\\":\\\"[{\\\\\\\"EndTime\\\\\\\":1702612230000,\\\\\\\"StartTime\\\\\\\":1702608630000,\\\\\\\"TopicId\\\\\\\":\\\\\\\"3c514e84-6f1f-46ec-afbf-05de6163f7fe\\\\\\\",\\\\\\\"TopicName\\\\\\\":\\\\\\\"dyltest2\\\\\\\",\\\\\\\"TopicType\\\\\\\":\\\\\\\"log\\\\\\\",\\\\\\\"grammarVersion\\\\\\\":\\\\\\\"cql\\\\\\\"}]\\\",\\\"uin\\\":100001127589,\\\"topic_id\\\":\\\"3c514e84-6f1f-46ec-afbf-05de6163f7fe\\\",\\\"record_info\\\":\\\"\\\",\\\"notify_time\\\":1702612278,\\\"level\\\":\\\"Warn\\\",\\\"process_error_msg\\\":\\\"The conditions are not matched, no results\\\",\\\"trigger\\\":\\\"$1.hit_rate<50\\\",\\\"trigger_failed_reason\\\":\\\"The conditions are not matched, no results\\\",\\\"happen_threshold\\\":1,\\\"record_id\\\":\\\"9e35be9f-b617-4827-96c5-97a0383aad0f\\\",\\\"nick_name\\\":\\\"\\\",\\\"logset_id\\\":\\\"19b6cec0-b80f-4ffe-98de-239670e5b19d\\\",\\\"detail\\\":\\\"\\\",\\\"alert_name\\\":\\\"EdgeOne 缓存命中率告警策略_100001127589\\\",\\\"process_error_type\\\":\\\"QueryResultUnmatch\\\",\\\"status\\\":\\\"QueryResultUnmatch\\\"}\",\n                \"PkgId\": \"\",\n                \"PkgLogId\": \"\",\n                \"RawLog\": \"\",\n                \"Source\": \"\",\n                \"Time\": 1702612278007,\n                \"TopicId\": \"louder\",\n                \"TopicName\": \"louder\"\n            }\n        ]\n    }\n}",
         "title": "查询指定告警策略和告警对象的告警历史记录"
       }
@@ -759,14 +759,14 @@
     "ModifyConsumer": [
       {
         "document": "修改Ckafka配置",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"fadcc986-xxxx-xxxx-b766-9ce9c193da32\",\n    \"Ckafka\": {\n        \"InstanceId\": \"ckafka-xxxx\",\n        \"TopicName\": \"xxxx_acl_test\",\n        \"Vip\": \"10.0.0.1\",\n        \"Vport\": \"8080\",\n        \"InstanceName\": \"xxx_ckafka_test\",\n        \"TopicId\": \"topic-maoxxxxx\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e5f008f-xxxx-xxxx-9636-ce13c618dfba\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"871710c5-35cd-4d1e-8e79-2fa92c35d612\",\n    \"Ckafka\": {\n        \"InstanceId\": \"ckafka-8j4az592\",\n        \"TopicName\": \"xxxx_acl_demo\",\n        \"Vip\": \"127.0.0.1\",\n        \"Vport\": \"8080\",\n        \"InstanceName\": \"ckafka_test\",\n        \"TopicId\": \"topic-jmpmwe12\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cfde6389-f546-4676-8900-ad3d304cbb54\"\n    }\n}",
         "title": "修改投递Ckafka任务"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"fadcc986-xxxx-xxxx-b766-9ce9c193da32\",\n    \"Effective\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"25d826d2-xxxx-xxxx-a4b6-f5490e86ae81\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"871710c5-35cd-4d1e-8e79-2fa92c35d612\",\n    \"Effective\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"24c19d3a-9444-4b0a-a1bd-53a87fa50bc5\"\n    }\n}",
         "title": "关闭投递Ckafka任务"
       }
     ],
@@ -867,7 +867,7 @@
     "ModifyTopic": [
       {
         "document": "修改日志主题",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxxxxx-xx-xx-xx-xxxxxxxx\",\n    \"TopicName\": \"testname\",\n    \"Status\": false,\n    \"Tags\": [],\n    \"Period\": 10\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n    \"TopicName\": \"testname\",\n    \"Status\": false,\n    \"Tags\": [],\n    \"Period\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改日志主题"
       }

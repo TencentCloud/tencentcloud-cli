@@ -28,6 +28,7 @@ Output:
                     "TopicId": "d30a5165-xxxx-xxxx-9e94-fb733d2c1c0e"
                 },
                 "EnableFlag": 1,
+                "FullQuery": 1,
                 "HasServicesLog": 2,
                 "Name": "scheduler_sql_delete_task",
                 "ProcessDelay": 60,

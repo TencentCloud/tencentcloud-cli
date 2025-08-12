@@ -2705,6 +2705,17 @@
           "required": false,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否电子身份证\n0：否\n1：是电子身份证",
+          "example": "1",
+          "member": "int64",
+          "name": "ElectronCheck",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15358,7 +15369,7 @@
         {
           "disabled": false,
           "document": "图片的 Base64 值。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "无",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAqgAAAKoCAYAAAC7uA1cAAAAAXNSR0IArs4c6QAAIABJREFUeF6EnduOdUtSnedcx6r69+4GJHgFxHv5EouzLbBfxXc+0Q02tuEBLFm+8KWRMTQHAX4...",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -15462,6 +15473,15 @@
           "name": "EnableQualityCheck",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "默认值为false，打开返回是否存在电子身份证判断。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableElectronCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15472,7 +15492,7 @@
         {
           "disabled": false,
           "document": "卡证类型\n身份证人像面\n身份证国徽面\n\n临时身份证人像面\n临时身份证人像面\n\n港澳台居住证人像面\n港澳台居住证国徽面\n\n外国人永久居留证人像面\n外国人永久居留证国徽面",
-          "example": "无",
+          "example": "身份证人像面",
           "member": "string",
           "name": "Type",
           "output_required": true,

@@ -623,6 +623,15 @@
           "name": "NeedRotateDetection",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "若图片中包含多张人脸，指定选取策略，默认为0。\n- 0：选取其中置信度最高的人脸\n- 1：选取其中面积最大的人脸。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FaceMatchingStrategy",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

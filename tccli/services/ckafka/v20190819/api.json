@@ -3612,20 +3612,20 @@
         },
         {
           "disabled": false,
-          "document": "私有网络Id，必填",
+          "document": "私有网络Id",
           "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "子网id，必填",
+          "document": "子网id",
           "example": "subnet-test",
           "member": "string",
           "name": "SubnetId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -3703,7 +3703,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "[{\"tagKey\":\"tagkey-test\",\"tagValue\":\"tagvalue-test\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -3827,7 +3827,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"ok[apply success]\",\"Data\":{\"FlowId\":0,\"DealNames\":[\"20230608002033882210000\"],\"InstanceId\":\"ckafka-test\",\"DealNameInstanceIdMapping\":[{\"DealName\":\"20230608002033882210000\",\"InstanceIdList\":[\"ckafka-test\"]}]}}",
+          "example": "无",
           "member": "CreateInstancePreResp",
           "name": "Result",
           "output_required": true,
@@ -3903,19 +3903,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
-          "example": "ckafka测试",
+          "document": "私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId",
+          "example": "vpc-test",
           "member": "string",
-          "name": "InstanceName",
-          "required": false,
+          "name": "VpcId",
+          "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId。目前不支持创建基础网络实例，因此该参数必填",
-          "example": "vpc-test",
+          "document": "ckafka集群实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "example": "ckafka测试",
           "member": "string",
-          "name": "VpcId",
+          "name": "InstanceName",
           "required": false,
           "type": "string"
         },
@@ -4066,7 +4066,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "[{\"tagKey\":\"tagkey-test\",\"tagValue\":\"tagvalue-test\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -4090,7 +4090,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"ok[apply success]\",\"Data\":{\"FlowId\":0,\"DealNames\":[\"20230608002033882210000\"],\"InstanceId\":\"ckafka-test\",\"DealNameInstanceIdMapping\":[{\"DealName\":\"20230608002033882210000\",\"InstanceIdList\":[\"ckafka-test\"]}]},\"DeleteRouteTimestamp\":\"1566144000\"}",
+          "example": "无",
           "member": "CreateInstancePostResp",
           "name": "Result",
           "output_required": true,
@@ -10163,11 +10163,11 @@
         },
         {
           "disabled": false,
-          "document": "位点信息，必填",
+          "document": "位点信息",
           "example": "1",
           "member": "int64",
           "name": "Offset",
-          "required": false,
+          "required": true,
           "type": "int"
         }
       ],
@@ -10179,7 +10179,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"Headers\":\"headers-test\",\"Key\":\"key-test\",\"Offset\":0,\"Partition\":0,\"Timestamp\":1730359250108,\"Topic\":\"topic-test\",\"Value\":\"value-test\"}",
+          "example": "无",
           "member": "ConsumerRecord",
           "name": "Result",
           "output_required": true,
@@ -10291,11 +10291,11 @@
         },
         {
           "disabled": false,
-          "document": "位点信息，必填",
+          "document": "位点信息",
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": false,
+          "required": true,
           "type": "int"
         }
       ],
@@ -10307,7 +10307,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"Headers\":\"headers-test\",\"Key\":\"key-test\",\"Offset\":0,\"Partition\":0,\"Timestamp\":1730359250108,\"Topic\":\"topic-test\",\"Value\":\"value-test\"}",
+          "example": "无",
           "member": "ConsumerRecord",
           "name": "Result",
           "output_required": true,

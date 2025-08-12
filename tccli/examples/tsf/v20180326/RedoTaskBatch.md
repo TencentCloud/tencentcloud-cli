@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "6281ddf9-1914-420b-afb8-93735ac3270a",
-        "Result": "batch-123456"
+        "Result": "blog-6a79x94v"
     }
 }
 ```

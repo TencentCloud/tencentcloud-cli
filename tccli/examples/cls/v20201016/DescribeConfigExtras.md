@@ -7,7 +7,7 @@ Input:
 ```
 tccli cls DescribeConfigExtras --cli-unfold-argument  \
     --Filters.0.Key configExtraId \
-    --Filters.0.Values xxxx-xxx-xxxx \
+    --Filters.0.Values 3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a \
     --Offset 0 \
     --Limit 10
 ```

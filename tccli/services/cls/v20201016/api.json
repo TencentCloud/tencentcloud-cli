@@ -120,7 +120,7 @@
       "status": "online"
     },
     "CreateExport": {
-      "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449",
+      "document": "本接口仅创建下载任务。任务返回的下载地址，请用户调用[DescribeExports](https://cloud.tencent.com/document/product/614/56449)查看任务列表，其中有下载地址CosPath参数。",
       "input": "CreateExportRequest",
       "name": "创建日志下载任务",
       "output": "CreateExportResponse",
@@ -204,7 +204,7 @@
       "status": "online"
     },
     "DeleteAlarmShield": {
-      "document": "该接口用于删除告警屏蔽规则。",
+      "document": "该接口用于删除告警屏蔽规则。当告警屏蔽规则在生效中或者是在失效中，无法被删除",
       "input": "DeleteAlarmShieldRequest",
       "name": "删除告警屏蔽规则",
       "output": "DeleteAlarmShieldResponse",
@@ -246,9 +246,9 @@
       "status": "online"
     },
     "DeleteConsumer": {
-      "document": "本接口用于删除投递配置",
+      "document": "删除投递Ckafka任务",
       "input": "DeleteConsumerRequest",
-      "name": "删除投递配置",
+      "name": "删除投递Ckafka任务",
       "output": "DeleteConsumerResponse",
       "status": "online"
     },
@@ -1408,7 +1408,7 @@
         },
         {
           "disabled": false,
-          "document": "规则创建时间。",
+          "document": "规则创建时间。秒级时间戳(s)",
           "example": "1701933943",
           "member": "uint64",
           "name": "CreateTime",
@@ -1418,7 +1418,7 @@
         },
         {
           "disabled": false,
-          "document": "规则更新时间。",
+          "document": "规则更新时间。秒级时间戳(s)",
           "example": "1701933943",
           "member": "uint64",
           "name": "UpdateTime",
@@ -1911,8 +1911,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集配置ID",
-          "example": "xxxxxxxxxx",
+          "document": "采集配置ID\n - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。",
+          "example": "3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -1920,8 +1920,8 @@
         },
         {
           "disabled": false,
-          "document": "机器组ID",
-          "example": "xxx-xxx-xxxxxx",
+          "document": "机器组ID\n- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。",
+          "example": "3581a3be-aa41-423b-995a-54ec84da6264",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -1975,7 +1975,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户输入的加工语句",
+          "document": "加工语句。 当FuncType为2时，EtlContent必须使用[log_auto_output](https://cloud.tencent.com/document/product/614/70733#b3c58797-4825-4807-bef4-68106e25024f) \n\n其他参考文档：\n\n- [创建加工任务](https://cloud.tencent.com/document/product/614/63940) \n-  [函数总览](https://cloud.tencent.com/document/product/614/70395)",
           "example": "fields_set(\"my_field\",\"value\")",
           "member": "string",
           "name": "EtlContent",
@@ -1984,7 +1984,7 @@
         },
         {
           "disabled": false,
-          "document": "加工任务目的topic_id以及别名",
+          "document": "加工任务目标topic_id以及别名，当 FuncType 为 1 时，必填。\n目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "无",
           "member": "DataTransformResouceInfo",
           "name": "DstResources",
@@ -2113,7 +2113,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Ckafka 的 InstanceId",
+          "document": "Ckafka 的 InstanceId。\n- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。\n- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取实例id。",
           "example": "ckafka-8j4rotest",
           "member": "string",
           "name": "InstanceId",
@@ -2124,7 +2124,7 @@
         },
         {
           "disabled": false,
-          "document": "Ckafka 的 TopicName",
+          "document": "Ckafka 的 TopicName。\n- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicName。\n- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicName。",
           "example": "mrxy-business",
           "member": "string",
           "name": "TopicName",
@@ -2135,8 +2135,8 @@
         },
         {
           "disabled": false,
-          "document": "Ckafka 的 Vip",
-          "example": "10.10.2.42",
+          "document": "Ckafka 的 Vip。\n- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip信息。\n- 如果是通过 角色ARN 方式创建投递任务，则Vip字段可为空。",
+          "example": "172.16.0.17",
           "member": "string",
           "name": "Vip",
           "output_required": true,
@@ -2146,7 +2146,7 @@
         },
         {
           "disabled": false,
-          "document": "Ckafka 的 Vport",
+          "document": "Ckafka 的 Vport。\n- 通过 [获取实例属性 ](https://cloud.tencent.com/document/product/597/40836) 获取vip port信息。\n- 如果是通过 角色ARN 方式创建投递任务，则Vport字段可为空。",
           "example": "9092",
           "member": "string",
           "name": "Vport",
@@ -2157,7 +2157,7 @@
         },
         {
           "disabled": false,
-          "document": "Ckafka 的 InstanceName",
+          "document": "Ckafka 的 InstanceName。\n- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取InstanceName。\n- 通过 [创建实例](https://cloud.tencent.com/document/product/597/53207) 获取InstanceName。\n- 如果是通过 角色ARN 方式创建投递任务，则InstanceName字段可为空。",
           "example": "kafka协议消费监控用",
           "member": "string",
           "name": "InstanceName",
@@ -2168,7 +2168,7 @@
         },
         {
           "disabled": false,
-          "document": "Ckafka 的 TopicId",
+          "document": "Ckafka 的 TopicId。\n- 通过 [创建 Topic](https://cloud.tencent.com/document/product/597/73566) 获得TopicId。\n- 通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获得TopicId。\n- 如果是通过 角色ARN 方式创建投递任务，则TopicId字段可为空。",
           "example": "1254011820-24a0d67e-748b-4e30-9502-78779bcc5test",
           "member": "string",
           "name": "TopicId",
@@ -2185,7 +2185,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "FromTopicId",
@@ -2415,7 +2415,7 @@
         {
           "disabled": false,
           "document": "采集规则扩展配置ID",
-          "example": "b388dc72-xxxx-xxxx-9dbb-7d05fdff0376",
+          "example": "3581a3be-aa41-423b-995a-54ec84da6264",
           "member": "string",
           "name": "ConfigExtraId",
           "output_required": true,
@@ -2425,7 +2425,7 @@
         {
           "disabled": false,
           "document": "采集规则名称",
-          "example": "tb-xxx1",
+          "example": "tb-config",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -2435,7 +2435,7 @@
         {
           "disabled": false,
           "document": "日志主题ID",
-          "example": "fadcc986-xxxx-xxxx-b766-9ce9c193da32",
+          "example": "3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a",
           "member": "string",
           "name": "TopicId",
           "output_required": true,
@@ -2444,7 +2444,7 @@
         },
         {
           "disabled": false,
-          "document": "类型：container_stdout、container_file、host_file",
+          "document": "自建k8s集群日志采集类型，支持\n- container_stdout 标准输出\n- container_file 标准文件\n- host_file 节点文件",
           "example": "container_stdout",
           "member": "string",
           "name": "Type",
@@ -2485,7 +2485,7 @@
         {
           "disabled": false,
           "document": "日志格式化方式",
-          "example": "default",
+          "example": "stdout-containerd",
           "member": "string",
           "name": "LogFormat",
           "output_required": true,
@@ -2524,7 +2524,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "更新时间\n- 时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2020-02-16 17:01:50",
           "member": "string",
           "name": "UpdateTime",
@@ -2534,7 +2534,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间\n- 时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2020-02-16 17:01:50",
           "member": "string",
           "name": "CreateTime",
@@ -2554,8 +2554,8 @@
         },
         {
           "disabled": false,
-          "document": "机器组ID",
-          "example": "b388dc72-xxxx-xxxx-9dbb-7d05fdff0376",
+          "document": "机器组ID\n- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。",
+          "example": "3581a3be-aa41-423b-995a-54ec84da6264",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
@@ -2574,7 +2574,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "日志集ID\n- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。",
           "example": "b388dc72-xxxx-xxxx-9dbb-7d05fdff0376",
           "member": "string",
           "name": "LogsetId",
@@ -2651,7 +2651,7 @@
         {
           "disabled": false,
           "document": "日志格式化方式",
-          "example": "default",
+          "example": "stdout-containerd",
           "member": "string",
           "name": "LogFormat",
           "output_required": true,
@@ -2710,7 +2710,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "更新时间\n- 时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2020-02-16 17:01:50",
           "member": "datetime",
           "name": "UpdateTime",
@@ -2720,7 +2720,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间\n- 时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2020-02-16 17:01:50",
           "member": "datetime",
           "name": "CreateTime",
@@ -2895,6 +2895,100 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConsoleSharingInfo": {
+      "document": "控制台分享信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分享ID",
+          "example": "13cez28h",
+          "member": "string",
+          "name": "SharingId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分享链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://clsshare.tencent-cloud.com/s/13cez28h",
+          "member": "string",
+          "name": "SharingUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匿名分享配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsoleSharingConfig",
+          "name": "SharingConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1706780117413",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1706780117413",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1706780117413",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分享链接状态\n1: 正常 \n-1: 因内容安全审查异常导致被封禁(存在于使用公网域名分享时)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "10001-广告 20001-政治 20002-色情 20004-社会事件 20011-暴力 20012-低俗 20006-违法犯罪 20007-谩骂 20008-欺诈 20013-版权 20104-谣言 21000-其他, 10086-聚合, 24001-暴恐（天御独有恶意类型），20472-违法，\n24005-社会\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10001",
+          "member": "uint64",
+          "name": "ContentSafetyCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -3879,7 +3973,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例ID\n- 通过各个接入云产品官方文档获取",
           "example": "ins-r8hrxxx",
           "member": "string",
           "name": "InstanceId",
@@ -3906,7 +4000,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT:  gz\n- MongoDB-AUDIT:  gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT:  gz\n- MongoDB-AUDIT:  gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -3915,7 +4009,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS目标地域",
+          "document": "CLS目标地域\n- 支持地域参考  [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档   ",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ClsRegion",
@@ -3942,7 +4036,7 @@
         },
         {
           "disabled": false,
-          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
+          "document": "日志配置扩展信息， 一般用于存储额外的日志投递配置",
           "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
           "member": "string",
           "name": "Extend",
@@ -3951,7 +4045,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集id",
+          "document": "日志集id\n- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。",
           "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
           "member": "string",
           "name": "LogsetId",
@@ -3960,7 +4054,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题id",
+          "document": "日志主题id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "92cdd6d4-da98-4a6e-",
           "member": "string",
           "name": "TopicId",
@@ -4236,7 +4330,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集配置名称",
+          "document": "采集配置名称\n- 名称种不得包含特殊字符｜\n- 名称最长255字符，超过截断",
           "example": "testname",
           "member": "string",
           "name": "Name",
@@ -4245,8 +4339,8 @@
         },
         {
           "disabled": false,
-          "document": "采集配置所属日志主题ID即TopicId",
-          "example": "xxxxxx-xxx-xxxxxx",
+          "document": "采集配置所属日志主题ID即TopicId\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "f948972f-a063-408c-a59f-8c3230bddaf6",
           "member": "string",
           "name": "Output",
           "required": true,
@@ -4291,7 +4385,7 @@
         {
           "disabled": false,
           "document": "用户自定义采集规则，Json格式序列化的字符串。当LogType为user_define_log时，必填。",
-          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]},\\\"processors\\\":[{\\\"type\\\":\\\"processor_timeformat\\\",\\\"detail\\\":{\\\"KeepSource\\\":true,\\\"TimeFormat\\\":\\\"%s\\\",\\\"SourceKey\\\":\\\"time\\\"}},{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"|\\\",\\\"SourceKey\\\":\\\"msg1\\\",\\\"ExtractKeys\\\":[\\\"submsg1\\\",\\\"submsg2\\\",\\\"submsg3\\\"]},\\\"processors\\\":[]},{\\\"type\\\":\\\"processor_split_key_value\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"：\\\",\\\"SourceKey\\\":\\\"msg2\\\"}}]}]}\"",
+          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]}]}\"",
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
@@ -4383,8 +4477,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递任务绑定的日志主题 ID",
-          "example": "3c38e5b1-xxxx-xxxx-8963-3af704e22e73",
+          "document": "投递任务绑定的日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "example": "871710c5-35cd-4d1e-8e79-2fa92c35d612",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -4573,7 +4667,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "仪表盘订阅名称。",
+          "document": "仪表盘订阅名称。\n输入限制：\n- 不能为空\n- 长度不能超过128字节\n- 不能包含字符'|'",
           "example": "仪表盘-CLS-日报",
           "member": "string",
           "name": "Name",
@@ -4582,7 +4676,7 @@
         },
         {
           "disabled": false,
-          "document": "仪表盘id。",
+          "document": "仪表盘Id。\n- 通过[获取仪表盘](https://cloud.tencent.com/document/product/614/95636)获取仪表盘Id。",
           "example": "dashboard-0d954d68-xxxx-xxxx-95a6-f9eff0db370f",
           "member": "string",
           "name": "DashboardId",
@@ -4591,7 +4685,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅时间cron表达式，格式为：{秒数} {分钟} {小时} {日期} {月份} {星期}；（有效数据为：{分钟} {小时} {日期} {月份} {星期}）。<br><li/>{秒数} 取值范围： 0 ~ 59 <br><li/>{分钟} 取值范围： 0 ~ 59  <br><li/>{小时} 取值范围： 0 ~ 23  <br><li/>{日期} 取值范围： 1 ~ 31 AND (dayOfMonth最后一天： L) <br><li/>{月份} 取值范围： 1 ~ 12 <br><li/>{星期} 取值范围： 0 ~ 6 【0:星期日， 6星期六】",
+          "document": "订阅时间cron表达式，格式为：{秒数} {分钟} {小时} {日期} {月份} {星期}；（有效数据为：{分钟} {小时} {日期} {月份} {星期}）。\n- {秒数} 取值范围： 0 ~ 59 \n- {分钟} 取值范围： 0 ~ 59 \n- {小时} 取值范围： 0 ~ 23 \n- {日期} 取值范围： 1 ~ 31 AND (dayOfMonth最后一天： L) \n- {月份} 取值范围： 1 ~ 12 \n- {星期} 取值范围： 0 ~ 6 【0:星期日， 6星期六】",
           "example": "\"0 40 20 * * ?\"",
           "member": "string",
           "name": "Cron",
@@ -4736,8 +4830,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递规则属于的 topic id",
-          "example": "xxx-xxx-xxx-xxx",
+          "document": "投递规则属于的TopicId。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "example": "871710c5-35cd-4d1e-8e79-2fa92c35d612",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -4745,8 +4839,8 @@
         },
         {
           "disabled": false,
-          "document": "投递的云函数名字。仅支持[事件函数](https://cloud.tencent.com/document/product/583/9694#scf-.E4.BA.8B.E4.BB.B6.E5.87.BD.E6.95.B0) （[函数类型选型](https://cloud.tencent.com/document/product/583/73483)）",
-          "example": "test-report-es",
+          "document": "投递的云函数名字。仅支持[事件函数](https://cloud.tencent.com/document/product/583/9694#scf-.E4.BA.8B.E4.BB.B6.E5.87.BD.E6.95.B0) （[函数类型选型](https://cloud.tencent.com/document/product/583/73483)）\n通过 [获取函数列表](https://cloud.tencent.com/document/product/583/18582) 获取函数信息。",
+          "example": "functionName1",
           "member": "string",
           "name": "FunctionName",
           "required": true,
@@ -4754,8 +4848,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
-          "example": "default",
+          "document": "命名空间。参考 [命名空间管理](https://cloud.tencent.com/document/product/583/35913)\n- 通过 [列出命名空间列表](https://cloud.tencent.com/document/product/583/37158) 获取Name。",
+          "example": "ns1",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -4763,8 +4857,8 @@
         },
         {
           "disabled": false,
-          "document": "函数版本",
-          "example": "$DEFAULT",
+          "document": "函数版本。\n- 通过 [查询函数版本 ](https://cloud.tencent.com/document/product/583/37162) 获取函数版本。",
+          "example": "$LATEST",
           "member": "string",
           "name": "Qualifier",
           "required": true,
@@ -4772,7 +4866,7 @@
         },
         {
           "disabled": false,
-          "document": "投递最长等待时间，单位：秒",
+          "document": "投递最长等待时间，单位：秒。 默认：60",
           "example": "60",
           "member": "uint64",
           "name": "Timeout",
@@ -4781,8 +4875,8 @@
         },
         {
           "disabled": false,
-          "document": "投递最大消息数",
-          "example": "10000000",
+          "document": "投递最大消息数。默认为100。支持范围[1,10000]",
+          "example": "100",
           "member": "uint64",
           "name": "MaxMsgNum",
           "required": false,
@@ -4808,7 +4902,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题Id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "ee20bb16-3025-4048-b81a-dd436373062e",
           "member": "string",
           "name": "TopicId",
@@ -4881,7 +4975,7 @@
         {
           "disabled": false,
           "document": "导出字段",
-          "example": "[\"__timestamp__\",\"a\",\"b\"]",
+          "example": "[\"__timestamp__\"]",
           "member": "string",
           "name": "DerivedFields",
           "required": false,
@@ -4980,7 +5074,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入CLS目标topic ID",
+          "document": "导入CLS目标TopicId。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
           "example": "b53fe5be-7ee3-4031-8043-5a73bad4f572",
           "member": "string",
           "name": "TopicId",
@@ -5034,7 +5128,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID，KafkaType为0时必填。",
+          "document": "腾讯云CKafka实例ID，KafkaType为0时必填。\n- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。",
           "example": "ckafka-2vrgxbxa",
           "member": "string",
           "name": "KafkaInstance",
@@ -5070,8 +5164,8 @@
         },
         {
           "disabled": false,
-          "document": "用户Kafka消费组名称",
-          "example": "cls-dfxxx",
+          "document": "用户Kafka消费组名称。\n- 消费组是 Kafka 提供的可扩展且具有容错性的消费者机制，一个消费组中存在多个消费者，组内的所有消费者共同消费订阅 Topic 中的消息。一个消费者可同时消费多个 Partition，但一个 Partition 只能被消费组内的一个消费者消费。",
+          "example": "consumer-group-name",
           "member": "string",
           "name": "ConsumerGroupName",
           "required": false,
@@ -5335,7 +5429,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源日志主题",
+          "document": "源日志主题ID- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "6ef60bec-0242-43af-bb20-270359fbxxx",
           "member": "string",
           "name": "SrcTopicId",
@@ -5344,7 +5438,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "任务名称，0~255字符",
           "example": "scheduler_sql_delete_task",
           "member": "string",
           "name": "Name",
@@ -5398,7 +5492,7 @@
         },
         {
           "disabled": false,
-          "document": "调度周期(分钟)",
+          "document": "调度周期(分钟)，1~1440分钟",
           "example": "2",
           "member": "int64",
           "name": "ProcessPeriod",
@@ -5416,7 +5510,7 @@
         },
         {
           "disabled": false,
-          "document": "执行延迟(秒)",
+          "document": "执行延迟(秒)，0~120秒，默认60秒",
           "example": "60",
           "member": "int64",
           "name": "ProcessDelay",
@@ -5425,7 +5519,7 @@
         },
         {
           "disabled": false,
-          "document": "源topicId的地域信息",
+          "document": "源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SrcTopicRegion",
@@ -5634,8 +5728,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志集ID",
-          "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
+          "document": "日志集ID\n- 通过[获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。",
+          "example": "64aebb76-644b-4e60-90f6-3c183094da40-ab2f-47ab-9dcd-31413b057812",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -5643,7 +5737,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称",
+          "document": "日志主题名称\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]\n",
           "example": "testname",
           "member": "string",
           "name": "TopicName",
@@ -5725,7 +5819,7 @@
         {
           "disabled": false,
           "document": "主题自定义ID，格式为：用户自定义部分-APPID。未填写该参数时将自动生成ID。\n- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符\n- APPID可在https://console.cloud.tencent.com/developer页面查询",
-          "example": "user-define-233435352",
+          "example": "eb9ec10d-1343-4386-9a6e-75fd9d68726e",
           "member": "string",
           "name": "TopicId",
           "required": false,
@@ -6029,7 +6123,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "仪表盘通知方式。<br>\n<li/>Uin：腾讯云用户<br>\n<li/>Group：腾讯云用户组<br>\n<li/>Email：自定义Email<br>\n<li/>WeCom: 企业微信回调",
+          "document": "仪表盘通知方式。<br>\n<li/>Uin：腾讯云用户<br>\n<li/>Group：腾讯云用户组<br>\n<li/>Email：自定义Email<br>\n<li/>WeCom: 企业微信回调<br>\n<li/>DingTalk：钉钉<br>\n<li/>Lark：飞书",
           "example": "Email",
           "member": "string",
           "name": "ReceiverType",
@@ -6041,7 +6135,7 @@
         {
           "disabled": false,
           "document": "知方式对应的值。\n<br> <li/> 当ReceiverType不是 WeCom 时，Values必填。",
-          "example": "[\"168053\",\"12345\"]",
+          "example": "[\"168053\",\"1\"]",
           "member": "string",
           "name": "Values",
           "output_required": true,
@@ -6464,8 +6558,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "屏蔽规则id。",
-          "example": "bb42f112-a74d-456e-b3c4-ff5472911b42",
+          "document": "屏蔽规则id。通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取屏蔽规则ID",
+          "example": "bc42f172-a74d-496e-b3c4-ff5472911b42",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -6473,8 +6567,8 @@
         },
         {
           "disabled": false,
-          "document": "通知渠道组id。",
-          "example": "notice-bb42f112-a74d-456e-b3c4-ff5472911b42",
+          "document": "通知渠道组id。通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取通知渠道组id",
+          "example": "notice-bb42f112-a74d-476e-b3c4-ff5472911b42",
           "member": "string",
           "name": "AlarmNoticeId",
           "required": true,
@@ -6527,7 +6621,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -6564,7 +6658,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "特殊采集规则扩展配置ID",
+          "document": "特殊采集规则扩展配置ID\n- 通过[获取特殊采集配置](https://cloud.tencent.com/document/api/614/71164)特殊采集规则扩展配置ID。",
           "example": "00903f17-3e27-4f32-b1f5-489cf6e5bf08",
           "member": "string",
           "name": "ConfigExtraId",
@@ -6591,8 +6685,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器组ID",
-          "example": "xxx-xxx-xxxxxx",
+          "document": "机器组ID\n- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。",
+          "example": "3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -6600,8 +6694,8 @@
         },
         {
           "disabled": false,
-          "document": "采集配置ID",
-          "example": "xxxxxxxxxx",
+          "document": "采集配置ID\n - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。",
+          "example": "3581a3be-aa41-423b-995a-54ec84da6264",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -6627,8 +6721,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集规则配置ID",
-          "example": "xxxxxxxxxx",
+          "document": "采集配置ID\n - 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。",
+          "example": "3581a3be-aa41-423b-995a-54ec84da6264",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -6654,7 +6748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "免密分享Id",
+          "document": "免密分享Id。\n- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 \n- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。",
           "example": "13cez28h",
           "member": "string",
           "name": "SharingId",
@@ -6681,8 +6775,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递任务绑定的日志主题 ID",
-          "example": "\"xxx-xxx-xxx-xxx\"",
+          "document": "投递任务绑定的日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "example": "871710c5-35cd-4d1e-8e79-2fa92c35d612",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -6771,7 +6865,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据加工任务id",
+          "document": "数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。",
           "example": "4c216645-01f2-414d-8a87-719b97ba205a",
           "member": "string",
           "name": "TaskId",
@@ -6798,7 +6892,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志导出ID",
+          "document": "日志导出任务Id\n- 通过[获取日志下载任务列表](https://cloud.tencent.com/document/product/614/56449)获取日志导出任务Id。\n",
           "example": "57196a6a-7622-47be-bc92-d2ebea959a0f",
           "member": "string",
           "name": "ExportId",
@@ -6915,7 +7009,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器组ID",
+          "document": "机器组Id\n- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "GroupId",
@@ -6951,7 +7045,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器组ID",
+          "document": "机器组Id\n- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "GroupId",
@@ -7005,8 +7099,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
-          "example": "6ef60bec-0242-43af-bb20-270359fb5xxx",
+          "document": "任务ID，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取",
+          "example": "absbdbfb-0242-43af-bb20-270359fb5xxx",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -7014,7 +7108,7 @@
         },
         {
           "disabled": false,
-          "document": "源日志主题ID",
+          "document": "源日志主题ID，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取",
           "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
           "member": "string",
           "name": "SrcTopicId",
@@ -7068,7 +7162,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "a5ce0c9c-0690-44a5-bc79-5f2190626bd0",
           "member": "string",
           "name": "TopicId",
@@ -7511,7 +7605,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤器，支持如下选项：\nname\n- 按照【特殊采集配置名称】进行模糊匹配过滤。\n- 类型：String\n\nconfigExtraId\n- 按照【特殊采集配置ID】进行过滤。\n- 类型：String\n\ntopicId\n- 按照【日志主题】进行过滤。\n- 类型：String\n\nmachineGroupId\n- 按照【机器组ID】进行过滤。\n- 类型：String\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "过滤器，支持如下选项：\nname\n- 按照【特殊采集配置名称】进行模糊匹配过滤。\n- 类型：String\n- 示例：test-config\n\nconfigExtraId\n- 按照【特殊采集配置ID】进行过滤。\n- 类型：String\n- 示例：3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a\n\ntopicId\n- 按照【日志主题】进行过滤。\n- 类型：String\n- 示例：3581a3be-aa41-423b-995a-54ec84da6264\n\nmachineGroupId\n- 按照【机器组ID】进行过滤。\n- 类型：String\n- 示例：f948972f-a063-408c-a59f-8c3230bddaf6\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7576,8 +7670,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集配置ID",
-          "example": "xxxxxxxxxx",
+          "document": "采集配置ID\n- 通过[获取采集规则配置](https://cloud.tencent.com/document/product/614/58616)获取采集配置Id。",
+          "example": "3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -7613,7 +7707,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "configName\n- 按照【采集配置名称】进行模糊匹配过滤。\n- 类型：String\n- 必选：否\n\nconfigId\n- 按照【采集配置ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntopicId\n- 按照【日志主题】进行过滤。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "configName\n- 按照【采集配置名称】进行模糊匹配过滤。\n- 类型：String\n- 必选：否\n- 示例：test-config\n\nconfigId\n- 按照【采集配置ID】进行过滤。\n- 类型：String\n- 必选：否\n- 示例：3581a3be-aa41-423b-995a-54ec84da6264\n\ntopicId\n- 按照【日志主题】进行过滤。\n- 类型：String\n- 必选：否\n- 示例：3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7692,6 +7786,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "控制台免密分享列表",
+          "example": "无",
+          "member": "ConsoleSharingInfo",
+          "name": "ConsoleSharingInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7705,8 +7809,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递任务绑定的日志主题 ID",
-          "example": "\"xxx-xxx-xxx-xxx\"",
+          "document": "投递任务绑定的日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "example": "871710c5-35cd-4d1e-8e79-2fa92c35d612",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -8039,7 +8143,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题Id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "ee20bb16-3025-4048-b81a-dd436373062e",
           "member": "string",
           "name": "TopicId",
@@ -8073,10 +8177,10 @@
         {
           "disabled": false,
           "document": "日志导出列表",
-          "example": "[]",
+          "example": "无",
           "member": "ExportInfo",
           "name": "Exports",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8086,7 +8190,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8191,7 +8295,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "FromTopicId",
@@ -8258,7 +8362,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题 ID",
+          "document": "日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "6bf3355c-xxxx-xxxx-89c8-76c3ca37bae9",
           "member": "string",
           "name": "TopicId",
@@ -8267,7 +8371,7 @@
         },
         {
           "disabled": false,
-          "document": "导入配置ID",
+          "document": "导入配置Id。\n- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。\n- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。",
           "example": "f574db7d-45ff-xxxx-xxxx-35f7fe71a4d0",
           "member": "string",
           "name": "Id",
@@ -8276,7 +8380,7 @@
         },
         {
           "disabled": false,
-          "document": "状态   status 1: 运行中, 2: 暂停...",
+          "document": "状态。1: 运行中，2: 暂停，3：错误",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -8470,7 +8574,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语句",
+          "document": "检索分析语句。\n语句由 [检索条件] | [SQL语句]构成，无需对日志进行统计分析时，可省略其中的管道符 | 及SQL语句。\n使用*或空字符串可查询所有日志。",
           "example": "http_status:200",
           "member": "string",
           "name": "Query",
@@ -8479,7 +8583,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的日志主题ID",
+          "document": "要查询的日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
           "name": "TopicId",
@@ -8619,8 +8723,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器组ID",
-          "example": "xxxxx-xxx-xxxxx",
+          "document": "机器组ID\n- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。",
+          "example": "3b83f9d6-3a4d-47f9-9b7f-285c868b2f9a",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -8656,7 +8760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "machineGroupName\n- 按照【机器组名称】进行过滤。\n- 类型：String\n- 必选：否\n\nmachineGroupId\n- 按照【机器组ID】进行过滤。\n- 类型：String\n- 必选：否\n\nosType\n- 按照【操作系统类型】进行过滤。\n- 类型：Int\n- 必选：否\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "过滤条件\nmachineGroupName\n- 按照【机器组名称】进行过滤。\n- 类型：String\n- 必选：否\n\nmachineGroupId\n- 按照【机器组ID】进行过滤。\n- 类型：String\n- 必选：否\n\nosType\n- 按照【操作系统类型】进行过滤。0： Linux；1： Windows\n- 类型：Int\n- 必选：否\n\ntagKey\n- 按照【标签键】进行过滤。\n- 类型：String\n- 必选：否\n\ntag:tagKey\n- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n- 类型：String\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -8910,8 +9014,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
-          "example": "cabcd0a8-4a54-11eb-b378-0242ac130002",
+          "document": "日志主题Id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "eb9ec10d-1343-4386-9a6e-75fd9d68726e",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -8975,7 +9079,7 @@
         {
           "disabled": false,
           "document": "任务id。",
-          "example": "6ef60bec-xxxx-xxxx-bb20-270359fb54xx",
+          "example": "9c64f9c1-a14e-4b59-b074-5b73cac3dd66",
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -8983,7 +9087,7 @@
         },
         {
           "disabled": false,
-          "document": "<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>bizType按照【主题类型】进行过滤，0：日志主题；1：指标主题。类型：String。必选：否</li>\n<li>status按照【任务状态】进行过滤，1：运行；2：停止。类型：String。必选：否</li>\n<li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>\n",
+          "document": "- srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否。示例：业务日志主题1 ，通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题名称。\n- dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否。示例：业务日志主题 2，通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题名称。\n- srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否。示例：a4478687-2382-4486-9692-de7986350f6b ，通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题id。\n- dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否。示例：bd4d3375-d72a-4cd2-988d-d8eda2bd62b0，通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题id。\n- bizType按照【主题类型】进行过滤，0：日志主题；1：指标主题。类型：String。必选：否\n- status按照【任务状态】进行过滤，1：运行；2：停止；3：异常。类型：String。必选：否\n- taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否。示例：metricTask ，通过 [获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519) 获取任务名称。\n- taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否。示例：9c64f9c1-a14e-4b59-b074-5b73cac3dd66 ，通过 [获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519) 获取任务id。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9159,7 +9263,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<ul><li>topicName 按照【日志主题名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>logsetName 按照【日志集名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>topicId 按照【日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>logsetId 按照【日志集ID】进行过滤，可通过调用 DescribeLogsets 查询已创建的日志集列表或登录控制台进行查看；也可以调用 CreateLogset 创建新的日志集。类型：String。必选：否</li>\n<li>tagKey 按照【标签键】进行过滤。类型：String。必选：否</li>\n<li>tag:tagKey 按照【标签键值对】进行过滤。tagKey 使用具体的标签键进行替换，例如 tag:exampleKey。类型：String。必选：否</li>\n<li>storageType 按照【日志主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String。必选：否</li></ul>\n注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。",
+          "document": "<ul><li>topicName 按照【日志主题名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>logsetName 按照【日志集名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>topicId 按照【日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>logsetId 按照【日志集ID】进行过滤，可通过调用 <a href=\"https://cloud.tencent.com/document/product/614/58624\">DescribeLogsets</a> 查询已创建的日志集列表或登录控制台进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/614/58626\">CreateLogset</a> 创建新的日志集。类型：String。必选：否</li>\n<li>tagKey 按照【标签键】进行过滤。类型：String。必选：否</li>\n<li>tag:tagKey 按照【标签键值对】进行过滤。tagKey 使用具体的标签键进行替换，例如 tag:exampleKey。类型：String。必选：否</li>\n<li>storageType 按照【日志主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String。必选：否</li></ul>\n注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9407,7 +9511,7 @@
         },
         {
           "disabled": false,
-          "document": "时间类型，1:用户自定义，2:当前时间",
+          "document": "时间字段（Timestamp）支持的类型\n- 1（用户自定义时间）\n- 2（当前时间）",
           "example": "1",
           "member": "uint64",
           "name": "TimeType",
@@ -9418,8 +9522,8 @@
         },
         {
           "disabled": false,
-          "document": "时间，用户选择自定义时间类型时，需要指定时间，单位秒",
-          "example": "12345675",
+          "document": "时间，用户选择自定义时间类型时，需要指定时间，单位秒\n格式：时间戳，1754897446",
+          "example": "1754897446",
           "member": "uint64",
           "name": "Timestamp",
           "output_required": true,
@@ -9564,7 +9668,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出起始时间",
+          "document": "日志导出起始时间，毫秒时间戳",
           "example": "1607499207000",
           "member": "int64",
           "name": "From",
@@ -9574,7 +9678,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出结束时间",
+          "document": "日志导出结束时间，毫秒时间戳",
           "example": "1607499208000",
           "member": "int64",
           "name": "To",
@@ -9594,7 +9698,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出创建时间",
+          "document": "日志导出创建时间\n时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2020-08-08 12:12:12",
           "member": "string",
           "name": "CreateTime",
@@ -9615,7 +9719,7 @@
         {
           "disabled": false,
           "document": "导出字段",
-          "example": "[\"__timestamp__\",\"a\",\"b\"]",
+          "example": "[\"__timestamp__\"]",
           "member": "string",
           "name": "DerivedFields",
           "output_required": false,
@@ -9630,7 +9734,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间字段的key名字，TikeKey和TimeFormat必须成对出现",
+          "document": "时间字段的key名字，TimeKey和TimeFormat必须成对出现",
           "example": "time",
           "member": "string",
           "name": "TimeKey",
@@ -9641,8 +9745,8 @@
         },
         {
           "disabled": false,
-          "document": "时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数",
-          "example": "YYDDWW",
+          "document": "时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数\n- 参考 [配置时间格式](https://cloud.tencent.com/document/product/614/38614) 文档 ",
+          "example": "%Y-%m-%d %H:%M:%S",
           "member": "string",
           "name": "TimeFormat",
           "output_required": true,
@@ -9730,7 +9834,7 @@
         {
           "disabled": false,
           "document": "增量采集模式下的回溯数据量，默认：-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。\n注意：\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-1",
+          "example": "0",
           "member": "int64",
           "name": "Backtracking",
           "output_required": true,
@@ -9999,7 +10103,7 @@
         },
         {
           "disabled": false,
-          "document": "查询过滤条件，例如：\n- 按告警策略ID查询：`alert_id:\"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971\"`\n- 按监控对象ID查询：`monitored_object:\"823d8bfa-76a7-xxxx-8399-8cda74d4009b\" `\n- 按告警策略ID及监控对象ID查询：`alert_id:\"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971\" AND monitored_object:\"823d8bfa-76a7-xxxx-8399-8cda74d4009b\"`\n- 按告警策略ID及监控对象ID查询支持SQL语句：`(alert_id:\"alarm-5ce45495-09e8-4d58-xxxx-768134bf330c\") AND (monitored_object:\"3c514e84-6f1f-46ec-xxxx-05de6163f7fe\") AND NOT condition_evaluate_result: \"Skip\" AND condition_evaluate_result:[* TO *] | SELECT count(*) as top50StatisticsTotalCount, count_if(condition_evaluate_result='ProcessError') as top50StatisticsFailureCount, count_if(notification_send_result!='NotSend') as top50NoticeTotalCount, count_if(notification_send_result='SendPartFail' or notification_send_result='SendFail') as top50NoticeFailureCount, alert_id, alert_name, monitored_object, topic_type, happen_threshold, alert_threshold, notify_template group by alert_id, alert_name, monitored_object,topic_type, happen_threshold, alert_threshold, notify_template order by top50StatisticsTotalCount desc limit 1`",
+          "document": "查询过滤条件，例如：\n- 按告警策略ID查询：`alert_id:\"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971\"`\n   - 通过[获取告警策略列表](https://cloud.tencent.com/document/api/614/56461)获取告警策略ID\n- 按监控对象ID查询：`monitored_object:\"823d8bfa-76a7-xxxx-8399-8cda74d4009b\" `\n  - 通过[获取告警策略列表](https://cloud.tencent.com/document/api/614/56461)获取监控对象ID\n- 按告警策略ID及监控对象ID查询：`alert_id:\"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971\" AND monitored_object:\"823d8bfa-76a7-xxxx-8399-8cda74d4009b\"`\n- 按告警策略ID及监控对象ID查询支持SQL语句：`(alert_id:\"alarm-5ce45495-09e8-4d58-xxxx-768134bf330c\") AND (monitored_object:\"3c514e84-6f1f-46ec-xxxx-05de6163f7fe\") AND NOT condition_evaluate_result: \"Skip\" AND condition_evaluate_result:[* TO *] | SELECT count(*) as top50StatisticsTotalCount, count_if(condition_evaluate_result='ProcessError') as top50StatisticsFailureCount, count_if(notification_send_result!='NotSend') as top50NoticeTotalCount, count_if(notification_send_result='SendPartFail' or notification_send_result='SendFail') as top50NoticeFailureCount, alert_id, alert_name, monitored_object, topic_type, happen_threshold, alert_threshold, notify_template group by alert_id, alert_name, monitored_object,topic_type, happen_threshold, alert_threshold, notify_template order by top50StatisticsTotalCount desc limit 1`",
           "example": "alert_id:notice-c0960eb3-6454-4eef-xxxx-8feb766a9fbd",
           "member": "string",
           "name": "Query",
@@ -10071,7 +10175,7 @@
         {
           "disabled": false,
           "document": "返回的结果是否为SQL分析结果",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "Analysis",
           "output_required": true,
@@ -10111,7 +10215,7 @@
         {
           "disabled": false,
           "document": "执行详情统计分析结果；UseNewAnalysis为true有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"xxx\",\"yy\"]",
+          "example": "[\"acd\",\"ac\"]",
           "member": "string",
           "name": "AnalysisRecords",
           "output_required": true,
@@ -10200,17 +10304,17 @@
           "example": "15",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "按 period 取整后的 unix timestamp： 单位毫秒",
-          "example": "2021-04-25 14:25:00.000",
+          "example": "1754856576000",
           "member": "int64",
           "name": "BTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -10361,7 +10465,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。\n入参必填",
+          "document": "协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。\n\n- 当IsEncryptionAddr为true时，Protocol必填。\n- 支持的协议类型如下：\n    - plaintext：纯文本无加密协议\n    - sasl_ssl：SASL 认证 + SSL 加密\n    - ssl：纯 SSL/TLS 加密协议\n    - sasl_plaintext：SASL 认证 + 非加密通道\n",
           "example": "sasl_ssl",
           "member": "string",
           "name": "Protocol",
@@ -10372,7 +10476,7 @@
         },
         {
           "disabled": false,
-          "document": "加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。\n当Protocol为sasl_plaintext或sasl_ssl时必填",
+          "document": "加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。\n\n- 当Protocol为  `sasl_plaintext` 或 `sasl_ssl` 时 Mechanism 必填。\n- 支持加密类型如下\n    -  PLAIN：明文认证\n    -  SCRAM-SHA-256：基于挑战-响应机制，使用PBKDF2-HMAC-SHA256算法\n    -  SCRAM-SHA-512：增强版SCRAM，使用PBKDF2-HMAC-SHA512算法",
           "example": "PLAIN",
           "member": "string",
           "name": "Mechanism",
@@ -10919,7 +11023,7 @@
         },
         {
           "disabled": false,
-          "document": "使用默认时间，true：开启（默认值）， flase：关闭",
+          "document": "使用默认时间状态。true：开启后将使用系统当前时间或 Kafka 消息时间戳作为日志时间戳；false：关闭将使用日志中的时间字段作为日志时间戳。 默认：true",
           "example": "true",
           "member": "bool",
           "name": "DefaultTimeSwitch",
@@ -10985,7 +11089,7 @@
         },
         {
           "disabled": false,
-          "document": "时间字段",
+          "document": "时间字段，日志中代表时间的字段名。\n\n- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `json_log` JSON-文件日志 或 `fullregex_log` 单行完全正则-文件日志时， TimeKey不能为空。",
           "example": "__TIMESTAMP__",
           "member": "string",
           "name": "TimeKey",
@@ -10996,7 +11100,7 @@
         },
         {
           "disabled": false,
-          "document": "时间提取正则表达式",
+          "document": "时间提取正则表达式。\n- 当DefaultTimeSwitch为false，且RechargeType数据提取模式为 `minimalist_log` 单行全文-文件日志时， TimeRegex不能为空。\n- 仅需输入日志中代表时间的字段的正则表达式即可；若匹配到多个字段，将使用第一个。\n   例：日志原文为：message with time 2022-08-08 14:20:20，则您可以设置提取时间正则为\\d\\d\\d\\d-\\d\\d-\\d\\d \\d\\d:\\d\\d:\\d\\d\n",
           "example": "(\\d{4})-(\\d{2})-(\\d{2}) (\\d{2}):(\\d{2}):(\\d{2})",
           "member": "string",
           "name": "TimeRegex",
@@ -11007,7 +11111,7 @@
         },
         {
           "disabled": false,
-          "document": "时间字段格式",
+          "document": "时间字段格式。\n- 当DefaultTimeSwitch为false时， TimeFormat不能为空。",
           "example": "%Y-%m-%d %H:%M:%S",
           "member": "string",
           "name": "TimeFormat",
@@ -11018,7 +11122,7 @@
         },
         {
           "disabled": false,
-          "document": "时间字段时区",
+          "document": "时间字段时区。\n- 当DefaultTimeSwitch为false时， TimeZone不能为空。\n- 时区格式规则\n​前缀​：使用 GMT 或 UTC 作为时区基准\n​偏移量​：\n    - `-` 表示西时区（比基准时间晚）\n    - `+` 表示东时区（比基准时间早）\n    -  格式为 ±HH:MM（小时:分钟）\n\n- 当前支持：\n```\n\"GMT-12:00\" \n\"GMT-11:00\" \n\"GMT-10:00\" \n\"GMT-09:30\" \n\"GMT-09:00\" \n\"GMT-08:00\" \n\"GMT-07:00\" \n\"GMT-06:00\" \n\"GMT-05:00\" \n\"GMT-04:00\" \n\"GMT-03:30\" \n\"GMT-03:00\" \n\"GMT-02:00\" \n\"GMT-01:00\" \n\"GMT+00:00\"\n\"GMT+01:00\"\n\"GMT+02:00\"\n\"GMT+03:30\"\n\"GMT+04:00\"\n\"GMT+04:30\"\n\"GMT+05:00\"\n\"GMT+05:30\"\n\"GMT+05:45\"\n\"GMT+06:00\"\n\"GMT+06:30\"\n\"GMT+07:00\"\n\"GMT+08:00\"\n\"GMT+09:00\"\n\"GMT+09:30\"\n\"GMT+10:00\"\n\"GMT+10:30\"\n\"GMT+11:00\"\n\"GMT+11:30\"\n\"GMT+12:00\"\n\"GMT+12:45\"\n\"GMT+13:00\"\n\"GMT+14:00\"\n\"UTC-11:00\"\n\"UTC-10:00\"\n\"UTC-09:00\"\n\"UTC-08:00\"\n\"UTC-12:00\"\n\"UTC-07:00\"\n\"UTC-06:00\"\n\"UTC-05:00\"\n\"UTC-04:30\"\n\"UTC-04:00\"\n\"UTC-03:30\"\n\"UTC-03:00\"\n\"UTC-02:00\"\n\"UTC-01:00\"\n\"UTC+00:00\"\n\"UTC+01:00\"\n\"UTC+02:00\"\n\"UTC+03:00\"\n\"UTC+03:30\"\n\"UTC+04:00\"\n\"UTC+04:30\"\n\"UTC+05:00\"\n\"UTC+05:45\"\n\"UTC+06:00\"\n\"UTC+06:30\"\n\"UTC+07:00\"\n\"UTC+08:00\"\n\"UTC+09:00\"\n\"UTC+09:30\"\n\"UTC+10:00\"\n\"UTC+11:00\"\n\"UTC+12:00\"\n\"UTC+13:00\"\n```",
           "example": "UTC+08:00",
           "member": "string",
           "name": "TimeZone",
@@ -11174,7 +11278,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间\n时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2021-03-05 00:40:22",
           "member": "string",
           "name": "CreateTime",
@@ -11204,7 +11308,7 @@
         },
         {
           "disabled": false,
-          "document": "升级开始时间，建议业务低峰期升级LogListener",
+          "document": "升级开始时间，建议业务低峰期升级LogListener\n时间格式：HH:mm:ss",
           "example": "\"12:00:00\"",
           "member": "string",
           "name": "UpdateStartTime",
@@ -11214,7 +11318,7 @@
         },
         {
           "disabled": false,
-          "document": "升级结束时间，建议业务低峰期升级LogListener",
+          "document": "升级结束时间，建议业务低峰期升级LogListener\n时间格式：HH:mm:ss",
           "example": "\"13:00:00\"",
           "member": "string",
           "name": "UpdateEndTime",
@@ -11234,7 +11338,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组中机器离线定期清理时间",
+          "document": "机器组中机器离线定期清理时间，单位天，默认设置30天。",
           "example": "30",
           "member": "int64",
           "name": "DelayCleanupTime",
@@ -11394,7 +11498,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题Id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "427bba81-e149-4a8b-bd0d-b2a412520d7b",
           "member": "string",
           "name": "TopicId",
@@ -11403,7 +11507,7 @@
         },
         {
           "disabled": false,
-          "document": "合并的PartitionId（找到下一个分区InclusiveBeginKey与入参PartitionId对应的ExclusiveEndKey相等，且找到的分区必须是读写分区（Staus:readwrite），入参PartitionId与找到的PartitionId设置为只读分区（Status:readonly）,再新建一个新的读写分区） 。[获取分区列表](https://cloud.tencent.com/document/product/614/56469)\n\n1. 入参PartitionId只能是读写分区（Status的值有readonly，readwrite），且能找到入参PartitionId的下一个可读写分区（找到下一个分区InclusiveBeginKey与入参PartitionId对应的ExclusiveEndKey相等）；\n2. 入参PartitionId不能是最后一个分区（PartitionId的ExclusiveEndKey不能是ffffffffffffffffffffffffffffffff）；\n3. topic的分区数量是有限制的（默认50个），合并之后不能超过最大分区，否则不能合并。",
+          "document": "合并的PartitionId（找到下一个分区InclusiveBeginKey与入参PartitionId对应的ExclusiveEndKey相等，且找到的分区必须是读写分区（Status:readwrite），入参PartitionId与找到的PartitionId设置为只读分区（Status:readonly）,再新建一个新的读写分区） 。[获取分区列表](https://cloud.tencent.com/document/product/614/56470)\n\n1. 入参PartitionId只能是读写分区（Status的值有readonly，readwrite），且能找到入参PartitionId的下一个可读写分区（找到下一个分区InclusiveBeginKey与入参PartitionId对应的ExclusiveEndKey相等）；\n2. 入参PartitionId不能是最后一个分区（PartitionId的ExclusiveEndKey不能是ffffffffffffffffffffffffffffffff）；\n3. topic的分区数量是有限制的（默认50个），合并之后不能超过最大分区，否则不能合并。",
           "example": "2",
           "member": "int64",
           "name": "PartitionId",
@@ -12153,7 +12257,7 @@
         },
         {
           "disabled": false,
-          "document": "采集规则配置名称",
+          "document": "采集规则配置名称\n- 不能包含特殊字符｜\n- 长度不能超过255字符，超过会被截断",
           "example": "testname",
           "member": "string",
           "name": "Name",
@@ -12198,7 +12302,7 @@
         },
         {
           "disabled": false,
-          "document": "采集配置关联的日志主题（TopicId）",
+          "document": "采集配置关联的日志主题（TopicId）\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "Output",
@@ -12208,7 +12312,7 @@
         {
           "disabled": false,
           "document": "用户自定义解析字符串，Json格式序列化的字符串。",
-          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]},\\\"processors\\\":[{\\\"type\\\":\\\"processor_timeformat\\\",\\\"detail\\\":{\\\"KeepSource\\\":true,\\\"TimeFormat\\\":\\\"%s\\\",\\\"SourceKey\\\":\\\"time\\\"}},{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"|\\\",\\\"SourceKey\\\":\\\"msg1\\\",\\\"ExtractKeys\\\":[\\\"submsg1\\\",\\\"submsg2\\\",\\\"submsg3\\\"]},\\\"processors\\\":[]},{\\\"type\\\":\\\"processor_split_key_value\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"：\\\",\\\"SourceKey\\\":\\\"msg2\\\"}}]}]}\"",
+          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]}]}\"",
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
@@ -12243,7 +12347,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "免密分享链接Id",
+          "document": "免密分享Id。\n- 通过 [获取免密分享列表](https://cloud.tencent.com/document/product/614/109798) 获取免密分享Id。 \n- 通过 [创建免密分享](https://cloud.tencent.com/document/product/614/109800) 获取免密分享Id。",
           "example": "13cez28h",
           "member": "string",
           "name": "SharingId",
@@ -12279,8 +12383,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递任务绑定的日志主题 ID",
-          "example": "\"xxx-xxx-xxx-xxx\"",
+          "document": "投递任务绑定的日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "example": "871710c5-35cd-4d1e-8e79-2fa92c35d612",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -12675,7 +12779,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "FromTopicId",
@@ -12684,7 +12788,7 @@
         },
         {
           "disabled": false,
-          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]",
+          "document": "压缩方式。0：不压缩；2：使用Snappy压缩；3：使用LZ4压缩",
           "example": "2",
           "member": "int64",
           "name": "Compression",
@@ -12720,7 +12824,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kafka导入配置ID",
+          "document": "导入配置Id。\n- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。\n- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。",
           "example": "1014cc79-f006-48e4-8820-1dc7270540c0",
           "member": "string",
           "name": "Id",
@@ -12729,7 +12833,7 @@
         },
         {
           "disabled": false,
-          "document": "导入CLS目标topic ID",
+          "document": "导入CLS目标TopicId。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456)获取日志主题Id。",
           "example": "06bdb6f6-ae6e-41f6-9e7b-fcab91cb0111",
           "member": "string",
           "name": "TopicId",
@@ -12756,7 +12860,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID，KafkaType为0时必填。",
+          "document": "腾讯云CKafka实例ID，KafkaType为0时必填。\n- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。",
           "example": "ckafka-2vrgxbxa",
           "member": "string",
           "name": "KafkaInstance",
@@ -12792,7 +12896,7 @@
         },
         {
           "disabled": false,
-          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开",
+          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。\n\n- Kafka类型为腾讯云CKafka时：通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获取TopicName。",
           "example": "topic-subs-0px4qkvu32-cdb-5zi7jf11",
           "member": "string",
           "name": "UserKafkaTopics",
@@ -12819,7 +12923,7 @@
         },
         {
           "disabled": false,
-          "document": "导入控制，1：暂停；2：继续。",
+          "document": "导入控制，1：暂停；2：启动。",
           "example": "1",
           "member": "uint64",
           "name": "StatusControl",
@@ -12891,7 +12995,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器组ID",
+          "document": "机器组Id\n- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "GroupId",
@@ -12900,7 +13004,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组名称",
+          "document": "机器组名称\n输入限制：\n- 不能为空字符串\n- 不能包含字符'|'",
           "example": "testname",
           "member": "string",
           "name": "GroupName",
@@ -12936,7 +13040,7 @@
         },
         {
           "disabled": false,
-          "document": "升级开始时间，建议业务低峰期升级LogListener",
+          "document": "升级开始时间，建议业务低峰期升级LogListener\n时间格式：HH:mm:ss",
           "example": "\"12:00:00\"",
           "member": "string",
           "name": "UpdateStartTime",
@@ -12945,7 +13049,7 @@
         },
         {
           "disabled": false,
-          "document": "升级结束时间，建议业务低峰期升级LogListener",
+          "document": "升级结束时间，建议业务低峰期升级LogListener\n时间格式：HH:mm:ss",
           "example": "\"13:00:00\"",
           "member": "string",
           "name": "UpdateEndTime",
@@ -13053,7 +13157,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取",
           "example": "6ef60bec-0242-43af-bb20-270359fxxxx",
           "member": "string",
           "name": "TaskId",
@@ -13062,7 +13166,7 @@
         },
         {
           "disabled": false,
-          "document": "源日志主题",
+          "document": "源日志主题，通过[获取定时SQL分析任务列表](https://cloud.tencent.com/document/product/614/95519)获取",
           "example": "xxxx-0889-4ec0-accc-xxxxxxx",
           "member": "string",
           "name": "SrcTopicId",
@@ -13098,7 +13202,7 @@
         },
         {
           "disabled": false,
-          "document": "调度周期(分钟)",
+          "document": "调度周期(分钟)，1~1440分钟",
           "example": "2",
           "member": "int64",
           "name": "ProcessPeriod",
@@ -13116,7 +13220,7 @@
         },
         {
           "disabled": false,
-          "document": "执行延迟(秒)",
+          "document": "执行延迟(秒)，0~120秒，默认60秒",
           "example": "60",
           "member": "int64",
           "name": "ProcessDelay",
@@ -13125,7 +13229,7 @@
         },
         {
           "disabled": false,
-          "document": "源topicId的地域信息",
+          "document": "源topicId的地域信息,支持地域见(https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SrcTopicRegion",
@@ -13134,7 +13238,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "任务名称，0~255字符",
           "example": "scheduler_sql任务1",
           "member": "string",
           "name": "Name",
@@ -13305,8 +13409,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
-          "example": "xxxxxx-xx-xx-xx-xxxxxxxx",
+          "document": "日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "eb9ec10d-1343-4386-9a6e-75fd9d68726e",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -13314,7 +13418,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称",
+          "document": "日志主题名称\n输入限制：\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]",
           "example": "testname",
           "member": "string",
           "name": "TopicName",
@@ -13350,7 +13454,7 @@
         },
         {
           "disabled": false,
-          "document": "若开启最大分裂，该主题能够能够允许的最大分区数",
+          "document": "若开启最大分裂，该主题能够能够允许的最大分区数；\n默认为50；必须为正数",
           "example": "50",
           "member": "int64",
           "name": "MaxSplitPartitions",
@@ -13404,7 +13508,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题分区数量",
+          "document": "日志主题分区数量。\n默认为1；\n取值范围及约束：\n- 当输入值<=0，系统自动调整为1。\n- 如果未传MaxSplitPartitions，需要PartitionCount<=50；\n- 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；",
           "example": "10",
           "member": "uint64",
           "name": "PartitionCount",
@@ -13413,7 +13517,7 @@
         },
         {
           "disabled": false,
-          "document": "取消切换存储任务的id",
+          "document": "取消切换存储任务的id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。",
           "example": "87b94286-1b33-44df-8568-924eb250ef4e",
           "member": "string",
           "name": "CancelTopicAsyncTaskID",
@@ -13644,7 +13748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模板标题信息。\n部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。",
+          "document": "通知内容模板标题信息。\n部分通知渠道类型不支持“标题”，请参照[腾讯云控制台页面](https://console.cloud.tencent.com/cls/alarm/notice-template)。",
           "example": "这是标题。",
           "member": "string",
           "name": "Title",
@@ -13945,7 +14049,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "FromTopicId",
@@ -14076,7 +14180,7 @@
         {
           "disabled": false,
           "document": "分区哈希键起始key",
-          "example": "00000000000000000000000000000000",
+          "example": "000000000000000000000000000000f",
           "member": "string",
           "name": "InclusiveBeginKey",
           "output_required": true,
@@ -14086,7 +14190,7 @@
         {
           "disabled": false,
           "document": "分区哈希键结束key",
-          "example": "ffffffffffffffffffffffffffffffff",
+          "example": "0fffffffffffffffffffffffffffffff",
           "member": "string",
           "name": "ExclusiveEndKey",
           "output_required": true,
@@ -14095,7 +14199,7 @@
         },
         {
           "disabled": false,
-          "document": "分区创建时间",
+          "document": "分区创建时间\n时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2024-10-04 07:43:08",
           "member": "string",
           "name": "CreateTime",
@@ -14105,7 +14209,7 @@
         },
         {
           "disabled": false,
-          "document": "只读分区数据停止写入时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只读分区数据停止写入时间\n时间格式：yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-10-06 16:08:59",
           "member": "string",
           "name": "LastWriteTime",
@@ -14321,7 +14425,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询语句，使用PromQL语法\t",
+          "document": "查询语句，使用PromQL语法\t\n- 参考 [语法规则](https://cloud.tencent.com/document/product/614/90334) 文档",
           "example": "access_evaluation_duration_bucket",
           "member": "string",
           "name": "Query",
@@ -14330,7 +14434,7 @@
         },
         {
           "disabled": false,
-          "document": "指标主题ID",
+          "document": "指标主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "8e7c3bd9-ef13-4981-xxxx-207971e1f80f",
           "member": "string",
           "name": "TopicId",
@@ -14354,7 +14458,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标查询结果类型",
+          "document": "指标查询结果类型，支持\n- scalar 标量值\n- string 字符串值\n- vector 瞬时向量\n- matrix 区间向量",
           "example": "vector",
           "member": "string",
           "name": "ResultType",
@@ -14386,7 +14490,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标主题ID",
+          "document": "指标主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "8e7c3bd9-ef13-4981-xxxx-207971e1f80f",
           "member": "string",
           "name": "TopicId",
@@ -14395,7 +14499,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语句，使用PromQL语法",
+          "document": "查询语句，使用PromQL语法\n- 参考 [语法规则](https://cloud.tencent.com/document/product/614/90334) 文档",
           "example": "access_evaluation_duration_bucket",
           "member": "string",
           "name": "Query",
@@ -14437,7 +14541,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标查询结果类型",
+          "document": "指标查询结果类型，支持\n- scalar 标量值\n- string 字符串值\n- vector 瞬时向量\n- matrix 区间向量",
           "example": "matrix",
           "member": "string",
           "name": "ResultType",
@@ -14611,7 +14715,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标主题id",
+          "document": "通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。",
           "example": "xxxxxxxx-0889-4ec0-accc-xxxxxxx",
           "member": "string",
           "name": "TopicId",
@@ -14622,7 +14726,7 @@
         },
         {
           "disabled": false,
-          "document": "主题的地域信息",
+          "document": "主题的地域信息，当前不支持跨地域，支持地域参考 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -14689,7 +14793,7 @@
         {
           "disabled": false,
           "document": "除了MetricLabels，您还可以使用该参数，为指标补充静态的维度。\n维度名以字母或下划线开头，后面可以跟字母、数字或下划线，长度小于等于1024 字节",
-          "example": "[{\"Key\":\"region\",\"Value\":\"gz\"},{\"Key\":\"service\",\"Value\":\"cgi\"}]",
+          "example": "无",
           "member": "MetricLabel",
           "name": "CustomMetricLabels",
           "output_required": false,
@@ -14755,7 +14859,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间",
+          "document": "任务创建时间。格式：yyyy-MM-dd HH:mm:ss",
           "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "CreateTime",
@@ -14765,7 +14869,7 @@
         },
         {
           "disabled": false,
-          "document": "任务更新时间",
+          "document": "任务更新时间，格式：yyyy-MM-dd HH:mm:ss",
           "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "UpdateTime",
@@ -14805,7 +14909,7 @@
         },
         {
           "disabled": false,
-          "document": "调度开始时间",
+          "document": "调度开始时间，格式：yyyy-MM-dd HH:mm:ss",
           "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "ProcessStartTime",
@@ -14825,7 +14929,7 @@
         },
         {
           "disabled": false,
-          "document": "调度结束时间，当process_type=2时为必传字段",
+          "document": "调度结束时间，格式：yyyy-MM-dd HH:mm:ss，当process_type=2时为必传字段",
           "example": "2023-07-28 11:36:00",
           "member": "string",
           "name": "ProcessEndTime",
@@ -14835,7 +14939,7 @@
         },
         {
           "disabled": false,
-          "document": "调度周期(分钟)",
+          "document": "调度周期(分钟)，1~1440分钟",
           "example": "5",
           "member": "int64",
           "name": "ProcessPeriod",
@@ -14855,7 +14959,7 @@
         },
         {
           "disabled": false,
-          "document": "执行延迟(秒)",
+          "document": "执行延迟(秒)，0~120秒，默认60秒",
           "example": "5",
           "member": "int64",
           "name": "ProcessDelay",
@@ -14865,7 +14969,7 @@
         },
         {
           "disabled": false,
-          "document": "源topicId的地域信息",
+          "document": "源topicId的地域信息，支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SrcTopicRegion",
@@ -15924,7 +16028,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间\n时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2024-11-13 14:48:23",
           "member": "string",
           "name": "CreateTime",
@@ -16064,7 +16168,7 @@
         },
         {
           "disabled": false,
-          "document": "异步迁移状态",
+          "document": "异步迁移状态\n- 1：进行中\n- 2：已完成\n- 3：失败\n- 4：已取消",
           "example": "1",
           "member": "uint64",
           "name": "MigrationStatus",
@@ -16074,7 +16178,7 @@
         },
         {
           "disabled": false,
-          "document": "异步迁移完成后，预计生效日期",
+          "document": "异步迁移完成后，预计生效日期\n时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2024-11-13 14:48:23",
           "member": "string",
           "name": "EffectiveDate",

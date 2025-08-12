@@ -390,6 +390,14 @@
         "title": "查询通用资源配额信息"
       }
     ],
+    "DescribeImagesToShare": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImagesToShare\n<公共请求参数>\n\n{\n    \"ImageIds\": [\n        \"img-cs2rrmp0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSet\": [\n            {\n                \"ImageId\": \"img-cs2rrmp0\",\n                \"ImageName\": \"ubuntu\",\n                \"ImageDescription\": \"ubuntu\",\n                \"ImageSize\": 50,\n                \"ImageSource\": \"CREATE_IMAGE\",\n                \"ImageClass\": \"SystemImage\",\n                \"ImageState\": \"NORMAL\",\n                \"IsSupportCloudinit\": true,\n                \"Architecture\": \"x86_64\",\n                \"OsName\": \"Ubuntu Server 20.04 LTS 64bit\",\n                \"Platform\": \"Ubuntu\",\n                \"CreatedTime\": \"2021-07-23T08:49:36Z\",\n                \"IsShareable\": true,\n                \"UnshareableReason\": \"\"\n            }\n        ],\n        \"RequestId\": \"c5aafa9d-20e4-400e-852c-b800f607dd91\"\n    }\n}",
+        "title": "查询CVM的自定义镜像列表共享到轻量应用服务器"
+      }
+    ],
     "DescribeInstanceVncUrl": [
       {
         "document": "本示例用于查询实例管理终端地址。",
@@ -660,6 +668,20 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFirewallTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\",\n    \"TemplateName\": \"test-modify\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cc75e4c9-b6a9-44c2-9a8f-ef8e78ff0e81\"\n    }\n}",
         "title": "修改防火墙模板"
+      }
+    ],
+    "ModifyImageSharePermission": [
+      {
+        "document": "共享CVM镜像到轻量应用服务器镜像。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageSharePermission\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-xkd784jw\",\n    \"Permission\": \"SHARE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BlueprintId\": \"lhbp-su83x02a\",\n        \"RequestId\": \"4fe640d6-4912-4b43-9b3a-cc3bbab4cef2\"\n    }\n}",
+        "title": "共享CVM镜像到轻量应用服务器镜像"
+      },
+      {
+        "document": "CVM镜像取消共享到轻量应用服务器镜像",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageSharePermission\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-xkd784jw\",\n    \"Permission\": \"CANEL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BlueprintId\": null,\n        \"RequestId\": \"4fe640d6-4912-4b43-9b3a-cc3bbab4cef2\"\n    }\n}",
+        "title": "CVM镜像取消共享到轻量应用服务器镜像"
       }
     ],
     "ModifyInstancesAttribute": [

@@ -448,13 +448,6 @@
       "output": "ListAppResponse",
       "status": "online"
     },
-    "ListAppCategory": {
-      "document": "应用类型列表",
-      "input": "ListAppCategoryRequest",
-      "name": "应用类型列表",
-      "output": "ListAppCategoryResponse",
-      "status": "online"
-    },
     "ListAppKnowledgeDetail": {
       "document": "列表查询知识库容量详情",
       "input": "ListAppKnowledgeDetailRequest",
@@ -3789,7 +3782,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "1826933901291945900",
+          "example": "1954559753310423232",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -3807,7 +3800,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "[             {                 \"LabelName\": \"SUV\",                 \"SimilarLabels\": [                     \"运动型多用途汽车\",                     \"越野\"                 ]             }         ]",
+          "example": "无",
           "member": "AttributeLabel",
           "name": "Labels",
           "required": true,
@@ -3816,7 +3809,7 @@
         {
           "disabled": false,
           "document": "标签标识（不生效，无需填写） 已作废",
-          "example": "无",
+          "example": "hRbTRndC",
           "member": "string",
           "name": "AttrKey",
           "required": false,
@@ -3849,11 +3842,21 @@
         {
           "disabled": false,
           "document": "标签ID",
-          "example": "123123213",
+          "example": "1954740932035178240",
           "member": "string",
           "name": "AttrBizId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值ID与名称",
+          "example": "无",
+          "member": "AttributeLabel",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -10323,69 +10326,6 @@
       ],
       "usage": "out"
     },
-    "ListAppCategoryRequest": {
-      "document": "ListAppCategory请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "ListAppCategoryResponse": {
-      "document": "ListAppCategory返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ListAppCategoryRspOption",
-          "name": "List",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ListAppCategoryRspOption": {
-      "document": "应用类型详情",
-      "members": [
-        {
-          "disabled": false,
-          "document": "类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Text",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "类型值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Value",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "类型log\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Logo",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "ListAppKnowledgeDetailRequest": {
       "document": "ListAppKnowledgeDetail请求参数结构体",
       "members": [
@@ -13304,7 +13244,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "1954559753310423232",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -13313,7 +13253,7 @@
         {
           "disabled": false,
           "document": "标签ID",
-          "example": "无",
+          "example": "1954740932035178240",
           "member": "string",
           "name": "AttributeBizId",
           "required": true,
@@ -13322,7 +13262,7 @@
         {
           "disabled": false,
           "document": "标签名称",
-          "example": "无",
+          "example": "汽车类型",
           "member": "string",
           "name": "AttrName",
           "required": true,
@@ -13331,7 +13271,7 @@
         {
           "disabled": false,
           "document": "标签标识 （已作废）",
-          "example": "无",
+          "example": "hRbTRndC",
           "member": "string",
           "name": "AttrKey",
           "required": false,
@@ -13358,7 +13298,7 @@
         {
           "disabled": false,
           "document": "删除的标签值",
-          "example": "无",
+          "example": "[\"1\",\"2\"]",
           "member": "string",
           "name": "DeleteLabelBizIds",
           "required": false,
@@ -13387,6 +13327,16 @@
           "name": "TaskId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签ID与名称",
+          "example": "无",
+          "member": "AttributeLabel",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

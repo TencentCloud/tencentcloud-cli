@@ -639,7 +639,7 @@
         {
           "disabled": false,
           "document": "授权文件id",
-          "example": "123",
+          "example": "5841c36f1b194857f5e416486e4bf1d3",
           "member": "string",
           "name": "AuthFile",
           "output_required": false,
@@ -649,7 +649,7 @@
         {
           "disabled": false,
           "document": "测绘时间配置项",
-          "example": "无",
+          "example": "{\\\"Monday\\\":{\\\"0\\\":true,\\\"9\\\":true}}",
           "member": "string",
           "name": "ScanTime",
           "output_required": false,
@@ -659,7 +659,7 @@
         {
           "disabled": false,
           "document": "图标",
-          "example": "无",
+          "example": "5841c36f1b194857f5e416486e4bf1d3",
           "member": "string",
           "name": "Icon",
           "output_required": false,
@@ -669,7 +669,7 @@
         {
           "disabled": false,
           "document": "关键字",
-          "example": "无",
+          "example": "腾讯",
           "member": "string",
           "name": "Keywords",
           "output_required": false,
@@ -679,7 +679,7 @@
         {
           "disabled": false,
           "document": "Qps设置，10-500，默认100",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Qps",
           "output_required": false,
@@ -689,7 +689,7 @@
         {
           "disabled": false,
           "document": "子公司拓展层次",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "SubCompanyLevel",
           "output_required": false,
@@ -699,7 +699,7 @@
         {
           "disabled": false,
           "document": "是否包含完整扫描\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsIncludeFullScan",
           "output_required": false,
@@ -709,7 +709,7 @@
         {
           "disabled": false,
           "document": "是否识别集团成员",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "EnableGroupMemberDiscovered",
           "output_required": false,
@@ -3479,7 +3479,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayManage",
           "name": "List",
           "output_required": false,
@@ -3634,7 +3634,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayNetDisk",
           "name": "List",
           "output_required": false,
@@ -4445,7 +4445,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayVul",
           "name": "List",
           "output_required": false,
@@ -4600,7 +4600,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ] ",
+          "example": "无",
           "member": "DisplayWeakPassword",
           "name": "List",
           "output_required": false,
@@ -4755,7 +4755,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayWechatApplet",
           "name": "List",
           "output_required": false,
@@ -4910,7 +4910,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayWechatOfficialAccount",
           "name": "List",
           "output_required": false,
@@ -4952,7 +4952,7 @@
         {
           "disabled": false,
           "document": "APP名称",
-          "example": "测试",
+          "example": "腾讯测试",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -4962,7 +4962,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "测试",
+          "example": "腾讯测试",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -4982,7 +4982,7 @@
         {
           "disabled": false,
           "document": "下载地址",
-          "example": "无",
+          "example": "http://test.com/api/xx",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": false,
@@ -4992,7 +4992,7 @@
         {
           "disabled": false,
           "document": "图片",
-          "example": "无",
+          "example": "http://test.com/api/xx.png",
           "member": "string",
           "name": "Logo",
           "output_required": false,
@@ -5022,7 +5022,7 @@
         {
           "disabled": false,
           "document": "服务端地址",
-          "example": "无",
+          "example": "http://test.com",
           "member": "string",
           "name": "ServerUrl",
           "output_required": false,
@@ -5154,7 +5154,7 @@
         {
           "disabled": false,
           "document": "站点标题",
-          "example": "测试",
+          "example": "FastAPI - Swagger UI",
           "member": "string",
           "name": "Title",
           "output_required": false,
@@ -5214,7 +5214,7 @@
         {
           "disabled": false,
           "document": "AI分析",
-          "example": "无",
+          "example": "分析结果正常",
           "member": "string",
           "name": "AIAnalysis",
           "output_required": false,
@@ -5234,7 +5234,7 @@
         {
           "disabled": false,
           "document": "建议",
-          "example": "无",
+          "example": "无建议",
           "member": "string",
           "name": "Suggestion",
           "output_required": false,
@@ -5402,7 +5402,7 @@
         {
           "disabled": false,
           "document": "子公司上级",
-          "example": "无",
+          "example": "48139a35bd080859e8148ed98f6d2788",
           "member": "string",
           "name": "ParentEnterpriseUid",
           "output_required": false,
@@ -5472,7 +5472,7 @@
         {
           "disabled": false,
           "document": "法人代表",
-          "example": "无",
+          "example": "腾讯",
           "member": "string",
           "name": "LegalPerson",
           "output_required": false,
@@ -5578,7 +5578,7 @@
         {
           "disabled": false,
           "document": "仿冒应用名称",
-          "example": "无",
+          "example": "暴露面管理",
           "member": "string",
           "name": "AppName",
           "output_required": false,
@@ -5588,7 +5588,7 @@
         {
           "disabled": false,
           "document": "仿冒应用包名称",
-          "example": "无",
+          "example": "com.ctem",
           "member": "string",
           "name": "PackageName",
           "output_required": false,
@@ -5598,7 +5598,7 @@
         {
           "disabled": false,
           "document": "下载链接",
-          "example": "无",
+          "example": "http://test.com/download",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": false,
@@ -5608,7 +5608,7 @@
         {
           "disabled": false,
           "document": "处置状态：0-待处理 1-处理中 2-已处理",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "HandlingStatus",
           "output_required": false,
@@ -5618,7 +5618,7 @@
         {
           "disabled": false,
           "document": "关停状态：0-(默认状态) 1-关停审核中 2-已拦截 3-已拒绝 4-下线流程中 5-已下线 6-下线失败",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ShutdownStatus",
           "output_required": false,
@@ -5628,7 +5628,7 @@
         {
           "disabled": false,
           "document": "关停时间",
-          "example": "无",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "ShutdownTime",
           "output_required": false,
@@ -5664,7 +5664,7 @@
         {
           "disabled": false,
           "document": "仿冒小程序名称",
-          "example": "无",
+          "example": "com.ctem",
           "member": "string",
           "name": "ProgramName",
           "output_required": false,
@@ -5674,7 +5674,7 @@
         {
           "disabled": false,
           "document": "小程序ID",
-          "example": "无",
+          "example": "1001",
           "member": "string",
           "name": "ProgramId",
           "output_required": false,
@@ -5684,7 +5684,7 @@
         {
           "disabled": false,
           "document": "类别",
-          "example": "无",
+          "example": "安全",
           "member": "string",
           "name": "Category",
           "output_required": false,
@@ -5694,7 +5694,7 @@
         {
           "disabled": false,
           "document": "二维码",
-          "example": "无",
+          "example": "http://test.com/qrcode",
           "member": "string",
           "name": "QrCode",
           "output_required": false,
@@ -5704,7 +5704,7 @@
         {
           "disabled": false,
           "document": "处置状态：0-待处理 1-处理中 2-已处理",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "HandlingStatus",
           "output_required": false,
@@ -5714,7 +5714,7 @@
         {
           "disabled": false,
           "document": "关停状态：0-(默认状态) 1-关停审核中 2-已拦截 3-已拒绝 4-下线流程中 5-已下线 6-下线失败",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ShutdownStatus",
           "output_required": false,
@@ -5724,7 +5724,7 @@
         {
           "disabled": false,
           "document": "关停时间",
-          "example": "无",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "ShutdownTime",
           "output_required": false,
@@ -5760,7 +5760,7 @@
         {
           "disabled": false,
           "document": "仿冒网站",
-          "example": "无",
+          "example": "http://fake.com",
           "member": "string",
           "name": "Website",
           "output_required": false,
@@ -5770,7 +5770,7 @@
         {
           "disabled": false,
           "document": "ip位置",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "IPLocation",
           "output_required": false,
@@ -5780,7 +5780,7 @@
         {
           "disabled": false,
           "document": "截图",
-          "example": "无",
+          "example": "http://test.com/xxx.png",
           "member": "string",
           "name": "Screenshot",
           "output_required": false,
@@ -5790,7 +5790,7 @@
         {
           "disabled": false,
           "document": "处置状态：0-待处理 1-处理中 2-已处理",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "HandlingStatus",
           "output_required": false,
@@ -5800,7 +5800,7 @@
         {
           "disabled": false,
           "document": "关停状态：0-(默认状态) 1-关停审核中 2-已拦截 3-已拒绝 4-下线流程中 5-已下线 6-下线失败",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ShutdownStatus",
           "output_required": false,
@@ -5810,7 +5810,7 @@
         {
           "disabled": false,
           "document": "关停时间",
-          "example": "无",
+          "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "ShutdownTime",
           "output_required": false,
@@ -5846,7 +5846,7 @@
         {
           "disabled": false,
           "document": "仿冒公众号名称",
-          "example": "无",
+          "example": "暴露面管理",
           "member": "string",
           "name": "AccountName",
           "output_required": false,
@@ -5856,7 +5856,7 @@
         {
           "disabled": false,
           "document": "公众号ID",
-          "example": "无",
+          "example": "1001",
           "member": "string",
           "name": "WechatId",
           "output_required": false,
@@ -5866,7 +5866,7 @@
         {
           "disabled": false,
           "document": "头像",
-          "example": "无",
+          "example": "http://test.com/logo.png",
           "member": "string",
           "name": "Avatar",
           "output_required": false,
@@ -5876,7 +5876,7 @@
         {
           "disabled": false,
           "document": "二维码",
-          "example": "无",
+          "example": "http://test.com/qrcode",
           "member": "string",
           "name": "QrCode",
           "output_required": false,
@@ -5886,7 +5886,7 @@
         {
           "disabled": false,
           "document": "处置状态：0-待处理 1-处理中 2-已处理",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "HandlingStatus",
           "output_required": false,
@@ -5896,7 +5896,7 @@
         {
           "disabled": false,
           "document": "关停状态：0-(默认状态) 1-关停审核中 2-已拦截 3-已拒绝 4-下线流程中 5-已下线 6-下线失败",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ShutdownStatus",
           "output_required": false,
@@ -5906,7 +5906,7 @@
         {
           "disabled": false,
           "document": "关停时间",
-          "example": "无",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "ShutdownTime",
           "output_required": false,
@@ -5932,7 +5932,7 @@
         {
           "disabled": false,
           "document": "内容",
-          "example": "无",
+          "example": "AKIDxxx泄露",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -5942,7 +5942,7 @@
         {
           "disabled": false,
           "document": "命中关键字",
-          "example": "无",
+          "example": "AKID24edd12xx",
           "member": "string",
           "name": "MatchedKeywords",
           "output_required": false,
@@ -5962,7 +5962,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "无",
+          "example": "泄露",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -6018,7 +6018,7 @@
         {
           "disabled": false,
           "document": "标题",
-          "example": "测试",
+          "example": "暴露面管理",
           "member": "string",
           "name": "Title",
           "output_required": false,
@@ -6038,7 +6038,7 @@
         {
           "disabled": false,
           "document": "报文内容",
-          "example": "无",
+          "example": "<html>...</html>",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -6048,7 +6048,7 @@
         {
           "disabled": false,
           "document": "截图缩略图URL",
-          "example": "无",
+          "example": "http://test.com/xx.png",
           "member": "string",
           "name": "ScreenshotThumbUrl",
           "output_required": false,
@@ -6058,7 +6058,7 @@
         {
           "disabled": false,
           "document": "截图URL",
-          "example": "无",
+          "example": "http://test.com/xx.png",
           "member": "string",
           "name": "ScreenshotUrl",
           "output_required": false,
@@ -6098,7 +6098,7 @@
         {
           "disabled": false,
           "document": "证书信息",
-          "example": "无",
+          "example": "{\\\"cipher\\\": \\\"TLS_AES_256_GCM_SHA384\\\"}",
           "member": "string",
           "name": "Ssl",
           "output_required": false,
@@ -6167,7 +6167,7 @@
         {
           "disabled": false,
           "document": "周期任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0 0 0 * * *",
           "member": "string",
           "name": "Crontab",
           "output_required": false,
@@ -6189,7 +6189,7 @@
         {
           "disabled": false,
           "document": "新增数据",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "NewCount",
           "output_required": false,
@@ -6200,7 +6200,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "CreateAt",
           "output_required": false,
@@ -6211,7 +6211,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "UpdateAt",
           "output_required": false,
@@ -6233,7 +6233,7 @@
         {
           "disabled": false,
           "document": "并发设置",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Qps",
           "output_required": false,
@@ -6255,7 +6255,7 @@
         {
           "disabled": false,
           "document": "客户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1001",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -6266,7 +6266,7 @@
         {
           "disabled": false,
           "document": "客户appid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "251001",
           "member": "int64",
           "name": "AppId",
           "output_required": false,
@@ -6283,7 +6283,7 @@
         {
           "disabled": false,
           "document": "发现时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "TimeAt",
           "output_required": false,
@@ -6349,7 +6349,7 @@
         {
           "disabled": false,
           "document": "链接",
-          "example": "无",
+          "example": "http://github.com/xxx",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -6375,7 +6375,7 @@
         {
           "disabled": false,
           "document": "链接",
-          "example": "无",
+          "example": "http://test.com/xx",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -6401,7 +6401,7 @@
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "无",
+          "example": "test@qq.com",
           "member": "string",
           "name": "Email",
           "output_required": false,
@@ -6447,7 +6447,7 @@
         {
           "disabled": false,
           "document": "标题",
-          "example": "测试",
+          "example": "暴露面管理",
           "member": "string",
           "name": "Title",
           "output_required": false,
@@ -6457,7 +6457,7 @@
         {
           "disabled": false,
           "document": "Icon",
-          "example": "无",
+          "example": "http://test.com/xx.ico",
           "member": "string",
           "name": "Icon",
           "output_required": false,
@@ -6467,7 +6467,7 @@
         {
           "disabled": false,
           "document": "缩略图",
-          "example": "无",
+          "example": "http://test.com/xx.png",
           "member": "string",
           "name": "Screenshot",
           "output_required": false,
@@ -6523,7 +6523,7 @@
         {
           "disabled": false,
           "document": "内容",
-          "example": "无",
+          "example": "暴露面管理",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -6533,7 +6533,7 @@
         {
           "disabled": false,
           "document": "命中关键字",
-          "example": "无",
+          "example": "password:test257",
           "member": "string",
           "name": "MatchedKeywords",
           "output_required": false,
@@ -6553,7 +6553,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "无",
+          "example": "在线",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -6573,7 +6573,7 @@
         {
           "disabled": false,
           "document": "泄露平台",
-          "example": "无",
+          "example": "百度网盘",
           "member": "string",
           "name": "Platform",
           "output_required": false,
@@ -6669,7 +6669,7 @@
         {
           "disabled": false,
           "document": "端口响应详情",
-          "example": "无",
+          "example": "U1NILTIuMC1PcGVuU1NIXzguMA0K",
           "member": "string",
           "name": "Banner",
           "output_required": false,
@@ -6877,7 +6877,7 @@
         {
           "disabled": false,
           "document": "标题",
-          "example": "测试",
+          "example": "暴露面管理",
           "member": "string",
           "name": "Title",
           "output_required": false,
@@ -6897,7 +6897,7 @@
         {
           "disabled": false,
           "document": "报文内容",
-          "example": "无",
+          "example": "暴露面管理",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -6907,7 +6907,7 @@
         {
           "disabled": false,
           "document": "截图缩略图URL",
-          "example": "无",
+          "example": "http://test.com/xx.png",
           "member": "string",
           "name": "ScreenshotThumbUrl",
           "output_required": false,
@@ -6917,7 +6917,7 @@
         {
           "disabled": false,
           "document": "截图URL",
-          "example": "无",
+          "example": "http://test.com/xx.png",
           "member": "string",
           "name": "ScreenshotUrl",
           "output_required": false,
@@ -6957,7 +6957,7 @@
         {
           "disabled": false,
           "document": "证书信息",
-          "example": "无",
+          "example": "{\\\"cipher\\\": \\\"TLS_AES_256_GCM_SHA384\\\"}",
           "member": "string",
           "name": "Ssl",
           "output_required": false,
@@ -6967,7 +6967,7 @@
         {
           "disabled": false,
           "document": "ssl证书过期时间",
-          "example": "无",
+          "example": "2026-03-30T12:03:50Z",
           "member": "string",
           "name": "SslExpiredTime",
           "output_required": false,
@@ -7043,7 +7043,7 @@
         {
           "disabled": false,
           "document": "子公司名称",
-          "example": "无",
+          "example": "暴露面管理",
           "member": "string",
           "name": "EnterpriseName",
           "output_required": false,
@@ -7113,7 +7113,7 @@
         {
           "disabled": false,
           "document": "详情",
-          "example": "无",
+          "example": "测试数据",
           "member": "string",
           "name": "Detail",
           "output_required": false,
@@ -7123,7 +7123,7 @@
         {
           "disabled": false,
           "document": "Md5值",
-          "example": "无",
+          "example": "145314895749100ae8306079519b3393",
           "member": "string",
           "name": "Md5",
           "output_required": false,
@@ -7153,7 +7153,7 @@
         {
           "disabled": false,
           "document": "标签列表，json格式：{\\\"tag1\\\":[\\\"责任人xxx\\\"],\\\"tag2\\\":[\\\"测试站\\\"]}",
-          "example": "无",
+          "example": "{\\\"tag1\\\":[\\\"责任人xxx\\\"],\\\"tag2\\\":[\\\"测试站\\\"]}",
           "member": "string",
           "name": "Labels",
           "output_required": false,
@@ -7229,7 +7229,7 @@
         {
           "disabled": false,
           "document": "漏洞名称",
-          "example": "测试",
+          "example": "暴露面测试",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -7249,7 +7249,7 @@
         {
           "disabled": false,
           "document": "建议",
-          "example": "无",
+          "example": "无建议",
           "member": "string",
           "name": "Suggestion",
           "output_required": false,
@@ -7269,7 +7269,7 @@
         {
           "disabled": false,
           "document": "AI研判",
-          "example": "无",
+          "example": "无建议",
           "member": "string",
           "name": "AiJudge",
           "output_required": false,
@@ -7365,7 +7365,7 @@
         {
           "disabled": false,
           "document": "弱口令账号",
-          "example": "test",
+          "example": "ctem",
           "member": "string",
           "name": "Account",
           "output_required": false,
@@ -7375,7 +7375,7 @@
         {
           "disabled": false,
           "document": "弱口令密码",
-          "example": "123",
+          "example": "pwd@1#23",
           "member": "string",
           "name": "Password",
           "output_required": false,
@@ -7395,7 +7395,7 @@
         {
           "disabled": false,
           "document": "截图",
-          "example": "无",
+          "example": "http://test.com/xx.png",
           "member": "string",
           "name": "ScreenshotUrl",
           "output_required": false,
@@ -7415,7 +7415,7 @@
         {
           "disabled": false,
           "document": "上次复测时间",
-          "example": "无",
+          "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "LastCheckTime",
           "output_required": false,
@@ -7461,7 +7461,7 @@
         {
           "disabled": false,
           "document": "图片地址",
-          "example": "无",
+          "example": "http://test.com/xx.png",
           "member": "string",
           "name": "Logo",
           "output_required": false,
@@ -7471,7 +7471,7 @@
         {
           "disabled": false,
           "document": "账号",
-          "example": "无",
+          "example": "em_test",
           "member": "string",
           "name": "AccountId",
           "output_required": false,
@@ -7481,7 +7481,7 @@
         {
           "disabled": false,
           "document": "二维码",
-          "example": "无",
+          "example": "http://test.com/qrcode",
           "member": "string",
           "name": "QrCode",
           "output_required": false,
@@ -7491,7 +7491,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "暴露面测试",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -7537,7 +7537,7 @@
         {
           "disabled": false,
           "document": "图片地址",
-          "example": "无",
+          "example": "http://test.com/xx.png",
           "member": "string",
           "name": "Logo",
           "output_required": false,
@@ -7547,7 +7547,7 @@
         {
           "disabled": false,
           "document": "账号",
-          "example": "无",
+          "example": "em_test",
           "member": "string",
           "name": "AccountId",
           "output_required": false,
@@ -7557,7 +7557,7 @@
         {
           "disabled": false,
           "document": "二维码",
-          "example": "无",
+          "example": "http://test.com/qrcode",
           "member": "string",
           "name": "QrCode",
           "output_required": false,
@@ -7567,7 +7567,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "暴露面测试",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -7607,7 +7607,7 @@
         {
           "disabled": false,
           "document": "详情ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "Id",
           "output_required": false,
@@ -7617,7 +7617,7 @@
         {
           "disabled": false,
           "document": "目标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://test.com",
           "member": "string",
           "name": "Value",
           "output_required": false,

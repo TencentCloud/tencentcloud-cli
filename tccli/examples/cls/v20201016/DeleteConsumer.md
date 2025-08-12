@@ -1,19 +1,19 @@
-**Example 1: 删除投递配置**
+**Example 1: 删除投递Ckafka任务**
 
-
+删除投递Ckafka任务
 
 Input: 
 
 ```
 tccli cls DeleteConsumer --cli-unfold-argument  \
-    --TopicId xxx-xxx-xxx-xxx
+    --TopicId 871710c5-35cd-4d1e-8e79-2fa92c35d612
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx"
+        "RequestId": "5beb8d61-93b9-417b-85a3-4d7db8f7618a"
     }
 }
 ```

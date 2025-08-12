@@ -17,7 +17,7 @@ Output:
                 "DisplayToolCommon": {
                     "CreateAt": "2024-06-07 10:59:23",
                     "CustomerId": 100081,
-                    "CustomerName": "5555",
+                    "CustomerName": "腾讯test",
                     "Detail": "",
                     "EnterpriseName": "",
                     "EnterpriseUid": "",
@@ -31,7 +31,7 @@ Output:
                 "Id": 168,
                 "Ip": "1.1.1.1",
                 "Level": 0,
-                "Name": "test",
+                "Name": "Go pprof Debug Page",
                 "Port": 80,
                 "RepairStatus": 0,
                 "Suggestion": "",

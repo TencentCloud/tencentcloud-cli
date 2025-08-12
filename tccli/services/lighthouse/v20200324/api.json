@@ -336,6 +336,13 @@
       "output": "DescribeGeneralResourceQuotasResponse",
       "status": "online"
     },
+    "DescribeImagesToShare": {
+      "document": "本接口 (DescribeImagesToShare) 用于查询CVM的自定义镜像列表共享到轻量应用服务器。",
+      "input": "DescribeImagesToShareRequest",
+      "name": "查询CVM镜像列表",
+      "output": "DescribeImagesToShareResponse",
+      "status": "online"
+    },
     "DescribeInstanceVncUrl": {
       "document": "本接口 ( DescribeInstanceVncUrl ) 用于查询实例管理终端地址，获取的地址可用于实例的 VNC 登录。\n\n* 仅处于 `RUNNING`，`RESCUE_MODE` 状态的机器，且当前机器无变更中操作，才可使用此功能。\n* 管理终端地址的有效期为 15 秒，调用接口成功后如果 15 秒内不使用该链接进行访问，管理终端地址自动失效，您需要重新查询。\n* 管理终端地址一旦被访问，将自动失效，您需要重新查询。\n* 如果连接断开，每分钟内重新连接的次数不能超过 30 次。\n* 参数 `InstanceVncUrl` ：调用接口成功后会返回的 `InstanceVncUrl` 的值。\n获取到 `InstanceVncUrl` 后，您需要在链接 `https://img.qcloud.com/qcloud/app/active_vnc/index.html?` 末尾加上参数 `InstanceVncUrl=xxxx`。\n 最后组成的 URL 格式如下：\n\n```\nhttps://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9\n```",
       "input": "DescribeInstanceVncUrlRequest",
@@ -572,6 +579,13 @@
       "input": "ModifyFirewallTemplateRequest",
       "name": "修改防火墙模板",
       "output": "ModifyFirewallTemplateResponse",
+      "status": "online"
+    },
+    "ModifyImageSharePermission": {
+      "document": "本接口 (ModifyImageSharePermission) 用于共享和取消共享CVM自定义镜像到轻量应用服务器服务。\nCVM镜像共享到轻量应用服务器镜像需要满足如下条件：\n1.已共享过的镜像不支持再次共享。\n2.外部导入的镜像不支持共享。\n3.整机镜像不支持共享。\n4.镜像要支持Cloudinit才支持共享。\n5.镜像的Platform和OsName要满足。\n6.NORMAL状态的镜像才支持共享。",
+      "input": "ModifyImageSharePermissionRequest",
+      "name": "修改CVM镜像共享信息",
+      "output": "ModifyImageSharePermissionResponse",
       "status": "online"
     },
     "ModifyInstancesAttribute": {
@@ -4061,6 +4075,80 @@
       ],
       "type": "object"
     },
+    "DescribeImagesToShareRequest": {
+      "document": "DescribeImagesToShare请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CVM镜像 ID 列表。可通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回值中的ImageId获取。",
+          "example": "[\"img-xksdu822\"]",
+          "member": "string",
+          "name": "ImageIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器列表。\n<li>image-id</li>按照【CVM镜像ID】进行过滤。\n类型：String\n必选：否\n\n<li>image-name</li>按照【CVM镜像名称】进行过滤。\n类型：String\n必选：否\n\n<li>image-type</li>按照【CVM镜像类型】进行过滤。\n类型：String\n必选：否\n取值范围：\nPRIVATE_IMAGE: 私有镜像 (本账户创建的镜像)\nPUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)\nSHARED_IMAGE: 共享镜像(其他账户共享给本账户的镜像) 。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。\n参数不可以同时指定ImageIds和Filters。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesToShareResponse": {
+      "document": "DescribeImagesToShare返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的镜像数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM镜像详细信息列表。",
+          "example": "无",
+          "member": "Image",
+          "name": "ImageSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceVncUrlRequest": {
       "document": "DescribeInstanceVncUrl请求参数结构体",
       "members": [
@@ -6453,6 +6541,152 @@
       ],
       "usage": "out"
     },
+    "Image": {
+      "document": "CVM镜像信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CVM镜像 ID ，是Image的唯一标识。",
+          "example": "img-cs2rrmp0",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称。",
+          "example": "test-image",
+          "member": "string",
+          "name": "ImageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像描述。",
+          "example": "test-image",
+          "member": "string",
+          "name": "ImageDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像大小。单位GB。",
+          "example": "50",
+          "member": "int64",
+          "name": "ImageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像来源。\n<li>CREATE_IMAGE：自定义镜像</li>\n<li>EXTERNAL_IMPORT：外部导入镜像</li>",
+          "example": "CREATE_IMAGE",
+          "member": "string",
+          "name": "ImageSource",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像分类\n<li>SystemImage：系统盘镜像</li>\n<li>InstanceImage：整机镜像</li>",
+          "example": "SystemImage",
+          "member": "string",
+          "name": "ImageClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像状态\nCREATING:创建中\nNORMAL:正常\nCREATEFAILED:创建失败\nUSING:使用中\nSYNCING:同步中\nIMPORTING:导入中\nIMPORTFAILED:导入失败",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ImageState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像是否支持Cloudinit。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportCloudinit",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像架构。",
+          "example": "x86_64",
+          "member": "string",
+          "name": "Architecture",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像操作系统。",
+          "example": "Ubuntu Server 20.04 LTS 64bit",
+          "member": "string",
+          "name": "OsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像来源平台。",
+          "example": "Ubuntu",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像创建时间。",
+          "example": "2021-07-23T08:49:36Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像是否可共享到轻量应用服务器。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsShareable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不可共享的原因。",
+          "example": "镜像已共享。",
+          "member": "string",
+          "name": "UnshareableReason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ImportKeyPairRequest": {
       "document": "ImportKeyPair请求参数结构体",
       "members": [
@@ -8084,6 +8318,52 @@
     "ModifyFirewallTemplateResponse": {
       "document": "ModifyFirewallTemplate返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyImageSharePermissionRequest": {
+      "document": "ModifyImageSharePermission请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像 ID。可通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回值中的ImageId获取。",
+          "example": "img-dw8adx",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享属性，包括 SHARE，CANCEL。其中SHARE代表共享，CANCEL代表取消共享。",
+          "example": "SHARE",
+          "member": "string",
+          "name": "Permission",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyImageSharePermissionResponse": {
+      "document": "ModifyImageSharePermission返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CVM自定义镜像共享到轻量应用服务器后的镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lhbp-xkeh87da",
+          "member": "string",
+          "name": "BlueprintId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

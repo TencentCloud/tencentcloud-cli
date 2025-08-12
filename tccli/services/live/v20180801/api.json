@@ -8345,7 +8345,7 @@
         },
         {
           "disabled": false,
-          "document": "可选值：\nMainland：查询国内数据，\nOversea：则查询国外数据，\n默认：查询国内+国外的数据。\n注：LEB（快直播）只支持国内+国外数据查询。",
+          "document": "可选值：Mainland：查询国内数据，Oversea：则查询国外数据，默认：查询国内+国外的数据。",
           "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",

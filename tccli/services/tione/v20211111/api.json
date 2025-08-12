@@ -1562,7 +1562,7 @@
         {
           "disabled": false,
           "document": "计算资源配置",
-          "example": " {\"Cpu\": 1000, \"Memory\": 1024, \"Gpu\": 0, \"InstanceType\": \"TI.S.MEDIUM.POST\"}",
+          "example": "无",
           "member": "ResourceConf",
           "name": "ResourceConf",
           "required": true,
@@ -1652,7 +1652,7 @@
         {
           "disabled": false,
           "document": "CFS存储的配置",
-          "example": "{\"id\":\"cfs-9su5kqtv\",\"path\":\"/\",\"mappingPath\":\"/data\"}",
+          "example": "无",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
           "required": false,
@@ -1661,7 +1661,7 @@
         {
           "disabled": false,
           "document": "日志配置",
-          "example": "{\"LogsetId\": \"4dd0a097-f629-4afc-9b99-888ef99a178f\", \"TopicId\": \"ea8048db-8f97-4abb-9668-f3532b9b61f8\"}",
+          "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
           "required": false,
@@ -1706,7 +1706,7 @@
         {
           "disabled": false,
           "document": "标签配置",
-          "example": "[{\"TagKey\": \"test_key\", \"TagValue\": \"good_value\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1715,7 +1715,7 @@
         {
           "disabled": false,
           "document": "数据配置，只支持WEDATA_HDFS存储类型",
-          "example": "[ {\"DataSourceType\": \"CLOUD_PREMIUM\", \"CBSSource\": {\"VolumeSizeInGB\": 50}, \"MappingPath\": \"/home/tione/notebook\"}]",
+          "example": "无",
           "member": "DataConfig",
           "name": "DataConfigs",
           "required": false,
@@ -1724,7 +1724,7 @@
         {
           "disabled": false,
           "document": "镜像信息",
-          "example": "{\"ImageType\":\"SYSTEM\",\"ImageId\":\"35551e3c-b0e3\",\"ImageUrl\":\"tione.tencentcloudcr.com/qcloud/llm-train:1.8.0\",\"RegistryRegion\":\"\",\"RegistryId\":\"\",\"ImageName\":\"tilearn-llm0.9\"}",
+          "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "required": false,
@@ -1742,7 +1742,7 @@
         {
           "disabled": false,
           "document": "SSH配置信息",
-          "example": " {\"Enable\": false, \"PublicKey\": \"public-key\"}",
+          "example": "无",
           "member": "SSHConfig",
           "name": "SSHConfig",
           "required": false,
@@ -1751,7 +1751,7 @@
         {
           "disabled": false,
           "document": "GooseFS存储配置",
-          "example": "{\"id\":\"x-c60-v747xo7z\",\"gfsType\":\"GooseFSx\",\"path\":\"/\"}",
+          "example": "无",
           "member": "GooseFS",
           "name": "VolumeSourceGooseFS",
           "required": false,
@@ -3630,7 +3630,7 @@
         {
           "disabled": false,
           "document": "过滤条件\n注意: \n1. Filter.Name 只支持以下枚举值:\n    InstanceId (资源组节点id)\n    InstanceStatus (资源组节点状态)\n2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询\n3. 每次请求的Filters的上限为10，Filter.Values的上限为100",
-          "example": "[{Name: \"InstanceStatus\", Values: [\"RUNNING\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -8072,7 +8072,7 @@
         {
           "disabled": false,
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"TagKey\": \"test_key\", \"TagValue\": \"good_value\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -8112,7 +8112,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": " {\"Cpu\": 1000, \"Memory\": 1024, \"Gpu\": 0, \"InstanceType\": \"TI.S.MEDIUM.POST\"}",
+          "example": "无",
           "member": "ResourceConf",
           "name": "ResourceConf",
           "output_required": true,
@@ -8152,7 +8152,7 @@
         {
           "disabled": false,
           "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{ \"TopicId\": \"ea8048db-8f97-4abb-9668-f3532b9b61f8\", \"LogsetId\": \"4dd0a097-f629-4afc-9b99-888ef99a178f\"}",
+          "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
           "output_required": true,
@@ -8312,7 +8312,7 @@
         {
           "disabled": false,
           "document": "CFS存储的配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Id\":\"cfs-abcdefg\",\"Path\":\"/\"}",
+          "example": "无",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
           "output_required": true,
@@ -8322,7 +8322,7 @@
         {
           "disabled": false,
           "document": "数据配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"MappingPath\":\"/home/tione/notebook\",\"DataSourceType\":\"CFS\",\"WeDataHDFSSource\":{\"Id\":0,\"Path\":\"\"},\"CFSSource\":{\"Id\":\"cfs-14cpoxo5\",\"Path\":\"/\"}}]",
+          "example": "无",
           "member": "DataConfig",
           "name": "DataConfigs",
           "output_required": true,
@@ -8352,7 +8352,7 @@
         {
           "disabled": false,
           "document": "镜像信息",
-          "example": "{\"ImageType\":\"SYSTEM\",\"ImageUrl\":\"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\"ImageName\":\"tilearn-\",\"ImageId\":\"35551e3c-b0e310a5613cd3\"}",
+          "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "output_required": true,
@@ -8372,7 +8372,7 @@
         {
           "disabled": false,
           "document": "SSH配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Enable\":false,\"PublicKey\":\"\",\"Port\":0,\"LoginCommand\":\"\"}",
+          "example": "无",
           "member": "SSHConfig",
           "name": "SSHConfig",
           "output_required": false,
@@ -8382,7 +8382,7 @@
         {
           "disabled": false,
           "document": "GooseFS存储配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Id\":\"gs-1234\",\"Type\":\"GooseFSx\",\"Path\":\"/\", \"NameSpace\": \"test\"}",
+          "example": "无",
           "member": "GooseFS",
           "name": "VolumeSourceGooseFS",
           "output_required": false,
@@ -8432,7 +8432,7 @@
         {
           "disabled": false,
           "document": "Appid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1256704107",
+          "example": "1357704107",
           "member": "string",
           "name": "AppId",
           "output_required": false,

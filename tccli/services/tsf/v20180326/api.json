@@ -141,7 +141,7 @@
       "status": "online"
     },
     "CreateFileConfigWithDetailResp": {
-      "document": "创建文件配置项，返回详细信息",
+      "document": "创建文件配置项，返回详细信息。",
       "input": "CreateFileConfigWithDetailRespRequest",
       "name": "创建文件配置项并返回详细信息",
       "output": "CreateFileConfigWithDetailRespResponse",
@@ -162,16 +162,16 @@
       "status": "online"
     },
     "CreateLane": {
-      "document": "创建泳道",
+      "document": "创建泳道配置",
       "input": "CreateLaneRequest",
-      "name": "创建泳道",
+      "name": "创建泳道配置",
       "output": "CreateLaneResponse",
       "status": "online"
     },
     "CreateLaneRule": {
-      "document": "创建泳道规则",
+      "document": "创建灰度发布规则",
       "input": "CreateLaneRuleRequest",
-      "name": "创建泳道规则",
+      "name": "创建灰度发布规则",
       "output": "CreateLaneRuleResponse",
       "status": "online"
     },
@@ -183,9 +183,9 @@
       "status": "online"
     },
     "CreateMicroserviceWithDetailResp": {
-      "document": "新增微服务返回id",
+      "document": "新增微服务返回ID",
       "input": "CreateMicroserviceWithDetailRespRequest",
-      "name": "新增微服务返回id",
+      "name": "新增微服务返回ID",
       "output": "CreateMicroserviceWithDetailRespResponse",
       "status": "online"
     },
@@ -225,7 +225,7 @@
       "status": "online"
     },
     "CreatePublicConfigWithDetailResp": {
-      "document": "创建公共配置项，并返回配置项详细信息",
+      "document": "创建公共配置项，并返回配置项详细信息。",
       "input": "CreatePublicConfigWithDetailRespRequest",
       "name": "创建公共配置项返回详细信息",
       "output": "CreatePublicConfigWithDetailRespResponse",
@@ -351,16 +351,16 @@
       "status": "online"
     },
     "DeleteLane": {
-      "document": "删除泳道",
+      "document": "删除泳道配置",
       "input": "DeleteLaneRequest",
-      "name": "删除泳道",
+      "name": "删除泳道配置",
       "output": "DeleteLaneResponse",
       "status": "online"
     },
     "DeleteLaneRule": {
-      "document": "删除泳道规则",
+      "document": "删除灰度发布规则",
       "input": "DeleteLaneRuleRequest",
-      "name": "删除泳道规则",
+      "name": "删除灰度发布规则",
       "output": "DeleteLaneRuleResponse",
       "status": "online"
     },
@@ -491,7 +491,7 @@
       "status": "online"
     },
     "DescribeApiVersions": {
-      "document": "查询API 版本",
+      "document": "查询API版本",
       "input": "DescribeApiVersionsRequest",
       "name": "查询API版本",
       "output": "DescribeApiVersionsResponse",
@@ -584,7 +584,7 @@
     "DescribeConfigTemplate": {
       "document": "导入配置",
       "input": "DescribeConfigTemplateRequest",
-      "name": "导入配置",
+      "name": "查询配置模板详情",
       "output": "DescribeConfigTemplateResponse",
       "status": "online"
     },
@@ -659,7 +659,7 @@
       "status": "online"
     },
     "DescribeDownloadInfo": {
-      "document": "TSF上传的程序包存放在腾讯云对象存储（COS）中，通过该API可以获取从COS下载程序包需要的信息，包括包所在的桶、存储路径、鉴权信息等，之后使用COS API（或SDK）进行下载。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436",
+      "document": "TSF上传的程序包存放在腾讯云对象存储（COS）中，通过该API可以获取从COS下载程序包需要的信息，包括包所在的桶、存储路径、鉴权信息等，之后使用COS API（或SDK）进行下载。\n请查阅[COS相关文档](https://cloud.tencent.com/document/product/436)",
       "input": "DescribeDownloadInfoRequest",
       "name": "获取下载程序包信息",
       "output": "DescribeDownloadInfoResponse",
@@ -848,16 +848,16 @@
       "status": "online"
     },
     "DescribeLaneRules": {
-      "document": "查询泳道规则列表",
+      "document": "查询灰度发布规则列表",
       "input": "DescribeLaneRulesRequest",
-      "name": "查询泳道规则列表",
+      "name": "查询灰度发布规则列表",
       "output": "DescribeLaneRulesResponse",
       "status": "online"
     },
     "DescribeLanes": {
-      "document": "查询泳道列表",
+      "document": "查询泳道配置列表",
       "input": "DescribeLanesRequest",
-      "name": "查询泳道列表",
+      "name": "查询泳道配置列表",
       "output": "DescribeLanesResponse",
       "status": "online"
     },
@@ -988,9 +988,9 @@
       "status": "online"
     },
     "DescribeReleasedConfig": {
-      "document": "查询group发布的配置",
+      "document": "查询部署组发布的配置",
       "input": "DescribeReleasedConfigRequest",
-      "name": "查询group发布的配置",
+      "name": "查询部署组发布的配置",
       "output": "DescribeReleasedConfigResponse",
       "status": "online"
     },
@@ -1114,7 +1114,7 @@
       "status": "online"
     },
     "DescribeUploadInfo": {
-      "document": "TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。\nCOS相关文档请查阅：https://cloud.tencent.com/document/product/436",
+      "document": "TSF会将软件包上传到腾讯云对象存储（COS）。调用此接口获取上传信息，如目标地域，桶，包Id，存储路径，鉴权信息等，之后请使用COS API（或SDK）进行上传。\n请查阅[COS相关文档](https://cloud.tencent.com/document/product/436)",
       "input": "DescribeUploadInfoRequest",
       "name": "获取上传程序包信息",
       "output": "DescribeUploadInfoResponse",
@@ -1128,9 +1128,9 @@
       "status": "online"
     },
     "DisableLaneRule": {
-      "document": "禁用泳道规则",
+      "document": "禁用灰度发布规则",
       "input": "DisableLaneRuleRequest",
-      "name": "禁用泳道规则",
+      "name": "禁用灰度发布规则",
       "output": "DisableLaneRuleResponse",
       "status": "online"
     },
@@ -1184,9 +1184,9 @@
       "status": "online"
     },
     "EnableLaneRule": {
-      "document": "启用泳道规则",
+      "document": "启用灰度发布规则",
       "input": "EnableLaneRuleRequest",
-      "name": "启用泳道规则",
+      "name": "启用灰度发布规则",
       "output": "EnableLaneRuleResponse",
       "status": "online"
     },
@@ -1275,16 +1275,16 @@
       "status": "online"
     },
     "ModifyLane": {
-      "document": "更新泳道信息",
+      "document": "更新泳道配置信息",
       "input": "ModifyLaneRequest",
-      "name": "更新泳道信息",
+      "name": "更新泳道配置信息",
       "output": "ModifyLaneResponse",
       "status": "online"
     },
     "ModifyLaneRule": {
-      "document": "更新泳道规则",
+      "document": "更新灰度发布规则",
       "input": "ModifyLaneRuleRequest",
-      "name": "更新泳道规则",
+      "name": "更新灰度发布规则",
       "output": "ModifyLaneRuleResponse",
       "status": "online"
     },
@@ -1387,7 +1387,7 @@
       "status": "online"
     },
     "ReleaseConfigWithDetailResp": {
-      "document": "发布配置,并且返回配置 ID",
+      "document": "发布配置，并且返回配置ID。",
       "input": "ReleaseConfigWithDetailRespRequest",
       "name": "发布配置返回详细信息",
       "output": "ReleaseConfigWithDetailRespResponse",
@@ -7119,7 +7119,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批次ID。",
+          "document": "任务批次ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)页面点击任务ID进入执行记录页，第一列即为任务批次ID，在[任务执行记录](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=task)页能查看所有任务批次ID。",
           "example": "batch-6a79x94v",
           "member": "string",
           "name": "BatchId",
@@ -7971,7 +7971,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项名称",
+          "document": "配置项名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”、“_”），且不能以分隔符开头或结尾。",
           "example": "config_app",
           "member": "string",
           "name": "ConfigName",
@@ -7980,7 +7980,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本",
+          "document": "配置项版本，只能包含小写字母、数字及分隔符(\"-\"，\".\")，且必须以小写字母或数字开头、以小写字母或数字结尾，中间不能有连续的\"-\"或\".\"。",
           "example": "v1",
           "member": "string",
           "name": "ConfigVersion",
@@ -7989,7 +7989,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项值",
+          "document": "配置项值。",
           "example": "config: enabled",
           "member": "string",
           "name": "ConfigValue",
@@ -7998,7 +7998,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-5yr26r9a",
           "member": "string",
           "name": "ApplicationId",
@@ -8007,7 +8007,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本描述",
+          "document": "配置项版本描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ConfigVersionDesc",
@@ -8016,7 +8016,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项值类型",
+          "document": "配置项值类型，固定值。",
           "example": "application",
           "member": "string",
           "name": "ConfigType",
@@ -8025,7 +8025,7 @@
         },
         {
           "disabled": false,
-          "document": "Base64编码的配置项",
+          "document": "Base64编码的配置项。\n- true：开启\n- false：关闭",
           "example": "true",
           "member": "bool",
           "name": "EncodeWithBase64",
@@ -8034,7 +8034,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -8049,7 +8049,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：创建成功；false：创建失败",
+          "document": "创建结果。\n- true：创建成功\n- false：创建失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -8071,7 +8071,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置模板名称",
+          "document": "配置模板名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。",
           "example": "config_temp_app",
           "member": "string",
           "name": "ConfigTemplateName",
@@ -8080,7 +8080,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模板对应的微服务框架",
+          "document": "配置模板对应的微服务框架。\n- Ribbon：Ribbon类型配置模板\n- Hystrix：Hystrix类型配置模板\n- Zuul：Zuul类型配置模板\n- customize：自定义类型配置模板",
           "example": "Ribbon",
           "member": "string",
           "name": "ConfigTemplateType",
@@ -8089,7 +8089,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模板数据",
+          "document": "配置模板数据。",
           "example": "ribbon.ReadTimeout: 5000",
           "member": "string",
           "name": "ConfigTemplateValue",
@@ -8098,7 +8098,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模板描述",
+          "document": "配置模板描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ConfigTemplateDesc",
@@ -8107,7 +8107,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -8122,7 +8122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：创建成功；false：创建失败",
+          "document": "创建结果。\n- true：创建成功\n- false：创建失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -8144,7 +8144,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置模板名称",
+          "document": "配置模板名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。",
           "example": "config_app",
           "member": "string",
           "name": "ConfigTemplateName",
@@ -8153,7 +8153,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模板对应的微服务框架",
+          "document": "配置模板对应的微服务框架。- Ribbon：Ribbon类型配置模板- Hystrix：Hystrix类型配置模板- Zuul：Zuul类型配置模板- customize：自定义类型配置模板。",
           "example": "Ribbon",
           "member": "string",
           "name": "ConfigTemplateType",
@@ -8162,7 +8162,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模板数据",
+          "document": "配置模板数据。",
           "example": "#请求处理超时时间ribbon.ReadTimeout: 5000#请求连接超时时间ribbon.ConnectTimeout: 2000#同一实例最大重试次数，不包括首次调用ribbon.MaxAutoRetries: 0",
           "member": "string",
           "name": "ConfigTemplateValue",
@@ -8171,7 +8171,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模板描述",
+          "document": "配置模板描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ConfigTemplateDesc",
@@ -8180,7 +8180,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -8195,8 +8195,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建成功，返回 ID",
-          "example": "{\"ConfigTemplateId\":\"dcfg_temp-ym1v\",\"ConfigTemplateName\":\"ct\",\"ConfigTemplateType\":\"Ribbon\",\"ConfigTemplateValue\":\"time: 2000\"}",
+          "document": "创建成功，返回配置模板ID。",
+          "example": "无",
           "member": "ConfigTemplate",
           "name": "Result",
           "output_required": true,
@@ -8217,7 +8217,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项名称",
+          "document": "配置项名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”、“_”），且不能以分隔符开头或结尾。",
           "example": "app_config",
           "member": "string",
           "name": "ConfigName",
@@ -8226,7 +8226,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本",
+          "document": "配置项版本，只能包含小写字母、数字及分隔符(\"-\"，\".\")，且必须以小写字母或数字开头、以小写字母或数字结尾，中间不能有连续的\"-\"或\".\"。",
           "example": "v1.0",
           "member": "string",
           "name": "ConfigVersion",
@@ -8235,7 +8235,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项值",
+          "document": "配置项值。",
           "example": "api.invok.limit: 5000",
           "member": "string",
           "name": "ConfigValue",
@@ -8244,7 +8244,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-gyq2xry5",
           "member": "string",
           "name": "ApplicationId",
@@ -8253,7 +8253,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本描述",
+          "document": "配置项版本描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ConfigVersionDesc",
@@ -8262,7 +8262,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项值类型",
+          "document": "配置项值类型，固定值。",
           "example": "application",
           "member": "string",
           "name": "ConfigType",
@@ -8271,7 +8271,7 @@
         },
         {
           "disabled": false,
-          "document": "Base64编码的配置项",
+          "document": "Base64编码的配置项。\n- true：开启\n- false：关闭",
           "example": "true",
           "member": "bool",
           "name": "EncodeWithBase64",
@@ -8280,7 +8280,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -8295,8 +8295,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项",
-          "example": "{   \"ConfigName\": \"abc\",   \"ConfigVersion\": \"abc\",   \"ConfigVersionDesc\": \"abc\",   \"ConfigValue\": \"abc\",   \"ApplicationId\": \"abc\",   \"ConfigType\": \"abc\",   \"EncodeWithBase64\": true,   \"ProgramIdList\": [     \"abc\"   ] }",
+          "document": "配置项。",
+          "example": "无",
           "member": "Config",
           "name": "Result",
           "output_required": true,
@@ -8561,7 +8561,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项名称",
+          "document": "配置项名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”、“_”），且不能以分隔符开头或结尾。",
           "example": "config_app",
           "member": "string",
           "name": "ConfigName",
@@ -8570,7 +8570,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本",
+          "document": "配置项版本，只能包含小写字母、数字及分隔符(\"-\"，\".\")，且必须以小写字母或数字开头、以小写字母或数字结尾，中间不能有连续的\"-\"或\".\"。",
           "example": "v1",
           "member": "string",
           "name": "ConfigVersion",
@@ -8579,7 +8579,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项文件名",
+          "document": "配置项文件名，最多支持60个字符，只能包含英文、数字、\"-\"（英文）、\"_\"（英文）、\".\"（英文）。",
           "example": "conf.txt",
           "member": "string",
           "name": "ConfigFileName",
@@ -8597,7 +8597,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项关联应用ID",
+          "document": "配置项关联应用ID，该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-5yr26r9a",
           "member": "string",
           "name": "ApplicationId",
@@ -8606,7 +8606,7 @@
         },
         {
           "disabled": false,
-          "document": "发布路径",
+          "document": "发布路径。",
           "example": "/root",
           "member": "string",
           "name": "ConfigFilePath",
@@ -8615,7 +8615,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本描述",
+          "document": "配置项版本描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ConfigVersionDesc",
@@ -8624,7 +8624,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项文件编码，utf-8 或 gbk。注：如果选择 gbk，需要新版本 tsf-consul-template （公有云虚拟机需要使用 1.32 tsf-agent，容器需要从文档中获取最新的 tsf-consul-template-docker.tar.gz）的支持",
+          "document": "配置项文件编码，utf-8 或 gbk。注：如果选择 gbk，需要新版本 tsf-consul-template （公有云虚拟机需要使用 1.32 tsf-agent，容器需要从文档中获取最新的 tsf-consul-template-docker.tar.gz）的支持。",
           "example": "utf-8",
           "member": "string",
           "name": "ConfigFileCode",
@@ -8633,7 +8633,7 @@
         },
         {
           "disabled": false,
-          "document": "后置命令",
+          "document": "后置命令。",
           "example": "sh start.sh",
           "member": "string",
           "name": "ConfigPostCmd",
@@ -8642,7 +8642,7 @@
         },
         {
           "disabled": false,
-          "document": "Base64编码的配置项",
+          "document": "Base64编码的配置项。\n- true：开启\n- false：关闭",
           "example": "true",
           "member": "bool",
           "name": "EncodeWithBase64",
@@ -8651,7 +8651,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -8666,7 +8666,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：创建成功；false：创建失败",
+          "document": "创建结果。\n- true：创建成功\n- false：创建失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -8688,7 +8688,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项名称",
+          "document": "配置名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”、“_”），且不能以分隔符开头或结尾。",
           "example": "consumer-config",
           "member": "string",
           "name": "ConfigName",
@@ -8697,8 +8697,8 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本",
-          "example": "1",
+          "document": "配置项版本，只能包含小写字母、数字及分隔符(\"-\"，\".\")，且必须以小写字母或数字开头、以小写字母或数字结尾，中间不能有连续的\"-\"或\".\"。",
+          "example": "v1",
           "member": "string",
           "name": "ConfigVersion",
           "required": true,
@@ -8706,7 +8706,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项文件名",
+          "document": "配置项文件名，不超过60个字符，只能包含英文、数字、\"-\"（英文）、\"_\"（英文）、\".\"（英文）。",
           "example": "config.txt",
           "member": "string",
           "name": "ConfigFileName",
@@ -8715,7 +8715,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项文件内容（原始内容编码需要 utf-8 格式，如果 ConfigFileCode 为 gbk，后台会进行转换）",
+          "document": "配置项文件内容（原始内容编码需要 utf-8 格式，如果 ConfigFileCode 为 gbk，后台会进行转换）。",
           "example": "config=enabled",
           "member": "string",
           "name": "ConfigFileValue",
@@ -8724,7 +8724,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项关联应用ID",
+          "document": "配置项关联应用ID。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-dapbkdgy",
           "member": "string",
           "name": "ApplicationId",
@@ -8733,7 +8733,7 @@
         },
         {
           "disabled": false,
-          "document": "发布路径",
+          "document": "发布路径。",
           "example": "/root",
           "member": "string",
           "name": "ConfigFilePath",
@@ -8742,7 +8742,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本描述",
+          "document": "配置项版本描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ConfigVersionDesc",
@@ -8751,7 +8751,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项文件编码，utf-8 或 gbk。注：如果选择 gbk，需要新版本 tsf-consul-template （公有云虚拟机需要使用 1.32 tsf-agent，容器需要从文档中获取最新的 tsf-consul-template-docker.tar.gz）的支持",
+          "document": "配置项文件编码，utf-8 或 gbk。注：如果选择 gbk，需要新版本 tsf-consul-template （公有云虚拟机需要使用 1.32 tsf-agent，容器需要从文档中获取最新的 tsf-consul-template-docker.tar.gz）的支持。",
           "example": "utf-8",
           "member": "string",
           "name": "ConfigFileCode",
@@ -8760,7 +8760,7 @@
         },
         {
           "disabled": false,
-          "document": "后置命令",
+          "document": "后置命令。",
           "example": "/usr/bin/bash",
           "member": "string",
           "name": "ConfigPostCmd",
@@ -8778,7 +8778,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -8793,8 +8793,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件配置项",
-          "example": "{\"ApplicationId\":\"application-01\",\"ConfigFileCode\":\"UTF-8\",\"ConfigFileName\":\"cfg.txt\",\"ConfigFilePath\":\"/root\",\"ConfigFileValue\":\"config=1\",\"ConfigFileValueLength\":14,\"ConfigId\":\"dcfg-f-01\",\"ConfigName\":\"app\",\"ConfigPostCmd\":\"\",\"ConfigVersion\":\"v1\"}",
+          "document": "文件配置项。",
+          "example": "无",
           "member": "FileConfig",
           "name": "Result",
           "output_required": true,
@@ -8970,7 +8970,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道名称",
+          "document": "泳道配置名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。",
           "example": "app_lane",
           "member": "string",
           "name": "LaneName",
@@ -8979,7 +8979,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道备注",
+          "document": "泳道配置备注，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "Remark",
@@ -8988,8 +8988,8 @@
         },
         {
           "disabled": false,
-          "document": "泳道部署组信息",
-          "example": "[{\"GroupId\":\"group-vwebgxzv\",\"Entrance\":true}]",
+          "document": "泳道部署组信息。",
+          "example": "无",
           "member": "LaneGroup",
           "name": "LaneGroupList",
           "required": true,
@@ -8997,7 +8997,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -9012,7 +9012,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道ID",
+          "document": "泳道配置ID。",
           "example": "lane-vwdjqq29",
           "member": "string",
           "name": "Result",
@@ -9034,7 +9034,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道规则名称",
+          "document": "灰度发布规则名称，最多支持60个字符，支持中英文字符。",
           "example": "app_rule",
           "member": "string",
           "name": "RuleName",
@@ -9043,7 +9043,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则备注",
+          "document": "灰度发布规则备注，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "Remark",
@@ -9052,8 +9052,8 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则标签列表",
-          "example": "[{\"TagName\":\"app_tag\",\"TagOperator\":\"EQUAL\",\"TagValue\":\"user\"}]",
+          "document": "灰度发布规则标签列表。",
+          "example": "无",
           "member": "LaneRuleTag",
           "name": "RuleTagList",
           "required": true,
@@ -9061,7 +9061,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则标签关系",
+          "document": "灰度发布规则标签关系。\n- RELEATION_AND：与\n- RELEATION_OR：或",
           "example": "RELEATION_AND",
           "member": "string",
           "name": "RuleTagRelationship",
@@ -9070,7 +9070,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道Id",
+          "document": "泳道配置ID。该参数可以通过调用 [DescribeLanes](https://cloud.tencent.com/document/product/649/44504) 的返回值中的 LaneId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lane)查看；也可以调用[CreateLane](https://cloud.tencent.com/document/product/649/44508)创建新的泳道配置。",
           "example": "lane-y9o6w958",
           "member": "string",
           "name": "LaneId",
@@ -9079,7 +9079,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -9094,7 +9094,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道规则Id",
+          "document": "灰度发布规则ID。",
           "example": "lane-r-yojkwwpr",
           "member": "string",
           "name": "Result",
@@ -9116,7 +9116,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-v3gw3lna",
           "member": "string",
           "name": "NamespaceId",
@@ -9125,7 +9125,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务名称",
+          "document": "微服务名称。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceName 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
           "example": "provider-app",
           "member": "string",
           "name": "MicroserviceName",
@@ -9134,7 +9134,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务描述信息",
+          "document": "微服务备注信息，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "MicroserviceDesc",
@@ -9149,7 +9149,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新增微服务是否成功。\ntrue：操作成功。\nfalse：操作失败。",
+          "document": "新增结果。\ntrue：操作成功。\nfalse：操作失败。",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -9171,7 +9171,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-vw8oox6v",
           "member": "string",
           "name": "NamespaceId",
@@ -9180,7 +9180,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务名称",
+          "document": "微服务名称，最多支持128个字符。",
           "example": "provider-demo",
           "member": "string",
           "name": "MicroserviceName",
@@ -9189,7 +9189,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务描述信息",
+          "document": "微服务描述信息，最多支持200个字符。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "MicroserviceDesc",
@@ -9204,7 +9204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务ID",
+          "document": "微服务ID。",
           "example": "ms-vwdjqqow",
           "member": "string",
           "name": "Result",
@@ -9464,7 +9464,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项名称",
+          "document": "配置名称，最长60个字符，只能包含字母、数字及分隔符（“-”、“_”），且不能以分隔符开头或结尾。",
           "example": "config_pub_app",
           "member": "string",
           "name": "ConfigName",
@@ -9473,7 +9473,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本",
+          "document": "配置版本，只能包含小写字母、数字及分隔符(\"-\"，\".\")，且必须以小写字母或数字开头、以小写字母或数字结尾，中间不能有连续的\"-\"或\".\"。",
           "example": "v1",
           "member": "string",
           "name": "ConfigVersion",
@@ -9482,7 +9482,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项值，总是接收yaml格式的内容",
+          "document": "配置项值，总是接收yaml格式的内容。",
           "example": "config: enabled",
           "member": "string",
           "name": "ConfigValue",
@@ -9491,7 +9491,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本描述",
+          "document": "配置项版本描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ConfigVersionDesc",
@@ -9500,7 +9500,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项类型",
+          "document": "配置项类型，固定值。",
           "example": "public",
           "member": "string",
           "name": "ConfigType",
@@ -9509,7 +9509,7 @@
         },
         {
           "disabled": false,
-          "document": "Base64编码的配置项",
+          "document": "Base64编码的配置项。\n- true：开启\n- false：关闭",
           "example": "true",
           "member": "bool",
           "name": "EncodeWithBase64",
@@ -9518,7 +9518,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -9533,7 +9533,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：创建成功；false：创建失败",
+          "document": "创建结果。\n- true：创建成功\n- false：创建失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -9555,7 +9555,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项名称",
+          "document": "配置项名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”、“_”），且不能以分隔符开头或结尾。",
           "example": "app-config",
           "member": "string",
           "name": "ConfigName",
@@ -9564,7 +9564,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本",
+          "document": "配置项版本，最多支持60个字符，只能包含小写字母、数字及分隔符(\"-\",\".\")，且必须以小写字母或数字开头、以小写字母或数字结尾，中间不能有连续的\"-\"或\".\"。",
           "example": "v1",
           "member": "string",
           "name": "ConfigVersion",
@@ -9573,7 +9573,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项值，总是接收yaml格式的内容",
+          "document": "配置项值，总是接收yaml格式的内容。",
           "example": "config: enabled",
           "member": "string",
           "name": "ConfigValue",
@@ -9582,7 +9582,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本描述",
+          "document": "配置项版本描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ConfigVersionDesc",
@@ -9591,7 +9591,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项类型",
+          "document": "配置项类型，固定值。",
           "example": "public",
           "member": "string",
           "name": "ConfigType",
@@ -9600,7 +9600,7 @@
         },
         {
           "disabled": false,
-          "document": "Base64编码的配置项",
+          "document": "Base64编码的配置项。\n- true：开启\n- false：关闭",
           "example": "true",
           "member": "bool",
           "name": "EncodeWithBase64",
@@ -9609,7 +9609,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "需要绑定的数据集ID。该参数可以通过调用 [DescribePrograms](https://cloud.tencent.com/document/product/649/73477) 的返回值中的 ProgramId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/privilege?tab=program&roleId=role-yrle4doy)查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -9624,8 +9624,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "公共配置项 ID",
-          "example": "{\"ConfigId\":\"dcfg-p-vkj5dnky\",\"ConfigName\":\"app-config\",\"ConfigType\":\"public\",\"ConfigValue\":\"config: enabled\",\"ConfigVersion\":\"v1\",\"ConfigVersionDesc\":\"This is desc\",\"EncodeWithBase64\":true}",
+          "document": "公共配置项ID。",
+          "example": "无",
           "member": "Config",
           "name": "Result",
           "output_required": true,
@@ -9664,7 +9664,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库所在桶名称",
+          "document": "仓库所在桶名称，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)",
           "example": "tsf_mockBucket",
           "member": "string",
           "name": "BucketName",
@@ -9673,7 +9673,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库所在桶地域",
+          "document": "仓库所在桶地域，[存储桶概述和创建](https://cloud.tencent.com/document/product/436/13312)",
           "example": "ap-nanjing",
           "member": "string",
           "name": "BucketRegion",
@@ -9819,7 +9819,7 @@
         },
         {
           "disabled": false,
-          "document": "执行类型，unicast/broadcast",
+          "document": "任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行",
           "example": "unicast",
           "member": "string",
           "name": "ExecuteType",
@@ -9828,7 +9828,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型,java",
+          "document": "任务类型。当前只支持一种任务类型。枚举值，java：Java类任务",
           "example": "java",
           "member": "string",
           "name": "TaskType",
@@ -9837,7 +9837,7 @@
         },
         {
           "disabled": false,
-          "document": "任务超时时间， 时间单位 ms",
+          "document": "任务超时时间，取值大于0，单位：毫秒（ms）",
           "example": "30000",
           "member": "uint64",
           "name": "TimeOut",
@@ -9846,7 +9846,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID。在[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)，点击应用ID进入应用部署页查看部署组ID。",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -9882,7 +9882,7 @@
         },
         {
           "disabled": false,
-          "document": "分片数量",
+          "document": "分片数量，仅当任务执行方式为分片执行时需要设置该值，取值范围2~1000",
           "example": "0",
           "member": "int64",
           "name": "ShardCount",
@@ -9936,7 +9936,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "数据集列表",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -10438,7 +10438,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项ID",
+          "document": "配置ID。该参数可以通过调用 [DescribeConfigs](https://cloud.tencent.com/document/product/649/38340) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=app)配置详情-配置版本页查看；也可以调用[CreateConfig](https://cloud.tencent.com/document/product/649/38348)创建新的配置。",
           "example": "dcfg-a7rl7w4v",
           "member": "string",
           "name": "ConfigId",
@@ -10453,7 +10453,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：删除成功；false：删除失败",
+          "document": "删除结果。\n- true：删除成功\n- false：删除失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -10475,7 +10475,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "无",
+          "document": "配置模板ID。该参数可以通过调用 [DescribeConfigTemplate](https://cloud.tencent.com/document/product/649/85856) 的返回值中的 ConfigTemplateId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=template)查看；也可以调用[CreateConfigTemplate](https://cloud.tencent.com/document/product/649/85861)创建新的配置模板。",
           "example": "dcfg_temp-2js8kh",
           "member": "string",
           "name": "ConfigTemplateId",
@@ -10549,7 +10549,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件配置项ID",
+          "document": "文件配置项ID。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=file)-详情页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的文件配置。",
           "example": "dcfg-f-aeonjd6y",
           "member": "string",
           "name": "ConfigId",
@@ -10564,7 +10564,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除结果",
+          "document": "删除结果。\n- true：成功\n- false：失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -10739,7 +10739,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道Idl",
+          "document": "泳道配置ID。该参数可以通过调用 [DescribeLanes](https://cloud.tencent.com/document/product/649/44504) 的返回值中的 LaneId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lane)查看；也可以调用[CreateLane](https://cloud.tencent.com/document/product/649/44508)创建新的泳道配置。",
           "example": "lane-y9o6w958",
           "member": "string",
           "name": "LaneId",
@@ -10754,7 +10754,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除成功: true / 删除失败: false",
+          "document": "删除结果。\n- true：删除成功\n- false：删除失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -10776,7 +10776,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道规则Id",
+          "document": "灰度发布规则ID。该参数可以通过调用 [DescribeLaneRules](https://cloud.tencent.com/document/product/649/44505) 的返回值中的 RuleId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lanerule)查看；也可以调用[CreateLaneRule](https://cloud.tencent.com/document/product/649/44507)创建新的泳道规则。",
           "example": "lane-r-f1dk0g1",
           "member": "string",
           "name": "RuleId",
@@ -10791,7 +10791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作状态",
+          "document": "删除结果。\n- true：成功\n- false：失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -10813,7 +10813,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务ID",
+          "document": "微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
           "example": "ms-vzg9kzj3",
           "member": "string",
           "name": "MicroserviceId",
@@ -10828,7 +10828,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除微服务是否成功。\ntrue：操作成功。\nfalse：操作失败。",
+          "document": "删除结果。\n- true：操作成功\n- false：操作失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -10933,7 +10933,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，通过调用DescribeApplications接口[获取应用列表](https://cloud.tencent.com/document/api/649/36090)从而获取应用ID，或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看，调用CreateApplication接口[创建应用](https://cloud.tencent.com/document/product/649/36094)时的返回值",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -10942,7 +10942,7 @@
         },
         {
           "disabled": false,
-          "document": "需要删除的程序包ID列表",
+          "document": "软件包ID所形成的列表，软件包ID可通过调用DescribeUploadInfo接口时[获取上传程序包信息](https://cloud.tencent.com/document/api/649/36078)返回的COS上传信息获取，登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "[\"pkg-6a79x94v\"]",
           "member": "string",
           "name": "PkgIds",
@@ -10951,8 +10951,8 @@
         },
         {
           "disabled": false,
-          "document": "程序包仓库类型",
-          "example": "personal",
+          "document": "程序包仓库类型（允许值：\"public-demo\"TSF公共demo仓库, \"private\"自定义仓库, \"default\"TSF公共仓库）",
+          "example": "private",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -10960,7 +10960,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包仓库id",
+          "document": "仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "RepositoryId",
@@ -10987,7 +10987,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项ID",
+          "document": "配置ID。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。",
           "example": "dcfg-p-vzk36rov",
           "member": "string",
           "name": "ConfigId",
@@ -11002,7 +11002,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：删除成功；false：删除失败",
+          "document": "删除结果。\n- true：删除成功\n- false：删除失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -11024,7 +11024,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "仓库ID",
+          "document": "删除对应仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "RepositoryId",
@@ -11097,7 +11097,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列和任务基本信息页查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -11112,7 +11112,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除成功or失败",
+          "document": "true：删除成功，false：删除失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -12620,7 +12620,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务id",
+          "document": "微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
           "example": "ms-y5w8n5e9",
           "member": "string",
           "name": "MicroserviceId",
@@ -12629,7 +12629,7 @@
         },
         {
           "disabled": false,
-          "document": "请求路径",
+          "document": "请求路径。",
           "example": "/user-feign",
           "member": "string",
           "name": "Path",
@@ -12638,7 +12638,7 @@
         },
         {
           "disabled": false,
-          "document": "请求方法",
+          "document": "请求方法。\n- GET\n- POST\n- PUT\n- DELETE\n- HEAD\n- PATCH\n- OPTIONS",
           "example": "GET",
           "member": "string",
           "name": "Method",
@@ -12647,7 +12647,7 @@
         },
         {
           "disabled": false,
-          "document": "包版本",
+          "document": "应用包版本号。",
           "example": "20210625192924",
           "member": "string",
           "name": "PkgVersion",
@@ -12656,7 +12656,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-yn3zdj9v",
           "member": "string",
           "name": "ApplicationId",
@@ -12671,7 +12671,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "API 详情",
+          "document": "API详情。",
           "example": "无",
           "member": "ApiDetailResponse",
           "name": "Result",
@@ -12940,8 +12940,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务ID",
-          "example": "ms-xxx",
+          "document": "微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
+          "example": "ms-vk2wqlnv",
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
@@ -12949,7 +12949,7 @@
         },
         {
           "disabled": false,
-          "document": "API 请求路径",
+          "document": "API请求路径。",
           "example": "/hello",
           "member": "string",
           "name": "Path",
@@ -12958,7 +12958,7 @@
         },
         {
           "disabled": false,
-          "document": "请求方法",
+          "document": "API请求方法。\n- GET\n- POST\n- PUT\n- DELETE\n- HEAD\n- PATCH\n- OPTIONS",
           "example": "GET",
           "member": "string",
           "name": "Method",
@@ -12973,7 +12973,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "API版本列表",
+          "document": "API版本列表。",
           "example": "无",
           "member": "ApiVersionArray",
           "name": "Result",
@@ -13507,8 +13507,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID，不传入时查询全量",
-          "example": "group-aln2284v",
+          "document": "部署组ID，不传入时查询全量。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
+          "example": "group-zvwbbnxv",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -13516,7 +13516,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -13525,7 +13525,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数，默认为20",
+          "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -13534,7 +13534,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID，不传入时查询全量",
+          "document": "命名空间ID，不传入时查询全量。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-vj3z3zgy",
           "member": "string",
           "name": "NamespaceId",
@@ -13543,7 +13543,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID，不传入时查询全量",
+          "document": "集群ID，不传入时查询全量。该参数可以通过调用 [DescribeClusters](https://cloud.tencent.com/document/product/649/85857) 的返回值中的 ClusterId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。",
           "example": "cluster-yne99jdy",
           "member": "string",
           "name": "ClusterId",
@@ -13552,8 +13552,8 @@
         },
         {
           "disabled": false,
-          "document": "应用ID，不传入时查询全量",
-          "example": "application-l6ymbvgd",
+          "document": "应用ID，不传入时查询全量。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
+          "example": "application-ov6ml25a",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -13567,8 +13567,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页的配置项发布历史列表",
-          "example": "{\"Content\":[{\"ClusterId\":\"cluster-yne99jdy\",\"ConfigId\":\"dcfg-yo82mmra\",\"ConfigReleaseLogId\":\"dcfgrl-yq75nn3a\",\"ConfigVersion\":\"v3\",\"GroupId\":\"group-aln2284v\",\"NamespaceId\":\"namespace-vw8oox6v\",\"ReleaseStatus\":\"S\"}],\"TotalCount\":1}",
+          "document": "分页的配置项发布历史列表。",
+          "example": "无",
           "member": "TsfPageConfigReleaseLog",
           "name": "Result",
           "output_required": true,
@@ -13589,7 +13589,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项名称，不传入时查询全量",
+          "document": "配置项名称，不传入时查询全量。该参数可以通过调用 [DescribeConfigs](https://cloud.tencent.com/document/product/649/38340) 的返回值中的 ConfigName 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=app)配置详情-配置版本页查看；也可以调用[CreateConfig](https://cloud.tencent.com/document/product/649/38348)创建新的配置。",
           "example": "configName",
           "member": "string",
           "name": "ConfigName",
@@ -13598,7 +13598,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID，不传入时查询全量",
+          "document": "部署组ID，不传入时查询全量。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "group-aln2284v",
           "member": "string",
           "name": "GroupId",
@@ -13607,7 +13607,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID，不传入时查询全量",
+          "document": "命名空间ID，不传入时查询全量。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-vw8oox6v",
           "member": "string",
           "name": "NamespaceId",
@@ -13616,7 +13616,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID，不传入时查询全量",
+          "document": "集群ID，不传入时查询全量。该参数可以通过调用 [DescribeClusters](https://cloud.tencent.com/document/product/649/85857) 的返回值中的 ClusterId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。",
           "example": "cluster-yne99jdy",
           "member": "string",
           "name": "ClusterId",
@@ -13625,7 +13625,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -13634,7 +13634,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -13643,7 +13643,7 @@
         },
         {
           "disabled": false,
-          "document": "配置ID，不传入时查询全量",
+          "document": "配置ID，不传入时查询全量。该参数可以通过调用 [DescribeConfigs](https://cloud.tencent.com/document/product/649/38340) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=app)配置详情-配置版本页查看；也可以调用[CreateConfig](https://cloud.tencent.com/document/product/649/38348)创建新的配置。",
           "example": "dcfg-yo82mmra",
           "member": "string",
           "name": "ConfigId",
@@ -13652,7 +13652,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID，不传入时查询全量",
+          "document": "应用ID，不传入时查询全量。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-a7rwwz4v",
           "member": "string",
           "name": "ApplicationId",
@@ -13667,8 +13667,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页的配置发布信息",
-          "example": "{\"Content\":[{\"ApplicationId\":\"application-app1\",\"ClusterId\":\"cluster-cls1\",\"ConfigId\":\"dcfg-d1\",\"ConfigReleaseId\":\"dcfgr-dr1\",\"GroupId\":\"group-grp1\",\"NamespaceId\":\"namespace-ns1\",\"NamespaceName\":\"cluster-jolyonzheng_default\"}],\"TotalCount\":1}",
+          "document": "分页的配置发布信息。",
+          "example": "无",
           "member": "TsfPageConfigRelease",
           "name": "Result",
           "output_required": true,
@@ -13689,7 +13689,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项ID",
+          "document": "配置ID。该参数可以通过调用 [DescribeConfigs](https://cloud.tencent.com/document/product/649/38340) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=app)配置详情-配置版本页查看；也可以调用[CreateConfig](https://cloud.tencent.com/document/product/649/38348)创建新的配置。",
           "example": "dcfg-vzk36owv",
           "member": "string",
           "name": "ConfigId",
@@ -13704,8 +13704,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ApplicationId\":\"application-5yr26r9a\",\"ApplicationName\":\"amp-consumer\",\"ConfigId\":\"dcfg-vzk36owv\",\"ConfigName\":\"config_app\",\"ConfigValue\":\"config: 1\",\"ConfigVersion\":\"v1\",\"ConfigVersionDesc\":\"This is desc\",\"DeleteFlag\":true}",
+          "document": "配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Config",
           "name": "Result",
           "output_required": true,
@@ -13726,7 +13726,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID，不传入时查询全量",
+          "document": "应用ID，不传入时查询全量。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-5yr26r9a",
           "member": "string",
           "name": "ApplicationId",
@@ -13735,7 +13735,7 @@
         },
         {
           "disabled": false,
-          "document": "查询关键字，模糊查询：应用名称，配置项名称，不传入时查询全量",
+          "document": "查询关键字，模糊查询：应用名称，配置项名称，不传入时查询全量。",
           "example": "config_app",
           "member": "string",
           "name": "SearchWord",
@@ -13744,7 +13744,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -13753,7 +13753,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数，默认为20",
+          "document": "返回数量，默认为20，最大值为50。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -13762,7 +13762,7 @@
         },
         {
           "disabled": false,
-          "document": "按时间排序：creation_time；按名称排序：config_name",
+          "document": "排序字段。\n- creation_time：按时间排序\n- config_name：按名称排序",
           "example": "creation_time",
           "member": "string",
           "name": "OrderBy",
@@ -13771,7 +13771,7 @@
         },
         {
           "disabled": false,
-          "document": "升序传 0，降序传 1",
+          "document": "排序顺序。\n- 0：升序\n- 1：降序",
           "example": "1",
           "member": "int64",
           "name": "OrderType",
@@ -13780,7 +13780,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "TAG标签资源值。",
           "example": "[\"config_app-application-5yr26r9a\"]",
           "member": "string",
           "name": "ConfigTagList",
@@ -13789,7 +13789,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "忽略传参，业务预留字段。",
           "example": "true",
           "member": "bool",
           "name": "DisableProgramAuthCheck",
@@ -13798,7 +13798,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "配置ID列表。该参数可以通过调用 [DescribeConfigs](https://cloud.tencent.com/document/product/649/38340) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=app)配置详情-配置版本页查看；也可以调用[CreateConfig](https://cloud.tencent.com/document/product/649/38348)创建新的配置。",
           "example": "[\"dcfg-vzk36owv\"]",
           "member": "string",
           "name": "ConfigIdList",
@@ -13813,7 +13813,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项分页对象",
+          "document": "配置项分页对象。",
           "example": "无",
           "member": "TsfPageConfig",
           "name": "Result",
@@ -13835,7 +13835,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置模板Id",
+          "document": "配置模板ID。该参数可以通过调用 [DescribeConfigTemplate](https://cloud.tencent.com/document/product/649/85856) 的返回值中的 ConfigTemplateId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=template)查看；也可以调用[CreateConfigTemplate](https://cloud.tencent.com/document/product/649/85861)创建新的配置模板。",
           "example": "dcfg_temp-vwkjqd6v",
           "member": "string",
           "name": "ConfigTemplateId",
@@ -13850,8 +13850,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入结果",
-          "example": "{\"ConfigTemplateDesc\":\"\",\"ConfigTemplateId\":\"dcfg_temp-vwkjqd6v\",\"ConfigTemplateName\":\"garden-test\",\"ConfigTemplateType\":\"Ribbon\",\"ConfigTemplateValue\":\"#请求处理超时时间\\nribbon.ReadTimeout: 5000\\n\",\"CreateTime\":\"2022-08-23 15:44:11\"}",
+          "document": "导入结果。",
+          "example": "无",
           "member": "ConfigTemplate",
           "name": "Result",
           "output_required": true,
@@ -13872,7 +13872,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID，不传入时查询全量",
+          "document": "应用ID，不传入时查询全量。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-jy9w6lka",
           "member": "string",
           "name": "ApplicationId",
@@ -13881,8 +13881,8 @@
         },
         {
           "disabled": false,
-          "document": "配置项ID，不传入时查询全量，高优先级",
-          "example": "dcfg-01",
+          "document": "配置ID，不传入时查询全量，高优先级。该参数可以通过调用 [DescribeConfigs](https://cloud.tencent.com/document/product/649/38340) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=app)配置详情-配置版本页查看；也可以调用[CreateConfig](https://cloud.tencent.com/document/product/649/38348)创建新的配置。",
+          "example": "dcfg-2vz558vp",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -13890,7 +13890,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -13899,7 +13899,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "返回数量，默认为20，最大值为100。",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -13908,8 +13908,8 @@
         },
         {
           "disabled": false,
-          "document": "配置项ID列表，不传入时查询全量，低优先级",
-          "example": "null",
+          "document": "配置ID列表，不传入时查询全量，低优先级。该参数可以通过调用 [DescribeConfigs](https://cloud.tencent.com/document/product/649/38340) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=app)配置详情-配置版本页查看；也可以调用[CreateConfig](https://cloud.tencent.com/document/product/649/38348)创建新的配置。",
+          "example": "[\"dcfg-2vz558vp\"]",
           "member": "string",
           "name": "ConfigIdList",
           "required": false,
@@ -13917,7 +13917,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项名称，精确查询，不传入时查询全量",
+          "document": "配置项名称，精确查询，不传入时查询全量。",
           "example": "test-driverapi-config",
           "member": "string",
           "name": "ConfigName",
@@ -13926,7 +13926,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本，精确查询，不传入时查询全量",
+          "document": "配置项版本，精确查询，不传入时查询全量。",
           "example": "v1",
           "member": "string",
           "name": "ConfigVersion",
@@ -13941,7 +13941,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页后的配置项列表",
+          "document": "分页后的配置项列表。",
           "example": "无",
           "member": "TsfPageConfig",
           "name": "Result",
@@ -14283,7 +14283,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "所属分组ID",
+          "document": "网关分组ID。该参数可以通过调用 [DescribeApiGroups](https://cloud.tencent.com/document/product/649/50636) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app?tab=middleware&subTab=app)-网关应用详情-Java网关实例-实例详情-分组管理页查看；也可以调用[CreateApiGroup](https://cloud.tencent.com/document/product/649/50641)创建新的网关分组。",
           "example": "grp-nb08ur29",
           "member": "string",
           "name": "GroupId",
@@ -14292,7 +14292,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务ID",
+          "document": "微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
           "example": "ms-a78gk87b",
           "member": "string",
           "name": "MicroserviceId",
@@ -14307,7 +14307,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否已完成导入任务",
+          "document": "导入任务状态执行结果。\n- true：已完成\n- false：未完成",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -14476,7 +14476,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，通过调用DescribeApplications接口[获取应用列表](https://cloud.tencent.com/document/api/649/36090)从而获取应用ID，或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看，调用CreateApplication接口[创建应用](https://cloud.tencent.com/document/product/649/36094)时的返回值",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -14485,7 +14485,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包ID",
+          "document": "软件包ID可通过调用DescribeUploadInfo接口时[获取上传程序包信息](https://cloud.tencent.com/document/api/649/36078)返回的COS上传信息获取，登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "pkg-6a79x94v",
           "member": "string",
           "name": "PkgId",
@@ -14494,7 +14494,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包仓库ID",
+          "document": "仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "RepositoryId",
@@ -14503,8 +14503,8 @@
         },
         {
           "disabled": false,
-          "document": "程序包仓库类型",
-          "example": "tcr",
+          "document": "程序包仓库类型（允许值：\"public-demo\"TSF公共demo仓库, \"private\"自定义仓库, \"default\"TSF公共仓库）",
+          "example": "private",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -14577,7 +14577,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项ID",
+          "document": "配置ID。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。",
           "example": "dcfg-f-v3qqrkdy",
           "member": "string",
           "name": "ConfigId",
@@ -14586,7 +14586,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项名称",
+          "document": "配置项名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”,“_”），且不能以分隔符开头或结尾。",
           "example": "conf_app",
           "member": "string",
           "name": "ConfigName",
@@ -14595,7 +14595,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "group-vj3n6lzy",
           "member": "string",
           "name": "GroupId",
@@ -14604,7 +14604,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-ygo3djma",
           "member": "string",
           "name": "NamespaceId",
@@ -14613,7 +14613,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID。该参数可以通过调用 [DescribeClusters](https://cloud.tencent.com/document/product/649/85857) 的返回值中的 ClusterId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。",
           "example": "cls-f6bk82xc",
           "member": "string",
           "name": "ClusterId",
@@ -14622,7 +14622,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-vw8ljmwv",
           "member": "string",
           "name": "ApplicationId",
@@ -14631,7 +14631,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -14640,8 +14640,8 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
-          "example": "10",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -14655,8 +14655,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项发布信息列表",
-          "example": "{\"Content\":[{\"ApplicationId\":\"application-a1\",\"ClusterId\":\"cls-c1\",\"ConfigId\":\"dcfg-f-df1\",\"ConfigReleaseId\":\"dcfgr-f-drf1\",\"GroupId\":\"group-g1\",\"NamespaceId\":\"namespace-n1\",\"NamespaceName\":\"cluster-container-jolyonzheng_default\"}],\"TotalCount\":1}",
+          "document": "配置项发布信息列表。",
+          "example": "无",
           "member": "TsfPageFileConfigRelease",
           "name": "Result",
           "output_required": true,
@@ -14677,8 +14677,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项ID",
-          "example": "dcfg-f-01",
+          "document": "配置ID。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。",
+          "example": "dcfg-f-2vzbzovp",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -14686,8 +14686,8 @@
         },
         {
           "disabled": false,
-          "document": "配置项ID列表",
-          "example": "null",
+          "document": "配置项ID列表。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。",
+          "example": "[\"dcfg-f-ba2d9ovk\"]",
           "member": "string",
           "name": "ConfigIdList",
           "required": false,
@@ -14695,7 +14695,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项名称",
+          "document": "配置项名称。",
           "example": "cfg1",
           "member": "string",
           "name": "ConfigName",
@@ -14704,7 +14704,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID。该参数可以通过调用 [DescribeApplications](https://cloud.tencent.com/document/product/649/36090) 的返回值中的 ApplicationId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/app)查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-6ymrrbag",
           "member": "string",
           "name": "ApplicationId",
@@ -14713,7 +14713,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -14722,7 +14722,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "返回数量，默认为20，最大值为100。",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -14731,7 +14731,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本",
+          "document": "配置项版本。",
           "example": "v1",
           "member": "string",
           "name": "ConfigVersion",
@@ -14746,7 +14746,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件配置项列表",
+          "document": "文件配置项列表。",
           "example": "无",
           "member": "TsfPageFileConfig",
           "name": "Result",
@@ -14768,7 +14768,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流 ID",
+          "document": "工作流 ID。前往[工作流管理](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=workflowManage)，在工作流列表第一列和工作流详情页查看工作流ID。",
           "example": "flow-6a79x94v",
           "member": "string",
           "name": "FlowId",
@@ -15254,7 +15254,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "group-v6q747py",
           "member": "string",
           "name": "GroupId",
@@ -15269,8 +15269,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组发布的相关信息",
-          "example": "{\"ConfigReleaseList\":[{\"ConfigId\":\"dcfg-a7rl7w4v\"}],\"FileConfigReleaseList\":[{\"ConfigId\":\"dcfg-f-aeonjd6y\"}],\"PublicConfigReleaseList\":[{\"ConfigId\":\"dcfg-p-vzk36rov\"}],\"RepoName\":\"tsf_100011910000/app-provider\",\"TagName\":\"20241212161801\"}",
+          "document": "部署组发布的相关信息。",
+          "example": "无",
           "member": "GroupRelease",
           "name": "Result",
           "output_required": true,
@@ -16419,7 +16419,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页展示的条数",
+          "document": "返回数量，默认为20，最大值为500。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -16428,7 +16428,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页偏移量",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -16437,7 +16437,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键词",
+          "document": "搜索关键词。",
           "example": "groupName",
           "member": "string",
           "name": "SearchWord",
@@ -16446,7 +16446,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则ID（用于精确搜索）",
+          "document": "灰度发布规则ID。该参数可以通过调用 [DescribeLaneRules](https://cloud.tencent.com/document/product/649/44505) 的返回值中的 RuleId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lanerule)查看；也可以调用[CreateLaneRule](https://cloud.tencent.com/document/product/649/44507)创建新的灰度发布规则。",
           "example": "lane-r-v6ewp385",
           "member": "string",
           "name": "RuleId",
@@ -16455,7 +16455,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "灰度发布规则ID。该参数可以通过调用 [DescribeLaneRules](https://cloud.tencent.com/document/product/649/44505) 的返回值中的 RuleId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lanerule)查看；也可以调用[CreateLaneRule](https://cloud.tencent.com/document/product/649/44507)创建新的灰度发布规则。",
           "example": "[\"lane-r-v6ewp385\"]",
           "member": "string",
           "name": "RuleIdList",
@@ -16470,8 +16470,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道规则列表",
-          "example": "{\"Content\":[{\"CreateTime\":1725509095000,\"Enable\":true,\"LaneId\":\"lane-ynmlnwm4\",\"Priority\":1,\"Remark\":\"\",\"RuleId\":\"lane-r-v6ewp385\",\"RuleName\":\"rule_app\",\"RuleTagList\":null,\"RuleTagRelationship\":\"RELEATION_AND\",\"UpdateTime\":1727167548000}],\"TotalCount\":1}",
+          "document": "灰度发布规则列表。",
+          "example": "无",
           "member": "LaneRules",
           "name": "Result",
           "output_required": true,
@@ -16492,7 +16492,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页展示的条数",
+          "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -16501,7 +16501,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页偏移量",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -16510,7 +16510,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字",
+          "document": "搜索关键字。",
           "example": "lane_name",
           "member": "string",
           "name": "SearchWord",
@@ -16519,7 +16519,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "泳道配置ID。该参数可以通过调用 [DescribeLanes](https://cloud.tencent.com/document/product/649/44504) 的返回值中的 LaneId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lane)查看；也可以调用[CreateLane](https://cloud.tencent.com/document/product/649/44508)创建新的泳道配置。",
           "example": "[\"lane-ynmlnwm4\"]",
           "member": "string",
           "name": "LaneIdList",
@@ -16528,7 +16528,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "忽略传参，业务预留字段。",
           "example": "true",
           "member": "bool",
           "name": "DisableProgramAuthCheck",
@@ -16543,8 +16543,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道列表",
-          "example": "{\"Content\":[{\"CreateTime\":1726849955000,\"Entrance\":null,\"LaneGroupList\":null,\"LaneId\":\"lane-ynmlnwm4\",\"LaneName\":\"lane_name\",\"NamespaceIdList\":null,\"Remark\":\"\",\"UpdateTime\":1726849955000}],\"TotalCount\":1}",
+          "document": "泳道配置列表。",
+          "example": "无",
           "member": "LaneInfos",
           "name": "Result",
           "output_required": true,
@@ -16648,7 +16648,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务ID",
+          "document": "微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
           "example": "ms-a78gk87b",
           "member": "string",
           "name": "MicroserviceId",
@@ -16657,7 +16657,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -16666,8 +16666,8 @@
         },
         {
           "disabled": false,
-          "document": "分页个数",
-          "example": "10",
+          "document": "返回数量，默认为20，最大值为50。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -16675,7 +16675,7 @@
         },
         {
           "disabled": false,
-          "document": "可选，根据部署组ID进行过滤",
+          "document": "部署组ID。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "[\"group-yx87px4a\"]",
           "member": "string",
           "name": "GroupIds",
@@ -16684,8 +16684,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。多个 filter 之间是与关系，单个 filter 多个 value 之间是或关系。filter name 取值有：id（实例id）、name（实例名）、lan-ip（内网ip）、node-ip（所在节点ip）",
-          "example": "[{\"Name\":\"LanIp\",\"Values\":[\"172.16.16.139\"]}]",
+          "document": "过滤条件。多个 filter 之间是与关系，单个 filter 多个 value 之间是或关系。\n参考：[{\"Name\":\"LanIp\",\"Values\":[\"172.16.16.139\"]}]\nfilter name 取值范围：\n- id：实例ID\n- name：实例名\n- lan-ip：内网IP\n- node-ip：所在节点IP",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -16699,8 +16699,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务详情实例列表",
-          "example": "{\"Content\":[{\"AppMicroServiceType\":\"G\",\"ApplicationId\":\"application-a1\",\"ApplicationType\":\"V\",\"ClusterId\":\"cluster-c1\",\"ClusterType\":\"V\",\"GroupId\":\"group-g1\",\"HiddenStatus\":\"unhidden\",\"InstanceId\":\"ins-i1\",\"RegistrationId\":\"ins-i1\"}],\"TotalCount\":1}",
+          "document": "微服务详情实例列表。",
+          "example": "无",
           "member": "TsfPageMsInstance",
           "name": "Result",
           "output_required": true,
@@ -16721,7 +16721,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID列表",
+          "document": "部署组ID列表。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "[\"group-6a7eb39y\",\"group-nalb5dwv\"]",
           "member": "string",
           "name": "GroupIds",
@@ -16736,8 +16736,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务信息分页列表",
-          "example": "{\"Content\":[{\"GroupIds\":[\"group-nalb5dwv\"],\"MicroserviceId\":\"ms-id\",\"MicroserviceName\":\"ms-name\",\"NamespaceId\":\"namespace-id\",\"NamespaceName\":\"ns_default\",\"RunInstanceCount\":1}],\"TotalCount\":1}",
+          "document": "微服务信息分页列表。",
+          "example": "无",
           "member": "TsfPageMicroservice",
           "name": "Result",
           "output_required": true,
@@ -16758,7 +16758,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-v6b2exey",
           "member": "string",
           "name": "NamespaceId",
@@ -16767,7 +16767,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索字段",
+          "document": "搜索字段。",
           "example": "serviceName",
           "member": "string",
           "name": "SearchWord",
@@ -16776,7 +16776,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "排序字段。\n- create_time：创建时间\n默认为创建时间，暂不支持其他值。",
           "example": "create_time",
           "member": "string",
           "name": "OrderBy",
@@ -16785,7 +16785,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型",
+          "document": "排序类型。\n- 1：倒序\n默认为倒序，暂不支持其他值。",
           "example": "1",
           "member": "int64",
           "name": "OrderType",
@@ -16794,7 +16794,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -16803,8 +16803,8 @@
         },
         {
           "disabled": false,
-          "document": "分页个数",
-          "example": "10",
+          "document": "返回数量，默认为20，最大值为50。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -16812,7 +16812,7 @@
         },
         {
           "disabled": false,
-          "document": "状态过滤，online、offline、single_online",
+          "document": "状态。\n- online：在线\n- offline：离线\n- single_online：单点在线",
           "example": "[\"single_online\"]",
           "member": "string",
           "name": "Status",
@@ -16821,7 +16821,7 @@
         },
         {
           "disabled": false,
-          "document": "IdList",
+          "document": "微服务ID列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
           "example": "[\"ms-yqwbbpxl\"]",
           "member": "string",
           "name": "MicroserviceIdList",
@@ -16830,7 +16830,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索的服务名列表",
+          "document": "微服务名称列表。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceName 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
           "example": "[\"consumer-demo\"]",
           "member": "string",
           "name": "MicroserviceNameList",
@@ -16839,7 +16839,7 @@
         },
         {
           "disabled": false,
-          "document": "注册中心实例id",
+          "document": "注册中心实例ID。业务预留参数，忽略传参。",
           "example": "ins-ac69c57e",
           "member": "string",
           "name": "ConfigCenterInstanceId",
@@ -16854,8 +16854,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务分页列表信息",
-          "example": "{\"Content\":[{\"CreateTime\":null,\"CriticalInstanceCount\":0,\"MicroserviceDesc\":\"\",\"MicroserviceId\":\"ms-yqwbbpxl\",\"MicroserviceName\":\"consumer-demo\",\"NamespaceId\":\"namespace-v6b2exey\",\"RunInstanceCount\":1,\"UpdateTime\":null}],\"TotalCount\":1}",
+          "document": "微服务分页列表信息。",
+          "example": "无",
           "member": "TsfPageMicroservice",
           "name": "Result",
           "output_required": true,
@@ -16876,7 +16876,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务ID",
+          "document": "微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
           "example": "ms-y5w8n5e9",
           "member": "string",
           "name": "MicroserviceId",
@@ -16885,7 +16885,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键字",
+          "document": "搜索关键字。",
           "example": "echo-feign-url",
           "member": "string",
           "name": "SearchWord",
@@ -16894,8 +16894,8 @@
         },
         {
           "disabled": false,
-          "document": "每页的数量",
-          "example": "10",
+          "document": "返回数量，默认为20，最大值为50。",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -16903,7 +16903,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页偏移量",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -16918,8 +16918,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "相应结果",
-          "example": "{\"Content\":[{\"Description\":\"\",\"Method\":\"GET\",\"MsgwApiType\":null,\"Path\":\"/echo-feign-url/{str}\",\"RpcType\":\"http\",\"Status\":1}],\"TotalCount\":1}",
+          "document": "微服务API列表。",
+          "example": "无",
           "member": "TsfApiListResponse",
           "name": "Result",
           "output_required": true,
@@ -17114,7 +17114,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID（只传入应用ID，返回该应用下所有软件包信息）",
+          "document": "应用ID，通过调用DescribeApplications接口[获取应用列表](https://cloud.tencent.com/document/api/649/36090)从而获取应用ID，或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看，调用CreateApplication接口[创建应用](https://cloud.tencent.com/document/product/649/36094)时的返回值",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -17132,7 +17132,7 @@
         },
         {
           "disabled": false,
-          "document": "排序关键字（默认为\"UploadTime\"：上传时间）",
+          "document": "排序关键字（默认值\"UploadTime\"），允许值：\"UploadTime\"上传时间, \"name\"程序包名, \"size\"应用大小, \"id\"程序包ID",
           "example": "UploadTime",
           "member": "string",
           "name": "OrderBy",
@@ -17150,7 +17150,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始偏移",
+          "document": "查询起始偏移，大于等于0，默认值为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -17168,8 +17168,8 @@
         },
         {
           "disabled": false,
-          "document": "程序包仓库类型",
-          "example": "tcr",
+          "document": "程序包仓库类型，允许值：\"public-demo\"TSF公共demo仓库, \"private\"自定义仓库, \"default\"TSF公共仓库",
+          "example": "private",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -17177,7 +17177,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包仓库id",
+          "document": "仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "tcr-6a79x94v",
           "member": "string",
           "name": "RepositoryId",
@@ -17442,7 +17442,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID，不传入时查询全量",
+          "document": "命名空间ID，不传入时查询全量。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-vj3z3zgy",
           "member": "string",
           "name": "NamespaceId",
@@ -17451,7 +17451,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -17460,7 +17460,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数，默认为20",
+          "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -17475,8 +17475,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页后的公共配置项发布历史列表",
-          "example": "{\"Content\":[{\"ConfigId\":\"dcfg-p-vzk36rov\",\"ConfigReleaseLogId\":\"dcfgrl-yrm5jx9v\",\"LastConfigId\":\"dcfg-p-vzk36rov\",\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"test_default\",\"ReleaseStatus\":\"DS\",\"RollbackFlag\":false}],\"TotalCount\":1}",
+          "document": "分页后的公共配置项发布历史列表。",
+          "example": "无",
           "member": "TsfPageConfigReleaseLog",
           "name": "Result",
           "output_required": true,
@@ -17497,7 +17497,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项名称，不传入时查询全量",
+          "document": "配置名称，不传入时查询全量。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigName 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。",
           "example": "configName",
           "member": "string",
           "name": "ConfigName",
@@ -17506,7 +17506,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID，不传入时查询全量",
+          "document": "命名空间ID，不传入时查询全量。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-yxoqm4ky",
           "member": "string",
           "name": "NamespaceId",
@@ -17515,7 +17515,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "返回数量，默认为20，最大值为100。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -17524,7 +17524,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -17533,7 +17533,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项ID，不传入时查询全量",
+          "document": "配置项ID，不传入时查询全量。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。",
           "example": "dcfg-p-v6kxdlpy",
           "member": "string",
           "name": "ConfigId",
@@ -17548,8 +17548,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "公共配置发布信息",
-          "example": "{\"Content\":[{\"ConfigId\":\"dcfg-p-v6kxdlpy\",\"ConfigName\":\"cfg-name\",\"ConfigReleaseId\":\"dcfgr-y446nlby\",\"ConfigVersion\":\"1\",\"NamespaceId\":\"namespace-yxoqm4ky\",\"NamespaceName\":\"ns_default\",\"ReleaseTime\":\"2024-09-11 17:27:59\"}],\"TotalCount\":1}",
+          "document": "公共配置发布信息。",
+          "example": "无",
           "member": "TsfPageConfigRelease",
           "name": "Result",
           "output_required": true,
@@ -17570,7 +17570,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询的配置项ID",
+          "document": "需要查询的配置ID。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。",
           "example": "dcfg-p-vkj5dnky",
           "member": "string",
           "name": "ConfigId",
@@ -17585,8 +17585,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "全局配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ConfigId\":\"dcfg-p-vkj5dnky\",\"ConfigName\":\"app-config\",\"ConfigValue\":\"config: enabled\",\"ConfigVersion\":\"v1\",\"ConfigVersionDesc\":\"This is desc\",\"DeleteFlag\":true}",
+          "document": "全局配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "Config",
           "name": "Result",
           "output_required": true,
@@ -17607,7 +17607,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询关键字，模糊查询：配置项名称，不传入时查询全量",
+          "document": "查询关键字，模糊查询：配置项名称，不传入时查询全量。",
           "example": "configName",
           "member": "string",
           "name": "SearchWord",
@@ -17616,7 +17616,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -17625,7 +17625,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数，默认为20",
+          "document": "返回数量，默认为20，最大值为50。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -17634,7 +17634,7 @@
         },
         {
           "disabled": false,
-          "document": "按时间排序：creation_time；按名称排序：config_name",
+          "document": "排序字段。\n- creation_time：按时间排序\n- config_name：按名称排序",
           "example": "creation_time",
           "member": "string",
           "name": "OrderBy",
@@ -17643,7 +17643,7 @@
         },
         {
           "disabled": false,
-          "document": "升序传 0，降序传 1",
+          "document": "排序顺序。\n- 0：升序\n- 1：降序",
           "example": "1",
           "member": "int64",
           "name": "OrderType",
@@ -17652,7 +17652,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "TAG标签资源值。",
           "example": "[\"app-config\"]",
           "member": "string",
           "name": "ConfigTagList",
@@ -17661,7 +17661,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "忽略传参，业务预留字段。",
           "example": "true",
           "member": "bool",
           "name": "DisableProgramAuthCheck",
@@ -17670,7 +17670,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "配置ID。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。",
           "example": "[\"dcfg-p-vkj5dnky\"]",
           "member": "string",
           "name": "ConfigIdList",
@@ -17685,8 +17685,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页的全局配置统计信息列表",
-          "example": "{\"Content\":[{\"ConfigId\":\"dcfg-p-vkj5dnky\",\"ConfigName\":\"app-config\",\"ConfigVersionCount\":1,\"LastUpdateTime\":\"2024-12-20 19:16:10\"}],\"TotalCount\":1}",
+          "document": "分页的全局配置统计信息列表。",
+          "example": "无",
           "member": "TsfPageConfig",
           "name": "Result",
           "output_required": true,
@@ -17707,7 +17707,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项ID，不传入时查询全量，高优先级",
+          "document": "配置ID。不传入时查询全量，高优先级。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。",
           "example": "dcfg-p-id001",
           "member": "string",
           "name": "ConfigId",
@@ -17716,7 +17716,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "偏移量，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -17725,7 +17725,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数，默认为20",
+          "document": "返回数量，默认为20，最大值为100。",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -17734,7 +17734,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项ID列表，不传入时查询全量，低优先级",
+          "document": "配置ID列表，不传入时查询全量，低优先级。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。",
           "example": "[\"dcfg-p-id001\"]",
           "member": "string",
           "name": "ConfigIdList",
@@ -17743,7 +17743,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项名称，精确查询，不传入时查询全量",
+          "document": "配置项名称，精确查询，不传入时查询全量。",
           "example": "global",
           "member": "string",
           "name": "ConfigName",
@@ -17752,7 +17752,7 @@
         },
         {
           "disabled": false,
-          "document": "配置项版本，精确查询，不传入时查询全量",
+          "document": "配置项版本，精确查询，不传入时查询全量。",
           "example": "v1",
           "member": "string",
           "name": "ConfigVersion",
@@ -17767,7 +17767,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页后的全局配置项列表",
+          "document": "分页后的全局配置项列表。",
           "example": "无",
           "member": "TsfPageConfig",
           "name": "Result",
@@ -17789,7 +17789,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "group-jy9re3gy",
           "member": "string",
           "name": "GroupId",
@@ -17804,7 +17804,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "已发布的配置内容",
+          "document": "已发布的配置内容。",
           "example": "config: enabled",
           "member": "string",
           "name": "Result",
@@ -17835,7 +17835,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始偏移",
+          "document": "查询起始偏移，大于等于0，默认值为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -17844,7 +17844,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量限制",
+          "document": "返回数量限制，大于0，默认为不分页",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -17853,8 +17853,8 @@
         },
         {
           "disabled": false,
-          "document": "仓库类型（默认仓库：default，私有仓库：private）",
-          "example": "default",
+          "document": "仓库类型（默认仓库：default，私有仓库：private，公共仓库：public-demo）",
+          "example": "private",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -17869,7 +17869,7 @@
         {
           "disabled": false,
           "document": "符合查询仓库信息列表",
-          "example": " ",
+          "example": "无",
           "member": "RepositoryList",
           "name": "Result",
           "output_required": true,
@@ -17890,7 +17890,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "仓库ID",
+          "document": "仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "RepositoryId",
@@ -18812,8 +18812,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
-          "example": "task-12345678",
+          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列和任务基本信息页查看任务ID。",
+          "example": "task-jzdv5qao",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -18821,8 +18821,8 @@
         },
         {
           "disabled": false,
-          "document": "任务历史ID",
-          "example": "tlog-12345678",
+          "document": "任务历史ID。查询任务列表 [DescribeTaskRecords](https://cloud.tencent.com/document/api/649/56136) 返回值字段 TaskLogId",
+          "example": "tlog-zex89wp5",
           "member": "string",
           "name": "TaskLogId",
           "required": false,
@@ -18858,7 +18858,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列和任务基本信息页查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -18895,7 +18895,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "翻页偏移量。",
+          "document": "翻页偏移量。默认值为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -18904,7 +18904,7 @@
         },
         {
           "disabled": false,
-          "document": "翻页查询单页数量。",
+          "document": "翻页查询单页数量。默认值为 20，最大值为 1000",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -18922,7 +18922,7 @@
         },
         {
           "disabled": false,
-          "document": "任务启用状态。enabled/disabled",
+          "document": "任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用",
           "example": "enabled",
           "member": "string",
           "name": "TaskState",
@@ -18931,8 +18931,8 @@
         },
         {
           "disabled": false,
-          "document": "分组ID。",
-          "example": "grp-dddd",
+          "document": "部署组ID。前往应用管理 - 应用部署，部署组列表页面获取部署组ID。",
+          "example": "group-abl8j7xy",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -18940,7 +18940,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型。",
+          "document": "任务类型。当前只支持一种任务类型。枚举值，java：Java类任务",
           "example": "java",
           "member": "string",
           "name": "TaskType",
@@ -18949,7 +18949,7 @@
         },
         {
           "disabled": false,
-          "document": "任务触发类型，UNICAST、BROADCAST。",
+          "document": "任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行",
           "example": "unicast",
           "member": "string",
           "name": "ExecuteType",
@@ -18958,7 +18958,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "任务ID列表。",
           "example": "[\"task-6a79x94v\"]",
           "member": "string",
           "name": "Ids",
@@ -19351,7 +19351,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，通过调用DescribeApplications接口[获取应用列表](https://cloud.tencent.com/document/api/649/36090)从而获取应用ID，或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看，调用CreateApplication接口[创建应用](https://cloud.tencent.com/document/product/649/36094)时的返回值",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -19396,8 +19396,8 @@
         },
         {
           "disabled": false,
-          "document": "程序包仓库类型",
-          "example": "C",
+          "document": "仓库类型（默认仓库：default，私有仓库：private，公共仓库：public-demo）",
+          "example": "private",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -19405,7 +19405,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包仓库id",
+          "document": "仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "repo-6a79x94v",
           "member": "string",
           "name": "RepositoryId",
@@ -19497,7 +19497,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道规则ID",
+          "document": "灰度发布规则ID。该参数可以通过调用 [DescribeLaneRules](https://cloud.tencent.com/document/product/649/44505) 的返回值中的 RuleId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lanerule)查看；也可以调用[CreateLaneRule](https://cloud.tencent.com/document/product/649/44507)创建新的灰度发布规则。",
           "example": "lane-r-yqg4kmbd",
           "member": "string",
           "name": "RuleId",
@@ -19512,7 +19512,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作状态。成功：true，失败：false",
+          "document": "操作状态。\n- true：成功\n- false：失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -19534,7 +19534,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流 ID",
+          "document": "工作流 ID。前往工作流管理，在工作流列表第一列和工作流详情页查看工作流ID。",
           "example": "flow-6a79x94v",
           "member": "string",
           "name": "FlowId",
@@ -19571,7 +19571,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID。在[任务管理](https://console.cloud.tencent.com/tsf/tct?rid=1)列表页第一列或是任务基本信息页查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -19586,7 +19586,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作成功 or 失败",
+          "document": "true：操作成功，false：操作失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -19861,7 +19861,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道规则ID",
+          "document": "灰度发布规则ID。该参数可以通过调用 [DescribeLaneRules](https://cloud.tencent.com/document/product/649/44505) 的返回值中的 RuleId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lanerule)查看；也可以调用[CreateLaneRule](https://cloud.tencent.com/document/product/649/44507)创建新的灰度发布规则。",
           "example": "lane-r-yqg4kmbd",
           "member": "string",
           "name": "RuleId",
@@ -19876,7 +19876,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作状态。成功：true，失败：false",
+          "document": "操作状态。\n- true：成功\n- false：失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -19898,7 +19898,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流 ID",
+          "document": "工作流 ID。前往工作流管理，在工作流列表第一列和工作流详情页查看工作流ID。",
           "example": "flow-6a79x94v",
           "member": "string",
           "name": "FlowId",
@@ -19935,7 +19935,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "启用任务",
+          "document": "任务ID。在任务管理列表页面和任务基本信息页可以查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -19950,7 +19950,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作成功or失败",
+          "document": "true：操作成功，false：操作失败",
           "example": "false",
           "member": "bool",
           "name": "Result",
@@ -20154,7 +20154,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流 ID",
+          "document": "工作流 ID。前往工作流管理，在工作流列表第一列和工作流详情页查看工作流ID。",
           "example": "flow-6a79x94v",
           "member": "string",
           "name": "FlowId",
@@ -20169,8 +20169,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流批次ID",
-          "example": "true",
+          "document": "操作成功返回工作流批次ID，操作失败返回空字符串。",
+          "example": "fbatch-6g4rq8z6",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -20191,8 +20191,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID",
-          "example": "task-xxxxxx",
+          "document": "任务ID。在任务管理列表页面第一列或是任务基本信息页查看任务ID。",
+          "example": "task-jzdv5qao",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -20206,8 +20206,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "成功/失败",
-          "example": "batch-xxxxxx",
+          "document": "操作成功返回任务批次ID，操作失败返回空字符串。",
+          "example": "batch-mdq33ove",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -20523,7 +20523,7 @@
         },
         {
           "disabled": false,
-          "document": "发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发布时间。格式为 YYYY-MM-DD hh:mm:ss。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-11-28 18:51:06",
           "member": "string",
           "name": "ReleaseTime",
@@ -20594,7 +20594,7 @@
         {
           "disabled": false,
           "document": "配置中心发布详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"ConfigType\":\"EXCLUSIVE\",\"ConfigCenterInstanceId\":\"ins-f4f48f71\",\"ConfigCenterInstanceName\":\"pk-gz\",\"RegionId\":\"33\",\"CurrentVersion\":\"1.18.0.2\",\"TargetVersion\":\"1.18.0.1\"}]",
+          "example": "无",
           "member": "TsfConfigCenter",
           "name": "ConfigCenters",
           "output_required": false,
@@ -23842,7 +23842,7 @@
         {
           "disabled": false,
           "document": "泳道部署组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"groupId\":\"group-afge1ad3s\",\"entrance\":\"true\"}]",
+          "example": "无",
           "member": "LaneGroup",
           "name": "LaneGroupList",
           "output_required": true,
@@ -24957,7 +24957,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道ID",
+          "document": "泳道配置ID。该参数可以通过调用 [DescribeLanes](https://cloud.tencent.com/document/product/649/44504) 的返回值中的 LaneId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lane)查看；也可以调用[CreateLane](https://cloud.tencent.com/document/product/649/44508)创建新的泳道配置。",
           "example": "lane-ap62k7ol",
           "member": "string",
           "name": "LaneId",
@@ -24966,7 +24966,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道名称",
+          "document": "泳道配置名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。",
           "example": "rule_app",
           "member": "string",
           "name": "LaneName",
@@ -24975,7 +24975,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "备注，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "Remark",
@@ -24990,7 +24990,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新成功: true / 更新失败: false",
+          "document": "更新结果。\n- true：更新成功\n- false：更新失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -25012,7 +25012,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道规则ID",
+          "document": "灰度发布规则ID。该参数可以通过调用 [DescribeLaneRules](https://cloud.tencent.com/document/product/649/44505) 的返回值中的 RuleId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lanerule)查看；也可以调用[CreateLaneRule](https://cloud.tencent.com/document/product/649/44507)创建新的灰度发布规则。",
           "example": "lane-r-yqg4kmbd",
           "member": "string",
           "name": "RuleId",
@@ -25021,7 +25021,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则名称",
+          "document": "灰度发布规则名称，最多支持60个字符，支持中英文字符。",
           "example": "rule_app",
           "member": "string",
           "name": "RuleName",
@@ -25030,7 +25030,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则备注",
+          "document": "灰度发布规则备注，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "Remark",
@@ -25039,8 +25039,8 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则标签列表",
-          "example": "[{\"TagName\":\"user_tag\",\"TagOperator\":\"EQUAL\",\"TagValue\":\"1\",\"LaneRuleId\":\"lane-r-yqg4kmbd\",\"CreateTime\":1704857794000,\"UpdateTime\":1704857794000}]",
+          "document": "灰度发布规则标签列表。",
+          "example": "无",
           "member": "LaneRuleTag",
           "name": "RuleTagList",
           "required": true,
@@ -25048,7 +25048,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道规则标签关系",
+          "document": "灰度发布规则标签关系。- RELEATION_AND：与- RELEATION_OR：或",
           "example": "RELEATION_AND",
           "member": "string",
           "name": "RuleTagRelationship",
@@ -25057,7 +25057,7 @@
         },
         {
           "disabled": false,
-          "document": "泳道ID",
+          "document": "泳道配置ID。该参数可以通过调用 [DescribeLanes](https://cloud.tencent.com/document/product/649/44504) 的返回值中的 LaneId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=grayscale&subTab=lane)查看；也可以调用[CreateLane](https://cloud.tencent.com/document/product/649/44508)创建新的泳道配置。",
           "example": "lane-ap62k7ol",
           "member": "string",
           "name": "LaneId",
@@ -25066,7 +25066,7 @@
         },
         {
           "disabled": false,
-          "document": "开启状态",
+          "document": "开启状态。\n- true：开启\n- false：关闭",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -25081,7 +25081,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作状态。成功：true，失败：false",
+          "document": "修改结果。\n- true：成功\n- false：失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -25103,7 +25103,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务 ID",
+          "document": "微服务ID。该参数可以通过调用 [DescribeMicroservices](https://cloud.tencent.com/document/product/649/36084) 的返回值中的 MicroserviceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?tab=service)查看；也可以调用[CreateMicroserviceWithDetailResp](https://cloud.tencent.com/document/product/649/85860)创建新的微服务。",
           "example": "ms-yd8dr5bx",
           "member": "string",
           "name": "MicroserviceId",
@@ -25112,7 +25112,7 @@
         },
         {
           "disabled": false,
-          "document": "微服务备注信息",
+          "document": "微服务备注信息，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "MicroserviceDesc",
@@ -25127,7 +25127,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改微服务详情是否成功。\ntrue：操作成功。\nfalse：操作失败。",
+          "document": "修改结果。\n- true：修改成功\n- false：修改失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -25359,7 +25359,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID。在任务管理列表页面第一列查看任务ID。",
           "example": "task-klwqrnlw",
           "member": "string",
           "name": "TaskId",
@@ -25368,7 +25368,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "任务名称，长度限制为64字符。在任务管理列表页面第一列或是任务基本信息页查看任务名称。",
           "example": "demohaha",
           "member": "string",
           "name": "TaskName",
@@ -25377,7 +25377,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
+          "document": "任务类型。当前只支持一种任务类型。枚举值，java：Java类任务",
           "example": "java",
           "member": "string",
           "name": "TaskType",
@@ -25386,7 +25386,7 @@
         },
         {
           "disabled": false,
-          "document": "任务内容",
+          "document": "任务内容，长度限制为 65536 字节",
           "example": "com.tencent.task.example.SimpleTask",
           "member": "string",
           "name": "TaskContent",
@@ -25395,7 +25395,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行类型",
+          "document": "任务执行方式，枚举值。unicast：随机单节点执行，broadcast：广播执行，shard：分片执行",
           "example": "unicast",
           "member": "string",
           "name": "ExecuteType",
@@ -25413,7 +25413,7 @@
         },
         {
           "disabled": false,
-          "document": "超时时间，单位 ms",
+          "document": "超时时间，取值大于0，单位：毫秒（ms）",
           "example": "60000",
           "member": "uint64",
           "name": "TimeOut",
@@ -25422,8 +25422,8 @@
         },
         {
           "disabled": false,
-          "document": "分组ID",
-          "example": "group-1234545",
+          "document": "部署组ID。在[应用管理](https://console.cloud.tencent.com/tsf/app?rid=1)，点击应用ID进入应用部署页查看部署组ID。",
+          "example": "group-aedpen6v",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -25431,7 +25431,7 @@
         },
         {
           "disabled": false,
-          "document": "分片数量",
+          "document": "分片数量，取值范围2~1000",
           "example": "1",
           "member": "int64",
           "name": "ShardCount",
@@ -25467,7 +25467,7 @@
         },
         {
           "disabled": false,
-          "document": "判断任务成功率的阈值",
+          "document": "判断任务成功率的阈值，取值范围：1-100，单位：百分比（%）",
           "example": "100",
           "member": "int64",
           "name": "SuccessRatio",
@@ -25476,7 +25476,7 @@
         },
         {
           "disabled": false,
-          "document": "重试次数",
+          "document": "重试次数，取值范围 0 - 10，单位：次",
           "example": "0",
           "member": "uint64",
           "name": "RetryCount",
@@ -25485,7 +25485,7 @@
         },
         {
           "disabled": false,
-          "document": "重试间隔",
+          "document": "重试间隔，取值范围 0-600，单位：秒（s）",
           "example": "0",
           "member": "uint64",
           "name": "RetryInterval",
@@ -25503,7 +25503,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "数据集列表。",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -25518,7 +25518,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新是否成功",
+          "document": "更新是否成功。true：操作成功、false：操作失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -25540,7 +25540,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，通过调用DescribeApplications接口[获取应用列表](https://cloud.tencent.com/document/api/649/36090)从而获取应用ID，或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看，调用CreateApplication接口[创建应用](https://cloud.tencent.com/document/product/649/36094)时的返回值",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -25549,7 +25549,7 @@
         },
         {
           "disabled": false,
-          "document": "调用DescribeUploadInfo接口时返回的软件包ID",
+          "document": "软件包ID可通过调用DescribeUploadInfo接口时[获取上传程序包信息](https://cloud.tencent.com/document/api/649/36078)返回的COS上传信息获取，登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "pkg-6a79x94v",
           "member": "string",
           "name": "PkgId",
@@ -25594,7 +25594,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包仓库id",
+          "document": "仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "RepositoryId",
@@ -27155,7 +27155,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID。在任务管理列表页面可以查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -27164,7 +27164,7 @@
         },
         {
           "disabled": false,
-          "document": "批次ID",
+          "document": "任务批次ID。在任务管理页面点击任务ID进入任务详情，进入执行记录列表页，第一列即为任务批次ID。",
           "example": "batch-6a79x94v",
           "member": "string",
           "name": "BatchId",
@@ -27179,8 +27179,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "批次ID",
-          "example": "batch-6a79x94v",
+          "document": "批次流水ID",
+          "example": "blog-6a79x94v",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -27201,7 +27201,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务批次ID",
+          "document": "任务批次ID。在任务管理页面第一列点击任务ID进入任务详情，进入执行记录列表页，第一列内容即为任务批次ID。",
           "example": "batch-6a79x94v",
           "member": "string",
           "name": "BatchId",
@@ -27210,7 +27210,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行ID",
+          "document": "任务执行ID。在任务管理页面第一列点击任务ID进入任务详情，进入执行记录页，点击批次ID进入执行详情列表页，第一列即为任务执行ID。",
           "example": "execute-6a79x94v",
           "member": "string",
           "name": "ExecuteId",
@@ -27219,7 +27219,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID。在任务管理列表页面可以查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -27234,8 +27234,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "成功失败",
-          "example": "SUCCESS",
+          "document": "成功返回执行批次流水ID。失败返回空字符串。",
+          "example": "elog-hb6fg5d5",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -27256,7 +27256,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流批次 ID",
+          "document": "工作流批次 ID。在工作流管理页面，点击第一列的工作流ID进入工作流执行记录列表页面，第一列的内容即为工作流批次ID。",
           "example": "fbatch-6a79x94v",
           "member": "string",
           "name": "FlowBatchId",
@@ -27271,8 +27271,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流批次历史 ID",
-          "example": "fbatch-6a79x94f",
+          "document": "工作流批次历史 ID。操作失败时不返回该字段，返回错误码。",
+          "example": "fblog-6a79x94f",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -27293,7 +27293,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID。在任务管理列表页面第一列查看任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -27308,8 +27308,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作成功or失败",
-          "example": "SUCCESS",
+          "document": "操作成功任务批次ID。操作失败返回空字符串。",
+          "example": "batch-qmqrqa87",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -27367,7 +27367,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置ID",
+          "document": "配置ID。该参数可以通过调用 [DescribeConfigs](https://cloud.tencent.com/document/product/649/38340) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=app)配置详情-配置版本页查看；也可以调用[CreateConfig](https://cloud.tencent.com/document/product/649/38348)创建新的配置。",
           "example": "dcfg-vzk36owv",
           "member": "string",
           "name": "ConfigId",
@@ -27376,7 +27376,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "group-9yn684ev",
           "member": "string",
           "name": "GroupId",
@@ -27385,7 +27385,7 @@
         },
         {
           "disabled": false,
-          "document": "发布描述",
+          "document": "发布描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ReleaseDesc",
@@ -27400,7 +27400,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：发布成功；false：发布失败",
+          "document": "发布结果。\n- true：发布成功\n- false：发布失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -27422,7 +27422,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置ID",
+          "document": "配置ID。该参数可以通过调用 [DescribeConfigs](https://cloud.tencent.com/document/product/649/38340) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=app)配置详情-配置版本页查看；也可以调用[CreateConfig](https://cloud.tencent.com/document/product/649/38348)创建新的配置。",
           "example": "dcfg-yo82mmra",
           "member": "string",
           "name": "ConfigId",
@@ -27431,7 +27431,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "group-aln2284v",
           "member": "string",
           "name": "GroupId",
@@ -27440,7 +27440,7 @@
         },
         {
           "disabled": false,
-          "document": "发布描述",
+          "document": "发布描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ReleaseDesc",
@@ -27455,8 +27455,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项发布 ID",
-          "example": "{\"ConfigReleaseId\":\"dcfgr-yxd366ov\"}",
+          "document": "配置项发布ID。",
+          "example": "无",
           "member": "ConfigRelease",
           "name": "Result",
           "output_required": true,
@@ -27477,7 +27477,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置ID",
+          "document": "配置ID。该参数可以通过调用 [DescribeFileConfigs](https://cloud.tencent.com/document/product/649/58593) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?rid=1&subTab=file)配置详情-配置版本页查看；也可以调用[CreateFileConfig](https://cloud.tencent.com/document/product/649/58594)创建新的配置。",
           "example": "dcfg-f-mae7g3v3",
           "member": "string",
           "name": "ConfigId",
@@ -27486,7 +27486,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "group-oydld25a",
           "member": "string",
           "name": "GroupId",
@@ -27495,8 +27495,8 @@
         },
         {
           "disabled": false,
-          "document": "发布描述",
-          "example": "release v1",
+          "document": "发布描述，最多支持200个字符。",
+          "example": "this is desc",
           "member": "string",
           "name": "ReleaseDesc",
           "required": false,
@@ -27510,7 +27510,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发布结果，成功：true，失败：false。",
+          "document": "发布结果。\n- true：成功\n- false：失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -27532,7 +27532,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置ID",
+          "document": "配置ID。该参数可以通过调用 [DescribePublicConfigs](https://cloud.tencent.com/document/product/649/38335) 的返回值中的 ConfigId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=public)配置详情-配置版本页查看；也可以调用[CreatePublicConfig](https://cloud.tencent.com/document/product/649/38347)创建新的配置。",
           "example": "dcfg-p-vkj5dnky",
           "member": "string",
           "name": "ConfigId",
@@ -27541,7 +27541,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "命名空间ID。该参数可以通过调用 [DescribeSimpleNamespaces](https://cloud.tencent.com/document/api/649/36096) 的返回值中的 NamespaceId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource?tab=namespace)查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-vw46q85y",
           "member": "string",
           "name": "NamespaceId",
@@ -27550,7 +27550,7 @@
         },
         {
           "disabled": false,
-          "document": "发布描述",
+          "document": "发布描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ReleaseDesc",
@@ -27565,7 +27565,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：发布成功；false：发布失败",
+          "document": "发布结果。\n- true：发布成功\n- false：发布失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -27959,7 +27959,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项发布ID",
+          "document": "配置项发布ID。该参数可以通过调用 [DescribeConfigReleases](https://cloud.tencent.com/document/product/649/38342) 的返回值中的 ConfigReleaseId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=app)配置详情-发布情况页查看。",
           "example": "dcfgr-y84o2xla",
           "member": "string",
           "name": "ConfigReleaseId",
@@ -27974,7 +27974,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：回滚成功；false：回滚失败",
+          "document": "撤回结果。\n- true：成功\n- false：失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -28033,8 +28033,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项发布ID",
-          "example": "dcfgr-f-aeon99ry",
+          "document": "按照【配置项发布ID】进行撤回。可通过调用[DescribeFileConfigReleases](https://cloud.tencent.com/document/product/649/85855)查询已发布的文件配置列表或登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=file)-查看发布信息-发布情况进行查看；也可以调用[ReleaseFileConfig](https://cloud.tencent.com/document/product/649/58592)发布文件配置。",
+          "example": "dcfgr-f-oyd458xy",
           "member": "string",
           "name": "ConfigReleaseId",
           "required": true,
@@ -28070,7 +28070,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项发布历史ID",
+          "document": "配置项发布历史ID。该参数可以通过调用 [DescribeConfigReleaseLogs](https://cloud.tencent.com/document/product/649/38343) 的返回值中的 ConfigReleaseLogId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=app)配置详情-发布情况页查看。",
           "example": "dcfgrl-a2qj3qoa",
           "member": "string",
           "name": "ConfigReleaseLogId",
@@ -28079,7 +28079,7 @@
         },
         {
           "disabled": false,
-          "document": "回滚描述",
+          "document": "回滚描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ReleaseDesc",
@@ -28094,7 +28094,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：回滚成功；false：回滚失败",
+          "document": "回滚结果。\n- true：回滚成功\n- false：回滚失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -29372,7 +29372,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[获取虚拟机部署组列表](https://cloud.tencent.com/document/api/649/36065)接口时出参中的Result.Content.GroupId，或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-aaaaaaaa&tab=publish&subTab=group)选择对应应用进入应用部署页面查看，同时也是调用[创建部署组](https://cloud.tencent.com/document/api/649/36074)接口返回的Result值",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -29381,7 +29381,7 @@
         },
         {
           "disabled": false,
-          "document": "下线机器实例ID列表",
+          "document": "实例ID列表，实例ID可通过调用[查询虚拟机部署组云主机列表](https://cloud.tencent.com/document/product/649/36066)接口时出参中的Result.Content.InstanceId，或登录[控制台](https://console.cloud.tencent.com/tsf/resource-detail?rid=1&id=cluster-aaaaaaaa)选择对应的虚拟机集群查看云主机信息，同时也是[集群添加云主机](https://cloud.tencent.com/document/product/649/41225?ls=doc-search!current)接口的的返回值Result中的节点列表",
           "example": "[\"ins-6a79x94v\", \"ins-6a79kx78s\"]",
           "member": "string",
           "name": "InstanceIdList",
@@ -29397,7 +29397,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "task-6a79x94v",
+          "example": "无",
           "member": "TaskId",
           "name": "Result",
           "output_required": true,
@@ -30039,8 +30039,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点 ID",
-          "example": "node-6a79x94v",
+          "document": "节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点\"且\"时为 AND，为逻辑节点\"或\"时为 OR，节点类型为头节点时为字符串\"head\"",
+          "example": "head",
           "member": "string",
           "name": "NodeId",
           "output_required": true,
@@ -30050,8 +30050,8 @@
         },
         {
           "disabled": false,
-          "document": "子节点 ID",
-          "example": "cnode-6a79x94v",
+          "document": "子节点 ID，节点类型为任务时为任务ID，节点类型为逻辑节点\"且\"时为 AND，为逻辑节点\"或\"时为 OR",
+          "example": "task-x8orm34b",
           "member": "string",
           "name": "ChildNodeId",
           "output_required": true,
@@ -30062,7 +30062,7 @@
         {
           "disabled": false,
           "document": "是否核心任务,Y/N",
-          "example": "core-6a79x94v",
+          "example": "N",
           "member": "string",
           "name": "CoreNode",
           "output_required": true,
@@ -30072,8 +30072,8 @@
         },
         {
           "disabled": false,
-          "document": "边类型",
-          "example": "edge",
+          "document": "边类型，上下游任务依赖触发关系。一共2个值，Y：成功触发，N：失败触发",
+          "example": "Y",
           "member": "string",
           "name": "EdgeType",
           "output_required": true,
@@ -30083,8 +30083,8 @@
         },
         {
           "disabled": false,
-          "document": "任务节点类型",
-          "example": "default",
+          "document": "任务节点类型，一共有4种类型，AND：逻辑节点且，OR：逻辑节点或，TASK：任务节点，START：头节点",
+          "example": "START",
           "member": "string",
           "name": "NodeType",
           "output_required": true,
@@ -30116,8 +30116,8 @@
         },
         {
           "disabled": false,
-          "document": "图 ID",
-          "example": "graph-6a79x94v",
+          "document": "图 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回",
+          "example": "graph-2p7d984g",
           "member": "string",
           "name": "GraphId",
           "output_required": true,
@@ -30127,8 +30127,8 @@
         },
         {
           "disabled": false,
-          "document": "工作流 ID",
-          "example": "flow-6a79x94v",
+          "document": "工作流 ID，新建工作流时自动生成，不需要填写，查看工作流图时后端返回",
+          "example": "flow-2p7d984g",
           "member": "string",
           "name": "FlowId",
           "output_required": true,
@@ -30139,7 +30139,7 @@
         {
           "disabled": false,
           "document": "节点名称",
-          "example": "test-node",
+          "example": "head",
           "member": "string",
           "name": "NodeName",
           "output_required": true,
@@ -30149,8 +30149,8 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
-          "example": "task-6a79x94v",
+          "document": "任务ID，新建工作流时不需要填写，查看工作流图时后端返回",
+          "example": "task-x8orm34b",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -30160,8 +30160,8 @@
         },
         {
           "disabled": false,
-          "document": "任务历史ID",
-          "example": "tlog-6a79x94v",
+          "document": "任务历史ID，新建工作流时不需要填写，查看工作流图时后端返回",
+          "example": "tlog-x8orm34b",
           "member": "string",
           "name": "TaskLogId",
           "output_required": true,
@@ -30276,7 +30276,7 @@
         {
           "disabled": false,
           "document": "任务类型",
-          "example": "default",
+          "example": "java",
           "member": "string",
           "name": "TaskType",
           "output_required": true,
@@ -30285,7 +30285,7 @@
         },
         {
           "disabled": false,
-          "document": "执行类型",
+          "document": "任务执行方式，unicast：随机单节点执行，broadcast：广播执行，shard：分片执行",
           "example": "unicast",
           "member": "string",
           "name": "ExecuteType",
@@ -30315,8 +30315,8 @@
         },
         {
           "disabled": false,
-          "document": "超时时间",
-          "example": "30",
+          "document": "超时时间，单位：毫秒。",
+          "example": "30000",
           "member": "int64",
           "name": "TimeOut",
           "output_required": true,
@@ -30335,8 +30335,8 @@
         },
         {
           "disabled": false,
-          "document": "重试间隔",
-          "example": "20",
+          "document": "重试间隔，单位：毫秒。",
+          "example": "20000",
           "member": "int64",
           "name": "RetryInterval",
           "output_required": true,
@@ -30355,7 +30355,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用任务,ENABLED/DISABLED",
+          "document": "任务启用状态。一共2种状态可选，ENABLED：启用，DISABLED：停用",
           "example": "ENABLE",
           "member": "string",
           "name": "TaskState",
@@ -30445,8 +30445,8 @@
         },
         {
           "disabled": false,
-          "document": "触发类型",
-          "example": "auto",
+          "document": "触发类型，一共3种类型，WorkFlow：工作流触发，Cron：定时触发，FixRate：周期触发",
+          "example": "WorkFlow",
           "member": "string",
           "name": "TriggerType",
           "output_required": true,
@@ -30497,7 +30497,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "触发规则类型, Cron/Repeat",
+          "document": "触发规则类型，枚举值。一共3个值，Cron：定时触发，Repeat：周期触发，WorkFlow：工作流触发",
           "example": "Cron",
           "member": "string",
           "name": "RuleType",
@@ -30597,7 +30597,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流批次 ID",
+          "document": "工作流批次 ID，在[工作流执行记录](https://console.cloud.tencent.com/tsf/tct?rid=1&tab=taskflow)列表页第一列获取。",
           "example": "fbatch-2ks9hk",
           "member": "string",
           "name": "FlowBatchId",
@@ -30612,7 +30612,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否停止成功",
+          "document": "是否停止成功，true：停止成功，false：停止失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -30734,8 +30734,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置中心类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "SHARE/EXCLUSIVE",
+          "document": "配置中心类型。\n- SHARE：共享型\n- EXCLUSIVE：独占型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SHARE",
           "member": "string",
           "name": "ConfigType",
           "output_required": true,
@@ -32302,7 +32302,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置模板id",
+          "document": "配置模板ID。该参数可以通过调用 [DescribeConfigTemplate](https://cloud.tencent.com/document/product/649/85856) 的返回值中的 ConfigTemplateId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tse/tsf-consul?subTab=template)查看；也可以调用[CreateConfigTemplate](https://cloud.tencent.com/document/product/649/85861)创建新的配置模板。",
           "example": "dcfg_temp-aln5d3wv",
           "member": "string",
           "name": "ConfigTemplateId",
@@ -32311,7 +32311,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模板名称",
+          "document": "配置模板名称，最多支持60个字符，只能包含字母、数字及分隔符（“-”），且不能以分隔符开头或结尾。",
           "example": "app_config",
           "member": "string",
           "name": "ConfigTemplateName",
@@ -32320,7 +32320,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模板对应的微服务框架",
+          "document": "配置模板对应的微服务框架。\n- Ribbon：Ribbon类型配置模板\n- Hystrix：Hystrix类型配置模板\n- Zuul：Zuul类型配置模板\n- customize：自定义类型配置模板",
           "example": "Ribbon",
           "member": "string",
           "name": "ConfigTemplateType",
@@ -32329,7 +32329,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模板数据",
+          "document": "配置模板数据。",
           "example": "ribbon.ReadTimeout: 5000",
           "member": "string",
           "name": "ConfigTemplateValue",
@@ -32338,7 +32338,7 @@
         },
         {
           "disabled": false,
-          "document": "配置模板描述",
+          "document": "配置模板描述，最多支持200个字符。",
           "example": "This is desc",
           "member": "string",
           "name": "ConfigTemplateDesc",
@@ -32353,7 +32353,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新成功: true / 更新失败: false",
+          "document": "更新结果。\n- true：成功\n- false：失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -32512,7 +32512,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "仓库ID",
+          "document": "仓库ID，可通过调用[仓库信息查询类](https://cloud.tencent.com/document/api/649/45925)接口时出参中的RepositoryId，或登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "repo-6a79x94v",
           "member": "string",
           "name": "RepositoryId",

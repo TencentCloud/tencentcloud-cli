@@ -29,38 +29,23 @@ Output:
                 "TaskTemplateInfo": {
                     "OutputMappings": [
                         {
-                            "SourcePath": "C:\\\\render\\\\",
-                            "DestinationPath": "cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/"
+                            "SourcePath": "/tmp/t1",
+                            "DestinationPath": "cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/",
+                            "OutputMappingOption": {
+                                "Workspace": "BATCH_WORKSPACE"
+                            }
                         }
                     ],
                     "TaskInstanceNum": 1,
                     "ComputeEnv": {
                         "EnvType": "MANAGED",
                         "EnvData": {
-                            "SystemDisk": {
-                                "DiskSize": "50",
-                                "DiskType": "CLOUD_BASIC"
-                            },
                             "LoginSettings": {
                                 "Password": "B1habcdB1habcd"
                             },
-                            "InternetAccessible": {
-                                "InternetMaxBandwidthOut": "10",
-                                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR"
-                            },
                             "ImageId": "img-i64lx84h",
-                            "InstanceType": "S1.LARGE8",
-                            "DataDisks": [
-                                {
-                                    "DiskSize": "0",
-                                    "DiskType": "CLOUD_BASIC"
-                                }
-                            ]
+                            "InstanceType": "S1.LARGE8"
                         }
-                    },
-                    "RedirectInfo": {
-                        "StdoutRedirectPath": "cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/wonderflet/logs/",
-                        "StderrRedirectPath": "cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/wonderflet/logs/"
                     },
                     "Application": {
                         "Command": "3dsmaxcmd Demo.max -outputName:c:\\\\render\\\\image.jpg",
@@ -92,10 +77,6 @@ Output:
                             "InstanceType": "S1.SMALL1",
                             "ImageId": "img-bq1gnde2"
                         }
-                    },
-                    "RedirectInfo": {
-                        "StdoutRedirectPath": "cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/hello2/logs/",
-                        "StderrRedirectPath": "cos://bucket-appid.cos.ap-guangzhou.myqcloud.com/hello2/logs/"
                     },
                     "Application": {
                         "Command": "python -c \"fib=lambda n:1 if n&lt=2 else fib(n-1)+fib(n-2); print(fib(20))\" ",

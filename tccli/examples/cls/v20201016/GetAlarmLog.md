@@ -102,7 +102,7 @@ tccli cls GetAlarmLog --cli-unfold-argument  \
     --To 1702655999999 \
     --Query alert_id:"alarm-5ce45495-09e8-4d58-8f36-768134bf330c" AND monitored_object:"3c514e84-6f1f-46ec-afbf-05de6163f7fe" \
     --Limit 1 \
-    --Context 
+    --Context Y29udGxxxxC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy
 ```
 
 Output: 

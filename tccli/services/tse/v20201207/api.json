@@ -1772,7 +1772,7 @@
         {
           "disabled": false,
           "document": "备可用区",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "SlaveZoneId",
           "output_required": false,
@@ -1792,7 +1792,7 @@
         {
           "disabled": false,
           "document": "备可用区名称",
-          "example": "广州二区",
+          "example": "广州三区",
           "member": "string",
           "name": "SlaveZoneName",
           "output_required": false,
@@ -1802,7 +1802,7 @@
         {
           "disabled": false,
           "document": "网络 id",
-          "example": "network-1234xxxx",
+          "example": "network-1obc76ux",
           "member": "string",
           "name": "NetworkId",
           "output_required": false,
@@ -4246,7 +4246,7 @@
         {
           "disabled": false,
           "document": "路由id，或路由名称。\n不支持“未命名”",
-          "example": "6f423439-ec27-4a2e-aff9-9e73ffa3da4",
+          "example": "5836e46f-1653-4183-a76e-c361540d0831",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -4911,6 +4911,24 @@
           "example": "STRICT",
           "member": "string",
           "name": "AffinityConstraint",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定zone id列表",
+          "example": "[100006,100007]",
+          "member": "int64",
+          "name": "ZoneIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "地域特殊标签，用于区分相同地域，不通的业务属性",
+          "example": "ziyan_fit",
+          "member": "string",
+          "name": "EngineRegionTag",
           "required": false,
           "type": "string"
         }
@@ -12491,7 +12509,7 @@
         {
           "disabled": false,
           "document": "备可用区",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "SlaveZoneId",
           "required": false,

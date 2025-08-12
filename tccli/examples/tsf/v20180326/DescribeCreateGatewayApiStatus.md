@@ -1,4 +1,4 @@
-**Example 1: DescribeCreateGatewayApiStatus**
+**Example 1: 查询一键导入API分组任务的状态**
 
 
 

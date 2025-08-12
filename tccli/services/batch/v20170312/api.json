@@ -372,7 +372,7 @@
           "example": "MANAGED",
           "member": "string",
           "name": "EnvType",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -383,7 +383,7 @@
           "example": "无",
           "member": "EnvData",
           "name": "EnvData",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -394,7 +394,7 @@
           "example": "无",
           "member": "MountDataDisk",
           "name": "MountDataDisks",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -405,7 +405,7 @@
           "example": "无",
           "member": "AgentRunningMode",
           "name": "AgentRunningMode",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -2276,7 +2276,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)",
           "example": "job-97zcl3wt",
           "member": "string",
           "name": "JobId",
@@ -2295,27 +2295,27 @@
           "example": "job-97zcl3wt",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "作业名称",
-          "example": "test job",
+          "example": "demo job",
           "member": "string",
           "name": "JobName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "作业描述",
-          "example": "xxx",
+          "example": "demo-1",
           "member": "string",
           "name": "JobDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2325,7 +2325,7 @@
           "example": "1",
           "member": "int64",
           "name": "Priority",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2335,7 +2335,7 @@
           "example": "无",
           "member": "Task",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2345,7 +2345,7 @@
           "example": "无",
           "member": "Dependence",
           "name": "Dependences",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2355,7 +2355,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2673,8 +2673,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务模板ID列表，与Filters参数不能同时指定。",
-          "example": "[\"task-tmpl-pq24rq1e\\n\",\"task-tmpl-606i415o\\n\"]",
+          "document": "任务模板ID列表，与Filters参数不能同时指定。模版ID最大限制100.",
+          "example": "[\"task-tmpl-pq24rq1e\",\"task-tmpl-606i415o\"]",
           "member": "string",
           "name": "TaskTemplateIds",
           "required": false,
@@ -2700,7 +2700,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量",
+          "document": "返回数量; 可选范围[1-100]；默认值为20。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -2719,7 +2719,7 @@
           "example": "无",
           "member": "TaskTemplateView",
           "name": "TaskTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2729,7 +2729,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2933,7 +2933,7 @@
           "example": "SA5.MEDIUM2",
           "member": "string",
           "name": "InstanceType",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2944,7 +2944,7 @@
           "example": "img-jsdt6r36",
           "member": "string",
           "name": "ImageId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2955,7 +2955,7 @@
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -2966,7 +2966,7 @@
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -2977,7 +2977,7 @@
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -2988,7 +2988,7 @@
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -2999,7 +2999,7 @@
           "example": "demo",
           "member": "string",
           "name": "InstanceName",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3010,7 +3010,7 @@
           "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -3021,7 +3021,7 @@
           "example": "[\"sg-dec9tgiy\"]",
           "member": "string",
           "name": "SecurityGroupIds",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -3032,7 +3032,7 @@
           "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -3043,7 +3043,7 @@
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3054,7 +3054,7 @@
           "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -3065,7 +3065,7 @@
           "example": "[\"SA5.MEDIUM2\"]",
           "member": "string",
           "name": "InstanceTypes",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -3076,7 +3076,7 @@
           "example": "无",
           "member": "InstanceTypeOptions",
           "name": "InstanceTypeOptions",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -3087,7 +3087,7 @@
           "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "Zones",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -3098,7 +3098,7 @@
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateClouds",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -3759,8 +3759,8 @@
         },
         {
           "disabled": false,
-          "document": "线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。\n\n- BGP：常规 BGP 线路\n\n已开通静态单线IP白名单的用户，可选值：\n\n - CMCC：中国移动\n - CTCC：中国电信\n - CUCC：中国联通\n\n注意：仅部分地域支持静态单线IP。\n示例值：BGP",
-          "example": "CMCC",
+          "document": "线路类型。各种线路类型及支持地区详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。\n<li>BGP：常规 BGP 线路</li>\n已开通静态单线IP白名单的用户，可选值：\n<li>CMCC：中国移动</li>\n<li>CTCC：中国电信</li>\n<li>CUCC：中国联通</li>\n注意：仅部分地域支持静态单线IP。\n",
+          "example": "BGP",
           "member": "string",
           "name": "InternetServiceProvider",
           "output_required": false,
@@ -3770,7 +3770,7 @@
         },
         {
           "disabled": false,
-          "document": "公网 IP 类型。\n\n- WanIP：普通公网IP。\n- HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。\n- AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。\n\n如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。\n\n示例值：WanIP\n\n此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)",
+          "document": "公网 IP 类型。\n\n<li> WanIP：普通公网IP。</li>\n<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>\n<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>\n如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。\n\n此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)",
           "example": "WanIP",
           "member": "string",
           "name": "IPv4AddressType",
@@ -3781,7 +3781,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性公网 IPv6 类型。\n- EIPv6：弹性公网 IPv6。\n- HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。\n\n如需为资源分配IPv6地址，请指定弹性公网IPv6类型。\n示例值：EIPv6\n\n此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)",
+          "document": "弹性公网 IPv6 类型。\n<li> EIPv6：弹性公网 IPv6。</li>\n<li> HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。</li>\n如需为资源分配IPv6地址，请指定弹性公网IPv6类型。\n\n此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)",
           "example": "EIPv6",
           "member": "string",
           "name": "IPv6AddressType",
@@ -3792,8 +3792,8 @@
         },
         {
           "disabled": false,
-          "document": "高防包唯一ID，申请高防IP时，该字段必传。\n示例值：bgp-12345678\n",
-          "example": "bgp-12345678",
+          "document": "高防包唯一ID，申请高防IP时，该字段必传。\n",
+          "example": "bgp-00000000",
           "member": "string",
           "name": "AntiDDoSPackageId",
           "output_required": false,
@@ -5162,7 +5162,7 @@
           "example": "无",
           "member": "AnonymousComputeEnv",
           "name": "ComputeEnv",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -5173,7 +5173,7 @@
           "example": "env_238swek2",
           "member": "string",
           "name": "EnvId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5184,7 +5184,7 @@
           "example": "无",
           "member": "RedirectInfo",
           "name": "RedirectInfo",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -5195,7 +5195,7 @@
           "example": "无",
           "member": "RedirectLocalInfo",
           "name": "RedirectLocalInfo",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -5206,7 +5206,7 @@
           "example": "无",
           "member": "InputMapping",
           "name": "InputMappings",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5217,7 +5217,7 @@
           "example": "无",
           "member": "OutputMapping",
           "name": "OutputMappings",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5228,7 +5228,7 @@
           "example": "无",
           "member": "OutputMappingConfig",
           "name": "OutputMappingConfigs",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5239,7 +5239,7 @@
           "example": "无",
           "member": "EnvVar",
           "name": "EnvVars",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5250,7 +5250,7 @@
           "example": "无",
           "member": "Authentication",
           "name": "Authentications",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5261,7 +5261,7 @@
           "example": "TERMINATE",
           "member": "string",
           "name": "FailedAction",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5272,7 +5272,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MaxRetryCount",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5283,7 +5283,7 @@
           "example": "86400",
           "member": "uint64",
           "name": "Timeout",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5294,7 +5294,7 @@
           "example": "100",
           "member": "uint64",
           "name": "MaxConcurrentNum",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5305,7 +5305,7 @@
           "example": "false",
           "member": "bool",
           "name": "RestartComputeNode",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -5316,7 +5316,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ResourceMaxRetryCount",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false

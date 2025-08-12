@@ -508,7 +508,7 @@
       {
         "document": "",
         "input": "https://organization.tencentcloudapi.com/?Action=DescribeResourceToShareMember\n&Area=guangzhou\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2021-03-06 17:11:30\",\n                \"ResourceId\": \"shareResource-ew89er12d\",\n                \"ProductResourceId\": \"vpc-ewd23dd\",\n                \"Type\": \"vpc\",\n                \"UnitId\": \"shareUnit-xhreofra2p\",\n                \"UnitName\": \"test\"\n            }\n        ],\n        \"RequestId\": \"34b1919e-ab09-4cc0-8f4b-b35f371c7c58\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2021-03-06 17:11:30\",\n                \"ProductResourceId\": \"sec***002\",\n                \"Type\": \"secret\",\n                \"UnitId\": \"shareUnit-xh***a2p\",\n                \"UnitName\": \"my-shareunit\",\n                \"ShareManagerUin\": \"1000001\"\n            }\n        ],\n        \"RequestId\": \"34b1919e-ab09-4cc0-8f4b-b35f371c7c58\",\n        \"Total\": 1\n    }\n}",
         "title": "获取与我共享的资源列表"
       }
     ],

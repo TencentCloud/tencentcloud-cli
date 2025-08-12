@@ -7,7 +7,7 @@ Input:
 ```
 tccli tse CreateCloudNativeAPIGatewayRouteRateLimit --cli-unfold-argument  \
     --GatewayId gateway-9abf3b79 \
-    --Id 6f423439-ec27-4a2e-aff9-9e73ffa3da4d \
+    --Id 5836e46f-1653-4183-a76e-c361540d0831 \
     --LimitDetail.Enabled True \
     --LimitDetail.QpsThresholds.0.Max 20 \
     --LimitDetail.QpsThresholds.0.Unit second \
@@ -24,7 +24,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "3124124141241fas432"
+        "RequestId": "552cae66-953b-490c-b2d7-4c7c8d1cbd05"
     }
 }
 ```

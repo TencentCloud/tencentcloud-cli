@@ -1,4 +1,4 @@
-**Example 1: 查询group发布的配置**
+**Example 1: 查询部署组发布的配置**
 
 
 

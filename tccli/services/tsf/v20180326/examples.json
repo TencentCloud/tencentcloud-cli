@@ -189,7 +189,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLane\n<公共请求参数>\n\n{\n    \"LaneName\": \"app_lane\",\n    \"Remark\": \"This is desc\",\n    \"LaneGroupList\": [\n        {\n            \"GroupId\": \"group-vwebgxzv\",\n            \"Entrance\": true\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"681d3bab-f5fd-4a27-8b81-f65d6eda0238\",\n        \"Result\": \"lane-vwdjqq29\"\n    }\n}",
-        "title": "创建泳道"
+        "title": "创建泳道配置"
       }
     ],
     "CreateLaneRule": [
@@ -197,7 +197,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaneRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"app_rule\",\n    \"Remark\": \"This is desc\",\n    \"RuleTagList\": [\n        {\n            \"TagName\": \"app_tag\",\n            \"TagOperator\": \"EQUAL\",\n            \"TagValue\": \"user\"\n        }\n    ],\n    \"RuleTagRelationship\": \"RELEATION_AND\",\n    \"LaneId\": \"lane-y9o6w958\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d074caa-3966-42bd-a159-4bdd35534593\",\n        \"Result\": \"lane-r-yojkwwpr\"\n    }\n}",
-        "title": "创建泳道规则"
+        "title": "创建灰度发布规则"
       }
     ],
     "CreateMicroservice": [
@@ -213,7 +213,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMicroserviceWithDetailResp\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"namespace-vw8oox6v\",\n    \"MicroserviceName\": \"provider-demo-user\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b9daebe-d33d-4f78-8f23-e6c73026b4b0\",\n        \"Result\": \"ms-vwdjqqow\"\n    }\n}",
-        "title": "新增微服务返回id"
+        "title": "新增微服务返回ID"
       }
     ],
     "CreateNamespace": [
@@ -276,7 +276,7 @@
       {
         "document": "创建任务",
         "input": "https://tsf.tencentcloudapi.com/?Action=CreateTask\n&TaskName=task-test\n&TaskContent=com.example.task.simpleTask\n&TaskArgument=taskArgumentTest\n&ExecuteType=UNICAST\n&TaskType=JAVA\n&TaskRule.RuleType=Cron\n&TaskRule.RepeatInterval=0\n&TaskRule.Expression=00/1****?\n&TimeOut=30000\n&GroupId=group-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\n        \"Result\": \"task-12345678\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\n        \"Result\": \"task-6a79x94v\"\n    }\n}",
         "title": "创建任务"
       }
     ],
@@ -405,7 +405,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLane\n<公共请求参数>\n\n{\n    \"LaneId\": \"lane-y9o6w958\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"40bb8670-043a-478c-b85f-157b1f552d56\",\n        \"Result\": true\n    }\n}",
-        "title": "删除泳道"
+        "title": "删除泳道配置"
       }
     ],
     "DeleteLaneRule": [
@@ -413,7 +413,7 @@
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=DeleteLaneRule\n&RuleId=lane-r-fdjsgjkgfvd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"33d1f2e3a7d3-9e05-0960-4c15-a9f7dd46\"\n    }\n}",
-        "title": "删除泳道规则"
+        "title": "删除灰度发布规则"
       }
     ],
     "DeleteMicroservice": [
@@ -643,8 +643,8 @@
     "DescribeConfigReleaseLogs": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigReleaseLogs\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-aln2284v\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"NamespaceId\": \"namespace-vj3z3zgy\",\n    \"ClusterId\": \"cluster-yne99jdy\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"66410802-5243-4b39-8823-21843a2bf669\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"ClusterId\": \"cluster-yne99jdy\",\n                    \"ClusterName\": \"cluster-app\",\n                    \"ConfigId\": \"dcfg-yo82mmra\",\n                    \"ConfigName\": \"app-config\",\n                    \"ConfigReleaseLogId\": \"dcfgrl-yq75nn3a\",\n                    \"ConfigVersion\": \"v3\",\n                    \"GroupId\": \"group-aln2284v\",\n                    \"GroupName\": \"group-provider-1\",\n                    \"LastConfigId\": \"dcfg-yo82mmra\",\n                    \"LastConfigName\": \"config_app\",\n                    \"LastConfigVersion\": \"v1\",\n                    \"NamespaceId\": \"namespace-vw8oox6v\",\n                    \"NamespaceName\": \"cluster-jolyonzheng_default\",\n                    \"ReleaseDesc\": \"This is desc\",\n                    \"ReleaseStatus\": \"S\",\n                    \"ReleaseTime\": \"2024-12-24 15:57:15\",\n                    \"ReleasedConfigCenter\": \"SHARE\",\n                    \"RollbackFlag\": false\n                }\n            ],\n            \"TotalCount\": 6\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigReleaseLogs\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-zvwbbnxv\",\n    \"ApplicationId\": \"application-ov6ml25a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6566f040-7ad3-4608-8be4-aa20e84cfdbf\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"ClusterId\": \"cluster-jqv3mda7\",\n                    \"ClusterName\": \"jolyonzheng-vm-cluster\",\n                    \"ConfigId\": \"dcfg-nyg99e5a\",\n                    \"ConfigName\": \"gw_opensource_api\",\n                    \"ConfigReleaseLogId\": \"dcfgrl-4y4rxnba\",\n                    \"ConfigVersion\": \"2\",\n                    \"GroupId\": \"group-zvwbbnxv\",\n                    \"GroupName\": \"group-msgw-mock1\",\n                    \"LastConfigId\": \"dcfg-qv3rrn6v\",\n                    \"LastConfigName\": \"gw_opensource_api\",\n                    \"LastConfigVersion\": \"1\",\n                    \"NamespaceId\": \"namespace-9ynzz64y\",\n                    \"NamespaceName\": \"mock-service-ns\",\n                    \"ReleaseDesc\": \"this is desc\",\n                    \"ReleaseStatus\": \"RS\",\n                    \"ReleaseTime\": \"2025-08-07 11:34:36\",\n                    \"ReleasedConfigCenter\": \"SHARE\",\n                    \"RollbackFlag\": false\n                },\n                {\n                    \"ClusterId\": \"cluster-jqv3mda7\",\n                    \"ClusterName\": \"jolyonzheng-vm-cluster\",\n                    \"ConfigId\": \"dcfg-qv3rrn6v\",\n                    \"ConfigName\": \"gw_opensource_api\",\n                    \"ConfigReleaseLogId\": \"dcfgrl-qabpxw9v\",\n                    \"ConfigVersion\": \"1\",\n                    \"GroupId\": \"group-zvwbbnxv\",\n                    \"GroupName\": \"group-msgw-mock1\",\n                    \"LastConfigId\": \"dcfg-nyg99e5a\",\n                    \"LastConfigName\": \"gw_opensource_api\",\n                    \"LastConfigVersion\": \"2\",\n                    \"NamespaceId\": \"namespace-9ynzz64y\",\n                    \"NamespaceName\": \"mock-service-ns\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseStatus\": \"S\",\n                    \"ReleaseTime\": \"2025-08-07 11:30:25\",\n                    \"ReleasedConfigCenter\": \"SHARE\",\n                    \"RollbackFlag\": true\n                },\n                {\n                    \"ClusterId\": \"cluster-jqv3mda7\",\n                    \"ClusterName\": \"jolyonzheng-vm-cluster\",\n                    \"ConfigId\": \"dcfg-nyg99e5a\",\n                    \"ConfigName\": \"gw_opensource_api\",\n                    \"ConfigReleaseLogId\": \"dcfgrl-6yoxb8ny\",\n                    \"ConfigVersion\": \"2\",\n                    \"GroupId\": \"group-zvwbbnxv\",\n                    \"GroupName\": \"group-msgw-mock1\",\n                    \"LastConfigId\": null,\n                    \"LastConfigName\": null,\n                    \"LastConfigVersion\": null,\n                    \"NamespaceId\": \"namespace-9ynzz64y\",\n                    \"NamespaceName\": \"mock-service-ns\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseStatus\": \"S\",\n                    \"ReleaseTime\": \"2024-11-28 17:01:08\",\n                    \"ReleasedConfigCenter\": \"SHARE\",\n                    \"RollbackFlag\": false\n                }\n            ],\n            \"TotalCount\": 3\n        }\n    }\n}",
         "title": "查询配置发布历史"
       }
     ],
@@ -725,7 +725,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCreateGatewayApiStatus\n<公共请求参数>\n\n{\n    \"GroupId\": \"grp-nb08ur29\",\n    \"MicroserviceId\": \"ms-a78gk87b\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"44466474-1d8c-4157-8448-c7f1fbb22599\",\n        \"Result\": true\n    }\n}",
-        "title": "DescribeCreateGatewayApiStatus"
+        "title": "查询一键导入API分组任务的状态"
       }
     ],
     "DescribeDeliveryConfig": [
@@ -868,7 +868,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupRelease\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-v6q747py\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81d75b7e-8bec-47fd-bc65-c99bb24f569e\",\n        \"Result\": {\n            \"ConfigReleaseList\": [\n                {\n                    \"ApplicationId\": \"application-vzoebl8a\",\n                    \"ClusterId\": \"cls-i3v5y09e\",\n                    \"ClusterName\": \"cls-app\",\n                    \"ConfigCenters\": [\n                        {\n                            \"ConfigCenterInstanceId\": null,\n                            \"ConfigCenterInstanceName\": null,\n                            \"ConfigType\": \"SHARE\",\n                            \"CurrentVersion\": null,\n                            \"RegionId\": null,\n                            \"TargetVersion\": null\n                        }\n                    ],\n                    \"ConfigId\": \"dcfg-a7rl7w4v\",\n                    \"ConfigName\": \"conf-app\",\n                    \"ConfigReleaseId\": \"dcfgr-ymw5965v\",\n                    \"ConfigVersion\": \"v1\",\n                    \"GroupId\": \"group-v6q747py\",\n                    \"GroupName\": \"cloud-provider\",\n                    \"NamespaceId\": \"namespace-vj3z3zgy\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseTime\": \"2024-12-24 18:36:03\"\n                }\n            ],\n            \"FileConfigReleaseList\": [\n                {\n                    \"ClusterId\": \"cls-i3v5y09e\",\n                    \"ClusterName\": \"cls-app\",\n                    \"ConfigId\": \"dcfg-f-aeonjd6y\",\n                    \"ConfigName\": \"config_app\",\n                    \"ConfigReleaseId\": \"dcfgr-f-y84omela\",\n                    \"ConfigVersion\": \"v1\",\n                    \"GroupId\": \"group-v6q747py\",\n                    \"GroupName\": \"cloud-provider\",\n                    \"NamespaceId\": \"namespace-vj3z3zgy\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseTime\": \"2024-12-24 18:37:50\"\n                }\n            ],\n            \"PackageId\": \"pkg-9198307d\",\n            \"PackageName\": \"msgw-zuul1-1.29.20-Hoxton-Higher-RELEASE.jar\",\n            \"PackageVersion\": \"20241223010307\",\n            \"PublicConfigReleaseList\": [\n                {\n                    \"ApplicationId\": null,\n                    \"ClusterId\": null,\n                    \"ClusterName\": null,\n                    \"ConfigCenters\": [\n                        {\n                            \"ConfigCenterInstanceId\": null,\n                            \"ConfigCenterInstanceName\": null,\n                            \"ConfigType\": \"SHARE\",\n                            \"CurrentVersion\": null,\n                            \"RegionId\": null,\n                            \"TargetVersion\": null\n                        }\n                    ],\n                    \"ConfigId\": \"dcfg-p-vzk36rov\",\n                    \"ConfigName\": \"config_pub_app\",\n                    \"ConfigReleaseId\": \"dcfgr-yne579dy\",\n                    \"ConfigVersion\": \"v1\",\n                    \"GroupId\": null,\n                    \"GroupName\": null,\n                    \"NamespaceId\": \"namespace-vj3z3zgy\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseTime\": \"2024-12-24 18:36:54\"\n                }\n            ],\n            \"RepoName\": \"tsf_100011910000/app-provider\",\n            \"TagName\": \"20241212161801\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81d75b7e-8bec-47fd-bc65-c99bb24f569e\",\n        \"Result\": {\n            \"ConfigReleaseList\": [\n                {\n                    \"ApplicationId\": \"application-vzoebl8a\",\n                    \"ClusterId\": \"cls-i3v5y09e\",\n                    \"ClusterName\": \"cls-app\",\n                    \"ConfigCenters\": [\n                        {\n                            \"ConfigCenterInstanceId\": null,\n                            \"ConfigCenterInstanceName\": null,\n                            \"ConfigType\": \"SHARE\",\n                            \"CurrentVersion\": null,\n                            \"RegionId\": null,\n                            \"TargetVersion\": null\n                        }\n                    ],\n                    \"ConfigId\": \"dcfg-a7rl7w4v\",\n                    \"ConfigName\": \"conf-app\",\n                    \"ConfigReleaseId\": \"dcfgr-ymw5965v\",\n                    \"ConfigVersion\": \"v1\",\n                    \"GroupId\": \"group-v6q747py\",\n                    \"GroupName\": \"cloud-provider\",\n                    \"NamespaceId\": \"namespace-vj3z3zgy\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseTime\": \"2024-12-24 18:36:03\"\n                }\n            ],\n            \"FileConfigReleaseList\": [\n                {\n                    \"ClusterId\": \"cls-i3v5y09e\",\n                    \"ClusterName\": \"cls-app\",\n                    \"ConfigId\": \"dcfg-f-aeonjd6y\",\n                    \"ConfigName\": \"config_app\",\n                    \"ConfigReleaseId\": \"dcfgr-f-y84omela\",\n                    \"ConfigVersion\": \"v1\",\n                    \"GroupId\": \"group-v6q747py\",\n                    \"GroupName\": \"cloud-provider\",\n                    \"NamespaceId\": \"namespace-vj3z3zgy\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseTime\": \"2024-12-24 18:37:50\"\n                }\n            ],\n            \"PackageId\": \"pkg-9198307d\",\n            \"PackageName\": \"msgw-zuul1-1.29.20-Hoxton-Higher-RELEASE.jar\",\n            \"PackageVersion\": \"20241223010307\",\n            \"PublicConfigReleaseList\": [\n                {\n                    \"ApplicationId\": null,\n                    \"ClusterId\": null,\n                    \"ClusterName\": null,\n                    \"ConfigCenters\": [\n                        {\n                            \"ConfigCenterInstanceId\": null,\n                            \"ConfigCenterInstanceName\": null,\n                            \"ConfigType\": \"SHARE\",\n                            \"CurrentVersion\": null,\n                            \"RegionId\": null,\n                            \"TargetVersion\": null\n                        }\n                    ],\n                    \"ConfigId\": \"dcfg-p-vzk36rov\",\n                    \"ConfigName\": \"config_pub_app\",\n                    \"ConfigReleaseId\": \"dcfgr-yne579dy\",\n                    \"ConfigVersion\": \"v1\",\n                    \"GroupId\": null,\n                    \"GroupName\": null,\n                    \"NamespaceId\": \"namespace-vj3z3zgy\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseTime\": \"2024-12-24 18:36:54\"\n                }\n            ],\n            \"RepoName\": \"tsf_001/app-provider\",\n            \"TagName\": \"20241212161801\"\n        }\n    }\n}",
         "title": "查询部署组发布的相关信息"
       }
     ],
@@ -973,7 +973,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLaneRules\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"SearchWord\": \"ruleName\",\n    \"RuleId\": \"lane-r-v6ewp385\",\n    \"RuleIdList\": [\n        \"lane-r-v6ewp385\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4a47430-c0f8-4ebb-9a20-774e32936035\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"CreateTime\": 1725509095000,\n                    \"Enable\": true,\n                    \"LaneId\": \"lane-ynmlnwm4\",\n                    \"Priority\": 1,\n                    \"Remark\": \"\",\n                    \"RuleId\": \"lane-r-v6ewp385\",\n                    \"RuleName\": \"rule_app\",\n                    \"RuleTagList\": null,\n                    \"RuleTagRelationship\": \"RELEATION_AND\",\n                    \"UpdateTime\": 1727167548000\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
-        "title": "查询泳道规则列表"
+        "title": "查询灰度发布规则列表"
       }
     ],
     "DescribeLanes": [
@@ -981,7 +981,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLanes\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"SearchWord\": \"lane\",\n    \"LaneIdList\": [\n        \"lane-ynmlnwm4\"\n    ],\n    \"DisableProgramAuthCheck\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6dec7e1-dfcd-4a12-8977-986605343663\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"CreateTime\": 1726849955000,\n                    \"Entrance\": null,\n                    \"LaneGroupList\": null,\n                    \"LaneId\": \"lane-ynmlnwm4\",\n                    \"LaneName\": \"lane_name\",\n                    \"NamespaceIdList\": null,\n                    \"Remark\": \"\",\n                    \"UpdateTime\": 1726849955000\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
-        "title": "查询泳道列表"
+        "title": "查询泳道配置列表"
       }
     ],
     "DescribeLicenses": [
@@ -1133,7 +1133,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReleasedConfig\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-jy9re3gy\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ec73c01-a942-4c6c-9630-b25e53745a43\",\n        \"Result\": \"config: enabled\\n\"\n    }\n}",
-        "title": "查询group发布的配置"
+        "title": "查询部署组发布的配置"
       }
     ],
     "DescribeRepositories": [
@@ -1293,7 +1293,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableLaneRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"lane-r-yqg4kmbd\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"42070bc6-afad-43c2-9646-3b0e1bca8d3f\",\n        \"Result\": true\n    }\n}",
-        "title": "禁用泳道规则"
+        "title": "禁用灰度发布规则"
       }
     ],
     "DisableTask": [
@@ -1357,7 +1357,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableLaneRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"lane-r-yqg4kmbd\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"265f638d-1998-494b-a794-1abe86d5eecc\",\n        \"Result\": true\n    }\n}",
-        "title": "启用泳道规则"
+        "title": "启用灰度发布规则"
       }
     ],
     "EnableTask": [
@@ -1461,7 +1461,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLane\n<公共请求参数>\n\n{\n    \"LaneId\": \"lane-ap62k7ol\",\n    \"LaneName\": \"rule_app\",\n    \"Remark\": \"This is desc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ad3847e-b102-4b45-8f90-bb64112cc27f\",\n        \"Result\": true\n    }\n}",
-        "title": "更新泳道信息"
+        "title": "更新泳道配置信息"
       }
     ],
     "ModifyLaneRule": [
@@ -1469,7 +1469,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLaneRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"lane-r-yqg4kmbd\",\n    \"RuleName\": \"rule_app\",\n    \"Remark\": \"This is desc\",\n    \"RuleTagList\": [\n        {\n            \"TagName\": \"user_tag\",\n            \"TagOperator\": \"EQUAL\",\n            \"TagValue\": \"1\"\n        }\n    ],\n    \"RuleTagRelationship\": \"RELEATION_AND\",\n    \"LaneId\": \"lane-ap62k7ol\",\n    \"Enable\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ab21a41-5ab1-4988-8092-904541aa6877\",\n        \"Result\": true\n    }\n}",
-        "title": "更新泳道规则"
+        "title": "更新灰度发布规则"
       }
     ],
     "ModifyMicroservice": [
@@ -1540,7 +1540,7 @@
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=RedoTask\n&TaskId=task-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\n        \"Result\": \"batch-1234545\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\n        \"Result\": \"batch-ze383d57\"\n    }\n}",
         "title": "重新执行任务"
       }
     ],
@@ -1548,7 +1548,7 @@
       {
         "document": "重新执行批次",
         "input": "https://tsf.tencentcloudapi.com/?Action=RedoTaskBatch\n&TaskId=task-qov7j8ky\n&BatchId=batch-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\n        \"Result\": \"batch-123456\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\n        \"Result\": \"blog-6a79x94v\"\n    }\n}",
         "title": "重新执行批次"
       }
     ],
@@ -1556,7 +1556,7 @@
       {
         "document": "在某个节点上重新执行任务",
         "input": "https://tsf.tencentcloudapi.com/?Action=RedoTaskExecute\n&BatchId=batch-12345678\n&ExecuteId=execute-12345678\n&TaskId=task-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\n        \"Result\": \"batch-1234456\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6281ddf9-1914-420b-afb8-93735ac3270a\",\n        \"Result\": \"elog-hb6fg5d5\"\n    }\n}",
         "title": "重新执行任务"
       }
     ],
@@ -1589,7 +1589,7 @@
         "document": "将一个应用配置项发布到指定的应用部署组",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseConfigWithDetailResp\n<公共请求参数>\n\n{\n    \"ConfigId\": \"dcfg-yo82mmra\",\n    \"GroupId\": \"group-aln2284v\",\n    \"ReleaseDesc\": \"This is desc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1892e2c1-9223-4979-bf25-1935c7eeed12\",\n        \"Result\": {\n            \"ApplicationId\": null,\n            \"ClusterId\": null,\n            \"ClusterName\": null,\n            \"ConfigCenters\": null,\n            \"ConfigId\": null,\n            \"ConfigName\": null,\n            \"ConfigReleaseId\": \"dcfgr-yxd366ov\",\n            \"ConfigVersion\": null,\n            \"GroupId\": null,\n            \"GroupName\": null,\n            \"NamespaceId\": null,\n            \"NamespaceName\": null,\n            \"ReleaseDesc\": null,\n            \"ReleaseTime\": null\n        }\n    }\n}",
-        "title": "发布配置"
+        "title": "发布配置，并且返回配置ID。"
       }
     ],
     "ReleaseFileConfig": [
