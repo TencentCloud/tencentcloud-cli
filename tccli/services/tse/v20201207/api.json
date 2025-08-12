@@ -1821,7 +1821,7 @@
         {
           "disabled": false,
           "document": "备可用区",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "SlaveZoneId",
           "output_required": false,
@@ -1841,7 +1841,7 @@
         {
           "disabled": false,
           "document": "备可用区名称",
-          "example": "广州二区",
+          "example": "广州三区",
           "member": "string",
           "name": "SlaveZoneName",
           "output_required": false,
@@ -1851,7 +1851,7 @@
         {
           "disabled": false,
           "document": "网络 id",
-          "example": "network-1234xxxx",
+          "example": "network-1obc76ux",
           "member": "string",
           "name": "NetworkId",
           "output_required": false,
@@ -4361,7 +4361,7 @@
         {
           "disabled": false,
           "document": "路由id，或路由名称。\n不支持“未命名”",
-          "example": "6f423439-ec27-4a2e-aff9-9e73ffa3da4",
+          "example": "5836e46f-1653-4183-a76e-c361540d0831",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -13031,7 +13031,7 @@
         {
           "disabled": false,
           "document": "备可用区",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "SlaveZoneId",
           "required": false,

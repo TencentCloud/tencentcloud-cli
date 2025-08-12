@@ -78,6 +78,14 @@
         "title": "创建告警屏蔽"
       }
     ],
+    "CreateBinlogSubscribe": [
+      {
+        "document": "CreateBinlogSubscribe",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBinlogSubscribe\n<公共请求参数>\n\n{\n    \"Name\": \"template_1\",\n    \"TopicId\": \"715094e3-01b0-4aeb-91f5-ee9f46a4a13c\",\n    \"Type\": 1,\n    \"SqlInfo\": {\n        \"AccessMode\": 1,\n        \"User\": \"root\",\n        \"Password\": \"root-3306\",\n        \"InstanceId\": \"instance-id\"\n    },\n    \"InitialPoint\": {\n        \"Type\": 1\n    },\n    \"Events\": [\n        \"DDL\"\n    ],\n    \"Metadatas\": [\n        \"position\"\n    ],\n    \"TimestampType\": 1,\n    \"BlockListStatus\": 1,\n    \"AllowListStatus\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"715094e3-01b0-4aeb-91f5-ee9f46a4a13c\",\n        \"RequestId\": \"715094e3-01b0-4aeb-91f5-ee9f46a4a131\"\n    }\n}",
+        "title": "创建binlog采集"
+      }
+    ],
     "CreateCloudProductLogCollection": [
       {
         "document": "",
@@ -184,12 +192,44 @@
         "title": "创建投递SCF任务"
       }
     ],
+    "CreateDlcDeliver": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDlcDeliver\n<公共请求参数>\n\n{\n    \"TopicId\": \"6bf3355c-3c88-4566-89c8-76c3ca37bae9\",\n    \"Name\": \"test1\",\n    \"DeliverType\": 0,\n    \"StartTime\": 1741005340,\n    \"DlcInfo\": {\n        \"TableInfo\": {\n            \"DataDirectory\": \"/a/a/a/a\",\n            \"DatabaseName\": \"database_name\",\n            \"TableName\": \"table_name\"\n        },\n        \"FieldInfos\": [\n            {\n                \"ClsField\": \"cls_1\",\n                \"DlcField\": \"dlc_1\",\n                \"DlcFieldType\": \"string\"\n            },\n            {\n                \"ClsField\": \"dlc_2\",\n                \"DlcField\": \"dlc_2\",\n                \"DlcFieldType\": \"int\",\n                \"Disable\": true\n            }\n        ],\n        \"PartitionInfos\": [\n            {\n                \"ClsField\": \"cls_1\",\n                \"DlcField\": \"dlc_1\",\n                \"DlcFieldType\": \"string\"\n            }\n        ]\n    },\n    \"MaxSize\": 5,\n    \"Interval\": 300,\n    \"HasServicesLog\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09e2ab6b-97fe-47eb-917c-bfb1e6c218e0\",\n        \"TaskId\": \"23428151-15cc-48ce-a2de-d02e186ddcf8\"\n    }\n}",
+        "title": "创建投递dlc任务"
+      }
+    ],
+    "CreateEsRecharge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEsRecharge\n<公共请求参数>\n\n{\n    \"TopicId\": \"0335dd94-e327-435c-938c-d9d7a4525d45\",\n    \"Name\": \"es_test\",\n    \"Index\": \"65cdbbea-a06e-4e3b-a7a8-d8b365240f62_search\",\n    \"Query\": \"\",\n    \"EsInfo\": {\n        \"EsType\": 2,\n        \"AccessMode\": 2,\n        \"User\": \"es_user\",\n        \"Address\": \"127.0.0.1\",\n        \"Port\": 9200,\n        \"Password\": \"abc@syz\"\n    },\n    \"ImportInfo\": {\n        \"Type\": 1\n    },\n    \"TimeInfo\": {\n        \"Type\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"fc9170c0-95b9-4553-8f2d-32b12bf9d4d7\",\n        \"RequestId\": \"609a4b29-4e49-4f34-bbca-b01a1e04f0b5\"\n    }\n}",
+        "title": "创建es导入任务"
+      }
+    ],
     "CreateExport": [
       {
         "document": "创建日志下载任务",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExport\n<公共请求参数>\n\n{\n    \"TopicId\": \"ee20bb16-3025-4048-b81a-dd436373062e\",\n    \"Query\": \"status:200\",\n    \"Count\": 100,\n    \"Order\": \"desc\",\n    \"Format\": \"json\",\n    \"From\": 1607499107000,\n    \"To\": 1607499207000\n}",
         "output": "{\n    \"Response\": {\n        \"ExportId\": \"57196a6a-7622-47be-bc92-d2ebea959a0f\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建日志下载任务"
+      }
+    ],
+    "CreateExternalDataSource": [
+      {
+        "document": "创建外部数据源配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExternalDataSource\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Describes\": \"abc\",\n    \"Datasource\": 1,\n    \"SQLInfo\": {\n        \"AccessMode\": 1,\n        \"Address\": \"abc\",\n        \"Port\": \"abc\",\n        \"EndPointServiceId\": \"abc\",\n        \"User\": \"abc\",\n        \"Password\": \"abc\",\n        \"DatabaseName\": \"abc\",\n        \"TableName\": \"abc\"\n    },\n    \"COSInfo\": {\n        \"Region\": \"abc\",\n        \"Bucket\": \"abc\",\n        \"FileAddress\": \"abc\",\n        \"FieldsInfo\": [\n            {\n                \"FieldName\": \"abc\",\n                \"FieldType\": \"abc\"\n            }\n        ]\n    },\n    \"TopicId\": \"abc\",\n    \"LogsetId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建外部数据源配置"
+      }
+    ],
+    "CreateHostMetricConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHostMetricConfig\n<公共请求参数>\n\n{\n    \"TopicId\": \"55fdd8a0-1a33-4ce3-8166-01f2361f0cdf\",\n    \"Name\": \"host_metric_config_test\",\n    \"MachineGroupIds\": [\n        \"c8bdead9-0170-4d69-ab08-5caa607b76d0\"\n    ],\n    \"Interval\": 50000,\n    \"HostMetricItems\": [\n        {\n            \"Type\": \"cpu\"\n        },\n        {\n            \"Type\": \"mem\"\n        },\n        {\n            \"Type\": \"net\"\n        },\n        {\n            \"Type\": \"disk\"\n        },\n        {\n            \"Type\": \"system\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigId\": \"e542d884-f08b-4be9-b700-2a99d9aa1545\",\n        \"RequestId\": \"2a1f4deb-c47a-46d4-bb7a-565a17e6aa38\"\n    }\n}",
+        "title": "创建主机指标采集配置"
       }
     ],
     "CreateIndex": [
@@ -224,12 +264,36 @@
         "title": "创建机器组"
       }
     ],
+    "CreateMetricConfig": [
+      {
+        "document": "创建基础监控指标采集配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetricConfig\n<公共请求参数>\n\n{\n    \"TopicId\": \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\",\n    \"Source\": 1,\n    \"GroupIds\": [\n        \"886bf7a8-7340-4314-8d64-b360da0ffd78\"\n    ],\n    \"Type\": 1,\n    \"Flag\": 1,\n    \"YamlSpec\": {\n        \"Type\": \"ScrapeConfig-prometheus\",\n        \"Spec\": \"scrape_configs:\\n- job_name: cadvisor\\n  honor_timestamps: false\\n  metrics_path: /metrics\\n  scheme: https\\n  kubernetes_sd_configs:\\n  - role: node\\n  bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\n  tls_config:\\n    ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt\\n  relabel_configs:\\n  - source_labels: [__meta_kubernetes_node_name]\\n    separator: ;\\n    regex: (.*)\\n    target_label: __address__\\n    replacement: kubernetes.default.svc:443\\n    action: replace\\n  - source_labels: [__meta_kubernetes_node_name]\\n    separator: ;\\n    regex: (.+)\\n    target_label: __metrics_path__\\n    replacement: /api/v1/nodes/${1}/proxy/metrics/cadvisor\\n    action: replace\\n  - separator: ;\\n    regex: __meta_kubernetes_node_label_(.+)\\n    replacement: $1\\n    action: labelmap\\n  - separator: ;\\n    regex: eks_tke_cloud_tencent_com_(.+)\\n    replacement: $1\\n    action: labeldrop\\n  metric_relabel_configs:\\n  - source_labels: [container_name]\\n    separator: ;\\n    regex: (.+)\\n    target_label: container\\n    replacement: $1\\n    action: replace\\n  - source_labels: [pod_name]\\n    separator: ;\\n    regex: (.+)\\n    target_label: pod\\n    replacement: $1\\n    action: replace\\n  - source_labels: [container]\\n    separator: ;\\n    regex: (.*)\\n    replacement: $1\\n    action: keep\\n---\\nscrape_configs:\\n- job_name: kube-state-metric\\n  honor_timestamps: true\\n  metrics_path: /metrics\\n  scheme: http\\n  kubernetes_sd_configs:\\n  - role: endpoints\\n    namespaces:\\n      names:\\n      - kube-system\\n    selectors:\\n      - label: \\\"app.kubernetes.io/name==kube-state-metrics\\\"\\n        role: endpoints\\n  bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\n  tls_config:\\n    insecure_skip_verify: true\\n  metric_relabel_configs:\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_requests;cpu;core\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_requests_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_limits;cpu;core\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_limits_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_requests;memory;byte\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_requests_memory_bytes\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_limits;memory;byte\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_limits_memory_bytes\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_capacity;cpu;core\\n    target_label: __name__\\n    replacement: kube_node_status_capacity_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_capacity;memory;byte\\n    target_label: __name__\\n    replacement: kube_node_status_capacity_memory_bytes\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_allocatable;cpu;core\\n    target_label: __name__\\n    replacement: kube_node_status_allocatable_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_allocatable;memory;byte\\n    target_label: __name__\\n    replacement: kube_node_status_allocatable_memory_bytes\\n    action: replace\\n---\\nscrape_configs:\\n- job_name: node-exporter\\n  honor_timestamps: true\\n  metrics_path: /metrics\\n  scheme: http\\n  kubernetes_sd_configs:\\n  - role: endpoints\\n    namespaces:\\n      names:\\n      - kube-system\\n    selectors:\\n    - label: \\\"app.kubernetes.io/name==node-exporter\\\"\\n      role: endpoints\\n  bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\n  tls_config:\\n    insecure_skip_verify: true\\n  relabel_configs:\\n  - separator: ;\\n    action: replace\\n    regex: (.*)\\n    replacement: $1\\n    source_labels: [__meta_kubernetes_pod_node_name]\\n    target_label: instance\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigIds\": [\n            \"1bfadff7-9c5d-48c2-b985-21670d9d007e\",\n            \"82182b27-7997-439d-bcc3-22a5c9da3bc4\",\n            \"b8c24595-6fce-489c-8488-9d2db440fd9d\"\n        ],\n        \"RequestId\": \"e163af1b-fd31-4cef-b820-cb897e4644cf\"\n    }\n}",
+        "title": "创建指标采集"
+      }
+    ],
+    "CreateMetricSubscribe": [
+      {
+        "document": "创建指标订阅配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetricSubscribe\n<公共请求参数>\n\n{\n    \"Name\": \"metric_subscribe_name\",\n    \"TopicId\": \"715094e3-01b0-4aeb-91f5-ee9f46a4a13c\",\n    \"Namespace\": \"QCE/CVM\",\n    \"Metrics\": [\n        {\n            \"MetricName\": \"metric name\",\n            \"Periods\": [\n                60,\n                120\n            ],\n            \"MetricLabels\": [\n                {\n                    \"Key\": \"label_key\",\n                    \"Value\": \"label_value\"\n                }\n            ]\n        }\n    ],\n    \"InstanceInfo\": {\n        \"InstanceDimension\": [\n            \"bucket\",\n            \"appid\"\n        ],\n        \"Instances\": [\n            {\n                \"Values\": [\n                    \"bucket_asdfa-asdf-asdf-ads\",\n                    \"12325435\"\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"c03bf755-0482-4903-a210-2a318cde922e\",\n        \"RequestId\": \"4a3c7ea9-02fa-4d33-b626-6cd496d0e300\"\n    }\n}",
+        "title": "创建指标订阅配置"
+      }
+    ],
     "CreateNoticeContent": [
       {
         "document": "创建通知内容信息",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNoticeContent\n<公共请求参数>\n\n{\n    \"Name\": \"testEmail\",\n    \"Type\": 0,\n    \"NoticeContents\": [\n        {\n            \"Type\": \"Email\",\n            \"TriggerContent\": {\n                \"Title\": \"title\",\n                \"Content\": \"this is content\",\n                \"Headers\": [\n                    \"Content-Type:application/json\"\n                ]\n            },\n            \"RecoveryContent\": {\n                \"Title\": \"title\",\n                \"Content\": \"this is content\",\n                \"Headers\": [\n                    \"Content-Type:application/json\"\n                ]\n            }\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"NoticeContentId\": \"noticetemplate-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\",\n        \"RequestId\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n    }\n}",
         "title": "创建通知内容信息"
+      }
+    ],
+    "CreateRemoteWriteTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRemoteWriteTask\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\",\n    \"Target\": \"prometheus\",\n    \"RemoteWriteURL\": \"\",\n    \"AuthType\": 0,\n    \"NetType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc-dec-ff-ee\",\n        \"RequestId\": \"xxx-x-xx-xx\"\n    }\n}",
+        "title": "创建RemoteWrite 任务"
       }
     ],
     "CreateScheduledSql": [
@@ -254,6 +318,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"PartitionCount\": 1,\n    \"Tags\": [],\n    \"Period\": 12\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建日志主题"
+      }
+    ],
+    "CreateTopicExtendConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopicExtendConfig\n<公共请求参数>\n\n{\n    \"ClbTopicExtendConfigs\": [\n        {\n            \"UserAppId\": 1,\n            \"TopicId\": \"xx\",\n            \"UserHealthTopicId\": \"xx\",\n            \"VpcId\": 1,\n            \"TmpKeyExpired\": 1,\n            \"LogSample\": \"xx\",\n            \"UserSample\": \"xx\",\n            \"UserTmpSecretId\": \"xx\",\n            \"Collection\": true,\n            \"UserTmpSecretKey\": \"xx\",\n            \"Vip\": \"xx\",\n            \"LbKey\": \"xx\",\n            \"UserSampleStatus\": true,\n            \"UserUin\": 1,\n            \"UserToken\": \"xx\",\n            \"UserTopicId\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "创建采集配置(clb专用)"
       }
     ],
     "CreateWebCallback": [
@@ -556,7 +628,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoleSharingList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ConsoleSharingInfos\": [\n            {\n                \"SharingId\": \"13cez28h\",\n                \"SharingUrl\": \"https://clsshare.tencent-cloud.com/s/13cez28h\",\n                \"SharingConfig\": {\n                    \"Name\": \"my-sharing\",\n                    \"Type\": 1,\n                    \"VerifyCode\": \"lEC0V0\",\n                    \"DurationMilliseconds\": 18000,\n                    \"NowTime\": 1706787306086,\n                    \"IsLockTimeRange\": true,\n                    \"IsLockQuery\": true,\n                    \"Params\": [],\n                    \"Resources\": [\n                        \"qcs::cls:ap-guangzhou:uin/10000000001:topic/c1306921-2180-3e45-9azb-31d12217871e6\"\n                    ]\n                },\n                \"ExpiredTime\": 1706789065000,\n                \"CreateTime\": 1706787264000,\n                \"UpdateTime\": 1706787264000\n            }\n        ],\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
         "title": "批量查询控制台检索页/仪表盘免登录分享站点示例"
       }
     ],
@@ -722,7 +794,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledSqlInfo\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1700c27-xxxx-xxxx-806f-eece0a0e756e\",\n        \"ScheduledSqlTaskInfos\": [\n            {\n                \"CreateTime\": \"2024-12-25 15:07:41\",\n                \"DstResource\": {\n                    \"BizType\": 0,\n                    \"CustomMetricLabels\": [],\n                    \"CustomTime\": \"\",\n                    \"MetricLabels\": [],\n                    \"MetricName\": \"\",\n                    \"Region\": \"ap-chengdu\",\n                    \"TopicId\": \"d30a5165-xxxx-xxxx-9e94-fb733d2c1c0e\"\n                },\n                \"EnableFlag\": 1,\n                \"HasServicesLog\": 2,\n                \"Name\": \"scheduler_sql_delete_task\",\n                \"ProcessDelay\": 60,\n                \"ProcessEndTime\": \"\",\n                \"ProcessPeriod\": 1,\n                \"ProcessStartTime\": \"2024-12-25 15:07:00\",\n                \"ProcessTimeWindow\": \"@m-1m,@m\",\n                \"ProcessType\": 1,\n                \"ScheduledSqlContent\": \"* | select count(*) as c limit 10000\",\n                \"SrcTopicId\": \"fe4e7d35-xxxx-xxxx-82e1-2762471b0928\",\n                \"SrcTopicName\": \"\",\n                \"SrcTopicRegion\": \"ap-chengdu\",\n                \"Status\": 1,\n                \"SyntaxRule\": 1,\n                \"TaskId\": \"44bb210d-xxxx-xxxx-8f7d-7fc5170553d4\",\n                \"UpdateTime\": \"2024-12-25 15:07:41\"\n            }\n        ],\n        \"TotalCount\": 15\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1700c27-xxxx-xxxx-806f-eece0a0e756e\",\n        \"ScheduledSqlTaskInfos\": [\n            {\n                \"CreateTime\": \"2024-12-25 15:07:41\",\n                \"DstResource\": {\n                    \"BizType\": 0,\n                    \"CustomMetricLabels\": [],\n                    \"CustomTime\": \"\",\n                    \"MetricLabels\": [],\n                    \"MetricName\": \"\",\n                    \"Region\": \"ap-chengdu\",\n                    \"TopicId\": \"d30a5165-xxxx-xxxx-9e94-fb733d2c1c0e\"\n                },\n                \"EnableFlag\": 1,\n                \"FullQuery\": 1,\n                \"HasServicesLog\": 2,\n                \"Name\": \"scheduler_sql_delete_task\",\n                \"ProcessDelay\": 60,\n                \"ProcessEndTime\": \"\",\n                \"ProcessPeriod\": 1,\n                \"ProcessStartTime\": \"2024-12-25 15:07:00\",\n                \"ProcessTimeWindow\": \"@m-1m,@m\",\n                \"ProcessType\": 1,\n                \"ScheduledSqlContent\": \"* | select count(*) as c limit 10000\",\n                \"SrcTopicId\": \"fe4e7d35-xxxx-xxxx-82e1-2762471b0928\",\n                \"SrcTopicName\": \"\",\n                \"SrcTopicRegion\": \"ap-chengdu\",\n                \"Status\": 1,\n                \"SyntaxRule\": 1,\n                \"TaskId\": \"44bb210d-xxxx-xxxx-8f7d-7fc5170553d4\",\n                \"UpdateTime\": \"2024-12-25 15:07:41\"\n            }\n        ],\n        \"TotalCount\": 15\n    }\n}",
         "title": "获取ScheduledSql任务列表"
       }
     ],

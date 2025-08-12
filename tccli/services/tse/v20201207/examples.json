@@ -67,8 +67,8 @@
     "CreateCloudNativeAPIGatewayRouteRateLimit": [
       {
         "document": "云原生网关创建限流插件(路由)",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayServiceRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b79\",\n    \"Id\": \"6f423439-ec27-4a2e-aff9-9e73ffa3da4d\",\n    \"LimitDetail\": {\n        \"Enabled\": true,\n        \"QpsThresholds\": [\n            {\n                \"Max\": 20,\n                \"Unit\": \"second\"\n            }\n        ],\n        \"LimitBy\": \"consumer\",\n        \"Policy\": \"local\",\n        \"RateLimitResponse\": {\n            \"HttpStatus\": 200\n        },\n        \"ResponseType\": \"text\",\n        \"HideClientHeaders\": true,\n        \"LineUpTime\": 1,\n        \"IsDelay\": true\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3124124141241fas432\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayRouteRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b79\",\n    \"Id\": \"5836e46f-1653-4183-a76e-c361540d0831\",\n    \"LimitDetail\": {\n        \"Enabled\": true,\n        \"QpsThresholds\": [\n            {\n                \"Max\": 20,\n                \"Unit\": \"second\"\n            }\n        ],\n        \"LimitBy\": \"consumer\",\n        \"Policy\": \"local\",\n        \"RateLimitResponse\": {\n            \"HttpStatus\": 200\n        },\n        \"ResponseType\": \"text\",\n        \"HideClientHeaders\": true,\n        \"LineUpTime\": 1,\n        \"IsDelay\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"552cae66-953b-490c-b2d7-4c7c8d1cbd05\"\n    }\n}",
         "title": "云原生网关创建限流插件(路由)"
       }
     ],

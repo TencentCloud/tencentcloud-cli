@@ -4126,6 +4126,15 @@
           "name": "ComputeResourceConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "所有组件是否使用同一个clb。0：不是；1：是",
+          "example": "0",
+          "member": "int64",
+          "name": "UsePublicClb",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

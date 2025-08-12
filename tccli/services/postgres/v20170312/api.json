@@ -717,7 +717,7 @@
   },
   "metadata": {
     "apiVersion": "2017-03-12",
-    "api_brief": "介绍如何使用API对云数据库PostgreSQL进行操作，包括实例管理、serverlessDB等。",
+    "api_brief": "介绍如何使用API对云数据库PostgreSQL进行操作，包括实例管理、创建数据库账号等。",
     "serviceNameCN": "云数据库 PostgreSQL",
     "serviceShortName": "postgres"
   },

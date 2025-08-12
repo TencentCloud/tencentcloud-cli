@@ -7954,7 +7954,7 @@
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "133xxxxxx",
+          "example": "12341312",
           "member": "uint64",
           "name": "AppId",
           "output_required": true,
@@ -8494,7 +8494,7 @@
         {
           "disabled": false,
           "document": "安全组id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxabd",
+          "example": "[\"str\"]",
           "member": "string",
           "name": "SecurityGroups",
           "output_required": true,
@@ -8624,7 +8624,7 @@
         {
           "disabled": false,
           "document": "集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-1",
+          "example": "1",
           "member": "int64",
           "name": "HealthStatus",
           "output_required": true,
@@ -8860,6 +8860,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kibana内网访问地址",
+          "example": "http://10.0.0.1:5601",
+          "member": "string",
+          "name": "ShowKibanaIpPort",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11122,7 +11132,7 @@
         {
           "disabled": false,
           "document": "节点名称列表",
-          "example": "[\"159229897700074xxxx\\r\\n\"]",
+          "example": "[\"15922989770074xxxx\\r\\n\"]",
           "member": "string",
           "name": "NodeNames",
           "required": true,
@@ -11199,6 +11209,15 @@
           "name": "EnableScheduleOperationDuration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "事件id列表",
+          "example": "[\"1_89248734\"]",
+          "member": "string",
+          "name": "EventTypeIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

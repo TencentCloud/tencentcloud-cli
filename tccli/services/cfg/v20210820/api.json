@@ -1108,7 +1108,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "\"1\"",
+          "example": "[\"1\"]",
           "member": "string",
           "name": "TaskTag",
           "required": false,
@@ -1162,7 +1162,7 @@
         {
           "disabled": false,
           "document": "筛选条件",
-          "example": "None",
+          "example": "无",
           "member": "ActionFilter",
           "name": "Filters",
           "required": false,
@@ -1171,7 +1171,7 @@
         {
           "disabled": false,
           "document": "演练ID",
-          "example": "5871",
+          "example": "[5871]",
           "member": "uint64",
           "name": "TaskId",
           "required": false,
@@ -1180,7 +1180,7 @@
         {
           "disabled": false,
           "document": "关联应用ID筛选",
-          "example": "\"app-faee9ba9\"",
+          "example": "[\"app-faee9ba9\"]",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -1189,7 +1189,7 @@
         {
           "disabled": false,
           "document": "关联应用筛选",
-          "example": "\"yh-test001\"",
+          "example": "[\"yh-test001\"]",
           "member": "string",
           "name": "ApplicationName",
           "required": false,
