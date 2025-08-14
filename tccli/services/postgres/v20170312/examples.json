@@ -128,14 +128,6 @@
         "title": "创建RO组网络"
       }
     ],
-    "CreateServerlessDBInstance": [
-      {
-        "document": "创建一个实例名为“serverlessdb-test”的serverless实例，实例数据库版本为10.4，服务端database字符集为UTF8。",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerlessDBInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxx\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"DBVersion\": \"10.4\",\n    \"DBInstanceName\": \"serverlessdb-test\",\n    \"DBCharset\": \"UTF8\",\n    \"SubnetId\": \"subnet-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"DBInstanceId\": \"postgres-xxxxx\"\n    }\n}",
-        "title": "创建serverlessDB实例"
-      }
-    ],
     "DeleteAccount": [
       {
         "document": "删除数据库账号",
@@ -550,14 +542,6 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0872c9bb-0540-4ac4-80cf-ba63bd771b0a\",\n        \"TotalCount\": 7,\n        \"RegionSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"华南地区(广州)\",\n                \"RegionId\": 1,\n                \"SupportInternational\": 0,\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-chengdu\",\n                \"RegionName\": \"西南地区(成都)\",\n                \"RegionId\": 16,\n                \"SupportInternational\": 0,\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-shanghai\",\n                \"RegionName\": \"华东地区(上海)\",\n                \"RegionId\": 4,\n                \"SupportInternational\": 0,\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"na-toronto\",\n                \"RegionName\": \"北美地区(多伦多)\",\n                \"RegionId\": 6,\n                \"SupportInternational\": 1,\n                \"RegionState\": \"UNAVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-shanghai-fsi\",\n                \"RegionName\": \"华东地区(上海金融)\",\n                \"RegionId\": 7,\n                \"SupportInternational\": 0,\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"ap-beijing\",\n                \"RegionName\": \"华北地区(北京)\",\n                \"RegionId\": 8,\n                \"SupportInternational\": 0,\n                \"RegionState\": \"AVAILABLE\"\n            },\n            {\n                \"Region\": \"na-siliconvalley\",\n                \"RegionName\": \"美国西部(硅谷)\",\n                \"RegionId\": 15,\n                \"SupportInternational\": 1,\n                \"RegionState\": \"AVAILABLE\"\n            }\n        ]\n    }\n}",
         "title": "查询所有地域"
-      }
-    ],
-    "DescribeServerlessDBInstances": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessDBInstances\n<公共请求参数>\n\n{\n    \"Filter\": [\n        {\n            \"Name\": \"db-instance-name\",\n            \"Values\": [\n                \"user-data-db\"\n            ]\n        }\n    ],\n    \"Limit\": \"0\",\n    \"Offset\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DBInstanceSet\": [\n            {\n                \"DBInstanceId\": \"postgres-dnlizio3\",\n                \"DBInstanceName\": \"user-data-db\",\n                \"DBInstanceStatus\": \"running\",\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"ProjectId\": 0,\n                \"VpcId\": \"vpc-49ab5lb9\",\n                \"SubnetId\": \"subnet-b23o6b22\",\n                \"DBCharset\": \"UTF8\",\n                \"DBVersion\": \"10\",\n                \"DBKernelVersion\": \"v10.4_r1.0\",\n                \"CreateTime\": \"2020-03-20 12:19:14\",\n                \"DBInstanceNetInfo\": [\n                    {\n                        \"Address\": \"\",\n                        \"Ip\": \"10.*.*.*\",\n                        \"Port\": 5432,\n                        \"Status\": \"opened\",\n                        \"NetType\": \"private\"\n                    },\n                    {\n                        \"Address\": \"\",\n                        \"Ip\": \"\",\n                        \"Port\": 0,\n                        \"Status\": \"initing\",\n                        \"NetType\": \"public\"\n                    }\n                ],\n                \"DBAccountSet\": [],\n                \"DBDatabaseList\": null\n            }\n        ],\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
-        "title": "查询ServerlessDB实例列表"
       }
     ],
     "DescribeSlowQueryAnalysis": [

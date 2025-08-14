@@ -22,11 +22,11 @@
       "status": "online"
     },
     "BindGateway": {
-      "document": "关联服务器",
+      "document": "SaaS无网关\n\n关联服务器",
       "input": "BindGatewayRequest",
       "name": "关联服务器",
       "output": "BindGatewayResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "BindVirtualAccounts": {
       "document": "关联账户到虚拟组上，支持批量，私有化调用path为：capi/Assets/BindVirtualAccount，从7.x版本开始支持",
@@ -610,11 +610,11 @@
       "status": "online"
     },
     "DeleteZeroTrustGateway": {
-      "document": "删除网关数据，支持批量",
+      "document": "SaaS无网关\n\n删除网关数据，支持批量",
       "input": "DeleteZeroTrustGatewayRequest",
       "name": "删除零信任网关",
       "output": "DeleteZeroTrustGatewayResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAIEDRIncidentDetail": {
       "document": "组合edr的事件详情数据",

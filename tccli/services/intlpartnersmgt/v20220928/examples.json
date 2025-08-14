@@ -35,7 +35,7 @@
     "CreateAccount": [
       {
         "document": "申请创建客户账户",
-        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"Extended\": \"for personal\",\n    \"CountryCode\": \"852\",\n    \"Area\": \"HK\",\n    \"PhoneNum\": \"18888888888\",\n    \"AccountType\": \"business\",\n    \"Mail\": \"account@qq.com\",\n    \"Password\": \"ABCabc123!\",\n    \"ConfirmPassword\": \"ABCabc123\",\n    \"VerifyCode\": \"364928\"\n}",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n\n\n{\n    \"Extended\": \"for personal\",\n    \"CountryCode\": \"852\",\n    \"Area\": \"HK\",\n    \"PhoneNum\": \"18888888888\",\n    \"AccountType\": \"business\",\n    \"Mail\": \"account@qq.com\",\n    \"Password\": \"ABCabc123!\",\n    \"ConfirmPassword\": \"ABCabc123\",\n    \"VerifyCode\": \"364928\",\n    \"TradeOne\": \"kghy_01\",\n    \"TradeTwo\": \"kghy_0101\"\n}",
         "output": "{\n    \"Response\": {\n        \"Uin\": \"200000123456\",\n        \"RequestId\": \"a9e390a7-a1af-42cd-8178-13bd046337a7\"\n    }\n}",
         "title": "申请创建客户账户"
       }

@@ -29,11 +29,11 @@
       "status": "deprecated"
     },
     "CheckUinShowAddFansEntrance": {
-      "document": "检查用户是否展示加粉入口",
+      "document": "接口已迁移至cem产品下维护\n\n检查用户是否展示加粉入口",
       "input": "CheckUinShowAddFansEntranceRequest",
       "name": "检查用户是否展示加粉入口",
       "output": "CheckUinShowAddFansEntranceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CheckUserOrgInfo": {
       "document": "检查腾讯云用户是否已经成为私域用户",

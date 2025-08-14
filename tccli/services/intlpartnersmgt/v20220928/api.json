@@ -1222,20 +1222,11 @@
         },
         {
           "disabled": false,
-          "document": "拓展字段，默认为空",
-          "example": "other info",
-          "member": "string",
-          "name": "Extended",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "一级行业id，该参数为必填项，调用 GetTradeConfigList 接口获取 ",
           "example": "kghy_01",
           "member": "string",
           "name": "TradeOne",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -1244,6 +1235,15 @@
           "example": "kghy_0101",
           "member": "string",
           "name": "TradeTwo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拓展字段，默认为空",
+          "example": "other info",
+          "member": "string",
+          "name": "Extended",
           "required": false,
           "type": "string"
         }

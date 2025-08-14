@@ -4488,6 +4488,21 @@
       ],
       "usage": "out"
     },
+    "UserInformation": {
+      "document": "用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏好",
+          "example": "流行歌曲",
+          "member": "string",
+          "name": "Preference",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "UserLocation": {
       "document": "用户位置详细信息",
       "members": [
@@ -4550,6 +4565,15 @@
           "name": "Processes",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用户信息",
+          "example": "无",
+          "member": "UserInformation",
+          "name": "UserInformation",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"

@@ -5845,7 +5845,7 @@
       "usage": "both"
     },
     "Filter": {
-      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口的`Filter`为例。若我们需要查询可用区（`zone`）为广州一区 ***并且*** 实例计费模式（`instance-charge-type`）为包年包月 ***或者*** 按量计费的实例时，可如下实现：\n```\nFilters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-1\n&Filters.1.Name=instance-charge-type\n&Filters.1.Values.0=PREPAID\n&Filters.1.Values.1=POSTPAID_BY_HOUR\n```",
+      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口的`Filter`为例。若我们需要查询可用区（`zone`）为广州六区 ***并且*** 实例计费模式（`instance-charge-type`）为包年包月 ***或者*** 按量计费的实例时，可如下实现：\n```\nFilters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-6\n&Filters.1.Name=instance-charge-type\n&Filters.1.Values.0=PREPAID\n&Filters.1.Values.1=POSTPAID_BY_HOUR\n```",
       "members": [
         {
           "disabled": false,
@@ -5859,7 +5859,7 @@
         {
           "disabled": false,
           "document": "字段的过滤值。",
-          "example": "[\"ap-guangzhou-2\"]",
+          "example": "[\"ap-guangzhou-6\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -6390,7 +6390,7 @@
         {
           "disabled": false,
           "document": "集群所在可用区",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -6450,7 +6450,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群网络模式",
-          "example": "0～32，一般取28，30",
+          "example": "30",
           "member": "uint64",
           "name": "HpcClusterNetMode",
           "output_required": false,
@@ -6460,7 +6460,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群关联的标签列表",
-          "example": "[{\"Key\": \"APP3\", \"Value\": \"3\"}, {\"Key\": \"APP4\", \"Value\": \"4\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": false,
@@ -8506,7 +8506,7 @@
         {
           "disabled": false,
           "document": "可用区。",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -8582,6 +8582,16 @@
           "output_required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例GPU类型。",
+          "example": "NVIDIA T4",
+          "member": "string",
+          "name": "GPUType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8628,7 +8638,7 @@
         {
           "disabled": false,
           "document": "可用区。",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -10032,7 +10042,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。项目可以使用[AddProject](https://cloud.tencent.com/document/api/651/81952)接口创建。可通过[DescribeProject](https://cloud.tencent.com/document/product/378/4400) API返回值中的`projectId`获取。后续使用[DescribeHosts](https://cloud.tencent.com/document/api/213/16474)接口查询实例时，项目ID可用于过滤结果。",
+          "document": "项目ID。项目可以使用[AddProject](https://cloud.tencent.com/document/api/651/81952)接口创建。可通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725) API返回值中的`projectId`获取。后续使用[DescribeHosts](https://cloud.tencent.com/document/api/213/16474)接口查询实例时，项目ID可用于过滤结果。",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",

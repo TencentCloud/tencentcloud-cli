@@ -73,8 +73,8 @@
   },
   "metadata": {
     "apiVersion": "2020-03-04",
-    "api_brief": "介绍如何使用API对智能编辑进行操作，包括获取智能编辑任务结果、创建智能编辑任务等。",
-    "serviceNameCN": "智能编辑",
+    "api_brief": "介绍如何调用 API 进行媒体处理操作，例如发起媒体处理任务、创建模板或查询任务详情。",
+    "serviceNameCN": "媒体AI",
     "serviceShortName": "ie"
   },
   "objects": {

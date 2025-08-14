@@ -14,68 +14,80 @@ Output:
         "RegionZones": [
             {
                 "Region": "ap-guangzhou",
-                "RegionName": "gz",
                 "RegionCnName": "广州",
+                "RegionName": "gz",
                 "RegionStatus": "AVAILABLE",
                 "Zones": [
                     {
-                        "Zone": "ap-guangzhou-2",
-                        "ZoneId": 100002,
-                        "ZoneName": "广州二区",
-                        "ZoneCnName": "广州二区",
                         "Types": [
                             {
-                                "Type": "SD",
                                 "Prepayment": true,
                                 "Protocols": [
                                     {
                                         "Protocol": "NFS",
                                         "SaleStatus": "saling"
+                                    },
+                                    {
+                                        "Protocol": "CIFS",
+                                        "SaleStatus": "saling"
                                     }
-                                ]
+                                ],
+                                "Type": "SD"
                             }
-                        ]
-                    },
-                    {
+                        ],
                         "Zone": "ap-guangzhou-3",
-                        "ZoneId": 100003,
-                        "ZoneName": "广州三区",
                         "ZoneCnName": "广州三区",
-                        "Types": [
-                            {
-                                "Type": "SD",
-                                "Prepayment": true,
-                                "Protocols": [
-                                    {
-                                        "Protocol": "NFS",
-                                        "SaleStatus": "saling"
-                                    }
-                                ]
-                            }
-                        ]
+                        "ZoneId": 100003,
+                        "ZoneName": "广州三区"
                     },
                     {
-                        "Zone": "ap-guangzhou-4",
-                        "ZoneId": 100004,
-                        "ZoneName": "广州四区",
-                        "ZoneCnName": "广州四区",
                         "Types": [
                             {
-                                "Type": "SD",
                                 "Prepayment": true,
                                 "Protocols": [
                                     {
                                         "Protocol": "NFS",
                                         "SaleStatus": "saling"
+                                    },
+                                    {
+                                        "Protocol": "CIFS",
+                                        "SaleStatus": "saling"
                                     }
-                                ]
+                                ],
+                                "Type": "SD"
                             }
-                        ]
+                        ],
+                        "Zone": "ap-guangzhou-4",
+                        "ZoneCnName": "广州四区",
+                        "ZoneId": 100004,
+                        "ZoneName": "广州四区"
+                    },
+                    {
+                        "Types": [
+                            {
+                                "Prepayment": true,
+                                "Protocols": [
+                                    {
+                                        "Protocol": "NFS",
+                                        "SaleStatus": "saling"
+                                    },
+                                    {
+                                        "Protocol": "CIFS",
+                                        "SaleStatus": "saling"
+                                    }
+                                ],
+                                "Type": "SD"
+                            }
+                        ],
+                        "Zone": "ap-guangzhou-6",
+                        "ZoneCnName": "广州六区",
+                        "ZoneId": 100006,
+                        "ZoneName": "广州六区"
                     }
                 ]
             }
         ],
-        "RequestId": "a7493b9c-8650-409a-a950-8d4afa18b5ec"
+        "RequestId": "f3585511-5134-43f2-ba14-b4b528119fa3"
     }
 }
 ```

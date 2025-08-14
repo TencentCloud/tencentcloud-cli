@@ -11,7 +11,7 @@ tccli cls ModifyWebCallback --cli-unfold-argument  \
     --Type Http \
     --Webhook http://www.xxx.com \
     --Method POST \
-    --Key HHFNIKFKLAUPOISNFIUYIOIA
+    --Key 
 ```
 
 Output: 

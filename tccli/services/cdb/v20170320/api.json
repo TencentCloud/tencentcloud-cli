@@ -6335,6 +6335,33 @@
           "name": "SpecifiedBackupId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否为并发任务。true：是， false: 不是",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMultiCloneTask",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "克隆任务优先级，根据优先级来进行排队克隆",
+          "example": "2000",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "克隆业务方表示，当前只有dbbrain来使用",
+          "example": "DBBRAIN",
+          "member": "string",
+          "name": "BusinessType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6345,7 +6372,7 @@
         {
           "disabled": false,
           "document": "任务查询id，为uuid类型",
-          "example": " 11123-yyyy-ccccc",
+          "example": " 11163-yyyy-ccccc",
           "member": "string",
           "name": "JobId",
           "output_required": false,

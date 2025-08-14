@@ -14,7 +14,9 @@ tccli intlpartnersmgt CreateAccount --cli-unfold-argument  \
     --Mail account@qq.com \
     --Password ABCabc123! \
     --ConfirmPassword ABCabc123 \
-    --VerifyCode 364928
+    --VerifyCode 364928 \
+    --TradeOne kghy_01 \
+    --TradeTwo kghy_0101
 ```
 
 Output: 
