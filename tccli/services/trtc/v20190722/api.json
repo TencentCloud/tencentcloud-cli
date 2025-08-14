@@ -2242,7 +2242,7 @@
         {
           "disabled": false,
           "document": "用户SdkAppId（如：1400xxxxxx）。",
-          "example": "1400xxxxxx",
+          "example": "1400123456",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -2251,7 +2251,7 @@
         {
           "disabled": false,
           "document": "需查询的用户数组，默认不填返回6个用户。",
-          "example": "[\"a\",\"b\"]",
+          "example": "[\"user_a\",\"user_b\"]",
           "member": "string",
           "name": "UserIds",
           "required": false,
@@ -2259,7 +2259,7 @@
         },
         {
           "disabled": false,
-          "document": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；单位：bps\naBlock：音频卡顿时长；单位：ms\nbigvBit：上/下行视频码率；单位：bps\nbigvCapFps：视频采集帧率；\nbigvEncFps：视频发送帧率；\nbigvDecFps：渲染帧率；\nbigvBlock：视频卡顿时长；单位：ms\naLoss：上/下行音频丢包率；\nbigvLoss：上/下行视频丢包率；\nbigvWidth：上/下行分辨率宽；\nbigvHeight：上/下行分辨率高；\naCapEnergy：音频采集能量；\naPlayEnergy：音频播放能量；\nrtt：SDK到云端的往返延时；单位: ms",
+          "document": "需查询的指标，不填则只返回用户列表，填all则返回所有指标。\nappCpu：APP CPU使用率；\nsysCpu：系统 CPU使用率；\naBit：上/下行音频码率；单位：bps\naBlock：音频卡顿时长；单位：ms\nbigvBit：上/下行视频码率；单位：bps\nbigvCapFps：视频采集帧率；\nbigvEncFps：视频发送帧率；\nbigvDecFps：渲染帧率；\nbigvBlock：视频卡顿时长；单位：ms\naLoss：上/下行音频丢包率；\nbigvLoss：上/下行视频丢包率；\nbigvWidth：上/下行分辨率宽；\nbigvHeight：上/下行分辨率高；\naCapEnergy：音频采集能量；\naPlayEnergy：音频播放能量；\nrtt：SDK到云端的往返延时；单位: ms\nbigvRecFps: 云端送达帧率；",
           "example": "[\"bigvCapFps\"]",
           "member": "string",
           "name": "DataType",
@@ -7028,7 +7028,7 @@
         {
           "disabled": false,
           "document": "**发起模糊识别为高级版能力,默认按照高级版收费**\n注意：不支持填写\"zh-dialect\", \"16k_zh_edu\", \"16k_zh_medical\", \"16k_zh_court\", \"8k_zh_large\", \"16k_zh_large\",\"16k_multi_lang\", \"16k_zh_en\"\n",
-          "example": "无",
+          "example": "[\"zh\", \"en\"]",
           "member": "string",
           "name": "AlternativeLanguage",
           "output_required": false,
@@ -7039,7 +7039,7 @@
         {
           "disabled": false,
           "document": "自定义参数，联系后台使用\n",
-          "example": "无",
+          "example": "{\"key\": \"xx\"}",
           "member": "string",
           "name": "CustomParam",
           "output_required": false,
@@ -7050,7 +7050,7 @@
         {
           "disabled": false,
           "document": "语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。",
-          "example": "无",
+          "example": "500",
           "member": "uint64",
           "name": "VadSilenceTime",
           "output_required": false,
@@ -7522,7 +7522,7 @@
         {
           "disabled": false,
           "document": "机器人参数",
-          "example": "{     \"UserId\": \"user_12345\",     \"UserSig\": \"user_signature_example\",     \"MaxIdleTime\": 120,     \"TargetUserId\": \"target_user_54321\"   }",
+          "example": "无",
           "member": "AgentConfig",
           "name": "AgentConfig",
           "required": true,
@@ -7549,7 +7549,7 @@
         {
           "disabled": false,
           "document": "语音识别配置。",
-          "example": " {     \"Language\": \"zh\"}",
+          "example": "无",
           "member": "STTConfig",
           "name": "STTConfig",
           "required": false,
@@ -7557,7 +7557,7 @@
         },
         {
           "disabled": false,
-          "document": "LLM配置。需符合openai规范，为JSON字符串，示例如下：\n<pre> { <br> &emsp;  \"LLMType\": \"大模型类型\",  // String 必填，如：\"openai\" <br> &emsp;  \"Model\": \"您的模型名称\", // String 必填，指定使用的模型<br>    \"APIKey\": \"您的LLM API密钥\", // String 必填 <br> &emsp;  \"APIUrl\": \"https://api.xxx.com/chat/completions\", // String 必填，LLM API访问的URL<br> &emsp;  \"Streaming\": true // Boolean 非必填，指定是否使用流式传输<br> &emsp;} </pre>\n",
+          "document": "LLM配置。需符合openai规范，为JSON字符串，示例如下：\n<pre> { <br> &emsp;  \"LLMType\": \"大模型类型\",  // String 必填，如：\"openai\" <br> &emsp;  \"Model\": \"您的模型名称\", // String 必填，指定使用的模型<br>    \"APIKey\": \"您的LLM API密钥\", // String 必填 <br> &emsp;  \"APIUrl\": \"https://api.xxx.com/chat/completions\", // String 必填，LLM API访问的URL<br> &emsp;  \"History\": 10, // Integer 选填，设置 LLM 的上下文轮次，默认值为0，最大值50<br> &emsp;  \"HistoryMode\": 1, // Integer 选填，1表示LLM上下文中的内容会和播放音频做同步，没有播放的音频对应的文本不会出现在上下文中。0表示不会做同步，默认值为0<br> &emsp;  \"Streaming\": true // Boolean 非必填，指定是否使用流式传输<br> &emsp;} </pre>\n",
           "example": "{\\\"LLMType\\\": \\\"openai\\\", \\\"Model\\\": \\\"gpt-xxx\", \\\"APIKey\\\": \\\"xxxxxxxx\\\", \\\"APIUrl\\\": \\\"https://api.xxx.com/v1/chat/completions\\\", \\\"Streaming\\\": true}",
           "member": "string",
           "name": "LLMConfig",
@@ -9751,7 +9751,7 @@
         },
         {
           "disabled": false,
-          "document": "声音克隆的名字",
+          "document": "声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位",
           "example": "xiaoming_01",
           "member": "string",
           "name": "VoiceName",

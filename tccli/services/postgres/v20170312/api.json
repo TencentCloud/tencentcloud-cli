@@ -91,13 +91,6 @@
       "output": "CreateReadOnlyGroupNetworkAccessResponse",
       "status": "online"
     },
-    "CreateServerlessDBInstance": {
-      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。",
-      "input": "CreateServerlessDBInstanceRequest",
-      "name": "【废弃】创建ServerlessDB实例",
-      "output": "CreateServerlessDBInstanceResponse",
-      "status": "deprecated"
-    },
     "DeleteAccount": {
       "document": "此接口用于删除数据库账号，需要同时输入Oid与UserName，避免误删。注：该接口可重入，如果账号已经不存在，调用此接口进行删除时不会报错。",
       "input": "DeleteAccountRequest",
@@ -287,13 +280,6 @@
       "output": "DescribeDBInstancesResponse",
       "status": "online"
     },
-    "DescribeDBSlowlogs": {
-      "document": "早期接口不规范，已提供新接口 DescribeSlowQueryList 替换\n\n本接口（DescribeDBSlowlogs）用于获取慢查询日志。本接口已于2021.09.01日废弃，后续此接口将不再返回任何数据，推荐使用接口[DescribeSlowQueryList](https://cloud.tencent.com/document/api/409/60540)替代。",
-      "input": "DescribeDBSlowlogsRequest",
-      "name": "获取慢查询日志 （废弃）",
-      "output": "DescribeDBSlowlogsResponse",
-      "status": "deprecated"
-    },
     "DescribeDBVersions": {
       "document": "本接口（DescribeDBVersions）用于查询支持的数据库版本。",
       "input": "DescribeDBVersionsRequest",
@@ -405,13 +391,6 @@
       "name": "查询售卖地域",
       "output": "DescribeRegionsResponse",
       "status": "online"
-    },
-    "DescribeServerlessDBInstances": {
-      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】用于查询一个或多个serverlessDB实例的详细信息",
-      "input": "DescribeServerlessDBInstancesRequest",
-      "name": "【废弃】查询ServerlessDB实例列表",
-      "output": "DescribeServerlessDBInstancesResponse",
-      "status": "deprecated"
     },
     "DescribeSlowQueryAnalysis": {
       "document": "此接口（DescribeSlowQueryAnalysis）用于统计指定时间范围内的所有慢查询，根据SQL语句抽象参数后，进行聚合分析，并返回同类SQL列表。",
@@ -724,7 +703,7 @@
   },
   "metadata": {
     "apiVersion": "2017-03-12",
-    "api_brief": "介绍如何使用API对云数据库PostgreSQL进行操作，包括实例管理、serverlessDB等。",
+    "api_brief": "介绍如何使用API对云数据库PostgreSQL进行操作，包括实例管理、创建数据库账号等。",
     "serviceNameCN": "云数据库 PostgreSQL",
     "serviceShortName": "postgres"
   },
@@ -2861,106 +2840,6 @@
       ],
       "type": "object"
     },
-    "CreateServerlessDBInstanceRequest": {
-      "document": "CreateServerlessDBInstance请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "可用区ID。公测阶段仅支持ap-shanghai-2、ap-beijing-1,ap-guangzhou-2.",
-          "example": "ap-guangzhou-3",
-          "member": "string",
-          "name": "Zone",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "DB实例名称，同一个账号下该值必须唯一。",
-          "example": "serverlessdb-test",
-          "member": "string",
-          "name": "DBInstanceName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "PostgreSQL内核版本，目前只支持：10.4。",
-          "example": "10.4",
-          "member": "string",
-          "name": "DBVersion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "PostgreSQL数据库字符集，目前支持UTF8。",
-          "example": "UTF8",
-          "member": "string",
-          "name": "DBCharset",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "项目ID。",
-          "example": "0",
-          "member": "uint64",
-          "name": "ProjectId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "私有网络ID。",
-          "example": "vpc-xxxx",
-          "member": "string",
-          "name": "VpcId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "私有网络子网ID。",
-          "example": "subnet-xxx",
-          "member": "string",
-          "name": "SubnetId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "实例需要绑定的标签数组信息",
-          "example": "[     {         \"TagKey\": \"abc\",         \"TagValue\": \"123\",         \"CanDelete\": 1     } ]",
-          "member": "Tag",
-          "name": "TagList",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateServerlessDBInstanceResponse": {
-      "document": "CreateServerlessDBInstance返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID，该ID全局唯一，如：postgres-xxxxx",
-          "example": "postgres-xxxxx",
-          "member": "string",
-          "name": "DBInstanceId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DBBackup": {
       "document": "数据库备份信息",
       "members": [
@@ -4151,7 +4030,7 @@
         {
           "disabled": false,
           "document": "RO组ID，形如：pgrogrp-4t9c6g7k。可通过[DescribeReadOnlyGroups](https://cloud.tencent.com/document/api/409/52599)接口获取",
-          "example": "pgro-4t9c6g7k",
+          "example": "pgrogrp-4t9c6g7k",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": true,
@@ -4738,7 +4617,7 @@
         },
         {
           "disabled": false,
-          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，支持模糊匹配，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。",
           "example": "[     {         \"Values\": [             \"postgres-2uepfuz1\"         ],         \"Name\": \"db-instance-id\"     } ]",
           "member": "Filter",
           "name": "Filters",
@@ -4747,7 +4626,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，支持TotalBackupSize,LogBackupSize,ManualBaseBackupSize,AutoBaseBackupSize。",
+          "document": "排序字段，支持TotalBackupSize - 备份总大小、LogBackupSize - 备份日志的大小、ManualBaseBackupSize - 手动备份数据大小、AutoBaseBackupSize - 自动备份数据大小。当不传入该参数时，默认不进行排序。",
           "example": "TotalBackupSize",
           "member": "string",
           "name": "OrderBy",
@@ -4756,7 +4635,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，包括升序：asc，降序：desc。",
+          "document": "排序方式，包括升序：asc，降序：desc。默认值：asc。",
           "example": "asc",
           "member": "string",
           "name": "OrderByType",
@@ -4772,7 +4651,7 @@
         {
           "disabled": false,
           "document": "备份统计信息列表。",
-          "example": "[     {         \"AutoBaseBackupCount\": 3,         \"AutoBaseBackupSize\": 3535342436352,         \"DBInstanceId\": \"postgres-lsw5y0bp\",         \"LogBackupCount\": 2,         \"LogBackupSize\": 167792640,         \"ManualBaseBackupCount\": 1,         \"ManualBaseBackupSize\": 1178447478784,         \"TotalBackupCount\": 6,         \"TotalBackupSize\": 4713957707776     } ]",
+          "example": "无",
           "member": "BackupSummary",
           "name": "BackupSummarySet",
           "output_required": true,
@@ -5557,116 +5436,6 @@
           "name": "DBInstanceSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDBSlowlogsRequest": {
-      "document": "DescribeDBSlowlogs请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID，形如postgres-lnp6j617",
-          "example": "postgres-apzvwncr",
-          "member": "string",
-          "name": "DBInstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "查询起始时间，形如2018-06-10 17:06:38，起始时间不得小于7天以前",
-          "example": "2018-06-10 17:06:38",
-          "member": "datetime",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "查询结束时间，形如2018-06-10 17:06:38",
-          "example": "2018-06-11 17:06:38",
-          "member": "datetime",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "数据库名字",
-          "example": "”postgres-xx“",
-          "member": "string",
-          "name": "DatabaseName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "按照何种指标排序，取值为sum_calls或者sum_cost_time。sum_calls-总调用次数；sum_cost_time-总的花费时间",
-          "example": "sum_call",
-          "member": "string",
-          "name": "OrderBy",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "排序规则。desc-降序；asc-升序",
-          "example": "desc",
-          "member": "string",
-          "name": "OrderByType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "分页返回结果，每页最大返回数量，取值为1-100，默认20",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页返回结果，返回结果的第几页，从0开始计数",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDBSlowlogsResponse": {
-      "document": "DescribeDBSlowlogs返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "本次返回多少条数据",
-          "example": "0",
-          "member": "int64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "慢查询日志详情",
-          "example": "[     {         \"Advanced\": false,         \"ClassificationCN\": \"连接和认证\",         \"ClassificationEN\": \"Connections and Authentication\",         \"CurrentValue\": \"2048\",         \"DefaultValue\": \"2048\",         \"EnumValue\": null,         \"ID\": 15124,         \"LastModifyTime\": \"\",         \"Max\": 2048,         \"Min\": 100,         \"Name\": \"max_connections\",         \"NeedReboot\": true,         \"ParamDescriptionCH\": \"实例最大连接数\",         \"ParamDescriptionEN\": \"Sets the maximum number of concurrent connections.\",         \"ParamValueType\": \"integer\",         \"SpecRelated\": true,         \"SpecRelationSet\": null,         \"StandbyRelated\": 0,         \"Unit\": \"\",         \"VersionRelationSet\": null     } ]",
-          "member": "SlowlogDetail",
-          "name": "Detail",
-          "output_required": true,
-          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -6551,7 +6320,7 @@
         {
           "disabled": false,
           "document": "可用区名称",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-7",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -6688,89 +6457,6 @@
           "example": "[     {         \"Region\": \"ap-guangzhou\",         \"RegionName\": \"华南地区(广州)\",         \"RegionId\": 1,         \"SupportInternational\": 0,         \"RegionState\": \"AVAILABLE\"     },     {         \"Region\": \"ap-chengdu\",         \"RegionName\": \"西南地区(成都)\",         \"RegionId\": 16,         \"SupportInternational\": 0,         \"RegionState\": \"AVAILABLE\"     },     {         \"Region\": \"na-siliconvalley\",         \"RegionName\": \"美国西部(硅谷)\",         \"RegionId\": 15,         \"SupportInternational\": 1,         \"RegionState\": \"AVAILABLE\"     } ]",
           "member": "RegionInfo",
           "name": "RegionSet",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeServerlessDBInstancesRequest": {
-      "document": "DescribeServerlessDBInstances请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "查询条件。按照一个或者多个过滤条件进行查询，目前支持的过滤条件类型（name字段指定）有： \n\n- db-instance-id：按照实例ID过滤，类型为string\n- db-instance-name：按照实例名过滤，类型为string\n- db-tag-key：按照实例的tag过滤，类型为string\n\nvalue字段指定该类型过滤条件下具体要过滤的实例ID/实例名/实例tag-key。",
-          "example": "[{\"Values\":[\"postgres-2uepfuz1\"],\"Name\": \"db-instance-id\"}]",
-          "member": "Filter",
-          "name": "Filter",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "查询个数",
-          "example": "20",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "偏移量",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "排序指标，目前支持实例创建时间CreateTime",
-          "example": "CreateTime",
-          "member": "string",
-          "name": "OrderBy",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "排序方式，包括升序、降序",
-          "example": "desc",
-          "member": "string",
-          "name": "OrderByType",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeServerlessDBInstancesResponse": {
-      "document": "DescribeServerlessDBInstances返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "查询结果数",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "查询结果",
-          "example": "[{\"DBInstanceId\":\"postgres-dnlizio3\",\"DBInstanceName\":\"user-data-db\",\"DBInstanceNetInfo\":[{\"Address\":\"\",\"Ip\":\"10.*.*.*\",\"Port\":5432,\"Status\":\"opened\",\"NetType\":\"private\"}],\"DBAccountSet\":[],\"DBDatabaseList\":null}]",
-          "member": "ServerlessDBInstance",
-          "name": "DBInstanceSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -7145,7 +6831,7 @@
         {
           "disabled": false,
           "document": "可用区信息集合。",
-          "example": "[     {         \"Zone\": \"ap-guangzhou-2\",         \"ZoneName\": \"广州二区\",         \"ZoneId\": 100002,         \"ZoneState\": \"AVAILABLE\",         \"ZoneSupportIpv6\": 0,         \"StandbyZoneSet\": [             \"ap-guangzhou-2\",             \"ap-guangzhou-3\"         ]     },     {         \"Zone\": \"ap-guangzhou-3\",         \"ZoneName\": \"广州三区\",         \"ZoneId\": 100003,         \"ZoneState\": \"AVAILABLE\",         \"ZoneSupportIpv6\": 0,         \"StandbyZoneSet\": [             \"ap-guangzhou-2\",             \"ap-guangzhou-3\"         ]     } ]",
+          "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneSet",
           "output_required": true,
@@ -9384,162 +9070,6 @@
       ],
       "usage": "out"
     },
-    "NormalQueryItem": {
-      "document": "单条SlowQuery信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "用户名",
-          "example": "db_user",
-          "member": "string",
-          "name": "UserName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "调用次数",
-          "example": "150",
-          "member": "int64",
-          "name": "Calls",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "粒度点",
-          "example": "[10,20,30,40,50]",
-          "member": "int64",
-          "name": "CallsGrids",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "花费总时间",
-          "example": "120.5",
-          "member": "float",
-          "name": "CostTime",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "影响的行数",
-          "example": "75",
-          "member": "int64",
-          "name": "Rows",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "花费最小时间",
-          "example": "0.5",
-          "member": "float",
-          "name": "MinCostTime",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "花费最大时间",
-          "example": "5.0",
-          "member": "float",
-          "name": "MaxCostTime",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "最早一条慢SQL时间",
-          "example": "2024-10-01T10:00:00Z",
-          "member": "string",
-          "name": "FirstTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "最晚一条慢SQL时间",
-          "example": "2024-10-01T10:05:00Z",
-          "member": "string",
-          "name": "LastTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "读共享内存块数",
-          "example": "300",
-          "member": "int64",
-          "name": "SharedReadBlks",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "写共享内存块数",
-          "example": "50",
-          "member": "int64",
-          "name": "SharedWriteBlks",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "读io总耗时",
-          "example": "100",
-          "member": "int64",
-          "name": "ReadCostTime",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "写io总耗时",
-          "example": "20",
-          "member": "int64",
-          "name": "WriteCostTime",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "数据库名字",
-          "example": "my_database",
-          "member": "string",
-          "name": "DatabaseName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "脱敏后的慢SQL",
-          "example": "SELECT * FROM users WHERE age > 30",
-          "member": "string",
-          "name": "NormalQuery",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "OpenDBExtranetAccessRequest": {
       "document": "OpenDBExtranetAccess请求参数结构体",
       "members": [
@@ -10805,299 +10335,6 @@
       ],
       "usage": "out"
     },
-    "ServerlessDBAccount": {
-      "document": "serverless账号描述",
-      "members": [
-        {
-          "disabled": false,
-          "document": "用户名",
-          "example": "web_app",
-          "member": "string",
-          "name": "DBUser",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "密码",
-          "example": "A********5",
-          "member": "string",
-          "name": "DBPassword",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "连接数限制",
-          "example": "5",
-          "member": "int64",
-          "name": "DBConnLimit",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "ServerlessDBInstance": {
-      "document": "serverless实例描述",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例id，唯一标识符",
-          "example": "postgres-1i1xmfwr",
-          "member": "string",
-          "name": "DBInstanceId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例名称",
-          "example": "pg10",
-          "member": "string",
-          "name": "DBInstanceName",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例状态",
-          "example": "running",
-          "member": "string",
-          "name": "DBInstanceStatus",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "地域",
-          "example": "ap-guangzhou",
-          "member": "string",
-          "name": "Region",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "可用区",
-          "example": "ap-guangzhou-3",
-          "member": "string",
-          "name": "Zone",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "项目id",
-          "example": "1",
-          "member": "int64",
-          "name": "ProjectId",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "私有网络Id",
-          "example": "1",
-          "member": "string",
-          "name": "VpcId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "子网id",
-          "example": "1",
-          "member": "string",
-          "name": "SubnetId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "字符集",
-          "example": "UTF8",
-          "member": "string",
-          "name": "DBCharset",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "数据库版本",
-          "example": "10.4",
-          "member": "string",
-          "name": "DBVersion",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间",
-          "example": "2021-10-11 17:04:24",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例网络信息",
-          "example": "1",
-          "member": "ServerlessDBInstanceNetInfo",
-          "name": "DBInstanceNetInfo",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例账户信息",
-          "example": "1",
-          "member": "ServerlessDBAccount",
-          "name": "DBAccountSet",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例下的db信息",
-          "example": "1",
-          "member": "string",
-          "name": "DBDatabaseList",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例绑定的标签数组",
-          "example": "1",
-          "member": "Tag",
-          "name": "TagList",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "数据库内核版本",
-          "example": "v10.4_r1.0",
-          "member": "string",
-          "name": "DBKernelVersion",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "数据库主要版本",
-          "example": "10",
-          "member": "string",
-          "name": "DBMajorVersion",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "ServerlessDBInstanceNetInfo": {
-      "document": "serverless实例网络信息描述",
-      "members": [
-        {
-          "disabled": false,
-          "document": "地址",
-          "example": "gz-xxx.tencent.com",
-          "member": "string",
-          "name": "Address",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "ip地址",
-          "example": "172.*.*.*",
-          "member": "string",
-          "name": "Ip",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "端口号",
-          "example": "5432",
-          "member": "int64",
-          "name": "Port",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态",
-          "example": "opened",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "网络类型",
-          "example": "private",
-          "member": "string",
-          "name": "NetType",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
     "SetAutoRenewFlagRequest": {
       "document": "SetAutoRenewFlag请求参数结构体",
       "members": [
@@ -11143,42 +10380,6 @@
         }
       ],
       "type": "object"
-    },
-    "SlowlogDetail": {
-      "document": "慢查询详情",
-      "members": [
-        {
-          "disabled": false,
-          "document": "花费总时间",
-          "example": "120.5",
-          "member": "float",
-          "name": "TotalTime",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "调用总次数",
-          "example": "150",
-          "member": "int64",
-          "name": "TotalCalls",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "脱敏后的慢SQL列表",
-          "example": "{     \"DatabaseName\": \"my_database\",     \"UserName\": \"db_user\",     \"NormalQuery\": \"SELECT * FROM users WHERE age > 30\",     \"Calls\": 150,     \"CallsGrids\": [         10,         20,         30,         40,         50     ],     \"CostTime\": 120.5,     \"Rows\": 75,     \"MinCostTime\": 0.5,     \"MaxCostTime\": 5.0,     \"FirstTime\": \"2024-10-01T10:00:00Z\",     \"LastTime\": \"2024-10-01T10:05:00Z\",     \"SharedReadBlks\": 300,     \"SharedWriteBlks\": 50,     \"ReadCostTime\": 100,     \"WriteCostTime\": 20 }",
-          "member": "NormalQueryItem",
-          "name": "NormalQueries",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "SpecInfo": {
       "document": "描述某个地域下某个可用区的可售卖规格详细信息。",
@@ -11985,30 +11186,30 @@
         {
           "disabled": false,
           "document": "该可用区的英文名称",
-          "example": "ap-guangzhou-1",
+          "example": "ap-guangzhou-7",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该可用区的中文名称",
-          "example": "广州一区",
+          "example": "广州七区",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该可用区对应的数字编号",
-          "example": "100001",
+          "example": "100007",
           "member": "uint64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12018,7 +11219,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "ZoneState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12028,17 +11229,17 @@
           "example": "1",
           "member": "uint64",
           "name": "ZoneSupportIpv6",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该可用区对应的备可用区集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ap-guangzhou-1,ap-guangzhou-2",
+          "example": "[\"ap-guangzhou-6\",\"ap-guangzhou-7\"]",
           "member": "string",
           "name": "StandbyZoneSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

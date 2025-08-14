@@ -396,6 +396,15 @@
           "name": "AlternateExchange",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "延迟类型的exchange背后对应的exchange类型, 支持 \"fanout\",\"direct\",\"topic\",\"headers\"",
+          "example": "direct",
+          "member": "string",
+          "name": "DelayedExchangeType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3398,6 +3407,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发送消息流量比例",
+          "example": "0.5",
+          "member": "float",
+          "name": "SendReceiveRatio",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息轨迹保留时间，单位小时",
+          "example": "72",
+          "member": "uint64",
+          "name": "TraceTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4060,7 +4089,7 @@
         {
           "disabled": false,
           "document": "公网域名",
-          "example": "http://127.4.5.1",
+          "example": "127.4.5.1",
           "member": "string",
           "name": "PublicAccessEndpoint",
           "output_required": false,
@@ -4070,9 +4099,19 @@
         {
           "disabled": false,
           "document": "公网状态",
-          "example": "on",
+          "example": "ON",
           "member": "string",
           "name": "PublicDataStreamStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网CLB实例ID",
+          "example": "lb-abcd",
+          "member": "string",
+          "name": "PublicClbId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

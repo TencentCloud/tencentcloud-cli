@@ -596,7 +596,7 @@
       "status": "online"
     },
     "ModifyAlarmShield": {
-      "document": "该接口用于修改告警屏蔽规则。",
+      "document": "该接口用于修改告警屏蔽规则。当告警屏蔽规则为失效中时，无法对其进行修改",
       "input": "ModifyAlarmShieldRequest",
       "name": "修改告警屏蔽规则",
       "output": "ModifyAlarmShieldResponse",
@@ -811,7 +811,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器组ID",
+          "document": "机器组Id\n- 通过[获取机器组列表](https://cloud.tencent.com/document/product/614/56438)获取机器组Id。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "GroupId",
@@ -970,7 +970,7 @@
         },
         {
           "disabled": false,
-          "document": "单触发条件。与MultiConditions参数互斥。",
+          "document": "是否触发告警的单触发条件。与MultiConditions参数互斥。",
           "example": "$1.cnt > 1",
           "member": "string",
           "name": "Condition",
@@ -1030,7 +1030,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "创建时间。格式： YYYY-MM-DD HH:MM:SS",
           "example": "2024-10-21 22:37:16",
           "member": "string",
           "name": "CreateTime",
@@ -1040,7 +1040,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新时间。",
+          "document": "最近更新时间。格式： YYYY-MM-DD HH:MM:SS",
           "example": "2024-10-21 22-56-18",
           "member": "string",
           "name": "UpdateTime",
@@ -1131,7 +1131,7 @@
         {
           "disabled": false,
           "document": "告警附加分类字段。",
-          "example": "[{\"Key\":\"abc\",\"Value\":\"123\"}]",
+          "example": "无",
           "member": "AlarmClassification",
           "name": "Classifications",
           "output_required": true,
@@ -1207,7 +1207,7 @@
         {
           "disabled": false,
           "document": "告警通知模板ID。",
-          "example": "notice-xxx-xxx-xx-xx",
+          "example": "notice-5281f1d2-6275-4e56-9ec3-a1eb19d8bc2f",
           "member": "string",
           "name": "AlarmNoticeId",
           "output_required": true,
@@ -1256,7 +1256,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "创建时间。格式： YYYY-MM-DD HH:MM:SS",
           "example": "2022-11-07 16:30:53",
           "member": "string",
           "name": "CreateTime",
@@ -1266,7 +1266,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新时间。",
+          "document": "最近更新时间。格式： YYYY-MM-DD HH:MM:SS",
           "example": "2022-11-07 16:30:53",
           "member": "string",
           "name": "UpdateTime",
@@ -1434,7 +1434,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID。",
+          "document": "日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID",
           "example": "380fe1f1-0c7b-4b0d-xxxx-d514959db1bb",
           "member": "string",
           "name": "TopicId",
@@ -1468,7 +1468,7 @@
         {
           "disabled": false,
           "document": "查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。",
-          "example": "-5",
+          "example": "0",
           "member": "int64",
           "name": "StartTimeOffset",
           "output_required": false,
@@ -1489,8 +1489,8 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID。",
-          "example": "1c012db7-2cfd-4418-xxxx-7342c7a42516",
+          "document": "日志集ID。通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志集ID",
+          "example": "1c072db7-2cfd-4418-xxxx-7342c7a42516",
           "member": "string",
           "name": "LogsetId",
           "output_required": false,
@@ -1739,7 +1739,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知发送频率，单位为分钟",
+          "document": "告警通知发送频率，单位为分钟(min)",
           "example": "15",
           "member": "int64",
           "name": "AlarmPeriod",
@@ -1761,7 +1761,7 @@
         },
         {
           "disabled": false,
-          "document": "告警持续时间，单位为分钟",
+          "document": "告警持续时间，单位为分钟(min)",
           "example": "60",
           "member": "int64",
           "name": "Duration",
@@ -1783,7 +1783,7 @@
         },
         {
           "disabled": false,
-          "document": "告警发生时间，毫秒级Unix时间戳",
+          "document": "告警发生时间，毫秒级Unix时间戳(ms)",
           "example": "1619359718000",
           "member": "uint64",
           "name": "CreateTime",
@@ -1795,7 +1795,7 @@
         {
           "disabled": false,
           "document": "告警分组触发时对应的分组信息",
-          "example": "[{\"Key\":\"$1.count\",\"Value\":\"100\"}]",
+          "example": "无",
           "member": "GroupTriggerConditionInfo",
           "name": "GroupTriggerCondition",
           "output_required": true,
@@ -1844,7 +1844,7 @@
         },
         {
           "disabled": false,
-          "document": "分析类型：query，field ，original",
+          "document": "分析类型：query(自定义检索分析)，field(字段TOP5及占比统计) ，original(相关原始日志)\n",
           "example": "query",
           "member": "string",
           "name": "Type",
@@ -3574,7 +3574,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知渠道组名称。",
+          "document": "通知渠道组名称。最大支持255个字节。 不支持 '|'。",
           "example": "研发通知渠道组",
           "member": "string",
           "name": "Name",
@@ -3692,7 +3692,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略名称",
+          "document": "告警策略名称。最大支持255个字节。 不支持 '|'。",
           "example": "p1-业务告警",
           "member": "string",
           "name": "Name",
@@ -3737,7 +3737,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的告警通知模板列表。",
+          "document": "关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表",
           "example": "[\"notice-b02af159-f67b-44c3-877c-a55343f874c3\"]",
           "member": "string",
           "name": "AlarmNoticeIds",
@@ -3746,7 +3746,7 @@
         },
         {
           "disabled": false,
-          "document": "触发条件\n 注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。\n",
+          "document": "告警发送通知的触发条件\n 注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。\n",
           "example": "$1.count > 10",
           "member": "string",
           "name": "Condition",
@@ -3891,8 +3891,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知渠道组id。",
-          "example": "notice-bb42f112-xxxx-456e-b3c4-ff5472911b42",
+          "document": "通知渠道组id。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取通知渠道组id",
+          "example": "notice-bb42f112-xxxx-476e-b3c4-ff5472911b42",
           "member": "string",
           "name": "AlarmNoticeId",
           "required": true,
@@ -3900,7 +3900,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽开始时间（秒级时间戳）。",
+          "document": "屏蔽规则开始时间，秒级(s)时间戳。",
           "example": "1701872657",
           "member": "uint64",
           "name": "StartTime",
@@ -3909,7 +3909,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽结束时间（秒级时间戳）。",
+          "document": "屏蔽规则结束时间，秒级(s)时间戳。结束时间需要大于当前时间",
           "example": "1701883657",
           "member": "uint64",
           "name": "EndTime",
@@ -3937,7 +3937,7 @@
         {
           "disabled": false,
           "document": "屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。",
-          "example": "{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1]\",\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"AlarmID\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[\\\"alarm-57105ec6-xxxx-xxxx-xxxx-892f3b8d143a\\\"]\",\"Type\":\"Value\"}]}]}",
+          "example": "{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1]\",\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"AlarmID\"}]}",
           "member": "string",
           "name": "Rule",
           "required": false,
@@ -5256,7 +5256,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器组名字，不能重复",
+          "document": "机器组名字。\n输入限制：\n- 最大支持255个字符，不能为空字符串\n- 不能包含字符'|'",
           "example": "testgroup",
           "member": "string",
           "name": "GroupName",
@@ -5292,7 +5292,7 @@
         },
         {
           "disabled": false,
-          "document": "升级开始时间，建议业务低峰期升级LogListener",
+          "document": "升级开始时间，建议业务低峰期升级LogListener\n时间格式：HH:mm:ss",
           "example": "\"12:00:00\"",
           "member": "string",
           "name": "UpdateStartTime",
@@ -5301,7 +5301,7 @@
         },
         {
           "disabled": false,
-          "document": "升级结束时间，建议业务低峰期升级LogListener",
+          "document": "升级结束时间，建议业务低峰期升级LogListener\n时间格式：HH:mm:ss",
           "example": "\"13:00:00\"",
           "member": "string",
           "name": "UpdateEndTime",
@@ -5319,7 +5319,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组中机器离线清理时间。单位：天",
+          "document": "机器组中机器离线清理时间。单位：天\n\n- 大于0时生效。",
           "example": "30",
           "member": "int64",
           "name": "DelayCleanupTime",
@@ -5374,7 +5374,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板名称。",
+          "document": "模板名称。最大支持255个字节",
           "example": "告警内容模板",
           "member": "string",
           "name": "Name",
@@ -5408,7 +5408,7 @@
         {
           "disabled": false,
           "document": "通知内容配置ID",
-          "example": "noticetemplate-xxxx-xx-xx-xx-xxxxxxxx",
+          "example": "noticetemplate-5431432e-1370-490a-b43f-2757e07264c4",
           "member": "string",
           "name": "NoticeContentId",
           "output_required": true,
@@ -5873,7 +5873,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容名称。",
+          "document": "通知内容名称。最大支持255个字节",
           "example": "监控告警专用",
           "member": "string",
           "name": "Name",
@@ -5909,7 +5909,7 @@
         },
         {
           "disabled": false,
-          "document": "秘钥。",
+          "document": "秘钥。最大支持1024个字节",
           "example": "AASFFGGYYBHGTDJ",
           "member": "string",
           "name": "Key",
@@ -5925,7 +5925,7 @@
         {
           "disabled": false,
           "document": "回调配置ID。",
-          "example": "webcallback-xxxx-xx-xx-xx-xxxxxxxx",
+          "example": "webcallback-57069150-273b-46e0-b692-aff5ff92cc8c",
           "member": "string",
           "name": "WebCallbackId",
           "output_required": true,
@@ -6504,8 +6504,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知渠道组ID",
-          "example": "notice-d7286784-46d9-4be3-b7ba-2c464e6a5ad1",
+          "document": "通知渠道组ID。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/api/614/56462)获取通知渠道组ID",
+          "example": "notice-d7286484-46d9-4be3-b7ba-2c464e6a5ad1",
           "member": "string",
           "name": "AlarmNoticeId",
           "required": true,
@@ -7072,8 +7072,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模板ID",
-          "example": "noticetemplate-d7286784-46d9-4be3-b7ba-2c464e6a5ad1",
+          "document": "通知内容模板ID。-通过[获取通知内容模板](https://cloud.tencent.com/document/api/614/111714)获取通知内容模版ID",
+          "example": "noticetemplate-d72867484-46d9-4be3-b7ba-2c464e6a5ad1",
           "member": "string",
           "name": "NoticeContentId",
           "required": true,
@@ -7189,8 +7189,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警渠道回调配置ID。",
-          "example": "webcallback-d7286784-46d9-4be3-b7ba-2c464e6a5ad1",
+          "document": "告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID",
+          "example": "webcallback-d7286794-46d9-4be3-b7ba-2c464e6a5ad1",
           "member": "string",
           "name": "WebCallbackId",
           "required": true,
@@ -7227,8 +7227,8 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID。",
-          "example": "12312324-asdfa-13513-66254",
+          "document": "日志主题ID。-通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题ID",
+          "example": "17312724-asdfa-13513-66254",
           "member": "string",
           "name": "TopicId",
           "output_required": true,
@@ -7255,7 +7255,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li> name\n按照【通知渠道组名称】进行过滤。\n类型：String\n必选：否</li>\n<li> alarmNoticeId\n按照【通知渠道组ID】进行过滤。\n类型：String\n必选：否</li>\n<li> uid\n按照【接收用户ID】进行过滤。\n类型：String\n必选：否</li>\n<li> groupId\n按照【接收用户组ID】进行过滤。\n类型：String\n必选：否</li>\n\n<li> deliverFlag\n按照【投递状态】进行过滤。\n类型：String\n必选：否\n可选值： \"1\":未启用,  \"2\": 已启用, \"3\":投递异常</li>\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "<li> name\n按照【通知渠道组名称】进行过滤。\n类型：String\n示例：\"Filters\":[{\"Key\":\"name\",\"Values\":[\"test-notice\"]}]\n必选：否</li>\n<li> alarmNoticeId\n按照【通知渠道组ID】进行过滤。\n类型：String\n示例：\"Filters\": [{Key: \"alarmNoticeId\", Values: [\"notice-5281f1d2-6275-4e56-9ec3-a1eb19d8bc2f\"]}]\n必选：否</li>\n<li> uid\n按照【接收用户ID】进行过滤。\n类型：String\n示例：\"Filters\": [{Key: \"uid\", Values: [\"1137546\"]}]\n必选：否</li>\n<li> groupId\n按照【接收用户组ID】进行过滤。\n类型：String\n示例：\"Filters\": [{Key: \"groupId\", Values: [\"344098\"]}]\n必选：否</li>\n\n<li> deliverFlag\n按照【投递状态】进行过滤。\n类型：String\n必选：否\n可选值： \"1\":未启用,  \"2\": 已启用, \"3\":投递异常</li>\n示例：\"Filters\":[{\"Key\":\"deliverFlag\",\"Values\":[\"2\"]}]\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7321,7 +7321,7 @@
         {
           "disabled": false,
           "document": "通知渠道组id。",
-          "example": "notice-bb42f112-xxxx-456e-b3c4-ff5472911b42",
+          "example": "notice-bb42f112-xxxx-476e-b3c4-ff5472911b42",
           "member": "string",
           "name": "AlarmNoticeId",
           "required": true,
@@ -7394,7 +7394,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "name\n- 按照【告警策略名称】进行过滤。\n- 类型：String\n- 必选：否\n\nalarmId\n- 按照【告警策略ID】进行过滤。\n- 类型：String\n- 必选：否\n\ntopicId\n- 按照【监控对象的日志主题ID】进行过滤。\n- 类型：String\n- 必选：否\n\nenable\n- 按照【启用状态】进行过滤。\n- 类型：String\n- 备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.\n- 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "name\n- 按照【告警策略名称】进行过滤。\n- 类型：String\n- 必选：否\n- 示例：test-alarm\n\nalarmId\n- 按照【告警策略ID】进行过滤。\n- 类型：String\n- 必选：否\n- 示例：alarm-b60cf034-c3d6-4b01-xxxx-4e877ebb4751\n\ntopicId\n- 按照【监控对象的日志主题ID】进行过滤。\n- 类型：String\n- 必选：否\n- 示例：6766f83d-659e-xxxx-a8f7-9104a1012743\n\nenable\n- 按照【启用状态】进行过滤。\n- 类型：String\n- 备注：enable参数值范围: 1, t, T, TRUE, true, True, 0, f, F, FALSE, false, False。 其它值将返回参数错误信息.\n- 必选：否\n- 示例：true\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7431,6 +7431,7 @@
           "example": "无",
           "member": "AlarmInfo",
           "name": "Alarms",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7440,6 +7441,7 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7457,7 +7459,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询时间范围启始时间，毫秒级unix时间戳",
+          "document": "查询时间范围启始时间，毫秒级unix时间戳(ms)",
           "example": "1619063300000",
           "member": "uint64",
           "name": "From",
@@ -7466,7 +7468,7 @@
         },
         {
           "disabled": false,
-          "document": "查询时间范围结束时间，毫秒级unix时间戳",
+          "document": "查询时间范围结束时间，毫秒级unix时间戳(ms)",
           "example": "1619581700000",
           "member": "uint64",
           "name": "To",
@@ -9346,7 +9348,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "- name\n按照【告警渠道回调配置名称】进行过滤。\n类型：String\n必选：否\n\n- webCallbackId\n按照【告警渠道回调配置ID】进行过滤。\n类型：String\n必选：否\n\n- type\n按照【告警渠道回调配置渠道类型】进行过滤。\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "- name\n按照【告警渠道回调配置名称】进行过滤。\n类型：String\n必选：否\n\n- webCallbackId\n按照【告警渠道回调配置ID】进行过滤。\n类型：String\n必选：否\n\n- type\n按照【告警渠道回调配置渠道类型】进行过滤。\n类型：String\n必选：否\n枚举值：WeCom，DingTalk，Lark，Http\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -11600,7 +11602,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知渠道组ID。",
+          "document": "通知渠道组ID。-通过[获取通知内容模板](https://cloud.tencent.com/document/api/614/111714)获取通知渠道组ID",
           "example": "notice-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
           "member": "string",
           "name": "AlarmNoticeId",
@@ -11717,7 +11719,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警策略ID。",
+          "document": "告警策略ID。-通过[获取告警策略列表](https://cloud.tencent.com/document/product/614/56461)获取告警策略ID",
           "example": "alarm-bea71170-4a59-11eb-b378-0242ac130002",
           "member": "string",
           "name": "AlarmId",
@@ -11726,7 +11728,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略名称",
+          "document": "告警策略名称。最大支持255个字节，不支持 '|'。",
           "example": "访问拦截告警",
           "member": "string",
           "name": "Name",
@@ -11744,7 +11746,7 @@
         },
         {
           "disabled": false,
-          "document": "触发条件。\n\n注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。",
+          "document": "告警信息发送的触发条件。\n\n注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。",
           "example": "$1.source='10.0.0.1'",
           "member": "string",
           "name": "Condition",
@@ -11789,7 +11791,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的告警通知模板列表。",
+          "document": "关联的告警通知渠道列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取告警通知渠道列表",
           "example": "[\"notice-479dec34-4a59-11eb-b378-0242ac130002\"]",
           "member": "string",
           "name": "AlarmNoticeIds",
@@ -11915,7 +11917,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "屏蔽规则ID。",
+          "document": "屏蔽规则ID。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取屏蔽规则ID",
           "example": "cb37f589-6232-431a-xxxx-e2b61fb375d1",
           "member": "string",
           "name": "TaskId",
@@ -11924,7 +11926,7 @@
         },
         {
           "disabled": false,
-          "document": "通知渠道组id。",
+          "document": "通知渠道组id。-通过[获取告警屏蔽配置规则](https://cloud.tencent.com/document/api/614/103650)获取通知渠道组id",
           "example": "notice-bb42f112-xxxx-456e-b3c4-ff5472911b42",
           "member": "string",
           "name": "AlarmNoticeId",
@@ -11933,7 +11935,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽开始时间（秒级时间戳）。",
+          "document": "屏蔽开始时间，秒级(s)时间戳。",
           "example": "1701872657",
           "member": "uint64",
           "name": "StartTime",
@@ -11942,7 +11944,7 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽结束时间（秒级时间戳）。",
+          "document": "屏蔽结束时间，秒级(s)时间戳。",
           "example": "1701883657",
           "member": "uint64",
           "name": "EndTime",
@@ -11961,7 +11963,7 @@
         {
           "disabled": false,
           "document": "屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。",
-          "example": "{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1]\",\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"AlarmID\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[\"alarm-57105ec6-xxxx-xxxx-xxxx-892f3b8d143a\"]\",\"Type\":\"Value\"}]}]}",
+          "example": "{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1]\",\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"AlarmID\"}]}",
           "member": "string",
           "name": "Rule",
           "required": false,
@@ -11978,7 +11980,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态。只有规则状态为生效中（status:1）时，才能将其修改为已失效（status:2）。",
+          "document": "规则状态。只有规则状态为生效中（status:1）时，才能将其修改为已失效（status:2）。\n枚举：0（未生效），1（生效中），2（已失效）",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -13103,7 +13105,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模板ID。",
+          "document": "通知内容模板ID。-通过[获取通知内容模板](https://cloud.tencent.com/document/api/614/111714)获取通知内容模版ID",
           "example": "noticetemplate-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
           "member": "string",
           "name": "NoticeContentId",
@@ -13229,7 +13231,7 @@
         },
         {
           "disabled": false,
-          "document": "源topicId的地域信息,支持地域见(https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)",
+          "document": "源topicId的地域信息,支持地域见 [地域列表](https://cloud.tencent.com/document/api/614/56474#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) 文档",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "SrcTopicRegion",
@@ -13544,7 +13546,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警渠道回调配置ID。",
+          "document": "告警渠道回调配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/api/614/115229)获取告警渠道回调配置ID",
           "example": "webcallback-5b2ea996-xxxx-xxxx-bbad-5b12888b4c89",
           "member": "string",
           "name": "WebCallbackId",
@@ -13553,7 +13555,7 @@
         },
         {
           "disabled": false,
-          "document": "告警渠道回调配置名称。",
+          "document": "告警渠道回调配置名称。最大支持255个字节",
           "example": "监控告警专用",
           "member": "string",
           "name": "Name",
@@ -13589,7 +13591,7 @@
         },
         {
           "disabled": false,
-          "document": "秘钥信息。",
+          "document": "秘钥信息。最大支持1024个字节",
           "example": "HASFUBRINFYAWERNTFGPI",
           "member": "string",
           "name": "Key",
@@ -13638,7 +13640,7 @@
         },
         {
           "disabled": false,
-          "document": "执行的周期cron表达式。示例：`\"*/1 * * * *\"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。\n当type为`Cron`时，CronExpression字段生效。",
+          "document": "执行的周期cron表达式。示例：`\"*/1 * * * *\"` 从左到右每个field的含义 Minutes field(分钟), Hours field(小时),Day of month field(日期),Month field(月份),Day of week field(星期)， 不支持秒级别。\n当type为`Cron`时，CronExpression字段生效。",
           "example": "*/1 * * * *",
           "member": "string",
           "name": "CronExpression",
@@ -13857,7 +13859,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间 秒级时间戳。",
+          "document": "创建时间 秒级(s)时间戳。",
           "example": "1705923855",
           "member": "int64",
           "name": "CreateTime",
@@ -13867,7 +13869,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间 秒级时间戳。",
+          "document": "更新时间 秒级(s)时间戳。",
           "example": "1706149043",
           "member": "int64",
           "name": "UpdateTime",
@@ -13906,7 +13908,7 @@
         {
           "disabled": false,
           "document": "通知接收渠道。\n- Email - 邮件\n- Sms - 短信\n- WeChat - 微信\n- Phone - 电话",
-          "example": "['Sms']",
+          "example": "[\"Sms\"]",
           "member": "string",
           "name": "ReceiverChannels",
           "output_required": true,
@@ -13916,7 +13918,7 @@
         },
         {
           "disabled": false,
-          "document": "通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。",
+          "document": "通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。-通过[获取通知内容模板](https://cloud.tencent.com/document/product/614/111714)获取通知内容模板ID",
           "example": "\"noticetemplate-1eba4ed8-9584-40e3-a948-c8cff121eed1\"",
           "member": "string",
           "name": "NoticeContentId",
@@ -16300,7 +16302,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "回调的类型。可选值：\n- Http\n- WeCom\n- DingTalk\n- Lark",
+          "document": "回调的类型。可选值：\n- Http(自定义接口回调)\n- WeCom(企业微信)\n- DingTalk(钉钉)\n- Lark(飞书)",
           "example": "WeCom",
           "member": "string",
           "name": "CallbackType",
@@ -16322,7 +16324,7 @@
         },
         {
           "disabled": false,
-          "document": "集成配置ID。",
+          "document": "集成配置ID。-通过[获取告警渠道回调配置列表](https://cloud.tencent.com/document/product/614/115229)获取集成配置ID",
           "example": "\"webcallback-aaa-bbb-ccc-ddd\"",
           "member": "string",
           "name": "WebCallbackId",
@@ -16378,7 +16380,7 @@
         {
           "disabled": false,
           "document": "用户ID列表。",
-          "example": "[\"11234\"]",
+          "example": "[\"11274\"]",
           "member": "string",
           "name": "UserIds",
           "output_required": false,
@@ -16507,7 +16509,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。秒级时间戳",
+          "document": "创建时间。秒(s)级时间戳",
           "example": "1693468888",
           "member": "uint64",
           "name": "CreateTime",
@@ -16517,7 +16519,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间。秒级时间戳",
+          "document": "更新时间。秒(s)级时间戳",
           "example": "1693468888",
           "member": "uint64",
           "name": "UpdateTime",

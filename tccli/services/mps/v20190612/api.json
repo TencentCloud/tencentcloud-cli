@@ -18982,6 +18982,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集锦标题。",
+          "example": "title",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集锦概要。",
+          "example": "summary",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -21736,7 +21756,7 @@
         {
           "disabled": false,
           "document": "智能精彩集锦地址。",
-          "example": "/AItest/hht-20250321xxx-021234545678E_172343423310test-0.mp4",
+          "example": "/AItst/hht-2025031xxx-021354578E_17243423310test-0.mp4",
           "member": "string",
           "name": "HighlightPath",
           "output_required": true,
@@ -21746,7 +21766,7 @@
         {
           "disabled": false,
           "document": "智能精彩集锦封面地址。",
-          "example": "/AItest/hht-20250321xxx-021234545678E_172343423310test-0.jpg",
+          "example": "/AItest/hht-2025031xxx-021245578E_17243423310test-0.jpg",
           "member": "string",
           "name": "CovImgPath",
           "output_required": true,
@@ -21782,6 +21802,26 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能精彩集锦地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://test-12246.cos.ap-nanjing.myqcloud.com/AItest/hht-2025031xxx-02135468E_17243423310test-0.mp4",
+          "member": "string",
+          "name": "HighlightUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能精彩集锦封面地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://test-12246.cos.ap-nanjing.myqcloud.com/AItest/hht-2025031xxx-02134468E_17243423310test-0.jpg",
+          "member": "string",
+          "name": "CovImgUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

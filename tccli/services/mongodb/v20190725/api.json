@@ -410,8 +410,8 @@
         },
         {
           "disabled": false,
-          "document": "项目ID，用户已创建项目的唯一ID,非自定义",
-          "example": "1118****",
+          "document": "项目ID，用户已创建项目的唯一ID。请在控制台账号中心的项目管理中复制项目 ID。",
+          "example": "12",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -425,8 +425,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的异步任务ID列表",
-          "example": "[1081****]",
+          "document": "返回的异步任务ID列表。",
+          "example": "[1081,1082]",
           "member": "uint64",
           "name": "FlowIds",
           "output_required": true,

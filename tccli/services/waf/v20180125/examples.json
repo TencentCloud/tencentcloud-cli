@@ -252,6 +252,14 @@
         "title": "删除IP黑白名单"
       }
     ],
+    "DeleteOwaspRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: NotifyOwaspRuleUpdate\n<公共请求参数>\n\n{\n    \"Domain\": \"q.testwaf.com\",\n    \"RuleIDs\": [\n        \"1000000\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08e8410d-6e80-4d1f-89ff-62669042369d\"\n    }\n}",
+        "title": "删除用户自定义规则状态"
+      }
+    ],
     "DeleteOwaspWhiteRule": [
       {
         "document": "",
@@ -644,6 +652,22 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeObjects\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"1\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ClbObjects\": [\n            {\n                \"ApiStatus\": 0,\n                \"BotStatus\": 0,\n                \"ClsStatus\": 0,\n                \"InstanceId\": \"waf_2kuil2ft02vqm7z3\",\n                \"InstanceLevel\": 3,\n                \"InstanceName\": \"gz-Default1\",\n                \"IpHeaders\": [\n                    \"spheader\",\n                    \"myheader\"\n                ],\n                \"NumericalVpcId\": -1,\n                \"ObjectFlowMode\": 1,\n                \"ObjectId\": \"lb-70mdt3it\",\n                \"ObjectName\": \"zunhua-multi-test_pjk1\",\n                \"PostCKafkaStatus\": 0,\n                \"PostCLSStatus\": 0,\n                \"PreciseDomains\": [],\n                \"PrivateIp\": [\n                    \"121.123.11.7\"\n                ],\n                \"Proxy\": 3,\n                \"PublicIp\": [\n                    \"139.186.100.71\"\n                ],\n                \"Region\": \"ap-chongqing\",\n                \"Status\": 1,\n                \"Type\": \"CLB\",\n                \"VirtualDomain\": \"lb-70mdt3it.clb-default.qcloudwaf.com\",\n                \"Vpc\": \"vpc-jl1cw1e9\",\n                \"VpcName\": \"Default-VPC\"\n            }\n        ],\n        \"RequestId\": \"6ceb784e-b440-4cac-81ee-0b87ffe81e6f\"\n    }\n}",
         "title": "查看对象列表"
+      }
+    ],
+    "DescribeOwaspRuleTypes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOwaspRuleTypes\n<公共请求参数>\n\n{\n    \"Domain\": \"owasp.saas3.testwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Action\": 0,\n                \"ActiveRule\": 1056,\n                \"Classification\": \"XSS攻击\",\n                \"Description\": \"跨站脚本 (XSS) 攻击是一种注入，其中恶意脚本被注入到其他受信任的网站中。 当攻击者使用 Web 应用程序将恶意代码（通常以浏览器端脚本的形式）发送给不同的最终用户时，就会发生 XSS 攻击。 允许这些攻击成功的缺陷非常普遍，并且发生在 Web 应用程序在其生成的输出中使用来自用户的输入而不对其进行验证或编码的任何地方。 攻击者可以使用 XSS 向毫无戒心的用户发送恶意脚本。 最终用户的浏览器无法知道该脚本不应受信任，并且会执行该脚本。 由于它认为脚本来自可信来源，因此恶意脚本可以访问浏览器保留并与该站点一起使用的任何 cookie、会话令牌或其他敏感信息。 这些脚本甚至可以重写 HTML 页面的内容。\",\n                \"Level\": 100,\n                \"Status\": 1,\n                \"TotalRule\": 1320,\n                \"TypeId\": 10000000,\n                \"TypeName\": \"XSS攻击\"\n            }\n        ],\n        \"RequestId\": \"239d0e9a-c7b1-48af-acda-7237c060362a\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询规则引擎的规则类型列表"
+      }
+    ],
+    "DescribeOwaspRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOwaspRules\n<公共请求参数>\n\n{\n    \"Domain\": \"owasp.saas3.testwaf.com\",\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"CreateTime\": \"2021-10-12T17:12:40+08:00\",\n                \"CveID\": \"\",\n                \"Description\": \"防护 eval、phpinfo 等 asp、php 代码执行或者 webshell 上传特征\",\n                \"Level\": 200,\n                \"Locked\": 1,\n                \"Reason\": 0,\n                \"RuleId\": 16,\n                \"Status\": 1,\n                \"TypeId\": 10000000,\n                \"VulLevel\": 0\n            }\n        ],\n        \"RequestId\": \"03e5562c-d809-4435-8bb5-2c1438b943b3\",\n        \"Total\": 1320\n    }\n}",
+        "title": "展示规则"
       }
     ],
     "DescribeOwaspWhiteRules": [
@@ -1226,6 +1250,38 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyObject\n<公共请求参数>\n\n{\n    \"ObjectId\": \"lb-vsf13vzg\",\n    \"Status\": 0,\n    \"InstanceId\": \"waf_vxj234vxcfnm\",\n    \"OpType\": \"Status\",\n    \"Proxy\": 1,\n    \"IpHeaders\": []\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改防护对象"
+      }
+    ],
+    "ModifyOwaspRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOwaspRuleStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"owasp.saas3.testwaf.com\",\n    \"RuleStatus\": 1,\n    \"SelectAll\": false,\n    \"RuleIDs\": [\n        \"16\"\n    ],\n    \"TypeId\": 10000000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7d727dd-48de-4609-ba67-6cca079bae04\"\n    }\n}",
+        "title": "修改规则状态"
+      }
+    ],
+    "ModifyOwaspRuleTypeAction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOwaspRuleTypeAction\n<公共请求参数>\n\n{\n    \"Domain\": \"owasp.saas3.testwaf.com\",\n    \"TypeIDs\": [\n        \"10000000\"\n    ],\n    \"RuleTypeAction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b034d2ed-102c-4266-aa74-113c8e2db3fb\"\n    }\n}",
+        "title": "修改类型防护模式"
+      }
+    ],
+    "ModifyOwaspRuleTypeLevel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOwaspRuleTypeLevel\n<公共请求参数>\n\n{\n    \"Domain\": \"owasp.saas3.testwaf.com\",\n    \"TypeIDs\": [\n        \"10000000\"\n    ],\n    \"RuleTypeLevel\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a776d3a-5bbe-4ee4-a3bb-5a41ba18aa56\"\n    }\n}",
+        "title": "修改类型防护等级"
+      }
+    ],
+    "ModifyOwaspRuleTypeStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOwaspRuleTypeStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"owasp.saas3.testwaf.com\",\n    \"TypeIDs\": [\n        \"10000000\"\n    ],\n    \"RuleTypeStatus\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ef51e76-fc98-4281-86f9-69ef620494e0\"\n    }\n}",
+        "title": "修改类型开关"
       }
     ],
     "ModifyOwaspWhiteRule": [

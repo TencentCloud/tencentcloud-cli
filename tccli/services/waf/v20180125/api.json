@@ -210,6 +210,13 @@
       "output": "DeleteIpAccessControlV2Response",
       "status": "online"
     },
+    "DeleteOwaspRuleStatus": {
+      "document": "解除门神规则的状态锁",
+      "input": "DeleteOwaspRuleStatusRequest",
+      "name": "删除用户自定义规则状态",
+      "output": "DeleteOwaspRuleStatusResponse",
+      "status": "online"
+    },
     "DeleteOwaspWhiteRule": {
       "document": "删除用户规则引擎白名单",
       "input": "DeleteOwaspWhiteRuleRequest",
@@ -537,6 +544,20 @@
       "input": "DescribeObjectsRequest",
       "name": "查看防护对象列表",
       "output": "DescribeObjectsResponse",
+      "status": "online"
+    },
+    "DescribeOwaspRuleTypes": {
+      "document": "查询规则引擎的规则类型列表",
+      "input": "DescribeOwaspRuleTypesRequest",
+      "name": "查询规则引擎规则类型列表",
+      "output": "DescribeOwaspRuleTypesResponse",
+      "status": "online"
+    },
+    "DescribeOwaspRules": {
+      "document": "查询规则引擎的规则列表",
+      "input": "DescribeOwaspRulesRequest",
+      "name": "查询规则引擎的规则列表",
+      "output": "DescribeOwaspRulesResponse",
       "status": "online"
     },
     "DescribeOwaspWhiteRules": {
@@ -1020,6 +1041,34 @@
       "input": "ModifyObjectRequest",
       "name": "修改防护对象",
       "output": "ModifyObjectResponse",
+      "status": "online"
+    },
+    "ModifyOwaspRuleStatus": {
+      "document": "更新规则的开关",
+      "input": "ModifyOwaspRuleStatusRequest",
+      "name": "更新规则的开关",
+      "output": "ModifyOwaspRuleStatusResponse",
+      "status": "online"
+    },
+    "ModifyOwaspRuleTypeAction": {
+      "document": "更新规则类型的防护模式",
+      "input": "ModifyOwaspRuleTypeActionRequest",
+      "name": "更新规则类型的防护模式",
+      "output": "ModifyOwaspRuleTypeActionResponse",
+      "status": "online"
+    },
+    "ModifyOwaspRuleTypeLevel": {
+      "document": "更新规则类型的防护等级",
+      "input": "ModifyOwaspRuleTypeLevelRequest",
+      "name": "更新规则类型的防护等级",
+      "output": "ModifyOwaspRuleTypeLevelResponse",
+      "status": "online"
+    },
+    "ModifyOwaspRuleTypeStatus": {
+      "document": "更新规则类型的开关",
+      "input": "ModifyOwaspRuleTypeStatusRequest",
+      "name": "更新规则类型的开关",
+      "output": "ModifyOwaspRuleTypeStatusResponse",
       "status": "online"
     },
     "ModifyOwaspWhiteRule": {
@@ -7359,6 +7408,42 @@
       ],
       "type": "object"
     },
+    "DeleteOwaspRuleStatusRequest": {
+      "document": "DeleteOwaspRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID列表",
+          "example": "[10000000,20000000]",
+          "member": "string",
+          "name": "RuleIDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOwaspRuleStatusResponse": {
+      "document": "DeleteOwaspRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteOwaspWhiteRuleRequest": {
       "document": "DeleteOwaspWhiteRule请求参数结构体",
       "members": [
@@ -11693,6 +11778,172 @@
           "example": "无",
           "member": "ClbObject",
           "name": "ClbObjects",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOwaspRuleTypesRequest": {
+      "document": "DescribeOwaspRuleTypes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页页数，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页容量，默认为10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件，支持 RuleId：规则ID、CveID：CVE编号、Desc：描述",
+          "example": "{\"ExactMatch\": true,\"Name\": \"RuleId\", \"Values\": [\"10000001\"]}",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOwaspRuleTypesResponse": {
+      "document": "DescribeOwaspRuleTypes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则类型数量",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型列表及信息",
+          "example": "[{\"Name\": \"rulename\",\"Desc\": \"description\",\"RuleTypeStatus\": 0,\"ActiveRuleCount\": 10,\"TotalRuleCount\": 12}]",
+          "member": "OwaspRuleType",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOwaspRulesRequest": {
+      "document": "DescribeOwaspRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的域名",
+          "example": "www.waf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页页数，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页容量，默认为10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，支持 RuleId, UpdateTime",
+          "example": "RuleId",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，支持asc、desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件，支持 RuleId：规则ID、TypeId：规则类型、Desc：规则描述 、CveID：CVE编号、Status：规则状态、VulLevel：威胁等级",
+          "example": "{\"ExactMatch\": true,\"Name\": \"RuleId\", \"Values\": [\"10000001\"]}",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOwaspRulesResponse": {
+      "document": "DescribeOwaspRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "[{\"CveID\": \"\",\"Description\": \"这\", \"ID\": \"10000041\",\"MainClassID\": \"010000000\",\"MainClassName\": \"XSS攻击\",\"Reason\": 0}]",
+          "member": "OwaspRule",
+          "name": "List",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -20689,6 +20940,213 @@
       ],
       "type": "object"
     },
+    "ModifyOwaspRuleStatusRequest": {
+      "document": "ModifyOwaspRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则开关，0：关闭、1：开启、2：只观察",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleStatus",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否全选",
+          "example": "true",
+          "member": "bool",
+          "name": "SelectAll",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID列表",
+          "example": "[10000000,20000000]",
+          "member": "string",
+          "name": "RuleIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "如果反转需要传入类型",
+          "example": "10000",
+          "member": "uint64",
+          "name": "TypeId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改原因 0：无(兼容记录为空) 1：业务自身特性误报避免 2：规则误报上报 3：核心业务规则灰度 4：其它",
+          "example": "0",
+          "member": "int64",
+          "name": "Reason",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOwaspRuleStatusResponse": {
+      "document": "ModifyOwaspRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOwaspRuleTypeActionRequest": {
+      "document": "ModifyOwaspRuleTypeAction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型ID列表",
+          "example": "[10000000,20000000]",
+          "member": "string",
+          "name": "TypeIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型的防护模式，0：观察、1：拦截",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleTypeAction",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOwaspRuleTypeActionResponse": {
+      "document": "ModifyOwaspRuleTypeAction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOwaspRuleTypeLevelRequest": {
+      "document": "ModifyOwaspRuleTypeLevel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型ID列表",
+          "example": "[10000000,20000000]",
+          "member": "string",
+          "name": "TypeIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则的防护等级，100：宽松、200：正常、300：严格、400：超严格",
+          "example": "100",
+          "member": "int64",
+          "name": "RuleTypeLevel",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOwaspRuleTypeLevelResponse": {
+      "document": "ModifyOwaspRuleTypeLevel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOwaspRuleTypeStatusRequest": {
+      "document": "ModifyOwaspRuleTypeStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型ID列表",
+          "example": "[10000000,20000000]",
+          "member": "string",
+          "name": "TypeIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型的开关状态，0：关闭、1：开启",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleTypeStatus",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOwaspRuleTypeStatusResponse": {
+      "document": "ModifyOwaspRuleTypeStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyOwaspWhiteRuleRequest": {
       "document": "ModifyOwaspWhiteRule请求参数结构体",
       "members": [
@@ -21733,6 +22191,227 @@
           "example": "1",
           "member": "uint64",
           "name": "VipStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OwaspRule": {
+      "document": "Owasp规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "10000001",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "rule description",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开关，0：关闭、1：开启、2：只观察",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则的防护等级，100：宽松、200：正常、300：严格、400：超严格",
+          "example": "100",
+          "member": "int64",
+          "name": "Level",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "威胁等级，0：未知，100：低危，200：中危，300：高危，400：危急",
+          "example": "1",
+          "member": "int64",
+          "name": "VulLevel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVE ID",
+          "example": "CVE-2022-39195",
+          "member": "string",
+          "name": "CveID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则所属的类型ID",
+          "example": "10000001",
+          "member": "uint64",
+          "name": "TypeId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-11-24 19:55:55",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2021-11-24 19:55:55",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否被锁定",
+          "example": "0 1",
+          "member": "int64",
+          "name": "Locked",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改原因\n0：无(兼容记录为空)\n1：业务自身特性误报避免\n2：规则误报上报\n3：核心业务规则灰度\n4：其它",
+          "example": "0",
+          "member": "int64",
+          "name": "Reason",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OwaspRuleType": {
+      "document": "Owasp规则类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型ID",
+          "example": "10000001",
+          "member": "uint64",
+          "name": "TypeId",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型名称",
+          "example": "ruleName",
+          "member": "string",
+          "name": "TypeName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型描述\n",
+          "example": "ruleDescription",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型分类",
+          "example": "XSS",
+          "member": "string",
+          "name": "Classification",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型的防护模式，0：观察、1：拦截",
+          "example": "0",
+          "member": "int64",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型的防护等级，100：宽松、200：正常、300：严格、400：超严格",
+          "example": "100",
+          "member": "int64",
+          "name": "Level",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型的开关状态，0：关闭、1：开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型下的所有规则总是",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalRule",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型下的启用的规则总数",
+          "example": "50",
+          "member": "uint64",
+          "name": "ActiveRule",
           "output_required": false,
           "required": false,
           "type": "int",

@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tcss DescribeClusterDetail --cli-unfold-argument  \
-    --ClusterId b6ebf065d08563396da66bf0950cba8c
+    --ClusterId cls-20ry
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ApiServerAddress": "https://30.46.164.12:1****",
+        "ApiServerAddress": "https://10.46.164.12:1053",
         "CheckStatus": "HasRisk",
-        "ClusterId": "57153b3ea9483f46f5dd9a0052cad265",
+        "ClusterId": "cls-20ry",
         "ClusterName": "benben-tcss",
         "ClusterNodeNum": 1,
         "ClusterStatus": "CSR_RUNNING",

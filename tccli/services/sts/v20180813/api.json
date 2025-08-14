@@ -1,7 +1,7 @@
 {
   "actions": {
     "AssumeRole": {
-      "document": "申请扮演角色临时访问凭证。\n\n1、角色策略组成\n\n（1）角色信任策略：指定谁可以扮演该角色；\n\n（2）角色权限策略：指定扮演角色后可以执行哪些操作。\n\n\n2、角色可扮演条件\n\n（1）给用户绑定允许调用AssumeRole的策略 ；\n\n（2）将用户添加为角色信任策略中的主体。",
+      "document": "**使用说明**\n\n1. 申请扮演某个角色的临时访问凭证，返回临时身份的token和能够扮演该角色的临时密钥；\n2. 角色策略组成  \n（1）角色载体：指定谁可以扮演该角色；  \n（2）角色权限：指定扮演角色后可以执行哪些操作，操作哪些资源。\n\n3. 角色可被扮演的条件  \n（1）给该用户绑定包含AssumeRole的策略；  \n（2）将该用户配置为角色载体的主体。\n\n4. 此接口可以支持永久密钥或临时密钥调用。\n\n\n**典型场景**\n\n1. 跨账号授权：主账号A需要操作主账号B的资源。  \n例如：A账号下有子用户a，B账号下有角色role b，a可以通过AssumeRole接口扮演b，以角色b身份登录账号B的控制台，并操作资源。\n\n2. 跨服务调用：云上的A服务需要访问或操作B服务的资源。  \n例如：为A服务接入一个服务相关角色，用户授权创建角色和策略后，A服务即可调用AssumeRole获取用户的服务相关角色临时密钥，调用B服务接口并访问资源。\n\n\n\n**最佳实践**\n1. 临时访问凭证在有效期内（Expiration）都可以使用，建议在有效期内重复使用，避免业务请求该接口频率达到上限被限频；\n2. 授予临时访问凭证权限的CAM策略，建议严格遵循最小权限原则；\n3. 建议不要使用主账号永久密钥，对该接口进行调用。",
       "input": "AssumeRoleRequest",
       "name": "申请扮演角色临时访问凭证",
       "output": "AssumeRoleResponse",
@@ -135,7 +135,7 @@
         {
           "disabled": false,
           "document": "角色外部ID，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。\n长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\\w+=,.@:\\/-]*",
-          "example": "role-1232",
+          "example": "role-external-id",
           "member": "string",
           "name": "ExternalId",
           "required": false,
@@ -144,7 +144,7 @@
         {
           "disabled": false,
           "document": "会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。",
-          "example": "[{\"Key\":\"partment\",\"Value\":\"product\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -186,7 +186,7 @@
         {
           "disabled": false,
           "document": "临时访问凭证",
-          "example": "{\"Token\":\"da1e***\",\"TmpSecretId\":\"AKID***\",\"TmpSecretKey\":\"q95K***\"}",
+          "example": "无",
           "member": "Credentials",
           "name": "Credentials",
           "output_required": true,

@@ -15790,20 +15790,20 @@
         {
           "disabled": false,
           "document": "指标名",
-          "example": "",
+          "example": "cpu_usages",
           "member": "string",
           "name": "MetricName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监控数据点",
-          "example": "",
+          "example": "[{}]",
           "member": "MetricDataPoint",
           "name": "Points",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

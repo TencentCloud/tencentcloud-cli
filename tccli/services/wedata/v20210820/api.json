@@ -8276,6 +8276,17 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "比较关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "((0a1)o2a3)",
+          "member": "string",
+          "name": "ComputeExpression",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -46721,7 +46732,7 @@
         {
           "disabled": false,
           "document": "规则执行ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "532312",
           "member": "uint64",
           "name": "RuleExecId",
           "output_required": true,
@@ -46732,7 +46743,7 @@
         {
           "disabled": false,
           "document": "规则组执行ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "32423",
           "member": "uint64",
           "name": "RuleGroupExecId",
           "output_required": true,
@@ -46743,7 +46754,7 @@
         {
           "disabled": false,
           "document": "规则组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "3424",
           "member": "uint64",
           "name": "RuleGroupId",
           "output_required": true,
@@ -46754,7 +46765,7 @@
         {
           "disabled": false,
           "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "5452",
           "member": "uint64",
           "name": "RuleId",
           "output_required": true,
@@ -46875,7 +46886,7 @@
         {
           "disabled": false,
           "document": "目标表-库表名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "defaule.person",
+          "example": "person",
           "member": "string",
           "name": "TargetDBTableName",
           "output_required": true,
@@ -46941,7 +46952,7 @@
         {
           "disabled": false,
           "document": "1/2/3:低/中/高\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "告警级别",
+          "example": "1",
           "member": "uint64",
           "name": "AlarmLevel",
           "output_required": true,
@@ -46955,6 +46966,127 @@
           "example": "固定值>1",
           "member": "string",
           "name": "TriggerCondition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任务",
+          "member": "string",
+          "name": "RuleGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "89723",
+          "member": "string",
+          "name": "DatasourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dsName",
+          "member": "string",
+          "name": "DatasourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dbName",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模式名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SchemaName",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tableName",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "判断是否屏蔽监控 0.屏蔽 1.不屏蔽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleGroupExist",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DatasourceType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "323",
+          "member": "uint64",
+          "name": "RuleGroupTableId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控方式 1.未配置, 2.关联生产调度, 3.离线周期检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MonitorType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-09-10 01:00:00",
+          "member": "string",
+          "name": "FinishTime",
           "output_required": false,
           "required": false,
           "type": "string",

@@ -4101,6 +4101,7 @@
           "example": "'FALSE'",
           "member": "string",
           "name": "DynamicEnabled",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4111,6 +4112,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MaxConcurrency",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true

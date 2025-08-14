@@ -697,50 +697,50 @@
         {
           "disabled": false,
           "document": "区域名称，如“ap-beijing”",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区域名称，如“bj”",
-          "example": "",
+          "example": "gz",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区域可用情况，当区域内至少有一个可用区处于可售状态时，取值为AVAILABLE，否则为UNAVAILABLE",
-          "example": "",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "RegionStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区数组",
-          "example": "",
+          "example": "无",
           "member": "AvailableZone",
           "name": "Zones",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区域中文名称，如“广州”",
-          "example": "",
+          "example": "广州区",
           "member": "string",
           "name": "RegionCnName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

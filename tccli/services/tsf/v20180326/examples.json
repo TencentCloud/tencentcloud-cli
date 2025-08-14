@@ -27,7 +27,7 @@
     "AssociateConfigWithGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=AssociateConfigWithGroup\n&ConfigId=dddd\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=AssociateConfigWithGroup\n&ConfigId=apm-busi-log-cfg-maeprb6v\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e64dc152-b874-4b91-9301-e9b290f1ffbb\",\n        \"Result\": true\n    }\n}",
         "title": "关联投递配置到部署组"
       }
@@ -507,7 +507,7 @@
     "DeployContainerGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployContainerGroup\n<公共请求参数>\n\n{\n    \"DoNotStart\": \"false\",\n    \"MemRequest\": \"1024\",\n    \"UpdateType\": \"1\",\n    \"Server\": \"ccr.ccs.tencentyun.com\",\n    \"InstanceNum\": \"1\",\n    \"RepoName\": \"tsf_10000617xxxx/test\",\n    \"TagName\": \"v1\",\n    \"CpuRequest\": \"0.54\",\n    \"JvmOpts\": \"-Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m\",\n    \"UpdateIvl\": \"10\",\n    \"GroupId\": \"group-6a79x94v\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployContainerGroup\n<公共请求参数>\n\n{\n    \"DoNotStart\": \"false\",\n    \"MemRequest\": \"1024\",\n    \"UpdateType\": \"1\",\n    \"Server\": \"ccr.ccs.tencentyun.com\",\n    \"InstanceNum\": 1,\n    \"RepoName\": \"tsf_10000617xxxx/test\",\n    \"TagName\": \"v1\",\n    \"CpuRequest\": \"0.54\",\n    \"JvmOpts\": \"-Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m\",\n    \"UpdateIvl\": 10,\n    \"GroupId\": \"group-6a79x94v\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b481cffd-6b00-463f-a1ae-7afe5fd5fa2e\",\n        \"Result\": true\n    }\n}",
         "title": "部署容器应用"
       }
@@ -627,7 +627,7 @@
     "DescribeClusters": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusters\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusters\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d7e580e-4b1c-49a7-8ffd-21551f865643\",\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Content\": []\n        }\n    }\n}",
         "title": "获取集群列表示例"
       }
@@ -683,7 +683,7 @@
     "DescribeContainerEvents": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeContainerEvents\n&ResourceType=instance\n&ResourceId=test-event-6f46bcb6b-sxfcr\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeContainerEvents\n&ResourceType=instance\n&ResourceId=test-event-6f46bcb6b-sxfcr\n&GroupId=group-9yn2q8yd\n&Offset=0\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Content\": [\n                {\n                    \"FirstTimestamp\": 0,\n                    \"LastTimestamp\": 0,\n                    \"Type\": \"instance\",\n                    \"Kind\": \"SERVER\",\n                    \"Name\": \"test-event\",\n                    \"Reason\": \"this is a reason\",\n                    \"Message\": \"this is a msg\",\n                    \"Count\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"96561cf1-738a-47d6-943b-dec7ebbccabe\"\n    }\n}",
         "title": "DescribeContainerEvents"
       }
@@ -1035,7 +1035,7 @@
     "DescribeOverviewInvocation": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeOverviewInvocation\n&StartTime=2019-05-28 17:45:43\n&EndTime=2019-05-29 17:45:43\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeOverviewInvocation\n&NamespaceId=namespace-xxx\n&Type=SumReqAmount\n&StartTime=2019-05-28 17:45:43\n&EndTime=2019-05-29 17:45:43\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2903f230-fabc-4dff-b4c4-1fbe0fd73ebe\",\n        \"Result\": []\n    }\n}",
         "title": "服务调用监控统计概览"
       }
@@ -1076,7 +1076,7 @@
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribePodInstances\n&GroupId=group-6a73w4v5\n&Offset=0\n&Limit=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"Status\": \"Running\",\n                    \"ReadyCount\": 2,\n                    \"RestartCount\": 0,\n                    \"ServiceInstanceStatus\": \"Running\",\n                    \"PodId\": \"pod-sss\",\n                    \"Ip\": \"10.0.1.1\",\n                    \"Reason\": \"failed\",\n                    \"InstanceAvailableStatus\": \"Running\",\n                    \"PodName\": \"pod-sss\",\n                    \"InstanceStatus\": \"Running\",\n                    \"NodeIp\": \"10.0.1.0\",\n                    \"Runtime\": \"runtime\",\n                    \"NodeInstanceId\": \"id\",\n                    \"CreatedAt\": \"time\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"request-123\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"Status\": \"Running\",\n                    \"ReadyCount\": 2,\n                    \"RestartCount\": 0,\n                    \"ServiceInstanceStatus\": \"Running\",\n                    \"PodId\": \"pod-sss\",\n                    \"Ip\": \"10.0.1.1\",\n                    \"Reason\": \"failed\",\n                    \"InstanceAvailableStatus\": \"Running\",\n                    \"PodName\": \"pod-sss\",\n                    \"InstanceStatus\": \"Running\",\n                    \"NodeIp\": \"10.0.1.0\",\n                    \"Runtime\": \"runtime\",\n                    \"NodeInstanceId\": \"id\",\n                    \"CreatedAt\": \"time\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"6d7e580e-4b1c-49a7-8ffd-21551f865643\"\n    }\n}",
         "title": "DescribePodInstances"
       }
     ],
@@ -1203,7 +1203,7 @@
     "DescribeStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatistics\n<公共请求参数>\n\n{\n    \"OrderBy\": \"字符串\",\n    \"StartTime\": \"2020-05-12 14:43:12\",\n    \"TimeStep\": \"1\",\n    \"Offset\": \"1\",\n    \"DbName\": \"字符串\",\n    \"ServiceName\": \"字符串\",\n    \"Limit\": \"1\",\n    \"NamespaceIdList\": [\n        \"字符串\"\n    ],\n    \"SearchWord\": \"字符串\",\n    \"OrderType\": \"1\",\n    \"EndTime\": \"2020-05-12 14:43:12\",\n    \"Type\": \"字符串\",\n    \"NamespaceId\": \"字符串\",\n    \"BucketKey\": \"字符串\",\n    \"MetricDimensionValues\": [\n        {\n            \"Name\": \"字符串\",\n            \"Value\": [\n                \"字符串\"\n            ]\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatistics\n<公共请求参数>\n\n{\n    \"OrderBy\": \"AvgTimeConsuming\",\n    \"StartTime\": \"2020-05-12 14:43:12\",\n    \"TimeStep\": \"1\",\n    \"Offset\": \"1\",\n    \"DbName\": \"mysql\",\n    \"ServiceName\": \"demo-service\",\n    \"Limit\": \"1\",\n    \"SearchWord\": \"keyword\",\n    \"OrderType\": \"1\",\n    \"EndTime\": \"2020-05-12 14:43:12\",\n    \"Type\": \"Service\",\n    \"NamespaceId\": \"namespace-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b057eeaa-ccdf-40be-995f-f059b4b974e8\",\n        \"Result\": {\n            \"TotalCount\": 2,\n            \"Content\": []\n        }\n    }\n}",
         "title": "test"
       }
@@ -1339,7 +1339,7 @@
     "DisassociateKafkaConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DisassociateKafkaConfig\r\n&ConfigId=dddd\r\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DisassociateKafkaConfig\n&ConfigId=apm-busi-log-cfg-6a7m36a5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e64dc152-b874-4b91-9301-e9b290f1ffbb\",\n        \"Result\": true\n    }\n}",
         "title": "取消关联投递信息和部署组"
       }

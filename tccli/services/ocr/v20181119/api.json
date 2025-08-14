@@ -5135,7 +5135,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景\nOnlineTaxiItinerary -- 网约车行程单\nRideHailingDriverLicense -- 网约车驾驶证\nRideHailingTransportLicense -- 网约车运输证\nWayBill -- 快递运单\nAccountOpeningPermit -- 银行开户许可证\nInvoiceEng -- 海外发票模版\nCoin --钱币识别模板\nOnboardingDocuments -- 入职材料识别\nPropertyOwnershipCertificate -- 房产证识别\nRealEstateCertificate --不动产权证识别\nHouseEncumbranceCertificate -- 他权证识别\nCarInsurance -- 车险保单\nMultiRealEstateCertificate -- 房产证、不动产证、产权证等材料合一模板",
+          "document": "配置id支持：\nGeneral -- 通用场景\nOnlineTaxiItinerary -- 网约车行程单\nRideHailingDriverLicense -- 网约车驾驶证\nRideHailingTransportLicense -- 网约车运输证\nWayBill -- 快递运单\nAccountOpeningPermit -- 银行开户许可证\nInvoiceEng -- 国际发票模板\nCoin --钱币识别模板\nOnboardingDocuments -- 入职材料识别\nPropertyOwnershipCertificate -- 房产证识别\nRealEstateCertificate --不动产权证识别\nHouseEncumbranceCertificate -- 他权证识别\nCarInsurance -- 车险保单\nMultiRealEstateCertificate -- 房产证、不动产证、产权证等材料合一模板",
           "example": "General",
           "member": "string",
           "name": "ConfigId",
@@ -5160,7 +5160,7 @@
         {
           "disabled": false,
           "document": "图片旋转角度(角度制)，文本的水平方向\n为 0；顺时针为正，逆时针为负",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "Angle",
           "output_required": true,
@@ -5282,8 +5282,8 @@
         },
         {
           "disabled": false,
-          "document": "模版的单个属性配置",
-          "example": "{\"Scene\": \"only_hw\"}",
+          "document": "模板的单个属性配置",
+          "example": "无",
           "member": "ConfigAdvanced",
           "name": "ConfigAdvanced",
           "required": false,
@@ -5298,7 +5298,7 @@
         {
           "disabled": false,
           "document": "图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "Angle",
           "output_required": true,
@@ -5403,7 +5403,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模版 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nTable -- 表格模版\nSteelLabel -- 实物标签识别模板\nCarInsurance -- 车辆保险单识别模板\nMultiRealEstateCertificate -- 房产材料识别模板\nMultiRealEstateMaterial -- 房产证明识别模板\nHongKongUtilityBill -- 香港水电煤单识别模板",
+          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模板 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nTable -- 表格模板\nSteelLabel -- 实物标签识别模板\nCarInsurance -- 车辆保险单识别模板\nMultiRealEstateCertificate -- 房产材料识别模板\nMultiRealEstateMaterial -- 房产证明识别模板\nHongKongUtilityBill -- 中国香港水电煤单识别模板",
           "example": "General",
           "member": "string",
           "name": "ConfigId",
@@ -5430,8 +5430,8 @@
         },
         {
           "disabled": false,
-          "document": "模版的单个属性配置",
-          "example": "{\"Scene\": \"only_hw\"}",
+          "document": "模板的单个属性配置",
+          "example": "无",
           "member": "ConfigAdvanced",
           "name": "ConfigAdvanced",
           "required": false,
@@ -5455,7 +5455,7 @@
         {
           "disabled": false,
           "document": "图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "Angle",
           "output_required": true,
@@ -6456,6 +6456,15 @@
           "name": "EnableDetectText",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景 ",
+          "example": "OCR",
+          "member": "string",
+          "name": "ConfigID",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7409,7 +7418,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nArticleRecognize -- 手写作文模版\n默认：ArticleRecognize",
+          "document": "配置id支持：\nArticleRecognize -- 手写作文模板\n默认：ArticleRecognize",
           "example": "ArticleRecognize",
           "member": "string",
           "name": "ConfigId",
@@ -7418,7 +7427,7 @@
         },
         {
           "disabled": false,
-          "document": "模版的单个属性配置",
+          "document": "模板的单个属性配置",
           "example": "only_hw",
           "member": "string",
           "name": "Scene",
@@ -7434,7 +7443,7 @@
         {
           "disabled": false,
           "document": "图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "Angle",
           "output_required": true,

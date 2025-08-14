@@ -366,6 +366,14 @@
         "title": "获取数据迁移任务列表"
       }
     ],
+    "DescribeProducerList": [
+      {
+        "document": "查询生产者列表",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProducerList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-9j77qmrm\",\n    \"Topic\": \"topic-normal\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ProducerList\": [\n            {\n                \"ClientId\": \"169.254.165.243@a3c02f03-5b27-425f-8632-83d1e9f7010b\",\n                \"ClientIp\": \"/11.176.16.134:58560\",\n                \"Language\": \"JAVA\",\n                \"LastUpdateTimestamp\": 1725440379597,\n                \"Version\": \"V4_9_3\"\n            }\n        ],\n        \"RequestId\": \"6918ecdb-ee41-4f8a-bf5f-7b313cd5fca0\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询生产者列表"
+      }
+    ],
     "DescribeProductSKUs": [
       {
         "document": "获取产品规格信息",

@@ -1689,7 +1689,7 @@
         {
           "disabled": false,
           "document": "助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。",
-          "example": "[azsdasfsdfsd,asefawefewf]]",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
           "member": "string",
           "name": "Assistants",
           "required": false,
@@ -1725,7 +1725,7 @@
         {
           "disabled": false,
           "document": "课堂绑定的群组ID,非空时限制组成员进入",
-          "example": "abcdfgd",
+          "example": "98781273",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -1769,12 +1769,21 @@
         },
         {
           "disabled": false,
-          "document": "课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏",
+          "document": "课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏",
           "example": "0",
           "member": "int64",
           "name": "RoomType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
+          "member": "string",
+          "name": "Guests",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1797,7 +1806,7 @@
         {
           "disabled": false,
           "document": "伪直播链接。 支持的协议以及格式： 协议：HTTP、HTTPS、RTMP、HLS 。格式：FLV、MP3、MP4、MPEG-TS、MOV、MKV、M4A。视频编码：H.264、VP8。音频编码：AAC、OPUS。",
-          "example": "https://1234221212.vod-qcloud.com/425sfabhhs7814/e99049456789ghjk7399827/1INCKHSY9QMA.mp4",
+          "example": "https://791263.vod-qcloud.com/425sfabhs7814/e9049470840ghjk739827/1INCKHSY9QMA.mp4",
           "member": "string",
           "name": "RecordLiveUrl",
           "required": false,
@@ -1823,8 +1832,8 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。\n数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。",
-          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"type\":\"h5\",\"subjectId\":\"57\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
+          "document": "录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。\n\n自定义场景参数的含义。如下：\n     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。 \n    lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）\n     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。",
+          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
           "member": "string",
           "name": "RecordScene",
           "required": false,
@@ -3826,7 +3835,7 @@
         {
           "disabled": false,
           "document": "助教UserId列表。",
-          "example": "\t[azsdasfsdfsd,asefawefew]",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
           "member": "string",
           "name": "Assistants",
           "output_required": true,
@@ -3836,7 +3845,7 @@
         {
           "disabled": false,
           "document": "录制地址（协议为https)。仅在房间结束后存在。",
-          "example": "https://abc.mp4",
+          "example": "https://791263.vod-qcloud.com/425sfabhs7814/e9049470840ghjk739827/1INCKHSY9QMA.mp4",
           "member": "string",
           "name": "RecordUrl",
           "output_required": true,
@@ -3905,7 +3914,7 @@
         },
         {
           "disabled": false,
-          "document": "课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)注：大班课的布局(layout)只有三分屏",
+          "document": "课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏",
           "example": "0",
           "member": "int64",
           "name": "RoomType",
@@ -3946,7 +3955,7 @@
         {
           "disabled": false,
           "document": "伪直播链接",
-          "example": "https://1101910181.vod2.myqcloud.com/6casjaisjaidcq1101910181/d26589e12312512121842/f0.mp4",
+          "example": "https://791263.vod-qcloud.com/425sfabhs7814/e9049470840ghjk739827/1INCKHSY9QMA.mp4",
           "member": "string",
           "name": "RecordLiveUrl",
           "output_required": false,
@@ -3976,7 +3985,7 @@
         {
           "disabled": false,
           "document": "RTMP推流链接",
-          "example": "rtmp://rtmp.rtc.qq.com/push/301234567?sdkappid=141234567&userid=abcdefg123456789&usersig=&use_number_room_id=1",
+          "example": "rtmp://rtmp.rtc.com/push/30928374?sdkappid=9182537&userid=mpqhaijldaoqpnsd12&use_number_room_id=1&usersig=bsjkehdbfwie28102",
           "member": "string",
           "name": "RTMPStreamingURL",
           "output_required": false,
@@ -3985,8 +3994,8 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效",
-          "example": "default",
+          "document": "录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。自定义场景参数的含义。如下：     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。     lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。",
+          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
           "member": "string",
           "name": "RecordScene",
           "output_required": false,
@@ -4041,6 +4050,16 @@
           "name": "SubtitlesTranscription",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
+          "member": "string",
+          "name": "Guests",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -6711,7 +6730,7 @@
         {
           "disabled": false,
           "document": "助教Id列表。通过[注册用户]接口获取的UserId。",
-          "example": "[azsdasfsdfsd,asefawefew]",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
           "member": "string",
           "name": "Assistants",
           "required": false,
@@ -6791,7 +6810,7 @@
         },
         {
           "disabled": false,
-          "document": "房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)\n注：大班课的布局(layout)只有三分屏",
+          "document": "课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放); 3 圆桌会议 注：大班课的布局(layout)只有三分屏",
           "example": "0",
           "member": "int64",
           "name": "RoomType",
@@ -6819,7 +6838,7 @@
         {
           "disabled": false,
           "document": "伪直播回放链接",
-          "example": "https://1101910181.vod2.myqcloud.com/6casjaisjaidcq1101910181/d26589e12312512121842/f0.mp4",
+          "example": "https://791263.vod-qcloud.com/425sfabhs7814/e9049470840ghjk739827/1INCKHSY9QMA.mp4",
           "member": "string",
           "name": "RecordLiveUrl",
           "required": false,
@@ -6845,8 +6864,8 @@
         },
         {
           "disabled": false,
-          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。",
-          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"type\":\"h5\",\"subjectId\":\"57\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
+          "document": "录制自定义场景。注意：仅recordlayout=9的时候此参数有效。需注意各类参数配置正确能够生效。不然会造成录制失败，失败后无法补救。数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。自定义场景参数的含义。如下：     scene：自定义js/css对应的场景值。如scene=recordScene，会加载 recordScene 场景对应的 js/css，这样就可以自定义录制页面的元素。     lng：录制页面对应的语种。如lng=en，则录制界面为en。（枚举值：en,zh，zh-TW，jp，ar，kr，vi）     customToken：录制页面中涉及客户自己的服务需要鉴权时进行配置。一般情况下，无需配置。",
+          "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"customToken\":\"sajdlfjasdglweqirouoiu\"}",
           "member": "string",
           "name": "RecordScene",
           "required": false,
@@ -6887,6 +6906,15 @@
           "name": "SubtitlesTranscription",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效",
+          "example": "[\"azsdasfsdfsd\",\"asefawefewf\"]",
+          "member": "string",
+          "name": "Guests",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

@@ -1121,7 +1121,7 @@
       "status": "online"
     },
     "ProcessMediaByMPS": {
-      "document": "使用媒体处理服务（MPS）的媒体处理能力，对点播中的视频发起媒体处理，任务发起时需将 MPS 相关参数以 JSON 格式填入 MPSProcessMediaParams 参数中。具体任务参数配置请参考[媒体处理 ProcessMedia 接口](https://cloud.tencent.com/document/api/862/37578)。\n当前支持的 MPS 功能：\n1. [智能擦除](https://cloud.tencent.com/document/product/862/101530)：能够对视频画面中的 Logo、字幕、人脸和车牌等元素进行模糊、马赛克或无痕化处理，从而便于内容的传播和分享。该任务产生的新视频将生成新的 FileId 存储在点播平台的子应用中。\n\n> 以该种方式发起的视频处理任务：\n> 1. 任务状态及结果的查询仍在点播平台中完成，使用 [DescribeTaskDetail](https://cloud.tencent.com/document/product/266/33431) 或 [DescribeTasks](https://cloud.tencent.com/document/product/266/33430) 查询任务。\n> 2. 相关功能的用量及账单将在 MPS 平台给出，因此在使用该功能前，首先需要开通 MPS 服务。\n> 3. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。",
+      "document": "使用媒体处理服务（MPS）的媒体处理能力，对点播中的视频发起媒体处理，任务发起时需将 MPS 相关参数以 JSON 格式填入 MPSProcessMediaParams 参数中。具体任务参数配置请参考[媒体处理 ProcessMedia 接口](https://cloud.tencent.com/document/api/862/37578)。 \n当前支持的 MPS 功能：\n1. [智能擦除](https://cloud.tencent.com/document/product/862/101530)：能够对视频画面中的 Logo、字幕、人脸和车牌等元素进行模糊、马赛克或无痕化处理，从而便于内容的传播和分享。该任务产生的新视频将生成新的 FileId 存储在点播平台的子应用中。\n2. [音视频增强](https://cloud.tencent.com/document/product/862/118703)：该功能支持分布式实时画质增强，包含视频去毛刺、降噪、色彩增强、细节增强、人脸增强、SDR2HDR、大模型增强等功能，可大幅提升音视频质量，广泛应用于 OTT、电商、赛事等场景，有效实现 QoE 与 QoS 双维度提升，创造显著业务价值。\n\n> 以该种方式发起的视频处理任务：\n> 1. 任务状态及结果的查询仍在点播平台中完成，使用 [DescribeTaskDetail](https://cloud.tencent.com/document/product/266/33431) 或 [DescribeTasks](https://cloud.tencent.com/document/product/266/33430) 查询任务。\n> 2. 相关功能的用量及账单将在 MPS 平台给出，因此在使用该功能前，首先需要开通 MPS 服务。\n> 3. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。",
       "input": "ProcessMediaByMPSRequest",
       "name": "使用 MPS 进行视频处理",
       "output": "ProcessMediaByMPSResponse",
@@ -18925,7 +18925,7 @@
         {
           "disabled": false,
           "document": "事件句柄，调用方必须调用 ConfirmEvents 来确认消息已经收到，确认有效时间 30 秒。失效后，事件可重新被获取。",
-          "example": "123**456",
+          "example": "14253**42576",
           "member": "string",
           "name": "EventHandle",
           "output_required": true,
@@ -18934,7 +18934,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成；</li>\n<li>QualityEnhanceComplete：音画质重生任务完成；</li>\n<li>PersistenceComplete：剪辑固化完成；</li>\n<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成；</li>\n<li>QualityEnhanceComplete：音画质重生任务完成；</li>\n<li>PersistenceComplete：剪辑固化完成；</li>\n<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>\n<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -18945,7 +18945,7 @@
         {
           "disabled": false,
           "document": "视频上传完成事件，当事件类型为 NewFileUpload 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "FileUploadTask",
           "name": "FileUploadEvent",
           "output_required": true,
@@ -18955,7 +18955,7 @@
         {
           "disabled": false,
           "document": "任务流状态变更事件，当事件类型为 ProcedureStateChanged 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "ProcedureTask",
           "name": "ProcedureStateChangeEvent",
           "output_required": true,
@@ -18965,7 +18965,7 @@
         {
           "disabled": false,
           "document": "文件删除事件，当事件类型为 FileDeleted 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "FileDeleteTask",
           "name": "FileDeleteEvent",
           "output_required": true,
@@ -18975,7 +18975,7 @@
         {
           "disabled": false,
           "document": "视频转拉完成事件，当事件类型为 PullComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "PullUploadTask",
           "name": "PullCompleteEvent",
           "output_required": true,
@@ -18985,7 +18985,7 @@
         {
           "disabled": false,
           "document": "视频编辑完成事件，当事件类型为 EditMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "EditMediaTask",
           "name": "EditMediaCompleteEvent",
           "output_required": true,
@@ -18995,7 +18995,7 @@
         {
           "disabled": false,
           "document": "视频拆分完成事件，当事件类型为 SplitMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "SplitMediaTask",
           "name": "SplitMediaCompleteEvent",
           "output_required": true,
@@ -19005,7 +19005,7 @@
         {
           "disabled": false,
           "document": "制作媒体文件任务完成事件，当事件类型为 ComposeMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "ComposeMediaTask",
           "name": "ComposeMediaCompleteEvent",
           "output_required": true,
@@ -19015,7 +19015,7 @@
         {
           "disabled": false,
           "document": "视频剪辑完成事件，当事件类型为 ClipComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "ClipTask2017",
           "name": "ClipCompleteEvent",
           "output_required": true,
@@ -19025,7 +19025,7 @@
         {
           "disabled": false,
           "document": "视频转码完成事件，当事件类型为 TranscodeComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "TranscodeTask2017",
           "name": "TranscodeCompleteEvent",
           "output_required": true,
@@ -19035,7 +19035,7 @@
         {
           "disabled": false,
           "document": "视频截取雪碧图完成事件，当事件类型为 CreateImageSpriteComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "CreateImageSpriteTask2017",
           "name": "CreateImageSpriteCompleteEvent",
           "output_required": true,
@@ -19045,7 +19045,7 @@
         {
           "disabled": false,
           "document": "视频拼接完成事件，当事件类型为 ConcatComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "ConcatTask2017",
           "name": "ConcatCompleteEvent",
           "output_required": true,
@@ -19055,7 +19055,7 @@
         {
           "disabled": false,
           "document": "视频按时间点截图完成事件，当事件类型为 CreateSnapshotByTimeOffsetComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "SnapshotByTimeOffsetTask2017",
           "name": "SnapshotByTimeOffsetCompleteEvent",
           "output_required": true,
@@ -19065,7 +19065,7 @@
         {
           "disabled": false,
           "document": "微信发布完成事件，当事件类型为 WechatPublishComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "WechatPublishTask",
           "name": "WechatPublishCompleteEvent",
           "output_required": true,
@@ -19075,7 +19075,7 @@
         {
           "disabled": false,
           "document": "微信小程序发布任务完成事件，当事件类型为 WechatMiniProgramPublishComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "WechatMiniProgramPublishTask",
           "name": "WechatMiniProgramPublishCompleteEvent",
           "output_required": true,
@@ -19085,7 +19085,7 @@
         {
           "disabled": false,
           "document": "智能去除水印完成事件，当事件类型为 RemoveWatermark 有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "RemoveWatermarkTask",
           "name": "RemoveWatermarkCompleteEvent",
           "output_required": true,
@@ -19095,7 +19095,7 @@
         {
           "disabled": false,
           "document": "视频取回完成事件，当事件类型为 RestoreMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "RestoreMediaTask",
           "name": "RestoreMediaCompleteEvent",
           "output_required": true,
@@ -19105,7 +19105,7 @@
         {
           "disabled": false,
           "document": "音画质重生完成事件，当事件类型为 RebuildMediaComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "RebuildMediaTask",
           "name": "RebuildMediaCompleteEvent",
           "output_required": true,
@@ -19115,7 +19115,7 @@
         {
           "disabled": false,
           "document": "溯源水印提取完成事件，当事件类型为 ExtractTraceWatermarkComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "ExtractTraceWatermarkTask",
           "name": "ExtractTraceWatermarkCompleteEvent",
           "output_required": true,
@@ -19135,7 +19135,7 @@
         {
           "disabled": false,
           "document": "音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "ReviewAudioVideoTask",
           "name": "ReviewAudioVideoCompleteEvent",
           "output_required": true,
@@ -19145,7 +19145,7 @@
         {
           "disabled": false,
           "document": "该字段已无效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "ReduceMediaBitrateTask",
           "name": "ReduceMediaBitrateCompleteEvent",
           "output_required": true,
@@ -19155,7 +19155,7 @@
         {
           "disabled": false,
           "document": "获取文件属性完成事件，当事件类型为 DescribeFileAttributesComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "DescribeFileAttributesTask",
           "name": "DescribeFileAttributesCompleteEvent",
           "output_required": true,
@@ -19195,7 +19195,7 @@
         {
           "disabled": false,
           "document": "剪辑固化完成事件，当事件类型为 PersistenceComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "PersistenceCompleteTask",
           "name": "PersistenceCompleteEvent",
           "output_required": true,
@@ -19205,12 +19205,22 @@
         {
           "disabled": false,
           "document": "自适应码流任务信息，仅当 EventType 为ComplexAdaptiveDynamicStreamingComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "ComplexAdaptiveDynamicStreamingTask",
           "name": "ComplexAdaptiveDynamicStreamingCompleteEvent",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MPS 视频处理任务信息，仅当 EventType 为 ProcessMediaByMPSComplete 时有效。",
+          "example": "无",
+          "member": "ProcessMediaByMPS",
+          "name": "ProcessMediaByMPSCompleteEvent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -21829,7 +21839,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件类型。用于标识 MPS 视频处理任务执行结果中的特定返回文件。\n取值：<li>AiAnalysis.DeLogo.Video: 智能擦除任务中产生的擦除后视频文件；</li><li>AiAnalysis.DeLogo.OriginSubtitle: 智能擦除任务中基于画面提取的字幕文件；</li><li>AiAnalysis.DeLogo.TranslateSubtitle: 智能擦除任务中基于画面提取的字幕翻译文件。</li>",
+          "document": "文件类型。用于标识 MPS 视频处理任务执行结果中的特定返回文件。\n取值：<li>AiAnalysis.DeLogo.Video: 智能擦除任务中产生的擦除后视频文件，默认以原文件类型存储；</li><li>AiAnalysis.DeLogo.OriginSubtitle: 智能擦除任务中基于画面提取的字幕文件；</li><li>AiAnalysis.DeLogo.TranslateSubtitle: 智能擦除任务中基于画面提取的字幕翻译文件。</li><li>MediaProcess.Transcode.Video: 音视频增强任务中增强后的音视频文件，默认以转码文件类型存储。</li>",
           "example": "AiAnalysis.DeLogo.Video",
           "member": "string",
           "name": "FileType",
@@ -21869,6 +21879,16 @@
         },
         {
           "disabled": false,
+          "document": "转码规格 ID。当 FileType 等于 MediaProcess.Transcode.Video时有效，取值为0表示原始文件。 ",
+          "example": "21214",
+          "member": "string",
+          "name": "Definition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "过期时间。当 StorageMode 为 Temporary 时有效，表示 Url 的过期时间，单位为秒。",
           "example": "720",
           "member": "uint64",
@@ -21885,7 +21905,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型。MPS 的 WorkflowTask 结构中的具体子任务类型。取值：<li>AiAnalysis.DeLogo：智能擦除任务。</li>",
+          "document": "任务类型。MPS 的 WorkflowTask 结构中的具体子任务类型。取值：<li>AiAnalysis.DeLogo：智能擦除任务。</li><li>MediaProcess.Transcode：音视频增强任务。</li>",
           "example": "AiAnalysis.DeLogo",
           "member": "string",
           "name": "TaskType",
@@ -21925,8 +21945,8 @@
         },
         {
           "disabled": false,
-          "document": "MPS 视频处理任务输入。该字段对应 MPS 任务返回中的 Input 结果，以 JSON 格式返回。",
-          "example": "{\"Definition\": 24}",
+          "document": "MPS 视频处理任务输入。该字段对应 MPS 任务返回中的 Input 结果，以 JSON 格式返回。\n示例：{\"Definition\": 24}",
+          "example": "\"{}\"",
           "member": "string",
           "name": "Input",
           "output_required": true,
@@ -29792,11 +29812,20 @@
         },
         {
           "disabled": false,
-          "document": "该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。\n视频处理参数详情请参考：[MPS 发起媒体处理](https://cloud.tencent.com/document/api/862/37578)。\n填写说明：\n1. 目前仅需要配置 MPS “发起媒体处理”接口中的 AiAnalysisTask 参数，其他参数无需填写，若包含其它参数，系统将自动忽略；\n2. 当前仅支持通过此方式发起智能擦除任务。若配置了其他任务类型的相关参数，系统将自动忽略这些参数。\n",
-          "example": "{\\\"AiAnalysisTask\\\":{\\\"Definition\\\":25,\\\"ExtendedParameter\\\":\\\"\\\"}}",
+          "document": "该参数用于透传至媒体处理服务（MPS），以便从云点播侧发起 MPS 视频处理任务。\n视频处理参数详情请参考：[MPS 发起媒体处理](https://cloud.tencent.com/document/api/862/37578)。\n填写说明：\n1. 目前仅需要配置 MPS “发起媒体处理”接口中任务配置相关的参数，如 AiAnalysisTask 与 MediaProcessTask，其他参数无需填写。若包含其它参数，系统将自动忽略；\n2. 当前仅支持通过此方式发起智能擦除及音视频增强任务。若配置了其他任务类型的相关参数，系统将自动忽略这些参数；\n3. 音视频增强任务目前不支持使用预置模板发起，可通过 [CreateMPSTemplate](document/product/266/57382) 接口创建自定义模板。\n示例：{\"AiAnalysisTask\":{\"Definition\":25}}",
+          "example": "\"{}\"",
           "member": "string",
           "name": "MPSProcessMediaParams",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保留字段，特殊用途时使用。",
+          "example": "ExtInfo",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
           "type": "string"
         }
       ],

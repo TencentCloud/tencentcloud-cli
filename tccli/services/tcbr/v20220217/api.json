@@ -908,6 +908,15 @@
           "name": "VpcConf",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "存储配置信息",
+          "example": "无",
+          "member": "VolumeConf",
+          "name": "VolumesConf",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -1897,6 +1906,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储配置信息",
+          "example": "无",
+          "member": "VolumeConf",
+          "name": "VolumesConf",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2586,6 +2606,78 @@
         }
       ],
       "usage": "in"
+    },
+    "VolumeConf": {
+      "document": "存储配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储类型",
+          "example": "\"COS\",\"CFS\"",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储桶名称",
+          "example": "xxx-appid",
+          "member": "string",
+          "name": "BucketName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储连接地址",
+          "example": "https://cos.ap-shanghai",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储连接用户密码",
+          "example": "xxxx-xxxx",
+          "member": "string",
+          "name": "KeyID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储挂载目的目录",
+          "example": "/data",
+          "member": "string",
+          "name": "DstPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储挂载源目录",
+          "example": "/data",
+          "member": "string",
+          "name": "SrcPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VpcConf": {
       "document": "云托管服务 Vpc 配置",
