@@ -28,8 +28,8 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/TencentCloud/tencentcloud-cli"
-"Bug Tracker" = "https://github.com/TencentCloud/tencentcloud-cli/issues"
+"Homepage" = "https://git.woa.com/tencentcloud-internal/tencentcloud-cli"
+"Bug Tracker" = "https://git.woa.com/tencentcloud-internal/tencentcloud-cli/issues"
 
 [project.scripts]
 tccli = "tccli.main:main"
