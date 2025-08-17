@@ -516,7 +516,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDashboardSubscribes\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 10,\n    \"Limit\": 30\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd402dd9-a3aa-47c3-a5c0-5789d1f8875b\",\n        \"TotalCount\": 1,\n        \"DashboardSubscribeInfos\": [\n            {\n                \"Id\": 21683,\n                \"Name\": \"订阅任务-2025-08-15_09:59\",\n                \"DashboardId\": \"dashboard-522a5609-1f41-4b11-8086-5afd1d7574f5\",\n                \"Cron\": \"0 0 10 * * ?\",\n                \"SubscribeData\": {\n                    \"DashboardTime\": [\n                        \"now-15m\",\n                        \"now\"\n                    ],\n                    \"TemplateVariables\": null,\n                    \"NoticeModes\": [\n                        {\n                            \"ReceiverType\": \"Uin\",\n                            \"Values\": [\n                                \"10300000\",\n                                \"10200000\"\n                            ],\n                            \"ReceiverChannels\": [\n                                \"Email\"\n                            ],\n                            \"Url\": \"\"\n                        }\n                    ],\n                    \"Timezone\": \"Asia/Shanghai\",\n                    \"SubscribeLanguage\": \"zh\",\n                    \"JumpDomain\": \"https://console.cloud.tencent.com\",\n                    \"JumpUrl\": \"\"\n                },\n                \"Uin\": 100001127589,\n                \"SubUin\": 100012969012,\n                \"CreateTime\": \"2025-08-15 10:29:10\",\n                \"UpdateTime\": \"2025-08-15 10:31:24\",\n                \"LastTime\": \"\",\n                \"LastStatus\": \"invalid\"\n            }\n        ]\n    }\n}",
         "title": "获取仪表盘订阅列表"
       }
     ],
@@ -805,7 +805,7 @@
     "ModifyKafkaConsumer": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKafkaConsumer\n<公共请求参数>\n\n{\n    \"FromTopicId\": \"a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n    \"Compression\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKafkaConsumer\n<公共请求参数>\n\n{\n    \"FromTopicId\": \"a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n    \"Compression\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改Kafka协议消费信息"
       }

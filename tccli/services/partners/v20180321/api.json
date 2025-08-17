@@ -1409,7 +1409,7 @@
         {
           "disabled": false,
           "document": "客户账号ID列表",
-          "example": "[10000, 10001]",
+          "example": "[\"1000021\", \"10000022\"]",
           "member": "string",
           "name": "ClientUins",
           "required": false,
@@ -1435,7 +1435,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量 请保持必传",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1444,7 +1444,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目",
+          "document": "限制数目 请保持必传，最大2000",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -1496,7 +1496,7 @@
         {
           "disabled": false,
           "document": "已审核代客列表",
-          "example": "{     \"Uin\": \"3286669433\",     \"ClientUin\": \"2461871653\",     \"C",
+          "example": "无",
           "member": "AgentAuditedClient",
           "name": "AgentClientSet",
           "output_required": true,

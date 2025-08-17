@@ -674,10 +674,10 @@
     ],
     "DescribeRegularBackupPlan": [
       {
-        "document": "",
+        "document": "查询实例定期备份保留计划",
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegularBackupPlan\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-j8kv137v\",\n    \"RegularBackupCounts\": \"1\",\n    \"RegularBackupSaveDays\": \"365\",\n    \"RegularBackupStrategy\": \"month\",\n    \"RegularBackupStartTime\": \"2022-10-10\",\n    \"BackupCycle\": [\n        1,\n        2,\n        3\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a62cac28-1656-4115-bf8d-189bef5e1102\",\n        \"SaveModePeriod\": [\n            \"2022-10-24 00:00:00\"\n        ],\n        \"SaveModeRegular\": [\n            \"2022-10-26 00:00:00\"\n        ]\n    }\n}",
-        "title": "查询实例mssql-j8kv137v定期备份保留计划"
+        "title": "查询实例定期备份保留计划"
       }
     ],
     "DescribeRestoreTask": [

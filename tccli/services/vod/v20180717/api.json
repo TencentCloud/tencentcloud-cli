@@ -140,6 +140,13 @@
       "output": "CreateJustInTimeTranscodeTemplateResponse",
       "status": "online"
     },
+    "CreateMPSTemplate": {
+      "document": "该接口用于创建自定义模板，模板用于 ProcessMediaByMPS 接口的部分功能。\n创建模板时，需要将 MPS 相关参数以 JSON 格式填入 MPSCreateTemplateParams 参数中。关于具体的任务参数配置方法，请参考 MPS 任务模板相关文档说明。\n当前支持创建自定义模板的 MPS 功能：\n1. [音视频增强](https://cloud.tencent.com/document/product/862/118703)。\n\n> 以该种方式创建的任务模板：\n> 1. 模板的管理仍在点播平台中完成。\n> 2. 该功能目前仍在内测中，如需测试体验，您可以联系我们获得支持。",
+      "input": "CreateMPSTemplateRequest",
+      "name": "创建 MPS 任务模板",
+      "output": "CreateMPSTemplateResponse",
+      "status": "online"
+    },
     "CreatePersonSample": {
       "document": "该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、不适宜视频识别等视频处理。",
       "input": "CreatePersonSampleRequest",
@@ -327,6 +334,13 @@
       "input": "DeleteJustInTimeTranscodeTemplateRequest",
       "name": "删除即时转码模板",
       "output": "DeleteJustInTimeTranscodeTemplateResponse",
+      "status": "online"
+    },
+    "DeleteMPSTemplate": {
+      "document": "删除用户自定义 MPS 任务模板。",
+      "input": "DeleteMPSTemplateRequest",
+      "name": "删除 MPS 任务模板",
+      "output": "DeleteMPSTemplateResponse",
       "status": "online"
     },
     "DeleteMedia": {
@@ -635,6 +649,13 @@
       "input": "DescribeLicenseUsageDataRequest",
       "name": "查询 License 请求数统计数据",
       "output": "DescribeLicenseUsageDataResponse",
+      "status": "online"
+    },
+    "DescribeMPSTemplates": {
+      "document": "获取用户自定义媒体处理服务（MPS）任务模板。\n查询模板列表时，需要将 MPS 相关参数以 JSON 格式填入 MPSDescribeTemplateParams 参数中。关于具体的任务参数配置方法，请参考 MPS 任务模板相关文档说明。",
+      "input": "DescribeMPSTemplatesRequest",
+      "name": "获取 MPS 任务模板列表",
+      "output": "DescribeMPSTemplatesResponse",
       "status": "online"
     },
     "DescribeMediaInfos": {
@@ -978,6 +999,13 @@
       "input": "ModifyJustInTimeTranscodeTemplateRequest",
       "name": "修改即时转码模板",
       "output": "ModifyJustInTimeTranscodeTemplateResponse",
+      "status": "online"
+    },
+    "ModifyMPSTemplate": {
+      "document": "修改用户自定义 MPS 任务模板。\n修改模板时，需要将 MPS 相关参数以 JSON 格式填入 MPSModifyTemplateParams 参数中。关于具体的任务参数配置方法，请参考 MPS 任务模板相关文档说明。",
+      "input": "ModifyMPSTemplateRequest",
+      "name": "修改 MPS 任务模板",
+      "output": "ModifyMPSTemplateResponse",
       "status": "online"
     },
     "ModifyMediaInfo": {
@@ -10941,6 +10969,61 @@
       ],
       "type": "object"
     },
+    "CreateMPSTemplateRequest": {
+      "document": "CreateMPSTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "example": "1500000001",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要创建的 MPS 模板的类型。取值：\n<li>Transcode: 创建转码模板，目前仅支持创建增强模板。</li>",
+          "example": "Transcode",
+          "member": "string",
+          "name": "TemplateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MPS 创建模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧创建用户自定义的 MPS 任务模板。\n目前仅支持通过此方式创建以下任务类型的模板：\n1. 音视频增强：仅支持填写“[创建转码模板](https://cloud.tencent.com/document/product/862/37605)”接口中的 Container 、Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数。其中 EnhanceConfig 此处必填。\n\n目前模板中仅支持配置以上参数，其他参数无需填写。若包含其它参数，系统将自动忽略。以上透传参数以JSON形式表示。\n",
+          "example": "{\"Container\":\"mp4\",\"Name\":\"test\",\"RemoveAudio\":1,\"VideoTemplate\":{\"Codec\":\"h264\",\"Fps\":0,\"Bitrate\":0},\"EnhanceConfig\":{\"VideoEnhance\":{\"FrameRate\":{\"Switch\":\"ON\",\"Fps\":50}}}}",
+          "member": "string",
+          "name": "MPSCreateTemplateParams",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMPSTemplateResponse": {
+      "document": "CreateMPSTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MPS 任务模板唯一标识。该模板独立于直接在 MPS 服务中创建的模板。",
+          "example": "30",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePersonSampleRequest": {
       "document": "CreatePersonSample请求参数结构体",
       "members": [
@@ -12862,6 +12945,51 @@
     },
     "DeleteJustInTimeTranscodeTemplateResponse": {
       "document": "DeleteJustInTimeTranscodeTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMPSTemplateRequest": {
+      "document": "DeleteMPSTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "example": "1500000001",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的 MPS 模板的类型。取值：\n<li>Transcode: 删除转码模板。</li>",
+          "example": "Transcode",
+          "member": "string",
+          "name": "TemplateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MPS 任务模板唯一标识。",
+          "example": "24214",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMPSTemplateResponse": {
+      "document": "DeleteMPSTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15600,6 +15728,71 @@
           "example": "无",
           "member": "LicenseUsageDataItem",
           "name": "LicenseUsageDataSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMPSTemplatesRequest": {
+      "document": "DescribeMPSTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "example": "1500000001",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "MPS 模板类型。根据需要查询的 MPS 模板的类型对结果进行过滤。取值：\n<li>Transcode: 查询转码模板列表。</li>",
+          "example": "Transcode",
+          "member": "string",
+          "name": "TemplateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MPS 查询模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧查询 MPS 任务模板列表。目前仅支持通过此方式查询以下任务类型的模板：\n1. 音视频增强：仅支持填写“[获取转码模板列表](https://cloud.tencent.com/document/product/862/37593)”接口中的 Definitions、Offset 和 Limit 几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。",
+          "example": "{\"Limit\": 10}",
+          "member": "string",
+          "name": "MPSDescribeTemplateParams",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMPSTemplatesResponse": {
+      "document": "DescribeMPSTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MPS 任务模板详情列表。",
+          "example": "无",
+          "member": "MPSTemplate",
+          "name": "MPSTemplateSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -21982,6 +22175,32 @@
       ],
       "usage": "out"
     },
+    "MPSTemplate": {
+      "document": "MPS 任务模板详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MPS 模板的类型。取值：\n<li>Transcode: 转码模板。</li>",
+          "example": "Transcode",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MPS 任务模板详情内容。\n示例：{\"Definition\":24214,\"Name\":\"test\",\"Comment\":\"\",\"Type\":\"Preset\",\"EnhanceConfig\":{\"VideoEnhance\":{\"FrameRate\":{\"Switch\":\"ON\",\"Fps\":50},\"SuperResolution\":{\"Switch\":\"ON\",\"Type\":\"lq\"}}}}",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "MPSTemplateInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ManageTaskRequest": {
       "document": "ManageTask请求参数结构体",
       "members": [
@@ -26357,6 +26576,51 @@
     },
     "ModifyJustInTimeTranscodeTemplateResponse": {
       "document": "ModifyJustInTimeTranscodeTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMPSTemplateRequest": {
+      "document": "ModifyMPSTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "example": "1500000001",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改的 MPS 模板的类型。取值：\n<li>Transcode: 创建转码模板，目前仅支持修改增强参数。</li>",
+          "example": "Transcode",
+          "member": "string",
+          "name": "TemplateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MPS 修改模板参数。该参数用于透传至媒体处理服务（MPS），从云点播侧修改用户自定义的 MPS 任务模板。\n 目前仅支持通过此方式修改以下任务类型的模板：\n1. 音视频增强：仅支持填写“[修改转码模板](https://cloud.tencent.com/document/api/862/37578)”接口中的 Name、Comment、RemoveVideo、RemoveAudio、VideoTemplate、AudioTemplate 和 EnhanceConfig 几个参数的内容。目前仅支持在模板中配置以上参数，其他参数无需填写，若包含其它参数，系统将自动忽略。\n示例：{\"Definition\":24214,\"Container\":\"mp4\",\"Name\":\"test\",\"RemoveAudio\":1,\"VideoTemplate\":{\"Codec\":\"h264\",\"Fps\":0,\"Bitrate\":0},\"EnhanceConfig\":{\"VideoEnhance\":{\"FrameRate\":{\"Switch\":\"ON\",\"Fps\":50}}}}",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "MPSModifyTemplateParams",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMPSTemplateResponse": {
+      "document": "ModifyMPSTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -20977,6 +20977,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全电类型的多页pdf票据中，支持输出票面页码：当前第几页，一共第几页。",
+          "example": "共1页第1页",
+          "member": "string",
+          "name": "InvoicePageIndex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

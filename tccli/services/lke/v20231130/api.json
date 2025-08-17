@@ -547,9 +547,9 @@
       "status": "online"
     },
     "ListSelectDoc": {
-      "document": "获取账户信息",
+      "document": "文档生成问答时，可通过该接口获得当前支持生成问答的文档列表，当前不支持xlsx、xls、csv格式的文档生成问答，且文档需处于待发布或已发布状态才可生成问答。",
       "input": "ListSelectDocRequest",
-      "name": "获取文档下拉列表",
+      "name": "获取文档生成问答可选文档列表",
       "output": "ListSelectDocResponse",
       "status": "online"
     },
@@ -945,6 +945,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 自由转交，1 计划与执行",
+          "example": "0",
+          "member": "int64",
+          "name": "AgentMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -955,7 +966,7 @@
         {
           "disabled": false,
           "document": "工具、大模型的输入信息，json\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "输入",
           "member": "string",
           "name": "Input",
           "output_required": false,
@@ -966,13 +977,24 @@
         {
           "disabled": false,
           "document": "工具、大模型的输出信息，json\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "输出",
           "member": "string",
           "name": "Output",
           "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型名",
+          "example": "模型名",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1313,6 +1335,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mcp server query信息",
+          "example": "无",
+          "member": "AgentPluginQuery",
+          "name": "Query",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1417,6 +1450,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型参数",
+          "example": "无",
+          "member": "ModelParams",
+          "name": "ModelParams",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -1536,6 +1580,100 @@
           "example": "无",
           "member": "AgentKnowledgeQAPlugin",
           "name": "KnowledgeQa",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否使用一键授权",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableRoleAuth",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用配置的插件query信息",
+          "example": "无",
+          "member": "AgentPluginQuery",
+          "name": "Query",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "McpType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentPluginQuery": {
+      "document": "应用配置MCP插件query信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称",
+          "example": "无",
+          "member": "string",
+          "name": "ParamName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "query参数配置是否隐藏不可见，true-隐藏不可见，false-可见",
+          "example": "false",
+          "member": "bool",
+          "name": "GlobalHidden",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数是否可以为空",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRequired",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入的值",
+          "example": "无",
+          "member": "AgentInput",
+          "name": "Input",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -1693,7 +1831,7 @@
         {
           "disabled": false,
           "document": "Agent的图标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "智能体头像",
           "member": "string",
           "name": "AgentIcon",
           "output_required": false,
@@ -1710,7 +1848,7 @@
         {
           "disabled": false,
           "document": "模型思考内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -1721,7 +1859,7 @@
         {
           "disabled": false,
           "document": "展示的具体文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "DisplayContent",
           "output_required": false,
@@ -1731,8 +1869,8 @@
         },
         {
           "disabled": false,
-          "document": "展示类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1：搜索引擎参考来源；2：知识库参考来源",
+          "document": "1：搜索引擎参考来源；2：知识库参考来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "DisplayType",
           "output_required": false,
@@ -1776,7 +1914,7 @@
         {
           "disabled": false,
           "document": "云桌面的URL地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "沙盒地址",
           "member": "string",
           "name": "SandboxUrl",
           "output_required": false,
@@ -1804,7 +1942,7 @@
         {
           "disabled": false,
           "document": "来源文档ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "来源文档ID",
           "member": "string",
           "name": "DocId",
           "output_required": false,
@@ -1815,7 +1953,7 @@
         {
           "disabled": false,
           "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "id",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -1826,7 +1964,7 @@
         {
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "名称",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -1837,7 +1975,7 @@
         {
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "Type",
           "output_required": false,
@@ -1848,7 +1986,7 @@
         {
           "disabled": false,
           "document": "链接\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "链接",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -1859,7 +1997,7 @@
         {
           "disabled": false,
           "document": "文档业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "文档业务ID",
           "member": "string",
           "name": "DocBizId",
           "output_required": false,
@@ -1870,7 +2008,7 @@
         {
           "disabled": false,
           "document": "文档名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "文档名称",
           "member": "string",
           "name": "DocName",
           "output_required": false,
@@ -1881,7 +2019,7 @@
         {
           "disabled": false,
           "document": "问答业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "问答业务ID",
           "member": "string",
           "name": "QaBizId",
           "output_required": false,
@@ -1892,7 +2030,7 @@
         {
           "disabled": false,
           "document": "搜索引擎索引\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Index",
           "output_required": false,
@@ -1903,9 +2041,31 @@
         {
           "disabled": false,
           "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "标题",
           "member": "string",
           "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "知识库名称",
+          "member": "string",
+          "name": "KnowledgeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "知识库标识",
+          "member": "string",
+          "name": "KnowledgeBizId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -2177,6 +2337,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "query信息",
+          "example": "无",
+          "member": "AgentPluginQuery",
+          "name": "Query",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工具计费状态 0-不计费 1-可用 2-不可用（欠费、无资源等）",
+          "example": "0",
+          "member": "int64",
+          "name": "FinanceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2492,7 +2674,7 @@
         {
           "disabled": false,
           "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "knowledge_qa",
           "member": "string",
           "name": "AppType",
           "output_required": false,
@@ -2503,7 +2685,7 @@
         {
           "disabled": false,
           "document": "应用类型描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "知识库应用",
           "member": "string",
           "name": "AppTypeDesc",
           "output_required": false,
@@ -2514,7 +2696,7 @@
         {
           "disabled": false,
           "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1932370484353927616",
           "member": "string",
           "name": "AppBizId",
           "output_required": false,
@@ -2525,7 +2707,7 @@
         {
           "disabled": false,
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "我的应用",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -2536,7 +2718,7 @@
         {
           "disabled": false,
           "document": "应用头像\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "头像地址",
           "member": "string",
           "name": "Avatar",
           "output_required": false,
@@ -2547,7 +2729,7 @@
         {
           "disabled": false,
           "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "应用描述信息",
           "member": "string",
           "name": "Desc",
           "output_required": false,
@@ -2558,7 +2740,7 @@
         {
           "disabled": false,
           "document": "应用状态，1：未上线，2：运行中，3：停用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "AppStatus",
           "output_required": false,
@@ -2569,7 +2751,7 @@
         {
           "disabled": false,
           "document": "状态说明\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "未上线",
           "member": "string",
           "name": "AppStatusDesc",
           "output_required": false,
@@ -2580,7 +2762,7 @@
         {
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1753254304",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -2591,7 +2773,7 @@
         {
           "disabled": false,
           "document": "最后修改人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "操作人",
           "member": "string",
           "name": "Operator",
           "output_required": false,
@@ -2602,7 +2784,7 @@
         {
           "disabled": false,
           "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cs-nomal-70b",
           "member": "string",
           "name": "ModelName",
           "output_required": false,
@@ -2613,7 +2795,7 @@
         {
           "disabled": false,
           "document": "生成模型别名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\t 精调知识大模型高级版",
           "member": "string",
           "name": "ModelAliasName",
           "output_required": false,
@@ -2624,7 +2806,7 @@
         {
           "disabled": false,
           "document": "应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "standard",
           "member": "string",
           "name": "Pattern",
           "output_required": false,
@@ -2635,13 +2817,24 @@
         {
           "disabled": false,
           "document": "思考模型别名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "思考模型高级版",
           "member": "string",
           "name": "ThoughtModelAliasName",
           "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限位信息",
+          "example": "[\"adpAppEdit\"]",
+          "member": "string",
+          "name": "PermissionIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2768,6 +2961,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelParams",
+          "name": "ModelParams",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -3717,7 +3921,7 @@
         {
           "disabled": false,
           "document": "应用类型；knowledge_qa-知识问答管理",
-          "example": "无",
+          "example": "knowledge_qa",
           "member": "string",
           "name": "AppType",
           "required": true,
@@ -3740,6 +3944,15 @@
           "name": "Pattern",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能体类型 dialogue 对话式智能体，wechat 公众号智能体",
+          "example": "dialogue",
+          "member": "string",
+          "name": "AgentType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3750,7 +3963,7 @@
         {
           "disabled": false,
           "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1932370484353927616",
           "member": "string",
           "name": "AppBizId",
           "output_required": false,
@@ -3760,7 +3973,7 @@
         {
           "disabled": false,
           "document": "判断账户应用列表权限是否是自定义的，用户交互提示\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsCustomList",
           "output_required": false,
@@ -4305,13 +4518,22 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "Embedding模型，字符数量上限128",
           "example": "general-text-embedding-v2.7",
           "member": "string",
           "name": "EmbeddingModel",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享知识库类型，0普通，1公众号",
+          "example": "0",
+          "member": "int64",
+          "name": "KnowledgeType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4394,6 +4616,15 @@
           "name": "VarDefaultFileName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "VarModuleType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4981,6 +5212,15 @@
           "name": "VarId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "VarModuleType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5385,7 +5625,7 @@
         {
           "disabled": false,
           "document": "uin",
-          "example": "无",
+          "example": "[\"uin:6000005624511\"]",
           "member": "string",
           "name": "UinAccount",
           "required": false,
@@ -5412,7 +5652,7 @@
         {
           "disabled": false,
           "document": "子业务类型",
-          "example": "无",
+          "example": "\"biztype\"",
           "member": "string",
           "name": "SubBizType",
           "required": false,
@@ -5421,7 +5661,7 @@
         {
           "disabled": false,
           "document": "模型标识",
-          "example": "无",
+          "example": "\"hunyuan\"",
           "member": "string",
           "name": "ModelName",
           "required": false,
@@ -5430,7 +5670,7 @@
         {
           "disabled": false,
           "document": "开始时间戳, 单位为秒",
-          "example": "无",
+          "example": "\"1754816440\"",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -5439,7 +5679,7 @@
         {
           "disabled": false,
           "document": "结束时间戳, 单位为秒",
-          "example": "无",
+          "example": "\"1754816440\"",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -5448,7 +5688,7 @@
         {
           "disabled": false,
           "document": "应用id列表",
-          "example": "无",
+          "example": "[\"appid\"]",
           "member": "string",
           "name": "AppBizIds",
           "required": false,
@@ -5457,7 +5697,7 @@
         {
           "disabled": false,
           "document": "筛选子场景(文档解析场景使用)",
-          "example": "无",
+          "example": "[\"scene\"]",
           "member": "string",
           "name": "SubScenes",
           "required": false,
@@ -5469,6 +5709,15 @@
           "example": "knowledge_qa",
           "member": "string",
           "name": "AppType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "空间id",
+          "example": "space_1",
+          "member": "string",
+          "name": "SpaceId",
           "required": false,
           "type": "string"
         }
@@ -5503,7 +5752,7 @@
         {
           "disabled": false,
           "document": "模型标识",
-          "example": "无",
+          "example": "“hunyuan”",
           "member": "string",
           "name": "ModelName",
           "required": true,
@@ -5512,7 +5761,7 @@
         {
           "disabled": false,
           "document": "开始时间戳, 单位为秒",
-          "example": "无",
+          "example": "1754817316",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -5521,7 +5770,7 @@
         {
           "disabled": false,
           "document": "结束时间戳, 单位为秒",
-          "example": "无",
+          "example": "1754817316",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -5530,7 +5779,7 @@
         {
           "disabled": false,
           "document": "uin",
-          "example": "无",
+          "example": "[\"uin:6000005624511\"]",
           "member": "string",
           "name": "UinAccount",
           "required": false,
@@ -5557,7 +5806,7 @@
         {
           "disabled": false,
           "document": "子业务类型",
-          "example": "无",
+          "example": "\"biztype\"",
           "member": "string",
           "name": "SubBizType",
           "required": false,
@@ -5566,11 +5815,20 @@
         {
           "disabled": false,
           "document": "应用id列表",
-          "example": "无",
+          "example": "[\"appid\"]",
           "member": "string",
           "name": "AppBizIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "空间id",
+          "example": "space1",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5581,7 +5839,7 @@
         {
           "disabled": false,
           "document": "X轴: 时间区域；根据查询条件的粒度返回“分/小时/日”两种区间范围",
-          "example": "无",
+          "example": "[\"12\"]",
           "member": "string",
           "name": "X",
           "output_required": false,
@@ -5591,7 +5849,7 @@
         {
           "disabled": false,
           "document": "可用并发y轴坐标",
-          "example": "无",
+          "example": "[100]",
           "member": "int64",
           "name": "AvailableY",
           "output_required": false,
@@ -5601,7 +5859,7 @@
         {
           "disabled": false,
           "document": "成功调用并发y轴坐标",
-          "example": "无",
+          "example": "[100]",
           "member": "int64",
           "name": "SuccessCallY",
           "output_required": false,
@@ -5623,7 +5881,7 @@
         {
           "disabled": false,
           "document": "模型标识",
-          "example": "无",
+          "example": "\"hunyuan\"",
           "member": "string",
           "name": "ModelName",
           "required": true,
@@ -5632,7 +5890,7 @@
         {
           "disabled": false,
           "document": "开始时间戳, 单位为秒",
-          "example": "无",
+          "example": "1754817316",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -5641,7 +5899,7 @@
         {
           "disabled": false,
           "document": "结束时间戳, 单位为秒",
-          "example": "无",
+          "example": "1754817316",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -5650,11 +5908,20 @@
         {
           "disabled": false,
           "document": "应用id列表",
-          "example": "无",
+          "example": "[\"appid\"]",
           "member": "string",
           "name": "AppBizIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "空间id",
+          "example": "space1",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5665,7 +5932,7 @@
         {
           "disabled": false,
           "document": "可用并发数上限",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "AvailableConcurrency",
           "output_required": false,
@@ -5675,7 +5942,7 @@
         {
           "disabled": false,
           "document": "并发峰值",
-          "example": "无",
+          "example": "5",
           "member": "uint64",
           "name": "ConcurrencyPeak",
           "output_required": false,
@@ -5685,7 +5952,7 @@
         {
           "disabled": false,
           "document": "超出可用并发数上限的次数",
-          "example": "无",
+          "example": "1754817316",
           "member": "uint64",
           "name": "ExceedUsageTime",
           "output_required": false,
@@ -5707,7 +5974,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "195117326502409112",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -5716,7 +5983,7 @@
         {
           "disabled": false,
           "document": "文档ID",
-          "example": "无",
+          "example": "19517346915356272",
           "member": "string",
           "name": "DocBizId",
           "required": true,
@@ -5731,7 +5998,7 @@
         {
           "disabled": false,
           "document": "文档ID",
-          "example": "无",
+          "example": "19517346915356272",
           "member": "string",
           "name": "DocBizId",
           "output_required": false,
@@ -5741,7 +6008,7 @@
         {
           "disabled": false,
           "document": "文件名称",
-          "example": "无",
+          "example": "腾讯云智能体开发平台功能清单.png",
           "member": "string",
           "name": "FileName",
           "output_required": false,
@@ -5751,7 +6018,7 @@
         {
           "disabled": false,
           "document": "文件类型",
-          "example": "无",
+          "example": "png",
           "member": "string",
           "name": "FileType",
           "output_required": false,
@@ -5761,7 +6028,7 @@
         {
           "disabled": false,
           "document": "cos路径",
-          "example": "无",
+          "example": "/corp/1781137320016347136/19511732650240902/doc/XegQmZzPwQwpkvVTlSsF-1951173448143208448.png",
           "member": "string",
           "name": "CosUrl",
           "output_required": false,
@@ -5771,7 +6038,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "1754031032",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -5781,7 +6048,7 @@
         {
           "disabled": false,
           "document": "文档状态： 1-未生成 2-生成中 3-生成成功 4-生成失败 5-删除中 6-删除成功 7-审核中 8-审核失败 9-审核成功 10-待发布 11-发布中 12-已发布 13-学习中 14-学习失败 15-更新中 16-更新失败 17-解析中 18-解析失败 19-导入失败 20-已过期 21-超量失效 22-超量失效恢复",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -5791,7 +6058,7 @@
         {
           "disabled": false,
           "document": "文档状态描述",
-          "example": "无",
+          "example": "待发布",
           "member": "string",
           "name": "StatusDesc",
           "output_required": false,
@@ -5801,7 +6068,7 @@
         {
           "disabled": false,
           "document": "生成失败原因",
-          "example": "无",
+          "example": "入库失败",
           "member": "string",
           "name": "Reason",
           "output_required": false,
@@ -5811,7 +6078,7 @@
         {
           "disabled": false,
           "document": "答案中是否引用",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsRefer",
           "output_required": false,
@@ -5821,7 +6088,7 @@
         {
           "disabled": false,
           "document": "问答对数量",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "QaNum",
           "output_required": false,
@@ -5831,7 +6098,7 @@
         {
           "disabled": false,
           "document": "是否删除",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsDeleted",
           "output_required": false,
@@ -5841,7 +6108,7 @@
         {
           "disabled": false,
           "document": "文档来源",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Source",
           "output_required": false,
@@ -5851,7 +6118,7 @@
         {
           "disabled": false,
           "document": "文档来源描述",
-          "example": "无",
+          "example": "源文件导入",
           "member": "string",
           "name": "SourceDesc",
           "output_required": false,
@@ -5861,7 +6128,7 @@
         {
           "disabled": false,
           "document": "是否允许重新生成",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsAllowRestart",
           "output_required": false,
@@ -5871,7 +6138,7 @@
         {
           "disabled": false,
           "document": "qa是否已删除",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsDeletedQa",
           "output_required": false,
@@ -5881,7 +6148,7 @@
         {
           "disabled": false,
           "document": "问答是否生成中",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsCreatingQa",
           "output_required": false,
@@ -5891,7 +6158,7 @@
         {
           "disabled": false,
           "document": "是否允许删除",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsAllowDelete",
           "output_required": false,
@@ -5901,7 +6168,7 @@
         {
           "disabled": false,
           "document": "是否允许操作引用开关",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsAllowRefer",
           "output_required": false,
@@ -5911,7 +6178,7 @@
         {
           "disabled": false,
           "document": "是否生成过问答",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsCreatedQa",
           "output_required": false,
@@ -5921,7 +6188,7 @@
         {
           "disabled": false,
           "document": "文档字符量",
-          "example": "无",
+          "example": "1803",
           "member": "string",
           "name": "DocCharSize",
           "output_required": false,
@@ -5931,7 +6198,7 @@
         {
           "disabled": false,
           "document": "是否允许编辑",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsAllowEdit",
           "output_required": false,
@@ -5941,7 +6208,7 @@
         {
           "disabled": false,
           "document": "标签适用范围 1：全部，2：按条件范围",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AttrRange",
           "output_required": false,
@@ -5961,7 +6228,7 @@
         {
           "disabled": false,
           "document": "分类ID",
-          "example": "无",
+          "example": "1951173265057644545",
           "member": "string",
           "name": "CateBizId",
           "output_required": false,
@@ -5971,7 +6238,7 @@
         {
           "disabled": false,
           "document": "文档是否停用，false:未停用，true:已停用",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsDisabled",
           "output_required": false,
@@ -5981,11 +6248,31 @@
         {
           "disabled": false,
           "document": "是否支持下载\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsDownload",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义切分规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"common_splitter\":{}}",
+          "member": "string",
+          "name": "SplitRule",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档更新频率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpdatePeriodInfo",
+          "name": "UpdatePeriodInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -6003,11 +6290,20 @@
         {
           "disabled": false,
           "document": "应用ID数组",
-          "example": "无",
+          "example": "[\"appid\"]",
           "member": "string",
           "name": "AppBizIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "空间列表",
+          "example": "space_1",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6018,7 +6314,7 @@
         {
           "disabled": false,
           "document": "所有应用已用的字符总数",
-          "example": "无",
+          "example": "\"1000\"",
           "member": "string",
           "name": "AvailableCharSize",
           "output_required": false,
@@ -6055,7 +6351,7 @@
         {
           "disabled": false,
           "document": "可用字符数上限",
-          "example": "无",
+          "example": "100",
           "member": "string",
           "name": "AvailableCharSize",
           "output_required": false,
@@ -6065,7 +6361,7 @@
         {
           "disabled": false,
           "document": "超过可用字符数上限的字符数",
-          "example": "无",
+          "example": "100",
           "member": "string",
           "name": "ExceedCharSize",
           "output_required": false,
@@ -6075,7 +6371,7 @@
         {
           "disabled": false,
           "document": "知识库使用字符总数",
-          "example": "无",
+          "example": "100",
           "member": "string",
           "name": "UsedCharSize",
           "output_required": false,
@@ -6732,7 +7028,7 @@
         {
           "disabled": false,
           "document": "uin列表",
-          "example": "无",
+          "example": "[\"uin:6000005624511\"]",
           "member": "string",
           "name": "UinAccount",
           "required": false,
@@ -6741,7 +7037,7 @@
         {
           "disabled": false,
           "document": "子业务类型",
-          "example": "无",
+          "example": "\"biztype\"",
           "member": "string",
           "name": "SubBizType",
           "required": false,
@@ -6750,7 +7046,7 @@
         {
           "disabled": false,
           "document": "模型标识",
-          "example": "无",
+          "example": "\"hunyuan\"",
           "member": "string",
           "name": "ModelName",
           "required": false,
@@ -6759,7 +7055,7 @@
         {
           "disabled": false,
           "document": "开始时间戳, 单位为秒",
-          "example": "无",
+          "example": "1754816440",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -6768,7 +7064,7 @@
         {
           "disabled": false,
           "document": "结束时间戳, 单位为秒",
-          "example": "无",
+          "example": "1754816440",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -6777,11 +7073,20 @@
         {
           "disabled": false,
           "document": "应用id列表",
-          "example": "无",
+          "example": "[\"appid\"]",
           "member": "string",
           "name": "AppBizIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "空间id",
+          "example": "space1",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6874,7 +7179,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "知识库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "知识库详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KnowledgeDetailInfo",
           "name": "Info",
@@ -7051,7 +7356,7 @@
         {
           "disabled": false,
           "document": "腾讯云主账号",
-          "example": "无",
+          "example": "[\"uin:11111111111\"]",
           "member": "string",
           "name": "UinAccount",
           "required": false,
@@ -7060,7 +7365,7 @@
         {
           "disabled": false,
           "document": "知识引擎子业务类型:  FileParse(文档解析)、Embedding、Rewrite(多轮改写)、 Concurrency(并发)、KnowledgeSummary(知识总结)   KnowledgeQA(知识问答)、KnowledgeCapacity(知识库容量)、SearchEngine(搜索引擎)",
-          "example": "无",
+          "example": "\"biz_type\"",
           "member": "string",
           "name": "SubBizType",
           "required": false,
@@ -7069,7 +7374,7 @@
         {
           "disabled": false,
           "document": "模型标识",
-          "example": "无",
+          "example": "\"hunyuan\"",
           "member": "string",
           "name": "ModelName",
           "required": false,
@@ -7078,7 +7383,7 @@
         {
           "disabled": false,
           "document": "开始时间戳, 单位为秒",
-          "example": "无",
+          "example": "\"1754816440\"",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -7087,7 +7392,7 @@
         {
           "disabled": false,
           "document": "结束时间戳, 单位为秒",
-          "example": "无",
+          "example": "\"1754816440\"",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -7096,7 +7401,7 @@
         {
           "disabled": false,
           "document": "应用id列表",
-          "example": "无",
+          "example": "[\"appid\"]",
           "member": "string",
           "name": "AppBizIds",
           "required": false,
@@ -7110,6 +7415,15 @@
           "name": "AppType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选子场景",
+          "example": "[\"KnowledgeQA\"]",
+          "member": "string",
+          "name": "SubScenes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7162,7 +7476,7 @@
         {
           "disabled": false,
           "document": "腾讯云主账号",
-          "example": "[\"uin\":\"6000005624511\"]",
+          "example": "[\"uin:6000005624511\"]",
           "member": "string",
           "name": "UinAccount",
           "required": false,
@@ -7225,7 +7539,7 @@
         {
           "disabled": false,
           "document": "应用id列表",
-          "example": "appid",
+          "example": "[\"appid\"]",
           "member": "string",
           "name": "AppBizIds",
           "required": false,
@@ -7234,7 +7548,7 @@
         {
           "disabled": false,
           "document": "筛选子场景(文档解析场景使用)",
-          "example": "KonwledgeQA",
+          "example": "[\"KnowledgeQA\"]",
           "member": "string",
           "name": "SubScenes",
           "required": false,
@@ -7248,6 +7562,15 @@
           "name": "AppType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "空间id",
+          "example": "space1",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7258,7 +7581,7 @@
         {
           "disabled": false,
           "document": "总token消耗量",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "TotalTokenUsage",
           "output_required": false,
@@ -7268,7 +7591,7 @@
         {
           "disabled": false,
           "document": "输入token消耗",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "InputTokenUsage",
           "output_required": false,
@@ -7278,7 +7601,7 @@
         {
           "disabled": false,
           "document": "输出token消耗",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "OutputTokenUsage",
           "output_required": false,
@@ -7298,7 +7621,7 @@
         {
           "disabled": false,
           "document": "搜索服务调用次数",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "SearchUsage",
           "output_required": false,
@@ -7318,7 +7641,7 @@
         {
           "disabled": false,
           "document": "拆分token消耗量",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "SplitTokenUsage",
           "output_required": false,
@@ -7328,7 +7651,7 @@
         {
           "disabled": false,
           "document": "Rag检索次数",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "RagSearchUsage",
           "output_required": false,
@@ -7338,7 +7661,7 @@
         {
           "disabled": false,
           "document": "联网搜索次数",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "InternetSearchUsage",
           "output_required": false,
@@ -7348,7 +7671,7 @@
         {
           "disabled": false,
           "document": "dosage配额限制",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "DosageTypeLimit",
           "output_required": false,
@@ -7358,7 +7681,7 @@
         {
           "disabled": false,
           "document": "dosage当前用量\t",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "DosageTypeCurr",
           "output_required": false,
@@ -8864,6 +9187,15 @@
           "name": "NeedInternalVar",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "变量类型",
+          "example": "0",
+          "member": "int64",
+          "name": "VarModuleType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9163,7 +9495,7 @@
         {
           "disabled": false,
           "document": "助手\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "您好有什么需要帮助吗",
           "member": "string",
           "name": "Assistant",
           "output_required": false,
@@ -9174,7 +9506,7 @@
         {
           "disabled": false,
           "document": "用户\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "你好",
           "member": "string",
           "name": "User",
           "output_required": false,
@@ -9407,6 +9739,34 @@
       ],
       "type": "object"
     },
+    "KnowledgeAdvancedConfig": {
+      "document": "知识库高级设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重排序模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "adp-rerank-model",
+          "member": "string",
+          "name": "RerankModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "召回数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "RerankRecallNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "KnowledgeBaseInfo": {
       "document": "共享知识库基础信息",
       "members": [
@@ -9474,6 +9834,50 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "共享知识库类型，0普通，1公众号",
+          "example": "0",
+          "member": "int64",
+          "name": "KnowledgeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拥有者id",
+          "example": "0",
+          "member": "string",
+          "name": "OwnerStaffId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库文档数量,当前仅支持公众号知识库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DocTotal",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库处理中状态标记，1：向量embedding变更中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "int64",
+          "name": "ProcessingFlags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -9632,6 +10036,84 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限位信息",
+          "example": "[\"knowledge\"]",
+          "member": "string",
+          "name": "PermissionIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeModelConfig": {
+      "document": "知识库模型设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "向量模型，该字段只有共享知识库有，应用知识库没有\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "adp-embedding-model",
+          "member": "string",
+          "name": "EmbeddingModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "问答对生成模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "adp-model",
+          "member": "string",
+          "name": "QaExtractModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "schema生成模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "adp-schema-model",
+          "member": "string",
+          "name": "SchemaModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeQaAgent": {
+      "document": "应用配置关联的agent信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "协同方式，1：自由转交，2：工作流编排，3：Plan-and-Execute\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgentCollaboration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用配置agent关联的工作流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "工作流信息",
+          "member": "KnowledgeQaWorkflowInfo",
+          "name": "Workflow",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -9642,7 +10124,7 @@
         {
           "disabled": false,
           "document": "欢迎语，200字符以内\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "欢迎",
           "member": "string",
           "name": "Greeting",
           "output_required": false,
@@ -9653,7 +10135,7 @@
         {
           "disabled": false,
           "document": "角色描述，4000字符以内。通过填写描述，设定应用的 #角色名称、 #风格特点 及可达成的#意图。建议按照下面的模板填写，且自定义意图建议不超过5个。\n\n#角色名称：\n#风格特点：\n#输出要求：\n#能力限制：\n\n能够达成以下用户意图\n##意图名称：\n##意图描述：\n##意图示例：\n##意图实现：\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "这是一个角色提示词",
           "member": "string",
           "name": "RoleDescription",
           "output_required": false,
@@ -9719,7 +10201,7 @@
         {
           "disabled": false,
           "document": "应用模式，standard:标准模式, agent: agent模式，single_workflow：单工作流模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "standard",
           "member": "string",
           "name": "Pattern",
           "output_required": false,
@@ -9785,7 +10267,7 @@
         {
           "disabled": false,
           "document": "是否开启图文检索\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "ImageTextRetrieval",
           "output_required": false,
@@ -9806,14 +10288,14 @@
         },
         {
           "disabled": false,
-          "document": "共享知识库关联配置",
+          "document": "共享知识库关联配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ShareKnowledgeBase",
           "name": "ShareKnowledgeBases",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -9835,6 +10317,61 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "长期记忆开关",
+          "example": "false",
+          "member": "bool",
+          "name": "LongMemoryOpen",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "长期记忆时效",
+          "example": "3",
+          "member": "uint64",
+          "name": "LongMemoryDay",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "agent配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeQaAgent",
+          "name": "Agent",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeModelConfig",
+          "name": "KnowledgeModelConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeAdvancedConfig",
+          "name": "KnowledgeAdvancedConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -10194,6 +10731,67 @@
       ],
       "usage": "both"
     },
+    "KnowledgeQaWorkflowInfo": {
+      "document": "应用配置关联的工作流信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作流ID",
+          "example": "b97df586-16c4-4795-85fd-705c2b7a8265",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流名称",
+          "example": "工作流",
+          "member": "string",
+          "name": "WorkflowName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流描述",
+          "example": "订机票",
+          "member": "string",
+          "name": "WorkflowDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流状态，发布状态(UNPUBLISHED: 待发布 PUBLISHING: 发布中 PUBLISHED: 已发布 FAIL:发布失败)",
+          "example": "UNPUBLISHED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流是否启用",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "KnowledgeSummary": {
       "document": "检索知识",
       "members": [
@@ -10248,7 +10846,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "Embedding模型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "general-text-embedding-v2.7",
           "member": "string",
@@ -10259,7 +10857,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "问答提取模型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "general-qa-extract-v1.8",
           "member": "string",
@@ -10268,6 +10866,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拥有者id",
+          "example": "1089",
+          "member": "string",
+          "name": "OwnerStaffId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10332,7 +10941,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -10341,7 +10950,7 @@
         {
           "disabled": false,
           "document": "页面大小",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -10350,11 +10959,20 @@
         {
           "disabled": false,
           "document": "应用ID列表",
-          "example": "无",
+          "example": "[\"appid\"]",
           "member": "string",
           "name": "AppBizIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "空间列表",
+          "example": "space1",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10365,7 +10983,7 @@
         {
           "disabled": false,
           "document": "列表总数",
-          "example": "无",
+          "example": "1000",
           "member": "uint64",
           "name": "Total",
           "output_required": false,
@@ -10397,7 +11015,7 @@
         {
           "disabled": false,
           "document": "应用类型；knowledge_qa - 知识问答管理 ",
-          "example": "无",
+          "example": "knowledge_qa",
           "member": "string",
           "name": "AppType",
           "required": false,
@@ -10406,7 +11024,7 @@
         {
           "disabled": false,
           "document": "每页数目，整型",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -10415,7 +11033,7 @@
         {
           "disabled": false,
           "document": "页码，整型",
-          "example": "无",
+          "example": "15",
           "member": "uint64",
           "name": "PageNumber",
           "required": false,
@@ -10424,7 +11042,7 @@
         {
           "disabled": false,
           "document": "关键词：应用/修改人",
-          "example": "无",
+          "example": "关键词",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -10438,6 +11056,24 @@
           "name": "LoginSubAccountUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能体类型 dialogue：对话智能体，wechat：公众号智能体",
+          "example": "dialogue",
+          "member": "string",
+          "name": "AgentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用状态 1:未上线 2：运行中",
+          "example": "1",
+          "member": "string",
+          "name": "AppStatus",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10448,7 +11084,7 @@
         {
           "disabled": false,
           "document": "数量",
-          "example": "无",
+          "example": "总数",
           "member": "string",
           "name": "Total",
           "output_required": false,
@@ -10457,7 +11093,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "应用列表",
           "example": "无",
           "member": "AppInfo",
           "name": "List",
@@ -11112,7 +11748,7 @@
         {
           "disabled": false,
           "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取",
-          "example": "无",
+          "example": "knowledge_qa",
           "member": "string",
           "name": "AppType",
           "required": true,
@@ -11121,7 +11757,7 @@
         {
           "disabled": false,
           "document": "应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式",
-          "example": "无",
+          "example": "standard",
           "member": "string",
           "name": "Pattern",
           "required": false,
@@ -11129,8 +11765,8 @@
         },
         {
           "disabled": false,
-          "document": "模型类别 generate：生成模型，thought：思考模型",
-          "example": "无",
+          "document": "模型类别 generate：生成模型，thought：思考模型,embedding模型，rerank：rerank模型",
+          "example": "thought",
           "member": "string",
           "name": "ModelCategory",
           "required": false,
@@ -12411,7 +13047,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -12419,8 +13055,8 @@
         },
         {
           "disabled": false,
-          "document": "文档名称\n",
-          "example": "无",
+          "document": "文档名称。可通过文档名称检索支持生成问答的文档，不支持xlsx、xls、csv格式",
+          "example": "文档名称",
           "member": "string",
           "name": "FileName",
           "required": false,
@@ -12428,8 +13064,8 @@
         },
         {
           "disabled": false,
-          "document": "文档状态： 7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期",
-          "example": "无",
+          "document": "文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答",
+          "example": "[10,12]",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -12489,6 +13125,15 @@
           "name": "Keyword",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享知识库类型，0普通，1公众号",
+          "example": "[0,1]",
+          "member": "int64",
+          "name": "KnowledgeTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12632,7 +13277,7 @@
         {
           "disabled": false,
           "document": "模型标识",
-          "example": "无",
+          "example": "\"hunyuan\"",
           "member": "string",
           "name": "ModelName",
           "required": true,
@@ -12641,7 +13286,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "1754817104",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -12650,7 +13295,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "1754817104",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -12668,7 +13313,7 @@
         {
           "disabled": false,
           "document": "分页数量(最大值1000)",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -12677,7 +13322,7 @@
         {
           "disabled": false,
           "document": "uin列表",
-          "example": "无",
+          "example": "[\"uin:6000005624511\"]",
           "member": "string",
           "name": "UinAccount",
           "required": false,
@@ -12686,7 +13331,7 @@
         {
           "disabled": false,
           "document": "应用ID列表",
-          "example": "无",
+          "example": "[\"appid\"]",
           "member": "string",
           "name": "AppBizIds",
           "required": false,
@@ -12695,7 +13340,7 @@
         {
           "disabled": false,
           "document": "调用类型列表",
-          "example": "无",
+          "example": "\"calltype1\"",
           "member": "string",
           "name": "CallType",
           "required": false,
@@ -12704,7 +13349,7 @@
         {
           "disabled": false,
           "document": "筛选子场景",
-          "example": "无",
+          "example": "[\"scene1\"]",
           "member": "string",
           "name": "SubScenes",
           "required": false,
@@ -12727,6 +13372,15 @@
           "name": "BillingTag",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "空间id",
+          "example": "spaceid1",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12737,7 +13391,7 @@
         {
           "disabled": false,
           "document": "列表总数",
-          "example": "无",
+          "example": "1000",
           "member": "uint64",
           "name": "Total",
           "output_required": false,
@@ -12861,7 +13515,7 @@
         {
           "disabled": false,
           "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cs-normal",
           "member": "string",
           "name": "ModelName",
           "output_required": false,
@@ -12872,7 +13526,7 @@
         {
           "disabled": false,
           "document": "模型描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "模型描述信息",
           "member": "string",
           "name": "ModelDesc",
           "output_required": false,
@@ -12883,7 +13537,7 @@
         {
           "disabled": false,
           "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "精调模型",
           "member": "string",
           "name": "AliasName",
           "output_required": false,
@@ -12894,7 +13548,7 @@
         {
           "disabled": false,
           "document": "资源状态 1：资源可用；2：资源已用尽\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "ResourceStatus",
           "output_required": false,
@@ -12960,7 +13614,7 @@
         {
           "disabled": false,
           "document": "模型图标",
-          "example": "无",
+          "example": "https://cdn.xiaowei.qq.com/lke/assets/static/modelicon/hunyuan.png",
           "member": "string",
           "name": "Icon",
           "output_required": false,
@@ -12971,7 +13625,7 @@
         {
           "disabled": false,
           "document": "是否免费",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsFree",
           "output_required": false,
@@ -12982,7 +13636,7 @@
         {
           "disabled": false,
           "document": "模型对话框可输入的上限\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "4000",
           "member": "uint64",
           "name": "InputLenLimit",
           "output_required": false,
@@ -12993,7 +13647,7 @@
         {
           "disabled": false,
           "document": "支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "SupportWorkflowStatus",
           "output_required": false,
@@ -13004,7 +13658,7 @@
         {
           "disabled": false,
           "document": "模型类别 generate：生成模型，thought：思考模型",
-          "example": "无",
+          "example": "generate",
           "member": "string",
           "name": "ModelCategory",
           "output_required": false,
@@ -13015,7 +13669,7 @@
         {
           "disabled": false,
           "document": "是否默认模型",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsDefault",
           "output_required": false,
@@ -13026,7 +13680,7 @@
         {
           "disabled": false,
           "document": "角色提示词输入长度限制",
-          "example": "无",
+          "example": "4000",
           "member": "uint64",
           "name": "RoleLenLimit",
           "output_required": false,
@@ -13037,7 +13691,7 @@
         {
           "disabled": false,
           "document": "是否专属并发模型",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsExclusive",
           "output_required": false,
@@ -13048,7 +13702,7 @@
         {
           "disabled": false,
           "document": "模型支持智能通话效果",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "SupportAiCallStatus",
           "output_required": false,
@@ -13059,12 +13713,67 @@
         {
           "disabled": false,
           "document": "专属并发数",
-          "example": "无",
+          "example": "5",
           "member": "uint64",
           "name": "Concurrency",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"文本推理\"]",
+          "member": "string",
+          "name": "ModelTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型超参定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelParameter",
+          "name": "ModelParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提供商名称",
+          "example": "Hunyuan",
+          "member": "string",
+          "name": "ProviderName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提供商别名",
+          "example": "腾讯混元",
+          "member": "string",
+          "name": "ProviderAliasName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提供商类型 Self:提供商，Custom：自定义模型提供商，Third：第三方模型提供商",
+          "example": "Self",
+          "member": "string",
+          "name": "ProviderType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -13105,6 +13814,122 @@
           "required": false,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超参名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModelParams": {
+      "document": "模型参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "温度",
+          "example": "0.1",
+          "member": "float",
+          "name": "Temperature",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Top_P",
+          "example": "0.1",
+          "member": "float",
+          "name": "TopP",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "随机种子",
+          "example": "3",
+          "member": "int64",
+          "name": "Seed",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存在惩罚",
+          "example": "0.1",
+          "member": "float",
+          "name": "PresencePenalty",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "频率惩罚",
+          "example": "0.1",
+          "member": "float",
+          "name": "FrequencyPenalty",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重复惩罚",
+          "example": "0.1",
+          "member": "float",
+          "name": "RepetitionPenalty",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大输出长度",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "停止序列",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "StopSequences",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出格式",
+          "example": "text",
+          "member": "string",
+          "name": "ReplyFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13453,7 +14278,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -13462,7 +14287,7 @@
         {
           "disabled": false,
           "document": "文档ID",
-          "example": "无",
+          "example": "无1727231073371148288",
           "member": "string",
           "name": "DocBizId",
           "required": true,
@@ -13471,7 +14296,7 @@
         {
           "disabled": false,
           "document": "是否引用链接",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsRefer",
           "required": true,
@@ -13516,7 +14341,7 @@
         {
           "disabled": false,
           "document": "网页(或自定义链接)地址",
-          "example": "无",
+          "example": "http://xxx.xxx",
           "member": "string",
           "name": "WebUrl",
           "required": false,
@@ -13525,7 +14350,7 @@
         {
           "disabled": false,
           "document": "外部引用链接类型 0：系统链接 1：自定义链接\n值为1时，WebUrl 字段不能为空，否则不生效。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "ReferUrlType",
           "required": false,
@@ -13534,7 +14359,7 @@
         {
           "disabled": false,
           "document": "有效开始时间，unix时间戳",
-          "example": "无",
+          "example": "1753278682",
           "member": "string",
           "name": "ExpireStart",
           "required": false,
@@ -13543,7 +14368,7 @@
         {
           "disabled": false,
           "document": "有效结束时间，unix时间戳，0代表永久有效",
-          "example": "无",
+          "example": "1753325001",
           "member": "string",
           "name": "ExpireEnd",
           "required": false,
@@ -13552,7 +14377,7 @@
         {
           "disabled": false,
           "document": "分类ID",
-          "example": "无",
+          "example": "194603807082126",
           "member": "string",
           "name": "CateBizId",
           "required": false,
@@ -13566,6 +14391,33 @@
           "name": "IsDownload",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改的内容类型  0  无效 1 更新文档cos信息 2 更新文档引用信息 3 更新文档刷新频率 4 腾讯文档刷新",
+          "example": "[0]",
+          "member": "uint64",
+          "name": "ModifyTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文档更新频率",
+          "example": "无",
+          "member": "UpdatePeriodInfo",
+          "name": "UpdatePeriodInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义切分规则",
+          "example": "{\"common_splitter\":{}}",
+          "member": "string",
+          "name": "SplitRule",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13923,7 +14775,7 @@
         {
           "disabled": false,
           "document": "内容",
-          "example": "无",
+          "example": "todo",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -13933,7 +14785,7 @@
         {
           "disabled": false,
           "document": "当前记录所对应的 Session ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "todo",
           "member": "string",
           "name": "SessionId",
           "output_required": false,
@@ -13943,7 +14795,7 @@
         {
           "disabled": false,
           "document": "记录ID",
-          "example": "无",
+          "example": "todo",
           "member": "string",
           "name": "RecordId",
           "output_required": false,
@@ -13953,7 +14805,7 @@
         {
           "disabled": false,
           "document": "关联记录ID",
-          "example": "无",
+          "example": "todo",
           "member": "string",
           "name": "RelatedRecordId",
           "output_required": false,
@@ -13963,7 +14815,7 @@
         {
           "disabled": false,
           "document": "是否来自自己",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsFromSelf",
           "output_required": false,
@@ -13973,7 +14825,7 @@
         {
           "disabled": false,
           "document": "发送者名称",
-          "example": "无",
+          "example": "todo",
           "member": "string",
           "name": "FromName",
           "output_required": false,
@@ -13983,7 +14835,7 @@
         {
           "disabled": false,
           "document": "发送者头像",
-          "example": "无",
+          "example": "todo",
           "member": "string",
           "name": "FromAvatar",
           "output_required": false,
@@ -13993,7 +14845,7 @@
         {
           "disabled": false,
           "document": "时间戳",
-          "example": "无",
+          "example": "todo",
           "member": "string",
           "name": "Timestamp",
           "output_required": false,
@@ -14003,7 +14855,7 @@
         {
           "disabled": false,
           "document": "是否已读",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "HasRead",
           "output_required": false,
@@ -14013,7 +14865,7 @@
         {
           "disabled": false,
           "document": "评价",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Score",
           "output_required": false,
@@ -14023,7 +14875,7 @@
         {
           "disabled": false,
           "document": "是否评分",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "CanRating",
           "output_required": false,
@@ -14033,7 +14885,7 @@
         {
           "disabled": false,
           "document": "是否展示反馈按钮\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "CanFeedback",
           "output_required": false,
@@ -14043,7 +14895,7 @@
         {
           "disabled": false,
           "document": "记录类型",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Type",
           "output_required": false,
@@ -14063,7 +14915,7 @@
         {
           "disabled": false,
           "document": "评价原因",
-          "example": "无",
+          "example": "[\"todo\"]",
           "member": "string",
           "name": "Reasons",
           "output_required": false,
@@ -14073,7 +14925,7 @@
         {
           "disabled": false,
           "document": "是否大模型",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsLlmGenerated",
           "output_required": false,
@@ -14083,7 +14935,7 @@
         {
           "disabled": false,
           "document": "图片链接，可公有读\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"todo\"]",
           "member": "string",
           "name": "ImageUrls",
           "output_required": false,
@@ -14103,7 +14955,7 @@
         {
           "disabled": false,
           "document": "回复方式\n1:大模型直接回复;\n2:保守回复, 未知问题回复;\n3:拒答问题回复;\n4:敏感回复;\n5:问答对直接回复, 已采纳问答对优先回复;\n6:欢迎语回复;\n7:并发超限回复;\n8:全局干预知识;\n9:任务流程过程回复, 当历史记录中 task_flow.type = 0 时, 为大模型回复;\n10:任务流程答案回复;\n11:搜索引擎回复;\n12:知识润色后回复;\n13:图片理解回复;\n14:实时文档回复;\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "ReplyMethod",
           "output_required": false,
@@ -14113,7 +14965,7 @@
         {
           "disabled": false,
           "document": "选项卡, 用于多轮对话\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"选项1\",\"选项2\"]",
           "member": "string",
           "name": "OptionCards",
           "output_required": false,
@@ -14189,95 +15041,115 @@
         {
           "disabled": false,
           "document": "id",
-          "example": "无",
+          "example": "asasdf",
           "member": "string",
           "name": "Id",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "链接",
-          "example": "无",
+          "example": "todo",
           "member": "string",
           "name": "Url",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "类型",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
           "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "名称",
-          "example": "无",
+          "example": "todo",
           "member": "string",
           "name": "Name",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "来源文档ID",
-          "example": "无",
+          "example": "1134",
           "member": "string",
           "name": "DocId",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "知识库名称",
-          "example": "无",
+          "example": "知识库名称",
           "member": "string",
           "name": "KnowledgeName",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "知识库业务id",
-          "example": "无",
+          "example": "知识库标识 ",
           "member": "string",
           "name": "KnowledgeBizId",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文档业务id",
-          "example": "无",
+          "example": "文档标识",
           "member": "string",
           "name": "DocBizId",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "问答业务id",
-          "example": "无",
+          "example": "问答标识",
           "member": "string",
           "name": "QaBizId",
           "output_required": false,
+          "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档索引id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "NodeRunBase": {
       "document": "节点运行的基本信息",
@@ -14682,6 +15554,34 @@
       ],
       "usage": "both"
     },
+    "OptionCardIndex": {
+      "document": "选项卡索引",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一标识",
+          "example": "doc_20250726_153945_830_LX68mlEN",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "选项卡索引",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PluginToolReqParam": {
       "document": "插件参数请求结构",
       "members": [
@@ -14793,7 +15693,7 @@
         {
           "disabled": false,
           "document": "执行过程英语名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "英文名",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -14804,7 +15704,7 @@
         {
           "disabled": false,
           "document": "中文名, 用于展示\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "中文名",
           "member": "string",
           "name": "Title",
           "output_required": false,
@@ -14815,7 +15715,7 @@
         {
           "disabled": false,
           "document": "状态常量: 使用中: processing, 成功: success, 失败: failed\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "状态",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -14826,7 +15726,7 @@
         {
           "disabled": false,
           "document": "消耗 token 数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "200",
           "member": "uint64",
           "name": "Count",
           "output_required": false,
@@ -14848,13 +15748,35 @@
         {
           "disabled": false,
           "document": "计费资源状态，1：可用，2：不可用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "ResourceStatus",
           "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输入消耗 token 数",
+          "example": "100",
+          "member": "uint64",
+          "name": "InputCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出消耗 token 数",
+          "example": "100",
+          "member": "uint64",
+          "name": "OutputCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14865,7 +15787,7 @@
         {
           "disabled": false,
           "document": "检索query\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "调试内容",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -14876,7 +15798,7 @@
         {
           "disabled": false,
           "document": "系统prompt\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "系统信息",
           "member": "string",
           "name": "System",
           "output_required": false,
@@ -14941,14 +15863,14 @@
         },
         {
           "disabled": false,
-          "document": "自定义参数",
-          "example": "无",
+          "document": "自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "CustomVariables",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -16310,6 +17232,24 @@
           "name": "DuplicateFileHandles",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义切分规则\n\n请求参数为一个 **JSON Object**，具体格式可参见接口示例值。包含以下主要字段：\n\n| 字段名             | 类型      | 说明                                   |\n|--------------------|--------|----------------------------------------|\n| `xlsx_splitter`    | Object   | **Excel（xlsx）文件切分策略配置**，仅当处理 Excel 文件时有效 |\n| `common_splitter`  | Object  | **通用文件（如 txt、pdf 等）切分策略配置**，按页或按标签切分 |\n| `table_style`      | String | 表格内容的输出格式，如 HTML 或 Markdown |\n\n---\n\n## `xlsx_splitter`（Excel 切分策略）\n\n用于配置 **表格文件的切分方式**。\n**类型：Object**\n\n```json\n\"xlsx_splitter\": {\n  \"header_interval\": [1, 2],\n  \"content_start\": 10,\n  \"split_row\": 2\n}\n```\n\n### 字段说明：\n\n| 字段名            | 类型   | 说明                                                                 |\n|-------------------|--------|----------------------------------------------------------------------|\n| `header_interval` | Array\\<Number\\>  | 表头所在的行区间，格式为 `[起始行, 结束行]`，**行号从 1 开始计数**。例如 `[1, 2]` 表示第 1~2 行为表头。 |\n| `content_start`   | Number  | **表格内容的起始行号（从 1 开始）**。 |\n| `split_row`       | Number   | **切分行数**。                   |\n\n---\n## `common_splitter`（通用文件切分策略）\n\n用于配置 **非 Excel 文件（如 TXT、PDF、DOCX 等）的切分方式**，支持两种策略：**按页切分（page）** 或 **按标识符切分（tag）**。\n\n**类型：Object**\n\n```json\n\"common_splitter\": {\n  \"splitter\": \"page\",\n  \"page_splitter\": {\n    \"chunk_length\": 1000,\n    \"chunk_overlap_length\": 100\n  }\n}\n```\n\n### 字段说明：\n\n| 字段名            | 类型     | 说明                                                                 |\n|-------------------|--------|---------------------------------------------------|\n| `splitter`        | String  | 切分策略类型，可选值为：`\"page\"`（按页切分） 或 `\"tag\"`（按标识符切分）。 |\n| `page_splitter`   | Object   | **按页切分的配置**。                                         |\n| `page_splitter.chunk_length`   | 1000    | **切片最大长度**。              |\n| `page_splitter.chunk_overlap_length`  | 100    | **切片重叠长度**。  |\n| `tag_splitter`             | Object          | **自定义切分配置**。             |\n| `tag_splitter.tag`         | Array\\<String\\>    | **切分标识符**。                             |\n| `tag_splitter.chunk_length`| Number       | **切片最大长度**。                                                               |\n| `tag_splitter.chunk_overlap_length` | Number    | **切块重叠长度**。                                                  |\n\n🔹 **补充说明：**\n\n- `splitter` 字段的值可以是：\n  - `\"page\"`：只使用按页切分逻辑，此时只需要关心 `page_splitter` 相关字段。\n  - `\"tag\"`：只使用按标识符（如分号、换行等）切分逻辑，此时关注 `tag_splitter`。\n---\n\n##  `table_style`（表格输出样式）\n\n用于指定 **表格类内容（比如从 Excel 或 CSV 中提取的表格）最终以何种格式返回**，方便前端展示或后续处理。\n\n**类型：String**\n\n```json\n\"table_style\": \"md\"\n```\n\n### 字段说明：\n\n| 字段名       | 类型   | 说明                                                                 |\n|--------------|--------|----------------------------------------------------------------------|\n| `table_style` | String | 指定表格内容的输出格式。可用值：<br>• `\"html\"`：以 HTML 表格形式返回，适合网页展示。<br>• `\"md\"`：以 Markdown 表格语法返回，适合文档或 Markdown 渲染环境。|",
+          "example": "{\"split_config_new\":{\"table_style\":\"md\",\"rm_spec_symbol\":1,\"xlsx_splitter\":{\"header_interval\":[1,1],\"content_start\":2,\"split_row\":1},\"common_splitter\":{\"splitter\":\"tag\",\"tag_splitter\":{\"tag\":[\"\\n\"],\"chunk_length\":1000,\"chunk_overlap_length\":100}}}}",
+          "member": "string",
+          "name": "SplitRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档更新频率",
+          "example": "无",
+          "member": "UpdatePeriodInfo",
+          "name": "UpdatePeriodInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -16410,7 +17350,7 @@
         {
           "disabled": false,
           "document": "检索策略类型 0:混合检索，1：语义检索\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "StrategyType",
           "output_required": false,
@@ -16420,13 +17360,46 @@
         },
         {
           "disabled": false,
-          "document": "Excel检索增强开关\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Excel检索增强开关, false关闭，true打开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "TableEnhancement",
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "向量模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "adp-embedding-model",
+          "member": "string",
+          "name": "EmbeddingModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果重排序开关， on打开，off关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "on",
+          "member": "string",
+          "name": "RerankModelSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果重排序模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "adp-rerank-model",
+          "member": "string",
+          "name": "RerankModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -16437,25 +17410,80 @@
       "members": [
         {
           "disabled": false,
-          "document": "共享知识库ID",
-          "example": "无",
+          "document": "共享知识库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1942591969559038144",
           "member": "string",
           "name": "KnowledgeBizId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "检索范围",
+          "document": "检索范围\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SearchRange",
           "name": "SearchRange",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库模型设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeModelConfig",
+          "name": "KnowledgeModelConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检索策略配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchStrategy",
+          "name": "SearchStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检索配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeQaSearch",
+          "name": "Search",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "// 问答-回复灵活度 1：已采纳答案直接回复 2：已采纳润色后回复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReplyFlexibility",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "共享知识库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "小学数据题集",
+          "member": "string",
+          "name": "KnowledgeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -16867,6 +17895,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变量类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "VarModuleType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -17187,6 +18226,23 @@
       ],
       "usage": "out"
     },
+    "UpdatePeriodInfo": {
+      "document": "更新时间策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档更新频率类型：0不更新 -H 小时粒度,当前仅支持24(1天)，72(3天)，168(7天) 仅source=2 腾讯文档类型有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "UpdatePeriodH",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "UpdateSharedKnowledgeRequest": {
       "document": "UpdateSharedKnowledge请求参数结构体",
       "members": [
@@ -17298,6 +18354,15 @@
           "name": "VarDefaultFileName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变量类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "VarModuleType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -17656,7 +18721,7 @@
         {
           "disabled": false,
           "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "asdf125",
           "member": "string",
           "name": "WorkflowId",
           "output_required": false,
@@ -17678,7 +18743,7 @@
         {
           "disabled": false,
           "document": "工作流运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "asdf2125",
           "member": "string",
           "name": "WorkflowRunId",
           "output_required": false,
@@ -17722,13 +18787,35 @@
         {
           "disabled": false,
           "document": "工作流发布时间，unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1746800121",
+          "example": "1",
           "member": "string",
           "name": "WorkflowReleaseTime",
           "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中间消息",
+          "example": "[\"中间消息\"]",
+          "member": "string",
+          "name": "PendingMessages",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "选项卡索引",
+          "example": "无",
+          "member": "OptionCardIndex",
+          "name": "OptionCardIndex",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18046,6 +19133,17 @@
           "example": "订酒店",
           "member": "string",
           "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流输出",
+          "example": "{\"LoopTImes\":4,\"Question\":\"你好\"}}",
+          "member": "string",
+          "name": "Output",
           "output_required": false,
           "required": false,
           "type": "string",

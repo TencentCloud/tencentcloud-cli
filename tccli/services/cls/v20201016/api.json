@@ -4140,7 +4140,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题id",
+          "document": "日志主题id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "3269961d-52e0-407b-9dcd-34bd830c6f19",
           "member": "string",
           "name": "TopicId",
@@ -4176,7 +4176,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集id",
+          "document": "日志集id\n- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集Id。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "LogsetId",
@@ -4185,7 +4185,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集name",
+          "document": "日志集名称\n- 通过[获取日志集列表](https://cloud.tencent.com/document/api/614/58624)获取日志集名称。",
           "example": "name1",
           "member": "string",
           "name": "LogsetName",
@@ -4194,7 +4194,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称",
+          "document": "日志主题名称\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题名称。",
           "example": "name2",
           "member": "string",
           "name": "TopicName",
@@ -4203,7 +4203,7 @@
         },
         {
           "disabled": false,
-          "document": "节点文件路径类型配置。",
+          "document": "自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。\n\n- 详细参考 [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 信息。",
           "example": "无",
           "member": "HostFileInfo",
           "name": "HostFile",
@@ -4221,7 +4221,7 @@
         },
         {
           "disabled": false,
-          "document": "容器标准输出类型配置。",
+          "document": "自建k8s-容器标准输出信息，包括容器、命名空间等。\n\n- 详细参考 [ContainerStdoutInfo](https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 信息。",
           "example": "无",
           "member": "ContainerStdoutInfo",
           "name": "ContainerStdout",
@@ -4266,7 +4266,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的机器组id",
+          "document": "绑定的机器组ID\n- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id。\n- GroupId 与 GroupIds 选择其一即可，不可同时为空。",
           "example": "57f5808c-4a55-11eb-b378-0242ac130002",
           "member": "string",
           "name": "GroupId",
@@ -4275,7 +4275,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的机器组id列表",
+          "document": "绑定的机器组ID列表\n- 通过[获取机器组列表](https://cloud.tencent.com/document/api/614/56438)获取机器组Id信息。\n- GroupId 与 GroupIds 选择其一即可，不可同时为空。",
           "example": "[\"59b6014b-6507-44c2-9d4f-a5bee6df9ab5\",\"0af7e6bb-fc91-4ee8-ad24-1129e9c91c6c\"]",
           "member": "string",
           "name": "GroupIds",
@@ -4284,7 +4284,7 @@
         },
         {
           "disabled": false,
-          "document": "采集相关配置信息。详情见CollectInfo复杂类型配置。",
+          "document": "采集相关配置信息。详细参考 [CollectInfo](https://cloud.tencent.com/document/api/614/56471#CollectInfo) 信息。",
           "example": "无",
           "member": "CollectInfo",
           "name": "CollectInfos",
@@ -4409,7 +4409,7 @@
         {
           "disabled": false,
           "document": "采集配置ID",
-          "example": "xxxx-xx-xx-xx-xxxxxxxx",
+          "example": "72294392-a730-410a-bbdc-d998c27ecd4f",
           "member": "string",
           "name": "ConfigId",
           "output_required": true,
@@ -6123,8 +6123,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "仪表盘通知方式。<br>\n<li/>Uin：腾讯云用户<br>\n<li/>Group：腾讯云用户组<br>\n<li/>Email：自定义Email<br>\n<li/>WeCom: 企业微信回调<br>\n<li/>DingTalk：钉钉<br>\n<li/>Lark：飞书",
-          "example": "Email",
+          "document": "仪表盘通知方式。\n\n- Uin：腾讯云用户\n- Group：腾讯云用户组\n- WeCom：企业微信回调\n- Email：自定义邮件\n- DingTalk：钉钉\n- Lark：飞书",
+          "example": "Uin",
           "member": "string",
           "name": "ReceiverType",
           "output_required": true,
@@ -6134,7 +6134,7 @@
         },
         {
           "disabled": false,
-          "document": "知方式对应的值。\n<br> <li/> 当ReceiverType不是 WeCom 时，Values必填。",
+          "document": "知方式对应的值。\n- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Values必须为空，且Url字段必填。\n- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Values必填，且Url字段必须为空。\n- 当ReceiverType为：`Uin ` 时，Values为用户id，通过 [拉取子用户](https://cloud.tencent.com/document/product/598/34587) 获取子用户 UID 。\n- 当ReceiverType为：`Group` 时，Values为用户组id，通过 [查询用户组列表](https://cloud.tencent.com/document/product/598/34589) 获取用户组 ID 。\n- 当ReceiverType为：`Email` 时，Values为用户邮箱信息。",
           "example": "[\"168053\",\"1\"]",
           "member": "string",
           "name": "Values",
@@ -6145,7 +6145,7 @@
         },
         {
           "disabled": false,
-          "document": "仪表盘通知渠道。\n<br><li/> 支持：[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]。\n<br><li/> 当ReceiverType是 Email 或 WeCom 时，ReceiverChannels不能赋值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仪表盘通知渠道。\n\n-  支持：[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]。\n-  当ReceiverType为 `Email` 或 `WeCom` 时，ReceiverChannels无效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]",
           "member": "string",
           "name": "ReceiverChannels",
@@ -6156,8 +6156,8 @@
         },
         {
           "disabled": false,
-          "document": "回调Url。\n<br><li/> 当ReceiverType是 WeCom 时，Url必填。\n<br><li/> 当ReceiverType不是 WeCom 时，Url不能填写。",
-          "example": "http://xxx",
+          "document": "订阅方式\t- 回调地址。\n- 当ReceiverType为：`WeCom`、`DingTalk`、`Lark` 时，Url字段必填为各渠道的回调地址。\n    - 为：`WeCom` 时，Url为 企业微信回调地址。\n    - 为：`DingTalk` 时，Url为 钉钉机器人Webhook地址。\n    - 为：`Lark` 时，Url为 飞书机器人Webhook地址。\n- 当ReceiverType为：`Uin`、`Group`、`Email` 时，Url字段必须为空。",
+          "example": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=ctestea1a5-7xx9-4xx3-8xxb-w5fxxbd6",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -6250,6 +6250,122 @@
         }
       ],
       "usage": "both"
+    },
+    "DashboardSubscribeInfo": {
+      "document": "仪表盘订阅信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅id。",
+          "example": "21683",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅名称。",
+          "example": "订阅任务-bus-test-2025-08-15_09:59",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘id。",
+          "example": "dashboard-522a5609-1f41-4b11-8086-5afd1d7574f5",
+          "member": "string",
+          "name": "DashboardId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅时间。",
+          "example": "0 0 10 * * ?",
+          "member": "string",
+          "name": "Cron",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅数据。",
+          "example": "无",
+          "member": "DashboardSubscribeData",
+          "name": "SubscribeData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅记录创建时间。格式：`YYYY-MM-DD HH:MM:SS`",
+          "example": "2022-03-18 22:47:06",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅记录更新时间。格式：`YYYY-MM-DD HH:MM:SS`",
+          "example": "2022-03-18 22:47:06",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅记录最后一次发送成功时间。格式：`YYYY-MM-DD HH:MM:SS`",
+          "example": "2022-03-19 22:47:06",
+          "member": "string",
+          "name": "LastTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云主账号Id。",
+          "example": "100001111589",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云主账号下的子账号Id。",
+          "example": "100011169012",
+          "member": "uint64",
+          "name": "SubUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘订阅记录最后一次发送的状态。success：全部发送成功，fail：未发送， partialSuccess：部分发送成功。",
+          "example": "\"ok\"",
+          "member": "string",
+          "name": "LastStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DashboardTemplateVariable": {
       "document": "仪表盘订阅模板变量",
@@ -6802,7 +6918,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "COS导入配置Id。\n- 通过[获取投递任务列表](https://cloud.tencent.com/document/api/614/58745)获取COS导入配置Id。",
+          "document": "COS导入配置Id。\n- 通过 [获取cos导入配置](https://cloud.tencent.com/document/product/614/88099) 获取COS导入配置Id。",
           "example": "ca092608-98e8-4ad9-83c5-a6b3bbexxxxx",
           "member": "string",
           "name": "Id",
@@ -7216,7 +7332,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域信息。\n\n示例：\n ap-guangzhou  广州地域；\nap-nanjing 南京地域。\n\n详细信息请查看官网：\n\nhttps://cloud.tencent.com/document/product/614/18940",
+          "document": "地域信息。\n\n示例：\n ap-guangzhou  广州地域；\nap-nanjing 南京地域。\n\n详细信息请查看官网[地域和访问域名](https://cloud.tencent.com/document/product/614/18940)\n\n",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -7320,7 +7436,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知渠道组id。",
+          "document": "通知渠道组id。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/api/614/56462)获取通知渠道组id",
           "example": "notice-bb42f112-xxxx-476e-b3c4-ff5472911b42",
           "member": "string",
           "name": "AlarmNoticeId",
@@ -7943,7 +8059,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否\n\n- 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "dashboardId：按照【仪表盘id】进行过滤。类型：String必选：否\n\n- 仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。\n- 入参示例：dashboard-522a5609-1f41-4b11-8086-5afd1d7574f5\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7974,6 +8090,26 @@
     "DescribeDashboardSubscribesResponse": {
       "document": "DescribeDashboardSubscribes返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "仪表盘订阅列表",
+          "example": "无",
+          "member": "DashboardSubscribeInfo",
+          "name": "DashboardSubscribeInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8006,7 +8142,7 @@
         },
         {
           "disabled": false,
-          "document": "- dashboardId 按照【仪表盘id】进行过滤，类型：String， 必选：否。\n- dashboardName 按照【仪表盘名字】进行模糊搜索过滤，类型：String，必选：否。\n- dashboardRegion 按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性，类型：String，必选：否。 [地域和访问域名](https://cloud.tencent.com/document/product/614/18940)，例如：ap-guangzhou\n- tagKey 按照【标签键】进行过滤，类型：String，必选：否。\n- tag:tagKey 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换，类型：String，必选：否，使用请参考[示例2](https://cloud.tencent.com/document/api/614/95636#4.-.E7.A4.BA.E4.BE.8B)。\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "- dashboardId 按照【仪表盘id】进行过滤，类型：String， 必选：否。\n    - 示例值：dashboard-522a5609-1f41-4b11-8086-5afd1d7574f5\n- dashboardName 按照【仪表盘名字】进行模糊搜索过滤，类型：String，必选：否。\n    - 示例值：业务大盘\n- dashboardRegion 按照【仪表盘地域】进行过滤（兼容老的仪表盘），通过云API创建的仪表盘该属性，类型：String，必选：否。\n    - 参考  [地域和访问域名](https://cloud.tencent.com/document/product/614/18940)\n    - 示例：ap-guangzhou\n- tagKey 按照【标签键】进行过滤，类型：String，必选：否。\n    - 示例值：\n    ```\n    \"Filters\":[\n        {\n            \"Key\": \"tagKey\",\n            \"Values\": [\n                \"tag-key-test\"\n            ]\n        }\n    ]\n    ```\n\n- tag:tagKey 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换，类型：String，必选：否，\n    - 参考 [示例1](https://cloud.tencent.com/document/api/614/95636#4.-.E7.A4.BA.E4.BE.8B) 使用。\n    ```\n    \"Filters\": [\n        {\n            \"Key\": \"tag:tag-key-test\",\n            \"Values\": [\n                \"12\"\n            ]\n        }\n    ]\n    ```\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -8015,7 +8151,7 @@
         },
         {
           "disabled": false,
-          "document": "按照topicId和regionId过滤。\n\n- topicId:日志主题Id。\n    -  通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。\n- regionId\n    - 1:广州\n    - 4:上海\n    - 5:中国香港\n    - 7:上海金融\n    - 8:北京\n    - 9:新加坡\n    - 11:深圳金融\n    - 15:硅谷\n    - 16:成都\n    - 17:法兰克福\n    - 18:首尔\n    - 19:重庆\n    - 22:弗吉尼亚\n    - 23:曼谷\n    - 25:东京\n    - 33:南京\n    - 36:天津\n    - 39:台北\n    - 46:北京金融\n    - 72:雅加达\n    - 74:圣保罗\n    - 78:上海自动驾驶云\n",
+          "document": "按照topicId和regionId过滤。\n- topicId:日志主题Id。\n    -  通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。\n    - 示例值：439a5304-08f9-484b-9c4d-46ff57133816\n- regionId\n    - 1:广州\n    - 4:上海\n    - 5:中国香港\n    - 7:上海金融\n    - 8:北京\n    - 9:新加坡\n    - 11:深圳金融\n    - 15:硅谷\n    - 16:成都\n    - 17:法兰克福\n    - 18:首尔\n    - 19:重庆\n    - 22:弗吉尼亚\n    - 23:曼谷\n    - 25:东京\n    - 33:南京\n    - 36:天津\n    - 39:台北\n    - 46:北京金融\n    - 72:雅加达\n    - 74:圣保罗\n    - 78:上海自动驾驶云\n",
           "example": "无",
           "member": "TopicIdAndRegion",
           "name": "TopicIdRegionFilter",
@@ -11602,7 +11738,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知渠道组ID。-通过[获取通知内容模板](https://cloud.tencent.com/document/api/614/111714)获取通知渠道组ID",
+          "document": "通知渠道组ID。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/api/614/56462)获取通知渠道组ID",
           "example": "notice-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
           "member": "string",
           "name": "AlarmNoticeId",
@@ -12097,7 +12233,7 @@
         },
         {
           "disabled": false,
-          "document": "自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息，详细参考https://cloud.tencent.com/document/api/614/56471#HostFileInfo",
+          "document": "自建k8s-节点文件配置信息,包括文件路径、名称及元数据相关信息。\n\n- 详情参考  [HostFileInfo](https://cloud.tencent.com/document/api/614/56471#HostFileInfo) 文档。",
           "example": "无",
           "member": "HostFileInfo",
           "name": "HostFile",
@@ -12106,7 +12242,7 @@
         },
         {
           "disabled": false,
-          "document": "采集配置标记。\n- 目前只支持label_k8s，用于标记自建k8s集群使用的采集配置",
+          "document": "采集配置标记。\n- 目前只支持label_k8s，用于标记自建k8s集群使用的采集配置\n- 详情参考 [ ContainerFileInfo](https://cloud.tencent.com/document/api/614/56471#ContainerFileInfo) 文档",
           "example": "无",
           "member": "ContainerFileInfo",
           "name": "ContainerFile",
@@ -12115,7 +12251,7 @@
         },
         {
           "disabled": false,
-          "document": "自建k8s-容器标准输出信息，包括容器、命名空间等，详细参考https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo",
+          "document": "自建k8s-容器标准输出信息，包括容器、命名空间等，\n\n- 详情参考 [ContainerStdoutInfo]( https://cloud.tencent.com/document/api/614/56471#ContainerStdoutInfo) 文档",
           "example": "无",
           "member": "ContainerStdoutInfo",
           "name": "ContainerStdout",
@@ -12142,7 +12278,7 @@
         },
         {
           "disabled": false,
-          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
+          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType。",
           "example": "无",
           "member": "ExtractRuleInfo",
           "name": "ExtractRule",
@@ -12584,7 +12720,7 @@
         {
           "disabled": false,
           "document": "仪表盘订阅id。通过 [获取仪表盘订阅列表](https://cloud.tencent.com/document/api/614/105779)接口获取Id。",
-          "example": "1",
+          "example": "21683",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -12593,7 +12729,7 @@
         {
           "disabled": false,
           "document": "仪表盘id。通过 [获取仪表盘](https://cloud.tencent.com/document/api/614/95636)接口获取DashboardId。",
-          "example": "dashboard-e7497a78-667f-45ee-b785-4ac8fca05dc6",
+          "example": "dashboard-522a5609-1f41-4b11-8086-5afd1d7574f5",
           "member": "string",
           "name": "DashboardId",
           "required": false,
@@ -12611,7 +12747,7 @@
         {
           "disabled": false,
           "document": "订阅时间cron表达式，格式为：{秒数} {分钟} {小时} {日期} {月份} {星期}；（有效数据为：{分钟} {小时} {日期} {月份} {星期}）。",
-          "example": "\"0 0 10 L * ?\"",
+          "example": "0 0 10 * * ?",
           "member": "string",
           "name": "Cron",
           "required": false,
@@ -13519,7 +13655,7 @@
         },
         {
           "disabled": false,
-          "document": "取消切换存储任务的id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id。",
+          "document": "取消切换存储任务的id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取取消切换存储任务的id【Topics中的TopicAsyncTaskID字段】。",
           "example": "87b94286-1b33-44df-8568-924eb250ef4e",
           "member": "string",
           "name": "CancelTopicAsyncTaskID",

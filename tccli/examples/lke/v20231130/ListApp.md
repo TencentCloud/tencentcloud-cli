@@ -21,7 +21,7 @@ Output:
                 "AppBizId": "1801166480814637052",
                 "Name": "我的应用",
                 "Avatar": "https://qidian-qbot-xxxxxxx.cos.ap-guangzhou.myqcloud.com/public/174434244193038090240/1801166482343244637056/image/jNVJvoXsTsBzo2324324121HZdgd-1816016475183120384.png",
-                "Desc": "描述",
+                "Desc": "描述信息",
                 "AppStatus": 2,
                 "AppStatusDesc": "运行中",
                 "UpdateTime": "1731407395",

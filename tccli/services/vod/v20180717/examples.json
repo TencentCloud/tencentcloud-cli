@@ -226,6 +226,14 @@
         "title": "创建即时转码模板"
       }
     ],
+    "CreateMPSTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMPSTemplate\n<公共请求参数>\n\n{\n    \"SubAppId\": 1500000001,\n    \"TemplateType\": \"Transcode\",\n    \"MPSCreateTemplateParams\": \"{\\\"Container\\\":\\\"mp4\\\",\\\"Name\\\":\\\"test\\\",\\\"RemoveAudio\\\":1,\\\"VideoTemplate\\\":{\\\"Codec\\\":\\\"h264\\\",\\\"Fps\\\":0,\\\"Bitrate\\\":0},\\\"EnhanceConfig\\\":{\\\"VideoEnhance\\\":{\\\"FrameRate\\\":{\\\"Switch\\\":\\\"ON\\\",\\\"Fps\\\":50}}}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 22143,\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "创建 MPS 音视频增强任务模板"
+      }
+    ],
     "CreatePersonSample": [
       {
         "document": "",
@@ -482,6 +490,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"MyTemplateName\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"58759c60-aceb-4b02-b0ed-6c62bfea88cc\"\n    }\n}",
         "title": "删除即时转码模板"
+      }
+    ],
+    "DeleteMPSTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMPSTemplate\n<公共请求参数>\n\n{\n    \"SubAppId\": 1500000001,\n    \"TemplateType\": \"Transcode\",\n    \"Definition\": 24214\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "删除 MPS 音视频增强任务模板"
       }
     ],
     "DeleteMedia": [
@@ -876,6 +892,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeLicenseUsageData\n&LicenseType=DRM\n&StartTime=2020-09-07T00:00:00+08:00\n&EndTime=2020-09-09T23:59:59+08:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"LicenseUsageDataSet\": [\n            {\n                \"Time\": \"2020-09-07T00:00:00+08:00\",\n                \"Count\": 2\n            },\n            {\n                \"Time\": \"2020-09-08T00:00:00+08:00\",\n                \"Count\": 2\n            },\n            {\n                \"Time\": \"2020-09-09T00:00:00+08:00\",\n                \"Count\": 2\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "查询 DRM 加密播放 License 请求次数"
+      }
+    ],
+    "DescribeMPSTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMPSTemplate\n<公共请求参数>\n\n{\n    \"SubAppId\": 1500000001,\n    \"TemplateType\": \"Transcode\",\n    \"MPSDescribeTemplateParams\": \"{\\\"Definitions\\\": [100010],\\\"Type\\\": \\\"Custom\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MPSTemplateSet\": [\n            {\n                \"TaskType\": \"Transcode\",\n                \"MPSTemplateInfo\": \"{\\\"Definition\\\":\\\"100010\\\",\\\"Container\\\":\\\"mp4\\\",\\\"Name\\\":\\\"test\\\",\\\"Comment\\\":\\\"\\\",\\\"Type\\\":\\\"Custom\\\",\\\"RemoveVideo\\\":0,\\\"RemoveAudio\\\":0,\\\"VideoTemplate\\\":{\\\"Codec\\\":\\\"h264\\\",\\\"Fps\\\":0,\\\"Bitrate\\\":0,\\\"ResolutionAdaptive\\\":\\\"open\\\",\\\"Width\\\":0,\\\"Height\\\":0,\\\"FillType\\\":\\\"black\\\",\\\"Gop\\\":0,\\\"VideoProfile\\\":\\\"\\\",\\\"VideoLevel\\\":\\\"\\\",\\\"Subjective\\\":0,\\\"ContentAdaptStream\\\":0,\\\"SegmentType\\\":0,\\\"FpsDenominator\\\":1,\\\"Stereo3dType\\\":\\\"\\\",\\\"HlsTime\\\":0,\\\"Mode\\\":\\\"VBR\\\",\\\"Sar\\\":\\\"\\\",\\\"NoScenecut\\\":0,\\\"BitDepth\\\":8,\\\"RawPts\\\":0,\\\"ScenarioBased\\\":0,\\\"SceneType\\\":\\\"\\\",\\\"CompressType\\\":\\\"\\\"},\\\"AudioTemplate\\\":{\\\"Codec\\\":\\\"aac\\\",\\\"Bitrate\\\":0,\\\"SampleRate\\\":44100,\\\"AudioChannel\\\":2,\\\"StreamSelects\\\":[]},\\\"ContainerType\\\":\\\"Video\\\",\\\"CreateTime\\\":\\\"2025-07-22T20:28:36+08:00\\\",\\\"UpdateTime\\\":\\\"2025-07-22T20:28:36+08:00\\\",\\\"TEHDConfig\\\":null,\\\"EnhanceConfig\\\":{\\\"VideoEnhance\\\":{\\\"FrameRate\\\":{\\\"Switch\\\":\\\"ON\\\",\\\"Fps\\\":0},\\\"SuperResolution\\\":{\\\"Switch\\\":\\\"ON\\\",\\\"Type\\\":\\\"hq\\\",\\\"Size\\\":2},\\\"Hdr\\\":{\\\"Switch\\\":\\\"OFF\\\",\\\"Type\\\":\\\"HDR10\\\"},\\\"Denoise\\\":{\\\"Switch\\\":\\\"OFF\\\",\\\"Type\\\":\\\"weak\\\"},\\\"ImageQualityEnhance\\\":{\\\"Switch\\\":\\\"ON\\\",\\\"Type\\\":\\\"normal\\\"},\\\"ColorEnhance\\\":{\\\"Switch\\\":\\\"ON\\\",\\\"Type\\\":\\\"weak\\\"},\\\"SharpEnhance\\\":{\\\"Switch\\\":\\\"OFF\\\",\\\"Intensity\\\":0},\\\"FaceEnhance\\\":{\\\"Switch\\\":\\\"OFF\\\",\\\"Intensity\\\":0},\\\"LowLightEnhance\\\":{\\\"Switch\\\":\\\"OFF\\\",\\\"Type\\\":\\\"normal\\\"},\\\"ScratchRepair\\\":{\\\"Switch\\\":\\\"OFF\\\",\\\"Intensity\\\":0},\\\"ArtifactRepair\\\":{\\\"Switch\\\":\\\"OFF\\\",\\\"Type\\\":\\\"weak\\\"}},\\\"AudioEnhance\\\":{\\\"Denoise\\\":{\\\"Switch\\\":\\\"OFF\\\"},\\\"Separate\\\":{\\\"Switch\\\":\\\"OFF\\\",\\\"Type\\\":\\\"normal\\\",\\\"Track\\\":\\\"vocal\\\"},\\\"VolumeBalance\\\":{\\\"Switch\\\":\\\"OFF\\\",\\\"Type\\\":\\\"loudNorm\\\"},\\\"Beautify\\\":{\\\"Switch\\\":\\\"OFF\\\",\\\"Types\\\":[\\\"declick\\\"]}}},\\\"StdExtInfo\\\":null,\\\"AliasName\\\":\\\"\\\"}\"\n            }\n        ],\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "获取 MPS 任务的参数模板列表"
       }
     ],
     "DescribeMediaInfos": [
@@ -1406,6 +1430,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"MyTemplateName\",\n    \"Comment\": \"comment\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"58759c60-aceb-4b02-b0ed-6c62bfea88cc\"\n    }\n}",
         "title": "修改即时转码模板"
+      }
+    ],
+    "ModifyMPSTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMPSTemplate\n<公共请求参数>\n\n{\n    \"SubAppId\": 1500000001,\n    \"TemplateType\": \"Transcode\",\n    \"MPSModifyTemplateParams\": \"{\\\"Definition\\\":24214,\\\"Container\\\":\\\"mp4\\\",\\\"Name\\\":\\\"test\\\",\\\"RemoveAudio\\\":1,\\\"VideoTemplate\\\":{\\\"Codec\\\":\\\"h264\\\",\\\"Fps\\\":0,\\\"Bitrate\\\":0},\\\"EnhanceConfig\\\":{\\\"VideoEnhance\\\":{\\\"FrameRate\\\":{\\\"Switch\\\":\\\"ON\\\",\\\"Fps\\\":50}}}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "修改 MPS 音视频增强任务模板"
       }
     ],
     "ModifyMediaInfo": [

@@ -617,7 +617,7 @@
       "status": "online"
     },
     "DescribeContainerGroupDetail": {
-      "document": "容器部署组详情（已废弃，请使用  DescribeContainerGroupDeployInfo）",
+      "document": "容器部署组详情（已废弃，请使用  [DescribeContainerGroupDeployInfo](https://cloud.tencent.com/document/product/649/67221)）",
       "input": "DescribeContainerGroupDetailRequest",
       "name": "查询容器部署组详情",
       "output": "DescribeContainerGroupDetailResponse",
@@ -7662,7 +7662,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "应用名称，最长60字符",
           "example": "application-user",
           "member": "string",
           "name": "ApplicationName",
@@ -7725,7 +7725,7 @@
         },
         {
           "disabled": false,
-          "document": "需要绑定的数据集ID",
+          "document": "【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
           "example": "program-6a79x94v",
           "member": "string",
           "name": "ProgramId",
@@ -8361,7 +8361,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组所属应用ID",
+          "document": "分组所属【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -8370,7 +8370,7 @@
         },
         {
           "disabled": false,
-          "document": "分组所属命名空间ID",
+          "document": "分组所属【命名空间ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -8487,8 +8487,8 @@
         },
         {
           "disabled": false,
-          "document": "部署组资源类型；\nDEF — 默认资源类型；\nGW — 网关资源类型；",
-          "example": "DEF",
+          "document": "部署组资源类型；DEF 表示默认资源类型",
+          "example": "\"DEF\": 使用时需要去掉双引号",
           "member": "string",
           "name": "GroupResourceType",
           "required": false,
@@ -8496,7 +8496,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "分组所属【子网ID】，可前往TKE侧集群[控制台](https://console.cloud.tencent.com/tke2/cluster/sub/list/basic/info/base?rid=1&clusterId=cls-2nhp3g1i)进行获取",
           "example": "subnet-6a79x94v",
           "member": "string",
           "name": "SubnetId",
@@ -8914,7 +8914,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组所属的应用ID",
+          "document": "部署组所属的【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -8923,7 +8923,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组所属命名空间ID",
+          "document": "部署组所属【命名空间ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -8941,7 +8941,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "部署组所属的【集群ID】，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。",
           "example": "cluster-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -8959,8 +8959,8 @@
         },
         {
           "disabled": false,
-          "document": "部署组资源类型；DEF 表示默认资源类型；GW 表示网关资源类型",
-          "example": "DEF",
+          "document": "部署组资源类型；DEF 表示默认资源类型",
+          "example": "\"DEF\": 使用时需要去掉双引号",
           "member": "string",
           "name": "GroupResourceType",
           "required": false,
@@ -8983,6 +8983,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "k8s命名空间名称",
+          "example": "default",
+          "member": "string",
+          "name": "K8sNamespaceName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9297,8 +9306,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间资源类型(默认值为DEF)。DEF：默认普通命名空间。GLOBAL：全局命名空间",
-          "example": "GLOBAL",
+          "document": "命名空间资源类型；DEF：表示默认资源类型；GW：表示网关资源类型",
+          "example": "\"DEF\": 使用时需要去掉双引号",
           "member": "string",
           "name": "NamespaceResourceType",
           "required": false,
@@ -9306,8 +9315,8 @@
         },
         {
           "disabled": false,
-          "document": "是否是全局命名空间(默认是DEF，表示普通命名空间；GLOBAL表示全局命名空间)",
-          "example": "GLOBAL",
+          "document": "命名空间类型；DEF 表示默认普通命名空间；GLOBAL 表示全局命名空间",
+          "example": "\"DEF\": 使用时需要去掉双引号",
           "member": "string",
           "name": "NamespaceType",
           "required": false,
@@ -12038,6 +12047,42 @@
           "name": "DeployDesc",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "k8s命名空间名称",
+          "example": "default",
+          "member": "string",
+          "name": "K8sNamespaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用静态IP",
+          "example": "false",
+          "member": "bool",
+          "name": "StaticIpEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "启动策略[OrderedReady/Parallel]",
+          "example": "OrderedReady",
+          "member": "string",
+          "name": "PodManagementPolicyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "滚动更新分区序号",
+          "example": "0",
+          "member": "int64",
+          "name": "Partition",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -12465,7 +12510,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
@@ -12474,7 +12519,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包ID",
+          "document": "软件包ID，可通过调用DescribeUploadInfo接口时[获取上传程序包信息](https://cloud.tencent.com/document/api/649/36078)返回的COS上传信息获取，登录[控制台](https://console.cloud.tencent.com/tsf/product?rid=1)进行查看",
           "example": "pkg-6a79x94v",
           "member": "string",
           "name": "PkgId",
@@ -12547,7 +12592,7 @@
         {
           "disabled": false,
           "document": "滚动发布每个批次参与的实例比率",
-          "example": "0.25",
+          "example": "[0.25]",
           "member": "float",
           "name": "DeployBatch",
           "required": false,
@@ -12564,7 +12609,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动发布每个批次的时间间隔",
+          "document": "滚动发布每个批次的时间间隔，单位min。默认值是0，不等待。",
           "example": "30",
           "member": "uint64",
           "name": "DeployWaitTime",
@@ -12652,7 +12697,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "task-6a79x94v",
+          "example": "无",
           "member": "TaskId",
           "name": "Result",
           "output_required": true,
@@ -13048,7 +13093,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -13167,8 +13212,8 @@
         },
         {
           "disabled": false,
-          "document": "应用类型",
-          "example": "GLOBAL",
+          "document": "指定应用类型，目前支持：\n- `V`：普通应用/CVM应用\n- `C`：容器应用\n- `S`：serverless 应用",
+          "example": "V",
           "member": "string",
           "name": "ApplicationType",
           "required": false,
@@ -13185,8 +13230,8 @@
         },
         {
           "disabled": false,
-          "document": "应用资源类型数组",
-          "example": "[\"GLOBAL\"]",
+          "document": "应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型",
+          "example": "[\"GW\"]",
           "member": "string",
           "name": "ApplicationResourceTypeList",
           "required": false,
@@ -14125,7 +14170,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID，按照【部署组ID】进行过滤，可通过调用DescribeGroups查询已创建的项目列表或登录控制台进行查看；也可以调用CreateGroup创建新的项目。部署组ID例如：group-ab958z6y",
           "example": "group-ab958z6y",
           "member": "string",
           "name": "GroupId",
@@ -14236,8 +14281,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组所属应用ID。",
-          "example": "application-xxx",
+          "document": "分组所属【应用ID】，可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
+          "example": "application-zvw6zp9a",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -14290,8 +14335,8 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
-          "example": "cls-xxx",
+          "document": "分组所属【集群ID】，可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。",
+          "example": "cls-2nhp3g1i",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -14299,8 +14344,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间 ID",
-          "example": "namespace-xxx",
+          "document": "分组所属【命名空间 ID】，可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
+          "example": "namespace-byxwl4da",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -17449,7 +17494,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
+          "document": "每页数量，默认值20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -17458,7 +17503,7 @@
         },
         {
           "disabled": false,
-          "document": "起始偏移量",
+          "document": "起始偏移量，默认值0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -18311,8 +18356,8 @@
         },
         {
           "disabled": false,
-          "document": "资源类型数组",
-          "example": "[\"GLOBAL\"]",
+          "document": "应用资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型",
+          "example": "[\"GW\"]",
           "member": "string",
           "name": "ApplicationResourceTypeList",
           "required": false,
@@ -18457,7 +18502,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID列表，不填写时查询全量",
+          "document": "按照【部署组ID】进行过滤，不填写时查询全量。可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-zvw6zp9a&tab=publish&subTab=group)进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "[\"group-6a79x94v\"]",
           "member": "string",
           "name": "GroupIdList",
@@ -18466,7 +18511,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID，不填写时查询全量",
+          "document": "按照【应用ID】进行过滤，不填写时查询全量。可通过调用[DescribeApplications](https://cloud.tencent.com/document/product/649/36090)查询已创建的应用列表或登录[控制台](https://console.cloud.tencent.com/tsf/app?rid=1)进行查看；也可以调用[CreateApplication](https://cloud.tencent.com/document/product/649/36094)创建新的应用。",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
@@ -18475,7 +18520,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID，不填写时查询全量",
+          "document": "按照【集群ID】进行过滤，不填写时查询全量。可通过调用[DescribeClusters](https://cloud.tencent.com/document/product/649/85857)查询已创建的集群列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=docker)进行查看；也可以调用[CreateCluster](https://cloud.tencent.com/document/product/649/36049)创建新的集群。",
           "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
@@ -18484,7 +18529,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID，不填写时查询全量",
+          "document": "按照【命名空间ID】进行过滤，不填写时查询全量。可通过调用[DescribeSimpleNamespaces](https://cloud.tencent.com/document/product/649/36096)查询已创建的命名空间列表或登录[控制台](https://console.cloud.tencent.com/tsf/resource?rid=1&tab=namespace)进行查看；也可以调用[CreateNamespace](https://cloud.tencent.com/document/product/649/36098)创建新的命名空间。",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
@@ -18493,7 +18538,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "每页条数，默认值20，无上限",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -18502,7 +18547,7 @@
         },
         {
           "disabled": false,
-          "document": "起始偏移量",
+          "document": "起始偏移量，默认值0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -18611,8 +18656,8 @@
         },
         {
           "disabled": false,
-          "document": "查询资源类型列表",
-          "example": "[\"GLOBAL\"]",
+          "document": "查询资源类型列表；DEF 表示默认资源类型；GW 表示网关资源类型",
+          "example": "[\"GW\"]",
           "member": "string",
           "name": "NamespaceResourceTypeList",
           "required": false,
@@ -21029,6 +21074,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用删除",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteDisabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁用原因",
+          "example": "已存在绑定资源,请解绑分组或API后重试",
+          "member": "string",
+          "name": "DeleteDisabledReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -23935,6 +24000,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用删除。\ntrue：禁用\nfalse：取消禁用",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteDisabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁用原因",
+          "example": "该泳道已关联全链路灰度发布规则,请先从规则中移除后删除",
+          "member": "string",
+          "name": "DeleteDisabledReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -25337,7 +25424,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据集ID",
+          "document": "数据集ID，调用[DescribePrograms](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program)查询接口会返回数据集信息，包括programId",
           "example": "program-6a79x94v",
           "member": "string",
           "name": "ProgramId",
@@ -29696,7 +29783,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "default",
+          "example": "namespace-name",
           "member": "string",
           "name": "NamespaceName",
           "output_required": true,
@@ -29730,6 +29817,16 @@
           "member": "string",
           "name": "AppMicroServiceType",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "k8s 命名空间名称",
+          "example": "kube-ns",
+          "member": "string",
+          "name": "K8sNamespaceName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -29804,7 +29901,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "按照【部署组ID】进行部署组启动，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-zvw6zp9a&tab=publish&subTab=group)进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "group-2ks8wsk",
           "member": "string",
           "name": "GroupId",
@@ -29924,7 +30021,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "按照【部署组ID】进行部署组删除，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-zvw6zp9a&tab=publish&subTab=group)进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
           "example": "group-wns82m",
           "member": "string",
           "name": "GroupId",

@@ -8171,6 +8171,15 @@
           "name": "TaxIdentifyCode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "印章描述内容",
+          "example": "印章描述说明",
+          "member": "string",
+          "name": "SealDescription",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15046,6 +15055,56 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "印章的真实宽度，单位毫米",
+          "example": "42",
+          "member": "int64",
+          "name": "RealWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "印章的真实高度，单位毫米",
+          "example": "42",
+          "member": "int64",
+          "name": "RealHeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义子类型印章",
+          "example": "OHTER_1",
+          "member": "string",
+          "name": "SubSealType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义子类型印章名称",
+          "example": "其他子印章类型",
+          "member": "string",
+          "name": "SubSealName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "印章描述",
+          "example": "印章描述内容",
+          "member": "string",
+          "name": "SealDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15262,6 +15321,16 @@
           "example": "yDCHoUU08m4mnpUxHGGHPv9FScKQsvHb",
           "member": "string",
           "name": "SubTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业批量注册 传递过来的企业名称，方便客户定位企业",
+          "example": "典子谦示例企业",
+          "member": "string",
+          "name": "OrganizationName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
