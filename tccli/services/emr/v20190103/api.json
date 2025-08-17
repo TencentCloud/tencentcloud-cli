@@ -4022,7 +4022,7 @@
         {
           "disabled": false,
           "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
-          "example": "{\"SubnetId\":\"subnet-xxxx3hi2\",\"VpcId\":\"vpc-xxxx1fu7\"}",
+          "example": "无",
           "member": "VPCSettings",
           "name": "VPCSettings",
           "required": false,
@@ -4067,7 +4067,7 @@
         {
           "disabled": false,
           "document": "登陆密码，LoginSettings中的Password字段",
-          "example": "{\"Password\":\"xxxxxxxx\"}",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -4112,7 +4112,7 @@
         {
           "disabled": false,
           "document": "计算资源Id，如果不存在，会根据ComputeResourceConfig来创建",
-          "example": "无",
+          "example": "emr-ComputerID",
           "member": "string",
           "name": "ComputeResourceId",
           "required": false,

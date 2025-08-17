@@ -20,6 +20,7 @@ Output:
             {
                 "McpServerId": "lhms-oartxxxz",
                 "Name": "map",
+                "McpServerType": "PUBLIC_PACKAGE",
                 "IconUrl": "https://example.com/icon.png",
                 "Command": "ZW5jb2RlZCBtY3Agc2VydmVyIGNvbW1hbmQ=",
                 "State": "RUNNING",
@@ -36,6 +37,8 @@ Output:
                 ]
             }
         ],
+        "InstanceId": "\tlhins-muuz7kis",
+        "InstanceName": "green-lh-test",
         "TotalCount": 1,
         "RequestId": "42582c39-52fd-4a00-8019-c3c995e8f9d6"
     }

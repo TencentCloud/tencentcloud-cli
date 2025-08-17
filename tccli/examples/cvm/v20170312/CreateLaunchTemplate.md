@@ -1,13 +1,13 @@
 **Example 1: 使用最简单参数创建实例启动模板**
 
-只传必传的Zone、镜像ID和启动模板ID，其他均采用系统默认值，具体配置如下：实例所在位置为广州二区，镜像ID为：img-pmqg1cw7，实例启动模板名称：myTemplate
+只传必传的Zone、镜像ID和启动模板ID，其他均采用系统默认值，具体配置如下：实例所在位置为广州六区，镜像ID为：img-pmqg1cw7，实例启动模板名称：myTemplate
 
 Input: 
 
 ```
 tccli cvm CreateLaunchTemplate --cli-unfold-argument  \
     --LaunchTemplateName myTemplate \
-    --Placement.Zone ap-guangzhou-2 \
+    --Placement.Zone ap-guangzhou-6 \
     --ImageId img-pmqg1cw7
 ```
 

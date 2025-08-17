@@ -161,7 +161,7 @@
         {
           "disabled": false,
           "document": "多视角的模型图片，视角参考值：\nleft：左视图；\nright：右视图；\nback：后视图；\n\n每个视角仅限制一张图片。\n●图片大小限制：编码后大小不可超过8M。\n●图片分辨率限制：单边分辨率小于5000且大于128。\n●支持图片格式：支持jpg或png",
-          "example": "[{\"ViewType\":\"back\", \"ViewImageUrl\":\"https://cos.ap-guangzhou.myqcloud.com/image.jpg\"}]",
+          "example": "无",
           "member": "ViewImage",
           "name": "MultiViewImages",
           "required": false,

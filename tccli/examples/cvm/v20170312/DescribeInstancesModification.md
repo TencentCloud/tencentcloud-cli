@@ -20,7 +20,7 @@ Output:
                 "Status": "SELL",
                 "InstanceTypeConfig": {
                     "GPU": 0,
-                    "Zone": "ap-guangzhou-2",
+                    "Zone": "ap-guangzhou-6",
                     "FPGA": 0,
                     "InstanceFamily": "SA2",
                     "InstanceType": "SA2.MEDIUM4",

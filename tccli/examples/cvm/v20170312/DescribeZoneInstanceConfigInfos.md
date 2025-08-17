@@ -8,7 +8,7 @@ Input:
 tccli cvm DescribeZoneInstanceConfigInfos --cli-unfold-argument  \
     --Filters.0.Values POSTPAID_BY_HOUR \
     --Filters.0.Name instance-charge-type \
-    --Filters.1.Values ap-guangzhou-2 \
+    --Filters.1.Values ap-guangzhou-6 \
     --Filters.1.Name zone
 ```
 
@@ -19,7 +19,7 @@ Output:
         "InstanceTypeQuotaSet": [
             {
                 "Status": "SELL",
-                "Zone": "ap-guangzhou-2",
+                "Zone": "ap-guangzhou-6",
                 "NetworkCard": 0,
                 "Price": {
                     "DiscountPrice": 59,

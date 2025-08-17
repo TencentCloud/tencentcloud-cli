@@ -2328,7 +2328,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID（必填），形如mssql-i1z41iwd",
+          "document": "实例ID，形如mssql-i1z41iwd",
           "example": "mssql-njj2mtpl",
           "member": "string",
           "name": "InstanceId",
@@ -5992,15 +5992,17 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账号权限列表",
-          "example": "[]",
+          "example": "无",
           "member": "AccountPrivilege",
           "name": "Accounts",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6742,7 +6744,7 @@
         {
           "disabled": false,
           "document": "一个或者多个实例ID。实例ID，格式如：mssql-si2823jyl。",
-          "example": "[mssql-7vfv3rk3]",
+          "example": "[\"mssql-7vfv3rk3\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": false,
@@ -6751,7 +6753,7 @@
         {
           "disabled": false,
           "document": "实例名称列表，模糊查询。",
-          "example": "[name]",
+          "example": "[\"name\"]",
           "member": "string",
           "name": "InstanceNameSet",
           "required": false,
@@ -6760,7 +6762,7 @@
         {
           "disabled": false,
           "document": "排序字段，默认default，则按照备份空间降序。\ndefault 按照备份空间排序\ndata 数据备份排序\nlog 日志备份排序\nauto 自动备份排序\nmanual 手动备份排序",
-          "example": "default",
+          "example": "order",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -6787,7 +6789,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6797,7 +6799,7 @@
           "example": "无",
           "member": "SummaryDetailRes",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7466,7 +7468,7 @@
         {
           "disabled": false,
           "document": "实例ID列表",
-          "example": "[mssql-6upluvd5]",
+          "example": "[\"mssql-6upluvd5\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": false,
@@ -7475,7 +7477,7 @@
         {
           "disabled": false,
           "document": "实例名称列表",
-          "example": "[name]",
+          "example": "[\"name\"]",
           "member": "string",
           "name": "InstanceNameSet",
           "required": false,
@@ -7501,8 +7503,8 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份培训",
-          "example": "default",
+          "document": "排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份",
+          "example": "instanceId",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -7529,7 +7531,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7539,7 +7541,7 @@
           "example": "无",
           "member": "CrossSummaryDetailRes",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11109,7 +11111,7 @@
           "example": "[\"2022-10-24 00:00:00\"]",
           "member": "string",
           "name": "SaveModePeriod",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11119,7 +11121,7 @@
           "example": "[\"2022-10-25 00:00:00\"]",
           "member": "string",
           "name": "SaveModeRegular",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12012,7 +12014,7 @@
         {
           "disabled": false,
           "document": "扩展事件列表",
-          "example": "[]",
+          "example": "无",
           "member": "Events",
           "name": "Events",
           "output_required": true,
@@ -13893,7 +13895,7 @@
         },
         {
           "disabled": false,
-          "document": "备份模式（必填），master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。",
+          "document": "备份模式，master_pkg-主节点上打包备份文件；master_no_pkg-主节点单库备份文件；slave_pkg-从节点上打包备份文件；slave_no_pkg-从节点上单库备份文件，从节点上备份只有在always on容灾模式下支持。",
           "example": "master_no_pkg",
           "member": "string",
           "name": "BackupModel",

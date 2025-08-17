@@ -8879,8 +8879,8 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server ID列表。列表为空时查询实例所有的MCP Server。",
-          "example": "lhms-oartxxxz",
+          "document": "MCP Server ID列表。列表为空时此条件不生效。",
+          "example": "[\"lhms-oartxxxz\"]",
           "member": "string",
           "name": "McpServerIds",
           "required": false,
@@ -8889,7 +8889,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -8898,7 +8898,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -8923,11 +8923,31 @@
         {
           "disabled": false,
           "document": "符合条件的MCP Server数量。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例 ID。\t",
+          "example": "lhins-lart4xxz",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称。",
+          "example": "green-lh-test",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -14732,6 +14752,17 @@
         },
         {
           "disabled": false,
+          "document": "MCP Server类型。枚举值：PUBLIC_PACKAGE，公共包安装；AGENT_GENERATED，AI生成。",
+          "example": "PUBLIC_PACKAGE",
+          "member": "string",
+          "name": "McpServerType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "MCP Server图标地址",
           "example": "http://127.0.0.1/map/icon.png",
           "member": "string",
@@ -16248,7 +16279,7 @@
         {
           "disabled": false,
           "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
-          "example": "lhms-oartxxxz",
+          "example": "[\"lhms-oartxxxz\"]",
           "member": "string",
           "name": "McpServerIds",
           "required": true,
@@ -16958,7 +16989,7 @@
         {
           "disabled": false,
           "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
-          "example": "无",
+          "example": "\t[\"lhms-oartxxxz\"]",
           "member": "string",
           "name": "McpServerIds",
           "required": true,
@@ -17640,7 +17671,7 @@
         {
           "disabled": false,
           "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
-          "example": "无",
+          "example": "\t[\"lhms-oartxxxz\"]",
           "member": "string",
           "name": "McpServerIds",
           "required": true,
@@ -17749,7 +17780,7 @@
         {
           "disabled": false,
           "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
-          "example": "无",
+          "example": "[\"lhms-oartxxxz\"]",
           "member": "string",
           "name": "McpServerIds",
           "required": true,
