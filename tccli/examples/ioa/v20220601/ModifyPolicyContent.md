@@ -35,6 +35,7 @@ Input:
 
 ```
 tccli ioa ModifyPolicyContent --cli-unfold-argument  \
+    --DomainInstanceId 10 \
     --PolicyId 306968 \
     --PolicyContent.0.Operation 1 \
     --PolicyContent.0.OSType 0 \

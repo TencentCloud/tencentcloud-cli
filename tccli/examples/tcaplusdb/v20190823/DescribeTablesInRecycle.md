@@ -16,74 +16,74 @@ Output:
         "TotalCount": 1,
         "TableInfos": [
             {
-                "TableName": "abc",
-                "TableInstanceId": "abc",
-                "TableType": "abc",
-                "TableIdlType": "abc",
-                "ClusterId": "abc",
-                "ClusterName": "abc",
-                "TableGroupId": "abc",
-                "TableGroupName": "abc",
-                "KeyStruct": "abc",
-                "ValueStruct": "abc",
-                "ShardingKeySet": "abc",
-                "IndexStruct": "abc",
-                "ListElementNum": 1,
+                "TableName": "testname",
+                "TableInstanceId": "tcaplus-121312",
+                "TableType": "tdr",
+                "TableIdlType": "tdr",
+                "ClusterId": "121443121",
+                "ClusterName": "clustename",
+                "TableGroupId": "18433",
+                "TableGroupName": "groupname",
+                "KeyStruct": "keystruct",
+                "ValueStruct": "valuestruct",
+                "ShardingKeySet": "shardingkeyset",
+                "IndexStruct": "indexstruct",
+                "ListElementNum": 1024,
                 "IdlFiles": [
                     {
-                        "FileName": "abc",
-                        "FileType": "abc",
-                        "FileExtType": "abc",
-                        "FileSize": 0,
-                        "FileId": 0,
-                        "FileContent": "abc"
+                        "FileName": "filename",
+                        "FileType": "tdr",
+                        "FileExtType": "tdr",
+                        "FileSize": 10240,
+                        "FileId": 1,
+                        "FileContent": "content"
                     }
                 ],
-                "ReservedVolume": 0,
-                "ReservedReadQps": 0,
-                "ReservedWriteQps": 0,
-                "TableSize": 0,
-                "Status": "abc",
-                "CreatedTime": "abc",
-                "UpdatedTime": "abc",
-                "Memo": "abc",
+                "ReservedVolume": 10,
+                "ReservedReadQps": 1000,
+                "ReservedWriteQps": 1000,
+                "TableSize": 1000,
+                "Status": "normal",
+                "CreatedTime": "2020-10-10 10:10:10",
+                "UpdatedTime": "2020-10-10 10:10:10",
+                "Memo": "memo",
                 "Error": {
-                    "Code": "abc",
-                    "Message": "abc"
+                    "Code": "",
+                    "Message": ""
                 },
-                "ApiAccessId": "abc",
+                "ApiAccessId": "accessid",
                 "SortFieldNum": 0,
                 "SortRule": 0,
-                "DbClusterInfoStruct": "abc",
+                "DbClusterInfoStruct": "dbinfostruct",
                 "TxhBackupExpireDay": 1,
                 "SyncTableInfo": {
                     "TargetTableSplitNum": 1,
                     "TargetTableNamePrefix": [
-                        "abc"
+                        "tablenameprefix"
                     ],
-                    "TargetSyncDBInstanceId": "abc",
-                    "TargetDatabaseName": "abc",
+                    "TargetSyncDBInstanceId": "193242",
+                    "TargetDatabaseName": "targetname",
                     "Status": 0,
-                    "ClusterId": "abc",
+                    "ClusterId": "193243234",
                     "TableGroupId": 1,
-                    "TableName": "abc",
-                    "TableId": "abc",
+                    "TableName": "testname",
+                    "TableId": "tcaplus-12312",
                     "KeyFieldMapping": [
                         {
-                            "SourceName": "abc",
-                            "TargetName": "abc"
+                            "SourceName": "sourcename",
+                            "TargetName": "targetname"
                         }
                     ],
                     "ValueFieldMapping": [
                         {
-                            "SourceName": "abc",
-                            "TargetName": "abc"
+                            "SourceName": "sourcename",
+                            "TargetName": "targetname"
                         }
                     ]
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1932423-121413"
     }
 }
 ```

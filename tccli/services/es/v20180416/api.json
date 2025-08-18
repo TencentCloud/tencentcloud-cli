@@ -7350,6 +7350,34 @@
       ],
       "type": "object"
     },
+    "GpuInfo": {
+      "document": "节点Gpu信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Gpu块数",
+          "example": "1",
+          "member": "int64",
+          "name": "GpuCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Gpu类型",
+          "example": "Nvidia T4",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IndexMetaField": {
       "document": "索引元数据字段",
       "members": [
@@ -8870,6 +8898,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为CDZLite可用区",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCdzLite",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10293,6 +10331,17 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点Gpu信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GpuInfo",
+          "name": "GpuInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

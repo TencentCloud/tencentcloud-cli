@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tcaplusdb DeleteBackupRecords --cli-unfold-argument  \
-    --ClusterId xx \
-    --BackupRecords.0.BackupBatchTime xx \
+    --ClusterId 12345 \
+    --BackupRecords.0.BackupBatchTime 1731661134 \
     --BackupRecords.0.AppId 1 \
-    --BackupRecords.0.TableName xx \
+    --BackupRecords.0.TableName test \
     --BackupRecords.0.ZoneId 1 \
-    --BackupRecords.0.BackupType xx \
-    --BackupRecords.0.FileTag xx \
+    --BackupRecords.0.BackupType 1 \
+    --BackupRecords.0.FileTag 1 \
     --BackupRecords.0.ShardCount 1 \
-    --BackupRecords.0.BackupExpireTime xx \
-    --BackupRecords.0.BackupSuccRate xx \
+    --BackupRecords.0.BackupExpireTime 1731661134 \
+    --BackupRecords.0.BackupSuccRate 1 \
     --BackupRecords.0.BackupFileSize 1
 ```
 
@@ -23,8 +23,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "TaskId": "xx"
+        "RequestId": "1232222",
+        "TaskId": "12321"
     }
 }
 ```

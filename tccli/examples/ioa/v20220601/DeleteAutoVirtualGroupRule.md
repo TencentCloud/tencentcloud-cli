@@ -32,6 +32,7 @@ Input:
 
 ```
 tccli ioa DeleteAutoVirtualGroupRule --cli-unfold-argument  \
+    --DomainInstanceId 3 \
     --VirtualGroupId 8 \
     --OsType 0 \
     --RuleId 1

@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli ioa DescribeAutoVirtualGroupRule --cli-unfold-argument  \
+    --DomainInstanceId 3 \
     --VirtualGroupId 9 \
     --OsType 0
 ```

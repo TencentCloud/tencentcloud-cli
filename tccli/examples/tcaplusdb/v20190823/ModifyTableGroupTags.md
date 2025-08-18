@@ -6,12 +6,11 @@ Input:
 
 ```
 tccli tcaplusdb ModifyTableGroupTags --cli-unfold-argument  \
+    --ClusterId 5674209986 \
+    --TableGroupId 1 \
     --ReplaceTags.0.TagKey test1 \
     --ReplaceTags.0.TagValue value1 \
-    --DeleteTags.0.TagKey delete1 \
-    --DeleteTags.0.TagValue xx \
-    --TableGroupId 1 \
-    --ClusterId 5674209986
+    --DeleteTags.0.TagKey delete1
 ```
 
 Output: 

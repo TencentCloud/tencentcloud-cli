@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli ioa DeleteDeviceVirtualGroup --cli-unfold-argument  \
+    --DomainInstanceId 3 \
     --DeviceVirtualGroupId 11 \
     --OsType 0
 ```

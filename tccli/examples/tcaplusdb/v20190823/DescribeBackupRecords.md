@@ -6,33 +6,33 @@ Input:
 
 ```
 tccli tcaplusdb DescribeBackupRecords --cli-unfold-argument  \
-    --Limit 1 \
-    --ClusterId xx \
-    --TableGroupId xx \
-    --TableName xx \
-    --Offset 1
+    --ClusterId 1345225 \
+    --Limit 0 \
+    --Offset 0 \
+    --TableGroupId 2313 \
+    --TableName testname
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 92,
         "BackupRecords": [
             {
-                "BackupBatchTime": "xx",
-                "AppId": 1,
-                "TableName": "xx",
                 "ZoneId": 1,
-                "BackupType": "xx",
-                "FileTag": "xx",
+                "TableName": "testname",
+                "BackupType": "1",
+                "FileTag": "2",
                 "ShardCount": 1,
-                "BackupExpireTime": "xx",
-                "BackupSuccRate": "xx",
-                "BackupFileSize": 1
+                "BackupBatchTime": "17844564",
+                "BackupFileSize": 1,
+                "BackupSuccRate": "1",
+                "BackupExpireTime": "17844564",
+                "AppId": 1
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 0,
+        "RequestId": "213123-2131"
     }
 }
 ```

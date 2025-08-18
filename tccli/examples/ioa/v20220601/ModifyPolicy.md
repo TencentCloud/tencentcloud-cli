@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli ioa ModifyPolicy --cli-unfold-argument  \
+    --DomainInstanceId 3 \
     --PolicyId 303884 \
     --Name 测试2 \
     --Description 修改名字 \

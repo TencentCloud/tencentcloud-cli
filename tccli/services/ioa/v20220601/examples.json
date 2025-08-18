@@ -437,7 +437,7 @@
     "CreatePolicy": [
       {
         "document": "创建策略",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePolicy\n<公共请求参数>\n\n{\n    \"Name\": \"测试\",\n    \"Description\": \"测试\",\n    \"Status\": 1,\n    \"PolicyType\": 1,\n    \"PolicySubType\": 1,\n    \"OsType\": 2,\n    \"Priority\": 50\n}",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePolicy\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"3\",\n    \"Name\": \"mac病毒查杀策略\",\n    \"Description\": \"病毒查杀策略\",\n    \"Status\": 1,\n    \"PolicyType\": 1,\n    \"PolicySubType\": 1,\n    \"OsType\": 2,\n    \"Priority\": 50\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PolicyId\": 303884\n        },\n        \"RequestId\": \"dc58f2fa-8534-4cb5-9b8d-233d52f1ab31\"\n    }\n}",
         "title": "创建策略"
       }
@@ -545,7 +545,7 @@
       },
       {
         "document": "删除自定义分组自动划分规则",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAutoVirtualGroupRule\n<公共请求参数>\n\n{\n    \"VirtualGroupId\": 8,\n    \"OsType\": 0,\n    \"RuleId\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAutoVirtualGroupRule\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"3\",\n    \"VirtualGroupId\": 8,\n    \"OsType\": 0,\n    \"RuleId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Ok\": true,\n            \"RuleId\": 1\n        },\n        \"RequestId\": \"d7dd4467-ff51-4e66-9c4a-7df1ce7acde0\"\n    }\n}",
         "title": "删除自定义分组自动划分规则"
       }
@@ -657,7 +657,7 @@
     "DeleteDeviceVirtualGroup": [
       {
         "document": "删除终端自定义分组",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceVirtualGroup\n<公共请求参数>\n\n{\n    \"DeviceVirtualGroupId\": 11,\n    \"OsType\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceVirtualGroup\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"3\",\n    \"DeviceVirtualGroupId\": 11,\n    \"OsType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c870bad-ac85-4f20-a9d1-84721fb738dd\"\n    }\n}",
         "title": "删除终端自定义分组"
       }
@@ -991,7 +991,7 @@
     "DescribeAutoVirtualGroupRule": [
       {
         "document": "获取终端自定义分组划分规则",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoVirtualGroupRule\n<公共请求参数>\n\n{\n    \"VirtualGroupId\": 9,\n    \"OsType\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoVirtualGroupRule\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"3\",\n    \"VirtualGroupId\": 9,\n    \"OsType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AutoMinute\": 10,\n            \"AutoRules\": {\n                \"SimpleRules\": [\n                    {\n                        \"Expressions\": [\n                            {\n                                \"Items\": [\n                                    {\n                                        \"Key\": \"mid\",\n                                        \"Operate\": \"等于\",\n                                        \"Value\": \"111111111\"\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                ]\n            },\n            \"IsAuto\": true,\n            \"RuleId\": 2,\n            \"TimeType\": 3,\n            \"VirtualGroupId\": 9\n        },\n        \"RequestId\": \"69cc6953-259a-4414-9a86-172744f3032a\"\n    }\n}",
         "title": "获取终端自定义分组划分规则"
       }
@@ -1076,10 +1076,10 @@
     ],
     "DescribeConcurrentBandwidthAlarm": [
       {
-        "document": "success",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrentBandwidthAlarm\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4122cef6-493a-493a-8d4e-c44339743345\"\n    }\n}",
-        "title": "success"
+        "title": "查询当前的带宽及并发消耗数据"
       }
     ],
     "DescribeConnectorConfig": [
@@ -1562,15 +1562,9 @@
     ],
     "DescribeDeviceTags": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceTags\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceTagList\": null\n        },\n        \"RequestId\": \"a5cff48e-5a0d-4f2c-8a76-ae1c47ebc3bf\"\n    }\n}",
-        "title": "null"
-      },
-      {
         "document": "测试",
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceTags\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceTagList\": [\n                {\n                    \"Id\": 1,\n                    \"TagName\": \"123456\",\n                    \"UpdateTime\": 1725444263\n                }\n            ]\n        },\n        \"RequestId\": \"0560fa92-f36e-4c62-b5fc-15a5dc5e3812\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceTagList\": [\n                {\n                    \"Id\": 1,\n                    \"TagName\": \"标记1\",\n                    \"UpdateTime\": 1725444263\n                }\n            ]\n        },\n        \"RequestId\": \"0560fa92-f36e-4c62-b5fc-15a5dc5e3812\"\n    }\n}",
         "title": "测试"
       }
     ],
@@ -3463,7 +3457,7 @@
     "ModifyPolicy": [
       {
         "document": "修改策略内容",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": 303884,\n    \"Name\": \"测试2\",\n    \"Description\": \"修改名字\",\n    \"Status\": 1,\n    \"Priority\": 50,\n    \"OsType\": 2\n}",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPolicy\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"3\",\n    \"PolicyId\": 303884,\n    \"Name\": \"测试2\",\n    \"Description\": \"修改名字\",\n    \"Status\": 1,\n    \"Priority\": 50,\n    \"OsType\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PolicyId\": 303884\n        },\n        \"RequestId\": \"cb3552ae-b868-4069-a238-48426455e251\"\n    }\n}",
         "title": "修改策略内容"
       }
@@ -3477,7 +3471,7 @@
       },
       {
         "document": "创建策略项的内容",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPolicyContent\n<公共请求参数>\n\n{\n    \"PolicyId\": 306968,\n    \"PolicyContent\": [\n        {\n            \"Operation\": 1,\n            \"OSType\": 0,\n            \"PolicyItemName\": \"ClientDLSetting\",\n            \"Modify\": 1,\n            \"Version\": 1,\n            \"Data\": \"{\\\"ClientDlMode\\\":1}\"\n        },\n        {\n            \"Operation\": 1,\n            \"OSType\": 0,\n            \"PolicyItemName\": \"QMUUpdateType\",\n            \"Modify\": 1,\n            \"Version\": 1,\n            \"Data\": \"{\\\"Day\\\":1,\\\"Md5\\\":\\\"\\\",\\\"Url\\\":\\\"\\\",\\\"Hour\\\":0,\\\"Mode\\\":1,\\\"Enable\\\":1,\\\"Minute\\\":0,\\\"HourEnd\\\":1,\\\"Version\\\":\\\"\\\",\\\"TimeType\\\":2,\\\"MinuteEnd\\\":0}\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPolicyContent\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"10\",\n    \"PolicyId\": 306968,\n    \"PolicyContent\": [\n        {\n            \"Operation\": 1,\n            \"OSType\": 0,\n            \"PolicyItemName\": \"ClientDLSetting\",\n            \"Modify\": 1,\n            \"Version\": 1,\n            \"Data\": \"{\\\"ClientDlMode\\\":1}\"\n        },\n        {\n            \"Operation\": 1,\n            \"OSType\": 0,\n            \"PolicyItemName\": \"QMUUpdateType\",\n            \"Modify\": 1,\n            \"Version\": 1,\n            \"Data\": \"{\\\"Day\\\":1,\\\"Md5\\\":\\\"\\\",\\\"Url\\\":\\\"\\\",\\\"Hour\\\":0,\\\"Mode\\\":1,\\\"Enable\\\":1,\\\"Minute\\\":0,\\\"HourEnd\\\":1,\\\"Version\\\":\\\"\\\",\\\"TimeType\\\":2,\\\"MinuteEnd\\\":0}\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PolicyId\": 306968\n        },\n        \"RequestId\": \"7ca984a9-77f1-4b04-bc4e-7c6568c5207e\"\n    }\n}",
         "title": "创建策略项的内容"
       }
@@ -3493,7 +3487,7 @@
     "ModifyPolicyStatus": [
       {
         "document": "修改策略开启状态",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPolicyStatus\n<公共请求参数>\n\n{\n    \"PolicyIds\": [\n        303884\n    ],\n    \"Status\": 0,\n    \"OsType\": 2\n}",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPolicyStatus\n<公共请求参数>\n\n{\n    \"PolicyIds\": [\n        303884\n    ],\n    \"Status\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6015e594-280c-4c6c-8448-4f9422d2575f\"\n    }\n}",
         "title": "修改策略开启状态"
       }
@@ -3643,9 +3637,9 @@
     "SaveAccountGroupResources": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveAccountGroupResources\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        {\n            \"ResourceId\": 981,\n            \"ResourceType\": 1,\n            \"ExpireTime\": 0\n        }\n    ],\n    \"AccountGroupId\": 2182\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bc1e2831-dffb-408e-9e4a-8fd73aff0843\"\n    }\n}",
-        "title": "示例1"
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveAccountGroupResources\n<公共请求参数>\n\n{\n    \"AccountGroupId\": 135030,\n    \"ResourceList\": [\n        {\n            \"ResourceId\": 15625,\n            \"ResourceType\": 1,\n            \"ExpireTime\": 0\n        },\n        {\n            \"ResourceId\": 15626,\n            \"ResourceType\": 1,\n            \"ExpireTime\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d149043-9997-4dfc-a103-444b2eb17a88\"\n    }\n}",
+        "title": "添加资源授权"
       }
     ],
     "SaveAccountResources": [

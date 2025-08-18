@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tbaas QueryChainMakerDemoContract --cli-unfold-argument  \
-    --ChainId chain_test \
+    --ChainId chain_demo \
     --ClusterId chainmaker-demo \
-    --ContractName fact \
-    --FuncParam {"file_hash":"1234567"} \
-    --FuncName find_by_file_hash
+    --ContractName ChainMakerDemo \
+    --FuncParam {"key":"key1","field":"field1"} \
+    --FuncName get
 ```
 
 Output: 

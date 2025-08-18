@@ -1832,7 +1832,7 @@
         {
           "disabled": false,
           "document": "网络ID，可在区块链网络详情或列表中获取",
-          "example": "251005746bc987bojjue8",
+          "example": "chainmaker-j1juwsmndn",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1841,7 +1841,7 @@
         {
           "disabled": false,
           "document": "业务链ID，可在网络概览页获取",
-          "example": "chain-test",
+          "example": "chain_dcwtt",
           "member": "string",
           "name": "ChainId",
           "required": true,
@@ -1859,7 +1859,7 @@
         {
           "disabled": false,
           "document": "合约方法名",
-          "example": "send",
+          "example": "save",
           "member": "string",
           "name": "FuncName",
           "required": true,
@@ -1868,7 +1868,7 @@
         {
           "disabled": false,
           "document": "合约方法入参，json格式字符串，key/value都是string类型的map",
-          "example": "{\\\"name\\\":\\\"test\\\"}",
+          "example": "{\\\"time\\\":\\\"7908\\\",\\\"file_hash\\\":\\\"file\\\",\\\"file_name\\\":\\\"file\\\"}",
           "member": "string",
           "name": "FuncParam",
           "required": false,
@@ -1877,7 +1877,7 @@
         {
           "disabled": false,
           "document": "是否异步执行，1为是，否则为0；如果异步执行，可使用返回值中的交易TxID查询执行结果",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "AsyncFlag",
           "required": false,
@@ -1923,7 +1923,7 @@
         {
           "disabled": false,
           "document": "业务链ID，可在网络概览页获取",
-          "example": "chain_test",
+          "example": "chain_demo",
           "member": "string",
           "name": "ChainId",
           "required": true,
@@ -1932,7 +1932,7 @@
         {
           "disabled": false,
           "document": "合约名称，可在合约管理中获取",
-          "example": "fact",
+          "example": "ChainMakerDemo",
           "member": "string",
           "name": "ContractName",
           "required": true,
@@ -1940,8 +1940,8 @@
         },
         {
           "disabled": false,
-          "document": "合约方法名",
-          "example": "send",
+          "document": "合约方法名，由合约代码定义，可以参考合约详情中的合约调用定义",
+          "example": "save",
           "member": "string",
           "name": "FuncName",
           "required": true,
@@ -1949,8 +1949,8 @@
         },
         {
           "disabled": false,
-          "document": "合约方法入参，json格式字符串，key/value都是string类型的map",
-          "example": "{\\\"name\\\":\\\"test\\\"}",
+          "document": "合约方法入参，json格式字符串，key/value都是string类型的map，由合约代码定义，可以参考合约详情中的合约调用定义",
+          "example": "{\"key\":\"key1\",\"field\":\"field1\",\"value\":\"value1\"}",
           "member": "string",
           "name": "FuncParam",
           "required": false,
@@ -1959,7 +1959,7 @@
         {
           "disabled": false,
           "document": "是否异步执行，1为是，否则为0；如果异步执行，可使用返回值中的交易TxID查询执行结果",
-          "example": "1",
+          "example": "0",
           "member": "int64",
           "name": "AsyncFlag",
           "required": false,
@@ -2345,7 +2345,7 @@
         {
           "disabled": false,
           "document": "网络ID，可在区块链网络详情或列表中获取",
-          "example": "251005746bc987bojjue8",
+          "example": "chainmaker-j1juwsmndn",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2354,7 +2354,7 @@
         {
           "disabled": false,
           "document": "业务链ID，可在网络概览页获取",
-          "example": "chain-test",
+          "example": "chain_dcwtt",
           "member": "string",
           "name": "ChainId",
           "required": true,
@@ -2371,8 +2371,8 @@
         },
         {
           "disabled": false,
-          "document": "合约方法名",
-          "example": "send",
+          "document": "合约方法名，由合约代码定义",
+          "example": "find_by_file_hash",
           "member": "string",
           "name": "FuncName",
           "required": true,
@@ -2380,8 +2380,8 @@
         },
         {
           "disabled": false,
-          "document": "合约方法入参，json格式字符串，key/value都是string类型的map",
-          "example": "{\\\"name\\\":\\\"test\\\"}",
+          "document": "合约方法入参，json格式字符串，key/value都是string类型的map，由合约代码定义",
+          "example": "{\\\"file_hash\\\":\\\"test\\\"}",
           "member": "string",
           "name": "FuncParam",
           "required": false,
@@ -2427,7 +2427,7 @@
         {
           "disabled": false,
           "document": "业务链ID，可在网络概览页获取",
-          "example": "chain_test",
+          "example": "chain_demo",
           "member": "string",
           "name": "ChainId",
           "required": true,
@@ -2512,7 +2512,7 @@
         {
           "disabled": false,
           "document": "业务链ID，可在网络概览页获取",
-          "example": "chain_test",
+          "example": "chain_demo",
           "member": "string",
           "name": "ChainId",
           "required": true,
@@ -2521,7 +2521,7 @@
         {
           "disabled": false,
           "document": "合约名称，可在合约管理中获取",
-          "example": "fact",
+          "example": "ChainMakerDemo",
           "member": "string",
           "name": "ContractName",
           "required": true,
@@ -2529,8 +2529,8 @@
         },
         {
           "disabled": false,
-          "document": "合约方法名",
-          "example": "send",
+          "document": "合约方法名，由合约代码定义，可以参考合约详情中的合约调用定义",
+          "example": "get",
           "member": "string",
           "name": "FuncName",
           "required": true,
@@ -2538,8 +2538,8 @@
         },
         {
           "disabled": false,
-          "document": "合约方法入参，json格式字符串，key/value都是string类型的map",
-          "example": "{\\\"name\\\":\\\"test\\\"}",
+          "document": "合约方法入参，json格式字符串，key/value都是string类型的map，由合约代码定义，可以参考合约详情中的合约调用定义",
+          "example": "{\"key\":\"key1\",\"field\":\"field1\"}",
           "member": "string",
           "name": "FuncParam",
           "required": false,
@@ -2585,7 +2585,7 @@
         {
           "disabled": false,
           "document": "业务链ID，可在网络概览页获取",
-          "example": "chain_test",
+          "example": "chain_demo",
           "member": "string",
           "name": "ChainId",
           "required": true,
@@ -2594,7 +2594,7 @@
         {
           "disabled": false,
           "document": "交易ID，通过调用合约的返回值获取",
-          "example": "HHHHHHHHHHHHHH",
+          "example": "f6cf450f9b0b496f9ee6d332e739b8b182fe1e3b34ed446ab068a151f1ee8cbe",
           "member": "string",
           "name": "TxID",
           "required": true,
@@ -2631,7 +2631,7 @@
         {
           "disabled": false,
           "document": "网络ID，可在区块链网络详情或列表中获取",
-          "example": "251005746bc987bojjue8",
+          "example": "chainmaker-j1juwsmndn",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2640,7 +2640,7 @@
         {
           "disabled": false,
           "document": "业务链ID，可在网络概览页获取",
-          "example": "chain-test",
+          "example": "chain_dcwtt",
           "member": "string",
           "name": "ChainId",
           "required": true,
@@ -2649,7 +2649,7 @@
         {
           "disabled": false,
           "document": "交易ID，通过调用合约的返回值获取",
-          "example": "HHHHHHHHHHHHHH",
+          "example": "f6cf450f9b0b496f9ee6d332e739b8b182fe1e3b34ed446ab068a151f1ee8cbe",
           "member": "string",
           "name": "TxID",
           "required": true,

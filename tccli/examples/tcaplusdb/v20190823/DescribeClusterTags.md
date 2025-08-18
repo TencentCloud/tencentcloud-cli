@@ -15,21 +15,21 @@ Output:
     "Response": {
         "Rows": [
             {
-                "ClusterId": "abc",
+                "ClusterId": "19887328",
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "tkey1",
+                        "TagValue": "tvalue1"
                     }
                 ],
                 "Error": {
-                    "Code": "abc",
-                    "Message": "abc"
+                    "Code": "",
+                    "Message": ""
                 }
             }
         ],
         "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "189382-121421"
     }
 }
 ```

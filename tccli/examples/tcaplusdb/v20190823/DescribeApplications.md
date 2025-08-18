@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tcaplusdb DescribeApplications --cli-unfold-argument  \
-    --TableGroupId xx \
-    --ClusterId xx \
-    --Applicant xx \
-    --TableName xx \
+    --TableGroupId 89879 \
+    --ClusterId 789789 \
+    --Applicant 23 \
+    --TableName testname \
     --Limit 1 \
     --Offset 1 \
     --CensorStatus 0 \

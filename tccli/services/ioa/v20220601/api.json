@@ -862,7 +862,7 @@
       "status": "online"
     },
     "DescribeConcurrentBandwidthAlarm": {
-      "document": "资源消耗告警与监控-带宽峰值和并发账号，私有化调用path为：capi/LogCenter/DescribeConcurrentBandwidthAlarm",
+      "document": "资源消耗告警与监控-带宽峰值和并发账号",
       "input": "DescribeConcurrentBandwidthAlarmRequest",
       "name": "资源消耗告警与监控-带宽峰值和并发账号",
       "output": "DescribeConcurrentBandwidthAlarmResponse",
@@ -2829,7 +2829,7 @@
       "status": "online"
     },
     "SaveAccountGroupResources": {
-      "document": "保存账户组和资源授权,私有化调用path为：capi/Assets/SaveAccountGroupResources",
+      "document": "添加资源授权到账号组",
       "input": "SaveAccountGroupResourcesRequest",
       "name": "保存账户组资源",
       "output": "SaveAccountGroupResourcesResponse",
@@ -3733,25 +3733,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "结果状态",
+          "example": "1",
           "member": "bool",
           "name": "Ok",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "规则id",
+          "example": "1",
           "member": "int64",
           "name": "RuleId",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6765,6 +6765,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "设备唯一标识符列表",
           "example": "无",
           "member": "string",
@@ -6828,19 +6837,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
-          "example": "1",
-          "member": "string",
-          "name": "DomainInstanceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "必填，终端自定义分组名",
           "example": "分组名称1",
           "member": "string",
           "name": "DeviceVirtualGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
           "required": false,
           "type": "string"
         },
@@ -6855,7 +6864,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ； 默认值0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -6864,7 +6873,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组）(只支持32位)",
+          "document": "分组类型（0:手动分组；非0为自动划分分组；具体枚举值为：1:自动每小时划分分组、2:自动每天划分分组、3:自定义时间划分分组； 默认值0）(只支持32位)",
           "example": "0",
           "member": "int64",
           "name": "TimeType",
@@ -6883,7 +6892,7 @@
         {
           "disabled": false,
           "document": "选填，手动分组不填，自动划分分组的划分规则数据",
-          "example": "{\"SimpleRules\":[{\"Expressions\":[{\"Items\":[{\"Key\":\"name\",\"Operate\":\"包含\",\"Value\":\"lucal\"}],\"Relation\":\"并且\"}]}]}",
+          "example": "无",
           "member": "ComplexRule",
           "name": "AutoRules",
           "required": false,
@@ -6898,7 +6907,7 @@
         {
           "disabled": false,
           "document": "响应返回的data",
-          "example": "{\"id\":12121}",
+          "example": "无",
           "member": "CreateDeviceVirtualGroupRspData",
           "name": "Data",
           "output_required": false,
@@ -7736,8 +7745,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略名称;",
-          "example": "无",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "客户端自保护策略1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -7745,8 +7763,8 @@
         },
         {
           "disabled": false,
-          "document": "策略描述;",
-          "example": "无",
+          "document": "策略描述",
+          "example": "自保护策略",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -7755,7 +7773,7 @@
         {
           "disabled": false,
           "document": "启用停用状态；(只支持32位)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -7764,7 +7782,7 @@
         {
           "disabled": false,
           "document": "策略类型(只支持32位)",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "PolicyType",
           "required": false,
@@ -7773,7 +7791,7 @@
         {
           "disabled": false,
           "document": "策略子类型(只支持32位)",
-          "example": "无",
+          "example": "19",
           "member": "int64",
           "name": "PolicySubType",
           "required": false,
@@ -7781,8 +7799,8 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）(只支持32位)",
-          "example": "无",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）(只支持32位)",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -7791,7 +7809,7 @@
         {
           "disabled": false,
           "document": "优先级(只支持32位)",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "Priority",
           "required": false,
@@ -7800,7 +7818,7 @@
         {
           "disabled": false,
           "document": "策略有效期类型(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TimeEffectType",
           "required": false,
@@ -7809,7 +7827,7 @@
         {
           "disabled": false,
           "document": "策略有效期起始时间(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TimeStart",
           "required": false,
@@ -7818,7 +7836,7 @@
         {
           "disabled": false,
           "document": "策略有效期终止时间(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TimeEnd",
           "required": false,
@@ -7827,7 +7845,7 @@
         {
           "disabled": false,
           "document": "动态策略类型",
-          "example": "无",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "DynamicType",
           "required": false,
@@ -7841,13 +7859,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务响应数据",
           "example": "无",
           "member": "CreatePolicyRspData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7880,6 +7898,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "必填；设备唯一标识符;",
+          "example": "489C698CAECC13B1B7C44E59443F5CBB676B7F33",
+          "member": "string",
+          "name": "Mid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
           "example": "1",
           "member": "string",
@@ -7889,12 +7916,12 @@
         },
         {
           "disabled": false,
-          "document": "必填；设备唯一标识符;",
-          "example": "489C698CAECC13B1B7C44E59443F5CBB676B7F33",
-          "member": "string",
-          "name": "Mid",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ）；默认值0",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
           "required": false,
-          "type": "string"
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7904,13 +7931,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务响应数据",
           "example": "无",
           "member": "CreatePrivilegeCodeRspData",
           "name": "Data",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8473,7 +8500,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义分组id",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义分组id，和参数RuleId  必填其一",
           "example": "无",
           "member": "int64",
           "name": "VirtualGroupId",
@@ -8482,7 +8518,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型(只支持32位)",
+          "document": "必填，系统类型(只支持32位)",
           "example": "无",
           "member": "int64",
           "name": "OsType",
@@ -8491,7 +8527,7 @@
         },
         {
           "disabled": false,
-          "document": "规则id",
+          "document": "规则id，可不填，未填写VirtualGroupId，则根据RuleId删除规则",
           "example": "无",
           "member": "int64",
           "name": "RuleId",
@@ -8506,13 +8542,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "响应数据",
           "example": "无",
           "member": "AutoVirtualGroupRuleRspData",
           "name": "Data",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8808,6 +8844,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "终端分组id",
           "example": "无",
           "member": "int64",
@@ -8880,7 +8925,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "终端自定义分组id",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "必填，终端自定义分组id",
           "example": "无",
           "member": "int64",
           "name": "DeviceVirtualGroupId",
@@ -8889,7 +8943,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
+          "document": "必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -8922,6 +8976,15 @@
           "name": "MidList",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9142,8 +9205,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "策略列表ID，支持批量删(只支持32位)",
-          "example": "无",
+          "example": "[332682]",
           "member": "int64",
           "name": "PolicyIds",
           "required": false,
@@ -9151,7 +9223,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -12436,7 +12508,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义分组id",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "必填，自定义分组id",
           "example": "无",
           "member": "int64",
           "name": "VirtualGroupId",
@@ -12445,7 +12526,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型(只支持32位)",
+          "document": "必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios ）(只支持32位)",
           "example": "无",
           "member": "int64",
           "name": "OsType",
@@ -12460,13 +12541,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "响应数据",
           "example": "无",
           "member": "DescribeAutoVirtualGroupRuleRspData",
           "name": "Data",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12482,91 +12563,91 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否为自定义自动分组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "是否为自定义自动分组",
+          "example": "1",
           "member": "bool",
           "name": "IsAuto",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义分组id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "自定义分组id",
+          "example": "1",
           "member": "int64",
           "name": "VirtualGroupId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "规则id",
+          "example": "1",
           "member": "int64",
           "name": "RuleId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "时间设置类型（1:自动小时、2:自动每天、3:自定义）(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "时间设置类型（1:自动小时、2:自动每天、3:自定义）(只支持32位)",
+          "example": "1",
           "member": "int64",
           "name": "TimeType",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动划分时间（单位min）(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "自动划分时间（单位min）(只支持32位)",
+          "example": "1",
           "member": "int64",
           "name": "AutoMinute",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动划分规则数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "自动划分规则数据",
+          "example": "1",
           "member": "ComplexRule",
           "name": "AutoRules",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "例外黑名单--设备id列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "例外黑名单--设备id列表",
+          "example": "1",
           "member": "int64",
           "name": "DeviceBlacklist",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "例外白名单--设备id列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "例外白名单--设备id列表",
+          "example": "1",
           "member": "int64",
           "name": "DeviceWhitelist",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14829,6 +14910,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "过滤条件参数（字段含义请参考接口返回值）\n- Name, 类型String，支持操作：【like，ilike】，支持排序\n\n\n\n\n分页参数\n- PageNum 从1开始，小于等于0时使用默认参数\n- PageSize 最大值5000，最好不超过100",
           "example": "无",
           "member": "Condition",
@@ -14838,7 +14928,7 @@
         },
         {
           "disabled": false,
-          "document": "【必填】父分组id，允许传0",
+          "document": "父分组id，默认0：表示获取全网终端分组",
           "example": "0",
           "member": "int64",
           "name": "ParentId",
@@ -14847,7 +14937,7 @@
         },
         {
           "disabled": false,
-          "document": "【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）",
+          "document": "操作系统类型（0：win，1：linux，2：mac，4：android，5：ios；默认0：系统win）",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -14862,13 +14952,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询设备组子分组详情响应结构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询设备组子分组详情响应结构",
           "example": "无",
           "member": "DescribeDeviceChildGroupsRspData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14884,13 +14974,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的数组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "返回的数组列表",
+          "example": "无",
           "member": "DeviceGroupDetail",
           "name": "Items",
+          "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15793,6 +15884,96 @@
           "output_required": false,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端备注名",
+          "example": "leizi的电脑",
+          "member": "string",
+          "name": "RemarkName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备健康检测状态(0:健康分析, 1:分析中, 2:分析完成, 3:分析失败)",
+          "example": "0",
+          "member": "int64",
+          "name": "EndpointHealthCheckStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备健康检测结果(1:无需更换, 2:建议更换, 3:立即更换, 4:暂无数据)(设备健康检测状态为2时才有意义)",
+          "example": "1",
+          "member": "int64",
+          "name": "EndpointHealthStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备健康检测详情(设备健康检测状态为2时才有意义)",
+          "example": "当前终端硬件配置尚可...",
+          "member": "string",
+          "name": "EndpointHealthSummary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新的一次硬件设备变更key",
+          "example": "cpu",
+          "member": "string",
+          "name": "HardwareChangeKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬件设备变更旧值",
+          "example": "i5",
+          "member": "string",
+          "name": "HardwareChangeOld",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬件设备变更新值",
+          "example": "i7",
+          "member": "string",
+          "name": "HardwareChangeNew",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1",
+          "example": "10.00",
+          "member": "float",
+          "name": "SystemDiskUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1",
+          "example": "10.00",
+          "member": "float",
+          "name": "DiskUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15830,7 +16011,7 @@
         {
           "disabled": false,
           "document": "过滤条件参数（字段含义请参考接口返回值）  - Name, 类型String，支持操作：【eq，like，ilike】，支持排序  - UserName, 类型String，支持操作：【eq，like，ilike】，支持排序  - IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序  - MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序  - Ip, 类型String，支持操作：【eq，like，ilike】，支持排序  - Mid, 类型String，支持操作：【eq，like，ilike】，支持排序  ，支持排序分页参数  - PageNum 从1开始，小于等于0时使用默认参数 - PageSize 最大值5000，最好不超过100",
-          "example": "\"Condition\":{\"Filters\":[],\"Sort\":{\"Field\":\"Id\",\"Order\":\"desc\"},\"PageSize\":10,\"PageNum\":1}",
+          "example": "无",
           "member": "Condition",
           "name": "Condition",
           "required": false,
@@ -15839,7 +16020,7 @@
         {
           "disabled": false,
           "document": "设备唯一标识符列表",
-          "example": "[\"C0DD17897AFCB57EF87FC5CE4BDAF2D867E138F4\", \"B454307F6CA03B56E0CFEC44EABF93BB67E56D6F\"]",
+          "example": "[\"220b182d3b4f4a84af0d925e6d36a97468764434\"]",
           "member": "string",
           "name": "MidList",
           "required": false,
@@ -16012,6 +16193,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "设备唯一标识符;",
           "example": "无",
           "member": "string",
@@ -16046,7 +16236,17 @@
     },
     "DescribeDeviceTagsRequest": {
       "document": "DescribeDeviceTags请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeDeviceTagsResponse": {
@@ -16744,6 +16944,15 @@
     "DescribeDownloadHardwareChangeInfosRequest": {
       "document": "DescribeDownloadHardwareChangeInfos请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "条件过滤",
@@ -17998,6 +18207,15 @@
     "DescribeHardwareChangeInfosRequest": {
       "document": "DescribeHardwareChangeInfos请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "条件过滤",
@@ -23506,8 +23724,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略ID(只支持32位)",
-          "example": "无",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "6709",
           "member": "int64",
           "name": "PolicyId",
           "required": false,
@@ -23515,8 +23742,8 @@
         },
         {
           "disabled": false,
-          "document": "系统类型(只支持32位)",
-          "example": "无",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ）",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -23530,13 +23757,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略项内容数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略项内容数据",
           "example": "无",
           "member": "PolicyContentData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -23906,8 +24133,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略ID(只支持32位)",
-          "example": "无",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "6709",
           "member": "int64",
           "name": "PolicyId",
           "required": false,
@@ -23915,8 +24151,8 @@
         },
         {
           "disabled": false,
-          "document": "系统类型(只支持32位)",
-          "example": "无",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ）",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -23930,13 +24166,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略适用范围数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略适用范围数据",
           "example": "无",
           "member": "PolicyScopeData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -23952,8 +24188,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "策略类型(只支持32位)",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "PolicyType",
           "required": false,
@@ -23961,8 +24206,8 @@
         },
         {
           "disabled": false,
-          "document": "系统类型(只支持32位)",
-          "example": "无",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ）",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -23971,7 +24216,7 @@
         {
           "disabled": false,
           "document": "展示隐藏策略开关(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ShowHiddenPolicy",
           "required": false,
@@ -23985,13 +24230,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略子类型数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略子类型数据",
           "example": "无",
           "member": "PolicySubTypeData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -24794,8 +25039,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作系统类型",
-          "example": "无",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ）",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -24809,13 +25063,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "根分组数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "根分组数据",
           "example": "无",
           "member": "DescribeGroupIdsRspData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -29992,173 +30246,201 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备组id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备组id",
+          "example": "7",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备组名称",
+          "example": "分组1",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备组描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备组描述",
+          "example": "1部门",
           "member": "string",
           "name": "Description",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "父节点id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "父节点id",
+          "example": "1",
           "member": "int64",
           "name": "ParentId",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "基于id的节点路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "基于id的节点路径",
+          "example": "1.7",
           "member": "string",
           "name": "IdPath",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "基于名称的节点路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "基于名称的节点路径",
+          "example": "全网终端.分组1",
           "member": "string",
           "name": "NamePath",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分组锁定状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "分组锁定状态",
+          "example": "0",
           "member": "int64",
           "name": "Locked",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作系统类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios   ）",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "排序\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "排序",
+          "example": "0",
           "member": "int64",
           "name": "Sort",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否自动调整\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "是否自动调整",
+          "example": "0",
           "member": "int64",
           "name": "FromAuto",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "子节点数量",
+          "example": "2",
           "member": "int64",
           "name": "Count",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "图标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "图标",
+          "example": "空字符串",
           "member": "string",
           "name": "Icon",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否有ip\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "是否有ip",
+          "example": "0",
           "member": "int64",
           "name": "WithIp",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否有组ip\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "是否有组ip",
+          "example": "false",
           "member": "bool",
           "name": "HasIp",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否是叶子节点\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "是否是叶子节点",
+          "example": "false",
           "member": "bool",
           "name": "IsLeaf",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否只读\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "是否只读",
+          "example": "false",
           "member": "bool",
           "name": "ReadOnly",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对应绑定的账号id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "对应绑定的账号id",
+          "example": "8",
           "member": "int64",
           "name": "BindAccount",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定账号的用户名",
+          "example": "张三",
+          "member": "string",
+          "name": "BindAccountName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -33115,311 +33397,322 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备列表的ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备列表的ID(只支持32位)",
+          "example": "775111",
           "member": "int64",
           "name": "Id",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备唯一标识符\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备唯一标识符",
+          "example": "B0853DB141639AD031C70118E6E420ED680F61BE",
           "member": "string",
           "name": "Mid",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备名",
+          "example": "BLENPC01",
           "member": "string",
           "name": "Name",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备所属分组ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备所属分组ID(只支持32位)",
+          "example": "11604177",
           "member": "int64",
           "name": "GroupId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "OS平台(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "OS平台(只支持32位)",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备IP",
+          "example": "120.68.161.145",
           "member": "string",
           "name": "Ip",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最近活跃时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "最近活跃时间",
+          "example": "2025-07-29T18:38:44.373195+08:00",
           "member": "string",
           "name": "ConnActiveTime",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备所属分组名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备所属分组名",
+          "example": "未分组终端",
           "member": "string",
           "name": "GroupName",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备品牌\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备品牌",
+          "example": "LENOVO QiTianM540-N000",
           "member": "string",
           "name": "Computer",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CPU品牌型号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "CPU品牌型号",
+          "example": "AMD Ryzen 3 3200G with Radeon Vega Graphics",
           "member": "string",
           "name": "Cpu",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主板品牌型号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "主板品牌型号",
+          "example": "HP 89B3 A (SMVB)",
           "member": "string",
           "name": "MainBoard",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内存大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "内存大小",
+          "example": "8 GB",
           "member": "string",
           "name": "Memory",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "硬盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "硬盘大小",
+          "example": "NVMe SAMSUNG MZVLQ256HBJD-00BH1 238 GB",
           "member": "string",
           "name": "HardDiskSize",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "显卡品牌型号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "显卡品牌型号",
+          "example": "Intel(R) UHD Graphics 730 | OrayIddDriver Device",
           "member": "string",
           "name": "VideoCard",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网卡品牌型号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "网卡品牌型号",
+          "example": "Intel(R) Wi-Fi 6 AX201 160MHz",
           "member": "string",
           "name": "NetworkCard",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "显示器品牌型号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "显示器品牌型号",
+          "example": "TE22-10",
           "member": "string",
           "name": "Monitor",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "声卡品牌型号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "声卡品牌型号",
+          "example": "AMD High Definition Audio Device | Realtek High Definition Audio",
           "member": "string",
           "name": "AudioCard",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "设备名",
+          "example": "BLENPC01",
           "member": "string",
           "name": "ComputerName",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "MAC地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "MAC地址",
+          "example": "88:AE:DD:4F:49:38",
           "member": "string",
           "name": "MacAddr",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "用户名",
+          "example": "Administrator",
           "member": "string",
           "name": "UserName",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IOA用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "IOA用户名",
+          "example": "leizi",
           "member": "string",
           "name": "IOAUserName",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "硬件变更记录项\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "硬件变更记录项",
+          "example": "audioCard",
           "member": "string",
           "name": "HardwareChangeItem",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "旧硬件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "旧硬件",
+          "example": "AMD High Definition Audio Device | Realtek High Definition Audio",
           "member": "string",
           "name": "OldHardware",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "新硬件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "新硬件",
+          "example": "AMD High Definition Audio Device | Realtek High Definition Audio | USB Audio Device",
           "member": "string",
           "name": "NewHardware",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "硬件变更记录项\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "硬件变更记录项",
+          "example": "2025-07-29T18:57:36+08:00",
           "member": "string",
           "name": "HardwareChangeTime",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "授权状态(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "授权状态(只支持32位)",
+          "example": "5",
           "member": "int64",
           "name": "Status",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "在线状态(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "在线状态(只支持32位)",
+          "example": "2",
           "member": "int64",
           "name": "OnlineStatus",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "终端硬件变更记录id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "终端硬件变更记录id(只支持32位)",
+          "example": "459",
           "member": "int64",
           "name": "HardwareChangeId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端备注名",
+          "example": "leizi的电脑",
+          "member": "string",
+          "name": "RemarkName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -34474,7 +34767,7 @@
         {
           "disabled": false,
           "document": "排序字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "Account",
           "member": "string",
           "name": "Field",
           "output_required": false,
@@ -34485,7 +34778,7 @@
         {
           "disabled": false,
           "document": "排序顺序\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "desc",
           "member": "string",
           "name": "Order",
           "output_required": false,
@@ -35634,9 +35927,10 @@
         {
           "disabled": false,
           "document": "配置描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "这是一段示例描述",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -35644,9 +35938,10 @@
         {
           "disabled": false,
           "document": "配置修改标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "int64",
           "name": "Modify",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -35654,9 +35949,10 @@
         {
           "disabled": false,
           "document": "配置值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "请先登录，开启无边界办公之旅",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -35664,9 +35960,10 @@
         {
           "disabled": false,
           "document": "配置版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "0",
           "member": "int64",
           "name": "Version",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -35674,9 +35971,10 @@
         {
           "disabled": false,
           "document": "操作系统类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "windows",
           "member": "string",
           "name": "OsType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -35684,9 +35982,10 @@
         {
           "disabled": false,
           "document": "配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "5851548",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -35694,15 +35993,16 @@
         {
           "disabled": false,
           "document": "配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "MainTitle",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ModifyCommonConfigsRequest": {
       "document": "ModifyCommonConfigs请求参数结构体",
@@ -37042,8 +37342,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "策略列表唯一ID(只支持32位)",
-          "example": "无",
+          "example": "8935",
           "member": "int64",
           "name": "PolicyId",
           "required": false,
@@ -37051,7 +37360,7 @@
         },
         {
           "disabled": false,
-          "document": "管理域信息\nDomainInfo Domain = 2;\n策略项具体内容",
+          "document": "策略内容数据",
           "example": "无",
           "member": "PolicyContent",
           "name": "PolicyContent",
@@ -37066,13 +37375,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改管控策略适用范围业务响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改管控策略适用范围业务响应数据",
           "example": "无",
           "member": "ModifyPolicyContentRspData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -37105,8 +37414,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "策略列表唯一ID(只支持32位)",
-          "example": "无",
+          "example": "3790",
           "member": "int64",
           "name": "PolicyId",
           "required": false,
@@ -37115,7 +37433,7 @@
         {
           "disabled": false,
           "document": "策略名称",
-          "example": "无",
+          "example": "水印保护策略",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -37124,7 +37442,7 @@
         {
           "disabled": false,
           "document": "策略描述",
-          "example": "无",
+          "example": "修改策略权重",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -37133,7 +37451,7 @@
         {
           "disabled": false,
           "document": "启用状态(只支持32位)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -37142,7 +37460,7 @@
         {
           "disabled": false,
           "document": "有效期类型(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TimeEffectType",
           "required": false,
@@ -37151,7 +37469,7 @@
         {
           "disabled": false,
           "document": "有效期起始时间(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TimeStart",
           "required": false,
@@ -37160,7 +37478,7 @@
         {
           "disabled": false,
           "document": "有效期终止时间(只支持32位)",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TimeEnd",
           "required": false,
@@ -37169,7 +37487,7 @@
         {
           "disabled": false,
           "document": "策略优先级(只支持32位)",
-          "example": "无",
+          "example": "55",
           "member": "int64",
           "name": "Priority",
           "required": false,
@@ -37177,8 +37495,8 @@
         },
         {
           "disabled": false,
-          "document": "系统类型(只支持32位)",
-          "example": "无",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ）",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -37192,13 +37510,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改管控策略基本信息业务响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改管控策略基本信息业务响应数据",
           "example": "无",
           "member": "ModifyPolicyRspData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -37231,8 +37549,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略列表唯一ID(只支持32位)",
-          "example": "无",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略列表唯一ID",
+          "example": "7815",
           "member": "int64",
           "name": "PolicyId",
           "required": false,
@@ -37240,8 +37567,8 @@
         },
         {
           "disabled": false,
-          "document": "系统类型(只支持32位)",
-          "example": "无",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ）",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -37273,13 +37600,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改管控策略适用范围业务响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改管控策略适用范围业务响应数据",
           "example": "无",
           "member": "ModifyPolicyScopeRspData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -37312,8 +37639,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略列表ID(只支持32位)",
-          "example": "无",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略列表ID",
+          "example": "[2517]",
           "member": "int64",
           "name": "PolicyIds",
           "required": false,
@@ -37322,7 +37658,7 @@
         {
           "disabled": false,
           "document": "策略启用状态(只支持32位)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -37330,7 +37666,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios ）",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -37761,6 +38097,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "必填，操作的设备列表数据",
+          "example": "无",
+          "member": "ModifyVirtualDeviceGroupsReqItem",
+          "name": "DeviceList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
           "example": "1",
           "member": "string",
@@ -37779,15 +38124,6 @@
         },
         {
           "disabled": false,
-          "document": "必填，操作的设备列表数据",
-          "example": "[{DeviceMid: \"10527BB0BE025F40B5E8A7D00B5E13E268243DBB\", Operation: 1}]",
-          "member": "ModifyVirtualDeviceGroupsReqItem",
-          "name": "DeviceList",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "要添加的终端自定义分组id列表",
           "example": "[14989]",
           "member": "int64",
@@ -37797,7 +38133,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -37822,6 +38158,15 @@
     "ModifyVirtualGroupDevicesRequest": {
       "document": "ModifyVirtualGroupDevices请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "批量操作终端自定义分组id。直接从终端组添加设备时使用",
@@ -41452,7 +41797,7 @@
         {
           "disabled": false,
           "document": "账户组Id(只支持32位)",
-          "example": "无",
+          "example": "135030",
           "member": "uint64",
           "name": "AccountGroupId",
           "required": true,

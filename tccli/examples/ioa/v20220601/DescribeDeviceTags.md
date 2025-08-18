@@ -1,25 +1,4 @@
-**Example 1: null**
-
-
-
-Input: 
-
-```
-tccli ioa DescribeDeviceTags --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": {
-            "DeviceTagList": null
-        },
-        "RequestId": "a5cff48e-5a0d-4f2c-8a76-ae1c47ebc3bf"
-    }
-}
-```
-
-**Example 2: 测试**
+**Example 1: 测试**
 
 测试
 
@@ -36,7 +15,7 @@ Output:
             "DeviceTagList": [
                 {
                     "Id": 1,
-                    "TagName": "123456",
+                    "TagName": "标记1",
                     "UpdateTime": 1725444263
                 }
             ]

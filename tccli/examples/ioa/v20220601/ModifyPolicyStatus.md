@@ -7,8 +7,7 @@ Input:
 ```
 tccli ioa ModifyPolicyStatus --cli-unfold-argument  \
     --PolicyIds 303884 \
-    --Status 0 \
-    --OsType 2
+    --Status 0
 ```
 
 Output: 

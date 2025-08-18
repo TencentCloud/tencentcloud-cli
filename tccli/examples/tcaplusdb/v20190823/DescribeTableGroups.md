@@ -16,18 +16,18 @@ Output:
         "TotalCount": 0,
         "TableGroups": [
             {
-                "TableGroupId": "abc",
-                "TableGroupName": "abc",
+                "TableGroupId": "18322",
+                "TableGroupName": "groupname",
                 "CreatedTime": "2020-09-22 00:00:00",
                 "TableCount": 1,
                 "TotalSize": 1,
                 "TxhBackupExpireDay": 1,
                 "EnableMysql": 1,
-                "MysqlConnIp": "abc",
-                "MysqlConnPort": 1
+                "MysqlConnIp": "192.1.2.3",
+                "MysqlConnPort": 13722
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "13232-13523"
     }
 }
 ```

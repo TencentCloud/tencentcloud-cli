@@ -1,6 +1,6 @@
-**Example 1: success**
+**Example 1: 查询当前的带宽及并发消耗数据**
 
-success
+
 
 Input: 
 

@@ -5,7 +5,7 @@
       "input": "ResetAuthUserPasswordRequest",
       "name": "重置用户密码",
       "output": "ResetAuthUserPasswordResponse",
-      "status": "deprecated"
+      "status": "offline"
     }
   },
   "metadata": {

@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli ioa CreatePolicy --cli-unfold-argument  \
-    --Name 测试 \
-    --Description 测试 \
+    --DomainInstanceId 3 \
+    --Name mac病毒查杀策略 \
+    --Description 病毒查杀策略 \
     --Status 1 \
     --PolicyType 1 \
     --PolicySubType 1 \
