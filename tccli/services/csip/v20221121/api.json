@@ -4038,7 +4038,7 @@
         {
           "disabled": false,
           "document": "配置名",
-          "example": "高风险子帐号应该开启登录保护",
+          "example": "高风险子账号应该开启登录保护",
           "member": "string",
           "name": "CFGName",
           "output_required": true,

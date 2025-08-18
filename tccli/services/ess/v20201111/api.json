@@ -11958,6 +11958,24 @@
           "name": "ForbidEditWatermark",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "印章描述",
+          "example": "合同章",
+          "member": "string",
+          "name": "SealDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁止编辑印章描述内容\n<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>",
+          "example": "true",
+          "member": "string",
+          "name": "ForbidEditSealDescription",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

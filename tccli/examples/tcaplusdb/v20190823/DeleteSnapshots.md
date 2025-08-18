@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcaplusdb DeleteSnapshots --cli-unfold-argument  \
-    --ClusterId xx \
+    --ClusterId 165765 \
     --SelectedTables.0.SnapshotName 666 \
     --SelectedTables.0.TableGroupId 1 \
     --SelectedTables.0.TableName cl_generic \

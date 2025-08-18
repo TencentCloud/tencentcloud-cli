@@ -5625,20 +5625,20 @@
         {
           "disabled": false,
           "document": "CPU 核数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "内存 MiB 数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1024",
           "member": "string",
           "name": "Mem",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -7128,30 +7128,30 @@
         {
           "disabled": false,
           "document": "实例导入方式，可多个，公有云为 [\"R\"]，独立版的取值有 \"M\" 脚本模式、\"S\" SSH 模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[\"R\"]",
           "member": "string",
           "name": "ImportMode",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "SSH 模式时，前端应该限制用户填这个数量的 master 主机信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "MasterNumLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "SSH 模式时，前端应该限制用户填的最高数量的 node 主机信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "NodeNumLimitPerSetup",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -10574,7 +10574,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或登录控制台进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
+          "document": "部署组ID，可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/api/649/36068)查询已创建的部署组列表或[登录控制台](https://console.cloud.tencent.com/tsf/app-group-docker-detail?rid=1&id=group-aedpen6v)\n进行查看；也可以调用[CreateContainGroup](https://cloud.tencent.com/document/api/649/36075)创建新的部署组。",
           "example": "group-s892j3s",
           "member": "string",
           "name": "GroupId",
@@ -18042,10 +18042,10 @@
         {
           "disabled": false,
           "document": "是否需要子网\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "NeedSubnetWhenCreatingCluster",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -18058,50 +18058,50 @@
         {
           "disabled": false,
           "document": "功能\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "DescribeResourceConfigLicenseFunction",
           "name": "Function",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "DescribeResourceConfigLicenseResource",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "utc时间 单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "utc时间 单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Countdown",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "规格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "basic",
           "member": "string",
           "name": "Spec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -18113,21 +18113,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "功能名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vm",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "enable\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "是否启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -18140,20 +18140,20 @@
         {
           "disabled": false,
           "document": "Name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "instance",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "Quota\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Quota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -18259,10 +18259,10 @@
         {
           "disabled": false,
           "document": "uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "91000000039",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -18274,7 +18274,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "容器实例任务ID，可通过调用 ListContainerTask 查询已创建的变更记录总数或登录控制台进行查看。",
+          "document": "容器实例任务ID，可通过调用 [DeployContainerGroup](https://cloud.tencent.com/document/product/649/120669) 部署容器应用，查询其返回内容中的任务ID。",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "TaskId",
@@ -24273,20 +24273,20 @@
         {
           "disabled": false,
           "document": "许可ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "tsf-jhdas5d3",
           "member": "string",
           "name": "LicenseId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -26529,10 +26529,10 @@
         {
           "disabled": false,
           "document": "程序包存储空间大小，单位字节\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10737418",
           "member": "uint64",
           "name": "SpaceSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -31448,20 +31448,20 @@
         {
           "disabled": false,
           "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "记录实体列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "LicenseTag",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -33569,10 +33569,10 @@
         {
           "disabled": false,
           "document": "实例导入方式，可多个，公有云为 [\"R\", \"M\"]，独立版的取值仅有 \"M\" 脚本模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[\"R\"]",
           "member": "string",
           "name": "ImportMode",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

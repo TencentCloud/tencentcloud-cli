@@ -42344,7 +42344,7 @@
         {
           "disabled": false,
           "document": "加白地域",
-          "example": "{\"CityId\":1,\"ProvinceId\":1, \"CountryId\":1, \"Location\":\"中国:北京市:北京市\"}",
+          "example": "无",
           "member": "Place",
           "name": "Places",
           "required": true,
@@ -42371,7 +42371,7 @@
         {
           "disabled": false,
           "document": "是否对全局生效, 1：全局有效 0: 仅针对单台主机'",
-          "example": "False",
+          "example": "1",
           "member": "uint64",
           "name": "IsGlobal",
           "required": true,
@@ -42380,7 +42380,7 @@
         {
           "disabled": false,
           "document": "白名单生效的机器信息列表",
-          "example": "[{\"Quuid\":\"77A8AE4C-2CF8-4656-A999-6D706E1*****\", \"Uuid\":\"77A8AE4C-2CF8-4656-A999-6D706E1*****\"}]",
+          "example": "无",
           "member": "HostInfo",
           "name": "HostInfos",
           "required": true,
@@ -42398,7 +42398,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "2024-11-03 18:37:03",
+          "example": "08:00",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -42407,7 +42407,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "2024-11-03 18:37:03",
+          "example": "22:00",
           "member": "string",
           "name": "EndTime",
           "required": false,

@@ -388,7 +388,7 @@
           "example": "10001",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -398,7 +398,7 @@
           "example": "表格合并",
           "member": "int64",
           "name": "ApplicationType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -408,7 +408,7 @@
           "example": "1822112",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -418,19 +418,19 @@
           "example": "Test",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格组名称",
           "example": "db_user",
           "member": "string",
           "name": "TableGroupName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -438,7 +438,7 @@
           "example": "db_user_info",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -448,7 +448,7 @@
           "example": "yuxinfan",
           "member": "string",
           "name": "Applicant",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -458,7 +458,7 @@
           "example": "2021-01-18 20:10:21",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -468,7 +468,7 @@
           "example": "0",
           "member": "int64",
           "name": "ApplicationStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -478,7 +478,7 @@
           "example": "222",
           "member": "string",
           "name": "TableGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -488,69 +488,69 @@
           "example": "222",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "腾讯云上table的唯一键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "腾讯云上table的唯一键",
           "example": "tcaplus_dsdfsdf",
           "member": "string",
           "name": "TableInstanceId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2021-01-18 20:10:21",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审批人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批人",
           "example": "yuxinfan",
           "member": "string",
           "name": "ExecuteUser",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "执行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行状态",
           "example": "0",
           "member": "string",
           "name": "ExecuteStatus",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该申请单是否可以被当前用户审批\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该申请单是否可以被当前用户审批",
           "example": "0",
           "member": "bool",
           "name": "CanCensor",
-          "required": true,
+          "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该申请单是否可以被当前用户撤回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该申请单是否可以被当前用户撤回",
           "example": "0",
           "member": "bool",
           "name": "CanWithdrawal",
-          "required": true,
+          "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -564,7 +564,7 @@
           "example": "10001",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -574,39 +574,39 @@
           "example": "0",
           "member": "int64",
           "name": "ApplicationType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "处理状态 0-待审核 1-已经审核并提交任务 2-已驳回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处理状态 0-待审核 1-已经审核并提交任务 2-已驳回",
           "example": "0",
           "member": "int64",
           "name": "ApplicationStatus",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已提交的任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已提交的任务Id",
           "example": "0",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "0",
           "member": "ErrorInfo",
           "name": "Error",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -825,7 +825,7 @@
         {
           "disabled": false,
           "document": "表所属集群实例ID",
-          "example": "123",
+          "example": "898898",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -834,7 +834,7 @@
         {
           "disabled": false,
           "document": "待清理表信息列表",
-          "example": "null",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
@@ -852,15 +852,17 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "清除表结果列表",
-          "example": "null",
+          "example": "{}",
           "member": "TableResultNew",
           "name": "TableResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -882,7 +884,7 @@
           "example": "0",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -892,7 +894,7 @@
           "example": "0",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -902,7 +904,7 @@
           "example": "0",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -912,7 +914,7 @@
           "example": "0",
           "member": "string",
           "name": "IdlType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -922,7 +924,7 @@
           "example": "0",
           "member": "string",
           "name": "NetworkType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -932,7 +934,7 @@
           "example": "0",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -942,7 +944,7 @@
           "example": "0",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -952,7 +954,7 @@
           "example": "0",
           "member": "datetime",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -962,7 +964,7 @@
           "example": "0",
           "member": "string",
           "name": "Password",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -972,7 +974,7 @@
           "example": "0",
           "member": "string",
           "name": "PasswordStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -982,7 +984,7 @@
           "example": "0",
           "member": "string",
           "name": "ApiAccessId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -992,7 +994,7 @@
           "example": "0",
           "member": "string",
           "name": "ApiAccessIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1002,99 +1004,99 @@
           "example": "0",
           "member": "int64",
           "name": "ApiAccessPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "如果PasswordStatus是unmodifiable说明有旧密码还未过期，此字段将显示旧密码过期的时间，否则为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果PasswordStatus是unmodifiable说明有旧密码还未过期，此字段将显示旧密码过期的时间，否则为空",
           "example": "0",
           "member": "string",
           "name": "OldPasswordExpireTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "TcaplusDB SDK连接参数，接入ipv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TcaplusDB SDK连接参数，接入ipv6地址",
           "example": "0",
           "member": "string",
           "name": "ApiAccessIpv6",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群类型，0,1:共享集群; 2:独立集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群类型，0,1:共享集群; 2:独立集群",
           "example": "0",
           "member": "int64",
           "name": "ClusterType",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中",
           "example": "0",
           "member": "int64",
           "name": "ClusterStatus",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "读CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "读CU",
           "example": "0",
           "member": "int64",
           "name": "ReadCapacityUnit",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "写CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "写CU",
           "example": "0",
           "member": "int64",
           "name": "WriteCapacityUnit",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "磁盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磁盘容量",
           "example": "0",
           "member": "int64",
           "name": "DiskVolume",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "独占server机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独占server机器信息",
           "example": "0",
           "member": "ServerDetailInfo",
           "name": "ServerList",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "独占proxy机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独占proxy机器信息",
           "example": "0",
           "member": "ProxyDetailInfo",
           "name": "ProxyList",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1102,79 +1104,79 @@
           "example": "0",
           "member": "int64",
           "name": "Censorship",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审批人uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批人uin列表",
           "example": "0",
           "member": "string",
           "name": "DbaUins",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启了数据订阅\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启了数据订阅",
           "example": "0",
           "member": "int64",
           "name": "DataFlowStatus",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据订阅的kafka信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据订阅的kafka信息",
           "example": "无",
           "member": "KafkaInfo",
           "name": "KafkaInfo",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群Txh备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群Txh备份文件多少天后过期删除",
           "example": "0",
           "member": "uint64",
           "name": "TxhBackupExpireDay",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群Ulog备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群Ulog备份文件多少天后过期删除",
           "example": "0",
           "member": "uint64",
           "name": "UlogBackupExpireDay",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群Ulog备份文件过期策略是否为只读， 0： UlogBackupExpire是只读，不可修改， 1： UlogBackupExpire可以修改（当前业务存在Svrid第二段等于clusterid的机器）",
           "example": "0",
           "member": "uint64",
           "name": "IsReadOnlyUlogBackupExpireDay",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "restproxy状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "restproxy状态",
           "example": "0",
           "member": "int64",
           "name": "RestProxyStatus",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1185,7 +1187,7 @@
         {
           "disabled": false,
           "document": "待修改表格所在集群ID",
-          "example": "",
+          "example": "187676",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1194,7 +1196,7 @@
         {
           "disabled": false,
           "document": "待修改表格列表",
-          "example": "",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
@@ -1203,7 +1205,7 @@
         {
           "disabled": false,
           "document": "选中的已上传IDL文件列表，与NewIdlFiles必选其一",
-          "example": "",
+          "example": "{}",
           "member": "IdlFileInfo",
           "name": "ExistingIdlFiles",
           "required": false,
@@ -1212,7 +1214,7 @@
         {
           "disabled": false,
           "document": "本次上传IDL文件列表，与ExistingIdlFiles必选其一",
-          "example": "",
+          "example": "{}",
           "member": "IdlFileInfo",
           "name": "NewIdlFiles",
           "required": false,
@@ -1227,27 +1229,30 @@
         {
           "disabled": false,
           "document": "本次上传校验所有的IDL文件信息列表",
-          "example": "",
+          "example": "{}",
           "member": "IdlFileInfo",
           "name": "IdlFiles",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "本次校验合法的表格数量",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "读取IDL描述文件后,根据用户指示的所选中表格解析校验结果",
-          "example": "",
+          "example": "{}",
           "member": "ParsedTableInfoNew",
           "name": "TableInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1265,91 +1270,91 @@
       "members": [
         {
           "disabled": false,
-          "document": "源表格的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "源表格的集群id",
+          "example": "75685",
           "member": "string",
           "name": "SrcTableClusterId",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源表格的表格组id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "源表格的表格组id",
+          "example": "18755",
           "member": "string",
           "name": "SrcTableGroupId",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源表格的表名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "源表格的表名",
+          "example": "srcname",
           "member": "string",
           "name": "SrcTableName",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标表格的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "目标表格的集群id",
+          "example": "75685",
           "member": "string",
           "name": "DstTableClusterId",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标表格的表格组id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "目标表格的表格组id",
+          "example": "18755",
           "member": "string",
           "name": "DstTableGroupId",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标表格的表名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "目标表格的表名",
+          "example": "dstname",
           "member": "string",
           "name": "DstTableName",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源表格的实例id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "源表格的实例id",
+          "example": "tcap-1232",
           "member": "string",
           "name": "SrcTableInstanceId",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标表格的实例id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "目标表格的实例id",
+          "example": "tcap-2586",
           "member": "string",
           "name": "DstTableInstanceId",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1392,23 +1397,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的备份任务ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建的备份任务ID列表",
           "example": "0",
           "member": "string",
           "name": "TaskIds",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建的备份申请ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建的备份申请ID列表",
           "example": "0",
           "member": "string",
           "name": "ApplicationIds",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1561,7 +1566,7 @@
         {
           "disabled": false,
           "document": "快照列表",
-          "example": "无",
+          "example": "{}",
           "member": "SnapshotInfo",
           "name": "SelectedTables",
           "required": true,
@@ -1579,17 +1584,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "批量创建的快照结果列表",
-          "example": "无",
+          "example": "{}",
           "member": "SnapshotResult",
           "name": "TableResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1608,7 +1613,7 @@
         {
           "disabled": false,
           "document": "表格组所属集群ID",
-          "example": "",
+          "example": "18744",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1617,7 +1622,7 @@
         {
           "disabled": false,
           "document": "表格组名称，可以采用中文、英文或数字字符，最大长度32个字符",
-          "example": "",
+          "example": "groupname",
           "member": "string",
           "name": "TableGroupName",
           "required": true,
@@ -1626,7 +1631,7 @@
         {
           "disabled": false,
           "document": "表格组ID，可以由用户指定，但在同一个集群内不能重复，如果不指定则采用自增的模式",
-          "example": "",
+          "example": "17565",
           "member": "string",
           "name": "TableGroupId",
           "required": false,
@@ -1635,7 +1640,7 @@
         {
           "disabled": false,
           "document": "表格组标签列表",
-          "example": "",
+          "example": "{}",
           "member": "TagInfoUnit",
           "name": "ResourceTags",
           "required": false,
@@ -1650,9 +1655,10 @@
         {
           "disabled": false,
           "document": "创建成功的表格组ID",
-          "example": "",
+          "example": "167556",
           "member": "string",
           "name": "TableGroupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1680,7 +1686,7 @@
         {
           "disabled": false,
           "document": "用户选定的建表格IDL文件列表",
-          "example": " null",
+          "example": " {}",
           "member": "IdlFileInfo",
           "name": "IdlFiles",
           "required": true,
@@ -1689,7 +1695,7 @@
         {
           "disabled": false,
           "document": "待创建表格信息列表",
-          "example": "null",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
@@ -1698,7 +1704,7 @@
         {
           "disabled": false,
           "document": "表格标签列表",
-          "example": "null",
+          "example": "{}",
           "member": "TagInfoUnit",
           "name": "ResourceTags",
           "required": false,
@@ -1716,6 +1722,7 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1725,6 +1732,7 @@
           "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1766,13 +1774,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1789,7 +1797,7 @@
         {
           "disabled": false,
           "document": "待删除的集群ID",
-          "example": "",
+          "example": "18767",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1804,9 +1812,10 @@
         {
           "disabled": false,
           "document": "删除集群生成的任务ID",
-          "example": "",
+          "example": "17454",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1825,7 +1834,7 @@
         {
           "disabled": false,
           "document": "IDL所属集群ID",
-          "example": "",
+          "example": "187656",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1834,7 +1843,7 @@
         {
           "disabled": false,
           "document": "待删除的IDL文件信息列表",
-          "example": "",
+          "example": "{}",
           "member": "IdlFileInfo",
           "name": "IdlFiles",
           "required": true,
@@ -1849,18 +1858,20 @@
         {
           "disabled": false,
           "document": "结果记录数量",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "删除结果",
-          "example": "",
+          "example": "{}",
           "member": "IdlFileInfoWithoutContent",
           "name": "IdlFileInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1888,7 +1899,7 @@
         {
           "disabled": false,
           "document": "删除的快照列表",
-          "example": "无",
+          "example": "{}",
           "member": "SnapshotInfoNew",
           "name": "SelectedTables",
           "required": true,
@@ -1906,17 +1917,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "批量删除的快照结果",
-          "example": "无",
+          "example": "{}",
           "member": "SnapshotResult",
           "name": "TableResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1991,7 +2002,7 @@
         {
           "disabled": false,
           "document": "表格组所属的集群ID",
-          "example": "",
+          "example": "17568",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2000,7 +2011,7 @@
         {
           "disabled": false,
           "document": "表格组ID",
-          "example": "",
+          "example": "14234",
           "member": "string",
           "name": "TableGroupId",
           "required": true,
@@ -2015,9 +2026,10 @@
         {
           "disabled": false,
           "document": "删除表格组所创建的任务ID",
-          "example": "",
+          "example": "18767865",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2036,7 +2048,7 @@
         {
           "disabled": false,
           "document": "表格所属集群实例ID",
-          "example": "123",
+          "example": "897858",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2045,7 +2057,7 @@
         {
           "disabled": false,
           "document": "待删除分布式索引的表格列表",
-          "example": "null",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
@@ -2063,15 +2075,17 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "删除表格分布式索引结果列表",
-          "example": "null",
+          "example": "{}",
           "member": "TableResultNew",
           "name": "TableResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2090,7 +2104,7 @@
         {
           "disabled": false,
           "document": "待删除表所在集群ID",
-          "example": "123",
+          "example": "8978978",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2099,7 +2113,7 @@
         {
           "disabled": false,
           "document": "待删除表信息列表",
-          "example": "null",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
@@ -2117,15 +2131,17 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "删除表结果详情列表",
-          "example": "null",
+          "example": "{}",
           "member": "TableResultNew",
           "name": "TableResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2180,7 +2196,7 @@
         {
           "disabled": false,
           "document": "表格组id，用于过滤",
-          "example": "xx",
+          "example": "32424",
           "member": "string",
           "name": "TableGroupId",
           "required": false,
@@ -2189,7 +2205,7 @@
         {
           "disabled": false,
           "document": "表格名，用于过滤",
-          "example": "xx",
+          "example": "testname",
           "member": "string",
           "name": "TableName",
           "required": false,
@@ -2198,7 +2214,7 @@
         {
           "disabled": false,
           "document": "申请人uin，用于过滤",
-          "example": "xx",
+          "example": "2131",
           "member": "string",
           "name": "Applicant",
           "required": false,
@@ -2222,10 +2238,10 @@
         {
           "disabled": false,
           "document": "申请单列表",
-          "example": "无",
+          "example": "{}",
           "member": "Application",
           "name": "Applications",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2235,7 +2251,7 @@
           "example": "92",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2281,7 +2297,7 @@
         {
           "disabled": false,
           "document": "表格组id，用于过滤",
-          "example": "xx",
+          "example": "7867",
           "member": "string",
           "name": "TableGroupId",
           "required": false,
@@ -2290,7 +2306,7 @@
         {
           "disabled": false,
           "document": "表格名，用于过滤",
-          "example": "xx",
+          "example": "testname",
           "member": "string",
           "name": "TableName",
           "required": false,
@@ -2308,7 +2324,7 @@
           "example": "无",
           "member": "BackupRecords",
           "name": "BackupRecords",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2318,7 +2334,7 @@
           "example": "92",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2337,7 +2353,7 @@
         {
           "disabled": false,
           "document": "集群ID列表",
-          "example": "\"123\"",
+          "example": "879789",
           "member": "string",
           "name": "ClusterIds",
           "required": true,
@@ -2351,23 +2367,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群标签信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群标签信息列表",
           "example": "0",
           "member": "TagsInfoOfCluster",
           "name": "Rows",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回结果个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果个数",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2393,7 +2409,7 @@
         {
           "disabled": false,
           "document": "查询过滤条件",
-          "example": "无",
+          "example": "{}",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2445,7 +2461,7 @@
         {
           "disabled": false,
           "document": "集群实例列表",
-          "example": "无",
+          "example": "{}",
           "member": "ClusterInfo",
           "name": "Clusters",
           "output_required": true,
@@ -2467,7 +2483,7 @@
         {
           "disabled": false,
           "document": "文件所属集群ID",
-          "example": "",
+          "example": "1876767",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2476,7 +2492,7 @@
         {
           "disabled": false,
           "document": "文件所属表格组ID",
-          "example": "",
+          "example": "1214765",
           "member": "string",
           "name": "TableGroupIds",
           "required": false,
@@ -2485,7 +2501,7 @@
         {
           "disabled": false,
           "document": "指定文件ID列表",
-          "example": "",
+          "example": "testfield",
           "member": "string",
           "name": "IdlFileIds",
           "required": false,
@@ -2494,7 +2510,7 @@
         {
           "disabled": false,
           "document": "查询列表偏移量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -2503,7 +2519,7 @@
         {
           "disabled": false,
           "document": "查询列表返回记录数",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -2518,18 +2534,20 @@
         {
           "disabled": false,
           "document": "文件数量",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件详情列表",
-          "example": "",
+          "example": "{}",
           "member": "IdlFileInfo",
           "name": "IdlFileInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2548,7 +2566,7 @@
         {
           "disabled": false,
           "document": "不为0，表示查询支持ipv6的机器",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Ipv6Enable",
           "required": false,
@@ -2563,9 +2581,10 @@
         {
           "disabled": false,
           "document": "独占机器资源列表",
-          "example": "",
+          "example": "{}",
           "member": "PoolInfo",
           "name": "PoolList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2589,18 +2608,20 @@
         {
           "disabled": false,
           "document": "可用区详情结果数量",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区详情结果列表",
-          "example": "",
+          "example": "{}",
           "member": "RegionInfo",
           "name": "RegionInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2655,7 +2676,7 @@
         {
           "disabled": false,
           "document": "批量拉取快照的表格列表",
-          "example": "无",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": false,
@@ -2673,17 +2694,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照结果列表",
-          "example": "无",
+          "example": "{}",
           "member": "SnapshotResult",
           "name": "TableResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2702,7 +2723,7 @@
         {
           "disabled": false,
           "document": "待查询标签表格组所属集群ID",
-          "example": "\"123\"",
+          "example": "345332",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2711,7 +2732,7 @@
         {
           "disabled": false,
           "document": "待查询标签表格组ID列表",
-          "example": "\"\"",
+          "example": "435342",
           "member": "string",
           "name": "TableGroupIds",
           "required": true,
@@ -2725,23 +2746,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "表格组标签信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格组标签信息列表",
           "example": "0",
           "member": "TagsInfoOfTableGroup",
           "name": "Rows",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回结果个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果个数",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2758,7 +2779,7 @@
         {
           "disabled": false,
           "document": "表格组所属集群ID",
-          "example": "\"123\"",
+          "example": "7867686",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2841,7 +2862,7 @@
         {
           "disabled": false,
           "document": "表格所属集群ID",
-          "example": "\"123\"",
+          "example": "456546",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2897,7 +2918,7 @@
         {
           "disabled": false,
           "document": "待查询表格所属集群ID",
-          "example": "\"123\"",
+          "example": "5456454",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -2906,7 +2927,7 @@
         {
           "disabled": false,
           "document": "待查询表格所属表格组ID列表",
-          "example": "\"\"",
+          "example": "13755",
           "member": "string",
           "name": "TableGroupIds",
           "required": false,
@@ -3072,7 +3093,7 @@
         {
           "disabled": false,
           "document": "需要查询任务所属的集群ID列表",
-          "example": "",
+          "example": "176784",
           "member": "string",
           "name": "ClusterIds",
           "required": false,
@@ -3081,7 +3102,7 @@
         {
           "disabled": false,
           "document": "需要查询的任务ID列表",
-          "example": "",
+          "example": "1345345",
           "member": "string",
           "name": "TaskIds",
           "required": false,
@@ -3090,7 +3111,7 @@
         {
           "disabled": false,
           "document": "过滤条件，本接口支持：Content，TaskType, Operator, Time",
-          "example": "",
+          "example": "{}",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3099,7 +3120,7 @@
         {
           "disabled": false,
           "document": "查询列表偏移量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3108,7 +3129,7 @@
         {
           "disabled": false,
           "document": "查询列表返回记录数",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3123,18 +3144,20 @@
         {
           "disabled": false,
           "document": "任务数量",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "查询到的任务详情列表",
-          "example": "",
+          "example": "{}",
           "member": "TaskInfoNew",
           "name": "TaskInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3158,9 +3181,10 @@
         {
           "disabled": false,
           "document": "查询结果：`FALSE` 否；`TRUE` 是",
-          "example": "",
+          "example": "FALSE",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3179,7 +3203,7 @@
         {
           "disabled": false,
           "document": "对应appid",
-          "example": "123",
+          "example": "4534634",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3204,7 +3228,7 @@
         {
           "disabled": false,
           "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务",
-          "example": "123",
+          "example": "34532",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -3273,20 +3297,20 @@
         {
           "disabled": false,
           "document": "错误码",
-          "example": "",
+          "example": "14212",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "",
+          "example": "InnerError",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3299,42 +3323,38 @@
         {
           "disabled": false,
           "document": "表格字段名称",
-          "example": "",
+          "example": "fieldName",
           "member": "string",
           "name": "FieldName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字段是否是主键字段",
-          "example": "",
+          "example": "0",
           "member": "string",
           "name": "IsPrimaryKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字段类型",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "FieldType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字段长度",
-          "example": "",
+          "example": "32012",
           "member": "int64",
           "name": "FieldSize",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -3381,9 +3401,10 @@
         {
           "disabled": false,
           "document": "文件名称，不包含扩展名",
-          "example": "",
+          "example": "fieldName",
           "member": "string",
           "name": "FileName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3391,9 +3412,10 @@
         {
           "disabled": false,
           "document": "数据描述语言（IDL）类型",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "FileType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3401,9 +3423,10 @@
         {
           "disabled": false,
           "document": "文件扩展名",
-          "example": "",
+          "example": "proto",
           "member": "string",
           "name": "FileExtType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3411,32 +3434,35 @@
         {
           "disabled": false,
           "document": "文件大小（Bytes）",
-          "example": "",
+          "example": "137545",
           "member": "int64",
           "name": "FileSize",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件ID，对于已上传的文件有意义\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "文件ID，对于已上传的文件有意义",
+          "example": "243445",
           "member": "int64",
           "name": "FileId",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件内容，对于本次新上传的文件有意义\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "文件内容，对于本次新上传的文件有意义",
+          "example": "filecontent",
           "member": "string",
           "name": "FileContent",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3446,63 +3472,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件名称，不包含扩展名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "文件名称，不包含扩展名",
+          "example": "filename",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据描述语言（IDL）类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "数据描述语言（IDL）类型",
+          "example": "1",
           "member": "string",
           "name": "FileType",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件扩展名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "文件扩展名",
+          "example": "proto",
           "member": "string",
           "name": "FileExtType",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件大小（Bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "文件大小（Bytes）",
+          "example": "143534",
           "member": "int64",
           "name": "FileSize",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "文件ID",
+          "example": "15",
           "member": "int64",
           "name": "FileId",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "错误信息",
+          "example": "{}",
           "member": "ErrorInfo",
           "name": "Error",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3513,7 +3539,7 @@
         {
           "disabled": false,
           "document": "表格所属的集群id",
-          "example": "无",
+          "example": "346673",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3522,7 +3548,7 @@
         {
           "disabled": false,
           "document": "用于导入的快照信息",
-          "example": "无",
+          "example": "{}",
           "member": "SnapshotInfo",
           "name": "Snapshots",
           "required": true,
@@ -3531,7 +3557,7 @@
         {
           "disabled": false,
           "document": "是否导入部分记录，TRUE表示导入部分记录，FALSE表示全表导入",
-          "example": "无",
+          "example": "testkey",
           "member": "string",
           "name": "ImportSpecialKey",
           "required": true,
@@ -3540,7 +3566,7 @@
         {
           "disabled": false,
           "document": "是否导入到当前表，TRUE表示导入到当前表，FALSE表示导入到新表",
-          "example": "无",
+          "example": "testname",
           "member": "string",
           "name": "ImportOriginTable",
           "required": true,
@@ -3549,7 +3575,7 @@
         {
           "disabled": false,
           "document": "部分记录的key文件",
-          "example": "无",
+          "example": "{}",
           "member": "KeyFile",
           "name": "KeyFile",
           "required": false,
@@ -3558,7 +3584,7 @@
         {
           "disabled": false,
           "document": "如果导入到新表，此为新表所属的表格组id",
-          "example": "无",
+          "example": "56336",
           "member": "string",
           "name": "NewTableGroupId",
           "required": false,
@@ -3567,7 +3593,7 @@
         {
           "disabled": false,
           "document": "如果导入到新表，此为新表的表名，系统会以该名称自动创建一张结构相同的空表",
-          "example": "无",
+          "example": "testnewname",
           "member": "string",
           "name": "NewTableName",
           "required": false,
@@ -3581,23 +3607,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务",
+          "example": "11843324",
           "member": "string",
           "name": "TaskId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ApplicationId由 AppInstanceId-applicationId 组成，以区分不同集群的申请\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ApplicationId由 AppInstanceId-applicationId 组成，以区分不同集群的申请",
           "example": "0",
           "member": "string",
           "name": "ApplicationId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3613,69 +3639,69 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kafka address\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Kafka address",
           "example": "ckafka-3azrwxvw.ap-shanghai.ckafka.tencentcloudmq.com:6006",
           "member": "string",
           "name": "Address",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Kafka topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Kafka topic",
           "example": "tcapstream",
           "member": "string",
           "name": "Topic",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "kafka username\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "kafka username",
           "example": "ckafka-3azrwxvw#tcaplusDev",
           "member": "string",
           "name": "User",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "kafka password\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "kafka password",
           "example": "tcaplusDev123321",
           "member": "string",
           "name": "Password",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ckafka实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ckafka实例",
           "example": "ckafka-l4xpzgpz",
           "member": "string",
           "name": "Instance",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否走VPC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否走VPC",
           "example": "0",
           "member": "int64",
           "name": "IsVpc",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3686,42 +3712,38 @@
         {
           "disabled": false,
           "document": "key文件名称",
-          "example": "",
+          "example": "filename",
           "member": "string",
           "name": "FileName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "key文件扩展名",
-          "example": "",
+          "example": "txt",
           "member": "string",
           "name": "FileExtType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "key文件内容",
-          "example": "",
+          "example": "filecontent",
           "member": "string",
           "name": "FileContent",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "key文件大小",
-          "example": "",
+          "example": "154564",
           "member": "int64",
           "name": "FileSize",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -3732,22 +3754,20 @@
         {
           "disabled": false,
           "document": "机器类型",
-          "example": "",
+          "example": "proxy",
           "member": "string",
           "name": "MachineType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "机器数量",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "MachineNum",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -3757,23 +3777,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务Id",
           "example": "0",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "成功时此字段返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成功时此字段返回 null，表示取不到有效值。",
           "example": "0",
           "member": "ErrorInfo",
           "name": "Error",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3781,19 +3801,19 @@
           "example": "0",
           "member": "CompareTablesInfo",
           "name": "Table",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "申请单Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请单Id",
           "example": "0",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3804,7 +3824,7 @@
         {
           "disabled": false,
           "document": "选取的表格",
-          "example": "无",
+          "example": "{}",
           "member": "MergeTablesInfo",
           "name": "SelectedTables",
           "required": true,
@@ -3813,7 +3833,7 @@
         {
           "disabled": false,
           "document": "true只做对比，false既对比又执行",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsOnlyCompare",
           "required": true,
@@ -3831,6 +3851,7 @@
           "example": "无",
           "member": "MergeTableResult",
           "name": "Results",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3849,22 +3870,20 @@
         {
           "disabled": false,
           "document": "合服的表格信息",
-          "example": "",
+          "example": "{}",
           "member": "CompareTablesInfo",
           "name": "MergeTables",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "是否检查索引",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "CheckIndex",
           "required": true,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -3911,19 +3930,19 @@
           "example": "10001",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已加入审批人的uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已加入审批人的uin",
           "example": "0",
           "member": "string",
           "name": "Uins",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3931,7 +3950,7 @@
           "example": "0",
           "member": "int64",
           "name": "Censorship",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3950,7 +3969,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "",
+          "example": "16585",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3959,7 +3978,7 @@
         {
           "disabled": false,
           "document": "svr占用的机器",
-          "example": "",
+          "example": "{}",
           "member": "MachineInfo",
           "name": "ServerList",
           "required": true,
@@ -3968,7 +3987,7 @@
         {
           "disabled": false,
           "document": "proxy占用的机器",
-          "example": "",
+          "example": "{}",
           "member": "MachineInfo",
           "name": "ProxyList",
           "required": true,
@@ -3977,7 +3996,7 @@
         {
           "disabled": false,
           "document": "集群类型1共享集群2独占集群",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "ClusterType",
           "required": true,
@@ -3992,9 +4011,10 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "",
+          "example": "165865",
           "member": "string",
           "name": "ClusterId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4013,7 +4033,7 @@
         {
           "disabled": false,
           "document": "需要修改名称的集群ID",
-          "example": "",
+          "example": "1865675",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4022,7 +4042,7 @@
         {
           "disabled": false,
           "document": "需要修改的集群名称，可使用中文或英文字符，最大长度32个字符",
-          "example": "",
+          "example": "testname",
           "member": "string",
           "name": "ClusterName",
           "required": true,
@@ -4112,7 +4132,7 @@
         {
           "disabled": false,
           "document": "待修改标签的集群ID",
-          "example": "",
+          "example": "932312",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4121,7 +4141,7 @@
         {
           "disabled": false,
           "document": "待增加或修改的标签列表",
-          "example": "",
+          "example": "{}",
           "member": "TagInfoUnit",
           "name": "ReplaceTags",
           "required": false,
@@ -4130,7 +4150,7 @@
         {
           "disabled": false,
           "document": "待删除的标签",
-          "example": "",
+          "example": "{}",
           "member": "TagInfoUnit",
           "name": "DeleteTags",
           "required": false,
@@ -4144,12 +4164,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "任务ID",
+          "example": "898989",
           "member": "string",
           "name": "TaskId",
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4193,7 +4214,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4203,7 +4224,7 @@
           "example": "无",
           "member": "SnapshotResult",
           "name": "TableResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4222,7 +4243,7 @@
         {
           "disabled": false,
           "document": "表格组所属的集群ID",
-          "example": "",
+          "example": "1656785",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4231,7 +4252,7 @@
         {
           "disabled": false,
           "document": "待修改名称的表格组ID",
-          "example": "",
+          "example": "14564",
           "member": "string",
           "name": "TableGroupId",
           "required": true,
@@ -4240,7 +4261,7 @@
         {
           "disabled": false,
           "document": "新的表格组名称，可以使用中英文字符和符号",
-          "example": "",
+          "example": "groupname",
           "member": "string",
           "name": "TableGroupName",
           "required": true,
@@ -4267,7 +4288,7 @@
         {
           "disabled": false,
           "document": "待修改标签表格组所属集群ID",
-          "example": "",
+          "example": "15474",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4276,7 +4297,7 @@
         {
           "disabled": false,
           "document": "待修改标签表格组ID",
-          "example": "",
+          "example": "4545",
           "member": "string",
           "name": "TableGroupId",
           "required": true,
@@ -4285,7 +4306,7 @@
         {
           "disabled": false,
           "document": "待增加或修改的标签列表",
-          "example": "",
+          "example": "{}",
           "member": "TagInfoUnit",
           "name": "ReplaceTags",
           "required": false,
@@ -4294,7 +4315,7 @@
         {
           "disabled": false,
           "document": "待删除的标签",
-          "example": "",
+          "example": "{}",
           "member": "TagInfoUnit",
           "name": "DeleteTags",
           "required": false,
@@ -4308,12 +4329,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "任务ID",
+          "example": "1654564",
           "member": "string",
           "name": "TaskId",
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4330,7 +4352,7 @@
         {
           "disabled": false,
           "document": "表所属集群实例ID",
-          "example": "123",
+          "example": "574845",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4339,7 +4361,7 @@
         {
           "disabled": false,
           "document": "选定表详情列表",
-          "example": "null",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "TableMemos",
           "required": true,
@@ -4357,15 +4379,17 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "表备注修改结果列表",
-          "example": "null",
+          "example": "{}",
           "member": "TableResultNew",
           "name": "TableResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4384,7 +4408,7 @@
         {
           "disabled": false,
           "document": "带扩缩容表所属集群ID",
-          "example": "123",
+          "example": "675656",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4393,7 +4417,7 @@
         {
           "disabled": false,
           "document": "已选中待修改的表配额列表",
-          "example": "null",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "TableQuotas",
           "required": true,
@@ -4411,6 +4435,7 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4420,6 +4445,7 @@
           "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4438,7 +4464,7 @@
         {
           "disabled": false,
           "document": "待修改标签表格所属集群ID",
-          "example": "123",
+          "example": "76784564",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4447,7 +4473,7 @@
         {
           "disabled": false,
           "document": "待修改标签表格列表",
-          "example": "null",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
@@ -4456,7 +4482,7 @@
         {
           "disabled": false,
           "document": "待增加或修改的标签列表",
-          "example": "null",
+          "example": "{}",
           "member": "TagInfoUnit",
           "name": "ReplaceTags",
           "required": false,
@@ -4465,7 +4491,7 @@
         {
           "disabled": false,
           "document": "待删除的标签列表",
-          "example": "null",
+          "example": "{}",
           "member": "TagInfoUnit",
           "name": "DeleteTags",
           "required": false,
@@ -4483,6 +4509,7 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4492,6 +4519,7 @@
           "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4510,7 +4538,7 @@
         {
           "disabled": false,
           "document": "待修改表格所在集群ID",
-          "example": "123",
+          "example": "565335",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4519,7 +4547,7 @@
         {
           "disabled": false,
           "document": "选中的改表IDL文件",
-          "example": "null",
+          "example": "{}",
           "member": "IdlFileInfo",
           "name": "IdlFiles",
           "required": true,
@@ -4528,7 +4556,7 @@
         {
           "disabled": false,
           "document": "待改表格列表",
-          "example": "null",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
@@ -4546,6 +4574,7 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4555,6 +4584,7 @@
           "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4572,183 +4602,183 @@
       "members": [
         {
           "disabled": false,
-          "document": "表格描述语言类型：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格描述语言类型：`PROTO`或`TDR`",
+          "example": "1",
           "member": "string",
           "name": "TableIdlType",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格实例ID",
+          "example": "tcaplus-323",
           "member": "string",
           "name": "TableInstanceId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格名称",
+          "example": "testname",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格数据结构类型：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格数据结构类型：`GENERIC`或`LIST`",
+          "example": "1",
           "member": "string",
           "name": "TableType",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主键字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "主键字段信息",
+          "example": "testkey",
           "member": "string",
           "name": "KeyFields",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原主键字段信息，改表校验时有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "原主键字段信息，改表校验时有效",
+          "example": "oldtestkey",
           "member": "string",
           "name": "OldKeyFields",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "非主键字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "非主键字段信息",
+          "example": "valuefield",
           "member": "string",
           "name": "ValueFields",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原非主键字段信息，改表校验时有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "原非主键字段信息，改表校验时有效",
+          "example": "oldvaluefield",
           "member": "string",
           "name": "OldValueFields",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "所属表格组ID",
+          "example": "12414",
           "member": "string",
           "name": "TableGroupId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主键字段总大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "主键字段总大小",
+          "example": "135235",
           "member": "int64",
           "name": "SumKeyFieldSize",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "非主键字段总大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "非主键字段总大小",
+          "example": "1325323",
           "member": "int64",
           "name": "SumValueFieldSize",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "索引键集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "索引键集合",
+          "example": "indexkeyset",
           "member": "string",
           "name": "IndexKeySet",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分表因子集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "分表因子集合",
+          "example": "shardingkeyset",
           "member": "string",
           "name": "ShardingKeySet",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "TDR版本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "TDR版本号",
+          "example": "1",
           "member": "int64",
           "name": "TdrVersion",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "错误信息",
+          "example": "{}",
           "member": "ErrorInfo",
           "name": "Error",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "LIST类型表格元素个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "LIST类型表格元素个数",
+          "example": "1024",
           "member": "int64",
           "name": "ListElementNum",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "SORTLIST类型表格排序字段个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "SORTLIST类型表格排序字段个数",
+          "example": "0",
           "member": "int64",
           "name": "SortFieldNum",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "SORTLIST类型表格排序顺序\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "SORTLIST类型表格排序顺序",
+          "example": "1",
           "member": "int64",
           "name": "SortRule",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4759,50 +4789,50 @@
         {
           "disabled": false,
           "document": "唯一id",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "PoolUid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否支持ipv6",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Ipv6Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "剩余可用app",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "AvailableAppCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "svr机器列表",
-          "example": "",
+          "example": "{}",
           "member": "ServerMachineInfo",
           "name": "ServerList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "proxy机器列表",
-          "example": "",
+          "example": "{}",
           "member": "ProxyMachineInfo",
           "name": "ProxyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -4818,7 +4848,7 @@
           "example": "1.2.2.2",
           "member": "string",
           "name": "ProxyUid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4828,7 +4858,7 @@
           "example": "0",
           "member": "string",
           "name": "MachineType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4838,7 +4868,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProcessSpeed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4848,7 +4878,7 @@
           "example": "0",
           "member": "int64",
           "name": "AverageProcessDelay",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4858,19 +4888,19 @@
           "example": "0",
           "member": "int64",
           "name": "SlowProcessSpeed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本",
           "example": "3.46.0",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4917,7 +4947,7 @@
         {
           "disabled": false,
           "document": "表所在集群ID",
-          "example": "123",
+          "example": "635363",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -4926,7 +4956,7 @@
         {
           "disabled": false,
           "document": "待恢复表信息",
-          "example": "null",
+          "example": "{}",
           "member": "SelectedTableInfoNew",
           "name": "SelectedTables",
           "required": true,
@@ -4944,6 +4974,7 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4953,6 +4984,7 @@
           "example": "null",
           "member": "TableResultNew",
           "name": "TableResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4971,40 +5003,40 @@
         {
           "disabled": false,
           "document": "地域Ap-Code",
-          "example": "",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域缩写",
-          "example": "",
+          "example": "sh",
           "member": "string",
           "name": "RegionAbbr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域ID",
-          "example": "",
+          "example": "102123",
           "member": "uint64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否支持ipv6，0:不支持，1:支持",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Ipv6Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -5089,142 +5121,128 @@
         {
           "disabled": false,
           "document": "表所属表格组ID",
-          "example": "",
+          "example": "1213",
           "member": "string",
           "name": "TableGroupId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "表格名称",
-          "example": "",
+          "example": "testname",
           "member": "string",
           "name": "TableName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "表实例ID",
-          "example": "",
+          "example": "tcaplus-21312",
           "member": "string",
           "name": "TableInstanceId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "表格描述语言类型：`PROTO`或`TDR`",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "TableIdlType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "表格数据结构类型：`GENERIC`或`LIST`",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "TableType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "LIST表元素个数",
-          "example": "",
+          "example": "1024",
           "member": "int64",
           "name": "ListElementNum",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "表格预留容量（GB）",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "ReservedVolume",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "表格预留读CU",
-          "example": "",
+          "example": "1000",
           "member": "int64",
           "name": "ReservedReadQps",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "表格预留写CU",
-          "example": "",
+          "example": "1000",
           "member": "int64",
           "name": "ReservedWriteQps",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "表格备注信息",
-          "example": "",
+          "example": "memo",
           "member": "string",
           "name": "Memo",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "Key回档文件名，回档专用",
-          "example": "",
+          "example": "filename",
           "member": "string",
           "name": "FileName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "Key回档文件扩展名，回档专用",
-          "example": "",
+          "example": "txt",
           "member": "string",
           "name": "FileExtType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "Key回档文件大小，回档专用",
-          "example": "",
+          "example": "10234",
           "member": "int64",
           "name": "FileSize",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "Key回档文件内容，回档专用",
-          "example": "",
+          "example": "filecontent",
           "member": "string",
           "name": "FileContent",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -5324,7 +5342,7 @@
           "example": "1.2.2.2",
           "member": "string",
           "name": "ServerUid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5334,7 +5352,7 @@
           "example": "master",
           "member": "string",
           "name": "MachineType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5344,7 +5362,7 @@
           "example": "0",
           "member": "int64",
           "name": "MemoryRate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5354,7 +5372,7 @@
           "example": "0",
           "member": "int64",
           "name": "DiskRate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5364,7 +5382,7 @@
           "example": "0",
           "member": "int64",
           "name": "ReadNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5374,19 +5392,19 @@
           "example": "0",
           "member": "int64",
           "name": "WriteNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本",
           "example": "3.46.0",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5397,20 +5415,20 @@
         {
           "disabled": false,
           "document": "机器唯一id",
-          "example": "",
+          "example": "svr-10221",
           "member": "string",
           "name": "ServerUid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机器类型",
-          "example": "",
+          "example": "svr",
           "member": "string",
           "name": "MachineType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5446,13 +5464,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TaskId由 AppInstanceId-taskId 组成，以区分不同集群的任务",
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5552,6 +5570,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5561,6 +5580,7 @@
           "example": "无",
           "member": "TableResultNew",
           "name": "TableResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5579,9 +5599,10 @@
         {
           "disabled": false,
           "document": "所属表格组ID",
-          "example": "",
+          "example": "19822",
           "member": "string",
           "name": "TableGroupId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5589,9 +5610,10 @@
         {
           "disabled": false,
           "document": "表名称",
-          "example": "",
+          "example": "testname",
           "member": "string",
           "name": "TableName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5599,9 +5621,10 @@
         {
           "disabled": false,
           "document": "快照名称",
-          "example": "",
+          "example": "snapshotname",
           "member": "string",
           "name": "SnapshotName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5609,9 +5632,10 @@
         {
           "disabled": false,
           "document": "快照时间点",
-          "example": "",
+          "example": "2023-10-10 10:10:10",
           "member": "datetime",
           "name": "SnapshotTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5619,9 +5643,10 @@
         {
           "disabled": false,
           "document": "快照过期时间点",
-          "example": "",
+          "example": "2023-10-11 10:10:10",
           "member": "datetime",
           "name": "SnapshotDeadTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5635,42 +5660,38 @@
         {
           "disabled": false,
           "document": "所属表格组ID",
-          "example": "",
+          "example": "184232",
           "member": "string",
           "name": "TableGroupId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "表名称",
-          "example": "",
+          "example": "testname",
           "member": "string",
           "name": "TableName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "快照名称",
-          "example": "",
+          "example": "snapshotname",
           "member": "string",
           "name": "SnapshotName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "快照过期时间点",
-          "example": "",
+          "example": "2020-10-10 10:10:10",
           "member": "datetime",
           "name": "SnapshotDeadTime",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -5680,113 +5701,113 @@
       "members": [
         {
           "disabled": false,
-          "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "表格所属表格组ID",
+          "example": "13277",
           "member": "string",
           "name": "TableGroupId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "表格名称",
+          "example": "name",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务ID，对于创建单任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "任务ID，对于创建单任务的接口有效",
+          "example": "16756",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "错误信息",
+          "example": "{}",
           "member": "ErrorInfo",
           "name": "Error",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "快照名称",
+          "example": "snapname",
           "member": "string",
           "name": "SnapshotName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照的时间点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照的时间点",
           "example": "0",
           "member": "datetime",
           "name": "SnapshotTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照的过期时间点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照的过期时间点",
           "example": "0",
           "member": "datetime",
           "name": "SnapshotDeadTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照创建时间点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照创建时间点",
           "example": "0",
           "member": "datetime",
           "name": "SnapshotCreateTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "快照大小",
+          "example": "35623",
           "member": "uint64",
           "name": "SnapshotSize",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照状态，0 生成中 1 正常 2 删除中 3 已失效 4 回档使用中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照状态，0 生成中 1 正常 2 删除中 3 已失效 4 回档使用中",
           "example": "0",
           "member": "uint64",
           "name": "SnapshotStatus",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "申请单ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "申请单ID",
+          "example": "13755",
           "member": "string",
           "name": "ApplicationId",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5826,17 +5847,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TargetTableSplitNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "目标缓写表名前缀",
-          "example": "无",
+          "example": "nameprefix",
           "member": "string",
           "name": "TargetTableNamePrefix",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5846,7 +5867,7 @@
           "example": "cdb-70zdmgg1",
           "member": "string",
           "name": "TargetSyncDBInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5856,7 +5877,7 @@
           "example": "db",
           "member": "string",
           "name": "TargetDatabaseName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5866,7 +5887,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5876,7 +5897,7 @@
           "example": "18641706761",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5886,7 +5907,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TableGroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5896,7 +5917,7 @@
           "example": "tablename",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5906,27 +5927,27 @@
           "example": "tcaplus-d753f0db",
           "member": "string",
           "name": "TableId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "TcaplusDB表主键字段到目标缓写表字段的映射",
-          "example": "无",
+          "example": "{}",
           "member": "SyncTableField",
           "name": "KeyFieldMapping",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "TcaplusDB表字段到目标缓写表字段的映射",
-          "example": "无",
+          "example": "{}",
           "member": "SyncTableField",
           "name": "ValueFieldMapping",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -5939,20 +5960,20 @@
         {
           "disabled": false,
           "document": "表格组ID",
-          "example": "\"123\"",
+          "example": "28127",
           "member": "string",
           "name": "TableGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "表格组名称",
-          "example": "\"ZoneName\"",
+          "example": "ZoneName",
           "member": "string",
           "name": "TableGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5962,7 +5983,7 @@
           "example": "20211011",
           "member": "datetime",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5972,7 +5993,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TableCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5982,19 +6003,19 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格Txh备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格Txh备份文件多少天后过期删除",
           "example": "0",
           "member": "uint64",
           "name": "TxhBackupExpireDay",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6002,29 +6023,29 @@
           "example": "1",
           "member": "uint64",
           "name": "EnableMysql",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "mysql负载均衡vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mysql负载均衡vip",
           "example": "0.0.0.0",
           "member": "string",
           "name": "MysqlConnIp",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "mysql负载均衡vport\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mysql负载均衡vport",
           "example": "3306",
           "member": "uint64",
           "name": "MysqlConnPort",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6034,293 +6055,293 @@
       "members": [
         {
           "disabled": false,
-          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格名称",
           "example": "1",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格实例ID",
           "example": "1",
           "member": "string",
           "name": "TableInstanceId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格数据结构类型，如：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格数据结构类型，如：`GENERIC`或`LIST`",
           "example": "1",
           "member": "string",
           "name": "TableType",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格数据描述语言（IDL）类型，如：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格数据描述语言（IDL）类型，如：`PROTO`或`TDR`",
           "example": "1",
           "member": "string",
           "name": "TableIdlType",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格所属集群ID",
           "example": "1",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格所属集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格所属集群名称",
           "example": "1",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格所属表格组ID",
           "example": "1",
           "member": "string",
           "name": "TableGroupId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格所属表格组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格所属表格组名称",
           "example": "1",
           "member": "string",
           "name": "TableGroupName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格主键字段结构json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格主键字段结构json字符串",
           "example": "1",
           "member": "string",
           "name": "KeyStruct",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格非主键字段结构json字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格非主键字段结构json字符串",
           "example": "1",
           "member": "string",
           "name": "ValueStruct",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格分表因子集合，对PROTO类型表格有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格分表因子集合，对PROTO类型表格有效",
           "example": "1",
           "member": "string",
           "name": "ShardingKeySet",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格索引键字段集合，对PROTO类型表格有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格索引键字段集合，对PROTO类型表格有效",
           "example": "1",
           "member": "string",
           "name": "IndexStruct",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "LIST类型表格元素个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "LIST类型表格元素个数",
           "example": "1",
           "member": "uint64",
           "name": "ListElementNum",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格所关联IDL文件信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格所关联IDL文件信息列表",
           "example": "无",
           "member": "IdlFileInfo",
           "name": "IdlFiles",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格预留容量（GB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格预留容量（GB）",
           "example": "1",
           "member": "int64",
           "name": "ReservedVolume",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格预留读CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格预留读CU",
           "example": "1",
           "member": "int64",
           "name": "ReservedReadQps",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格预留写CU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格预留写CU",
           "example": "1",
           "member": "int64",
           "name": "ReservedWriteQps",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格实际数据量大小（MB）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格实际数据量大小（MB）",
           "example": "1",
           "member": "int64",
           "name": "TableSize",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格状态",
           "example": "1",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格创建时间",
           "example": "1",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格最后一次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格最后一次修改时间",
           "example": "1",
           "member": "string",
           "name": "UpdatedTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格备注信息",
           "example": "1",
           "member": "string",
           "name": "Memo",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "1",
           "member": "ErrorInfo",
           "name": "Error",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "TcaplusDB SDK数据访问接入ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TcaplusDB SDK数据访问接入ID",
           "example": "1",
           "member": "string",
           "name": "ApiAccessId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "SORTLIST类型表格排序字段个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SORTLIST类型表格排序字段个数",
           "example": "1",
           "member": "int64",
           "name": "SortFieldNum",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "SORTLIST类型表格排序顺序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SORTLIST类型表格排序顺序",
           "example": "1",
           "member": "int64",
           "name": "SortRule",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格分布式索引/缓写、kafka数据订阅信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格分布式索引/缓写、kafka数据订阅信息",
           "example": "1",
           "member": "string",
           "name": "DbClusterInfoStruct",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格Txh备份文件多少天后过期删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格Txh备份文件多少天后过期删除",
           "example": "0",
           "member": "uint64",
           "name": "TxhBackupExpireDay",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格的缓写信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格的缓写信息",
           "example": "无",
           "member": "SyncTableInfo",
           "name": "SyncTableInfo",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6330,93 +6351,93 @@
       "members": [
         {
           "disabled": false,
-          "document": "表格实例ID，形如：tcaplus-3be64cbb\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格实例ID，形如：tcaplus-3be64cbb",
           "example": "0",
           "member": "string",
           "name": "TableInstanceId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务ID，对于创建单任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID，对于创建单任务的接口有效",
           "example": "0",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格名称",
           "example": "0",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格数据结构类型，如：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格数据结构类型，如：`GENERIC`或`LIST`",
           "example": "0",
           "member": "string",
           "name": "TableType",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表数据描述语言（IDL）类型，如：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表数据描述语言（IDL）类型，如：`PROTO`或`TDR`",
           "example": "0",
           "member": "string",
           "name": "TableIdlType",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表格所属表格组ID",
           "example": "0",
           "member": "string",
           "name": "TableGroupId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "0",
           "member": "ErrorInfo",
           "name": "Error",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务ID列表，对于创建多任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID列表，对于创建多任务的接口有效",
           "example": "0",
           "member": "string",
           "name": "TaskIds",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "腾讯云申请审核单Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "腾讯云申请审核单Id",
           "example": "0",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6426,113 +6447,113 @@
       "members": [
         {
           "disabled": false,
-          "document": "表格实例ID，形如：tcaplus-3be64cbb\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格实例ID，形如：tcaplus-3be64cbb",
+          "example": "120123",
           "member": "string",
           "name": "TableInstanceId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务ID，对于创建单任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "任务ID，对于创建单任务的接口有效",
+          "example": "176768",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格名称",
+          "example": "testname",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格数据结构类型，如：`GENERIC`或`LIST`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格数据结构类型，如：`GENERIC`或`LIST`",
+          "example": "1",
           "member": "string",
           "name": "TableType",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格数据描述语言（IDL）类型，如：`PROTO`或`TDR`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格数据描述语言（IDL）类型，如：`PROTO`或`TDR`",
+          "example": "1",
           "member": "string",
           "name": "TableIdlType",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格所属表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格所属表格组ID",
+          "example": "15323",
           "member": "string",
           "name": "TableGroupId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "错误信息",
+          "example": "{}",
           "member": "ErrorInfo",
           "name": "Error",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务ID列表，对于创建多任务的接口有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "任务ID列表，对于创建多任务的接口有效",
+          "example": "1587678",
           "member": "string",
           "name": "TaskIds",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上传的key文件ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "上传的key文件ID",
+          "example": "1",
           "member": "string",
           "name": "FileId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "校验成功Key数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "校验成功Key数量",
+          "example": "10",
           "member": "uint64",
           "name": "SuccKeyNum",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Key文件中包含总的Key数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "Key文件中包含总的Key数量",
+          "example": "10",
           "member": "uint64",
           "name": "TotalKeyNum",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6543,22 +6564,24 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "tagkey",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "标签值",
+          "example": "tagvalue",
           "member": "string",
           "name": "TagValue",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6568,33 +6591,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "集群ID",
+          "example": "1875657",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "标签信息",
+          "example": "{}",
           "member": "TagInfoUnit",
           "name": "Tags",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "错误信息",
+          "example": "{}",
           "member": "ErrorInfo",
           "name": "Error",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6604,53 +6627,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "表格实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格实例ID",
+          "example": "tcaplus-2221",
           "member": "string",
           "name": "TableInstanceId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格名称",
+          "example": "testname",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格组ID",
+          "example": "31231",
           "member": "string",
           "name": "TableGroupId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "标签信息",
+          "example": "{}",
           "member": "TagInfoUnit",
           "name": "Tags",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "错误信息",
+          "example": "{}",
           "member": "ErrorInfo",
           "name": "Error",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6660,43 +6683,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "集群ID",
+          "example": "189787",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "表格组ID",
+          "example": "176565",
           "member": "string",
           "name": "TableGroupId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "标签信息",
+          "example": "{}",
           "member": "TagInfoUnit",
           "name": "Tags",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "错误信息",
+          "example": "{}",
           "member": "ErrorInfo",
           "name": "Error",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6707,132 +6730,132 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "1765447",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务类型",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务所关联的TcaplusDB内部事务ID",
-          "example": "无",
+          "example": "46563",
           "member": "string",
           "name": "TransId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务所属集群ID",
-          "example": "无",
+          "example": "1865765",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务所属集群名称",
-          "example": "无",
+          "example": "clustername",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务进度",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务创建时间",
-          "example": "无",
+          "example": "20231010",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务最后更新时间",
-          "example": "无",
+          "example": "20231010",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作者",
-          "example": "无",
+          "example": "operator",
           "member": "string",
           "name": "Operator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务详情",
-          "example": "无",
+          "example": "createtable",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "表格组ID",
+          "example": "165675",
           "member": "string",
           "name": "TableGroupId",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表格组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "表格组名称",
+          "example": "groupname",
           "member": "string",
           "name": "TableGroupName",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "表名称",
+          "example": "testname",
           "member": "string",
           "name": "TableName",
-          "required": false,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6857,13 +6880,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "已更新的申请单列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已更新的申请单列表",
           "example": "无",
           "member": "ApplyResult",
           "name": "ApplyResults",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6890,7 +6913,7 @@
         {
           "disabled": false,
           "document": "待创建表格的集群ID",
-          "example": "",
+          "example": "176567",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -6899,7 +6922,7 @@
         {
           "disabled": false,
           "document": "待创建表格的表格组ID",
-          "example": "",
+          "example": "15452",
           "member": "string",
           "name": "TableGroupId",
           "required": false,
@@ -6908,7 +6931,7 @@
         {
           "disabled": false,
           "document": "曾经上传过的IDL文件信息列表，与NewIdlFiles至少有一者",
-          "example": "",
+          "example": "{}",
           "member": "IdlFileInfo",
           "name": "ExistingIdlFiles",
           "required": false,
@@ -6917,7 +6940,7 @@
         {
           "disabled": false,
           "document": "待上传的IDL文件信息列表，与ExistingIdlFiles至少有一者",
-          "example": "",
+          "example": "{}",
           "member": "IdlFileInfo",
           "name": "NewIdlFiles",
           "required": false,
@@ -6932,27 +6955,30 @@
         {
           "disabled": false,
           "document": "本次上传校验所有的IDL文件信息列表",
-          "example": "",
+          "example": "{}",
           "member": "IdlFileInfo",
           "name": "IdlFiles",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "读取IDL描述文件后解析出的合法表数量，不包含已经创建的表",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "读取IDL描述文件后解析出的合法表列表，不包含已经创建的表",
-          "example": "",
+          "example": "{}",
           "member": "ParsedTableInfoNew",
           "name": "TableInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

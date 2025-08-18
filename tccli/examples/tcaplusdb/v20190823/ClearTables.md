@@ -16,20 +16,22 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "122bb375-7464-4536-a3c5-8ddbdd6f4ce4",
+        "TotalCount": 1,
         "TableResults": [
             {
-                "Error": null,
-                "TableGroupId": "101",
-                "TableIdlType": null,
-                "TableInstanceId": "tcaplus-1f224454",
-                "TableName": "tb_example",
-                "TableType": null,
-                "TaskId": "5674209986-1199",
-                "TaskIds": null
+                "TableInstanceId": "abc8989",
+                "TaskId": "768786",
+                "TableName": "abc",
+                "TableType": "1",
+                "TableIdlType": "1",
+                "TableGroupId": "2321",
+                "TaskIds": [
+                    "abc"
+                ],
+                "ApplicationId": "abc"
             }
         ],
-        "TotalCount": 1
+        "RequestId": "abc"
     }
 }
 ```
@@ -53,24 +55,26 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "0488b016-9c9e-44d5-9bd1-55f8f59cc0d0",
+        "TotalCount": 1,
         "TableResults": [
             {
-                "ApplicationId": null,
+                "TableInstanceId": "abc",
+                "TaskId": "abc",
+                "TableName": "abc",
+                "TableType": "abc",
+                "TableIdlType": "abc",
+                "TableGroupId": "abc",
                 "Error": {
-                    "Code": "MissingParameter",
-                    "Message": "Missing parameter TableInstanceId"
+                    "Code": "abc",
+                    "Message": "abc"
                 },
-                "TableGroupId": null,
-                "TableIdlType": null,
-                "TableInstanceId": null,
-                "TableName": null,
-                "TableType": null,
-                "TaskId": null,
-                "TaskIds": null
+                "TaskIds": [
+                    "abc"
+                ],
+                "ApplicationId": "abc"
             }
         ],
-        "TotalCount": 1
+        "RequestId": "abc"
     }
 }
 ```

@@ -763,6 +763,13 @@
       "output": "DescribeTopicsResponse",
       "status": "online"
     },
+    "ExecuteDisasterRecovery": {
+      "document": "执行域名异地访问切换，域名的访问指向将切换至备份集群。",
+      "input": "ExecuteDisasterRecoveryRequest",
+      "name": "执行异地访问切换",
+      "output": "ExecuteDisasterRecoveryResponse",
+      "status": "online"
+    },
     "ExportRocketMQMessageDetail": {
       "document": "导出RocketMQ消息详情",
       "input": "ExportRocketMQMessageDetailRequest",
@@ -6859,8 +6866,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "必填字段，环境（命名空间）名称。",
-          "example": "default",
+          "document": "Pulsar 集群的ID",
+          "example": "pulsar-ge3n43v3wj",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境（命名空间）名称。",
+          "example": "ns-test",
           "member": "string",
           "name": "EnvironmentId",
           "required": false,
@@ -6883,15 +6899,6 @@
           "name": "Limit",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "必填字段，Pulsar 集群的ID",
-          "example": "pulsar-ge3n43v3wj",
-          "member": "string",
-          "name": "ClusterId",
-          "required": false,
-          "type": "string"
         },
         {
           "disabled": false,
@@ -12282,6 +12289,23 @@
         }
       ],
       "usage": "out"
+    },
+    "ExecuteDisasterRecoveryRequest": {
+      "document": "ExecuteDisasterRecovery请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ExecuteDisasterRecoveryResponse": {
+      "document": "ExecuteDisasterRecovery返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExportRocketMQMessageDetailRequest": {
       "document": "ExportRocketMQMessageDetail请求参数结构体",

@@ -5333,7 +5333,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，是否忽略当前检查",
+          "document": "是否忽略当前检查",
           "example": "true",
           "member": "bool",
           "name": "IgnoreCheck",
@@ -5343,7 +5343,7 @@
         {
           "disabled": false,
           "document": "命名空间，仅迁移至4.x集群有效，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。",
-          "example": "tdmq-default",
+          "example": "ns1",
           "member": "string",
           "name": "Namespace",
           "required": false,

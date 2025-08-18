@@ -15434,7 +15434,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li>\n<li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li>\n<li>ImageID- String - 是否必填：否 - 镜像ID筛选，</li>\n<li>SecurityRisk- String - 是否必填：否 - 安全风险，VulCnt 、VirusCnt、RiskCnt、IsTrustImage</li>",
-          "example": "[{\"Name\":\"ScanStatus\",\"Values\":[\"notScan\"]}]",
+          "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
           "required": false,
@@ -34285,7 +34285,7 @@
         {
           "disabled": false,
           "document": "镜像id",
-          "example": "sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f****",
+          "example": "sha256:****",
           "member": "string",
           "name": "ImageID",
           "output_required": true,
@@ -34295,7 +34295,7 @@
         {
           "disabled": false,
           "document": "镜像名称",
-          "example": "registry.jiguang.woa.com/tcloud-yunjing-cwp-detection/tcloud-yunjing-cwp-detection:0.0.1-20241023-141138-920a71a.rhel.a****",
+          "example": "imageName-01:latest",
           "member": "string",
           "name": "ImageName",
           "output_required": true,
@@ -34395,7 +34395,7 @@
         {
           "disabled": false,
           "document": "是否信任镜像",
-          "example": "False",
+          "example": "true",
           "member": "bool",
           "name": "IsTrustImage",
           "output_required": true,

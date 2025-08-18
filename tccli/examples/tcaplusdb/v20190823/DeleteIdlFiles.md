@@ -7,30 +7,32 @@ Input:
 ```
 tccli tcaplusdb DeleteIdlFiles --cli-unfold-argument  \
     --ClusterId 6084038577 \
-    --IdlFiles.0.FileExtType proto \
-    --IdlFiles.0.FileType PROTO \
     --IdlFiles.0.FileName tb_example \
-    --IdlFiles.0.FileSize 0 \
-    --IdlFiles.0.FileContent xx \
-    --IdlFiles.0.FileId 0
+    --IdlFiles.0.FileType PROTO \
+    --IdlFiles.0.FileExtType proto \
+    --IdlFiles.0.FileSize 266 \
+    --IdlFiles.0.FileId 849
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "IdlFileInfos": [
             {
-                "Error": null,
+                "FileName": "filename",
+                "FileType": "proto",
                 "FileExtType": "proto",
-                "FileId": 849,
-                "FileName": "tb_example",
-                "FileSize": 266,
-                "FileType": "PROTO"
+                "FileSize": 12230,
+                "FileId": 1,
+                "Error": {
+                    "Code": "",
+                    "Message": ""
+                }
             }
         ],
-        "RequestId": "4e79897b-5696-4d1b-b337-d2b46824de64",
-        "TotalCount": 1
+        "RequestId": "16454"
     }
 }
 ```

@@ -105,7 +105,7 @@
     "InvokeChainMakerContract": [
       {
         "document": "调用长安链合约执行交易",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeChainMakerContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_dcwtt\",\n    \"FuncParam\": \"{\\\"time\\\":\\\"2021-07-26\\\",\\\"file_hash\\\":\\\"123456\\\",\\\"file_name\\\":\\\"test.jpg\\\"}\",\n    \"ClusterId\": \"chainmaker-j1juwsmndn\",\n    \"FuncName\": \"save\",\n    \"AsyncFlag\": \"0\",\n    \"ContractName\": \"fact\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeChainMakerContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_dcwtt\",\n    \"FuncParam\": \"{\\\"time\\\":\\\"282039\\\",\\\"file_hash\\\":\\\"123456\\\",\\\"file_name\\\":\\\"test.jpg\\\"}\",\n    \"ClusterId\": \"chainmaker-j1juwsmndn\",\n    \"FuncName\": \"save\",\n    \"AsyncFlag\": 0,\n    \"ContractName\": \"fact\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2974e7ac-72e2-49c3-ae39-bc2bc6a7330b\",\n        \"Result\": {\n            \"Code\": 0,\n            \"CodeMessage\": \"OK\",\n            \"Message\": \"\",\n            \"TxId\": \"963b8210f10e45e6ab6fe5cd37ba7f6719db5948a38c494ca9137fa2b8c9033d\",\n            \"GasUsed\": 9573483,\n            \"Result\": \"b2s=\"\n        }\n    }\n}",
         "title": "调用长安链合约执行交易"
       }
@@ -113,7 +113,7 @@
     "InvokeChainMakerDemoContract": [
       {
         "document": "调用长安链体验网络合约执行交易",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeChainMakerDemoContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_test\",\n    \"FuncParam\": \"{\\\"time\\\":\\\"2021-07-26\\\",\\\"file_hash\\\":\\\"123456\\\",\\\"file_name\\\":\\\"test.jpg\\\"}\",\n    \"ClusterId\": \"chainmaker-demo\",\n    \"FuncName\": \"save\",\n    \"AsyncFlag\": \"0\",\n    \"ContractName\": \"fact\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeChainMakerDemoContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_demo\",\n    \"FuncParam\": \"{\\\"key\\\":\\\"key1\\\",\\\"field\\\":\\\"field1\\\",\\\"value\\\":\\\"value1\\\"}\",\n    \"ClusterId\": \"chainmaker-demo\",\n    \"FuncName\": \"save\",\n    \"AsyncFlag\": 0,\n    \"ContractName\": \"fact\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2974e7ac-72e2-49c3-ae39-bc2bc6a7330b\",\n        \"Result\": {\n            \"Code\": 0,\n            \"CodeMessage\": \"OK\",\n            \"Message\": \"\",\n            \"TxId\": \"963b8210f10e45e6ab6fe5cd37ba7f6719db5948a38c494ca9137fa2b8c9033d\",\n            \"GasUsed\": 9573483,\n            \"Result\": \"b2s=\"\n        }\n    }\n}",
         "title": "调用长安链体验网络合约执行交易"
       }
@@ -153,7 +153,7 @@
     "QueryChainMakerDemoBlockTransaction": [
       {
         "document": "查询长安链体验网络指定高度区块的交易",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryChainMakerDemoBlockTransaction\n<公共请求参数>\n\n{\n    \"BlockHeight\": \"2\",\n    \"ChainId\": \"chain_test\",\n    \"ClusterId\": \"chainmaker-demo\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryChainMakerDemoBlockTransaction\n<公共请求参数>\n\n{\n    \"BlockHeight\": 2,\n    \"ChainId\": \"chain_test\",\n    \"ClusterId\": \"chainmaker-demo\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c64831e-a310-47c7-bf6c-a625c5cfde17\",\n        \"BlockHeight\": 2,\n        \"TxCount\": 1,\n        \"BlockTimestamp\": 1627267176,\n        \"Result\": [\n            {\n                \"Code\": 0,\n                \"CodeMessage\": \"\",\n                \"Message\": \"\",\n                \"TxId\": \"f6cf450f9b0b496f9ee6d332e739b8b182fe1e3b34ed446ab068a151f1ee8cbe\",\n                \"Timestamp\": 1627267173,\n                \"GasUsed\": 230871,\n                \"BlockHeight\": 2,\n                \"ContractEvent\": \"\"\n            }\n        ]\n    }\n}",
         "title": "查询长安链体验网络指定高度区块的交易"
       }
@@ -161,7 +161,7 @@
     "QueryChainMakerDemoContract": [
       {
         "document": "调用长安链体验网络合约查询",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryChainMakerDemoContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_test\",\n    \"ClusterId\": \"chainmaker-demo\",\n    \"ContractName\": \"fact\",\n    \"FuncParam\": \"{\\\"file_hash\\\":\\\"1234567\\\"}\",\n    \"FuncName\": \"find_by_file_hash\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryChainMakerDemoContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_demo\",\n    \"ClusterId\": \"chainmaker-demo\",\n    \"ContractName\": \"ChainMakerDemo\",\n    \"FuncParam\": \"{\\\"key\\\":\\\"key1\\\",\\\"field\\\":\\\"field1\\\"}\",\n    \"FuncName\": \"get\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fac6ef5a-7637-4a75-a2d3-0f7d87b5b8b5\",\n        \"Result\": {\n            \"Code\": 0,\n            \"CodeMessage\": \"OK\",\n            \"Message\": \"\",\n            \"TxId\": \"3ae794a658af4a219f849f5891d7a390eae524de4d614339ace2411059aaa19c\",\n            \"GasUsed\": 6100540,\n            \"Result\": \"b2s=\"\n        }\n    }\n}",
         "title": "调用长安链体验网络合约查询"
       }

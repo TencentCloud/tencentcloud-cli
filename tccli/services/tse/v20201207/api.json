@@ -5894,6 +5894,15 @@
           "name": "Name",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否同步删除服务上绑定的路由",
+          "example": "false",
+          "member": "bool",
+          "name": "DeleteRoutes",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

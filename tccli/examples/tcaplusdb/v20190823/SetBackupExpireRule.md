@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tcaplusdb SetBackupExpireRule --cli-unfold-argument  \
-    --ClusterId xx \
+    --ClusterId 21312 \
     --BackupExpireRules.0.ExpireDay 1 \
     --BackupExpireRules.0.OperType 1 \
-    --BackupExpireRules.0.TableGroupId xx \
-    --BackupExpireRules.0.TableName xx \
+    --BackupExpireRules.0.TableGroupId 213213 \
+    --BackupExpireRules.0.TableName nametest \
     --BackupExpireRules.0.FileTag 1
 ```
 
@@ -18,8 +18,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "TaskId": "xx"
+        "RequestId": "12312-1231",
+        "TaskId": "23132"
     }
 }
 ```

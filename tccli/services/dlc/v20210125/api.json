@@ -56,6 +56,13 @@
       "output": "AssociateDatasourceHouseResponse",
       "status": "online"
     },
+    "AttachDataMaskPolicy": {
+      "document": "绑定数据脱敏策略",
+      "input": "AttachDataMaskPolicyRequest",
+      "name": "绑定数据脱敏策略",
+      "output": "AttachDataMaskPolicyResponse",
+      "status": "online"
+    },
     "AttachUserPolicy": {
       "document": "绑定鉴权策略到用户",
       "input": "AttachUserPolicyRequest",
@@ -166,6 +173,13 @@
       "input": "CreateDataEngineRequest",
       "name": "创建数据引擎.",
       "output": "CreateDataEngineResponse",
+      "status": "online"
+    },
+    "CreateDataMaskStrategy": {
+      "document": "创建数据脱敏策略",
+      "input": "CreateDataMaskStrategyRequest",
+      "name": "创建数据脱敏策略",
+      "output": "CreateDataMaskStrategyResponse",
       "status": "online"
     },
     "CreateDatabase": {
@@ -334,6 +348,13 @@
       "input": "DeleteDataEngineRequest",
       "name": "删除数据引擎",
       "output": "DeleteDataEngineResponse",
+      "status": "online"
+    },
+    "DeleteDataMaskStrategy": {
+      "document": "删除数据脱敏策略",
+      "input": "DeleteDataMaskStrategyRequest",
+      "name": "删除数据脱敏策略",
+      "output": "DeleteDataMaskStrategyResponse",
       "status": "online"
     },
     "DeleteNativeSparkSession": {
@@ -509,6 +530,13 @@
       "input": "DescribeDataEnginesScaleDetailRequest",
       "name": "查看引擎的规格明细",
       "output": "DescribeDataEnginesScaleDetailResponse",
+      "status": "online"
+    },
+    "DescribeDataMaskStrategies": {
+      "document": "查询数据脱敏列表接口",
+      "input": "DescribeDataMaskStrategiesRequest",
+      "name": "查询数据脱敏策略列表",
+      "output": "DescribeDataMaskStrategiesResponse",
       "status": "online"
     },
     "DescribeDatabases": {
@@ -810,6 +838,13 @@
       "input": "DescribeThirdPartyAccessUserRequest",
       "name": "查询开通的第三方平台访问用户信息",
       "output": "DescribeThirdPartyAccessUserResponse",
+      "status": "online"
+    },
+    "DescribeUDFPolicy": {
+      "document": "获取UDF权限信息",
+      "input": "DescribeUDFPolicyRequest",
+      "name": "获取UDF权限信息",
+      "output": "DescribeUDFPolicyResponse",
       "status": "online"
     },
     "DescribeUpdatableDataEngines": {
@@ -1155,6 +1190,13 @@
       "output": "UpdateDataEngineConfigResponse",
       "status": "online"
     },
+    "UpdateDataMaskStrategy": {
+      "document": "更新数据脱敏策略",
+      "input": "UpdateDataMaskStrategyRequest",
+      "name": "更新数据脱敏策略",
+      "output": "UpdateDataMaskStrategyResponse",
+      "status": "online"
+    },
     "UpdateEngineResourceGroupNetworkConfigInfo": {
       "document": "更新标准引擎资源组网络配置信息",
       "input": "UpdateEngineResourceGroupNetworkConfigInfoRequest",
@@ -1195,6 +1237,13 @@
       "input": "UpdateStandardEngineResourceGroupResourceInfoRequest",
       "name": "更新标准引擎资源组资源信息",
       "output": "UpdateStandardEngineResourceGroupResourceInfoResponse",
+      "status": "online"
+    },
+    "UpdateUDFPolicy": {
+      "document": "UDP权限修改",
+      "input": "UpdateUDFPolicyRequest",
+      "name": "修改UDF权限",
+      "output": "UpdateUDFPolicyResponse",
       "status": "online"
     },
     "UpdateUserDataEngineConfig": {
@@ -2147,6 +2196,33 @@
     },
     "AssociateDatasourceHouseResponse": {
       "document": "AssociateDatasourceHouse返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachDataMaskPolicyRequest": {
+      "document": "AttachDataMaskPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要绑定的数据脱敏策略权限对象集合",
+          "example": "无",
+          "member": "DataMaskStrategyPolicy",
+          "name": "DataMaskStrategyPolicySet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachDataMaskPolicyResponse": {
+      "document": "AttachDataMaskPolicy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3812,6 +3888,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataMaskStrategyRequest": {
+      "document": "CreateDataMaskStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据脱敏策略详情",
+          "example": "无",
+          "member": "DataMaskStrategyInfo",
+          "name": "Strategy",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataMaskStrategyResponse": {
+      "document": "CreateDataMaskStrategy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7939,6 +8042,144 @@
       ],
       "usage": "both"
     },
+    "DataMaskStrategy": {
+      "document": "数据脱敏策略信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "StrategyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1232121211",
+          "member": "string",
+          "name": "UserAppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1212313121",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作用户子账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1213124121",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "策略1",
+          "member": "string",
+          "name": "StrategyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MASK_SHOW_FIRST_4; MASK_SHOW_LAST_4;MASK_HASH; MASK_DATE_SHOW_YEAR; MASK_NULL; MASK_DEFAULT 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MASK_SHOW_FIRST_4",
+          "member": "string",
+          "name": "StrategyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "描述",
+          "member": "string",
+          "name": "StrategyDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GroupInfo",
+          "name": "Groups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户子账号uin列表，按;拼接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12312314112;1231231231",
+          "member": "string",
+          "name": "Users",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1: 生效中； 0：已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略创建时间，毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1723106621346",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略更新时间，毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1723106621346",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DataMaskStrategyInfo": {
       "document": "数据脱敏策略信息",
       "members": [
@@ -8007,6 +8248,45 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DataMaskStrategyPolicy": {
+      "document": "数据脱敏策略权限对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据脱敏权限对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policy",
+          "name": "PolicyInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据脱敏策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1123-12a-31231",
+          "member": "string",
+          "name": "DataMaskStrategyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "int",
+          "member": "string",
+          "name": "ColumnType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8718,6 +8998,33 @@
     },
     "DeleteDataEngineResponse": {
       "document": "DeleteDataEngine返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataMaskStrategyRequest": {
+      "document": "DeleteDataMaskStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据脱敏策略Id",
+          "example": "1",
+          "member": "string",
+          "name": "StrategyId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataMaskStrategyResponse": {
+      "document": "DeleteDataMaskStrategy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10523,6 +10830,71 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataMaskStrategiesRequest": {
+      "document": "DescribeDataMaskStrategies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页参数，单页返回数据量，默认10",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，数据便偏移量，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤字段，strategy-name: 按策略名称搜索",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataMaskStrategiesResponse": {
+      "document": "DescribeDataMaskStrategies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数据脱敏策略数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据脱敏策略列表",
+          "example": "无",
+          "member": "DataMaskStrategy",
+          "name": "Strategies",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13681,6 +14053,61 @@
           "name": "UserInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUDFPolicyRequest": {
+      "document": "DescribeUDFPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "udf名称",
+          "example": "udf1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名(全局UDF：global-function)",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据目录名",
+          "example": "catalog1",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUDFPolicyResponse": {
+      "document": "DescribeUDFPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "UDF权限信息",
+          "example": "无",
+          "member": "UDFPolicyInfo",
+          "name": "UDFPolicyInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -22802,6 +23229,45 @@
       ],
       "usage": "both"
     },
+    "UDFPolicyInfo": {
+      "document": "UDF权限信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限类型\n示例：select，alter，drop",
+          "example": "select",
+          "member": "string",
+          "name": "Accesses",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拥有权限的用户信息",
+          "example": "['100026442346', '100018379117']",
+          "member": "string",
+          "name": "Users",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拥有权限的工作组的信息",
+          "example": "['221458']",
+          "member": "string",
+          "name": "Groups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UnbindWorkGroupsFromUserRequest": {
       "document": "UnbindWorkGroupsFromUser请求参数结构体",
       "members": [
@@ -23122,6 +23588,33 @@
     },
     "UpdateDataEngineResponse": {
       "document": "UpdateDataEngine返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataMaskStrategyRequest": {
+      "document": "UpdateDataMaskStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据脱敏策略详情",
+          "example": "无",
+          "member": "DataMaskStrategyInfo",
+          "name": "Strategy",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataMaskStrategyResponse": {
+      "document": "UpdateDataMaskStrategy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -23519,6 +24012,70 @@
     "UpdateStandardEngineResourceGroupResourceInfoResponse": {
       "document": "UpdateStandardEngineResourceGroupResourceInfo返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUDFPolicyRequest": {
+      "document": "UpdateUDFPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "UDF名称",
+          "example": "udf1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据目录名",
+          "example": "catalog1",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "UDF权限信息",
+          "example": "无",
+          "member": "UDFPolicyInfo",
+          "name": "UDFPolicyInfos",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUDFPolicyResponse": {
+      "document": "UpdateUDFPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "UDF权限信息",
+          "example": "无",
+          "member": "UDFPolicyInfo",
+          "name": "UDFPolicyInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

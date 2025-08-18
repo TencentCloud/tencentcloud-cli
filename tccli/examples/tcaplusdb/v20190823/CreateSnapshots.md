@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcaplusdb CreateSnapshots --cli-unfold-argument  \
-    --ClusterId xx \
+    --ClusterId 1454345 \
     --SelectedTables.0.SnapshotName 666 \
     --SelectedTables.0.TableGroupId 1 \
     --SelectedTables.0.SnapshotTime 2020-09-22 00:00:00 \

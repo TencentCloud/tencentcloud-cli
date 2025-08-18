@@ -3769,11 +3769,11 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskIds互斥。",
           "example": "disk-dw0bbzws",
           "member": "string",
           "name": "DiskId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -3784,6 +3784,15 @@
           "name": "ProjectId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘ID列表， 通过[DescribeDisks](/document/product/362/16315)接口查询。与参数DiskId互斥。",
+          "example": "[\"disk-dw0bbzws\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

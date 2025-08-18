@@ -16,22 +16,22 @@ Output:
     "Response": {
         "Rows": [
             {
-                "ClusterId": "abc",
-                "TableGroupId": "abc",
+                "ClusterId": "1989787",
+                "TableGroupId": "18743",
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "tkey",
+                        "TagValue": "tvalue"
                     }
                 ],
                 "Error": {
-                    "Code": "abc",
-                    "Message": "abc"
+                    "Code": "",
+                    "Message": ""
                 }
             }
         ],
         "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "198232-12431"
     }
 }
 ```

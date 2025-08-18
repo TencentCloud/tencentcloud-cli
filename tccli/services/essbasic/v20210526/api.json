@@ -9978,6 +9978,24 @@
           "name": "ForbidEditWatermark",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "印章描述",
+          "example": "合同章",
+          "member": "string",
+          "name": "SealDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁止编辑印章描述内容\n<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>",
+          "example": "true",
+          "member": "string",
+          "name": "ForbidEditSealDescription",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -12349,6 +12367,26 @@
           "example": "企业三要素不通过",
           "member": "string",
           "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业批量注册 传递过来的企业名称，方便客户定位企业\t",
+          "example": "典子谦示例企业",
+          "member": "string",
+          "name": "OrganizationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业批量注册的唯一 Id， 此 Id 可以用在[创建企业批量认证链接-单链接](https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks)。",
+          "example": "yDCHoUU08m4mnpUxHGGHPv9FScKQsvHb",
+          "member": "string",
+          "name": "SubTaskId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

@@ -64,6 +64,14 @@
         "title": "test"
       }
     ],
+    "AttachDataMaskPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachDataMaskPolicy\n<公共请求参数>\n\n{\n    \"DataMaskStrategyPolicySet\": [\n        {\n            \"PolicyInfo\": {\n                \"Database\": \"default_database\",\n                \"Catalog\": \"DataLakeCatalog\",\n                \"Table\": \"default_table\",\n                \"Operation\": \"SELECT\",\n                \"PolicyType\": \"DATAMASK\",\n                \"Column\": \"string_msg\"\n            },\n            \"ColumnType\": \"string\",\n            \"DataMaskStrategyId\": \"72de85e2-887a-4a87-bf86-90fc90ff25fa\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678-1234-1234-1234-12345678\"\n    }\n}",
+        "title": "绑定数据脱敏策略"
+      }
+    ],
     "AttachUserPolicy": [
       {
         "document": "",
@@ -190,6 +198,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataEngine\n<公共请求参数>\n\n{\n    \"EngineType\": \"spark\",\n    \"DataEngineName\": \"house_test\",\n    \"ClusterType\": \"spark\",\n    \"MinClusters\": 0,\n    \"MaxClusters\": 0,\n    \"DefaultDataEngine\": true,\n    \"CidrBlock\": \"10.*.*.*/16\",\n    \"Mode\": 0,\n    \"Message\": \"cretate house test\",\n    \"AutoResume\": true,\n    \"Size\": 0,\n    \"PayMode\": 0,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"h\",\n    \"AutoRenew\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"key\",\n            \"TagValue\": \"value\"\n        }\n    ],\n    \"AutoSuspend\": true,\n    \"CrontabResumeSuspend\": 0,\n    \"CrontabResumeSuspendStrategy\": {\n        \"ResumeTime\": \"10\",\n        \"SuspendTime\": \"10\",\n        \"SuspendStrategy\": 0\n    },\n    \"EngineExecType\": \"BATCH\",\n    \"MaxConcurrency\": 10,\n    \"TolerableQueueTime\": 5,\n    \"AutoSuspendTime\": 5,\n    \"ResourceType\": \"spark_cu\",\n    \"ImageVersionName\": \"SuperSQL-P 1.1\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataEngineId\": \"DataEngine-abc123\",\n        \"RequestId\": \"7348577b-a168-467b-bd68-3c396b78b608\"\n    }\n}",
         "title": "创建数据引擎"
+      }
+    ],
+    "CreateDataMaskStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataMaskStrategy\n<公共请求参数>\n\n{\n    \"Strategy\": {\n        \"StrategyName\": \"create_data_mask_tag\",\n        \"Groups\": [\n            {\n                \"WorkGroupId\": 46920,\n                \"StrategyType\": \"MASK_HASH\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"812228c6-45c7-43a2-af77-c7e67dc0b524\"\n    }\n}",
+        "title": "创建数据脱敏策略"
       }
     ],
     "CreateDatabase": [
@@ -382,6 +398,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataEngine\n<公共请求参数>\n\n{\n    \"DataEngineNames\": [\n        \"public-engine\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"58abbd19-0394-4f82-84fc-a35c3e2f7c1a\"\n    }\n}",
         "title": "test"
+      }
+    ],
+    "DeleteDataMaskStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataMaskStrategy\n<公共请求参数>\n\n{\n    \"StrategyId\": \"c82f17bd-f577-4930-a8ef-83b9647259b8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678-1234-1234-1234-12345678\"\n    }\n}",
+        "title": "删除数据脱敏策略"
       }
     ],
     "DeleteNativeSparkSession": [
@@ -594,6 +618,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataEnginesScaleDetail\n<公共请求参数>\n\n{\n    \"StartTime\": \"2024-06-06 12:00:00\",\n    \"EndTime\": \"2024-06-06 13:00:00\",\n    \"DataEngineNames\": [\n        \"dataengine-presto\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7348577b-a168-467b-bd68-3c396b78b608\",\n        \"Scales\": [\n            {\n                \"DataEngineId\": \"DataEngine-2ctxxxj3\",\n                \"DataEngineName\": \"dataengine-presto\",\n                \"ScaleDetail\": [\n                    {\n                        \"StartTime\": \"2025-01-14 14:55:00\",\n                        \"EndTime\": \"2025-01-14 14:59:01\",\n                        \"CU\": 0\n                    },\n                    {\n                        \"StartTime\": \"2025-01-14 14:59:01\",\n                        \"EndTime\": \"2025-01-14 15:12:03\",\n                        \"CU\": 128\n                    },\n                    {\n                        \"StartTime\": \"2025-01-14 15:12:03\",\n                        \"EndTime\": \"2025-01-14 15:19:04\",\n                        \"CU\": 0\n                    },\n                    {\n                        \"StartTime\": \"2025-01-14 15:19:04\",\n                        \"EndTime\": \"2025-01-14 15:35:07\",\n                        \"CU\": 128\n                    },\n                    {\n                        \"StartTime\": \"2025-01-14 15:36:00\",\n                        \"EndTime\": \"2025-01-14 15:36:00\",\n                        \"CU\": 128\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询引擎规格详情"
+      }
+    ],
+    "DescribeDataMaskStrategies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataMaskStrategies\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Filters\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14ba6c26-2d36-4646-b1c4-6fe8dc2711d5\",\n        \"Strategies\": [\n            {\n                \"StrategyId\": \"9facbbd7-ab31-4f56-8657-f981f3fea223\",\n                \"UserAppId\": \"1305424723\",\n                \"Uin\": \"100018379117\",\n                \"SubAccountUin\": \"100041604908\",\n                \"StrategyName\": \"default_mask_1\",\n                \"StrategyType\": \"\",\n                \"StrategyDesc\": \"\",\n                \"Groups\": [\n                    {\n                        \"WorkGroupId\": 225289,\n                        \"StrategyType\": \"MASK_SHOW_FIRST_4\"\n                    }\n                ],\n                \"Users\": \"\",\n                \"State\": 1,\n                \"CreateTime\": 1753416120334,\n                \"UpdateTime\": 1753416120334\n            },\n            {\n                \"StrategyId\": \"af088222-22f0-4e7b-a179-8640b4f29ac9\",\n                \"UserAppId\": \"1305424723\",\n                \"Uin\": \"100018379117\",\n                \"SubAccountUin\": \"100018370021\",\n                \"StrategyName\": \"default_mask_2\",\n                \"StrategyType\": \"\",\n                \"StrategyDesc\": \"\",\n                \"Groups\": [\n                    {\n                        \"WorkGroupId\": 225285,\n                        \"StrategyType\": \"MASK\"\n                    },\n                    {\n                        \"WorkGroupId\": 225284,\n                        \"StrategyType\": \"MASK_NONE\"\n                    }\n                ],\n                \"Users\": \"\",\n                \"State\": 1,\n                \"CreateTime\": 1752579358146,\n                \"UpdateTime\": 1752579472439\n            },\n            {\n                \"StrategyId\": \"1f14426d-fb9c-4e91-98a9-41d9691d0186\",\n                \"UserAppId\": \"1305424723\",\n                \"Uin\": \"100018379117\",\n                \"SubAccountUin\": \"100042020000\",\n                \"StrategyName\": \"default_mask_3\",\n                \"StrategyType\": \"\",\n                \"StrategyDesc\": \"\",\n                \"Groups\": [\n                    {\n                        \"WorkGroupId\": 225284,\n                        \"StrategyType\": \"MASK_SHOW_FIRST_4\"\n                    },\n                    {\n                        \"WorkGroupId\": 225285,\n                        \"StrategyType\": \"MASK_SHOW_LAST_4\"\n                    }\n                ],\n                \"Users\": \"\",\n                \"State\": 1,\n                \"CreateTime\": 1752578536032,\n                \"UpdateTime\": 1752578536032\n            },\n            {\n                \"StrategyId\": \"f4ac2013-d004-4b6a-b3f9-89dc313e8f44\",\n                \"UserAppId\": \"1305424723\",\n                \"Uin\": \"100018379117\",\n                \"SubAccountUin\": \"100042020000\",\n                \"StrategyName\": \"data_mask_4\",\n                \"StrategyType\": \"\",\n                \"StrategyDesc\": \"\",\n                \"Groups\": [\n                    {\n                        \"WorkGroupId\": 221485,\n                        \"StrategyType\": \"MASK_DATE_SHOW_YEAR\"\n                    }\n                ],\n                \"Users\": \"\",\n                \"State\": 1,\n                \"CreateTime\": 1752570666841,\n                \"UpdateTime\": 1752570666841\n            },\n            {\n                \"StrategyId\": \"f9c49afd-d5f5-4a22-b4a5-80d66061601c\",\n                \"UserAppId\": \"1305424723\",\n                \"Uin\": \"100018379117\",\n                \"SubAccountUin\": \"100040310000\",\n                \"StrategyName\": \"default_mask_5\",\n                \"StrategyType\": \"\",\n                \"StrategyDesc\": \"\",\n                \"Groups\": [\n                    {\n                        \"WorkGroupId\": 225254,\n                        \"StrategyType\": \"MASK_NONE\"\n                    }\n                ],\n                \"Users\": \"\",\n                \"State\": 1,\n                \"CreateTime\": 1752213893224,\n                \"UpdateTime\": 1752213893224\n            },\n            {\n                \"StrategyId\": \"7a5cc300-baad-44b8-a918-46883a8a8454\",\n                \"UserAppId\": \"1305424723\",\n                \"Uin\": \"100018379117\",\n                \"SubAccountUin\": \"100018430000\",\n                \"StrategyName\": \"default_mask_6\",\n                \"StrategyType\": \"\",\n                \"StrategyDesc\": \"\",\n                \"Groups\": [\n                    {\n                        \"WorkGroupId\": 225237,\n                        \"StrategyType\": \"MASK_NULL\"\n                    }\n                ],\n                \"Users\": \"\",\n                \"State\": 1,\n                \"CreateTime\": 1750851717526,\n                \"UpdateTime\": 1750851717526\n            },\n            {\n                \"StrategyId\": \"72de85e2-887a-4a87-bf86-90fc90ff25fa\",\n                \"UserAppId\": \"1305424723\",\n                \"Uin\": \"100018379117\",\n                \"SubAccountUin\": \"100018370000\",\n                \"StrategyName\": \"default_mask_7\",\n                \"StrategyType\": \"\",\n                \"StrategyDesc\": \"\",\n                \"Groups\": [\n                    {\n                        \"WorkGroupId\": 225237,\n                        \"StrategyType\": \"MASK_SHOW_LAST_4\"\n                    }\n                ],\n                \"Users\": \"\",\n                \"State\": 1,\n                \"CreateTime\": 1750144801970,\n                \"UpdateTime\": 1750257014072\n            }\n        ],\n        \"TotalCount\": 7\n    }\n}",
+        "title": "查询数据列表"
       }
     ],
     "DescribeDatabases": [
@@ -938,6 +970,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeThirdPartyAccessUser\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"584515f3-*-*-*-*\",\n        \"UserInfo\": {\n            \"AppId\": \"130****831\",\n            \"CreateTime\": \"2024-10-24T16:23:01+08:00\",\n            \"Id\": 5,\n            \"Uin\": \"1000****6626\"\n        }\n    }\n}",
         "title": "实例一"
+      }
+    ],
+    "DescribeUDFPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUDFPolicy\n<公共请求参数>\n\n{\n    \"Name\": \"myfunction\",\n    \"DatabaseName\": \"global-function\",\n    \"CatalogName\": \"DataLakeCatalog\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ffcb19d-e23a-4816-bdc2-d69bdc586a0d\",\n        \"UDFPolicyInfos\": [\n            {\n                \"Accesses\": [\n                    \"alter\"\n                ],\n                \"Users\": [\n                    \"49830499352\"\n                ],\n                \"Groups\": [\n                    \"221447\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取UDF权限信息"
       }
     ],
     "DescribeUpdatableDataEngines": [
@@ -1332,6 +1372,14 @@
         "title": "更新指定引擎的结果桶配置信息"
       }
     ],
+    "UpdateDataMaskStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataMaskStrategy\n<公共请求参数>\n\n{\n    \"Strategy\": {\n        \"StrategyId\": \"c82f17bd-f577-4930-a8ef-83b9647259b8\",\n        \"StrategyName\": \"default_strategy\",\n        \"StrategyType\": \"\",\n        \"StrategyDesc\": \"\",\n        \"Groups\": [\n            {\n                \"WorkGroupId\": 225249,\n                \"StrategyType\": \"MASK_SHOW_LAST_4\"\n            },\n            {\n                \"WorkGroupId\": 225237,\n                \"StrategyType\": \"MASK_HASH\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d2dc2eb-0a9c-483b-9454-e7e8db604507\"\n    }\n}",
+        "title": "更新数据脱敏策略"
+      }
+    ],
     "UpdateEngineResourceGroupNetworkConfigInfo": [
       {
         "document": "修改资源组网络配置",
@@ -1378,6 +1426,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateStandardEngineResourceGroupResourceInfo\n<公共请求参数>\n\n{\n    \"EngineResourceGroupName\": \"test-rg\",\n    \"DriverCuSpec\": \"small\",\n    \"ExecutorCuSpec\": \"small\",\n    \"MinExecutorNums\": 1,\n    \"MaxExecutorNums\": 1,\n    \"IsEffectiveNow\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b12eb63a-37d1-4b9c-ac9a-8995ccc89b58\"\n    }\n}",
         "title": "更新资源组资源配置"
+      }
+    ],
+    "UpdateUDFPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUDFPolicy\n<公共请求参数>\n\n{\n    \"Name\": \"table1\",\n    \"DatabaseName\": \"global-function\",\n    \"CatalogName\": \"DataLakeCatalog\",\n    \"UDFPolicyInfos\": [\n        {\n            \"Accesses\": [\n                \"alter\"\n            ],\n            \"Users\": [\n                \"49830499352\"\n            ],\n            \"Groups\": [\n                \"221447\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"05d2202d-d1b6-40af-8be3-9b1202ad8eb7\",\n        \"UDFPolicyInfos\": [\n            {\n                \"Accesses\": [\n                    \"alter\"\n                ],\n                \"Users\": [\n                    \"49830499352\"\n                ],\n                \"Groups\": [\n                    \"221447\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "UDF权限修改"
       }
     ],
     "UpdateUserDataEngineConfig": [

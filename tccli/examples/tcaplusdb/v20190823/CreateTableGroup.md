@@ -6,11 +6,8 @@ Input:
 
 ```
 tccli tcaplusdb CreateTableGroup --cli-unfold-argument  \
-    --TableGroupName tdr区1 \
-    --ResourceTags.0.TagKey xx \
-    --ResourceTags.0.TagValue xx \
     --ClusterId 6179109757 \
-    --TableGroupId xx
+    --TableGroupName tdr区1
 ```
 
 Output: 

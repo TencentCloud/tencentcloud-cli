@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tcaplusdb ModifyClusterMachine --cli-unfold-argument  \
-    --ProxyList.0.MachineNum 0 \
-    --ProxyList.0.MachineType T1 \
+    --ClusterId abc \
+    --ServerList.0.MachineType abc \
     --ServerList.0.MachineNum 0 \
-    --ServerList.0.MachineType T1 \
-    --ClusterId 6179109757 \
+    --ProxyList.0.MachineType abc \
+    --ProxyList.0.MachineNum 0 \
     --ClusterType 0
 ```
 
