@@ -480,6 +480,14 @@
         "title": "获取成员列表"
       }
     ],
+    "DescribeOrganizationMembersAuthPolicy": [
+      {
+        "document": "查询组织成员访问授权策略列表",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListOrganizationMembersAuthPolicy\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2022-01-13 10:27:11\",\n                \"IdentityId\": 1,\n                \"IdentityRoleAliasName\": \"Admin\",\n                \"IdentityRoleName\": \"TestRole\",\n                \"MemberName\": \"\",\n                \"MemberUin\": 111111111111,\n                \"OrgSubAccountName\": \"test001\",\n                \"OrgSubAccountUin\": 222222222222,\n                \"PolicyId\": 111,\n                \"PolicyName\": \"pocy01131027\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"ab3628b0-cce5-4337-9a01-e68f5242931e\"\n    }\n}",
+        "title": "查询组织成员访问授权策略列表"
+      }
+    ],
     "DescribeOrganizationNodes": [
       {
         "document": "",

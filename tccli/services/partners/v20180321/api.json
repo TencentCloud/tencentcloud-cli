@@ -1435,7 +1435,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量 请保持必传",
+          "document": "*偏移量 【请保持必传】",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1444,7 +1444,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目 请保持必传，最大2000",
+          "document": "*限制数目 【请保持必传】最大2000",
           "example": "10",
           "member": "uint64",
           "name": "Limit",

@@ -8394,6 +8394,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例关联的Endpoint id。",
+          "example": "vpce-kig4revm",
+          "member": "string",
+          "name": "AssociateEndpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9649,6 +9660,15 @@
           "name": "ModifyClassicDomain",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "关联的终端节点Id，可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679)接口查询。传空字符串代表解除关联。",
+          "example": "vpce-h0fk8lfc",
+          "member": "string",
+          "name": "AssociateEndpoint",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

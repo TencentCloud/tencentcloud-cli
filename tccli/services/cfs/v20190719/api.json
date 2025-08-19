@@ -3658,7 +3658,7 @@
         },
         {
           "disabled": false,
-          "document": "create：创建目录  check：确认目录是否存在",
+          "document": "create：创建目录  check：确认目录是否存在  move: 对目录做mv 操作",
           "example": "check",
           "member": "string",
           "name": "OpetationType",
@@ -3680,6 +3680,15 @@
           "example": "0777",
           "member": "string",
           "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mv操作的目标目录名称；如果是turbo文件系统必须以/cfs/开头",
+          "example": "/cfs/testa",
+          "member": "string",
+          "name": "DestPath",
           "required": false,
           "type": "string"
         }

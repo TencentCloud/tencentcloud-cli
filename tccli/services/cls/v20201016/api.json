@@ -8565,7 +8565,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询的日志主题ID",
+          "document": "要查询的日志主题Id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
           "name": "TopicId",
@@ -8574,7 +8574,7 @@
         },
         {
           "disabled": false,
-          "document": "日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。",
+          "document": "日志时间,  即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。",
           "example": "2021-04-25 14:25:00.000",
           "member": "string",
           "name": "BTime",
@@ -8583,7 +8583,7 @@
         },
         {
           "disabled": false,
-          "document": "日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。",
+          "document": "日志包序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构体中的PkgId。",
           "example": "528C1318606EFEB8-1A7",
           "member": "string",
           "name": "PkgId",
@@ -8592,7 +8592,7 @@
         },
         {
           "disabled": false,
-          "document": "日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。",
+          "document": "日志包内一条日志的序号，即 [检索分析日志](https://cloud.tencent.com/document/product/614/56447) 接口返回信息中Results结构中的PkgLogId。",
           "example": "65536",
           "member": "int64",
           "name": "PkgLogId",
@@ -12854,7 +12854,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题Id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
           "member": "string",
           "name": "TopicId",
@@ -12863,7 +12863,7 @@
         },
         {
           "disabled": false,
-          "document": "默认不生效",
+          "document": "索引状态。false：关闭索引， true：开启索引\n开启后可对日志进行检索分析，将产生索引流量、索引存储及相应费用。[费用详情](https://cloud.tencent.com/document/product/614/45802#.E8.AE.A1.E8.B4.B9.E9.A1.B9)",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -15973,7 +15973,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题Id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "427bba81-e149-4a8b-bd0d-b2a412520d7b",
           "member": "string",
           "name": "TopicId",
@@ -15982,7 +15982,7 @@
         },
         {
           "disabled": false,
-          "document": "待分裂分区ID",
+          "document": "待分裂分区Id\n- 通过[获取分区列表](https://cloud.tencent.com/document/product/614/56470)获取待分裂分区Id。",
           "example": "1",
           "member": "int64",
           "name": "PartitionId",

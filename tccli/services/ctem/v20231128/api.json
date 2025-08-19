@@ -1157,6 +1157,15 @@
           "name": "Ignored",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "支持按照响应长度排序，例如：+ContentLength或-ContentLength，+是递增，-是递减",
+          "example": "-ContentLength",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5250,7 +5259,7 @@
         {
           "disabled": false,
           "document": "主键ID",
-          "example": "1",
+          "example": "100",
           "member": "int64",
           "name": "Id",
           "output_required": false,
@@ -5260,7 +5269,7 @@
         {
           "disabled": false,
           "document": "内容",
-          "example": "无",
+          "example": "td#147",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -5270,7 +5279,7 @@
         {
           "disabled": false,
           "document": "命中关键字",
-          "example": "密码",
+          "example": "td#147",
           "member": "string",
           "name": "MatchedKeywords",
           "output_required": false,
@@ -5295,6 +5304,16 @@
           "name": "DisplayToolCommon",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态：unrepaired:未修复，repaired:已修复，ignore:已忽略",
+          "example": "unrepaired",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

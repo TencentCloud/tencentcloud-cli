@@ -7623,7 +7623,7 @@
         {
           "disabled": false,
           "document": "setats warehouse\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"\"}",
+          "example": "无",
           "member": "Warehouse",
           "name": "Warehouse",
           "output_required": false,
@@ -7634,7 +7634,7 @@
         {
           "disabled": false,
           "document": "setats master 机器规格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"\"}",
+          "example": "无",
           "member": "SetatsCvmInfo",
           "name": "MasterInfo",
           "output_required": false,
@@ -7645,7 +7645,7 @@
         {
           "disabled": false,
           "document": "setats worker规格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"\"}",
+          "example": "无",
           "member": "SetatsCvmInfo",
           "name": "WorkerInfo",
           "output_required": false,
@@ -7656,7 +7656,7 @@
         {
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"\"]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": false,
@@ -7689,7 +7689,7 @@
         {
           "disabled": false,
           "document": "过期时间 秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "854",
           "member": "string",
           "name": "SecondsUntilExpiry",
           "output_required": false,

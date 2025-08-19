@@ -15171,7 +15171,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询数据库错误码",
+          "document": "查询数据库错误码。0 - 正常，1600001 - 内部错误，1600003 - 入参异常，1600009 - 实例不存在，1624001 - DB 访问异常。",
           "example": "0",
           "member": "int64",
           "name": "Code",
@@ -15202,7 +15202,7 @@
         {
           "disabled": false,
           "document": "可回档时间范围",
-          "example": "[{\"Begin\": \"2024-08-21 02:06:20\",\"End\": \"2024-08-25 17:52:05\"}]",
+          "example": "无",
           "member": "RollbackTimeRange",
           "name": "Times",
           "output_required": true,

@@ -5670,7 +5670,7 @@
         {
           "disabled": false,
           "document": "影响资产",
-          "example": "1.1.1.1",
+          "example": "1024",
           "member": "int64",
           "name": "NoHandleCount",
           "output_required": true,
@@ -5780,7 +5780,7 @@
         {
           "disabled": false,
           "document": "配置名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "高风险子帐号应该开启登录保护",
+          "example": "高风险子账号应该开启登录保护",
           "member": "string",
           "name": "CFGName",
           "output_required": true,

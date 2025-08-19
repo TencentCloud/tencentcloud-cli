@@ -14587,7 +14587,7 @@
         },
         {
           "disabled": false,
-          "document": "\n文件对应业务类型,可以选择的类型如下\n<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li>\n<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li></ul>",
+          "document": "文件对应业务类型,可以选择的类型如下<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li><li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html。如果上传的是非pdf文件，用来发起流程，还需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后得到的pdf文件才能用于发起合同接口。如果上传的文件不是用来发起合同，直接上传后使用返回的文件资源Id即可</li><li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>",
           "example": "TEMPLATE",
           "member": "string",
           "name": "BusinessType",
@@ -14597,7 +14597,7 @@
         {
           "disabled": false,
           "document": "上传文件内容数组，一次最多可上传20个文件。\n\n<b>若上传多个文件，所有文件必须为相同类型</b>，例如全部为PDF或全部为Word文件。不支持混合文件类型的上传。",
-          "example": "FileInfos",
+          "example": "无",
           "member": "UploadFile",
           "name": "FileInfos",
           "required": false,
