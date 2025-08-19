@@ -175,15 +175,6 @@ Output:
                 "OsType": 0,
                 "BusinessId": 200,
                 "Version": 1,
-                "Name": "TrojanTrustConfirmEnableModify",
-                "Data": "{}",
-                "Id": 18
-            },
-            {
-                "Modify": 0,
-                "OsType": 0,
-                "BusinessId": 200,
-                "Version": 1,
                 "Name": "RestoreQuarantine",
                 "Data": "{\"Switch\":1}",
                 "Id": 19

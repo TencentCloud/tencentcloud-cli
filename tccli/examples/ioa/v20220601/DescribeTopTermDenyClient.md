@@ -61,6 +61,7 @@ Input:
 tccli ioa DescribeTopTermDenyClient --cli-unfold-argument  \
     --StartTime 1 \
     --EndTime 1 \
+    --DomainInstanceId 123 \
     --Department 1 \
     --From 132 \
     --Size 1 \

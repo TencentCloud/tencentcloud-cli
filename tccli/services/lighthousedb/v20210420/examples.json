@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CheckCleanableUserAppIds": [
+      {
+        "document": "检测大账号下是否存在资源",
+        "input": "POST / HTTP/1.1\nHost: lighthousedb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCleanableUserAppIds\n<公共请求参数>\n\n{\n    \"UserAppIds\": [\n        623134343\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CleanableUserAppIdSet\": [\n            12345,\n            12345\n        ],\n        \"RequestId\": \"f040a2e4-803e-438f-8afb-8877028be0f5\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "账号可清理列表"
+      }
+    ],
     "CreateAccounts": [
       {
         "document": "",

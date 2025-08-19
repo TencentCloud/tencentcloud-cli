@@ -554,6 +554,14 @@
         "title": "无效的设备Id错误"
       }
     ],
+    "DescribeUserDeviceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDeviceList\n<公共请求参数>\n\n{\n    \"DeviceIds\": [\n        \"da238a8c-****-4a5b-****-************\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"423da921-fd90-4b07-a1a4-a17b8df24e37\",\n        \"Data\": {\n            \"List\": [\n                {\n                    \"DeviceId\": \"da238a8c-****-4a5b-****-************\",\n                    \"Name\": \"rxxxxx2710\",\n                    \"Code\": \"xxxxx\",\n                    \"Status\": 0,\n                    \"Region\": \"ap-shanghai\",\n                    \"Type\": 1,\n                    \"TransportProtocol\": 0,\n                    \"AccessProtocol\": 1,\n                    \"OrganizationId\": \"1\",\n                    \"Manufacturer\": \"\",\n                    \"Description\": \"\",\n                    \"ClusterId\": \"41xxxxxxxad-4c16-xxx-dxxx3axxxxx90\",\n                    \"ClusterName\": \"xxxx区\",\n                    \"SipId\": \"\",\n                    \"SipDomain\": \"\",\n                    \"SipIp\": \"\",\n                    \"SipPort\": 0,\n                    \"Password\": \"\",\n                    \"PushStreamUrl\": \"\",\n                    \"GatewayId\": \"\",\n                    \"GatewayName\": \"\",\n                    \"ProtocolType\": 0,\n                    \"ProtocolTypeName\": \"\",\n                    \"Ip\": \"\",\n                    \"Port\": 0,\n                    \"Username\": \"\",\n                    \"AudioSwitch\": 1,\n                    \"SubscribeSwitch\": 0,\n                    \"AppName\": \"tesxxxxxx\",\n                    \"StreamName\": \"testsxxxxx\",\n                    \"SilentFrameSwitch\": 0\n                }\n            ]\n        }\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "DescribeVideoBitRate": [
       {
         "document": "正常响应",

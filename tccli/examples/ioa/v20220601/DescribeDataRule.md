@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli ioa DescribeDataRule --cli-unfold-argument ```
+tccli ioa DescribeDataRule --cli-unfold-argument  \
+    --DomainInstanceId 1
+```
 
 Output: 
 ```

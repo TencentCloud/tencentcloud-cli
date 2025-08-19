@@ -19,7 +19,7 @@ Output:
                 "DisplayToolCommon": {
                     "CreateAt": "2024-06-07 11:26:14",
                     "CustomerId": 100081,
-                    "CustomerName": "5555",
+                    "CustomerName": "腾讯测试",
                     "Detail": "",
                     "EnterpriseName": "",
                     "EnterpriseUid": "",
@@ -34,7 +34,7 @@ Output:
                 },
                 "Id": 41,
                 "Ip": "",
-                "Title": "test",
+                "Title": "FastAPI - Swagger UI",
                 "Url": "http://a.cn"
             }
         ],

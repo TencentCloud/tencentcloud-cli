@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ioa DescribeTemplateFileDownloadUrl --cli-unfold-argument  \
-    --TemplateFileName abc
+    --TemplateFileName tsta.csv
 ```
 
 Output: 
@@ -14,9 +14,9 @@ Output:
 {
     "Response": {
         "Data": {
-            "DownloadUrl": "abc"
+            "DownloadUrl": "htt://cos.1x.com/daca/sav11v"
         },
-        "RequestId": "abc"
+        "RequestId": "fgsdfgsdfg23422"
     }
 }
 ```

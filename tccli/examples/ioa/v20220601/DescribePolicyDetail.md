@@ -6,7 +6,9 @@ Input:
 
 ```
 tccli ioa DescribePolicyDetail --cli-unfold-argument  \
-    --PolicyId 474
+    --PolicyId 291463 \
+    --OsType 2 \
+    --DomainInstanceId 1
 ```
 
 Output: 
@@ -15,17 +17,17 @@ Output:
     "Response": {
         "RequestId": "be6db4f6-5ec9-4aef-9d1c-a2c710be0105",
         "Data": {
-            "Name": "abc",
-            "OsType": 0,
-            "Priority": 50,
-            "PolicyType": 3,
-            "Description": "\"\"",
+            "OsType": 2,
+            "Description": "",
             "Status": 1,
+            "PolicyType": 2,
             "TimeEffectType": 0,
             "TimeStart": 0,
             "TimeEnd": 0,
-            "PolicySubType": 20,
-            "IsBase": 0
+            "Priority": 50,
+            "PolicySubType": 18,
+            "IsBase": 0,
+            "Name": "peihe"
         }
     }
 }

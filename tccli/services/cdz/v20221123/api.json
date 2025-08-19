@@ -43,6 +43,62 @@
     "serviceShortName": "cdz"
   },
   "objects": {
+    "CloudDedicatedZone": {
+      "document": "专属可用区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "专属可用区所属的可用区",
+          "example": "ap-beijing-cdz-xx",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域系统中的可用区ID",
+          "example": "10001",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "专属可用区名称",
+          "example": "某某科技上海CDZ一区",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为轻量专属可用区",
+          "example": "true",
+          "member": "bool",
+          "name": "IsLiteMode",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区所在地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CloudDedicatedZoneFeatureInfo": {
       "document": "专属可用区可用区级特性信息",
       "members": [
@@ -614,6 +670,15 @@
           "name": "RegionId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "- region\n\n    按照【**地域**】进行过滤。地域名称形如：ap-beijing。如果传入多个值，则返回这些地域下的专属可用区。\n    类型：String\n    必选：否\n\n- zone\n\n    按照【**可用区**】进行过滤。可用区名称形如：ap-beijing-cdz-dedicatedzone-1。如果传入多个值，则返回这些可用区下的专属可用区。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -627,6 +692,16 @@
           "example": "[\"100001\"]",
           "member": "string",
           "name": "ZoneIdSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "专属可用区列表信息。",
+          "example": "无",
+          "member": "CloudDedicatedZone",
+          "name": "ZoneSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false

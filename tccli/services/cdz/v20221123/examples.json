@@ -36,8 +36,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdz.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserAvailableCloudDedicatedZones\n<公共请求参数>\n\n{\n    \"CheckUin\": \"700000775535\",\n    \"RegionId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ZoneIdSet\": [\n            \"100001\"\n        ],\n        \"RequestId\": \"fa1ec983-3f83-4353-9ae7-1bd7aa60d77c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneIdSet\": [\n            \"2000800002\"\n        ],\n        \"ZoneSet\": [\n            {\n                \"Zone\": \"ap-beijing-cdz-dedicatedzone-1\",\n                \"ZoneId\": \"2000800002\",\n                \"ZoneName\": \"北京客户专属可用一区\",\n                \"IsLiteMode\": false,\n                \"Region\": \"ap-beijing\"\n            }\n        ],\n        \"RequestId\": \"4f165d08-e21e-4057-ba2c-c2b193930541\"\n    }\n}",
         "title": "查询用户可使用的专属可用区列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdz.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserAvailableCloudDedicatedZones\n<公共请求参数>\n\n{\n    \"CheckUin\": \"700000775535\",\n    \"Filters\": [\n        {\n            \"Name\": \"region\",\n            \"Values\": [\n                \"ap-beijing\"\n            ]\n        },\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"ap-beijing-cdz-haerbin-1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneIdSet\": [\n            \"2000800002\"\n        ],\n        \"ZoneSet\": [\n            {\n                \"Zone\": \"ap-beijing-cdz-dedicatedzone-1\",\n                \"ZoneId\": \"2000800002\",\n                \"ZoneName\": \"北京客户专属可用一区\",\n                \"IsLiteMode\": false,\n                \"Region\": \"ap-beijing\"\n            }\n        ],\n        \"RequestId\": \"4f165d08-e21e-4057-ba2c-c2b193930541\"\n    }\n}",
+        "title": "按过滤条件查询用户可使用的专属可用区列表"
       }
     ]
   },

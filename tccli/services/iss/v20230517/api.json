@@ -385,6 +385,13 @@
       "output": "DescribeUserDeviceResponse",
       "status": "online"
     },
+    "DescribeUserDeviceList": {
+      "document": "用于批量查询设备详细信息。",
+      "input": "DescribeUserDeviceListRequest",
+      "name": "批量查询设备详情",
+      "output": "DescribeUserDeviceListResponse",
+      "status": "online"
+    },
     "DescribeVideoBitRate": {
       "document": "用于获取视频通道的码率信息",
       "input": "DescribeVideoBitRateRequest",
@@ -4238,6 +4245,22 @@
       ],
       "usage": "out"
     },
+    "DescribeDeviceListData": {
+      "document": "批量查询设备接口返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备详情列表",
+          "example": " ",
+          "member": "DescribeDeviceData",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeDevicePresetData": {
       "document": "查询设备预置位返回数据",
       "members": [
@@ -6003,6 +6026,43 @@
           "document": "任务详情",
           "example": "无",
           "member": "TaskData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserDeviceListRequest": {
+      "document": "DescribeUserDeviceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备Id列表",
+          "example": "[\"cf40269b-324b-464b-b2aa-************\",\"9e05af80-edbd-4115-a706-************\"]",
+          "member": "string",
+          "name": "DeviceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserDeviceListResponse": {
+      "document": "DescribeUserDeviceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": " ",
+          "member": "DescribeDeviceListData",
           "name": "Data",
           "output_required": true,
           "type": "object",
