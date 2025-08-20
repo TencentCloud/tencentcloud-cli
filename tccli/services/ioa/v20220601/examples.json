@@ -232,7 +232,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDLPDataLabel\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd\"\n    }\n}",
         "title": "示例1"
       },
       {
@@ -1179,18 +1179,6 @@
       }
     ],
     "DescribeDLPAlarmHit": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDLPAlarmHit\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "实例1"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDLPAlarmHit\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "示例1"
-      },
       {
         "document": "DescribeDLPAlarmHit",
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDLPAlarmHit\n<公共请求参数>\n\n{}",

@@ -5634,6 +5634,24 @@
         },
         {
           "disabled": false,
+          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)",
+          "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
+          "member": "string",
+          "name": "RoleArn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "外部ID",
+          "example": "external_id_demo",
+          "member": "string",
+          "name": "ExternalId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "高级配置项",
           "example": "无",
           "member": "AdvancedConsumerConfiguration",
@@ -7666,6 +7684,15 @@
         },
         {
           "disabled": false,
+          "document": "跨账户uin，用于支持跨账户bucket投递",
+          "example": "1670641097",
+          "member": "uint64",
+          "name": "CustomUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "投递数据范围的开始时间点（秒级时间戳），不能超出日志主题的生命周期起点。\n如果用户不填写，默认为用户新建投递任务的时间。",
           "example": "1713410880",
           "member": "int64",
@@ -7688,6 +7715,24 @@
           "example": "STANDARD",
           "member": "string",
           "name": "StorageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)",
+          "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
+          "member": "string",
+          "name": "RoleArn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "外部ID",
+          "example": "external_id_demo",
+          "member": "string",
+          "name": "ExternalId",
           "required": false,
           "type": "string"
         }

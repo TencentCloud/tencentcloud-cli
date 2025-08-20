@@ -18,3 +18,27 @@ Output:
 }
 ```
 
+**Example 2: 新版BanStatus**
+
+新版BanStatus
+
+Input: 
+
+```
+tccli cwp DescribeBanStatus --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "BanBlackIp": true,
+        "BanByRule": false,
+        "BanVulIp": true,
+        "OpenSmartMode": true,
+        "RequestId": "b76c888e-31cf-4dfe-b40a-0e3d30ee555e",
+        "ShowTips": false,
+        "Status": 2
+    }
+}
+```
+

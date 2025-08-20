@@ -5,7 +5,7 @@
       "input": "ListUserGroupsRequest",
       "name": "用户组列表",
       "output": "ListUserGroupsResponse",
-      "status": "deprecated"
+      "status": "offline"
     }
   },
   "metadata": {

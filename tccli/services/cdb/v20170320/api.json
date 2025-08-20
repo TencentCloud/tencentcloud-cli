@@ -13765,7 +13765,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "代理配置",
           "example": "无",
           "member": "CustomConfig",
@@ -13777,11 +13777,21 @@
         {
           "disabled": false,
           "document": "权重限制",
-          "example": "{\"LessThan\":2000,\"Weight\":1}",
+          "example": "无",
           "member": "Rule",
           "name": "WeightRule",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代理配置",
+          "example": "无",
+          "member": "CustomConfig",
+          "name": "CustomConfInfo",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

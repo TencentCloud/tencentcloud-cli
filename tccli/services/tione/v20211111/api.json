@@ -758,6 +758,67 @@
       ],
       "usage": "both"
     },
+    "CacheStrategy": {
+      "document": "文件缓存策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最大重试次数",
+          "example": "3",
+          "member": "int64",
+          "name": "MaxRetry",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重试间隔时间，单位为秒",
+          "example": "15",
+          "member": "int64",
+          "name": "RetryInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "低水位容量，当磁盘剩余容量小于此值时不再新增缓存，单位为GB",
+          "example": "500",
+          "member": "int64",
+          "name": "LowWatermarkGb",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大并发数",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单节点超时时间",
+          "example": "100",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ChatCompletionRequest": {
       "document": "ChatCompletion请求参数结构体",
       "members": [
@@ -1174,6 +1235,67 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CosStorageInfo": {
+      "document": "预加载文件的COS配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储桶名",
+          "example": "demo",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路径",
+          "example": "path/model",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入点",
+          "example": "demo-1336547806.cos.ap-shanghai.myqcloud.com",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被缓存的目录大小",
+          "example": "12",
+          "member": "int64",
+          "name": "SizeHintGb",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1862,8 +1984,8 @@
         },
         {
           "disabled": false,
-          "document": "30",
-          "example": "服务的优雅退出时限。单位为秒，默认值为30，最小为1",
+          "document": "服务的优雅退出时限。单位为秒，默认值为30，最小为1",
+          "example": "30",
           "member": "int64",
           "name": "TerminationGracePeriodSeconds",
           "required": false,
@@ -1871,8 +1993,8 @@
         },
         {
           "disabled": false,
-          "document": "[\"sleep\",\"60\"]",
-          "example": "服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束",
+          "document": "服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束",
+          "example": "[\"sleep\",\"60\"]",
           "member": "string",
           "name": "PreStopCommand",
           "required": false,
@@ -1913,6 +2035,15 @@
           "name": "Sidecar",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。",
+          "example": "无",
+          "member": "VolumeMount",
+          "name": "VolumeMounts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2908,7 +3039,7 @@
         {
           "disabled": false,
           "document": "映射路径",
-          "example": "无",
+          "example": "/opt/ml/",
           "member": "string",
           "name": "MappingPath",
           "output_required": true,
@@ -4262,6 +4393,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "竞价实例节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SpotPaidInfo",
+          "name": "SpotPaidInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组总资源(包含购买中实例)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GroupResource",
+          "name": "TotalResourceWithPurchasing",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7486,7 +7637,7 @@
         {
           "disabled": false,
           "document": "创建人",
-          "example": "123",
+          "example": "100005875",
           "member": "string",
           "name": "SubUin",
           "output_required": true,
@@ -8382,7 +8533,7 @@
         {
           "disabled": false,
           "document": "模型名",
-          "example": "test",
+          "example": "mn-xx",
           "member": "string",
           "name": "ModelName",
           "output_required": true,
@@ -8459,7 +8610,7 @@
         {
           "disabled": false,
           "document": "模型格式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "pmml",
           "member": "string",
           "name": "ModelFormat",
           "output_required": false,
@@ -8470,7 +8621,7 @@
         {
           "disabled": false,
           "document": "是否为私有化大模型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsPrivateModel",
           "output_required": false,
@@ -8495,6 +8646,17 @@
           "example": "无",
           "member": "PublicDataSourceFS",
           "name": "PublicDataSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "PRELOAD_FILE来源的模型配置信息, ModelType为PRELOAD_FILE时有效",
+          "example": "无",
+          "member": "PreloadFile",
+          "name": "PreloadFile",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -9065,8 +9227,8 @@
         },
         {
           "disabled": false,
-          "document": "30",
-          "example": "服务的优雅退出时限。单位为秒，默认值为30，最小为1",
+          "document": "服务的优雅退出时限。单位为秒，默认值为30，最小为1",
+          "example": "30",
           "member": "int64",
           "name": "TerminationGracePeriodSeconds",
           "required": false,
@@ -9074,8 +9236,8 @@
         },
         {
           "disabled": false,
-          "document": "[\"sleep\",\"60\"]",
-          "example": "服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束",
+          "document": "服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束",
+          "example": "[\"sleep\",\"60\"]",
           "member": "string",
           "name": "PreStopCommand",
           "required": false,
@@ -9084,7 +9246,7 @@
         {
           "disabled": false,
           "document": "是否启动grpc端口",
-          "example": "flase",
+          "example": "false",
           "member": "bool",
           "name": "GrpcEnable",
           "required": false,
@@ -9125,6 +9287,15 @@
           "name": "ResourceGroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。",
+          "example": "无",
+          "member": "VolumeMount",
+          "name": "VolumeMounts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10354,7 +10525,7 @@
         {
           "disabled": false,
           "document": "pod的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2022-08-19T09:32:15Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -10437,6 +10608,50 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前实例所在节点id",
+          "example": "sm-esffesx",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当时实例所属资源组 id",
+          "example": "rsg-tt2sxcf",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称",
+          "example": "资源组1",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例的资源占用信息",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "ResourceInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -10553,6 +10768,420 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PreloadFile": {
+      "document": "预加载文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件ID",
+          "example": "pf-1c53b2d",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件名称",
+          "example": "testmodel",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件类型",
+          "example": "MODEL",
+          "member": "string",
+          "name": "PreloadFileType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件来源",
+          "example": "COS",
+          "member": "string",
+          "name": "PreloadFileSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS",
+          "example": "无",
+          "member": "CosStorageInfo",
+          "name": "CosStrategyInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件缓存策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheStrategy",
+          "name": "FileStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件状态",
+          "example": "Failed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缓存进度",
+          "example": "15",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号UIN",
+          "example": "100005325423",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作人子账号",
+          "example": "100005341438",
+          "member": "string",
+          "name": "OperateUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作人昵称",
+          "example": "user-a",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-06-01 12:44:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近修改时间",
+          "example": "2025-06-01 12:44:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余时间",
+          "example": "456",
+          "member": "uint64",
+          "name": "RemainingTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败信息",
+          "example": "a12xb",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预加载文件资源组信息",
+          "example": "无",
+          "member": "PreloadFileResourceGroup",
+          "name": "PreloadFileByResourceGroups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已加载完成的节点数量",
+          "example": "13",
+          "member": "int64",
+          "name": "LoadedNodeCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已加载失败的节点数量",
+          "example": "2",
+          "member": "int64",
+          "name": "ExceptionNodeCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有节点数量",
+          "example": "15",
+          "member": "int64",
+          "name": "TotalNodeCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PreloadFileInstance": {
+      "document": "预加载文件实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "rsg-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cvm实例id",
+          "example": "ins-xxx",
+          "member": "string",
+          "name": "CvmInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "0",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进度",
+          "example": "1",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余时长",
+          "example": "123",
+          "member": "uint64",
+          "name": "RemainingTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "cuowuxinxi",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PreloadFileResourceGroup": {
+      "document": "预加载文件资源组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "a12",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称",
+          "example": "a12",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "2",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进度",
+          "example": "1",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "a12",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预加载文件实例信息",
+          "example": "无",
+          "member": "PreloadFileInstance",
+          "name": "PreloadFileByNodes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已加载完成的节点数量",
+          "example": "15",
+          "member": "int64",
+          "name": "LoadedNodeCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已加载失败的节点数量",
+          "example": "4",
+          "member": "int64",
+          "name": "ExceptionNodeCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有节点数量",
+          "example": "19",
+          "member": "int64",
+          "name": "TotalNodeCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10753,7 +11382,30 @@
     },
     "PublicDataSourceFS": {
       "document": "公有云数据源结构",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "dse-Cfs-a8zxlg2kjpxc",
+          "member": "string",
+          "name": "DataSourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "相对数据源子路径",
+          "example": "/data",
+          "member": "string",
+          "name": "SubPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "both"
     },
     "PushTrainingMetricsRequest": {
@@ -11055,7 +11707,7 @@
         },
         {
           "disabled": false,
-          "document": "资资源组已用的资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源组已用的资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GroupResource",
           "name": "UsedResource",
@@ -11092,6 +11744,32 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceGroupInfo": {
+      "document": "在线服务中服务的资源组简略信息结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组 id",
+          "example": "rsg-tsfsfxg",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称",
+          "example": "资源组名称",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11502,6 +12180,22 @@
       ],
       "usage": "both"
     },
+    "SchedulingPolicy": {
+      "document": "服务的调度策略配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用了跨资源组调度开关",
+          "example": "false",
+          "member": "bool",
+          "name": "CrossResourceGroupScheduling",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SchemaInfo": {
       "document": "表格数据集表头信息",
       "members": [
@@ -11881,6 +12575,26 @@
           "name": "SubUinName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务的调度策略",
+          "example": "无",
+          "member": "SchedulingPolicy",
+          "name": "SchedulingPolicy",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外部的资源组信息，表示借调了哪些资源组的资源",
+          "example": "无",
+          "member": "ResourceGroupInfo",
+          "name": "ExternalResourceGroups",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -12456,7 +13170,7 @@
         {
           "disabled": false,
           "document": "环境变量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{name: \"k\", value: \"v\"}",
+          "example": "无",
           "member": "EnvVar",
           "name": "Env",
           "output_required": true,
@@ -12544,7 +13258,7 @@
         {
           "disabled": false,
           "document": "服务的状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Normal",
+          "example": "无",
           "member": "WorkloadStatus",
           "name": "Status",
           "output_required": true,
@@ -12676,7 +13390,7 @@
         {
           "disabled": true,
           "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sss",
+          "example": "[\"w\"]",
           "member": "string",
           "name": "PodList",
           "output_required": true,
@@ -12858,6 +13572,28 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单副本下的实例数，仅在部署类型为DIST、ROLE时生效，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "InstancePerReplicas",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量数据盘挂载配置",
+          "example": "无",
+          "member": "VolumeMount",
+          "name": "VolumeMounts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -13117,6 +13853,34 @@
         }
       ],
       "usage": "in"
+    },
+    "SpotPaidInfo": {
+      "document": "竞价实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "竞价实例总节点",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalInstance",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买中的竞价实例节点",
+          "example": "1",
+          "member": "uint64",
+          "name": "PurchasingInstance",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "StartCmdInfo": {
       "document": "启动命令信息",
@@ -14654,6 +15418,17 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义容器内挂载路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/MountPath",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -803,7 +803,7 @@
         {
           "disabled": false,
           "document": "说明：文件的 URL 地址。\n备注：文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)",
-          "example": "无",
+          "example": "http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/example.jpg",
           "member": "string",
           "name": "FileUrl",
           "required": false,
@@ -812,7 +812,7 @@
         {
           "disabled": false,
           "document": "文件的 Base64 值。\n支持的文件类型： PNG、JPG、JPEG、PDF、GIF、BMP、TIFF\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
-          "example": "无",
+          "example": "文件base64值",
           "member": "string",
           "name": "FileBase64",
           "required": false,
@@ -839,7 +839,7 @@
         {
           "disabled": false,
           "document": "说明：创建文档解析任务配置信息。\n备注：可设置结果的返回格式\n默认值：无",
-          "example": "{\"TableResultType\":\"1\"}",
+          "example": "无",
           "member": "CreateReconstructDocumentFlowConfig",
           "name": "Config",
           "required": false,
@@ -954,7 +954,7 @@
         {
           "disabled": true,
           "document": "文件的 Base64 值。\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
-          "example": "无",
+          "example": "文件base64值",
           "member": "string",
           "name": "FileBase64",
           "required": false,
@@ -981,7 +981,7 @@
         {
           "disabled": false,
           "document": "文档拆分任务的配置信息。\n",
-          "example": "{\"EnableMllm\":true,\"MaxChunkSize\":4800}\t",
+          "example": "无",
           "member": "CreateSplitDocumentFlowConfig",
           "name": "Config",
           "required": false,
@@ -1561,6 +1561,16 @@
           "example": "1",
           "member": "int64",
           "name": "FailPageNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，单位KB",
+          "example": "100",
+          "member": "int64",
+          "name": "FileSize",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

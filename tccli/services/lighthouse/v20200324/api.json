@@ -7833,30 +7833,30 @@
         {
           "disabled": false,
           "document": "分区名。",
-          "example": "",
+          "example": "\"c:\"",
           "member": "string",
           "name": "Name",
-          "required": true,
-          "type": "list",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用量，单位 GB。",
-          "example": "",
+          "example": "35.34",
           "member": "float",
           "name": "Usage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总量，单位 GB。",
-          "example": "",
+          "example": "49.66",
           "member": "float",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }

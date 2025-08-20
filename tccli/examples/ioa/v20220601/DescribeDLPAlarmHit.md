@@ -1,40 +1,4 @@
-**Example 1: 实例1**
-
-
-
-Input: 
-
-```
-tccli ioa DescribeDLPAlarmHit --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 2: 示例1**
-
-
-
-Input: 
-
-```
-tccli ioa DescribeDLPAlarmHit --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 3: DescribeDLPAlarmHit**
+**Example 1: DescribeDLPAlarmHit**
 
 DescribeDLPAlarmHit
 

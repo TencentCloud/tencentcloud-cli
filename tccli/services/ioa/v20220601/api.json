@@ -6481,7 +6481,17 @@
     },
     "CreateDLPDataLabelRequest": {
       "document": "CreateDLPDataLabel请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateDLPDataLabelResponse": {
@@ -14187,7 +14197,17 @@
     },
     "DescribeDLPAlarmHitRequest": {
       "document": "DescribeDLPAlarmHit请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeDLPAlarmHitResponse": {
@@ -14238,7 +14258,17 @@
     },
     "DescribeDLPDataLabelRequest": {
       "document": "DescribeDLPDataLabel请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeDLPDataLabelResponse": {
@@ -20841,6 +20871,15 @@
         },
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "用户分组",
           "example": "无",
           "member": "int64",
@@ -21575,6 +21614,15 @@
         },
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "用户分组",
           "example": "无",
           "member": "int64",
@@ -21693,6 +21741,15 @@
         },
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "用户分组",
           "example": "无",
           "member": "int64",
@@ -21808,6 +21865,15 @@
           "name": "EndTime",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,

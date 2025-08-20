@@ -5886,6 +5886,39 @@
       ],
       "usage": "in"
     },
+    "FuzzyZone": {
+      "document": "多可用区创建实例指定的可用区和子网。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例所属的可用区名称。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcs](https://cloud.tencent.com/document/product/215/15778) ，从接口返回中的`VpcId `字段获取，不允许传入DEFAULT值。",
+          "example": "vpc-3hru0v1x",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](https://cloud.tencent.com/document/product/215/15784) ，从接口返回中的`SubnetId `字段获取，不允许传入DEFAULT值。",
+          "example": "subnet-o7y71276",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "GPUInfo": {
       "document": "实例GPU信息",
       "members": [
@@ -7606,7 +7639,7 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
-          "example": "{         \"DiskSize\": 50     }",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -7687,7 +7720,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "a521b4e4-c903-4d37-9de6-8906e3ad8eb7",
+          "example": "a521b4e4-c903-4d37-9de6-8096e3ad8eb7",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -7786,11 +7819,20 @@
         {
           "disabled": false,
           "document": "描述了实例的软件证书情况与其设置，如Grid驱动证书等",
-          "example": "{ \"GridDriverService\": {\"Enabled\": \"true\"} }",
+          "example": "无",
           "member": "SoftwareLicenseService",
           "name": "SoftwareLicenseService",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "FuzzyZones参数支持模糊化可用区选择机制，需加自研白名单才可传入使用。有该参数时，Placement和VirtualPrivateCloud参数将只做校验使用，不参与创建过程，系统将在多个可用区中尝试实例创建，自动适配最优方案，直至成功满足用户购买需求。",
+          "example": "无",
+          "member": "FuzzyZone",
+          "name": "FuzzyZones",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12803,7 +12845,7 @@
         {
           "disabled": false,
           "document": "置放群组id，仅支持指定一个。",
-          "example": "['ps-3p88qhfo']",
+          "example": "[\"sg-efil73jd\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -12947,7 +12989,7 @@
         {
           "disabled": false,
           "document": "描述了实例的软件证书情况与其设置，如Grid驱动证书等",
-          "example": "{ \"GridDriverService\": {\"Enabled\": \"true\"} }",
+          "example": "无",
           "member": "SoftwareLicenseService",
           "name": "SoftwareLicenseService",
           "required": false,
@@ -12965,11 +13007,20 @@
         {
           "disabled": false,
           "document": "弹性网卡相关信息配置。通过该参数可以指定私有网络的ID，子网ID,网卡ID等信息。若在此参数中指定了弹性网卡数据，即表示每个实例的会自动创建弹性网卡并绑定实例",
-          "example": "{\"SubnetId\":\"subnet-ilvmekya\",\"IsRdma\":true,\"VpcId\":\"vpc-ilcecbpj\",\"NetworkInterfaceId\":\"\",\"AutoInstallRdmaDriver\":true}",
+          "example": "无",
           "member": "ElasticNetworkInterfaces",
           "name": "ElasticNetworkInterfaces",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "FuzzyZones参数支持模糊化可用区选择机制，需加自研白名单才可传入使用。有该参数时，Placement和VirtualPrivateCloud参数将只做校验使用，不参与创建过程，系统将在多个可用区中尝试实例创建，自动适配最优方案，直至成功满足用户购买需求。",
+          "example": "无",
+          "member": "FuzzyZone",
+          "name": "FuzzyZones",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12980,7 +13031,7 @@
         {
           "disabled": false,
           "document": "当通过本接口来创建实例时会返回该参数，表示一个或多个实例`ID`。返回实例`ID`列表并不代表实例创建成功，可根据 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询返回的InstancesSet中对应实例的`ID`的状态来判断创建是否完成；如果实例状态由“PENDING(创建中)”变为“RUNNING(运行中)”，则为创建成功。",
-          "example": "['ins-rn99mzt1']",
+          "example": "[\"ins-rn79mzt1\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "output_required": true,
