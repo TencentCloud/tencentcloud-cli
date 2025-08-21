@@ -926,6 +926,14 @@
         "title": "示例1"
       }
     ],
+    "DescribeAggrSoftCategorySoftList": [
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAggrSoftCategorySoftList\n<公共请求参数>\n\n{\n    \"OsType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Page\": {\n                \"PageSize\": 1,\n                \"PageNum\": 1,\n                \"PageCount\": 1,\n                \"Total\": 1\n            },\n            \"Total\": 0,\n            \"AggrSoftCategorySoftList\": [\n                {\n                    \"ID\": 0,\n                    \"Name\": \"11\",\n                    \"PiracyRisk\": 0,\n                    \"OsType\": 0,\n                    \"CorpName\": \"11\",\n                    \"InstalledDeviceNum\": 0,\n                    \"PiracyInstalledDeviceNum\": 0,\n                    \"InstalledUserNum\": 0,\n                    \"PiracyInstalledUserNum\": 0,\n                    \"AuthNum\": 0,\n                    \"GenuineRate\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"11\"\n    }\n}",
+        "title": "1"
+      }
+    ],
     "DescribeApplyDevices": [
       {
         "document": "",

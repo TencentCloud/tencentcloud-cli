@@ -970,6 +970,15 @@
         },
         {
           "disabled": false,
+          "document": "报障联系邮箱。",
+          "example": "lisi@tencent.com",
+          "member": "string",
+          "name": "FaultReportContactEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "物理专线申请者是否签署了用户使用协议。默认已签署。",
           "example": "是",
           "member": "bool",
@@ -3315,6 +3324,15 @@
           "example": "18812345678",
           "member": "string",
           "name": "FaultReportContactNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "报障联系邮箱。",
+          "example": "zhangsan@tencent.com",
+          "member": "string",
+          "name": "FaultReportContactEmail",
           "required": false,
           "type": "string"
         },
