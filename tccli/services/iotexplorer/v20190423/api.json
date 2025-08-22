@@ -4389,9 +4389,27 @@
         {
           "disabled": false,
           "document": "摘要输出配置",
-          "example": "{\"OutputLang\": \"en\"}",
+          "example": "无",
           "member": "VisionSummaryConfig",
           "name": "SummaryConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型，可能取值：\n- `Summary`：视频/图片摘要\n- `ObjectDetect`：目标检测",
+          "example": "Summary",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标检测配置",
+          "example": "无",
+          "member": "VisionObjectDetectConfig",
+          "name": "ObjectDetectConfig",
           "required": false,
           "type": "object"
         }
@@ -12418,6 +12436,24 @@
           "name": "SummaryConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型，可能取值：\n- `Summary`：视频/图片摘要\n- `ObjectDetect`：目标检测",
+          "example": "Summary",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标检测配置",
+          "example": "无",
+          "member": "VisionObjectDetectConfig",
+          "name": "ObjectDetectConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -17288,6 +17324,21 @@
         }
       ],
       "usage": "out"
+    },
+    "VisionObjectDetectConfig": {
+      "document": "目标检测配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测类别，可选值：\n- `adult`：成年人\n- `child`：儿童",
+          "example": "[\"adult\", \"child\"]",
+          "member": "string",
+          "name": "DetectTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "VisionRecognitionResult": {
       "document": "TWeSee 语义理解结果",

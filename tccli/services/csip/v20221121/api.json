@@ -597,8 +597,8 @@
         },
         {
           "disabled": false,
-          "document": "ak具体值\n临时密钥时返回临时密钥",
-          "example": "AKID***FGAW1  ",
+          "document": "ak具体值\\n\n临时密钥时返回临时密钥",
+          "example": "AKID********",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -19693,7 +19693,7 @@
         {
           "disabled": false,
           "document": "子账号UIn",
-          "example": "100*3**012345",
+          "example": "10001**271828",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -19723,7 +19723,7 @@
         {
           "disabled": false,
           "document": "主账号Uin",
-          "example": "10033**12345",
+          "example": "10002**271828",
           "member": "string",
           "name": "OwnerUin",
           "output_required": true,
@@ -19822,7 +19822,7 @@
         },
         {
           "disabled": false,
-          "document": "是否接入云审计日志",
+          "document": "是否接入操作审计日志",
           "example": "false",
           "member": "bool",
           "name": "IsAccessCloudAudit",
@@ -20581,7 +20581,7 @@
         {
           "disabled": false,
           "document": "发生事件",
-          "example": "{     \"EventType\": 2,     \"Content\": \"zero**\" }",
+          "example": "无",
           "member": "UebaEventContent",
           "name": "EventContent",
           "output_required": true,
@@ -20658,7 +20658,7 @@
         {
           "disabled": false,
           "document": "日志中文名",
-          "example": "云审计读日志",
+          "example": "操作审计读日志",
           "member": "string",
           "name": "LogTypeStr",
           "output_required": true,
@@ -20725,7 +20725,7 @@
         {
           "disabled": false,
           "document": "策略id",
-          "example": "rule-abc1234",
+          "example": "rule-example-271828",
           "member": "string",
           "name": "RuleID",
           "output_required": true,
@@ -20735,7 +20735,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "海外IP调用高危接口",
+          "example": "境外IP调用高危接口",
           "member": "string",
           "name": "RuleName",
           "output_required": true,
@@ -20745,7 +20745,7 @@
         {
           "disabled": false,
           "document": "策略类型\n0:系统策略\n1:自定义策略",
-          "example": "系统策略",
+          "example": "1",
           "member": "int64",
           "name": "RuleType",
           "output_required": true,
@@ -20755,7 +20755,7 @@
         {
           "disabled": false,
           "document": "策略等级\n0:提示\n1:低危\n2:中危\n3:高危\n4:严重",
-          "example": "严重",
+          "example": "2",
           "member": "int64",
           "name": "RuleLevel",
           "output_required": true,
@@ -20835,7 +20835,7 @@
         {
           "disabled": false,
           "document": "自定义规则具体内容",
-          "example": "自定义规则具体内容",
+          "example": "无",
           "member": "UebaCustomRule",
           "name": "CustomRuleDetail",
           "output_required": true,

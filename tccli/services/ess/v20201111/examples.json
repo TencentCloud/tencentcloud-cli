@@ -268,6 +268,14 @@
         "title": "创建合同对比web页面 - 跳过文件上传确认页"
       }
     ],
+    "CreateContractReviewWebUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateContractReviewWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwqbUUckp3oxxo7\"\n    },\n    \"ResourceId\": \"yDt4oUUcxxxqVZx\",\n    \"UserData\": \"5rWL6K+V5pWw5o2u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1755568206750403220\",\n        \"TaskId\": \"yDt4mUUckp9sgohiUugsjbKR241Yq5F7\",\n        \"WebUrl\": \"https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDt4oUUckp9sdhe2UugPqwK8NOCXY1Rg&channel=TENCENTCLOUD&embedType=CONTRACT_REVIEW&shortKey=yDt4mUjbKxHBzcYpadbe\"\n    }\n}",
+        "title": "创建合同审查web页面"
+      }
+    ],
     "CreateConvertTaskApi": [
       {
         "document": "适用场景：将jpg文件转换为pdf",
@@ -1482,6 +1490,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractReviewTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwJGxxrmBe\"\n    },\n    \"TaskId\": \"yDtIFxxxq\"\n}",
         "output": "{\n    \"Response\": {\n        \"ChecklistId\": \"yDtCMxxxxIi\",\n        \"CreatedOn\": 1753417470,\n        \"FinishedOn\": 1753417684,\n        \"PolicyType\": 2,\n        \"RequestId\": \"s1753417731216986125\",\n        \"ResourceId\": \"yDtG1UUxxxEsrBwa\",\n        \"Risks\": [\n            {\n                \"Content\": \"第三十二条乙方应当保守甲方的商业秘密，商业秘密系指不为公众所知悉，能为甲方带来经济利益，具有实用性并经甲方采取保密措施的技术秘密和经营信息。包括但不限于下述内容:\",\n                \"RiskAdvice\": \"建议在第三十二条后增加：「乙方离职后的竞业限制期限不得超过两年，竞业限制补偿金标准为......」\",\n                \"RiskBasis\": \"【通用商业合同审查清单】{特殊类型合同补充要点}, 系统审查要求。\",\n                \"RiskDescription\": \"保密条款未明确竞业限制期限，存在超出法定期限的法律风险，可能被认定为无效条款。\",\n                \"RiskId\": \"yDtIFUU2tnxxxKveWxm\",\n                \"RiskLevel\": \"NORMAL\",\n                \"RiskName\": \"竞业限制期限缺失\",\n                \"RiskPresentation\": [\n                    \"不符合清单要求\"\n                ]\n            }\n        ],\n        \"Role\": {\n            \"Description\": \"\",\n            \"Name\": \"授权方\"\n        },\n        \"Status\": 4,\n        \"TaskId\": \"yDtIFxxxq\"\n    }\n}",
         "title": "查询合同审查任务详情"
+      }
+    ],
+    "DescribeContractReviewWebUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractReviewWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwqbUUckp3o2rzmUxHsV0j1FlhYIKo7\"\n    },\n    \"TaskId\": \"yDt4MUUckp9j4zj5UugsjbKvB0vibmas\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1755602790251475316\",\n        \"Status\": 1,\n        \"WebUrl\": \"https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDt4mUUckp9shfedUx7mkC9zwLgqGdH6&channel=TENCENTCLOUD&embedType=CONTRACT_REVIEW&taskId=yDt4mUUckp9sgohiUugsjbKR241Yq5F7&preTaskId=yDt4mUUckp9sgoh6UugsjbKsbOWqWA2o\"\n    }\n}",
+        "title": "获取合同审查结果web页面"
       }
     ],
     "DescribeExtendedServiceAuthDetail": [

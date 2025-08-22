@@ -4004,6 +4004,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用了 DataPlaneV2（cilium替代kube-proxy）",
+          "example": "false",
+          "member": "bool",
+          "name": "DataPlaneV2",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

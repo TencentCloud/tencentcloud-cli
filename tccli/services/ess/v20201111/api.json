@@ -98,6 +98,13 @@
       "output": "CreateContractDiffTaskWebUrlResponse",
       "status": "online"
     },
+    "CreateContractReviewWebUrl": {
+      "document": "此接口（CreateContractReviewWebUrl）用来创建合同审查web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。\n\n适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。\n\n注: \n1. pdf、word格式限制大小为10M以下\n2. 如果文件资源为word类型生成的链接不能进行iframe嵌入，需要在单独窗口打开",
+      "input": "CreateContractReviewWebUrlRequest",
+      "name": "创建合同审查web页面",
+      "output": "CreateContractReviewWebUrlResponse",
+      "status": "online"
+    },
     "CreateConvertTaskApi": {
       "document": "此接口（CreateConvertTaskApi）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />\n前提条件：源文件已经通过 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />\n适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同\n适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />\n转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi\" target=\"_blank\">查询转换任务状态</a>接口获取任务状态。<br />\n注: \n1. `支持的文件类型有doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt`\n2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`",
       "input": "CreateConvertTaskApiRequest",
@@ -530,6 +537,13 @@
       "input": "DescribeContractReviewTaskRequest",
       "name": "获取合同审查任务详情",
       "output": "DescribeContractReviewTaskResponse",
+      "status": "online"
+    },
+    "DescribeContractReviewWebUrl": {
+      "document": "此接口（DescribeContractReviewWebUrl）用来创建合同审查web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。\n\n适用场景：根据合同内容识别出合同的风险信息。审查结果由AI生成，仅供参考。请结合相关法律法规和公司制度要求综合判断。\n\n注意:  `如果文件资源为word类型生成的链接不能进行iframe嵌入，需要在单独窗口打开`",
+      "input": "DescribeContractReviewWebUrlRequest",
+      "name": "获取合同审查结果web页面",
+      "output": "DescribeContractReviewWebUrlResponse",
       "status": "online"
     },
     "DescribeExtendedServiceAuthDetail": {
@@ -3384,6 +3398,71 @@
           "disabled": false,
           "document": "合同对比嵌入式web页面链接，有效期：5分钟\n链接仅能使用一次",
           "example": "https://embed.qian.tencent.cn/contract-compare?embed=1&code=yDtthUUckpx9l14eUy8nTBEypH6h1yKt&channel=TENCENTCLOUD&embedType=CONTRACT_DIFF",
+          "member": "string",
+          "name": "WebUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateContractReviewWebUrlRequest": {
+      "document": "CreateContractReviewWebUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "需要审查的合同文件资源ID,可通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">UploadFiles</a>接口获取文件资源ID。\n\n注:  `目前，每个文件限制在10M以下，文件仅支持pdf、doc、docx格式`",
+          "example": "yDttXUUckpx90i1xUxPpcHHyPdyqVErm",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。\n\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。",
+          "example": "QmFzZTY0IEJhc2U2NCA=",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateContractReviewWebUrlResponse": {
+      "document": "CreateContractReviewWebUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接口返回的合同审查任务ID，可以调用接口<a href=\"https://qian.tencent.com/developers/companyApis/embedPages/DescribeContractReviewWebUrl\" target=\"_blank\">获取合同审查结果web页面</a>查看审查任务的结果。\n\n注意： `当ResourceId参数不为空时才会返回此值。`",
+          "example": "yDt4mUUckp9snk1mUugsjbKuk19M9oKP",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查嵌入式web页面链接。\n\n注意：`链接有效期为5分钟，且链接仅能使用一次。如果上传的合同文件为word时不能进行iframe方式嵌入到贵方系统的网页中，需要单独页面打开此链接显示`",
+          "example": "https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDt4mUUckp9s5rksUJaGnr8TvzvPZQYt&channel=TENCENTCLOUD&embedType=CONTRACT_REVIEW",
           "member": "string",
           "name": "WebUrl",
           "output_required": true,
@@ -9886,6 +9965,62 @@
       ],
       "type": "object"
     },
+    "DescribeContractReviewWebUrlRequest": {
+      "document": "DescribeContractReviewWebUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同审查任务ID，该参数通过调用接口<a href=\"https://qian.tencent.com/developers/companyApis/embedPages/CreateContractReviewWebUrl\" target=\"_blank\">创建合同审查web页面</a>获取。",
+          "example": "yDt4MUUckp9j4zj5UugsjbKvB0vibmas",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContractReviewWebUrlResponse": {
+      "document": "DescribeContractReviewWebUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同审查嵌入式web页面链接。\n注意：`链接有效期为5分钟，且链接仅能使用一次。如果上传的合同文件为word时不能进行iframe方式嵌入到贵方系统的网页中，需要单独页面打开此链接显示`",
+          "example": "https://embed.test.qian.tencent.cn/ai-contract-review?embed=1&code=yDt4AUUckp9qgovnUy2vfEF8hYOjMMYZ&channel=TENCENTCLOUD&embedType=CONTRACT_REVIE",
+          "member": "string",
+          "name": "WebUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查任务状态。任务状态为`5`时没有WebUrl链接。\n状态如下：\n<ul>\n    <li>**1** - 合同审查任务创建成功</li>   \n    <li>**2** - 合同审查任务排队中</li>  \n    <li>**3** - 合同审查任务执行中</li>   \n    <li>**4** - 合同审查任务执行成功</li>\n    <li>**5** - 合同审查任务执行失败</li>\n</ul>",
+          "example": "4",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExtendedServiceAuthDetailRequest": {
       "document": "DescribeExtendedServiceAuthDetail请求参数结构体",
       "members": [
@@ -11972,10 +12107,10 @@
           "disabled": false,
           "document": "是否禁止编辑印章描述内容\n<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>",
           "example": "true",
-          "member": "string",
+          "member": "bool",
           "name": "ForbidEditSealDescription",
           "required": false,
-          "type": "string"
+          "type": "bool"
         }
       ],
       "usage": "in"

@@ -371,8 +371,8 @@
     "CreateUserVpcConnection": [
       {
         "document": "创建用户vpc连接到引擎网络",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserVpcConnection\n<公共请求参数>\n\n{\n    \"UserVpcId\": \"vpc-dk19yfij\",\n    \"UserSubnetId\": \"subnet-gne3mgsy\",\n    \"UserVpcEndpointName\": \"rickytest\",\n    \"EngineNetworkId\": \"DataEngine-Network-xxx\",\n    \"UserVpcEndpointVip\": \"10.0.0.13\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"515ee497-d527-4f05-b484-61b46522a408\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserVpcConnection\n<公共请求参数>\n\n{\n    \"UserVpcId\": \"vpc-dk19yfxx\",\n    \"UserSubnetId\": \"subnet-gne3mgxx\",\n    \"UserVpcEndpointName\": \"rickytest\",\n    \"EngineNetworkId\": \"DataEngine-Network-xxx\",\n    \"UserVpcEndpointVip\": \"10.0.0.13\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserVpcEndpointId\": \"vpce-h4czuhxx\",\n        \"RequestId\": \"515ee497-d527-4f05-b484-61b46522a408\"\n    }\n}",
         "title": "创建用户vpc连接到引擎网络"
       }
     ],

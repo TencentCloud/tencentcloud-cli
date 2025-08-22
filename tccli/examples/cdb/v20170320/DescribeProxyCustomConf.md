@@ -16,13 +16,15 @@ Output:
 {
     "Response": {
         "Count": 1,
-        "CustomConf": {
-            "Device": "Z3",
-            "Type": "高可用版本",
-            "DeviceType": "custom",
-            "Memory": 4000,
-            "Cpu": 2
-        },
+        "CustomConfInfo": [
+            {
+                "Device": "Z3",
+                "Type": "高可用版本",
+                "DeviceType": "custom",
+                "Memory": 4000,
+                "Cpu": 2
+            }
+        ],
         "WeightRule": {
             "LessThan": 2000,
             "Weight": 1

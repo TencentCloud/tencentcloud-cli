@@ -455,6 +455,15 @@
         },
         {
           "disabled": false,
+          "document": "qgpu开关",
+          "example": "true",
+          "member": "bool",
+          "name": "QGPUEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "节点池ssh公钥id数组",
           "example": "[\"sky-6esd9xe\",\"sky-shjixw8\"]",
           "member": "string",
@@ -470,6 +479,15 @@
           "name": "MachineType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池安装节点自动化助手开关",
+          "example": "false",
+          "member": "bool",
+          "name": "AutomationService",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -498,7 +516,7 @@
         {
           "disabled": false,
           "document": "节点池类型",
-          "example": "Hosted",
+          "example": "Navite、External",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -551,7 +569,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池创建参数",
+          "document": "原生节点池创建参数（Type字段设置为Native时需填写）",
           "example": "无",
           "member": "CreateNativeNodePoolParam",
           "name": "Native",

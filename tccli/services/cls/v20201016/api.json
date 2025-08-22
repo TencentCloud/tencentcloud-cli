@@ -4730,7 +4730,7 @@
         },
         {
           "disabled": false,
-          "document": "源日志主题",
+          "document": "日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "topicid-1",
           "member": "string",
           "name": "SrcTopicId",
@@ -4739,7 +4739,7 @@
         },
         {
           "disabled": false,
-          "document": "加工任务名称",
+          "document": "加工任务名称\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 最长 255 个字符",
           "example": "task1",
           "member": "string",
           "name": "Name",
@@ -4766,8 +4766,8 @@
         },
         {
           "disabled": false,
-          "document": "加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。",
-          "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
+          "document": "加工任务目标topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。\n目标topic_id，通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。\n别名限制 1.不能为空字符串，2. 不能包含字符'|'。\n",
+          "example": "无",
           "member": "DataTransformResouceInfo",
           "name": "DstResources",
           "required": false,
@@ -4784,7 +4784,7 @@
         },
         {
           "disabled": false,
-          "document": "用于预览加工结果的测试数据",
+          "document": "用于预览加工结果的测试数据\n目标日志主题ID通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "无",
           "member": "PreviewLogStatistic",
           "name": "PreviewLogStatistics",
@@ -6484,7 +6484,7 @@
         },
         {
           "disabled": false,
-          "document": "加工任务类型，1： DSL， 2：SQL",
+          "document": "加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -6524,7 +6524,7 @@
         },
         {
           "disabled": false,
-          "document": "最近修改时间",
+          "document": "最近修改时间\n示例值：2025-06-18 16:55:54",
           "example": "2024-03-20 15:51:01",
           "member": "string",
           "name": "UpdateTime",
@@ -6534,7 +6534,7 @@
         },
         {
           "disabled": false,
-          "document": "最后启用时间，如果需要重建集群，修改该时间",
+          "document": "最后启用时间，如果需要重建集群，修改该时间\n示例值：2025-06-18 19:55:54",
           "example": "2024-03-20 15:50:00",
           "member": "string",
           "name": "LastEnableTime",
@@ -6565,7 +6565,7 @@
         {
           "disabled": false,
           "document": "加工任务目的topic_id以及别名",
-          "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
+          "example": "无",
           "member": "DataTransformResouceInfo",
           "name": "DstResources",
           "output_required": true,
@@ -8198,7 +8198,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "- taskName\n按照【加工任务名称】进行过滤。\n类型：String\n必选：否\n\n- taskId\n按照【加工任务id】进行过滤。\n类型：String\n必选：否\n\n- topicId\n按照【源topicId】进行过滤。\n类型：String\n必选：否\n- status\n按照【 任务运行状态】进行过滤。 1：准备中，2：运行中，3：停止中，4：已停止\n类型：String\n必选：否\n- hasServiceLog\n按照【是否开启服务日志】进行过滤。 1：未开启，2：已开启\n类型：String\n必选：否\n- dstTopicType\n按照【目标topic类型】进行过滤。  1：固定，2：动态\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "- taskName\n按照【加工任务名称】进行过滤。\n类型：String\n必选：否\n示例：test-task\n\n- taskId\n按照【加工任务id】进行过滤。\n类型：String\n必选：否\n示例：a3622556-6402-4942-b4ff-5ae32ec29810\n数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。\n\n- topicId\n按照【源topicId】进行过滤。\n类型：String\n必选：否\n示例：756cec3e-a0a5-44c3-85a8-090870582000\n日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。\n\n- status\n按照【 任务运行状态】进行过滤。 1：准备中，2：运行中，3：停止中，4：已停止\n类型：String\n必选：否\n示例：1\n\n- hasServiceLog\n按照【是否开启服务日志】进行过滤。 1：未开启，2：已开启\n类型：String\n必选：否\n示例：1\n\n- dstTopicType\n按照【目标topic类型】进行过滤。  1：固定，2：动态\n类型：String\n必选：否\n示例：1\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -8234,7 +8234,7 @@
         },
         {
           "disabled": false,
-          "document": "Type为1， 此参数必填",
+          "document": "Type为1， 此参数必填\n数据加工任务ID- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。",
           "example": "task-id",
           "member": "string",
           "name": "TaskId",
@@ -12782,7 +12782,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加工任务id",
+          "document": "数据加工任务ID\n- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务Id。",
           "example": "abdeace6-9484-4d2e-b670-28289c42b60f",
           "member": "string",
           "name": "TaskId",
@@ -12791,7 +12791,7 @@
         },
         {
           "disabled": false,
-          "document": "加工任务名称",
+          "document": "加工任务名称\n- 通过[获取数据加工任务列表基本信息](https://cloud.tencent.com/document/product/614/72182)获取数据加工任务名称。\n\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 最长 255 个字符",
           "example": "task1",
           "member": "string",
           "name": "Name",

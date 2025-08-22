@@ -468,6 +468,14 @@
         "title": "重置数据订阅任务"
       }
     ],
+    "ResetSyncJob": [
+      {
+        "document": "任务结束后重置同步任务信息，生成一个完全初始化的同步任务",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopSyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-7r1cz016\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ead9fdc1-baa8-4a09-aaa1-c2012690c976\"\n    }\n}",
+        "title": "重置同步任务"
+      }
+    ],
     "ResizeSyncJob": [
       {
         "document": "",

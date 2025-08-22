@@ -1,4 +1,4 @@
-**Example 1: 创建 TWeSee 语义理解任务**
+**Example 1: 创建视频摘要任务**
 
 
 
@@ -7,20 +7,144 @@ Input:
 ```
 tccli iotexplorer CreateTWeSeeRecognitionTask --cli-unfold-argument  \
     --ProductId 4AHMY9X89Y \
-    --DeviceName dev001 \
-    --InputURL hhttps://example.com/video.mp4 \
-    --CustomId event-1 \
-    --EnableSearch True \
-    --StartTimeMs 1744389074077 \
-    --EndTimeMs 1744389075077
+    --DeviceName example_device_name \
+    --InputURL https://example.qq.com/video.mp4 \
+    --ServiceType Summary
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "26083bec-a7bd-491f-b6df-45e7f143638c",
-        "TaskId": "019625b1-15d6-72d8-a5d6-388b45c92c67"
+        "RequestId": "f3d7d0eb-d28d-43b0-9b8c-676f785edcb3",
+        "TaskId": "0198cbc3-8c89-70f2-a07a-5a39b606bc92"
+    }
+}
+```
+
+**Example 2: 创建视频摘要任务且使该视频可被搜索**
+
+
+
+Input: 
+
+```
+tccli iotexplorer CreateTWeSeeRecognitionTask --cli-unfold-argument  \
+    --ProductId 4AHMY9X89Y \
+    --DeviceName example_device_name \
+    --InputURL https://example.qq.com/video.mp4 \
+    --EnableSearch True \
+    --StartTimeMs 1755765320366 \
+    --EndTimeMs 1755765328366 \
+    --ServiceType Summary
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "c7a2ea4f-8a8c-484c-afde-c82005c643fb",
+        "TaskId": "0198cbc4-eca1-78dd-b8ff-c150b97e081f"
+    }
+}
+```
+
+**Example 3: 使用未创建的设备名创建视频摘要任务**
+
+
+
+Input: 
+
+```
+tccli iotexplorer CreateTWeSeeRecognitionTask --cli-unfold-argument  \
+    --ProductId 4AHMY9X89Y \
+    --DeviceName not_exist_device_name \
+    --InputURL https://example.qq.com/video.mp4 \
+    --IsCustomDevice True \
+    --ServiceType Summary
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "988080c5-b74a-4185-a404-f2877e08f97e",
+        "TaskId": "0198cbc6-e472-79c6-953a-5240495d7640"
+    }
+}
+```
+
+**Example 4: 创建图片摘要任务**
+
+
+
+Input: 
+
+```
+tccli iotexplorer CreateTWeSeeRecognitionTask --cli-unfold-argument  \
+    --ProductId 4AHMY9X89Y \
+    --DeviceName example_device_name \
+    --InputURL https://example.qq.com/image.jpg \
+    --InputType image \
+    --ServiceType Summary
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "65dcf25f-385a-4b63-9a60-c99caa28f45a",
+        "TaskId": "0198cbc8-8680-7b0a-bd4f-4dbff77853cd"
+    }
+}
+```
+
+**Example 5: 创建视频摘要任务（包含多路摄像头的视频）**
+
+
+
+Input: 
+
+```
+tccli iotexplorer CreateTWeSeeRecognitionTask --cli-unfold-argument  \
+    --ProductId 4AHMY9X89Y \
+    --DeviceName example_device_name \
+    --InputURL https://example.qq.com/video.mp4 \
+    --SummaryConfig.MultiCameraLayout Vertical,Num=2,Index=0;1 \
+    --ServiceType Summary
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "35044438-d9b8-42ee-a169-a40d9ecd96cc",
+        "TaskId": "0198cbc5-e684-7335-a168-593d91d5d89f"
+    }
+}
+```
+
+**Example 6: 创建目标检测任务**
+
+
+
+Input: 
+
+```
+tccli iotexplorer CreateTWeSeeRecognitionTask --cli-unfold-argument  \
+    --ProductId 4AHMY9X89Y \
+    --DeviceName example_device_name \
+    --InputURL https://example.qq.com/video.mp4 \
+    --ServiceType ObjectDetect \
+    --ObjectDetectConfig.DetectTypes adult child
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "57096151-fd04-4558-a2f9-280943e9682d",
+        "TaskId": "0198cbc2-91df-79cd-96ca-0f73ef661632"
     }
 }
 ```

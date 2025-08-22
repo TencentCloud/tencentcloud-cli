@@ -78,7 +78,7 @@
       "status": "online"
     },
     "DescribeAgentPayDealsV2": {
-      "document": "可以查询代理商代付的预付费订单",
+      "document": "查询最近15天内的代理商代付订单",
       "input": "DescribeAgentPayDealsV2Request",
       "name": "代理商代付订单查询接口（预付费）",
       "output": "DescribeAgentPayDealsV2Response",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "DescribeAgentSelfPayDealsV2": {
-      "document": "查询代理商名下指定代客的自付订单（预付费）",
+      "document": "查询代理商名下指定代客最近15天内的自付订单（预付费）",
       "input": "DescribeAgentSelfPayDealsV2Request",
       "name": "代理商自付订单查询接口（预付费）",
       "output": "DescribeAgentSelfPayDealsV2Response",
@@ -2006,7 +2006,7 @@
         },
         {
           "disabled": false,
-          "document": "下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)",
+          "document": "下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",
@@ -2043,7 +2043,7 @@
         {
           "disabled": false,
           "document": "下单人账号ID列表",
-          "example": "[100001,100002]",
+          "example": "[\"100001\",\"100002\"]",
           "member": "string",
           "name": "OwnerUins",
           "required": false,
@@ -2171,7 +2171,7 @@
         },
         {
           "disabled": false,
-          "document": "下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)",
+          "document": "下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",
