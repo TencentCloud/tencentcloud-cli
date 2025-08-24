@@ -5069,7 +5069,7 @@
         {
           "disabled": false,
           "document": "集群创建需要绑定的tag数组信息",
-          "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
@@ -5150,7 +5150,7 @@
         {
           "disabled": false,
           "document": "参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感",
-          "example": "[{\"ParamName\": \"character_set_server\",\"CurrentValue\": \"utf8\",\"OldValue\": \"utf8mb4\"}]",
+          "example": "无",
           "member": "ParamItem",
           "name": "ClusterParams",
           "required": false,
@@ -5186,7 +5186,7 @@
         {
           "disabled": false,
           "document": "实例初始化配置信息，主要用于购买集群时选不同规格实例",
-          "example": "[{\"Cpu\": 1,\"Memory\": 2,\"InstanceType\": \"rw\",\"InstanceCount\": 1,\"MinRoCount\": 1,\"MaxRoCount\": 2,\"MinRoCpu\": 1,\"MaxRoCpu\": 4}]",
+          "example": "无",
           "member": "InstanceInitInfo",
           "name": "InstanceInitInfos",
           "required": false,
@@ -5195,7 +5195,7 @@
         {
           "disabled": false,
           "document": "集群业务类型，仅用于深宇财付通地域",
-          "example": "无",
+          "example": "weda",
           "member": "string",
           "name": "BusinessType",
           "required": false,
@@ -5295,7 +5295,7 @@
         {
           "disabled": false,
           "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"xxx\"]",
+          "example": "[\"2019052211228311\"]",
           "member": "string",
           "name": "BigDealIds",
           "output_required": true,
@@ -6329,7 +6329,7 @@
         {
           "disabled": false,
           "document": "从可用区",
-          "example": "ap-singapore-4",
+          "example": "[\"ap-singapore-4\"]",
           "member": "string",
           "name": "SlaveZones",
           "output_required": true,
@@ -6763,7 +6763,7 @@
         {
           "disabled": false,
           "document": "从可用区列表",
-          "example": "ap-guangzhou-3",
+          "example": "[\"ap-guangzhou-3\"]",
           "member": "string",
           "name": "SlaveZones",
           "output_required": true,
@@ -12042,7 +12042,7 @@
         {
           "disabled": false,
           "document": "是否需要返回可用区信息",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "IncludeZoneStocks",
           "required": false,
@@ -12066,7 +12066,7 @@
         {
           "disabled": false,
           "document": "规格信息",
-          "example": "[{\"Cpu\": 1,\"Memory\": 1,\"MaxStorageSize\": 1,\"MinStorageSize\": 1,\"HasStock\": true,\"MachineType\": \"exclusive\",\"MaxIops\": 0,\"MaxIoBandWidth\": 0,\"ZoneStockInfos\": [{\"Zone\": \"ap-beijing-3\",\"HasStock\": true,\"StockCount\": 0,\"NetworkStockInfos\": [{\"NetworkType\": \"hole_rdma\",\"StockCount\": 0,\"HasStock\": true}]}],\"StockCount\": 0}]",
+          "example": "无",
           "member": "InstanceSpec",
           "name": "InstanceSpecSet",
           "output_required": true,
@@ -16203,7 +16203,7 @@
         },
         {
           "disabled": false,
-          "document": "自动逻辑备份保留时间",
+          "document": "自动逻辑备份保留时间\n单位：秒",
           "example": "7",
           "member": "uint64",
           "name": "LogicReserveDuration",
@@ -16214,8 +16214,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启跨地域逻辑备份",
-          "example": "yes",
+          "document": "是否开启跨地域逻辑备份\n可选值：ON/OFF",
+          "example": "ON",
           "member": "string",
           "name": "LogicCrossRegionsEnable",
           "output_required": false,

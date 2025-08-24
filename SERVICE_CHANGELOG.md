@@ -1,10 +1,10 @@
-# Release 3.0.1264.1
+# Release 3.0.1265.1
 
-## 专线接入(dc) 版本：2018-04-10
+## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 14 次发布
+### 第 161 次发布
 
-发布时间：2025-08-22 01:30:02
+发布时间：2025-08-25 01:35:41
 
 本次发布包含了以下内容：
 
@@ -12,63 +12,94 @@
 
 修改接口：
 
-* [CreateDirectConnect](http://document.tencentcloudapi.woa.com/document/product/216/34829)
+* [CreateBatchContractReviewTask](http://document.tencentcloudapi.woa.com/document/product/1668/87287)
 
-	* 新增入参：FaultReportContactEmail
+	* 新增入参：Comment, UserData
 
-* [ModifyDirectConnectAttribute](http://document.tencentcloudapi.woa.com/document/product/216/34825)
+	* <font color="#dd0000">**修改入参**：</font>PolicyType, Role, ChecklistId
 
-	* 新增入参：FaultReportContactEmail
+* [DescribeContractReviewTask](http://document.tencentcloudapi.woa.com/document/product/1668/87286)
 
+	* 新增出参：Comment, UserData
 
-
-
-## 数据传输服务(dts) 版本：2021-12-06
-
-### 第 38 次发布
-
-发布时间：2025-08-22 01:32:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ResetSyncJob](http://document.tencentcloudapi.woa.com/document/product/571/87589)
-
-
-
-## 数据传输服务(dts) 版本：2018-03-30
-
-
-
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
-
-### 第 22 次发布
-
-发布时间：2025-08-22 01:41:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeAggrSoftCategorySoftList](http://document.tencentcloudapi.woa.com/document/product/1794/87590)
 
 新增数据结构：
 
-* [AggrCategorySoftDetailRow](http://document.tencentcloudapi.woa.com/document/product/1794/86648#AggrCategorySoftDetailRow)
-* [DescribeAggrSoftCategorySoftListData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeAggrSoftCategorySoftListData)
+* [PositionInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#PositionInfo)
+
+修改数据结构：
+
+* [OutputRisk](http://document.tencentcloudapi.woa.com/document/product/1668/79360#OutputRisk)
+
+	* 新增成员：Positions
+
 
 
 
 ## 物联网开发平台(iotexplorer) 版本：2019-04-23
 
-### 第 83 次发布
+### 第 84 次发布
 
-发布时间：2025-08-22 02:10:27
+发布时间：2025-08-25 01:44:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTWeSeeRecognitionTask](http://document.tencentcloudapi.woa.com/document/product/1081/87591)
+
+新增数据结构：
+
+* [VisionRecognitionTask](http://document.tencentcloudapi.woa.com/document/product/1081/34988#VisionRecognitionTask)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 157 次发布
+
+发布时间：2025-08-25 02:07:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRocketMQProducers](http://document.tencentcloudapi.woa.com/document/product/1179/87592)
+
+新增数据结构：
+
+* [ProducerInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ProducerInfo)
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 102 次发布
+
+发布时间：2025-08-25 02:14:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AgentConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentConfig)
+
+	* 新增成员：InterruptWordList
+
+
+
+
+## 腾讯混元生视频(vclm) 版本：2024-05-23
+
+### 第 2 次发布
+
+发布时间：2025-08-25 02:15:58
 
 本次发布包含了以下内容：
 
@@ -76,18 +107,10 @@
 
 修改接口：
 
-* [CreateTWeSeeRecognitionTask](http://document.tencentcloudapi.woa.com/document/product/1081/86166)
+* [SubmitTemplateToVideoJob](http://document.tencentcloudapi.woa.com/document/product/1766/87506)
 
-	* 新增入参：ServiceType, ObjectDetectConfig
+	* 新增入参：BGM
 
-* [InvokeTWeSeeRecognitionTask](http://document.tencentcloudapi.woa.com/document/product/1081/86165)
-
-	* 新增入参：ServiceType, ObjectDetectConfig
-
-
-新增数据结构：
-
-* [VisionObjectDetectConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#VisionObjectDetectConfig)
 
 
 
