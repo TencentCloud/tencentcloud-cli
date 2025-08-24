@@ -665,6 +665,13 @@
       "output": "DescribeTWeSeeConfigResponse",
       "status": "online"
     },
+    "DescribeTWeSeeRecognitionTask": {
+      "document": "查询 TWeSee 语义理解任务",
+      "input": "DescribeTWeSeeRecognitionTaskRequest",
+      "name": "查询 TWeSee 语义理解任务",
+      "output": "DescribeTWeSeeRecognitionTaskResponse",
+      "status": "online"
+    },
     "DescribeTopicPolicy": {
       "document": "本接口（DescribeTopicPolicy）用于查看Topic详细信息",
       "input": "DescribeTopicPolicyRequest",
@@ -8904,6 +8911,52 @@
           "name": "Config",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeRecognitionTaskRequest": {
+      "document": "DescribeTWeSeeRecognitionTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "01985f3b-1781-75e6-aed5-d6510855f086",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下载 URL 的过期时间。\n\n若传入该参数，则响应中将包含所有文件的下载 URL",
+          "example": "1743436800",
+          "member": "int64",
+          "name": "FileURLExpireTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeRecognitionTaskResponse": {
+      "document": "DescribeTWeSeeRecognitionTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务信息",
+          "example": "无",
+          "member": "VisionRecognitionTask",
+          "name": "TaskInfo",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -17391,6 +17444,162 @@
           "name": "ErrorCode",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VisionRecognitionTask": {
+      "document": "TWeSee 语义理解任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存 AI 服务任务 ID",
+          "example": "fb066d7a-baac-4706-acda-058f56f82759",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "TQBDY6RPI9",
+          "member": "string",
+          "name": "ProductId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "cs_112114601_2",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应云存视频的起始时间（秒级 UNIX 时间戳）",
+          "example": "1710487888",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应云存视频的起始时间（毫秒级 UNIX 时间戳）",
+          "example": "1710487888270",
+          "member": "int64",
+          "name": "StartTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应云存视频的结束时间（秒级 UNIX 时间戳）",
+          "example": "1710487898",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应云存视频的结束时间（毫秒级 UNIX 时间戳）",
+          "example": "1710487898990",
+          "member": "int64",
+          "name": "EndTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功；4：执行中）",
+          "example": "3",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务结果",
+          "example": "无",
+          "member": "VisionRecognitionResult",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1711338476",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后更新时间",
+          "example": "1711338476",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义任务 ID",
+          "example": "your-custom-id",
+          "member": "string",
+          "name": "CustomId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务输出文件列表",
+          "example": "[\"thumbnail.jpg\"]",
+          "member": "string",
+          "name": "Files",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务输出文件信息列表",
+          "example": "无",
+          "member": "CloudStorageAIServiceTaskFileInfo",
+          "name": "FilesInfo",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

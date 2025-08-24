@@ -6428,10 +6428,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标主题id",
-          "example": "topic-xx",
+          "document": "日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "abdeace6-9484-4d2e-b670-28289c42b60f",
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6442,6 +6443,7 @@
           "example": "topicname",
           "member": "string",
           "name": "Alias",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6514,7 +6516,7 @@
         },
         {
           "disabled": false,
-          "document": "加工任务创建时间",
+          "document": "加工任务创建时间\n示例值：2025-03-18 19:55:54\n时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2022-12-08 21:00:35",
           "member": "string",
           "name": "CreateTime",
@@ -6524,7 +6526,7 @@
         },
         {
           "disabled": false,
-          "document": "最近修改时间\n示例值：2025-06-18 16:55:54",
+          "document": "最近修改时间\n示例值：2025-04-18 16:55:54\n时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2024-03-20 15:51:01",
           "member": "string",
           "name": "UpdateTime",
@@ -6534,8 +6536,8 @@
         },
         {
           "disabled": false,
-          "document": "最后启用时间，如果需要重建集群，修改该时间\n示例值：2025-06-18 19:55:54",
-          "example": "2024-03-20 15:50:00",
+          "document": "最后启用时间，如果需要重建集群，修改该时间\n示例值：2025-05-18 19:55:54\n时间格式：yyyy-MM-dd HH:mm:ss",
+          "example": "2024-05-23 15:50:00",
           "member": "string",
           "name": "LastEnableTime",
           "output_required": true,

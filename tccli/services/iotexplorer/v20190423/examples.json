@@ -874,6 +874,14 @@
         "title": "查询 TWeSee 配置"
       }
     ],
+    "DescribeTWeSeeRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"01985f3b-1781-75e6-aed5-d6510855f086\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8632226-fe3c-4f70-86d9-eb995cefeae8\",\n        \"TaskInfo\": {\n            \"ChannelId\": 0,\n            \"CreateTime\": 1753944365,\n            \"DeviceName\": \"dev002\",\n            \"EndTime\": 1753944365,\n            \"EndTimeMs\": 1753944365774,\n            \"Files\": [],\n            \"FilesInfo\": [],\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"Result\": {\n                \"DetectedClassifications\": [\n                    \"person\",\n                    \"vehicle\"\n                ],\n                \"Status\": 3,\n                \"Summary\": \"一穿蓝上衣的人驾驶蓝卡车在道路上行驶。\"\n            },\n            \"StartTime\": 1753944364,\n            \"StartTimeMs\": 1753944364774,\n            \"Status\": 3,\n            \"TaskId\": \"01985f3b-1781-75e6-aed5-d6510855f086\",\n            \"UpdateTime\": 1753944368\n        }\n    }\n}",
+        "title": "查询 TWeSee 语义理解任务"
+      }
+    ],
     "DescribeTopicPolicy": [
       {
         "document": "",
