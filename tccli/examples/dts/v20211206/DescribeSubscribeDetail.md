@@ -44,7 +44,7 @@ Output:
                     "DbPattern": ".*",
                     "RuleType": "table",
                     "TablePattern": ".*",
-                    "Columns": null
+                    "Columns": []
                 }
             ],
             "NumberOfPartitions": 8

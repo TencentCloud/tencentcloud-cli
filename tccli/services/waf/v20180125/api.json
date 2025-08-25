@@ -10535,7 +10535,7 @@
         {
           "disabled": false,
           "document": "排序参数",
-          "example": "desc",
+          "example": "timestamp:-1",
           "member": "string",
           "name": "Sort",
           "required": true,
@@ -10598,7 +10598,7 @@
         {
           "disabled": false,
           "document": "规则id",
-          "example": "2342",
+          "example": "330000001",
           "member": "string",
           "name": "RuleId",
           "required": false,
@@ -10613,7 +10613,7 @@
         {
           "disabled": false,
           "document": "返回数据包",
-          "example": "{       \"Res\": [       ],       \"TotalCount\": 0     }",
+          "example": "无",
           "member": "DescribeBotUCBRuleRsp",
           "name": "Data",
           "output_required": false,
