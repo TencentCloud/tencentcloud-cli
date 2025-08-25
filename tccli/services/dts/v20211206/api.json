@@ -1435,6 +1435,24 @@
           "name": "ExtraAttr",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "vpc id",
+          "example": "vpc-2hfu26a7",
+          "member": "string",
+          "name": "ConsumerVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "subnet id",
+          "example": "subnet-3gnpluam",
+          "member": "string",
+          "name": "ConsumerSubnetId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2139,6 +2157,15 @@
           "example": "binlog订阅",
           "member": "string",
           "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅实例规格，当前仅支持small、medium、large",
+          "example": "small",
+          "member": "string",
+          "name": "InstanceClass",
           "required": false,
           "type": "string"
         }
@@ -4736,6 +4763,46 @@
           "name": "ExtraAttr",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅版本, 当前支持kafka和kafkaPro（专业版）",
+          "example": "kafka",
+          "member": "string",
+          "name": "SubscribeVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费端地址所在vpc",
+          "example": "vpc-r9rir3i9",
+          "member": "string",
+          "name": "ConsumerVpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费端地址所在子网",
+          "example": "subnet-jgyd4txs",
+          "member": "string",
+          "name": "ConsumerSubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅实例规格",
+          "example": "small",
+          "member": "string",
+          "name": "InstanceClass",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -9855,7 +9922,7 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅版本, 当前只支持 kafka 版本。",
+          "document": "数据订阅版本, 当前支持kafka和kafkaPro（专业版）",
           "example": "kafka",
           "member": "string",
           "name": "SubscribeVersion",
@@ -9882,6 +9949,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅实例规格",
+          "example": "small",
+          "member": "string",
+          "name": "InstanceClass",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

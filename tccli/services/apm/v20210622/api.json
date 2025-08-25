@@ -439,6 +439,28 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探针熔断内存阈值",
+          "example": "90",
+          "member": "int64",
+          "name": "DisableMemoryUsed",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探针熔断CPU阈值",
+          "example": "90",
+          "member": "int64",
+          "name": "DisableCpuUsed",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

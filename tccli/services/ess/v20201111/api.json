@@ -9946,7 +9946,7 @@
         },
         {
           "disabled": false,
-          "document": "合同审查中的角色信息。注意：注意：如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同审查中的角色信息。注意： `如果用户没有配置审查角色时此值可能为null，需要等大模型根据合同内容推荐出审查角色信息。`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RiskIdentificationRoleInfo",
           "name": "Role",
@@ -9992,6 +9992,26 @@
           "name": "UserData",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查出的高风险项数量",
+          "example": "5",
+          "member": "int64",
+          "name": "HighRiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同审查出的风险总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalRiskCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

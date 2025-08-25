@@ -281,9 +281,9 @@
       "status": "online"
     },
     "MLIDPassportOCR": {
-      "document": "本接口支持以及其他国家、地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍、国家地区代码，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。\n本接口支持地区范围：可机读护照国家。包括中国港澳台地区、新加坡、马来西亚、泰国、美国、韩国、越南、澳大利亚、缅甸、印度尼西亚、日本、加拿大、老挝、巴基斯坦、哈萨克斯坦、法国、英国、德国、菲律宾、新西兰、印度、意大利、蒙古、孟加拉国、尼日利亚、柬埔寨、西班牙、摩洛哥、吉尔吉斯斯坦、埃及、荷兰、塔吉克斯坦、巴西、乌兹别克斯坦、伊拉克、阿尔及利亚、土耳其、南非、墨西哥、尼泊尔、白俄罗斯、叶门、阿富汗、沙特、肯尼亚、波兰、比利时、瑞典、奥地利、坦桑尼亚、委内瑞拉、阿根廷、喀麦隆、斯里兰卡、衣索比亚、约旦、瑞士、加纳、爱尔兰、哥伦比亚、苏丹、匈牙利、罗马尼亚、阿联酋、文莱、希腊、以色列、巴拿马、丹麦、伊朗、乌干达、挪威、秘鲁、葡萄牙、智利、塞尔维亚、芬兰、尚比亚、亚美尼亚、叙利亚、黎巴嫩、斯洛伐克、卡塔尔、古巴、朝鲜。\n\n默认接口请求频率限制：5次/秒。",
+      "document": "本接口支持中国大陆地区及中国港澳台地区、其他国家以及地区的护照识别。识别字段包括护照ID、姓名、出生日期、性别、有效期、发行国、国籍、国家地区代码，具备护照人像照片的裁剪功能和翻拍、复印件告警功能。\n本接口支持地区范围：可机读护照国家。包括中国大陆地区、中国港澳台地区、新加坡、马来西亚、泰国、美国、韩国、越南、澳大利亚、缅甸、印度尼西亚、日本、加拿大、老挝、巴基斯坦、哈萨克斯坦、法国、英国、德国、菲律宾、新西兰、印度、意大利、蒙古、孟加拉国、尼日利亚、柬埔寨、西班牙、摩洛哥、吉尔吉斯斯坦、埃及、荷兰、塔吉克斯坦、巴西、乌兹别克斯坦、伊拉克、阿尔及利亚、土耳其、南非、墨西哥、尼泊尔、白俄罗斯、叶门、阿富汗、沙特、肯尼亚、波兰、比利时、瑞典、奥地利、坦桑尼亚、委内瑞拉、阿根廷、喀麦隆、斯里兰卡、衣索比亚、约旦、瑞士、加纳、爱尔兰、哥伦比亚、苏丹、匈牙利、罗马尼亚、阿联酋、文莱、希腊、以色列、巴拿马、丹麦、伊朗、乌干达、挪威、秘鲁、葡萄牙、智利、塞尔维亚、芬兰、尚比亚、亚美尼亚、叙利亚、黎巴嫩、斯洛伐克、卡塔尔、古巴、朝鲜。\n\n默认接口请求频率限制：5次/秒。",
       "input": "MLIDPassportOCRRequest",
-      "name": "护照识别（港澳台地区及境外护照）",
+      "name": "护照识别（多国多地区护照）",
       "output": "MLIDPassportOCRResponse",
       "status": "online"
     },
@@ -9355,7 +9355,7 @@
         {
           "disabled": false,
           "document": "出生日期（机读码区的解析结果）",
-          "example": "20230414",
+          "example": "20230415",
           "member": "string",
           "name": "DateOfBirth",
           "output_required": true,
@@ -9445,7 +9445,7 @@
         {
           "disabled": false,
           "document": "最下方第二行 MRZ Code 序列",
-          "example": "`JK123488<3CAN8510168M2603298<<<<<<<<<<<<<<04`",
+          "example": "1357",
           "member": "string",
           "name": "CodeCrc",
           "output_required": true,
@@ -9485,7 +9485,7 @@
         {
           "disabled": false,
           "document": "信息区证件内容",
-          "example": "{\"DateOfBirth\":\"11 Apr 1990\"}",
+          "example": "无",
           "member": "PassportRecognizeInfos",
           "name": "PassportRecognizeInfos",
           "output_required": true,
@@ -11665,7 +11665,7 @@
         {
           "disabled": false,
           "document": "护照号",
-          "example": "G12345678",
+          "example": "EQ4024254",
           "member": "string",
           "name": "PassportNo",
           "output_required": true,
@@ -11765,7 +11765,7 @@
         {
           "disabled": false,
           "document": "最下方第二行 MRZ Code 序列",
-          "example": "G123456785CHN9209220M200819219203100<<<<<<60",
+          "example": "EQ65243780C**********************OMAMGLNA878",
           "member": "string",
           "name": "CodeCrc",
           "output_required": true,
@@ -11805,7 +11805,7 @@
         {
           "disabled": false,
           "document": "头像和坐标信息",
-          "example": "{\"ImageCoordinates\":{\"X\":0,\"Y\":0,\"Width\":0,\"Height\":0},\"PortraitImage\":\"\"}",
+          "example": "无",
           "member": "PortraitImageInfo",
           "name": "PortraitImageInfo",
           "output_required": false,
