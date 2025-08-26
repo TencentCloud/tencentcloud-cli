@@ -34,7 +34,7 @@ Output:
                 "DiskState": "ATTACHED",
                 "Placement": {
                     "ProjectId": 0,
-                    "Zone": "ap-guangzhou-2",
+                    "Zone": "ap-guangzhou-3",
                     "ProjectName": "默认项目",
                     "CageId": "cage-bdq5l1mx",
                     "CdcName": "my-cloud-dedicated-cbs",

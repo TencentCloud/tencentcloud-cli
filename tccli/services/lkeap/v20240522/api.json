@@ -169,7 +169,7 @@
       "status": "online"
     },
     "RunRerank": {
-      "document": "基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按分数由高到低对切片进行排序，并输出对应的打分结果。",
+      "document": "基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按照顺序给出每一条结果和query的相关性分数。",
       "input": "RunRerankRequest",
       "name": "重排序",
       "output": "RunRerankResponse",
@@ -1400,7 +1400,7 @@
         {
           "disabled": false,
           "document": "消耗量，返回TotalToken",
-          "example": "{\"TotalTokens\":3}",
+          "example": "无",
           "member": "Usage",
           "name": "Usage",
           "output_required": false,
@@ -2076,8 +2076,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写",
-          "example": "[{\"Role\":\"user\",\"Content\":\"你家在哪里\"},{\"Role\":\"assistant\",\"Content\":“我家在国内”}]",
+          "document": "说明：需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入\n备注：由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写。四轮对话最多包含3600个字符。",
+          "example": "无",
           "member": "Message",
           "name": "Messages",
           "required": true,
@@ -2085,7 +2085,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称",
+          "document": "说明：模型名称\n备注：仅一个模型可选\n默认值：lke-query-rewrite-base",
           "example": "lke-query-rewrite-base",
           "member": "string",
           "name": "Model",
@@ -2101,7 +2101,7 @@
         {
           "disabled": false,
           "document": "改写结果",
-          "example": "无",
+          "example": "你好",
           "member": "string",
           "name": "Content",
           "output_required": true,
@@ -2111,7 +2111,7 @@
         {
           "disabled": false,
           "document": "消耗量，返回输入token数，输出token数以及总token数",
-          "example": "{\"InputTokens\":45,\"OutputTokens\":6,\"TotalTokens\":51}",
+          "example": "无",
           "member": "Usage",
           "name": "Usage",
           "output_required": false,
@@ -2209,7 +2209,7 @@
         {
           "disabled": false,
           "document": "文件的 URL 地址。文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)\n\n默认值：无",
-          "example": "无",
+          "example": "url",
           "member": "string",
           "name": "FileUrl",
           "required": false,
@@ -2218,7 +2218,7 @@
         {
           "disabled": false,
           "document": "说明：文件的 Base64 值。\n备注：支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。\n\n默认值：无",
-          "example": "无",
+          "example": "base64",
           "member": "string",
           "name": "FileBase64",
           "required": false,
@@ -2260,7 +2260,7 @@
         {
           "disabled": false,
           "document": "任务ID。本次请求的唯一标识",
-          "example": "无",
+          "example": "taskld",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -2270,7 +2270,7 @@
         {
           "disabled": false,
           "document": "响应类型。1：返回进度信息， 2：返回解析结果",
-          "example": "无",
+          "example": "type",
           "member": "string",
           "name": "ResponseType",
           "output_required": false,
@@ -2280,7 +2280,7 @@
         {
           "disabled": false,
           "document": "进度。0~100",
-          "example": "无",
+          "example": "progress",
           "member": "string",
           "name": "Progress",
           "output_required": false,
@@ -2290,7 +2290,7 @@
         {
           "disabled": false,
           "document": "进度信息。",
-          "example": "无",
+          "example": "progressMessage",
           "member": "string",
           "name": "ProgressMessage",
           "output_required": false,
@@ -2300,7 +2300,7 @@
         {
           "disabled": false,
           "document": "文档解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟。压缩包内包含*.md、*.json以及images文件夹。\n",
-          "example": "无",
+          "example": "documentRecognizeResultUrl",
           "member": "string",
           "name": "DocumentRecognizeResultUrl",
           "output_required": false,
@@ -2539,7 +2539,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询内容",
+          "document": "说明：查询内容\n备注：用于匹配的query",
           "example": "腾讯知识引擎大模型",
           "member": "string",
           "name": "Query",
@@ -2548,7 +2548,7 @@
         },
         {
           "disabled": false,
-          "document": "文档列表，最多20个",
+          "document": "说明：文档列表\n备注：最多60个，Query字段和Docs字段的总长度上限为2000字符",
           "example": "[\"腾讯知识引擎\",\"知识引擎大模型\"]",
           "member": "string",
           "name": "Docs",
@@ -2557,7 +2557,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称, 默认: lke-reranker-base",
+          "document": "说明：模型名称\n备注：仅一个模型可选\n默认值：lke-reranker-base",
           "example": "lke-reranker-base",
           "member": "string",
           "name": "Model",
@@ -2583,7 +2583,7 @@
         {
           "disabled": false,
           "document": "消耗量，仅返回TotalToken",
-          "example": "{\"TotalTokens\":3}",
+          "example": "无",
           "member": "Usage",
           "name": "Usage",
           "output_required": false,

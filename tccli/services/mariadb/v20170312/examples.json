@@ -292,6 +292,14 @@
         "title": "获取数据库实例主备节点信息"
       }
     ],
+    "DescribeInstanceSSLAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceSSLAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"64fca3d9-df2c-4cfb-814d-xxx\"\n    }\n}",
+        "title": "获取实例ssl属性请求示例"
+      }
+    ],
     "DescribeLogFileRetentionPeriod": [
       {
         "document": "",
@@ -314,6 +322,14 @@
         "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrice\n<公共请求参数>\n\n{\n    \"Count\": \"1\",\n    \"Zone\": \"ap-guangzhou-2\",\n    \"Storage\": \"10000\",\n    \"Period\": \"1\",\n    \"Memory\": \"2000\",\n    \"NodeCount\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e1000c2-190a-d0df-ff75-59fbdf5ff381\",\n        \"OriginalPrice\": 21120,\n        \"Price\": 21120\n    }\n}",
         "title": "查询新购云数据库实例的价格"
+      }
+    ],
+    "DescribeProcessList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProcessList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-048udnfz\",\n    \"NodeId\": \"7b1f6e62b767\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProcessList\": [\n            {\n                \"Command\": \"Sleep\",\n                \"Db\": \"mysql\",\n                \"Host\": \"9.71.144.188:55615\",\n                \"Id\": 951069,\n                \"Info\": \"\",\n                \"ProcessStartTime\": \"2025-06-24 11:27:26\",\n                \"State\": \"\",\n                \"Time\": 30,\n                \"User\": \"root\"\n            }\n        ],\n        \"RequestId\": \"d4eb7e99-b3e6-45d6-ae6f-7358c7511cad-013\"\n    }\n}",
+        "title": "查询主节点当前正在运行的线程"
       }
     ],
     "DescribeProjectSecurityGroups": [
@@ -514,6 +530,22 @@
         "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyInstanceNetwork\n&InstanceId=tdsql-jv8z8fhl\n&VpcId=vpc-xxxxxx\n&SubnetId=subnet-xxxxx\n&VipReleaseDelay=168\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"FlowId\": 1122\n    }\n}",
         "title": "无"
+      }
+    ],
+    "ModifyInstanceProtectedProperty": [
+      {
+        "document": "调用成功",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceProtectedProperty\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-cn1peun5\",\n    \"ProtectedProperty\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f6e63e1-ca64-42fa-bf67-021d78246dfc\"\n    }\n}",
+        "title": "修改删除保护属性调用示例"
+      }
+    ],
+    "ModifyInstanceSSLAttributes": [
+      {
+        "document": "",
+        "input": "https://mariadb.tencentcloudapi.com/?Action=ModifyInstanceSSLAttributes\n&InstanceId=tdsql-jv8z8fhl\n&SSLEnabled=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\"\n    }\n}",
+        "title": "请求示例DEMO"
       }
     ],
     "ModifyInstanceVip": [

@@ -1292,6 +1292,14 @@
         "title": "修改规则白名单"
       }
     ],
+    "ModifyProtectionLevel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProtectionLevel\n<公共请求参数>\n\n{\n    \"Domain\": \"admin.qcloudwaf.com\",\n    \"Level\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46757c6e-786c-48ca-b5c4-9fa29ece1c9e\"\n    }\n}",
+        "title": "更改防护等级"
+      }
+    ],
     "ModifyProtectionStatus": [
       {
         "document": "",

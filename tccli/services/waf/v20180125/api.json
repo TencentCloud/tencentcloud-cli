@@ -1078,6 +1078,13 @@
       "output": "ModifyOwaspWhiteRuleResponse",
       "status": "online"
     },
+    "ModifyProtectionLevel": {
+      "document": "更改防护等级",
+      "input": "ModifyProtectionLevelRequest",
+      "name": "更改防护等级",
+      "output": "ModifyProtectionLevelResponse",
+      "status": "online"
+    },
     "ModifyProtectionStatus": {
       "document": "开启、关闭WAF开关",
       "input": "ModifyProtectionStatusRequest",
@@ -21245,6 +21252,42 @@
     },
     "ModifyOwaspWhiteRuleResponse": {
       "document": "ModifyOwaspWhiteRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProtectionLevelRequest": {
+      "document": "ModifyProtectionLevel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户域名",
+          "example": "admin.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防护等级,100,200,300",
+          "example": "200",
+          "member": "int64",
+          "name": "Level",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProtectionLevelResponse": {
+      "document": "ModifyProtectionLevel返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

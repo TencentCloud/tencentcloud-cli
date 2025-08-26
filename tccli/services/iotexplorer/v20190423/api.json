@@ -196,6 +196,13 @@
       "output": "CreateTWeSeeRecognitionTaskResponse",
       "status": "online"
     },
+    "CreateTWeTalkProductConfig": {
+      "document": "用于配置TWeTalk服务连接产品配置信息。",
+      "input": "CreateTWeTalkProductConfigRequest",
+      "name": "新增TWeTalk连接配置信息",
+      "output": "CreateTWeTalkProductConfigResponse",
+      "status": "online"
+    },
     "CreateTopicPolicy": {
       "document": "本接口（CreateTopicPolicy）用于创建一个Topic",
       "input": "CreateTopicPolicyRequest",
@@ -672,6 +679,13 @@
       "output": "DescribeTWeSeeRecognitionTaskResponse",
       "status": "online"
     },
+    "DescribeTWeTalkProductConfig": {
+      "document": "用于获取TWeTalk服务连接产品配置信息。",
+      "input": "DescribeTWeTalkProductConfigRequest",
+      "name": "获取TWeTalk连接配置信息详情",
+      "output": "DescribeTWeTalkProductConfigResponse",
+      "status": "online"
+    },
     "DescribeTopicPolicy": {
       "document": "本接口（DescribeTopicPolicy）用于查看Topic详细信息",
       "input": "DescribeTopicPolicyRequest",
@@ -838,6 +852,13 @@
       "input": "GetTWeCallActiveStatusRequest",
       "name": "查询TWeCall激活状态",
       "output": "GetTWeCallActiveStatusResponse",
+      "status": "online"
+    },
+    "GetTWeTalkProductConfigList": {
+      "document": "用于获取TWeTalk服务连接产品配置信息列表。",
+      "input": "GetTWeTalkProductConfigListRequest",
+      "name": "获取TWeTalk连接配置信息列表",
+      "output": "GetTWeTalkProductConfigListResponse",
       "status": "online"
     },
     "GetTopicRuleList": {
@@ -1013,6 +1034,13 @@
       "input": "ModifyTWeSeeConfigRequest",
       "name": "修改 TWeSee 配置",
       "output": "ModifyTWeSeeConfigResponse",
+      "status": "online"
+    },
+    "ModifyTWeTalkProductConfig": {
+      "document": "用于修改TWeTalk服务连接产品配置信息。",
+      "input": "ModifyTWeTalkProductConfigRequest",
+      "name": "修改TWeTalk连接配置信息",
+      "output": "ModifyTWeTalkProductConfigResponse",
       "status": "online"
     },
     "ModifyTopicPolicy": {
@@ -4436,6 +4464,69 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTWeTalkProductConfigRequest": {
+      "document": "CreateTWeTalkProductConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "O9U8YC8",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统提示词",
+          "example": "你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话",
+          "member": "string",
+          "name": "SystemPrompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "欢迎语",
+          "example": "你好呀，我叫QQ鹅仔，今天过的怎么样呢？",
+          "member": "string",
+          "name": "GreetingMessage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音色，支持的音色列表：100510000-阅读男声智逍遥；101001-情感女声智瑜；101002-通用女声智聆；101003-客服女声智美；101004-通用男声智云；101005-通用女声智莉；101006-助手女声智言；101008-客服女声智琪；101009-知性女声智芸；101010-通用男声智华；101011-新闻女声智燕；101012-新闻女声智丹；101013-新闻男声智辉；101014 -新闻男声智宁；101015-男童声智萌；101016-女童声智甜；101017-情感女声智蓉；101018-情感男声智靖；101019-粤语女声智彤。",
+          "example": "101006",
+          "member": "int64",
+          "name": "VoiceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "支持的语言，zh-中文；en-英文；默认zh",
+          "example": "en",
+          "member": "string",
+          "name": "TargetLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTWeTalkProductConfigResponse": {
+      "document": "CreateTWeTalkProductConfig返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8968,6 +9059,52 @@
       ],
       "type": "object"
     },
+    "DescribeTWeTalkProductConfigRequest": {
+      "document": "DescribeTWeTalkProductConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "PCKOP3VBFZ1",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支持的语言，zh-中文；en-英文；默认zh",
+          "example": "zh",
+          "member": "string",
+          "name": "TargetLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeTalkProductConfigResponse": {
+      "document": "DescribeTWeTalkProductConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置信息",
+          "example": "无",
+          "member": "TalkProductConfigInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopicPolicyRequest": {
       "document": "DescribeTopicPolicy请求参数结构体",
       "members": [
@@ -11580,6 +11717,80 @@
           "name": "TWeCallActiveInfos",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTWeTalkProductConfigListRequest": {
+      "document": "GetTWeTalkProductConfigList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "O9I8KHJ",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t支持的语言，zh-中文；en-英文；默认zh",
+          "example": "zh",
+          "member": "string",
+          "name": "TargetLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，10-100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTWeTalkProductConfigListResponse": {
+      "document": "GetTWeTalkProductConfigList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置信息列表",
+          "example": "无",
+          "member": "TalkProductConfigInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -14464,6 +14675,69 @@
       ],
       "type": "object"
     },
+    "ModifyTWeTalkProductConfigRequest": {
+      "document": "ModifyTWeTalkProductConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "O9U8YC8",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统提示词",
+          "example": "你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话",
+          "member": "string",
+          "name": "SystemPrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "欢迎语",
+          "example": "你好呀，我叫QQ鹅仔，今天过的怎么样呢？",
+          "member": "string",
+          "name": "GreetingMessage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音色，支持的音色列表：100510000-阅读男声智逍遥；101001-情感女声智瑜；101002-通用女声智聆；101003-客服女声智美；101004-通用男声智云；101005-通用女声智莉；101006-助手女声智言；101008-客服女声智琪；101009-知性女声智芸；101010-通用男声智华；101011-新闻女声智燕；101012-新闻女声智丹；101013-新闻男声智辉；101014 -新闻男声智宁；101015-男童声智萌；101016-女童声智甜；101017-情感女声智蓉；101018-情感男声智靖；101019-粤语女声智彤。",
+          "example": "101003",
+          "member": "int64",
+          "name": "VoiceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "支持的语言，zh-中文；en-英文；默认zh",
+          "example": "en",
+          "member": "string",
+          "name": "TargetLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTWeTalkProductConfigResponse": {
+      "document": "ModifyTWeTalkProductConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTopicPolicyRequest": {
       "document": "ModifyTopicPolicy请求参数结构体",
       "members": [
@@ -16577,6 +16851,89 @@
           "example": "1",
           "member": "int64",
           "name": "UsedNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TalkProductConfigInfo": {
+      "document": "Talk配置信息描述。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "PCKOP3VBFZ",
+          "member": "string",
+          "name": "ProductId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的语言，zh-中文；en-英文；默认zh",
+          "example": "zh",
+          "member": "string",
+          "name": "TargetLanguage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 系统提示词",
+          "example": "你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶",
+          "member": "string",
+          "name": "SystemPrompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "欢迎语",
+          "example": "你好呀，我叫QQ鹅仔",
+          "member": "string",
+          "name": "GreetingMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音色，支持的音色列表：100510000-阅读男声智逍遥；101001-情感女声智瑜；101002-通用女声智聆；101003-客服女声智美；101004-通用男声智云；101005-通用女声智莉；101006-助手女声智言；101008-客服女声智琪；101009-知性女声智芸；101010-通用男声智华；101011-新闻女声智燕；101012-新闻女声智丹；101013-新闻男声智辉；101014 -新闻男声智宁；101015-男童声智萌；101016-女童声智甜；101017-情感女声智蓉；101018-情感男声智靖；101019-粤语女声智彤。",
+          "example": "50023",
+          "member": "int64",
+          "name": "VoiceType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1755509182",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "1755509182",
+          "member": "int64",
+          "name": "UpdateTime",
           "output_required": false,
           "required": false,
           "type": "int",

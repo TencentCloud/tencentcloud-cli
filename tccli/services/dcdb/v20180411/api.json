@@ -280,6 +280,13 @@
       "output": "DescribeFlowResponse",
       "status": "online"
     },
+    "DescribeInstanceSSLAttributes": {
+      "document": "本接口（DescribeInstanceSSLAttributes）用于拉取实例SSL认证属性",
+      "input": "DescribeInstanceSSLAttributesRequest",
+      "name": "拉取实例SSL认证功能属性",
+      "output": "DescribeInstanceSSLAttributesResponse",
+      "status": "online"
+    },
     "DescribeLogFileRetentionPeriod": {
       "document": "本接口(DescribeLogFileRetentionPeriod)用于查看数据库备份日志的备份天数的设置情况。",
       "input": "DescribeLogFileRetentionPeriodRequest",
@@ -299,6 +306,13 @@
       "input": "DescribeOrdersRequest",
       "name": "查询订单信息",
       "output": "DescribeOrdersResponse",
+      "status": "online"
+    },
+    "DescribeProcessList": {
+      "document": "本接口 (DescribeProcessList) 用于查询当前正在运行的线程（连接/查询）信息。\n\n- 可以根据客户端IP，DB，执行时间等信息来查询实例正在运行的线程信息。过滤信息详细请见过滤器Filter。\n- 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的线程信息。",
+      "input": "DescribeProcessListRequest",
+      "name": "查询数据库会话列表",
+      "output": "DescribeProcessListResponse",
       "status": "online"
     },
     "DescribeProjectSecurityGroups": {
@@ -474,6 +488,20 @@
       "input": "ModifyInstanceNetworkRequest",
       "name": "修改实例所属网络",
       "output": "ModifyInstanceNetworkResponse",
+      "status": "online"
+    },
+    "ModifyInstanceProtectedProperty": {
+      "document": "该接口用于修改实例的保护属性",
+      "input": "ModifyInstanceProtectedPropertyRequest",
+      "name": "修改实例的保护属性",
+      "output": "ModifyInstanceProtectedPropertyResponse",
+      "status": "online"
+    },
+    "ModifyInstanceSSLAttributes": {
+      "document": "本接口  （ModifyInstanceSSLAttributes）用于修改实例SSL认证功能属性",
+      "input": "ModifyInstanceSSLAttributesRequest",
+      "name": "修改实例SSL认证功能属性",
+      "output": "ModifyInstanceSSLAttributesResponse",
       "status": "online"
     },
     "ModifyInstanceVip": {
@@ -6446,6 +6474,43 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceSSLAttributesRequest": {
+      "document": "DescribeInstanceSSLAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "tdsqlshard-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceSSLAttributesResponse": {
+      "document": "DescribeInstanceSSLAttributes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例SSL认证功能当前状态。1-开启中；2-已开启；3-已关闭；4-关闭中",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLogFileRetentionPeriodRequest": {
       "document": "DescribeLogFileRetentionPeriod请求参数结构体",
       "members": [
@@ -6604,6 +6669,97 @@
           "member": "Deal",
           "name": "Deals",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProcessListRequest": {
+      "document": "DescribeProcessList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "tdsqlshard-2gk4nxyz",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点ID。",
+          "example": "681390887981",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分片ID，与ShardSerialId设置一个。",
+          "example": "shard-ljilb4st",
+          "member": "string",
+          "name": "ShardId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分片序列ID，与ShardId设置一个。",
+          "example": "set_1468379419_1",
+          "member": "string",
+          "name": "ShardSerialId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<li><strong>id</strong></li>\n    <p style=\"padding-left: 30px;\">按照【<strong>会话ID</strong>】进行过滤。会话ID例如：125700。</p>\n    <p style=\"padding-left: 30px;\">类型：String</p>\n    <p style=\"padding-left: 30px;\">必选：否</p>\n    <p style=\"padding-left: 30px;\">匹配类型：精确匹配</p>\n\n<li><strong>user</strong></li>\n    <p style=\"padding-left: 30px;\">按照【<strong>用户名</strong>】进行过滤。用户名例如：root。</p>\n    <p style=\"padding-left: 30px;\">类型：String</p>\n    <p style=\"padding-left: 30px;\">必选：否</p>\n    <p style=\"padding-left: 30px;\">匹配类型：精确匹配</p>\n<li><strong>host</strong></li>\n    <p style=\"padding-left: 30px;\">按照【<strong>客户端Host</strong>】进行过滤。客户端Host例如：127.0.0.1:46295。</p>\n    <p style=\"padding-left: 30px;\">类型：String</p>\n    <p style=\"padding-left: 30px;\">必选：否</p>\n    <p style=\"padding-left: 30px;\">匹配类型：前缀匹配，例如可以查询客户端IP不加端口：127.0.0.1。</p>\n<li><strong>state</strong></li>\n    <p style=\"padding-left: 30px;\">按照【<strong>线程状态</strong>】进行过滤。线程状态例如：Updating。</p>\n    <p style=\"padding-left: 30px;\">类型：String</p>\n    <p style=\"padding-left: 30px;\">必选：否</p>\n    <p style=\"padding-left: 30px;\">匹配类型：精确匹配</p>\n<li><strong>db</strong></li>\n    <p style=\"padding-left: 30px;\">按照【<strong>数据库名称</strong>】进行过滤。数据库名称例如：mysql。</p>\n    <p style=\"padding-left: 30px;\">类型：String</p>\n    <p style=\"padding-left: 30px;\">必选：否</p>\n    <p style=\"padding-left: 30px;\">匹配类型：精确匹配</p>\n<li><strong>command</strong></li>\n    <p style=\"padding-left: 30px;\">按照【<strong>命令类型</strong>】进行过滤。命令类型例如：Query。</p>\n    <p style=\"padding-left: 30px;\">类型：String</p>\n    <p style=\"padding-left: 30px;\">必选：否</p>\n    <p style=\"padding-left: 30px;\">匹配类型：精确匹配</p>\n<li><strong>info</strong></li>\n    <p style=\"padding-left: 30px;\">按照【<strong>执行语句</strong>】进行过滤。执行语句例如：select id, name from demo.table1 where id > 10。</p>\n    <p style=\"padding-left: 30px;\">类型：String</p>\n    <p style=\"padding-left: 30px;\">必选：否</p>\n    <p style=\"padding-left: 30px;\">匹配类型：前缀匹配，例如SQL较长，可以输入SQL前缀：select  id, name from demo.table1。</p>\n<li><strong>time</strong></li>\n    <p style=\"padding-left: 30px;\">按照【<strong>执行时间大于多少（秒）</strong>】进行过滤。例如：10，表示查询执行时间超过10秒的会话。</p>\n    <p style=\"padding-left: 30px;\">类型：Integer</p>\n    <p style=\"padding-left: 30px;\">必选：否</p>\n    <p style=\"padding-left: 30px;\">匹配类型：范围匹配，Values值只支持输入1个。</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为50。",
+          "example": "[{\"Name\": \"user\", \"Values\": [\"root\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProcessListResponse": {
+      "document": "DescribeProcessList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前正在运行的线程（连接/查询）信息列表。",
+          "example": "无",
+          "member": "Process",
+          "name": "ProcessList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7023,6 +7179,30 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段。",
+          "example": "zone",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字段的过滤值。",
+          "example": "[\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -8193,6 +8373,78 @@
       ],
       "type": "object"
     },
+    "ModifyInstanceProtectedPropertyRequest": {
+      "document": "ModifyInstanceProtectedProperty请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "tdsqlshard-qoep98ai",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0-允许删除，无销毁保护，1-禁止删除，有销毁保护",
+          "example": "1",
+          "member": "int64",
+          "name": "ProtectedProperty",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceProtectedPropertyResponse": {
+      "document": "ModifyInstanceProtectedProperty返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceSSLAttributesRequest": {
+      "document": "ModifyInstanceSSLAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启实例的SSL认证。0-关闭；1-开启",
+          "example": "无",
+          "member": "int64",
+          "name": "SSLEnabled",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceSSLAttributesResponse": {
+      "document": "ModifyInstanceSSLAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyInstanceVipRequest": {
       "document": "ModifyInstanceVip请求参数结构体",
       "members": [
@@ -8614,6 +8866,102 @@
           "name": "Code",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Process": {
+      "document": "用于显示当前正在运行的线程（连接/查询）信息，数据源来自系统表：information_schema.processlist。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "线程ID​​：唯一标识当前连接/线程的整数。",
+          "example": "125700",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名​​：发起连接的 MySQL 用户。",
+          "example": "root",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端地址​​：发起连接的客户端主机名及端口（格式：host:port）。",
+          "example": "127.0.0.1:46295",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前数据库​​：线程正在使用的数据库名（未选择数据库时为 空串）。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Db",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命令类型​​：线程正在执行的命令类型。常见值：\n\n- Sleep：空闲等待状态（等待新查询）。\n- Query：正在执行查询或 SQL 语句。\n- Binlog Dump：主服务器线程向从服务器发送二进制日志。\n- Connect：客户端正在连接。\n- Killed：线程被终止但未完全退出。",
+          "example": "Query",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行时间（秒）​​：线程在当前状态持续的秒数。",
+          "example": "10",
+          "member": "int64",
+          "name": "Time",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行开始时间（秒）​​：线程在当前状态开始执行的时间。",
+          "example": "2025-06-24 11:27:26",
+          "member": "string",
+          "name": "ProcessStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "​​状态描述​​：线程当前的详细操作状态。常见值：\n\n- Sending data：正在处理/发送数据。\n- Locked：等待表锁释放（例如 MyISAM 表级锁）。\n- Sorting result：排序查询结果。\n- Updating：更新表中数据。\n- 当为NULL返回空串：无明确状态（如 Sleep 时）。",
+          "example": "User sleep",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行语句​​：正在执行的 SQL 语句（前 1024 字符）。",
+          "example": "select * from information_schema.processlist",
+          "member": "string",
+          "name": "Info",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

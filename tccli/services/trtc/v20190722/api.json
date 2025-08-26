@@ -5909,7 +5909,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保存命中文件 0 默认不保存  1 保存命中文件",
+          "document": "是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件",
           "example": "0",
           "member": "uint64",
           "name": "SaveModerationFile",

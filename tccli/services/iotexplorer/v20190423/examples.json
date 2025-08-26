@@ -332,6 +332,14 @@
         "title": "创建目标检测任务"
       }
     ],
+    "CreateTWeTalkProductConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkProductConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"SystemPrompt\": \"你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶\",\n    \"GreetingMessage\": \"你好呀，我叫QQ鹅仔\",\n    \"VoiceType\": 101006\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b64cf0b-c10e-4b4a-97a1-40ab7116b362\"\n    }\n}",
+        "title": "新增产品配置信息"
+      }
+    ],
     "CreateTopicPolicy": [
       {
         "document": "",
@@ -882,6 +890,14 @@
         "title": "查询 TWeSee 语义理解任务"
       }
     ],
+    "DescribeTWeTalkProductConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkProductConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ProductId\": \"PCKOP3VBFZ\",\n            \"GreetingMessage\": \"你好呀，我叫QQ鹅仔\",\n            \"VoiceType\": 501003,\n            \"SystemPrompt\": \"你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\",\n            \"CreateTime\": 1754565145,\n            \"UpdateTime\": 1754565145\n        },\n        \"RequestId\": \"acb8a-730ffge968a\"\n    }\n}",
+        "title": "获取配置信息"
+      }
+    ],
     "DescribeTopicPolicy": [
       {
         "document": "",
@@ -1078,6 +1094,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeCallActiveStatus\n<公共请求参数>\n\n{\n    \"DeviceList\": [\n        {\n            \"Sn\": \"productId_deviceName\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4rfv-6yhj-56hjsg\",\n        \"TWeCallActiveInfos\": [\n            {\n                \"ModelId\": \"1qaz\",\n                \"Sn\": \"productid_deviceName\",\n                \"ExpireTime\": 45674345567\n            }\n        ]\n    }\n}",
         "title": "成功获取激活状态"
+      }
+    ],
+    "GetTWeTalkProductConfigList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeTalkProductConfigList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ProductId\": \"PCKOP3VBFZ\",\n                \"GreetingMessage\": \"你好呀，我叫QQ鹅仔\",\n                \"VoiceType\": 501003,\n                \"SystemPrompt\": \"你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶，你将使用语音和用户对话\",\n                \"TargetLanguage\": \"zh\",\n                \"CreateTime\": 1754565145,\n                \"UpdateTime\": 1754565145\n            }\n        ],\n        \"RequestId\": \"acb8a-730effg=-e968a\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取配置信息列表"
       }
     ],
     "GetTopicRuleList": [
@@ -1338,6 +1362,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"MOU0U8SCZQ\",\n    \"DeviceName\": \"new_131296974_1\",\n    \"EnableSummary\": false,\n    \"EnableSearch\": false,\n    \"Config\": \"{\\\"type\\\":\\\"data\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6\"\n    }\n}",
         "title": "修改 TWeSee 配置"
+      }
+    ],
+    "ModifyTWeTalkProductConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeTalkProductConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"SystemPrompt\": \"你的名字叫QQ鹅仔，是一个陪伴用户的AI玩偶\",\n    \"GreetingMessage\": \"你好呀，我叫QQ鹅仔\",\n    \"VoiceType\": 101003\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b64cf0b-c10e-4b4a-97a1-40ab7116b362\"\n    }\n}",
+        "title": "修改产品配置信息"
       }
     ],
     "ModifyTopicPolicy": [

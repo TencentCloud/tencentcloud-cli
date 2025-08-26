@@ -1333,7 +1333,7 @@
         {
           "disabled": false,
           "document": "传入True时，云盘将创建为共享型云盘，默认为False。因共享型云盘不支持加密，此参数与Encrypt参数不可同时传入。",
-          "example": "False",
+          "example": "true",
           "member": "bool",
           "name": "Shareable",
           "required": false,
@@ -1396,7 +1396,7 @@
         {
           "disabled": false,
           "document": "创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）且云盘大小不小于460GiB。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "BurstPerformance",
           "required": false,
@@ -2171,7 +2171,7 @@
         {
           "disabled": false,
           "document": "云盘详情中是否需要返回云盘绑定的定期快照策略ID，TRUE表示需要返回，FALSE表示不返回。",
-          "example": "FALSE",
+          "example": "false",
           "member": "bool",
           "name": "ReturnBindAutoSnapshotPolicy",
           "required": false,
@@ -2430,7 +2430,7 @@
         {
           "disabled": false,
           "document": "要查询快照的ID列表。参数不支持同时指定`SnapshotIds`和`Filters`。",
-          "example": "snap-j1ytqxx7",
+          "example": "[\"snap-j1ytqxx7\"]",
           "member": "string",
           "name": "SnapshotIds",
           "required": false,
@@ -4260,7 +4260,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属项目ID，可通过[DescribeProject](/document/api/651/78725)获取。不填默认为0，表示默认项目。",
+          "document": "实例所属项目ID，可通过DescribeProject获取。不填默认为0，表示默认项目。",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
@@ -4272,7 +4272,7 @@
         {
           "disabled": false,
           "document": "实例所属项目名称，可通过[DescribeProject](/document/api/651/78725)获取。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Default Project",
+          "example": "name",
           "member": "string",
           "name": "ProjectName",
           "output_required": true,
