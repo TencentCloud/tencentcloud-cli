@@ -673,7 +673,7 @@
       "status": "online"
     },
     "RemoveReplicationGroup": {
-      "document": "删除复制组",
+      "document": "本接口（RemoveReplicationGroup）用于删除复制组。",
       "input": "RemoveReplicationGroupRequest",
       "name": "删除复制组",
       "output": "RemoveReplicationGroupResponse",
@@ -9196,7 +9196,7 @@
         {
           "disabled": false,
           "document": "更换为新的安全组 ID 列表，即一个或者多个安全组 ID 组成的数组。\n- 若实例第一次配置安全组，请使用接口[AssociateSecurityGroups](https://cloud.tencent.com/document/product/239/41260)先绑定安全组。\n- 更换安全组，请在[控制台安全组](https://console.cloud.tencent.com/vpc/security-group)页面获取安全组 ID。\n  **注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
-          "example": "[\"sg-ajr1jzgj\\n\"]",
+          "example": "[\"sg-ajr1jzgj\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
@@ -11271,7 +11271,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "复制组ID",
+          "document": "复制组ID。请登录 [Redis控制台的全球复制](https://console.cloud.tencent.com/redis/replication) 页面获取复制组 ID。",
           "example": "crs-rpl-xxx",
           "member": "string",
           "name": "GroupId",

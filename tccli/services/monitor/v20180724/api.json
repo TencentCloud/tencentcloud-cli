@@ -20588,7 +20588,7 @@
         {
           "disabled": true,
           "document": "最大block\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "16MB",
           "member": "string",
           "name": "MaxBlockSize",
           "output_required": true,
@@ -20599,7 +20599,7 @@
         {
           "disabled": true,
           "document": "Label\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"instance_id\": \"prom-xxxxx\"}]",
           "member": "string",
           "name": "Label",
           "output_required": true,

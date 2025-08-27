@@ -102,6 +102,14 @@
         "title": "样例"
       }
     ],
+    "CreateExport": [
+      {
+        "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExport\n<公共请求参数>\n\n{\n    \"TopicId\": \"ee20bb16-3025-4048-b81a-dd436373062e\",\n    \"Query\": \"status:200\",\n    \"Count\": 100,\n    \"Order\": \"desc\",\n    \"Format\": \"json\",\n    \"From\": 1607499107000,\n    \"To\": 1607499207000\n}",
+        "output": "{\n    \"Response\": {\n        \"ExportId\": \"57196a6a-7622-47be-bc92-d2ebea959a0f\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建日志导出"
+      }
+    ],
     "CreateHost": [
       {
         "document": "",
@@ -226,6 +234,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainWhiteRules\n<公共请求参数>\n\n{\n    \"Domain\": \"abc.qcloudwaf.com\",\n    \"Ids\": [\n        111,\n        222\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"46757c6e-786c-48ca-b5c4-9fa29ece1c9e\",\n        \"Data\": \"success\"\n    }\n}",
         "title": "删除域名规则白名单"
+      }
+    ],
+    "DeleteExport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExport\n<公共请求参数>\n\n{\n    \"ExportId\": \"57196a6a-7622-47be-bc92-d2ebea959a0f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "删除日志导出"
       }
     ],
     "DeleteHost": [
@@ -566,6 +582,14 @@
         "title": "查询用户SAASWAF某个实例的域名信息"
       }
     ],
+    "DescribeExports": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExports\n<公共请求参数>\n\n{\n    \"TopicId\": \"ee20bb16-3025-4048-b81a-dd436373062e\",\n    \"Offset\": 0,\n    \"Limit\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"Exports\": [\n            {\n                \"TopicId\": \"ee20bb16-3025-4048-b81a-dd436373062e\",\n                \"ExportId\": \"export-57196a6a-7622-47be-bc92-d2ebea959a0f\",\n                \"Query\": \"status:200\",\n                \"FileName\": \"log_2075178708_ee20bb16-3025-4048-b81a-dd436373062f_20210107_xxxxxx_1610001073.tar.gz\",\n                \"CosPath\": \"https://clstest01-xxxxxx.cos.ap-shanghai.myqcloud.com/xxxxxx\",\n                \"FileSize\": 6112993,\n                \"Order\": \"desc\",\n                \"Format\": \"json\",\n                \"Count\": 100000,\n                \"Status\": \"Completed\",\n                \"From\": 1607499207000,\n                \"To\": 1607499207000,\n                \"CreateTime\": \"2020-08-08 12:12:12\",\n                \"SyntaxRule\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "获取日志导出列表"
+      }
+    ],
     "DescribeFindDomainList": [
       {
         "document": "",
@@ -636,6 +660,14 @@
         "input": "https://waf.tencentcloudapi.com/?Action=DescribeIpHitItems\r\n&Domain=www.test.com\r\n&Category=cc\r\n&Skip=0\r\n&Limit=10\r\n&Sort=ts_version:-1\r\n&Count=1\r\n&CtsMin=1578468704000\r\n&CtsMax=1578499199000\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"a4010dd1-d24b-43f5-bab4-8a6b204835b7\"\n    }\n}",
         "title": "Waf  IP封堵状态查询"
+      }
+    ],
+    "DescribeLogHistogram": [
+      {
+        "document": "根据指定的检索条件，获取符合检索条件的日志分布直方图",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogHistogram\n<公共请求参数>\n\n{\n    \"From\": 1685086740862,\n    \"To\": 1685087640862,\n    \"Interval\": 30000,\n    \"TopicId\": \"2e7b5c4d-1be3-484a-xxxx-8705adb56dcd\",\n    \"Query\": \"\",\n    \"SyntaxRule\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 14,\n        \"Interval\": 30000,\n        \"HistogramInfos\": [\n            {\n                \"Count\": 0,\n                \"BTime\": 1685086740000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685086770000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685086800000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685086830000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685086860000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685086890000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685086920000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685086950000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685086980000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087010000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087040000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087070000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087100000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087130000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087160000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087190000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087220000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087250000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087280000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087310000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087340000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087370000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087400000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087430000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087460000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087490000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087520000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087550000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087580000\n            },\n            {\n                \"Count\": 14,\n                \"BTime\": 1685087610000\n            },\n            {\n                \"Count\": 0,\n                \"BTime\": 1685087640000\n            }\n        ],\n        \"RequestId\": \"4279ae1f-cbd6-438b-xxxx-6df5a8152afd\"\n    }\n}",
+        "title": "获取日志分布直方图"
       }
     ],
     "DescribeModuleStatus": [
@@ -780,6 +812,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopAttackDomain\n<公共请求参数>\n\n{\n    \"FromTime\": \"2024-11-03 00:00:00\",\n    \"ToTime\": \"2024-11-03 15:17:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"CC\": [],\n        \"Web\": [],\n        \"RequestId\": \"a4010dd1-d24b-43f5-bab4-8a6b204835b7\"\n    }\n}",
         "title": "查询Top5的攻击域名"
+      }
+    ],
+    "DescribeTopics": [
+      {
+        "document": "获取日志主题列表",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopics\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 10,\n    \"Limit\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"Topics\": [\n            {\n                \"LogsetId\": \"46c34030-f7fd-xxxx-91ee-053215c2bf9c\",\n                \"TopicId\": \"305f8be8-25a9-xxxx-8f05-361dafab39fe\",\n                \"TopicName\": \"attack-log\",\n                \"PartitionCount\": 1,\n                \"Index\": true,\n                \"AssumerName\": \"\",\n                \"SubAssumerName\": \"\",\n                \"CreateTime\": \"2022-12-30 16:02:52\",\n                \"Status\": true,\n                \"Tags\": [],\n                \"AutoSplit\": true,\n                \"MaxSplitPartitions\": 50,\n                \"StorageType\": \"hot\",\n                \"Period\": 27,\n                \"Describes\": \"\",\n                \"HotPeriod\": 0,\n                \"BizType\": 0,\n                \"IsWebTracking\": false,\n                \"Extends\": {\n                    \"AnonymousAccess\": null\n                }\n            }\n        ],\n        \"RequestId\": \"cdb48d76-9be0-xxxx-8654-56290de7442e\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取日志主题列表"
       }
     ],
     "DescribeUserCdcClbWafRegions": [
@@ -1422,6 +1462,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchAttackLog\n<公共请求参数>\n\n{\n    \"Domain\": \"all\",\n    \"StartTime\": \"2024-10-28 20:56:07\",\n    \"EndTime\": \"2024-10-29 20:56:07\",\n    \"QueryString\": \"bot:1\",\n    \"Context\": \"cont\",\n    \"Sort\": \"desc\",\n    \"Count\": 10,\n    \"Page\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"Context\": \"cont\",\n        \"ListOver\": false,\n        \"SqlFlag\": false,\n        \"Data\": [\n            {\n                \"Content\": \"{\\\"action\\\":1,\\\"args_name\\\":\\\"HTTP Header\\\"}\",\n                \"FileName\": \"name\",\n                \"Source\": \"sre\",\n                \"TimeStamp\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"ead32d5d-a9ac-496f-b8e3-d3a92f1fb1ce\"\n    }\n}",
         "title": "搜索攻击日志详情内容"
+      }
+    ],
+    "SearchLog": [
+      {
+        "document": "查询http响应状态码（http_code）为200的日志",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchLog\n<公共请求参数>\n\n{\n    \"TopicId\": \"601c2a87-ca8e-49c9-xxxx-27286a970db5\",\n    \"From\": 1679901909686,\n    \"To\": 1679902809686,\n    \"Query\": \"http_code:\\\"200\\\"\",\n    \"Limit\": 1,\n    \"Sort\": \"desc\",\n    \"UseNewAnalysis\": true,\n    \"SyntaxRule\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"Y29udGV4dC0zZDVmZGI2NC1jNDZkLTQ2NzktYWM2OC1jYzg2NjUxYmVlMWExNjc5OTAyODEwNDM0\",\n        \"ListOver\": false,\n        \"Analysis\": false,\n        \"ColNames\": [],\n        \"Columns\": null,\n        \"Results\": [\n            {\n                \"Time\": 1679902806070,\n                \"TopicId\": \"601c2a87-ca8e-49c9-xxxx-27286a970db5\",\n                \"TopicName\": \"CDN Demo访问日志日志主题_10000100xxxx\",\n                \"Source\": \"\",\n                \"FileName\": \"\",\n                \"HostName\": \"\",\n                \"PkgId\": \"\",\n                \"PkgLogId\": \"\",\n                \"LogJson\": \"{\\\"referer\\\":\\\"http://qwunsag.2022.qq.com/prizes?activity_code=AVGCHaQFX02Eb\\\",\\\"method\\\":\\\"GET\\\",\\\"isp\\\":\\\"中国联通\\\",\\\"remote_port\\\":\\\"45088\\\",\\\"ua\\\":\\\"Mozilla/5.0 (Linux; Android 9; INE-AL00 Build/HUAWEIINE-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/3211 MMWEBSDK/20210601 Mobile Safari/537.36 MMWEBID/6389 MicroMessenger/8.0.11.1980(0x28000B5B) Process/toolsmp WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64\\\",\\\"uuid\\\":\\\"acf1010c853f4a24bb3e92cc34e283e2\\\",\\\"version\\\":\\\"1\\\",\\\"file_size\\\":\\\"186358\\\",\\\"url\\\":\\\"/loxtxt/979884858.png\\\",\\\"request_range\\\":\\\"-\\\",\\\"rsp_size\\\":\\\"186830\\\",\\\"hit\\\":\\\"hit\\\",\\\"request_time\\\":\\\"2808\\\",\\\"http_code\\\":\\\"200\\\",\\\"param\\\":\\\"-\\\",\\\"sys_address\\\":\\\"9.130.154.208\\\",\\\"proto\\\":\\\"HTTPS\\\",\\\"host\\\":\\\"test.2022.cls.cn\\\",\\\"sys_datasource\\\":\\\"cq.3.4.v1.2.17\\\",\\\"client_ip\\\":\\\"116.116.247.167\\\",\\\"time\\\":\\\"1679902806070\\\",\\\"app_id\\\":\\\"1302700768\\\",\\\"prov\\\":\\\"内蒙古自治区\\\",\\\"timestamp\\\":\\\"2023-03-27T15:40:06+08:00\\\"}\",\n                \"RawLog\": \"\",\n                \"IndexStatus\": \"\"\n            }\n        ],\n        \"AnalysisResults\": [],\n        \"AnalysisRecords\": null,\n        \"RequestId\": \"79f593e5-1374-4463-xxxx-c49d0b3c5290\",\n        \"SamplingRate\": 0\n    }\n}",
+        "title": "查询日志"
       }
     ],
     "SwitchDomainRules": [

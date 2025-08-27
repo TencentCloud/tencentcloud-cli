@@ -11309,6 +11309,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志聚合结果",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "AnalysisRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

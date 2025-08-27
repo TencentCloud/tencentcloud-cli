@@ -122,6 +122,12 @@
         "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetReconstructDocumentResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"25adcef61750343903609\"\n}",
         "output": "{\n    \"Response\": {\n        \"DocumentRecognizeResultUrl\": \"https://document-restruction-1258344699.cos.ap-guangzhou.myqcloud.com/doc_parse/output_files/a9c6a9482c72412fa84445a44ss125531.zip?q-sign-algorithm=sha1&q-ak=AKIDlWFaadfHLNbidLwPqOrAKGzXrx40scL7l&q-sign-time=1715503711%3B1718804311&q-key-time=1718855711%3B1718804311&q-header-list=host&q-url-param-list=&q-signature=71b568b8632d7e45gertdc3d235ef68d41fdfe7f8\",\n        \"FailedPages\": [],\n        \"RequestId\": \"a37b0d0b-c3af-44bd-iuiu-632442644a80\",\n        \"Status\": \"Success\",\n        \"Usage\": {\n            \"PageNumber\": 10,\n            \"TotalTokens\": 2048\n        }\n    }\n}",
         "title": "接口调用成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetReconstructDocumentResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"25adcef61750343903609\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedPages\": [],\n        \"RequestId\": \"a37b0d0b-c3af-44bd-iuiu-632442644a80\",\n        \"Status\": \"Failed\",\n        \"Error\": {\n            \"Code\": \"InvalidParameter.FileURLInvalid\",\n            \"Message\": \"url download failed\"\n        }\n    }\n}",
+        "title": "任务处理失败示例"
       }
     ],
     "GetSplitDocumentResult": [
