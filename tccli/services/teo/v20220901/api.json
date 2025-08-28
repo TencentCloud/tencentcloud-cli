@@ -4667,7 +4667,7 @@
         {
           "disabled": false,
           "document": "认证选项 ID。",
-          "example": "\"challenge-21801232\"",
+          "example": "\"challenge-21820202\"",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -4699,7 +4699,7 @@
         },
         {
           "disabled": false,
-          "document": "认证方法。取值有：\n<li>TC-RCE: 使用全栈式风控引擎进行认证；</li>\n<li>TC-CAPTCHA: 使用天御验证码进行认证。</li>",
+          "document": "认证方法。取值有：\n<li>TC-RCE: 使用风险识别 RCE 进行认证；</li>\n<li>TC-CAPTCHA: 使用天御验证码进行认证。</li>",
           "example": "\"turing-rce\"",
           "member": "string",
           "name": "AttesterSource",
@@ -24370,7 +24370,7 @@
         {
           "disabled": false,
           "document": "创建时间。",
-          "example": "无",
+          "example": "2024-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -24380,7 +24380,7 @@
         {
           "disabled": false,
           "document": "生效时间。",
-          "example": "无",
+          "example": "2024-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "EnableTime",
           "output_required": true,
@@ -24390,7 +24390,7 @@
         {
           "disabled": false,
           "document": "失效时间。",
-          "example": "无",
+          "example": "2024-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "ExpireTime",
           "output_required": true,
@@ -24439,7 +24439,7 @@
         },
         {
           "disabled": false,
-          "document": "地域，取值有：\n<li>mainland：国内；</li>\n<li>overseas：海外。</li>\n<li>global：全球。</li>",
+          "document": "地域，取值有：\n<li>mainland：中国大陆境内；</li>\n<li>overseas：中国大陆境外。</li>\n<li>global：全球。</li>",
           "example": "mainland",
           "member": "string",
           "name": "Area",

@@ -865,7 +865,7 @@
         {
           "disabled": false,
           "document": "应用型负载均衡器列表",
-          "example": "[{\"LoadBalancerId\": \"lb-af8li2kn\", \"ListenerId\": \"lbl-akw1lgo7\", \"TargetAttributes\": [{\"Port\": 80, \"Weight\": 10}]}]",
+          "example": "无",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancerSet",
           "output_required": true,
@@ -965,7 +965,7 @@
         {
           "disabled": false,
           "document": "销毁策略。取值范围如下：\n<li>OLDEST_INSTANCE：优先销毁伸缩组中最旧的实例，默认取值。</li>\n<li>NEWEST_INSTANCE：优先销毁伸缩组中最新的实例。</li>",
-          "example": "OLDEST_INSTANCE",
+          "example": "[\"OLDEST_INSTANCE\"]",
           "member": "string",
           "name": "TerminationPolicySet",
           "output_required": true,
@@ -1015,7 +1015,7 @@
         {
           "disabled": false,
           "document": "伸缩组标签列表",
-          "example": "[{\"Key\": \"Service_B\", \"Value\": \"pss3\", \"ResourceType\": \"auto-scaling-group\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -1025,7 +1025,7 @@
         {
           "disabled": false,
           "document": "服务设置",
-          "example": "{\"ReplaceMonitorUnhealthy\": false, \"ReplaceLoadBalancerUnhealthy\": false, \"ReplaceMode\": \"RECREATE\", \"ScalingMode\": \"CLASSIC_SCALING\"}",
+          "example": "无",
           "member": "ServiceSettings",
           "name": "ServiceSettings",
           "output_required": true,
@@ -1085,7 +1085,7 @@
         {
           "disabled": false,
           "document": "竞价混合模式下，各计费类型实例的分配策略。\n仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时才会返回有效值。",
-          "example": "{\"BaseCapacity\": 1, \"CompensateWithBaseInstance\": true, \"OnDemandPercentageAboveBaseCapacity\": 50, \"SpotAllocationStrategy\": \"COST_OPTIMIZED\"}",
+          "example": "无",
           "member": "SpotMixedAllocationPolicy",
           "name": "SpotMixedAllocationPolicy",
           "output_required": true,
@@ -1105,7 +1105,7 @@
         {
           "disabled": false,
           "document": "实例名称序号相关设置。",
-          "example": "{\"BeginIndex\": 0, \"Enabled\": true}",
+          "example": "无",
           "member": "InstanceNameIndexSettings",
           "name": "InstanceNameIndexSettings",
           "output_required": true,
@@ -4049,7 +4049,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云服务器的主机名。\n<li> 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li> \n<li> 不支持 Windows 实例。</li> \n<li> 其他类型（Linux 等）实例：字符长度为[2, 40]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。</li> \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器的主机名。\n<li> 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li> \n<li> 不支持 Windows 实例。</li> \n<li> 其他类型（Linux 等）实例：字符长度为[2, 42]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。不允许为纯数字。</li> \n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "product-as-host-0",
           "member": "string",
           "name": "HostName",
@@ -4071,7 +4071,7 @@
         },
         {
           "disabled": false,
-          "document": "云服务器的主机名后缀。\n<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的首尾字符，不能连续使用。</li> \n<li> 不支持 Windows 实例。</li> \n<li>其他类型（Linux 等）实例：字符长度为[1, 37]，且与 HostName 的长度和不能超过 39，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li> \n假设后缀名称为 suffix，原主机名为 test.0，最终主机名为 test.0.suffix。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器的主机名后缀。\nHostNameSettings的该入参非必选，未选时不设置主机名后缀。\n<li> 点号（.）和短横线（-）不能作为 HostNameSuffix 的首尾字符，不能连续使用。</li> \n<li> 不支持 Windows 实例。</li> \n<li>其他类型（Linux 等）实例：字符长度为[1, 39]，且与 HostName 的长度和不能超过 41，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li> \n假设后缀名称为 suffix，原主机名为 test.0，最终主机名为 test.0.suffix。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "suffix",
           "member": "string",
           "name": "HostNameSuffix",
@@ -4336,8 +4336,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启实例创建序号，默认不开启。取值范围：<li>TRUE：表示开启实例创建序号<li>FALSE：表示不开启实例创建序号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "FALSE",
+          "document": "是否开启实例创建序号，默认不开启。取值范围：\n\n**TRUE**：表示开启实例创建序号; **FALSE**：表示不开启实例创建序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "Enabled",
           "output_required": false,
@@ -4347,7 +4347,7 @@
         },
         {
           "disabled": false,
-          "document": "初始序号，取值范围为 [0, 99999999]。当序号递增后超出取值范围时，扩容活动会失败。<li>首次开启实例名称序号：默认值为 0。<li>非首次开启实例名称序号：若不指定该参数，沿用历史序号。下调初始序号可能会造成伸缩组内实例名称序号重复。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "初始序号。\n序号固定位数 IndexLength 为默认值0时，取值范围为 [0, 99999999]。\n序号固定位数 IndexLength 为 [1, 8] 时，取值范围为为 [0, 固定位数的最大数字]。\n当序号递增后超出取值范围时，扩容活动会失败。\n\n首次开启实例名称序号：默认值为 0。\n非首次开启实例名称序号：若不指定该参数，沿用历史序号。\n下调初始序号可能会造成伸缩组内实例名称序号重复。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "BeginIndex",
@@ -4602,7 +4602,7 @@
         {
           "disabled": false,
           "document": "启动配置ID。",
-          "example": "asc-abcd0123",
+          "example": "asc-acbd0312",
           "member": "string",
           "name": "LaunchConfigurationId",
           "output_required": true,
@@ -4632,7 +4632,7 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息。",
-          "example": "{\"DiskSize\": 500, \"DiskType\": \"CLOUD_BSSD\"}",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "output_required": true,
@@ -4642,7 +4642,7 @@
         {
           "disabled": false,
           "document": "实例数据盘配置信息。",
-          "example": "[{\"DiskSize\": 200, \"DiskType\": \"CLOUD_BSSD\"}]",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "output_required": true,
@@ -4652,7 +4652,7 @@
         {
           "disabled": false,
           "document": "实例登录设置。",
-          "example": "{\"KeyIds\": [\"skey-sm1dxnap\"]}",
+          "example": "无",
           "member": "LimitedLoginSettings",
           "name": "LoginSettings",
           "output_required": true,
@@ -4662,7 +4662,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。",
-          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 0, \"PublicIpAssigned\": false}",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "output_required": true,
@@ -4682,7 +4682,7 @@
         {
           "disabled": false,
           "document": "启动配置关联的伸缩组。",
-          "example": "[{'AutoScalingGroupId': 'asg-1dbjno4d', 'AutoScalingGroupName': 'asg-v000'}]",
+          "example": "无",
           "member": "AutoScalingGroupAbstract",
           "name": "AutoScalingGroupAbstractSet",
           "output_required": true,
@@ -4712,7 +4712,7 @@
         {
           "disabled": false,
           "document": "实例的增强服务启用情况与其设置。",
-          "example": "{\"MonitorService\": {\"Enabled\": true}, \"SecurityService\": {\"Enabled\": true}}",
+          "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "output_required": true,
@@ -4722,7 +4722,7 @@
         {
           "disabled": false,
           "document": "镜像ID。",
-          "example": "img-abcd0123",
+          "example": "img-acbd0312",
           "member": "string",
           "name": "ImageId",
           "output_required": true,
@@ -4752,7 +4752,7 @@
         {
           "disabled": false,
           "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"SpotOptions\": {\"SpotInstanceType\": \"one-time\", \"MaxPrice\": 1000}, \"MarketType\": \"spot\"}",
+          "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "output_required": true,
@@ -4772,7 +4772,7 @@
         {
           "disabled": false,
           "document": "实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。",
-          "example": "[{\"Key\": \"server-group-name\", \"Value\": \"as-tencent\"}]",
+          "example": "无",
           "member": "InstanceTag",
           "name": "InstanceTags",
           "output_required": true,
@@ -4782,7 +4782,7 @@
         {
           "disabled": false,
           "document": "标签列表，该参数内的标签仅用于绑定启动配置，不会传递给基于该启动配置扩容的 CVM 实例。",
-          "example": "[{\"Key\": \"CCode\", \"Value\": \"ASTENCENT\", \"ResourceType\": \"launch-configuration\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -4832,7 +4832,7 @@
         {
           "disabled": false,
           "document": "云服务器主机名（HostName）的相关设置。",
-          "example": "{\"HostNameStyle\": \"UNIQUE\", \"HostName\": \"as-host\"}",
+          "example": "无",
           "member": "HostNameSettings",
           "name": "HostNameSettings",
           "output_required": true,
@@ -4842,7 +4842,7 @@
         {
           "disabled": false,
           "document": "云服务器实例名（InstanceName）的相关设置。",
-          "example": "{\"InstanceName\": \"app-as\", \"InstanceNameStyle\": \"UNIQUE\"}",
+          "example": "无",
           "member": "InstanceNameSettings",
           "name": "InstanceNameSettings",
           "output_required": true,
@@ -4852,7 +4852,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "{\"Period\": 1, \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"}",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "output_required": true,
@@ -4872,7 +4872,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群ID。<br>\n注意：此字段默认为空。",
-          "example": "hpc-abcd0123",
+          "example": "hpc-acbd0321",
           "member": "string",
           "name": "HpcClusterId",
           "output_required": true,
@@ -4882,7 +4882,7 @@
         {
           "disabled": false,
           "document": "IPv6公网带宽相关信息设置。",
-          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 1}",
+          "example": "无",
           "member": "IPv6InternetAccessible",
           "name": "IPv6InternetAccessible",
           "output_required": true,

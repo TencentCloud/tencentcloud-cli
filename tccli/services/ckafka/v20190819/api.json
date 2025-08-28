@@ -113,7 +113,7 @@
       "status": "online"
     },
     "CreatePrometheus": {
-      "document": "添加普罗米修斯监控1",
+      "document": "添加普罗米修斯监控",
       "input": "CreatePrometheusRequest",
       "name": "添加普罗米修斯监控",
       "output": "CreatePrometheusResponse",
@@ -197,14 +197,14 @@
       "status": "online"
     },
     "DeleteInstancePost": {
-      "document": "删除后付费实例",
+      "document": "删除后付费实例，通过调用API删除不会对连接器和任务进行关联预检查，直接进行实例销毁。",
       "input": "DeleteInstancePostRequest",
       "name": "删除后付费实例",
       "output": "DeleteInstancePostResponse",
       "status": "online"
     },
     "DeleteInstancePre": {
-      "document": "删除预付费实例，该接口会对实例执行隔离并删除的动作，执行成功后实例会被直接删除销毁",
+      "document": "删除预付费实例，该接口会对实例执行隔离并删除的动作，执行成功后实例会被直接删除销毁。通过调用API删除不会对连接器和任务进行关联预检查，直接进行实例销毁。",
       "input": "DeleteInstancePreRequest",
       "name": "删除预付费实例",
       "output": "DeleteInstancePreResponse",
@@ -568,7 +568,7 @@
       "status": "online"
     },
     "ModifyInstancePre": {
-      "document": "预付费实例变配接口，调整磁盘，带宽",
+      "document": "预付费实例变配接口，调整磁盘，带宽,  分区",
       "input": "ModifyInstancePreRequest",
       "name": "预付费实例变配接口",
       "output": "ModifyInstancePreResponse",
@@ -859,7 +859,7 @@
         },
         {
           "disabled": false,
-          "document": "权限类型，(Deny，Allow)",
+          "document": "权限类型，Deny：拒绝，Allow：允许。",
           "example": "Allow",
           "member": "string",
           "name": "PermissionType",
@@ -868,7 +868,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为\\*，表示任何host都可以访问，当前ckafka不支持host为\\* 和 ip网段",
+          "document": "表示任何host都可以访问",
           "example": "10.0.0.6",
           "member": "string",
           "name": "Host",
@@ -877,7 +877,7 @@
         },
         {
           "disabled": false,
-          "document": "用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入格式需要带【User:】前缀。例如用户A，传入为User:A。",
+          "document": "用户，User:*表示任何user都可以访问，当前用户只能是用户列表中包含的用户。传入格式需要带【User:】前缀。例如用户A，传入为User:A。",
           "example": "User:*",
           "member": "string",
           "name": "Principal",
@@ -1020,7 +1020,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id, 可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -1116,7 +1116,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -1134,7 +1134,7 @@
         },
         {
           "disabled": false,
-          "document": "资源列表数组",
+          "document": "资源列表数组，可通过DescribeTopic接口获取。",
           "example": "[\"test1\",\"test2\"]",
           "member": "string",
           "name": "ResourceNames",
@@ -1143,8 +1143,8 @@
         },
         {
           "disabled": false,
-          "document": "设置的ACL规则列表",
-          "example": "[{\"Operation\":\"2\",\"PermissionType\":\"3\",\"Host\":\"*\",\"Principal\":\"User:*\"}]",
+          "document": "设置的ACL规则列表，可通过DescribeAclRule接口获取。",
+          "example": "无",
           "member": "AclRuleInfo",
           "name": "RuleList",
           "required": true,
@@ -1470,7 +1470,7 @@
         },
         {
           "disabled": false,
-          "document": "主题占用Broker 容量大小",
+          "document": "主题占用Broker 容量大小，单位为Bytes。",
           "example": "200",
           "member": "uint64",
           "name": "DataSize",
@@ -1525,7 +1525,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -2704,7 +2704,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -2783,7 +2783,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -2804,7 +2804,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -2814,7 +2814,7 @@
         {
           "disabled": false,
           "document": "Acl资源类型,目前只支持Topic,枚举值列表：Topic",
-          "example": "KAFKA",
+          "example": "Topic",
           "member": "string",
           "name": "ResourceType",
           "required": true,
@@ -2841,7 +2841,7 @@
         {
           "disabled": false,
           "document": "设置的ACL规则列表",
-          "example": "[{\"Operation\":\"Read\",\"PermissionType\":\"Allow\",\"Host\":\"*\",\"Principal\":\"User:*\"}]",
+          "example": "无",
           "member": "AclRuleInfo",
           "name": "RuleList",
           "required": true,
@@ -2849,7 +2849,7 @@
         },
         {
           "disabled": false,
-          "document": "表示前缀匹配的前缀的值",
+          "document": "表示前缀匹配的前缀的值 (当PatternType取值为PREFIXED时，此参数必填)",
           "example": "topic-*",
           "member": "string",
           "name": "Pattern",
@@ -2858,7 +2858,7 @@
         },
         {
           "disabled": false,
-          "document": "预设ACL规则是否应用到新增的topic中",
+          "document": "预设ACL规则是否应用到新增的topic中。默认为0，表示否。取值为1时表示是。",
           "example": "1",
           "member": "int64",
           "name": "IsApplied",
@@ -3158,7 +3158,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -3201,7 +3201,7 @@
         {
           "disabled": false,
           "document": "创建消费者组返回结果",
-          "example": "{\"Data\":null,\"ReturnCode\":\"0\",\"ReturnMessage\":\"ok[apply success]\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -3222,7 +3222,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)",
           "example": "task测试",
           "member": "string",
           "name": "TaskName",
@@ -3268,7 +3268,7 @@
         {
           "disabled": true,
           "document": "实例连接参数【已废弃】",
-          "example": "{\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\"}",
+          "example": "无",
           "member": "PrivateLinkParam",
           "name": "PrivateLinkParam",
           "required": false,
@@ -3304,7 +3304,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -3354,7 +3354,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"TaskId\":\"task-test\",\"DatahubId\":\"task-test\"}",
+          "example": "无",
           "member": "CreateDatahubTaskRes",
           "name": "Result",
           "output_required": true,
@@ -3576,7 +3576,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Name，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "document": "ckafka集群实例Name，是一个不超过 128 个字符的任意字符串。",
           "example": "ckafka集群实例Name",
           "member": "string",
           "name": "InstanceName",
@@ -3630,7 +3630,7 @@
         },
         {
           "disabled": false,
-          "document": "可选。实例日志的最长保留时间，单位分钟，默认为10080（7天），最大30天，不填默认0，代表不开启日志保留时间回收策略",
+          "document": "可选。实例日志的最长保留时间，单位分钟，不填默认为1440（1天），可设置范围为1分钟到90天。",
           "example": "1440",
           "member": "int64",
           "name": "MsgRetentionTime",
@@ -3657,7 +3657,7 @@
         },
         {
           "disabled": false,
-          "document": "CKafka版本号[0.10.2、1.1.1、2.4.1、2.4.2、2.8.1、3.2.3], 默认是1.1.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。",
+          "document": "CKafka版本号[2.4.1, 2.4.2, 2.8.1, 3.2.3], 默认取值是2.4.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。",
           "example": "1.1.1",
           "member": "string",
           "name": "KafkaVersion",
@@ -3675,7 +3675,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘大小，如果跟控制台规格配比不相符，则无法创建成功",
+          "document": "磁盘大小，如果跟控制台规格配比不相符，则无法创建成功。默认取值为500，步长设置为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122562",
           "example": "800",
           "member": "int64",
           "name": "DiskSize",
@@ -3684,7 +3684,7 @@
         },
         {
           "disabled": false,
-          "document": "实例带宽,单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s",
+          "document": "实例带宽,默认值为40，单位MB/s; 最小值:20MB/s, 高级版最大值:360MB/s,专业版最大值:100000MB/s  标准版固定带宽规格: 40MB/s, 100MB/s, 150MB/s。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/11745",
           "example": "20",
           "member": "int64",
           "name": "BandWidth",
@@ -3693,7 +3693,7 @@
         },
         {
           "disabled": false,
-          "document": "分区大小，如果跟控制台规格配比不相符，则无法创建成功",
+          "document": "分区大小，如果跟控制台规格配比不相符，则无法创建成功。默认值为800，步长为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122563",
           "example": "800",
           "member": "int64",
           "name": "Partition",
@@ -3848,7 +3848,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -3857,7 +3857,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "主题名称，可通过DescribeTopic接口获取。",
           "example": "topic-test",
           "member": "string",
           "name": "TopicName",
@@ -3866,7 +3866,7 @@
         },
         {
           "disabled": false,
-          "document": "主题分区个数",
+          "document": "主题分区个数，传入参数为修改后的分区数，而不是增加的分区数，因此传入参数需要大于当前主题分区个数。",
           "example": "3",
           "member": "int64",
           "name": "PartitionNum",
@@ -3882,7 +3882,7 @@
         {
           "disabled": false,
           "document": "返回的结果集",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -4111,7 +4111,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4145,7 +4145,7 @@
         {
           "disabled": false,
           "document": "打通普罗米修斯",
-          "example": "{\"Data\":{\"FlowId\":0},\"ReturnCode\":\"0\",\"ReturnMessage\":\"SUCCESS\"}",
+          "example": "无",
           "member": "PrometheusResult",
           "name": "Result",
           "output_required": true,
@@ -4166,7 +4166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例唯一id",
+          "document": "ckafka集群实例id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4175,7 +4175,7 @@
         },
         {
           "disabled": false,
-          "document": "路由网络类型(3:vpc路由;7:内部支撑路由)",
+          "document": "路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)",
           "example": "1",
           "member": "int64",
           "name": "VipType",
@@ -4184,7 +4184,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc网络Id",
+          "document": "vpc网络Id,当vipType为3时必填",
           "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
@@ -4193,7 +4193,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc子网id",
+          "document": "vpc子网id,当vipType为3时必填",
           "example": "subnet-test",
           "member": "string",
           "name": "SubnetId",
@@ -4202,7 +4202,7 @@
         },
         {
           "disabled": false,
-          "document": "访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl",
+          "document": "访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl,默认为0",
           "example": "1",
           "member": "int64",
           "name": "AccessType",
@@ -4211,7 +4211,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要权限管理",
+          "document": "是否需要权限管理,该字段已废弃",
           "example": "1",
           "member": "int64",
           "name": "AuthFlag",
@@ -4229,7 +4229,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽",
+          "document": "公网带宽,公网路由必传,且必选时3的倍数,无默认值",
           "example": "3",
           "member": "int64",
           "name": "PublicNetwork",
@@ -4254,7 +4254,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"returnCode\":\"0\", \"returnMessage\":\"success\",\"data\":{\"flowId\":1,\"routeDTO\":{\"routeId\":301}}}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -4275,7 +4275,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4321,7 +4321,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4330,7 +4330,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "主题名称，可通过DescribeTopic接口获取",
           "example": "topic-test",
           "member": "string",
           "name": "TopicName",
@@ -4339,8 +4339,8 @@
         },
         {
           "disabled": false,
-          "document": "ip白名单列表",
-          "example": "[\"192.16.23.3666\"]",
+          "document": "ip白名单列表，最大值为512，即最大允许传入512个ip。",
+          "example": "[\"192.16.23.36\"]",
           "member": "string",
           "name": "IpWhiteList",
           "required": true,
@@ -4355,7 +4355,7 @@
         {
           "disabled": false,
           "document": "删除主题IP白名单结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -4573,7 +4573,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4607,7 +4607,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"Data\":{\"FlowId\":0},\"ReturnCode\":\"0\",\"ReturnMessage\":\"apply ok\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -4810,7 +4810,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM实例ID",
+          "document": "CVM实例ID(ins-test )或POD IP(10.0.0.30)  ",
           "example": "ins-test",
           "member": "string",
           "name": "InstanceId",
@@ -4836,8 +4836,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型",
-          "example": "EB",
+          "document": "资源类型  type类型如下: \nKAFKA,\nEB_ES,\nEB_COS,\nEB_CLS,\nEB_,\nMONGODB,\nHTTP,\nTDW,\nES,\nCLICKHOUSE,\nDTS,\nCLS,\nCOS,\nTOPIC,\nMYSQL,\nMQTT,\nMYSQL_DATA,\nDORIS,\nPOSTGRESQL,\nTDSQL_C_POSTGRESQL,\nTDSQL_POSTGRESQL,\nWAREHOUSE_POSTGRESQL,\nTDSQL_C_MYSQL,\nMARIADB,\nSQLSERVER,\nCTSDB,\nSCF\n\n",
+          "example": "EB_",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -4848,7 +4848,7 @@
         {
           "disabled": false,
           "document": "ckafka配置，Type为KAFKA时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\",\"Topic\":\"topic-test\",\"OffsetType\":\"timestamp\",\"StartTime\":1566144000,\"ResourceName\":\"ckafka测试\",\"ZoneId\":100003,\"TopicId\":\"topic-test\",\"PartitionNum\":1,\"EnableToleration\":false,\"QpsLimit\":4000,\"TableMappings\":[{\"Database\":\"db1\",\"Table\":\"table1\",\"Topic\":\"topic1\",\"TopicId\":\"topic-id\"}],\"UseTableMapping\":false,\"UseAutoCreateTopic\":false,\"CompressionType\":\"none\",\"MsgMultiple\":1,\"ConnectorSyncType\":\"DATA_SYNC_TYPE\",\"KeepPartition\":false}",
+          "example": "无",
           "member": "KafkaParam",
           "name": "KafkaParam",
           "output_required": true,
@@ -4859,7 +4859,7 @@
         {
           "disabled": false,
           "document": "EB配置，Type为EB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Type\":\"COS\",\"SelfBuilt\":false,\"Resource\":\"resource-test\",\"Namespace\":\"namespace-test\",\"FunctionName\":\"function-test\",\"Qualifier\":\"qualifier-test\"}",
+          "example": "无",
           "member": "EventBusParam",
           "name": "EventBusParam",
           "output_required": true,
@@ -4870,7 +4870,7 @@
         {
           "disabled": false,
           "document": "MongoDB配置，Type为MONGODB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Database\":\"database-test\",\"Collection\":\"collection-test\",\"CopyExisting\":true,\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":8099,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"ListeningEvent\":\"insert,update\",\"ReadPreference\":\"主节点\",\"Pipeline\":\"pipeline-test\",\"SelfBuilt\":false}",
+          "example": "无",
           "member": "MongoDBParam",
           "name": "MongoDBParam",
           "output_required": true,
@@ -4881,7 +4881,7 @@
         {
           "disabled": false,
           "document": "Es配置，Type为ES时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8099,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"DropInvalidMessage\":true,\"Index\":\"index-test\",\"DateFormat\":\"yyyy-MM-dd\",\"ContentKey\":\"key-test\",\"DropInvalidJsonMessage\":true,\"DocumentIdField\":\"$.payload.name\",\"IndexType\":\"JSONPATH\",\"DropCls\":{\"DropInvalidMessageToCls\":true,\"DropClsRegion\":\"ap-guangzhou\",\"DropClsOwneruin\":\"10003080064\",\"DropClsTopicId\":\"eafds-vfdfsdf-dbdfsdf\",\"DropClsLogSet\":\"wqead-bfdebv-sfds\"},\"DatabasePrimaryKey\":\"pk_test\",\"DropDlq\":{\"Type\":\"DLQ\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\"},\"RetryInterval\":1,\"MaxRetryAttempts\":2,\"TopicParam\":{\"Resource\":\"appId-test\"},\"DlqType\":\"TOPIC\"},\"RecordMappingList\":[{\"ColumnName\":\"column-test\",\"JsonKey\":\"key-test\"}],\"DateField\":\"create_timestamp\",\"RecordMappingMode\":\"EXIST_MAPPING\"}",
+          "example": "无",
           "member": "EsParam",
           "name": "EsParam",
           "output_required": true,
@@ -4892,7 +4892,7 @@
         {
           "disabled": false,
           "document": "Tdw配置，Type为TDW时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Bid\":\"bid-test\",\"Tid\":\"tid-test\",\"IsDomestic\":true,\"TdwHost\":\"tl-tdbank-tdmanager.tencent-distribute.com\",\"TdwPort\":8099}",
+          "example": "无",
           "member": "TdwParam",
           "name": "TdwParam",
           "output_required": true,
@@ -4903,7 +4903,7 @@
         {
           "disabled": false,
           "document": "Dts配置，Type为DTS时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":8099,\"Topic\":\"topic-test\",\"GroupId\":\"group-test\",\"GroupUser\":\"username-test\",\"GroupPassword\":\"password-test\",\"TranSql\":true}",
+          "example": "无",
           "member": "DtsParam",
           "name": "DtsParam",
           "output_required": true,
@@ -4914,7 +4914,7 @@
         {
           "disabled": false,
           "document": "ClickHouse配置，Type为CLICKHOUSE时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Cluster\":\"cluster-test\",\"Database\":\"database-test\",\"Table\":\"table-test\",\"Schema\":[{\"ColumnName\":\"column_test\",\"JsonKey\":\"column_test\",\"Type\":\"String\",\"AllowNull\":false}],\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":8099,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"ServiceVip\":\"10.0.0.5\",\"UniqVpcId\":\"vpc-test\",\"SelfBuilt\":false,\"DropInvalidMessage\":true,\"Type\":\"emr\",\"DropCls\":{\"DropInvalidMessageToCls\":true,\"DropClsRegion\":\"ap-guangzhou\",\"DropClsOwneruin\":\"10003080064\",\"DropClsTopicId\":\"eafds-vfdfsdf-dbdfsdf\",\"DropClsLogSet\":\"wqead-bfdebv-sfds\"},\"BatchSize\":1000,\"ConsumerFetchMinBytes\":1000000,\"ConsumerFetchMaxWaitMs\":30000}",
+          "example": "无",
           "member": "ClickHouseParam",
           "name": "ClickHouseParam",
           "output_required": true,
@@ -4925,7 +4925,7 @@
         {
           "disabled": false,
           "document": "Cls配置，Type为CLS时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"DecodeJson\":true,\"Resource\":\"resource-test\",\"LogSet\":\"logset-test\",\"ContentKey\":\"key-test\",\"TimeField\":\"time\"}",
+          "example": "无",
           "member": "ClsParam",
           "name": "ClsParam",
           "output_required": true,
@@ -4936,7 +4936,7 @@
         {
           "disabled": false,
           "document": "Cos配置，Type为COS时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"BucketName\":\"bucket-name-test\",\"Region\":\"ap-guangzhou\",\"ObjectKey\":\"key-test\",\"AggregateBatchSize\":100,\"AggregateInterval\":1,\"FormatOutputType\":\"json\",\"ObjectKeyPrefix\":\"prefix-test\",\"DirectoryTimeFormat\":\"/%Y/%m/%d/%H\"}",
+          "example": "无",
           "member": "CosParam",
           "name": "CosParam",
           "output_required": true,
@@ -4947,7 +4947,7 @@
         {
           "disabled": false,
           "document": "MySQL配置，Type为MYSQL时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Database\":\"database-test\",\"Table\":\"table-test\",\"Resource\":\"resource-test\",\"SnapshotMode\":\"initial\",\"DdlTopic\":\"topic-test\",\"DataSourceMonitorMode\":\"TABLE\",\"DataSourceMonitorResource\":\"table-test\",\"DataSourceIncrementMode\":\"TIMESTAMP\",\"DataSourceIncrementColumn\":\"column_test\",\"DataSourceStartFrom\":\"HEAD\",\"DataTargetInsertMode\":\"INSERT\",\"DataTargetPrimaryKeyField\":\"id\",\"DataTargetRecordMapping\":[{\"JsonKey\":\"test-key\",\"Type\":\"Integer\",\"AllowNull\":false,\"ColumnName\":\"column_test\",\"ExtraInfo\":\"AUTO_INCREMENT COMMENT 'ID'\",\"ColumnSize\":\"32\",\"DecimalDigits\":\"10\",\"AutoIncrement\":true,\"DefaultValue\":\"0\"}],\"TopicRegex\":\"(.*).db.(.*)\",\"TopicReplacement\":\"$1\",\"KeyColumns\":\"db1.table2.k1,k2\",\"DropInvalidMessage\":true,\"DropCls\":{\"DropInvalidMessageToCls\":true,\"DropClsRegion\":\"ap-guangzhou\",\"DropClsOwneruin\":\"10003080064\",\"DropClsTopicId\":\"eafds-vfdfsdf-dbdfsdf\",\"DropClsLogSet\":\"wqead-bfdebv-sfds\"},\"OutputFormat\":\"DEFAULT\",\"IsTablePrefix\":false,\"IncludeContentChanges\":\"all\",\"IncludeQuery\":false,\"RecordWithSchema\":false,\"SignalDatabase\":\"database-test\",\"IsTableRegular\":false,\"SignalTable\":\"table-test\",\"DateTimeZone\":\"UTC+8\",\"SelfBuilt\":false}",
+          "example": "无",
           "member": "MySQLParam",
           "name": "MySQLParam",
           "output_required": true,
@@ -4958,7 +4958,7 @@
         {
           "disabled": false,
           "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Database\":\"database-test\",\"Table\":\"*\",\"Resource\":\"resource-test\",\"PluginName\":\"decoderbufs\",\"SnapshotMode\":\"initial\",\"DataFormat\":\"JSON\",\"DataTargetInsertMode\":\"INSERT\",\"DataTargetPrimaryKeyField\":\"id\",\"DataTargetRecordMapping\":[{\"JsonKey\":\"test-key\",\"Type\":\"Integer\",\"AllowNull\":false,\"ColumnName\":\"column_test\",\"ExtraInfo\":\"AUTO_INCREMENT COMMENT 'ID'\",\"ColumnSize\":\"32\",\"DecimalDigits\":\"10\",\"AutoIncrement\":true,\"DefaultValue\":\"0\"}],\"DropInvalidMessage\":true,\"IsTableRegular\":false,\"KeyColumns\":\"db1.table2.k1,k2\",\"RecordWithSchema\":false}",
+          "example": "无",
           "member": "PostgreSQLParam",
           "name": "PostgreSQLParam",
           "output_required": true,
@@ -4969,7 +4969,7 @@
         {
           "disabled": false,
           "document": "Topic配置，Type为Topic时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"topic-test\",\"OffsetType\":\"timestamp\",\"StartTime\":1566144000,\"TopicId\":\"topic-test\",\"CompressionType\":\"none\",\"UseAutoCreateTopic\":false,\"MsgMultiple\":1}",
+          "example": "无",
           "member": "TopicParam",
           "name": "TopicParam",
           "output_required": true,
@@ -4980,7 +4980,7 @@
         {
           "disabled": false,
           "document": "MariaDB配置，Type为MARIADB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Database\":\"database-test\",\"Table\":\"table-test\",\"Resource\":\"resource-test\",\"SnapshotMode\":\"initial\",\"KeyColumns\":\"db1.table2.k1,k2\",\"IsTablePrefix\":false,\"OutputFormat\":\"DEFAULT\",\"IncludeContentChanges\":\"all\",\"IncludeQuery\":false,\"RecordWithSchema\":false}",
+          "example": "无",
           "member": "MariaDBParam",
           "name": "MariaDBParam",
           "output_required": true,
@@ -4991,7 +4991,7 @@
         {
           "disabled": false,
           "document": "SQLServer配置，Type为SQLSERVER时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Database\":\"database-test\",\"Table\":\"*\",\"Resource\":\"resource-test\",\"SnapshotMode\":\"initial\"}",
+          "example": "无",
           "member": "SQLServerParam",
           "name": "SQLServerParam",
           "output_required": true,
@@ -5002,7 +5002,7 @@
         {
           "disabled": false,
           "document": "Ctsdb配置，Type为CTSDB时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"CtsdbMetric\":\"metric-test\"}",
+          "example": "无",
           "member": "CtsdbParam",
           "name": "CtsdbParam",
           "output_required": true,
@@ -5013,7 +5013,7 @@
         {
           "disabled": false,
           "document": "Scf配置，Type为SCF时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"FunctionName\":\"function-test\",\"Namespace\":\"default\",\"Qualifier\":\"$DEFAULT\",\"BatchSize\":1000,\"MaxRetries\":5}",
+          "example": "无",
           "member": "ScfParam",
           "name": "ScfParam",
           "output_required": true,
@@ -5024,7 +5024,7 @@
         {
           "disabled": false,
           "document": "MQTT配置，Type为 MQTT 时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Topics\":\"topic-test\",\"CleanSession\":true,\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":1883,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Qos\":1,\"MaxTasks\":1,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"SelfBuilt\":false}",
+          "example": "无",
           "member": "MqttParam",
           "name": "MqttParam",
           "output_required": false,
@@ -5359,7 +5359,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5413,7 +5413,7 @@
         },
         {
           "disabled": false,
-          "document": "用户列表，默认为*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户",
+          "document": "用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户",
           "example": "User:*",
           "member": "string",
           "name": "Principal",
@@ -5429,7 +5429,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -5450,7 +5450,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id信息",
+          "document": "实例id信息，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5459,7 +5459,7 @@
         },
         {
           "disabled": false,
-          "document": "acl规则名称",
+          "document": "acl规则名称，可通过DescribeAclRule接口获取。",
           "example": "rulename-test",
           "member": "string",
           "name": "RuleName",
@@ -5607,7 +5607,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5616,7 +5616,7 @@
         },
         {
           "disabled": false,
-          "document": "消费分组",
+          "document": "消费组名称，可通过DescribeConsumerGroup接口获取。",
           "example": "group-test",
           "member": "string",
           "name": "Group",
@@ -5632,7 +5632,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -5653,7 +5653,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5669,7 +5669,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"FlowId\":500201}",
+          "example": "无",
           "member": "InstanceDeleteResponse",
           "name": "Result",
           "output_required": true,
@@ -5690,7 +5690,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5706,7 +5706,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"ok[apply success]\",\"Data\":{\"FlowId\":0,\"DealNames\":[\"20230608002033882210000\"],\"InstanceId\":\"ckafka-test\",\"DealNameInstanceIdMapping\":[{\"DealName\":\"20230608002033882210000\",\"InstanceIdList\":[\"ckafka-test\"]}]},\"DeleteRouteTimestamp\":\"1566144000\"}",
+          "example": "无",
           "member": "CreateInstancePreResp",
           "name": "Result",
           "output_required": true,
@@ -5727,7 +5727,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5736,7 +5736,7 @@
         },
         {
           "disabled": false,
-          "document": "路由id",
+          "document": "路由id,可通过DescribeRoute接口获取",
           "example": "301",
           "member": "int64",
           "name": "RouteId",
@@ -5754,7 +5754,7 @@
         },
         {
           "disabled": false,
-          "document": "设置定时删除路由时间,若DeleteRouteTime < now ,设置时间小于当前接口提交时间则立即执行;DeleteRouteTime > now,设置时间大于当前接口提交时间,则按照设置的时间,定时执行删除;  该参数设置提交后,无法撤销!!!",
+          "document": "设置定时删除路由时间,仅类型为公网路由支持定时删除,可选择未来的24小时的任意时间",
           "example": "2020-08-21 11:15:54",
           "member": "string",
           "name": "DeleteRouteTime",
@@ -5770,7 +5770,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -5791,7 +5791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5827,7 +5827,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5836,7 +5836,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名",
+          "document": "主题名，可通过DescribeTopic接口获取。",
           "example": "topic-test",
           "member": "string",
           "name": "TopicName",
@@ -5861,7 +5861,7 @@
         {
           "disabled": false,
           "document": "删除主题IP白名单结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -5928,7 +5928,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5937,7 +5937,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名称",
+          "document": "用户名称，可通过DescribeUser接口获取。",
           "example": "name-test",
           "member": "string",
           "name": "Name",
@@ -5953,7 +5953,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"Data\":{\"FlowId\":0},\"ReturnCode\":\"0\",\"ReturnMessage\":\"apply ok\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -5974,7 +5974,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6010,7 +6010,7 @@
         },
         {
           "disabled": false,
-          "document": "个数限制",
+          "document": "个数限制，默认值为50，最大值为50。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -6035,7 +6035,7 @@
         {
           "disabled": false,
           "document": "返回的ACL结果集对象",
-          "example": "{\"TotalCount\":1,\"AclList\":[{\"ResourceType\":2,\"ResourceName\":\"topic-test\",\"Principal\":\"User:user-test\",\"Host\":\"*\",\"Operation\":3,\"PermissionType\":3}]}",
+          "example": "无",
           "member": "AclResponse",
           "name": "Result",
           "output_required": true,
@@ -6056,7 +6056,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6074,7 +6074,7 @@
         },
         {
           "disabled": false,
-          "document": "ACL规则匹配类型",
+          "document": "ACL规则匹配类型 （PREFIXED：前缀匹配，PRESET：预设策略）",
           "example": "PREFIXED",
           "member": "string",
           "name": "PatternType",
@@ -6083,7 +6083,7 @@
         },
         {
           "disabled": false,
-          "document": "是否读取简略的ACL规则",
+          "document": "是否读取简略的ACL规则，默认值为false，表示不读取简略的ACL规则。",
           "example": "false",
           "member": "bool",
           "name": "IsSimplified",
@@ -6099,7 +6099,7 @@
         {
           "disabled": false,
           "document": "返回的AclRule结果集对象",
-          "example": "{\"TotalCount\":1,\"AclRuleList\":[{\"RuleName\":\"rulename-test\",\"InstanceId\":\"ckafka-test\",\"PatternType\":\"PRESET\",\"Pattern\":\"\",\"ResourceType\":\"Topic\",\"AclList\":\"[{\\\"host\\\":\\\"*\\\",\\\"operation\\\":\\\"Read\\\",\\\"permissionType\\\":\\\"Allow\\\",\\\"principal\\\":\\\"User:*\\\"}]\",\"CreateTimeStamp\":\"Thu Jun 06 13:07:13 CST 2024\",\"IsApplied\":0,\"UpdateTimeStamp\":\"Thu Jun 06 13:07:13 CST 2024\",\"Comment\":\"\",\"TopicName\":\"\",\"TopicCount\":0,\"PatternTypeTitle\":\"预设策略\"}]}",
+          "example": "无",
           "member": "AclRuleResp",
           "name": "Result",
           "output_required": true,
@@ -6182,7 +6182,7 @@
         {
           "disabled": false,
           "document": "查询结果复杂对象实体",
-          "example": "{\"ZoneList\":[{\"ZoneId\":\"100006\",\"IsInternalApp\":2,\"AppId\":1300957330,\"Flag\":false,\"ZoneName\":\"广州六区\",\"ZoneStatus\":3,\"Exflag\":\"0\",\"ExtraFlag\":\"0\",\"SalesInfo\":[{\"Flag\":false,\"Version\":\"0.10.2.1\",\"Platform\":\"standard\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"1.1.1\",\"Platform\":\"standard\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"0.10.2\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"1.1.1\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.4.1\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.8.1\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"3.2.3\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.4.1\",\"Platform\":\"premium\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.8.1\",\"Platform\":\"premium\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"3.2.3\",\"Platform\":\"premium\",\"SoldOut\":false}],\"SoldOut\":\"false\"},{\"ZoneId\":\"100007\",\"IsInternalApp\":2,\"AppId\":1300957330,\"Flag\":false,\"ZoneName\":\"广州七区\",\"ZoneStatus\":3,\"Exflag\":\"0\",\"ExtraFlag\":\"0\",\"SalesInfo\":[{\"Flag\":false,\"Version\":\"0.10.2.1\",\"Platform\":\"standard\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"1.1.1\",\"Platform\":\"standard\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"0.10.2\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"1.1.1\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.4.1\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.8.1\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"3.2.3\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.4.1\",\"Platform\":\"premium\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.8.1\",\"Platform\":\"premium\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"3.2.3\",\"Platform\":\"premium\",\"SoldOut\":false}],\"SoldOut\":\"false\"},{\"ZoneId\":\"100003\",\"IsInternalApp\":2,\"AppId\":1300957330,\"Flag\":false,\"ZoneName\":\"广州三区\",\"ZoneStatus\":3,\"Exflag\":\"0\",\"ExtraFlag\":\"0\",\"SalesInfo\":[{\"Flag\":false,\"Version\":\"0.10.2.1\",\"Platform\":\"standard\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"1.1.1\",\"Platform\":\"standard\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"0.10.2\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"1.1.1\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.4.1\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.8.1\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"3.2.3\",\"Platform\":\"profession\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.4.1\",\"Platform\":\"premium\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"2.8.1\",\"Platform\":\"premium\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"3.2.3\",\"Platform\":\"premium\",\"SoldOut\":false}],\"SoldOut\":\"false\"},{\"ZoneId\":\"100004\",\"IsInternalApp\":2,\"AppId\":1300957330,\"Flag\":false,\"ZoneName\":\"广州四区\",\"ZoneStatus\":3,\"Exflag\":\"0\",\"ExtraFlag\":\"0\",\"SalesInfo\":[{\"Flag\":false,\"Version\":\"0.10.2.1\",\"Platform\":\"standard\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"1.1.1\",\"Platform\":\"standard\",\"SoldOut\":false},{\"Flag\":false,\"Version\":\"0.10.2\",\"Platform\":\"profession\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"1.1.1\",\"Platform\":\"profession\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"2.4.1\",\"Platform\":\"profession\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"2.8.1\",\"Platform\":\"profession\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"3.2.3\",\"Platform\":\"profession\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"2.4.1\",\"Platform\":\"premium\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"2.8.1\",\"Platform\":\"premium\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"3.2.3\",\"Platform\":\"premium\",\"SoldOut\":true}],\"SoldOut\":\"true\"},{\"ZoneId\":\"100005\",\"IsInternalApp\":2,\"AppId\":1300957330,\"Flag\":true,\"ZoneName\":\"广州五区\",\"ZoneStatus\":4,\"Exflag\":\"1\",\"ExtraFlag\":\"1\",\"SalesInfo\":[{\"Flag\":true,\"Version\":\"0.10.2.1\",\"Platform\":\"standard\",\"SoldOut\":true},{\"Flag\":true,\"Version\":\"1.1.1\",\"Platform\":\"standard\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"0.10.2\",\"Platform\":\"profession\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"1.1.1\",\"Platform\":\"profession\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"2.4.1\",\"Platform\":\"profession\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"2.8.1\",\"Platform\":\"profession\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"3.2.3\",\"Platform\":\"profession\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"2.4.1\",\"Platform\":\"premium\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"2.8.1\",\"Platform\":\"premium\",\"SoldOut\":true},{\"Flag\":false,\"Version\":\"3.2.3\",\"Platform\":\"premium\",\"SoldOut\":true}],\"SoldOut\":\"true\"}],\"MaxBuyInstanceNum\":20,\"MaxBandwidth\":1200,\"UnitPrice\":{\"RealTotalCost\":0,\"TotalCost\":0},\"MessagePrice\":{\"RealTotalCost\":0,\"TotalCost\":0},\"ClusterInfo\":[{\"ZoneId\":100007,\"ZoneIds\":[100007],\"ClusterId\":5914,\"ClusterName\":\"100007-ckafka-xjvq5bnb\",\"MaxDiskSize\":198,\"MaxBandWidth\":19,\"AvailableDiskSize\":198,\"AvailableBandWidth\":19},{\"ZoneId\":100007,\"ZoneIds\":[100006,100007],\"ClusterId\":7849,\"ClusterName\":\"100007-ckafka-xjvq5po4\",\"MaxDiskSize\":200,\"MaxBandWidth\":20,\"AvailableDiskSize\":200,\"AvailableBandWidth\":20}],\"Standard\":\"{}\",\"StandardS2\":\"{\\\"InstanceTypeConfigSet\\\":[{\\\"Type\\\":\\\"sv_ckafka_instance_s2_1\\\",\\\"Desc\\\":\\\"入门型\\\",\\\"DescEn\\\":\\\"Small\\\",\\\"Bandwidth\\\":320,\\\"MinDiskSize\\\":300,\\\"MaxDiskSize\\\":1000,\\\"DiskSize\\\":500,\\\"Pid\\\":1004034,\\\"MaximumInstancePartition\\\":60,\\\"MaximumInstanceTopic\\\":25},{\\\"Type\\\":\\\"sv_ckafka_instance_s2_2\\\",\\\"Desc\\\":\\\"标准型\\\",\\\"DescEn\\\":\\\"Standard\\\",\\\"Bandwidth\\\":800,\\\"DiskSize\\\":1500,\\\"MinDiskSize\\\":500,\\\"MaxDiskSize\\\":2500,\\\"Pid\\\":1004037,\\\"MaximumInstancePartition\\\":100,\\\"MaximumInstanceTopic\\\":40},{\\\"Type\\\":\\\"sv_ckafka_instance_s2_3\\\",\\\"Desc\\\":\\\"进阶型\\\",\\\"DescEn\\\":\\\"Advanced\\\",\\\"Bandwidth\\\":1200,\\\"DiskSize\\\":3000,\\\"MinDiskSize\\\":1000,\\\"MaxDiskSize\\\":4000,\\\"Pid\\\":1004038,\\\"MaximumInstancePartition\\\":150,\\\"MaximumInstanceTopic\\\":50}],\\\"maximumTopicPartition\\\":2500,\\\"maximumInstanceConsumerGroup\\\":0}\",\"Profession\":\"{\\\"BasicEdition\\\":{\\\"Bandwidth\\\":{\\\"Maximum\\\":1200,\\\"Minimal\\\":20,\\\"Step\\\":20},\\\"DiskCapacity\\\":{\\\"20\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":200,\\\"Step\\\":100},\\\"40\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":500,\\\"Step\\\":100},\\\"120\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":1000,\\\"Step\\\":100},\\\"320\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":3000,\\\"Step\\\":100},\\\"800\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":5400,\\\"Step\\\":100},\\\"1000\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":7500,\\\"Step\\\":100}},\\\"DiskTypes\\\":[\\\"SSD\\\",\\\"CLOUD_BASIC\\\"],\\\"MessageRetention\\\":{\\\"Maximum\\\":2160,\\\"Minimal\\\":24,\\\"Step\\\":1},\\\"Partition\\\":{\\\"20\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":400,\\\"Step\\\":100},\\\"40\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":800,\\\"Step\\\":100},\\\"60\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":900,\\\"Step\\\":100},\\\"120\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":1200,\\\"Step\\\":100},\\\"180\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":1400,\\\"Step\\\":100},\\\"240\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":1600,\\\"Step\\\":100},\\\"320\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":1800,\\\"Step\\\":100},\\\"400\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":2000,\\\"Step\\\":100},\\\"500\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":2200,\\\"Step\\\":100},\\\"600\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":2400,\\\"Step\\\":100},\\\"800\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":2600,\\\"Step\\\":100},\\\"1000\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":2800,\\\"Step\\\":100},\\\"1200\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":3200,\\\"Step\\\":100}}},\\\"HighPerformanceEdition\\\":{\\\"Bandwidth\\\":{\\\"Maximum\\\":100000,\\\"Minimal\\\":1600,\\\"Step\\\":200},\\\"DiskCapacity\\\":{\\\"1600\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":10000,\\\"Step\\\":100},\\\"2000\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":10000,\\\"Step\\\":100},\\\"2400\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":10000,\\\"Step\\\":100},\\\"2800\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":10000,\\\"Step\\\":100},\\\"3200\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":10000,\\\"Step\\\":100}},\\\"DiskTypes\\\":[\\\"SSD\\\",\\\"CLOUD_BASIC\\\"],\\\"MessageRetention\\\":{\\\"Maximum\\\":2160,\\\"Minimal\\\":24,\\\"Step\\\":1},\\\"Partition\\\":{\\\"1600\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":4000,\\\"Step\\\":100},\\\"2000\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":4500,\\\"Step\\\":100},\\\"2400\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":5000,\\\"Step\\\":100},\\\"2800\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":5500,\\\"Step\\\":100},\\\"3200\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":6000,\\\"Step\\\":100}}}}\\n\",\"Physical\":\"{}\",\"Premium\":\"{\\\"BasicEdition\\\":{\\\"Bandwidth\\\":{\\\"Maximum\\\":360,\\\"Minimal\\\":20,\\\"Step\\\":20},\\\"DiskCapacity\\\":{\\\"20\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":200,\\\"Step\\\":100},\\\"40\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":500,\\\"Step\\\":100},\\\"120\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":1000,\\\"Step\\\":100},\\\"320\\\":{\\\"Maximum\\\":500000,\\\"Minimal\\\":3000,\\\"Step\\\":100}},\\\"DiskTypes\\\":[\\\"SSD\\\",\\\"CLOUD_BASIC\\\"],\\\"MessageRetention\\\":{\\\"Maximum\\\":2160,\\\"Minimal\\\":24,\\\"Step\\\":1},\\\"Partition\\\":{\\\"20\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":400,\\\"Step\\\":100},\\\"40\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":800,\\\"Step\\\":100},\\\"60\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":900,\\\"Step\\\":100},\\\"120\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":1200,\\\"Step\\\":100},\\\"180\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":1400,\\\"Step\\\":100},\\\"240\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":1600,\\\"Step\\\":100},\\\"320\\\":{\\\"Maximum\\\":40000,\\\"Minimal\\\":1800,\\\"Step\\\":100}}}}\",\"PublicNetwork\":\"[{\\\"Maximum\\\":198,\\\"Minimal\\\":3,\\\"step\\\":3}]\",\"PublicNetworkLimit\":\"{\\\"Maximum\\\":999,\\\"Minimal\\\":198,\\\"step\\\":3,\\\"minimalZoneIds\\\":[100001,100002,200001,300001,400001],\\\"unsupportedRegionId\\\":[32,78]}\",\"SupportStoreQuantity\":1,\"ElasticBandwidthSwitch\":1}",
+          "example": "无",
           "member": "ZoneResponse",
           "name": "Result",
           "output_required": true,
@@ -6530,7 +6530,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源的状态",
+          "document": "连接源的状态  枚举值: -1 (创建失败) 、0 (创建中) 、 1 (运行中)、 2 (删除中) 、 4 (删除失败) 、 5 (配置更改中) 、 6 (配置更改失败) 、 7 (异常)",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -6581,7 +6581,7 @@
         {
           "disabled": false,
           "document": "MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"ClusterId\":\"cynosdbmysql-test\",\"SelfBuilt\":false}",
+          "example": "无",
           "member": "MySQLConnectParam",
           "name": "MySQLConnectParam",
           "output_required": true,
@@ -6591,7 +6591,7 @@
         {
           "disabled": false,
           "document": "PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"ClusterId\":\"tdcpg-test\",\"IsUpdate\":true,\"SelfBuilt\":false}",
+          "example": "无",
           "member": "PostgreSQLConnectParam",
           "name": "PostgreSQLConnectParam",
           "output_required": true,
@@ -6601,7 +6601,7 @@
         {
           "disabled": false,
           "document": "Dts配置，Type为DTS时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"GroupId\":\"group-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"Topic\":\"topic-test\"}",
+          "example": "无",
           "member": "DtsConnectParam",
           "name": "DtsConnectParam",
           "output_required": true,
@@ -6611,7 +6611,7 @@
         {
           "disabled": false,
           "document": "MongoDB配置，Type为MONGODB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "example": "无",
           "member": "MongoDBConnectParam",
           "name": "MongoDBConnectParam",
           "output_required": true,
@@ -6621,7 +6621,7 @@
         {
           "disabled": false,
           "document": "Es配置，Type为ES时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "example": "无",
           "member": "EsConnectParam",
           "name": "EsConnectParam",
           "output_required": true,
@@ -6631,7 +6631,7 @@
         {
           "disabled": false,
           "document": "ClickHouse配置，Type为CLICKHOUSE时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"IsUpdate\":true}",
+          "example": "无",
           "member": "ClickHouseConnectParam",
           "name": "ClickHouseConnectParam",
           "output_required": true,
@@ -6641,7 +6641,7 @@
         {
           "disabled": false,
           "document": "MariaDB配置，Type为MARIADB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true}",
+          "example": "无",
           "member": "MariaDBConnectParam",
           "name": "MariaDBConnectParam",
           "output_required": true,
@@ -6651,7 +6651,7 @@
         {
           "disabled": false,
           "document": "SQLServer配置，Type为SQLSERVER时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":1433,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true}",
+          "example": "无",
           "member": "SQLServerConnectParam",
           "name": "SQLServerConnectParam",
           "output_required": true,
@@ -6661,7 +6661,7 @@
         {
           "disabled": false,
           "document": "Ctsdb配置，Type为CTSDB时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Port\":8080,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\"}",
+          "example": "无",
           "member": "CtsdbConnectParam",
           "name": "CtsdbConnectParam",
           "output_required": true,
@@ -6671,7 +6671,7 @@
         {
           "disabled": false,
           "document": "Doris 配置，Type 为 DORIS 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"resource-test\",\"Port\":9030,\"ServiceVip\":\"10.0.0.31\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"IsUpdate\":true,\"SelfBuilt\":false,\"BePort\":8040}",
+          "example": "无",
           "member": "DorisConnectParam",
           "name": "DorisConnectParam",
           "output_required": true,
@@ -6681,7 +6681,7 @@
         {
           "disabled": false,
           "document": "Kafka配置，Type 为 KAFKA 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Resource\":\"ckafka-test\",\"SelfBuilt\":true,\"IsUpdate\":true,\"BrokerAddress\":\"10.0.0.30:9092,10.0.0.31:9092\",\"Region\":\"ap-guangzhou\"}",
+          "example": "无",
           "member": "KafkaConnectParam",
           "name": "KafkaConnectParam",
           "output_required": true,
@@ -6691,7 +6691,7 @@
         {
           "disabled": false,
           "document": "MQTT配置，Type 为 MQTT 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"UniqVpcId\":\"vpc-test\",\"SelfBuilt\":true,\"IsUpdate\":true,\"Region\":\"ap-guangzhou\"}",
+          "example": "无",
           "member": "MqttConnectParam",
           "name": "MqttConnectParam",
           "output_required": false,
@@ -6900,7 +6900,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6916,7 +6916,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"CvmList\":[{\"CkafkaInstanceId\":\"ckafka-test\",\"InstanceId\":\"ins-test\",\"Ip\":\"10.0.0.30\"}],\"TotalCount\":1}",
+          "example": "无",
           "member": "ListCvmAndIpInfoRsp",
           "name": "Result",
           "output_required": true,
@@ -8064,7 +8064,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -8080,7 +8080,7 @@
         {
           "disabled": false,
           "document": "Prometheus监控映射列表",
-          "example": "[{\"Type\":\"jmx_export\",\"SourceIp\":\"10.0.0.5\",\"SourcePort\":9090,\"BrokerIp\":\"10.0.0.30\",\"VpcId\":\"vpc-test\",\"SubnetId\":\"subnet-test\"}]",
+          "example": "无",
           "member": "PrometheusDTO",
           "name": "Result",
           "output_required": true,
@@ -8212,7 +8212,7 @@
         {
           "disabled": false,
           "document": "路由信息",
-          "example": "{\"instanceId\":\"ckafka-test\", \"routeId\":301}",
+          "example": "无",
           "member": "InstanceRoute",
           "name": "InstanceRoute",
           "required": false,
@@ -8221,7 +8221,7 @@
         {
           "disabled": false,
           "document": "过滤器",
-          "example": "[{\"Name\":\"filtername-test\",\"TagValue\":[\"filtervalue-test\"]}]",
+          "example": "无",
           "member": "RouteFilter",
           "name": "Filters",
           "required": false,
@@ -8263,7 +8263,7 @@
         {
           "disabled": false,
           "document": "返回的安全组路由信息结果对象",
-          "example": "{\"securityGroupRoutes\":[{\"instanceRoute\":{\"instanceId\":\"ckafka-test\", \"routeId\":301},\"securityGroupIds\":[\"sg-test\"], \"InstanceName\":\"ckafka测试\",\"vpcId\":\"vpc-test\",\"vip\":\"10.0.0.5\"}], \"returnMessage\":\"success\"}",
+          "example": "无",
           "member": "SecurityGroupRouteResp",
           "name": "Result",
           "output_required": false,
@@ -10145,7 +10145,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性topic名称",
+          "document": "弹性topic名称，可通过DescribeDatahubTopics接口获取。",
           "example": "appId-test",
           "member": "string",
           "name": "Name",
@@ -10264,7 +10264,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -10273,7 +10273,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名",
+          "document": "主题名，可通过DescribeTopic接口获取。",
           "example": "topic-test",
           "member": "string",
           "name": "Topic",
@@ -10960,7 +10960,7 @@
         {
           "disabled": false,
           "document": "购买/续费付费类型(购买时不填的话, 默认获取购买包年包月一个月的费用)",
-          "example": "{\"InstanceChargeType\":\"PREPAID\", \"InstanceChargePeriod\": 1}",
+          "example": "无",
           "member": "InstanceChargeParam",
           "name": "InstanceChargeParam",
           "required": false,
@@ -10986,8 +10986,8 @@
         },
         {
           "disabled": false,
-          "document": "实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)",
-          "example": "{\"DiskType\":\"SSD\", \"DiskSize\": 500}",
+          "document": "实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)\n",
+          "example": "无",
           "member": "InquiryDiskParam",
           "name": "InquiryDiskParam",
           "required": false,
@@ -11013,7 +11013,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)",
+          "document": "购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)\n分区上限 最大值: 40000,步长: 100\n可以通过以下链接查看规格限制: https://cloud.tencent.com/document/product/597/122563\n",
           "example": "40",
           "member": "int64",
           "name": "Partition",
@@ -11049,8 +11049,8 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填)",
-          "example": "{\"PublicNetworkChargeType\":\"BANDWIDTH_PREPAID\",\"PublicNetworkMonthly\":0}",
+          "document": "公网带宽计费模式, 目前只有专业版支持公网带宽 (购买公网带宽时必填),取值为3的倍数",
+          "example": "无",
           "member": "InquiryPublicNetworkParam",
           "name": "PublicNetworkParam",
           "required": false,
@@ -11100,7 +11100,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"InstancePrice\":{\"DetailPrices\":null,\"UnitPrice\":190,\"UnitPriceDiscount\":57.56,\"OriginalPrice\":190,\"DiscountPrice\":7.56,\"Discount\":30.3,\"GoodsNum\":null,\"Currency\":null,\"DiskType\":null,\"TimeSpan\":null,\"TimeUnit\":null,\"Value\":1},\"PublicNetworkBandwidthPrice\":{\"UnitPrice\":0,\"UnitPriceDiscount\":0,\"OriginalPrice\":0,\"DiscountPrice\":0,\"Discount\":100,\"GoodsNum\":null,\"Currency\":null,\"DiskType\":null,\"TimeSpan\":null,\"TimeUnit\":null,\"Value\":0}}",
+          "example": "无",
           "member": "InquireCkafkaPriceResp",
           "name": "Result",
           "output_required": true,
@@ -12453,7 +12453,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -12471,7 +12471,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘大小 单位 GB",
+          "document": "磁盘大小 单位 GB     最大值为500000,步长100\n可以通过以下链接查看规格限制：https://cloud.tencent.com/document/product/597/122562\n\n",
           "example": "800",
           "member": "int64",
           "name": "DiskSize",
@@ -12480,7 +12480,7 @@
         },
         {
           "disabled": false,
-          "document": "峰值带宽 单位 MB/s",
+          "document": "峰值带宽 单位 MB/s\n可以通过以下链接查看规格限制及对应步长: https://cloud.tencent.com/document/product/597/11745",
           "example": "60",
           "member": "int64",
           "name": "BandWidth",
@@ -12489,7 +12489,7 @@
         },
         {
           "disabled": false,
-          "document": "分区上限",
+          "document": "分区上限 最大值: 40000, 步长: 100\n可以通过以下链接查看规格限制: https://cloud.tencent.com/document/product/597/122563\n",
           "example": "60",
           "member": "int64",
           "name": "Partition",
@@ -12505,7 +12505,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"DealNames\":[\"20190819000001\"]}",
+          "example": "无",
           "member": "ScalingDownResp",
           "name": "Result",
           "output_required": true,
@@ -13710,7 +13710,7 @@
         },
         {
           "disabled": false,
-          "document": "可选，如果auto.create.topic.enable设置为true没有设置该值时，默认设置为3",
+          "document": "新创建主题的默认分区数,如果AutoCreateTopicEnable设置为true没有设置该值时，默认设置为3",
           "example": "3",
           "member": "int64",
           "name": "DefaultNumPartitions",
@@ -13719,7 +13719,7 @@
         },
         {
           "disabled": false,
-          "document": "如果auto.create.topic.enable设置为true没有指定该值时默认设置为2",
+          "document": "新创建主题的默认副本数,如果AutoCreateTopicEnable设置为true没有指定该值时默认设置为2",
           "example": "2",
           "member": "int64",
           "name": "DefaultReplicationFactor",
@@ -13734,7 +13734,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -13743,7 +13743,7 @@
         },
         {
           "disabled": false,
-          "document": "实例日志的最长保留时间，单位分钟，最大90天，0代表不开启日志保留时间回收策略",
+          "document": "实例日志的最长保留时间，单位分钟，最大90天，最小为1min",
           "example": "10",
           "member": "int64",
           "name": "MsgRetentionTime",
@@ -13762,7 +13762,7 @@
         {
           "disabled": false,
           "document": "实例配置",
-          "example": "{\"AutoCreateTopicEnable\":true,\"DefaultNumPartitions\":3,\"DefaultReplicationFactor\":2}",
+          "example": "无",
           "member": "ModifyInstanceAttributesConfig",
           "name": "Config",
           "required": false,
@@ -13771,7 +13771,7 @@
         {
           "disabled": false,
           "document": "动态消息保留策略配置",
-          "example": "{\"BottomRetention\":360,\"DiskQuotaPercentage\":75,\"Enable\":1,\"StepForwardPercentage\":10}",
+          "example": "无",
           "member": "DynamicRetentionTime",
           "name": "DynamicRetentionConfig",
           "required": false,
@@ -13798,7 +13798,7 @@
         {
           "disabled": true,
           "document": "动态硬盘扩容策略配置",
-          "example": "{\"Enable\":1,\"DiskQuotaPercentage\":15,\"StepForwardPercentage\":70,\"BottomRetention\":1000}",
+          "example": "无",
           "member": "DynamicDiskConfig",
           "name": "DynamicDiskConfig",
           "required": false,
@@ -13815,7 +13815,7 @@
         },
         {
           "disabled": false,
-          "document": "集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭",
+          "document": "是否允许未同步的副本选为 leader: 1 开启  0 关闭",
           "example": "1",
           "member": "int64",
           "name": "UncleanLeaderElectionEnable",
@@ -13840,7 +13840,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -13861,7 +13861,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -13870,7 +13870,7 @@
         },
         {
           "disabled": false,
-          "document": "预计磁盘，根据磁盘步长，规格向上调整。",
+          "document": "磁盘大小 单位 GB     最大值为500000,步长100\n可以通过以下链接查看规格限制：https://cloud.tencent.com/document/product/597/122562\n",
           "example": "800",
           "member": "int64",
           "name": "DiskSize",
@@ -13879,7 +13879,7 @@
         },
         {
           "disabled": false,
-          "document": "预计带宽，根据带宽步长，规格向上调整。",
+          "document": "峰值带宽 单位 MB/s\n可以通过以下链接查看规格限制及对应步长: https://cloud.tencent.com/document/product/597/11745\n",
           "example": "20",
           "member": "int64",
           "name": "BandWidth",
@@ -13888,7 +13888,7 @@
         },
         {
           "disabled": false,
-          "document": "预计分区，根据带宽步长，规格向上调整。",
+          "document": "分区上限 最大值: 40000, 步长: 100\n可以通过以下链接查看规格限制: https://cloud.tencent.com/document/product/597/122563",
           "example": "100",
           "member": "int64",
           "name": "Partition",
@@ -13904,7 +13904,7 @@
         {
           "disabled": false,
           "document": "变更预付费实例配置返回结构",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"ok[apply success]\",\"Data\":{\"FlowId\":0,\"DealNames\":[\"20230608002033882210000\"],\"InstanceId\":\"ckafka-test\",\"DealNameInstanceIdMapping\":[{\"DealName\":\"20230608002033882210000\",\"InstanceIdList\":[\"ckafka-test\"]}]},\"DeleteRouteTimestamp\":\"1566144000\"}",
+          "example": "无",
           "member": "CreateInstancePreResp",
           "name": "Result",
           "output_required": true,
@@ -13925,7 +13925,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -13934,7 +13934,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名称",
+          "document": "用户名称，可通过DescribeUser接口获取。",
           "example": "name-test",
           "member": "string",
           "name": "Name",
@@ -13968,7 +13968,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"Data\":{\"FlowId\":0},\"ReturnCode\":\"0\",\"ReturnMessage\":\"apply ok\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -13989,7 +13989,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "ckafka集群实例id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -13998,7 +13998,7 @@
         },
         {
           "disabled": false,
-          "document": "自动化运维类别",
+          "document": "自动化运维类别, 类别如下: QUOTA、ANALYSIS、RE_BALANCE、ELASTIC_BANDWIDTH",
           "example": "QUOTA",
           "member": "string",
           "name": "MaintenanceType",
@@ -14070,7 +14070,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态",
+          "document": "任务状态,0 开启,1 关闭",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -14095,7 +14095,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -16201,7 +16201,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -16252,7 +16252,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "{\"DealName\":\"dealName-test\",\"BigDealId\":\"order-test\"}",
+          "example": "无",
           "member": "RenewCkafkaInstanceResp",
           "name": "Result",
           "output_required": true,
@@ -17749,7 +17749,7 @@
         {
           "disabled": false,
           "document": "Topic 流量数组",
-          "example": "[{\"MessageHeap\":0,\"PartitionNum\":3,\"ReplicaNum\":2,\"TopicId\":\"topic-test\",\"TopicName\":\"topic-test\",\"TopicTraffic\":\"0.00\"}]",
+          "example": "无",
           "member": "TopicFlowRanking",
           "name": "TopicFlow",
           "output_required": true,
@@ -17759,7 +17759,7 @@
         {
           "disabled": false,
           "document": "消费者组消费速度排行速度",
-          "example": "[{\"ConsumerGroupName\":\"group-test\",\"Speed\":100}]",
+          "example": "无",
           "member": "ConsumerGroupSpeed",
           "name": "ConsumeSpeed",
           "output_required": true,
@@ -17769,7 +17769,7 @@
         {
           "disabled": false,
           "document": "Topic 消息堆积/占用磁盘排行",
-          "example": "[{\"MessageHeap\":0,\"PartitionNum\":3,\"ReplicaNum\":2,\"TopicId\":\"topic-test\",\"TopicName\":\"topic-test\",\"TopicTraffic\":\"0.00\"}]",
+          "example": "无",
           "member": "TopicMessageHeapRanking",
           "name": "TopicMessageHeap",
           "output_required": true,
@@ -17789,7 +17789,7 @@
         {
           "disabled": false,
           "document": "单个broker 节点 Topic占用的数据大小",
-          "example": "[{\"TopicName\":\"topic-test\",\"TopicId\":\"topic-test\",\"DataSize\":200}]",
+          "example": "无",
           "member": "BrokerTopicData",
           "name": "BrokerTopicData",
           "output_required": true,
@@ -17799,7 +17799,7 @@
         {
           "disabled": false,
           "document": "单个Broker 节点Topic 流量的大小(单位MB)",
-          "example": "[{\"TopicName\":\"topic-test\",\"TopicId\":\"topic-test\",\"TopicTraffic\":\"1.00\"}]",
+          "example": "无",
           "member": "BrokerTopicFlowData",
           "name": "BrokerTopicFlowData",
           "output_required": false,
@@ -17966,7 +17966,7 @@
         },
         {
           "disabled": false,
-          "document": "Topic 流量",
+          "document": "Topic 流量，单位为MB。",
           "example": "35.12",
           "member": "string",
           "name": "TopicTraffic",
@@ -17976,7 +17976,7 @@
         },
         {
           "disabled": false,
-          "document": "topic消息堆积/占用磁盘",
+          "document": "topic消息堆积/占用磁盘，单位为Bytes。",
           "example": "949006",
           "member": "uint64",
           "name": "MessageHeap",
@@ -18085,7 +18085,7 @@
         },
         {
           "disabled": false,
-          "document": "Leader 运行状态",
+          "document": "Leader 运行状态，0表示正常运行",
           "example": "0",
           "member": "int64",
           "name": "LeaderStatus",
@@ -18764,7 +18764,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区状态",
+          "document": "可用区状态  枚举示例:  3: 开启，4: 关闭;  可用区状态以SoldOut为准",
           "example": "3",
           "member": "int64",
           "name": "ZoneStatus",
@@ -18795,7 +18795,7 @@
         {
           "disabled": false,
           "document": "标准版售罄信息",
-          "example": "[{\"Flag\":false,\"Version\":\"1.1.1\",\"Platform\":\"standard\",\"SoldOut\":true}]",
+          "example": "无",
           "member": "SaleInfo",
           "name": "SalesInfo",
           "output_required": true,

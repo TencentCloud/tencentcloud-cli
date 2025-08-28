@@ -1432,7 +1432,7 @@
         {
           "disabled": false,
           "document": "安卓实例 ID",
-          "example": "cai_abcd1234",
+          "example": "cai_a1b2",
           "member": "string",
           "name": "AndroidInstanceId",
           "output_required": false,
@@ -1457,6 +1457,17 @@
           "example": "/sdcard/Download/",
           "member": "string",
           "name": "DestinationDirectory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标文件名",
+          "example": "file_name",
+          "member": "string",
+          "name": "DestinationFileName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -3668,6 +3679,15 @@
           "name": "DestinationDirectory",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标文件名",
+          "example": "file_name",
+          "member": "string",
+          "name": "DestinationFileName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5860,6 +5880,15 @@
           "example": "/sdcard/Download/",
           "member": "string",
           "name": "DestinationDirectory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标文件名",
+          "example": "file_name",
+          "member": "string",
+          "name": "DestinationFileName",
           "required": false,
           "type": "string"
         }

@@ -13,7 +13,7 @@ tccli ckafka CreateInstancePre --cli-unfold-argument  \
     --Period 1m \
     --RenewFlag 0 \
     --InstanceType 1 \
-    --KafkaVersion 1.1.1 \
+    --KafkaVersion 2.4.1 \
     --SpecificationsType profession \
     --DiskSize 200 \
     --BandWidth 20 \
@@ -65,7 +65,7 @@ tccli ckafka CreateInstancePre --cli-unfold-argument  \
     --Period 1m \
     --RenewFlag 2 \
     --InstanceType 1 \
-    --KafkaVersion 1.1.1 \
+    --KafkaVersion 2.4.1 \
     --SpecificationsType standard \
     --DiskSize 200 \
     --BandWidth 20 \

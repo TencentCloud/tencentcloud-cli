@@ -8022,7 +8022,7 @@
         {
           "disabled": false,
           "document": "输入在线媒体流机器人的UserId，用于进房发起拉流转推任务。",
-          "example": "recorder_1234",
+          "example": "recorder_1357",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -8031,7 +8031,7 @@
         {
           "disabled": false,
           "document": "输入在线媒体流机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
-          "example": "recorder_1234_sig",
+          "example": "recorder_1357_sig",
           "member": "string",
           "name": "UserSig",
           "required": true,
@@ -8076,7 +8076,7 @@
         {
           "disabled": true,
           "document": "【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。",
-          "example": "https://a.b/test.mp4",
+          "example": "[\"https://a.b/test.mp4\"]",
           "member": "string",
           "name": "SourceUrl",
           "required": false,
@@ -9359,7 +9359,7 @@
         },
         {
           "disabled": false,
-          "document": "是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，如果要销毁任务请调用停止接口。",
+          "document": "是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，暂停超过12小时会自动销毁任务, 建议主动调用停止任务接口。",
           "example": "false",
           "member": "bool",
           "name": "IsPause",

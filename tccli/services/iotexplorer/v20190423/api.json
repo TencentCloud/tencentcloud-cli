@@ -17128,7 +17128,7 @@
         {
           "disabled": false,
           "document": "行为的JSON字符串。",
-          "example": "[“*\"]",
+          "example": "[\"*\"]",
           "member": "string",
           "name": "Actions",
           "output_required": true,
