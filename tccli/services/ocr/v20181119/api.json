@@ -1791,7 +1791,7 @@
         {
           "disabled": false,
           "document": "统一社会信用代码（三合一之前为注册号）",
-          "example": "110000012345678",
+          "example": "159613",
           "member": "string",
           "name": "RegNum",
           "output_required": true,
@@ -1871,7 +1871,7 @@
         {
           "disabled": false,
           "document": "组成形式",
-          "example": "无",
+          "example": "示例",
           "member": "string",
           "name": "ComposingForm",
           "output_required": true,
@@ -1981,7 +1981,7 @@
         {
           "disabled": false,
           "document": "编号",
-          "example": "无",
+          "example": "示例",
           "member": "string",
           "name": "SerialNumber",
           "output_required": true,
@@ -2016,6 +2016,16 @@
           "name": "BusinessCertificate",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重要提示字段",
+          "example": "五",
+          "member": "string",
+          "name": "Important",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -12875,6 +12885,15 @@
           "example": "false",
           "member": "bool",
           "name": "EnableOnlyDetectBorder",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "false: 使用当前默认模型  true: 使用新的多模态推理模型，速度更快推理效果更强，仅 `EnableOnlyDetectBorder` 为 `true` 时生效，公测中",
+          "example": "false",
+          "member": "bool",
+          "name": "UseNewModel",
           "required": false,
           "type": "bool"
         }

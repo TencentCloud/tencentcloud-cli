@@ -3590,7 +3590,7 @@
         {
           "disabled": false,
           "document": "配置项ID",
-          "example": "config-6a79x94v",
+          "example": "apm-busi-log-cfg-qabp49vl",
           "member": "string",
           "name": "ConfigId",
           "output_required": true,
@@ -5706,7 +5706,7 @@
         },
         {
           "disabled": false,
-          "document": "Kubernetes 资源类型，典型取值有 Deployment、Pod、Service 等",
+          "document": "Kubernetes 资源类型，典型取值有 Deployment(部署资源)、Pod(容器组)、Service(服务资源) 等",
           "example": "Pod",
           "member": "string",
           "name": "Kind",
@@ -8496,7 +8496,7 @@
         },
         {
           "disabled": false,
-          "document": "分组所属【子网ID】，可前往TKE侧集群[控制台](https://console.cloud.tencent.com/tke2/cluster/sub/list/basic/info/base?rid=1&clusterId=cls-2nhp3g1i)进行获取",
+          "document": "分组所属【子网ID】，可前往私有网络[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1&unVpcId=vpc-6bs8ytjd)进行获取",
           "example": "subnet-6a79x94v",
           "member": "string",
           "name": "SubnetId",
@@ -13323,7 +13323,7 @@
         {
           "disabled": false,
           "document": "日志配置项ID\n可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看",
-          "example": "config-6a79x94v",
+          "example": "apm-busi-log-cfg-qabp49vl",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -13377,7 +13377,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊匹配关键词",
+          "document": "模糊匹配关键词，可搜索配置项ID或配置项名称",
           "example": "config-name",
           "member": "string",
           "name": "SearchWord",
@@ -13396,7 +13396,7 @@
         {
           "disabled": false,
           "document": "日志配置项ID\n可通过调用[DescribeBusinessLogConfigs](https://cloud.tencent.com/document/product/649/75777)查询已创建的日志配置项列表或登录[控制台](https://console.cloud.tencent.com/tsf/observable/log?rid=1)进行查看",
-          "example": "[\"config-6a79x94v\"]",
+          "example": "[\"apm-busi-log-cfg-qabp49vl\"]",
           "member": "string",
           "name": "ConfigIdList",
           "required": false,
@@ -14070,7 +14070,7 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID，按照【部署组ID】进行过滤，可通过调用DescribeGroups查询已创建的项目列表或登录控制台进行查看；也可以调用CreateGroup创建新的项目。部署组ID例如：group-9yn2q8yd",
+          "document": "部署组ID，按照【部署组ID】进行过滤，可通过调用[DescribeGroups](https://cloud.tencent.com/document/product/649/36065)查询已创建的项目列表或登录控制台进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的项目。",
           "example": "group-df3fsd23",
           "member": "string",
           "name": "ResourceId",
@@ -14501,7 +14501,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关键字",
+          "document": "搜索关键字，可搜索日志投递配置项ID或日志投递配置项名称",
           "example": "mock-name",
           "member": "string",
           "name": "SearchWord",
@@ -14510,7 +14510,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移",
+          "document": "偏移量，取值范围大于等于0，默认值为0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -14519,7 +14519,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条数",
+          "document": "单页请求配置数量，取值范围[1, 50]，默认值为10",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -16034,8 +16034,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件，name表示过滤字段，value表示过滤字段值。",
-          "example": "[{\"name\":\"id\",\"values\":[\"ins-xxxxxx\"]}]",
+          "document": "过滤条件。多个 filter 之间是与关系，单个 filter 多个 value 之间是或关系。\n参考：[{\"Name\":\"ip\",\"Values\":[\"172.16.16.139\"]}]\nfilter name 取值范围：\n- `id`：实例ID\n- ` name `：实例名\n- ` ip `：内网IP（可填wan_ip或lan_ip）",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -16068,7 +16068,7 @@
         {
           "disabled": false,
           "document": "机器列表信息",
-          "example": "{\"TotalCount\":0,\"Content\":[]}",
+          "example": "无",
           "member": "InstanceEnrichedInfoPage",
           "name": "Result",
           "output_required": true,
@@ -16198,7 +16198,7 @@
         },
         {
           "disabled": false,
-          "document": "开始index",
+          "document": "开始index，取值范围大于等于0，默认值为0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -16207,7 +16207,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "单页请求配置数量，取值范围[1, 50]，默认值为10",
           "example": "50",
           "member": "int64",
           "name": "Limit",

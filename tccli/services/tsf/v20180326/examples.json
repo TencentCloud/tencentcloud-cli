@@ -1203,7 +1203,7 @@
     "DescribeStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatistics\n<公共请求参数>\n\n{\n    \"OrderBy\": \"AvgTimeConsuming\",\n    \"StartTime\": \"2020-05-12 14:43:12\",\n    \"TimeStep\": \"1\",\n    \"Offset\": \"1\",\n    \"DbName\": \"mysql\",\n    \"ServiceName\": \"demo-service\",\n    \"Limit\": \"1\",\n    \"SearchWord\": \"keyword\",\n    \"OrderType\": \"1\",\n    \"EndTime\": \"2020-05-12 14:43:12\",\n    \"Type\": \"Service\",\n    \"NamespaceId\": \"namespace-xxxxxxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatistics\n<公共请求参数>\n\n{\n    \"OrderBy\": \"AvgTimeConsuming\",\n    \"StartTime\": \"2020-05-12 14:43:12\",\n    \"TimeStep\": 60,\n    \"Offset\": 0,\n    \"DbName\": \"mysql\",\n    \"ServiceName\": \"demo-service\",\n    \"Limit\": 10,\n    \"SearchWord\": \"keyword\",\n    \"OrderType\": 1,\n    \"EndTime\": \"2020-05-12 14:43:12\",\n    \"Type\": \"Service\",\n    \"NamespaceId\": \"namespace-xxxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b057eeaa-ccdf-40be-995f-f059b4b974e8\",\n        \"Result\": {\n            \"TotalCount\": 2,\n            \"Content\": []\n        }\n    }\n}",
         "title": "test"
       }

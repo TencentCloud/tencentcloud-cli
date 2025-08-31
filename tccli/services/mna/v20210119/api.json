@@ -3661,7 +3661,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "父帐号uin",
+          "document": "父账号uin",
           "example": "700001394326",
           "member": "string",
           "name": "Uin",
