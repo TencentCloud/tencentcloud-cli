@@ -276,6 +276,14 @@
         "title": "示例1"
       }
     ],
+    "ReportOrder": [
+      {
+        "document": "用于用户上报自定义的订单信息，多网聚合加速服务将相关信息进行保存",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportOrder\n<公共请求参数>\n\n{\n    \"OrderId\": \"100003848\",\n    \"ProjectId\": \"4002428\",\n    \"PackageType\": \"pack_1\",\n    \"ReportMonth\": \"2025-08\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f00ee83-0ce6-4148-86c5-e3e3dc44920b\",\n        \"OrderInfo\": {\n            \"OrderId\": \"100003848\",\n            \"ProjectId\": \"4002428\",\n            \"PackageType\": \"pack_1\",\n            \"ReportMonth\": \"2025-08\"\n        }\n    }\n}",
+        "title": "上报订单信息"
+      }
+    ],
     "SetNotifyUrl": [
       {
         "document": "",

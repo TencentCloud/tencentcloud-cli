@@ -4499,6 +4499,15 @@
           "name": "Preference",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "声纹信息",
+          "example": "小红",
+          "member": "string",
+          "name": "Voiceprint",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

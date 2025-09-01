@@ -57,7 +57,8 @@ Output:
                             "Rule": 0,
                             "Value": "400|500"
                         }
-                    ]
+                    ],
+                    "RawLogKey": ""
                 },
                 "TaskType": 1,
                 "Metadata": []

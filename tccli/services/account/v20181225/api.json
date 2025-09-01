@@ -2678,15 +2678,6 @@
         },
         {
           "disabled": false,
-          "document": "用户密码，邮箱注册用户必填。需由前台js打码https://iwiki.woa.com/p/4008495624#%E5%AF%86%E7%A0%81%E6%8F%90%E4%BA%A4%E6%97%B6%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86",
-          "example": "ZaZ5nK*****T96vc=",
-          "member": "string",
-          "name": "Password",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "行业名称。要求和TradeOne，TradeTwo一起传递。https://tcloud4api.woa.com/document/product/1023/31684?!preview&!document=1",
           "example": "kghy_01",
           "member": "string",
@@ -2759,11 +2750,20 @@
         },
         {
           "disabled": false,
-          "document": "邮箱验证码。",
+          "document": "用户密码，接入 AccessLevel 为 4 时邮箱注册用户必填。需由前台js打码https://iwiki.woa.com/p/4008495624#%E5%AF%86%E7%A0%81%E6%8F%90%E4%BA%A4%E6%97%B6%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86",
+          "example": "ZaZ5nK*****T96vc=",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "邮箱验证码。接入AccessLevel 为 4 时必传",
           "example": "343423",
           "member": "string",
           "name": "EmailVerifyCode",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -2786,7 +2786,7 @@
         },
         {
           "disabled": false,
-          "document": "接入级别，国际站仅支持4",
+          "document": "接入级别，2-影子账号接入，4-标准云账号接入",
           "example": "4",
           "member": "uint64",
           "name": "AccessLevel",

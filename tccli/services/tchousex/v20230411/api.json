@@ -97,6 +97,15 @@
           "name": "AllocationRange",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "离线版本",
+          "example": "3.3.4-1.6.0",
+          "member": "string",
+          "name": "OfflineVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -797,6 +806,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "离线版本",
+          "example": "3.3.4",
+          "member": "string",
+          "name": "OfflineVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

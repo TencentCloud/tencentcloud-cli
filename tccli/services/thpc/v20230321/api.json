@@ -642,8 +642,7 @@
           "member": "string",
           "name": "LocalPath",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -651,19 +650,17 @@
           "example": "172.0.0.1:/",
           "member": "string",
           "name": "RemotePath",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "文件系统协议类型，默认值NFS 3.0。\n<li>NFS 3.0。\n<li>NFS 4.0。\n<li>TURBO。",
-          "example": "NFS 3.0",
+          "document": "文件系统协议类型。\n<li>NFS 3.0</li>\n<li>NFS 4.0</li>\n<li>TURBO</li>",
+          "example": "NFS 4.0",
           "member": "string",
           "name": "Protocol",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -672,18 +669,25 @@
           "member": "string",
           "name": "StorageType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "文件系统挂载挂载命令参数选项。\n\n- NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport\n- NFS 4.0默认值：vers=4.0,noresvport\n- TURBO默认值：user_xattr",
+          "document": "文件系统挂载挂载命令参数选项。\n- NFS 3.0默认值：vers=3,nolock,proto=tcp,noresvport\n- NFS 4.0默认值：vers=4.0,noresvport\n- TURBO默认值：user_xattr",
           "example": "vers=4.0,noresvport",
           "member": "string",
           "name": "MountOption",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统ID    文件系统ID通过调用接口[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)获取。",
+          "example": "cfs-7641x0zh",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

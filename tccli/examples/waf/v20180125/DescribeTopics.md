@@ -18,7 +18,7 @@ Output:
             {
                 "LogsetId": "46c34030-f7fd-xxxx-91ee-053215c2bf9c",
                 "TopicId": "305f8be8-25a9-xxxx-8f05-361dafab39fe",
-                "TopicName": "test",
+                "TopicName": "attack-log",
                 "PartitionCount": 1,
                 "Index": true,
                 "AssumerName": "",

@@ -396,6 +396,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "lakehouse连接信息",
+          "example": "复杂类型",
+          "member": "LakeHouseConnection",
+          "name": "LakeHouseConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -883,6 +894,89 @@
       ],
       "usage": "both"
     },
+    "LakeHouseConnection": {
+      "document": "LakeHouseConnection",
+      "members": [
+        {
+          "disabled": false,
+          "document": "hms服务id",
+          "example": "11",
+          "member": "string",
+          "name": "HmsEndpointServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "点服务id",
+          "example": "11",
+          "member": "string",
+          "name": "EndpointServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据url",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "MetaStoreUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ranger信息",
+          "example": "无",
+          "member": "RangerConnection",
+          "name": "RangerConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "hive版本",
+          "example": "1.0",
+          "member": "string",
+          "name": "HiveVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "hive 位置",
+          "example": "cosn://xxxx",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络信息",
+          "example": "复杂类型",
+          "member": "NetWork",
+          "name": "NetWork",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyCatalogRequest": {
       "document": "ModifyCatalog请求参数结构体",
       "members": [
@@ -1083,6 +1177,56 @@
           "example": "11808",
           "member": "string",
           "name": "ClbPort",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RangerConnection": {
+      "document": "RangerConnection",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "qq",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务url",
+          "example": "23",
+          "member": "string",
+          "name": "ServiceUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "myq",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "12312",
+          "member": "string",
+          "name": "Password",
           "output_required": false,
           "required": false,
           "type": "string",

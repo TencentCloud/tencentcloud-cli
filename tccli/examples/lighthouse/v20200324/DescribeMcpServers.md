@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli lighthouse DescribeMcpServers --cli-unfold-argument  \
-    --InstanceId lhins-lart4xxz \
-    --McpServerIds lhms-oartxxxz \
-    --Limit 20 \
+    --InstanceId lhins-5h3s0lht \
+    --McpServerIds lhms-p2dophob \
+    --Limit 10 \
     --Offset 0
 ```
 
@@ -16,31 +16,35 @@ Output:
 ```
 {
     "Response": {
+        "InstanceId": "lhins-5h3s0lht",
+        "InstanceName": "ai mcp server test",
         "McpServerSet": [
             {
-                "McpServerId": "lhms-oartxxxz",
-                "Name": "map",
-                "McpServerType": "PUBLIC_PACKAGE",
-                "IconUrl": "https://example.com/icon.png",
-                "Command": "ZW5jb2RlZCBtY3Agc2VydmVyIGNvbW1hbmQ=",
-                "State": "RUNNING",
-                "ServerUrl": "http://127.0.0.1/map/sse",
-                "Config": "{\"mcpServers\":{\"map\":{\"url\":\"http://127.0.0.1/map/sse\"}}}",
-                "Description": "此MCP Server用于提供地图访问功能。",
-                "CreatedTime": "2025-05-09T17:50:14Z",
-                "UpdatedTime": "2025-05-09T17:50:14Z",
+                "Command": "bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==",
+                "Config": "{\"mcpServers\":{\"腾讯云 Lighthouse MCP Server\":{\"url\":\"http://1.14.57.202/lhms-p2dophob/sse\"}}}",
+                "CreatedTime": "2025-08-27T07:33:14Z",
+                "Description": "基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。",
                 "EnvSet": [
                     {
-                        "Key": "MAP_API_KEY",
-                        "Value": "api_key_xxx_xxx"
+                        "Key": "TENCENTCLOUD_SECRET_KEY",
+                        "Value": "**********"
+                    },
+                    {
+                        "Key": "TENCENTCLOUD_SECRET_ID",
+                        "Value": "**********"
                     }
-                ]
+                ],
+                "IconUrl": "https://cloudcache.tencent-cloud.com/qcloud/ui/static/other_external_resource/6e6c2ea3-301f-4ce2-8fd9-3952c6eb04b5.png",
+                "McpServerId": "lhms-p2dophob",
+                "McpServerType": "PUBLIC_PACKAGE",
+                "Name": "腾讯云 Lighthouse MCP Server",
+                "ServerUrl": "http://1.14.57.202/lhms-p2dophob/sse",
+                "State": "RUNNING",
+                "UpdatedTime": "2025-08-27T07:37:43Z"
             }
         ],
-        "InstanceId": "\tlhins-muuz7kis",
-        "InstanceName": "green-lh-test",
-        "TotalCount": 1,
-        "RequestId": "42582c39-52fd-4a00-8019-c3c995e8f9d6"
+        "RequestId": "fe83a82b-967c-4f58-89d2-9ee20f9dafc5",
+        "TotalCount": 1
     }
 }
 ```

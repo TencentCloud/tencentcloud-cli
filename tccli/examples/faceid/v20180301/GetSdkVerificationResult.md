@@ -48,6 +48,11 @@ Output:
                     "MD5": "e87070d8eb95f64bc01b12e03cc8f533",
                     "Size": 887224
                 },
+                "ActionVideo": {
+                    "Url": "https://intl-reflect-h5-1257237511.cos.ap-guangzhou.myqcloud.com",
+                    "MD5": "e87070d8eb95f64bc01b12e03cc8f533",
+                    "Size": 887224
+                },
                 "LiveErrorCode": "1001",
                 "LiveErrorMsg": "Failed to call the liveness engine",
                 "CompareErrorCode": "",

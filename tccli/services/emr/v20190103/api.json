@@ -5013,7 +5013,7 @@
         {
           "disabled": false,
           "document": "预付费参数",
-          "example": "{     \"Period\": {       \"TimeSpan\": 1,       \"TimeUnit\": \"m\"     },     \"AutoRenewFlag\": 2   }",
+          "example": "无",
           "member": "PrePaySetting",
           "name": "PrePaySetting",
           "required": false,
@@ -5034,6 +5034,33 @@
           "example": "Active-Standby",
           "member": "string",
           "name": "DeploymentMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称，默认为hbase，可选tengine、starrocks",
+          "example": "tengine",
+          "member": "string",
+          "name": "SubProductName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务密码，对不需要密码的服务不用传，8-16个字符，包含大写字母、小写字母、数字和特殊字符四种，特殊符号仅支持!@%^*，密码第一位不能为特殊字符",
+          "example": "Password@test",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpc所在客户的父账号uin",
+          "example": "100000",
+          "member": "string",
+          "name": "CustomerUin",
           "required": false,
           "type": "string"
         }

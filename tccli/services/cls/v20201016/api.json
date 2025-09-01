@@ -13472,6 +13472,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始日志的键名称(Key)；所有原始日志， 均以您指定的键名称（Key），原始日志内容作为值（Value）进行上传，为空时表示不开启原始日志上传。\n- COS导入不支持此字段。",
+          "example": "RawLog",
+          "member": "string",
+          "name": "RawLogKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

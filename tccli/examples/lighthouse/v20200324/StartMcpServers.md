@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli lighthouse StartMcpServers --cli-unfold-argument  \
-    --InstanceId lhins-ruy9d2tw \
-    --McpServerIds lhms-oartxxxz
+    --InstanceId lhins-5h3s0lht \
+    --McpServerIds lhms-p2dophob
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "42582c39-52fd-4a00-8019-c3c995e8f9d6"
+        "RequestId": "5cee0dea-b7d4-41d2-ad79-4d2a852e6013"
     }
 }
 ```

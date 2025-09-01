@@ -874,7 +874,7 @@
         {
           "disabled": false,
           "document": "节点磁盘信息",
-          "example": "[{\"DiskType\":\"CLOUD_DISK\",\"NodeId\":17341724100}]",
+          "example": "无",
           "member": "DiskUsageInfo",
           "name": "DiskUsageInfoList",
           "output_required": false,

@@ -1037,7 +1037,7 @@
       "status": "online"
     },
     "ModifyMcpServer": {
-      "document": "本接口（ModifyMcpServer）用于修改实例的MCP Server信息。",
+      "document": "本接口（ModifyMcpServer）用于修改实例的MCP Server信息。\n- 本接口为异步接口，API返回时修改操作并未立即完成。MCP Server的修改结果可以通过调用 DescribeMcpServers 接口查询。",
       "input": "ModifyMcpServerRequest",
       "name": "修改MCP Server",
       "output": "ModifyMcpServerResponse",
@@ -1086,7 +1086,7 @@
       "status": "online"
     },
     "RemoveMcpServers": {
-      "document": "本接口（RemoveMcpServers）用于删除MCP Server。\n- 本接口为异步接口，此时操作并未立即完成。实例操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，会尽可能处理完成，不会因为某一个失败而停止。由于操作为异步，您需要通过调用 DescribeMcpServers 接口查询操作结果。",
+      "document": "本接口（RemoveMcpServers）用于删除MCP Server。\n- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果，如无法查询到，代表删除成功。",
       "input": "RemoveMcpServersRequest",
       "name": "删除MCP Server",
       "output": "RemoveMcpServersResponse",
@@ -1170,7 +1170,7 @@
       "status": "online"
     },
     "RestartMcpServers": {
-      "document": "本接口（RestartMcpServers）用于重启实例中的MCP Server。\n- 本接口为异步接口，此时操作并未立即完成。实例操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，会尽可能处理完成，不会因为某一个失败而停止。由于操作为异步，您需要通过调用 DescribeMcpServers 接口查询操作结果。",
+      "document": "本接口（RestartMcpServers）用于重启实例中的MCP Server。\n- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果。",
       "input": "RestartMcpServersRequest",
       "name": "重启MCP Server",
       "output": "RestartMcpServersResponse",
@@ -1212,7 +1212,7 @@
       "status": "online"
     },
     "StartMcpServers": {
-      "document": "本接口（StartMcpServers）用于开启实例中的MCP Server。\n- 本接口为异步接口，此时操作并未立即完成。实例操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，会尽可能处理完成，不会因为某一个失败而停止。由于操作为异步，您需要通过调用 DescribeMcpServers 接口查询操作结果。",
+      "document": "本接口（StartMcpServers）用于开启实例中的MCP Server。\n- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果。",
       "input": "StartMcpServersRequest",
       "name": "开启MCP Server",
       "output": "StartMcpServersResponse",
@@ -1233,7 +1233,7 @@
       "status": "online"
     },
     "StopMcpServers": {
-      "document": "本接口（StopMcpServers）用于关闭实例中的MCP Server。\n- 本接口为异步接口，此时操作并未立即完成。实例操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，会尽可能处理完成，不会因为某一个失败而停止。由于操作为异步，您需要通过调用 DescribeMcpServers 接口查询操作结果。",
+      "document": "本接口（StopMcpServers）用于关闭实例中的MCP Server。\n- 本接口为异步接口，API返回时操作并未立即完成。MCP Server的操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，不会因为某一个失败而停止。您需要通过调用 DescribeMcpServers 接口查询最终操作结果。",
       "input": "StopMcpServersRequest",
       "name": "关闭MCP Server",
       "output": "StopMcpServersResponse",
@@ -4485,7 +4485,7 @@
         {
           "disabled": false,
           "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "lhins-lart4xxz",
+          "example": "lhins-5h3s0lht",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4494,7 +4494,7 @@
         {
           "disabled": false,
           "document": "MCP Server名称。最大长度：64",
-          "example": "map",
+          "example": "腾讯云 Lighthouse MCP Server",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4503,7 +4503,7 @@
         {
           "disabled": false,
           "document": "Base64编码后的MCP Server启动命令。最大长度：2048",
-          "example": "ZW5jb2RlZCBtY3Agc2VydmVyIGNvbW1hbmQ=",
+          "example": "bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==",
           "member": "string",
           "name": "Command",
           "required": true,
@@ -4512,7 +4512,7 @@
         {
           "disabled": false,
           "document": "MCP Server备注。最大长度：2048",
-          "example": "此MCP Server用于提供地图访问功能。",
+          "example": "基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -4536,7 +4536,7 @@
         {
           "disabled": false,
           "document": "MCP Server ID。",
-          "example": "lhms-oartxxxz",
+          "example": "lhms-p2dophob",
           "member": "string",
           "name": "McpServerId",
           "output_required": true,
@@ -8871,7 +8871,7 @@
         {
           "disabled": false,
           "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "lhins-lart4xxz",
+          "example": "lhins-5h3s0lht",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8879,8 +8879,8 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server ID列表。列表为空时此条件不生效。",
-          "example": "[\"lhms-oartxxxz\"]",
+          "document": "MCP Server ID列表。列表为空时此条件不生效。最大长度：10",
+          "example": "[\"lhms-p2dophob\"]",
           "member": "string",
           "name": "McpServerIds",
           "required": false,
@@ -8923,7 +8923,7 @@
         {
           "disabled": false,
           "document": "符合条件的MCP Server数量。",
-          "example": "10",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -8933,7 +8933,7 @@
         {
           "disabled": false,
           "document": "实例 ID。\t",
-          "example": "lhins-lart4xxz",
+          "example": "lhins-5h3s0lht",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -8943,7 +8943,7 @@
         {
           "disabled": false,
           "document": "实例名称。",
-          "example": "green-lh-test",
+          "example": "ai mcp server test",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -14808,7 +14808,7 @@
         {
           "disabled": false,
           "document": "MCP Server配置",
-          "example": "{\\\"mcpServers\\\":{\\\"map\\\":{\\\"url\\\":\\\"http://127.0.0.1/map/sse\\\"}}}}",
+          "example": "{\\\"mcpServers\\\":{\\\"map\\\":{\\\"url\\\":\\\"http://127.0.0.1/map/sse\\\"}}}",
           "member": "string",
           "name": "Config",
           "output_required": true,
@@ -15795,7 +15795,7 @@
         {
           "disabled": false,
           "document": "实例ID。可以通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "lhins-lart4xxz",
+          "example": "lhins-5h3s0lht",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -15804,7 +15804,7 @@
         {
           "disabled": false,
           "document": "MCP Server ID。可以通过DescribeMcpServers接口返回值中的McpServerId获取。",
-          "example": "lhms-oartxxxz",
+          "example": "lhms-p2dophob",
           "member": "string",
           "name": "McpServerId",
           "required": true,
@@ -15812,8 +15812,8 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server名称。",
-          "example": "map",
+          "document": "MCP Server名称。最大长度：64",
+          "example": "腾讯云 Lighthouse MCP Server",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -15822,7 +15822,7 @@
         {
           "disabled": false,
           "document": "Base64编码后的MCP Server启动命令。最大长度：2048",
-          "example": "ZW5jb2RlZCBtY3Agc2VydmVyIGNvbW1hbmQ=",
+          "example": "bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==",
           "member": "string",
           "name": "Command",
           "required": false,
@@ -15830,8 +15830,8 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server备注",
-          "example": "此MCP Server用于提供地图访问功能。",
+          "document": "MCP Server备注。最大长度：2048",
+          "example": "基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -16270,7 +16270,7 @@
         {
           "disabled": false,
           "document": "实例ID。可以通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "lhins-lart4xxz",
+          "example": "lhins-5h3s0lht",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -16278,8 +16278,8 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
-          "example": "[\"lhms-oartxxxz\"]",
+          "document": "MCP Server ID列表。可通过DescribeMcpServers接口返回值中的McpServerId获取。最大长度：10",
+          "example": "[\"lhms-p2dophob\"]",
           "member": "string",
           "name": "McpServerIds",
           "required": true,
@@ -16980,7 +16980,7 @@
         {
           "disabled": false,
           "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "lhins-ruy9d2tw",
+          "example": "lhins-5h3s0lht",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -16988,8 +16988,8 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
-          "example": "\t[\"lhms-oartxxxz\"]",
+          "document": "MCP Server ID列表。可通过DescribeMcpServers接口返回值中的McpServerId获取。最大长度：10",
+          "example": "[\"lhms-p2dophob\"]",
           "member": "string",
           "name": "McpServerIds",
           "required": true,
@@ -17662,7 +17662,7 @@
         {
           "disabled": false,
           "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "lhins-ruy9d2tw",
+          "example": "lhins-5h3s0lht",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -17670,8 +17670,8 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
-          "example": "\t[\"lhms-oartxxxz\"]",
+          "document": "MCP Server ID列表。可通过DescribeMcpServers接口返回值中的McpServerId获取。最大长度：10",
+          "example": "[\"lhms-p2dophob\"]",
           "member": "string",
           "name": "McpServerIds",
           "required": true,
@@ -17771,7 +17771,7 @@
         {
           "disabled": false,
           "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "lhins-ruy9d2tw",
+          "example": "lhins-5h3s0lht",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -17779,8 +17779,8 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
-          "example": "[\"lhms-oartxxxz\"]",
+          "document": "MCP Server ID列表。可通过DescribeMcpServers接口返回值中的McpServerId获取。最大长度：10",
+          "example": "[\"lhms-p2dophob\"]",
           "member": "string",
           "name": "McpServerIds",
           "required": true,

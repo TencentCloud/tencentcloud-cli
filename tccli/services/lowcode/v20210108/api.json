@@ -148,11 +148,11 @@
       "status": "online"
     },
     "GetDataSourceToken": {
-      "document": "GetDataSourceTokenRequestVO",
+      "document": "90无调用\n\nGetDataSourceTokenRequestVO",
       "input": "GetDataSourceTokenRequest",
       "name": "获取数据源授权token",
       "output": "GetDataSourceTokenResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyDataSource": {
       "document": "修改数据源信息",

@@ -512,7 +512,7 @@
         {
           "disabled": false,
           "document": "主账号 UIN",
-          "example": "12314214",
+          "example": "yte",
           "member": "string",
           "name": "OwnerUin",
           "output_required": true,
@@ -522,7 +522,7 @@
         {
           "disabled": false,
           "document": "创建者 UIN",
-          "example": "12314214",
+          "example": "t1",
           "member": "string",
           "name": "CreatorUin",
           "output_required": true,
@@ -542,7 +542,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "test",
+          "example": "r1",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -612,7 +612,7 @@
         {
           "disabled": false,
           "document": "网络",
-          "example": "ccn-a",
+          "example": "无",
           "member": "CCN",
           "name": "CCNs",
           "output_required": true,
@@ -642,7 +642,7 @@
         {
           "disabled": false,
           "document": "集群绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "tag",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -692,7 +692,7 @@
         {
           "disabled": false,
           "document": "集群的默认 COS 存储桶\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test-12314214",
+          "example": "cos-1",
           "member": "string",
           "name": "DefaultCOSBucket",
           "output_required": true,
@@ -742,7 +742,7 @@
         {
           "disabled": false,
           "document": "集群的版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2019",
+          "example": "无",
           "member": "ClusterVersion",
           "name": "Version",
           "output_required": true,
@@ -782,7 +782,7 @@
         {
           "disabled": false,
           "document": "空间信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "space-aa",
+          "example": "无",
           "member": "WorkSpaceClusterItem",
           "name": "Correlations",
           "output_required": true,
@@ -812,7 +812,7 @@
         {
           "disabled": false,
           "document": "前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0 / 1",
+          "example": "1",
           "member": "int64",
           "name": "IsNeedManageNode",
           "output_required": true,
@@ -902,7 +902,7 @@
         {
           "disabled": false,
           "document": "上级集群\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "serialId-1",
           "member": "string",
           "name": "AgentSerialId",
           "output_required": false,
@@ -952,7 +952,7 @@
         {
           "disabled": false,
           "document": "总的CPU",
-          "example": "0",
+          "example": "0.1",
           "member": "float",
           "name": "TotalCpu",
           "output_required": false,
@@ -962,7 +962,7 @@
         {
           "disabled": false,
           "document": "总的内存",
-          "example": "0",
+          "example": "0.1",
           "member": "float",
           "name": "TotalMem",
           "output_required": false,
@@ -972,7 +972,7 @@
         {
           "disabled": false,
           "document": "运行的CPU",
-          "example": "0",
+          "example": "0.1",
           "member": "float",
           "name": "RunningCpu",
           "output_required": false,
@@ -982,7 +982,7 @@
         {
           "disabled": false,
           "document": "运行的内存",
-          "example": "0",
+          "example": "0.1",
           "member": "float",
           "name": "RunningMem",
           "output_required": false,
@@ -1008,6 +1008,36 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 单可用区 1多可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DeploymentMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SlaveZone",
+          "name": "SlaveZones",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群的日志cos存储",
+          "example": "cos-2",
+          "member": "string",
+          "name": "LogCOSBucket",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2087,7 +2117,7 @@
         {
           "disabled": false,
           "document": "es索引名称",
-          "example": "无",
+          "example": "\"index-xxxxx\"",
           "member": "string",
           "name": "EsServerlessIndex",
           "required": false,
@@ -2096,7 +2126,7 @@
         {
           "disabled": false,
           "document": "es索引空间",
-          "example": "无",
+          "example": "\"space-xxxxx\"",
           "member": "string",
           "name": "EsServerlessSpace",
           "required": false,
@@ -2171,6 +2201,15 @@
           "example": "36000",
           "member": "int64",
           "name": "CheckpointTimeoutSecond",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "checkpoint 间隔时间",
+          "example": "600",
+          "member": "int64",
+          "name": "CheckpointIntervalSecond",
           "required": false,
           "type": "int"
         }
@@ -5358,7 +5397,7 @@
         {
           "disabled": false,
           "document": "运行中配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"\"}",
           "member": "JobConfig",
           "name": "JobConfigItem",
           "output_required": false,
@@ -5371,6 +5410,16 @@
           "example": "36000",
           "member": "int64",
           "name": "CheckpointTimeoutSecond",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "checkpoint 间隔时间",
+          "example": "600",
+          "member": "int64",
+          "name": "CheckpointIntervalSecond",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -7992,6 +8041,45 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SlaveZone": {
+      "document": "多可用区支持备区域",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-1",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-1",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

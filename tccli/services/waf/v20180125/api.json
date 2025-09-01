@@ -560,6 +560,13 @@
       "output": "DescribeDomainsResponse",
       "status": "online"
     },
+    "DescribeExports": {
+      "document": "本接口用于获取日志下载任务列表",
+      "input": "DescribeExportsRequest",
+      "name": "获取日志下载任务列表",
+      "output": "DescribeExportsResponse",
+      "status": "online"
+    },
     "DescribeFindDomainList": {
       "document": "获取发现域名列表接口",
       "input": "DescribeFindDomainListRequest",
@@ -1300,6 +1307,13 @@
       "input": "ModifyOwaspWhiteRuleRequest",
       "name": "编辑规则引擎白名单",
       "output": "ModifyOwaspWhiteRuleResponse",
+      "status": "online"
+    },
+    "ModifyProtectionLevel": {
+      "document": "更改防护等级",
+      "input": "ModifyProtectionLevelRequest",
+      "name": "更改防护等级",
+      "output": "ModifyProtectionLevelResponse",
       "status": "online"
     },
     "ModifyProtectionStatus": {
@@ -6974,7 +6988,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题ID，可以通过DescribeTopics接口获取,访问日志主题ID和攻击日志主题ID方式不同，注意DescribeTopics接口使用方法",
           "example": "ee20bb16-3025-4048-b81a-dd436373062e",
           "member": "string",
           "name": "TopicId",
@@ -7047,7 +7061,7 @@
         {
           "disabled": false,
           "document": "导出字段",
-          "example": "[\"__timestamp__\",\"a\",\"b\"]",
+          "example": "[\"timestamp\"]",
           "member": "string",
           "name": "DerivedFields",
           "required": false,
@@ -11968,6 +11982,71 @@
       ],
       "type": "object"
     },
+    "DescribeExportsRequest": {
+      "document": "DescribeExports请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID，可以通过DescribeTopics接口获取,访问日志主题ID和攻击日志主题ID方式不同，注意DescribeTopics接口使用方法",
+          "example": "ee20bb16-3025-4048-b81a-dd436373062e",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100",
+          "example": "5",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportsResponse": {
+      "document": "DescribeExports返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志导出列表",
+          "example": "无",
+          "member": "ExportInfo",
+          "name": "Exports",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFindDomainListRequest": {
       "document": "DescribeFindDomainList请求参数结构体",
       "members": [
@@ -12896,7 +12975,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的日志主题ID",
+          "document": "日志主题ID，可以通过DescribeTopics接口获取,访问日志主题ID和攻击日志主题ID方式不同，注意DescribeTopics接口使用方法",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
           "name": "TopicId",
@@ -14949,7 +15028,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<ul><li>topicName 按照【日志主题名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>logsetName 按照【日志集名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>topicId 按照【日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>logsetId 按照【日志集ID】进行过滤，可通过调用 DescribeLogsets 查询已创建的日志集列表或登录控制台进行查看；也可以调用 CreateLogset 创建新的日志集。类型：String。必选：否</li>\n<li>tagKey 按照【标签键】进行过滤。类型：String。必选：否</li>\n<li>tag:tagKey 按照【标签键值对】进行过滤。tagKey 使用具体的标签键进行替换，例如 tag:exampleKey。类型：String。必选：否</li>\n<li>storageType 按照【日志主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String。必选：否</li></ul>\n注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。",
+          "document": "<ul><li>topicName 按照【日志主题名称】进行过滤，默认为模糊匹配，Filter.Values 当要查询访问日志时为access，查询攻击日志时为attack</li></ul>注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。",
           "example": "无",
           "member": "FilterCls",
           "name": "Filters",
@@ -14986,7 +15065,7 @@
         {
           "disabled": false,
           "document": "主题类型\n<ul><li>0:日志主题，默认值</li>\n<li>1:指标主题</li></ul>",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "BizType",
           "required": false,
@@ -17435,6 +17514,162 @@
       ],
       "usage": "out"
     },
+    "ExportInfo": {
+      "document": "日志导出信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "ee20bb16-3025-4048-b81a-dd436373062e",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志导出任务ID",
+          "example": "export-57196a6a-7622-47be-bc92-d2ebea959a0f",
+          "member": "string",
+          "name": "ExportId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志导出查询语句",
+          "example": "status:200",
+          "member": "string",
+          "name": "Query",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志导出文件名",
+          "example": "log_2075178708_ee20bb16-3025-4048-b81a-dd436373062f_20210107_571",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志文件大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "FileSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志导出时间排序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志导出格式",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志导出数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中",
+          "example": "Expired",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志导出起始时间",
+          "example": "1607499207000",
+          "member": "int64",
+          "name": "From",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志导出结束时间",
+          "example": "1607499208000",
+          "member": "int64",
+          "name": "To",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志导出路径,有效期一个小时，请尽快使用该路径下载。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CosPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志导出创建时间",
+          "example": "2020-08-08 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语法规则。 默认值为0。\n0：Lucene语法，1：CQL语法。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SyntaxRule",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导出字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"__timestamp__\",\"a\",\"b\"]",
+          "member": "string",
+          "name": "DerivedFields",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FieldWriteConfig": {
       "document": "设置哪些字段是否存储或转发",
       "members": [
@@ -17476,7 +17711,26 @@
     },
     "FilterCls": {
       "document": "过滤器",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段。",
+          "example": "topicName",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要过滤的值。",
+          "example": "[\"access\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "usage": "in"
     },
     "FiltersItemNew": {
@@ -18555,7 +18809,28 @@
     },
     "HistogramInfo": {
       "document": "直方图详细信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计周期内的日志条数",
+          "example": "15",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "按 period 取整后的 unix timestamp： 单位毫秒",
+          "example": "1619331900000",
+          "member": "int64",
+          "name": "BTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "out"
     },
     "HostDel": {
@@ -23923,6 +24198,42 @@
       ],
       "type": "object"
     },
+    "ModifyProtectionLevelRequest": {
+      "document": "ModifyProtectionLevel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户域名",
+          "example": "admin.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防护等级,100,200,300",
+          "example": "200",
+          "member": "int64",
+          "name": "Level",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProtectionLevelResponse": {
+      "document": "ModifyProtectionLevel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyProtectionStatusRequest": {
       "document": "ModifyProtectionStatus请求参数结构体",
       "members": [
@@ -27378,6 +27689,38 @@
       ],
       "usage": "in"
     },
+    "SearchLogErrors": {
+      "document": "多日志主题检索错误信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "682d0718-07bb-4ec0-xxxx-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchLogInfos": {
+      "document": "多日志主题检索topic信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志存储生命周期",
+          "example": "30",
+          "member": "int64",
+          "name": "Period",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SearchLogRequest": {
       "document": "SearchLog请求参数结构体",
       "members": [
@@ -27419,7 +27762,7 @@
         },
         {
           "disabled": false,
-          "document": "- 要检索分析的日志主题ID，仅能指定一个日志主题。\n- 如需同时检索多个日志主题，请使用Topics参数。\n- TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。",
+          "document": "日志主题ID，可以通过DescribeTopics接口获取,访问日志主题ID和攻击日志主题ID方式不同，注意DescribeTopics接口使用方法",
           "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
           "member": "string",
           "name": "TopicId",
@@ -27529,7 +27872,7 @@
         {
           "disabled": false,
           "document": "日志统计分析结果的列名\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"xx\"]",
+          "example": "[\"x2\"]",
           "member": "string",
           "name": "ColNames",
           "output_required": true,
@@ -27549,7 +27892,7 @@
         {
           "disabled": false,
           "document": "日志统计分析结果\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"xxx\",\"yy\"]",
+          "example": "[\"x2\"]",
           "member": "string",
           "name": "AnalysisRecords",
           "output_required": true,
@@ -27587,7 +27930,28 @@
     },
     "SearchLogTopics": {
       "document": "多主题检索返回信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "多日志主题检索对应的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchLogErrors",
+          "name": "Errors",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多日志主题检索各日志主题信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchLogInfos",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "SessionData": {
@@ -27778,7 +28142,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配字段\n\n    匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同\u000b具体如下所示：\n<table><thead><tr><th>匹配字段</th><th>匹配参数</th><th>逻辑符号</th><th>匹配内容</th></tr></thead><tbody><tr><td>IP（来源IP）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>多个IP以英文逗号隔开,最多20个</td></tr><tr><td>IPV6（来源IPv6）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>支持单个IPV6地址</td></tr><tr><td>Referer（Referer）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>URL（请求路径）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）<br/></td><td>请以/开头,512个字符以内</td></tr><tr><td>UserAgent（UserAgent）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>HTTP_METHOD（HTTP请求方法）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）</td><td>请输入方法名称,建议大写</td></tr><tr><td>QUERY_STRING（请求字符串）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET（GET参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_PARAMS_NAMES（GET参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST（POST参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_POST_NAMES（POST参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST_BODY（完整BODY）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入BODY内容,512个字符以内</td></tr><tr><td>COOKIE（Cookie）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>rematch（正则匹配）</td><td><font color=\"Red\">暂不支持</font></td></tr><tr><td>GET_COOKIES_NAMES（Cookie参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>ARGS_COOKIE（Cookie参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_HEADERS_NAMES（Header参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,建议小写,512个字符以内</td></tr><tr><td>ARGS_HEADER（Header参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>CONTENT_LENGTH（Content-length）</td><td>支持参数录入</td><td>numgt（数值大于）<br/>numlt（数值小于）<br/>numeq（数值等于）<br/></td><td>请输入0-9999999999999之间的整数</td></tr><tr><td>IP_GEO（来源IP归属地）</td><td>支持参数录入</td><td>geo_in（属于）<br/>geo_not_in（不属于）<br/></td><td>请输入内容,10240字符以内，格式为序列化的JSON，格式为：[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]</td></tr>\n</tbody></table>",
+          "document": "匹配字段\n\n    匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同\u000b具体如下所示：\n<table><thead><tr><th>匹配字段</th><th>匹配参数</th><th>逻辑符号</th><th>匹配内容</th></tr></thead><tbody><tr><td>IP（来源IP）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>多个IP以英文逗号隔开,最多20个</td></tr><tr><td>IPV6（来源IPv6）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>支持单个IPV6地址</td></tr><tr><td>Referer（Referer）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>URL（请求路径）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）<br/></td><td>请以/开头,512个字符以内</td></tr><tr><td>UserAgent（UserAgent）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>HTTP_METHOD（HTTP请求方法）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）</td><td>请输入方法名称,建议大写</td></tr><tr><td>QUERY_STRING（请求字符串）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET（GET参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_PARAMS_NAMES（GET参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST（POST参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_POST_NAMES（POST参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST_BODY（完整BODY）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入BODY内容,512个字符以内</td></tr><tr><td>COOKIE（Cookie）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>rematch（正则匹配）</td><td><font color=\"Red\">暂不支持</font></td></tr><tr><td>GET_COOKIES_NAMES（Cookie参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>ARGS_COOKIE（Cookie参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_HEADERS_NAMES（Header参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,建议小写,512个字符以内</td></tr><tr><td>ARGS_HEADER（Header参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>CONTENT_LENGTH（Content-length）</td><td>支持参数录入</td><td>numgt（数值大于）<br/>numlt（数值小于）<br/>numeq（数值等于）<br/></td><td>请输入0-9999999999999之间的整数</td></tr><tr><td>IP_GEO（来源IP归属地）</td><td>支持参数录入</td><td>geo_in（属于）<br/>geo_not_in（不属于）<br/></td><td>请输入内容,10240字符以内，格式为序列化的JSON，格式为：[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]</td></tr><tr><td>CAPTCHA_RISK（验证码风险）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>belong（属于）<br/>not_belong（不属于）<br/>null（不存在）<br/>exist（存在）</td><td>请输入风险等级值,支持数值范围0-255</td></tr><tr><td>CAPTCHA_DEVICE_RISK（验证码设备风险）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>belong（属于）<br/>not_belong（不属于）<br/>null（不存在）<br/>exist（存在）</td><td>请输入设备风险代码,支持取值：101、201、301、401、501、601、701</td></tr><tr><td>CAPTCHAR_SCORE（验证码风险评估分）</td><td>不支持参数</td><td>numeq（数值等于）<br/>numgt（数值大于）<br/>numlt（数值小于）<br/>numle（数值小于等于）<br/>numge（数值大于等于）<br/>null（不存在）<br/>exist（存在）</td><td>请输入评估分数,支持数值范围0-100</td></tr>\n</tbody></table>",
           "example": "IP-来源IP",
           "member": "string",
           "name": "Field",
@@ -27789,7 +28153,7 @@
         },
         {
           "disabled": false,
-          "document": "逻辑符号 \n\n    逻辑符号一共分为以下几种类型：\n        empty （ 内容为空）\n        null （不存在）\n        eq （ 等于）\n        neq （ 不等于）\n        contains （ 包含）\n        ncontains （ 不包含）\n        strprefix （ 前缀匹配）\n        strsuffix （ 后缀匹配）\n        len_eq （ 长度等于）\n        len_gt （ 长度大于）\n        len_lt （ 长度小于）\n        ipmatch （ 属于）\n        ipnmatch （ 不属于）\n        numgt （ 数值大于）\n        numlt （ 数值小于）\n        numeq （ 数值等于）\n        geo_in （ IP地理属于）\n        geo_not_in （ IP地理不属于）\n    各匹配字段对应的逻辑符号不同，详见上述匹配字段表格\n",
+          "document": "逻辑符号 \n\n    逻辑符号一共分为以下几种类型：\n        empty （ 内容为空）\n        null （不存在）\n        eq （ 等于）\n        neq （ 不等于）\n        contains （ 包含）\n        ncontains （ 不包含）\n        strprefix （ 前缀匹配）\n        strsuffix （ 后缀匹配）\n        len_eq （ 长度等于）\n        len_gt （ 长度大于）\n        len_lt （ 长度小于）\n        ipmatch （ 属于）\n        ipnmatch （ 不属于）\n        numgt （ 数值大于）\n        numlt （ 数值小于）\n        numeq （ 数值等于）\n        numneq （ 数值不等于）\n        numle （ 数值小于等于）\n        numge （ 数值大于等于）\n        geo_in （ IP地理属于）\n        geo_not_in （ IP地理不属于）\n    各匹配字段对应的逻辑符号不同，详见上述匹配字段表格",
           "example": "contains - 包含",
           "member": "string",
           "name": "CompareFunc",
@@ -28764,7 +29128,7 @@
         },
         {
           "disabled": false,
-          "document": "CC的匹配条件JSON序列化的字符串，示例：[{\\\"key\\\":\\\"Method\\\",\\\"args\\\":[\\\"=R0VU\\\"],\\\"match\\\":\\\"0\\\",\\\"encodeflag\\\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 Key为IPLocation时，可选值为13（属于）、14（不属于）。args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。",
+          "document": "CC的匹配条件JSON序列化的字符串，示例：[{\\\"key\\\":\\\"Method\\\",\\\"args\\\":[\\\"=R0VU\\\"],\\\"match\\\":\\\"0\\\",\\\"encodeflag\\\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader、CaptchaRisk、CaptchaDeviceRisk、CaptchaScore match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 Key为IPLocation时，可选值为13（属于）、14（不属于）。 Key为CaptchaRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaDeviceRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaScore时，可选值为15（数值等于）、16（数值不等于）、17（数值大于）、18（数值小于）、19（数值大于等于）、20（数值小于等于）、12（存在）、5（不存在）。args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。",
           "example": "\"[]\"",
           "member": "string",
           "name": "OptionsArr",

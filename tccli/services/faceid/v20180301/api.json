@@ -551,7 +551,7 @@
         },
         {
           "disabled": false,
-          "document": "认证使用的卡证类型，当前支持:  \n\n1. HK (默认): 中国香港身份证\n2. ML: 马来西亚身份证\n3. IndonesiaIDCard: 印度尼西亚身份证\n4. PhilippinesVoteID: 菲律宾选民卡\n5. PhilippinesDrivingLicense: 菲律宾驾驶证\n6. PhilippinesTinID: 菲律宾TinID\n7. PhilippinesSSSID: 菲律宾SSSID\n8. PhilippinesUMID: 菲律宾UMID\n9. MLIDPassport: 港澳台地区以及境外护照\n10. MacaoIDCard: 澳门身份证\n11. ThailandIDCard: 泰国身份证\n12. MainlandIDCard: 大陆身份证\n13. SingaporeIDCard: 新加坡身份证\n14. JapanIDCard: 日本身份证\n15. MLDrivingLicense: 马来西亚驾驶证\n16. IndonesiaDrivingLicense: 印度尼西亚驾驶证\n17. ThailandDrivingLicense: 泰国驾驶证\n18. SingaporeDrivingLicense: 新加坡驾驶证\n19. JapanDrivingLicense: 日本驾驶证\n20. TaiWanIDCard：台湾身份证\n21. HMTPermit：港澳台通行证",
+          "document": "认证使用的卡证类型，当前支持:  \n\n1. HK (默认): 中国香港身份证\n2. ML: 马来西亚身份证\n3. IndonesiaIDCard: 印度尼西亚身份证\n4. PhilippinesVoteID: 菲律宾选民卡\n5. PhilippinesDrivingLicense: 菲律宾驾驶证\n6. PhilippinesTinID: 菲律宾TinID\n7. PhilippinesSSSID: 菲律宾SSSID\n8. PhilippinesUMID: 菲律宾UMID\n9. MLIDPassport: 港澳台地区以及境外护照\n10. ThailandIDCard: 泰国身份证\n11. MainlandIDCard: 大陆身份证\n12. SingaporeIDCard: 新加坡身份证\n13. HMTPermit：港澳台通行证",
           "example": "HK",
           "member": "string",
           "name": "IdCardType",
@@ -561,7 +561,7 @@
         {
           "disabled": false,
           "document": "比对照片的base64，仅当CheakMode为2时，本参数才需要传入。",
-          "example": "无",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "CompareImage",
           "required": false,
@@ -600,6 +600,15 @@
           "example": "1",
           "member": "string",
           "name": "Extra",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ENHANCED：增强版\nBASIC：基础版（默认）",
+          "example": "ENHANCED",
+          "member": "string",
+          "name": "SdkVersion",
           "required": false,
           "type": "string"
         },
@@ -4799,6 +4808,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "描述当前请求所在设备的风险等级，共4级。 详情如下： 1 - 安全。 2 - 低风险。 3 - 中风险。 4 - 高危。 空 - 未获取到风险等级。 仅增强版返回，默认为空。",
+          "example": "1",
+          "member": "string",
+          "name": "DeviceInfoLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5121,7 +5140,7 @@
         {
           "disabled": false,
           "document": "比对照片的base64编码，用于“活体比对”模式。当参数CheckMode为“compare”时，本参数必传。",
-          "example": "无",
+          "example": "\t/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -5130,7 +5149,7 @@
         {
           "disabled": false,
           "document": "业务透传参数，如无特殊需求本参数可以不传。",
-          "example": "无",
+          "example": "extra",
           "member": "string",
           "name": "Extra",
           "required": false,
@@ -5142,6 +5161,15 @@
           "example": "blink",
           "member": "string",
           "name": "ActionList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ENHANCED：增强版，BASIC：基础版（默认）",
+          "example": "BASIC",
+          "member": "string",
+          "name": "SdkVersion",
           "required": false,
           "type": "string"
         }
@@ -5425,7 +5453,7 @@
         {
           "disabled": false,
           "document": "标识一次Sdk核验流程的令牌。",
-          "example": "无",
+          "example": "41734715-B5D9-4DD8-A0C6-804BE5B45AD1",
           "member": "string",
           "name": "SdkToken",
           "required": true,
@@ -5440,7 +5468,7 @@
         {
           "disabled": false,
           "document": "此次核验结果的结果码。",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -5450,7 +5478,7 @@
         {
           "disabled": false,
           "document": "核验结果描述。",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -5490,10 +5518,20 @@
         {
           "disabled": false,
           "document": "获取token时传入的透传数据。",
-          "example": "无",
+          "example": "\"extra\"",
           "member": "string",
           "name": "Extra",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述当前请求所在设备的风险等级，共4级。 详情如下： 1 - 安全。 2 - 低风险。 3 - 中风险。 4 - 高危。 空 - 未获取到风险等级。 仅增强版返回，默认为空。",
+          "example": "1",
+          "member": "string",
+          "name": "DeviceInfoLevel",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

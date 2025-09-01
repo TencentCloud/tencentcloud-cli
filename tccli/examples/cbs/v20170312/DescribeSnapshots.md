@@ -1,6 +1,6 @@
-**Example 1: 查询广州二区状态为NORMAL的快照**
+**Example 1: 查询广州三区状态为NORMAL的快照**
 
-查询广州二区状态为NORMAL的快照
+查询广州三区状态为NORMAL的快照
 
 Input: 
 
@@ -9,7 +9,7 @@ tccli cbs DescribeSnapshots --cli-unfold-argument  \
     --Filters.0.Name snapshot-state \
     --Filters.0.Values NORMAL \
     --Filters.1.Name zone \
-    --Filters.1.Values ap-guangzhou-2
+    --Filters.1.Values ap-guangzhou-3
 ```
 
 Output: 
@@ -23,7 +23,7 @@ Output:
                 "Tags": [],
                 "Placement": {
                     "CageId": "",
-                    "Zone": "ap-guangzhou-2",
+                    "Zone": "ap-guangzhou-3",
                     "ProjectId": 0,
                     "CdcName": "",
                     "CdcId": "",
@@ -53,7 +53,7 @@ Output:
                 "Tags": [],
                 "Placement": {
                     "CageId": "",
-                    "Zone": "ap-guangzhou-2",
+                    "Zone": "ap-guangzhou-3",
                     "ProjectId": 0,
                     "CdcName": "",
                     "CdcId": "",

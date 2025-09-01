@@ -23484,7 +23484,7 @@
         {
           "disabled": false,
           "document": "阈值：0-99",
-          "example": "0",
+          "example": "[0]",
           "member": "uint64",
           "name": "Thresholds",
           "required": true,
@@ -23519,10 +23519,19 @@
         },
         {
           "disabled": false,
-          "document": "0:百分比类型阈值 1:数值类型阈值  默认为1",
+          "document": "0:百分比类型阈值 1:数值类型阈值  默认为0",
           "example": "0",
           "member": "uint64",
           "name": "ThresholdValueType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前告警规则的状态，1:启用，0:禁用，默认为启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Valid",
           "required": false,
           "type": "int"
         }
