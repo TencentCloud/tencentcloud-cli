@@ -147,8 +147,8 @@
     "CreateDataTransform": [
       {
         "document": "数据加工提供对日志数据的过滤、清洗、脱敏、富化、分发等能力,可对标开源组件 Logstash。使用数据加工DSL（Domain Specified Language ）函数，底层基于 Flink 实现，您可轻松处理日志流数据。\n",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataTransform\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"Name\": \"数据加工任务\",\n    \"FuncType\": 0,\n    \"PreviewLogStatistics\": [\n        {\n            \"LineNum\": 0,\n            \"FailReason\": \"errorcode\",\n            \"DstTopicId\": \"81XXXXe5-e39e-4a1e-b2d4-a778df97d825\",\n            \"LogContent\": \"XXXX\",\n            \"Time\": \"2017-08-08 12:12:12\"\n        }\n    ],\n    \"SrcTopicId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n    \"TaskType\": 0,\n    \"DstResources\": [\n        {\n            \"TopicId\": \"3d9bXXXX-05a4-4435-ac65-f43e684329b3\",\n            \"Alias\": \"别名\"\n        }\n    ],\n    \"EtlContent\": \"xx-xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"xxxx-xx-xx-xx-xxxxxxxx\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataTransform\n<公共请求参数>\n\n{\n    \"EnableFlag\": 1,\n    \"Name\": \"数据加工任务\",\n    \"FuncType\": 0,\n    \"PreviewLogStatistics\": [\n        {\n            \"LineNum\": 0,\n            \"FailReason\": \"errorcode\",\n            \"DstTopicId\": \"81sdqwe5-e39e-4a1e-b2d4-a778df97d825\",\n            \"LogContent\": \"{\\\"test\\\":\\\"demo\\\"}\",\n            \"Time\": \"2017-08-08 12:12:12\"\n        }\n    ],\n    \"SrcTopicId\": \"181d630d-3116-40cf-a12b-597be5e83edd\",\n    \"TaskType\": 0,\n    \"DstResources\": [\n        {\n            \"TopicId\": \"adfe19a8-6dad-44a6-9e48-24984ea74108\",\n            \"Alias\": \"别名\"\n        }\n    ],\n    \"EtlContent\": \"fields_set(\\\"hello\\\",\\\"world\\\")\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"a3622556-6402-4942-b4ff-5ae32ec29810\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建数据加工任务"
       }
     ],
@@ -157,7 +157,13 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeliverCloudFunction\n<公共请求参数>\n\n{\n    \"TopicId\": \"7953cd3d-993f-4813-822d-1dc65f5ba111\",\n    \"FunctionName\": \"test-client-log-handler\",\n    \"Namespace\": \"default\",\n    \"Timeout\": 60,\n    \"Qualifier\": \"$LATEST\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"01fd5bcc-d7d4-4edb-9ff5-7ecfc305b831\"\n    }\n}",
-        "title": "创建投递SCF任务"
+        "title": "创建投递SCF任务-成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeliverCloudFunction\n<公共请求参数>\n\n{\n    \"TopicId\": \"923527bf-0728-4114-88a8-5898c0f527ac\",\n    \"FunctionName\": \"functionName1\",\n    \"Namespace\": \"ns1\",\n    \"Qualifier\": \"$LATEST\",\n    \"Timeout\": 60,\n    \"MaxMsgNum\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.TopicNotExist\",\n            \"Message\": \"topic not exist RequestId:[341023a0-26d7-4ce6-8f8f-72fc34661335]\"\n        },\n        \"RequestId\": \"341023a0-26d7-4ce6-8f8f-72fc34661335\"\n    }\n}",
+        "title": "创建投递SCF任务-失败"
       }
     ],
     "CreateExport": [

@@ -16420,8 +16420,8 @@
         },
         {
           "disabled": false,
-          "document": "告警策略触发任务列表，空数据代表解绑",
-          "example": "         {             \"Type\": \"AS\",             \"TaskConfig\": \"{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Group\\\":\\\"asg-0zhspjx\\\",\\\"Policy\\\":\\\"asp-ganig28\\\"}\"         }    ",
+          "document": "告警策略触发任务列表，空数据代表解绑示例值： { \"Type\": \"AS\", \"TaskConfig\": \"{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Group\\\":\\\"asg-0zhspjx\\\",\\\"Policy\\\":\\\"asp-ganig28\\\"}\" }",
+          "example": "无",
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
           "required": false,

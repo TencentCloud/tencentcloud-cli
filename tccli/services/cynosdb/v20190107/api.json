@@ -14738,7 +14738,7 @@
         {
           "disabled": false,
           "document": "地域库存信息",
-          "example": "[{\"Zone\": \"ap-beijing-3\",\"HasStock\": true,\"StockCount\": 0}]",
+          "example": "无",
           "member": "ZoneStockInfo",
           "name": "ZoneStockInfos",
           "output_required": true,
@@ -14753,6 +14753,26 @@
           "name": "StockCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大cpu",
+          "example": "1.0",
+          "member": "float",
+          "name": "MaxCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最小cpu",
+          "example": "0.5",
+          "member": "float",
+          "name": "MinCpu",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

@@ -6516,7 +6516,7 @@
         },
         {
           "disabled": false,
-          "document": "加工任务创建时间\n示例值：2025-03-18 19:55:54\n时间格式：yyyy-MM-dd HH:mm:ss",
+          "document": "加工任务创建时间\n时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2022-12-08 21:00:35",
           "member": "string",
           "name": "CreateTime",
@@ -6526,7 +6526,7 @@
         },
         {
           "disabled": false,
-          "document": "最近修改时间\n示例值：2025-04-18 16:55:54\n时间格式：yyyy-MM-dd HH:mm:ss",
+          "document": "最近修改时间\n时间格式：yyyy-MM-dd HH:mm:ss",
           "example": "2024-03-20 15:51:01",
           "member": "string",
           "name": "UpdateTime",
@@ -6536,8 +6536,8 @@
         },
         {
           "disabled": false,
-          "document": "最后启用时间，如果需要重建集群，修改该时间\n示例值：2025-05-18 19:55:54\n时间格式：yyyy-MM-dd HH:mm:ss",
-          "example": "2024-05-23 15:50:00",
+          "document": "最后启用时间，如果需要重建集群，修改该时间\n时间格式：yyyy-MM-dd HH:mm:ss",
+          "example": "2024-05-23 19:20:00",
           "member": "string",
           "name": "LastEnableTime",
           "output_required": true,
@@ -14494,7 +14494,7 @@
         {
           "disabled": false,
           "document": "日志内容",
-          "example": "{\\\"AgentStartTime\\\":\\\"6557160\\\",\\\"AvailConnNum\\\":\\\"1\\\",\\\"AvgReqSize\\\":\\\"0\\\",\\\"ConfigMinVer\\\":\\\"1715073167340919\\\",\\\"CpuMax\\\":\\\"0\\\",\\\"CpuUsage\\\":\\\"5\\\",\\\"DirMax\\\":\\\"5000\\\",\\\"FileMax\\\":\\\"15000\\\",\\\"IP\\\":\\\"9.135.76.114\\\",\\\"InstanceId\\\":\\\"loglistener-24bf21cb-0327-fc1d-be4e-5e056dadxxx\\\",\\\"Label\\\":\\\"\\\",\\\"LogConfigCnt\\\":\\\"5000\\\",\\\"MemMax\\\":\\\"2097152000\\\",\\\"MemoryUsed\\\":\\\"66678784\\\",\\\"MonitorDirs\\\":\\\"4\\\",\\\"MonitorFiles\\\":\\\"0\\\",\\\"OpenFiles\\\":\\\"0\\\",\\\"ParseFailureLogCount\\\":\\\"0\\\",\\\"QueueSize\\\":\\\"0\\\",\\\"ReadEventCnt\\\":\\\"188\\\",\\\"ResendCnt\\\":\\\"0\\\",\\\"SendAvgCost\\\":\\\"0\\\",\\\"SendFailureLogCount\\\":\\\"0\\\",\\\"SendFailureLogSize\\\":\\\"0\\\",\\\"SendFailureReqs\\\":\\\"0\\\",\\\"SendSuccessLogCount\\\":\\\"0\\\",\\\"SendSuccessLogSize\\\":\\\"0\\\",\\\"SendSuccessReqs\\\":\\\"0\\\",\\\"SendTimeoutLogCount\\\":\\\"0\\\",\\\"SendTimeoutLogSize\\\":\\\"0\\\",\\\"SendTimeoutReqs\\\":\\\"0\\\",\\\"Status\\\":\\\"22\\\",\\\"TotalFinishRsps\\\":\\\"0\\\",\\\"TotalParseLogCount\\\":\\\"0\\\",\\\"TotalSendLogCount\\\":\\\"0\\\",\\\"TotalSendLogSize\\\":\\\"0\\\",\\\"TotalSendReqs\\\":\\\"0\\\",\\\"TotalSuccessFromStart\\\":\\\"0\\\",\\\"Version\\\":\\\"2.9.0\\\",\\\"__FILENAME__\\\":\\\"status\\\",\\\"__SOURCE__\\\":\\\"9.135.76.114\\\"}",
+          "example": "{\\\"hello\\\":\\\"world\\\"}",
           "member": "string",
           "name": "LogContent",
           "output_required": true,
@@ -14515,7 +14515,7 @@
         },
         {
           "disabled": false,
-          "document": "目标日志主题",
+          "document": "目标日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "4c216645-01f2-414d-8a87-719b97baxxx",
           "member": "string",
           "name": "DstTopicId",

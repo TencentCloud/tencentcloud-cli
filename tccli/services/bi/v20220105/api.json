@@ -35,6 +35,13 @@
       "output": "CreateEmbedTokenResponse",
       "status": "online"
     },
+    "CreatePermissionRanks": {
+      "document": "创建行列权限",
+      "input": "CreatePermissionRanksRequest",
+      "name": "创建行列权限",
+      "output": "CreatePermissionRanksResponse",
+      "status": "online"
+    },
     "CreateProject": {
       "document": "创建项目",
       "input": "CreateProjectRequest",
@@ -96,6 +103,27 @@
       "input": "DescribePageWidgetListRequest",
       "name": "查询页面组件信息",
       "output": "DescribePageWidgetListResponse",
+      "status": "online"
+    },
+    "DescribePermissionRanksInfo": {
+      "document": "根据角色或标签查询行列权限配置",
+      "input": "DescribePermissionRanksInfoRequest",
+      "name": "根据角色或标签查询行列权限配置",
+      "output": "DescribePermissionRanksInfoResponse",
+      "status": "online"
+    },
+    "DescribePermissionRoleInfo": {
+      "document": "行列权限项目内角色列表接口1",
+      "input": "DescribePermissionRoleInfoRequest",
+      "name": "行列权限项目内角色列表1",
+      "output": "DescribePermissionRoleInfoResponse",
+      "status": "online"
+    },
+    "DescribePermissionStatusInfo": {
+      "document": "查询行列权限初始状态1",
+      "input": "DescribePermissionStatusInfoRequest",
+      "name": "查询行列权限初始状态1",
+      "output": "DescribePermissionStatusInfoResponse",
       "status": "online"
     },
     "DescribeProjectInfo": {
@@ -1261,6 +1289,145 @@
           "member": "string",
           "name": "Msg",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePermissionRanksRequest": {
+      "document": "CreatePermissionRanks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "int64",
+          "name": "TableId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "条数",
+          "example": "1",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色类型",
+          "example": "1",
+          "member": "string",
+          "name": "RoleType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所有页码",
+          "example": "1",
+          "member": "int64",
+          "name": "RoleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则信息",
+          "example": "1",
+          "member": "string",
+          "name": "RulerInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "1",
+          "member": "string",
+          "name": "OpenStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "行列权限配置",
+          "example": "无",
+          "member": "RowColumnConfig",
+          "name": "RowColumnConfigList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePermissionRanksResponse": {
+      "document": "CreatePermissionRanks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "112\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2566,6 +2733,297 @@
           "name": "Msg",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePermissionRanksInfoRequest": {
+      "document": "DescribePermissionRanksInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "int64",
+          "name": "TableId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "条数",
+          "example": "1",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色类型",
+          "example": "1",
+          "member": "string",
+          "name": "RoleType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所有页码",
+          "example": "1",
+          "member": "int64",
+          "name": "RoleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePermissionRanksInfoResponse": {
+      "document": "DescribePermissionRanksInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "112\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "RankInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePermissionRoleInfoRequest": {
+      "document": "DescribePermissionRoleInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "条数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "所有页码",
+          "example": "1",
+          "member": "bool",
+          "name": "AllPage",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePermissionRoleInfoResponse": {
+      "document": "DescribePermissionRoleInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Role",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "112\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePermissionStatusInfoRequest": {
+      "document": "DescribePermissionStatusInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "int64",
+          "name": "TableId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePermissionStatusInfoResponse": {
+      "document": "DescribePermissionStatusInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误信息对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "112\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "RowColumnStatus",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -5094,6 +5552,358 @@
         }
       ],
       "usage": "out"
+    },
+    "RankInfo": {
+      "document": "行列权限内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Mode",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "`",
+          "member": "string",
+          "name": "RulerInfo",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "int64",
+          "name": "RoleId",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RoleType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TableId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "行列权限配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RowColumnConfig",
+          "name": "RowColumnConfigList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Role": {
+      "document": "角色",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "1",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1",
+          "member": "string",
+          "name": "CorpId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色类型",
+          "example": "1",
+          "member": "string",
+          "name": "RoleType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "范围",
+          "example": "1",
+          "member": "string",
+          "name": "Scope",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreatedUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "UpdatedUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为全局角色（0 不是， 1 是）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ScopeType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可被选\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CanChoose",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ModuleCollection",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RowColumnConfig": {
+      "document": "行列权限配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "行列权限规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RulerInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RowColumnTagValue",
+          "name": "TagValueList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RowColumnStatus": {
+      "document": "行列权限初始状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TableId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "OpenStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RoleType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RoleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RowColumnTagValue": {
+      "document": "行列权限标签出入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "UserGroupDTO": {
       "document": "用户组",

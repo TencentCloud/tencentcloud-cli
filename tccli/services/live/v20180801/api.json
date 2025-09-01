@@ -21977,7 +21977,7 @@
           "example": "2022-11-14T14:04:59+08:00",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21987,7 +21987,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21997,7 +21997,7 @@
           "example": "liveprocessor_H264",
           "member": "string",
           "name": "ModuleCodec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22007,7 +22007,7 @@
           "example": "720P",
           "member": "string",
           "name": "Resolution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
