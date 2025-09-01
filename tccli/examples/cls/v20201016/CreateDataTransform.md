@@ -12,21 +12,21 @@ tccli cls CreateDataTransform --cli-unfold-argument  \
     --FuncType 0 \
     --PreviewLogStatistics.0.LineNum 0 \
     --PreviewLogStatistics.0.FailReason errorcode \
-    --PreviewLogStatistics.0.DstTopicId 81XXXXe5-e39e-4a1e-b2d4-a778df97d825 \
-    --PreviewLogStatistics.0.LogContent XXXX \
+    --PreviewLogStatistics.0.DstTopicId 81sdqwe5-e39e-4a1e-b2d4-a778df97d825 \
+    --PreviewLogStatistics.0.LogContent {"test":"demo"} \
     --PreviewLogStatistics.0.Time 2017-08-08 12:12:12 \
-    --SrcTopicId xxxx-xx-xx-xx-xxxxxxxx \
+    --SrcTopicId 181d630d-3116-40cf-a12b-597be5e83edd \
     --TaskType 0 \
-    --DstResources.0.TopicId 3d9bXXXX-05a4-4435-ac65-f43e684329b3 \
+    --DstResources.0.TopicId adfe19a8-6dad-44a6-9e48-24984ea74108 \
     --DstResources.0.Alias 别名 \
-    --EtlContent xx-xx
+    --EtlContent fields_set("hello","world")
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": "xxxx-xx-xx-xx-xxxxxxxx",
+        "TaskId": "a3622556-6402-4942-b4ff-5ae32ec29810",
         "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
     }
 }

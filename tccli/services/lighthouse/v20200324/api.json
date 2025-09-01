@@ -168,6 +168,13 @@
       "output": "CreateMcpServerResponse",
       "status": "online"
     },
+    "CreateMcpServerProject": {
+      "document": "本接口（CreateMcpServerProject）用于创建MCP Server项目。",
+      "input": "CreateMcpServerProjectRequest",
+      "name": "创建MCP Server项目",
+      "output": "CreateMcpServerProjectResponse",
+      "status": "online"
+    },
     "DebugFunctionVersion": {
       "document": "本接口（DebugFunctionVersion）用于调试函数版本。\n- 只能调试函数Status为Ready状态的函数版本，可通过DescribeFunctionVersion接口查询函数版本信息。",
       "input": "DebugFunctionVersionRequest",
@@ -637,6 +644,13 @@
       "output": "DescribeKeyPairsResponse",
       "status": "online"
     },
+    "DescribeMcpServerDeployments": {
+      "document": "用于查询部署状态。",
+      "input": "DescribeMcpServerDeploymentsRequest",
+      "name": "查询MCP Server部署",
+      "output": "DescribeMcpServerDeploymentsResponse",
+      "status": "online"
+    },
     "DescribeMcpServerTemplates": {
       "document": "本接口（DescribeMcpServerTemplates）用于查询MCP Server模板列表。",
       "input": "DescribeMcpServerTemplatesRequest",
@@ -810,6 +824,13 @@
       "input": "ExitRescueModeRequest",
       "name": "退出救援模式",
       "output": "ExitRescueModeResponse",
+      "status": "online"
+    },
+    "GetFederationTokenForMcpServer": {
+      "document": "本接口（GetFederationTokenForMcpServer）用于获取MCP Server 项目的 COS 上传临时凭证。",
+      "input": "GetFederationTokenForMcpServerRequest",
+      "name": "获取MCP Server上传凭证",
+      "output": "GetFederationTokenForMcpServerResponse",
       "status": "online"
     },
     "GetMonitorData": {
@@ -1209,6 +1230,13 @@
       "input": "StartInstancesRequest",
       "name": "启动实例",
       "output": "StartInstancesResponse",
+      "status": "online"
+    },
+    "StartMcpServerDeployments": {
+      "document": "本接口（StartMcpServerDeployments）用于发起MCP Server部署。您需要提供项目ID、代码文件信息、目标部署实例以及MCP Server的名称等元数据。接口会为每个目标实例创建一个部署任务，并返回部署记录列表。这是一个异步接口，您可以通过 DescribeMcpServerDeployments 接口查询部署的最终状态。",
+      "input": "StartMcpServerDeploymentsRequest",
+      "name": "发起MCP Server部署",
+      "output": "StartMcpServerDeploymentsResponse",
       "status": "online"
     },
     "StartMcpServers": {
@@ -3571,6 +3599,34 @@
       ],
       "type": "object"
     },
+    "CodeFile": {
+      "document": "代码文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代码文件在COS中的对象键。最大长度：512",
+          "example": "agent_generated/actived/11297289/lhmsp-axjdikig/main.py",
+          "member": "string",
+          "name": "CosKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代码文件 SHA256 值。长度：64",
+          "example": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+          "member": "string",
+          "name": "CodeSha256",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Command": {
       "document": "用户执行TAT命令的数据结构。",
       "members": [
@@ -4479,6 +4535,33 @@
       ],
       "type": "object"
     },
+    "CreateMcpServerProjectRequest": {
+      "document": "CreateMcpServerProject请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateMcpServerProjectResponse": {
+      "document": "CreateMcpServerProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server项目ID。",
+          "example": "lhmsp-axjdikig",
+          "member": "string",
+          "name": "McpServerProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMcpServerRequest": {
       "document": "CreateMcpServer请求参数结构体",
       "members": [
@@ -4551,6 +4634,42 @@
         }
       ],
       "type": "object"
+    },
+    "Credentials": {
+      "document": "临时安全凭证",
+      "members": [
+        {
+          "disabled": false,
+          "document": "临时安全凭证的临时密钥ID",
+          "example": "AKID***",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时安全凭证的临时密钥Key",
+          "example": "q95K***",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时安全凭证的Token",
+          "example": "da1e***",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CrowdPackage": {
       "document": "人群包",
@@ -8800,6 +8919,71 @@
       ],
       "type": "object"
     },
+    "DescribeMcpServerDeploymentsRequest": {
+      "document": "DescribeMcpServerDeployments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server项目ID",
+          "example": "lhmsp-axjdikig",
+          "member": "string",
+          "name": "McpServerProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，最大值：10",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServerDeploymentsResponse": {
+      "document": "DescribeMcpServerDeployments返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署记录列表",
+          "example": "无",
+          "member": "McpServerDeployment",
+          "name": "McpServerDeploymentSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的MCP Server数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMcpServerTemplatesRequest": {
       "document": "DescribeMcpServerTemplates请求参数结构体",
       "members": [
@@ -12200,6 +12384,83 @@
       ],
       "usage": "out"
     },
+    "GetFederationTokenForMcpServerRequest": {
+      "document": "GetFederationTokenForMcpServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server项目ID",
+          "example": "lhmsp-sdmijlld",
+          "member": "string",
+          "name": "McpServerProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFederationTokenForMcpServerResponse": {
+      "document": "GetFederationTokenForMcpServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "临时安全凭证",
+          "example": "无",
+          "member": "Credentials",
+          "name": "Credentials",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS桶名称",
+          "example": "mcp-server-21839",
+          "member": "string",
+          "name": "CosBucketName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS桶所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CosRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象键前缀",
+          "example": "agent_generated/actived/112839902/lhmsp-sdmijlld/",
+          "member": "string",
+          "name": "CosKeyPrefix",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS桶域名",
+          "example": "mcp-server-21839.cos.ap-guangzhou.myqcloud.com",
+          "member": "string",
+          "name": "CosDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetMonitorDataRequest": {
       "document": "GetMonitorData请求参数结构体",
       "members": [
@@ -13693,6 +13954,30 @@
       ],
       "usage": "out"
     },
+    "InstanceDeployment": {
+      "document": "待部署实例目标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-4r4pvtbg",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "InstanceDigest": {
       "document": "实例摘要信息。",
       "members": [
@@ -14272,7 +14557,7 @@
         },
         {
           "disabled": false,
-          "document": "实例退还失败错误码。取值:\n0: 可以退还\n1: 资源已退货。如为退货后续费资源，请于购买6小时后操作\n2: 资源已到期\n3: 资源购买超过5天不支持退款\n4: 非预付费资源不支持退款\n8: 退货数量超出限额\n9: 涉及活动订单不支持退款\n10: 资源不支持自助退，请走工单退款\n11: 涉及推广奖励渠道订单，请提工单咨询\n12: 根据业务侧产品规定，该资源不允许退款",
+          "document": "实例退还失败错误码。取值:\n0: 可以退还\n1: 资源已退货。\n2: 资源已到期\n3: 资源购买超过5天不支持退款\n4: 非预付费资源不支持退款\n8: 退货数量超出限额\n9: 涉及活动订单不支持退款\n10: 资源不支持自助退，请走工单退款\n11: 涉及推广奖励渠道订单，请提工单咨询\n12: 根据业务侧产品规定，该资源不允许退款",
           "example": "2",
           "member": "int64",
           "name": "ReturnFailCode",
@@ -14862,6 +15147,92 @@
         }
       ],
       "usage": "both"
+    },
+    "McpServerDeployment": {
+      "document": "MCP Server部署记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server部署ID。",
+          "example": "lhmsp-axjdikig",
+          "member": "string",
+          "name": "McpServerDeploymentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID。",
+          "example": "lhms-oartxxxz",
+          "member": "string",
+          "name": "McpServerId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "lhins-4r4pvtbg",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server部署状态。枚举值如下：\n\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nSTOPPED：表示关闭\nSTARTING：表示开启中\nSTOPPING：表示关闭中\nRESTARTING：表示重启中\nREMOVING：表示删除中\nUNKNOWN：表示未知\nENV_ERROR：表示环境错误\nDELETED：表示已删除",
+          "example": "PENDING",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server 名称。",
+          "example": "my-mcp-server",
+          "member": "string",
+          "name": "McpServerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称。",
+          "example": "green-lh-test",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server部署时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 格式为： YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2025-06-24T18:00:00Z",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "McpServerEnv": {
       "document": "MCP Server环境变量",
@@ -17647,6 +18018,97 @@
     "StartInstancesResponse": {
       "document": "StartInstances返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartMcpServerDeploymentsRequest": {
+      "document": "StartMcpServerDeployments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server项目ID",
+          "example": "lhmsp-axjdikig",
+          "member": "string",
+          "name": "McpServerProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代码文件列表。最大长度：10",
+          "example": "无",
+          "member": "CodeFile",
+          "name": "CodeFiles",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "待部署实例列表。最大长度：10",
+          "example": "无",
+          "member": "InstanceDeployment",
+          "name": "InstanceDeployments",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server名称。最大长度：64",
+          "example": "My Weather App",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server图标地址。最大长度：2048",
+          "example": "https://example.com/icon.png",
+          "member": "string",
+          "name": "IconUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server备注。最大长度：2048",
+          "example": "基于AI生成的天气预报MCP Server",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server环境变量。最大长度：10",
+          "example": "无",
+          "member": "McpServerEnv",
+          "name": "Envs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartMcpServerDeploymentsResponse": {
+      "document": "StartMcpServerDeployments返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署记录列表",
+          "example": "无",
+          "member": "McpServerDeployment",
+          "name": "McpServerDeploymentSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

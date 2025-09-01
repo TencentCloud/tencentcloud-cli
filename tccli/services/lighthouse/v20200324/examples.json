@@ -192,6 +192,14 @@
         "title": "创建MCP Server"
       }
     ],
+    "CreateMcpServerProject": [
+      {
+        "document": "本接口用于创建一个新的MCP Server项目。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMcpServerProject\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"McpServerProjectId\": \"lhmsp-12345678\",\n        \"RequestId\": \"e29e6e6a-6903-4eff-80d3-335f4a0a454c\"\n    }\n}",
+        "title": "创建MCP Server项目"
+      }
+    ],
     "DebugFunctionVersion": [
       {
         "document": "调试函数function-001的版本2，body为test。",
@@ -764,6 +772,14 @@
         "title": "查询用户密钥对列表"
       }
     ],
+    "DescribeMcpServerDeployments": [
+      {
+        "document": "查询MCP Server部署记录。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMcpServerDeployments\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"McpServerDeploymentSet\": [\n            {\n                \"McpServerDeploymentId\": \"lhdeploy-abcd1234\",\n                \"McpServerId\": \"lhms-oartxxxz\",\n                \"McpServerName\": \"My Weather App\",\n                \"InstanceId\": \"lhins-lart4xxz\",\n                \"InstanceName\": \"green-lh-test\",\n                \"Region\": \"ap-guangzhou\",\n                \"State\": \"RUNNING\",\n                \"CreatedTime\": \"2025-06-24T18:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"e29e6e6a-6903-4eff-80d3-335f4a0a454c\"\n    }\n}",
+        "title": "查询MCP Server部署记录"
+      }
+    ],
     "DescribeMcpServerTemplates": [
       {
         "document": "限制返回结果最多为一项",
@@ -974,6 +990,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExitRescueMode\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-aaaabbbb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ee5b113-30e9-40fe-849d-cd041a977d2a\"\n    }\n}",
         "title": "退出救援模式"
+      }
+    ],
+    "GetFederationTokenForMcpServer": [
+      {
+        "document": "获取MCP Server上传凭证。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFederationTokenForMcpServer\n<公共请求参数>\n\n{\n    \"McpServerProjectId\": \"lhmsp-12345678\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"SecretId\": \"AKID***\",\n            \"SecretKey\": \"q95K***\",\n            \"Token\": \"da1e***\"\n        },\n        \"CosBucketName\": \"lighthouse-mcp-server-123456789\",\n        \"CosRegion\": \"ap-guangzhou\",\n        \"CosKeyPrefix\": \"mcp_server_agent_generated/actived/12345/lhmsp-12345678/\",\n        \"CosDomain\": \"lighthouse-mcp-server-123456789.cos.ap-guangzhou.myqcloud.com\",\n        \"RequestId\": \"f3b2a1b5-f2c1-4e5a-8b9c-0d1e2f3a4b5c\"\n    }\n}",
+        "title": "获取MCP Server上传凭证"
       }
     ],
     "GetMonitorData": [
@@ -1454,6 +1478,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=StartInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&InstanceIds.1=lhins-rusdke45\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e9982ad-ec0b-44f4-b010-40ba25c8b7b7\"\n    }\n}",
         "title": "启动指定ID的实例"
+      }
+    ],
+    "StartMcpServerDeployments": [
+      {
+        "document": "发起MCP Server部署。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartMcpServerDeployments\n<公共请求参数>\n\n{\n    \"McpServerProjectId\": \"lhmsp-axjdikig\",\n    \"Name\": \"my-mcp-server\",\n    \"Description\": \"This is a test MCP Server\",\n    \"IconUrl\": \"https://example.com/icon.png\",\n    \"CodeFiles\": [\n        {\n            \"CosKey\": \"agent_generated/actived/12345/lhmsp-axjdikig/main.py\",\n            \"CodeSha256\": \"1b4f0e9851971998e732078544c96b36c3d01cedf7caa332359d6f1d83567014\"\n        },\n        {\n            \"CosKey\": \"agent_generated/actived/12345/lhmsp-axjdikig/requirements.txt\",\n            \"CodeSha256\": \"60303ae22b998861bce3b28f33eec1be758a213c86c93c076dbe9f558c11c752\"\n        }\n    ],\n    \"InstanceDeployments\": [\n        {\n            \"Region\": \"ap-guangzhou\",\n            \"InstanceId\": \"lhins-lart4xxz\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"McpServerDeploymentSet\": [\n            {\n                \"McpServerDeploymentId\": \"lhmsd-axjdikig\",\n                \"McpServerId\": \"lhms-abcdefgh\",\n                \"McpServerName\": \"my-mcp-server\",\n                \"InstanceId\": \"lhins-lart4xxz\",\n                \"InstanceName\": \"green-lh-test\",\n                \"Region\": \"ap-guangzhou\",\n                \"State\": \"PENDING\",\n                \"CreatedTime\": \"2023-06-13T13:55:53Z\"\n            }\n        ],\n        \"RequestId\": \"e29e6e6a-6903-4eff-80d3-335f4a0a454c\"\n    }\n}",
+        "title": "发起MCP Server部署"
       }
     ],
     "StartMcpServers": [

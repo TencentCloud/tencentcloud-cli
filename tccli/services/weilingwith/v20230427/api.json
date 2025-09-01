@@ -152,7 +152,7 @@
       "input": "DescribeCityWorkspaceListRequest",
       "name": "通过城市id查询工作空间列表",
       "output": "DescribeCityWorkspaceListResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DescribeDeviceGroupList": {
       "document": "设备分组列表",
