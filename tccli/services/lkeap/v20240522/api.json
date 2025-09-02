@@ -1,7 +1,7 @@
 {
   "actions": {
     "ChatCompletions": {
-      "document": "### 接口功能\n\n调用接口，发起一次对话请求。默认该接口下的单账号QPM上限为15000 ，TPM上限为1200000\n如需使用OpenAI兼容接口， 请参考文档：[Deepseek OpenAI对话接口](https://cloud.tencent.com/document/product/1772/115969)\n\n#### 在线体验\n如您希望在网页内直接体验 DeepSeek 模型对话，推荐您前往[腾讯云智能体开发平台](https://cloud.tencent.com/product/lke)，使用[ DeepSeek 联网助手](https://lke.cloud.tencent.com/webim_exp/#/chat/wQrAwR)。\n\n#### 已支持的模型\n- DeepSeek-V3-0324（model 参数值为**deepseek-v3-0324**）\n    - DeepSeek-V3-0324为671B参数MoE模型，在编程与技术能力、上下文理解与长文本处理等方面优势突出。\n    - 支持128K上下文长度，最大输出16k（不含思维链）。\n    - 注意：相比于DeepSeek-V3，DeepSeek-V3-0324仅更新了模型权重，未增加参数量。总模型大小为685B，其中包括671B的主模型权重和 14B 的多令牌预测（MTP）模块权重，后续均描述主模型参数量。\n- DeepSeek-V3（model 参数值为**deepseek-v3**）\n    - DeepSeek-V3为671B参数MoE模型，在百科知识、数学推理等多项任务上优势突出，评测成绩在主流榜单中位列开源模型榜首。\n    - 支持64K上下文长度，最大输出16k。\n- DeepSeek-R1（model 参数值为**deepseek-r1**）\n    - DeepSeek-R1为671B模型，使用强化学习训练，推理过程包含大量反思和验证，思维链长度可达数万字。 该系列模型在数学、代码以及各种复杂逻辑推理任务上推理效果优异，并为用户展现了完整的思考过程。\n    -  支持96K上下文长度，最大输入长度64k，最大输出16k（默认4k），最大思维链输出长度32k。\n- DeepSeek-R1-0528（model 参数值为**deepseek-r1-0528**）\n    - DeepSeek-R1-0528为671B 模型，架构优化与训练策略升级后，相比上一版本在代码生成、长文本处理和复杂推理领域提升明显。\n    -  支持96K上下文长度，最大输入长度64k，最大输出16k（默认4k），最大思维链输出长度32k。\n\n\n\n### 计费说明\n\n- 标准计费（2025年2月26日起生效），计费模式为后付费小时结，为保证您账户资源的正常使用，请提前[开通后付费](https://console.cloud.tencent.com/lkeap/settings)并及时[充值](https://console.cloud.tencent.com/expense/recharge)。\n\n    -  DeepSeek-R1 模型   | 输入：0.004元/千token | 输出（含思维链）：0.016元/千token\n\n    -  DeepSeek-R1-0528 模型   | 输入：0.004元/千token | 输出（含思维链）：0.016元/千token\n\n    - DeepSeek-V3 模型 | 输入：0.002元/千token | 输出：0.008元/千token\n\n    - DeepSeek-V3-0324 模型 | 输入：0.002元/千token | 输出：0.008元/千token\n\n\n### Openai兼容协议接口\n知识引擎原子能力大模型对话 API 兼容了 OpenAI 的接口规范，这意味着您可以直接使用 OpenAI 官方提供的 SDK 来调用大模型对话接口。您仅需要将 base_url 和 [api_key](https://cloud.tencent.com/document/product/1772/115970) 替换成相关配置，不需要对应用做额外修改，即可无缝将您的应用切换到相应的大模型。请参考文档：[Deepseek OpenAI对话接口](https://cloud.tencent.com/document/product/1772/115969)。\n> base_url：  https://api.lkeap.cloud.tencent.com/v1\n\n> api_key的获取请参考[API KEY管理](https://cloud.tencent.com/document/product/1772/115970)\n\n\n### 快速接入\n1. 完成[实名认证](https://console.cloud.tencent.com/developer/auth)。\n2. 主账户前往[控制台](https://console.cloud.tencent.com/lkeap)开通服务。若为子账户，需由主账号在[权限管理](https://console.cloud.tencent.com/cam)中为子账号授权，关联预设策略，策略名称：QcloudLKEAPFullAccess。\n3. 通过API Explorer[在线调试](https://console.cloud.tencent.com/api/explorer?Product=lkeap&Version=2024-05-22&Action=ChatCompletions)。\n4. 使用[官方 SDK ](https://cloud.tencent.com/document/product/1772/115963#SDK)调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）。\n\n-----------\n\n### SDK调用示例\n通过本地代码调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）：下面的代码以 Python 语言为例，展示如何访问腾讯云上的DeepSeek模型API的样例。\n（1）安装环境\n```\npython3 -m pip install --upgrade tencentcloud-sdk-python-common\npython3 -m pip install --upgrade tencentcloud-sdk-python-lkeap\n```\n\n（2）示例代码\n\n- 其中SecretKey和SecretID需要从腾讯云控制台获取\n\n- 参数params中模型Model字段可以选择“deepseek-r1“和“deepseek-v3”\n\n```\n# -*- coding: utf-8 -*-\nimport json\n\nfrom tencentcloud.common.common_client import CommonClient\nfrom tencentcloud.common import credential\nfrom tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException\nfrom tencentcloud.common.profile.client_profile import ClientProfile\nfrom tencentcloud.common.profile.http_profile import HttpProfile\n\nclass NonStreamResponse(object):\n    def __init__(self):\n        self.response = \"\"\n\n    def _deserialize(self, obj):\n        self.response = json.dumps(obj)\n\ntry:\n    # 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey，此处还需注意密钥对的保密\n    # 代码泄露可能会导致 SecretId 和 SecretKey 泄露，并威胁账号下所有资源的安全性。以下代码示例仅供参考，建议采用更安全的方式来使用密钥，请参见：https://cloud.tencent.com/document/product/1278/85305\n    # 密钥可前往官网控制台 https://console.cloud.tencent.com/cam/capi 进行获取\n    cred = credential.Credential(\"\", \"\")\n\n    httpProfile = HttpProfile()\n    httpProfile.endpoint = \"lkeap.tencentcloudapi.com\"\n    httpProfile.reqTimeout = 40000  # 流式接口可能耗时较长\n    clientProfile = ClientProfile()\n    clientProfile.httpProfile = httpProfile\n\n    params = \"{\\\"Model\\\":\\\"deepseek-r1\\\",\\\"Messages\\\":[{\\\"Role\\\":\\\"user\\\",\\\"Content\\\":\\\"你好\\\"}],\\\"Stream\\\":true}\";\n    common_client = CommonClient(\"lkeap\", \"2024-05-22\", cred, \"ap-guangzhou\", profile=clientProfile)\n    resp = common_client._call_and_deserialize(\"ChatCompletions\", json.loads(params), NonStreamResponse)\n    if isinstance(resp, NonStreamResponse):  # 非流式响应\n        print(resp.response)\n    else:  # 流式响应\n        for event in resp:\n            print(event)\nexcept TencentCloudSDKException as err:\n    print(err)\n\n```\n\n**DeepSeek-R1使用建议**\n\n1. 将温度设置在 0.5-0.7 范围内（建议为0.6），以防止无休止的重复或不连贯的输出。\n2. 避免添加system prompt，所有说明都应包含在user prompt中。",
+      "document": "### 接口功能\n\n调用接口，发起一次对话请求。默认该接口下的单账号QPM上限为15000 ，TPM上限为1200000\n如需使用OpenAI兼容接口， 请参考文档：[Deepseek OpenAI对话接口](https://cloud.tencent.com/document/product/1772/115969)\n\n#### 在线体验\n如您希望在网页内直接体验 DeepSeek 模型对话，推荐您前往[腾讯云智能体开发平台](https://cloud.tencent.com/product/lke)，使用[ DeepSeek 联网助手](https://lke.cloud.tencent.com/webim_exp/#/chat/wQrAwR)。\n\n#### 已支持的模型\n- DeepSeek-V3-0324（model 参数值为**deepseek-v3-0324**）\n    - DeepSeek-V3-0324为671B参数MoE模型，在编程与技术能力、上下文理解与长文本处理等方面优势突出。\n    - 支持128K上下文长度，最大输出16k（不含思维链）。\n    - 注意：相比于DeepSeek-V3，DeepSeek-V3-0324仅更新了模型权重，未增加参数量。总模型大小为685B，其中包括671B的主模型权重和 14B 的多令牌预测（MTP）模块权重，后续均描述主模型参数量。\n- DeepSeek-V3（model 参数值为**deepseek-v3**）\n    - DeepSeek-V3为671B参数MoE模型，在百科知识、数学推理等多项任务上优势突出，评测成绩在主流榜单中位列开源模型榜首。\n    - 支持64K上下文长度，最大输出16k。\n- DeepSeek-R1（model 参数值为**deepseek-r1**）\n    - DeepSeek-R1为671B模型，使用强化学习训练，推理过程包含大量反思和验证，思维链长度可达数万字。 该系列模型在数学、代码以及各种复杂逻辑推理任务上推理效果优异，并为用户展现了完整的思考过程。\n    -  支持96K上下文长度，最大输入长度64k，最大输出16k（默认4k），最大思维链输出长度32k。\n- DeepSeek-R1-0528（model 参数值为**deepseek-r1-0528**）\n    - DeepSeek-R1-0528为671B 模型，架构优化与训练策略升级后，相比上一版本在代码生成、长文本处理和复杂推理领域提升明显。\n    -  支持96K上下文长度，最大输入长度64k，最大输出16k（默认4k），最大思维链输出长度32k。\n- DeepSeek-V3.1（model 参数值为 deepseek-v3.1）\n\n    - DeepSeek-V3.1 为685B 参数 MoE 模型，支持混合推理架构，有更高的思考效率和更强的 Agent 能力。目前尚处于限制性开放的试运行阶段，如需申请开通请联系售前客服或商务经理。\n\n\n\n\n### 计费说明\n\n- 标准计费（2025年2月26日起生效），计费模式为后付费小时结，为保证您账户资源的正常使用，请提前[开通后付费](https://console.cloud.tencent.com/lkeap/settings)并及时[充值](https://console.cloud.tencent.com/expense/recharge)。\n\n    -  DeepSeek-R1 模型   | 输入：0.004元/千token | 输出（含思维链）：0.016元/千token\n\n    -  DeepSeek-R1-0528 模型   | 输入：0.004元/千token | 输出（含思维链）：0.016元/千token\n\n    - DeepSeek-V3 模型 | 输入：0.002元/千token | 输出：0.008元/千token\n\n    - DeepSeek-V3-0324 模型 | 输入：0.002元/千token | 输出：0.008元/千token\n\n\n### Openai兼容协议接口\n知识引擎原子能力大模型对话 API 兼容了 OpenAI 的接口规范，这意味着您可以直接使用 OpenAI 官方提供的 SDK 来调用大模型对话接口。您仅需要将 base_url 和 [api_key](https://cloud.tencent.com/document/product/1772/115970) 替换成相关配置，不需要对应用做额外修改，即可无缝将您的应用切换到相应的大模型。请参考文档：[Deepseek OpenAI对话接口](https://cloud.tencent.com/document/product/1772/115969)。\n> base_url：  https://api.lkeap.cloud.tencent.com/v1\n\n> api_key的获取请参考[API KEY管理](https://cloud.tencent.com/document/product/1772/115970)\n\n\n### 快速接入\n1. 完成[实名认证](https://console.cloud.tencent.com/developer/auth)。\n2. 主账户前往[控制台](https://console.cloud.tencent.com/lkeap)开通服务。若为子账户，需由主账号在[权限管理](https://console.cloud.tencent.com/cam)中为子账号授权，关联预设策略，策略名称：QcloudLKEAPFullAccess。\n3. 通过API Explorer[在线调试](https://console.cloud.tencent.com/api/explorer?Product=lkeap&Version=2024-05-22&Action=ChatCompletions)。\n4. 使用[官方 SDK ](https://cloud.tencent.com/document/product/1772/115963#SDK)调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）。\n\n-----------\n\n### SDK调用示例\n通过本地代码调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）：下面的代码以 Python 语言为例，展示如何访问腾讯云上的DeepSeek模型API的样例。\n（1）安装环境\n```\npython3 -m pip install --upgrade tencentcloud-sdk-python-common\npython3 -m pip install --upgrade tencentcloud-sdk-python-lkeap\n```\n\n（2）示例代码\n\n- 其中SecretKey和SecretID需要从腾讯云控制台获取\n\n- 参数params中模型Model字段可以选择“deepseek-r1“和“deepseek-v3”\n\n```\n# -*- coding: utf-8 -*-\nimport json\n\nfrom tencentcloud.common.common_client import CommonClient\nfrom tencentcloud.common import credential\nfrom tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException\nfrom tencentcloud.common.profile.client_profile import ClientProfile\nfrom tencentcloud.common.profile.http_profile import HttpProfile\n\nclass NonStreamResponse(object):\n    def __init__(self):\n        self.response = \"\"\n\n    def _deserialize(self, obj):\n        self.response = json.dumps(obj)\n\ntry:\n    # 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey，此处还需注意密钥对的保密\n    # 代码泄露可能会导致 SecretId 和 SecretKey 泄露，并威胁账号下所有资源的安全性。以下代码示例仅供参考，建议采用更安全的方式来使用密钥，请参见：https://cloud.tencent.com/document/product/1278/85305\n    # 密钥可前往官网控制台 https://console.cloud.tencent.com/cam/capi 进行获取\n    cred = credential.Credential(\"\", \"\")\n\n    httpProfile = HttpProfile()\n    httpProfile.endpoint = \"lkeap.tencentcloudapi.com\"\n    httpProfile.reqTimeout = 40000  # 流式接口可能耗时较长\n    clientProfile = ClientProfile()\n    clientProfile.httpProfile = httpProfile\n\n    params = \"{\\\"Model\\\":\\\"deepseek-r1\\\",\\\"Messages\\\":[{\\\"Role\\\":\\\"user\\\",\\\"Content\\\":\\\"你好\\\"}],\\\"Stream\\\":true}\";\n    common_client = CommonClient(\"lkeap\", \"2024-05-22\", cred, \"ap-guangzhou\", profile=clientProfile)\n    resp = common_client._call_and_deserialize(\"ChatCompletions\", json.loads(params), NonStreamResponse)\n    if isinstance(resp, NonStreamResponse):  # 非流式响应\n        print(resp.response)\n    else:  # 流式响应\n        for event in resp:\n            print(event)\nexcept TencentCloudSDKException as err:\n    print(err)\n\n```\n\n**DeepSeek-R1使用建议**\n\n1. 将温度设置在 0.5-0.7 范围内（建议为0.6），以防止无休止的重复或不连贯的输出。\n2. 避免添加system prompt，所有说明都应包含在user prompt中。",
       "input": "ChatCompletionsRequest",
       "name": "DeepSeek API 接口",
       "output": "ChatCompletionsResponse",
@@ -169,7 +169,7 @@
       "status": "online"
     },
     "RunRerank": {
-      "document": "基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按分数由高到低对切片进行排序，并输出对应的打分结果。",
+      "document": "基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按照顺序给出每一条结果和query的相关性分数。",
       "input": "RunRerankRequest",
       "name": "重排序",
       "output": "RunRerankResponse",
@@ -311,7 +311,7 @@
         {
           "disabled": false,
           "document": "聊天上下文信息。\n说明：\n1. 长度最多为 40，按对话时间从旧到新在数组中排列。\n2. Message.Role 可选值：system、user、assistant。\n其中，system 角色可选，如存在则必须位于列表的最开始。user 和 assistant 需交替出现，以 user 提问开始，user 提问结束，Content 不能为空。Role 的顺序示例：[system（可选） user assistant user assistant user ...]。\n",
-          "example": "{ \"Role\": \"user\", \"Content\": \"你是谁\" }",
+          "example": "无",
           "member": "Message",
           "name": "Messages",
           "required": true,
@@ -693,7 +693,7 @@
         {
           "disabled": false,
           "document": "说明：文件的 URL 地址。\n备注：文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)",
-          "example": "无",
+          "example": "http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/example.jpg",
           "member": "string",
           "name": "FileUrl",
           "required": false,
@@ -702,7 +702,7 @@
         {
           "disabled": false,
           "document": "文件的 Base64 值。\n支持的文件类型： PNG、JPG、JPEG、PDF、GIF、BMP、TIFF\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
-          "example": "无",
+          "example": "文件base64值",
           "member": "string",
           "name": "FileBase64",
           "required": false,
@@ -729,7 +729,7 @@
         {
           "disabled": false,
           "document": "说明：创建文档解析任务配置信息。\n备注：可设置结果的返回格式\n默认值：无",
-          "example": "{\"TableResultType\":\"1\"}",
+          "example": "无",
           "member": "CreateReconstructDocumentFlowConfig",
           "name": "Config",
           "required": false,
@@ -844,7 +844,7 @@
         {
           "disabled": true,
           "document": "文件的 Base64 值。\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
-          "example": "无",
+          "example": "文件base64值",
           "member": "string",
           "name": "FileBase64",
           "required": false,
@@ -871,7 +871,7 @@
         {
           "disabled": false,
           "document": "文档拆分任务的配置信息。\n",
-          "example": "{\"EnableMllm\":true,\"MaxChunkSize\":4800}\t",
+          "example": "无",
           "member": "CreateSplitDocumentFlowConfig",
           "name": "Config",
           "required": false,
@@ -1292,6 +1292,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，单位：字节",
+          "example": "100",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1312,6 +1322,32 @@
         }
       ],
       "usage": "both"
+    },
+    "ErrorInfo": {
+      "document": "错误信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "FailedOperation.FileParseError",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "file parse timeout",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "GetCharacterUsageRequest": {
       "document": "GetCharacterUsage请求参数结构体",
@@ -1390,7 +1426,7 @@
         {
           "disabled": false,
           "document": "消耗量，返回TotalToken",
-          "example": "{\"TotalTokens\":3}",
+          "example": "无",
           "member": "Usage",
           "name": "Usage",
           "output_required": false,
@@ -1465,6 +1501,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "Error",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1527,6 +1573,16 @@
           "example": "无",
           "member": "DocumentUsage",
           "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档拆分失败的错误信息，当拆分任务失败时返回该错误信息",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "Error",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -2066,8 +2122,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写",
-          "example": "[{\"Role\":\"user\",\"Content\":\"你家在哪里\"},{\"Role\":\"assistant\",\"Content\":“我家在国内”}]",
+          "document": "说明：需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入\n备注：由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写。四轮对话最多包含3600个字符。",
+          "example": "无",
           "member": "Message",
           "name": "Messages",
           "required": true,
@@ -2075,7 +2131,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称",
+          "document": "说明：模型名称\n备注：仅一个模型可选\n默认值：lke-query-rewrite-base",
           "example": "lke-query-rewrite-base",
           "member": "string",
           "name": "Model",
@@ -2091,7 +2147,7 @@
         {
           "disabled": false,
           "document": "改写结果",
-          "example": "无",
+          "example": "你好",
           "member": "string",
           "name": "Content",
           "output_required": true,
@@ -2101,7 +2157,7 @@
         {
           "disabled": false,
           "document": "消耗量，返回输入token数，输出token数以及总token数",
-          "example": "{\"InputTokens\":45,\"OutputTokens\":6,\"TotalTokens\":51}",
+          "example": "无",
           "member": "Usage",
           "name": "Usage",
           "output_required": false,
@@ -2199,7 +2255,7 @@
         {
           "disabled": false,
           "document": "文件的 URL 地址。文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)\n\n默认值：无",
-          "example": "无",
+          "example": "url",
           "member": "string",
           "name": "FileUrl",
           "required": false,
@@ -2208,7 +2264,7 @@
         {
           "disabled": false,
           "document": "说明：文件的 Base64 值。\n备注：支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。\n\n默认值：无",
-          "example": "无",
+          "example": "base64",
           "member": "string",
           "name": "FileBase64",
           "required": false,
@@ -2250,7 +2306,7 @@
         {
           "disabled": false,
           "document": "任务ID。本次请求的唯一标识",
-          "example": "无",
+          "example": "taskld",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -2260,7 +2316,7 @@
         {
           "disabled": false,
           "document": "响应类型。1：返回进度信息， 2：返回解析结果",
-          "example": "无",
+          "example": "type",
           "member": "string",
           "name": "ResponseType",
           "output_required": false,
@@ -2270,7 +2326,7 @@
         {
           "disabled": false,
           "document": "进度。0~100",
-          "example": "无",
+          "example": "progress",
           "member": "string",
           "name": "Progress",
           "output_required": false,
@@ -2280,7 +2336,7 @@
         {
           "disabled": false,
           "document": "进度信息。",
-          "example": "无",
+          "example": "progressMessage",
           "member": "string",
           "name": "ProgressMessage",
           "output_required": false,
@@ -2290,7 +2346,7 @@
         {
           "disabled": false,
           "document": "文档解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟。压缩包内包含*.md、*.json以及images文件夹。\n",
-          "example": "无",
+          "example": "documentRecognizeResultUrl",
           "member": "string",
           "name": "DocumentRecognizeResultUrl",
           "output_required": false,
@@ -2529,7 +2585,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询内容",
+          "document": "说明：查询内容\n备注：用于匹配的query",
           "example": "腾讯知识引擎大模型",
           "member": "string",
           "name": "Query",
@@ -2538,7 +2594,7 @@
         },
         {
           "disabled": false,
-          "document": "文档列表，最多20个",
+          "document": "说明：文档列表\n备注：最多60个，Query字段和Docs字段的总长度上限为2000字符",
           "example": "[\"腾讯知识引擎\",\"知识引擎大模型\"]",
           "member": "string",
           "name": "Docs",
@@ -2547,7 +2603,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称, 默认: lke-reranker-base",
+          "document": "说明：模型名称\n备注：仅一个模型可选\n默认值：lke-reranker-base",
           "example": "lke-reranker-base",
           "member": "string",
           "name": "Model",
@@ -2573,7 +2629,7 @@
         {
           "disabled": false,
           "document": "消耗量，仅返回TotalToken",
-          "example": "{\"TotalTokens\":3}",
+          "example": "无",
           "member": "Usage",
           "name": "Usage",
           "output_required": false,

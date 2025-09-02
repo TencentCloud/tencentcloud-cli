@@ -128,6 +128,14 @@
         "title": "创建密钥对"
       }
     ],
+    "CreateMcpServer": [
+      {
+        "document": "创建一个新的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMcpServer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"Name\": \"腾讯云 Lighthouse MCP Server\",\n    \"Command\": \"bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==\",\n    \"Description\": \"基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。\",\n    \"Envs\": [\n        {\n            \"Key\": \"TENCENTCLOUD_SECRET_KEY\",\n            \"Value\": \"YOUR_TENCENT_SECRET_KEY\"\n        },\n        {\n            \"Key\": \"TENCENTCLOUD_SECRET_ID\",\n            \"Value\": \"YOUR_TENCENT_SECRET_ID\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"McpServerId\": \"lhms-p2dophob\",\n        \"RequestId\": \"54a37c92-9e77-4ba2-a791-925ae44f37f2\"\n    }\n}",
+        "title": "创建MCP Server"
+      }
+    ],
     "DeleteBlueprints": [
       {
         "document": "删除一个自定义镜像",
@@ -454,6 +462,14 @@
         "title": "查询用户密钥对列表"
       }
     ],
+    "DescribeMcpServers": [
+      {
+        "document": "查询指定实例下的MCP Server列表。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerIds\": [\n        \"lhms-p2dophob\"\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"lhins-5h3s0lht\",\n        \"InstanceName\": \"ai mcp server test\",\n        \"McpServerSet\": [\n            {\n                \"Command\": \"bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==\",\n                \"Config\": \"{\\\"mcpServers\\\":{\\\"腾讯云 Lighthouse MCP Server\\\":{\\\"url\\\":\\\"http://1.14.57.202/lhms-p2dophob/sse\\\"}}}\",\n                \"CreatedTime\": \"2025-08-27T07:33:14Z\",\n                \"Description\": \"基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。\",\n                \"EnvSet\": [\n                    {\n                        \"Key\": \"TENCENTCLOUD_SECRET_KEY\",\n                        \"Value\": \"**********\"\n                    },\n                    {\n                        \"Key\": \"TENCENTCLOUD_SECRET_ID\",\n                        \"Value\": \"**********\"\n                    }\n                ],\n                \"IconUrl\": \"https://cloudcache.tencent-cloud.com/qcloud/ui/static/other_external_resource/6e6c2ea3-301f-4ce2-8fd9-3952c6eb04b5.png\",\n                \"McpServerId\": \"lhms-p2dophob\",\n                \"McpServerType\": \"PUBLIC_PACKAGE\",\n                \"Name\": \"腾讯云 Lighthouse MCP Server\",\n                \"ServerUrl\": \"http://1.14.57.202/lhms-p2dophob/sse\",\n                \"State\": \"RUNNING\",\n                \"UpdatedTime\": \"2025-08-27T07:37:43Z\"\n            }\n        ],\n        \"RequestId\": \"fe83a82b-967c-4f58-89d2-9ee20f9dafc5\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询MCP Server列表"
+      }
+    ],
     "DescribeModifyInstanceBundles": [
       {
         "document": "查询实例可修改套餐列表",
@@ -708,6 +724,14 @@
         "title": "修改实例的续费标识"
       }
     ],
+    "ModifyMcpServer": [
+      {
+        "document": "修改指定MCP Server的信息。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMcpServer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerId\": \"lhms-p2dophob\",\n    \"Name\": \"腾讯云 Lighthouse MCP Server\",\n    \"Command\": \"bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==\",\n    \"Description\": \"基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。\",\n    \"Envs\": [\n        {\n            \"Key\": \"TENCENTCLOUD_SECRET_KEY\",\n            \"Value\": \"MODIFIED_TENCENT_SECRET_KEY\"\n        },\n        {\n            \"Key\": \"TENCENTCLOUD_SECRET_ID\",\n            \"Value\": \"MODIFIED_TENCENT_SECRET_ID\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54b97dbc-e8d3-45f0-b648-2934d76c1cf9\"\n    }\n}",
+        "title": "修改MCP Server信息"
+      }
+    ],
     "ModifySnapshotAttribute": [
       {
         "document": "",
@@ -730,6 +754,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveDockerContainers\n<公共请求参数>\n\n{\n    \"ContainerIds\": [\n        \"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415\"\n    ],\n    \"InstanceId\": \"lhins-nwycpjl3\"\n}",
         "output": "{\n    \"Response\": {\n        \"DockerActivityId\": \"lhda-nn82v77w\",\n        \"RequestId\": \"2c715b55-de1f-4a46-94a8-caeeee86b0f1\"\n    }\n}",
         "title": "删除Docker容器"
+      }
+    ],
+    "RemoveMcpServers": [
+      {
+        "document": "删除指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerIds\": [\n        \"lhms-p2dophob\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a50de509-5ecb-40db-9ad2-a01cffc8c3f3\"\n    }\n}",
+        "title": "删除MCP Server"
       }
     ],
     "RenameDockerContainer": [
@@ -820,6 +852,14 @@
         "title": "重启Docker容器"
       }
     ],
+    "RestartMcpServers": [
+      {
+        "document": "重启指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerIds\": [\n        \"lhms-p2dophob\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfca933c-ba03-4c91-a03b-db81f79e0419\"\n    }\n}",
+        "title": "重启MCP Server"
+      }
+    ],
     "RunDockerContainers": [
       {
         "document": "",
@@ -852,6 +892,14 @@
         "title": "启动指定ID的实例"
       }
     ],
+    "StartMcpServers": [
+      {
+        "document": "开启指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerIds\": [\n        \"lhms-p2dophob\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cee0dea-b7d4-41d2-ad79-4d2a852e6013\"\n    }\n}",
+        "title": "开启MCP Server"
+      }
+    ],
     "StopDockerContainers": [
       {
         "document": "",
@@ -866,6 +914,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=StopInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&InstanceIds.1=lhins-rusdke45\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5fd6992a-f8b1-4cd2-9574-cb4251bc524f\"\n    }\n}",
         "title": "关闭实例"
+      }
+    ],
+    "StopMcpServers": [
+      {
+        "document": "关闭指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"McpServerIds\": [\n        \"lhms-p2dophob\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cab721b-7a7f-4438-82f9-d19f1bb5a45a\"\n    }\n}",
+        "title": "关闭MCP Server"
       }
     ],
     "SyncBlueprint": [

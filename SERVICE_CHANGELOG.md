@@ -1,10 +1,10 @@
-# Release 3.0.1376.1
+# Release 3.0.1382.1
 
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+## 云游戏(gs) 版本：2019-11-18
 
-### 第 55 次发布
+### 第 53 次发布
 
-发布时间：2025-08-20 01:19:20
+发布时间：2025-08-29 01:52:18
 
 本次发布包含了以下内容：
 
@@ -12,134 +12,29 @@
 
 修改接口：
 
-* [DeleteBackUpData](https://cloud.tencent.com/document/api/1387/109542)
+* [DistributeFileToAndroidInstances](https://cloud.tencent.com/document/api/1162/118964)
 
-	* 新增入参：IsRecover
+	* 新增入参：DestinationFileName
 
-	* 新增出参：ErrorMsg
+* [UploadFileToAndroidInstances](https://cloud.tencent.com/document/api/1162/117243)
+
+	* 新增入参：DestinationFileName
 
 
 修改数据结构：
 
-* [BackUpJobDisplay](https://cloud.tencent.com/document/api/1387/102385#BackUpJobDisplay)
+* [AndroidInstanceUploadFile](https://cloud.tencent.com/document/api/1162/40743#AndroidInstanceUploadFile)
 
-	* 新增成员：IsolationCount
+	* 新增成员：DestinationFileName
 
 
 
 
-## 文件存储(cfs) 版本：2019-07-19
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 41 次发布
+### 第 72 次发布
 
-发布时间：2025-08-20 01:20:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DoDirectoryOperation](https://cloud.tencent.com/document/api/582/122412)
-
-	* 新增入参：DestPath
-
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 135 次发布
-
-发布时间：2025-08-20 01:23:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyLoadBalancerAttributes](https://cloud.tencent.com/document/api/214/30680)
-
-	* 新增入参：AssociateEndpoint
-
-
-修改数据结构：
-
-* [LoadBalancer](https://cloud.tencent.com/document/api/214/30694#LoadBalancer)
-
-	* 新增成员：AssociateEndpoint
-
-
-
-
-## 暴露面管理服务(ctem) 版本：2023-11-28
-
-### 第 7 次发布
-
-发布时间：2025-08-20 01:27:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeConfigs](https://cloud.tencent.com/document/api/1755/120298)
-
-	* 新增入参：OrderBy
-
-
-修改数据结构：
-
-* [DisplayDarkWeb](https://cloud.tencent.com/document/api/1755/120320#DisplayDarkWeb)
-
-	* 新增成员：Status
-
-
-
-
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
-
-### 第 20 次发布
-
-发布时间：2025-08-20 01:51:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateDeviceTask](https://cloud.tencent.com/document/api/1092/119711)
-
-	* 新增入参：DomainInstanceId
-
-* [DescribeDeviceInfo](https://cloud.tencent.com/document/api/1092/119710)
-
-	* 新增入参：DomainInstanceId
-
-* [DescribeSoftCensusListByDevice](https://cloud.tencent.com/document/api/1092/118217)
-
-	* 新增入参：DomainInstanceId
-
-	* <font color="#dd0000">**修改入参**：</font>GroupId
-
-
-修改数据结构：
-
-* [DescribeSoftCensusListByDeviceData](https://cloud.tencent.com/document/api/1092/102488#DescribeSoftCensusListByDeviceData)
-
-	* 新增成员：RemarkName
-
-
-
-
-## 智能视图计算平台(iss) 版本：2023-05-17
-
-### 第 29 次发布
-
-发布时间：2025-08-20 01:57:09
+发布时间：2025-08-29 02:03:19
 
 本次发布包含了以下内容：
 
@@ -147,43 +42,26 @@
 
 新增接口：
 
-* [DescribeUserDeviceList](https://cloud.tencent.com/document/api/1344/122633)
+* [CreateMcpServer](https://cloud.tencent.com/document/api/1207/122838)
+* [DescribeMcpServers](https://cloud.tencent.com/document/api/1207/122837)
+* [ModifyMcpServer](https://cloud.tencent.com/document/api/1207/122836)
+* [RemoveMcpServers](https://cloud.tencent.com/document/api/1207/122835)
+* [RestartMcpServers](https://cloud.tencent.com/document/api/1207/122834)
+* [StartMcpServers](https://cloud.tencent.com/document/api/1207/122833)
+* [StopMcpServers](https://cloud.tencent.com/document/api/1207/122832)
 
 新增数据结构：
 
-* [DescribeDeviceListData](https://cloud.tencent.com/document/api/1344/95952#DescribeDeviceListData)
+* [McpServer](https://cloud.tencent.com/document/api/1207/47576#McpServer)
+* [McpServerEnv](https://cloud.tencent.com/document/api/1207/47576#McpServerEnv)
 
 
 
-## 集团账号管理(organization) 版本：2021-03-31
+## 高性能计算平台(thpc) 版本：2023-03-21
 
-### 第 51 次发布
+### 第 27 次发布
 
-发布时间：2025-08-20 02:21:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeOrganizationMembersAuthPolicy](https://cloud.tencent.com/document/api/850/122634)
-
-新增数据结构：
-
-* [OrgMembersAuthPolicy](https://cloud.tencent.com/document/api/850/67060#OrgMembersAuthPolicy)
-
-
-
-## 集团账号管理(organization) 版本：2018-12-25
-
-
-
-## 智能媒资托管(smh) 版本：2021-07-12
-
-### 第 8 次发布
-
-发布时间：2025-08-20 02:32:57
+发布时间：2025-08-29 03:04:08
 
 本次发布包含了以下内容：
 
@@ -191,10 +69,20 @@
 
 修改数据结构：
 
-* [Library](https://cloud.tencent.com/document/api/1339/69090#Library)
+* [CFSOption](https://cloud.tencent.com/document/api/1527/89579#CFSOption)
 
-	* 新增成员：AccessDomain
+	* 新增成员：FileSystemId
 
+	* <font color="#dd0000">**修改成员**：</font>RemotePath
+
+
+
+
+## 高性能计算平台(thpc) 版本：2022-04-01
+
+
+
+## 高性能计算平台(thpc) 版本：2021-11-09
 
 
 

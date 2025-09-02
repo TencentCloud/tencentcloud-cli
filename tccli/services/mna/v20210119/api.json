@@ -231,6 +231,13 @@
       "output": "OrderPerLicenseResponse",
       "status": "online"
     },
+    "ReportOrder": {
+      "document": "用户上报自定义的订单信息，多网聚合加速服务将相关信息进行保存",
+      "input": "ReportOrderRequest",
+      "name": "订单信息上报",
+      "output": "ReportOrderResponse",
+      "status": "online"
+    },
     "SetNotifyUrl": {
       "document": "设置用户流量告警信息接口，通过该接口设置流量包告警阈值以及告警时回调的url和key",
       "input": "SetNotifyUrlRequest",
@@ -3649,6 +3656,72 @@
       ],
       "type": "object"
     },
+    "OrderInfo": {
+      "document": "返回上报的订单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "父帐号uin",
+          "example": "700001394326",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "4002428",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量类型",
+          "example": "pack_1",
+          "member": "string",
+          "name": "PackageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单编号唯一标识符",
+          "example": "100003848",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上报月份，默认当前月",
+          "example": "2025-08",
+          "member": "string",
+          "name": "ReportMonth",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据更新时间",
+          "example": "2025-08-02 15:04:05",
+          "member": "string",
+          "name": "Updated",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "OrderPerLicenseRequest": {
       "document": "OrderPerLicense请求参数结构体",
       "members": [
@@ -3672,7 +3745,7 @@
         },
         {
           "disabled": false,
-          "document": "购买失败后是否回滚（删除）设备，默认true，如果设备绑定了生效中的流量包则不能回滚。",
+          "document": "购买失败后是否回滚（删除）设备，默认false，如果设备绑定了生效中的流量包则不能回滚。",
           "example": "true",
           "member": "bool",
           "name": "RollBack",
@@ -3711,6 +3784,70 @@
           "name": "ResourceId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportOrderRequest": {
+      "document": "ReportOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单编号唯一标识符",
+          "example": "100003848",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "4002428",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量类型",
+          "example": "pack_1",
+          "member": "string",
+          "name": "PackageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上报月份，默认当前月",
+          "example": "2025-08",
+          "member": "string",
+          "name": "ReportMonth",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportOrderResponse": {
+      "document": "ReportOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单信息",
+          "example": "无",
+          "member": "OrderInfo",
+          "name": "OrderInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {

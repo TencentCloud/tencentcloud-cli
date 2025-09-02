@@ -190,11 +190,11 @@
       "status": "online"
     },
     "DescribeTRTCMarketQualityMetricData": {
-      "document": "查询TRTC监控仪表盘-数据大盘质量指标（包括下列指标）\njoinSuccessRate：加入频道成功率。\njoinSuccessIn5sRate：5s内加入频道成功率。\naudioFreezeRate：音频卡顿率。\nvideoFreezeRate：视频卡顿率。\nnetworkDelay ：网络延迟率。\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2.查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天。",
+      "document": "云监控monitor接口已下线，trtc同步下线接口\n\n查询TRTC监控仪表盘-数据大盘质量指标（包括下列指标）\njoinSuccessRate：加入频道成功率。\njoinSuccessIn5sRate：5s内加入频道成功率。\naudioFreezeRate：音频卡顿率。\nvideoFreezeRate：视频卡顿率。\nnetworkDelay ：网络延迟率。\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2.查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天。",
       "input": "DescribeTRTCMarketQualityMetricDataRequest",
       "name": "查询TRTC数据大盘质量指标",
       "output": "DescribeTRTCMarketQualityMetricDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTRTCMarketScaleData": {
       "document": "查询TRTC监控仪表盘-数据大盘规模指标（会返回通话人数，通话房间数，峰值同时在线人数，峰值同时在线频道数）\nuserCount：通话人数，\nroomCount：通话房间数，从有用户加入频道到所有用户离开频道计为一个通话频道。\npeakCurrentChannels：峰值同时在线频道数。\npeakCurrentUsers：峰值同时在线人数。\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘[版本功能和计费说明](https://cloud.tencent.com/document/product/647/81331)。\n2.查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天。",
@@ -204,11 +204,11 @@
       "status": "online"
     },
     "DescribeTRTCMarketScaleMetricData": {
-      "document": "查询TRTC监控仪表盘-数据大盘规模指标（会返回通话人数，通话房间数，峰值同时在线人数，峰值同时在线频道数）\nuserCount：通话人数，\nroomCount：通话房间数，从有用户加入频道到所有用户离开频道计为一个通话频道。\npeakCurrentChannels：峰值同时在线频道数。\npeakCurrentUsers：峰值同时在线人数。\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2.查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天。",
+      "document": "云监控monitor接口已下线，trtc同步下线接口\n\n查询TRTC监控仪表盘-数据大盘规模指标（会返回通话人数，通话房间数，峰值同时在线人数，峰值同时在线频道数）\nuserCount：通话人数，\nroomCount：通话房间数，从有用户加入频道到所有用户离开频道计为一个通话频道。\npeakCurrentChannels：峰值同时在线频道数。\npeakCurrentUsers：峰值同时在线人数。\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2.查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天。",
       "input": "DescribeTRTCMarketScaleMetricDataRequest",
       "name": "查询TRTC数据大盘规模指标",
       "output": "DescribeTRTCMarketScaleMetricDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTRTCRealTimeQualityData": {
       "document": "查询TRTC监控仪表盘-实时监控质量指标（会返回下列指标）\n-视频卡顿率\n-音频卡顿率\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，详情参考[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)。\n2.查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时。",
@@ -218,11 +218,11 @@
       "status": "online"
     },
     "DescribeTRTCRealTimeQualityMetricData": {
-      "document": "查询TRTC监控仪表盘-实时监控质量指标（会返回下列指标）\n-视频卡顿率\n-音频卡顿率\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2.查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时。",
+      "document": "云监控monitor接口已下线，trtc同步下线接口\n\n查询TRTC监控仪表盘-实时监控质量指标（会返回下列指标）\n-视频卡顿率\n-音频卡顿率\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2.查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时。",
       "input": "DescribeTRTCRealTimeQualityMetricDataRequest",
       "name": "查询TRTC实时监控质量指标",
       "output": "DescribeTRTCRealTimeQualityMetricDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTRTCRealTimeScaleData": {
       "document": "查询TRTC监控仪表盘-实时监控规模指标（会返回下列指标）\n-userCount（在线用户数）\n-roomCount（在线房间数）\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，详情参考[监控仪表盘](https://cloud.tencent.com/document/product/647/81331)。\n2.查询时间范围根据监控仪表盘功能版本而定，基础版可查近3小时，进阶版可查近12小时。",
@@ -600,7 +600,7 @@
         {
           "disabled": false,
           "document": "机器人的UserId，用于进房发起任务。【注意】这个UserId不能与当前房间内的主播观众[UserId](https://cloud.tencent.com/document/product/647/46351#userid)重复。如果一个房间发起多个任务时，机器人的UserId也不能相互重复，否则会中断前一个任务。需要保证机器人UserId在房间内唯一。",
-          "example": "user_123",
+          "example": "user_132",
           "member": "string",
           "name": "UserId",
           "output_required": false,
@@ -622,7 +622,7 @@
         {
           "disabled": false,
           "document": "机器人拉流的UserId, 填写后，机器人会拉取该UserId的流进行实时处理",
-          "example": "user_123",
+          "example": "user_132",
           "member": "string",
           "name": "TargetUserId",
           "output_required": false,
@@ -721,7 +721,7 @@
         {
           "disabled": false,
           "document": "环境音设置",
-          "example": "{\"Scene\": \"coffee_shops\", \"Volume\": 1.0}}",
+          "example": "无",
           "member": "AmbientSound",
           "name": "AmbientSound",
           "output_required": false,
@@ -732,7 +732,7 @@
         {
           "disabled": false,
           "document": "声纹配置",
-          "example": "{\"Mode\": 1, \"IdList\": [\"voiceprintid1\"]]}",
+          "example": "无",
           "member": "VoicePrint",
           "name": "VoicePrint",
           "output_required": false,
@@ -743,7 +743,7 @@
         {
           "disabled": false,
           "document": "语义断句检测",
-          "example": "{\"SemanticEagerness\": \"auto\"}}",
+          "example": "无",
           "member": "TurnDetection",
           "name": "TurnDetection",
           "output_required": false,
@@ -760,6 +760,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "打断词列表，在AI说话期间，只有说出列表中的打断词才会打断AI说话。\n注意：打断词不会触发AI回复。",
+          "example": "[\"停下\"]",
+          "member": "string",
+          "name": "InterruptWordList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5898,7 +5909,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保存命中文件 0 默认不保存  1 保存命中文件",
+          "document": "是否保存文件  0不保存文件 1保存所有文件 2仅保存命中文件",
           "example": "0",
           "member": "uint64",
           "name": "SaveModerationFile",
@@ -8011,7 +8022,7 @@
         {
           "disabled": false,
           "document": "输入在线媒体流机器人的UserId，用于进房发起拉流转推任务。",
-          "example": "recorder_1234",
+          "example": "recorder_1357",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -8020,7 +8031,7 @@
         {
           "disabled": false,
           "document": "输入在线媒体流机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
-          "example": "recorder_1234_sig",
+          "example": "recorder_1357_sig",
           "member": "string",
           "name": "UserSig",
           "required": true,
@@ -8065,7 +8076,7 @@
         {
           "disabled": true,
           "document": "【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。",
-          "example": "https://a.b/test.mp4",
+          "example": "[\"https://a.b/test.mp4\"]",
           "member": "string",
           "name": "SourceUrl",
           "required": false,
@@ -9348,7 +9359,7 @@
         },
         {
           "disabled": false,
-          "document": "是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，如果要销毁任务请调用停止接口。",
+          "document": "是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，暂停超过12小时会自动销毁任务, 建议主动调用停止任务接口。",
           "example": "false",
           "member": "bool",
           "name": "IsPause",

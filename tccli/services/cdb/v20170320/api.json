@@ -1149,7 +1149,7 @@
       "status": "online"
     },
     "StopRollback": {
-      "document": "本接口(StopRollback) 用于撤销实例正在进行的回档任务，该接口返回一个异步任务id。 撤销结果可以通过 DescribeAsyncRequestInfo 查询任务的执行情况。",
+      "document": "本接口（StopRollback）用于撤销实例正在进行的回档任务，该接口返回一个异步任务 ID。撤销结果可以通过 [DescribeAsyncRequestInfo](https://cloud.tencent.com/document/api/236/20410) 查询任务的执行情况。",
       "input": "StopRollbackRequest",
       "name": "撤销回档任务",
       "output": "StopRollbackResponse",
@@ -12312,7 +12312,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "代理配置",
           "example": "无",
           "member": "CustomConfig",
@@ -12324,11 +12324,21 @@
         {
           "disabled": false,
           "document": "权重限制",
-          "example": "{\"LessThan\":2000,\"Weight\":1}",
+          "example": "无",
           "member": "Rule",
           "name": "WeightRule",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代理配置",
+          "example": "无",
+          "member": "CustomConfig",
+          "name": "CustomConfInfo",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -21109,7 +21119,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "撤销回档任务对应的实例Id。",
+          "document": "撤销回档任务对应的实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/api/236/15872) 接口获取。",
           "example": "cdb-9303wd4x",
           "member": "string",
           "name": "InstanceId",
@@ -21124,11 +21134,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行请求的异步任务ID",
+          "document": "执行请求的异步任务 ID。",
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

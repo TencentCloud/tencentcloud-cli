@@ -8,6 +8,14 @@
         "title": "申请Token延期接口实例"
       }
     ],
+    "ClearEmbedToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ClearEmbedToken\n<公共请求参数>\n\n{\n    \"ProjectId\": \"889\",\n    \"UserCorpId\": \"700000777778\",\n    \"Scope\": \"page\",\n    \"PageId\": \"8991\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Extra\": \"Extra\",\n        \"Msg\": \"Msg\",\n        \"Data\": false,\n        \"RequestId\": \"RequestId\"\n    }\n}",
+        "title": "page token 清理"
+      }
+    ],
     "CreateDatasource": [
       {
         "document": "创建数据源",

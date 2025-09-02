@@ -1013,6 +1013,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回收标志，为空则表示正常，recycle表示已回收",
+          "example": "recycle",
+          "member": "string",
+          "name": "Recycle",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

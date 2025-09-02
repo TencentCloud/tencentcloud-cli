@@ -20476,8 +20476,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "阻断开关状态:\n 0 -- 关闭 \n 1 -- 高级阻断\n 2 -- 基础阻断(只阻断情报库黑ip)",
-          "example": "1",
+          "document": "(已废弃) 阻断开关状态: 0 -- 关闭  1 -- 高级阻断 2 -- 基础阻断(只阻断情报库黑ip)",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -20497,9 +20497,39 @@
         {
           "disabled": false,
           "document": "是否开启智能过白模式",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "OpenSmartMode",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启情报IP阻断",
+          "example": "true",
+          "member": "bool",
+          "name": "BanBlackIp",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启漏洞IP阻断",
+          "example": "true",
+          "member": "bool",
+          "name": "BanVulIp",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启规则阻断",
+          "example": "true",
+          "member": "bool",
+          "name": "BanByRule",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -42307,7 +42337,7 @@
         },
         {
           "disabled": false,
-          "document": "高危信息说明：\nABROAD - 海外IP；\nXTI - 威胁情报",
+          "document": "高危信息说明：\nABROAD - 境外IP；\nXTI - 威胁情报",
           "example": "ABROAD",
           "member": "string",
           "name": "Desc",
@@ -42318,7 +42348,7 @@
         {
           "disabled": false,
           "document": "附加信息",
-          "example": "{\"WanIP\":\"1.1.1.1\",\"PrivateIP\":\"1.1.1.1\",\"NetworkType\":1,\"NetworkName\":\"vpc-id\",\"InstanceID\":\"ins-id\",\"HostName\":\"hn\"}",
+          "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
           "output_required": false,
@@ -44070,7 +44100,7 @@
         {
           "disabled": false,
           "document": "白名单地域",
-          "example": "[{\"CityId\":1,\"CountryId\":1,\"ProvinceId\":1},{\"CityId\":1,\"CountryId\":1,\"ProvinceId\":1}]",
+          "example": "无",
           "member": "Place",
           "name": "Places",
           "output_required": true,
@@ -44090,7 +44120,7 @@
         {
           "disabled": false,
           "document": "白名单IP（多个IP逗号隔开）",
-          "example": "19.123.**.**",
+          "example": "19.*.1.**",
           "member": "string",
           "name": "SrcIp",
           "output_required": true,
@@ -44209,7 +44239,7 @@
         },
         {
           "disabled": false,
-          "document": "登陆地",
+          "document": "登录地",
           "example": "shanghai",
           "member": "string",
           "name": "Locations",
@@ -50309,7 +50339,7 @@
         },
         {
           "disabled": false,
-          "document": "国家ID，暂只支持国内：1。",
+          "document": "国家ID，暂只支持境内：1。",
           "example": "104",
           "member": "uint64",
           "name": "CountryId",

@@ -630,6 +630,13 @@
       "output": "DescribeRocketMQNamespacesResponse",
       "status": "online"
     },
+    "DescribeRocketMQProducers": {
+      "document": "查询 RocketMQ 指定主题下的生产者客户端列表。",
+      "input": "DescribeRocketMQProducersRequest",
+      "name": "查询生产者客户端列表",
+      "output": "DescribeRocketMQProducersResponse",
+      "status": "online"
+    },
     "DescribeRocketMQPublicAccessMonitorData": {
       "document": "从腾讯云可观测平台拉取公网指标监控数据，目前仅支持客户端到 LB 的入带宽和出宽带指标。",
       "input": "DescribeRocketMQPublicAccessMonitorDataRequest",
@@ -1016,7 +1023,7 @@
       "status": "online"
     },
     "SendRocketMQMessage": {
-      "document": "发送RocketMQ消息",
+      "document": "发送 RocketMQ 消息，该接口仅用于控制台发送少量测试消息，不保证SLA，且云 API 存在限流，在真实业务场景下，请使用 RocketMQ SDK 发送消息。",
       "input": "SendRocketMQMessageRequest",
       "name": "发送RocketMQ消息",
       "output": "SendRocketMQMessageResponse",
@@ -10188,6 +10195,98 @@
       ],
       "type": "object"
     },
+    "DescribeRocketMQProducersRequest": {
+      "document": "DescribeRocketMQProducers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rocketmq-5kze4gr222mx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "test_ns",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页limit",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤查询条件列表，支持以下过滤参数：\n\n- ClientId：生产者客户端ID\n- ClientIp：生产者客户端IP",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQProducersResponse": {
+      "document": "DescribeRocketMQProducers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生产者客户端列表",
+          "example": "无",
+          "member": "ProducerInfo",
+          "name": "Producers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRocketMQPublicAccessMonitorDataRequest": {
       "document": "DescribeRocketMQPublicAccessMonitorData请求参数结构体",
       "members": [
@@ -14800,6 +14899,62 @@
           "member": "uint64",
           "name": "TopicType",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProducerInfo": {
+      "document": "生产者客户端详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "169.254.165.243@a3c02f03-5b27-425f-8632-83d1e9f7010b",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.0",
+          "member": "string",
+          "name": "ClientIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端语言\nJAVA((byte) 0),\n    CPP((byte) 1),\n    DOTNET((byte) 2),\n    PYTHON((byte) 3),\n    DELPHI((byte) 4),\n    ERLANG((byte) 5),\n    RUBY((byte) 6),\n    OTHER((byte) 7),\n    HTTP((byte) 8),\n    GO((byte) 9),\n    PHP((byte) 10),\n    OMS((byte) 11);\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JAVA",
+          "member": "string",
+          "name": "Language",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后生产时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "34872358347",
+          "member": "int64",
+          "name": "LastUpdateTimestamp",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }

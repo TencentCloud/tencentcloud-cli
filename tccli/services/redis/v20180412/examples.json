@@ -796,7 +796,7 @@
       {
         "document": "当复制组内没有实例时，删除复制组",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveReplicationGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"crs-rpl-oxsincthdd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a6bd110-20fc-4e08-b78b-a5656cb6151c\"\n    }\n}",
         "title": "删除复制组"
       }
     ],

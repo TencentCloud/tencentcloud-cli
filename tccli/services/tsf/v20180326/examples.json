@@ -507,7 +507,7 @@
     "DeployContainerGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployContainerGroup\n<公共请求参数>\n\n{\n    \"DoNotStart\": \"false\",\n    \"MemRequest\": \"1024\",\n    \"UpdateType\": \"1\",\n    \"Server\": \"ccr.ccs.tencentyun.com\",\n    \"InstanceNum\": 1,\n    \"RepoName\": \"tsf_10000617xxxx/test\",\n    \"TagName\": \"v1\",\n    \"CpuRequest\": \"0.54\",\n    \"JvmOpts\": \"-Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m\",\n    \"UpdateIvl\": 10,\n    \"GroupId\": \"group-6a79x94v\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployContainerGroup\n<公共请求参数>\n\n{\n    \"DoNotStart\": \"false\",\n    \"MemRequest\": \"1024\",\n    \"UpdateType\": 1,\n    \"Server\": \"ccr.ccs.tencentyun.com\",\n    \"InstanceNum\": 1,\n    \"RepoName\": \"tsf_10000617xxxx/test\",\n    \"TagName\": \"v1\",\n    \"CpuRequest\": \"0.54\",\n    \"JvmOpts\": \"-Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m\",\n    \"UpdateIvl\": 10,\n    \"GroupId\": \"group-6a79x94v\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b481cffd-6b00-463f-a1ae-7afe5fd5fa2e\",\n        \"Result\": true\n    }\n}",
         "title": "部署容器应用"
       }

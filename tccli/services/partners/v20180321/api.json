@@ -78,7 +78,7 @@
       "status": "online"
     },
     "DescribeAgentPayDealsV2": {
-      "document": "可以查询代理商代付的预付费订单",
+      "document": "查询最近15天内的代理商代付订单",
       "input": "DescribeAgentPayDealsV2Request",
       "name": "代理商代付订单查询接口（预付费）",
       "output": "DescribeAgentPayDealsV2Response",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "DescribeAgentSelfPayDealsV2": {
-      "document": "查询代理商名下指定代客的自付订单（预付费）",
+      "document": "查询代理商名下指定代客最近15天内的自付订单（预付费）",
       "input": "DescribeAgentSelfPayDealsV2Request",
       "name": "代理商自付订单查询接口（预付费）",
       "output": "DescribeAgentSelfPayDealsV2Response",
@@ -612,8 +612,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单自增 ID【请勿依赖该字段作为唯一标识】",
-          "example": "20200812123456",
+          "document": " ID【请勿依赖该字段作为唯一标识】",
+          "example": "12231",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -623,7 +623,7 @@
         {
           "disabled": false,
           "document": "订单号【订单唯一键】",
-          "example": "20200812123456",
+          "example": "2020081592126562",
           "member": "string",
           "name": "DealName",
           "output_required": true,
@@ -673,7 +673,7 @@
         {
           "disabled": false,
           "document": "价格详情",
-          "example": "{           \"OriginalTotalCost\": 6988000,           \"RealTotalCost\": 6988000         }",
+          "example": "无",
           "member": "DealGoodsPriceNewElem",
           "name": "GoodsPrice",
           "output_required": true,
@@ -713,7 +713,7 @@
         {
           "disabled": false,
           "document": "扣费流水号",
-          "example": "12345615882524264",
+          "example": "2020081592126562",
           "member": "string",
           "name": "BillId",
           "output_required": true,
@@ -742,7 +742,7 @@
         },
         {
           "disabled": false,
-          "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
+          "document": "子订单状态(1-待支付,2-已支付,3-发货中,4-已发货,5-发货失败,6-已退款,7-已取消,8-已过期,9-已失效,12-支付中,13-退款中,30-处理中)\n\n控制台订单状态为大订单状态，是以上状态的聚合：未支付(1) 处理中(2,3,5,12,13,30) 已取消(7) 交易成功(4) 已过期(8) 已退款(6) 订单错误(9)",
           "example": "1",
           "member": "string",
           "name": "Status",
@@ -793,7 +793,7 @@
         {
           "disabled": false,
           "document": "大订单号",
-          "example": "20200812123456",
+          "example": "20200815921265621",
           "member": "string",
           "name": "BigDealId",
           "output_required": true,
@@ -863,7 +863,7 @@
         {
           "disabled": false,
           "document": "产品详情",
-          "example": "[           {             \"Name\": \"企业版高级账号\",             \"Value\": \"10\"           },           {             \"Name\": \"50方虚拟会议室\",             \"Value\": \"1\"           },           {             \"Name\": \"300方虚拟会议室\",             \"Value\": \"9\"           }         ]",
+          "example": "无",
           "member": "ProductInfoElem",
           "name": "ProductInfo",
           "output_required": true,
@@ -893,7 +893,7 @@
         {
           "disabled": false,
           "document": "资源id",
-          "example": "[           \"700000942629_2024012000000000\"         ]",
+          "example": "[\"700000942629_20240110893045198634\"]",
           "member": "string",
           "name": "ResourceIds",
           "output_required": true,
@@ -903,7 +903,7 @@
         {
           "disabled": false,
           "document": "退款单的原订单信息。当前仅 DescribeClientDealsByCache 接口会返回该字段",
-          "example": "[{\"DealName\":\"demo\",\"RefundAmount\":10001}]",
+          "example": "无",
           "member": "RefundMap",
           "name": "RefundMap",
           "output_required": false,
@@ -2006,7 +2006,7 @@
         },
         {
           "disabled": false,
-          "document": "下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)",
+          "document": "下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",
@@ -2043,7 +2043,7 @@
         {
           "disabled": false,
           "document": "下单人账号ID列表",
-          "example": "[100001,100002]",
+          "example": "[\"100001\",\"100002\"]",
           "member": "string",
           "name": "OwnerUins",
           "required": false,
@@ -2171,7 +2171,7 @@
         },
         {
           "disabled": false,
-          "document": "下单时间范围起始点(不传时会默认查15天内订单，传值时需要传15天内的起始时间)",
+          "document": "下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",

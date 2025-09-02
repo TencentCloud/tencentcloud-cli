@@ -12,7 +12,7 @@
       {
         "document": "配置订阅一个cdb整实例的任务，其中db1.table1的数据根据id列值投递到不同的kafka分区，其他的数据根据表名投递",
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfigureSubscribeJob\n<公共请求参数>\n\n{\n    \"SubscribeMode\": \"all\",\n    \"SubscribeId\": \"subs-5ft0e2nrc0\",\n    \"KafkaConfig\": {\n        \"DistributeRules\": [\n            {\n                \"DbPattern\": \"db1\",\n                \"RuleType\": \"cols\",\n                \"TablePattern\": \"table1\",\n                \"Columns\": [\n                    \"id\"\n                ]\n            }\n        ],\n        \"NumberOfPartitions\": 8,\n        \"DefaultRuleType\": \"table\"\n    },\n    \"AccessType\": \"cdb\",\n    \"Protocol\": \"json\",\n    \"Endpoints\": [\n        {\n            \"InstanceId\": \"cdb-kdxona7h\",\n            \"DatabaseRegion\": \"ap-guangzhou\",\n            \"EncryptConn\": \"Encrypted\",\n            \"User\": \"root\",\n            \"Password\": \"******\"\n        }\n    ],\n    \"ExtraAttr\": [\n        {\n            \"Value\": \"true\",\n            \"Key\": \"ProcessXA\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8a1fc10-3547-11f0-92c2-d139ba775945\"\n    }\n}",
         "title": "配置订阅"
       }
     ],
@@ -226,7 +226,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubscribeDetail\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-0b2up6hk4u\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Region\": \"ap-guangzhou\",\n        \"AccessType\": \"cdb\",\n        \"AutoRenewFlag\": 0,\n        \"Broker\": \"guangzhoutest-kafka-3.cdb-dts.tencentcs.com.cn:32339\",\n        \"CreateTime\": \"2023-12-06 14:31:27\",\n        \"Endpoints\": [\n            {\n                \"DatabaseRegion\": \"ap-guangzhou\",\n                \"EncryptConn\": \"UnEncrypted\",\n                \"InstanceId\": \"cdb-kdxona7h\",\n                \"User\": \"root\"\n            }\n        ],\n        \"ExpireTime\": \"0000-00-00 00:00:00\",\n        \"InstanceId\": \"cdb-kdxona7h\",\n        \"InstanceStatus\": \"running\",\n        \"IsolateTime\": \"0000-00-00 00:00:00\",\n        \"KafkaConfig\": {\n            \"DistributeRules\": [\n                {\n                    \"DbPattern\": \"db1\",\n                    \"RuleType\": \"cols\",\n                    \"TablePattern\": \"table1\",\n                    \"Columns\": [\n                        \"id\"\n                    ]\n                },\n                {\n                    \"DbPattern\": \".*\",\n                    \"RuleType\": \"table\",\n                    \"TablePattern\": \".*\",\n                    \"Columns\": null\n                }\n            ],\n            \"NumberOfPartitions\": 8\n        },\n        \"ModifyTime\": \"2023-12-06 14:33:47\",\n        \"OfflineTime\": \"0000-00-00 00:00:00\",\n        \"PayType\": 0,\n        \"Product\": \"mysql\",\n        \"Protocol\": \"json\",\n        \"Status\": \"normal\",\n        \"SubsStatus\": \"running\",\n        \"SubscribeId\": \"subs-0b2up6hk4u\",\n        \"SubscribeName\": \"binlog订阅\",\n        \"SubscribeMode\": \"all\",\n        \"Topic\": \"topic-subs-0b2up6hk4u-cdb-kdxona7h\",\n        \"RequestId\": \"7bd11a40-9406-11ee-9689-216abbbe2107\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Region\": \"ap-guangzhou\",\n        \"AccessType\": \"cdb\",\n        \"AutoRenewFlag\": 0,\n        \"Broker\": \"guangzhoutest-kafka-3.cdb-dts.tencentcs.com.cn:32339\",\n        \"CreateTime\": \"2023-12-06 14:31:27\",\n        \"Endpoints\": [\n            {\n                \"DatabaseRegion\": \"ap-guangzhou\",\n                \"EncryptConn\": \"UnEncrypted\",\n                \"InstanceId\": \"cdb-kdxona7h\",\n                \"User\": \"root\"\n            }\n        ],\n        \"ExpireTime\": \"0000-00-00 00:00:00\",\n        \"InstanceId\": \"cdb-kdxona7h\",\n        \"InstanceStatus\": \"running\",\n        \"IsolateTime\": \"0000-00-00 00:00:00\",\n        \"KafkaConfig\": {\n            \"DistributeRules\": [\n                {\n                    \"DbPattern\": \"db1\",\n                    \"RuleType\": \"cols\",\n                    \"TablePattern\": \"table1\",\n                    \"Columns\": [\n                        \"id\"\n                    ]\n                },\n                {\n                    \"DbPattern\": \".*\",\n                    \"RuleType\": \"table\",\n                    \"TablePattern\": \".*\",\n                    \"Columns\": []\n                }\n            ],\n            \"NumberOfPartitions\": 8\n        },\n        \"ModifyTime\": \"2023-12-06 14:33:47\",\n        \"OfflineTime\": \"0000-00-00 00:00:00\",\n        \"PayType\": 0,\n        \"Product\": \"mysql\",\n        \"Protocol\": \"json\",\n        \"Status\": \"normal\",\n        \"SubsStatus\": \"running\",\n        \"SubscribeId\": \"subs-0b2up6hk4u\",\n        \"SubscribeName\": \"binlog订阅\",\n        \"SubscribeMode\": \"all\",\n        \"Topic\": \"topic-subs-0b2up6hk4u-cdb-kdxona7h\",\n        \"RequestId\": \"7bd11a40-9406-11ee-9689-216abbbe2107\"\n    }\n}",
         "title": "查询订阅任务详情"
       }
     ],
@@ -466,6 +466,14 @@
         "input": "https://dts.tencentcloudapi.com/?Action=ResetSubscribe\r\n&SubscribeId=subs-ieuwi83j2e\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "重置数据订阅任务"
+      }
+    ],
+    "ResetSyncJob": [
+      {
+        "document": "任务结束后重置同步任务信息，生成一个完全初始化的同步任务",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopSyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-7r1cz016\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ead9fdc1-baa8-4a09-aaa1-c2012690c976\"\n    }\n}",
+        "title": "重置同步任务"
       }
     ],
     "ResizeSyncJob": [

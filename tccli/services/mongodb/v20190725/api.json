@@ -447,26 +447,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>",
+          "document": "当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Mask",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "指具有当前账号权限的数据库名。\n<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>",
+          "document": "指具有当前账号权限的数据库名。\n<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"db_test\"",
           "member": "string",
           "name": "NameSpace",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "BackupDownloadTask": {
       "document": "备份下载任务",
@@ -6939,7 +6941,7 @@
           "example": "mongo_test",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6949,7 +6951,7 @@
           "example": "无",
           "member": "Auth",
           "name": "AuthRole",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6959,7 +6961,7 @@
           "example": "2021-09-28 14:25:38",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6969,7 +6971,7 @@
           "example": "2021-09-28 14:25:38",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6979,7 +6981,17 @@
           "example": "mongodb测试账号",
           "member": "string",
           "name": "UserDesc",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "控制台密码更新时间",
+          "example": "2021-09-28 14:25:38",
+          "member": "string",
+          "name": "ConsolePassUpdateTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

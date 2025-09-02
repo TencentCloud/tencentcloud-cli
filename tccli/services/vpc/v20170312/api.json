@@ -27238,7 +27238,7 @@
         {
           "disabled": false,
           "document": "是否开启等价路由功能。`False` 不开启，`True` 开启。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "RouteECMPFlag",
           "required": false,
@@ -27247,9 +27247,18 @@
         {
           "disabled": false,
           "document": "是否开启路由重叠功能。`False` 不开启，`True` 开启。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "RouteOverlapFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启qos功能。`False` 不开启，`True` 开启。",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficMarkingPolicyFlag",
           "required": false,
           "type": "bool"
         }

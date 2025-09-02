@@ -4041,7 +4041,7 @@
         {
           "disabled": false,
           "document": "预付费参数",
-          "example": "{     \"Period\": {       \"TimeSpan\": 1,       \"TimeUnit\": \"m\"     },     \"AutoRenewFlag\": 2   }",
+          "example": "无",
           "member": "PrePaySetting",
           "name": "PrePaySetting",
           "required": false,

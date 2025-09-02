@@ -350,6 +350,14 @@
         "title": "查询任务流程执行状态"
       }
     ],
+    "DescribeInstanceSSLAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceSSLAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"requestId-xxx\"\n    }\n}",
+        "title": "获取实例SSL认证功能属性"
+      }
+    ],
     "DescribeLogFileRetentionPeriod": [
       {
         "document": "",
@@ -372,6 +380,14 @@
         "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeOrders\n&DealNames.0=20181103110163\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b59ee51-0e13-1c2f-dedb-59fabe9d7f4a\",\n        \"TotalCount\": 1,\n        \"Deals\": [\n            {\n                \"DealName\": \"20181103110163\",\n                \"OwnerUin\": \"1235674890\",\n                \"Count\": 1,\n                \"PayMode\": 1,\n                \"FlowId\": 1234,\n                \"InstanceIds\": [\n                    \"dcdbt-avw0207d\"\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询订单信息"
+      }
+    ],
+    "DescribeProcessList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProcessList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-048udnfz\",\n    \"ShardId\": \"shard-ljilb4st\",\n    \"NodeId\": \"7b1f6e62b767\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProcessList\": [\n            {\n                \"Command\": \"Sleep\",\n                \"Db\": \"mysql\",\n                \"Host\": \"9.71.144.188:55615\",\n                \"Id\": 951069,\n                \"Info\": \"\",\n                \"ProcessStartTime\": \"2025-06-24 11:27:26\",\n                \"State\": \"\",\n                \"Time\": 30,\n                \"User\": \"root\"\n            }\n        ],\n        \"RequestId\": \"d4eb7e99-b3e6-45d6-ae6f-7358c7511cad-013\"\n    }\n}",
+        "title": "查询分片主节点当前正在运行的线程"
       }
     ],
     "DescribeProjectSecurityGroups": [
@@ -577,6 +593,22 @@
         "document": "",
         "input": "https://dcdb.tencentcloudapi.com/?Action=ModifyInstanceNetwork\n&InstanceId=tdsqlshard-jv8z8fhl\n&VpcId=vpc-xxxxxx\n&SubnetId=subnet-xxxxx\n&VipReleaseDelay=168\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"FlowId\": 1122\n    }\n}",
+        "title": "无"
+      }
+    ],
+    "ModifyInstanceProtectedProperty": [
+      {
+        "document": "修改实例保护属性调用示例",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceProtectedProperty\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-hy8i49u3\",\n    \"ProtectedProperty\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3828374c-5a49-4784-b5f9-9387b14c2c72\"\n    }\n}",
+        "title": "修改实例保护属性调用示例"
+      }
+    ],
+    "ModifyInstanceSSLAttributes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceSSLAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-xxx\",\n    \"SSLEnabled\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId-xxx\"\n    }\n}",
         "title": "无"
       }
     ],

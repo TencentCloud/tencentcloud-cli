@@ -32,6 +32,14 @@
         "title": "示例"
       }
     ],
+    "CreateDeviceIdentity": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceIdentity\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-qzgaq8bk\",\n    \"DeviceId\": \"device-2\",\n    \"Status\": \"1\",\n    \"PrimaryKey\": \"pk1\",\n    \"SecondaryKey\": \"sk1\",\n    \"PropagatingProperties\": [\n        {\n            \"Key\": \"key-1\",\n            \"Value\": \"key-b\"\n        }\n    ]\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"30a1df4f-1a90-4241-8f77-9e568f5d0149\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateHttpAuthenticator": [
       {
         "document": "示例",
@@ -136,6 +144,14 @@
         "title": "示例"
       }
     ],
+    "DeleteDeviceIdentity": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeviceIdentity\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-25zezo7b\",\n    \"DeviceId\": \"device-1\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"4492b6a9-d565-4c80-9ed5-12584bf17a1b\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeleteInsPublicEndpoint": [
       {
         "document": "示例",
@@ -221,6 +237,22 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceCertificates\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-qgzaawn9\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ClientId\": \"client-1\",\n                \"DeviceCertificateSn\": \"0eef68a582b94254296e54ce754f94d707a59913\",\n                \"DeviceCertificateCn\": \"tx\",\n                \"DeviceCertificate\": \"-----BEGIN CERTIFICATE-----\\n-----END CERTIFICATE-----\\n\",\n                \"CaSn\": \"1b1e3bf3702110125887a3a721a7e66f05522513\",\n                \"OrganizationalUnit\": \"tx\",\n                \"Format\": \"PEM\",\n                \"Status\": \"ACTIVE\",\n                \"CertificateSource\": \"API\",\n                \"LastActivationTime\": 1742983099435,\n                \"LastInactivationTime\": 0,\n                \"CreatedTime\": 1742983115198,\n                \"UpdateTime\": 1742983115198,\n                \"NotBeforeTime\": 1734537600000,\n                \"NotAfterTime\": 1766073600000\n            }\n        ],\n        \"RequestId\": \"378f8c36-a6a1-406c-85ac-f2379386eed6\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeDeviceIdentities": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceIdentities\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-25zezo7b\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CreatedTime\": 1741708800000,\n                \"DeviceId\": \"device-1\",\n                \"InstanceId\": \"mqtt-25zezo7b\",\n                \"PrimaryKey\": \"pk2\",\n                \"SecondaryKey\": \"sk2\",\n                \"Status\": 2\n            },\n            {\n                \"CreatedTime\": 1741708800000,\n                \"DeviceId\": \"device-2\",\n                \"InstanceId\": \"mqtt-25zezo7b\",\n                \"PrimaryKey\": \"pk\",\n                \"SecondaryKey\": \"sk\",\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"bc9241dd-5fd3-4636-aa07-06eda06661a8\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeDeviceIdentity": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceIdentity\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-25zezo7b\",\n    \"DeviceId\": \"device-1\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"CreatedTime\": 1741708800000,\n        \"DeviceId\": \"device-1\",\n        \"InstanceId\": \"mqtt-25zezo7b\",\n        \"PrimaryKey\": \"bcc0d6cae2a51e79723ce5e88547e214\",\n        \"RequestId\": \"c6a780ce-7850-41de-8be6-41e073cc6668\",\n        \"SecondaryKey\": \"sk1\",\n        \"Status\": 1\n    }\n}",
         "title": "示例"
       }
     ],
@@ -331,6 +363,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuthorizationPolicy\n<公共请求参数>\n\n{\n    \"Id\": 18,\n    \"InstanceId\": \"mqtt-jeredv33\",\n    \"PolicyName\": \"policy-1\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"657a771d-a70e-4c0d-a70a-eb7f82471000\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyDeviceIdentity": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceIdentity\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-qzgaq8bk\",\n    \"DeviceId\": \"device-1\",\n    \"PropagatingProperties\": [\n        {\n            \"Key\": \"key1\",\n            \"Value\": \"value1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"dbe406c9-8d46-4b54-b12f-b58be26d0e96\"\n    }\n}",
         "title": "示例"
       }
     ],

@@ -18,7 +18,7 @@ Output:
             "BigDealId": "2023020103xxxx",
             "DealName": "2023020103xxxx"
         },
-        "RequestId": "xx-xx-xx"
+        "RequestId": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
     }
 }
 ```

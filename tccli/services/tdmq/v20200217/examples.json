@@ -732,6 +732,14 @@
         "title": "获取用户命名空间列表"
       }
     ],
+    "DescribeRocketMQProducers": [
+      {
+        "document": "查询生产者客户端列表成功。",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQProducers\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-5kze4gr222mx\",\n    \"NamespaceId\": \"test_ns\",\n    \"Topic\": \"test_topic\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"CliendId\",\n            \"Values\": [\n                \"10.10.10.10@abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Producers\": [\n            {\n                \"ClientId\": \"10.10.10.10@abc\",\n                \"ClientIp\": \"10.10.10.10\",\n                \"Language\": \"JAVA\",\n                \"Version\": \"v5_0_5\",\n                \"LastUpdateTimestamp\": 1723195366688\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "正常响应"
+      }
+    ],
     "DescribeRocketMQPublicAccessMonitorData": [
       {
         "document": "",

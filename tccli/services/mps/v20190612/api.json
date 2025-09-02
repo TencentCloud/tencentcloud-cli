@@ -28223,6 +28223,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubtitleTemplate",
+          "name": "SubtitleTemplate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -31188,7 +31199,7 @@
         {
           "disabled": false,
           "document": "要压制到视频中的字幕文件地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://test-123xxxx456.cos.ap-nanjing.myqcloud.com/xxxxx/subtitle/1.srt",
+          "example": "https://test-13xxxx46.cos.ap-nanjing.myqcloud.com/xxxxx/subtitle/1.srt",
           "member": "string",
           "name": "Path",
           "output_required": false,
@@ -31205,6 +31216,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "要压制到视频中的字幕文件的输入信息，目前仅支持存储在COS的字幕文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "SubtitleFileInput",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -31243,7 +31265,7 @@
         {
           "disabled": false,
           "document": "文字透明度，取值范围：(0, 1]\n<li>0：完全透明</li>\n<li>1：完全不透明</li>\n默认值：1。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "FontAlpha",
           "output_required": false,
@@ -31315,6 +31337,94 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描边宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "OutlineWidth",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描边颜色。6位16进制RGB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0x000000",
+          "member": "string",
+          "name": "OutlineColor",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描边透明度。(0，1] 正浮点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.8",
+          "member": "float",
+          "name": "OutlineAlpha",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "阴影宽度。浮点数  [0, 1000]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "ShadowWidth",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "阴影颜色。6位16进制RGB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0x000000",
+          "member": "string",
+          "name": "ShadowColor",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "阴影透明度。(0，1] 正浮点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.9",
+          "member": "float",
+          "name": "ShadowAlpha",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "行间距。正整数  [0, 1000]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "LineSpacing",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对齐方式，，取值：top: 顶部对齐，字幕顶部按位置固定，底部随行数变化。bottom: 底部对齐，字幕底部按位置固定，顶部随行数变化。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bottom",
+          "member": "string",
+          "name": "Alignment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

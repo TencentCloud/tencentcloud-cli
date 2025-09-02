@@ -10,7 +10,7 @@
   },
   "metadata": {
     "apiVersion": "2025-05-08",
-    "api_brief": "联网搜索API，以json形式向客户提供搜索结果数据，包含不仅限于标题、摘要、内容来源url等信息",
+    "api_brief": "联网搜索API，以JSON形式向客户提供搜索结果数据，包含不仅限于标题、摘要、内容来源url等信息",
     "serviceNameCN": "联网搜索API",
     "serviceShortName": "wsa"
   },

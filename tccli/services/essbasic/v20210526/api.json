@@ -1273,7 +1273,7 @@
       "usage": "in"
     },
     "BatchOrganizationRegistrationTasksDetails": {
-      "document": "批量认证企业任务详情信息，其中包括 TaskId，状态信息等等",
+      "document": "批量认证企业任务详情信息，其中包括 TaskId，状态信息等",
       "members": [
         {
           "disabled": false,
@@ -9992,10 +9992,10 @@
           "disabled": false,
           "document": "是否禁止编辑印章描述内容\n<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>",
           "example": "true",
-          "member": "string",
+          "member": "bool",
           "name": "ForbidEditSealDescription",
           "required": false,
-          "type": "string"
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -14492,7 +14492,7 @@
         },
         {
           "disabled": false,
-          "document": "模版的用户合同类型",
+          "document": "模板的用户合同类型",
           "example": "无",
           "member": "UserFlowType",
           "name": "UserFlowType",
@@ -14504,7 +14504,7 @@
       "usage": "out"
     },
     "TemplateUserFlowType": {
-      "document": "模版对应的合同类型",
+      "document": "模板对应的合同类型",
       "members": [
         {
           "disabled": false,
@@ -14528,7 +14528,7 @@
         },
         {
           "disabled": false,
-          "document": "每个合同类型绑定的模版数量\t",
+          "document": "每个合同类型绑定的模板数量\t",
           "example": "10",
           "member": "int64",
           "name": "TemplateNum",

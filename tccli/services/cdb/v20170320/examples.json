@@ -802,7 +802,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyCustomConf\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-2wpip1dd\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"CustomConf\": {\n            \"Device\": \"Z3\",\n            \"Type\": \"高可用版本\",\n            \"DeviceType\": \"custom\",\n            \"Memory\": 4000,\n            \"Cpu\": 2\n        },\n        \"WeightRule\": {\n            \"LessThan\": 2000,\n            \"Weight\": 1\n        },\n        \"RequestId\": \"9bd2a785-2dc0-47dc-b285-2b154a218ea1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"CustomConfInfo\": [\n            {\n                \"Device\": \"Z3\",\n                \"Type\": \"高可用版本\",\n                \"DeviceType\": \"custom\",\n                \"Memory\": 4000,\n                \"Cpu\": 2\n            }\n        ],\n        \"WeightRule\": {\n            \"LessThan\": 2000,\n            \"Weight\": 1\n        },\n        \"RequestId\": \"9bd2a785-2dc0-47dc-b285-2b154a218ea1\"\n    }\n}",
         "title": "查询数据库代理规格配置"
       }
     ],

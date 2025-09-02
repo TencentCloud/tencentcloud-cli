@@ -15,7 +15,7 @@ tccli tione ModifyModelService --cli-unfold-argument  \
     --ScaleMode MANUAL \
     --Replicas 1 \
     --LogEnable False \
-    --Env.0.Name test \
+    --Env.0.Name env_test \
     --Env.0.Value 1 \
     --ServiceId ms-xxxxx-1
 ```

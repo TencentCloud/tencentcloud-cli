@@ -35,11 +35,25 @@
       "output": "DescribeAccountGroupsResponse",
       "status": "online"
     },
+    "DescribeAggrSoftCategorySoftList": {
+      "document": "聚合的分类软件列表",
+      "input": "DescribeAggrSoftCategorySoftListRequest",
+      "name": "软件分类的聚合软件列表查询",
+      "output": "DescribeAggrSoftCategorySoftListResponse",
+      "status": "online"
+    },
     "DescribeDLPFileDetectResult": {
       "document": "webservice查询文件检测结果",
       "input": "DescribeDLPFileDetectResultRequest",
       "name": "查询文件检测结果",
       "output": "DescribeDLPFileDetectResultResponse",
+      "status": "online"
+    },
+    "DescribeDeviceChildGroups": {
+      "document": "查询设备组子分组详情，私有化调用path为：capi/Assets/Device/DescribeDeviceChildGroups",
+      "input": "DescribeDeviceChildGroupsRequest",
+      "name": "查询设备组子分组",
+      "output": "DescribeDeviceChildGroupsResponse",
       "status": "online"
     },
     "DescribeDeviceHardwareInfoList": {
@@ -120,6 +134,132 @@
     "serviceShortName": "ioa"
   },
   "objects": {
+    "AggrCategorySoftDetailRow": {
+      "document": "按版本聚合后的软件列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "软件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盗版风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0=无风险;1=有风险;2=未开启检查",
+          "member": "int64",
+          "name": "PiracyRisk",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统平台\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0=未知;1=windows;2=mac;3=linux",
+          "member": "int64",
+          "name": "OsType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CorpName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安装设备数量(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstalledDeviceNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盗版安装设备数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PiracyInstalledDeviceNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已安装用户数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstalledUserNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盗版软件用户数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PiracyInstalledUserNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "正版率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "GenuineRate",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有新版本可升级的设备数量",
+          "example": "0",
+          "member": "int64",
+          "name": "UpgradableDeviceNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ComplexRule": {
       "document": "自动划分规则数据",
       "members": [
@@ -821,6 +961,79 @@
       ],
       "type": "object"
     },
+    "DescribeAggrSoftCategorySoftListData": {
+      "document": "业务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页公共对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Paging",
+          "name": "Page",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "行数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AggrCategorySoftDetailRow",
+          "name": "AggrSoftCategorySoftList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAggrSoftCategorySoftListRequest": {
+      "document": "DescribeAggrSoftCategorySoftList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "os类别(只支持32位)",
+          "example": "无",
+          "member": "int64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggrSoftCategorySoftListResponse": {
+      "document": "DescribeAggrSoftCategorySoftList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据",
+          "example": "无",
+          "member": "DescribeAggrSoftCategorySoftListData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDLPFileDetectResultData": {
       "document": "查询文件检测结果响应数据",
       "members": [
@@ -912,6 +1125,87 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeDeviceChildGroupsRequest": {
+      "document": "DescribeDeviceChildGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件参数（字段含义请参考接口返回值）\n- Name, 类型String，支持操作：【like，ilike】，支持排序\n\n\n\n\n分页参数\n- PageNum 从1开始，小于等于0时使用默认参数\n- PageSize 最大值5000，最好不超过100",
+          "example": "无",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "父分组id，默认0：表示获取全网终端分组",
+          "example": "0",
+          "member": "int64",
+          "name": "ParentId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统类型（0：win，1：linux，2：mac，4：android，5：ios；默认0：系统win）",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceChildGroupsResponse": {
+      "document": "DescribeDeviceChildGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询设备组子分组详情响应结构",
+          "example": "无",
+          "member": "DescribeDeviceChildGroupsRspData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceChildGroupsRspData": {
+      "document": "查询设备组子分组详情响应结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的数组列表",
+          "example": "无",
+          "member": "DeviceGroupDetail",
+          "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DescribeDeviceHardwareInfoItem": {
       "document": "终端硬件信息列表Item数据",
@@ -1316,7 +1610,7 @@
         {
           "disabled": false,
           "document": "滤条件、分页参数 <li>Name - String - 是否必填：否 - 操作符: like  - 排序支持：否- 按终端自定义分组过滤。</li> <li>DeviceVirtualGroupName - String - 是否必填：否 - 操作符: like  - 排序支持：否- 按终端自定义分组过滤。</li>",
-          "example": "{\"Filters\":[{\"Field\":\"Name\",\"Operator\":\"ilike\",\"Values\":[\"分组1\"]}],\"Sort\":{},\"PageSize\":-1,\"PageNum\":1}",
+          "example": "无",
           "member": "Condition",
           "name": "Condition",
           "required": false,
@@ -1324,7 +1618,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -1349,7 +1643,7 @@
         {
           "disabled": false,
           "document": "查询终端自定义分组的Data数据",
-          "example": "{\"Page\":{\"PageCount\":1,\"Total\":1,\"PageSize\":10,\"PageNum\":1},\"Items\":[{\"DeviceVirtualGroupName\":\"自定义分组1\",\"DeviceCount\":0,\"TimeType\":0,\"OsType\":0,\"Id\":10307,\"Status\":1}]}",
+          "example": "无",
           "member": "DescribeDeviceVirtualGroupsPageRsp",
           "name": "Data",
           "output_required": false,
@@ -1398,8 +1692,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "过滤条件参数（字段含义请参考接口返回值）\n\n- Mid, 类型String，支持操作：【eq，like，ilike】，支持排序\n- Name, 类型String，支持操作：【eq，like，ilike】，支持排序\n- Itime, 类型String，支持操作：【eq，like，ilike】，支持排序\n- UserName, 类型String，支持操作：【eq，like，ilike】，支持排序\n- MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序\n- UserId, 类型String，支持操作：【eq，like，ilike】，支持排序\n- Ip, 类型String，支持操作：【eq，like，ilike】，支持排序\n- Tags，类型String，支持操作：【eq，like，ilike】，支持排序\n- LocalIpList，类型String，支持操作：【eq，like，ilike】，支持排序\n- SerialNum，类型String，支持操作：【eq，like，ilike】，支持排序\n- Version，类型String，支持操作：【eq，like，ilike】，支持排序\n- StrVersion，类型String，支持操作：【eq，like，ilike】，支持排序\n- RtpStatus，类型String，支持操作：【eq，like，ilike】，**不支持排序**\n- HostName，类型String，支持操作：【eq，like，ilike】，支持排序\n- IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序\n- GroupName，类型String，支持操作：【eq，like，ilike】，支持排序\n- CriticalVulListCount，**类型Int**，支持操作：【eq】，**不支持排序**\n- RiskCount，**类型Int**，支持操作：【eq】，**不支持排序**\n- VulVersion，类型String，支持操作：【eq，like，ilike】，**不支持排序**\n- Virusver，类型String，支持操作：【eq，like，ilike】，**不支持排序**\n- SysRepver，类型String，支持操作：【eq，like，ilike】，**不支持排序**\n- BaseBoardSn，类型String，支持操作：【eq，like，ilike】，支持排序\n- Os，类型String，支持操作：【eq，like，ilike】，支持排序\n- ConnActiveTime，类型String，支持操作：【eq，like，ilike】，**不支持排序**\n- FirewallStatus，**类型Int**，支持操作：【eq】，**不支持排序**\n- ProfileName，类型String，支持操作：【eq，like，ilike】，支持排序\n- DomainName，类型String，支持操作：【eq，like，ilike】，支持排序\n- SysRepVersion，类型String，支持操作：【eq，like，ilike】，支持排序\n- VirusVer，类型String，支持操作：【eq，like，ilike】，支持排序\n- Cpu，类型String，支持操作：【eq，like，ilike】，支持排序\n- Memory，类型String，支持操作：【eq，like，ilike】，支持排序\n- HardDiskSize，类型String，支持操作：【eq，like，ilike】，支持排序\n- HardwareChangeCount，**类型Int**，支持操作：【eq】，支持排序\n- AccountName，类型String，支持操作：【like.ilike】，支持排序\n- AccountGroupName，类型String，支持操作：【like.ilike】，支持排序\n- ScreenRecordingPermission，**类型Int**，支持操作：【eq】，支持排序\n- DiskAccessPermission，**类型Int**，支持操作：【eq】，支持排序\n\n\n\n\n\n分页参数\n- PageNum 从1开始，小于等于0时使用默认参数\n- PageSize 最大值5000，最好不超过100",
-          "example": " { \"Condition\": {             \"FilterGroups\": [                 {                     \"Filters\": [                         {                             \"Field\": \"Name\",                             \"Operator\": \"ilike\",                             \"Values\": [                                 \" sarielliu-PCa\"                             ]                         }                     ]                 }             ],             \"PageSize\": 10,             \"PageNum\": 1         } }",
+          "example": "无",
           "member": "Condition",
           "name": "Condition",
           "required": false,
@@ -1416,7 +1719,7 @@
         },
         {
           "disabled": false,
-          "document": "【必填】操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配",
+          "document": "操作系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0），需要和GroupId或者GroupIds匹配",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -1435,7 +1738,7 @@
         {
           "disabled": false,
           "document": "过滤条件--兼容旧接口,参数同Condition",
-          "example": "参考Condition",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1444,7 +1747,7 @@
         {
           "disabled": false,
           "document": "排序字段--兼容旧接口,参数同Condition",
-          "example": "参考Sort",
+          "example": "无",
           "member": "Sort",
           "name": "Sort",
           "required": false,
@@ -1480,7 +1783,7 @@
         {
           "disabled": false,
           "document": "【和GroupId必须有一个填写】设备分组id列表（需要和OsType匹配）\n",
-          "example": "93",
+          "example": "[93]",
           "member": "int64",
           "name": "GroupIds",
           "required": false,
@@ -1495,7 +1798,7 @@
         {
           "disabled": false,
           "document": "分页的data数据",
-          "example": " {             \"Data\": {                 \"Items\": [                     {                         \"CriticalVulListCount\": 0,                         \"Camera\": 1,                         \"Desktop\": 1,                         \"UDisk\": 1,                         \"Download\": 1,                         \"SysFile\": 1,                         \"Reg\": 1,                         \"Proc\": 1,                         \"Mid\": \"348F553431765C49EAA34F373001D8106572EA05\",                         \"Guid\": \"348F553431765C49EAA34F373001D810\",                         \"Computer\": \"VMware, Inc. None\",                         \"Cpu\": \"Intel(R) Core(TM) i7-10700 CPU @ 2.90GHz\",                         \"MainBoard\": \"Intel Corporation 440BX Desktop Reference Platform\",                         \"GroupNamePath\": \"全网终端.未分组终端\",                         \"OsType\": 0,                         \"GroupName\": \"未分组终端\",                         \"HardDiskSize\": \"VMware Virtual NVMe Disk 59 GB\",                         \"AccountName\": \"canaan\",                         \"VideoCard\": \"VMware SVGA 3D\",                         \"AccountGroupIdPath\": \"\",                         \"NetworkCard\": \"Intel(R) 82574L Gigabit Network Connection\",                         \"Monitor\": \"\",                         \"AudioCard\": \"High Definition Audio Device\",                         \"OsBits\": 64,                         \"OsVersion\": \"10.0.18363\",                         \"OsLanguage\": \"简体中文\",                         \"OsInstallDate\": \"20230417175437.000000+480\",                         \"ComputerName\": \"DESKTOP-QRDNJ1O\",                         \"DomainName\": \"\",                         \"MacAddr\": \"00:0C:29:C1:28:2E\",                         \"VulCount\": 0,                         \"RiskCount\": 0,                         \"VirusVer\": \"2.0.13712.315\",                         \"VulVersion\": \"2023.12.01.15.05.16\",                         \"Itime\": \"2023-12-08T18:03:49.688332+08:00\",                         \"SysRepVersion\": \"2023.01.04.16.34.51\",                         \"Utime\": \"2023-12-08T23:33:25.320371+08:00\",                         \"RiskScanTime\": \"\",                         \"VulScanTime\": \"\",                         \"VulCriticalList\": [],                         \"VulIgnoreCount\": 0,                         \"Tags\": \"\",                         \"UserName\": \"canaanzhu\",                         \"CloudQueryState\": 3,                         \"FirewallStatus\": 0,                         \"SerialNum\": \"VMware-56 4d fc 76 58 77 77 69-b9 6c 6e 35 58 c1 28 2e\",                         \"IsRoot\": 0,                         \"DeviceStrategyVer\": \"2023-12-08 18:11:00\",                         \"NGNStrategyVer\": \"2023-12-08 18:15:00\",                         \"IOAUserName\": \"canaan\",                         \"DeviceNewStrategyVer\": \"2024-11-06 10:51:00\",                         \"NGNNewStrategyVer\": \"2024-10-15 20:00:00\",                         \"DeviceMark\": \"canaan\",                         \"HostName\": \"\",                         \"Profiles\": [],                         \"ProfileFileTotal\": 0,                         \"ProfileFileInstalled\": 0,                         \"Sort\": 0,                         \"BaseBoardSn\": \"\",                         \"AccountUsers\": \"\",                         \"IdentityStrategyVer\": \"\",                         \"IdentityNewStrategyVer\": \"\",                         \"AccountList\": [],                         \"NoPermission\": 0,                         \"BaseBoardManufacturer\": \"\",                         \"MemoryDetail\": \"\",                         \"SystemArchitecture\": \"\",                         \"HardwareChangeCount\": 0,                         \"RealTimeProtectionStatus\": 0,                         \"GroupId\": 67,                         \"ScreenRecordingPermission\": 0,                         \"DiskAccessPermission\": 0,                         \"Id\": 36488,                         \"Ip\": \"59.37.125.62\",                         \"Description\": \"\",                         \"AccountGroupSource\": 0,                         \"AccountGroupId\": 7,                         \"AccountGroupName\": \"sarielliutest\",                         \"ProfileFileNotInstall\": [],                         \"Memory\": \"2 GB\",                         \"Status\": 5,                         \"OnlineStatus\": 1,                         \"Locked\": 0,                         \"StrVersion\": \"208.12.18778.62001\",                         \"Version\": \"58546847926121009\",                         \"Os\": \"Microsoft Windows 10 教育版\",                         \"Driver\": 1,                         \"ConnActiveTime\": \"2023-12-08T23:49:21.642365+08:00\",                         \"Hacker\": 1,                         \"LocalIpList\": \"192.168.54.128\",                         \"Name\": \"DESKTOP-QRDNJ1O\",                         \"HostId\": 0,                         \"GroupFromAuto\": 0                     },                     {                         \"CriticalVulListCount\": 0,                         \"Camera\": 1,                         \"Desktop\": 1,                         \"UDisk\": 1,                         \"Download\": 1,                         \"SysFile\": 1,                         \"Reg\": 1,                         \"Proc\": 1,                         \"Mid\": \"AAA23147EA9AFBDB64DBB51BF703B4B96527F461\",                         \"Guid\": \"AAA23147EA9AFBDB64DBB51BF703B4B9\",                         \"Computer\": \"LENOVO ThinkPad X1 Extreme Gen 4i\",                         \"Cpu\": \"11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz\",                         \"MainBoard\": \"LENOVO 20Y6S12Q00 SDK0J40675 WIN\",                         \"GroupNamePath\": \"全网终端.未分组终端\",                         \"OsType\": 0,                         \"GroupName\": \"未分组终端\",                         \"HardDiskSize\": \"WDC PC SN730 SDBQNTY-1T00-1001 953 GB\",                         \"AccountName\": \"sarielliu@tencent.com\",                         \"VideoCard\": \"Intel(R) UHD Graphics | NVIDIA GeForce RTX 3050 Ti Laptop GPU\",                         \"AccountGroupIdPath\": \"\",                         \"NetworkCard\": \"Intel(R) Wi-Fi 6E AX210 160MHz\",                         \"Monitor\": \"\",                         \"AudioCard\": \"NVIDIA High Definition Audio | Realtek High Definition Audio(SST) | 适用于 USB 音频的英特尔® 智音技术 | 适用于数字麦克风的英特尔® 智音技术\",                         \"OsBits\": 64,                         \"OsVersion\": \"10.0.19045\",                         \"OsLanguage\": \"简体中文\",                         \"OsInstallDate\": \"20240116154100.000000+480\",                         \"ComputerName\": \"SARIELLIU-NB4\",                         \"DomainName\": \"\",                         \"MacAddr\": \"F0:B6:1E:57:21:19\",                         \"VulCount\": 0,                         \"RiskCount\": 0,                         \"VirusVer\": \"2.0.13712.288\",                         \"VulVersion\": \"2024.08.19.11.28.16\",                         \"Itime\": \"2023-10-12T21:28:01.794806+08:00\",                         \"SysRepVersion\": \"2024.09.05.09.00.49\",                         \"Utime\": \"2024-09-12T21:27:52.468659+08:00\",                         \"RiskScanTime\": \"2024-03-28T17:26:59.199403+08:00\",                         \"VulScanTime\": \"2023-11-02T20:38:19.422357+08:00\",                         \"VulCriticalList\": [],                         \"VulIgnoreCount\": 0,                         \"Tags\": \"\",                         \"UserName\": \"sarielliu\",                         \"CloudQueryState\": 3,                         \"FirewallStatus\": 1,                         \"SerialNum\": \"PW021WJP\",                         \"IsRoot\": 0,                         \"DeviceStrategyVer\": \"2024-09-02 16:22:00\",                         \"NGNStrategyVer\": \"2023-12-25 09:53:00\",                         \"IOAUserName\": \"sarielliu\",                         \"DeviceNewStrategyVer\": \"2024-11-06 10:51:00\",                         \"NGNNewStrategyVer\": \"2024-10-15 20:00:00\",                         \"DeviceMark\": \"sarielliu\",                         \"HostName\": \"\",                         \"Profiles\": [],                         \"ProfileFileTotal\": 0,                         \"ProfileFileInstalled\": 0,                         \"Sort\": 0,                         \"BaseBoardSn\": \"W2CG24S00F2\",                         \"AccountUsers\": \"\",                         \"IdentityStrategyVer\": \"\",                         \"IdentityNewStrategyVer\": \"\",                         \"AccountList\": [],                         \"NoPermission\": 0,                         \"BaseBoardManufacturer\": \"\",                         \"MemoryDetail\": \"\",                         \"SystemArchitecture\": \"\",                         \"HardwareChangeCount\": 8,                         \"RealTimeProtectionStatus\": 0,                         \"GroupId\": 67,                         \"ScreenRecordingPermission\": 0,                         \"DiskAccessPermission\": 0,                         \"Id\": 32599,                         \"Ip\": \"113.108.77.57\",                         \"Description\": \"\",                         \"AccountGroupSource\": 0,                         \"AccountGroupId\": 7,                         \"AccountGroupName\": \"sarielliutest\",                         \"ProfileFileNotInstall\": [],                         \"Memory\": \"32 GB\",                         \"Status\": 5,                         \"OnlineStatus\": 1,                         \"Locked\": 0,                         \"StrVersion\": \"209.4.20987.62001\",                         \"Version\": \"58828288687862321\",                         \"Os\": \"Microsoft Windows 10 专业版\",                         \"Driver\": 1,                         \"ConnActiveTime\": \"2024-09-12T21:58:33.210869+08:00\",                         \"Hacker\": 1,                         \"LocalIpList\": \"10.64.87.90\",                         \"Name\": \"SARIELLIU-NB4\",                         \"HostId\": 0,                         \"GroupFromAuto\": 0                     },                     {                         \"CriticalVulListCount\": 0,                         \"Camera\": 1,                         \"Desktop\": 1,                         \"UDisk\": 1,                         \"Download\": 1,                         \"SysFile\": 1,                         \"Reg\": 1,                         \"Proc\": 1,                         \"Mid\": \"6A925DB4A3223F6CC38488D0E241AE0B5D14B363\",                         \"Guid\": \"6A925DB4A3223F6CC38488D0E241AE0B\",                         \"Computer\": \"LENOVO ThinkCentre M910t-N000\",                         \"Cpu\": \"Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz\",                         \"MainBoard\": \"LENOVO 3107 SDK0J40675 WIN 3305553586072\",                         \"GroupNamePath\": \"全网终端.未分组终端\",                         \"OsType\": 0,                         \"GroupName\": \"未分组终端\",                         \"HardDiskSize\": \"SAMSUNG MZVLB256HAHQ-000L7 238 GB\",                         \"AccountName\": \"\",                         \"VideoCard\": \"Intel(R) HD Graphics 630\",                         \"AccountGroupIdPath\": \"\",                         \"NetworkCard\": \"Intel(R) Ethernet Connection (2) I219-LM\",                         \"Monitor\": \"P24i-10\",                         \"AudioCard\": \"Realtek High Definition Audio\",                         \"OsBits\": 64,                         \"OsVersion\": \"10.0.17134\",                         \"OsLanguage\": \"简体中文\",                         \"OsInstallDate\": \"20190531115405.000000+480\",                         \"ComputerName\": \"sarielliu-PCa\",                         \"DomainName\": \"tencent.com\",                         \"MacAddr\": \"00:D8:61:48:50:11\",                         \"VulCount\": 0,                         \"RiskCount\": 0,                         \"VirusVer\": \"2.0.13645.8348\",                         \"VulVersion\": \"2019.08.19.09.50.30\",                         \"Itime\": \"2022-10-26T17:52:40.783424+08:00\",                         \"SysRepVersion\": \"2023.01.04.16.34.51\",                         \"Utime\": \"2023-03-13T06:30:35.428937+08:00\",                         \"RiskScanTime\": \"2023-03-15T17:12:30.388189+08:00\",                         \"VulScanTime\": \"2023-01-10T11:46:47.884224+08:00\",                         \"VulCriticalList\": [],                         \"VulIgnoreCount\": 0,                         \"Tags\": \"\",                         \"UserName\": \"sarielliu\",                         \"CloudQueryState\": 3,                         \"FirewallStatus\": 0,                         \"SerialNum\": \"M70AG2FV\",                         \"IsRoot\": 0,                         \"DeviceStrategyVer\": \"2023-02-14 16:59:00\",                         \"NGNStrategyVer\": \"2023-01-05 15:29:00\",                         \"IOAUserName\": \"\",                         \"DeviceNewStrategyVer\": \"2024-11-06 10:51:00\",                         \"NGNNewStrategyVer\": \"2024-10-15 20:00:00\",                         \"DeviceMark\": \"\",                         \"HostName\": \"\",                         \"Profiles\": [],                         \"ProfileFileTotal\": 0,                         \"ProfileFileInstalled\": 0,                         \"Sort\": 0,                         \"BaseBoardSn\": \"\",                         \"AccountUsers\": \"\",                         \"IdentityStrategyVer\": \"\",                         \"IdentityNewStrategyVer\": \"\",                         \"AccountList\": [],                         \"NoPermission\": 0,                         \"BaseBoardManufacturer\": \"\",                         \"MemoryDetail\": \"\",                         \"SystemArchitecture\": \"\",                         \"HardwareChangeCount\": 0,                         \"RealTimeProtectionStatus\": 0,                         \"GroupId\": 67,                         \"ScreenRecordingPermission\": 0,                         \"DiskAccessPermission\": 0,                         \"Id\": 1,                         \"Ip\": \"119.147.10.202\",                         \"Description\": \"\",                         \"AccountGroupSource\": 0,                         \"AccountGroupId\": 0,                         \"AccountGroupName\": \"\",                         \"ProfileFileNotInstall\": [],                         \"Memory\": \"16 GB\",                         \"Status\": 5,                         \"OnlineStatus\": 1,                         \"Locked\": 0,                         \"StrVersion\": \"208.0.14144.62000\",                         \"Version\": \"58546796082819632\",                         \"Os\": \"Microsoft Windows 10 专业版\",                         \"Driver\": 1,                         \"ConnActiveTime\": \"2023-03-16T10:49:53.116277+08:00\",                         \"Hacker\": 1,                         \"LocalIpList\": \"10.6.59.48,192.168.245.1,192.168.127.1\",                         \"Name\": \"sarielliu-PCa\",                         \"HostId\": 0,                         \"GroupFromAuto\": 0                     }                 ]                        } }",
+          "example": "无",
           "member": "DescribeDevicesPageRsp",
           "name": "Data",
           "output_required": false,
@@ -2205,7 +2508,7 @@
         {
           "disabled": false,
           "document": "过滤条件参数（字段含义请参考接口返回值）- Mid, 类型String，支持操作：【eq，like，ilike】，支持排序- Name, 类型String，支持操作：【eq，like，ilike】，支持排序- Itime, 类型String，支持操作：【eq，like，ilike】，支持排序- UserName, 类型String，支持操作：【eq，like，ilike】，支持排序- MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序- UserId, 类型String，支持操作：【eq，like，ilike】，支持排序- Ip, 类型String，支持操作：【eq，like，ilike】，支持排序- Tags，类型String，支持操作：【eq，like，ilike】，支持排序- LocalIpList，类型String，支持操作：【eq，like，ilike】，支持排序- SerialNum，类型String，支持操作：【eq，like，ilike】，支持排序- Version，类型String，支持操作：【eq，like，ilike】，支持排序- StrVersion，类型String，支持操作：【eq，like，ilike】，支持排序- RtpStatus，类型String，支持操作：【eq，like，ilike】，**不支持排序**- HostName，类型String，支持操作：【eq，like，ilike】，支持排序- IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序- GroupName，类型String，支持操作：【eq，like，ilike】，支持排序- CriticalVulListCount，**类型Int**，支持操作：【eq】，**不支持排序**- RiskCount，**类型Int**，支持操作：【eq】，**不支持排序**- VulVersion，类型String，支持操作：【eq，like，ilike】，**不支持排序**- Virusver，类型String，支持操作：【eq，like，ilike】，**不支持排序**- SysRepver，类型String，支持操作：【eq，like，ilike】，**不支持排序**- BaseBoardSn，类型String，支持操作：【eq，like，ilike】，支持排序- Os，类型String，支持操作：【eq，like，ilike】，支持排序- ConnActiveTime，类型String，支持操作：【eq，like，ilike】，**不支持排序**- FirewallStatus，**类型Int**，支持操作：【eq】，**不支持排序**- ProfileName，类型String，支持操作：【eq，like，ilike】，支持排序- DomainName，类型String，支持操作：【eq，like，ilike】，支持排序- SysRepVersion，类型String，支持操作：【eq，like，ilike】，支持排序- VirusVer，类型String，支持操作：【eq，like，ilike】，支持排序- Cpu，类型String，支持操作：【eq，like，ilike】，支持排序- Memory，类型String，支持操作：【eq，like，ilike】，支持排序- HardDiskSize，类型String，支持操作：【eq，like，ilike】，支持排序- HardwareChangeCount，**类型Int**，支持操作：【eq】，支持排序- AccountName，类型String，支持操作：【like.ilike】，支持排序- AccountGroupName，类型String，支持操作：【like.ilike】，支持排序- ScreenRecordingPermission，**类型Int**，支持操作：【eq】，支持排序- DiskAccessPermission，**类型Int**，支持操作：【eq】，支持排序分页参数- PageNum 从1开始，小于等于0时使用默认参数- PageSize 最大值5000，最好不超过100",
-          "example": "{\"FilterGroups\":[],\"PageSize\":10,\"PageNum\":1}",
+          "example": "无",
           "member": "Condition",
           "name": "Condition",
           "required": false,
@@ -2213,7 +2516,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，终端自定义分组id",
+          "document": "终端自定义分组ID（0：获取租户全部自定义分组下的终端数据；其他值：获取具体ID分组下的终端数据）",
           "example": "14990",
           "member": "int64",
           "name": "DeviceVirtualGroupId",
@@ -2222,7 +2525,7 @@
         },
         {
           "disabled": false,
-          "document": "必填，系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）",
           "example": "0",
           "member": "int64",
           "name": "OsType",
@@ -2247,7 +2550,7 @@
         {
           "disabled": false,
           "document": "返回的具体Data数据",
-          "example": "{\"Items\":[{\"Id\":35,\"Status\":5,\"Ip\":\"42.81.192.121\",\"GroupId\":14,\"Name\":\"ZHI\",\"OsType\":0,\"UserName\":\"xxx\",\"Mid\":\"25BAF276FA7B97ACED6ACB416CEF298667E3BB0E\",\"MacAddr\":\"00:1C:42:1F:48:82\"}],\"Paging\":{\"Total\":1,\"PageNum\":1,\"PageSize\":10,\"PageCount\":1}}",
+          "example": "无",
           "member": "DescribeVirtualDevicesPageRsp",
           "name": "Data",
           "output_required": false,
@@ -2800,6 +3103,210 @@
           "example": "张三的终端",
           "member": "string",
           "name": "RemarkName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DeviceGroupDetail": {
+      "document": "返回的数组列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备组id",
+          "example": "7",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备组名称",
+          "example": "分组1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备组描述",
+          "example": "1部门",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "父节点id",
+          "example": "1",
+          "member": "int64",
+          "name": "ParentId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基于id的节点路径",
+          "example": "1.7",
+          "member": "string",
+          "name": "IdPath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基于名称的节点路径",
+          "example": "全网终端.分组1",
+          "member": "string",
+          "name": "NamePath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组锁定状态",
+          "example": "0",
+          "member": "int64",
+          "name": "Locked",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios   ）",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "0",
+          "member": "int64",
+          "name": "Sort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动调整",
+          "example": "0",
+          "member": "int64",
+          "name": "FromAuto",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子节点数量",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图标",
+          "example": "空字符串",
+          "member": "string",
+          "name": "Icon",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有ip",
+          "example": "0",
+          "member": "int64",
+          "name": "WithIp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有组ip",
+          "example": "false",
+          "member": "bool",
+          "name": "HasIp",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是叶子节点",
+          "example": "false",
+          "member": "bool",
+          "name": "IsLeaf",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否只读",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应绑定的账号id",
+          "example": "8",
+          "member": "int64",
+          "name": "BindAccount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定账号的用户名",
+          "example": "张三",
+          "member": "string",
+          "name": "BindAccountName",
           "output_required": false,
           "required": false,
           "type": "string",
