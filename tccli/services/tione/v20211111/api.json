@@ -161,6 +161,13 @@
       "output": "DescribeBillingResourceGroupResponse",
       "status": "online"
     },
+    "DescribeBillingResourceGroupHealthCheckTasks": {
+      "document": "查询资源组健康检测任务列表",
+      "input": "DescribeBillingResourceGroupHealthCheckTasksRequest",
+      "name": "查询资源组健康检测任务列表",
+      "output": "DescribeBillingResourceGroupHealthCheckTasksResponse",
+      "status": "online"
+    },
     "DescribeBillingResourceGroups": {
       "document": "查询资源组详情",
       "input": "DescribeBillingResourceGroupsRequest",
@@ -4298,6 +4305,98 @@
       ],
       "type": "object"
     },
+    "DescribeBillingResourceGroupHealthCheckTasksRequest": {
+      "document": "DescribeBillingResourceGroupHealthCheckTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId",
+          "example": "ersg-8jpj27jc",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件注意: 1. Filter.Name 只支持以下枚举值:    ResourceInstanceId (资源组节点id)    HealthCheckItem (检测项) TaskId (健康检测任务ID)2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询3. 每次请求的Filters的上限为10，Filter.Values的上限为100",
+          "example": "[{Name: \"TaskId\", Values: [\"jkjc-hs862dk2\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10....即每页左边为闭区间; 默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询每页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方向; 枚举值: ASC | DESC；默认DESC",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段; 枚举值: CreateTime (创建时间) ；默认CreateTime",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingResourceGroupHealthCheckTasksResponse": {
+      "document": "DescribeBillingResourceGroupHealthCheckTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组健康检测任务信息",
+          "example": "无",
+          "member": "HealthCheckTask",
+          "name": "HealthCheckTaskSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "8",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBillingResourceGroupRequest": {
       "document": "DescribeBillingResourceGroup请求参数结构体",
       "members": [
@@ -7008,6 +7107,72 @@
         }
       ],
       "usage": "both"
+    },
+    "HealthCheckTask": {
+      "document": "HealthCheckTask",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检测任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jkjc-hs862dk2",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检测任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STOPPED",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人子账号用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jack",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人子账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100040142333",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测范围(节点ID)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sm-2z84hf49\"]",
+          "member": "string",
+          "name": "ResourceInstanceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "HealthProbe": {
       "document": "健康探针",

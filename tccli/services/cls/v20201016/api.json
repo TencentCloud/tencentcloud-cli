@@ -6514,7 +6514,7 @@
         {
           "disabled": false,
           "document": "日志主题ID,  此外部数据源配置隶属此日志主题",
-          "example": "my_topic",
+          "example": "a9002dba-b707-4d98-8f23-f22b92d43ae1",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -6550,7 +6550,7 @@
         {
           "disabled": false,
           "document": "日志集ID, 不为空时表示该日志集下面的所有日志主题都可以使用此外部数据源配置",
-          "example": "无",
+          "example": "8a98c8ef-b301-4067-a98b-8cdbff172d3e",
           "member": "string",
           "name": "LogsetId",
           "required": false,
@@ -8602,12 +8602,12 @@
         },
         {
           "disabled": false,
-          "document": "别名",
+          "document": "别名\n限制：不能包含字符 |。",
           "example": "topicname",
           "member": "string",
           "name": "Alias",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

@@ -184,6 +184,14 @@
         "title": "查询资源组节点列表"
       }
     ],
+    "DescribeBillingResourceGroupHealthCheckTasks": [
+      {
+        "document": "查询资源组健康检测任务列表",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillingResourceGroupHealthCheckTasks\n<公共请求参数>\n\n{\n    \"ResourceGroupId\": \"ersg-9hw7jfk6\",\n    \"Filters\": [\n        {\n            \"Name\": \"TaskStatus\",\n            \"Values\": [\n                \"STOPPED\"\n            ],\n            \"Negative\": true,\n            \"Fuzzy\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Order\": \"ASC\",\n    \"OrderField\": \"CreateTime\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HealthCheckTaskSet\": [\n            {\n                \"CreateTime\": \"2025-04-29 16:33:04\",\n                \"Id\": \"jkjc-jbft2233\",\n                \"ResourceInstanceIds\": [\n                    \"sm-v8ml2233\"\n                ],\n                \"SubUin\": \"100035780233\",\n                \"SubUinName\": \"jack\",\n                \"TaskStatus\": \"RUNNING\"\n            }\n        ],\n        \"RequestId\": \"1dd7baad-d7dd-4a35-8bfd-4c5f6790esbc\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询资源组健康检测任务列表"
+      }
+    ],
     "DescribeBillingResourceGroups": [
       {
         "document": "",

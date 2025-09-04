@@ -225,8 +225,8 @@
     "CreateExternalDataSource": [
       {
         "document": "创建外部数据源配置",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExternalDataSource\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Describes\": \"abc\",\n    \"Datasource\": 1,\n    \"SQLInfo\": {\n        \"AccessMode\": 1,\n        \"Address\": \"abc\",\n        \"Port\": \"abc\",\n        \"EndPointServiceId\": \"abc\",\n        \"User\": \"abc\",\n        \"Password\": \"abc\",\n        \"DatabaseName\": \"abc\",\n        \"TableName\": \"abc\"\n    },\n    \"COSInfo\": {\n        \"Region\": \"abc\",\n        \"Bucket\": \"abc\",\n        \"FileAddress\": \"abc\",\n        \"FieldsInfo\": [\n            {\n                \"FieldName\": \"abc\",\n                \"FieldType\": \"abc\"\n            }\n        ]\n    },\n    \"TopicId\": \"abc\",\n    \"LogsetId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Id\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExternalDataSource\n<公共请求参数>\n\n{\n    \"Name\": \"uuid_test\",\n    \"Describes\": \"\",\n    \"Datasource\": 2,\n    \"COSInfo\": {\n        \"Region\": \"ap-shanghai\",\n        \"Bucket\": \"test-dataflow-1254139626\",\n        \"FileAddress\": \"temp_table/uuid_test.csv\",\n        \"FieldsInfo\": [\n            {\n                \"FieldName\": \"appId\",\n                \"FieldType\": \"BIGINT\"\n            },\n            {\n                \"FieldName\": \"uuid\",\n                \"FieldType\": \"VARCHAR\"\n            }\n        ]\n    },\n    \"TopicId\": \"a22340c8-add1-44c9-9f05-93e1bcf71a27\",\n    \"LogsetId\": \"8a98c8ef-b301-4067-a98b-8cdbff172d3e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"9f8127df-8b13-4552-86ae-b59a7ea007e2\",\n        \"RequestId\": \"d9b0a698-f539-440c-a67a-49d7c3a2dc07\"\n    }\n}",
         "title": "创建外部数据源配置"
       }
     ],
