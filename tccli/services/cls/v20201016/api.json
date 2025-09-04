@@ -6439,12 +6439,12 @@
         },
         {
           "disabled": false,
-          "document": "别名",
+          "document": "别名\n限制：不能包含字符 |。",
           "example": "topicname",
           "member": "string",
           "name": "Alias",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

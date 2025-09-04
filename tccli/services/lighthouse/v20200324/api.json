@@ -2759,7 +2759,7 @@
         {
           "disabled": false,
           "document": "使用场景ID列表。可通过[DescribeAllScenes](https://cloud.tencent.com/document/product/1207/83513)接口返回值中的SceneId获取。",
-          "example": "[\"lhsc-123456\"]",
+          "example": "[\"lhsc-3bzsddow\"]",
           "member": "string",
           "name": "SceneIds",
           "required": false,

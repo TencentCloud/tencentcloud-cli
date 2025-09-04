@@ -7391,7 +7391,7 @@
         },
         {
           "disabled": false,
-          "document": "音频切片时长，默认15s 示例值：15",
+          "document": "音频切片时长，默认15s 示例值：15\n取值范围15-60s",
           "example": "15",
           "member": "uint64",
           "name": "SliceAudio",
@@ -7400,7 +7400,7 @@
         },
         {
           "disabled": false,
-          "document": "视频截帧间隔时长，默认5s， 示例值：5",
+          "document": "视频截帧间隔时长，默认5s， 示例值：5 取值范围5-60s",
           "example": "5",
           "member": "uint64",
           "name": "SliceVideo",
@@ -7419,7 +7419,7 @@
         {
           "disabled": false,
           "document": "已废弃，从控制台配置回调url",
-          "example": "无",
+          "example": "url",
           "member": "string",
           "name": "SliceCallbackUrl",
           "required": false,
