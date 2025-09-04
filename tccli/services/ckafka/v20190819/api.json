@@ -11538,7 +11538,7 @@
         {
           "disabled": false,
           "document": "接入点 VIP 列表信息",
-          "example": "[{\"Vip\":\"10.0.0.5\",\"Vport\":\"9092\"}]",
+          "example": "无",
           "member": "VipEntity",
           "name": "VipList",
           "output_required": true,
@@ -11648,7 +11648,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "2019-08-19 00:00:00",
+          "example": "1564144000",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
@@ -11668,7 +11668,7 @@
         {
           "disabled": false,
           "document": "自动创建 Topic 配置， 若该字段为空，则表示未开启自动创建",
-          "example": "{\"AutoCreateTopicsEnable\":false,\"DefaultNumPartitions\":0,\"DefaultReplicationFactor\":0}",
+          "example": "无",
           "member": "InstanceConfigDO",
           "name": "Config",
           "output_required": true,
@@ -11718,7 +11718,7 @@
         {
           "disabled": false,
           "document": "标签数组",
-          "example": "[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -11798,7 +11798,7 @@
         {
           "disabled": false,
           "document": "动态消息保留策略",
-          "example": "{\"BottomRetention\":360,\"DiskQuotaPercentage\":75,\"Enable\":1,\"StepForwardPercentage\":10}",
+          "example": "无",
           "member": "DynamicRetentionTime",
           "name": "RetentionTimeConfig",
           "output_required": false,
@@ -11858,7 +11858,7 @@
         {
           "disabled": false,
           "document": "动态硬盘扩容策略",
-          "example": "{\"DiskQuotaPercentage\":75,\"Enable\":1,\"MaxDiskSpace\":500000,\"StepForwardPercentage\":10}",
+          "example": "无",
           "member": "DynamicDiskConfig",
           "name": "DynamicDiskConfig",
           "output_required": true,

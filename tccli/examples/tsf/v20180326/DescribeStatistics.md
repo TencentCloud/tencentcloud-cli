@@ -8,11 +8,11 @@ Input:
 tccli tsf DescribeStatistics --cli-unfold-argument  \
     --OrderBy AvgTimeConsuming \
     --StartTime 2020-05-12 14:43:12 \
-    --TimeStep 1 \
-    --Offset 1 \
+    --TimeStep 60 \
+    --Offset 0 \
     --DbName mysql \
     --ServiceName demo-service \
-    --Limit 1 \
+    --Limit 10 \
     --SearchWord keyword \
     --OrderType 1 \
     --EndTime 2020-05-12 14:43:12 \

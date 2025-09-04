@@ -1557,7 +1557,7 @@
         {
           "disabled": false,
           "document": "负载均衡器列表，目前长度上限为100，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
-          "example": "[{\"LoadBalancerId\": \"lb-af8li2kn\", \"ListenerId\": \"lbl-akw1lgo7\", \"TargetAttributes\": [{\"Port\": 80, \"Weight\": 10}]}]",
+          "example": "无",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancers",
           "required": false,
@@ -1575,7 +1575,7 @@
         {
           "disabled": false,
           "document": "销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE，默认取值为 OLDEST_INSTANCE。\n<li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。</li>\n<li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。</li>",
-          "example": "OLDEST_INSTANCE",
+          "example": "[\"OLDEST_INSTANCE\"]",
           "member": "string",
           "name": "TerminationPolicies",
           "required": false,
@@ -1611,7 +1611,7 @@
         {
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以支持绑定标签到伸缩组。同时绑定标签到相应的资源实例。每个伸缩组最多支持30个标签。可通过调用接口 [GetTags](https://cloud.tencent.com/document/product/651/72275) ，根据回参获取已有的标签键值对信息。",
-          "example": "[{\"Key\": \"Service_B\", \"Value\": \"pss3\", \"ResourceType\": \"auto-scaling-group\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1620,7 +1620,7 @@
         {
           "disabled": false,
           "document": "服务设置，包括云监控不健康替换等服务设置。",
-          "example": "{\"ScalingMode\": \"CLASSIC_SCALING\"}",
+          "example": "无",
           "member": "ServiceSettings",
           "name": "ServiceSettings",
           "required": false,
@@ -1674,7 +1674,7 @@
         {
           "disabled": false,
           "document": "竞价混合模式下，各计费类型实例的分配策略。\n仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时可用。",
-          "example": "{\"BaseCapacity\": 1, \"CompensateWithBaseInstance\": true, \"OnDemandPercentageAboveBaseCapacity\": 50, \"SpotAllocationStrategy\": \"COST_OPTIMIZED\"}",
+          "example": "无",
           "member": "SpotMixedAllocationPolicy",
           "name": "SpotMixedAllocationPolicy",
           "required": false,
@@ -1692,7 +1692,7 @@
         {
           "disabled": false,
           "document": "实例名称序号相关设置。若不指定该参数，则默认不开启。开启后为伸缩组内自动创建的实例名称添加递增的数字序号。",
-          "example": "{\"BeginIndex\": 0, \"Enabled\": true}",
+          "example": "无",
           "member": "InstanceNameIndexSettings",
           "name": "InstanceNameIndexSettings",
           "required": false,
@@ -1765,7 +1765,7 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
-          "example": "{\"DiskSize\": 500, \"DiskType\": \"CLOUD_BSSD\"}",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -1774,7 +1774,7 @@
         {
           "disabled": false,
           "document": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，最多支持指定11块数据盘。",
-          "example": "[{\"DiskSize\": 200, \"DiskType\": \"CLOUD_BSSD\"}]",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -1783,7 +1783,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
-          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 0, \"PublicIpAssigned\": false}",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -1792,7 +1792,7 @@
         {
           "disabled": false,
           "document": "实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。",
-          "example": "{\"KeyIds\": [\"skey-alaz9k65\"]}",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -1810,7 +1810,7 @@
         {
           "disabled": false,
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。",
-          "example": "{\"MonitorService\": {\"Enabled\": true}, \"SecurityService\": {\"Enabled\": true}}",
+          "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -1837,7 +1837,7 @@
         {
           "disabled": false,
           "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。",
-          "example": "{\"SpotOptions\": {\"MaxPrice\": 1000}}",
+          "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "required": false,
@@ -1873,7 +1873,7 @@
         {
           "disabled": false,
           "document": "标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。",
-          "example": "[{\"Key\": \"server-group-name\", \"Value\": \"as-tencent\"}]",
+          "example": "无",
           "member": "InstanceTag",
           "name": "InstanceTags",
           "required": false,
@@ -1882,7 +1882,7 @@
         {
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以支持绑定标签到启动配置。每个启动配置最多支持30个标签。",
-          "example": "[{\"Key\": \"CCode\", \"Value\": \"ASTENCENT\", \"ResourceType\": \"launch-configuration\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1890,8 +1890,8 @@
         },
         {
           "disabled": false,
-          "document": "云服务器主机名（HostName）的相关设置。",
-          "example": "{\"HostName\": \"app-as\", \"HostNameStyle\": \"UNIQUE\"}",
+          "document": "云服务器主机名（HostName）的相关设置。\n不支持windows实例设置主机名。 \n新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。\n会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。",
+          "example": "无",
           "member": "HostNameSettings",
           "name": "HostNameSettings",
           "required": false,
@@ -1899,8 +1899,8 @@
         },
         {
           "disabled": false,
-          "document": "云服务器实例名（InstanceName）的相关设置。\n如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。",
-          "example": "{\"InstanceName\": \"app-as\", \"InstanceNameStyle\": \"UNIQUE\"}",
+          "document": "云服务器实例名（InstanceName）的相关设置。\n如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。\n新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。\n会校验实例名称(如果存在后缀则加上后缀)是否超过最大位数108。",
+          "example": "无",
           "member": "InstanceNameSettings",
           "name": "InstanceNameSettings",
           "required": false,
@@ -1909,7 +1909,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "{\"Period\": 1, \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"}",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -1936,7 +1936,7 @@
         {
           "disabled": false,
           "document": "IPv6公网带宽相关信息设置。若新建实例包含IPv6地址，该参数可为新建实例的IPv6地址分配公网带宽。关联启动配置的伸缩组Ipv6AddressCount参数为0时，该参数不会生效。",
-          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 1}",
+          "example": "无",
           "member": "IPv6InternetAccessible",
           "name": "IPv6InternetAccessible",
           "required": false,
@@ -4347,7 +4347,7 @@
         },
         {
           "disabled": false,
-          "document": "初始序号。\n序号固定位数 IndexLength 为默认值0时，取值范围为 [0, 99999999]。\n序号固定位数 IndexLength 为 [1, 8] 时，取值范围为为 [0, 固定位数的最大数字]。\n当序号递增后超出取值范围时，扩容活动会失败。\n\n首次开启实例名称序号：默认值为 0。\n非首次开启实例名称序号：若不指定该参数，沿用历史序号。\n下调初始序号可能会造成伸缩组内实例名称序号重复。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "初始序号。取值范围为 [0, 99999999]。\n\n当序号递增后超出取值范围时，扩容活动会失败。\n\n首次开启实例名称序号：默认值为 0。\n非首次开启实例名称序号：若不指定该参数，沿用历史序号。\n下调初始序号可能会造成伸缩组内实例名称序号重复。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "BeginIndex",
@@ -5451,7 +5451,7 @@
         {
           "disabled": false,
           "document": "服务设置，包括云监控不健康替换等服务设置。",
-          "example": "{\"ReplaceLoadBalancerUnhealthy\": \"false\", \"ReplaceMonitorUnhealthy\": \"false\"}",
+          "example": "无",
           "member": "ServiceSettings",
           "name": "ServiceSettings",
           "required": false,
@@ -5505,7 +5505,7 @@
         {
           "disabled": false,
           "document": "竞价混合模式下，各计费类型实例的分配策略。\n仅当 InstanceAllocationPolicy 取 SPOT_MIXED 时可用。",
-          "example": "{\"BaseCapacity\": 1, \"CompensateWithBaseInstance\": true, \"OnDemandPercentageAboveBaseCapacity\": 50, \"SpotAllocationStrategy\": \"COST_OPTIMIZED\"}",
+          "example": "无",
           "member": "SpotMixedAllocationPolicy",
           "name": "SpotMixedAllocationPolicy",
           "required": false,
@@ -5523,7 +5523,7 @@
         {
           "disabled": false,
           "document": "实例名称序号相关设置。开启后为伸缩组内自动创建的实例名称添加递增的数字序号。",
-          "example": "{\"BeginIndex\": 0, \"Enabled\": true}",
+          "example": "无",
           "member": "InstanceNameIndexSettings",
           "name": "InstanceNameIndexSettings",
           "required": false,
@@ -5622,7 +5622,7 @@
         {
           "disabled": false,
           "document": "实例类型列表，不同实例机型指定了不同的资源规格，最多支持10种实例机型。\nInstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定多实例类型，并使原有的InstanceType失效。具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格描述](https://cloud.tencent.com/document/product/213/11518)。",
-          "example": "S5.SMALL2",
+          "example": "[\"S5.SMALL2\"]",
           "member": "string",
           "name": "InstanceTypes",
           "required": false,
@@ -5667,7 +5667,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。\n当公网出带宽上限为0Mbps时，不支持修改为开通分配公网IP；相应的，当前为开通分配公网IP时，修改的公网出带宽上限值必须大于0Mbps。",
-          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 0, \"PublicIpAssigned\": false}",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -5685,7 +5685,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。\n若修改实例的付费模式为预付费，则该参数必传；从预付费修改为其他付费模式时，本字段原信息会自动丢弃。\n当新增该字段时，必须传递购买实例的时长，其它未传递字段会设置为默认值。\n当修改本字段时，当前付费模式必须为预付费。",
-          "example": "{\"Period\": 1, \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"}",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -5694,7 +5694,7 @@
         {
           "disabled": false,
           "document": "实例的市场相关选项，如竞价实例相关参数。\n若修改实例的付费模式为竞价付费，则该参数必传；从竞价付费修改为其他付费模式时，本字段原信息会自动丢弃。\n当新增该字段时，必须传递竞价相关选项下的竞价出价，其它未传递字段会设置为默认值。\n当修改本字段时，当前付费模式必须为竞价付费。",
-          "example": "{\"SpotOptions\": {\"MaxPrice\": 1000}}",
+          "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "required": false,
@@ -5712,7 +5712,7 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息。",
-          "example": "{\"DiskSize\": 500, \"DiskType\": \"CLOUD_BSSD\"}",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -5721,7 +5721,7 @@
         {
           "disabled": false,
           "document": "实例数据盘配置信息。\n最多支持指定11块数据盘。采取整体修改，因此请提供修改后的全部值。\n数据盘类型默认与系统盘类型保持一致。",
-          "example": "[{\"DiskSize\": 200, \"DiskType\": \"CLOUD_BSSD\"}]",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -5729,8 +5729,8 @@
         },
         {
           "disabled": false,
-          "document": "云服务器主机名（HostName）的相关设置。\n不支持windows实例设置主机名。\n新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。",
-          "example": "{\"HostName\": \"app-as\", \"HostNameStyle\": \"UNIQUE\"}",
+          "document": "云服务器主机名（HostName）的相关设置。\n不支持windows实例设置主机名。\n新增该属性时，必须传递云服务器的主机名，其它未传递字段会设置为默认值。\n会校验主机名(如果存在后缀则加上后缀)是否超过最大位数46。",
+          "example": "无",
           "member": "HostNameSettings",
           "name": "HostNameSettings",
           "required": false,
@@ -5738,8 +5738,8 @@
         },
         {
           "disabled": false,
-          "document": "云服务器（InstanceName）实例名的相关设置。 \n如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。\n新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。",
-          "example": "{\"InstanceName\": \"app-as\", \"InstanceNameStyle\": \"UNIQUE\"}",
+          "document": "云服务器（InstanceName）实例名的相关设置。 \n如果用户在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 参照此字段进行设置，并传递给 CVM；如果用户未在启动配置中设置此字段，则伸缩组创建出的实例 InstanceName 按照“as-{{ 伸缩组AutoScalingGroupName }}”进行设置，并传递给 CVM。\n新增该属性时，必须传递云服务器的实例名称，其它未传递字段会设置为默认值。\n会校验实例名(如果存在后缀则加上后缀)是否超过最大位数108。",
+          "example": "无",
           "member": "InstanceNameSettings",
           "name": "InstanceNameSettings",
           "required": false,
@@ -5748,7 +5748,7 @@
         {
           "disabled": false,
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。",
-          "example": "{\"MonitorService\": {\"Enabled\": true}, \"SecurityService\": {\"Enabled\": true}}",
+          "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -5766,7 +5766,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群ID。可通过调用[DescribeHpcClusters](https://cloud.tencent.com/document/product/213/83220)接口获取该参数。\n注意：此字段默认为空。",
-          "example": "hpc-abcd1234",
+          "example": "hpc-acbd1324",
           "member": "string",
           "name": "HpcClusterId",
           "required": false,
@@ -5775,7 +5775,7 @@
         {
           "disabled": false,
           "document": "IPv6公网带宽相关信息设置。若新建实例包含IPv6地址，该参数可为新建实例的IPv6地址分配公网带宽。关联启动配置的伸缩组Ipv6AddressCount参数为0时，该参数不会生效。",
-          "example": "{\"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\", \"InternetMaxBandwidthOut\": 1}",
+          "example": "无",
           "member": "IPv6InternetAccessible",
           "name": "IPv6InternetAccessible",
           "required": false,
@@ -5793,7 +5793,7 @@
         {
           "disabled": false,
           "document": "实例登录设置，包括密码、密钥或保持镜像的原始登录设置。<br>请注意，指定新的登录设置会覆盖原有登录设置。例如，如果您之前使用密码登录，使用该参数将登录设置修改为密钥，则原有密码被清除。",
-          "example": "{\"KeyIds\": [\"skey-alaz9k65\"]}",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -5802,7 +5802,7 @@
         {
           "disabled": false,
           "document": "实例标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。\n该参数会覆盖原有的实例标签列表，如需新增标签，需将新标签和原有标签一并传入。",
-          "example": "[{\"Key\":\"Test\",\"Value\":\"test\"}]",
+          "example": "无",
           "member": "InstanceTag",
           "name": "InstanceTags",
           "required": false,

@@ -1791,7 +1791,7 @@
         {
           "disabled": false,
           "document": "统一社会信用代码（三合一之前为注册号）",
-          "example": "110000012345678",
+          "example": "159613",
           "member": "string",
           "name": "RegNum",
           "output_required": true,
@@ -1871,7 +1871,7 @@
         {
           "disabled": false,
           "document": "组成形式",
-          "example": "无",
+          "example": "示例",
           "member": "string",
           "name": "ComposingForm",
           "output_required": true,
@@ -1981,7 +1981,7 @@
         {
           "disabled": false,
           "document": "编号",
-          "example": "无",
+          "example": "示例",
           "member": "string",
           "name": "SerialNumber",
           "output_required": true,
@@ -2016,6 +2016,16 @@
           "name": "BusinessCertificate",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重要提示字段",
+          "example": "五",
+          "member": "string",
+          "name": "Important",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5403,7 +5413,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模板 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nTable -- 表格模板\nSteelLabel -- 实物标签识别模板\nCarInsurance -- 车辆保险单识别模板\nMultiRealEstateCertificate -- 房产材料识别模板\nMultiRealEstateMaterial -- 房产证明识别模板\nHongKongUtilityBill -- 中国香港水电煤单识别模板",
+          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模板 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nTable -- 表格模板\nSteelLabel -- 实物标签识别模板\nCarInsurance -- 车辆保险单识别模板\nMultiRealEstateCertificate -- 房产材料识别模板\nMultiRealEstateMaterial -- 房产证明识别模板\nHongKongUtilityBill -- 中国香港水电煤单识别模板\nOverseasCheques -- 海外支票\nRegistrationCertificate -- 备案证\n​GridPhoto -- 电网系统照片\n​SignaturePage -- 签署页\n\n",
           "example": "General",
           "member": "string",
           "name": "ConfigId",
@@ -12875,6 +12885,15 @@
           "example": "false",
           "member": "bool",
           "name": "EnableOnlyDetectBorder",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "false: 使用当前默认模型  true: 使用新的多模态推理模型，速度更快推理效果更强，仅 `EnableOnlyDetectBorder` 为 `true` 时生效，公测中",
+          "example": "false",
+          "member": "bool",
+          "name": "UseNewModel",
           "required": false,
           "type": "bool"
         }
@@ -20738,7 +20757,7 @@
           "example": "* 2 1 0 0 0 5 8 9 8 1 2 4 *",
           "member": "string",
           "name": "AutoContent",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20748,8 +20767,18 @@
           "example": "无",
           "member": "Polygon",
           "name": "Coord",
-          "required": false,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "PageIndex",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
