@@ -7,10 +7,10 @@ Input:
 ```
 tccli bi DescribePermissionRanksInfo --cli-unfold-argument  \
     --TableId 0 \
-    --Mode abc \
-    --RoleType abc \
+    --Mode testdata \
+    --RoleType testdata \
     --RoleId 0 \
-    --Type abc \
+    --Type testdata \
     --ProjectId 0
 ```
 
@@ -18,31 +18,31 @@ Output:
 ```
 {
     "Response": {
-        "Msg": "abc",
-        "Extra": "abc",
+        "Msg": "testdata",
+        "Extra": "testdata",
         "Data": {
             "TableId": 0,
-            "Type": "abc",
-            "Mode": "abc",
-            "RulerInfo": "abc",
+            "Type": "testdata",
+            "Mode": "testdata",
+            "RulerInfo": "testdata",
             "RoleId": 0,
-            "RoleType": "abc",
+            "RoleType": "testdata",
             "RowColumnConfigList": [
                 {
-                    "RulerInfo": "abc",
+                    "RulerInfo": "testdata",
                     "TagValueList": [
                         {
                             "Id": 0,
-                            "Name": "abc",
+                            "Name": "testdata",
                             "Values": [
-                                "abc"
+                                "testdata"
                             ]
                         }
                     ]
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "testdata"
     }
 }
 ```

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli bi ApplyEmbedInterval --cli-unfold-argument  \
-    --Intention embed \
-    --Scope page \
-    --BIToken 246cbf0d-aa6c-445d-895d-b368f59159e8 \
-    --ExtraParam  \
-    --PageId 1 \
-    --ProjectId 2
+    --ProjectId 1982493789748932 \
+    --PageId 1982493789748932 \
+    --BIToken BIToken \
+    --ExtraParam ExtraParam \
+    --Intention Intention \
+    --Scope Scope
 ```
 
 Output: 

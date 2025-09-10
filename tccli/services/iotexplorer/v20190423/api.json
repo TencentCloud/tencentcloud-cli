@@ -7,6 +7,13 @@
       "output": "ActivateTWeCallLicenseResponse",
       "status": "online"
     },
+    "BatchUpdateFirmware": {
+      "document": "本接口（BatchUpdateFirmware）用于批量更新设备固件",
+      "input": "BatchUpdateFirmwareRequest",
+      "name": "批量升级固件",
+      "output": "BatchUpdateFirmwareResponse",
+      "status": "online"
+    },
     "BindCloudStorageUser": {
       "document": "绑定云存用户",
       "input": "BindCloudStorageUserRequest",
@@ -154,6 +161,13 @@
       "output": "CreateLoRaGatewayResponse",
       "status": "online"
     },
+    "CreateOtaModule": {
+      "document": "本接口（CreateOtaModule）用于新建OTA模块",
+      "input": "CreateOtaModuleRequest",
+      "name": "新建OTA模块",
+      "output": "CreateOtaModuleResponse",
+      "status": "online"
+    },
     "CreatePositionFence": {
       "document": "创建围栏。",
       "input": "CreatePositionFenceRequest",
@@ -257,6 +271,13 @@
       "input": "DeleteLoRaGatewayRequest",
       "name": "删除 LoRa 网关",
       "output": "DeleteLoRaGatewayResponse",
+      "status": "online"
+    },
+    "DeleteOtaModule": {
+      "document": "本接口（DeleteOtaModule）用于删除OTA模块",
+      "input": "DeleteOtaModuleRequest",
+      "name": "删除OTA模块",
+      "output": "DeleteOtaModuleResponse",
       "status": "online"
     },
     "DeletePositionFence": {
@@ -551,6 +572,20 @@
       "input": "DescribeFirmwareTaskRequest",
       "name": "查询固件升级任务列表",
       "output": "DescribeFirmwareTaskResponse",
+      "status": "online"
+    },
+    "DescribeFirmwareTaskDevices": {
+      "document": "查询固件升级任务的设备列表",
+      "input": "DescribeFirmwareTaskDevicesRequest",
+      "name": "查询固件升级任务的设备列表",
+      "output": "DescribeFirmwareTaskDevicesResponse",
+      "status": "online"
+    },
+    "DescribeFirmwareTasks": {
+      "document": "搜索固件升级任务列表",
+      "input": "DescribeFirmwareTasksRequest",
+      "name": "搜索固件升级任务列表",
+      "output": "DescribeFirmwareTasksResponse",
       "status": "online"
     },
     "DescribeFirmwareUpdateStatus": {
@@ -931,6 +966,20 @@
       "output": "ListFirmwaresResponse",
       "status": "online"
     },
+    "ListOtaModules": {
+      "document": "本接口（ListOtaModules）用于获取OTA模块列表",
+      "input": "ListOtaModulesRequest",
+      "name": "获取OTA模块列表",
+      "output": "ListOtaModulesResponse",
+      "status": "online"
+    },
+    "ListProductOtaModules": {
+      "document": "本接口（ListProductOtaModules）用于获取产品OTA模块列表",
+      "input": "ListProductOtaModulesRequest",
+      "name": "获取产品OTA模块列表",
+      "output": "ListProductOtaModulesResponse",
+      "status": "online"
+    },
     "ListTopicPolicy": {
       "document": "本接口（ListTopicPolicy）用于获取Topic列表",
       "input": "ListTopicPolicyRequest",
@@ -1209,6 +1258,13 @@
       "input": "UpdateFirmwareRequest",
       "name": "更新设备固件",
       "output": "UpdateFirmwareResponse",
+      "status": "online"
+    },
+    "UpdateOtaModule": {
+      "document": "本接口（UpdateOtaModule）用于修改OTA模块",
+      "input": "UpdateOtaModuleRequest",
+      "name": "修改OTA模块",
+      "output": "UpdateOtaModuleResponse",
       "status": "online"
     },
     "UploadFirmware": {
@@ -1626,6 +1682,178 @@
         }
       ],
       "usage": "out"
+    },
+    "BatchUpdateFirmwareRequest": {
+      "document": "BatchUpdateFirmware请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "hsdkhfueh",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "固件新版本号",
+          "example": "2.0.0",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "固件原版本号",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "FirmwareOriVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式",
+          "example": "0",
+          "member": "uint64",
+          "name": "UpgradeMethod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备列表文件名称，根据文件列表升级固件需要填写此参数",
+          "example": "ota",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备列表的文件md5值",
+          "example": "608afe29a06b19d3033c5f8787ec75fa",
+          "member": "string",
+          "name": "FileMd5",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备列表的文件大小值",
+          "example": "120",
+          "member": "uint64",
+          "name": "FileSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要升级的设备名称列表",
+          "example": "[\"dev001\"]",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "固件升级任务，默认超时时间。 最小取值120秒，最大为900秒",
+          "example": "120",
+          "member": "uint64",
+          "name": "TimeoutInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "固件升级任务类型，默认静态升级值为空或1，动态升级值为7",
+          "example": "7",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务延迟时间",
+          "example": "10",
+          "member": "int64",
+          "name": "DelayTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否覆盖，0不覆盖，1覆盖",
+          "example": "1",
+          "member": "uint64",
+          "name": "OverrideMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "失败重试次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaxRetryNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重试间隔min",
+          "example": "1",
+          "member": "uint64",
+          "name": "RetryInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "固件模块",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义信息",
+          "example": "{\"key\":\"value\"}",
+          "member": "string",
+          "name": "TaskUserDefine",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchUpdateFirmwareResponse": {
+      "document": "BatchUpdateFirmware返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "1000696",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BindCloudStorageUserRequest": {
       "document": "BindCloudStorageUser请求参数结构体",
@@ -3964,6 +4192,60 @@
       ],
       "type": "object"
     },
+    "CreateOtaModuleRequest": {
+      "document": "CreateOtaModule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "4ON538D9AX",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模块类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模块类型名称",
+          "example": "muc包",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型描述",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOtaModuleResponse": {
+      "document": "CreateOtaModule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePositionFenceRequest": {
       "document": "CreatePositionFence请求参数结构体",
       "members": [
@@ -4890,6 +5172,42 @@
     },
     "DeleteLoRaGatewayResponse": {
       "document": "DeleteLoRaGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOtaModuleRequest": {
+      "document": "DeleteOtaModule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "4ON538D9AX",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模块类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOtaModuleResponse": {
+      "document": "DeleteOtaModule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7895,6 +8213,98 @@
       ],
       "type": "object"
     },
+    "DescribeFirmwareTaskDevicesRequest": {
+      "document": "DescribeFirmwareTaskDevices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "I6KTCZ170U",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "固件版本",
+          "example": "t.1",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件",
+          "example": "无",
+          "member": "SearchKeyword",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询的数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "固件类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTaskDevicesResponse": {
+      "document": "DescribeFirmwareTaskDevices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固件升级任务的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "固件升级任务的设备列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeviceUpdateStatus",
+          "name": "Devices",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFirmwareTaskRequest": {
       "document": "DescribeFirmwareTask请求参数结构体",
       "members": [
@@ -8110,6 +8520,98 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTasksRequest": {
+      "document": "DescribeFirmwareTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "I6KTCZ170U",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "固件版本号",
+          "example": "t.1",
+          "member": "string",
+          "name": "FirmwareVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回查询结果条数",
+          "example": "3",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索过滤条件",
+          "example": "无",
+          "member": "SearchKeyword",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "固件类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFirmwareTasksResponse": {
+      "document": "DescribeFirmwareTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固件升级任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FirmwareTaskInfo",
+          "name": "TaskInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "固件升级任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9937,6 +10439,122 @@
       ],
       "usage": "out"
     },
+    "DeviceUpdateStatus": {
+      "document": "设备固件更新状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备名",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后处理时间",
+          "example": "3247329874932",
+          "member": "uint64",
+          "name": "LastProcessTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误消息",
+          "example": "timeout",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回码",
+          "example": "-20",
+          "member": "int64",
+          "name": "Retcode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标更新版本",
+          "example": "1.0",
+          "member": "string",
+          "name": "DstVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下载中状态时的下载进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Percent",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.0",
+          "member": "string",
+          "name": "OriVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "234324",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "固件类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重试次数",
+          "example": "5",
+          "member": "uint64",
+          "name": "RetryNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeviceUser": {
       "document": "设备的用户",
       "members": [
@@ -10689,6 +11307,92 @@
           "example": "{\"key1\":\"value1\", \"key2\":\"支持中文\"}",
           "member": "string",
           "name": "UserDefined",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FirmwareTaskInfo": {
+      "document": "固件升级任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "324234",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2342345435",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zzz",
+          "member": "string",
+          "name": "CreatorNickName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建者ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "32423524323",
+          "member": "int64",
+          "name": "CreateUserId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "234345344234",
+          "member": "int64",
+          "name": "CronTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "固件类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13526,6 +14230,108 @@
       ],
       "type": "object"
     },
+    "ListOtaModulesRequest": {
+      "document": "ListOtaModules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取的页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索过滤条件",
+          "example": "无",
+          "member": "SearchKeyword",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListOtaModulesResponse": {
+      "document": "ListOtaModules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固件总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "固件列表",
+          "example": "无",
+          "member": "OtaModuleInfo",
+          "name": "Modules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListProductOtaModulesRequest": {
+      "document": "ListProductOtaModules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "4F9CD5H57H",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListProductOtaModulesResponse": {
+      "document": "ListProductOtaModules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固件列表",
+          "example": "无",
+          "member": "OtaModuleInfo",
+          "name": "Modules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListTopicPolicyRequest": {
       "document": "ListTopicPolicy请求参数结构体",
       "members": [
@@ -14970,6 +15776,82 @@
         }
       ],
       "type": "object"
+    },
+    "OtaModuleInfo": {
+      "document": "升级包类型详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模块创建时间",
+          "example": "1619322032",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "productName",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模块名称",
+          "example": "firmwareName",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "productId",
+          "member": "string",
+          "name": "ProductID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模块类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否系统内置升级包类型",
+          "example": "false",
+          "member": "bool",
+          "name": "IsBuildIn",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模块描述",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PackageConsumeStat": {
       "document": "云存套餐包消耗统计",
@@ -17741,6 +18623,60 @@
     },
     "UpdateFirmwareResponse": {
       "document": "UpdateFirmware返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOtaModuleRequest": {
+      "document": "UpdateOtaModule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "4ON538D9AX",
+          "member": "string",
+          "name": "ProductID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模块类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模块类型名称",
+          "example": "muc包",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模块类型描述",
+          "example": "这是一个描述",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOtaModuleResponse": {
+      "document": "UpdateOtaModule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

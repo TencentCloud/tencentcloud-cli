@@ -15,7 +15,7 @@ Output:
     "Response": {
         "Result": [
             {
-                "Type": "jmx_export",
+                "Type": "JmxExport",
                 "SourceIp": "10.0.0.5",
                 "SourcePort": 9090,
                 "BrokerIp": "10.0.0.30",

@@ -2514,7 +2514,7 @@
         {
           "disabled": false,
           "document": "快照备份详情列表",
-          "example": "返回[]",
+          "example": "无",
           "member": "Snapshots",
           "name": "Snapshots",
           "output_required": false,
@@ -2900,7 +2900,7 @@
         {
           "disabled": false,
           "document": "日志详细信息列表",
-          "example": "[{}]",
+          "example": "无",
           "member": "InstanceLog",
           "name": "InstanceLogList",
           "output_required": true,
@@ -3539,7 +3539,7 @@
         {
           "disabled": false,
           "document": "实例名称列表",
-          "example": "testnew",
+          "example": "[\"my-logstash-1\"]",
           "member": "string",
           "name": "InstanceNames",
           "required": false,
@@ -3584,7 +3584,7 @@
         {
           "disabled": false,
           "document": "VpcId 筛选项",
-          "example": "vpc-imhajivf",
+          "example": "[\"vpc-imhajivf\"]",
           "member": "string",
           "name": "VpcIds",
           "required": false,

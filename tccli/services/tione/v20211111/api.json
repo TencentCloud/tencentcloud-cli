@@ -6777,7 +6777,7 @@
         {
           "disabled": false,
           "document": "模型ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "m-1115750815945380480",
           "member": "string",
           "name": "ModelId",
           "output_required": true,
@@ -6787,7 +6787,7 @@
         {
           "disabled": false,
           "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "d12",
           "member": "string",
           "name": "ModelName",
           "output_required": true,
@@ -6907,7 +6907,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[TFJob job-96dm04o0mnwg] 模型文件损坏，请检查您上传的模型文件是否可以正常运行",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -6967,7 +6967,7 @@
         {
           "disabled": false,
           "document": "模型Tensor信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ \"input_0:float(1*3*1024*1024)\" ]",
           "member": "string",
           "name": "TensorInfos",
           "output_required": true,
@@ -6987,7 +6987,7 @@
         {
           "disabled": false,
           "document": "加速引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "v3.5",
           "member": "string",
           "name": "AccEngineVersion",
           "output_required": true,
@@ -7017,7 +7017,7 @@
         {
           "disabled": false,
           "document": "SAVED_MODEL保存时配置的签名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "“ ”",
           "member": "string",
           "name": "ModelSignature",
           "output_required": true,
@@ -7037,7 +7037,7 @@
         {
           "disabled": false,
           "document": "加速引擎对应的框架版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "pytorch1.9.0",
           "member": "string",
           "name": "FrameworkVersion",
           "output_required": true,
@@ -7047,7 +7047,7 @@
         {
           "disabled": false,
           "document": "模型版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "mv-v1-1115750815945380481",
           "member": "string",
           "name": "ModelVersionId",
           "output_required": false,
@@ -7067,7 +7067,7 @@
         {
           "disabled": false,
           "document": "资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "“ ”",
           "member": "string",
           "name": "ResourceGroupName",
           "output_required": false,

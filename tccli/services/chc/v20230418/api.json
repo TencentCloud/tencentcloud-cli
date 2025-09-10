@@ -797,6 +797,15 @@
           "name": "VisitRemark",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "到访人员车辆信息",
+          "example": "无",
+          "member": "PersonnelVisitCar",
+          "name": "CarSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -807,7 +816,7 @@
         {
           "disabled": false,
           "document": "创建的工单信息",
-          "example": "[     {         \"WorkOrderId\": \"ord-24122317200212924\",         \"ServiceType\": \"personnelVisit\",         \"OrderType\": \"personnelVisit\"     } ]",
+          "example": "无",
           "member": "WorkOrderTinyInfo",
           "name": "WorkOrderSet",
           "output_required": true,
@@ -2471,6 +2480,16 @@
           "name": "RejectReason",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到访人员车辆信息",
+          "example": "无",
+          "member": "PersonnelVisitCar",
+          "name": "CarSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -4900,6 +4919,45 @@
       ],
       "usage": "out"
     },
+    "PersonnelVisitCar": {
+      "document": "人员到访时的车辆信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "车牌号",
+          "example": "京A87653",
+          "member": "string",
+          "name": "CarNumber",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "驾驶人姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "DriverName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "驾驶人身份证号",
+          "example": "130721199101302615",
+          "member": "string",
+          "name": "DriverNumber",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Position": {
       "document": "机位信息",
       "members": [
@@ -5843,6 +5901,16 @@
           "example": "2024-11-15 20:04:11",
           "member": "string",
           "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单关联的dcops单号",
+          "example": "10250805010079",
+          "member": "string",
+          "name": "TicketId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

@@ -6,39 +6,28 @@ Input:
 
 ```
 tccli ckafka BatchModifyTopicAttributes --cli-unfold-argument  \
-    --InstanceId ckafka-test \
-    --Topic.0.TopicName topic-test \
-    --Topic.0.PartitionNum 0 \
-    --Topic.0.Note yournote \
-    --Topic.0.ReplicaNum 0 \
-    --Topic.0.CleanUpPolicy policy \
-    --Topic.0.MinInsyncReplicas 0 \
-    --Topic.0.UncleanLeaderElectionEnable True \
-    --Topic.0.RetentionMs 0 \
-    --Topic.0.RetentionBytes 0 \
-    --Topic.0.SegmentMs 0 \
-    --Topic.0.MaxMessageBytes 0
+    --InstanceId ckafka-o99zq5mv \
+    --Topic.0.TopicName test_leader \
+    --Topic.0.RetentionMs 3600000 \
+    --Topic.0.SegmentMs 86400000 \
+    --Topic.0.MaxMessageBytes 1024 \
+    --Topic.0.RetentionBytes 1099511627776 \
+    --Topic.0.LogMsgTimestampType None
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "cb00bc01-cda1-40b9-9c39-edad90b802d6",
         "Result": [
             {
-                "InstanceId": "ckafka-jam3ao99",
-                "TopicName": "topic-test",
-                "ReturnCode": "20018",
-                "Message": "get topic information fail"
-            },
-            {
-                "InstanceId": "ckafka-jam3ao99",
-                "TopicName": "topic-test1",
-                "ReturnCode": "20018",
-                "Message": "get topic information fail"
+                "InstanceId": "ckafka-o99zq5mv",
+                "Message": "ok[apply success]",
+                "ReturnCode": "0",
+                "TopicName": "test_leader"
             }
-        ],
-        "RequestId": "qwer0001"
+        ]
     }
 }
 ```

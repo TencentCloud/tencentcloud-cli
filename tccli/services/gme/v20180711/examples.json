@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ControlAIConversation": [
+      {
+        "document": "当您想让机器人主动播报文本的时候，可以使用该接口",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"your-taskid\",\n    \"Command\": \"ServerPushText\",\n    \"ServerPushText\": {\n        \"Text\": \"你好很高兴为您服务\",\n        \"Interrupt\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40e323b2-f0e7-402c-be5d-b02aef40d887\"\n    }\n}",
+        "title": "发送播报文本"
+      }
+    ],
     "CreateAgeDetectTask": [
       {
         "document": "提交年龄语音识别任务",
@@ -54,6 +62,22 @@
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScanUser\n<公共请求参数>\n\n{\n    \"UserId\": 123,\n    \"BizId\": 1400000000\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"ec975acd-0b19-4e97-90e2-a9ff7b9c26aa\"\n    }\n}",
         "title": "删除自定义送检用户"
+      }
+    ],
+    "DeleteVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"20250605_9cc525c117ab4545b1ad21543e48412fSz4ZnwTZCW2tyePrHj0Y37WXz4QkUoLvT9P_eRVqiw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3facfb37-9ded-4c73-bef7-90a78a0c2936\"\n    }\n}",
+        "title": "删除jackson的声纹信息"
+      }
+    ],
+    "DescribeAIConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"SV1FR+XTtvzAjRxZZ+aof1DfJF00VSBBNE0zR9W-PEpgCPBmt402BbnqMCdom79LtZO-VbLyV1nhVY1pFauWgrW12BevPvJ5Zn010RnD6vj3hgfbV0.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"abc\",\n        \"Status\": \"1\",\n        \"RequestId\": \"40e323b2-f0e7-402c-be5d-b02aef40d887\"\n    }\n}",
+        "title": "查询对话任务状态"
       }
     ],
     "DescribeAgeDetectTask": [
@@ -142,6 +166,14 @@
         "title": "拉取用户在房间得进出时间"
       }
     ],
+    "DescribeVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVoicePrint\n<公共请求参数>\n\n{\n    \"DescribeMode\": 1,\n    \"PageIndex\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AppId\": 1300056921,\n                \"AudioName\": \"jackson\",\n                \"CreateTime\": \"2025-06-05 18:40:27\",\n                \"ReqTimestamp\": 1749119970000,\n                \"UpdateTime\": \"2025-06-05 18:40:27\",\n                \"VoicePrintId\": \"20250605_e3f126cda7ad4196bfb1acfb10642d39fFPqPcCyY6KcccmO9t4CHqn-6qJMBnzaiLzdaeEi2Q\",\n                \"VoicePrintMetaInfo\": \"custom_metainfo\"\n            }\n        ],\n        \"RequestId\": \"10459f57-b3fb-42a3-99c7-0c037967e420\",\n        \"TotalCount\": 14\n    }\n}",
+        "title": "分页查询已经注册过的声纹信息"
+      }
+    ],
     "GetCustomizationList": [
       {
         "document": "查询语音消息转文本热句模型列表",
@@ -190,6 +222,14 @@
         "title": "修改用户麦克风属性"
       }
     ],
+    "RegisterVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterVoicePrint\n<公共请求参数>\n\n{\n    \"Audio\": \"The Base64 string of the entire WAV audio file, with valid audio content from 8 to 18 seconds.\",\n    \"ReqTimestamp\": 1749119700000,\n    \"AudioFormat\": 0,\n    \"AudioName\": \"jackson\",\n    \"AudioMetaInfo\": \"custom_metainfo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47a8f838-8368-4dc7-a5ce-94b366692f6f\",\n        \"VoicePrintId\": \"20250605_9cc525c117ab4545b1ad21543e48412fSz4ZnwTZCW2tyePrHj0Y37WXz4QkUoLvT9P_eRVqiw\"\n    }\n}",
+        "title": "注册jackson的声纹信息"
+      }
+    ],
     "ScanVoice": [
       {
         "document": "通过语音流的方式提交检测任务，回调地址为空，需要通过接口(查询语音检测结果)主动轮询获取检测结果",
@@ -210,6 +250,14 @@
         "title": "提交语音文件检测任务-2"
       }
     ],
+    "StartAIConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAIConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 12345678,\n    \"RoomId\": \"room_987654321\",\n    \"AgentConfig\": {\n        \"UserId\": \"user_12345\",\n        \"UserSig\": \"user_signature_example\",\n        \"MaxIdleTime\": 120,\n        \"TargetUserId\": \"target_user_54321\"\n    },\n    \"STTConfig\": {\n        \"Language\": \"zh\"\n    },\n    \"LLMConfig\": \"{\\\"LLMType\\\": \\\"openai\\\", \\\"Model\\\": \\\"gpt-3.5-turbo\\\", \\\"APIKey\\\": \\\"xxx\\\", \\\"APIUrl\\\": \\\"http://xxxx-api.xxxx.com/v1/chat/completions\\\", \\\"Streaming\\\": true}\",\n    \"TTSConfig\": \"{\\\"TTSType\\\": \\\"tencent\\\", \\\"AppId\\\": 130000000, \\\"SecretId\\\": \\\"AKIDxxxxx\\\", \\\"SecretKey\\\": \\\"HlDxxxxxx\\\", \\\"VoiceType\\\": 1008, \\\"Speed\\\": 1}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"v2_20250224_udqgoOzzpAFOoiXR_sHbeVCwys3hy0PLs1uRLvS7wY9mjZMEIQuDPhT\",\n        \"RequestId\": \"df81f274-c1b8-4342-b0a1-e552072cc48e\"\n    }\n}",
+        "title": "启动一个AI机器人对话"
+      }
+    ],
     "StartRecord": [
       {
         "document": "开启录制",
@@ -218,12 +266,28 @@
         "title": "开始录制"
       }
     ],
+    "StopAIConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"SV1FR+XTtvzAjRxZZ+aof1DfJF00VSBBNE0zR9W-PEpgCPBmt402BbnqMCdom79LtZO-VbLyV1nhVY1pFauWgrW12BevPvJ5Zn010RnD6vj3hgfbVH0.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40e323b2-f0e7-402c-be5d-b02aef40d887\"\n    }\n}",
+        "title": "停止AI对话任务"
+      }
+    ],
     "StopRecord": [
       {
         "document": "停止录制",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopRecord\n<公共请求参数>\n\n{\n    \"BizId\": 3400352518,\n    \"TaskId\": 446192236330927912\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"h9167d24-a2c6-1125-a5bd-5c023ba721c2\"\n    }\n}",
         "title": "停止录制"
+      }
+    ],
+    "UpdateAIConversation": [
+      {
+        "document": "在对话过程中，想要动态更新tts的音色",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"your-taskid\",\n    \"TTSConfig\": \"your-tts-config-json\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40e323b2-f0e7-402c-be5d-b02aef40d887\"\n    }\n}",
+        "title": "更新tts音色"
       }
     ],
     "UpdateScanRooms": [
@@ -240,6 +304,14 @@
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateScanUsers\n<公共请求参数>\n\n{\n    \"UserIdRegex\": [\n        \"^[0-9]*$\"\n    ],\n    \"UserIdString\": \"0001,0002,0003\",\n    \"BizId\": 1400000000\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"454859b0-5e53-491d-814c-ac40faaca5f7\"\n    }\n}",
         "title": "更新用户自定义送检用户号"
+      }
+    ],
+    "UpdateVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"20250605_9cc525c117ab4545b1ad21543e48412fSz4ZnwTZCW2tyePrHj0Y37WXz4QkUoLvT9P_eRVqiw\",\n    \"ReqTimestamp\": 1749120210000,\n    \"AudioFormat\": 0,\n    \"Audio\": \"The Base64 string of the entire WAV audio file, with valid audio content from 8 to 18 seconds.\",\n    \"AudioMetaInfo\": \"update_metainfo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40e323b2-f0e7-402c-be5d-b02aef40d887\"\n    }\n}",
+        "title": "更新jackson的音频信息"
       }
     ]
   },

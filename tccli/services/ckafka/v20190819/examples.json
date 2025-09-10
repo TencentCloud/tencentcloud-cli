@@ -27,8 +27,8 @@
     "BatchModifyTopicAttributes": [
       {
         "document": "批量设置主题属性",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyTopicAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-test\",\n    \"Topic\": [\n        {\n            \"TopicName\": \"topic-test\",\n            \"PartitionNum\": 0,\n            \"Note\": \"yournote\",\n            \"ReplicaNum\": 0,\n            \"CleanUpPolicy\": \"policy\",\n            \"MinInsyncReplicas\": 0,\n            \"UncleanLeaderElectionEnable\": true,\n            \"RetentionMs\": 0,\n            \"RetentionBytes\": 0,\n            \"SegmentMs\": 0,\n            \"MaxMessageBytes\": 0\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"InstanceId\": \"ckafka-jam3ao99\",\n                \"TopicName\": \"topic-test\",\n                \"ReturnCode\": \"20018\",\n                \"Message\": \"get topic information fail\"\n            },\n            {\n                \"InstanceId\": \"ckafka-jam3ao99\",\n                \"TopicName\": \"topic-test1\",\n                \"ReturnCode\": \"20018\",\n                \"Message\": \"get topic information fail\"\n            }\n        ],\n        \"RequestId\": \"qwer0001\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyTopicAttributes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-o99zq5mv\",\n    \"Topic\": [\n        {\n            \"TopicName\": \"test_leader\",\n            \"RetentionMs\": 3600000,\n            \"SegmentMs\": 86400000,\n            \"MaxMessageBytes\": 1024,\n            \"RetentionBytes\": 1099511627776,\n            \"LogMsgTimestampType\": null\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cb00bc01-cda1-40b9-9c39-edad90b802d6\",\n        \"Result\": [\n            {\n                \"InstanceId\": \"ckafka-o99zq5mv\",\n                \"Message\": \"ok[apply success]\",\n                \"ReturnCode\": \"0\",\n                \"TopicName\": \"test_leader\"\n            }\n        ]\n    }\n}",
         "title": "批量设置主题属性"
       }
     ],
@@ -147,7 +147,7 @@
     "CreatePostPaidInstance": [
       {
         "document": "创建硬盘大小 200GB，峰值带宽 20MB/s 的专业版后付费实例",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"1.1.1\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"2.4.2\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"323c3bbe-db79-48c3-9b76-63aacd65b169\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033899990000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-mom5xxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"2023060800203389990000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-mom5xxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
         "title": "创建后付费专业版实例"
       },
@@ -159,7 +159,7 @@
       },
       {
         "document": "创建一个三可用区的专业版实例",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"1.1.1\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0,\n    \"MultiZoneFlag\": true,\n    \"ZoneIds\": [\n        450001,\n        450002,\n        450003\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostPaidInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test55\",\n    \"VpcId\": \"vpc-rmcgxxxx\",\n    \"SubnetId\": \"subnet-mnzcxxxx\",\n    \"ZoneId\": 450001,\n    \"InstanceType\": 1,\n    \"KafkaVersion\": \"2.4.2\",\n    \"SpecificationsType\": \"profession\",\n    \"DiskSize\": 200,\n    \"BandWidth\": 20,\n    \"Partition\": 400,\n    \"DiskType\": \"CLOUD_BASIC\",\n    \"PublicNetworkMonthly\": 0,\n    \"MultiZoneFlag\": true,\n    \"ZoneIds\": [\n        450001,\n        450002,\n        450003\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"323c3bbe-db79-48c3-9b76-63aacd65b169\",\n        \"Result\": {\n            \"Data\": {\n                \"DealNameInstanceIdMapping\": [\n                    {\n                        \"DealName\": \"20230608002033899990000\",\n                        \"InstanceIdList\": [\n                            \"ckafka-mom5xxxx\"\n                        ]\n                    }\n                ],\n                \"DealNames\": [\n                    \"2023060800203389990000\"\n                ],\n                \"FlowId\": 0,\n                \"InstanceId\": \"ckafka-mom5xxxx\"\n            },\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"ok[apply ok]\"\n        }\n    }\n}",
         "title": "创建后付费多可用区专业版实例"
       }
@@ -359,7 +359,7 @@
     "DescribeConnectResources": [
       {
         "document": "查询Datahub连接源列表",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConnectResources\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Type\": \"KAFKA\",\n    \"SearchWord\": \"mytest\",\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConnectResources\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Type\": \"KAFKA\",\n    \"SearchWord\": \"mytest\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"ConnectResourceList\": [\n                {\n                    \"ResourceId\": \"resource-y9v8e3bl\",\n                    \"ResourceName\": \"mytest\",\n                    \"Description\": \"\",\n                    \"Status\": 1,\n                    \"CreateTime\": \"2024-12-04 16:21:08\",\n                    \"ErrorMessage\": \"RUNNING\",\n                    \"CurrentStep\": \"FINISH\",\n                    \"DatahubTaskCount\": 0,\n                    \"TaskProgress\": 36,\n                    \"StepList\": [\n                        \"WAIT_CREATE_PRIVATELINK\",\n                        \"WAIT_CONNECT_PORT\",\n                        \"WAIT_CONNECT_RESOURCE\"\n                    ],\n                    \"Type\": \"KAFKA\",\n                    \"MongoDBConnectParam\": null,\n                    \"EsConnectParam\": null,\n                    \"ClickHouseConnectParam\": null,\n                    \"DtsConnectParam\": null,\n                    \"MySQLConnectParam\": null,\n                    \"MqttConnectParam\": null,\n                    \"PostgreSQLConnectParam\": null,\n                    \"MariaDBConnectParam\": null,\n                    \"SQLServerConnectParam\": null,\n                    \"CtsdbConnectParam\": null,\n                    \"DorisConnectParam\": null,\n                    \"KafkaConnectParam\": {\n                        \"Region\": \"ap-guangzhou\",\n                        \"BrokerAddress\": \"11.135.14.76:8568\",\n                        \"SelfBuilt\": false,\n                        \"Resource\": \"ckafka-wdvgwwx2\",\n                        \"IsUpdate\": null\n                    }\n                }\n            ]\n        },\n        \"RequestId\": \"21de50a2-3626-4194-a60b-0741e396f368\"\n    }\n}",
         "title": "查询Datahub连接源列表"
       }
@@ -472,7 +472,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Type\": \"jmx_export\",\n                \"SourceIp\": \"10.0.0.5\",\n                \"SourcePort\": 9090,\n                \"BrokerIp\": \"10.0.0.30\",\n                \"VpcId\": \"vpc-test\",\n                \"SubnetId\": \"subnet-test\"\n            }\n        ],\n        \"RequestId\": \"d173b4fb-c6d0-4507-a822-b6f277fc4016\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Type\": \"JmxExport\",\n                \"SourceIp\": \"10.0.0.5\",\n                \"SourcePort\": 9090,\n                \"BrokerIp\": \"10.0.0.30\",\n                \"VpcId\": \"vpc-test\",\n                \"SubnetId\": \"subnet-test\"\n            }\n        ],\n        \"RequestId\": \"d173b4fb-c6d0-4507-a822-b6f277fc4016\"\n    }\n}",
         "title": "获取实例Prometheus信息"
       }
     ],
@@ -631,7 +631,7 @@
     "InstanceScalingDown": [
       {
         "document": "实例缩容",
-        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstanceScalingDown\n<公共请求参数>\n\n{\n    \"InstanceId\": \"***\",\n    \"DiskSize\": 900,\n    \"BandWidth\": 40,\n    \"Partition\": 1000,\n    \"UpgradeStrategy\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstanceScalingDown\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ckafka-test\",\n    \"DiskSize\": 900,\n    \"BandWidth\": 40,\n    \"Partition\": 1000,\n    \"UpgradeStrategy\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"DealNames\": [\n                \"20230703002035272950891\"\n            ]\n        },\n        \"RequestId\": \"f47ac10b-58cc-4372-a567-0e02b2c3d479\"\n    }\n}",
         "title": "实例缩容"
       }

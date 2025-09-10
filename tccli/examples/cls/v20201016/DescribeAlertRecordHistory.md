@@ -40,7 +40,8 @@ Output:
                 "CreateTime": 1681439122000,
                 "AlarmLevel": 0,
                 "MonitorObjectType": 0,
-                "GroupTriggerCondition": []
+                "GroupTriggerCondition": [],
+                "SendType": 1
             },
             {
                 "RecordId": "1be40239-505f-4f1a-a6aa-4b71a9757d8a",
@@ -63,7 +64,8 @@ Output:
                 "CreateTime": 1681438941000,
                 "AlarmLevel": 0,
                 "MonitorObjectType": 0,
-                "GroupTriggerCondition": []
+                "GroupTriggerCondition": [],
+                "SendType": 1
             }
         ],
         "TotalCount": 2,

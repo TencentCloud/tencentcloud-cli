@@ -1945,7 +1945,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql",
+          "document": "源实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)",
           "example": "mysql",
           "member": "string",
           "name": "SrcDatabaseType",
@@ -1954,7 +1954,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql",
+          "document": "目标实例数据库类型，如mysql,redis,percona,mongodb,postgresql,sqlserver,mariadb,cynosdbmysql(表示TDSQL-C MySQL数据库)",
           "example": "mysql",
           "member": "string",
           "name": "DstDatabaseType",
@@ -1981,7 +1981,7 @@
         },
         {
           "disabled": false,
-          "document": "实例规格，包括：small、medium、large、xlarge、2xlarge",
+          "document": "实例规格，包括：small、medium、large、xlarge、2xlarge。当前未计费链路仅支持medium字段值。不同规格类型参考[计费概述](https://cloud.tencent.com/document/product/571/18736)",
           "example": "large",
           "member": "string",
           "name": "InstanceClass",
@@ -2355,7 +2355,7 @@
         },
         {
           "disabled": false,
-          "document": "实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云主机自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路",
+          "document": "实例网络接入类型，如：extranet(外网)、ipv6(公网ipv6)、cvm(云服务器自建)、dcg(专线接入)、vpncloud(vpn接入的实例)、cdb(云数据库)、ccn(云联网)、intranet(自研上云)、vpc(私有网络)等，注意具体可选值依赖当前链路",
           "example": "cdb",
           "member": "string",
           "name": "AccessType",
@@ -2410,7 +2410,7 @@
         },
         {
           "disabled": false,
-          "document": "此参数为数组类型，可以传多个键值对结构对象。\nMongoDB可定义如下的参数：\n'AuthDatabase':'admin',\n'AuthFlag': \"1\",\n'AuthMechanism':\"SCRAM-SHA-1\",\n\"fetchMethod\":\"oplog\",\n\"connectMode\":\"srv\",\n\"EncryptedConnProtocol\":\"mongo_atlas_ssl\"；\n其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。",
+          "document": "此参数为数组类型，可以传多个键值对结构对象。\nMongoDB可定义如下的参数：\n'AuthDatabase':'admin',    //认证库\n'AuthFlag': \"1\",       //实例是否需要认证，\"0\": 不用认证；\"1\":需要认证\n'AuthMechanism':\"SCRAM-SHA-1\",    //实例认证方式\n\"fetchMethod\":\"oplog\",    //fetchMethod表示迁移方式，支持oplog、change_stream\n\"connectMode\":\"srv\",    //外网srv连接模式\n\"EncryptedConnProtocol\":\"mongo_atlas_ssl\"；    //加密连接方式\n其中fetchMethod表示迁移方式，还可支持change_stream；EncryptedConnProtocol值为mongo_atlas_ssl表示使用atlas ssl连接方式。",
           "example": "无",
           "member": "KeyValuePairOption",
           "name": "ExtraAttr",
@@ -6897,7 +6897,7 @@
         {
           "disabled": false,
           "document": "任务的所有操作列表",
-          "example": "[\"view\",\"modify\",\"check\",\"start\",\"configure\",\"stop\",\"complete\",\"",
+          "example": "[\"view\",\"modify\",\"check\",\"start\",\"configure\",\"stop\",\"complete\",\"modifyPosition\"]",
           "member": "string",
           "name": "AllAction",
           "output_required": true,

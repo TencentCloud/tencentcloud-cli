@@ -1000,7 +1000,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的告警通知模板列表。",
+          "document": "关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥",
           "example": "[\"notice-b388dc72-****-****-9dbb-7d05fdff0376\"]",
           "member": "string",
           "name": "AlarmNoticeIds",
@@ -1146,6 +1146,16 @@
           "name": "MultiConditions",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云监控通知渠道相关信息，和AlarmNoticeIds互斥",
+          "example": "无",
+          "member": "MonitorNotice",
+          "name": "MonitorNotice",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -1821,6 +1831,17 @@
           "member": "uint64",
           "name": "MonitorObjectType",
           "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道",
+          "example": "0",
+          "member": "uint64",
+          "name": "SendType",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -3737,11 +3758,11 @@
         },
         {
           "disabled": false,
-          "document": "关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表",
+          "document": "关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥",
           "example": "[\"notice-b02af159-f67b-44c3-877c-a55343f874c3\"]",
           "member": "string",
           "name": "AlarmNoticeIds",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -11929,7 +11950,7 @@
         },
         {
           "disabled": false,
-          "document": "关联的告警通知渠道列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取告警通知渠道列表",
+          "document": "关联的告警通知渠道组列表。-通过[获取通知渠道组列表](https://cloud.tencent.com/document/product/614/56462)获取关联的告警通知渠道组列表，和MonitorNotice互斥",
           "example": "[\"notice-479dec34-4a59-11eb-b378-0242ac130002\"]",
           "member": "string",
           "name": "AlarmNoticeIds",
@@ -13750,6 +13771,62 @@
         }
       ],
       "type": "object"
+    },
+    "MonitorNotice": {
+      "document": "提供多个Notice信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "以数组的形式提供MonitorNoticeRule",
+          "example": "无",
+          "member": "MonitorNoticeRule",
+          "name": "Notices",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MonitorNoticeRule": {
+      "document": "云监控通知渠道组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云监控通知模版ID",
+          "example": "notice-erictest",
+          "member": "string",
+          "name": "NoticeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云监控内容模版ID，不传默认内容模版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tmpl-erictest",
+          "member": "string",
+          "name": "ContentTmplId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警级别,0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)",
+          "example": "[0,1]",
+          "member": "uint64",
+          "name": "AlarmLevels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MonitorTime": {
       "document": "告警策略中监控任务的执行时间点",

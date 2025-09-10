@@ -216,7 +216,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分享项目id，必选",
+          "document": "分享项目id",
           "example": "1",
           "member": "uint64",
           "name": "ProjectId",
@@ -297,7 +297,7 @@
         {
           "disabled": false,
           "document": "结果数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"Data\": { \"Result\": true }",
+          "example": "无",
           "member": "ApplyEmbedTokenInfo",
           "name": "Data",
           "output_required": true,
@@ -2795,7 +2795,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "125",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -2839,8 +2839,8 @@
         },
         {
           "disabled": false,
-          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "RankInfo",
           "name": "Data",
           "output_required": true,
@@ -2870,7 +2870,7 @@
         },
         {
           "disabled": false,
-          "document": "页数",
+          "document": "页数 ",
           "example": "1",
           "member": "int64",
           "name": "PageNo",
@@ -2889,7 +2889,7 @@
         {
           "disabled": false,
           "document": "所有页码",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "AllPage",
           "required": false,
@@ -2933,7 +2933,7 @@
         },
         {
           "disabled": false,
-          "document": "112\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "112 \n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Extra",

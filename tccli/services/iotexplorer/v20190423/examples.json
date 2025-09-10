@@ -8,6 +8,14 @@
         "title": "成功激活示例"
       }
     ],
+    "BatchUpdateFirmware": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=BatchUpdateFirmware\n&ProductID=sdfewihf\n&FirmwareVersion=2.0.0\n&FirmwareOriVersion=1.0.0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxx\",\n        \"TaskId\": 1000696\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "BindCloudStorageUser": [
       {
         "document": "",
@@ -254,6 +262,14 @@
         "title": "新建 LoRa 网关"
       }
     ],
+    "CreateOtaModule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOtaModule\n<公共请求参数>\n\n{\n    \"ProductID\": \"8Q7X2QKV59\",\n    \"FwType\": \"bms\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0970c75a-07e2-429d-bae0-76230b466bbc\"\n    }\n}",
+        "title": "创建新模块"
+      }
+    ],
     "CreatePositionFence": [
       {
         "document": "创建围栏",
@@ -402,6 +418,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteLoRaGateway\n&GatewayId=ff00000000000002\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
         "title": "删除 LoRa 网关"
+      }
+    ],
+    "DeleteOtaModule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOtaModule\n<公共请求参数>\n\n{\n    \"ProductID\": \"8Q7X2QKV59\",\n    \"FwType\": \"mcu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c5b5c5e-ddcc-4a30-a933-d306e94b14a7\"\n    }\n}",
+        "title": "删除ota模块"
       }
     ],
     "DeletePositionFence": [
@@ -744,6 +768,22 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"1\",\n    \"FirmwareVersion\": \"1.0.0\",\n    \"ProductID\": \"J2CRPPZ8J4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c11474f-9501-482f-8b59-97213b8779d4\",\n        \"UpgradeMode\": \"filename\",\n        \"ProductName\": \"name\",\n        \"CreateUserId\": 2362445,\n        \"ProductId\": \"J2CRPPZ8J4\",\n        \"Type\": 1,\n        \"TaskId\": 1,\n        \"CreateTime\": 1686291740,\n        \"OriginalVersion\": \"v1\",\n        \"CreatorNickName\": \"leo\",\n        \"Status\": 5\n    }\n}",
         "title": "查询固件升级任务详情"
+      }
+    ],
+    "DescribeFirmwareTaskDevices": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTaskDevices\n<公共请求参数>\n\n{\n    \"ProductID\": \"I6KTCZ170U\",\n    \"FirmwareVersion\": \"t.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Devices\": [\n            {\n                \"DeviceName\": \"testota01\",\n                \"DstVersion\": \"t.1\",\n                \"ErrMsg\": \"firmware no need update.\",\n                \"LastProcessTime\": 1599293301,\n                \"OriVersion\": \"\",\n                \"Percent\": 0,\n                \"Retcode\": 0,\n                \"Status\": 5,\n                \"TaskId\": 1000698\n            },\n            {\n                \"DeviceName\": \"testota01\",\n                \"DstVersion\": \"t.1\",\n                \"ErrMsg\": \"firmware no need update.\",\n                \"LastProcessTime\": 1599293291,\n                \"OriVersion\": \"\",\n                \"Percent\": 0,\n                \"Retcode\": 0,\n                \"Status\": 5,\n                \"TaskId\": 1000697\n            },\n            {\n                \"DeviceName\": \"testota01\",\n                \"DstVersion\": \"t.1\",\n                \"ErrMsg\": \"firmware no need update.\",\n                \"LastProcessTime\": 1599293161,\n                \"OriVersion\": \"\",\n                \"Percent\": 0,\n                \"Retcode\": 0,\n                \"Status\": 5,\n                \"TaskId\": 1000696\n            },\n            {\n                \"DeviceName\": \"testota01\",\n                \"DstVersion\": \"t.1\",\n                \"ErrMsg\": \"firmware no need update.\",\n                \"LastProcessTime\": 1599292421,\n                \"OriVersion\": \"\",\n                \"Percent\": 0,\n                \"Retcode\": 0,\n                \"Status\": 5,\n                \"TaskId\": 1000695\n            },\n            {\n                \"DeviceName\": \"testota01\",\n                \"DstVersion\": \"t.1\",\n                \"ErrMsg\": \"firmware no need update.\",\n                \"LastProcessTime\": 1599292411,\n                \"OriVersion\": \"\",\n                \"Percent\": 0,\n                \"Retcode\": 0,\n                \"Status\": 5,\n                \"TaskId\": 1000694\n            }\n        ],\n        \"RequestId\": \"95e791e3-dfc4-47fa-9f0b-d3248a5adb55\",\n        \"Total\": 5\n    }\n}",
+        "title": "查询固件升级任务的设备列表"
+      }
+    ],
+    "DescribeFirmwareTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTasks\n<公共请求参数>\n\n{\n    \"ProductID\": \"I6KTCZ170U\",\n    \"FirmwareVersion\": \"t.1\",\n    \"Offset\": 0,\n    \"Limit\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"baffed26-d55b-41bd-a8b3-5c0377cd45d2\",\n        \"TaskInfos\": [\n            {\n                \"CreateTime\": 1599293298,\n                \"Status\": 5,\n                \"TaskId\": 1000698,\n                \"Type\": 1\n            },\n            {\n                \"CreateTime\": 1599293285,\n                \"Status\": 5,\n                \"TaskId\": 1000697,\n                \"Type\": 1\n            },\n            {\n                \"CreateTime\": 1599293158,\n                \"Status\": 5,\n                \"TaskId\": 1000696,\n                \"Type\": 1\n            }\n        ],\n        \"Total\": 6\n    }\n}",
+        "title": "查询固件升级任务列表"
       }
     ],
     "DescribeFirmwareUpdateStatus": [
@@ -1238,6 +1278,22 @@
         "title": "示例"
       }
     ],
+    "ListOtaModules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListOtaModules\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Modules\": [\n            {\n                \"CreateTime\": 1756953617,\n                \"FwType\": \"bms\",\n                \"IsBuildIn\": false,\n                \"Name\": \"\",\n                \"ProductID\": \"8Q7X2QKV59\",\n                \"ProductName\": \"ota测试\",\n                \"Remark\": \"\"\n            },\n            {\n                \"CreateTime\": 1756889779,\n                \"FwType\": \"mcu\",\n                \"IsBuildIn\": true,\n                \"Name\": \"\",\n                \"ProductID\": \"SR5E1Q7C2A\",\n                \"ProductName\": \"yufa\",\n                \"Remark\": \"\"\n            },\n            {\n                \"CreateTime\": 1756889779,\n                \"FwType\": \"mcu\",\n                \"IsBuildIn\": true,\n                \"Name\": \"\",\n                \"ProductID\": \"186XLZGJM5\",\n                \"ProductName\": \"预发测试\",\n                \"Remark\": \"\"\n            },\n            {\n                \"CreateTime\": 1756350539,\n                \"FwType\": \"default\",\n                \"IsBuildIn\": true,\n                \"Name\": \"\",\n                \"ProductID\": \"SR5E1Q7C2A\",\n                \"ProductName\": \"yufa\",\n                \"Remark\": \"\"\n            }\n        ],\n        \"RequestId\": \"c2862940-3dd8-4453-a8d8-31dacad30961\",\n        \"TotalCount\": 15\n    }\n}",
+        "title": "获取OTA模块列表"
+      }
+    ],
+    "ListProductOtaModules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListProductOtaModules\n<公共请求参数>\n\n{\n    \"ProductID\": \"8Q7X2QKV59\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Modules\": [\n            {\n                \"CreateTime\": 1753261941,\n                \"FwType\": \"default\",\n                \"IsBuildIn\": true,\n                \"Name\": \"\",\n                \"ProductID\": \"8Q7X2QKV59\",\n                \"ProductName\": \"ota测试\",\n                \"Remark\": \"\"\n            },\n            {\n                \"CreateTime\": 1756953617,\n                \"FwType\": \"bms\",\n                \"IsBuildIn\": false,\n                \"Name\": \"\",\n                \"ProductID\": \"8Q7X2QKV59\",\n                \"ProductName\": \"ota测试\",\n                \"Remark\": \"\"\n            }\n        ],\n        \"RequestId\": \"2face868-8e90-4a42-98f9-54810ef3f1f8\"\n    }\n}",
+        "title": "获取产品OTA模块列表"
+      }
+    ],
     "ListTopicPolicy": [
       {
         "document": "",
@@ -1580,6 +1636,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=UpdateFirmware\n&ProductID=J2CRPPZ8J4\n&DeviceName=d1\n&FirmwareVersion=2.0.0\n&FirmwareOriVersion=1.0.0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3edc-6yhc-567u9ye\"\n    }\n}",
         "title": "更新固件示例"
+      }
+    ],
+    "UpdateOtaModule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOtaModule\n<公共请求参数>\n\n{\n    \"ProductID\": \"8Q7X2QKV59\",\n    \"FwType\": \"mcu\",\n    \"Name\": \"mcu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e786a7af-c084-42b0-958d-70d5e567904e\"\n    }\n}",
+        "title": "更新模块"
       }
     ],
     "UploadFirmware": [

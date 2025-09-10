@@ -16238,7 +16238,7 @@
         },
         {
           "disabled": false,
-          "document": "导播台的描述\n最大允许长度256",
+          "document": "导播台的描述，最大允许长度256",
           "example": "example caster",
           "member": "string",
           "name": "Description",

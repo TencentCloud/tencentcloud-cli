@@ -1716,7 +1716,7 @@
         {
           "disabled": false,
           "document": "该云盘当前被挂载到的CVM实例InstanceId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[ins-1111111,ins-2222222]",
+          "example": "[\"ins-1111111\",\"ins-2222222\"]",
           "member": "string",
           "name": "InstanceIdList",
           "output_required": true,
@@ -1761,6 +1761,26 @@
           "name": "UnderwriteExpiredTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘额外性能值，单位：MB/s",
+          "example": "10",
+          "member": "int64",
+          "name": "ThroughputPerformance",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3244,7 +3264,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6----fae36063280\n示例值：a9a90aa6----fae36063280",
+          "document": "客户端token，唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，小于等于64个字符，例如 a9a90aa6fae36063280\n示例值：a9a90aa6fae36063280",
           "example": "a9a90aa6----fae36063280",
           "member": "string",
           "name": "ClientToken",
@@ -3298,7 +3318,7 @@
         },
         {
           "disabled": false,
-          "document": "登陆密码，LoginSettings中的Password字段",
+          "document": "登录密码，LoginSettings中的Password字段",
           "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
@@ -3320,6 +3340,24 @@
           "example": "100002",
           "member": "int64",
           "name": "ZoneId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "mysql8",
+          "member": "string",
+          "name": "DefaultMetaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开通审计",
+          "example": "0",
+          "member": "int64",
+          "name": "NeedCdbAudit",
           "required": false,
           "type": "int"
         }
@@ -3417,7 +3455,7 @@
         {
           "disabled": false,
           "document": "实例所属安全组的ID，形如sg-xxxxxxxx。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的SecurityGroupId字段来获取。",
-          "example": "sg-xxxxxxxxxx",
+          "example": "[\"sg-test\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -3557,6 +3595,24 @@
           "name": "LoadBalancerId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本：mysql8/tdsql8/mysql5",
+          "example": "mysql8",
+          "member": "string",
+          "name": "DefaultMetaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开通数据库审计",
+          "example": "0",
+          "member": "int64",
+          "name": "NeedCdbAudit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3946,6 +4002,24 @@
           "name": "LoadBalancerId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型：mysql8/tdsql8",
+          "example": "mysql8",
+          "member": "string",
+          "name": "DefaultMetaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开通审计：0:不开通,1:开通",
+          "example": "0",
+          "member": "int64",
+          "name": "NeedCdbAudit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6630,7 +6704,7 @@
         {
           "disabled": false,
           "document": "节点CVM实例Id列表",
-          "example": "[ins-xxx,inx-xxx]",
+          "example": "[\"ins-xxx\",\"inx-xxx\"]",
           "member": "string",
           "name": "CvmInstanceIds",
           "required": true,
@@ -6639,7 +6713,7 @@
         {
           "disabled": false,
           "document": "查询云盘的过滤条件",
-          "example": "[{\"Name\":\"disk-id\",\"Values\":[\"disk-123ddesx\"]},{\"Name\":\"disk-name\",\"Values\":[\"test1\"]}]",
+          "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -6671,6 +6745,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "场景值：\nModifyDiskExtraPerformance ：调整数据盘额外性能",
+          "example": "ModifyDiskExtraPerformance",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6704,6 +6787,16 @@
           "example": "200",
           "member": "uint64",
           "name": "MaxSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘最大额外性能值",
+          "example": "300",
+          "member": "int64",
+          "name": "MaxThroughputPerformance",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -10559,7 +10652,7 @@
         {
           "disabled": false,
           "document": "部署的组件列表。不同的EMR产品ID（ProductId：具体含义参考入参ProductId字段）需要选择不同的必选组件：<li>ProductId为2(EMR-V2.0.1)的时候，必选组件包括：hdfs-2.7.3,yarn-2.7.3,zookeeper-3.4.9,knox-1.2.0</li><li>ProductId为16(EMR-V2.3.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.5.5,knox-1.2.0</li><li>ProductId为20(EMR-V2.5.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为30(EMR-V2.6.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为38(EMR-V2.7.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为57(EMR-V2.8.0)的时候，必选组件包括：hdfs-2.8.5,yarn-2.8.5,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为7(EMR-V3.0.0)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.4.9,knox-1.2.0</li><li>ProductId为25(EMR-V3.1.0)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为31(EMR-V3.1.1)的时候，必选组件包括：hdfs-3.1.2,yarn-3.1.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为28(EMR-V3.2.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,knox-1.2.0</li><li>ProductId为33(EMR-V3.2.1)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为34(EMR-V3.3.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.1,openldap-2.4.44,knox-1.2.0</li><li>ProductId为37(EMR-V3.4.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为44(EMR-V3.5.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为53(EMR-V3.6.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li><li>ProductId为58(EMR-V3.6.1)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.46,knox-1.6.1</li><li>ProductId为47(EMR-V4.0.0)的时候，必选组件包括：hdfs-3.2.2,yarn-3.2.2,zookeeper-3.6.3,openldap-2.4.44,knox-1.6.1</li>",
-          "example": "[hdfs-2.7.3]",
+          "example": "[\"hdfs-2.7.3\"]",
           "member": "string",
           "name": "Software",
           "required": true,
@@ -10663,6 +10756,24 @@
           "name": "MultiZoneSettings",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本",
+          "example": "mysql8",
+          "member": "string",
+          "name": "DefaultMetaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0:不开通审计；1:开通审计",
+          "example": "0",
+          "member": "int64",
+          "name": "NeedCdbAudit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11989,6 +12100,17 @@
         },
         {
           "disabled": false,
+          "document": "是否开启任务保护",
+          "example": "true",
+          "member": "bool",
+          "name": "GraceDownProtectFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "绑定标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
@@ -12045,7 +12167,7 @@
         {
           "disabled": false,
           "document": "启动进程列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "7",
+          "example": "[98]",
           "member": "int64",
           "name": "ServiceNodeInfo",
           "output_required": true,
@@ -12056,7 +12178,7 @@
         {
           "disabled": false,
           "document": "节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "HDFS",
+          "example": "[98]",
           "member": "int64",
           "name": "SoftDeployInfo",
           "output_required": true,
@@ -20245,6 +20367,34 @@
       ],
       "usage": "both"
     },
+    "TagInfo": {
+      "document": "标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "tag-key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "tag-value",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Taint": {
       "document": "Kubernetes Taint",
       "members": [
@@ -20599,7 +20749,7 @@
         {
           "disabled": false,
           "document": "时间扩缩容重复策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
+          "example": "无",
           "member": "RepeatStrategy",
           "name": "RepeatStrategy",
           "output_required": true,
@@ -20610,7 +20760,7 @@
         {
           "disabled": false,
           "document": "策略唯一ID。",
-          "example": "1 ",
+          "example": "1",
           "member": "uint64",
           "name": "StrategyId",
           "output_required": true,
@@ -20638,6 +20788,17 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启任务保护",
+          "example": "true",
+          "member": "bool",
+          "name": "GraceDownProtectFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {

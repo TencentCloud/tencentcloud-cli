@@ -1234,8 +1234,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "os类别(只支持32位)",
+          "document": "过滤条件、分页参数<li>Name - String - 过滤支持：是 - 操作符:eq,neq,like,ilike,nlike - 排序支持：是 - 按类别名称过滤或排序。</li><li>CorpName - String - 过滤支持：是 - 操作符:eq,neq,like,ilike,nlike - 排序支持：是 - 按CorpName过滤或排序。</li><li>Version - String - 过滤支持：否 - 操作符:eq,like - 排序支持：是 - 按版本排序。</li><li>InstalledDeviceCount - int - 过滤支持：否 - 操作符:eq,like - 排序支持：是 - 按安装设备数量排序。</li><li>GenuineRate - float - 过滤支持：否 - 操作符:eq,like - 排序支持：是 - 按正版率排序。</li><li>AuthNum - int - 过滤支持：否 - 操作符:eq,like - 排序支持：是 - 按授权数量排序。</li><li>CategoryNamePath - String - 过滤支持：否 - 操作符:eq,like - 排序支持：是 - 按类别路径名排序。</li>",
           "example": "无",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统类型（0: win，1：linux，2: mac，4：android，5：ios 默认值0）",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -1499,8 +1508,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "软件名",
+          "document": "过滤条件",
           "example": "无",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "软件名",
+          "example": "微信",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1508,8 +1526,8 @@
         },
         {
           "disabled": false,
-          "document": "操作系统",
-          "example": "无",
+          "document": "0:win 2:mac",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -3197,11 +3215,20 @@
         {
           "disabled": false,
           "document": "过滤条件、分页参数\n<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>",
-          "example": "{\"PageSize\":100,\"PageNum\":1}",
+          "example": "无",
           "member": "Condition",
           "name": "Condition",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "0:win 2:mac",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3212,7 +3239,7 @@
         {
           "disabled": false,
           "document": "业务响应数据",
-          "example": "{\"Items\":[{\"CorpName\":\"\",\"Id\":19396,\"InstallDate\":\"2025/04/03\",\"Mid\":\"B454307F6CA03B56E0CFEC44EABF93BB67E56D6F\",\"Name\":\"微信\",\"PiracyRisk\":0,\"SoftwareId\":19396,\"Version\":\"3.9.12.51\"}],\"Page\":{\"PageCount\":1,\"PageNum\":1,\"PageSize\":100,\"Total\":1}}",
+          "example": "无",
           "member": "DescribeSoftwareInformationPageData",
           "name": "Data",
           "output_required": true,
@@ -4442,11 +4469,20 @@
         {
           "disabled": false,
           "document": "过滤条件、分页参数\n<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>",
-          "example": "{\"FilterGroups\":[],\"PageSize\":10,\"PageNum\":1}",
+          "example": "无",
           "member": "Condition",
           "name": "Condition",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "系统类型0:win 2:mac",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4457,7 +4493,7 @@
         {
           "disabled": false,
           "document": "业务响应数据",
-          "example": "1",
+          "example": "无",
           "member": "ExportSoftwareDownloadUrlRspData",
           "name": "Data",
           "output_required": false,

@@ -299,7 +299,7 @@
         {
           "disabled": false,
           "document": "文件类型，支持 MD，TXT 格式。",
-          "example": "MD",
+          "example": "TXT",
           "member": "string",
           "name": "FileType",
           "output_required": false,
@@ -310,7 +310,7 @@
         {
           "disabled": false,
           "document": "文本原文，使用字符串格式输入。",
-          "example": "53847824487347829",
+          "example": "hello,world",
           "member": "string",
           "name": "FileContent",
           "output_required": false,
@@ -446,8 +446,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件类型。\n支持的文件类型：PDF、DOC、DOCX、PPT、PPTX、MD、TXT、XLS、XLSX、CSV、PNG、JPG、JPEG、BMP、GIF、WEBP、HEIC、EPS、ICNS、IM、PCX、PPM、TIFF、XBM、HEIF、JP2\n支持的文件大小：\n- PDF、DOC、DOCX、PPT、PPTX 支持100M\n- MD、TXT、XLS、XLSX、CSV 支持10M\n- 其他支持20M",
-          "example": "md",
+          "document": "支持的文件类型：PDF、DOC、DOCX、PPT、PPTX、MD、TXT、XLS、\nXLSX、CSV、PNG、JPG、JPEG、BMP、GIF、WEBP、HEIC、EPS、ICNS、\nIM、PCX、PPM、TIFF、XBM、HEIF、JP2\n\n文档解析支持的文件大小：\n-PDF、DOC、DOCX、PPT、PPTX支持100M\n-MD、TXT、XLS、XLSX、CSV支特10M\n-其他支持20M\n\n文本切片支持的文件大小：\n-PDF最大300M\n-D0CX、D0C、PPT、PPTX最大200M\n-TXT、MD最大10M\n-其他最大20M",
+          "example": "DOC",
           "member": "string",
           "name": "FileType",
           "output_required": false,
@@ -769,7 +769,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色, ‘system', ‘user'，'assistant'或者'tool', 在message中, 除了system，其他必须是user与assistant交替(一问一答) ",
+          "document": "角色，可选值包括 system、user、assistant、 tool。",
           "example": "user",
           "member": "string",
           "name": "Role",
@@ -787,6 +787,28 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当role为tool时传入，标识具体的函数调用",
+          "example": "call_cq16e7k2c3m1v",
+          "member": "string",
+          "name": "ToolCallId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型生成的工具调用",
+          "example": "无",
+          "member": "ToolCall",
+          "name": "ToolCalls",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -844,6 +866,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型生成的工具调用",
+          "example": "无",
+          "member": "ToolCall",
+          "name": "ToolCalls",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -870,8 +903,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件类型。\n支持的文件类型：PDF、DOC、DOCX、PPT、PPTX、MD、TXT、XLS、XLSX、CSV、PNG、JPG、JPEG、BMP、GIF、WEBP、HEIC、EPS、ICNS、IM、PCX、PPM、TIFF、XBM、HEIF、JP2\n支持的文件大小：\n- PDF、DOC、DOCX、PPT、PPTX 支持100M\n- MD、TXT、XLS、XLSX、CSV 支持10M\n- 其他支持20M",
-          "example": "md",
+          "document": "支持的文件类型：PDF、DOC、DOCX、PPT、PPTX、MD、TXT、XLS、\nXLSX、CSV、PNG、JPG、JPEG、BMP、GIF、WEBP、HEIC、EPS、ICNS、\nIM、PCX、PPM、TIFF、XBM、HEIF、JP2\n\n文档解析支持的文件大小：\n-PDF、DOC、DOCX、PPT、PPTX支持100M\n-MD、TXT、XLS、XLSX、CSV支特10M\n-其他支持20M\n\n文本切片支持的文件大小：\n-PDF最大300M\n-D0CX、D0C、PPT、PPTX最大200M\n-TXT、MD最大10M\n-其他最大20M",
+          "example": "PDF",
           "member": "string",
           "name": "FileType",
           "output_required": false,
@@ -892,7 +925,7 @@
         },
         {
           "disabled": false,
-          "document": "文件的 base64 值，携带 MineType前缀信息。编码后的后的文件不超过 10M。\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过3秒。\n支持的图片像素：单边介于20-10000px之间。",
+          "document": "文件的 base64 值，携带 MineType前缀信息。编码后的后的文件不超过 10M。\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过3秒。\n支持的图片像素：单边介于20-10000px之间。\n文件的 FileUrl、FileContent必须提供一个，如果都提供只使用 FileUrl。",
           "example": "data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==",
           "member": "string",
           "name": "FileContent",
@@ -1212,6 +1245,84 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ToolCall": {
+      "document": "模型生成的工具调用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工具调用id",
+          "example": "call_cpv320k2c3m8fgcs8ja0",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工具调用类型，当前只支持function",
+          "example": "function",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "具体的function调用",
+          "example": "无",
+          "member": "ToolCallFunction",
+          "name": "Function",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "索引值",
+          "example": "0",
+          "member": "uint64",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ToolCallFunction": {
+      "document": "具体的function调用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "function名称",
+          "example": "get_current_weather",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "function参数，一般为json字符串",
+          "example": "{\"location\":[\"北京\",\"深圳\"],\"unit\":\"celsius\"}",
+          "member": "string",
+          "name": "Arguments",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

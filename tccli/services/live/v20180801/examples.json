@@ -788,7 +788,7 @@
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=DescribeLiveDomainCert\n&DomainName=5000.liveplay.myqcloud.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DomainCertInfo\": {\n            \"CertId\": 1000,\n            \"CertName\": \"testName\",\n            \"Description\": \"testDesc\",\n            \"CreateTime\": \"2018-11-30T15:50:12Z\",\n            \"HttpsCrt\": \"fsgfdsfsdfdsfd\",\n            \"CertType\": 0,\n            \"CertExpireTime\": \"2018-12-30T15:50:12Z\",\n            \"DomainName\": \"5000.livepush.play.com\",\n            \"Status\": 1,\n            \"CertDomains\": [\n                \"*.play.com\"\n            ],\n            \"CloudCertId\": \"sfrsfvdf\"\n        },\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DomainCertInfo\": {\n            \"CertId\": 1000,\n            \"CertName\": \"tName\",\n            \"Description\": \"tDesc\",\n            \"CreateTime\": \"2018-11-30T15:50:12Z\",\n            \"HttpsCrt\": \"fsgfdsfsdfdsfd\",\n            \"CertType\": 0,\n            \"CertExpireTime\": \"2018-12-30T15:50:12Z\",\n            \"DomainName\": \"5000.livepush.play.com\",\n            \"Status\": 1,\n            \"CertDomains\": [\n                \"*.play.com\"\n            ],\n            \"CloudCertId\": \"sfrsfvdf\"\n        },\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
     ],

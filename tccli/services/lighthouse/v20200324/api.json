@@ -9063,6 +9063,15 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关机类型。\n取值范围：\n- SOFT：表示软关机 \n- HARD：表示硬关机 \n- SOFT_FIRST：表示优先软关机，失败再执行硬关机  \n\n默认取值：SOFT_FIRST。",
+          "example": "\"SOFT_FIRST\"",
+          "member": "string",
+          "name": "StopType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10383,6 +10392,15 @@
           "name": "InstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关机类型。\n取值范围： \n\n- SOFT：表示软关机\n- HARD：表示硬关机 \n- SOFT_FIRST：表示优先软关机，失败再执行硬关机  \n\n默认取值：SOFT_FIRST",
+          "example": "\"SOFT_FIRST\"",
+          "member": "string",
+          "name": "StopType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

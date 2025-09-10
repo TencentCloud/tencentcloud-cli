@@ -11,7 +11,7 @@ tccli ckafka CreatePostPaidInstance --cli-unfold-argument  \
     --SubnetId subnet-mnzcxxxx \
     --ZoneId 450001 \
     --InstanceType 1 \
-    --KafkaVersion 1.1.1 \
+    --KafkaVersion 2.4.2 \
     --SpecificationsType profession \
     --DiskSize 200 \
     --BandWidth 20 \
@@ -113,7 +113,7 @@ tccli ckafka CreatePostPaidInstance --cli-unfold-argument  \
     --SubnetId subnet-mnzcxxxx \
     --ZoneId 450001 \
     --InstanceType 1 \
-    --KafkaVersion 1.1.1 \
+    --KafkaVersion 2.4.2 \
     --SpecificationsType profession \
     --DiskSize 200 \
     --BandWidth 20 \

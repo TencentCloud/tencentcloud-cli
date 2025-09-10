@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ControlAIConversation": {
+      "document": "提供服务端控制机器人的功能",
+      "input": "ControlAIConversationRequest",
+      "name": "操作AI对话机器人",
+      "output": "ControlAIConversationResponse",
+      "status": "online"
+    },
     "CreateAgeDetectTask": {
       "document": "目前该功能底层能力已不具备，不对外提供，目前需要下线，走预下线流程。\n\n用于创建年龄语音识别任务的接口，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。\n</br>\n<h4><b>接口功能说明：</b></h4>\n<li>支持对语音文件进行检测，判断是否为未成年人。</li>\n<li>支持批量提交检测子任务。检测子任务列表最多支持100个。</li>\n</br>\n<h4><b>音频文件限制说明：</b></h4>\n<li>音频文件大小限制：10 M</li>\n<li>音频文件时长限制：3分钟</li>\n<li>音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg</li>\n</br>",
       "input": "CreateAgeDetectTaskRequest",
@@ -47,6 +54,20 @@
       "input": "DeleteScanUserRequest",
       "name": "删除自定义送检用户",
       "output": "DeleteScanUserResponse",
+      "status": "online"
+    },
+    "DeleteVoicePrint": {
+      "document": "传入声纹ID，删除之前注册的声纹信息",
+      "input": "DeleteVoicePrintRequest",
+      "name": "删除声纹信息",
+      "output": "DeleteVoicePrintResponse",
+      "status": "online"
+    },
+    "DescribeAIConversation": {
+      "document": "查询AI对话任务状态。",
+      "input": "DescribeAIConversationRequest",
+      "name": "查询AI对话任务状态",
+      "output": "DescribeAIConversationResponse",
       "status": "online"
     },
     "DescribeAgeDetectTask": {
@@ -119,6 +140,13 @@
       "output": "DescribeUserInAndOutTimeResponse",
       "status": "online"
     },
+    "DescribeVoicePrint": {
+      "document": "查询先前注册的声纹信息",
+      "input": "DescribeVoicePrintRequest",
+      "name": "查询声纹信息",
+      "output": "DescribeVoicePrintResponse",
+      "status": "online"
+    },
     "GetCustomizationList": {
       "document": "查询语音消息转文本热句模型列表",
       "input": "GetCustomizationListRequest",
@@ -161,11 +189,25 @@
       "output": "ModifyUserMicStatusResponse",
       "status": "online"
     },
+    "RegisterVoicePrint": {
+      "document": "传入音频base64串，注册声纹信息，返回声纹ID",
+      "input": "RegisterVoicePrintRequest",
+      "name": "注册声纹信息",
+      "output": "RegisterVoicePrintResponse",
+      "status": "online"
+    },
     "ScanVoice": {
       "document": "本接口(ScanVoice)用于提交语音检测任务，检测任务列表最多支持100个。使用前请您登录[控制台 - 服务配置](https://console.cloud.tencent.com/gamegme/conf)开启语音内容安全服务。\n</br></br>\n\n<h4><b>功能试用说明：</b></h4>\n<li>打开前往<a href=\"https://console.cloud.tencent.com/gamegme/tryout\">控制台 - 产品试用</a>免费试用语音内容安全服务。</li>\n</br>\n\n<h4><b>接口功能说明：</b></h4>\n<li>支持对语音流或语音文件进行检测，判断其中是否包含违规内容。</li>\n<li>支持设置回调地址 Callback 获取检测结果，同时支持通过接口(查询语音检测结果)主动轮询获取检测结果。</li>\n<li>支持场景输入，包括：谩骂、色情等场景</li>\n<li>支持批量提交检测任务。检测任务列表最多支持100个。</li>\n</br>\n<h4><b>音频文件限制说明：</b></h4>\n<li>音频文件大小限制：100 M</li>\n<li>音频文件时长限制：30分钟</li>\n<li>音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg</li>\n</br>\n<h4><b>语音流限制说明：</b></h4>\n<li>语音流格式支持的类型：.m3u8、.flv</li>\n<li>语音流支持的传输协议：RTMP、HTTP、HTTPS</li>\n<li>语音流时长限制：4小时</li>\n<li>支持音视频流分离并对音频流进行分析</li>\n</br>\n<h4 id=\"Label_Value\"><b>Scenes 与 Label 参数说明：</b></h4>\n<p>提交语音检测任务时，需要指定 Scenes 场景参数，<font color=\"red\">目前要求您设置 Scenes 参数值为：[\"default\"]</font>；而在检测结果中，则包含请求时指定的场景，以及对应类型的检测结果。</p>\n<table>\n<thread>\n<tr>\n<th>场景</th>\n<th>描述</th>\n<th>Label</th>\n</tr>\n</thread>\n<tbody>\n<tr>\n<td>语音检测</td>\n<td>语音检测的检测类型</td>\n<td>\n<p>normal:正常文本</p>\n<p>porn:色情</p>\n<p>abuse:谩骂</p>\n<p>ad :广告</p>\n<p>illegal :违法</p>\n<p>moan :呻吟</p>\n<p>customized:自定义词库</p>\n</td>\n</tr>\n</tbody>\n</table>\n</br>\n<h4 id=\"Callback_Declare\"><b>回调相关说明：</b></h4>\n<li>如果在请求参数中指定了回调地址参数 Callback，即一个 HTTP(S) 协议接口的 URL，则需要支持 POST 方法，传输数据编码采用 UTF-8。</li>\n<li>在推送回调数据后，接收到的 HTTP 状态码为 200 时，表示推送成功。</li>\n<li>HTTP 请求参数（query）说明：</li>\n<table>\n<thread>\n<tr>\n<th>名称</th>\n<th>类型</th>\n<th>是否必需</th>\n<th>描述</th>\n</tr>\n</thread>\n<tbody>\n<tr>\n<td>Signatue</td>\n<td>string</td>\n<td>是</td>\n<td>签名，具体见<a href=\"#Callback_Signatue\">签名生成说明</a></td>\n</tr>\n</tbody>\n</table>\n<ul  id=\"Callback_Signatue\">\n\t<li>签名生成说明：</li>\n\t<ul>\n\t\t<li>使用 HMAC-SH1 算法, 最终结果做 BASE64 编码;</li>\n\t\t<li>签名原文串为 POST+body 的整个json内容(长度以 Content-Length 为准);</li>\n\t\t<li>签名key为应用的 SecretKey，可以通过控制台查看。</li>\n\t</ul>\n</ul>\n\n<li>回调示例如下<font color=\"red\">（详细字段说明见结构：\n<a href=\"https://cloud.tencent.com/document/api/607/35375#DescribeScanResult\" target=\"_blank\">DescribeScanResult</a>）</font>：</li>\n<pre><code>{\n\t\"Code\": 0,\n\t\"DataId\": \"1400000000_test_data_id\",\n\t\"ScanFinishTime\": 1566720906,\n\t\"HitFlag\": true,\n\t\"Live\": false,\n\t\"Msg\": \"\",\n\t\"ScanPiece\": [{\n\t\t\"DumpUrl\": \"\",\n\t\t\"HitFlag\": true,\n\t\t\"MainType\": \"abuse\",\n\t\t\"RoomId\": \"123\",\n\t\t\"OpenId\": \"111\",\n\t\t\"Info\":\"\",\n\t\t\"Offset\": 0,\n\t\t\"Duration\": 3400,\n\t\t\"PieceStartTime\":1574684231,\n\t\t\"ScanDetail\": [{\n\t\t\t\"EndTime\": 1110,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 1110\n\t\t}, {\n\t\t\t\"EndTime\": 1380,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 930\n\t\t}, {\n\t\t\t\"EndTime\": 1560,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 930\n\t\t}, {\n\t\t\t\"EndTime\": 2820,\n\t\t\t\"KeyWord\": \"违规字\",\n\t\t\t\"Label\": \"abuse\",\n\t\t\t\"Rate\": \"90.00\",\n\t\t\t\"StartTime\": 2490\n\t\t}]\n\t}],\n\t\"ScanStartTime\": 1566720905,\n\t\"Scenes\": [\n\t\t\"default\"\n\t],\n\t\"Status\": \"Success\",\n\t\"TaskId\": \"6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b\",\n\t\"Url\": \"https://xxx/xxx.m4a\"\n}\n</code></pre>",
       "input": "ScanVoiceRequest",
       "name": "提交语音检测任务",
       "output": "ScanVoiceResponse",
+      "status": "online"
+    },
+    "StartAIConversation": {
+      "document": "启动AI对话任务，AI通道机器人进入GME房间，与房间内指定的成员进行AI对话，适用于智能客服，AI口语教师等场景\n\nGME AI对话功能内置语音转文本能力，同时提供通道服务，即客户可灵活指定第三方AI模型（LLM）服务和文本转音频（TTS)服务，更多[功能说明](https://cloud.tencent.com/document/product/647/108901)。",
+      "input": "StartAIConversationRequest",
+      "name": "开始AI对话任务",
+      "output": "StartAIConversationResponse",
       "status": "online"
     },
     "StartRecord": {
@@ -175,11 +217,25 @@
       "output": "StartRecordResponse",
       "status": "online"
     },
+    "StopAIConversation": {
+      "document": "停止AI对话任务",
+      "input": "StopAIConversationRequest",
+      "name": "停止AI对话任务",
+      "output": "StopAIConversationResponse",
+      "status": "online"
+    },
     "StopRecord": {
       "document": "停止录制\n",
       "input": "StopRecordRequest",
       "name": "停止录制",
       "output": "StopRecordResponse",
+      "status": "online"
+    },
+    "UpdateAIConversation": {
+      "document": "更新AIConversation参数",
+      "input": "UpdateAIConversationRequest",
+      "name": "更新AI对话任务配置",
+      "output": "UpdateAIConversationResponse",
       "status": "online"
     },
     "UpdateScanRooms": {
@@ -194,6 +250,13 @@
       "input": "UpdateScanUsersRequest",
       "name": "更新送检用户号",
       "output": "UpdateScanUsersResponse",
+      "status": "online"
+    },
+    "UpdateVoicePrint": {
+      "document": "传入声纹ID以及对应音频信息，更新对应声纹信息",
+      "input": "UpdateVoicePrintRequest",
+      "name": "更新声纹信息",
+      "output": "UpdateVoicePrintResponse",
       "status": "online"
     }
   },
@@ -275,6 +338,216 @@
         }
       ],
       "usage": "out"
+    },
+    "AgentConfig": {
+      "document": "机器人参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器人的UserId，用于进房发起任务。【注意】这个UserId不能与当前房间内的主播观众UserId重复。如果一个房间发起多个任务时，机器人的UserId也不能相互重复，否则会中断前一个任务。需要保证机器人UserId在房间内唯一。",
+          "example": "user_124",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码。",
+          "example": "ehbciOiJS",
+          "member": "string",
+          "name": "UserSig",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器人拉流的UserId, 填写后，机器人会拉取该UserId的流进行实时处理",
+          "example": "user_124",
+          "member": "string",
+          "name": "TargetUserId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。",
+          "example": "60",
+          "member": "uint64",
+          "name": "MaxIdleTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器人的欢迎语",
+          "example": "你好呀",
+          "member": "string",
+          "name": "WelcomeMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断",
+          "example": "0",
+          "member": "uint64",
+          "name": "InterruptMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。",
+          "example": "500",
+          "member": "uint64",
+          "name": "InterruptSpeechDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "控制新一轮对话的触发方式，默认为0。\n- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。\n- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TurnDetectionMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true",
+          "example": "true",
+          "member": "bool",
+          "name": "FilterOneWord",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "欢迎消息优先级，0默认，1高优，高优不能被打断。",
+          "example": "0",
+          "member": "uint64",
+          "name": "WelcomeMessagePriority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于过滤LLM返回内容，不播放括号中的内容。\n1：中文括号（）\n2：英文括号()\n3：中文方括号【】\n4：英文方括号[]\n5：英文花括号{}\n默认值为空，表示不进行过滤。",
+          "example": "1",
+          "member": "uint64",
+          "name": "FilterBracketsContent",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境音设置\t",
+          "example": "无",
+          "member": "AmbientSound",
+          "name": "AmbientSound",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "声纹配置\t",
+          "example": "无",
+          "member": "VoicePrint",
+          "name": "VoicePrint",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "与WelcomeMessage参数互斥，当该参数有值时，WelcomeMessage将失效。\\n在对话开始后把该消息送到大模型来获取欢迎语。\t",
+          "example": "你好呀\t",
+          "member": "string",
+          "name": "InitLLMMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语义断句检测\t",
+          "example": "无",
+          "member": "TurnDetection",
+          "name": "TurnDetection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器人字幕显示模式。 - 0表示尽快显示，不会和音频播放进行同步。此时字幕全量下发，后面的字幕会包含前面的字幕。 - 1表示句子级别的实时显示，会和音频播放进行同步，只有当前句子对应的音频播放完后，下一条字幕才会下发。此时字幕增量下发，端上需要把前后的字幕进行拼接才是完整字幕。\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "SubtitleMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AmbientSound": {
+      "document": "背景音设置，将在通话中添加环境音效，使体验更加逼真。目前支持以下选项：\ncoffee_shops: 咖啡店氛围，背景中有人聊天。\nbusy_office: 客服中心\nstreet_traffic: 户外街道\nevening_mountain: 户外山林",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境场景选择",
+          "example": "coffee_shops",
+          "member": "string",
+          "name": "Scene",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "控制环境音的音量。取值的范围是 [0,2]。值越低，环境音越小；值越高，环境音越响亮。如果未设置，则使用默认值 1。",
+          "example": "1.0",
+          "member": "float",
+          "name": "Volume",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AppStatisticsItem": {
       "document": "应用用量统计数据",
@@ -645,6 +918,60 @@
         }
       ],
       "usage": "out"
+    },
+    "ControlAIConversationRequest": {
+      "document": "ControlAIConversation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务唯一标识",
+          "example": "v2*****test",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话",
+          "example": "ServerPushText",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务端发送播报文本命令，当Command为ServerPushText时必填",
+          "example": "无",
+          "member": "ServerPushText",
+          "name": "ServerPushText",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM=\"1\"",
+          "example": "无",
+          "member": "InvokeLLM",
+          "name": "InvokeLLM",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ControlAIConversationResponse": {
+      "document": "ControlAIConversation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAgeDetectTaskRequest": {
       "document": "CreateAgeDetectTask请求参数结构体",
@@ -1285,6 +1612,109 @@
           "name": "ErrorCode",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVoicePrintRequest": {
+      "document": "DeleteVoicePrint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "声纹信息ID",
+          "example": "20250529_xxxxxx",
+          "member": "string",
+          "name": "VoicePrintId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVoicePrintResponse": {
+      "document": "DeleteVoicePrint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIConversationRequest": {
+      "document": "DescribeAIConversation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GME的SdkAppId，和开启转录任务的房间使用的SdkAppId相同。",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "唯一标识一次任务。",
+          "example": "SV1FR+XTtvzAjRxZZ+aof1DfJF00VSBBNE0zR9W-PEpgCPBmt402BbnqMCdom79LtZO-VbLyV1nhVY1pFauWgrW12BevPvJ5Zn010nD6vj3hgfbVH0.",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIConversationResponse": {
+      "document": "DescribeAIConversation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务开始时间。",
+          "example": "2023-09-11",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。有4个值：1、Idle表示任务未开始2、Preparing表示任务准备中3、InProgress表示任务正在运行4、Stopped表示任务已停止，正在清理资源中",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一标识一次任务。",
+          "example": "SV1FR+XTtvzAjRxZZ+aof1DfJF00VSBBNE0zR9W-PEpgCPBmt402BbnqMCdom79LtZO-VbLyV1nhVY1pFauWgrW12BevPvJ5Zn010nD6vj3hgfbVH0.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开启对话任务时填写的SessionId，如果没写则不返回。",
+          "example": "conversation_1_2",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2142,6 +2572,80 @@
       ],
       "type": "object"
     },
+    "DescribeVoicePrintRequest": {
+      "document": "DescribeVoicePrint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询方式，0表示查询特定VoicePrintId，1表示分页查询",
+          "example": "1",
+          "member": "uint64",
+          "name": "DescribeMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "声纹ID",
+          "example": "[\"13000569124-fd91f128-52a6-4692-b94a-c0f9fd3c4287\"]",
+          "member": "string",
+          "name": "VoicePrintIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "当前页码,从1开始,DescribeMode为1时填写",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数 最少20,DescribeMode为1时填写",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVoicePrintResponse": {
+      "document": "DescribeVoicePrint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总的条数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "声纹信息",
+          "example": "无",
+          "member": "VoicePrintInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "查找过滤",
       "members": [
@@ -2228,6 +2732,30 @@
         }
       ],
       "usage": "out"
+    },
+    "InvokeLLM": {
+      "document": "调用服务端主动发起请求到LLM",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求LLM的内容",
+          "example": "今天天气怎么样",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许该文本打断机器人说话",
+          "example": "false",
+          "member": "bool",
+          "name": "Interrupt",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     },
     "ModifyAppStatusRequest": {
       "document": "ModifyAppStatus请求参数结构体",
@@ -2720,6 +3248,79 @@
       ],
       "usage": "out"
     },
+    "RegisterVoicePrintRequest": {
+      "document": "RegisterVoicePrint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "整个wav音频文件的base64字符串,其中wav文件限定为16k采样率, 16bit位深, 单声道, 4到18秒音频时长,有效音频不小于3秒(不能有太多静音段), 编码数据大小不超过2M, 为了识别准确率，建议音频长度为8秒",
+          "example": "kAOgA9AEA...",
+          "member": "string",
+          "name": "Audio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "毫秒时间戳",
+          "example": "1748249540000",
+          "member": "uint64",
+          "name": "ReqTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频格式,目前只支持0,代表wav",
+          "example": "0",
+          "member": "uint64",
+          "name": "AudioFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频名称,长度不要超过32",
+          "example": "jackson",
+          "member": "string",
+          "name": "AudioName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "和声纹绑定的MetaInfo，长度最大不超过512",
+          "example": "metainfo string",
+          "member": "string",
+          "name": "AudioMetaInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterVoicePrintResponse": {
+      "document": "RegisterVoicePrint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "声纹信息ID",
+          "example": "声纹信息id",
+          "member": "string",
+          "name": "VoicePrintId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RoomUser": {
       "document": "房间内用户信息",
       "members": [
@@ -2765,6 +3366,78 @@
         }
       ],
       "usage": "out"
+    },
+    "STTConfig": {
+      "document": "语音转文字参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "\n语音转文字支持识别的语言，默认是\"zh\" 中文\n\n可通过购买「AI智能识别时长包」解锁或领取包月套餐体验版解锁不同语言. \n\n语音转文本不同套餐版本支持的语言如下：\n\n**基础版**：\n- \"zh\": 中文（简体）\n- \"zh-TW\": 中文（繁体）\n- \"en\": 英语\n\n**标准版：**\n- \"8k_zh_large\": 普方大模型引擎. 当前模型同时支持中文等语言的识别，模型参数量极大，语言模型性能增强，针对电话音频中各类场景、各类中文方言的识别准确率极大提升.\n- \"16k_zh_large\": 普方英大模型引擎. 当前模型同时支持中文、英文、多种中文方言等语言的识别，模型参数量极大，语言模型性能增强，针对噪声大、回音大、人声小、人声远等低质量音频的识别准确率极大提升.\n- \"16k_multi_lang\": 多语种大模型引擎. 当前模型同时支持英语、日语、韩语、阿拉伯语、菲律宾语、法语、印地语、印尼语、马来语、葡萄牙语、西班牙语、泰语、土耳其语、越南语、德语的识别，可实现15个语种的自动识别(句子/段落级别).\n- \"16k_zh_en\": 中英大模型引擎. 当前模型同时支持中文、英语识别，模型参数量极大，语言模型性能增强，针对噪声大、回音大、人声小、人声远等低质量音频的识别准确率极大提升.\n\n**高级版：**\n- \"zh-dialect\": 中国方言\n- \"zh-yue\": 中国粤语\n- \"vi\": 越南语\n- \"ja\": 日语\n- \"ko\": 韩语\n- \"id\": 印度尼西亚语\n- \"th\": 泰语\n- \"pt\": 葡萄牙语\n- \"tr\": 土耳其语\n- \"ar\": 阿拉伯语\n- \"es\": 西班牙语\n- \"hi\": 印地语\n- \"fr\": 法语\n- \"ms\": 马来语\n- \"fil\": 菲律宾语\n- \"de\": 德语\n- \"it\": 意大利语\n- \"ru\": 俄语\n- \"sv\": 瑞典语\n- \"da\": 丹麦语\n- \"no\": 挪威语\n\n**注意：**\n如果缺少满足您需求的语言，请联系我们技术人员。",
+          "example": "zh",
+          "member": "string",
+          "name": "Language",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "**发起模糊识别为高级版能力,默认按照高级版收费,仅支持填写基础版和高级版语言.**\n注意：不支持填写\"zh-dialect\"",
+          "example": "[\"AlternativeLanguage\"]",
+          "member": "string",
+          "name": "AlternativeLanguage",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数，联系后台使用\n",
+          "example": "CustomParam",
+          "member": "string",
+          "name": "CustomParam",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "VadSilenceTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "热词表：该参数用于提升识别准确率。 单个热词限制：\"热词|权重\"，单个热词不超过30个字符（最多10个汉字），权重[1-11]或者100，如：“腾讯云|5” 或 “ASR|11”； 热词表限制：多个热词用英文逗号分割，最多支持128个热词，如：“腾讯云|10,语音识别|5,ASR|11”；",
+          "example": "腾讯云|10,语音识别|5,ASR|11",
+          "member": "string",
+          "name": "HotWordList",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "VadLevel",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ScanDetail": {
       "document": "语音检测详情",
@@ -3075,6 +3748,66 @@
       ],
       "usage": "both"
     },
+    "ServerPushText": {
+      "document": "服务端控制AI对话机器人播报指定文本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务端推送播报文本",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许该文本打断机器人说话",
+          "example": "无",
+          "member": "bool",
+          "name": "Interrupt",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "播报完文本后，是否自动关闭对话任务",
+          "example": "无",
+          "member": "bool",
+          "name": "StopAfterPlay",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "服务端推送播报音频\n    格式说明：音频必须为单声道，采样率必须跟对应TTS的采样率保持一致，编码为Base64字符串。\n    输入规则：当提供Audio字段时，将不接受Text字段的输入。系统将直接播放Audio字段中的音频内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Audio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认为0，仅在Interrupt为false时有效\n- 0表示当前有交互发生时，会丢弃Interrupt为false的消息\n- 1表示当前有交互发生时，不会丢弃Interrupt为false的消息，而是缓存下来，等待当前交互结束后，再去处理\n\n注意：DropMode为1时，允许缓存多个消息，如果后续出现了打断，缓存的消息会被清空",
+          "example": "0",
+          "member": "uint64",
+          "name": "DropMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。**目前仅支持传入0，如果需要传入1，请提工单联系我们添加权限。**\n注意：在接收到Priority=1的消息后，后续其他任何消息都会被忽略（包括Priority=1的消息），直到Priority=1的消息处理结束。该字段可与Interrupt、DropMode字段配合使用。\n例子：\n- Priority=1、Interrupt=true，会打断现有交互，立刻播报，播报过程中不会被打断\n- Priority=1、Interrupt=false、DropMode=1，会等待当前交互结束，再进行播报，播报过程中不会被打断\n",
+          "example": "0",
+          "member": "uint64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "ServiceStatus": {
       "document": "服务开关状态",
       "members": [
@@ -3140,6 +3873,106 @@
         }
       ],
       "usage": "out"
+    },
+    "StartAIConversationRequest": {
+      "document": "StartAIConversation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GME的SdkAppId和开启转录任务的房间使用的SdkAppId相同。",
+          "example": "14000000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GME的RoomId表示开启对话任务的房间号。",
+          "example": "10000",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机器人参数",
+          "example": "无",
+          "member": "AgentConfig",
+          "name": "AgentConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "语音识别配置。",
+          "example": "无",
+          "member": "STTConfig",
+          "name": "STTConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "LLM配置。需符合openai规范，为JSON字符串，示例如下：\n<pre> { <br> &emsp;  \"LLMType\": \"大模型类型\",  // String 必填，如：\"openai\" <br> &emsp;  \"Model\": \"您的模型名称\", // String 必填，指定使用的模型<br>    \"APIKey\": \"您的LLM API密钥\", // String 必填 <br> &emsp;  \"APIUrl\": \"https://api.xxx.com/chat/completions\", // String 必填，LLM API访问的URL<br> &emsp;  \"Streaming\": true // Boolean 非必填，指定是否使用流式传输<br> &emsp;} </pre>\n",
+          "example": "{\\\"LLMType\\\": \\\"openai\\\", \\\"Model\\\": \\\"gpt-xxx\", \\\"APIKey\\\": \\\"xxxxxxxx\\\", \\\"APIUrl\\\": \\\"https://api.xxx.com/v1/chat/completions\\\", \\\"Streaming\\\": true}",
+          "member": "string",
+          "name": "LLMConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "                                        \"description\": \"TTS配置，为JSON字符串，腾讯云TTS示例如下： <pre>{ <br> &emsp; \\\"AppId\\\": 您的应用ID, // Integer 必填<br> &emsp; \\\"TTSType\\\": \\\"TTS类型\\\", // String TTS类型, 固定为\\\"tencent\\\"<br> &emsp; \\\"SecretId\\\": \\\"您的密钥ID\\\", // String 必填<br> &emsp; \\\"SecretKey\\\":  \\\"您的密钥Key\\\", // String 必填<br> &emsp; \\\"VoiceType\\\": 101001, // Integer  必填，音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色。<br> &emsp; \\\"Speed\\\": 1.25, // Integer 非必填，语速，范围：[-2，6]，分别对应不同语速： -2: 代表0.6倍 -1: 代表0.8倍 0: 代表1.0倍（默认） 1: 代表1.2倍 2: 代表1.5倍  6: 代表2.5倍  如果需要更细化的语速，可以保留小数点后 2 位，例如0.5/1.25/2.81等。 参数值与实际语速转换\\\"Volume\\\": 5, // Integer 非必填，音量大小，范围：[0，10]，分别对应11个等级的音量，默认值为0，代表正常音量。<br> &emsp; \\\"EmotionCategory\\\":  \\\"angry\\\", // String 非必填 控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、sajiao(撒娇)、disgusted(厌恶)、amaze(震惊)、peaceful(平静)、exciting(兴奋)、aojiao(傲娇)、jieshuo(解说)。<br> &emsp; \\\"EmotionIntensity\\\":  150 // Integer 非必填 控制合成音频情感程度，取值范围为 [50,200]，默认为 100；只有 EmotionCategory 不为空时生效。<br> &emsp; }</pre>\",",
+          "example": "{\\\"TTSType\\\": \\\"tencent\\\", \\\"AppId\\\": 136666666, \\\"SecretId\\\": \\\"xxxxxxx\\\", \\\"SecretKey\\\": \\\"xxxxxxx\\\", \\\"VoiceType\\\": 1008, \\\"Speed\\\": 1}",
+          "member": "string",
+          "name": "TTSConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字人配置，为JSON字符串。**数字人配置需要提工单加白后才能使用**",
+          "example": "{\\\"AvatarType\\\": \\\"tencent\\\", \\\"Appkey\\\": \\\"数字人的appkey\\\", \\\"AccessToken\\\": \\\"token\\\",\\\"AssetVirtualmanKey\\\": \\\"2d64a32c02604b8db35d457ba0db0d75\\\", \\\"AvatarUserID\\\": \\\"robot_xiaowei\\\", \\\"DriverType\\\": 1, \\\"AvatarUserSig\\\": \\\"user_sign\\\"}",
+          "member": "string",
+          "name": "AvatarConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实验性参数,联系后台使用",
+          "example": "{\"internal\": \"xxx\"}",
+          "member": "string",
+          "name": "ExperimentalParams",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartAIConversationResponse": {
+      "document": "StartAIConversation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于唯一标识对话任务。",
+          "example": "SV1FR+XTtvzAjRxZZ+aof1DfJF00VSBBNE0zR9W-PEpgCPBmt402BbnqMCdom79LtZO-VbLyV1nhVY1pFauWgrW12BevPvJ5Zn010nD6vj3hgfbVH0.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StartRecordRequest": {
       "document": "StartRecord请求参数结构体",
@@ -3246,6 +4079,33 @@
         }
       ],
       "usage": "out"
+    },
+    "StopAIConversationRequest": {
+      "document": "StopAIConversation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一标识任务。",
+          "example": "-m97l2ZU7kOlV5cTRMoU6yoGp2nDYkzbJ13EC4K-4pycoZXVv+XVrNoUXQ8++8Z2PwUlAQ..",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopAIConversationResponse": {
+      "document": "StopAIConversation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StopRecordRequest": {
       "document": "StopRecord请求参数结构体",
@@ -3397,6 +4257,95 @@
       ],
       "usage": "in"
     },
+    "TurnDetection": {
+      "document": "断句配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TurnDetectionMode为3时生效，语义断句的灵敏程度\n\n\n功能简介：根据用户所说的话来判断其已完成发言来分割音频\n\n\n可选: \"low\" | \"medium\" | \"high\" | \"auto\"\n\n\nauto 是默认值，与 medium 相同。\nlow 将让用户有足够的时间说话。\nhigh 将尽快对音频进行分块。\n\n\n如果您希望模型在对话模式下更频繁地响应，可以将 SemanticEagerness 设置为 high\n如果您希望在用户停顿时，AI能够等待片刻，可以将 SemanticEagerness 设置为 low\n无论什么模式，最终都会分割送个大模型进行回复\n",
+          "example": "auto",
+          "member": "string",
+          "name": "SemanticEagerness",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateAIConversationRequest": {
+      "document": "UpdateAIConversation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一标识一个任务",
+          "example": "your-taskid",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新，机器人的欢迎语",
+          "example": "你好呀",
+          "member": "string",
+          "name": "WelcomeMessage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新。智能打断模式，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断",
+          "example": "0",
+          "member": "uint64",
+          "name": "InterruptMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新。InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断",
+          "example": "500",
+          "member": "uint64",
+          "name": "InterruptSpeechDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新，LLM配置，详情见StartAIConversation接口",
+          "example": "{\\\\\\\"LLMType\\\\\\\": \\\\\\\"openai\\\\\\\", \\\\\\\"Model\\\\\\\": \\\\\\\"gpt-xxx\\\", \\\\\\\"APIKey\\\\\\\": \\\\\\\"xxxxxxxx\\\\\\\", \\\\\\\"APIUrl\\\\\\\": \\\\\\\"https://api.xxx.com/v1/chat/completions\\\\\\\", \\\\\\\"Streaming\\\\\\\": true}",
+          "member": "string",
+          "name": "LLMConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "不填写则不进行更新，TTS配置，详情见StartAIConversation接口",
+          "example": "{\\\\\\\"TTSType\\\\\\\": \\\\\\\"tencent\\\\\\\", \\\\\\\"AppId\\\\\\\": 136666666, \\\\\\\"SecretId\\\\\\\": \\\\\\\"xxxxxxx\\\\\\\", \\\\\\\"SecretKey\\\\\\\": \\\\\\\"xxxxxxx\\\\\\\", \\\\\\\"VoiceType\\\\\\\": 1008, \\\\\\\"Speed\\\\\\\": 1}",
+          "member": "string",
+          "name": "TTSConfig",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAIConversationResponse": {
+      "document": "UpdateAIConversation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateScanRoomsRequest": {
       "document": "UpdateScanRooms请求参数结构体",
       "members": [
@@ -3498,6 +4447,69 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateVoicePrintRequest": {
+      "document": "UpdateVoicePrint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "声纹信息ID",
+          "example": "20250529_xxxxxx",
+          "member": "string",
+          "name": "VoicePrintId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "毫秒时间戳",
+          "example": "1748249540000",
+          "member": "uint64",
+          "name": "ReqTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频格式,目前只支持0,代表wav",
+          "example": "0",
+          "member": "uint64",
+          "name": "AudioFormat",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "整个wav音频文件的base64字符串,其中wav文件限定为16k采样率, 16bit位深, 单声道, 8到18秒音频时长,有效音频不小于6秒(不能有太多静音段),编码数据大小不超过2M",
+          "example": "f8AAAMABwAJAAsxxxx",
+          "member": "string",
+          "name": "Audio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "和声纹绑定的MetaInfo，长度最大不超过512",
+          "example": "metainfo string",
+          "member": "string",
+          "name": "AudioMetaInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateVoicePrintResponse": {
+      "document": "UpdateVoicePrint返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3625,6 +4637,120 @@
           "member": "uint64",
           "name": "Dau",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VoicePrint": {
+      "document": "声纹配置参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "默认为0，表示不启用声纹。1表示启用声纹，此时需要填写voiceprint id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id",
+          "example": "[\"your-voiceprint-id\"]",
+          "member": "string",
+          "name": "IdList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VoicePrintInfo": {
+      "document": "声纹查询数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "声纹ID",
+          "example": "1300056123-fd91f128-52a6-4692-b94a-c0f9fd3c4287",
+          "member": "string",
+          "name": "VoicePrintId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "1300056123",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "和声纹绑定的MetaInfo",
+          "example": "metainfo",
+          "member": "string",
+          "name": "VoicePrintMetaInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-05-21 19:23:54",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-05-21 19:23:54",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频格式,当前只有0(代表wav)",
+          "example": "0",
+          "member": "uint64",
+          "name": "AudioFormat",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频名称",
+          "example": "jackson",
+          "member": "string",
+          "name": "AudioName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求毫秒时间戳",
+          "example": "1748249540000",
+          "member": "uint64",
+          "name": "ReqTimestamp",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }

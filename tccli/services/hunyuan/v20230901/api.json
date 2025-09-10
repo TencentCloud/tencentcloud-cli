@@ -4201,6 +4201,24 @@
           "name": "Processes",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启图文混排",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启音乐",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableMusic",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

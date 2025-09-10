@@ -3,7 +3,7 @@
     "ApplyEmbedInterval": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyEmbedInterval\n<公共请求参数>\n\n{\n    \"Intention\": \"embed\",\n    \"Scope\": \"page\",\n    \"BIToken\": \"246cbf0d-aa6c-445d-895d-b368f59159e8\",\n    \"ExtraParam\": \"\",\n    \"PageId\": \"1\",\n    \"ProjectId\": \"2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyEmbedInterval\n<公共请求参数>\n\n{\n    \"ProjectId\": 1982493789748932,\n    \"PageId\": 1982493789748932,\n    \"BIToken\": \"BIToken\",\n    \"ExtraParam\": \"ExtraParam\",\n    \"Intention\": \"Intention\",\n    \"Scope\": \"Scope\"\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"e60a2172-715b-4305-beb2-40792ae53856\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Result\": true\n        }\n    }\n}",
         "title": "申请Token延期接口实例"
       }
@@ -141,8 +141,8 @@
     "DescribePermissionRanksInfo": [
       {
         "document": "根据角色或标签查询行列权限配置",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePermissionRanksInfo\n<公共请求参数>\n\n{\n    \"TableId\": 0,\n    \"Mode\": \"abc\",\n    \"RoleType\": \"abc\",\n    \"RoleId\": 0,\n    \"Type\": \"abc\",\n    \"ProjectId\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"Extra\": \"abc\",\n        \"Data\": {\n            \"TableId\": 0,\n            \"Type\": \"abc\",\n            \"Mode\": \"abc\",\n            \"RulerInfo\": \"abc\",\n            \"RoleId\": 0,\n            \"RoleType\": \"abc\",\n            \"RowColumnConfigList\": [\n                {\n                    \"RulerInfo\": \"abc\",\n                    \"TagValueList\": [\n                        {\n                            \"Id\": 0,\n                            \"Name\": \"abc\",\n                            \"Values\": [\n                                \"abc\"\n                            ]\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePermissionRanksInfo\n<公共请求参数>\n\n{\n    \"TableId\": 0,\n    \"Mode\": \"testdata\",\n    \"RoleType\": \"testdata\",\n    \"RoleId\": 0,\n    \"Type\": \"testdata\",\n    \"ProjectId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"testdata\",\n        \"Extra\": \"testdata\",\n        \"Data\": {\n            \"TableId\": 0,\n            \"Type\": \"testdata\",\n            \"Mode\": \"testdata\",\n            \"RulerInfo\": \"testdata\",\n            \"RoleId\": 0,\n            \"RoleType\": \"testdata\",\n            \"RowColumnConfigList\": [\n                {\n                    \"RulerInfo\": \"testdata\",\n                    \"TagValueList\": [\n                        {\n                            \"Id\": 0,\n                            \"Name\": \"testdata\",\n                            \"Values\": [\n                                \"testdata\"\n                            ]\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"testdata\"\n    }\n}",
         "title": "根据角色或标签查询行列权限配置"
       }
     ],
@@ -150,7 +150,7 @@
       {
         "document": "项目内角色列表接口示例",
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePermissionRoleInfo\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"PageNo\": \"0\",\n    \"PageSize\": \"10\",\n    \"AllPage\": \"true\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": 1,\n                \"RoleName\": \"abc\",\n                \"CorpId\": \"abc\",\n                \"RoleType\": \"abc\",\n                \"Scope\": \"abc\",\n                \"Description\": \"abc\",\n                \"CreatedAt\": \"abc\",\n                \"CreatedUser\": \"abc\",\n                \"UpdatedAt\": \"abc\",\n                \"UpdatedUser\": \"abc\",\n                \"ScopeType\": 0,\n                \"CanChoose\": true,\n                \"ModuleCollection\": \"abc\"\n            }\n        ],\n        \"Msg\": \"abc\",\n        \"Extra\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": 1,\n                \"RoleName\": \"testdata\",\n                \"CorpId\": \"testdata\",\n                \"RoleType\": \"testdata\",\n                \"Scope\": \"testdata\",\n                \"Description\": \"testdata\",\n                \"CreatedAt\": \"testdata\",\n                \"CreatedUser\": \"testdata\",\n                \"UpdatedAt\": \"testdata\",\n                \"UpdatedUser\": \"testdata\",\n                \"ScopeType\": 0,\n                \"CanChoose\": true,\n                \"ModuleCollection\": \"testdata\"\n            }\n        ],\n        \"Msg\": \"testdata\",\n        \"Extra\": \"testdata\",\n        \"RequestId\": \"testdata\"\n    }\n}",
         "title": "项目内角色列表接口示例"
       }
     ],
