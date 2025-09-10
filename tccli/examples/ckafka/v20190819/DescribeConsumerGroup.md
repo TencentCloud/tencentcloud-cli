@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DescribeConsumerGroup --cli-unfold-argument  \
-    --InstanceId 10
+    --InstanceId ckafka-test
 ```
 
 Output: 
@@ -14,23 +14,25 @@ Output:
 {
     "Response": {
         "Result": {
-            "TotalCount": 2,
+            "TotalCount": 1,
             "TopicList": [
                 {
-                    "TopicId": "topic-g8ud11it",
-                    "TopicName": "connect-offset"
+                    "TopicId": "topic-test",
+                    "TopicName": "topic-test"
                 }
             ],
             "GroupList": [
                 {
-                    "ConsumerGroupName": "connect-cluster-1",
-                    "SubscribedInfo": []
-                },
-                {
-                    "ConsumerGroupName": "qcloud_tocos",
+                    "ConsumerGroupName": "group-test",
                     "SubscribedInfo": [
                         {
-                            "TopicName": "connect-offset",
+                            "TopicId": "topic-test",
+                            "TopicName": "topic-test",
+                            "Partition": [
+                                0,
+                                1,
+                                2
+                            ],
                             "PartitionOffset": [
                                 {
                                     "Partition": "0",
@@ -49,25 +51,22 @@ Output:
                     ]
                 }
             ],
-            "TotalPartition": 0,
+            "TotalPartition": 3,
             "PartitionListForMonitor": [],
             "TotalTopic": 1,
             "TopicListForMonitor": [
                 {
-                    "TopicId": "topic-g8ud11it",
-                    "TopicName": "connect-offset"
+                    "TopicId": "topic-test",
+                    "TopicName": "topic-test"
                 }
             ],
             "GroupListForMonitor": [
                 {
-                    "GroupName": "connect-cluster-1"
-                },
-                {
-                    "GroupName": "qcloud_tocos"
+                    "GroupName": "group-test"
                 }
             ]
         },
-        "RequestId": "3c8a91a3-5921-4d7f-9fd9-6b4261cca363"
+        "RequestId": "d173b4fb-c6d0-4507-a822-b6f277fc4016"
     }
 }
 ```

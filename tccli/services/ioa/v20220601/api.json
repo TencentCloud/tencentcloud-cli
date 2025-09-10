@@ -42,6 +42,20 @@
       "output": "DescribeAggrSoftCategorySoftListResponse",
       "status": "online"
     },
+    "DescribeAggrSoftDetail": {
+      "document": "聚合的软件详情",
+      "input": "DescribeAggrSoftDetailRequest",
+      "name": "获取聚合的软件详情",
+      "output": "DescribeAggrSoftDetailResponse",
+      "status": "online"
+    },
+    "DescribeAggrSoftDeviceList": {
+      "document": "聚合软件的已安装终端列表",
+      "input": "DescribeAggrSoftDeviceListRequest",
+      "name": "获取聚合软件的设备列表",
+      "output": "DescribeAggrSoftDeviceListResponse",
+      "status": "online"
+    },
     "DescribeDLPFileDetectResult": {
       "document": "webservice查询文件检测结果",
       "input": "DescribeDLPFileDetectResultRequest",
@@ -54,6 +68,13 @@
       "input": "DescribeDeviceChildGroupsRequest",
       "name": "查询设备组子分组",
       "output": "DescribeDeviceChildGroupsResponse",
+      "status": "online"
+    },
+    "DescribeDeviceDetailList": {
+      "document": "基于软件查看终端详情列表,私有化调用path为：capi/Software/DescribeDeviceDetailList",
+      "input": "DescribeDeviceDetailListRequest",
+      "name": "基于软件查看终端详情列表",
+      "output": "DescribeDeviceDetailListResponse",
       "status": "online"
     },
     "DescribeDeviceHardwareInfoList": {
@@ -117,6 +138,13 @@
       "input": "DescribeVirtualDevicesRequest",
       "name": "展示自定义分组终端列表",
       "output": "DescribeVirtualDevicesResponse",
+      "status": "online"
+    },
+    "ExportSoftwareInformationList": {
+      "document": "导出基于指定终端查看软件信息详情列表查询,私有化调用path为：capi/Software/ExportSoftwareInformationList",
+      "input": "ExportSoftwareInformationListRequest",
+      "name": "导出软件信息列表",
+      "output": "ExportSoftwareInformationListResponse",
       "status": "online"
     },
     "ModifyVirtualDeviceGroups": {
@@ -259,6 +287,210 @@
         }
       ],
       "usage": "out"
+    },
+    "AggrSoftDeviceRow": {
+      "document": "聚合软件的已安装终端列表中的一行数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cugnansu-NB1",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近登录账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "win11",
+          "member": "string",
+          "name": "LastLoginAccount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "终端用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cugnansu",
+          "member": "string",
+          "name": "DeviceUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "软件版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.280.1.4",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否盗版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0=无风险;1=有风险;2=未开启检查",
+          "member": "int64",
+          "name": "PiracyRisk",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盗版原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "未支持",
+          "member": "string",
+          "name": "PiracyReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安装时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025/07/17",
+          "member": "string",
+          "name": "InstallTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "全网账户.OS",
+          "member": "string",
+          "name": "UserPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所在分组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "全网终端.服务器",
+          "member": "string",
+          "name": "UserGroup",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13.108.77.57",
+          "member": "string",
+          "name": "IP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MAC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "00:E0:4C:36:01:1A",
+          "member": "string",
+          "name": "MAC",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UseTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20543",
+          "member": "int64",
+          "name": "DeviceId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "软件全名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Overwolf",
+          "member": "string",
+          "name": "FullSoftName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据ID（唯一）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1842703",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该终端此款软件可升级到的目标版本号",
+          "example": "134.0.3124.66",
+          "member": "string",
+          "name": "NewVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该软件对应运营配置的可升级id",
+          "example": "1310",
+          "member": "int64",
+          "name": "UpgradeSoftId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端备注名",
+          "example": "windows",
+          "member": "string",
+          "name": "RemarkName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ComplexRule": {
       "document": "自动划分规则数据",
@@ -1034,13 +1266,287 @@
       ],
       "type": "object"
     },
+    "DescribeAggrSoftDetailData": {
+      "document": "聚合软件详情数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "软件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "平台\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OsType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盗版风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " 0=无风险;1=有风险;2=未开启检查",
+          "member": "int64",
+          "name": "PiracyRisk",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Corp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已安装版本分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SoftVersionAndNum",
+          "name": "SoftVersionDist",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盗版版本安装\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SoftVersionAndNum",
+          "name": "PiracyVersionDist",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安装设备数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstalledDeviceNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盗版安装设备数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PiracyInstalledDeviceNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安装用户数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstalledUserNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盗版安装用户数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PiracyInstalledUserNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "正版率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "GenuineRate",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有新版本可升级的设备数量",
+          "example": "0",
+          "member": "int64",
+          "name": "UpgradableDeviceNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前可升级的最新版本信息, 每一项均为json字符串",
+          "example": "[\"{\\\"version\\\": \\\"8.0.4410.7\\\"}\"]",
+          "member": "string",
+          "name": "UpgradableVersions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAggrSoftDetailRequest": {
+      "document": "DescribeAggrSoftDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "软件名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "无",
+          "member": "int64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggrSoftDetailResponse": {
+      "document": "DescribeAggrSoftDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据",
+          "example": "无",
+          "member": "DescribeAggrSoftDetailData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggrSoftDeviceListData": {
+      "document": "聚合软件-已安装终端列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页公共对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Paging",
+          "name": "Page",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AggrSoftDeviceRow",
+          "name": "AggrSoftDeviceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAggrSoftDeviceListRequest": {
+      "document": "DescribeAggrSoftDeviceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "软件名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "无",
+          "member": "int64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAggrSoftDeviceListResponse": {
+      "document": "DescribeAggrSoftDeviceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已安装终端列表",
+          "example": "无",
+          "member": "DescribeAggrSoftDeviceListData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDLPFileDetectResultData": {
       "document": "查询文件检测结果响应数据",
       "members": [
         {
           "disabled": false,
           "document": "提交任务时的文件md5",
-          "example": "e9e7cad967c0c7e22e44789110205111",
+          "example": "md5",
           "member": "string",
           "name": "FileMd5",
           "output_required": false,
@@ -1069,7 +1575,7 @@
         },
         {
           "disabled": false,
-          "document": "文件检测结果，json字符串。",
+          "document": "文件检测结果，json字符串。包含文件基本信息如type，path，md5以及命中的信息。其中State为检测状态，0为待解析文件，1为检测中，2为检测完成；FileAbstract为命中的上下文摘要信息，HitRuleid是命中的规则唯一ID，HitRuleCategoryId是规则分类唯一id，HitLevel是文件的等级，HitRuleDesc是规则的名称，HitContent是具体命中的规则以及词库信息，以及命中的内容。EngineConfigVersion是当前词库版本号",
           "example": "\"{\\\"Type\\\": \\\".pdf\\\",\\\"Size\\\": 802831,\\\"State\\\": 2,\\\"Result\\\": {\\\"FileName\\\": \\\"YOGA%20BOOK%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97.pdf\\\",\\\"FileContent\\\": {\\\"FileAbstract\\\": \\\"YOGA BOOK with Windows®\\\\n在使用本用户指南及其支持的产品之\\\\\\\"}}}\"",
           "member": "string",
           "name": "DetectResult",
@@ -1085,7 +1591,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "管理域实例ID，用于CAM管理域权限分配",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
           "example": "1",
           "member": "string",
           "name": "DomainInstanceId",
@@ -1109,7 +1615,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询任务结果",
+          "document": "文件鉴定任务结果数据。详情查看具体数据结构",
           "example": "无",
           "member": "DescribeDLPFileDetectResultData",
           "name": "Data",
@@ -1206,6 +1712,263 @@
         }
       ],
       "usage": "both"
+    },
+    "DescribeDeviceDetailListData": {
+      "document": "终端详情响应对象集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算机名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ComputerName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组IdPath\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "AccountGroupIdPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "AccountGroupId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "终端组名path\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "GroupNamePath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "AccountGroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "终端组IdPath\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "GroupIdPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "唯一标识Mid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Mid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IOA账号名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "IoaUserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所在分组Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所在分组Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Mac地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Mac",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "软件版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组名Path\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "AccountGroupNamePath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列表Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDeviceDetailListPageData": {
+      "document": "业务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端详情响应对象集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "DescribeDeviceDetailListData",
+          "name": "Items",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页公共对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "Paging",
+          "name": "Page",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDeviceDetailListRequest": {
+      "document": "DescribeDeviceDetailList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "系统类型(只支持32位)",
+          "example": "无",
+          "member": "int64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "终端分组id(只支持32位)",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件、分页参数\n<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>",
+          "example": "无",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceDetailListResponse": {
+      "document": "DescribeDeviceDetailList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeDeviceDetailListPageData",
+          "name": "Data",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeDeviceHardwareInfoItem": {
       "document": "终端硬件信息列表Item数据",
@@ -3636,6 +4399,80 @@
       ],
       "usage": "both"
     },
+    "ExportSoftwareDownloadUrlRspData": {
+      "document": "业务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下载的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"https://www.xxx.cn/1/2/3\"",
+          "member": "string",
+          "name": "DownloadURL",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超过一定时间走异步任务",
+          "example": "112233",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExportSoftwareInformationListRequest": {
+      "document": "ExportSoftwareInformationList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端唯一标识Mid",
+          "example": "1",
+          "member": "string",
+          "name": "Mid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件、分页参数\n<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>",
+          "example": "{\"FilterGroups\":[],\"PageSize\":10,\"PageNum\":1}",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportSoftwareInformationListResponse": {
+      "document": "ExportSoftwareInformationList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务响应数据",
+          "example": "1",
+          "member": "ExportSoftwareDownloadUrlRspData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "Filters 条件过滤",
       "members": [
@@ -4128,6 +4965,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SoftVersionAndNum": {
+      "document": "软件版本与安装数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "软件版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安装数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Num",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

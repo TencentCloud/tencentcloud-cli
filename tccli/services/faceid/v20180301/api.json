@@ -3942,7 +3942,7 @@
         {
           "disabled": false,
           "document": "意愿确认环节中用户语音转文字的识别结果。\n- 若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "我同意",
           "member": "string",
           "name": "AsrResult",
           "output_required": true,
@@ -3962,7 +3962,7 @@
         {
           "disabled": false,
           "document": "意愿确认环节的结果信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "成功",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
@@ -3985,6 +3985,16 @@
           "example": "0",
           "member": "string",
           "name": "AsrResultSimilarity",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "意愿确认环节中录制的音频（base64）。\n- 若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "IntentionVerifyAudio",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true

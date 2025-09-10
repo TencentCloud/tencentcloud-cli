@@ -1648,14 +1648,14 @@
         },
         {
           "disabled": false,
-          "document": "是否使用一键授权",
+          "document": "是否使用一键授权\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "EnableRoleAuth",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6464,6 +6464,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "应用ID",
+          "example": "1963140753734418240",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "节点运行实例ID",
           "example": "1dcf5a21-6223-4358-b8a0-b4d6571",
           "member": "string",
@@ -7838,6 +7847,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "应用ID",
+          "example": "1963140753734418240",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "工作流运行实例ID",
           "example": "1dcf5a21-6223-4358-b8a0-b4d6571",
           "member": "string",
@@ -9004,7 +9022,7 @@
         {
           "disabled": false,
           "document": "类型",
-          "example": "5: API访客",
+          "example": "5",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -9022,7 +9040,7 @@
         {
           "disabled": false,
           "document": "会话sessionid",
-          "example": "无",
+          "example": "27-ec29-441f-96c9-ec4fe463058c",
           "member": "string",
           "name": "SessionId",
           "required": true,
@@ -9031,7 +9049,7 @@
         {
           "disabled": false,
           "document": "应用AppKey, 当Type=5[API访客]时, 该字段必填  :</br>  获取方式:</br>   1、应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取</br>   2、参考 https://cloud.tencent.com/document/product/1759/109469 第二项",
-          "example": "无",
+          "example": "BTNhWsYypGqzBiZqBPW",
           "member": "string",
           "name": "BotAppKey",
           "required": false,
@@ -9040,7 +9058,7 @@
         {
           "disabled": false,
           "document": "场景, 体验: 1; 正式: 2",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Scene",
           "required": false,
@@ -9049,7 +9067,7 @@
         {
           "disabled": false,
           "document": "最后一条记录ID， 消息从后往前获取\n\nMidRecordId与LastRecordId只能选择一个\n",
-          "example": "无",
+          "example": "GqT_20250908_17005",
           "member": "string",
           "name": "LastRecordId",
           "required": false,
@@ -9058,7 +9076,7 @@
         {
           "disabled": false,
           "document": "传该值，代表拉取该记录id的前后总共count条消息记录\n\nMidRecordId与LastRecordId只能选择一个\n",
-          "example": "无",
+          "example": "MdM_202",
           "member": "string",
           "name": "MidRecordId",
           "required": false,
@@ -9083,7 +9101,7 @@
         {
           "disabled": false,
           "document": "session 清除关联上下文时间, 单位 ms\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"1\"",
           "member": "string",
           "name": "SessionDisassociatedTimestamp",
           "output_required": false,
@@ -9951,6 +9969,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库拥有者的名字",
+          "example": "小明",
+          "member": "string",
+          "name": "OwnerStaffName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12889,7 +12918,7 @@
         },
         {
           "disabled": false,
-          "document": "发布状态",
+          "document": "发布状态，1：待发布，2：发布中，3：发布成功，5：发布失败",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -13064,7 +13093,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -17782,6 +17811,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "应用ID",
+          "example": "1963140753734418240",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "工作流运行实例ID",
           "example": "1dcf5a21-6223-4358-b8a0-b4d6571",
           "member": "string",
@@ -19351,7 +19389,7 @@
         {
           "disabled": false,
           "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"1\"",
           "member": "string",
           "name": "NodeId",
           "output_required": false,
@@ -19373,7 +19411,7 @@
         {
           "disabled": false,
           "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"name\"",
           "member": "string",
           "name": "NodeName",
           "output_required": false,
@@ -19384,7 +19422,7 @@
         {
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -19395,7 +19433,7 @@
         {
           "disabled": false,
           "document": "输入\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"input\"",
           "member": "string",
           "name": "Input",
           "output_required": false,
@@ -19406,7 +19444,7 @@
         {
           "disabled": false,
           "document": "输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"output\"",
           "member": "string",
           "name": "Output",
           "output_required": false,
@@ -19417,7 +19455,7 @@
         {
           "disabled": false,
           "document": "任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"taskOutput\"",
           "member": "string",
           "name": "TaskOutput",
           "output_required": false,
@@ -19428,7 +19466,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"msg\"",
           "member": "string",
           "name": "FailMessage",
           "output_required": false,
@@ -19450,7 +19488,7 @@
         {
           "disabled": false,
           "document": "大模型输出信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "StatisticInfo",
           "name": "StatisticInfos",
           "output_required": false,

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DescribeRegion --cli-unfold-argument  \
-    --Business 10
+    --Business ckafka
 ```
 
 Output: 

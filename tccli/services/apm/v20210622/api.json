@@ -537,6 +537,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标英文名",
+          "example": "QPS",
+          "member": "string",
+          "name": "NameEN",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1429,7 +1439,7 @@
         {
           "disabled": false,
           "document": "Tag 列表",
-          "example": "[{ \t\t\"Key\": \"AppId\", \t\t\"Value\": \"123123422\" \t}]",
+          "example": "无",
           "member": "ApmTag",
           "name": "Tags",
           "required": false,
@@ -1702,7 +1712,7 @@
         {
           "disabled": false,
           "document": "通用过滤参数",
-          "example": "{             \"Key\": \"service.name\",             \"Type\": \"=\",             \"Value\": \"java-order-service\"         }",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1711,7 +1721,7 @@
         {
           "disabled": false,
           "document": "排序\n现支持的 Key 有：\n\n- startTime(开始时间)\n- endTime(结束时间)\n- duration(响应时间)\n\n现支持的 Value 有：\n\n- desc(降序排序)\n- asc(升序排序)",
-          "example": "{             \"Key\": \"startTime\",             \"Value\": \"desc\"         }",
+          "example": "无",
           "member": "OrderBy",
           "name": "OrderBy",
           "required": false,
@@ -1812,7 +1822,7 @@
         {
           "disabled": false,
           "document": "通用过滤参数",
-          "example": "{             \"Key\": \"service.name\",             \"Type\": \"=\",             \"Value\": \"java-order-service\"         }",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1821,7 +1831,7 @@
         {
           "disabled": false,
           "document": "排序\n现支持的 Key 有：\n\n- startTime(开始时间)\n- endTime(结束时间)\n- duration(响应时间)\n\n现支持的 Value 有：\n\n- desc(降序排序)\n- asc(升序排序)",
-          "example": "{             \"Key\": \"startTime\",             \"Value\": \"desc\"         }",
+          "example": "无",
           "member": "OrderBy",
           "name": "OrderBy",
           "required": false,
@@ -1904,7 +1914,7 @@
         {
           "disabled": false,
           "document": "指标列表",
-          "example": "[{\"Compare\":\"1\",\"Compares\":[\"CompareByYesterday\",\"CompareByLastWeek\"],\"MetricName\":\"qps\"}]",
+          "example": "无",
           "member": "QueryMetricItem",
           "name": "Metrics",
           "required": true,
@@ -1940,7 +1950,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "[{\"Type\":\"=\",\"Key\":\"span.kind\",\"Value\":\"server\"}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1949,7 +1959,7 @@
         {
           "disabled": false,
           "document": "Or 过滤条件",
-          "example": "[{\"Type\":\"=\",\"Key\":\"span.kind\",\"Value\":\"server\"}]",
+          "example": "无",
           "member": "Filter",
           "name": "OrFilters",
           "required": false,
@@ -1958,7 +1968,7 @@
         {
           "disabled": false,
           "document": "排序\n现支持的 Key 有：\n\n- startTime(开始时间)\n- endTime(结束时间)\n- duration(响应时间)\n\n现支持的 Value 有：\n\n- desc(降序排序)\n- asc(升序排序)",
-          "example": "{\"Key\":\"service_duration_avg\",\"Value\":\"DESC\"}",
+          "example": "无",
           "member": "OrderBy",
           "name": "OrderBy",
           "required": false,
@@ -2095,7 +2105,7 @@
         {
           "disabled": false,
           "document": "聚合维度",
-          "example": "service.name",
+          "example": "[\"service.name\"]",
           "member": "string",
           "name": "GroupBy",
           "required": true,

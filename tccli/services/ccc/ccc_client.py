@@ -225,7 +225,7 @@ def doDescribeAILatency(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAutoCalloutTasks(args, parsed_globals):
+def doCreateExtension(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -254,11 +254,11 @@ def doDescribeAutoCalloutTasks(args, parsed_globals):
     client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAutoCalloutTasksRequest()
+    model = models.CreateExtensionRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeAutoCalloutTasks(model)
+        rsp = client.CreateExtension(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -485,7 +485,7 @@ def doDeleteCCCSkillGroup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyOwnNumberApply(args, parsed_globals):
+def doStopAutoCalloutTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -514,11 +514,11 @@ def doModifyOwnNumberApply(args, parsed_globals):
     client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyOwnNumberApplyRequest()
+    model = models.StopAutoCalloutTaskRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyOwnNumberApply(model)
+        rsp = client.StopAutoCalloutTask(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -537,7 +537,7 @@ def doModifyOwnNumberApply(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePredictiveDialingCampaign(args, parsed_globals):
+def doDisableCCCPhoneNumber(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -566,11 +566,11 @@ def doDescribePredictiveDialingCampaign(args, parsed_globals):
     client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePredictiveDialingCampaignRequest()
+    model = models.DisableCCCPhoneNumberRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribePredictiveDialingCampaign(model)
+        rsp = client.DisableCCCPhoneNumber(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1057,7 +1057,7 @@ def doDescribeExtensions(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateExtension(args, parsed_globals):
+def doDescribeAutoCalloutTasks(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1086,11 +1086,11 @@ def doCreateExtension(args, parsed_globals):
     client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateExtensionRequest()
+    model = models.DescribeAutoCalloutTasksRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateExtension(model)
+        rsp = client.DescribeAutoCalloutTasks(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1351,6 +1351,58 @@ def doDescribeCarrierPrivilegeNumberApplicants(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeCarrierPrivilegeNumberApplicants(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSkillGroupInfoList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSkillGroupInfoListRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeSkillGroupInfoList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1733,7 +1785,7 @@ def doTransferToManual(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSkillGroupInfoList(args, parsed_globals):
+def doDescribeStaffStatusHistory(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1762,11 +1814,11 @@ def doDescribeSkillGroupInfoList(args, parsed_globals):
     client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSkillGroupInfoListRequest()
+    model = models.DescribeStaffStatusHistoryRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeSkillGroupInfoList(model)
+        rsp = client.DescribeStaffStatusHistory(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1785,7 +1837,7 @@ def doDescribeSkillGroupInfoList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStopAutoCalloutTask(args, parsed_globals):
+def doModifyOwnNumberApply(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1814,11 +1866,63 @@ def doStopAutoCalloutTask(args, parsed_globals):
     client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopAutoCalloutTaskRequest()
+    model = models.ModifyOwnNumberApplyRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.StopAutoCalloutTask(model)
+        rsp = client.ModifyOwnNumberApply(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSessionDetail(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSessionDetailRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeSessionDetail(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2565,7 +2669,7 @@ def doDescribePredictiveDialingCampaigns(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDisableCCCPhoneNumber(args, parsed_globals):
+def doDescribePredictiveDialingCampaign(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2594,11 +2698,11 @@ def doDisableCCCPhoneNumber(args, parsed_globals):
     client = mod.CccClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DisableCCCPhoneNumberRequest()
+    model = models.DescribePredictiveDialingCampaignRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DisableCCCPhoneNumber(model)
+        rsp = client.DescribePredictiveDialingCampaign(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3880,13 +3984,13 @@ ACTION_MAP = {
     "UnbindNumberCallOutSkillGroup": doUnbindNumberCallOutSkillGroup,
     "ModifyStaff": doModifyStaff,
     "DescribeAILatency": doDescribeAILatency,
-    "DescribeAutoCalloutTasks": doDescribeAutoCalloutTasks,
+    "CreateExtension": doCreateExtension,
     "AbortAgentCruiseDialingCampaign": doAbortAgentCruiseDialingCampaign,
     "CreateAICall": doCreateAICall,
     "DescribeAgentCruiseDialingCampaign": doDescribeAgentCruiseDialingCampaign,
     "DeleteCCCSkillGroup": doDeleteCCCSkillGroup,
-    "ModifyOwnNumberApply": doModifyOwnNumberApply,
-    "DescribePredictiveDialingCampaign": doDescribePredictiveDialingCampaign,
+    "StopAutoCalloutTask": doStopAutoCalloutTask,
+    "DisableCCCPhoneNumber": doDisableCCCPhoneNumber,
     "DescribePSTNActiveSessionList": doDescribePSTNActiveSessionList,
     "BindNumberCallInInterface": doBindNumberCallInInterface,
     "DeleteExtension": doDeleteExtension,
@@ -3896,12 +4000,13 @@ ACTION_MAP = {
     "CreatePredictiveDialingCampaign": doCreatePredictiveDialingCampaign,
     "DeleteStaff": doDeleteStaff,
     "DescribeExtensions": doDescribeExtensions,
-    "CreateExtension": doCreateExtension,
+    "DescribeAutoCalloutTasks": doDescribeAutoCalloutTasks,
     "ResetExtensionPassword": doResetExtensionPassword,
     "CreateStaff": doCreateStaff,
     "DescribeAICallExtractResult": doDescribeAICallExtractResult,
     "DescribeExtension": doDescribeExtension,
     "DescribeCarrierPrivilegeNumberApplicants": doDescribeCarrierPrivilegeNumberApplicants,
+    "DescribeSkillGroupInfoList": doDescribeSkillGroupInfoList,
     "CreateCallOutSession": doCreateCallOutSession,
     "DescribeTelSession": doDescribeTelSession,
     "DescribeAutoCalloutTask": doDescribeAutoCalloutTask,
@@ -3909,8 +4014,9 @@ ACTION_MAP = {
     "CreateCompanyApply": doCreateCompanyApply,
     "DescribeTelCdr": doDescribeTelCdr,
     "TransferToManual": doTransferToManual,
-    "DescribeSkillGroupInfoList": doDescribeSkillGroupInfoList,
-    "StopAutoCalloutTask": doStopAutoCalloutTask,
+    "DescribeStaffStatusHistory": doDescribeStaffStatusHistory,
+    "ModifyOwnNumberApply": doModifyOwnNumberApply,
+    "DescribeSessionDetail": doDescribeSessionDetail,
     "DescribeIvrAudioList": doDescribeIvrAudioList,
     "BindNumberCallOutSkillGroup": doBindNumberCallOutSkillGroup,
     "UploadIvrAudio": doUploadIvrAudio,
@@ -3925,7 +4031,7 @@ ACTION_MAP = {
     "ModifyStaffPassword": doModifyStaffPassword,
     "DescribeStaffInfoList": doDescribeStaffInfoList,
     "DescribePredictiveDialingCampaigns": doDescribePredictiveDialingCampaigns,
-    "DisableCCCPhoneNumber": doDisableCCCPhoneNumber,
+    "DescribePredictiveDialingCampaign": doDescribePredictiveDialingCampaign,
     "DescribeStaffStatusMetrics": doDescribeStaffStatusMetrics,
     "DescribeTelCallInfo": doDescribeTelCallInfo,
     "CreateIVRSession": doCreateIVRSession,

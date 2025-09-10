@@ -66,6 +66,22 @@
         "title": "1"
       }
     ],
+    "DescribeAggrSoftDetail": [
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAggrSoftDetail\n<公共请求参数>\n\n{\n    \"Name\": \"1\",\n    \"OsType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Name\": \"1\",\n            \"OsType\": 0,\n            \"PiracyRisk\": 0,\n            \"Corp\": \"1\",\n            \"SoftVersionDist\": [\n                {\n                    \"Version\": \"1\",\n                    \"Num\": 0\n                }\n            ],\n            \"PiracyVersionDist\": [\n                {\n                    \"Version\": \"1\",\n                    \"Num\": 0\n                }\n            ],\n            \"InstalledDeviceNum\": 0,\n            \"PiracyInstalledDeviceNum\": 0,\n            \"InstalledUserNum\": 0,\n            \"PiracyInstalledUserNum\": 0,\n            \"AuthNum\": 0,\n            \"GenuineRate\": 0\n        },\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "DescribeAggrSoftDeviceList": [
+      {
+        "document": "~",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAggrSoftDeviceList\n<公共请求参数>\n\n{\n    \"Name\": \"1\",\n    \"OsType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Page\": {\n                \"PageSize\": 1,\n                \"PageNum\": 1,\n                \"PageCount\": 1,\n                \"Total\": 1\n            },\n            \"Total\": 0,\n            \"AggrSoftDeviceList\": [\n                {\n                    \"DeviceName\": \"1\",\n                    \"LastLoginAccount\": \"1\",\n                    \"DeviceUserName\": \"1\",\n                    \"Version\": \"1\",\n                    \"PiracyRisk\": 0,\n                    \"PiracyReason\": \"1\",\n                    \"InstallTime\": \"1\",\n                    \"UserPath\": \"1\",\n                    \"UserGroup\": \"1\",\n                    \"IP\": \"1\",\n                    \"MAC\": \"1\",\n                    \"UseTime\": 0,\n                    \"DeviceId\": 0,\n                    \"FullSoftName\": \"1\"\n                }\n            ]\n        },\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "~"
+      }
+    ],
     "DescribeDLPFileDetectResult": [
       {
         "document": "查询检测结果，结果失败",
@@ -86,6 +102,14 @@
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceChildGroups\n<公共请求参数>\n\n{\n    \"ParentId\": 92,\n    \"OsType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"BindAccount\": 0,\n                    \"Count\": 11,\n                    \"Description\": \"\",\n                    \"FromAuto\": 0,\n                    \"HasIp\": false,\n                    \"Icon\": \"\",\n                    \"Id\": 93,\n                    \"IdPath\": \"92.93\",\n                    \"IsLeaf\": true,\n                    \"Locked\": 0,\n                    \"Name\": \"未分组终端\",\n                    \"NamePath\": \"全网终端.未分组终端\",\n                    \"OsType\": 0,\n                    \"ParentId\": 92,\n                    \"ReadOnly\": false,\n                    \"Sort\": 0,\n                    \"WithIp\": 0\n                },\n                {\n                    \"BindAccount\": 0,\n                    \"Count\": 0,\n                    \"Description\": \"\",\n                    \"FromAuto\": 0,\n                    \"HasIp\": false,\n                    \"Icon\": \"\",\n                    \"Id\": 94,\n                    \"IdPath\": \"92.94\",\n                    \"IsLeaf\": true,\n                    \"Locked\": 0,\n                    \"Name\": \"服务器\",\n                    \"NamePath\": \"全网终端.服务器\",\n                    \"OsType\": 0,\n                    \"ParentId\": 92,\n                    \"ReadOnly\": false,\n                    \"Sort\": 0,\n                    \"WithIp\": 0\n                },\n                {\n                    \"BindAccount\": 0,\n                    \"Count\": 4,\n                    \"Description\": \"\",\n                    \"FromAuto\": 0,\n                    \"HasIp\": false,\n                    \"Icon\": \"\",\n                    \"Id\": 74700,\n                    \"IdPath\": \"92.74700\",\n                    \"IsLeaf\": false,\n                    \"Locked\": 2,\n                    \"Name\": \"TestBone\",\n                    \"NamePath\": \"全网终端.TestBone\",\n                    \"OsType\": 0,\n                    \"ParentId\": 92,\n                    \"ReadOnly\": false,\n                    \"Sort\": 0,\n                    \"WithIp\": 0\n                },\n                {\n                    \"BindAccount\": 1,\n                    \"Count\": 11,\n                    \"Description\": \"\",\n                    \"FromAuto\": 0,\n                    \"HasIp\": false,\n                    \"Icon\": \"\",\n                    \"Id\": 74699,\n                    \"IdPath\": \"92.74699\",\n                    \"IsLeaf\": false,\n                    \"Locked\": 2,\n                    \"Name\": \"Test-New\",\n                    \"NamePath\": \"全网终端.Test-New\",\n                    \"OsType\": 0,\n                    \"ParentId\": 92,\n                    \"ReadOnly\": false,\n                    \"Sort\": 0,\n                    \"WithIp\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"73d262a9-4c0f-4f68-bce2-3718f98c6494\"\n    }\n}",
         "title": "测试"
+      }
+    ],
+    "DescribeDeviceDetailList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceDetailList\n<公共请求参数>\n\n{\n    \"OsType\": 0,\n    \"GroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cfe7fa02-dfd7-4ff2-9b3f-4f645ad03ced\",\n        \"Data\": {\n            \"Page\": {\n                \"Total\": 0,\n                \"PageCount\": 0,\n                \"PageSize\": 1000,\n                \"PageNum\": 1\n            },\n            \"Items\": []\n        }\n    }\n}",
+        "title": "基于软件查看终端详情列表"
       }
     ],
     "DescribeDeviceHardwareInfoList": [
@@ -176,6 +200,20 @@
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVirtualDevices\n<公共请求参数>\n\n{\n    \"DeviceVirtualGroupId\": 356,\n    \"OsType\": 0,\n    \"Condition\": {\n        \"Filters\": [],\n        \"Sort\": {},\n        \"PageSize\": 10,\n        \"PageNum\": 1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce9f337a-55c4-4a44-8c0c-c32462e03da8\",\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"FirewallStatus\": 0,\n                    \"Locked\": 0,\n                    \"DeviceStrategyVer\": \"\",\n                    \"NGNStrategyVer\": \"\",\n                    \"IOAUserName\": \"\",\n                    \"DeviceNewStrategyVer\": \"\",\n                    \"NGNNewStrategyVer\": \"2022-07-28 15:21:00\",\n                    \"HostName\": \"\",\n                    \"UserName\": \"niozhang\",\n                    \"Version\": \"28429406901371100\",\n                    \"Itime\": \"2022-10-21T15:21:37.460778+08:00\",\n                    \"Os\": \"\",\n                    \"Mid\": \"13fabc68a4834ba08d14afa179b7193863524881\",\n                    \"GroupId\": 42632,\n                    \"GroupName\": \"未分组终端\",\n                    \"Ip\": \"106.55.201.137\",\n                    \"OnlineStatus\": 0,\n                    \"SerialNum\": \"\",\n                    \"StrVersion\": \"101.101.7048.220\",\n                    \"Tags\": \"\",\n                    \"GroupNamePath\": \"全网终端.未分组终端\",\n                    \"Id\": 25902,\n                    \"ConnActiveTime\": \"\",\n                    \"LocalIpList\": \"\",\n                    \"HostId\": 0,\n                    \"Name\": \"BindDeviceTest1666336897217\",\n                    \"OsType\": 0,\n                    \"CriticalVulListCount\": 0,\n                    \"OsBits\": 0,\n                    \"OsVersion\": \"\",\n                    \"OsLanguage\": \"\",\n                    \"OsInstallDate\": \"\",\n                    \"ComputerName\": \"BindDeviceTest1666336897217\",\n                    \"DomainName\": \"\",\n                    \"MacAddr\": \"\",\n                    \"VulCount\": 0,\n                    \"RiskCount\": 0,\n                    \"VirusVer\": \"\",\n                    \"VulVersion\": \"\",\n                    \"SysRepVersion\": \"\",\n                    \"VulCriticalList\": []\n                }\n            ],\n            \"Paging\": {\n                \"PageNum\": 1,\n                \"Total\": 1,\n                \"PageCount\": 1,\n                \"PageSize\": 10\n            }\n        }\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "ExportSoftwareInformationList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportSoftwareInformationList\n<公共请求参数>\n\n{\n    \"Mid\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c1f66e2-90aa-4253-8e32-4abddb044170\",\n        \"Data\": {\n            \"DownloadURL\": \"https://ioa-dev-1-1258344699.cos-internal.ap-guangzhou.tencentcos.cn/software-open-api/software/ygM3Vgff7j-%E8%BD%AF%E4%BB%B6%E7%BB%9F%E8%AE%A1-%E6%8C%89%E7%BB%88%E7%AB%AF%E6%9F%A5%E7%9C%8B-%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A82022-11-10%2018%3A15%3A07.csv?q-sign-algorithm=sha1&q-ak=AKID******&q-sign-time=1668075307%3B1668078907&q-key-time=1668075307%3B1668078907&q-header-list=host&q-url-param-list=&q-signature=9b2cf4e463a138d9b29dcee9aceb1e21aa8ecffd\"\n        }\n    }\n}",
+        "title": "导出软件信息列表"
+      },
+      {
+        "document": "测试下载",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportSoftwareInformationList\n<公共请求参数>\n\n{\n    \"Mid\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DownloadURL\": \"http://xxx\",\n            \"TaskId\": 0\n        },\n        \"RequestId\": \"e36ff231-6bbc-475d-9e26-dd0d59260b55\"\n    }\n}",
+        "title": "测试下载"
       }
     ],
     "ModifyVirtualDeviceGroups": [

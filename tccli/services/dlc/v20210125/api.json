@@ -13095,12 +13095,95 @@
     },
     "DescribeTablePartitionsRequest": {
       "document": "DescribeTablePartitions请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录名称",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "Catalog",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "test_db",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据表名称",
+          "example": "test_tb",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询偏移位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当次查询的数量限制",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模糊查询的分区名称",
+          "example": "2023-12-23",
+          "member": "string",
+          "name": "FuzzyPartition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序信息",
+          "example": "无",
+          "member": "Sort",
+          "name": "Sorts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询的游标信息",
+          "example": "pt=name",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeTablePartitionsResponse": {
       "document": "DescribeTablePartitions返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "分区信息值",
+          "example": "无",
+          "member": "MixedTablePartitions",
+          "name": "MixedPartitions",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -16196,6 +16279,72 @@
       ],
       "usage": "both"
     },
+    "HiveTablePartition": {
+      "document": "Hive表分区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区信息名称",
+          "example": "pt=20240520",
+          "member": "string",
+          "name": "Partition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区记录数",
+          "example": "1000",
+          "member": "int64",
+          "name": "Records",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区数据文件存储量",
+          "example": "100",
+          "member": "int64",
+          "name": "DataFileStorage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区创建时间",
+          "example": "2025-06-03T22:07:11.733+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区schema更新时间",
+          "example": "2025-06-03T22:07:11.733+08:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一次分区更新的访问时间",
+          "example": "2025-06-03T22:07:11.733+08:00",
+          "member": "string",
+          "name": "LastAccessTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "HouseEventsInfo": {
       "document": "集群事件日志",
       "members": [
@@ -16228,6 +16377,92 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "IcebergTablePartition": {
+      "document": "Iceberg表分区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区信息名称",
+          "example": "pt=20240520",
+          "member": "string",
+          "name": "Partition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区记录数",
+          "example": "1000",
+          "member": "int64",
+          "name": "Records",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区数据文件数量",
+          "example": "100",
+          "member": "int64",
+          "name": "DataFileSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区数据文件存储量",
+          "example": "100",
+          "member": "int64",
+          "name": "DataFileStorage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区创建时间",
+          "example": "2025-06-03T22:07:11.733+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区更新时间",
+          "example": "2025-06-03T22:07:11.733+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一次分区更新的快照ID",
+          "example": "2025-06-03T22:07:11.733+08:00",
+          "member": "string",
+          "name": "LastUpdateSnapshotId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区的location",
+          "example": "无",
+          "member": "LocationInfo",
+          "name": "Location",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16784,6 +17019,32 @@
       ],
       "type": "object"
     },
+    "LocationInfo": {
+      "document": "Location信息结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "桶名称",
+          "example": "my_tb",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "location路径",
+          "example": "my_tb/data",
+          "member": "string",
+          "name": "DataLocation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LockComponentInfo": {
       "document": "元数据加锁内容",
       "members": [
@@ -16952,6 +17213,62 @@
         }
       ],
       "type": "object"
+    },
+    "MixedTablePartitions": {
+      "document": "DLC分区信息查询返回数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据表格式",
+          "example": "ICEBERG",
+          "member": "string",
+          "name": "TableFormat",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区总数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页查询的游标信息，在获取下一页信息时需要回传到服务端",
+          "example": "pt=name",
+          "member": "string",
+          "name": "NextCursor",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "iceberg表分区信息",
+          "example": "无",
+          "member": "IcebergTablePartition",
+          "name": "IcebergPartitions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "hive表分区信息",
+          "example": "无",
+          "member": "HiveTablePartition",
+          "name": "HivePartitions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ModifyAdvancedStoreLocationRequest": {
       "document": "ModifyAdvancedStoreLocation请求参数结构体",
@@ -20218,6 +20535,30 @@
         }
       ],
       "usage": "both"
+    },
+    "Sort": {
+      "document": "排序结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "create_time",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否按照ASC排序，否则DESC排序",
+          "example": "true",
+          "member": "bool",
+          "name": "Asc",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     },
     "SparkJobInfo": {
       "document": "spark作业详情。",

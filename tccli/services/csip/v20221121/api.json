@@ -597,7 +597,7 @@
         },
         {
           "disabled": false,
-          "document": "ak具体值\\n\n临时密钥时返回临时密钥",
+          "document": "ak具体值 临时密钥时返回临时密钥",
           "example": "AKID********",
           "member": "string",
           "name": "Name",
@@ -684,7 +684,7 @@
         {
           "disabled": false,
           "document": "访问密钥",
-          "example": "AKID*******dy5xs",
+          "example": "AKID********",
           "member": "string",
           "name": "AccessKey",
           "output_required": true,
@@ -744,7 +744,7 @@
         {
           "disabled": false,
           "document": "告警标签",
-          "example": "[\"主账号AK\"，“权限过高”]",
+          "example": "[\"主账号AK\",\"权限过高\"]",
           "member": "string",
           "name": "Tag",
           "output_required": true,
@@ -804,7 +804,7 @@
         {
           "disabled": false,
           "document": "所属appid",
-          "example": "13050*14",
+          "example": "1234567",
           "member": "int64",
           "name": "AppID",
           "output_required": true,
@@ -814,11 +814,41 @@
         {
           "disabled": false,
           "document": "泄漏证据",
-          "example": "[url1,url2]",
+          "example": "[\"url1\",\"url2\"]",
           "member": "string",
           "name": "LeakEvidence",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持编辑信任账号",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSupportEditWhiteAccount",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警证据",
+          "example": "“{   \"Type\": \"Login\",   \"Login\": [     {       \"LoginTime\": \"2025-08-27T20:21:19Z\",       \"Ip\": \"192.168.1.1\",       \"Country\": 86,       \"Province\": 44,       \"City\": 1     },”",
+          "member": "string",
+          "name": "Evidence",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警规则标识",
+          "example": "AbnormalLogin",
+          "member": "string",
+          "name": "RuleKey",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -902,7 +932,7 @@
         {
           "disabled": false,
           "document": "AK名称",
-          "example": "AKIDf12*****c192rb",
+          "example": "AKID********",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -922,7 +952,7 @@
         {
           "disabled": false,
           "document": "账号所属APPID",
-          "example": "120407**01",
+          "example": "1200000001",
           "member": "int64",
           "name": "AppID",
           "output_required": true,
@@ -992,7 +1022,7 @@
         {
           "disabled": false,
           "document": "告警信息列表",
-          "example": "告警列表",
+          "example": "无",
           "member": "AccessKeyAlarmInfo",
           "name": "AccessKeyAlarmList",
           "output_required": true,
@@ -1002,7 +1032,7 @@
         {
           "disabled": false,
           "document": "风险信息列表",
-          "example": "风险列表",
+          "example": "无",
           "member": "AccessKeyAlarmInfo",
           "name": "AccessKeyRiskList",
           "output_required": true,
@@ -1041,7 +1071,7 @@
         },
         {
           "disabled": false,
-          "document": "AK状态 \n0:禁用\n1:已启用",
+          "document": "AK状态 \n0:禁用\n1:已启用\n2:已删除(已在cam侧删除，安全中心仍然存留之前的记录)",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -1118,7 +1148,7 @@
         {
           "disabled": false,
           "document": "访问密钥",
-          "example": "AKID*******dy5xs",
+          "example": "AKID********",
           "member": "string",
           "name": "AccessKey",
           "output_required": true,
@@ -1168,7 +1198,7 @@
         {
           "disabled": false,
           "document": "风险标签",
-          "example": "[\"主账号AK\"，“权限过高”]",
+          "example": "[\"主账号AK\"]",
           "member": "string",
           "name": "Tag",
           "output_required": true,
@@ -1258,11 +1288,21 @@
         {
           "disabled": false,
           "document": "所属appid",
-          "example": "13050*14",
+          "example": "120000001",
           "member": "int64",
           "name": "AppID",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应风险的查询参数",
+          "example": "accUin:100**01 AND module:a AND action:b",
+          "member": "string",
+          "name": "QueryParam",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -6599,7 +6639,7 @@
         {
           "disabled": false,
           "document": "访问密钥",
-          "example": "AKID******fzD8s",
+          "example": "AKID********",
           "member": "string",
           "name": "AccessKey",
           "output_required": true,
@@ -6799,7 +6839,7 @@
         {
           "disabled": false,
           "document": "appid",
-          "example": "10852**92",
+          "example": "1000130",
           "member": "int64",
           "name": "AppID",
           "output_required": true,
@@ -6829,9 +6869,19 @@
         {
           "disabled": false,
           "document": "账号外vpc信息列表",
-          "example": "账号外vpc信息列表",
+          "example": "无",
           "member": "SourceIPVpcInfo",
           "name": "VpcInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用请求客户端列表",
+          "example": "[\"SDK_GO_1.0.xxx\",\"SDK_Java_1.0.xxx\"]",
+          "member": "string",
+          "name": "ReqClient",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false

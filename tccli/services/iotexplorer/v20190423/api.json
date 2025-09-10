@@ -7780,6 +7780,15 @@
           "name": "FirmwareVersion",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "固件模块",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7820,7 +7829,7 @@
         {
           "disabled": false,
           "document": "固件描述",
-          "example": "ttttt",
+          "example": "固件测试",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -8019,6 +8028,86 @@
           "member": "string",
           "name": "CreatorNickName",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "延迟时间",
+          "example": "10",
+          "member": "uint64",
+          "name": "DelayTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超时时间",
+          "example": "10",
+          "member": "uint64",
+          "name": "TimeoutInterval",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "静默升级or用户确认升级",
+          "example": "0",
+          "member": "uint64",
+          "name": "UpgradeMethod",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大重试次数",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxRetryNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "固件类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重试间隔时间单位min",
+          "example": "1",
+          "member": "uint64",
+          "name": "RetryInterval",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否覆盖任务",
+          "example": "1",
+          "member": "uint64",
+          "name": "OverrideMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义消息",
+          "example": "{\"data\": 1}",
+          "member": "string",
+          "name": "TaskUserDefine",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10941,6 +11030,15 @@
           "name": "FileSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模块类型or固件类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11008,6 +11106,15 @@
         },
         {
           "disabled": false,
+          "document": "固件类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "需要过滤的设备名称",
           "example": "1",
           "member": "string",
@@ -11027,7 +11134,7 @@
         {
           "disabled": false,
           "document": "每次请求的Filters的上限为10，Filter.Values的上限为1。",
-          "example": "NA",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -12304,6 +12411,42 @@
           "name": "TimeZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "取值为1表示高级搜索，取值为2表示简单搜索，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "SearchMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最终输出的条数；仅当SearchMode为2时支持自定义设置，默认为50",
+          "example": "50",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "向量搜索的相似度搜索半径，取值范围[-1, 1]；仅当SearchMode为2时支持自定义设置，默认为0.5",
+          "example": "0.5",
+          "member": "float",
+          "name": "VectorSearchRadius",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "指定向量搜索最相似的 Top K；仅当SearchMode为2时支持自定义设置，默认为100",
+          "example": "100",
+          "member": "int64",
+          "name": "VectorSearchTopK",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -15899,6 +16042,15 @@
           "example": "d1",
           "member": "string",
           "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "固件类型",
+          "example": "mcu",
+          "member": "string",
+          "name": "FwType",
           "required": false,
           "type": "string"
         }

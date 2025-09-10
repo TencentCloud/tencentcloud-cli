@@ -80,7 +80,7 @@
     "CreateInstanceAccount": {
       "document": "本接口（CreateInstanceAccount）用于自定义访问实例的账号。",
       "input": "CreateInstanceAccountRequest",
-      "name": "创建实例子账号",
+      "name": "自定义实例账号",
       "output": "CreateInstanceAccountResponse",
       "status": "online"
     },
@@ -575,9 +575,9 @@
       "status": "online"
     },
     "ModifyInstanceAccount": {
-      "document": "本接口（ModifyInstanceAccount）用于修改实例子账号。",
+      "document": "本接口（ModifyInstanceAccount）用于修改实例账号。",
       "input": "ModifyInstanceAccountRequest",
-      "name": "修改实例子账号",
+      "name": "修改实例账号",
       "output": "ModifyInstanceAccountResponse",
       "status": "online"
     },
@@ -1605,6 +1605,15 @@
           "name": "Password",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否加密密码",
+          "example": "false",
+          "member": "bool",
+          "name": "EncryptPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1691,7 +1700,7 @@
         {
           "disabled": false,
           "document": "克隆实例使用的备份ID。请通过接口[DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011)获取备份ID。",
-          "example": "154572601-1165734322-153731238",
+          "example": "154572601-1165734322-153705740",
           "member": "string",
           "name": "BackupId",
           "required": true,
@@ -1736,7 +1745,7 @@
         {
           "disabled": false,
           "document": "克隆实例的访问密码。<ul><li>当输入参数<b>NoAuth</b>为<b>true</b>时，可不设置该参数。</li><li>当实例为Redis2.8、4.0和5.0时，其密码格式为：8-30个字符，至少包含小写字母、大写字母、数字和字符 ()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头；</li><li>当实例为CKV 3.2时，其密码格式为：8-30个字符，必须包含字母和数字，且不包含其他字符。</li></ul>",
-          "example": "123456MyP@ssword",
+          "example": "305961MyP@ssword",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -1799,7 +1808,7 @@
         {
           "disabled": false,
           "document": "指定克隆实例的告警策略 ID。请登录[腾讯云可观测平台控制台](https://console.cloud.tencent.com/monitor/alarm2/policy)，在 <b>告警管理</b> > <b>策略管理</b>页面获取策略 ID 信息。",
-          "example": "policy-ny3vfcp0",
+          "example": "[\"policy-ny3vfcp0\"]",
           "member": "string",
           "name": "AlarmPolicyList",
           "required": false,
@@ -1813,6 +1822,15 @@
           "name": "CloneTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否加密密码",
+          "example": "false",
+          "member": "bool",
+          "name": "EncryptPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1953,7 +1971,7 @@
         },
         {
           "disabled": false,
-          "document": "账户读写权限，支持选择只读与读写权限。\n- r：只读\n- rw: 读写权限",
+          "document": "账户读写权限，支持选择只读与读写权限。\n- r：只读。\n- rw: 读写。",
           "example": "rw",
           "member": "string",
           "name": "Privilege",
@@ -1962,12 +1980,21 @@
         },
         {
           "disabled": false,
-          "document": "子账号描述信息，长度[0,64] 字节，支持中文。",
+          "document": "账号备注描述信息，长度为[0,64] 字节，支持中文。",
           "example": "\"生产账号\"",
           "member": "string",
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否加密密码",
+          "example": "false",
+          "member": "bool",
+          "name": "EncryptPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1977,7 +2004,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID。",
           "example": "29600111",
           "member": "int64",
           "name": "TaskId",
@@ -2054,7 +2081,7 @@
         {
           "disabled": false,
           "document": "访问实例的密码。\n- 当输入参数**NoAuth**为**true**时，指设置实例为免密码访问，Password可不用配置，否则Password为必填参数。\n- 当实例类型**TypeId**为Redis 2.8 内存版标准架构、Redis 4.0、5.0、6.2、7.0内存版标准架构或集群架构时，其密码复杂度要求为：8-64个字符，至少包含小写字母、大写字母、数字和字符()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头。\n- 当实例类型**TypeId**为CKV 3.2 内存版标准架构或集群架构时，其密码复杂度为：8-30个字符，必须包含字母和数字，且不包含其他字符。",
-          "example": "123456MyP@ssword",
+          "example": "260945MyP@ssword",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -2230,6 +2257,15 @@
           "name": "AlarmPolicyList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否加密密码",
+          "example": "false",
+          "member": "bool",
+          "name": "EncryptPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2250,7 +2286,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "\"crs-bzssy0cp\",\"crs-a47h97c1\"",
+          "example": "[\"crs-bzssy0cp\",\"crs-a47h97c1\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
@@ -2271,7 +2307,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板名称。",
+          "document": "参数模板名称。字符长度要求为[2,64]。",
           "example": "自定义参数模板",
           "member": "string",
           "name": "Name",
@@ -2289,7 +2325,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。",
+          "document": "产品类型。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。",
           "example": "6",
           "member": "uint64",
           "name": "ProductType",
@@ -2420,7 +2456,7 @@
         {
           "disabled": false,
           "document": "修改时间。",
-          "example": "0",
+          "example": "1718073070",
           "member": "int64",
           "name": "Updatetime",
           "output_required": true,
@@ -3410,7 +3446,7 @@
         {
           "disabled": false,
           "document": "备份任务的状态：\n1：备份在流程中。\n2：备份正常。\n3：备份转RDB文件处理中。\n4：已完成RDB转换。\n-1：备份已过期。\n-2：备份已删除。",
-          "example": "2",
+          "example": "[2]",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -3805,7 +3841,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance)在实例列表复制实例 ID。",
           "example": "crs-d8ej0xn2",
           "member": "string",
           "name": "InstanceId",
@@ -4324,7 +4360,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "实例 ID 。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -4333,7 +4369,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "分页大小。默认为100，最大值为 200。",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -4342,7 +4378,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，取Limit整数倍",
+          "document": "偏移量，取Limit整数倍，默认值为0。计算公式：offset=limit*(页码-1)。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -4466,8 +4502,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 列表，数组长度限制[0,100]。例如：[\"crs-f2ho5rsz\\n\"]",
-          "example": "[\"crs-f2ho5rsz\\n\"]",
+          "document": "实例 ID 列表，数组长度限制[0,100]。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
+          "example": "[\"crs-f2ho5rsz\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -5443,7 +5479,7 @@
         {
           "disabled": false,
           "document": "Redis独享集群 ID。请登录[专用集群控制台](https://console.cloud.tencent.com/cdc/dedicatedcluster/index?rid=1\n)切换至**云服务管理**页面，在下拉框选择**云数据库 Redis**，可获取独享集群ID。",
-          "example": "['crs-cdc-p8ktf94h']",
+          "example": "[\"crs-cdc-p8ktf94h\"]",
           "member": "string",
           "name": "RedisClusterIds",
           "required": false,
@@ -6421,7 +6457,7 @@
         {
           "disabled": false,
           "document": "实例ID列表，一个或者多个实例 ID 组成的数组。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
-          "example": "[\"crs-eb2w7dto\\n\"]",
+          "example": "[\"crs-eb2w7dto\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -7768,8 +7804,8 @@
         },
         {
           "disabled": false,
-          "document": "用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。\n",
-          "example": "1310******",
+          "document": "用户AppId。AppId是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 AppId。\n",
+          "example": "13103214145",
           "member": "int64",
           "name": "Appid",
           "output_required": true,
@@ -7869,7 +7905,7 @@
         {
           "disabled": false,
           "document": "实例内存容量大小。单位：MB，1MB=1024KB。",
-          "example": "1451",
+          "example": "1451.0",
           "member": "float",
           "name": "Size",
           "output_required": true,
@@ -7879,7 +7915,7 @@
         {
           "disabled": true,
           "document": "该字段已废弃。请使用腾讯云可观测平台API 接口 [GetMonitorData](https://cloud.tencent.com/document/product/248/31014) 获取实例已使用的内存容量。",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "SizeUsed",
           "output_required": true,
@@ -7999,7 +8035,7 @@
         {
           "disabled": false,
           "document": "反亲和性标签。",
-          "example": "antiaffinity-tag-name",
+          "example": "[\"tag1\"]",
           "member": "string",
           "name": "Tags",
           "output_required": true,
@@ -8089,7 +8125,7 @@
         {
           "disabled": false,
           "document": "项目名称。",
-          "example": "Default",
+          "example": "project",
           "member": "string",
           "name": "ProjectName",
           "output_required": true,
@@ -8344,6 +8380,16 @@
           "name": "BackupMode",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除保护开关，0关闭，1开启",
+          "example": "0",
+          "member": "int64",
+          "name": "DeleteProtectionSwitch",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -8934,6 +8980,15 @@
           "name": "Password",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否加密密码",
+          "example": "false",
+          "member": "bool",
+          "name": "EncryptPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9140,7 +9195,7 @@
         },
         {
           "disabled": false,
-          "document": "附加带宽，大于0，单位MB。",
+          "document": "附加带宽，大于0，单位MB。\n**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。",
           "example": "5",
           "member": "int64",
           "name": "Bandwidth",
@@ -9149,7 +9204,7 @@
         },
         {
           "disabled": false,
-          "document": "单分片的总连接数。\n- 未开启副本只读时，下限为10000，上限为40000。\n- 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。",
+          "document": "单分片的总连接数。\n- 未开启副本只读时，下限为10000，上限为40000。\n- 开启副本只读时，下限为10000，上限为10000×(只读副本数+3)。\n**说明**：Bandwidth 和 ClientLimit 参数不能同时为空，您必须至少选择其中一个进行配置。",
           "example": "20000",
           "member": "int64",
           "name": "ClientLimit",
@@ -9240,7 +9295,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号名称，如果要修改主账号，填 root。",
+          "document": "指定需修改的账号。\n- root：指在创建 Redis 数据库实例时自动生成的账号。用户无法修改其读写权限，仅可修改其请求路由策略。\n- 自定义的账号：用户在实例创建成功后手动创建的账号。用户可以随时修改其读写权限与请求路由策略。",
           "example": "example_name",
           "member": "string",
           "name": "AccountName",
@@ -9249,7 +9304,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号密码。",
+          "document": "指定所修改账号访问的密码。",
           "example": "redis***",
           "member": "string",
           "name": "AccountPassword",
@@ -9258,7 +9313,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号描述信息",
+          "document": "账号描述信息",
           "example": "some account instruction",
           "member": "string",
           "name": "Remark",
@@ -9267,7 +9322,7 @@
         },
         {
           "disabled": false,
-          "document": "账号读写路由策略。\n- master：表示主节点。\n- replication：表示从节点。",
+          "document": "指定所修改账号读写请求路由的策略。\n- master：表示读写请求路由至主节点。\n- replication：表示读写请求路由至从节点。",
           "example": "master",
           "member": "string",
           "name": "ReadonlyPolicy",
@@ -9276,7 +9331,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号读写策略。\n- r：只读。\n- w：只写。\n- rw：读写。",
+          "document": "指定所修改账号的读写权限。\n- r：只读。\n- w：只写。\n- rw：读写。",
           "example": "rw",
           "member": "string",
           "name": "Privilege",
@@ -9285,10 +9340,19 @@
         },
         {
           "disabled": false,
-          "document": "指定是否将主账号切换为免密账号。这里只适用于主账号，子账号不可免密。\n- true：将主账号切换为免密账号。\n- false：不切换。",
+          "document": "指定是否将默认账号（root）设置为免密账号。自定义账号不支持免密访问。\n- true：默认账号（root）设置为免密账号。\n- false：默认账号（root）不设置为免密账号。",
           "example": "true",
           "member": "bool",
           "name": "NoAuth",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "指定所修改的账号是否加密密码",
+          "example": "false",
+          "member": "bool",
+          "name": "EncryptPassword",
           "required": false,
           "type": "bool"
         }
@@ -9300,7 +9364,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID。",
           "example": "11011",
           "member": "int64",
           "name": "TaskId",
@@ -9770,7 +9834,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改实例操作。如填写：\n- rename：表示实例重命名。\n- modifyProject：修改实例所属项目。\n- modifyAutoRenew：修改实例续费标记。",
+          "document": "修改实例操作。如填写：\n- rename：表示实例重命名。\n- modifyProject：修改实例所属项目。\n- modifyAutoRenew：修改实例续费标记。\n- modifyDeleteProtectionSwitch：修改实例删除保护。",
           "example": "rename",
           "member": "string",
           "name": "Operation",
@@ -9810,6 +9874,15 @@
           "example": "[1,0]",
           "member": "int64",
           "name": "AutoRenews",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "删除保护开关。- 0：默认状态，指关闭。- 1：开关打开。",
+          "example": "[1,0]",
+          "member": "int64",
+          "name": "DeleteProtectionSwitches",
           "required": false,
           "type": "list"
         },
@@ -11488,6 +11561,15 @@
           "name": "NoAuth",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否加密密码",
+          "example": "false",
+          "member": "bool",
+          "name": "EncryptPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11579,7 +11661,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待操作的实例ID，可通过 DescribeInstances 接口返回值中的 InstanceId 获取。",
+          "document": "待操作的实例ID，可通过 [DescribeInstances](https://cloud.tencent.com/document/product/239/20018) 接口返回值中的 InstanceId 获取。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -11588,8 +11670,8 @@
         },
         {
           "disabled": false,
-          "document": "备份ID，可通过 GetRedisBackupList 接口返回值中的 backupId 获取",
-          "example": "678362566696298532848117",
+          "document": "备份ID，可通过 [DescribeInstanceBackups](https://cloud.tencent.com/document/product/239/20011) 接口返回的参数 RedisBackupSet 获取。",
+          "example": "\"154572601-1165734321-153731245\"",
           "member": "string",
           "name": "BackupId",
           "required": true,

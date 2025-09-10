@@ -336,6 +336,13 @@
       "output": "DescribeProtectedTelCdrResponse",
       "status": "online"
     },
+    "DescribeSessionDetail": {
+      "document": "获取通话详情",
+      "input": "DescribeSessionDetailRequest",
+      "name": "查询通话详情",
+      "output": "DescribeSessionDetailResponse",
+      "status": "online"
+    },
     "DescribeSkillGroupInfoList": {
       "document": "获取技能组信息列表",
       "input": "DescribeSkillGroupInfoListRequest",
@@ -348,6 +355,13 @@
       "input": "DescribeStaffInfoListRequest",
       "name": "获取坐席信息列表",
       "output": "DescribeStaffInfoListResponse",
+      "status": "online"
+    },
+    "DescribeStaffStatusHistory": {
+      "document": "查询座席状态历史",
+      "input": "DescribeStaffStatusHistoryRequest",
+      "name": "查询座席状态历史",
+      "output": "DescribeStaffStatusHistoryResponse",
       "status": "online"
     },
     "DescribeStaffStatusMetrics": {
@@ -5866,6 +5880,290 @@
       ],
       "type": "object"
     },
+    "DescribeSessionDetailRequest": {
+      "document": "DescribeSessionDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通话的 session id",
+          "example": "6164325c-39aa-45dc-83e2-2ecbc9b37ad5",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间戳，Unix 秒级时间戳，最大支持近180天。",
+          "example": "1756372067",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。",
+          "example": "1756372167",
+          "member": "int64",
+          "name": "EndTimestamp",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSessionDetailResponse": {
+      "document": "DescribeSessionDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主叫号码",
+          "example": "0086130xxxxxxxx",
+          "member": "string",
+          "name": "Caller",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被叫号码",
+          "example": "0086010xxxxxxxx",
+          "member": "string",
+          "name": "Callee",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通话类型 1 呼出 2 呼入 3 音频呼入 5 预测式外呼 6 内线呼叫",
+          "example": "1",
+          "member": "int64",
+          "name": "CallType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳，Unix 秒级时间戳",
+          "example": "1611631881",
+          "member": "int64",
+          "name": "StartTimeStamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "振铃时间戳，UNIX 秒级时间戳",
+          "example": "1611631885",
+          "member": "int64",
+          "name": "RingTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接听时间戳，UNIX 秒级时间戳",
+          "example": "1611631891",
+          "member": "int64",
+          "name": "AcceptTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳，UNIX 秒级时间戳",
+          "example": "1611631991",
+          "member": "int64",
+          "name": "EndedTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进入排队时间，Unix 秒级时间戳",
+          "example": "1611631889",
+          "member": "int64",
+          "name": "QueuedTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席账号",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "StaffUserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参考 DescribeTelCdr 接口 EndStatus 字段",
+          "example": "1",
+          "member": "int64",
+          "name": "EndStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排队技能组 ID",
+          "example": "203",
+          "member": "int64",
+          "name": "QueuedSkillGroupId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排队技能组名称",
+          "example": "销售组",
+          "member": "string",
+          "name": "QueuedSkillGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录音链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接",
+          "example": "https://xxxxx",
+          "member": "string",
+          "name": "RecordURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录音转存第三方 COS 链接",
+          "example": "https://xxxxx",
+          "member": "string",
+          "name": "CustomRecordURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录音文本信息链接，带鉴权和有效期，获取之后请在短时间内拉取，不要持久化此链接",
+          "example": "https://xxxxx",
+          "member": "string",
+          "name": "AsrURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音留言录音链接",
+          "example": "[\"https://xxxxx\"]",
+          "member": "string",
+          "name": "VoicemailRecordURL",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音留言录音文本信息链接，需在控制台购买离线语音识别套餐包并开启离线语音识别开关",
+          "example": "[\"https://xxxxx\"]",
+          "member": "string",
+          "name": "VoicemailAsrURL",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IVR 按键信息",
+          "example": "无",
+          "member": "IVRKeyPressedElement",
+          "name": "IVRKeyPressed",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "满意度按键信息",
+          "example": "无",
+          "member": "IVRKeyPressedElement",
+          "name": "PostIVRKeyPressed",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂机方 seat 座席 user 用户 system 系统",
+          "example": "user",
+          "member": "string",
+          "name": "HungUpSide",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户自定义数据（User-to-User Interface）",
+          "example": "foo-bar",
+          "member": "string",
+          "name": "UUI",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通话中的事件列表",
+          "example": "无",
+          "member": "SessionEvent",
+          "name": "Events",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务参与者列表",
+          "example": "无",
+          "member": "ServeParticipant",
+          "name": "ServeParticipants",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSkillGroupInfoListRequest": {
       "document": "DescribeSkillGroupInfoList请求参数结构体",
       "members": [
@@ -6038,6 +6336,88 @@
           "member": "StaffInfo",
           "name": "StaffList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStaffStatusHistoryRequest": {
+      "document": "DescribeStaffStatusHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "座席账号",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "StaffUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间戳，Unix 秒级时间戳，最大支持近180天。",
+          "example": "1753925234",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于 7 天。",
+          "example": "1753926234",
+          "member": "int64",
+          "name": "EndTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页检索时使用的游标",
+          "example": "foo-and-bar",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页尺寸",
+          "example": "1000",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStaffStatusHistoryResponse": {
+      "document": "DescribeStaffStatusHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "座席状态数据",
+          "example": "无",
+          "member": "StaffStatus",
+          "name": "Data",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6539,6 +6919,51 @@
         }
       ],
       "usage": "out"
+    },
+    "EventStaffDetail": {
+      "document": "座席事件相关详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "座席数据",
+          "example": "无",
+          "member": "EventStaffElement",
+          "name": "Staffs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EventStaffElement": {
+      "document": "座席信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "座席邮箱账号",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "Mail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席工号",
+          "example": "9527",
+          "member": "string",
+          "name": "StaffNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ExtensionInfo": {
       "document": "话机信息",
@@ -8546,6 +8971,45 @@
       ],
       "usage": "in"
     },
+    "SessionEvent": {
+      "document": "通话事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件时间戳，Unix 秒级时间戳",
+          "example": "1756372067",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件类型，目前支持 StaffHold StaffUnhold StaffMute StaffUnmute",
+          "example": "StaffHold",
+          "member": "string",
+          "name": "EventType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席相关事件详情",
+          "example": "无",
+          "member": "EventStaffDetail",
+          "name": "StaffEventDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SkillGroupInfoItem": {
       "document": "技能组信息",
       "members": [
@@ -8893,6 +9357,56 @@
         }
       ],
       "usage": "in"
+    },
+    "StaffStatus": {
+      "document": "座席状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询使用的游标，分页场景使用",
+          "example": "foo-and-bar",
+          "member": "string",
+          "name": "Cursor",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态时间戳，Unix 秒级时间戳",
+          "example": "1756297161",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线",
+          "example": "free",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态关联的会话 Id",
+          "example": "aaed24da-c8a5-412f-a346-157f2316ae75",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "StaffStatusExtra": {
       "document": "座席状态补充信息",

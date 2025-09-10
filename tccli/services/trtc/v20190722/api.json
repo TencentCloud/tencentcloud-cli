@@ -6588,7 +6588,7 @@
         {
           "disabled": false,
           "document": "**发起模糊识别为高级版能力,默认按照高级版收费,仅支持填写基础版和高级版语言.**\n注意：不支持填写\"zh-dialect\"",
-          "example": "无",
+          "example": "[\"en\",\"jp\"]",
           "member": "string",
           "name": "AlternativeLanguage",
           "required": false,
@@ -6597,7 +6597,7 @@
         {
           "disabled": true,
           "document": "目前已不支持",
-          "example": "无",
+          "example": "discarded",
           "member": "string",
           "name": "Model",
           "required": false,
@@ -6627,6 +6627,15 @@
           "example": "1000",
           "member": "uint64",
           "name": "VadSilenceTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "vad的远场人声抑制能力（不会对asr识别效果造成影响），范围为[0, 3]，默认为0。推荐设置为2，有较好的远场人声抑制能力。",
+          "example": "1",
+          "member": "uint64",
+          "name": "VadLevel",
           "required": false,
           "type": "int"
         }
@@ -7633,7 +7642,7 @@
         {
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和开启转录任务的房间使用的SdkAppId相同。",
-          "example": "无",
+          "example": "14600000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -7642,7 +7651,7 @@
         {
           "disabled": false,
           "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，表示开启转录任务的房间号。",
-          "example": "无",
+          "example": "11",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -7660,7 +7669,7 @@
         {
           "disabled": false,
           "document": "调用方传入的唯一Id，服务端用来任务去重，重复的任务会发起失败。服务端固定使用SdkAppId+RoomId+RoomIdType+RobotUserId来去重，如果传入了SessionId，也会使用SessionId去重。\n注意：\nTranscriptionMode为0时，需要保证一个房间内只发起一个任务，如果发起多个任务，则机器人之间会相互订阅，除非主动停止任务，否则只有10小时后任务才会超时退出，这种情况下建议填写SessionId，保证后续重复发起的任务失败。",
-          "example": "无",
+          "example": "session_1",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -7669,7 +7678,7 @@
         {
           "disabled": false,
           "document": "TRTC房间号的类型，0代表数字房间号，1代表字符串房间号。不填默认是数字房间号。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "RoomIdType",
           "required": false,
@@ -7681,6 +7690,15 @@
           "example": "无",
           "member": "RecognizeConfig",
           "name": "RecognizeConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "翻译相关配置",
+          "example": "无",
+          "member": "TranslationConfig",
+          "name": "TranslationConfig",
           "required": false,
           "type": "object"
         }
@@ -8739,6 +8757,23 @@
       ],
       "usage": "out"
     },
+    "TTSConfig": {
+      "document": "TTS相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音色ID",
+          "example": "xiaoming",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TencentVod": {
       "document": "腾讯云点播相关参数。",
       "members": [
@@ -8994,7 +9029,7 @@
         {
           "disabled": false,
           "document": "转录机器人的UserId，用于进房发起转录任务。【注意】这个UserId不能与当前房间内的主播观众[UserId](https://cloud.tencent.com/document/product/647/46351#userid)重复。如果一个房间发起多个转录任务时，机器人的userid也不能相互重复，否则会中断前一个任务。需要保证转录机器人UserId在房间内唯一。",
-          "example": "user123",
+          "example": "user329",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -9003,7 +9038,7 @@
         {
           "disabled": false,
           "document": "转录机器人UserId对应的校验签名，即UserId和UserSig相当于转录机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
-          "example": "无",
+          "example": "egjirneiwrwq",
           "member": "string",
           "name": "UserSig",
           "required": true,
@@ -9012,7 +9047,7 @@
         {
           "disabled": true,
           "document": "IM[管理员账户](\nhttps://cloud.tencent.com/document/product/269/31999#app-.E7.AE.A1.E7.90.86.E5.91.98)，如果填写，后台下发消息会使用IM通道，而不是TRTC自定义消息。",
-          "example": "无",
+          "example": "admin269",
           "member": "string",
           "name": "IMAdminUserId",
           "required": false,
@@ -9021,7 +9056,7 @@
         {
           "disabled": true,
           "document": "IM管理员账户生成的签名，用于向特定群组发送消息。如果填写，后台下发消息会使用IM通道，而不是TRTC自定义消息。必须和IM管理员的UserId一起填写。",
-          "example": "无",
+          "example": "ervwerqwe",
           "member": "string",
           "name": "IMAdminUserSig",
           "required": false,
@@ -9030,7 +9065,7 @@
         {
           "disabled": false,
           "document": "房间内推流用户全部退出后超过MaxIdleTime秒，后台自动关闭转录任务，默认值是60s。",
-          "example": "无",
+          "example": "60",
           "member": "uint64",
           "name": "MaxIdleTime",
           "required": false,
@@ -9039,7 +9074,7 @@
         {
           "disabled": false,
           "document": "1表示机器人只订阅单个人的流，0表示机器人订阅整个房间的流，如果不填默认订阅整个房间的流。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "TranscriptionMode",
           "required": false,
@@ -9048,7 +9083,7 @@
         {
           "disabled": false,
           "document": "TranscriptionMode为1时必填，机器人只会拉该userid的流，忽略房间里其他用户。",
-          "example": "无",
+          "example": "user219",
           "member": "string",
           "name": "TargetUserId",
           "required": false,
@@ -9057,7 +9092,7 @@
         {
           "disabled": false,
           "document": "机器人订阅的用户列表\n仅 TranscriptionMode 为 1或者 TranscriptionMode 为无限上麦模式支持传入多个用户列表",
-          "example": "无",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "TargetUserIdList",
           "required": false,
@@ -9071,9 +9106,57 @@
           "name": "VoicePrint",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "语义断句检测",
+          "example": "无",
+          "member": "TurnDetection",
+          "name": "TurnDetection",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
+    },
+    "TranslationConfig": {
+      "document": "翻译相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻译的目标语言，目标语种列表（ISO 639-1）\n",
+          "example": "[\"en\", \"ja\"]",
+          "member": "string",
+          "name": "TargetLanguages",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 1： 仅文字翻译，  2： 语音同传\n",
+          "example": "2",
+          "member": "uint64",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音同传配置，开启同传时，需要传递",
+          "example": "无",
+          "member": "TTSConfig",
+          "name": "TTSConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TrtcUsage": {
       "document": "实时音视频用量在某一时间段的统计信息。",

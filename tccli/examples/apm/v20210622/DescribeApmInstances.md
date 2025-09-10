@@ -66,6 +66,8 @@ Output:
                 "SpanDailyCounters": 0,
                 "Status": 1,
                 "StopReason": 0,
+                "UrlNumberSegmentThreshold": 40,
+                "UrlLongSegmentThreshold": 40,
                 "Tags": [
                     {
                         "Key": "负责人",

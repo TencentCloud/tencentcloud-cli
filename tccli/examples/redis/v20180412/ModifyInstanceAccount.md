@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis ModifyInstanceAccount --cli-unfold-argument  \
-    --InstanceId crs-5a4py64p \
+    --InstanceId crs-******** \
     --AccountName test_account
 ```
 

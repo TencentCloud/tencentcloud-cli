@@ -1887,6 +1887,42 @@
       ],
       "usage": "both"
     },
+    "NotificationType": {
+      "document": "通知类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯健康组学平台站点信息。",
+          "example": "true",
+          "member": "bool",
+          "name": "StationMessage",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邮箱列表。",
+          "example": "[\"test@tencent.com\"]",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前用户邮箱。",
+          "example": "false",
+          "member": "bool",
+          "name": "CurrentUserEmail",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ResourceIds": {
       "document": "云资源ID。",
       "members": [
@@ -2376,7 +2412,7 @@
         {
           "disabled": false,
           "document": "WDL运行选项。",
-          "example": "{\"FailureMode\": \"NoNewCalls\",\"UseCallCache\": true,\"UseErrorOnHold\": true}",
+          "example": "无",
           "member": "RunOption",
           "name": "Option",
           "required": false,
@@ -2385,7 +2421,7 @@
         {
           "disabled": false,
           "document": "Nextflow运行选项。",
-          "example": "{}",
+          "example": "无",
           "member": "NFOption",
           "name": "NFOption",
           "required": false,
@@ -2415,6 +2451,42 @@
           "example": "[\"vol-cis92d14\"]",
           "member": "string",
           "name": "VolumeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启结果通知。",
+          "example": "false",
+          "member": "bool",
+          "name": "ResultNotification",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启超时通知。",
+          "example": "false",
+          "member": "bool",
+          "name": "TimeoutNotification",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "任务超时通知时间（单位：分钟），支持5到2880分钟。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TimeoutNotificationMinutes",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "接受通知邮件地址列表。",
+          "example": "[\"test@tencent.com\"]",
+          "member": "string",
+          "name": "EmailForNotification",
           "required": false,
           "type": "list"
         }
@@ -2509,7 +2581,7 @@
         {
           "disabled": false,
           "document": "应用版本。",
-          "example": "{\"Type\": \"HISTORY\",\"ApplicationVersionId\": \"26\",\"Name\": \"\",\"Description\": \"\",\"Entrypoint\": \"main.wdl\",\"CreateTime\": \"2024-06-06 14:49:06\",\"CreatorName\": \"manager\",\"CreatorId\": \"df8c0fbfd4b94490aed913753473ebed\",\"GitSource\": null,\"CosSource\": null}",
+          "example": "无",
           "member": "ApplicationVersion",
           "name": "ApplicationVersion",
           "output_required": false,
@@ -2649,7 +2721,7 @@
         {
           "disabled": false,
           "document": "WDL运行选项。",
-          "example": "{\"FailureMode\": \"NoNewCalls\",\"UseCallCache\": true,\"UseErrorOnHold\": false,\"FinalWorkflowOutputsDir\": \"cos://omics-test-data-1252949230/mazeppafan\",\"UseRelativeOutputPaths\": false,\"AddRunInfoToOutputDir\": null,\"RunGroupName\": null}",
+          "example": "无",
           "member": "RunOption",
           "name": "Option",
           "output_required": true,
@@ -2659,7 +2731,7 @@
         {
           "disabled": false,
           "document": "Nextflow运行选项。",
-          "example": "{\"InputFileKeys\": null,\"OutputFileKeys\": null,\"Config\": \"\",\"NFVersion\": \"\",\"Report\": false,\"Profile\": \"\",\"Resume\": false,\"LaunchDir\": \"\"}",
+          "example": "无",
           "member": "NFOption",
           "name": "NFOption",
           "output_required": false,
@@ -2669,7 +2741,7 @@
         {
           "disabled": false,
           "document": "使用的缓存卷。",
-          "example": "[{\"VolumeId\": \"vol-8w7rfq4b\",\"Name\": \"默认缓存卷（menv-ry46eloh）\",\"MountPath\": \"/vol-8w7rfq4b\"}]",
+          "example": "无",
           "member": "VolumeInfo",
           "name": "Volumes",
           "output_required": false,
@@ -2689,7 +2761,7 @@
         {
           "disabled": false,
           "document": "各状态任务的数量。",
-          "example": "[{\"Status\": \"CANCELED\",\"Count\": 30}]",
+          "example": "无",
           "member": "RunStatusCount",
           "name": "RunStatusCounts",
           "output_required": true,
@@ -2699,7 +2771,7 @@
         {
           "disabled": false,
           "document": "执行时间。",
-          "example": "{\"SubmitTime\": \"2024-06-06T16:30:14+08:00\",\"StartTime\": \"2024-06-06T16:32:16+08:00\",\"EndTime\": \"2024-06-06T16:42:52+08:00\"}",
+          "example": "无",
           "member": "ExecutionTime",
           "name": "ExecutionTime",
           "output_required": true,
@@ -2718,12 +2790,12 @@
         },
         {
           "disabled": false,
-          "document": "运行结果通知方式。",
-          "example": "StationMessage",
-          "member": "string",
-          "name": "ResultNotify",
+          "document": "任务批次通知。",
+          "example": "无",
+          "member": "RunGroupNotification",
+          "name": "Notification",
           "output_required": false,
-          "type": "string",
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2764,6 +2836,84 @@
           "name": "CreatorId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行结果通知方式。",
+          "example": "StationMessage",
+          "member": "string",
+          "name": "ResultNotify",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RunGroupNotification": {
+      "document": "任务批次通知。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果通知。",
+          "example": "无",
+          "member": "RunGroupResultNotification",
+          "name": "ResultNotification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超时通知。",
+          "example": "无",
+          "member": "RunGroupTimeoutNotification",
+          "name": "TimeoutNotification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RunGroupResultNotification": {
+      "document": "任务批次结果通知",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知类型。",
+          "example": "无",
+          "member": "NotificationType",
+          "name": "NotificationType",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RunGroupTimeoutNotification": {
+      "document": "任务批次超时通知。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务批次超时时间，单位分钟。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TimeoutMinutes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知类型。",
+          "example": "无",
+          "member": "NotificationType",
+          "name": "NotificationType",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

@@ -1509,7 +1509,7 @@
         {
           "disabled": false,
           "document": "起始时间",
-          "example": "2012-12-12 12:12:12",
+          "example": "2015-09-12 13:15:14",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -1518,7 +1518,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "2012-12-12 13:12:12",
+          "example": "2015-12-12 13:12:12",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -1572,11 +1572,29 @@
         {
           "disabled": false,
           "document": "过滤时间",
-          "example": "10000",
+          "example": "5.2",
           "member": "float",
           "name": "Duration",
           "required": false,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "执行用户",
+          "example": "cran",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "query 语句",
+          "example": "select * from t1;",
+          "member": "string",
+          "name": "QueryString",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1597,7 +1615,7 @@
         {
           "disabled": false,
           "document": "慢SQL日志详细信息",
-          "example": "{\"NormalQuerys\":[{\"CallTimes\":1,\"ClientIp\":\"9.0.116.10\",...\"WriteCostTime\":0}],\"TotalCallTimes\":1,\"TotalTime\":10403.899}",
+          "example": "无",
           "member": "SlowLogDetail",
           "name": "SlowLogDetails",
           "output_required": true,

@@ -1056,7 +1056,7 @@
         {
           "disabled": false,
           "document": "数据集标签。",
-          "example": "无",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "SceneTags",
           "required": false,
@@ -2674,7 +2674,7 @@
         {
           "disabled": false,
           "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"TagKey\":\"k1\",\"TagValue\":\"v1\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "DatasetTags",
           "output_required": true,
@@ -2694,7 +2694,7 @@
         {
           "disabled": false,
           "document": "数据集标注任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ds-123",
+          "example": "ds-xxy",
           "member": "string",
           "name": "DatasetAnnotationTaskId",
           "output_required": true,
@@ -2784,7 +2784,7 @@
         {
           "disabled": false,
           "document": "数据集源COS路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Path\":\"a1\"}",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
           "output_required": true,
@@ -2794,7 +2794,7 @@
         {
           "disabled": false,
           "document": "数据集标签存储路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Path\":\"a1\"}",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
           "output_required": true,
@@ -2804,7 +2804,7 @@
         {
           "disabled": false,
           "document": "数据集版本聚合详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"DatasetVersion\":\"v1\"}",
+          "example": "无",
           "member": "DatasetInfo",
           "name": "DatasetVersions",
           "output_required": true,
@@ -2894,7 +2894,7 @@
         {
           "disabled": false,
           "document": "CFS配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test1",
+          "example": "无",
           "member": "CFSConfig",
           "name": "CFSConfig",
           "output_required": false,
@@ -2904,7 +2904,7 @@
         {
           "disabled": false,
           "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test1",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "SceneTags",
           "output_required": false,
@@ -2914,7 +2914,7 @@
         {
           "disabled": false,
           "document": "已标注数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test1",
+          "example": "100",
           "member": "uint64",
           "name": "NumAnnotated",
           "output_required": false,
@@ -2934,7 +2934,7 @@
         {
           "disabled": false,
           "document": "标注Schema是否配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test1",
+          "example": "true",
           "member": "bool",
           "name": "AnnotationSchemaConfigured",
           "output_required": false,
@@ -3020,7 +3020,7 @@
         {
           "disabled": false,
           "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "tag",
+          "example": "无",
           "member": "Tag",
           "name": "DatasetTags",
           "output_required": true,
@@ -3130,7 +3130,7 @@
         {
           "disabled": false,
           "document": "数据集源cos 路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Path\":\"a1\"}",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
           "output_required": true,
@@ -3140,7 +3140,7 @@
         {
           "disabled": false,
           "document": "数据集输出cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Path\":\"a1\"}",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
           "output_required": true,
@@ -3230,7 +3230,7 @@
         {
           "disabled": false,
           "document": "CFS配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Path\":\"a1\"}",
+          "example": "无",
           "member": "CFSConfig",
           "name": "CFSConfig",
           "output_required": false,
@@ -9249,6 +9249,45 @@
       ],
       "usage": "out"
     },
+    "PodSSHInfo": {
+      "document": "SSH pod访问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "pod访问ip",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod ssh访问端口",
+          "example": "22",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ssh访问命令",
+          "example": "ssh -p 22  root@1.2.3.4",
+          "member": "string",
+          "name": "LoginCommand",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PrivateLinkInfo": {
       "document": "私有连接信息",
       "members": [
@@ -9853,7 +9892,7 @@
         {
           "disabled": false,
           "document": "创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。",
-          "example": "{}",
+          "example": "无",
           "member": "GpuDetail",
           "name": "RealGpuDetailSet",
           "output_required": true,
@@ -9994,6 +10033,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "POD访问信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PodSSHInfo",
+          "name": "PodSSHInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
