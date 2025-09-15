@@ -204,6 +204,14 @@
         "title": "删除自定义线路分组"
       }
     ],
+    "DeletePackageOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePackageOrder\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37062da4-cdce-43a8-a1a9-6ea6176404d4\"\n    }\n}",
+        "title": "关闭国际站套餐订单"
+      }
+    ],
     "DeleteRecord": [
       {
         "document": " ",

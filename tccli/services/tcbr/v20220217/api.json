@@ -360,6 +360,15 @@
           "name": "Items",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "vpc 信息",
+          "example": "无",
+          "member": "CreateVpcInfo",
+          "name": "VpcInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -385,6 +394,39 @@
         }
       ],
       "type": "object"
+    },
+    "CreateVpcInfo": {
+      "document": "创建 vpc 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc id",
+          "example": "vpc-sdfd",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1 新建 2 指定",
+          "example": "2",
+          "member": "int64",
+          "name": "CreateType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子网ID列表",
+          "example": "[\"subnet-sdfdf\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "DatabasesInfo": {
       "document": "数据库资源信息",
@@ -666,6 +708,15 @@
           "example": "function",
           "member": "string",
           "name": "ServerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpcId",
+          "example": "vpc-sret",
+          "member": "string",
+          "name": "VpcId",
           "required": false,
           "type": "string"
         }

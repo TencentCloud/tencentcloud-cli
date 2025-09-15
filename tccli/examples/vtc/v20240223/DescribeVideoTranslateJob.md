@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vtc DescribeVideoTranslateJob --cli-unfold-argument  \
-    --JobId 111
+    --JobId vlSYvQkMM0KwPuoakawm0tPrREwc2p7c
 ```
 
 Output: 

@@ -18299,7 +18299,7 @@
         {
           "disabled": false,
           "document": "实例只读权重。\n该参数必填。",
-          "example": "[{\"InstanceId\": \"cynosdbmysql-ins-1rfvx111\",\"Weight\": \"10\"}]",
+          "example": "无",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",
           "required": false,
@@ -18385,6 +18385,24 @@
           "name": "ConnectionPoolTimeOut",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否将libra节点当作普通RO节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApNodeAsRoNode",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "libra节点故障，是否转发给其他节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApQueryToOtherNode",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

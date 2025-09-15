@@ -15,7 +15,7 @@
       "status": "online"
     },
     "ApplyWebVerificationBizTokenIntl": {
-      "document": "每次调用Web核验服务前，需要先调用本接口获取BizToken，并保存此BizToken用来发起核验流程，并且在核验完成后获取结果信息。",
+      "document": "每次调用Web核验服务前，需要先调用本接口获取BizToken，并保存此BizToken用来发起核验流程，并且在核验完成后获取结果信息，BizToken在10分钟内有效。",
       "input": "ApplyWebVerificationBizTokenIntlRequest",
       "name": "申请Web核验服务令牌（BizToken）",
       "output": "ApplyWebVerificationBizTokenIntlResponse",
@@ -688,7 +688,7 @@
         {
           "disabled": false,
           "document": "自定义核验页面的相关配置。",
-          "example": "{\"AutoSkip\": true,\"CheckMode\": 1,\"IdCardType\": \"HKIDCard\"}",
+          "example": "无",
           "member": "WebVerificationConfigIntl",
           "name": "Config",
           "required": false,
