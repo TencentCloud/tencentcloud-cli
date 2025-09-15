@@ -418,6 +418,14 @@
         "title": "设置实例的自动备份规则"
       }
     ],
+    "SetDBInstanceDeletionProtection": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=SetDBInstanceDeletionProtection\n&InstanceIds.0=cmgo-8l3r6yyt\n&EnableDeletionProtection=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d0d55f9-15ee-4f00-b460-7b645a62cc3a\"\n    }\n}",
+        "title": "设置实例销毁保护"
+      }
+    ],
     "SetInstanceMaintenance": [
       {
         "document": "修改实例维护时间窗口",

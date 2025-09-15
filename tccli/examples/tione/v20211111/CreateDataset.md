@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione CreateDataset --cli-unfold-argument  \
-    --DatasetName test \
+    --DatasetName dataset-example \
     --AnnotationStatus STATUS_NON_ANNOTATED \
     --SchemaInfos.0.Type  \
     --SchemaInfos.0.Name  \

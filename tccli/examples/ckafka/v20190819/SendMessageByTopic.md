@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli ckafka SendMessageByTopic --cli-unfold-argument  \
-    --InstanceId abc \
-    --TopicName abc \
-    --Message abc \
-    --Key abc \
+    --InstanceId ckafka-test \
+    --TopicName topic-test \
+    --Message message-test \
+    --Key key-test \
     --Partition 0
 ```
 
@@ -18,8 +18,8 @@ Output:
 {
     "Response": {
         "Result": {
-            "ReturnCode": "abc",
-            "ReturnMessage": "abc",
+            "ReturnCode": "0",
+            "ReturnMessage": "success",
             "Data": {
                 "FlowId": 0,
                 "RouteDTO": {
@@ -27,7 +27,7 @@ Output:
                 }
             }
         },
-        "RequestId": "abc"
+        "RequestId": "d173b4fb-c6d0-4507-a822-b6f277fc4016"
     }
 }
 ```

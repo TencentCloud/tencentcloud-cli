@@ -1964,7 +1964,7 @@
         {
           "disabled": false,
           "document": "标签值列表",
-          "example": "key",
+          "example": "[\"key\"]",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -1979,7 +1979,7 @@
         {
           "disabled": false,
           "document": "账单维度详细汇总",
-          "example": "[{\"Business\":[],\"OriginalCost\": \"0.003585\",\"VoucherPayAmount\":\"0\",\"RICost\":\"0\",\"TotalCost\":\"0.003585\",\"GroupKey\":\"0\",\"GroupValue\":\"default\"}]",
+          "example": "无",
           "member": "SummaryDetails",
           "name": "SummaryDetail",
           "output_required": true,

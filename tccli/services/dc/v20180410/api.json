@@ -2293,7 +2293,7 @@
         {
           "disabled": false,
           "document": "用户侧BGP，包括： CloudAsn，Asn，AuthKey",
-          "example": "{\"CloudAsn\": 45090, \"Asn\": 16550, \"AuthKey\": \"tencent\"}",
+          "example": "无",
           "member": "BgpPeer",
           "name": "BgpPeer",
           "output_required": true,
@@ -2303,7 +2303,7 @@
         {
           "disabled": false,
           "document": "用户侧网段地址",
-          "example": "[{\"Cidr\": \"8.8.8.8/32\"}]",
+          "example": "无",
           "member": "RouteFilterPrefix",
           "name": "RouteFilterPrefixes",
           "output_required": true,
@@ -2353,7 +2353,7 @@
         {
           "disabled": false,
           "document": "专用通道创建时间",
-          "example": "2018-06-01 14:59:16",
+          "example": "2018-06-01T14:59:16+08:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": true,
@@ -2373,7 +2373,7 @@
         {
           "disabled": false,
           "document": "专用通道标签值",
-          "example": "[{\"Key\": \"xxyy\", \"Value\": \"aabb\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -2393,7 +2393,7 @@
         {
           "disabled": false,
           "document": "BGP community开关",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "EnableBGPCommunity",
           "output_required": true,
@@ -2473,7 +2473,7 @@
         {
           "disabled": false,
           "document": "专用通道关联的物理专线是否签署了用户协议",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "SignLaw",
           "output_required": true,
@@ -2498,6 +2498,26 @@
           "name": "ShareOrNot",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入点名称",
+          "example": "上海",
+          "member": "string",
+          "name": "AccessPointName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入点ID",
+          "example": "\"13\"",
+          "member": "string",
+          "name": "AccessPointId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

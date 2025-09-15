@@ -8117,6 +8117,15 @@
           "name": "ShieldIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型列表，支持批量",
+          "example": "[\"cdb_detail\"]",
+          "member": "string",
+          "name": "StrategyTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8130,7 +8139,7 @@
           "example": "1002",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8140,7 +8149,7 @@
           "example": "无",
           "member": "Shield",
           "name": "Shields",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -22883,9 +22892,67 @@
           "output_required": true,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ShieldEvent",
+          "name": "ShieldEvent",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否对指标屏蔽 1=是 0=否",
+          "example": "无",
+          "member": "int64",
+          "name": "ShieldMetricFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否对事件屏蔽 1=是 0=否",
+          "example": "无",
+          "member": "int64",
+          "name": "ShieldEventFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "ShieldEvent": {
+      "document": "告警屏蔽的事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "屏蔽事件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Event",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽事件展示名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventShowName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ShieldMetric": {
       "document": "告警屏蔽的指标",

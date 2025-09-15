@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ckafka ModifyGroupOffsets --cli-unfold-argument  \
-    --InstanceId 10 \
+    --InstanceId ckafka-test \
     --Group "group" \
-    --Strategy 0
+    --Strategy 1
 ```
 
 Output: 
@@ -17,9 +17,12 @@ Output:
     "Response": {
         "Result": {
             "ReturnCode": "0",
-            "ReturnMessage": "ok"
+            "ReturnMessage": "SUCCESS",
+            "Data": {
+                "FlowId": 0
+            }
         },
-        "RequestId": "ae362db8-81f6-4441-b0cc-1f6ffa31127e"
+        "RequestId": "36713f94-d07d-4b96-babf-42d139276f23"
     }
 }
 ```

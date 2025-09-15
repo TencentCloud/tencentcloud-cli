@@ -1081,7 +1081,7 @@
         {
           "disabled": false,
           "document": "独占server机器信息",
-          "example": "0",
+          "example": "无",
           "member": "ServerDetailInfo",
           "name": "ServerList",
           "output_required": false,
@@ -1091,7 +1091,7 @@
         {
           "disabled": false,
           "document": "独占proxy机器信息",
-          "example": "0",
+          "example": "无",
           "member": "ProxyDetailInfo",
           "name": "ProxyList",
           "output_required": false,
@@ -1111,7 +1111,7 @@
         {
           "disabled": false,
           "document": "审批人uin列表",
-          "example": "0",
+          "example": "[\"name\"]",
           "member": "string",
           "name": "DbaUins",
           "output_required": false,
@@ -1174,6 +1174,26 @@
           "example": "0",
           "member": "int64",
           "name": "RestProxyStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该集群shard总数",
+          "example": "0",
+          "member": "int64",
+          "name": "ShardTotalNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用的shard总数",
+          "example": "0",
+          "member": "int64",
+          "name": "ShardUsedNum",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

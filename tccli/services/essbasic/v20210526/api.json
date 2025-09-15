@@ -3260,7 +3260,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "二维码的有效期限，默认为7天，最高设定不得超过90天。 一旦超过二维码的有效期限，该二维码将自动失效。\t",
           "example": "7",
           "member": "int64",
@@ -3280,7 +3280,7 @@
         {
           "disabled": false,
           "document": "指定签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式。",
-          "example": "[ { \"RecipientId\": \"yDwJNUUckpkojrssUxTFHk6xvcX2xigb\", \"Values\": [ \"HANDWRITE\", \"SYSTEM_ESIGN\" ] }, { \"RecipientId\": \"yDwJNUUckpkojrsqUxTFHk6yndh20CpW\", \"Values\": [ \"OCR_ESIGN\" ] } ]\t",
+          "example": "无",
           "member": "ApproverComponentLimitType",
           "name": "ApproverComponentLimitTypes",
           "required": false,
@@ -3289,7 +3289,7 @@
         {
           "disabled": true,
           "document": "已废弃，回调配置统一使用企业应用管理-应用集成-第三方应用中的配置\n<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/partner/callback_types_contracts_sign\n<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83",
-          "example": "无",
+          "example": "http://www.qq.com",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -3330,6 +3330,24 @@
           "name": "FlowNameAppendScannerInfo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "签署二维码的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成,会在生成的二维码图片上展示，若为空，则使用FlowName\t",
+          "example": "测试签署码",
+          "member": "string",
+          "name": "QrCodeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署二维码截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为签署二维码创建后的7天时截止，最长可设置为签署二维码创建后的365天时截止。\t",
+          "example": "1757416261",
+          "member": "int64",
+          "name": "QrCodeExpiredOn",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -6,6 +6,16 @@ Input:
 
 ```
 tccli ioa DescribeAggrSoftCategorySoftList --cli-unfold-argument  \
+    --Condition.Filters.0.Field 1 \
+    --Condition.Filters.0.Operator 1 \
+    --Condition.Filters.0.Values 1 \
+    --Condition.FilterGroups.0.Filters.0.Field 1 \
+    --Condition.FilterGroups.0.Filters.0.Operator 1 \
+    --Condition.FilterGroups.0.Filters.0.Values 1 \
+    --Condition.Sort.Field 1 \
+    --Condition.Sort.Order 1 \
+    --Condition.PageSize 1 \
+    --Condition.PageNum 10 \
     --OsType 0
 ```
 

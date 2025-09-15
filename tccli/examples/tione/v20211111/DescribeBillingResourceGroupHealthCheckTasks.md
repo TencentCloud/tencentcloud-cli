@@ -28,6 +28,20 @@ Output:
                 "ResourceInstanceIds": [
                     "sm-v8ml2233"
                 ],
+                "SanityCheckConfig": {
+                    "SanityCheckItems": [
+                        {
+                            "Item": "nccl-test",
+                            "Message": "nccl 网络测试",
+                            "Name": "NCCL-TEST",
+                            "SupportedTrainingModes": [
+                                "MPI",
+                                "DDP"
+                            ]
+                        }
+                    ],
+                    "SanityCheckTimeoutInMin": 5
+                },
                 "SubUin": "100035780233",
                 "SubUinName": "jack",
                 "TaskStatus": "RUNNING"

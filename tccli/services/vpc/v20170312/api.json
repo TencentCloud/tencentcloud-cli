@@ -17793,7 +17793,7 @@
         {
           "disabled": false,
           "document": "私网网关唯一`ID`，形如\"intranat-xxxxxxxx\"。",
-          "example": "\"intranat-0g3blj80\"",
+          "example": "intranat-0g3blj80",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -42509,7 +42509,7 @@
         {
           "disabled": false,
           "document": "NAT网关绑定的安全组列表，最终状态，空列表表示删除所有安全组，形如: `['sg-1n232323', 'sg-o4242424']`",
-          "example": "['sg-1n232323']",
+          "example": "[\"sg-1n232323\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -42530,6 +42530,15 @@
           "example": "false",
           "member": "bool",
           "name": "SmartScheduleMode",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "NAT实例是否开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtectionEnabled",
           "required": false,
           "type": "bool"
         }
@@ -44738,7 +44747,7 @@
         {
           "disabled": false,
           "document": "NAT网关的ID。",
-          "example": "\"nat-12345678\"",
+          "example": "\"nat-13254768\"",
           "member": "string",
           "name": "NatGatewayId",
           "output_required": true,
@@ -44798,7 +44807,7 @@
         {
           "disabled": false,
           "document": "绑定NAT网关的公网IP对象数组。",
-          "example": " 无",
+          "example": "无",
           "member": "NatGatewayAddress",
           "name": "PublicIpAddressSet",
           "output_required": true,
@@ -44828,7 +44837,7 @@
         {
           "disabled": false,
           "document": "VPC实例ID。",
-          "example": "\"vpc-12345678\"",
+          "example": "\"vpc-13254768\"",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -44848,7 +44857,7 @@
         {
           "disabled": false,
           "document": "绑定的专线网关ID。",
-          "example": "[\"dcg-12345678\"]",
+          "example": "[\"dcg-13254768\"]",
           "member": "string",
           "name": "DirectConnectGatewayIds",
           "output_required": true,
@@ -44858,7 +44867,7 @@
         {
           "disabled": false,
           "document": "所属子网ID。",
-          "example": "\"subnet-12345678\"",
+          "example": "\"subnet-13254768\"",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -44878,7 +44887,7 @@
         {
           "disabled": false,
           "document": "NAT网关绑定的安全组列表",
-          "example": "[\"sg-12345678\"]",
+          "example": "[\"sg-13254768\"]",
           "member": "string",
           "name": "SecurityGroupSet",
           "output_required": true,
@@ -44973,6 +44982,16 @@
           "name": "DedicatedClusterId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NAT实例是否开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtectionEnabled",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -47182,7 +47201,7 @@
         {
           "disabled": false,
           "document": "私网网关跨域标志。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "CrossDomain",
           "output_required": true,
@@ -47252,7 +47271,7 @@
         {
           "disabled": false,
           "document": "是否VPC型私网网关",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "VpcType",
           "output_required": false,
@@ -47267,6 +47286,16 @@
           "name": "CcnId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私网NAT是否开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtectionEnabled",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

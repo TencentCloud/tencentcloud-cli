@@ -35,7 +35,7 @@
     "DescribePluginArchList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePluginArchList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"PluginKey\": \"xxxxxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePluginArchList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"PluginKey\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b90a5cc7-1a1e-4fcd-a7ee-46f767be7b38\",\n        \"ArchList\": [\n            {\n                \"ArchId\": \"arch-xgosz3yz\",\n                \"ArchName\": \"测试架构图1\",\n                \"FolderId\": 123,\n                \"CreateTime\": \"2023-11-14 15:22:32\",\n                \"CreateUin\": \"123\",\n                \"UpdateTime\": \"2023-11-14 15:22:32\",\n                \"UpdateUin\": \"123\",\n                \"ShareStatus\": true,\n                \"ResourceBindStatus\": true\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "分页获取架构图列表"
       }

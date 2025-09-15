@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka InstanceScalingDown --cli-unfold-argument  \
-    --InstanceId *** \
+    --InstanceId ckafka-test \
     --DiskSize 900 \
     --BandWidth 40 \
     --Partition 1000 \

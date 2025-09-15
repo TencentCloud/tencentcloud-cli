@@ -262,6 +262,14 @@
         "title": "示例"
       }
     ],
+    "DisconnectAndroidInstance": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisconnectAndroidInstance\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-251006279-ea99qn24o1p\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cc56de7-c1f7-4d66-9c91-5fd48d32e61f\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DistributeFileToAndroidInstances": [
       {
         "document": "示例",

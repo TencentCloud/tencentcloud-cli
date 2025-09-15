@@ -1547,7 +1547,7 @@
         {
           "disabled": false,
           "document": "数据集标签。",
-          "example": "无",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "SceneTags",
           "required": false,
@@ -3283,7 +3283,7 @@
         {
           "disabled": false,
           "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"TagKey\":\"k1\",\"TagValue\":\"v1\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "DatasetTags",
           "output_required": true,
@@ -3303,7 +3303,7 @@
         {
           "disabled": false,
           "document": "数据集标注任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ds-123",
+          "example": "ds-xxy",
           "member": "string",
           "name": "DatasetAnnotationTaskId",
           "output_required": true,
@@ -3393,7 +3393,7 @@
         {
           "disabled": false,
           "document": "数据集源COS路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Path\":\"a1\"}",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
           "output_required": true,
@@ -3403,7 +3403,7 @@
         {
           "disabled": false,
           "document": "数据集标签存储路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Path\":\"a1\"}",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
           "output_required": true,
@@ -3413,7 +3413,7 @@
         {
           "disabled": false,
           "document": "数据集版本聚合详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"DatasetVersion\":\"v1\"}",
+          "example": "无",
           "member": "DatasetInfo",
           "name": "DatasetVersions",
           "output_required": true,
@@ -3503,7 +3503,7 @@
         {
           "disabled": false,
           "document": "CFS配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test1",
+          "example": "无",
           "member": "CFSConfig",
           "name": "CFSConfig",
           "output_required": false,
@@ -3513,7 +3513,7 @@
         {
           "disabled": false,
           "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test1",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "SceneTags",
           "output_required": false,
@@ -3523,7 +3523,7 @@
         {
           "disabled": false,
           "document": "已标注数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test1",
+          "example": "100",
           "member": "uint64",
           "name": "NumAnnotated",
           "output_required": false,
@@ -3543,7 +3543,7 @@
         {
           "disabled": false,
           "document": "标注Schema是否配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test1",
+          "example": "true",
           "member": "bool",
           "name": "AnnotationSchemaConfigured",
           "output_required": false,
@@ -3629,7 +3629,7 @@
         {
           "disabled": false,
           "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "tag",
+          "example": "无",
           "member": "Tag",
           "name": "DatasetTags",
           "output_required": true,
@@ -3739,7 +3739,7 @@
         {
           "disabled": false,
           "document": "数据集源cos 路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Path\":\"a1\"}",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
           "output_required": true,
@@ -3749,7 +3749,7 @@
         {
           "disabled": false,
           "document": "数据集输出cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Path\":\"a1\"}",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
           "output_required": true,
@@ -3839,7 +3839,7 @@
         {
           "disabled": false,
           "document": "CFS配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Path\":\"a1\"}",
+          "example": "无",
           "member": "CFSConfig",
           "name": "CFSConfig",
           "output_required": false,
@@ -3905,6 +3905,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GooseFSx配置",
+          "example": "无",
+          "member": "GooseFSx",
+          "name": "GooseFSxConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4453,6 +4463,15 @@
           "name": "OrderField",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否实时查询可用资源",
+          "example": "false",
+          "member": "bool",
+          "name": "IsRealTime",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4519,6 +4538,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为热备资源组",
+          "example": "false",
+          "member": "bool",
+          "name": "IsHotBackupResourceGroup",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7163,12 +7192,32 @@
         },
         {
           "disabled": false,
+          "document": "健康检测项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SanityCheckConfig",
+          "name": "SanityCheckConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "检测范围(节点ID)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"sm-2z84hf49\"]",
           "member": "string",
           "name": "ResourceInstanceIds",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对应的任务式建模的任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "train-1308533430774793985",
+          "member": "string",
+          "name": "TrainingTaskId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -8313,7 +8362,7 @@
         {
           "disabled": false,
           "document": "模型ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "m-1115750815945380480",
           "member": "string",
           "name": "ModelId",
           "output_required": true,
@@ -8323,7 +8372,7 @@
         {
           "disabled": false,
           "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "d12",
           "member": "string",
           "name": "ModelName",
           "output_required": true,
@@ -8443,7 +8492,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[TFJob job-96dm04o0mnwg] 模型文件损坏，请检查您上传的模型文件是否可以正常运行",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -8503,7 +8552,7 @@
         {
           "disabled": false,
           "document": "模型Tensor信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ \"input_0:float(1*3*1024*1024)\" ]",
           "member": "string",
           "name": "TensorInfos",
           "output_required": true,
@@ -8523,7 +8572,7 @@
         {
           "disabled": false,
           "document": "加速引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "v3.5",
           "member": "string",
           "name": "AccEngineVersion",
           "output_required": true,
@@ -8553,7 +8602,7 @@
         {
           "disabled": false,
           "document": "SAVED_MODEL保存时配置的签名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "“ ”",
           "member": "string",
           "name": "ModelSignature",
           "output_required": true,
@@ -8573,7 +8622,7 @@
         {
           "disabled": false,
           "document": "加速引擎对应的框架版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "pytorch1.9.0",
           "member": "string",
           "name": "FrameworkVersion",
           "output_required": true,
@@ -8583,7 +8632,7 @@
         {
           "disabled": false,
           "document": "模型版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "mv-v1-1115750815945380481",
           "member": "string",
           "name": "ModelVersionId",
           "output_required": false,
@@ -8603,7 +8652,7 @@
         {
           "disabled": false,
           "document": "资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "“ ”",
           "member": "string",
           "name": "ResourceGroupName",
           "output_required": false,
@@ -10997,6 +11046,45 @@
       ],
       "usage": "out"
     },
+    "PodSSHInfo": {
+      "document": "SSH pod访问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "pod访问ip",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod ssh访问端口",
+          "example": "22",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ssh访问命令",
+          "example": "ssh -p 22  root@1.2.3.4",
+          "member": "string",
+          "name": "LoginCommand",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PortElement": {
       "document": "CLB 暴露端口信息，单个条目",
       "members": [
@@ -11032,6 +11120,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口绑定状态",
+          "example": "success",
+          "member": "string",
+          "name": "BindStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12127,7 +12226,7 @@
         {
           "disabled": false,
           "document": "创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。",
-          "example": "{}",
+          "example": "无",
           "member": "GpuDetail",
           "name": "RealGpuDetailSet",
           "output_required": true,
@@ -12307,6 +12406,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "POD访问信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PodSSHInfo",
+          "name": "PodSSHInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

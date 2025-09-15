@@ -11793,7 +11793,7 @@
           "example": "myfm",
           "member": "string",
           "name": "Nick",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11803,7 +11803,7 @@
           "example": "5299600",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11813,7 +11813,7 @@
           "example": "qcloud_uin_100000000328@qcloud.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11823,7 +11823,7 @@
           "example": "enabled",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11833,7 +11833,7 @@
           "example": "187****3214",
           "member": "string",
           "name": "Telephone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11843,7 +11843,7 @@
           "example": "yes",
           "member": "string",
           "name": "EmailVerified",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11853,7 +11853,7 @@
           "example": "yes",
           "member": "string",
           "name": "TelephoneVerified",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11863,7 +11863,7 @@
           "example": "DP_Free",
           "member": "string",
           "name": "UserGrade",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11873,7 +11873,7 @@
           "example": "王小云",
           "member": "string",
           "name": "RealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11883,7 +11883,7 @@
           "example": "yes",
           "member": "string",
           "name": "WechatBinded",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11893,7 +11893,7 @@
           "example": "100000000328",
           "member": "int64",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11903,8 +11903,18 @@
           "example": " [\"r6i9m.dnspod.net\",\"a6i6c.dnspod.net\" ]",
           "member": "string",
           "name": "FreeNs",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户是否允许任何人转移域名到本账号",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowTransferIn",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

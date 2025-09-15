@@ -407,7 +407,7 @@
       "status": "online"
     },
     "DescribeInstances": {
-      "document": "本接口（DescribeInstance）用于在用户账户下获取消息队列 CKafka 实例列表",
+      "document": "本接口（DescribeInstances）用于在用户账户下获取消息队列 CKafka 实例列表",
       "input": "DescribeInstancesRequest",
       "name": "获取实例列表信息",
       "output": "DescribeInstancesResponse",
@@ -1097,7 +1097,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id, 可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id, 可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -1193,7 +1193,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -1211,7 +1211,7 @@
         },
         {
           "disabled": false,
-          "document": "资源列表数组，可通过DescribeTopic接口获取。",
+          "document": "资源列表数组，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取。",
           "example": "[\"test1\",\"test2\"]",
           "member": "string",
           "name": "ResourceNames",
@@ -1220,7 +1220,7 @@
         },
         {
           "disabled": false,
-          "document": "设置的ACL规则列表，可通过DescribeAclRule接口获取。",
+          "document": "设置的ACL规则列表，可通过[DescribeAclRule](https://cloud.tencent.com/document/product/597/89217)接口获取。",
           "example": "无",
           "member": "AclRuleInfo",
           "name": "RuleList",
@@ -1321,7 +1321,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -1330,8 +1330,8 @@
         },
         {
           "disabled": false,
-          "document": "主题属性列表 (同一个批次最多支持10个)",
-          "example": "[{\"TopicName\":\"topic-test\",\"PartitionNum\":3,\"Note\":\"note-test\",\"ReplicaNum\":2,\"CleanUpPolicy\":\"compact\",\"MinInsyncReplicas\":1,\"UncleanLeaderElectionEnable\":false,\"RetentionMs\":3600000,\"RetentionBytes\":1048576,\"SegmentMs\":86400000,\"MaxMessageBytes\":1024}]",
+          "document": "主题属性列表 (同一个批次最多支持10个)，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取",
+          "example": "无",
           "member": "BatchModifyTopicInfo",
           "name": "Topic",
           "required": true,
@@ -1346,7 +1346,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "[{\"InstanceId\":\"ckafka-test\",\"Message\":\"ok[apply success]\",\"ReturnCode\":\"0\",\"TopicName\":\"topic-test\"}]",
+          "example": "无",
           "member": "BatchModifyTopicResultDTO",
           "name": "Result",
           "output_required": true,
@@ -1439,8 +1439,8 @@
         },
         {
           "disabled": false,
-          "document": "topic维度的消息保留大小，范围1 MB到1024 GB",
-          "example": "1048576",
+          "document": "topic维度的消息保留大小，单位为Byte，范围1 GB到1024 GB。",
+          "example": "1073741824",
           "member": "int64",
           "name": "RetentionBytes",
           "required": false,
@@ -1448,7 +1448,7 @@
         },
         {
           "disabled": false,
-          "document": "Segment分片滚动的时长（毫秒），范围1 到90 天",
+          "document": "Segment分片滚动的时长（毫秒），范围1 天到90 天",
           "example": "86400000",
           "member": "int64",
           "name": "SegmentMs",
@@ -1761,7 +1761,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -2458,8 +2458,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "消息保留时间",
-          "example": "1",
+          "document": "消息保留时间，单位ms。",
+          "example": "3600000",
           "member": "int64",
           "name": "Retention",
           "output_required": false,
@@ -2488,8 +2488,8 @@
         },
         {
           "disabled": false,
-          "document": "Segment 分片滚动的时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "Segment 分片滚动的时长，单位ms。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "86400000",
           "member": "int64",
           "name": "SegmentMs",
           "output_required": false,
@@ -2508,8 +2508,8 @@
         },
         {
           "disabled": false,
-          "document": "Segment 分片滚动的字节数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "Segment 分片滚动的字节数，单位bytes\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "104857600",
           "member": "int64",
           "name": "SegmentBytes",
           "output_required": false,
@@ -2518,8 +2518,8 @@
         },
         {
           "disabled": false,
-          "document": "最大消息字节数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "最大消息字节数，单位bytes\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
           "member": "int64",
           "name": "MaxMessageBytes",
           "output_required": false,
@@ -2528,8 +2528,8 @@
         },
         {
           "disabled": false,
-          "document": "消息保留文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "107374",
+          "document": "消息保留文件大小，单位Bytes\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1073741824",
           "member": "int64",
           "name": "RetentionBytes",
           "output_required": false,
@@ -2538,7 +2538,7 @@
         },
         {
           "disabled": false,
-          "document": "消息保存的时间类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息保存的时间类型，CreateTime表示生产者创建这条消息的时间;LogAppendTime表示broker接收到消息的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "LogAppendTime",
           "member": "string",
           "name": "LogMsgTimestampType",
@@ -2940,7 +2940,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -3040,7 +3040,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -3394,7 +3394,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -3830,7 +3830,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费购买时长，例如 \"1m\",就是一个月",
+          "document": "预付费购买时长，例如 \"1m\",就是一个月,取值范围 1m~36m",
           "example": "1m",
           "member": "string",
           "name": "Period",
@@ -3894,7 +3894,7 @@
         {
           "disabled": false,
           "document": "CKafka版本号[2.4.1, 2.4.2, 2.8.1, 3.2.3], 默认取值是2.4.1。2.4.1 与 2.4.2 属于同一个版本，传任意一个均可。",
-          "example": "1.1.1",
+          "example": "2.4.2",
           "member": "string",
           "name": "KafkaVersion",
           "required": false,
@@ -4084,7 +4084,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4093,7 +4093,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称，可通过DescribeTopic接口获取。",
+          "document": "主题名称，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取",
           "example": "topic-test",
           "member": "string",
           "name": "TopicName",
@@ -4139,7 +4139,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有网络Id  创建的实例默认接入点所在的 vpc 对应 vpcId",
+          "document": "私有网络Id,可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取",
           "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
@@ -4148,19 +4148,19 @@
         },
         {
           "disabled": false,
-          "document": "ckafka集群实例名称，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
-          "example": "ckafka测试",
+          "document": "子网Id,可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取",
+          "example": "subnet-test",
           "member": "string",
-          "name": "InstanceName",
-          "required": false,
+          "name": "SubnetId",
+          "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "子网id。创建实例默认接入点所在的子网对应的子网 id",
-          "example": "subnet-test",
+          "document": "ckafka集群实例名称，是一个长度不超过128的任意字符。",
+          "example": "ckafka测试",
           "member": "string",
-          "name": "SubnetId",
+          "name": "InstanceName",
           "required": false,
           "type": "string"
         },
@@ -4193,7 +4193,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本。目前支持 \"0.10.2\",\"1.1.1\",\"2.4.1\",\"2.4.2\",\"2.8.1\"。\"2.4.1\" 与 \"2.4.2\" 属于同一个版本，传任意一个均可。",
+          "document": "实例版本。目前支持当前支持\"2.4.1\", \"2.4.2\",\"2.8.1\", \"3.2.3\"，默认取值\"2.4.1\"。\"2.4.1\" 与 \"2.4.2\" 属于同一个版本，传任意一个均可。",
           "example": "2.4.2",
           "member": "string",
           "name": "KafkaVersion",
@@ -4220,7 +4220,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内网峰值带宽。单位 MB/s。标准版需传入当前实例规格所对应的峰值带宽。注意如果创建的实例为专业版实例，峰值带宽，分区数等参数配置需要满足专业版的计费规格。",
+          "document": "实例内网峰值带宽，默认值为40。单位 MB/s。标准版需传入当前实例规格所对应的峰值带宽。注意如果创建的实例为专业版实例，峰值带宽，分区数等参数配置需要满足专业版的计费规格，可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/11745",
           "example": "20",
           "member": "int64",
           "name": "BandWidth",
@@ -4229,7 +4229,7 @@
         },
         {
           "disabled": false,
-          "document": "实例硬盘大小，需要满足当前实例的计费规格",
+          "document": "实例硬盘大小，默认取值为500，步长设置为100。需要满足当前实例的计费规格，可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122562",
           "example": "200",
           "member": "int64",
           "name": "DiskSize",
@@ -4238,7 +4238,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最大分区数量，需要满足当前实例的计费规格",
+          "document": "实例最大分区数量，需要满足当前实例的计费规格。默认值为800，步长为100。可以通过以下链接查看计费规格：https://cloud.tencent.com/document/product/597/122563",
           "example": "400",
           "member": "int64",
           "name": "Partition",
@@ -4247,7 +4247,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最大 topic 数量，需要满足当前实例的计费规格",
+          "document": "实例最大 topic 数量，需要满足当前实例的计费规格。默认值为800，步长设置为100。",
           "example": "200",
           "member": "int64",
           "name": "TopicNum",
@@ -4256,7 +4256,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在子网的可用区 id",
+          "document": "实例所在的可用区。当创建多可用区实例时，该参数为创建的默认接入点所在子网的可用区 id。ZoneId、ZoneIds不能同时为空，可通过[DescribeCkafkaZone](https://cloud.tencent.com/document/product/597/55246)接口获取。",
           "example": "100006",
           "member": "int64",
           "name": "ZoneId",
@@ -4274,7 +4274,7 @@
         },
         {
           "disabled": false,
-          "document": "当实例为多可用区实例时，多可用区 id 列表。注意参数 ZoneId 对应的多可用区需要包含在该参数数组中",
+          "document": "当实例为多可用区实例时，多可用区 id 列表。注意参数 ZoneId 对应的多可用区需要包含在该参数数组中。ZoneId、ZoneIds不能同时为空，可通过[DescribeCkafkaZone](https://cloud.tencent.com/document/product/597/55246)接口获取。",
           "example": "[100006,100007]",
           "member": "int64",
           "name": "ZoneIds",
@@ -4347,7 +4347,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4356,7 +4356,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络Id",
+          "document": "私有网络Id,可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取\n",
           "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
@@ -4365,7 +4365,7 @@
         },
         {
           "disabled": false,
-          "document": "子网Id",
+          "document": "子网Id,可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取",
           "example": "subnet-test",
           "member": "string",
           "name": "SubnetId",
@@ -4402,7 +4402,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4438,7 +4438,7 @@
         },
         {
           "disabled": false,
-          "document": "访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl,默认为0",
+          "document": "访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0\nvipType=3,支持 0,1,3,4,5\nvipType=7,支持0,1,3\nvipType=1,支持1,3\n",
           "example": "1",
           "member": "int64",
           "name": "AccessType",
@@ -4465,7 +4465,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽,公网路由必传,且必选时3的倍数,无默认值",
+          "document": "公网带宽,公网路由必传,且是3的倍数,无默认值",
           "example": "3",
           "member": "int64",
           "name": "PublicNetwork",
@@ -4478,6 +4478,15 @@
           "example": "10.0.0.30",
           "member": "string",
           "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "note-test",
+          "member": "string",
+          "name": "Note",
           "required": false,
           "type": "string"
         }
@@ -4511,7 +4520,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4557,7 +4566,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4566,7 +4575,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称，可通过DescribeTopic接口获取",
+          "document": "主题名称，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取",
           "example": "topic-test",
           "member": "string",
           "name": "TopicName",
@@ -4612,7 +4621,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "实例Id，可通过DescribeInstances接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4675,7 +4684,7 @@
         },
         {
           "disabled": false,
-          "document": "主题备注，是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "document": "主题备注，是一个不超过 64 个字符的字符串，可以用字母和数字为首字符，剩余部分可以包含字母、数字和横划线(-)",
           "example": "note",
           "member": "string",
           "name": "Note",
@@ -4684,7 +4693,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为1",
+          "document": "最小同步副本数，默认为1",
           "example": "2",
           "member": "int64",
           "name": "MinInsyncReplicas",
@@ -4693,7 +4702,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许未同步的副本选为leader，false:不允许，true:允许，默认不允许",
+          "document": "是否允许未同步的副本选为leader，0:不允许，1:允许，默认不允许",
           "example": "1",
           "member": "int64",
           "name": "UncleanLeaderElectionEnable",
@@ -4702,7 +4711,7 @@
         },
         {
           "disabled": false,
-          "document": "可选参数。消息保留时间，单位ms，当前最小值为60000ms",
+          "document": "可选参数。消息保留时间，单位ms，当前最小值为60000。默认值为7200000ms（2小时），最大值为7776000000 ms（90天）。",
           "example": "60000",
           "member": "int64",
           "name": "RetentionMs",
@@ -4711,8 +4720,8 @@
         },
         {
           "disabled": false,
-          "document": "Segment分片滚动的时长，单位ms，当前最小为3600000ms",
-          "example": "360000",
+          "document": "Segment分片滚动的时长，单位ms，最小值为86400000ms（1天）。",
+          "example": "86400000",
           "member": "int64",
           "name": "SegmentMs",
           "required": false,
@@ -4720,7 +4729,7 @@
         },
         {
           "disabled": false,
-          "document": "主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为12582912Byte（即12MB）",
+          "document": "主题消息最大值，单位为 Byte，最小值1024Bytes(即1KB)，最大值为12582912Bytes（即12MB）",
           "example": "1024",
           "member": "int64",
           "name": "MaxMessageBytes",
@@ -4747,8 +4756,8 @@
         },
         {
           "disabled": false,
-          "document": "可选, 保留文件大小. 默认为-1,单位bytes, 当前最小值为1048576B",
-          "example": "-1",
+          "document": "可选, 保留文件大小. 默认为-1,单位Byte, 当前最小值为1073741824。",
+          "example": "1073741824",
           "member": "int64",
           "name": "RetentionBytes",
           "required": false,
@@ -4757,7 +4766,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]\t",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -4788,7 +4797,7 @@
         {
           "disabled": false,
           "document": "返回创建结果",
-          "example": "{\"TopicId\":\"topic-crb21z3o\"}",
+          "example": "无",
           "member": "CreateTopicResp",
           "name": "Result",
           "output_required": true,
@@ -4809,7 +4818,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5468,7 +5477,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "过期时间，单位ms",
           "example": "3600000",
           "member": "uint64",
           "name": "RetentionMs",
@@ -5745,7 +5754,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5836,7 +5845,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id信息，可通过DescribeInstances接口获取。",
+          "document": "实例id信息，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -5993,7 +6002,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6039,7 +6048,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6076,7 +6085,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6113,7 +6122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6177,7 +6186,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6213,7 +6222,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6222,7 +6231,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名，可通过DescribeTopic接口获取。",
+          "document": "主题名，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取。",
           "example": "topic-test",
           "member": "string",
           "name": "TopicName",
@@ -6314,7 +6323,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取。",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6323,7 +6332,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名称，可通过DescribeUser接口获取。",
+          "document": "用户名称，可通过[DescribeUser](https://cloud.tencent.com/document/product/597/40855)接口获取。",
           "example": "name-test",
           "member": "string",
           "name": "Name",
@@ -6360,7 +6369,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -6442,7 +6451,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -7204,7 +7213,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源的Id",
+          "document": "连接源数据信息",
           "example": "无",
           "member": "DescribeConnectResourceResp",
           "name": "Result",
@@ -7235,7 +7244,7 @@
         },
         {
           "disabled": false,
-          "document": "连接源名称的关键字查询",
+          "document": "连接源名称的关键字查询,支持模糊匹配",
           "example": "search-test",
           "member": "string",
           "name": "SearchWord",
@@ -7253,7 +7262,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100",
+          "document": "返回数量，默认为20，最大值为1000 (超过1000,则限制为1000)",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -7304,7 +7313,7 @@
         {
           "disabled": false,
           "document": "连接源列表",
-          "example": "{\"TotalCount\":1,\"ConnectResourceList\":[{\"ResourceId\":\"resource-test\",\"ResourceName\":\"resource-test\"]}",
+          "example": "无",
           "member": "DescribeConnectResourcesResp",
           "name": "Result",
           "output_required": true,
@@ -7325,7 +7334,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -7334,7 +7343,7 @@
         },
         {
           "disabled": false,
-          "document": "可选，用户需要查询的group名称。",
+          "document": "用户需要查询的group名称。",
           "example": " group-test",
           "member": "string",
           "name": "GroupName",
@@ -7343,7 +7352,7 @@
         },
         {
           "disabled": false,
-          "document": "可选，用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。",
+          "document": "用户需要查询的group中的对应的topic名称，如果指定了该参数，而group又未指定则忽略该参数。",
           "example": " topic-test",
           "member": "string",
           "name": "TopicName",
@@ -7352,7 +7361,7 @@
         },
         {
           "disabled": false,
-          "document": "本次返回个数限制，最大支持50",
+          "document": "返回消费组的限制数量，最大支持50",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -7361,7 +7370,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移位置",
+          "document": "消费组列表的起始偏移量",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7377,7 +7386,7 @@
         {
           "disabled": false,
           "document": "返回的消费分组信息",
-          "example": "{\"TotalCount\":1,\"TopicList\":[{\"TopicId\":\"topic-test\",\"TopicName\":\"topic-test\"}],\"GroupList\":[{\"ConsumerGroupName\":\"group-test\",\"SubscribedInfo\":[{\"TopicName\":\"topic-test\",\"PartitionOffset\":[{\"Partition\":\"0\",\"Offset\":966186803},{\"Partition\":\"1\",\"Offset\":968552882},{\"Partition\":\"2\",\"Offset\":957792934}]}]}],\"TotalPartition\":3,\"PartitionListForMonitor\":[],\"TotalTopic\":1,\"TopicListForMonitor\":[{\"TopicId\":\"topic-test\",\"TopicName\":\"topic-test\"}],\"GroupListForMonitor\":[{\"GroupName\":\"group-test\"}]}",
+          "example": "无",
           "member": "ConsumerGroupResponse",
           "name": "Result",
           "output_required": true,
@@ -7398,7 +7407,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -7721,7 +7730,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100",
+          "document": "返回数量，默认为20，最大值为100 (超过100限制为100)",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -7817,7 +7826,7 @@
         {
           "disabled": false,
           "document": "返回任务查询结果",
-          "example": "{\"TotalCount\":1,\"TaskList\":[{\"Status\":1,\"TaskId\":\"task-test\",\"TaskName\":\"task测试\",\"TaskType\":\"SINK\",\"SourceResource\":{\"Type\":\"KAFKA\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\",\"Topic\":\"topic-test\",\"OffsetType\":\"timestamp\",\"StartTime\":1635339533,\"ResourceName\":\"resourceName-test\",\"ZoneId\":100003}},\"TargetResource\":{\"Type\":\"EB\",\"EventBusParam\":{\"Type\":\"COS\",\"SelfBuilt\":false,\"Resource\":\"resource-test\",\"Namespace\":\"default\",\"FunctionName\":\"functionName-test\",\"Qualifier\":\"$LATEST\"}}}]}",
+          "example": "无",
           "member": "DescribeDatahubTasksRes",
           "name": "Result",
           "output_required": true,
@@ -7893,7 +7902,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "过期时间，单位ms",
           "example": "3600000",
           "member": "uint64",
           "name": "RetentionMs",
@@ -8115,7 +8124,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -8124,7 +8133,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka 消费分组列表",
+          "document": "Kafka 消费分组列表,可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取",
           "example": "[\"group-test\"]",
           "member": "string",
           "name": "GroupList",
@@ -8140,7 +8149,7 @@
         {
           "disabled": false,
           "document": "返回的结果",
-          "example": "[{\"ErrorCode\":\"0\",\"Group\":\"group-test\",\"Members\":[],\"Protocol\":\"\",\"ProtocolType\":\"consumer\",\"State\":\"Empty\"}]",
+          "example": "无",
           "member": "GroupInfoResponse",
           "name": "Result",
           "output_required": true,
@@ -8316,7 +8325,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -8332,7 +8341,7 @@
         {
           "disabled": false,
           "document": "实例属性返回结果对象。",
-          "example": "{\"Bandwidth\":800,\"ClusterType\":\"CLOUD_EKS_TSE\",\"Config\":{\"AutoCreateTopicsEnable\":false,\"DefaultNumPartitions\":1,\"DefaultReplicationFactor\":2},\"CreateTime\":1732245392,\"CreatedPartitions\":60,\"CreatedTopics\":6,\"CustomCertId\":null,\"Cvm\":1,\"DeleteRouteTimestamp\":\"\",\"DiskSize\":1000,\"DynamicDiskConfig\":{\"DiskQuotaPercentage\":null,\"Enable\":null,\"MaxDiskSpace\":null,\"StepForwardPercentage\":null},\"ElasticFloatBandwidth\":240,\"ExpireTime\":1734837392,\"Features\":[\"FEATURE_SUBNET_ACL\",\"FEATURE_SASL_SSL\",\"FEATURE_MULIT_SASL_PLAINTEXT\",\"FEATURE_SASL_SCRAM_512\",\"FEATURE_TOPIC_QUOTA\",\"CLOUD_EKS_TSE\",\"CLOUD_EKS_CROS_ZONE\",\"FEATURE_SASL_SCRAM\"],\"FreePartitionNumber\":1200,\"Healthy\":1,\"HealthyMessage\":\"\",\"InstanceChargeType\":\"PREPAID\",\"InstanceId\":\"ckafka-wdvgwwx2\",\"InstanceName\":\"test-public-network\",\"InstanceType\":\"profession\",\"MaxConnection\":50000,\"MaxGroupNum\":500,\"MsgRetentionTime\":4320,\"PublicNetwork\":3,\"RemainderPartitions\":1140,\"RemainderTopics\":594,\"RemainingPartitions\":1140,\"RemainingTopics\":594,\"RetentionTimeConfig\":{\"BottomRetention\":null,\"DiskQuotaPercentage\":null,\"Enable\":null,\"StepForwardPercentage\":null},\"Status\":1,\"SubnetId\":\"subnet-5rhipsse\",\"Tags\":[],\"Version\":\"2.8.1\",\"Vip\":\"10.0.1.17\",\"VipList\":[{\"Vip\":\"10.0.1.17\",\"Vport\":\"9092\"}],\"VpcId\":\"vpc-ks7w9y0b\",\"Vport\":\"9092\",\"ZoneId\":100006,\"ZoneIds\":[100006,100007]}",
+          "example": "无",
           "member": "InstanceAttributesResponse",
           "name": "Result",
           "output_required": true,
@@ -8535,7 +8544,7 @@
         {
           "disabled": false,
           "document": "过滤器",
-          "example": "[{\"Name\":\"Serverless\",\"Values\":[\"1\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -8550,7 +8559,7 @@
         {
           "disabled": false,
           "document": "返回的结果",
-          "example": "{\"InstanceList\":[{\"IfCommunity\":true,\"InstanceId\":\"ckafka-test\",\"InstanceName\":\"ckafka测试\",\"Status\":1}],\"TotalCount\":1}",
+          "example": "无",
           "member": "InstanceResponse",
           "name": "Result",
           "output_required": true,
@@ -8571,7 +8580,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -8753,7 +8762,7 @@
         {
           "disabled": false,
           "document": "返回的路由信息结果集",
-          "example": "{\"Routers\":[{\"AccessType\":0,\"RouteId\":301,\"VipType\":3,\"VipList\":[{\"Vip\":\"1.0.0.5\",\"Vport\":\"9092\"}],\"Domain\":\"\",\"DomainPort\":0,\"DeleteTimestamp\":1566144000,\"InternalFlag\":0,\"UsedFor\":\"\",\"Subnet\":\"subnet-test\",\"BrokerVipList\":[{\"Vip\":\"1.0.0.5\",\"Vport\":\"9093\"},{\"Vip\":\"1.0.0.5\",\"Vport\":\"9094\"},{\"Vip\":\"1.0.0.5\",\"Vport\":\"9095\"}],\"Processing\":1,\"VpcId\":\"vpc-test\"}]}",
+          "example": "无",
           "member": "RouteResponse",
           "name": "Result",
           "output_required": true,
@@ -8884,7 +8893,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -8893,7 +8902,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "主题名称，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取",
           "example": "topic-test",
           "member": "string",
           "name": "TopicName",
@@ -8909,7 +8918,7 @@
         {
           "disabled": false,
           "document": "返回的结果对象",
-          "example": "{\"TopicId\":\"topic-test\",\"CreateTime\":1566144000,\"Note\":\"note-test\",\"PartitionNum\":20,\"EnableWhiteList\":0,\"IpWhiteList\":[\"10.0.0.5\"],\"Config\":{\"Retention\":60000,\"MinInsyncReplicas\":1,\"CleanUpPolicy\":\"delete\",\"SegmentMs\":60000,\"UncleanLeaderElectionEnable\":0,\"SegmentBytes\":1048576,\"MaxMessageBytes\":1048576,\"RetentionBytes\":1048576},\"Partitions\":[{\"Partition\":0,\"LeaderStatus\":0,\"IsrNum\":2,\"ReplicaNum\":2}],\"EnableAclRule\":0,\"AclRuleList\":[],\"QuotaConfig\":{\"QuotaProducerByteRate\":50,\"QuotaConsumerByteRate\":50},\"ReplicaNum\":2}",
+          "example": "无",
           "member": "TopicAttributesResponse",
           "name": "Result",
           "output_required": true,
@@ -8930,7 +8939,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -8957,7 +8966,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，不填则默认 10，最大值20，取值要大于0",
+          "document": "返回数量，不填则默认 20，取值要大于0",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -8975,7 +8984,7 @@
         },
         {
           "disabled": false,
-          "document": "根据特定的属性排序(目前支持PartitionNum/CreateTime)",
+          "document": "根据特定的属性排序(目前支持PartitionNum/CreateTime)，默认值为CreateTime。",
           "example": "PartitionNum/CreateTime",
           "member": "string",
           "name": "OrderBy",
@@ -8984,7 +8993,7 @@
         },
         {
           "disabled": false,
-          "document": "0-顺序、1-倒序",
+          "document": "0-顺序、1-倒序，默认值为0。",
           "example": "0",
           "member": "int64",
           "name": "OrderType",
@@ -8994,7 +9003,7 @@
         {
           "disabled": false,
           "document": "目前支持 ReplicaNum （副本数）筛选",
-          "example": "[{\"Name\":\"filtername-test\",\"TagValue\":[\"filtervalue-test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -9009,7 +9018,7 @@
         {
           "disabled": false,
           "document": "返回的主题详情实体",
-          "example": "{\"TopicList\":[{\"TopicName\":\"topic-test\",\"TopicId\":\"topic-test\",\"PartitionNum\":1,\"ReplicaNum\":2,\"Note\":\"note-test\",\"CreateTime\":1566144000,\"EnableWhiteList\":true,\"IpWhiteListCount\":0,\"ForwardCosBucket\":\"\",\"ForwardStatus\":0,\"ForwardInterval\":0,\"Config\":{\"Retention\":60000,\"MinInsyncReplicas\":0,\"CleanUpPolicy\":\"delete\",\"SegmentMs\":3600000,\"UncleanLeaderElectionEnable\":0,\"SegmentBytes\":1048576,\"MaxMessageBytes\":1048576,\"RetentionBytes\":1048576},\"Status\":0,\"Tags\":[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]}],\"TotalCount\":1}",
+          "example": "无",
           "member": "TopicDetailResponse",
           "name": "Result",
           "output_required": true,
@@ -9076,7 +9085,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -9128,7 +9137,7 @@
         {
           "disabled": false,
           "document": "流量排行返回结果",
-          "example": "{\"BrokerIp\":[\"10.0.0.14\",\"10.0.0.15\",\"10.0.0.16\",\"10.0.0.17\"],\"BrokerTopicData\":[],\"BrokerTopicFlowData\":[],\"ConsumeSpeed\":[{\"ConsumerGroupName\":\"group-test\",\"Speed\":0}],\"TopicFlow\":[{\"MessageHeap\":0,\"PartitionNum\":3,\"ReplicaNum\":2,\"TopicId\":\"topic-test\",\"TopicName\":\"topic-test\",\"TopicTraffic\":\"0.00\"}],\"TopicMessageHeap\":[{\"MessageHeap\":0,\"PartitionNum\":3,\"ReplicaNum\":2,\"TopicId\":\"topic-test\",\"TopicName\":\"topic-test\",\"TopicTraffic\":\"0.00\"}]}",
+          "example": "无",
           "member": "TopicFlowRankingResult",
           "name": "Result",
           "output_required": true,
@@ -9149,7 +9158,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -9158,7 +9167,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名",
+          "document": "主题名，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取。",
           "example": "topic-test",
           "member": "string",
           "name": "TopicName",
@@ -9174,7 +9183,7 @@
         {
           "disabled": false,
           "document": "链接信息返回结果集",
-          "example": "[{\"IpAddr\":\"10.0.0.30\",\"Time\":\"2019-08-19 00:00:00\",\"IsUnSupportVersion\":true}]",
+          "example": "无",
           "member": "DescribeConnectInfoResultDTO",
           "name": "Result",
           "output_required": true,
@@ -9359,7 +9368,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，不填则默认10，最大值20。",
+          "document": "返回数量，默认值为20，必须大于0。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -9384,7 +9393,7 @@
         {
           "disabled": false,
           "document": "返回topic 副本详情",
-          "example": "{\"TopicInSyncReplicaList\":[{\"BeginOffset\":0,\"EndOffset\":1,\"InSyncReplica\":\"1\",\"Leader\":1,\"MessageCount\":0,\"OutOfSyncReplica\":\"2\",\"Partition\":\"0\",\"Replica\":\"2,1\"}],\"TotalCount\":1}",
+          "example": "无",
           "member": "TopicInSyncReplicaResult",
           "name": "Result",
           "output_required": true,
@@ -10820,7 +10829,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性topic名称，可通过DescribeDatahubTopics接口获取。",
+          "document": "弹性topic名称，可通过[DescribeDatahubTopics](https://cloud.tencent.com/document/product/597/86863)接口获取",
           "example": "appId-test",
           "member": "string",
           "name": "Name",
@@ -10939,7 +10948,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id，可通过DescribeInstances接口获取。",
+          "document": "ckafka集群实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -10948,7 +10957,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名，可通过DescribeTopic接口获取。",
+          "document": "主题名，可通过[DescribeTopic](https://cloud.tencent.com/document/product/597/40847)接口获取",
           "example": "topic-test",
           "member": "string",
           "name": "Topic",
@@ -11764,7 +11773,7 @@
         {
           "disabled": false,
           "document": "购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)\n分区上限 最大值: 40000,步长: 100\n可以通过以下链接查看规格限制: https://cloud.tencent.com/document/product/597/122563\n",
-          "example": "40",
+          "example": "400",
           "member": "int64",
           "name": "Partition",
           "required": false,
@@ -12048,18 +12057,16 @@
           "member": "string",
           "name": "DiskType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "购买硬盘大小: 单位GB",
-          "example": "1",
+          "example": "400",
           "member": "int64",
           "name": "DiskSize",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -13203,7 +13210,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -13240,7 +13247,7 @@
         {
           "disabled": false,
           "document": "分区上限 最大值: 40000, 步长: 100\n可以通过以下链接查看规格限制: https://cloud.tencent.com/document/product/597/122563\n",
-          "example": "60",
+          "example": "400",
           "member": "int64",
           "name": "Partition",
           "required": false,
@@ -14333,7 +14340,7 @@
         {
           "disabled": false,
           "document": "消息保留时间，单位：ms，当前最小值为60000ms。",
-          "example": "1000",
+          "example": "360000",
           "member": "int64",
           "name": "RetentionMs",
           "required": true,
@@ -14351,7 +14358,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "1",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -14366,7 +14373,7 @@
         {
           "disabled": false,
           "document": "返回结果集",
-          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -14387,7 +14394,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -14396,7 +14403,7 @@
         },
         {
           "disabled": false,
-          "document": "消费分组名称",
+          "document": "消费分组名称,可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取",
           "example": "group-test",
           "member": "string",
           "name": "Group",
@@ -14405,7 +14412,7 @@
         },
         {
           "disabled": false,
-          "document": "重置offset的策略，入参含义 0. 对齐shift-by参数，代表把offset向前或向后移动shift条 1. 对齐参考(by-duration,to-datetime,to-earliest,to-latest),代表把offset移动到指定timestamp的位置 2. 对齐参考(to-offset)，代表把offset移动到指定的offset位置",
+          "document": "重置offset的策略,入参含义 0. 对齐shift-by参数,代表把offset向前或向后移动shift条 1. 对齐参考(by-duration,to-datetime,to-earliest,to-latest),代表把offset移动到指定timestamp的位置 2. 对齐参考(to-offset),代表把offset移动到指定的offset位置",
           "example": "1",
           "member": "int64",
           "name": "Strategy",
@@ -14414,7 +14421,7 @@
         },
         {
           "disabled": false,
-          "document": "需要重置的主题名列表， 不填表示全部",
+          "document": "需要重置的主题名列表",
           "example": "[\"topic-test\"]",
           "member": "string",
           "name": "Topics",
@@ -14432,7 +14439,7 @@
         },
         {
           "disabled": false,
-          "document": "单位ms。当strategy为1时，必须包含该字段，其中-2表示重置offset到最开始的位置，-1表示重置到最新的位置(相当于清空)，其它值则代表指定的时间，会获取topic中指定时间的offset然后进行重置，需要注意的时，如果指定的时间不存在消息，则获取最末尾的offset。",
+          "document": "单位ms。当strategy为1时，必须包含该字段，其中-2表示重置offset到最开始的位置，-1表示重置到最新的位置(相当于清空)，其它值则代表指定的时间，会获取topic中指定时间的offset然后进行重置，需要注意的是，如果指定的时间不存在消息，则获取最末尾的offset。",
           "example": "13589015901000",
           "member": "int64",
           "name": "ShiftTimestamp",
@@ -14466,7 +14473,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"Data\":null,\"ReturnCode\":\"0\",\"ReturnMessage\":\"SUCCESS\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -14520,7 +14527,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -14647,7 +14654,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -14675,7 +14682,7 @@
         {
           "disabled": false,
           "document": "分区上限 最大值: 40000, 步长: 100\n可以通过以下链接查看规格限制: https://cloud.tencent.com/document/product/597/122563",
-          "example": "100",
+          "example": "400",
           "member": "int64",
           "name": "Partition",
           "required": false,
@@ -14711,7 +14718,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id，可通过DescribeInstances接口获取。",
+          "document": "实例Id，可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -14720,7 +14727,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名称，可通过DescribeUser接口获取。",
+          "document": "用户名称，可通过[DescribeUser](https://cloud.tencent.com/document/product/597/40855)接口获取。",
           "example": "name-test",
           "member": "string",
           "name": "Name",
@@ -14775,7 +14782,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -14974,7 +14981,7 @@
         },
         {
           "disabled": false,
-          "document": "Segment 分片滚动的时长，单位：ms，当前最小为300000ms。",
+          "document": "Segment 分片滚动的时长，单位：ms，当前最小值86400000ms。",
           "example": "86400000",
           "member": "int64",
           "name": "SegmentMs",
@@ -15029,7 +15036,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -15071,7 +15078,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"Data\":null,\"ReturnCode\":\"0\",\"ReturnMessage\":\"ok[apply success]\"}",
+          "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
           "output_required": true,
@@ -16666,8 +16673,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "export类型（jmx_export\\node_export）",
-          "example": "jmx_export",
+          "document": "export类型（JmxExport\\NodeExport）",
+          "example": "JmxExport",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -16987,7 +16994,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id,可通过DescribeInstances接口获取",
+          "document": "ckafka集群实例Id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -17118,7 +17125,7 @@
         {
           "disabled": false,
           "document": "虚拟IP列表",
-          "example": "[{\"Vip\":\"10.0.0.5\",\"Vport\":\"9092\"}]",
+          "example": "无",
           "member": "VipEntity",
           "name": "VipList",
           "output_required": true,
@@ -17168,7 +17175,7 @@
         {
           "disabled": false,
           "document": "虚拟IP列表(1对1 broker节点)",
-          "example": "[{\"Vip\":\"10.0.0.5\",\"Vport\":\"9092\"}]",
+          "example": "无",
           "member": "VipEntity",
           "name": "BrokerVipList",
           "output_required": true,
@@ -17191,6 +17198,16 @@
           "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "note-test",
+          "member": "string",
+          "name": "Note",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18253,8 +18270,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
-          "example": "2021-7-26  4:16:58",
+          "document": "创建时间的秒级时间戳",
+          "example": "1753056925",
           "member": "int64",
           "name": "CreateTime",
           "output_required": true,
@@ -18304,7 +18321,7 @@
         {
           "disabled": false,
           "document": "topic 配置数组",
-          "example": "{\"Retention\":86400000,\"MinInsyncReplicas\":1,\"CleanUpPolicy\":\"delete\",\"SegmentMs\":null,\"UncleanLeaderElectionEnable\":1,\"SegmentBytes\":null,\"MaxMessageBytes\":8388608,\"RetentionBytes\":null}",
+          "example": "无",
           "member": "Config",
           "name": "Config",
           "output_required": true,
@@ -18314,7 +18331,7 @@
         {
           "disabled": false,
           "document": "分区详情",
-          "example": "[{\"Partition\":0,\"LeaderStatus\":0,\"IsrNum\":2,\"ReplicaNum\":2}]",
+          "example": "无",
           "member": "TopicPartitionDO",
           "name": "Partitions",
           "output_required": true,
@@ -18344,7 +18361,7 @@
         {
           "disabled": false,
           "document": "topic 限流策略",
-          "example": "{\"QuotaProducerByteRate\":30,\"QuotaConsumerByteRate\":30}",
+          "example": "无",
           "member": "InstanceQuotaConfigResp",
           "name": "QuotaConfig",
           "output_required": true,
@@ -19690,7 +19707,7 @@
         {
           "disabled": false,
           "document": "zone列表",
-          "example": "[{\"ZoneId\":\"100003\",\"IsInternalApp\":1,\"AppId\":1000000001,\"Flag\":false,\"ZoneName\":\"广州三区\",\"ZoneStatus\":3,\"SoldOut\":\"true\",\"SalesInfo\":[{\"Flag\":false,\"Version\":\"1.1.1\",\"Platform\":\"standard\",\"SoldOut\":true}],\"ExtraFlag\":\"0\"}]",
+          "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneList",
           "output_required": true,
@@ -19720,7 +19737,7 @@
         {
           "disabled": false,
           "document": "后付费单位价格",
-          "example": "{\"RealTotalCost\":0,\"TotalCost\":0}",
+          "example": "无",
           "member": "Price",
           "name": "UnitPrice",
           "output_required": true,
@@ -19730,7 +19747,7 @@
         {
           "disabled": false,
           "document": "后付费消息单价",
-          "example": "{\"RealTotalCost\":0,\"TotalCost\":0}",
+          "example": "无",
           "member": "Price",
           "name": "MessagePrice",
           "output_required": true,
@@ -19740,7 +19757,7 @@
         {
           "disabled": false,
           "document": "用户独占集群信息",
-          "example": "[{\"ClusterId\":6894,\"ClusterName\":\"100003-ckafka-test\",\"MaxDiskSize\":198,\"MaxBandWidth\":19,\"AvailableDiskSize\":198,\"AvailableBandWidth\":19,\"ZoneId\":100003,\"ZoneIds\":[100003,100002]}]",
+          "example": "无",
           "member": "ClusterInfo",
           "name": "ClusterInfo",
           "output_required": true,
@@ -19789,8 +19806,8 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写",
-          "example": "3",
+          "document": "公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义",
+          "example": "[{\\\"Maximum\\\":198,\\\"Minimal\\\":3,\\\"step\\\":3}]",
           "member": "string",
           "name": "PublicNetwork",
           "output_required": true,
@@ -19800,7 +19817,7 @@
         {
           "disabled": false,
           "document": "公网带宽配置",
-          "example": "999",
+          "example": "{\\\"Maximum\\\":999,\\\"Minimal\\\":198,\\\"step\\\":3,\\\"minimalZoneIds\\\":[100001,100002,200001,300001,400001],\\\"unsupportedRegionId\\\":[54,57,32,78,45,35]}",
           "member": "string",
           "name": "PublicNetworkLimit",
           "output_required": true,
@@ -19813,16 +19830,6 @@
           "example": "a85846f2-95bd-454d-8edf-f4cfe618282f",
           "member": "string",
           "name": "RequestId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "版本",
-          "example": "1.1.1",
-          "member": "string",
-          "name": "Version",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

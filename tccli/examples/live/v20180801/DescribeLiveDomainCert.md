@@ -15,8 +15,8 @@ Output:
     "Response": {
         "DomainCertInfo": {
             "CertId": 1000,
-            "CertName": "testName",
-            "Description": "testDesc",
+            "CertName": "tName",
+            "Description": "tDesc",
             "CreateTime": "2018-11-30T15:50:12Z",
             "HttpsCrt": "fsgfdsfsdfdsfd",
             "CertType": 0,

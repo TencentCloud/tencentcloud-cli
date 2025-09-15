@@ -507,7 +507,7 @@
         {
           "disabled": false,
           "document": "插件标识",
-          "example": "xxxx",
+          "example": "chaos",
           "member": "string",
           "name": "PluginKey",
           "required": false,
@@ -522,7 +522,7 @@
         {
           "disabled": false,
           "document": "产品列表",
-          "example": "[]",
+          "example": "[\"cvm\"]",
           "member": "string",
           "name": "ProductList",
           "output_required": false,
@@ -636,7 +636,7 @@
         {
           "disabled": false,
           "document": "插件标识",
-          "example": "无",
+          "example": "chaos",
           "member": "string",
           "name": "PluginKey",
           "required": false,
@@ -669,7 +669,7 @@
         {
           "disabled": false,
           "document": "架构ID",
-          "example": "无",
+          "example": "arch-xx",
           "member": "string",
           "name": "ArchId",
           "output_required": false,
@@ -679,7 +679,7 @@
         {
           "disabled": false,
           "document": "架构名称",
-          "example": "无",
+          "example": "测试架构",
           "member": "string",
           "name": "ArchName",
           "output_required": false,
@@ -689,7 +689,7 @@
         {
           "disabled": false,
           "document": "创建人Uin",
-          "example": "无",
+          "example": "测试uin",
           "member": "string",
           "name": "CreateUin",
           "output_required": false,
@@ -699,7 +699,7 @@
         {
           "disabled": false,
           "document": "更新人Uin",
-          "example": "无",
+          "example": "更新uin",
           "member": "string",
           "name": "UpdateUin",
           "output_required": false,
@@ -709,7 +709,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2023-02-03T01:00:00Z",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": false,
@@ -719,7 +719,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2023-02-03T01:00:00Z",
           "member": "datetime_iso",
           "name": "UpdateTime",
           "output_required": false,
@@ -729,7 +729,7 @@
         {
           "disabled": false,
           "document": "版本名称",
-          "example": "无",
+          "example": "1.0",
           "member": "string",
           "name": "VersionName",
           "output_required": false,
@@ -818,7 +818,7 @@
         {
           "disabled": false,
           "document": "页码。>0",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -827,7 +827,7 @@
         {
           "disabled": false,
           "document": "每页数目。>0 且 <=100\t",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -836,7 +836,7 @@
         {
           "disabled": false,
           "document": "根据架构图Id搜索",
-          "example": "无",
+          "example": "arch-xx",
           "member": "string",
           "name": "ArchId",
           "required": false,
@@ -845,7 +845,7 @@
         {
           "disabled": false,
           "document": "根据架构图名称搜索",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "ArchName",
           "required": false,
@@ -863,7 +863,7 @@
         {
           "disabled": false,
           "document": "插件标识",
-          "example": "无",
+          "example": "chaos",
           "member": "string",
           "name": "PluginKey",
           "required": false,
@@ -872,7 +872,7 @@
         {
           "disabled": false,
           "document": "根据关键词搜索(支持名称、描述、ID)",
-          "example": "无",
+          "example": "chaos",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -897,7 +897,7 @@
         {
           "disabled": false,
           "document": "总数。如不返回则为0",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,

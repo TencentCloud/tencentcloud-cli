@@ -8,7 +8,7 @@ Input:
 tccli advisor DescribePluginArchList --cli-unfold-argument  \
     --PageNumber 1 \
     --PageSize 10 \
-    --PluginKey xxxxxxx
+    --PluginKey xx
 ```
 
 Output: 

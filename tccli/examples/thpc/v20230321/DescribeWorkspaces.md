@@ -1,13 +1,13 @@
 **Example 1: 查询工作空间列表**
 
-查看在广州二区的实例信息,限制返回结果最多为一项
+查看在上海8区的实例信息,限制返回结果最多为一项
 
 Input: 
 
 ```
 tccli thpc DescribeWorkspaces --cli-unfold-argument  \
     --Limit 1 \
-    --Filters.0.Values ap-guangzhou-2 \
+    --Filters.0.Values ap-shanghai-8 \
     --Filters.0.Name zone \
     --Offset 0
 ```

@@ -2021,6 +2021,15 @@
           "name": "DomainId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名称映射属性",
+          "example": "cn",
+          "member": "string",
+          "name": "AttributeUserName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

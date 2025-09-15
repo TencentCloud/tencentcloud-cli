@@ -6786,7 +6786,7 @@
         {
           "disabled": false,
           "document": "意愿确认环节中用户语音转文字的识别结果。\n- 若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "我同意",
           "member": "string",
           "name": "AsrResult",
           "output_required": true,
@@ -6806,7 +6806,7 @@
         {
           "disabled": false,
           "document": "意愿确认环节的结果信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "成功",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
@@ -6829,6 +6829,16 @@
           "example": "0",
           "member": "string",
           "name": "AsrResultSimilarity",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "意愿确认环节中录制的音频（base64）。\n- 若不存在则为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "IntentionVerifyAudio",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10565,12 +10575,21 @@
         },
         {
           "disabled": false,
-          "document": "活体检测超时时间秒数，取值(0,600]",
+          "document": "控制活体检测超时时间秒数，取值范围(0,600]",
           "example": "45",
           "member": "uint64",
           "name": "LivenessTimeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "选择需要关注的OCR告警，当出现关注的OCR告警时身份认证流程会被中断，默认值为空，表示全部告警都关注。这功能需要参数 DisableCheckOcrWarnings=false，若关闭告警，本参数将不生效",
+          "example": "-9104,-9105",
+          "member": "string",
+          "name": "SelectedWarningCodes",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
