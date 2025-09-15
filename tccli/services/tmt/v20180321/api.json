@@ -343,7 +343,7 @@
         },
         {
           "disabled": false,
-          "document": "目标语言，支持语言列表：\n\n- 中文：zh\n- 繁体（台湾）：zh-TW\n- 繁体（香港）：zh-HK\n- 英文：en\n- 日语：ja\n- 韩语：ko\n- 泰语：th\n- 越南语：vi\n- 俄语：ru\n- 德语：de\n- 法语：fr\n- 阿拉伯语：ar\n- 西班牙语：es\n- 意大利语：it\n- 印度尼西亚语：id\n- 马来西亚语：ms\n- 葡萄牙语：pt\n- 土耳其语：tr\n- ",
+          "document": "目标语言，支持语言列表：\n\n- 中文：zh\n- 繁体（中国台湾）：zh-TW\n- 繁体（中国香港）：zh-HK\n- 英文：en\n- 日语：ja\n- 韩语：ko\n- 泰语：th\n- 越南语：vi\n- 俄语：ru\n- 德语：de\n- 法语：fr\n- 阿拉伯语：ar\n- 西班牙语：es\n- 意大利语：it\n- 印度尼西亚语：id\n- 马来西亚语：ms\n- 葡萄牙语：pt\n- 土耳其语：tr\n- ",
           "example": "en",
           "member": "string",
           "name": "Target",
@@ -418,7 +418,7 @@
         {
           "disabled": false,
           "document": "逆时针图片角度，取值范围为0-359",
-          "example": "90",
+          "example": "90.0",
           "member": "float",
           "name": "Angle",
           "output_required": false,
@@ -428,7 +428,7 @@
         {
           "disabled": false,
           "document": "翻译详情信息",
-          "example": "[{\"BoundingBox\":{\"Height\":26,\"Width\":240,\"X\":532,\"Y\":53},\"LineHeight\":23,\"LinesCount\":1,\"SourceLineText\":\"你好\",\"TargetLineText\":\"hello\"}]",
+          "example": "无",
           "member": "TransDetail",
           "name": "TransDetails",
           "output_required": false,

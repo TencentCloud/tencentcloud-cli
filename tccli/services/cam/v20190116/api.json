@@ -6190,7 +6190,7 @@
         {
           "disabled": false,
           "document": "手机号码",
-          "example": "132****0012",
+          "example": "132****0112",
           "member": "string",
           "name": "PhoneNumber",
           "output_required": true,
@@ -6255,6 +6255,16 @@
           "name": "Uin",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国家代码",
+          "example": "86",
+          "member": "string",
+          "name": "CountryCode",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

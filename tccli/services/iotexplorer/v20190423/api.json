@@ -5808,11 +5808,29 @@
         },
         {
           "disabled": false,
-          "document": "云存 AI 服务类型。可选值：\n- `RealtimeObjectDetect`：目标检测\n- `Highlight`：视频浓缩",
+          "document": "云存 AI 服务类型。可选值：\n- `Highlight`：视频浓缩",
           "example": "Highlight",
           "member": "string",
           "name": "ServiceType",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID",
+          "example": "user1",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
           "type": "string"
         }
       ],

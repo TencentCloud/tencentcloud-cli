@@ -416,7 +416,7 @@
       {
         "document": "修改任务全量导出线程数成功",
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySyncRateLimit\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-asasdasa\",\n    \"DumpThread\": 12,\n    \"DumpRps\": 0,\n    \"LoadThread\": 0,\n    \"SinkerThread\": 0,\n    \"LoadRps\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be20a600-66e5-11f0-b22f-efb8dc978dd0\"\n    }\n}",
         "title": "修改任务全量导出线程数"
       }
     ],

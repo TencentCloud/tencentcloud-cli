@@ -9652,7 +9652,7 @@
         {
           "disabled": false,
           "document": "主叫号码",
-          "example": "008613012345678",
+          "example": "0086010xxxxxxxx",
           "member": "string",
           "name": "Caller",
           "output_required": true,
@@ -9662,7 +9662,7 @@
         {
           "disabled": false,
           "document": "被叫号码",
-          "example": "008613012345670",
+          "example": "0086130xxxxxxxx",
           "member": "string",
           "name": "Callee",
           "output_required": true,
@@ -9732,7 +9732,7 @@
         {
           "disabled": false,
           "document": "座席信息",
-          "example": "0",
+          "example": "无",
           "member": "SeatUserInfo",
           "name": "SeatUser",
           "output_required": true,
@@ -9741,7 +9741,7 @@
         },
         {
           "disabled": false,
-          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常通话\n\n电话呼入&呼出\t0\t        error\t                异常结束\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       排队时用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       振铃时用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无座席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n\n电话呼出             108\t        restrictedCallee\t被叫因高风险受限\n\n电话呼出             109\t        tooManyRequest\t    外呼超频限制\n\n电话呼出             110\t        restrictedArea\t    外呼区域限制\n\n电话呼出             111\t        restrictedTime\t外呼时间限制\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t 被叫未接听\n\n电话呼出            203\t    userReject\t被叫拒接挂断\n\n电话呼出\t          204\t    powerOff\t被叫关机\n\n电话呼出           205            numberNotExist\t被叫空号\n\n电话呼出\t         206\t           busy\t被叫忙\n\n电话呼出   \t        207\t           outOfCredit\t被叫欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t被叫不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n电话呼出        212     carrierBlocked      运营商拦截",
+          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常通话\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       排队时用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       振铃时用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无座席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR全自动结束(无人工介入)\n\n电话呼入\t            100\t      blackList 黑名单(系统侧)\n\n电话呼出             108\t        restrictedCallee\t全局外呼风险号码拦截(系统侧)\n\n电话呼出             109\t        tooManyRequest\t    外呼频控拦截(系统侧)\n\n电话呼出             110\t        restrictedArea\t    外呼地域拦截(系统侧)\n\n电话呼出             111\t        restrictedTime\t外呼时段拦截(系统侧)\n                         \n电话呼出             202            notAnswer\t 被叫未接听\n\n电话呼出            203\t    userReject\t被叫拒接挂断\n\n电话呼出\t          204\t    powerOff\t被叫关机\n\n电话呼出           205            numberNotExist\t被叫空号\n\n电话呼出\t         206\t           busy\t被叫忙\n\n电话呼出   \t        207\t           outOfCredit\t被叫欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t被叫不在服务区\n\n电话呼入&呼出\t211    clientError    座席客户端错误\n\n电话呼出        212     carrierBlocked      运营商拦截\n\n电话呼出        213     callReminder      提示来电提醒\n\n电话呼出        215     numberInvalid      被叫号码无效\n\n电话呼出        216     callRestricted      提示呼叫受限\n\n电话呼出        217     calleeRestricted      被叫黑名单受限\n\n电话呼出        218     areaRestricted      被叫区域受限\n\n电话呼出        219     promptCallForwarding      提示呼叫转移\n\n电话呼出        220     callerCancelWhileRing      振铃中主叫取消\n\n电话呼出        221     callerCancelWithoutRing      未振铃被叫号码异常\n\n音频呼入        501     callConflict      VoIP 用户呼叫冲突终止\n\n音频呼入        502     clientTimeout      VoIP 用户客户端超时\n\n音频呼入        503     voipClientError      VoIP 用户客户端错误",
           "example": "1",
           "member": "int64",
           "name": "EndStatus",
@@ -9832,7 +9832,7 @@
         {
           "disabled": false,
           "document": "服务参与者列表",
-          "example": "0",
+          "example": "无",
           "member": "ServeParticipant",
           "name": "ServeParticipants",
           "output_required": true,
@@ -9851,7 +9851,7 @@
         },
         {
           "disabled": false,
-          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常通话\n\n电话呼入&呼出\t0\t        error\t                异常结束\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       排队时用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       振铃时用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无座席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n\n电话呼出             108\t        restrictedCallee\t被叫因高风险受限\n\n电话呼出             109\t        tooManyRequest\t    外呼超频限制\n\n电话呼出             110\t        restrictedArea\t    外呼区域限制\n\n电话呼出             111\t        restrictedTime\t外呼时间限制\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t 被叫未接听\n\n电话呼出            203\t    userReject\t被叫拒接挂断\n\n电话呼出\t          204\t    powerOff\t被叫关机\n\n电话呼出           205            numberNotExist\t被叫空号\n\n电话呼出\t         206\t           busy\t被叫忙\n\n电话呼出   \t        207\t           outOfCredit\t被叫欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t被叫不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n电话呼出        212     carrierBlocked      运营商拦截",
+          "document": "参考 EndStatus 字段",
           "example": "ok",
           "member": "string",
           "name": "EndStatusString",
@@ -9882,7 +9882,7 @@
         {
           "disabled": false,
           "document": "后置IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）",
-          "example": "0",
+          "example": "无",
           "member": "IVRKeyPressedElement",
           "name": "PostIVRKeyPressed",
           "output_required": true,
@@ -9912,7 +9912,7 @@
         {
           "disabled": false,
           "document": "主叫号码保护ID，开启号码保护映射功能时有效，且Caller字段置空",
-          "example": "008613XXXX5678",
+          "example": "0086130xxxxxxxx",
           "member": "string",
           "name": "ProtectedCaller",
           "output_required": true,
@@ -9922,7 +9922,7 @@
         {
           "disabled": false,
           "document": "被叫号码保护ID，开启号码保护映射功能时有效，且Callee字段置空",
-          "example": "008613XXXX5678",
+          "example": "0086130xxxxxxxx",
           "member": "string",
           "name": "ProtectedCallee",
           "output_required": true,
@@ -9952,7 +9952,7 @@
         {
           "disabled": false,
           "document": "IVR按键信息（e.g. [{\"Key\":\"1\",\"Label\":\"非常满意\"}]）",
-          "example": "0",
+          "example": "无",
           "member": "IVRKeyPressedElement",
           "name": "IVRKeyPressedEx",
           "output_required": true,

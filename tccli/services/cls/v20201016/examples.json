@@ -572,6 +572,22 @@
         "title": "获取Kakfa协议消费信息"
       }
     ],
+    "DescribeKafkaConsumerGroupDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaConsumerGroupDetail\n<公共请求参数>\n\n{\n    \"TopicId\": \"5023192e-1254139626\",\n    \"Group\": \"same_group_id\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Group\": \"same_group_id\",\n        \"LogsetId\": \"a8248746-c989-468e-b931-a9bf6c999c89\",\n        \"PartitionInfos\": [\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 0\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 1\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 2\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 3\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 4\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 5\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 6\n            }\n        ],\n        \"RequestId\": \"b4a11979-760c-42e2-92b8-5945eb93ee98\",\n        \"State\": \"Empty\"\n    }\n}",
+        "title": "获取Kafka协议消费组详情"
+      }
+    ],
+    "DescribeKafkaConsumerGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaConsumerGroupList\n<公共请求参数>\n\n{\n    \"TopicId\": \"5023192e-1254139626\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"Group\": \"same_group_id\",\n                \"ProtocolName\": \"\",\n                \"State\": \"Empty\"\n            }\n        ],\n        \"LogsetId\": \"a8248746-c989-468e-b931-a9bf6c999c89\",\n        \"RequestId\": \"53ac1397-336a-4d4b-87ff-a2a16ff97519\",\n        \"TopicName\": \"1254139626-5023192e\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取Kafka协议消费组详情"
+      }
+    ],
     "DescribeKafkaRecharges": [
       {
         "document": "获取Kafka导入配置信息",
@@ -814,6 +830,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKafkaConsumer\n<公共请求参数>\n\n{\n    \"FromTopicId\": \"a5ce0c9c-0690-44a5-bc79-5f2190626bd0\",\n    \"Compression\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改Kafka协议消费信息"
+      }
+    ],
+    "ModifyKafkaConsumerGroupOffset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKafkaConsumerGroupOffset\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"RequestId\": \"c3ae291d-8ffd-4a26-b5ae-00b6863cdf44\"\n    }\n}",
+        "title": "修改Kafka协议消费组点位"
       }
     ],
     "ModifyKafkaRecharge": [

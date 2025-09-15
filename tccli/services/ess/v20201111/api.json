@@ -1144,6 +1144,15 @@
           "name": "SignEndpoints",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "快速注册相关信息\n",
+          "example": "无",
+          "member": "RegisterInfo",
+          "name": "RegisterInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -3628,7 +3637,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为预览模式，取值如下：\n<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> \n<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。 <font color=\"red\">注意： 以预览模式创建的合同仅供查看，因此参与方无法进行签署操作</font> </li></ul>\n注: `当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容，动态表格合成完后会触发文档合成完成的回调通知`",
+          "document": "是否为预览模式，取值如下：<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。 <font color=\"red\">注意： 1.以预览模式创建的合同仅供查看，因此参与方无法进行签署操作;；2.以预览模式调用该接口返回的FlowId为临时Flowld，无法用于发起和拉取信息。</font> </li></ul>注: `当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容，动态表格合成完后会触发文档合成完成的回调通知`",
           "example": "false",
           "member": "bool",
           "name": "NeedPreview",
@@ -10880,8 +10889,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "信息提取任务结果",
-          "example": "[{\"Description\":\"PDF文件中的机构名称\",\"Name\":\"机构名称\",\"Type\":\"TEXT\",\"Values\":[\"广州xxxx有限公司\"]},{\"Description\":\"\",\"Name\":\"社会信用代码\",\"Type\":\"TEXT\",\"Values\":[\"91440xxxxT\"]}]",
+          "document": "合同信息提取字段信息",
+          "example": "无",
           "member": "ExtractionField",
           "name": "Fields",
           "output_required": false,
@@ -10906,6 +10915,16 @@
           "name": "Url",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同信息提取结果信息",
+          "example": "无",
+          "member": "ExtractionTaskResult",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -12344,6 +12363,117 @@
           "example": "[\"张三\"]",
           "member": "string",
           "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExtractionFieldResult": {
+      "document": "合同信息提取字段值信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段ID",
+          "example": "yDxxxxx",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于合同智能提取的字段名称。",
+          "example": "甲方",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同智能提取的字段类型，目前仅支持TEXT、DATE、NUMBER、OPTION类型。\n\n类型支持如下： 1、TEXT（文本） 2、DATE（日期） 3、NUMBER（数字） 4、OPTION（选项值）",
+          "example": "TEXT",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取出合同中的字段信息。",
+          "example": "[\"张三\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否需要语义提取，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "RequiresSemanticExtraction",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取出值在合同中的坐标位置信息",
+          "example": "无",
+          "member": "PositionInfo",
+          "name": "Positions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExtractionTaskResult": {
+      "document": "合同信息提取结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于合同信息提取的资源ID。",
+          "example": "yDtIgUU2vxu",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于合同信息提取的资源名称。",
+          "example": "示例文件.pdf",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "根据当前合同提取出的字段信息",
+          "example": "无",
+          "member": "ExtractionFieldResult",
+          "name": "ExtractionFieldResults",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -16560,7 +16690,7 @@
         {
           "disabled": true,
           "document": "社会统一信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "91110108772551611J",
           "member": "string",
           "name": "Uscc",
           "output_required": false,
@@ -16574,6 +16704,17 @@
           "example": "91110108772551611J",
           "member": "string",
           "name": "UnifiedSocialCreditCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。",
+          "example": "深圳市南山区高新区科技中一路腾讯大厦",
+          "member": "string",
+          "name": "OrganizationAddress",
           "output_required": false,
           "required": false,
           "type": "string",

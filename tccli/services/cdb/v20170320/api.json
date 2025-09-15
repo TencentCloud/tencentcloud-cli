@@ -1620,7 +1620,7 @@
         {
           "disabled": false,
           "document": "读写权重分配。如果 WeightMode 传的是 system ，则传入的权重不生效，由系统分配默认权重。",
-          "example": "[{\"Region\":\"ap-guangzhou\",\"Zone\":\"ap-guangzhou-2\",\"ProxyInstance\":[{\"InstanceId\":\"cdb-aykuksx3\",\"Weight\":100}]",
+          "example": "无",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
           "required": false,
@@ -1641,6 +1641,24 @@
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否将libra节点当作普通RO节点",
+          "example": "true",
+          "member": "string",
+          "name": "ApNodeAsRoNode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "libra节点故障，是否转发给其他节点",
+          "example": "true",
+          "member": "string",
+          "name": "ApQueryToOtherNode",
           "required": false,
           "type": "string"
         }
@@ -18595,7 +18613,7 @@
         {
           "disabled": false,
           "document": "实例读权重分配",
-          "example": "[{\"Region\": \"ap-guangzhou\",\"Zone\": \"ap-guangzhou-1\",\"ProxyInstance\": [{\"InstanceId\": \"cdb-aykuksx3\"}]}]",
+          "example": "无",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
           "output_required": true,
@@ -18618,6 +18636,26 @@
           "example": "false",
           "member": "bool",
           "name": "AutoLoadBalance",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否把libra当作ro节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApNodeAsRoNode",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "libra节点故障，是否转发给其他节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApQueryToOtherNode",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false

@@ -73,7 +73,7 @@
     "DescribeExtractDocAgentJob": {
       "document": "用于查询文档处理任务。文档处理领域里常见的通用Agent 如抽取、比对之类的，目前我们提供的抽取，但未来可以根据实际情况和客户需求扩展。",
       "input": "DescribeExtractDocAgentJobRequest",
-      "name": "查询文档处理任务",
+      "name": "查询文档抽取Agent任务",
       "output": "DescribeExtractDocAgentJobResponse",
       "status": "online"
     },
@@ -535,7 +535,7 @@
     "SubmitExtractDocAgentJob": {
       "document": "文档处理领域里常见的通用Agent 如抽取、比对之类的，目前我们提供的抽取，但未来可以根据实际情况和客户需求扩展。",
       "input": "SubmitExtractDocAgentJobRequest",
-      "name": "提交文档处理任务",
+      "name": "提交文档抽取Agent任务",
       "output": "SubmitExtractDocAgentJobResponse",
       "status": "online"
     },
@@ -17594,7 +17594,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为前5页。",
           "example": "1",
           "member": "int64",

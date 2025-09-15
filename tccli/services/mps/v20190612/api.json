@@ -113,7 +113,7 @@
       "status": "online"
     },
     "CreateSchedule": {
-      "document": "对 COS 中指定 Bucket 的目录下上传的媒体文件，设置处理规则，包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、敏感信息检测）；\n8. 智能内容分析（标签、分类、封面、按帧标签）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。\n\n注意：创建编排成功后是禁用状态，需要手动启用。",
+      "document": "对 COS 中指定 Bucket 的目录下上传的媒体文件，设置处理规则，包括：\n1. 视频转码（带水印）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、敏感信息检测）；\n8. 智能内容分析（标签、分类、封面、按帧标签）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。\n10. 媒体质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）\n11. 智能字幕（语音全文、语音热词、语音翻译）\n12. 智能擦除（去水印、去字幕、隐私保护）；\n\n注意：创建编排成功后是禁用状态，需要手动启用。",
       "input": "CreateScheduleRequest",
       "name": "创建编排",
       "output": "CreateScheduleResponse",
@@ -883,7 +883,7 @@
       "status": "online"
     },
     "ProcessMedia": {
-      "document": "对 URL视频链接 或 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（普通转码、极速高清转码、音视频增强）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（例如鉴黄、敏感信息检测）；\n8. 智能内容分析（例如标签、分类、封面、按帧标签、拆条、集锦、片头片尾、游戏打点）；\n9. 智能内容识别（例如人脸、文本全文、文本关键词、语音全文、语音关键词、语音翻译、物体识别）；\n10. 媒体质检（例如媒体格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）；\n11. 智能字幕（例如语音全文、语音热词、语音翻译）；",
+      "document": "对 URL视频链接 或 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（普通转码、极速高清转码、音视频增强）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（例如鉴黄、敏感信息检测）；\n8. 智能内容分析（例如标签、分类、封面、按帧标签、拆条、集锦、片头片尾、游戏打点）；\n9. 智能内容识别（例如人脸、文本全文、文本关键词、语音全文、语音关键词、语音翻译、物体识别）；\n10. 媒体质检（例如媒体格式诊断、音画内容检测、无参考打分，其中音画内容检测主要针对抖动、模糊、低光照、过曝光、花屏、噪点、马赛克、二维码等问题）;\n11. 智能字幕（例如语音全文、语音热词、语音翻译）；\n12.  智能擦除（去水印、去字幕、隐私保护）；",
       "input": "ProcessMediaRequest",
       "name": "发起媒体处理",
       "output": "ProcessMediaResponse",
@@ -1186,7 +1186,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n<li>action-AIQualityControl：媒体质检</li>\n<li>action-SmartSubtitles：智能字幕</li>\n<li>action-exec-rules：判断规则</li>\n\n\n",
+          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n<li>action-AIQualityControl：媒体质检</li>\n<li>action-SmartSubtitles：智能字幕</li>\n<li>action-exec-rules：判断规则</li>\n<li>action-SmartErase：智能擦除</li>\n\n\n",
           "example": "input",
           "member": "string",
           "name": "ActivityType",
@@ -1354,6 +1354,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartEraseTaskInput",
+          "name": "SmartEraseTask",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1480,6 +1491,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartEraseTaskResult",
+          "name": "SmartEraseTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1489,7 +1510,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型。\n<li>Transcode：转码。</li>\n<li>SampleSnapshot：采样截图。</li>\n<li>AnimatedGraphics：转动图。</li>\n<li>SnapshotByTimeOffset：时间点截图。</li>\n<li>ImageSprites：雪碧图。</li>\n<li>AdaptiveDynamicStreaming：自适应码流。</li>\n<li>AiContentReview：内容审核。</li>\n<li>AIRecognition：智能识别。</li>\n<li>AIAnalysis：智能分析。</li>\n<li>AiQualityControl：媒体质检。</li>\n<li>SmartSubtitles：智能字幕。</li>",
+          "document": "原子任务类型。\n<li>Transcode：转码。</li>\n<li>SampleSnapshot：采样截图。</li>\n<li>AnimatedGraphics：转动图。</li>\n<li>SnapshotByTimeOffset：时间点截图。</li>\n<li>ImageSprites：雪碧图。</li>\n<li>AdaptiveDynamicStreaming：自适应码流。</li>\n<li>AiContentReview：内容审核。</li>\n<li>AIRecognition：智能识别。</li>\n<li>AIAnalysis：智能分析。</li>\n<li>AiQualityControl：媒体质检。</li>\n<li>SmartSubtitles：智能字幕。</li>\n<li>SmartErase：智能擦除。</li>",
           "example": "Transcode",
           "member": "string",
           "name": "ActivityType",
@@ -1573,7 +1594,7 @@
         {
           "disabled": false,
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
-          "example": "WatermarkSet",
+          "example": "无",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
           "output_required": true,
@@ -1584,7 +1605,7 @@
         {
           "disabled": false,
           "document": "转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "OutputStorage",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
           "output_required": true,
@@ -1627,8 +1648,8 @@
         },
         {
           "disabled": false,
-          "document": "要插入的字幕文件。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "AddOnSubtitles",
+          "document": "外挂字幕功能，指定要插入的字幕文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "AddOnSubtitle",
           "name": "AddOnSubtitles",
           "output_required": false,
@@ -1638,14 +1659,14 @@
         },
         {
           "disabled": false,
-          "document": "Drm信息。",
-          "example": "DrmInfo",
+          "document": "Drm信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "DrmInfo",
           "name": "DrmInfo",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1660,8 +1681,8 @@
         },
         {
           "disabled": false,
-          "document": "字幕参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "SubtitleTemplate",
+          "document": "硬字幕（压制字幕）功能，指定字幕来源、字体大小、位置等字幕参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SubtitleTemplate",
           "name": "SubtitleTemplate",
           "output_required": false,
@@ -7451,6 +7472,112 @@
       ],
       "usage": "out"
     },
+    "BeautyConfig": {
+      "document": "美颜配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "美颜效果",
+          "example": "无",
+          "member": "BeautyEffectItemConfig",
+          "name": "BeautyEffectItems",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "美颜滤镜",
+          "example": "无",
+          "member": "BeautyFilterItemConfig",
+          "name": "BeautyFilterItems",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BeautyEffectItemConfig": {
+      "document": "美颜效果配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型名称。取值如下：\n\n<li>Whiten：美白</li>\n<li>Smooth：磨皮</li>\n<li>BeautyThinFace：瘦脸</li>\n<li>NatureFace：自然脸型</li>\n<li>VFace：V脸</li>\n<li>EnlargeEye：大眼</li>\n<li>EyeLighten：亮眼</li>\n<li>RemoveEyeBags：祛眼袋</li>\n<li>ThinNose：瘦鼻</li>\n<li>RemoveLawLine：祛法令纹</li>\n<li>ToothWhiten：牙齿美白</li>\n\n",
+          "example": "Whiten",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "效果强度，值范围：[0, 100]。",
+          "example": "40",
+          "member": "int64",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BeautyFilterItemConfig": {
+      "document": "美颜滤镜配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型名称。取值如下：\n\n<li>Dongjing：东京</li>\n<li>QingJiaopian：轻胶片</li>\n<li>Meiwei：美味</li>\n\n",
+          "example": "QingJiaopian",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "效果强度，值范围：[0, 100]。",
+          "example": "70",
+          "member": "int64",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BlindWatermarkConfig": {
       "document": "盲水印配置",
       "members": [
@@ -10622,7 +10749,7 @@
         {
           "disabled": false,
           "document": "媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。\n如果不填，表示与触发文件所在的目录一致。",
-          "example": "\"\"",
+          "example": "/tmp/",
           "member": "string",
           "name": "OutputDir",
           "required": false,
@@ -10640,7 +10767,7 @@
         {
           "disabled": false,
           "document": "资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。",
-          "example": "无",
+          "example": "vts-213xxxx02-0",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -10685,7 +10812,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言",
+          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言\nzh_en: 中英\nprime_zh: 中英方言",
           "example": "zh",
           "member": "string",
           "name": "VideoSrcLanguage",
@@ -10712,7 +10839,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式\n vtt: WebVTT 格式\n不填或填空：不生成字幕文件",
+          "document": "智能字幕文件格式\n vtt: WebVTT 格式\n srt: SRT 格式\n不填或填空：不生成字幕文件",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -17394,12 +17521,112 @@
       ],
       "usage": "both"
     },
+    "EraseArea": {
+      "document": "智能擦除，擦除区域坐标配置。\n区域由左上角与右下角点的坐标确定。\n坐标原点为画面左上角，坐标点可使用像素值或百分比单位指定。\n对自动擦除区域：\n当单位为%时，坐标范围为[0,1]；\n当单位为px时，X值范围为 [0，视频画面宽度]，Y值范围为 [0，视频画面高度]\n对指定擦除区域：\n当单位为%时，坐标范围为[0,1)；\n当单位为px时，X值范围为 [0，视频画面宽度]，Y值范围为 [0，视频画面高度]",
+      "members": [
+        {
+          "disabled": false,
+          "document": "区域左上角X坐标。\n如当Unit取1即使用百分比单位时，0.05表示区域左上角离整个画面左上角的横向距离为画面宽度的5%。",
+          "example": "0.0500",
+          "member": "float",
+          "name": "LeftTopX",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域左上角Y坐标。\n如当Unit取1即使用百分比单位时，0.1表示区域左上角离整个画面左上角的纵向距离为画面高度的10%。",
+          "example": "0.1000",
+          "member": "float",
+          "name": "LeftTopY",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域右下角X坐标。\n如当Unit取1即使用百分比单位时，0.75表示区域右下角离整个画面左上角的横向距离为画面宽度的75%。",
+          "example": "0.7500",
+          "member": "float",
+          "name": "RightBottomX",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域右下角Y坐标。\n如当Unit取1即使用百分比单位时，0.9表示区域右下角离整个画面左上角的纵向距离为画面高度的90%。",
+          "example": "0.9000",
+          "member": "float",
+          "name": "RightBottomY",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "坐标单位\n- 1 百分比\n- 2 像素值",
+          "example": "1",
+          "member": "uint64",
+          "name": "Unit",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EraseTimeArea": {
+      "document": "智能擦除，指定擦除区域配置。\n对指定时间段内的指定区域直接进行擦除。\n当BeginMs和EndMs均取0时对整个视频内的指定区域直接进行擦除。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间，单位:毫秒",
+          "example": "200",
+          "member": "uint64",
+          "name": "BeginMs",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，单位:毫秒",
+          "example": "3000",
+          "member": "uint64",
+          "name": "EndMs",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间段内擦除区域列表",
+          "example": "无",
+          "member": "EraseArea",
+          "name": "Areas",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EvaluationMediaInputInfo": {
       "document": "视频评测任务的视频来源信息",
       "members": [
         {
           "disabled": false,
-          "document": "对比视频的来源 ID，当评测任务的类型为 BD_RATE 且对比视频来自用户输入时有效；当对比视频来自转码模版时为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比视频的来源 ID，当评测任务的类型为 BD_RATE 且对比视频来自用户输入时有效；当对比视频来自转码模板时为空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
           "name": "SourceId",
@@ -17572,11 +17799,11 @@
       "usage": "both"
     },
     "EvaluationTemplateInputInfo": {
-      "document": "在评测中使用的转码模版的信息",
+      "document": "在评测中使用的转码模板的信息",
       "members": [
         {
           "disabled": false,
-          "document": "转码模版的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转码模板的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100010",
           "member": "uint64",
           "name": "Definition",
@@ -19612,6 +19839,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "美颜配置。",
+          "example": "无",
+          "member": "BeautyConfig",
+          "name": "BeautyConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -22458,7 +22696,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入来源对象的类型，支持：\n<li> COS：COS源</li>\n<li> URL：URL源</li>\n<li> AWS-S3：AWS 源，目前只支持转码任务 </li>",
+          "document": "输入来源对象的类型，支持：\n<li> COS：COS源</li>\n<li> URL：URL源</li>\n<li> AWS-S3：AWS 源，目前只支持转码任务 </li>\n<li> VOD：点播专业版 </li>",
           "example": "NULL",
           "member": "string",
           "name": "Type",
@@ -22470,7 +22708,7 @@
         {
           "disabled": false,
           "document": "当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 对象信息。",
-          "example": "NULL",
+          "example": "无",
           "member": "CosInputInfo",
           "name": "CosInputInfo",
           "output_required": true,
@@ -22481,7 +22719,7 @@
         {
           "disabled": false,
           "document": "当 Type 为 URL 时有效，则该项为必填，表示媒体处理 URL 对象信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "UrlInputInfo",
           "name": "UrlInputInfo",
           "output_required": true,
@@ -22492,10 +22730,21 @@
         {
           "disabled": false,
           "document": "当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 对象信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "S3InputInfo",
           "name": "S3InputInfo",
           "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 对象信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VODInputInfo",
+          "name": "VODInputInfo",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -25099,7 +25348,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言",
+          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言\nzh_en: 中英\nprime_zh: 中英方言",
           "example": "zh",
           "member": "string",
           "name": "VideoSrcLanguage",
@@ -25108,7 +25357,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式\n vtt: WebVTT 格式\n不填或填空：不生成字幕文件",
+          "document": "智能字幕文件格式\n vtt: WebVTT 格式\nsrt: SRT格式\n不填或填空：不生成字幕文件",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -27304,6 +27553,15 @@
         },
         {
           "disabled": false,
+          "document": "智能擦除类型任务参数",
+          "example": "无",
+          "member": "SmartEraseTaskInput",
+          "name": "SmartEraseTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "任务的事件通知信息，不填代表不获取事件通知。",
           "example": "无",
           "member": "TaskNotifyConfig",
@@ -27332,7 +27590,7 @@
         {
           "disabled": false,
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
-          "example": "UserDefinedInfo",
+          "example": "userxxxx",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -27350,7 +27608,7 @@
         {
           "disabled": false,
           "document": "资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。",
-          "example": "vts-24000123-0",
+          "example": "vts-24000-0",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -27703,7 +27961,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "质检项名称。质检项取值如下：\n<li>LowEvaluation：无参考打分</li>\n<li>Mosaic：马赛克检测</li>\n<li>CrashScreen：花屏检测</li>\n<li>Blur：模糊检测</li>\n<li>BlackWhiteEdge：黑白边检测</li>\n<li>SolidColorScreen：纯色屏检测</li>\n<li>LowLighting：低光照</li>\n<li>HighLighting：过曝</li>\n<li>NoVoice：静音检测</li>\n<li>LowVoice：低音检测</li>\n<li>HighVoice：爆音检测</li>\n<li>Jitter：抖动检测</li>\n<li>Noise：噪点检测</li>\n<li>QRCode：二维码检测</li>\n<li>BarCode：条形码检测</li>\n<li>AppletCode：小程序码检测</li>\n<li>VideoResolutionChanged：视频分辨率变化</li>\n<li>AudioSampleRateChanged：音频采样率变化</li>\n<li>AudioChannelsChanged：音频通道数变化</li>\n<li>ParameterSetsChanged：流参数集信息发生变化</li>\n<li>DarOrSarInvalid：视频的宽高比异常</li>\n<li>TimestampFallback：DTS时间戳回退</li>\n<li>DtsJitter：DTS抖动过大</li>\n<li>PtsJitter：PTS抖动过大</li>\n<li>AACDurationDeviation：AAC帧时间戳间隔不合理</li>\n<li>AudioDroppingFrames：音频丢帧</li>\n<li>VideoDroppingFrames：视频丢帧</li>\n<li>AVTimestampInterleave：音视频交织不合理</li>\n<li>PtsLessThanDts：媒体流的 pts 小于 dts</li>\n<li>ReceiveFpsJitter：网络接收帧率抖动过大</li>\n<li>ReceiveFpsTooSmall：网络接收视频帧率过小</li>\n<li>FpsJitter：通过PTS计算得到的流帧率抖动过大</li>\n<li>StreamOpenFailed：流打开失败</li>\n<li>StreamEnd：流结束</li>\n<li>StreamParseFailed：流解析失败</li>\n<li>VideoFirstFrameNotIdr：首帧不是IDR帧</li>\n<li>StreamNALUError：NALU起始码错误</li>\n<li>TsStreamNoAud：mpegts的H26x流缺失 AUD NALU</li>\n<li>AudioStreamLack：无音频流</li>\n<li>VideoStreamLack：无视频流</li>\n<li>LackAudioRecover：缺失音频流恢复</li>\n<li>LackVideoRecover：缺失视频流恢复</li>\n<li>VideoBitrateOutofRange：视频流码率(kbps)超出范围</li>\n<li>AudioBitrateOutofRange：音频流码率(kbps)超出范围</li>\n<li>VideoDecodeFailed：视频解码错误</li>\n<li>AudioDecodeFailed：音频解码错误</li>\n<li>AudioOutOfPhase：双通道音频相位相反</li>\n<li>VideoDuplicatedFrame：视频流中存在重复帧</li>\n<li>AudioDuplicatedFrame：音频流中存在重复帧</li>\n<li>VideoRotation：视频画面旋转</li>\n<li>TsMultiPrograms：MPEG2-TS流有多个program</li>\n<li>Mp4InvalidCodecFourcc：MP4中codec fourcc不符合Apple HLS要求</li>\n<li>HLSBadM3u8Format：无效的m3u8文件</li>\n<li>HLSInvalidMasterM3u8：无效的main m3u8文件</li>\n<li>HLSInvalidMediaM3u8：无效的media m3u8文件</li>\n<li>HLSMasterM3u8Recommended：main m3u8缺少标准推荐的参数</li>\n<li>HLSMediaM3u8Recommended：media m3u8缺少标准推荐的参数</li>\n<li>HLSMediaM3u8DiscontinuityExist：media m3u8存在EXT-X-DISCONTINUITY</li>\n<li>HLSMediaSegmentsStreamNumChange：切片的流数目发生变化</li>\n<li>HLSMediaSegmentsPTSJitterDeviation：切片间PTS跳变且没有EXT-X-DISCONTINUITY</li>\n<li>HLSMediaSegmentsDTSJitterDeviation：切片间DTS跳变且没有EXT-X-DISCONTINUITY</li>\n<li>TimecodeTrackExist：MP4存在tmcd轨道</li>",
+          "document": "质检项名称。质检项取值如下：\n<li>LowEvaluation：视频无参考评分（MOS）</li>\n<li>AudioEvaluation：音频无参考评分（MOS）</li>\n<li>Mosaic：马赛克检测</li>\n<li>CrashScreen：花屏检测</li>\n<li>Blur：模糊检测</li>\n<li>Jitter：抖动检测</li>\n<li>Noise：噪点检测</li>\n<li>QRCode：二维码检测</li>\n<li>BarCode：条形码检测</li>\n<li>AppletCode：小程序码检测</li>\n<li>BlackWhiteEdge：黑白边检测</li>\n<li>SolidColorScreen：纯色屏检测</li>\n<li>LowLighting：低光照</li>\n<li>HighLighting：过曝</li>\n<li>NoVoice：静音检测</li>\n<li>LowVoice：低音检测</li>\n<li>HighVoice：爆音检测</li>\n<li>AudioNoise：音频噪声检测</li>\n<li>VideoResolutionChanged：视频分辨率变化</li>\n<li>AudioSampleRateChanged：音频采样率变化</li>\n<li>AudioChannelsChanged：音频通道数变化</li>\n<li>ParameterSetsChanged：流参数集信息发生变化</li>\n<li>DarOrSarInvalid：视频的宽高比异常</li>\n<li>TimestampFallback：DTS时间戳回退</li>\n<li>DtsJitter：DTS抖动过大</li>\n<li>PtsJitter：PTS抖动过大</li>\n<li>AACDurationDeviation：AAC帧时间戳间隔不合理</li>\n<li>AudioDroppingFrames：音频丢帧</li>\n<li>VideoDroppingFrames：视频丢帧</li>\n<li>AVTimestampInterleave：音视频交织不合理</li>\n<li>PtsLessThanDts：媒体流的 pts 小于 dts</li>\n<li>ReceiveFpsJitter：网络接收帧率抖动过大</li>\n<li>ReceiveFpsTooSmall：网络接收视频帧率过小</li>\n<li>FpsJitter：通过PTS计算得到的流帧率抖动过大</li>\n<li>StreamOpenFailed：流打开失败</li>\n<li>StreamEnd：流结束</li>\n<li>StreamParseFailed：流解析失败</li>\n<li>VideoFirstFrameNotIdr：首帧不是IDR帧</li>\n<li>StreamNALUError：NALU起始码错误</li>\n<li>TsStreamNoAud：mpegts的H26x流缺失 AUD NALU</li>\n<li>AudioStreamLack：无音频流</li>\n<li>VideoStreamLack：无视频流</li>\n<li>LackAudioRecover：缺失音频流恢复</li>\n<li>LackVideoRecover：缺失视频流恢复</li>\n<li>VideoBitrateOutofRange：视频流码率(kbps)超出范围</li>\n<li>AudioBitrateOutofRange：音频流码率(kbps)超出范围</li>\n<li>VideoDecodeFailed：视频解码错误</li>\n<li>AudioDecodeFailed：音频解码错误</li>\n<li>AudioOutOfPhase：双通道音频相位相反</li>\n<li>VideoDuplicatedFrame：视频流中存在重复帧</li>\n<li>AudioDuplicatedFrame：音频流中存在重复帧</li>\n<li>VideoRotation：视频画面旋转</li>\n<li>TsMultiPrograms：MPEG2-TS流有多个program</li>\n<li>Mp4InvalidCodecFourcc：MP4中codec fourcc不符合Apple HLS要求</li>\n<li>HLSBadM3u8Format：无效的m3u8文件</li>\n<li>HLSInvalidMasterM3u8：无效的main m3u8文件</li>\n<li>HLSInvalidMediaM3u8：无效的media m3u8文件</li>\n<li>HLSMasterM3u8Recommended：main m3u8缺少标准推荐的参数</li>\n<li>HLSMediaM3u8Recommended：media m3u8缺少标准推荐的参数</li>\n<li>HLSMediaM3u8DiscontinuityExist：media m3u8存在EXT-X-DISCONTINUITY</li>\n<li>HLSMediaSegmentsStreamNumChange：切片的流数目发生变化</li>\n<li>HLSMediaSegmentsPTSJitterDeviation：切片间PTS跳变且没有EXT-X-DISCONTINUITY</li>\n<li>HLSMediaSegmentsDTSJitterDeviation：切片间DTS跳变且没有EXT-X-DISCONTINUITY</li>\n<li>TimecodeTrackExist：MP4存在tmcd轨道</li>",
           "example": "Mosaic",
           "member": "string",
           "name": "Type",
@@ -28050,6 +28308,56 @@
       ],
       "usage": "both"
     },
+    "RawSmartEraseParameter": {
+      "document": "智能擦除自定义参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "擦除类型\n- subtitle 去字幕\n- watermark 去水印\n- privacy 隐私保护",
+          "example": "subtitle",
+          "member": "string",
+          "name": "EraseType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕擦除配置；\n当EraseType值为：subtitle，此字段为必填参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartEraseSubtitleConfig",
+          "name": "EraseSubtitleConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "水印擦除配置；\n当EraseType值为：watermark，此字段为必填参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartEraseWatermarkConfig",
+          "name": "EraseWatermarkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "隐私保护配置；\n当EraseType值为：privacy，此字段为必填参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartErasePrivacyConfig",
+          "name": "ErasePrivacyConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RawSmartSubtitleParameter": {
       "document": "自定义智能字幕参数",
       "members": [
@@ -28066,7 +28374,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言",
+          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言\nzh_en: 中英\nprime_zh: 中英方言",
           "example": "zh",
           "member": "string",
           "name": "VideoSrcLanguage",
@@ -28077,7 +28385,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式\n vtt: WebVTT 格式\n不填或填空：不生成字幕文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能字幕文件格式\n vtt: WebVTT 格式\nsrt: SRT格式\n不填或填空：不生成字幕文件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -28111,7 +28419,7 @@
         {
           "disabled": false,
           "document": "ASR热词库参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Switch\": \"OFF\"}",
+          "example": "无",
           "member": "AsrHotWordsConfigure",
           "name": "AsrHotWordsConfigure",
           "output_required": false,
@@ -30150,6 +30458,325 @@
       ],
       "usage": "both"
     },
+    "SmartErasePrivacyConfig": {
+      "document": "智能擦除模板隐私保护配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "隐私保护擦除方式。\n- blur 模糊\n- mosaic 马赛克",
+          "example": "blur",
+          "member": "string",
+          "name": "PrivacyModel",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隐私保护目标，（在API Explorer上使用时无需传入数组，添加相应项并填入对应值即可）。\n- face 人脸\n- plate 车牌",
+          "example": "[\"face\",\"plate\"]",
+          "member": "string",
+          "name": "PrivacyTargets",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartEraseSubtitleConfig": {
+      "document": "智能擦除模板去字幕配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字幕擦除方式。\n**自动擦除：**通过AI模型自动识别视频中的字幕文本内容，进行无痕化擦除，生成新的视频。但画面干扰、特殊字幕样式可能会带来一定漏擦误擦问题，可以通过指定区域擦除处理。\n当使用自动擦除时，若您不指定AutoAreas，将对默认区域（画面中下部）进行自动擦除；若指定AutoAreas，将改为对您指定的区域进行自动擦除。\n**指定区域擦除：**若您的字幕位置较固定，建议您直接指定擦除区域，最大程度减少漏擦的情况。\n当您选择指定区域擦除时，请在CustomAreas中至少传入一个指定区域。\n- auto 自动擦除\n- custom 指定区域擦除\n",
+          "example": "auto",
+          "member": "string",
+          "name": "SubtitleEraseMethod",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕擦除模型。\n**标准版（推荐）：**若您的字幕样式标准，通常建议选择该版本，细节无痕化效果更好。\n**区域版：**若您的字幕存在花体、阴影、动效等特殊样式，建议选择区域版，擦除面积更大，但细节效果不如标准版。\n- standard 标准模型\n- area 区域模型",
+          "example": "standard",
+          "member": "string",
+          "name": "SubtitleModel",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启OCR字幕提取，默认取OFF。\n当且仅当SubtitleEraseMethod取auto时支持开启OCR字幕提取，开启后将识别自动擦除区域内出现时间最长且最稳定的文字区域为字幕区域，对字幕区域中的文字进行提取和擦除。\n- ON 开启\n- OFF 关闭",
+          "example": "ON",
+          "member": "string",
+          "name": "OcrSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕语言，用于指导OCR识别，默认取zh_en；仅当OcrSwitch取\"ON\"时生效。\n- zh_en 中英文\n- multi 其他\n其他具体支持识别如下语言：\n中文、英文、日文、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语、印地语、阿拉伯语、印度-孟加拉语、印度-古吉拉特语、印度-卡纳达语 、印度-马拉亚拉姆语 、印度-泰米尔语、印度-泰卢固语、斯洛文尼亚语、波兰语、加泰罗尼亚语、波斯尼亚语、捷克语、爱沙尼亚语、克罗地亚语、旁遮普语、马拉地语、阿塞拜疆语、印尼语、卢森堡语 、立陶宛语、拉脱维亚语、马耳他语、斯洛伐克语、土耳其语、哈萨克语、希腊语、爱尔兰语、白俄罗斯语、高棉语、他加禄语、普什图语、波斯语、塔吉克斯坦语\n\n",
+          "example": "zh_en",
+          "member": "string",
+          "name": "SubtitleLang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕文件格式，默认取vtt；仅当OcrSwitch取\"ON\"时生效。\n- srt srt格式\n- vtt WebVTT格式",
+          "example": "vtt",
+          "member": "string",
+          "name": "SubtitleFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启字幕翻译，默认取OFF；仅当OcrSwitch取\"ON\"时生效。\n- ON 开启\n- OFF 关闭",
+          "example": "ON",
+          "member": "string",
+          "name": "TransSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕翻译目标语言，默认取en；仅当TransSwitch取\"ON\"时生效。\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nfr：法语\nes：西班牙语\nit：意大利语\nde：德语\ntr：土耳其语\nru：俄语\npt：葡萄牙语\nvi：越南语\nid：印度尼西亚语\nms：马来语\nth：泰语\nar：阿拉伯语\nhi：印地语",
+          "example": "en",
+          "member": "string",
+          "name": "TransDstLang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动擦除自定义区域。\n对选定区域，利用AI模型自动检测其中存在的擦除目标并擦除。\n注意：当擦除方式选择custom时，此参数将不会生效；修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。",
+          "example": "无",
+          "member": "EraseArea",
+          "name": "AutoAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定擦除自定义区域。\n对选定区域，在选定时间段内不进行检测识别直接进行擦除。\n注意：修改模板时，清除区域请传入[]，不传时将保持模板区域信息不变。",
+          "example": "无",
+          "member": "EraseTimeArea",
+          "name": "CustomAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartEraseTaskInput": {
+      "document": "智能擦除任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能擦除模板id。",
+          "example": "101",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除自定义参数，当 Definition 填 0 时有效。 该参数用于高度定制场景，建议您优先使用 Definition 指定智能擦除参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RawSmartEraseParameter",
+          "name": "RawParameter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n\n**注意**：目前不支持`BatchProcessMedia`接口。",
+          "example": "{inputName}_smarterase.{format}",
+          "member": "string",
+          "name": "OutputObjectPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartEraseTaskResult": {
+      "document": "智能擦除任务结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "InvalidInput",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除输入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartEraseTaskInput",
+          "name": "Input",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskDelLogoOutput",
+          "name": "Output",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进度。\t",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务开始执行的时间，采用 ISO 日期格式。",
+          "example": "2024-03-21T10:13:06Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行完毕的时间，采用 ISO 日期格式。",
+          "example": "2024-03-21T10:14:06Z",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartEraseWatermarkConfig": {
+      "document": "智能擦除模板去水印配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "水印擦除方式。\n**自动擦除：**通过A模型自动识别视频中的水印，擦除后生成新的视频。适用于动态水印。\n当使用自动擦除时，若您不指定AutoAreas，将对视频全屏进行自动擦除；若指定AutoAreas，将改为对您指定的区域进行自动擦除。\n**指定区域擦除：**针对位置较固定的静态水印，建议您直接指定擦除区域。\n当您选择指定区域擦除时，请至少传入一个指定区域。\n\n- auto 自动擦除\n- custom 指定区域擦除",
+          "example": "auto",
+          "member": "string",
+          "name": "WatermarkEraseMethod",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印擦除模型。\n基础版：效果一般，性价比高，适合动画或背景较干净的视频。\n高级版：效果更好，适合短剧等现实风格视频。\n- basic 基础版\n- advanced 高级版",
+          "example": "advanced",
+          "member": "string",
+          "name": "WatermarkModel",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动擦除自定义区域。\n对选定区域，利用AI模型自动检测其中存在的擦除目标并擦除。\n注意，当擦除方式为custom时，此参数将不会生效。",
+          "example": "无",
+          "member": "EraseArea",
+          "name": "AutoAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定擦除自定义区域。\n对选定区域，在选定时间段内不进行检测识别直接进行擦除。",
+          "example": "无",
+          "member": "EraseTimeArea",
+          "name": "CustomAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SmartSubtitleTaskAsrFullTextResult": {
       "document": "语音全文识别结果。",
       "members": [
@@ -30247,6 +30874,16 @@
           "name": "SubtitlePath",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕文件存储位置。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -30482,7 +31119,7 @@
         {
           "disabled": false,
           "document": "翻译片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "SmartSubtitleTaskTransTextSegmentItem",
           "name": "SegmentSet",
           "output_required": false,
@@ -30497,6 +31134,16 @@
           "name": "SubtitlePath",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕文件存储位置。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -31717,7 +32364,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体处理输出对象存储位置的类型，支持：\n<li>COS：COS存储</li>\n<li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>",
+          "document": "媒体处理输出对象存储位置的类型，支持：\n<li>COS：COS存储</li>\n<li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>\n<li> VOD：点播专业版 </li>",
           "example": "NULL",
           "member": "string",
           "name": "Type",
@@ -31729,10 +32376,10 @@
         {
           "disabled": false,
           "document": "当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 输出位置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "CosOutputStorage",
           "name": "CosOutputStorage",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -31740,10 +32387,21 @@
         {
           "disabled": false,
           "document": "当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 输出位置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "S3OutputStorage",
           "name": "S3OutputStorage",
-          "output_required": true,
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当 Type 为 VOD 时有效，则该项为必填，表示媒体处理 点播专业版 输出位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VODOutputStorage",
+          "name": "VODOutputStorage",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -33025,6 +33683,95 @@
       ],
       "usage": "in"
     },
+    "VODInputInfo": {
+      "document": "媒体处理 VOD （点播专业版）对象信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体处理对象文件所在的 *Bucket ID*",
+          "example": "a00ehq6ocdmo0exn",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体处理对象文件所在的 Bucket 所属园区",
+          "example": "ap-chongqing",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体处理对象文件的输入路径",
+          "example": "/movie/201907/WildAnimal.mov",
+          "member": "string",
+          "name": "Object",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "点播专业版应用Id",
+          "example": "220762",
+          "member": "uint64",
+          "name": "SubAppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VODOutputStorage": {
+      "document": "媒体处理 VOD（点播专业版） 输出对象信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体处理生成的文件输出的目标 *Bucket ID*",
+          "example": "a00ehq6ocdmo0exn",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体处理生成的文件输出的目标 Bucket 的园区",
+          "example": "ap-chongqing",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "点播专业版应用Id",
+          "example": "220762",
+          "member": "uint64",
+          "name": "SubAppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "VideoDBEntryTaskResult": {
       "document": "视频检索入库任务的结果",
       "members": [
@@ -34281,7 +35028,7 @@
         {
           "disabled": false,
           "document": "媒体处理任务 ID。",
-          "example": "2xxxx-123456789",
+          "example": "2xxxx-asdews",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -34321,7 +35068,7 @@
         {
           "disabled": false,
           "document": "媒体处理的目标文件信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaInputInfo",
           "name": "InputInfo",
           "output_required": true,
@@ -34331,7 +35078,7 @@
         {
           "disabled": false,
           "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
           "output_required": true,
@@ -34341,7 +35088,7 @@
         {
           "disabled": false,
           "document": "媒体处理任务的执行状态与结果。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaProcessTaskResult",
           "name": "MediaProcessResultSet",
           "output_required": true,
@@ -34351,7 +35098,7 @@
         {
           "disabled": false,
           "document": "视频内容审核任务的执行状态与结果。",
-          "example": "NULL",
+          "example": "无",
           "member": "AiContentReviewResult",
           "name": "AiContentReviewResultSet",
           "output_required": true,
@@ -34361,7 +35108,7 @@
         {
           "disabled": false,
           "document": "视频内容分析任务的执行状态与结果。",
-          "example": "NULL",
+          "example": "无",
           "member": "AiAnalysisResult",
           "name": "AiAnalysisResultSet",
           "output_required": true,
@@ -34371,7 +35118,7 @@
         {
           "disabled": false,
           "document": "视频内容识别任务的执行状态与结果。",
-          "example": "NULL",
+          "example": "无",
           "member": "AiRecognitionResult",
           "name": "AiRecognitionResultSet",
           "output_required": true,
@@ -34381,7 +35128,7 @@
         {
           "disabled": false,
           "document": "媒体质检任务的执行状态与结果。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "ScheduleQualityControlTaskResult",
           "name": "AiQualityControlTaskResult",
           "output_required": true,
@@ -34391,11 +35138,21 @@
         {
           "disabled": false,
           "document": "智能字幕任务的执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "SmartSubtitlesResult",
           "name": "SmartSubtitlesTaskResult",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除任务的执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartEraseTaskResult",
+          "name": "SmartEraseTaskResult",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

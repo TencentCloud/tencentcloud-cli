@@ -875,6 +875,13 @@
       "output": "DescribeTimingL7CacheDataResponse",
       "status": "online"
     },
+    "DescribeTimingL7OriginPullData": {
+      "document": "本接口用以查询七层域名业务的回源时序数据。",
+      "input": "DescribeTimingL7OriginPullDataRequest",
+      "name": "查询回源时序数据",
+      "output": "DescribeTimingL7OriginPullDataResponse",
+      "status": "online"
+    },
     "DescribeTopL7AnalysisData": {
       "document": "本接口用于查询七层域名业务按照指定维度的 topN 数据。\n注意：\n1. 本接口查询数据有 10 分钟左右延迟，建议拉取当前时间 10 分钟以前的数据。\n2. 本接口默认返回防护后的流量请求数据，用户可在 `Filters.mitigatedByWebSecurity` 中自定义查询已防护缓释的数据。",
       "input": "DescribeTopL7AnalysisDataRequest",
@@ -13705,6 +13712,98 @@
       ],
       "type": "object"
     },
+    "DescribeTimingL7OriginPullDataRequest": {
+      "document": "DescribeTimingL7OriginPullData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间。",
+          "example": "2020-04-29T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
+          "example": "2020-04-30T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标列表，取值有:\n<li>l7Flow_outFlux_hy: EdgeOne 节点至源站方向的请求流量，单位：Byte；</li>\n<li>l7Flow_outBandwidth_hy: EdgeOne 节点至源站方向的请求带宽，单位：bps；</li>\n<li>l7Flow_request_hy: EdgeOne 节点至源站方向的请求数，单位：次。</li>\n<li>l7Flow_inFlux_hy: 源站至 EdgeOne 节点方向的响应流量，单位：Byte；</li>\n<li>l7Flow_inBandwidth_hy: 源站至 EdgeOne 节点方向的响应带宽，单位：bps；</li>\n",
+          "example": "[\"l7Flow_outFlux_hy\"]",
+          "member": "string",
+          "name": "MetricNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "example": "[\"*\"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询时间粒度，取值有：\n<li>min: 1分钟；</li>\n<li>5min: 5分钟；</li>\n<li>hour: 1小时；</li>\n<li>day: 1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：2 小时范围内以 min 粒度查询，2 天范围内以 5min 粒度查询，7 天范围内以 hour 粒度查询，超过 7 天以 day 粒度查询。",
+          "example": "hour",
+          "member": "string",
+          "name": "Interval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，详细的过滤条件如下：\n<li>domain：客户端请求的域名。若按泛域名接入 EdgeOne，则数据中记录为泛域名，而不是具体域名。</li>",
+          "example": "无",
+          "member": "QueryCondition",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTimingL7OriginPullDataResponse": {
+      "document": "DescribeTimingL7OriginPullData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果的总条数。",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源时序数据列表。",
+          "example": "无",
+          "member": "TimingDataRecord",
+          "name": "TimingDataRecords",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopL7AnalysisDataRequest": {
       "document": "DescribeTopL7AnalysisData请求参数结构体",
       "members": [
@@ -19867,7 +19966,7 @@
         {
           "disabled": false,
           "document": "需要修改证书配置的加速域名。",
-          "example": "www.test.com",
+          "example": "[\"www.test.com\"]",
           "member": "string",
           "name": "Hosts",
           "required": true,
@@ -19876,7 +19975,7 @@
         {
           "disabled": false,
           "document": "配置服务端证书的模式，取值有：\n<li>disable：不配置服务端证书；</li>\n<li>eofreecert：配置 EdgeOne 免费服务端证书；</li>\n<li>sslcert：配置 SSL 托管服务端证书；</li>\n不填写表示服务端证书保持原有配置。",
-          "example": "eoFreeCert",
+          "example": "eofreecert",
           "member": "string",
           "name": "Mode",
           "required": false,
@@ -19885,7 +19984,7 @@
         {
           "disabled": false,
           "document": "SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/ssl) 查看 CertId。",
-          "example": "J2Jsa2uM",
+          "example": "无",
           "member": "ServerCertInfo",
           "name": "ServerCertInfo",
           "required": false,
@@ -19906,6 +20005,15 @@
           "example": "无",
           "member": "MutualTLS",
           "name": "ClientCertInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于配置 EO 节点回源时携带的证书，用于回源双向认证握手，默认关闭，不填写表示保持原有配置。该配置当前为白名单内测中，如需使用，请[联系我们](https://cloud.tencent.com/online-service)。",
+          "example": "无",
+          "member": "UpstreamCertInfo",
+          "name": "UpstreamCertInfo",
           "required": false,
           "type": "object"
         }

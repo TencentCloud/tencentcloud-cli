@@ -2145,7 +2145,7 @@
         {
           "disabled": false,
           "document": "可用区信息",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -5047,8 +5047,8 @@
         },
         {
           "disabled": false,
-          "document": "系统盘ID。\n该参数目前仅用于`DescribeInstances`等查询类接口的返回参数，不可用于`RunInstances`等写接口的入参。",
-          "example": "disk-xyzw1234",
+          "document": "系统盘ID。\n该参数目前仅用于 [DescribeInstances](https://cloud.tencent.com/document/product/213/15728) 等查询类接口的返回参数，不可用于 [RunInstances](https://cloud.tencent.com/document/product/213/15730) 等写接口的入参。",
+          "example": "disk-xyzw1a3x",
           "member": "string",
           "name": "DiskId",
           "output_required": false,

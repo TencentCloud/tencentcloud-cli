@@ -827,7 +827,7 @@
       "status": "online"
     },
     "ModifyDatabaseShrinkMDF": {
-      "document": "本接口(ModifyDatabaseShrinkDMF)用于收缩数据库mdf(Shrink mdf)。",
+      "document": "本接口（ModifyDatabaseShrinkMDF）用于收缩数据库 mdf（Shrink mdf）。",
       "input": "ModifyDatabaseShrinkMDFRequest",
       "name": "收缩数据库mdf",
       "output": "ModifyDatabaseShrinkMDFResponse",
@@ -14137,8 +14137,8 @@
         },
         {
           "disabled": false,
-          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
-          "example": "[\"sg-igw86yth\\r\\n\"]",
+          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 DescribeDBSecurityGroups 接口获取。输入的安全组 ID 数组无长度限制。\n注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
+          "example": "[\"sg-ajr1jzgj\"]",
           "member": "string",
           "name": "SecurityGroupIdSet",
           "required": true,
@@ -14585,7 +14585,7 @@
         {
           "disabled": false,
           "document": "数据库名数组",
-          "example": "[db_test]",
+          "example": "[\"db_test\"]",
           "member": "string",
           "name": "DBNames",
           "required": true,

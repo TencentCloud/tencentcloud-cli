@@ -399,6 +399,13 @@
       "output": "DescribeKeyPairsResponse",
       "status": "online"
     },
+    "DescribeMcpServerTemplates": {
+      "document": "本接口（DescribeMcpServerTemplates）用于查询MCP Server模板列表。",
+      "input": "DescribeMcpServerTemplatesRequest",
+      "name": "查询MCP Server模板列表",
+      "output": "DescribeMcpServerTemplatesResponse",
+      "status": "online"
+    },
     "DescribeMcpServers": {
       "document": "本接口（DescribeMcpServers）用于查询MCP Server列表。",
       "input": "DescribeMcpServersRequest",
@@ -554,7 +561,7 @@
       "status": "online"
     },
     "ModifyDisksBackupQuota": {
-      "document": "本接口(ModifyDisksBackupQuota)用于调整云硬盘备份点配额。\n该操作目前仅支持云硬盘类型为数据盘且状态是ATTACHED（已挂载）或 UNATTACHED（待挂载）的云硬盘。\n支持批量操作。每次批量请求云硬盘数量上限为15个。",
+      "document": "本接口(ModifyDisksBackupQuota)用于调整云硬盘备份点配额。\n该操作目前仅支持状态是ATTACHED（已挂载）或 UNATTACHED（待挂载）的云硬盘。\n支持批量操作。每次批量请求云硬盘数量上限为15个。",
       "input": "ModifyDisksBackupQuotaRequest",
       "name": "调整云硬盘备份点配额",
       "output": "ModifyDisksBackupQuotaResponse",
@@ -4688,6 +4695,71 @@
       ],
       "type": "object"
     },
+    "DescribeMcpServerTemplatesRequest": {
+      "document": "DescribeMcpServerTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器列表。\n<li>name-description</li>按照MCP Server模板名称或描述进行过滤（支持模糊匹配）。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServerTemplatesResponse": {
+      "document": "DescribeMcpServerTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server模板列表。",
+          "example": "无",
+          "member": "McpServerTemplate",
+          "name": "McpServerTemplateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的MCP Server模板数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMcpServersRequest": {
       "document": "DescribeMcpServers请求参数结构体",
       "members": [
@@ -5258,51 +5330,51 @@
       "members": [
         {
           "disabled": false,
-          "document": "描述计费项目名称，目前取值\n<li>\"DiskSpace\"代表云硬盘空间收费项。</li>\n<li>\"DiskBackupQuota\"代表云硬盘备份点配额收费项。</li>",
+          "document": "描述计费项目名称，目前取值\n<li>\"DiskSpace\"代表云硬盘空间收费项。</li>\n<li>\"DiskBackupQuota\"代表数据盘备份点配额收费项。</li>\n<li>\"Instance\"代表实例收费项。</li>\n<li>\"SystemDiskBackupQuota\"代表系统盘备份点配额收费项。</li>",
           "example": "DiskSpace",
           "member": "string",
           "name": "PriceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘计费项维度单价。",
+          "document": "计费项维度单价。",
           "example": "1.1",
           "member": "float",
           "name": "OriginUnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘计费项维度总价。",
+          "document": "计费项维度总价。",
           "example": "2.2",
           "member": "float",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘在计费项维度折扣。",
+          "document": "计费项维度折扣。",
           "example": "0.8",
           "member": "float",
           "name": "Discount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘在计费项维度折后总价。",
+          "document": "计费项维度折后总价。",
           "example": "2.1",
           "member": "float",
           "name": "DiscountPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -5412,11 +5484,11 @@
       "usage": "out"
     },
     "Disk": {
-      "document": "磁盘信息",
+      "document": "云硬盘信息。",
       "members": [
         {
           "disabled": false,
-          "document": "磁盘ID",
+          "document": "云硬盘ID。",
           "example": "lhdisk-p1zflrif",
           "member": "string",
           "name": "DiskId",
@@ -5426,7 +5498,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例ID。",
           "example": "lhins-anxwfvxh",
           "member": "string",
           "name": "InstanceId",
@@ -5436,7 +5508,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "可用区。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -5446,7 +5518,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘名称",
+          "document": "云硬盘名称。",
           "example": "disk-name",
           "member": "string",
           "name": "DiskName",
@@ -5456,7 +5528,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘类型\n枚举值：\n<li> SYSTEM_DISK: 系统盘 </li>\n<li> DATA_DISK: 数据盘 </li>\n",
+          "document": "云硬盘类型。\n枚举值：\n<li> SYSTEM_DISK: 系统盘 </li>\n<li> DATA_DISK: 数据盘 </li>\n",
           "example": "DATA_DISK",
           "member": "string",
           "name": "DiskUsage",
@@ -5466,7 +5538,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘介质类型\n枚举值:\n<li> CLOUD_BASIC: 普通云硬盘 </li>\n<li> CLOUD_PREMIUM: 高性能云硬盘 </li>\n<li> CLOUD_SSD: SSD云硬盘 </li>",
+          "document": "云硬盘介质类型。\n枚举值:\n<li> CLOUD_BASIC: 普通云硬盘 </li>\n<li> CLOUD_PREMIUM: 高性能云硬盘 </li>\n<li> CLOUD_SSD: SSD云硬盘 </li>",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -5476,7 +5548,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘付费类型\n<li> PREPAID: 预付费 </li>\n<li> POSTPAID_BY_HOUR: 按小时后付费 </li>",
+          "document": "云硬盘付费类型。\n<li> PREPAID: 预付费 </li>\n<li> POSTPAID_BY_HOUR: 按小时后付费 </li>",
           "example": "PREPAID",
           "member": "string",
           "name": "DiskChargeType",
@@ -5486,7 +5558,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘大小, 单位GB",
+          "document": "云硬盘大小, 单位GB。",
           "example": "20",
           "member": "int64",
           "name": "DiskSize",
@@ -5496,7 +5568,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标识",
+          "document": "续费标识。",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -5506,7 +5578,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘状态，取值范围：\n<li>PENDING：创建中。 </li>\n<li>UNATTACHED：待挂载。</li>\n<li>ATTACHING：挂载中。</li>\n<li>ATTACHED：已挂载。</li>\n<li>DETACHING：卸载中。 </li>\n<li> SHUTDOWN：已隔离。</li>\n<li> CREATED_FAILED：创建失败。</li>\n<li>TERMINATING：销毁中。</li>\n<li> DELETING：删除中。</li>\n<li> FREEZING：冻结中。</li>",
+          "document": "云硬盘状态，取值范围：\n<li>PENDING：创建中。 </li>\n<li>UNATTACHED：待挂载。</li>\n<li>ATTACHING：挂载中。</li>\n<li>ATTACHED：已挂载。</li>\n<li>DETACHING：卸载中。 </li>\n<li> SHUTDOWN：已隔离。</li>\n<li> CREATED_FAILED：创建失败。</li>\n<li>TERMINATING：销毁中。</li>\n<li> DELETING：删除中。</li>\n<li> FREEZING：冻结中。</li>",
           "example": "UNATTACHED",
           "member": "string",
           "name": "DiskState",
@@ -5516,8 +5588,8 @@
         },
         {
           "disabled": false,
-          "document": "磁盘挂载状态",
-          "example": "False",
+          "document": "云硬盘挂载状态。",
+          "example": "false",
           "member": "bool",
           "name": "Attached",
           "output_required": true,
@@ -5526,8 +5598,8 @@
         },
         {
           "disabled": false,
-          "document": "是否随实例释放",
-          "example": "False",
+          "document": "是否随实例释放。",
+          "example": "false",
           "member": "bool",
           "name": "DeleteWithInstance",
           "output_required": true,
@@ -5536,7 +5608,7 @@
         },
         {
           "disabled": false,
-          "document": "上一次操作",
+          "document": "上一次操作。",
           "example": "CreateDisks",
           "member": "string",
           "name": "LatestOperation",
@@ -5546,7 +5618,7 @@
         },
         {
           "disabled": false,
-          "document": "上一次操作状态",
+          "document": "上一次操作状态。",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
@@ -5556,7 +5628,7 @@
         },
         {
           "disabled": false,
-          "document": "上一次请求ID",
+          "document": "上一次请求ID。",
           "example": "b786faac-d27b-4f70-a52e-3ae725e0f639",
           "member": "string",
           "name": "LatestOperationRequestId",
@@ -7668,12 +7740,12 @@
       "usage": "both"
     },
     "InstancePrice": {
-      "document": "关于Lighthouse Instance实例的价格信息",
+      "document": "关于Lighthouse Instance实例的价格信息。",
       "members": [
         {
           "disabled": false,
           "document": "套餐单价原价。",
-          "example": "90",
+          "example": "90.0",
           "member": "float",
           "name": "OriginalBundlePrice",
           "output_required": true,
@@ -7683,7 +7755,7 @@
         {
           "disabled": false,
           "document": "原价。",
-          "example": "90",
+          "example": "90.0",
           "member": "float",
           "name": "OriginalPrice",
           "output_required": true,
@@ -7693,7 +7765,7 @@
         {
           "disabled": false,
           "document": "折扣。",
-          "example": "100",
+          "example": "100.0",
           "member": "float",
           "name": "Discount",
           "output_required": true,
@@ -7703,7 +7775,7 @@
         {
           "disabled": false,
           "document": "折后价。",
-          "example": "90",
+          "example": "90.0",
           "member": "float",
           "name": "DiscountPrice",
           "output_required": true,
@@ -7718,6 +7790,16 @@
           "name": "Currency",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项目明细。",
+          "example": "无",
+          "member": "DetailPrice",
+          "name": "DetailPrices",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -8257,6 +8339,117 @@
       ],
       "usage": "both"
     },
+    "McpServerTemplate": {
+      "document": "MCP Server模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server名称",
+          "example": "AMap",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Base64编码之后的MCP Server启动命令。",
+          "example": "bnB4IC15IEBtb2RlbGNvbnRleHRwcm90b2NvbC9tYXA=",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "高德地图官网MCP Server",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server图标地址",
+          "example": "https://lbs.amap.com/favicon.ico",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server社区地址",
+          "example": "https://lbs.amap.com/api/mcp-server/summary",
+          "member": "string",
+          "name": "CommunityUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server关联的开发平台地址或开放平台地址",
+          "example": "https://console.amap.com/dev/index",
+          "member": "string",
+          "name": "PlatformUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server环境变量",
+          "example": "无",
+          "member": "McpServerTemplateEnv",
+          "name": "EnvSet",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "McpServerTemplateEnv": {
+      "document": "MCP Server模板环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server模板的环境变量键",
+          "example": "MAP_API_KEY",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server模板的环境变量值",
+          "example": "api_key_xxx_xxx",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyBlueprintAttributeRequest": {
       "document": "ModifyBlueprintAttribute请求参数结构体",
       "members": [
@@ -8434,7 +8627,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘备份点配额。取值范围: [0, 500]。调整后的配额必须不小于已存在的备份点数量。",
+          "document": "云硬盘备份点配额。取值范围: [0, 500]。调整后的配额必须大于等于已存在的备份点数量。",
           "example": "4",
           "member": "int64",
           "name": "DiskBackupQuota",

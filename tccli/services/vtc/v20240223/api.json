@@ -442,6 +442,7 @@
           "member": "string",
           "name": "SourceText",
           "output_required": false,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -452,11 +453,12 @@
           "member": "string",
           "name": "TargetText",
           "output_required": false,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     }
   },
   "version": "1.0"

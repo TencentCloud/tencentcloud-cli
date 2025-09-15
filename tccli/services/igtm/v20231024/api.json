@@ -3030,7 +3030,7 @@
         },
         {
           "disabled": false,
-          "document": "监控器id",
+          "document": "监控器id，当监控器已关联策略时，此字段必传",
           "example": "1",
           "member": "uint64",
           "name": "MonitorId",
@@ -3039,8 +3039,8 @@
         },
         {
           "disabled": false,
-          "document": "地址列表",
-          "example": "[{\"AddressId\":100,\"Addr\":\"1.1.1.2\",\"Location\":\"中国上海\",\"IsEnable\":\"ENABLED\",\"Weight\":99}]",
+          "document": "地址列表，全量更新逻辑，对于存量不需要修改的地址信息也需要带上(其中参数里的AddressId需传入正确的值)，否则会被删除。",
+          "example": "无",
           "member": "Address",
           "name": "AddressSet",
           "required": false,

@@ -1,5 +1,19 @@
 {
   "actions": {
+    "DescribeLicense": [
+      {
+        "document": "云应用准备更新 LICENCE 校验的接口",
+        "input": "POST / HTTP/1.1\nHost: cloudapp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicense\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"eyJhbGciOi\",\n        \"RequestId\": \"2aab88d8-b5bd-42ea-92ee-f8df1228e278\"\n    }\n}",
+        "title": "云应用许可校验接口"
+      },
+      {
+        "document": "云应用准备更新 LICENCE 校验的接口带增购信息",
+        "input": "POST / HTTP/1.1\nHost: cloudapp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicense\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"QueryType\",\n            \"Values\": [\n                \"IncludeAddition\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"eyJhbGciOi\",\n        \"RequestId\": \"f3891f61-7c21-4223-9b5b-33a3e7ca3095\"\n    }\n}",
+        "title": "云应用许可校验接口 带增购信息"
+      }
+    ],
     "VerifyLicense": [
       {
         "document": "软件进程对接 LICENSE 后，通过运行时角色申请临时密钥来调用，获取对应的 LICENSE 信息。\n\n获取到 LICENSE 后，请注意校验 LicenseStatus 是否有效，无效时软件可根据策略拒绝服务或者提供降级服务。同时，LICENSE 包含用户购买的规格信息，软件可根据规格来做运行的约束。\n\n对接 LICENSE 的详细方案，请参考文档：\n* [对接 LICENSE](https://cloud.tencent.com/document/product/1689/109428)\n* [通过运行时角色调用云 API](https://cloud.tencent.com/document/product/1689/109427)",

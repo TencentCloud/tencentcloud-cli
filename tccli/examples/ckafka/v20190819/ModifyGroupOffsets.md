@@ -8,6 +8,7 @@ Input:
 tccli ckafka ModifyGroupOffsets --cli-unfold-argument  \
     --InstanceId ckafka-test \
     --Group "group" \
+    --Topics topic-test \
     --Strategy 1
 ```
 

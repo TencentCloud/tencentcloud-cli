@@ -16879,7 +16879,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于30天。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#I)。",
+          "document": "结束时间，注意：\n1. 结束时间必须大于开始时间；\n2. 结束时间和开始时间必须大于当前时间；\n3. 结束时间 和 开始时间 间隔必须小于30天。\n使用UTC格式时间，\n例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#I)。\n4. 只修改EndTime进行续期， 不会影响正在进行中的任务。",
           "example": "2020-04-17T12:02:00Z",
           "member": "string",
           "name": "EndTime",
@@ -16952,7 +16952,7 @@
         {
           "disabled": false,
           "document": "指定任务 ID 修改任务。\n\n注意：该自定义任务 ID 只有在创建任务时指定了，才可在此处修改时使用。否则请使用系统返回的任务 ID。",
-          "example": "1234567",
+          "example": "mytaskid",
           "member": "string",
           "name": "SpecifyTaskId",
           "required": false,

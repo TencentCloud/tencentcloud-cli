@@ -527,7 +527,7 @@
     "DescribeCloudStorageAIService": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"Highlight\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageAIService\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\",\n    \"ServiceType\": \"Highlight\",\n    \"ChannelId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Enabled\": true,\n        \"ROI\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n        \"Config\": \"{\\\"param1\\\":\\\"value1\\\"}\",\n        \"Type\": 1,\n        \"Status\": 1,\n        \"ExpireTime\": 1719294987,\n        \"UserId\": \"user1\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询设备云存AI服务"
       }

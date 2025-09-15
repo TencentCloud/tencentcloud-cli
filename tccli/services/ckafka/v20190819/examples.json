@@ -671,7 +671,7 @@
     "ModifyGroupOffsets": [
       {
         "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyGroupOffsets\n&InstanceId=ckafka-test\n&Group=\"group\"\n&Strategy=1\n&<公共请求参数>",
+        "input": "https://ckafka.tencentcloudapi.com/?Action=ModifyGroupOffsets\n&InstanceId=ckafka-test\n&Group=\"group\"\n&Topics.0=topic-test\n&Strategy=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ReturnCode\": \"0\",\n            \"ReturnMessage\": \"SUCCESS\",\n            \"Data\": {\n                \"FlowId\": 0\n            }\n        },\n        \"RequestId\": \"36713f94-d07d-4b96-babf-42d139276f23\"\n    }\n}",
         "title": "设置Groups 消费分组offset"
       }

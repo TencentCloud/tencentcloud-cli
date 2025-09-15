@@ -469,6 +469,20 @@
       "output": "DescribeKafkaConsumerResponse",
       "status": "online"
     },
+    "DescribeKafkaConsumerGroupDetail": {
+      "document": "获取Kafka协议消费组详情",
+      "input": "DescribeKafkaConsumerGroupDetailRequest",
+      "name": "获取Kafka协议消费组详情",
+      "output": "DescribeKafkaConsumerGroupDetailResponse",
+      "status": "online"
+    },
+    "DescribeKafkaConsumerGroupList": {
+      "document": "获取Kafka协议消费组信息列表",
+      "input": "DescribeKafkaConsumerGroupListRequest",
+      "name": "获取Kafka协议消费组列表",
+      "output": "DescribeKafkaConsumerGroupListResponse",
+      "status": "online"
+    },
     "DescribeKafkaRecharges": {
       "document": "本接口用于获取Kafka数据订阅任务",
       "input": "DescribeKafkaRechargesRequest",
@@ -670,6 +684,13 @@
       "input": "ModifyKafkaConsumerRequest",
       "name": "修改Kafka协议消费信息",
       "output": "ModifyKafkaConsumerResponse",
+      "status": "online"
+    },
+    "ModifyKafkaConsumerGroupOffset": {
+      "document": "修改Kafka协议消费组点位",
+      "input": "ModifyKafkaConsumerGroupOffsetRequest",
+      "name": "修改Kafka协议消费组点位",
+      "output": "ModifyKafkaConsumerGroupOffsetResponse",
       "status": "online"
     },
     "ModifyKafkaRecharge": {
@@ -3104,6 +3125,42 @@
       ],
       "usage": "both"
     },
+    "ConsumerGroup": {
+      "document": "kafka协议消费组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "消费组1",
+          "member": "string",
+          "name": "Group",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态。\n\n- Empty：组内没有成员，但存在已提交的偏移量。所有消费者都离开但保留了偏移量\n- Dead：组内没有成员，且没有已提交的偏移量。组被删除或长时间无活动\n- Stable：组内成员正常消费，分区分配平衡。正常运行状态\n- PreparingRebalance：组正在准备重新平衡。有新成员加入或现有成员离开\n- CompletingRebalance：组正在准备重新平衡。有新成员加入或现有成员离开\n",
+          "example": "Empty",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区分配策略均衡算法名称。\n\n- 常见均衡算法如下：\n    - range:按分区范围分配\n    - roundrobin:轮询式分配\n    - sticky:粘性分配（避免不必要的重平衡）",
+          "example": "roundrobin",
+          "member": "string",
+          "name": "ProtocolName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ContainerFileInfo": {
       "document": "自建k8s-容器文件路径信息",
       "members": [
@@ -5240,7 +5297,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID，格式为：用户自定义部分-用户appid，用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符，尾部需要使用-拼接用户appid",
+          "document": "日志集ID，格式为：用户自定义部分-用户APPID。未填写该参数时将自动生成ID。\n\n- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符。\n- 尾部需要使用-拼接用户APPID，APPID可在https://console.cloud.tencent.com/developer页面查询。\n- 如果指定该字段，需保证全地域唯一",
           "example": "user-diy-1254139626",
           "member": "string",
           "name": "LogsetId",
@@ -5839,7 +5896,7 @@
         },
         {
           "disabled": false,
-          "document": "主题自定义ID，格式为：用户自定义部分-APPID。未填写该参数时将自动生成ID。\n- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符\n- APPID可在https://console.cloud.tencent.com/developer页面查询",
+          "document": "主题自定义ID，格式为：用户自定义部分-用户APPID。未填写该参数时将自动生成ID。\n- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符\n- 尾部需要使用-拼接用户APPID，APPID可在https://console.cloud.tencent.com/developer页面查询。\n- 如果指定该字段，需保证全地域唯一",
           "example": "eb9ec10d-1343-4386-9a6e-75fd9d68726e",
           "member": "string",
           "name": "TopicId",
@@ -8451,6 +8508,176 @@
       ],
       "type": "object"
     },
+    "DescribeKafkaConsumerGroupDetailRequest": {
+      "document": "DescribeKafkaConsumerGroupDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "消费组1",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaConsumerGroupDetailResponse": {
+      "document": "DescribeKafkaConsumerGroupDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集id",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130223",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "消费组1",
+          "member": "string",
+          "name": "Group",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组信息列表",
+          "example": "无",
+          "member": "GroupPartitionInfo",
+          "name": "PartitionInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Empty：组内没有成员，但存在已提交的偏移量。所有消费者都离开但保留了偏移量\nDead：组内没有成员，且没有已提交的偏移量。组被删除或长时间无活动\nStable：组内成员正常消费，分区分配平衡。正常运行状态\nPreparingRebalance：组正在准备重新平衡。有新成员加入或现有成员离开\nCompletingRebalance：组正在准备重新平衡。有新成员加入或现有成员离开",
+          "example": "Empty",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaConsumerGroupListRequest": {
+      "document": "DescribeKafkaConsumerGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "- group\n按照【消费组名称】进行过滤。\n类型：String\n必选：否\n示例：消费组1\n\n每次请求的Filters的上限为10，Filter.Values的上限为10。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaConsumerGroupListResponse": {
+      "document": "DescribeKafkaConsumerGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题名称",
+          "example": "日志a主题",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集id",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130223",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组信息列表",
+          "example": "无",
+          "member": "ConsumerGroup",
+          "name": "Groups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeKafkaConsumerRequest": {
       "document": "DescribeKafkaConsumer请求参数结构体",
       "members": [
@@ -10401,6 +10628,42 @@
         }
       ],
       "type": "object"
+    },
+    "GroupPartitionInfo": {
+      "document": "kafka协议消费组区分信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区id",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区最新数据时间戳，单位：s",
+          "example": "2",
+          "member": "int64",
+          "name": "CommitTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者",
+          "example": "app_as",
+          "member": "string",
+          "name": "Consumer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "GroupTriggerConditionInfo": {
       "document": "分组触发条件",
@@ -12926,6 +13189,33 @@
     "ModifyIndexResponse": {
       "document": "ModifyIndex返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyKafkaConsumerGroupOffsetRequest": {
+      "document": "ModifyKafkaConsumerGroupOffset请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyKafkaConsumerGroupOffsetResponse": {
+      "document": "ModifyKafkaConsumerGroupOffset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码。0：成功，-1：失败",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

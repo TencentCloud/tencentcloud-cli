@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DescribeLicense": {
+      "document": "# DescribeLicense\n\n客户根据请求的参数获取当前名下的许可证信息\n\n```json\n{\n  \"Filters\": [\n    {\n      \"Name\": \"QueryType\",\n      \"Values\": [\"IncludeAddition\"]\n    }\n  ]\n}\n```\n\n返回的内容结构如下：\n\n- Response.RequestId 为当前请求的唯一 id\n- Response.Token 为 license 信息 jwt 加密后的 token 串\n\n```json\n{\n  \"Response\": {\n    \"RequestId\": \"cd15813b-adff-460e-b9fc-64579e96412d\",\n    \"Token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjkzMjQ4MTc5ODAsImlhdCI6MTc1NjE3Nzk4MCwiaXNzIjoibGljZW5zZS1zZXJ2aWNlIiwicGF5bG9hZCI6eyJNYWluTGljZW5zZSI6eyJMaWNlbnNlTW9kZSI6IlN1YnNjcmlwdGlvbiIsIkJpbGxpbmdNb2RlIjoxLCJDcmVhdGVTb3VyY2UiOiJTTjE3MTk0MDc1NDc0SEJETSIsIkF1dGhvcml6ZWRDbG91ZGFwcFJvbGVJZCI6IjcwMDAwMTgzMzgwNiIsIkF1dGhvcml6ZWRDbG91ZGFwcElkIjoiY2xvdWRhcHAtc2V3ZWM2cHMiLCJBdXRob3JpemVkVXNlclVpbiI6IjcwMDAwMDkxODE1NiIsIkxpZmVTcGFuVW5pdCI6IlkiLCJMaWZlU3BhbiI6MzY1LCJTb2Z0d2FyZVBhY2thZ2VJZCI6InBrZy0xZ2xlaG9tNyIsIlNvZnR3YXJlUGFja2FnZVZlcnNpb24iOiIwLjAuMSIsIkF1dGhvcml6ZWRTcGVjaWZpY2F0aW9uIjpbeyJQYXJhbUtleSI6InZlcnNpb24iLCJQYXJhbUtleU5hbWUiOiLniYjmnKwiLCJQYXJhbVZhbHVlIjoiYmFzaWMiLCJQYXJhbVZhbHVlTmFtZSI6IuWfuuehgOeJiCJ9LHsiUGFyYW1LZXkiOiJzaXplIiwiUGFyYW1LZXlOYW1lIjoi6KeE5qC8IiwiUGFyYW1WYWx1ZSI6IjEwMCIsIlBhcmFtVmFsdWVOYW1lIjoiMTAw5Lq66KeE5qihIn1dLCJQcm92aWRlcklkIjoxMDAwMDAwNzEsIlByb3ZpZGVyVWluIjoiNzAwMDAwOTE4MTU2IiwiSXNzdWVEYXRlIjoiMjAyNC0wNi0yNlQyMToxMjozMiswODowMCIsIkFjdGl2YXRpb25EYXRlIjoiMjAyNC0wNi0yNlQyMToxMjozNSswODowMCIsIkV4cGlyYXRpb25EYXRlIjoiMjM4OS0wNi0yNlQyMToxMjozNSswODowMCIsIkxpY2Vuc2VTdGF0dXMiOiJBY3RpdmUiLCJMaWNlbnNlSWQiOiI3MDAwMDA5MTgxNTY6cGtnLTFnbGVob203OmNsb3VkYXBwLXNld2VjNnBzOjgwMDciLCJMaWNlbnNlVHlwZSI6IlN0YW5kYXJkIiwiTGljZW5zZUxldmVsIjoiTWFzdGVyIn0sIkFkZGl0aW9uTGljZW5zZXMiOltdLCJUaW1lc3RhbXAiOiIyMDI1LTA4LTI2VDExOjEzOjAwKzA4OjAwIn19.G8Lx49xZBW0Rh3lRA15XzZ-PzLJj0bAxwnklx0pTjrHWxqxQdETAdGfU_QaGI_WZfYh2IVbFcwHnRLiRj6pQb4guCMpCbcsgL28BRS4g1wnaFhjcyEQLLtpDdz4_lPnOR2VHHvnfwhLZtccAgsRpeedPMBK1hwO9D3WKisQg2LcIr0V-QB8gmgIqqyqrLW6z37QpjgB4ZyJ5bIC1J-0-VmghskA04xnQRPdGJtlyBhjzVjeDxBq5JOqm3Am0Nqu1jyTd3MuYgSRwJqkDyjVBOGFGGy6mZCIYnxU_ET6-0ZEendqYwXDkpYG4rZZv5YmRCXiSESYz0zx4czwmFWkw-TjRSvUQBxBfsoDcAgyzpY7zBOTnbrr7DyoMvVnnHo7vb0if8_vkub6o0MuRnvdDYxNJtnTtlIScCadWAIvWUQ1DlUw2kzS-h9Ju2h7JhKw9cUeutu0X_6V4arZu9JlgWT9Ns7BtS9Y5JxgQOd36Aan39Rwohy_BrVwjOkbvDuTFLc_yNUlNdq5T2GNbDjABCmi73CGhCuWyPgtRs4ftpPugDRrTe4E95F224jdhf7I0He-nY4i1MoVjz8Zzm4v0vH67cMfcu0XVhs7ywvmu5tBSwm0uuhAXFFIbSrgEzuadxNhSi6qVCFNLnjiPYplK1M9mxG8Hc-fU-0A0TPepx8Q\"\n  }\n}\n```\n\n验签过程：\n对 Response.Token 内容使用公钥进行解码转换得到许可结构体信息，返回的内容结构如下，其中 paylod 中的信息为许可证信息结构：\n\n```json\n{\n  \"exp\": 9324758169,\n  \"iat\": 1756118169,\n  \"iss\": \"license-service\",\n  \"payload\": {\n    \"MainLicense\": {\n      \"LicenseMode\": \"Subscription\",\n      \"BillingMode\": 1,\n      \"CreateSource\": \"SN1719406931EJJ1E\",\n      \"AuthorizedCloudappRoleId\": \"700001833621\",\n      \"AuthorizedCloudappId\": \"cloudapp-992nqg9u\",\n      \"AuthorizedUserUin\": \"700001833621\",\n      \"LifeSpanUnit\": \"Y\",\n      \"LifeSpan\": 365,\n      \"SoftwarePackageId\": \"pkg-1glehom7\",\n      \"SoftwarePackageVersion\": \"0.0.1\",\n      \"AuthorizedSpecification\": [\n        {\n          \"ParamKey\": \"version\",\n          \"ParamKeyName\": \"版本\",\n          \"ParamValue\": \"basic\",\n          \"ParamValueName\": \"基础版\"\n        },\n        {\n          \"ParamKey\": \"size\",\n          \"ParamKeyName\": \"规格\",\n          \"ParamValue\": \"100\",\n          \"ParamValueName\": \"100 人规模\"\n        }\n      ],\n      \"ProviderId\": 100000071,\n      \"ProviderUin\": \"700000918156\",\n      \"IssueDate\": \"2024-06-26T21:02:16+08:00\",\n      \"ActivationDate\": \"2024-06-26T21:02:19+08:00\",\n      \"ExpirationDate\": \"2389-06-26T21:02:19+08:00\",\n      \"LicenseStatus\": \"Active\",\n      \"LicenseId\": \"700000918156:pkg-1glehom7:cloudapp-992nqg9u:3988\",\n      \"LicenseType\": \"Standard\",\n      \"LicenseLevel\": \"Master\"\n    },\n    \"AdditionLicenses\": [\n      {\n        \"LicenseMode\": \"Subscription\",\n        \"BillingMode\": 1,\n        \"CreateSource\": \"SN1719406931EJJ1E\",\n        \"AuthorizedCloudappRoleId\": \"700001833621\",\n        \"AuthorizedCloudappId\": \"cloudapp-992nqg9u\",\n        \"AuthorizedUserUin\": \"700001833621\",\n        \"LifeSpanUnit\": \"Y\",\n        \"LifeSpan\": 365,\n        \"SoftwarePackageId\": \"pkg-1glehom7\",\n        \"SoftwarePackageVersion\": \"0.0.1\",\n        \"AuthorizedSpecification\": [\n          {\n            \"ParamKey\": \"version\",\n            \"ParamKeyName\": \"版本\",\n            \"ParamValue\": \"basic\",\n            \"ParamValueName\": \"基础版\"\n          },\n          {\n            \"ParamKey\": \"size\",\n            \"ParamKeyName\": \"规格\",\n            \"ParamValue\": \"100\",\n            \"ParamValueName\": \"100 人规模\"\n          }\n        ],\n        \"ProviderId\": 100000071,\n        \"ProviderUin\": \"700000918156\",\n        \"IssueDate\": \"2024-06-26T21:02:16+08:00\",\n        \"ActivationDate\": \"2024-06-26T21:02:19+08:00\",\n        \"ExpirationDate\": \"2389-06-26T21:02:19+08:00\",\n        \"LicenseStatus\": \"Active\",\n        \"LicenseId\": \"700000918156:pkg-1glehom7:cloudapp-992nqg9u:3988\",\n        \"LicenseType\": \"Standard\",\n        \"LicenseLevel\": \"Master\"\n      }\n    ],\n    \"Timestamp\": \"2025-08-25T18:36:09+08:00\"\n  }\n}\n```",
+      "input": "DescribeLicenseRequest",
+      "name": "获取license信息",
+      "output": "DescribeLicenseResponse",
+      "status": "online"
+    },
     "VerifyLicense": {
       "document": "从软件进程读取 LICENSE。",
       "input": "VerifyLicenseRequest",
@@ -15,6 +22,67 @@
     "serviceShortName": "cloudapp"
   },
   "objects": {
+    "DescribeLicenseRequest": {
+      "document": "DescribeLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可选过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLicenseResponse": {
+      "document": "DescribeLicense返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "针对上面raw的签名",
+          "example": "eyJhbGciOi",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤 ID、名称、状态等\n\n- 若存在多个 Filter 时，Filter间的关系为逻辑与（AND）关系。\n- 若同一个 Filter 存在多个 Values，同一 Filter 下 Values 间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字段的过滤值",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "License": {
       "document": "表示应用实例的软件授权，包含颁发信息、激活信息等内容。",
       "members": [

@@ -3223,7 +3223,7 @@
         {
           "disabled": false,
           "document": "任务名称,只能以字母起始,允许包含字母、数字、- 、.  、 下划线且长度不超过64 (、为分割符号规则不包含)",
-          "example": "task测试",
+          "example": "task-test",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -5625,7 +5625,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，可通过DescribeConsumerGroup接口获取。",
+          "document": "消费组名称，可通过[DescribeConsumerGroup](https://cloud.tencent.com/document/product/597/40841)接口获取。",
           "example": "group-test",
           "member": "string",
           "name": "Group",
@@ -5745,7 +5745,7 @@
         },
         {
           "disabled": false,
-          "document": "路由id,可通过DescribeRoute接口获取",
+          "document": "路由id,可通过[DescribeRoute](https://cloud.tencent.com/document/product/597/45484)接口获取",
           "example": "301",
           "member": "int64",
           "name": "RouteId",
@@ -11457,18 +11457,16 @@
           "member": "string",
           "name": "PublicNetworkChargeType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "公网带宽, 单位MB",
+          "document": "公网带宽, 单位MB 取值需是0，或是3的倍数",
           "example": "0",
           "member": "int64",
           "name": "PublicNetworkMonthly",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -11784,7 +11782,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "实例类型  枚举列表: \nprofession  :专业版    \nstandards2  :标准版\npremium   :高级版\nserverless  :serverless版",
           "example": "profession",
           "member": "string",
           "name": "InstanceType",
@@ -11834,7 +11832,7 @@
         },
         {
           "disabled": false,
-          "document": "时间",
+          "document": "该字段已废弃,无实际含义",
           "example": "1566144000",
           "member": "string",
           "name": "DeleteRouteTimestamp",
@@ -11874,7 +11872,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费类型",
+          "document": "实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -11884,7 +11882,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "集群类型  \nCLOUD_IDC IDC集群\nCLOUD_CVM_SHARE CVM共享集群\nCLOUD_CVM_YUNTI 云梯CVM集群\nCLOUD_CVM    CVM集群\nCLOUD_CDC CDC集群\nCLOUD_EKS_TSE EKS集群",
           "example": "CLOUD_CVM",
           "member": "string",
           "name": "ClusterType",
@@ -11914,7 +11912,7 @@
         },
         {
           "disabled": false,
-          "document": "ssl自定义证书id",
+          "document": "ssl自定义证书id  仅自定义证书实例集群返回",
           "example": "cert-test",
           "member": "string",
           "name": "CustomCertId",
@@ -13639,7 +13637,7 @@
           "example": "[\"topic-test\"]",
           "member": "string",
           "name": "Topics",
-          "required": false,
+          "required": true,
           "type": "list"
         },
         {
@@ -14733,7 +14731,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT clean-session",
+          "document": "用于控制会话的持久性。cleanSession 为true时，连接时会创建一个全新的会话。 cleanSession = false时，连接时会恢复之前的会话。",
           "example": "true",
           "member": "bool",
           "name": "CleanSession",
@@ -15203,7 +15201,7 @@
         {
           "disabled": false,
           "document": "表与消息间的映射关系",
-          "example": "[{\"JsonKey\":\"test-key\",\"Type\":\"Integer\",\"AllowNull\":false,\"ColumnName\":\"column_test\",\"ExtraInfo\":\"AUTO_INCREMENT COMMENT 'ID'\",\"ColumnSize\":\"32\",\"DecimalDigits\":\"10\",\"AutoIncrement\":true,\"DefaultValue\":\"0\"}]",
+          "example": "无",
           "member": "RecordMapping",
           "name": "DataTargetRecordMapping",
           "output_required": false,
@@ -15258,7 +15256,7 @@
         {
           "disabled": false,
           "document": "当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效",
-          "example": "{\"DropInvalidMessageToCls\":true,\"DropClsRegion\":\"ap-guangzhou\",\"DropClsOwneruin\":\"10003080064\",\"DropClsTopicId\":\"eafds-vfdfsdf-dbdfsdf\",\"DropClsLogSet\":\"wqead-bfdebv-sfds\"}",
+          "example": "无",
           "member": "DropCls",
           "name": "DropCls",
           "output_required": false,
@@ -15367,7 +15365,7 @@
         },
         {
           "disabled": false,
-          "document": "自建",
+          "document": "是否为自建集群",
           "example": "false",
           "member": "bool",
           "name": "SelfBuilt",
@@ -16415,6 +16413,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由的状态。1: 创建中，2: 创建成功，3: 创建失败，4: 删除中，6: 删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -16829,11 +16837,11 @@
       "usage": "both"
     },
     "SaleInfo": {
-      "document": "标准版销售信息",
+      "document": "各版本销售信息",
       "members": [
         {
           "disabled": false,
-          "document": "手动设置的flag标志",
+          "document": "手动设置的flag标志，true表示售罄，false表示可售。",
           "example": "false",
           "member": "bool",
           "name": "Flag",
@@ -18761,7 +18769,7 @@
         },
         {
           "disabled": false,
-          "document": "标识",
+          "document": "可用区是否售罄标识，true表示已售罄，false表示未售罄。",
           "example": "false",
           "member": "bool",
           "name": "Flag",

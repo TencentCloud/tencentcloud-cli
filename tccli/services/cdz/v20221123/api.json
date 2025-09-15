@@ -294,7 +294,7 @@
         {
           "disabled": false,
           "document": "资源水位扩展信息",
-          "example": "{\"ThisMondayLocalDate\":\"2024-11-11\",\"LastMondayLocalDate\":\"2024-11-04\"}",
+          "example": "无",
           "member": "ExtraInfo",
           "name": "ExtraInfo",
           "output_required": false,
