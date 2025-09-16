@@ -472,7 +472,7 @@
     "DescribeUser": {
       "document": "查询用户信息",
       "input": "DescribeUserRequest",
-      "name": "查询用户信息",
+      "name": "根据实例id查询用户信息",
       "output": "DescribeUserResponse",
       "status": "online"
     },
@@ -8930,7 +8930,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": "{\"TotalCount\":1,\"Users\":[{\"CreateTime\":\"2019-08-19 00:00:00\",\"Name\":\"name-test\",\"UpdateTime\":\"2019-08-19 00:00:00\",\"UserId\":101}]}",
+          "example": "无",
           "member": "UserResponse",
           "name": "Result",
           "output_required": true,

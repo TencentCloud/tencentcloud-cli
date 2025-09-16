@@ -94,6 +94,14 @@
         "title": "添加地域封禁规则"
       }
     ],
+    "CreateBatchIpAccessControl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchIpAccessControl\n<公共请求参数>\n\n{\n    \"IpList\": [\n        \"12.32.4.3\"\n    ],\n    \"ActionType\": 42,\n    \"Domains\": [\n        \"www.testwaf.com\",\n        \"www.testwaf2.com\"\n    ],\n    \"Note\": \"\",\n    \"JobType\": \"TimedJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 0,\n                \"EndDateTime\": 0\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5331fe64-a3a5-49c4-8c4b-ada147d91403\",\n        \"RuleId\": 5500921210\n    }\n}",
+        "title": "新增批量IP黑白名单"
+      }
+    ],
     "CreateDeals": [
       {
         "document": "",
@@ -194,6 +202,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttackWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Ids\": [\n        1,\n        2\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailIds\": [\n            1\n        ],\n        \"RequestId\": \"1cc54bf4-cfeb-40cc-a823-035e52106df9\"\n    }\n}",
         "title": "查询示例"
+      }
+    ],
+    "DeleteBatchIpAccessControl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBatchIpAccessControl\n<公共请求参数>\n\n{\n    \"Ids\": [\n        5500905783\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"90b403b2-186b-486c-8cc0-91703492fe2c\"\n    }\n}",
+        "title": "批量删除IP黑白名单"
       }
     ],
     "DeleteBotSceneUCBRule": [
@@ -1068,6 +1084,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAttackWhiteRule\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"Rules\": [\n        {\n            \"MatchField\": \"URL\",\n            \"MatchContent\": \"/url\",\n            \"MatchMethod\": \"EXACT\"\n        }\n    ],\n    \"Domain\": \"www.testwaf.com\",\n    \"SignatureIds\": [\n        \"90501998\",\n        \"90501999\"\n    ],\n    \"RuleId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RuleId\": 1,\n        \"RequestId\": \"76a16020-6e13-4028-823b-b20fb33ecf44\"\n    }\n}",
         "title": "修改示例"
+      }
+    ],
+    "ModifyBatchIpAccessControl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBatchIpAccessControl\n<公共请求参数>\n\n{\n    \"IpList\": [\n        \"1.1.1.1\"\n    ],\n    \"ActionType\": 42,\n    \"Domains\": [\n        \"www.testwaf.com\",\n        \"www.testwaf2.com\"\n    ],\n    \"Note\": \"\",\n    \"JobType\": \"TimedJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 0,\n                \"EndDateTime\": 0\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\"\n    },\n    \"RuleId\": 5500894817\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f03362ba-b50e-4581-88e8-76bdc1b332f5\"\n    }\n}",
+        "title": "新增批量IP黑白名单"
       }
     ],
     "ModifyBotSceneStatus": [

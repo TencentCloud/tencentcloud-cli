@@ -77,6 +77,13 @@
       "output": "CreateAreaBanRuleResponse",
       "status": "online"
     },
+    "CreateBatchIpAccessControl": {
+      "document": "批量IP黑白名单新增接口",
+      "input": "CreateBatchIpAccessControlRequest",
+      "name": "批量IP黑白名单新增接口",
+      "output": "CreateBatchIpAccessControlResponse",
+      "status": "online"
+    },
     "CreateDeals": {
       "document": "计费资源购买、续费下单接口",
       "input": "CreateDealsRequest",
@@ -159,6 +166,13 @@
       "input": "DeleteAttackWhiteRuleRequest",
       "name": "删除规则引擎白名单",
       "output": "DeleteAttackWhiteRuleResponse",
+      "status": "online"
+    },
+    "DeleteBatchIpAccessControl": {
+      "document": "批量黑白名单删除接口",
+      "input": "DeleteBatchIpAccessControlRequest",
+      "name": "批量IP黑白名单删除接口",
+      "output": "DeleteBatchIpAccessControlResponse",
       "status": "online"
     },
     "DeleteBotSceneUCBRule": {
@@ -908,6 +922,13 @@
       "input": "ModifyAttackWhiteRuleRequest",
       "name": "修改规则引擎白名单",
       "output": "ModifyAttackWhiteRuleResponse",
+      "status": "online"
+    },
+    "ModifyBatchIpAccessControl": {
+      "document": "批量IP黑白名单新增接口",
+      "input": "ModifyBatchIpAccessControlRequest",
+      "name": "批量IP黑白名单编辑接口",
+      "output": "ModifyBatchIpAccessControlResponse",
       "status": "online"
     },
     "ModifyBotSceneStatus": {
@@ -3568,6 +3589,34 @@
       ],
       "usage": "both"
     },
+    "BatchDomainResult": {
+      "document": "批量防护失败的域名以及对应的原因。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量操作中失败的域名",
+          "example": "www.testwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作失败的原因",
+          "example": "超过规格限制",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BatchIpAccessControlData": {
       "document": "多域名黑白名单describe返回",
       "members": [
@@ -6108,6 +6157,107 @@
       ],
       "type": "object"
     },
+    "CreateBatchIpAccessControlRequest": {
+      "document": "CreateBatchIpAccessControl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP参数列表",
+          "example": "[\"192.16.8.1.1\",\"192.168.2.1\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "{\"Timed\":[{\"StartDateTime\":1711618518,\"EndDateTime\":1711918518}],\"Cron\":[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}],\"TimeTZone\":\"UTC+8\"}",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "42为黑名单，40为白名单",
+          "example": "42",
+          "member": "int64",
+          "name": "ActionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组ID列表，如果绑定的是防护对象组，和Domains参数二选一",
+          "example": "[11101, 11102]",
+          "member": "uint64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "域名列表，如果绑定的是批量域名，和GroupIds参数二选一",
+          "example": "[\"www.qcloudwaf.com\",\"test.waf.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchIpAccessControlResponse": {
+      "document": "CreateBatchIpAccessControl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加失败的域名列表，如果非空则表示有域名添加失败，整个批量规则添加失败，否则则表示批量规则添加成功。",
+          "example": "[{\"Domain\":\"www.testwaf.com\", \"Message\":\"域名IP个数超过规格\"}]",
+          "member": "BatchDomainResult",
+          "name": "Failed",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "添加成功的批量规则ID",
+          "example": "11101",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDealsGoods": {
       "document": "计费下单接口出入参Goods",
       "members": [
@@ -7163,6 +7313,33 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBatchIpAccessControlRequest": {
+      "document": "DeleteBatchIpAccessControl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID列表，支持批量删除",
+          "example": "[552091011,552091010]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBatchIpAccessControlResponse": {
+      "document": "DeleteBatchIpAccessControl返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -20182,6 +20359,106 @@
           "name": "RuleId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBatchIpAccessControlRequest": {
+      "document": "ModifyBatchIpAccessControl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "编辑的批量规则ID",
+          "example": "1101",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "IP参数列表",
+          "example": "[\"192.16.8.1.1\",\"192.168.2.1\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "{\"Timed\":[{\"StartDateTime\":1711618518,\"EndDateTime\":1711918518}],\"Cron\":[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}],\"TimeTZone\":\"UTC+8\"}",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "42为黑名单，40为白名单",
+          "example": "42",
+          "member": "int64",
+          "name": "ActionType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组ID列表，如果绑定的是防护对象组，和Domains参数二选一",
+          "example": "[11101, 11102]",
+          "member": "uint64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "域名列表，如果绑定的是批量域名，和GroupIds参数二选一",
+          "example": "[\"www.qcloudwaf.com\",\"test.waf.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Note",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBatchIpAccessControlResponse": {
+      "document": "ModifyBatchIpAccessControl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "编辑失败的域名列表，如果非空则表示有域名编辑失败，整个批量规则编辑失败，否则则表示批量规则编辑成功。",
+          "example": "[{\"Domain\":\"www.testwaf.com\", \"Message\":\"域名IP个数超过规格\"}]",
+          "member": "BatchDomainResult",
+          "name": "Failed",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

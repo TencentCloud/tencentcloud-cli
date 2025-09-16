@@ -3624,6 +3624,15 @@
           "name": "SessionExpireTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "IP版本类型。",
+          "example": "IPv4",
+          "member": "string",
+          "name": "IpVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10840,7 +10849,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务修改后的标签。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Weight参数为空时，才以RsTagRule中的Tag参数为准。",
+          "document": "后端服务修改后的标签。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Tag参数为空时，才以RsTagRule中的Tag参数为准。",
           "example": "tag_target",
           "member": "string",
           "name": "Tag",
@@ -12427,6 +12436,16 @@
           "name": "SessionExpireTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP版本。",
+          "example": "IPv4",
+          "member": "string",
+          "name": "IpVersion",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

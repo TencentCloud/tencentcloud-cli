@@ -5496,7 +5496,7 @@
         },
         {
           "disabled": false,
-          "document": "true：仅输出自定义字段\nflase：输出默认字段+自定义字段\n默认true",
+          "document": "true：仅输出自定义字段\nfalse：输出默认字段+自定义字段\n默认true",
           "example": "true",
           "member": "bool",
           "name": "ItemNamesShowMode",

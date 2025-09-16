@@ -270,6 +270,14 @@
         "title": "示例"
       }
     ],
+    "DistributeAndroidInstanceImageToHosts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributeAndroidInstanceImageToHosts\n<公共请求参数>\n\n{\n    \"HostSerialNumbers\": [\n        \"RK8S50P1402309016\",\n        \"RK8S50P1402309017\"\n    ],\n    \"ImageId\": \"image-49va6apu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cb50f61b-6058-4500-b742-a692e06d3ef3\",\n        \"TaskSet\": [\n            {\n                \"HostSerialNumber\": \"RK8S50P1402309016\",\n                \"TaskId\": \"4e4af02c-7977-4612-8974-5b6a8493fa0c\"\n            },\n            {\n                \"HostSerialNumber\": \"RK8S50P1402309017\",\n                \"TaskId\": \"873b2107-4422-426f-9356-0a7ecb605297\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DistributeFileToAndroidInstances": [
       {
         "document": "示例",
