@@ -16678,7 +16678,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<font color=\"red\">字段不再使用</font>，法人姓名",
+          "document": "法人姓名",
           "example": "张三",
           "member": "string",
           "name": "LegalName",
@@ -16700,7 +16700,7 @@
         },
         {
           "disabled": false,
-          "document": "<font color=\"red\">字段不再使用</font>，社会统一信用代码",
+          "document": "社会统一信用代码",
           "example": "91110108772551611J",
           "member": "string",
           "name": "UnifiedSocialCreditCode",

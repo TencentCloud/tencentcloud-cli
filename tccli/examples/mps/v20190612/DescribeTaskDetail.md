@@ -150,7 +150,8 @@ Output:
                     "AnimatedGraphicTask": null,
                     "SnapshotByTimeOffsetTask": null,
                     "SampleSnapshotTask": null,
-                    "ImageSpriteTask": null
+                    "ImageSpriteTask": null,
+                    "AdaptiveDynamicStreamingTask": null
                 }
             ],
             "AiAnalysisResultSet": [],

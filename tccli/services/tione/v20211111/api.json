@@ -5216,7 +5216,7 @@
         {
           "disabled": false,
           "document": "pod名称列表",
-          "example": "[]",
+          "example": "[\"master\",\"pod\"]",
           "member": "string",
           "name": "PodNames",
           "output_required": true,
@@ -5236,7 +5236,7 @@
         {
           "disabled": false,
           "document": "pod详细信息",
-          "example": "[{\"Name\":\"train-786801095607790976-5z75pr7skj5s-master-0\",\"IP\":\"\t9.0.0.1\"}]",
+          "example": "无",
           "member": "PodInfo",
           "name": "PodInfoList",
           "output_required": true,

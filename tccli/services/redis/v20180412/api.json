@@ -428,7 +428,7 @@
       "status": "online"
     },
     "DescribeSecondLevelBackupInfo": {
-      "document": "查询实例秒级备份信息",
+      "document": "本接口（DescribeSecondLevelBackupInfo）用于查询实例秒级备份信息。",
       "input": "DescribeSecondLevelBackupInfoRequest",
       "name": "查询实例秒级备份信息",
       "output": "DescribeSecondLevelBackupInfoResponse",
@@ -962,7 +962,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
-          "example": "crs-deindi7de",
+          "example": "[\"crs-deindi7de\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -970,7 +970,7 @@
         },
         {
           "disabled": false,
-          "document": "应用的参数模板ID，请通过接口[DescribeParamTemplateInfo](https://cloud.tencent.com/document/product/239/58748)的返回参数 **TemplateId** 获取参数模板 ID。",
+          "document": "应用的参数模板ID。\n- 请通过接口 [DescribeParamTemplateInfo](https://cloud.tencent.com/document/product/239/58748) 的返回参数 **TemplateId** 获取参数模板 ID。\n- 仅当参数模板版本与目标实例的架构版本一致时，操作才能成功执行。版本不匹配将触发执行错误。",
           "example": "crs-cfg-rhlppeye",
           "member": "string",
           "name": "TemplateId",
@@ -986,7 +986,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "212",
+          "example": "[212]",
           "member": "int64",
           "name": "TaskIds",
           "output_required": true,
@@ -3758,7 +3758,7 @@
         },
         {
           "disabled": false,
-          "document": "输出每页显示事件的数量，默认：10，最大100。",
+          "document": "输出每页显示事件的数量。\n- 默认值：10。\n- 取值范围：[1,100]。",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -3767,7 +3767,7 @@
         },
         {
           "disabled": false,
-          "document": "配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。默认：1。",
+          "document": "配置查询事件的输出页码，即支持根据PageNo（页码）与 PageSize （每页输出数量）查询某一页的事件。\n- 默认值：1。\n- 取值范围：大于0 的正整数。",
           "example": "1",
           "member": "int64",
           "name": "PageNo",
@@ -3777,7 +3777,7 @@
         {
           "disabled": false,
           "document": "事件当前状态。\n- Waiting：未到达执行日期或不在维护时间窗内的事件。\n- Running：在维护时间窗内，正在执行维护的事件。\n- Finished：已全部完成维护的事件。\n- Canceled：已取消执行的事件。",
-          "example": "Running",
+          "example": "[\"Running\"]",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -3786,7 +3786,7 @@
         {
           "disabled": false,
           "document": "事件类型，当前仅支持配置实例迁移、资源腾挪、机房裁撤相关的运维操作。该参数仅支持配置为 **InstanceMigration**。",
-          "example": "InstanceMigration",
+          "example": "[\"InstanceMigration\"]",
           "member": "string",
           "name": "EventTypes",
           "required": false,
@@ -3795,7 +3795,7 @@
         {
           "disabled": false,
           "document": "配置查询事件等级。事件等级根据其影响严重程度和紧急程度进行分级，由重至轻依次为关键、重要、中等、一般。\n- Critical：关键\n- High：重要\n- Middle：中等\n- Low：一般",
-          "example": "Low",
+          "example": "[\"Low\"]",
           "member": "string",
           "name": "Grades",
           "required": false,
@@ -3820,7 +3820,7 @@
         {
           "disabled": false,
           "document": "实例事件信息",
-          "example": "RedisInstanceEvent",
+          "example": "无",
           "member": "RedisInstanceEvent",
           "name": "RedisInstanceEvents",
           "output_required": true,
@@ -5748,7 +5748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
           "example": "crs-deindi7de",
           "member": "string",
           "name": "InstanceId",
@@ -5825,7 +5825,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录Redis控制台在实例列表复制实例 ID。",
+          "document": "指定实例 ID。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
           "example": "crs-asdasdas",
           "member": "string",
           "name": "InstanceId",
@@ -5834,7 +5834,7 @@
         },
         {
           "disabled": false,
-          "document": "秒级备份时间戳，7天内",
+          "document": "秒级备份时间戳。\n- 设置范围：支持7天内任意秒级时间点。\n-  时间戳格式：Unix 时间戳。",
           "example": "1716449238",
           "member": "int64",
           "name": "BackupTimestamp",
@@ -5849,7 +5849,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份记录ID ",
+          "document": "备份记录ID。",
           "example": "12",
           "member": "string",
           "name": "BackupId",
@@ -5859,7 +5859,7 @@
         },
         {
           "disabled": false,
-          "document": "备份时间戳",
+          "document": "备份时间戳。",
           "example": "1716449238",
           "member": "int64",
           "name": "BackupTimestamp",
@@ -5869,7 +5869,7 @@
         },
         {
           "disabled": false,
-          "document": "备份不存在的时间戳范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份不存在的时间戳范围。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SecondLevelBackupMissingTimestamps",
           "name": "MissingTimestamps",
@@ -5879,7 +5879,7 @@
         },
         {
           "disabled": false,
-          "document": "实例开启秒级备份的时间戳",
+          "document": "实例开启秒级备份的时间戳。",
           "example": "1716449238",
           "member": "int64",
           "name": "StartTimestamp",
@@ -11372,7 +11372,7 @@
         {
           "disabled": false,
           "document": "复制组 ID。例如：crs-rpl-m3zt****。请登录[Redis 控制台](https://console.cloud.tencent.com/redis/replication)的全球复制组列表获取复制组 ID。\n",
-          "example": "crs-rpl-",
+          "example": "crs-rpl-deindi7de",
           "member": "string",
           "name": "GroupId",
           "required": true,

@@ -503,7 +503,7 @@
     "DescribeSecondLevelBackupInfo": [
       {
         "document": "查询秒级备份信息",
-        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecondLevelBackupInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-asdasdas\",\n    \"BackupTimestamp\": 1716449238\n}",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecondLevelBackupInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-asda****\",\n    \"BackupTimestamp\": 1716449238\n}",
         "output": "{\n    \"Response\": {\n        \"BackupId\": \"154709612-5143180-1043869225\",\n        \"BackupTimestamp\": 1719563096,\n        \"MissingTimestamps\": null,\n        \"RequestId\": \"fa6ec05f-d469-41cd-862f-da6771c4554d\",\n        \"StartTimestamp\": 1719562435\n    }\n}",
         "title": "查询秒级备份信息"
       }
