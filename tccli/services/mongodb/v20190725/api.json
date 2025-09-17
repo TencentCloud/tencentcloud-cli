@@ -154,6 +154,20 @@
       "output": "DescribeDBInstancesResponse",
       "status": "online"
     },
+    "DescribeDbTknPwdRules": {
+      "document": "查看数据库密码规则",
+      "input": "DescribeDbTknPwdRulesRequest",
+      "name": "查看数据库密码规则",
+      "output": "DescribeDbTknPwdRulesResponse",
+      "status": "online"
+    },
+    "DescribeDbTknResource": {
+      "document": "查询DBTkn资源信息",
+      "input": "DescribeDbTknResourceRequest",
+      "name": "查询DbTkn类型资源",
+      "output": "DescribeDbTknResourceResponse",
+      "status": "online"
+    },
     "DescribeDetailedSlowLogs": {
       "document": "查询实例慢日志详情",
       "input": "DescribeDetailedSlowLogsRequest",
@@ -327,6 +341,13 @@
       "input": "ResetDBInstancePasswordRequest",
       "name": "修改实例用户的密码",
       "output": "ResetDBInstancePasswordResponse",
+      "status": "online"
+    },
+    "ResetInstancePassword": {
+      "document": "设置实例密码",
+      "input": "ResetInstancePasswordRequest",
+      "name": "重置实例密码",
+      "output": "ResetInstancePasswordResponse",
       "status": "online"
     },
     "RestartNodes": {
@@ -3034,6 +3055,162 @@
           "name": "InstanceDetails",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknPwdRulesRequest": {
+      "document": "DescribeDbTknPwdRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "cmgo-xxxx",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "mongodb",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "readonly",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknPwdRulesResponse": {
+      "document": "DescribeDbTknPwdRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "密码最大长度",
+          "example": "16",
+          "member": "int64",
+          "name": "RequiredLength",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码规则",
+          "example": "无",
+          "member": "PasswordRule",
+          "name": "Rules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknResourceRequest": {
+      "document": "DescribeDbTknResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "cmgo-xxx",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "readonly",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型，此处填mongodb",
+          "example": "mongodb",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端地址",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknResourceResponse": {
+      "document": "DescribeDbTknResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启密码轮转",
+          "example": "true",
+          "member": "bool",
+          "name": "EnabledRotate",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -5893,6 +6070,52 @@
       ],
       "usage": "both"
     },
+    "PasswordRule": {
+      "document": "密码规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字符类型",
+          "example": "uppercase",
+          "member": "string",
+          "name": "CharacterType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字符可选集合",
+          "example": "0123456789",
+          "member": "string",
+          "name": "Choices",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最低长度",
+          "example": "4",
+          "member": "int64",
+          "name": "MinimumLength",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否必须以此字符开头",
+          "example": "true",
+          "member": "bool",
+          "name": "MustStart",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RemoveNodeList": {
       "document": "修改实例节点详情",
       "members": [
@@ -6074,6 +6297,98 @@
           "name": "AsyncRequestId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancePasswordRequest": {
+      "document": "ResetInstancePassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "cmgo-xxx",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "readonly",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "password",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "mongodb",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancePasswordResponse": {
+      "document": "ResetInstancePassword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "花费时间，单位ms",
+          "example": "10",
+          "member": "int64",
+          "name": "TimeCost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码设置时间点",
+          "example": "1751955183",
+          "member": "int64",
+          "name": "ResetTimestamp",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

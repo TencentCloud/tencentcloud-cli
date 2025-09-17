@@ -6438,7 +6438,7 @@
         {
           "disabled": false,
           "document": "pod名称列表",
-          "example": "[]",
+          "example": "[\"master\",\"pod\"]",
           "member": "string",
           "name": "PodNames",
           "output_required": true,
@@ -6458,7 +6458,7 @@
         {
           "disabled": false,
           "document": "pod详细信息",
-          "example": "[{\"Name\":\"train-786801095607790976-5z75pr7skj5s-master-0\",\"IP\":\"\t9.0.0.1\"}]",
+          "example": "无",
           "member": "PodInfo",
           "name": "PodInfoList",
           "output_required": true,
@@ -12107,6 +12107,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为热备资源组",
+          "example": "false",
+          "member": "bool",
+          "name": "IsHotBackupResourceGroup",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12314,6 +12324,17 @@
           "example": "训练过程中代码报错，请查看训练日志/事件或者联系工单",
           "member": "string",
           "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务实例 ID",
+          "example": "train-78987-xczv",
+          "member": "string",
+          "name": "InstanceId",
           "output_required": false,
           "required": false,
           "type": "string",

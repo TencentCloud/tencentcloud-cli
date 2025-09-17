@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli redis DescribeSecondLevelBackupInfo --cli-unfold-argument  \
-    --InstanceId crs-asdasdas \
+    --InstanceId crs-asda**** \
     --BackupTimestamp 1716449238
 ```
 

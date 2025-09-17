@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione DescribeTrainingTaskPods --cli-unfold-argument  \
-    --Id abc
+    --Id train-12442
 ```
 
 Output: 
@@ -14,32 +14,32 @@ Output:
 {
     "Response": {
         "PodNames": [
-            "abc"
+            "train-fdsff"
         ],
         "TotalCount": 1,
         "PodInfoList": [
             {
-                "Name": "abc",
-                "IP": "abc",
-                "Status": "abc",
-                "StartTime": "abc",
-                "EndTime": "abc",
+                "Name": "pod-abc",
+                "IP": "12.23.23.14",
+                "Status": "RUNNING",
+                "StartTime": "2025-01-02 00:00:00",
+                "EndTime": "2025-01-02 00:01:00",
                 "ResourceConfigInfo": {
-                    "Role": "abc",
+                    "Role": "master",
                     "Cpu": 1,
                     "Memory": 1,
-                    "GpuType": "abc",
+                    "GpuType": "HCC",
                     "Gpu": 1,
-                    "InstanceType": "abc",
+                    "InstanceType": "fdsaf",
                     "InstanceNum": 1,
-                    "InstanceTypeAlias": "abc",
+                    "InstanceTypeAlias": "fsadfd",
                     "RDMAConfig": {
                         "Enable": true
                     }
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "fdsjlk-dsfdsf"
     }
 }
 ```

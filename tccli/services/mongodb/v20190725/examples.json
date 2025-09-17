@@ -182,6 +182,22 @@
         "title": "查询实例列表"
       }
     ],
+    "DescribeDbTknPwdRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOplogDownloadTask\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"cmgo-js2qrgp5\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"InstanceType\": \"mongodb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ab09c94-b2fc-4053-9115-ccc178e56000\",\n        \"RequiredLength\": 8,\n        \"Rules\": [\n            {\n                \"CharacterType\": \"uppercase\",\n                \"Choices\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                \"MinimumLength\": 4,\n                \"MustStart\": false\n            }\n        ]\n    }\n}",
+        "title": "查看数据库密码规则"
+      }
+    ],
+    "DescribeDbTknResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDbTknResource\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"cmgo-abcdefg\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"readonly\",\n    \"InstanceType\": \"mongodb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ab09c94-b2fc-4053-9115-ccc178e56000\",\n        \"EnabledRotate\": true\n    }\n}",
+        "title": "查询DBTkn资源信息"
+      }
+    ],
     "DescribeDetailedSlowLogs": [
       {
         "document": "",
@@ -392,6 +408,14 @@
         "input": "https://mongodb.tencentcloudapi.com/?Action=ResetDBInstancePassword\n&InstanceId=cmgo-7pjedvz7\n&UserName=rwuser\n&Password=111111\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"4769\",\n        \"RequestId\": \"e600a8d0-9014-11ea-84c1-01cccde830c6\"\n    }\n}",
         "title": "修改实例用户的密码"
+      }
+    ],
+    "ResetInstancePassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstancePassword\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"cmgo-js2qrgp5\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"test1\",\n    \"Password\": \"abcde\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ab09c94-b2fc-4053-9115-ccc178e56000\",\n        \"TimeCost\": 10,\n        \"ResetTimestamp\": 12345\n    }\n}",
+        "title": "设置实例密码"
       }
     ],
     "RestartNodes": [

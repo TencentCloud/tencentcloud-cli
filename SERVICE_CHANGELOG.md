@@ -1,27 +1,10 @@
-# Release 3.0.1273.1
+# Release 3.0.1274.1
 
-## 腾讯混元生3D(ai3d) 版本：2025-05-13
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
 
-### 第 3 次发布
+### 第 43 次发布
 
-发布时间：2025-09-17 01:07:34
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [QueryHunyuanTo3DRapidJob](http://document.tencentcloudapi.woa.com/document/product/1800/87653)
-* [SubmitHunyuanTo3DRapidJob](http://document.tencentcloudapi.woa.com/document/product/1800/87652)
-
-
-
-## 云游戏(gs) 版本：2019-11-18
-
-### 第 41 次发布
-
-发布时间：2025-09-17 01:33:02
+发布时间：2025-09-18 01:42:05
 
 本次发布包含了以下内容：
 
@@ -29,19 +12,25 @@
 
 新增接口：
 
-* [DistributeAndroidInstanceImageToHosts](http://document.tencentcloudapi.woa.com/document/product/1162/87654)
+* [DescribeDbTknPwdRules](http://document.tencentcloudapi.woa.com/document/product/240/87657)
+* [DescribeDbTknResource](http://document.tencentcloudapi.woa.com/document/product/240/87656)
+* [ResetInstancePassword](http://document.tencentcloudapi.woa.com/document/product/240/87655)
 
 新增数据结构：
 
-* [AndroidInstanceHostTask](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceHostTask)
+* [PasswordRule](http://document.tencentcloudapi.woa.com/document/product/240/38576#PasswordRule)
 
 
 
-## 网关负载均衡(gwlb) 版本：2024-09-06
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
 
-### 第 5 次发布
 
-发布时间：2025-09-17 01:33:45
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 112 次发布
+
+发布时间：2025-09-18 01:44:15
 
 本次发布包含了以下内容：
 
@@ -49,37 +38,56 @@
 
 修改接口：
 
-* [CreateTargetGroup](http://document.tencentcloudapi.woa.com/document/product/1776/85071)
+* [DescribeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/862/37614)
 
-	* 新增入参：ForwardingMode, TcpIdleConnectTimeout, OthersIdleConnectTimeout, RescheduleUnbindRs, RescheduleUnbindRsStartTime, RescheduleUnhealthy, RescheduleUnhealthyStartTime
-
-* [ModifyTargetGroupAttribute](http://document.tencentcloudapi.woa.com/document/product/1776/85063)
-
-	* 新增入参：TcpIdleConnectTimeout, OthersIdleConnectTimeout, RescheduleUnbindRs, RescheduleUnbindRsStartTime, RescheduleUnhealthy, RescheduleUnhealthyStartTime
+	* 新增出参：ExtractBlindWatermarkTask
 
 
+新增数据结构：
+
+* [AiAnalysisTaskDubbingInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDubbingInput)
+* [AiAnalysisTaskDubbingOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDubbingOutput)
+* [AiAnalysisTaskDubbingResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDubbingResult)
+* [ExtractBlindWatermarkTask](http://document.tencentcloudapi.woa.com/document/product/862/37615#ExtractBlindWatermarkTask)
+* [ExtractBlindWatermarkTaskConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ExtractBlindWatermarkTaskConfig)
+
+修改数据结构：
+
+* [AiAnalysisResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisResult)
+
+	* 新增成员：DubbingTask
+
+* [AiAnalysisTaskDelLogoOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDelLogoOutput)
+
+	* 新增成员：VoiceClonedVideo, VoiceClonedMarkFile
 
 
-## 知识引擎原子能力(lkeap) 版本：2024-05-22
 
-### 第 33 次发布
 
-发布时间：2025-09-17 01:41:11
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 101 次发布
+
+发布时间：2025-09-18 02:00:05
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1764/83973)
+* [ResourceGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#ResourceGroup)
 
-	* 新增入参：Thinking
+	* 新增成员：IsHotBackupResourceGroup
+
+* [RestartInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#RestartInfo)
+
+	* 新增成员：InstanceId
 
 
-新增数据结构：
 
-* [Thinking](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Thinking)
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
 
 
 
