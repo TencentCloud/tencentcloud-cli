@@ -1,7 +1,7 @@
 {
   "actions": {
     "ConfirmVideoTranslateJob": {
-      "document": "确认视频翻译结果",
+      "document": "确认视频转译结果",
       "input": "ConfirmVideoTranslateJobRequest",
       "name": "确认视频转译结果",
       "output": "ConfirmVideoTranslateJobResponse",
@@ -95,7 +95,7 @@
         {
           "disabled": false,
           "document": "视频翻译任务 ID",
-          "example": "无",
+          "example": "vlSYvQkMM0KwPuoakawm0tPrREwc2p7c",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -119,7 +119,7 @@
         {
           "disabled": false,
           "document": "视频翻译任务 ID",
-          "example": "无",
+          "example": "vlSYvQkMM0KwPuoakawm0tPrREwc2p7c",
           "member": "string",
           "name": "JobId",
           "output_required": false,
@@ -129,7 +129,7 @@
         {
           "disabled": false,
           "document": "音频转换任务 ID",
-          "example": "无",
+          "example": "vlSYvQkMM0KwPuoakawm0tPrREwc2p7c",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -139,7 +139,7 @@
         {
           "disabled": false,
           "document": "音频翻译结果确认 session",
-          "example": "无",
+          "example": "vlSYvQkMM0KwPuoakawm0tPrREwc2p7c",
           "member": "string",
           "name": "SessionId",
           "output_required": false,
@@ -149,7 +149,7 @@
         {
           "disabled": false,
           "document": "视频转译任务状态",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -159,7 +159,7 @@
         {
           "disabled": false,
           "document": "视频转译任务信息",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": false,

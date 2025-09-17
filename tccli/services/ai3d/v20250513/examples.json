@@ -16,6 +16,14 @@
         "title": "查询生3D专业版示例"
       }
     ],
+    "QueryHunyuanTo3DRapidJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanTo3DRapidJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1336255233494892544\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"3020cd6c-4ad6-4df3-8560-c233f35d6221\",\n        \"ResultFile3Ds\": [\n            {\n                \"PreviewImageUrl\": \"https://xxx.cos.ap-guangzhou.tencentcos.cn/xxx.png\",\n                \"Type\": \"OBJ\",\n                \"Url\": \"https:/xxx.cos.ap-guangzhou.tencentcos.cn/xxx.zip\"\n            }\n        ],\n        \"Status\": \"DONE\"\n    }\n}",
+        "title": "查询任务调用示例"
+      }
+    ],
     "SubmitHunyuanTo3DJob": [
       {
         "document": "",
@@ -30,6 +38,14 @@
         "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DProJob\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://cos.ap-guangzhou.myqcloud.com/input.png\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1357237233311637504\",\n        \"RequestId\": \"173f8c3b-d559-4e17-aac7-4e42303773ac\"\n    }\n}",
         "title": "提交生3D专业版示例"
+      }
+    ],
+    "SubmitHunyuanTo3DRapidJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DRapidJob\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://***.cos.ap-guangzhou.myqcloud.com/***.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1335141824121323520\",\n        \"RequestId\": \"5f84f1df-7a29-4f93-8dc0-d9e6dea6bff9\"\n    }\n}",
+        "title": "提交任务调用示例"
       }
     ]
   },

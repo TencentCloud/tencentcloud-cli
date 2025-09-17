@@ -1,27 +1,10 @@
-# Release 3.0.1272.1
+# Release 3.0.1273.1
 
 ## 腾讯混元生3D(ai3d) 版本：2025-05-13
 
-### 第 2 次发布
+### 第 3 次发布
 
-发布时间：2025-09-16 01:07:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [QueryHunyuanTo3DProJob](http://document.tencentcloudapi.woa.com/document/product/1800/87647)
-* [SubmitHunyuanTo3DProJob](http://document.tencentcloudapi.woa.com/document/product/1800/87646)
-
-
-
-## 云开发低码(lowcode) 版本：2021-01-08
-
-### 第 28 次发布
-
-发布时间：2025-09-16 01:21:14
+发布时间：2025-09-17 01:07:34
 
 本次发布包含了以下内容：
 
@@ -29,52 +12,36 @@
 
 新增接口：
 
-* [DescribeApps](http://document.tencentcloudapi.woa.com/document/product/1599/87651)
-* [DescribeRelatedUsers](http://document.tencentcloudapi.woa.com/document/product/1599/87650)
-* [DescribeResourceRoleList](http://document.tencentcloudapi.woa.com/document/product/1599/87649)
-
-新增数据结构：
-
-* [AppJobInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#AppJobInfo)
-* [OrgResp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#OrgResp)
-* [RoleGroup](http://document.tencentcloudapi.woa.com/document/product/1599/75496#RoleGroup)
-* [RoleListPage](http://document.tencentcloudapi.woa.com/document/product/1599/75496#RoleListPage)
-* [Weapp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#Weapp)
-* [WedaRole](http://document.tencentcloudapi.woa.com/document/product/1599/75496#WedaRole)
-* [WedaUser](http://document.tencentcloudapi.woa.com/document/product/1599/75496#WedaUser)
+* [QueryHunyuanTo3DRapidJob](http://document.tencentcloudapi.woa.com/document/product/1800/87653)
+* [SubmitHunyuanTo3DRapidJob](http://document.tencentcloudapi.woa.com/document/product/1800/87652)
 
 
 
-## 媒体处理(mps) 版本：2019-06-12
+## 云游戏(gs) 版本：2019-11-18
 
-### 第 111 次发布
+### 第 41 次发布
 
-发布时间：2025-09-16 01:22:53
+发布时间：2025-09-17 01:33:02
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+新增接口：
+
+* [DistributeAndroidInstanceImageToHosts](http://document.tencentcloudapi.woa.com/document/product/1162/87654)
+
 新增数据结构：
 
-* [BeautyConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#BeautyConfig)
-* [BeautyEffectItemConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#BeautyEffectItemConfig)
-* [BeautyFilterItemConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#BeautyFilterItemConfig)
-
-修改数据结构：
-
-* [ImageTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageTaskInput)
-
-	* 新增成员：BeautyConfig
+* [AndroidInstanceHostTask](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceHostTask)
 
 
 
+## 网关负载均衡(gwlb) 版本：2024-09-06
 
-## 云托管 CloudBase Run(tcbr) 版本：2022-02-17
+### 第 5 次发布
 
-### 第 15 次发布
-
-发布时间：2025-09-16 01:26:54
+发布时间：2025-09-17 01:33:45
 
 本次发布包含了以下内容：
 
@@ -82,18 +49,37 @@
 
 修改接口：
 
-* [CreateCloudRunServer](http://document.tencentcloudapi.woa.com/document/product/1711/80399)
+* [CreateTargetGroup](http://document.tencentcloudapi.woa.com/document/product/1776/85071)
 
-	* 新增入参：VpcInfo
+	* 新增入参：ForwardingMode, TcpIdleConnectTimeout, OthersIdleConnectTimeout, RescheduleUnbindRs, RescheduleUnbindRsStartTime, RescheduleUnhealthy, RescheduleUnhealthyStartTime
 
-* [DescribeCloudRunServers](http://document.tencentcloudapi.woa.com/document/product/1711/80397)
+* [ModifyTargetGroupAttribute](http://document.tencentcloudapi.woa.com/document/product/1776/85063)
 
-	* 新增入参：VpcId
+	* 新增入参：TcpIdleConnectTimeout, OthersIdleConnectTimeout, RescheduleUnbindRs, RescheduleUnbindRsStartTime, RescheduleUnhealthy, RescheduleUnhealthyStartTime
+
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 33 次发布
+
+发布时间：2025-09-17 01:41:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1764/83973)
+
+	* 新增入参：Thinking
 
 
 新增数据结构：
 
-* [CreateVpcInfo](http://document.tencentcloudapi.woa.com/document/product/1711/80400#CreateVpcInfo)
+* [Thinking](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Thinking)
 
 
 

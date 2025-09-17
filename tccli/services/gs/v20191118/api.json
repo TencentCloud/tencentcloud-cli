@@ -231,6 +231,13 @@
       "output": "DisconnectAndroidInstanceResponse",
       "status": "online"
     },
+    "DistributeAndroidInstanceImageToHosts": {
+      "document": "分发安卓实例镜像至宿主机",
+      "input": "DistributeAndroidInstanceImageToHostsRequest",
+      "name": "分发安卓实例镜像到宿主机",
+      "output": "DistributeAndroidInstanceImageToHostsResponse",
+      "status": "online"
+    },
     "DistributeFileToAndroidInstances": {
       "document": "将一个文件批量分发到多个实例，一次接口调用触发一次文件分发，一次文件分发只会从公网下载一次，然后文件会走内网分发到实例列表中的实例。",
       "input": "DistributeFileToAndroidInstancesRequest",
@@ -1132,6 +1139,32 @@
         }
       ],
       "usage": "both"
+    },
+    "AndroidInstanceHostTask": {
+      "document": "安卓实例宿主机任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "a28c6f9c-e794-4d48-b711-d17e51a5d745",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宿主机序列号",
+          "example": "RK5838P1262201165",
+          "member": "string",
+          "name": "HostSerialNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AndroidInstanceImage": {
       "document": "安卓实例镜像信息",
@@ -3675,6 +3708,52 @@
     "DisconnectAndroidInstanceResponse": {
       "document": "DisconnectAndroidInstance返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeAndroidInstanceImageToHostsRequest": {
+      "document": "DistributeAndroidInstanceImageToHosts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "宿主机序列号数组",
+          "example": "[\"RK5838P1262201165\"]",
+          "member": "string",
+          "name": "HostSerialNumbers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例镜像 ID",
+          "example": "image-a5drda9q",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeAndroidInstanceImageToHostsResponse": {
+      "document": "DistributeAndroidInstanceImageToHosts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务集合",
+          "example": "无",
+          "member": "AndroidInstanceHostTask",
+          "name": "TaskSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
