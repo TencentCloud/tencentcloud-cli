@@ -2260,7 +2260,7 @@
         },
         {
           "disabled": false,
-          "document": "数据配置，只支持WEDATA_HDFS存储类型",
+          "document": "数据存储挂载配置",
           "example": "无",
           "member": "DataConfig",
           "name": "DataConfigs",
@@ -12014,12 +12014,23 @@
         {
           "disabled": false,
           "document": "RDMA配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Enable\": false}",
+          "example": "无",
           "member": "RDMAConfig",
           "name": "RDMAConfig",
           "output_required": true,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务运行的节点 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"rs-1\", \"rs-2\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
