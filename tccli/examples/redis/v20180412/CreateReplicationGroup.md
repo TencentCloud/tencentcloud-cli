@@ -15,6 +15,7 @@ Output:
 {
     "Response": {
         "TaskId": 327,
+        "GroupId": "crs-repl-eewq*****",
         "RequestId": "e546784b-709c-401d-aba6-73037eb4e522"
     }
 }

@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CreateAgent": {
-      "document": "你创建一个Agent",
+      "document": "创建一个Agent",
       "input": "CreateAgentRequest",
       "name": "创建Agent",
       "output": "CreateAgentResponse",
@@ -462,6 +462,13 @@
       "output": "ListAttributeLabelResponse",
       "status": "online"
     },
+    "ListChannel": {
+      "document": "获取发布渠道列表",
+      "input": "ListChannelRequest",
+      "name": "获取发布渠道列表",
+      "output": "ListChannelResponse",
+      "status": "online"
+    },
     "ListDoc": {
       "document": "文档列表",
       "input": "ListDocRequest",
@@ -849,7 +856,7 @@
         },
         {
           "disabled": false,
-          "document": "插件图标url",
+          "document": "Agent图标url",
           "example": "https://example.com/image/icon",
           "member": "string",
           "name": "IconUrl",
@@ -955,6 +962,89 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高级设置",
+          "example": "无",
+          "member": "AgentAdvancedConfig",
+          "name": "AdvancedConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentAdvancedConfig": {
+      "document": "Agent高级设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启澄清询问",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableClarification",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "思考模式，0为效果优先，1为速度优先",
+          "example": "0",
+          "member": "int64",
+          "name": "ThinkingMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大推理轮数",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxReasoningRound",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上下文轮数",
+          "example": "10",
+          "member": "uint64",
+          "name": "HistoryLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启结构化输出",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableStructuredOutput",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结构化输出配置",
+          "example": "无",
+          "member": "StructuredOutputConfig",
+          "name": "StructuredOutputConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -3622,6 +3712,111 @@
       ],
       "usage": "out"
     },
+    "ChannelListInfo": {
+      "document": "渠道详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "渠道类型 10000 微信订阅号 10001 微信服务号 10002 企微应用",
+          "example": "10001",
+          "member": "uint64",
+          "name": "ChannelType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "渠道状态 1未发布 2运行中 3已下线",
+          "example": "2",
+          "member": "uint64",
+          "name": "ChannelStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "渠道名称",
+          "example": "微信公众号",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "渠道id 数据库主键",
+          "example": "1968125072589206740",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "公众号渠道",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "1758087093",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1758087052",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后更新人",
+          "example": "128641079067",
+          "member": "string",
+          "name": "UpdatedUser",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体应用可见范围，public-所有人可见 private-仅自己可见 share-通过分享可见\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "YuanQi",
+          "name": "YuanQiInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CheckAttributeLabelExistRequest": {
       "document": "CheckAttributeLabelExist请求参数结构体",
       "members": [
@@ -4519,7 +4714,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -4528,7 +4723,7 @@
         {
           "disabled": false,
           "document": "发布描述",
-          "example": "无",
+          "example": "第一次发布",
           "member": "string",
           "name": "Desc",
           "required": false,
@@ -4536,8 +4731,8 @@
         },
         {
           "disabled": false,
-          "document": "渠道业务ID",
-          "example": "无",
+          "document": "渠道业务ID，从ListChannel接口的响应字段ChannelId获取",
+          "example": "[\"2\"]",
           "member": "string",
           "name": "ChannelBizIds",
           "required": false,
@@ -4552,7 +4747,7 @@
         {
           "disabled": false,
           "document": "发布ID",
-          "example": "无",
+          "example": "1730526803028463616",
           "member": "string",
           "name": "ReleaseBizId",
           "output_required": false,
@@ -11323,6 +11518,98 @@
       ],
       "type": "object"
     },
+    "ListChannelRequest": {
+      "document": "ListChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1908652910168703294",
+          "member": "string",
+          "name": "AppBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "应用ID",
+          "example": "1908652910168703294",
+          "member": "string",
+          "name": "BotBizId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "渠道类型, 10000: 微信订阅号，10001: 微信服务号，10002：企微应用，10004：微信客服，10005：小程序，10009：企微智能机器人 ",
+          "example": "[10000,10001,10002]",
+          "member": "uint64",
+          "name": "ChannelType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "渠道状态 1未发布 2运行中 3已下线",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "ChannelStatus",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListChannelResponse": {
+      "document": "ListChannel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回总数",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "渠道信息列表",
+          "example": "无",
+          "member": "ChannelListInfo",
+          "name": "ListChannel",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListDocCateRequest": {
       "document": "ListDocCate请求参数结构体",
       "members": [
@@ -14033,7 +14320,7 @@
         {
           "disabled": false,
           "document": "停止序列",
-          "example": "[\"\"]",
+          "example": "[\"set\"]",
           "member": "string",
           "name": "StopSequences",
           "output_required": false,
@@ -15515,7 +15802,7 @@
         {
           "disabled": false,
           "document": "节点的输入的完整内容的链接。（当Input内容超过限制的时候此字段才有值）",
-          "example": "无",
+          "example": "www.cos.com",
           "member": "string",
           "name": "InputRef",
           "output_required": false,
@@ -15537,7 +15824,7 @@
         {
           "disabled": false,
           "document": "节点的输出的完整内容的链接。（当Output内容超过限制的时候此字段才有值）",
-          "example": "无",
+          "example": "www.cos.com",
           "member": "string",
           "name": "OutputRef",
           "output_required": false,
@@ -15559,7 +15846,7 @@
         {
           "disabled": false,
           "document": "任务的原始输出的完整内容的链接。（当TaskOutput内容超过限制的时候此字段才有值）",
-          "example": "无",
+          "example": "www.cos.com",
           "member": "string",
           "name": "TaskOutputRef",
           "output_required": false,
@@ -15570,7 +15857,7 @@
         {
           "disabled": false,
           "document": "节点的日志",
-          "example": "无",
+          "example": "log",
           "member": "string",
           "name": "Log",
           "output_required": false,
@@ -15581,7 +15868,7 @@
         {
           "disabled": false,
           "document": "节点的日志的完整内容的链接志（当Log内容超过限制的时候才有值）",
-          "example": "无",
+          "example": "www.cos.com",
           "member": "string",
           "name": "LogRef",
           "output_required": false,
@@ -15698,6 +15985,89 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ParameterConfig": {
+      "document": "参数配置列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "test1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段描述",
+          "example": "test1",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段类型",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否必填",
+          "example": "false",
+          "member": "bool",
+          "name": "IsRequired",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子参数",
+          "example": "无",
+          "member": "ParameterConfig",
+          "name": "SubParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "OneOf类型的参数",
+          "example": "无",
+          "member": "ParameterConfig",
+          "name": "OneOf",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AnyOf类型的参数",
+          "example": "无",
+          "member": "ParameterConfig",
+          "name": "AnyOf",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -17723,7 +18093,7 @@
         {
           "disabled": false,
           "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "deepseek-v3",
           "member": "string",
           "name": "ModelName",
           "output_required": false,
@@ -17885,6 +18255,23 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "StructuredOutputConfig": {
+      "document": "结构化输出的配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数列表",
+          "example": "无",
+          "member": "ParameterConfig",
+          "name": "StructuredOutputParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19554,6 +19941,23 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "YuanQi": {
+      "document": "//智能体应用可见范围，public-所有人可见 private-仅自己可见 share-通过分享可见",
+      "members": [
+        {
+          "disabled": false,
+          "document": "public-所有人可见",
+          "example": "pubilc",
+          "member": "string",
+          "name": "VisibleRange",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

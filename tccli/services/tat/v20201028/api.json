@@ -2225,7 +2225,7 @@
         {
           "disabled": false,
           "document": "执行结果。",
-          "example": "{\"Dropped\":0,\"ExecEndTime\":\"2024-11-13T02:10:32Z\",\"ExecStartTime\":\"2024-11-13T02:10:32Z\",\"ExitCode\":7,\"Output\":\"\",\"OutputUploadCOSErrorInfo\":\"\",\"OutputUrl\":\"\"}",
+          "example": "无",
           "member": "TaskResult",
           "name": "TaskResult",
           "output_required": true,
@@ -2275,7 +2275,7 @@
         {
           "disabled": false,
           "document": "执行任务所执行的命令详情。",
-          "example": "{\"CommandType\":\"SHELL\",\"Content\":\"cHdk\",\"OutputCOSBucketUrl\":\"\",\"OutputCOSKeyPrefix\":\"prefix\",\"Timeout\":600,\"Username\":\"root\",\"WorkingDirectory\":\"/data\"}",
+          "example": "无",
           "member": "CommandDocument",
           "name": "CommandDocument",
           "output_required": true,
@@ -2298,6 +2298,16 @@
           "example": "USER",
           "member": "string",
           "name": "InvocationSource",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行的命令的名称。",
+          "example": "name",
+          "member": "string",
+          "name": "CommandName",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

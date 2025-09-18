@@ -273,6 +273,13 @@
       "output": "DescribeHealthScoreResponse",
       "status": "online"
     },
+    "DescribeHealthScoreTimeSeries": {
+      "document": "获取指定时间段内的健康得分趋势",
+      "input": "DescribeHealthScoreTimeSeriesRequest",
+      "name": "获取实例健康得分趋势",
+      "output": "DescribeHealthScoreTimeSeriesResponse",
+      "status": "online"
+    },
     "DescribeIndexRecommendAggregationSlowLogs": {
       "document": "查询某张表的慢查模板概览，这个接口是对用户点击对应的推荐索引后，展示慢日志用的",
       "input": "DescribeIndexRecommendAggregationSlowLogsRequest",
@@ -369,6 +376,13 @@
       "input": "DescribeRedisTopBigKeysRequest",
       "name": "查询redis实例大key列表",
       "output": "DescribeRedisTopBigKeysResponse",
+      "status": "online"
+    },
+    "DescribeRedisTopCostCommands": {
+      "document": "获取指定时间段内Redis 访问命令 cost top N",
+      "input": "DescribeRedisTopCostCommandsRequest",
+      "name": "查询访问命令Cost TopN",
+      "output": "DescribeRedisTopCostCommandsResponse",
       "status": "online"
     },
     "DescribeRedisTopHotKeys": {
@@ -4505,6 +4519,70 @@
       ],
       "type": "object"
     },
+    "DescribeHealthScoreTimeSeriesRequest": {
+      "document": "DescribeHealthScoreTimeSeries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。",
+          "example": "2025-09-03T10:41:59+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，如“2021-05-27 01:00:00”，支持的最早查询时间为当前时间的前30天。",
+          "example": "2025-09-03T10:41:59+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID列表。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "cdb-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括：\"mysql\" - 云数据库 MySQL，\"redis\" - 云数据库 Redis，\"mariadb\"-数据库mariadb    默认为\"mysql\"。",
+          "example": "cdb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHealthScoreTimeSeriesResponse": {
+      "document": "DescribeHealthScoreTimeSeries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康得分趋势数据",
+          "example": "无",
+          "member": "HealthScoreTimeSeriesData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIndexRecommendAggregationSlowLogsRequest": {
       "document": "DescribeIndexRecommendAggregationSlowLogs请求参数结构体",
       "members": [
@@ -5757,6 +5835,79 @@
           "name": "Timestamp",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisTopCostCommandsRequest": {
+      "document": "DescribeRedisTopCostCommands请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。",
+          "example": "2025-09-03T10:41:59+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，如“2021-05-27 01:00:00”，支持的最早查询时间为当前时间的前30天。",
+          "example": "2025-09-03T10:41:59+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID列表。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "crs-ml76e662g",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括：\"mysql\" - 云数据库 MySQL，\"redis\" - 云数据库 Redis，\"mariadb\"-数据库mariadb    默认为\"mysql\"。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认前20条",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisTopCostCommandsResponse": {
+      "document": "DescribeRedisTopCostCommands返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命令列表",
+          "example": "无",
+          "member": "RedisCostCmd",
+          "name": "TopCostCmdList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -7771,6 +7922,72 @@
           "member": "string",
           "name": "HealthLevel",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HealthScoreTimeSeriesData": {
+      "document": "健康得分趋势",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平均得分",
+          "example": "98.5",
+          "member": "float",
+          "name": "Avg",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康状态\n1-health\n2-warning\n3-critical",
+          "example": "1",
+          "member": "uint64",
+          "name": "HealthStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "health_score",
+          "member": "string",
+          "name": "Metric",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "得分序列",
+          "example": " [100, 100, 100]",
+          "member": "uint64",
+          "name": "Series",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间序列，单位：毫秒数",
+          "example": " [1757174400, 1757174700, 1757175000]",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单位",
+          "example": "分",
+          "member": "string",
+          "name": "Unit",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9839,6 +10056,32 @@
           "example": "17418",
           "member": "int64",
           "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RedisCostCmd": {
+      "document": "redis命令cost详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命令",
+          "example": "ping",
+          "member": "string",
+          "name": "Cmd",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大cost",
+          "example": "2",
+          "member": "uint64",
+          "name": "MaxCost",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false

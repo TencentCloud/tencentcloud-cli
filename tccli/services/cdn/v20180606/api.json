@@ -541,6 +541,15 @@
           "name": "Channel",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否继承域名标签, 默认保留上一次更改的值",
+          "example": "true",
+          "member": "bool",
+          "name": "InheritDomainTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3340,6 +3349,15 @@
           "name": "DomainAreaConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否继承域名标签，默认为false",
+          "example": "true",
+          "member": "bool",
+          "name": "InheritDomainTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4799,7 +4817,7 @@
         },
         {
           "disabled": false,
-          "document": "查询区域：\nmainland: 国内节点\noverseas: 海外节点\nglobal: 全球节点",
+          "document": "查询区域：mainland: 中国境内节点overseas: 海外节点global: 全球节点",
           "example": "last",
           "member": "string",
           "name": "Area",
@@ -4809,7 +4827,7 @@
         {
           "disabled": false,
           "document": "是否以IP段的格式返回。",
-          "example": "true/false",
+          "example": "true",
           "member": "bool",
           "name": "Segment",
           "required": false,
@@ -4818,7 +4836,7 @@
         {
           "disabled": false,
           "document": "是否查询节点 IPV6 信息。",
-          "example": "true/false",
+          "example": "true",
           "member": "bool",
           "name": "ShowIpv6",
           "required": false,
@@ -4827,7 +4845,7 @@
         {
           "disabled": false,
           "document": "是否对IPV6进行缩写。",
-          "example": "true/false",
+          "example": "true",
           "member": "bool",
           "name": "AbbreviationIpv6",
           "required": false,
@@ -8339,8 +8357,8 @@
         },
         {
           "disabled": false,
-          "document": "IP 黑白名单分路径配置，白名单功能。黑白名单 IP 总数不能超过 1000 个。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "document": "IP 黑白名单分路径配置。黑白名单 IP 总数不能超过 1000 个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "IpFilterPathRule",
           "name": "FilterRules",
           "output_required": true,
@@ -8784,6 +8802,16 @@
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否继承域名标签",
+          "example": "true",
+          "member": "bool",
+          "name": "InheritDomainTags",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -9573,6 +9601,15 @@
           "name": "DomainAreaConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否继承域名标签",
+          "example": "true",
+          "member": "bool",
+          "name": "InheritDomainTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9914,7 +9951,7 @@
         },
         {
           "disabled": false,
-          "document": "备源站类型\n<font color=red>备源站列表BackupOrigins 不为空时必填</font>\n支持以下类型：\ndomain：域名类型\nip：IP 列表作为源站\n以下备源源站类型尚未全量支持，需要申请试用：\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备源站类型\n<font color=red>备源站列表BackupOrigins 不为空时必填</font>\n支持以下类型：\ndomain：域名类型\nip：IP 列表作为源站\n以下备源源站类型尚未全量支持，需要申请试用：\nipv6_domain: 源站列表为多个 IPv6 地址以及域名\nip_ipv6：源站列表为多个 IPv4 地址和IPv6 地址\nip_ipv6_domain：源站列表为多个 IPv4 地址IPv6 地址以及域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ip",
           "member": "string",
           "name": "BackupOriginType",
@@ -9970,7 +10007,7 @@
         {
           "disabled": false,
           "document": "HTTPS回源SNI配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Switch\":\"on\",\"ServerName\":\"abc.com\"}",
+          "example": "无",
           "member": "OriginSni",
           "name": "Sni",
           "output_required": true,
@@ -9981,7 +10018,7 @@
         {
           "disabled": false,
           "document": "HTTPS回源高级配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "AdvanceHttps",
           "name": "AdvanceHttps",
           "output_required": true,

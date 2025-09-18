@@ -5642,7 +5642,7 @@
         {
           "disabled": false,
           "document": "绑定的DB列表（已废弃）",
-          "example": "[db1,db2]",
+          "example": "[\"db1\",\"db2\"]",
           "member": "string",
           "name": "BindDBList",
           "output_required": false,
@@ -5652,7 +5652,7 @@
         {
           "disabled": false,
           "document": "绑定信息",
-          "example": "[{\"ResourceId\":\"cdb-a1b2c3\",\"DbInfos\":[{\"DbName\":\"asset\",\"ValidStatus\":\"bind\",\"BindType\":\"binded\"}]}[",
+          "example": "无",
           "member": "DBInstanceInfo",
           "name": "BindList",
           "output_required": false,
@@ -6463,7 +6463,7 @@
         {
           "disabled": false,
           "document": "风险值",
-          "example": "[\"ItemName\":\"ins-a1b2c3\",\"RiskNum\":3}]",
+          "example": "无",
           "member": "RiskItem",
           "name": "Items",
           "output_required": true,
@@ -10214,7 +10214,7 @@
         {
           "disabled": false,
           "document": "数据样本列表，最多10条数据",
-          "example": "[{\"DataSample\":\"adfedf\"}}",
+          "example": "无",
           "member": "DspaFieldResultDataSample",
           "name": "Items",
           "output_required": true,
@@ -10655,7 +10655,7 @@
         {
           "disabled": false,
           "document": "2331",
-          "example": "合规组id",
+          "example": "1",
           "member": "int64",
           "name": "ComplianceId",
           "required": true,
@@ -10664,7 +10664,7 @@
         {
           "disabled": false,
           "document": "查询的资产信息列表",
-          "example": "{\"DataSourceType\":\"cdb\",\"DataSourceInfo\":[{\"DataSourceId\":\"cdb-b1c2\",\"BindList\":[\"db_asset\"]}]}",
+          "example": "无",
           "member": "AssetList",
           "name": "AssetList",
           "required": true,
@@ -10679,7 +10679,7 @@
         {
           "disabled": false,
           "document": "分级分布",
-          "example": "[{\"Key\":\"Level\",\"Value\":\"high\"}]",
+          "example": "无",
           "member": "Note",
           "name": "LevelDistribution",
           "output_required": true,
@@ -10689,7 +10689,7 @@
         {
           "disabled": false,
           "document": "分类分布",
-          "example": "[[\"Key\":\"Category\",\"Value\":\"级别\"}]",
+          "example": "无",
           "member": "Note",
           "name": "CategoryDistribution",
           "output_required": true,
@@ -10699,7 +10699,7 @@
         {
           "disabled": false,
           "document": "规则分布详情",
-          "example": "[{\"RuleId\":4,\"RuleName\":\"身份信息评估\",\"LevelId\":2,\"LevelName\":\"高风险\",\"RuleCnt\":2}]",
+          "example": "无",
           "member": "RuleDistribution",
           "name": "RuleDistribution",
           "output_required": true,
@@ -10749,7 +10749,7 @@
         {
           "disabled": false,
           "document": "查询的资产信息列表",
-          "example": "{\"DataSourceType\":\"cdb\",\"DataSourceInfo\":[{\"DataSourceId\":\"cdb-b1c2\",\"BindList\":[\"db_asset\"]}]}",
+          "example": "无",
           "member": "AssetList",
           "name": "AssetList",
           "required": true,
@@ -10764,7 +10764,7 @@
         {
           "disabled": false,
           "document": "分级分布",
-          "example": "[{\"Key\":\"高\",\"Value\":\"2\"]",
+          "example": "无",
           "member": "Note",
           "name": "LevelDistribution",
           "output_required": true,
@@ -10774,7 +10774,7 @@
         {
           "disabled": false,
           "document": "分类分布",
-          "example": "[\"Key\":\"个人信息\", \"Value\":\"2\"]",
+          "example": "无",
           "member": "Note",
           "name": "CategoryDistribution",
           "output_required": true,
@@ -10784,7 +10784,7 @@
         {
           "disabled": false,
           "document": "敏感规则分布详情列表",
-          "example": "[{\"AppId\":125500087,\"Uin\":\"24987078\",\"SubAccountUin\":\"298788091\",\"MetaType\":\"cdb\",\"StartTime\":\"2024-08-10 00:02:03\",\"FinishTime\":\"2024-08-10 00:03:00\",\"Status\":\"success\",\"ErrorInfo\":\"\"}]",
+          "example": "无",
           "member": "RuleDistribution",
           "name": "RuleDistribution",
           "output_required": true,
@@ -13573,6 +13573,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15494,9 +15504,18 @@
         {
           "disabled": false,
           "document": "过滤项。\n支持的过滤项包括：DspaId、Status、Version、DspaName、Channel。\nDspaId和DspaName支持模糊搜索。\nStatus支持的可选值：enabled、disabled。\nVersion支持的可选值：trial、official。\nChannel支持的可选值：sp_cds_dsgc_pre（代表dsgc实例）、sp_cds_dsgc_wedata_dc（代表wedata实例）",
-          "example": " [       {         \"Name\": \"Channel\",         \"Values\": [           \"dsgc\"         ]       },       {         \"Name\": \"DspaName\",         \"Values\": [           \"订单实例\"         ]       }     ]",
+          "example": "无",
           "member": "DspaDataSourceMngFilter",
           "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Tag键值过滤",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagFilter",
           "required": false,
           "type": "list"
         },
@@ -15528,7 +15547,7 @@
         {
           "disabled": false,
           "document": "资源列表。",
-          "example": "[   {     \"AppId\": 251205474,     \"DspaId\": \"dspa-44b7bd87\",     \"DspaName\": \"dspa-44b7bd87\",     \"DspaDescription\": \"dspa-44b7bd87\",     \"InsAuthCount\": 0,     \"DBAuthCount\": 0,     \"CosBindCount\": 0,     \"InstanceVersion\": \"professional\",     \"Status\": \"enabled\",     \"ExpiredAt\": 1733034406,     \"TrialVersion\": \"\",     \"TrialEndAt\": 18446744011573955000,     \"InsTotalQuota\": 5,     \"DbTotalQuota\": 5,     \"CosTotalQuota\": 1,     \"CosQuotaUnit\": \"T\",     \"RenewFlag\": 0,     \"Channel\": \"dsgc\"   } ]",
+          "example": "无",
           "member": "DspaInstance",
           "name": "InstanceList",
           "output_required": true,
@@ -18770,6 +18789,45 @@
         }
       ],
       "usage": "out"
+    },
+    "Tag": {
+      "document": "标签键/值和所属类别",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "key1",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "value1",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签所属类别",
+          "example": "category1",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TemplateInfo": {
       "document": "评估模板的详情数据",

@@ -245,6 +245,13 @@
       "output": "DiagnoseInstanceResponse",
       "status": "online"
     },
+    "ExportIpTraceLog": {
+      "document": "查询IP溯源日志原始数据",
+      "input": "ExportIpTraceLogRequest",
+      "name": "导出IP溯源日志",
+      "output": "ExportIpTraceLogResponse",
+      "status": "online"
+    },
     "GetDiagnoseSettings": {
       "document": "查看智能运维配置",
       "input": "GetDiagnoseSettingsRequest",
@@ -5351,6 +5358,142 @@
       ],
       "usage": "in"
     },
+    "ExportIpTraceLogRequest": {
+      "document": "ExportIpTraceLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ES集群ID",
+          "example": "es-xasdsfsa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2020-12-28 14:37:36",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2020-12-28 14:37:36",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "访问IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "RemoteIp",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Request/Response 请求/返回, 非必填",
+          "example": "[\"Request\"]",
+          "member": "string",
+          "name": "TraceType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Public/Private 公网访问/内网访问, 非必填",
+          "example": "[\"Public\"]",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填",
+          "example": "[\"OK\",\"GET\"]",
+          "member": "string",
+          "name": "ReqTypeOrRspStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关键字模糊查询，支持Lucene Query String",
+          "example": "message:abc",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "uri搜索",
+          "example": "/index/_search",
+          "member": "string",
+          "name": "Uri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群节点IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "NodeIp",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportIpTraceLogResponse": {
+      "document": "ExportIpTraceLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP时间列表",
+          "example": "无",
+          "member": "IpTimePair",
+          "name": "IpTraceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Failures": {
       "document": "索引备份失败的数据结构",
       "members": [
@@ -7076,6 +7219,45 @@
         }
       ],
       "usage": "out"
+    },
+    "IpTimePair": {
+      "document": "节点IP、访问IP、访问时间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳，毫秒",
+          "example": "173122344",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群节点IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "NodeIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "JobParam": {
       "document": "智能运维诊断参数",

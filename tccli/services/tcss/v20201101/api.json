@@ -12464,7 +12464,7 @@
         {
           "disabled": false,
           "document": "进程信息",
-          "example": "{         \"AncestorProcessInfo\": {             \"ProcessParam\": \"-port 22\",             \"ProcessPath\": \"/usr/local/bin/sshd\",             \"ProcessStartUser\": \"root\",             \"ProcessUserGroup\": \"root\"         }",
+          "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
           "output_required": true,
@@ -12494,7 +12494,7 @@
         {
           "disabled": false,
           "document": "祖先进程信息",
-          "example": "{             \"ProcessParam\": \"-port 22\",             \"ProcessPath\": \"/usr/local/bin/sshd\",             \"ProcessStartUser\": \"root\",             \"ProcessUserGroup\": \"root\"         }",
+          "example": "无",
           "member": "ProcessBaseInfo",
           "name": "AncestorProcessInfo",
           "output_required": true,
@@ -24786,7 +24786,7 @@
         {
           "disabled": false,
           "document": "解决方案",
-          "example": "1.检查容器内的恶意进程及非法端口，删除可疑的启动项和定时任务；\n 2.对容器存在的风险进行排查，如进行漏洞扫描、木马扫描等；\n 3.对容器所使用的的镜像进行加固，并替换运行中****",
+          "example": "1.检查容器内的恶意进程及非法端口，删除可疑的启动项和定时任务； 2.对容器存在的风险进行排查，如进行漏洞扫描、木马扫描等； 3.对容器所使用的镜像进行加固，并替换运行中****",
           "member": "string",
           "name": "Solution",
           "output_required": true,
@@ -24986,7 +24986,7 @@
         {
           "disabled": false,
           "document": "祖先进程命令行参数",
-          "example": "containerd-shim -namespace moby -workdir /var/lib/containerd/io.containerd.runtime.v1.linux/moby/36322181839db45cf0624e2d71059c015221be71c3552f2d98d26eda53094387 -address /run/containerd/containerd.sock -containerd-binary /usr/bin/containerd -runtime-root /var/run/docker/runtime-****",
+          "example": "param",
           "member": "string",
           "name": "AncestorProcessParam",
           "output_required": true,
@@ -25697,7 +25697,7 @@
         {
           "disabled": false,
           "document": "过滤参数,\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"2\"]}]",
-          "example": "[{\"Name\":\"Status\",\"Values\":[\"2\"]}]",
+          "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
           "required": false,
@@ -25740,7 +25740,7 @@
         {
           "disabled": false,
           "document": "白名单信息列表",
-          "example": "[             {                 \"UpdateTime\": \"2020-09-22 00:00:00\",                  \"SyscallNames\": [ \"chroot\", \"kill\"],                   \"ImageIds\": [                     \"image-id\"                 ]",
+          "example": "无",
           "member": "RiskSyscallWhiteListBaseInfo",
           "name": "WhiteListSet",
           "output_required": true,

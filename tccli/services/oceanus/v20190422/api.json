@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CheckConnectorName": {
+      "document": "查询资源名是否重复",
+      "input": "CheckConnectorNameRequest",
+      "name": "查询Connector名是否重复",
+      "output": "CheckConnectorNameResponse",
+      "status": "online"
+    },
     "CheckSavepoint": {
       "document": "检查快照是否可用",
       "input": "CheckSavepointRequest",
@@ -12,6 +19,13 @@
       "input": "CopyJobsRequest",
       "name": "复制作业",
       "output": "CopyJobsResponse",
+      "status": "online"
+    },
+    "CreateConnector": {
+      "document": "创建Connector",
+      "input": "CreateConnectorRequest",
+      "name": "创建Connector",
+      "output": "CreateConnectorResponse",
       "status": "online"
     },
     "CreateFolder": {
@@ -224,6 +238,13 @@
       "output": "GetMetaTableResponse",
       "status": "online"
     },
+    "ModifyConnector": {
+      "document": "修改Connector",
+      "input": "ModifyConnectorRequest",
+      "name": "修改Connector",
+      "output": "ModifyConnectorResponse",
+      "status": "online"
+    },
     "ModifyFolder": {
       "document": "自定义树状结构页面拖拽文件夹",
       "input": "ModifyFolderRequest",
@@ -243,6 +264,13 @@
       "input": "ModifyWorkSpaceRequest",
       "name": "修改工作空间",
       "output": "ModifyWorkSpaceResponse",
+      "status": "online"
+    },
+    "ParseConnector": {
+      "document": "解析用户上传connector",
+      "input": "ParseConnectorRequest",
+      "name": "解析用户自定义Connector",
+      "output": "ParseConnectorResponse",
       "status": "online"
     },
     "RunJobs": {
@@ -316,6 +344,43 @@
         }
       ],
       "usage": "out"
+    },
+    "CheckConnectorNameRequest": {
+      "document": "CheckConnectorName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名",
+          "example": "mj-test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckConnectorNameResponse": {
+      "document": "CheckConnectorName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否存在",
+          "example": "true",
+          "member": "bool",
+          "name": "Exists",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CheckSavepointRequest": {
       "document": "CheckSavepoint请求参数结构体",
@@ -1500,6 +1565,45 @@
       ],
       "usage": "out"
     },
+    "Connectors": {
+      "document": "解析Connector",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连接方式",
+          "example": "1,2",
+          "member": "string",
+          "name": "ConnectionMethod",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器名称",
+          "example": "kafka",
+          "member": "string",
+          "name": "Connector",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已经被使用",
+          "example": "true",
+          "member": "bool",
+          "name": "Existed",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CopyJobItem": {
       "document": "复制作业单条明细",
       "members": [
@@ -1728,6 +1832,69 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConnectorRequest": {
+      "document": "CreateConnector请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "resource-123qwe",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "空间",
+          "example": "space-qwe123",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源版本",
+          "example": "1",
+          "member": "int64",
+          "name": "VersionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "连接器名称",
+          "example": "kafka",
+          "member": "string",
+          "name": "Connector",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "连接方式",
+          "example": "1",
+          "member": "string",
+          "name": "ConnectionMethod",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConnectorResponse": {
+      "document": "CreateConnector返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6036,6 +6203,78 @@
       ],
       "usage": "out"
     },
+    "ModifyConnectorRequest": {
+      "document": "ModifyConnector请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间",
+          "example": "space-qwe123",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "connector ID",
+          "example": "resource-123qwe",
+          "member": "string",
+          "name": "ConnectorResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "resource-123qwe",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源版本",
+          "example": "1",
+          "member": "int64",
+          "name": "VersionId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "连接器名称",
+          "example": "kafka",
+          "member": "string",
+          "name": "Connector",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "连接方式",
+          "example": "1",
+          "member": "string",
+          "name": "ConnectionMethod",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConnectorResponse": {
+      "document": "ModifyConnector返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyFolderRequest": {
       "document": "ModifyFolder请求参数结构体",
       "members": [
@@ -6345,6 +6584,61 @@
         }
       ],
       "usage": "out"
+    },
+    "ParseConnectorRequest": {
+      "document": "ParseConnector请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "resource-6zoqt0tz",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源版本",
+          "example": "2",
+          "member": "int64",
+          "name": "VersionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "空间",
+          "example": "space-sd12ad1",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParseConnectorResponse": {
+      "document": "ParseConnector返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连接器",
+          "example": "[{\"ConnectionMethod\":\"\",\"Connector\":\"jdbc\",\"Existed\":false}]",
+          "member": "Connectors",
+          "name": "Connectors",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Property": {
       "document": "系统配置属性",

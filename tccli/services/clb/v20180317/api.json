@@ -681,6 +681,15 @@
           "name": "ConfigContent",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

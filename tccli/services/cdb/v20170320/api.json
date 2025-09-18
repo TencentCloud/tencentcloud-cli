@@ -15892,7 +15892,7 @@
         {
           "disabled": false,
           "document": "云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
-          "example": "andy",
+          "example": "无",
           "member": "Account",
           "name": "Accounts",
           "required": true,

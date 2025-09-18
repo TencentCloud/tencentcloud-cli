@@ -540,6 +540,14 @@
         "title": "知识标签列表"
       }
     ],
+    "ListChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListChannel\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1927296561029113536\",\n    \"PageNumber\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"ListChannel\": [\n            {\n                \"ChannelId\": \"1932046222365083648\",\n                \"ChannelName\": \"微信服务号\",\n                \"ChannelStatus\": 2,\n                \"ChannelType\": 10000,\n                \"Comment\": \"\",\n                \"CreateTime\": \"1749470703\",\n                \"UpdateTime\": \"1749470703\",\n                \"UpdatedUser\": \"channel@qq.com\",\n                \"YuanQiInfo\": {\n                    \"VisibleRange\": \"share\"\n                }\n            }\n        ],\n        \"RequestId\": \"bf251d0d-0409-4849-98e7-81fd7dbcc994\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取发布渠道列表"
+      }
+    ],
     "ListDoc": [
       {
         "document": "",

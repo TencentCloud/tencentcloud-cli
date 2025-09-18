@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CheckConnectorName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckConnectorName\n<公共请求参数>\n\n{\n    \"Name\": \"true\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Exists\": true,\n        \"RequestId\": \"5f124d6f-b035-4d29-9467-dd62eccdbf23\"\n    }\n}",
+        "title": "CheckConnectorName"
+      }
+    ],
     "CheckSavepoint": [
       {
         "document": "",
@@ -20,6 +28,14 @@
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyJobs\n<公共请求参数>\n\n{\n    \"WorkSpaceId\": \"sapce-xxx\",\n    \"JobItems\": [\n        {\n            \"SourceId\": \"cql-pqx9zh30\",\n            \"SourceName\": \"datagen_datagen_datagen_datagen_datagen_datagen_50\",\n            \"JobType\": 1,\n            \"TargetClusterId\": \"cluster-4y035tb0\",\n            \"TargetName\": \"datagen_datagen_datagen_datagen_datagen_datagen_50_2022-01-12_10_14_52\",\n            \"TargetFolderId\": \"root\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"SuccessCount\": 0,\n        \"FailCount\": 0,\n        \"CopyJobsResults\": [\n            {\n                \"JobId\": \"abc\",\n                \"JobName\": \"abc\",\n                \"TargetJobName\": \"abc\",\n                \"TargetJobId\": \"abc\",\n                \"Message\": \"abc\",\n                \"Result\": 0,\n                \"ClusterName\": \"abc\",\n                \"ClusterId\": \"abc\",\n                \"JobType\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "复制作业"
+      }
+    ],
+    "CreateConnector": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnector\n<公共请求参数>\n\n{\n    \"ConnectionMethod\": \"1\",\n    \"Connector\": \"kafka\",\n    \"ResourceId\": \"cql-n8yaia0y\",\n    \"VersionId\": 1,\n    \"WorkSpaceId\": \"2000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f124d6f-b035-4d29-9467-dd62eccdbf23\"\n    }\n}",
+        "title": "创建Connector"
       }
     ],
     "CreateFolder": [
@@ -292,6 +308,14 @@
         "title": "查询元数据表信息"
       }
     ],
+    "ModifyConnector": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConnector\n<公共请求参数>\n\n\n\n{\n    \"ConnectionMethod\": \"1\",\n    \"Connector\": \"kafka\",\n    \"ConnectorResourceId\": \"resouce-23s432\",\n    \"ResourceId\": \"resouce-23s432\",\n    \"VersionId\": 1,\n    \"WorkSpaceId\": \"space-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f124d6f-b035-4d29-9467-dd62eccdbf23\"\n    }\n}",
+        "title": "ModifyConnector"
+      }
+    ],
     "ModifyFolder": [
       {
         "document": "",
@@ -320,6 +344,14 @@
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkSpace\n<公共请求参数>\n\n{\n    \"WorkSpaceId\": \"workspace-xxx\",\n    \"WorkSpaceName\": \"MySpace0\",\n    \"Description\": \"default0\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改项目空间"
+      }
+    ],
+    "ParseConnector": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ParseConnector\n<公共请求参数>\n\n{\n    \"ResourceId\": \"resource-qjgxki5r\",\n    \"VersionId\": 1,\n    \"WorkSpaceId\": \"space-erzb4bkl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Connectors\": [\n            {\n                \"ConnectionMethod\": \"1,3\",\n                \"Connector\": \"jdbc\",\n                \"Existed\": false\n            },\n            {\n                \"ConnectionMethod\": \"\",\n                \"Connector\": \"jdbc\",\n                \"Existed\": false\n            }\n        ],\n        \"RequestId\": \"509757a9-f29e-46c8-8e5d-214e8220dd4d\"\n    }\n}",
+        "title": "解析用户Connector"
       }
     ],
     "RunJobs": [

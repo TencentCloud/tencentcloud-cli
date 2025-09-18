@@ -40,8 +40,8 @@ Output:
 ```
 {
     "Response": {
-        "TargetId": "abc",
-        "RequestId": "abc"
+        "TargetId": "target-xx2d32",
+        "RequestId": "b7662cf2-ce20-4b3e-aff2-2cb875cf0b6b"
     }
 }
 ```

@@ -19759,6 +19759,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出文件的URL。",
+          "example": "https://abc123.com/output/test.jpeg",
+          "member": "string",
+          "name": "SignedUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -27555,6 +27565,15 @@
           "example": "/image/",
           "member": "string",
           "name": "OutputDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：{inputName}.{format}。",
+          "example": "{inputName}.{format}",
+          "member": "string",
+          "name": "OutputPath",
           "required": false,
           "type": "string"
         },

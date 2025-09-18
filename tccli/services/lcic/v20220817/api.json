@@ -1874,6 +1874,15 @@
           "name": "SubtitlesTranscription",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "RecordMerge",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4063,6 +4072,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "RecordMerge",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6217,7 +6236,7 @@
         {
           "disabled": false,
           "document": "助教Id列表。直播开始后不允许修改。",
-          "example": "\t[azsdasfsdfsd,asefawefew]",
+          "example": "\t[\"azsdasfsdfsd\",\"asefawefewf\"]",
           "member": "string",
           "name": "Assistants",
           "required": false,
@@ -6226,7 +6245,7 @@
         {
           "disabled": false,
           "document": "房间绑定的群组ID。直播开始后不允许修改。",
-          "example": "490194023",
+          "example": "7230232",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -6307,7 +6326,7 @@
         {
           "disabled": false,
           "document": "伪直播链接",
-          "example": "https://1101910181.vod2.myqcloud.com/6casjaisjaidcq1101910181/d26589e12312512121842/f0.mp4",
+          "example": "https://791263.vod-qcloud.com/425sfabhs7814/e9049470840ghjk739827/1INCKHSY9QMA.mp4",
           "member": "string",
           "name": "RecordLiveUrl",
           "required": false,
@@ -6355,6 +6374,24 @@
           "example": "0",
           "member": "uint64",
           "name": "SubtitlesTranscription",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "嘉宾Id列表。当圆桌会议模式（RoomType==3）时生效",
+          "example": "\t[\"azsdasfsdfsd\",\"asefawefewf\"]",
+          "member": "string",
+          "name": "Guests",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "RecordMerge",
           "required": false,
           "type": "int"
         }
@@ -6915,6 +6952,15 @@
           "name": "Guests",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "录制文件合并开关。0 关闭 1 开启 注：只有在一节课多次启用手动录制时，此功能才有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "RecordMerge",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

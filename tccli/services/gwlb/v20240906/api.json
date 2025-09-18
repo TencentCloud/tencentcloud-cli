@@ -1894,6 +1894,76 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量分发方式\n\n- STATELESS：无状态\n- STATEFUL： 有状态",
+          "example": "STATEFUL",
+          "member": "string",
+          "name": "ForwardingMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。",
+          "example": "100",
+          "member": "int64",
+          "name": "TcpIdleConnectTimeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其他协议连接空闲超时时间，可配置5s-180s，默认120s",
+          "example": "100",
+          "member": "int64",
+          "name": "OthersIdleConnectTimeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。",
+          "example": "True",
+          "member": "bool",
+          "name": "RescheduleUnbindRs",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解绑RS后开启重调度的时间，可配置0s-3600s，默认0s",
+          "example": "100",
+          "member": "int64",
+          "name": "RescheduleUnbindRsStartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重新调度功能内的后端服务健康探测异常开关，开关打开后后端服务健康检查异常会触发重新调度。",
+          "example": "True",
+          "member": "bool",
+          "name": "RescheduleUnhealthy",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端服务健康探测异常后开启重调度的时间，可配置0s-3600s，默认0s",
+          "example": "100",
+          "member": "int64",
+          "name": "RescheduleUnhealthyStartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
