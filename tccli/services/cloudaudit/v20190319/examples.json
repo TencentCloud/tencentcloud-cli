@@ -128,6 +128,14 @@
         "title": "修改操作审计跟踪集"
       }
     ],
+    "ReportApiSourceIp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportApiSourceIp\n<公共请求参数>\n\n{\n    \"RequestAccountId\": 100004293724,\n    \"RequestSubAccountId\": \"100004293724\",\n    \"ServiceType\": \"cam\",\n    \"ServiceAction\": \"DescribeSubAccounts\",\n    \"ServiceRequestId\": \"097e67d8-69b8-48ea-96da-88ba9d9f99e8\",\n    \"RequestEventTime\": 1758185552,\n    \"SourceIp\": \"127.0.0.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad3eb51f-0623-437c-b66f-a971d2678b59\"\n    }\n}",
+        "title": "异步上报IP"
+      }
+    ],
     "StartLogging": [
       {
         "document": "开启跟踪集",

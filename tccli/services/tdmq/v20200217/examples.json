@@ -586,7 +586,7 @@
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeMsg\n&EnvironmentId=default\n&TopicName=msg_dev\n&MsgId=16836:8:-1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Properties\": \"{\\\"publish-time\\\": \\\"1597747661679\\\", \\\"X-Pulsar-num-batch-message\\\": \\\"1\\\", \\\"MESSAGE_ID\\\": \\\"16836:8:-1\\\", \\\"X-Pulsar-producer-name\\\": \\\"fisrtProducer\\\", \\\"bookies-address\\\": \\\"9.139.220.16:3181#9.139.220.8:3181\\\"}\",\n        \"Body\": \"i just a10 testing!\",\n        \"BatchId\": \"1\",\n        \"ProduceTime\": \"2020-08-18 18:47:41\",\n        \"MsgId\": \"16836:8:-1\",\n        \"ProducerName\": \"fisrtProducer\",\n        \"RequestId\": \"msgs\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Properties\": \"{\\\"publish-time\\\": \\\"1597747661679\\\", \\\"X-Pulsar-num-batch-message\\\": \\\"1\\\", \\\"MESSAGE_ID\\\": \\\"16836:8:-1\\\", \\\"X-Pulsar-producer-name\\\": \\\"fisrtProducer\\\", \\\"bookies-address\\\": \\\"9.139.220.16:3181#9.139.220.8:3181\\\"}\",\n        \"Body\": \"i just a10 testing!\",\n        \"BatchId\": \"1\",\n        \"ProduceTime\": \"2020-08-18 18:47:41\",\n        \"MsgId\": \"16836:8:-1\",\n        \"ProducerName\": \"fisrtProducer\",\n        \"RequestId\": \"b9c2eff2-e96a-4558-9ffc-d85279cxxxx\",\n        \"Metadata\": \"{\\\"X-Pulsar-event-time\\\":\\\"1755674979886\\\",\\\"X-Pulsar-redelivery-count\\\":\\\"0\\\",\\\"X-Pulsar-sequence-id\\\":\\\"11\\\",\\\"X-Pulsar-deliver-at-time\\\":\\\"1755686943517\\\",\\\"X-Pulsar-replicated-to\\\":\\\"[]\\\",\\\"X-Pulsar-ordering-key\\\":\\\"[116, 101, 115, 116, 50]\\\"}\",\n        \"Key\": \"test1\"\n    }\n}",
         "title": "获取消息详情"
       }
     ],

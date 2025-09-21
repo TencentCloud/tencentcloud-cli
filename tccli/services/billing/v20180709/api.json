@@ -7335,7 +7335,7 @@
         {
           "disabled": false,
           "document": "产品\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\" \"]",
           "member": "string",
           "name": "Business",
           "output_required": false,
@@ -7346,7 +7346,7 @@
         {
           "disabled": false,
           "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\" \"]",
           "member": "string",
           "name": "PayMode",
           "output_required": false,
@@ -7357,7 +7357,7 @@
         {
           "disabled": false,
           "document": "子产品\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\" \"]",
           "member": "string",
           "name": "ProductCodes",
           "output_required": false,
@@ -7368,7 +7368,7 @@
         {
           "disabled": false,
           "document": "组件编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\" \"]",
           "member": "string",
           "name": "ComponentCodes",
           "output_required": false,
@@ -7379,7 +7379,7 @@
         {
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\" \"]",
           "member": "string",
           "name": "ZoneIds",
           "output_required": false,
@@ -7390,7 +7390,7 @@
         {
           "disabled": false,
           "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\" \"]",
           "member": "string",
           "name": "RegionIds",
           "output_required": false,
@@ -7401,7 +7401,7 @@
         {
           "disabled": false,
           "document": "项目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\" \"]",
           "member": "string",
           "name": "ProjectIds",
           "output_required": false,
@@ -7412,7 +7412,7 @@
         {
           "disabled": false,
           "document": "交易类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\" \"]",
           "member": "string",
           "name": "ActionTypes",
           "output_required": false,
@@ -7423,7 +7423,7 @@
         {
           "disabled": false,
           "document": "消耗类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\" \"]",
           "member": "string",
           "name": "ConsumptionTypes",
           "output_required": false,
@@ -7437,6 +7437,39 @@
           "example": "无",
           "member": "TagsForm",
           "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 末级分账单元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1197623846\"]",
+          "member": "string",
+          "name": "PayerUins",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1197623846\"]",
+          "member": "string",
+          "name": "OwnerUins",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 末级分账单元唯一键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1197623846\"]",
+          "member": "string",
+          "name": "TreeNodeUniqKeys",
           "output_required": false,
           "required": false,
           "type": "list",

@@ -21,7 +21,9 @@ Output:
         "ProduceTime": "2020-08-18 18:47:41",
         "MsgId": "16836:8:-1",
         "ProducerName": "fisrtProducer",
-        "RequestId": "msgs"
+        "RequestId": "b9c2eff2-e96a-4558-9ffc-d85279cxxxx",
+        "Metadata": "{\"X-Pulsar-event-time\":\"1755674979886\",\"X-Pulsar-redelivery-count\":\"0\",\"X-Pulsar-sequence-id\":\"11\",\"X-Pulsar-deliver-at-time\":\"1755686943517\",\"X-Pulsar-replicated-to\":\"[]\",\"X-Pulsar-ordering-key\":\"[116, 101, 115, 116, 50]\"}",
+        "Key": "test1"
     }
 }
 ```

@@ -112,6 +112,13 @@
       "output": "ModifyEventsAuditTrackResponse",
       "status": "online"
     },
+    "ReportApiSourceIp": {
+      "document": "上报业务异步接口资源信息",
+      "input": "ReportApiSourceIpRequest",
+      "name": "业务异步上报操作源IP",
+      "output": "ReportApiSourceIpResponse",
+      "status": "online"
+    },
     "StartLogging": {
       "document": "开启跟踪集",
       "input": "StartLoggingRequest",
@@ -1715,6 +1722,87 @@
     },
     "ModifyEventsAuditTrackResponse": {
       "document": "ModifyEventsAuditTrack返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportApiSourceIpRequest": {
+      "document": "ReportApiSourceIp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务请求的主账号。",
+          "example": "100004293724",
+          "member": "uint64",
+          "name": "RequestAccountId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "业务请求的子账号。",
+          "example": "100004293724",
+          "member": "string",
+          "name": "RequestSubAccountId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求鉴权业务。比如请求鉴权action为：cam:AddUser， 此字段取cam",
+          "example": "cam",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求鉴权接口。比如请求鉴权action为：cam:AddUser， 此字段取AddUser",
+          "example": "DescribeSubAccounts",
+          "member": "string",
+          "name": "ServiceAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务请求鉴权接口返回的eventId字段。RequestAccountId、RequestSubAccountId、ServiceType、ServiceAction、ServiceRequestId 确定唯一事件。",
+          "example": "097e67d8-69b8-48ea-96da-88ba9d9f99e8",
+          "member": "string",
+          "name": "ServiceRequestId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务请求的时间戳。支持范围：近90天到当前系统时间。",
+          "example": "1758185552",
+          "member": "uint64",
+          "name": "RequestEventTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "业务请求IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "SourceIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportApiSourceIpResponse": {
+      "document": "ReportApiSourceIp返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
