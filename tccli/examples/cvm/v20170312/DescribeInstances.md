@@ -1,13 +1,13 @@
 **Example 1: 查看实例列表**
 
-查看在广州一区或广州二区的实例信息，限制返回结果最多为一项
+查看在广州三区或广州四区的实例信息，限制返回结果最多为一项
 
 Input: 
 
 ```
 tccli cvm DescribeInstances --cli-unfold-argument  \
     --Limit 1 \
-    --Filters.0.Values ap-guangzhou-2 ap-guangzhou-1 \
+    --Filters.0.Values ap-guangzhou-3 ap-guangzhou-4 \
     --Filters.0.Name zone \
     --Offset 0
 ```
@@ -28,7 +28,6 @@ Output:
                 "DefaultLoginUser": "root",
                 "LatestOperationState": "SUCCESS",
                 "LoginSettings": {
-                    "Password": "123qwe!@#QWE",
                     "KeyIds": [
                         "skey-b4vakk62"
                     ]
@@ -69,7 +68,7 @@ Output:
                     "HostId": "host-h3m57oik",
                     "ProjectId": 1174660,
                     "HostIds": [],
-                    "Zone": "ap-guangzhou-1"
+                    "Zone": "ap-guangzhou-3"
                 },
                 "PrivateIpAddresses": [
                     "172.16.32.78"
@@ -111,7 +110,7 @@ Output:
                 "LatestOperation": "ResetInstancesType"
             }
         ],
-        "TotalCount": 2,
+        "TotalCount": 1,
         "RequestId": "d655191e-a39d-43d2-8349-8c3f2bf4b327"
     }
 }
@@ -177,7 +176,7 @@ Output:
                 "IsolatedSource": "NOTISOLATED",
                 "Placement": {
                     "ProjectId": 1174660,
-                    "Zone": "ap-guangzhou-2"
+                    "Zone": "ap-guangzhou-3"
                 },
                 "PrivateIpAddresses": [
                     "172.16.32.78"
@@ -225,7 +224,7 @@ Input:
 ```
 tccli cvm DescribeInstances --cli-unfold-argument  \
     --Limit 1 \
-    --Filters.0.Values ap-guangzhou-2 ap-guangzhou-1 \
+    --Filters.0.Values ap-guangzhou-3 ap-guangzhou-4 \
     --Filters.0.Name zone \
     --Offset 0
 ```
@@ -246,8 +245,6 @@ Output:
                 "DefaultLoginUser": "root",
                 "LatestOperationState": "OPERATING",
                 "LoginSettings": {
-                    "Password": "123qwe!@#QWE",
-                    "KeepImageLogin": "False",
                     "KeyIds": [
                         "skey-b4vakk62"
                     ]
@@ -288,7 +285,7 @@ Output:
                     "HostId": "host-h3m57oik",
                     "ProjectId": 1174660,
                     "HostIds": [],
-                    "Zone": "ap-guangzhou-1"
+                    "Zone": "ap-guangzhou-3"
                 },
                 "PrivateIpAddresses": [
                     "172.16.32.78"
@@ -330,7 +327,7 @@ Output:
                 "LatestOperation": "StopInstances"
             }
         ],
-        "TotalCount": 2,
+        "TotalCount": 1,
         "RequestId": "d655191e-a39d-43d2-8349-8c3f2bf4b327"
     }
 }

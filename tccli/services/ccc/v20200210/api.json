@@ -2053,7 +2053,7 @@
         {
           "disabled": false,
           "document": "会话 ID",
-          "example": "无",
+          "example": "7cb26a84-83b2-42d8-a19b-7dae78e9b78e",
           "member": "string",
           "name": "SessionId",
           "required": true,
@@ -2070,8 +2070,8 @@
         },
         {
           "disabled": false,
-          "document": "控制命令，目前支持命令如下：\n\n- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本",
-          "example": "无",
+          "document": "控制命令，目前支持命令如下：\n\n- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本\n- InvokeLLM，服务端发送文本给大模型，触发对话",
+          "example": "ServerPushText",
           "member": "string",
           "name": "Command",
           "required": false,
@@ -2083,6 +2083,15 @@
           "example": "无",
           "member": "ServerPushText",
           "name": "ServerPushText",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM=\"1\"",
+          "example": "无",
+          "member": "InvokeLLM",
+          "name": "InvokeLLM",
           "required": false,
           "type": "object"
         }
@@ -2696,7 +2705,7 @@
         {
           "disabled": false,
           "document": "被叫号码列表",
-          "example": "[008613912341234,008613912341235]",
+          "example": "[\"0086139xxxxxxxx\",\"0086130xxxxxxxxx\"]",
           "member": "string",
           "name": "Callees",
           "required": true,
@@ -2705,7 +2714,7 @@
         {
           "disabled": false,
           "document": "主叫号码列表",
-          "example": "[008601012345678]",
+          "example": "[\"0086010xxxxxxxx\"]",
           "member": "string",
           "name": "Callers",
           "required": true,
@@ -2758,8 +2767,8 @@
         },
         {
           "disabled": false,
-          "document": "自定义变量（仅高级版支持）",
-          "example": "{\"a\":1}",
+          "document": "自定义变量（仅高级版支持），CalleeAttributes 字段中使用相同变量会覆盖此处",
+          "example": "无",
           "member": "Variable",
           "name": "Variables",
           "required": false,
@@ -2767,7 +2776,7 @@
         },
         {
           "disabled": false,
-          "document": "UUI",
+          "document": "用户自定义数据，CalleeAttributes 字段中使用 UUI 会覆盖此处",
           "example": "foobar",
           "member": "string",
           "name": "UUI",
@@ -2777,7 +2786,7 @@
         {
           "disabled": false,
           "document": "被叫属性",
-          "example": "[{\"Callee\":\"foobar\",\"UUI\":\"11\",\"Variables\":{\"foo\":\"bar\"}}]",
+          "example": "无",
           "member": "CalleeAttribute",
           "name": "CalleeAttributes",
           "required": false,
@@ -2795,7 +2804,7 @@
         {
           "disabled": false,
           "document": "可用时间段",
-          "example": "[{\"StartTime\":\"09:00:00\",\"EndTime\":\"11:30:00\"},{\"StartTime\":\"14:00:00\",\"EndTime\":\"18:00:00\"}]",
+          "example": "无",
           "member": "TimeRange",
           "name": "AvailableTime",
           "required": false,
@@ -3283,6 +3292,24 @@
           "name": "Prefix",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国内长途手机前缀码",
+          "example": "0",
+          "member": "string",
+          "name": "MobileNddPrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同市固话去掉区号",
+          "example": "false",
+          "member": "bool",
+          "name": "LocalNumberTrimAC",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7503,6 +7530,30 @@
       ],
       "usage": "both"
     },
+    "InvokeLLM": {
+      "document": "调用服务端主动发起请求到LLM",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求LLM的内容",
+          "example": "今天天气怎么样",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许该文本打断机器人说话",
+          "example": "false",
+          "member": "bool",
+          "name": "Interrupt",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
     "Message": {
       "document": "单条消息",
       "members": [
@@ -7702,6 +7753,24 @@
           "name": "Prefix",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国内长途手机前缀码",
+          "example": "0",
+          "member": "string",
+          "name": "MobileNddPrefix",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同市固话去掉区号",
+          "example": "false",
+          "member": "bool",
+          "name": "LocalNumberTrimAC",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7961,6 +8030,15 @@
           "example": "{+E.164}",
           "member": "string",
           "name": "OutboundCalleeFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商号码",
+          "example": "66660000",
+          "member": "string",
+          "name": "CarrierPhoneNumber",
           "required": false,
           "type": "string"
         }

@@ -3860,7 +3860,7 @@
         {
           "disabled": false,
           "document": "过滤",
-          "example": "    {         \"Name\":\"MainClassID\",         \"Values\":[\"010000000\"],         \"ExactMatch\":true     }",
+          "example": "无",
           "member": "FiltersItemNew",
           "name": "Filters",
           "required": false,
@@ -3875,7 +3875,7 @@
         {
           "disabled": false,
           "document": "操作结果",
-          "example": "  {Response: {RequestId: \"546b2091-1a59-4bd9-818d-47ab565102d9\"}}",
+          "example": "无",
           "member": "CommonRspData",
           "name": "CommonRsp",
           "output_required": false,
@@ -11979,7 +11979,7 @@
         {
           "disabled": false,
           "document": "输出",
-          "example": "{ \"Res\": [{\"Id\": \"66a341dd8f33c805d65f4765\", \"RuleId\": 5501526871, \"IpList\": [ \"113.108.77.69\" ],  \"TotalCount\": 1 }",
+          "example": "无",
           "member": "IpAccessControlData",
           "name": "Data",
           "output_required": true,
@@ -14003,7 +14003,7 @@
         {
           "disabled": false,
           "document": "规则类型列表及信息",
-          "example": "[{\"TypeID\": \"010000000\",\"Name\": \"rulename\",\"Desc\": \"description\",\"RuleTypeStatus\": 0,\"ActiveRuleCount\": 10,\"TotalRuleCount\": 12}]",
+          "example": "无",
           "member": "RuleType",
           "name": "RuleTypeList",
           "output_required": true,
@@ -14396,7 +14396,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "www.test.com",
+          "example": "www.qcloudwaf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -14411,7 +14411,7 @@
         {
           "disabled": false,
           "document": "webshell域名",
-          "example": "www.test.com",
+          "example": "www.qcloudwaf.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -23334,7 +23334,7 @@
         {
           "disabled": false,
           "document": "域名webshell状态",
-          "example": "{\"Domain\":\"www.test.com\",\"Status\":1}",
+          "example": "无",
           "member": "WebshellStatus",
           "name": "Webshell",
           "required": true,
@@ -23349,7 +23349,7 @@
         {
           "disabled": false,
           "document": "成功的状态码，需要JSON解码后再使用，返回的格式是{\"域名\":\"状态\"}，成功的状态码为Success，其它的为失败的状态码（yunapi定义的错误码）",
-          "example": "{\"Code\":\"Success\",\"Message\":\"Success\"}\t",
+          "example": "无",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,

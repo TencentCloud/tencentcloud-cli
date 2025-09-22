@@ -24,7 +24,7 @@
   },
   "metadata": {
     "apiVersion": "2024-02-23",
-    "api_brief": "视频翻译",
+    "api_brief": "视频转译",
     "serviceNameCN": "视频转译",
     "serviceShortName": "vtc"
   },

@@ -11375,7 +11375,7 @@
         },
         {
           "disabled": false,
-          "document": "应用状态 1:未上线 2：运行中",
+          "document": "应用状态 1:未上线   2：运行中",
           "example": "1",
           "member": "string",
           "name": "AppStatus",
@@ -14182,6 +14182,28 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否关闭模型超参",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCloseModelParams",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持深度思考",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDeepThinking",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -19940,6 +19962,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"NodeErr.MissingParam\"",
+          "member": "string",
+          "name": "FailCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

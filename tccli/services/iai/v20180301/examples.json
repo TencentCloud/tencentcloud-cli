@@ -205,8 +205,8 @@
     "GetGroupInfo": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetGroupInfo\r\n&GroupId=aaa\r\n&Version=2018-03-01\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"GroupName\": \"aaa\",\n        \"GroupId\": \"aaa\",\n        \"GroupExDescriptions\": [\n            \"24\"\n        ],\n        \"Tag\": \"fdsaf\",\n        \"FaceModelVersion\": \"3.0\",\n        \"CreationTimestamp\": 1559530931613,\n        \"RequestId\": \"6faa05d0-287b-464e-8755-cf3e8d0c703d\"\n    }\n}",
+        "input": "https://iai.tencentcloudapi.com/?Action=GetGroupInfo\n&GroupId=\"31\"\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GroupName\": \"人员库\",\n        \"GroupId\": \"31\",\n        \"GroupExDescriptions\": [\n            \"年龄\"\n        ],\n        \"Tag\": \"不含实习生\",\n        \"FaceModelVersion\": \"3.0\",\n        \"CreationTimestamp\": 1559530931613,\n        \"RequestId\": \"6faa05d0-287b-464e-8755-cf3e8d0c703d\"\n    }\n}",
         "title": "获取人员库信息"
       }
     ],
@@ -227,13 +227,13 @@
     "GetPersonBaseInfo": [
       {
         "document": "人员ID不存在",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonBaseInfo\r\n&PersonId=1002\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonBaseInfo\n&PersonId=1002\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdNotExist\",\n            \"Message\": \"人员ID不存在。\"\n        },\n        \"RequestId\": \"98b4a0bc-802b-4764-9701-bc0c6c544395\"\n    }\n}",
         "title": "错误示例"
       },
       {
         "document": "获取指定人员的信息，包括姓名、性别、人脸等",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonBaseInfo\r\n&PersonId=1001\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonBaseInfo\n&PersonId=1001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"PersonName\": \"EvanLiao\",\n        \"Gender\": 1,\n        \"FaceIds\": [\n            \"2873640802022644880\",\n            \"2875186538564559728\"\n        ],\n        \"RequestId\": \"9568a077-0710-40d2-9d6a-b9483d3f2051\"\n    }\n}",
         "title": "获取人员基础信息接口"
       }

@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BackUpAndroidInstance": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BackUpAndroidInstance\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-251006279-fe2d6u0dry4\",\n    \"Includes\": [\n        \"/data/misc/\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupId\": \"cai-251006279-fe2d6u0dry4-20250814194831\",\n        \"RequestId\": \"d8b4d88f-f1ee-46af-80b6-a82e8d0efecd\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "BackUpAndroidInstanceToStorage": [
       {
         "document": "示例",
@@ -158,6 +166,14 @@
         "title": "示例"
       }
     ],
+    "DeleteAndroidInstanceBackups": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidInstanceBackups\n<公共请求参数>\n\n{\n    \"BackupIds\": [\n        \"cai-251006279-fe2d6u0dry4-20250814193859\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae7f7eb2-7c82-4278-bb50-34a132714218\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeleteAndroidInstanceImages": [
       {
         "document": "删除安卓实例镜像",
@@ -188,6 +204,14 @@
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstanceApps\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-abcd1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\",\n        \"Apps\": [\n            {\n                \"AndroidAppId\": \"apk-nm5r03gm\",\n                \"Name\": \"测试2\",\n                \"AndroidAppVersion\": \"1719564791910084130\"\n            },\n            {\n                \"AndroidAppId\": \"apk-qekh35py\",\n                \"Name\": \"does\",\n                \"AndroidAppVersion\": \"1719564791910084133\"\n            }\n        ]\n    }\n}",
         "title": "查询安卓实例应用"
+      }
+    ],
+    "DescribeAndroidInstanceBackups": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstanceBackups\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"249a2ab6-3259-4bec-8683-bbf03492e894\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeAndroidInstanceImages": [
@@ -467,6 +491,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartAndroidInstancesApp\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-6c8fJh1iNOc\"\n    ],\n    \"PackageName\": \"pkg.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b92629aa-96ed-4e01-83ec-cb837e683c78\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "RestoreAndroidInstance": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreAndroidInstance\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-251006279-fe2dmi83dvo\",\n    \"BackupId\": \"cai-251006279-fe2d6u0dry4-20250814194831\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"84f5461e-175b-4dde-bafc-e009900b831b\",\n        \"TaskId\": \"6f082b31-9400-4c54-97ab-0a36dd788925\"\n    }\n}",
         "title": "示例"
       }
     ],

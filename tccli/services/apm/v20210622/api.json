@@ -28,6 +28,13 @@
       "output": "DescribeApmInstancesResponse",
       "status": "online"
     },
+    "DescribeApmServiceMetric": {
+      "document": "获取 APM 应用指标列表",
+      "input": "DescribeApmServiceMetricRequest",
+      "name": "获取 APM 应用指标",
+      "output": "DescribeApmServiceMetricResponse",
+      "status": "online"
+    },
     "DescribeGeneralApmApplicationConfig": {
       "document": "查询应用配置信息",
       "input": "DescribeGeneralApmApplicationConfigRequest",
@@ -1143,6 +1150,42 @@
       ],
       "usage": "out"
     },
+    "ApmServiceMetric": {
+      "document": "apm应用指标信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "filed数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ApmField",
+          "name": "Fields",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tag数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ApmTag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "ServiceDetail",
+          "name": "ServiceDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ApmTag": {
       "document": "维度（标签）对象",
       "members": [
@@ -1504,6 +1547,212 @@
           "name": "Instances",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApmServiceMetricRequest": {
+      "document": "DescribeApmServiceMetric请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务系统ID",
+          "example": "apm-CVfliqa8U",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用名",
+          "example": "apm_test",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "svc-JRNE5rvV8",
+          "member": "string",
+          "name": "ServiceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1719317419",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1720580629",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否demo模式",
+          "example": "false",
+          "member": "bool",
+          "name": "Demo",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "应用状态筛选，可枚举的值为：health、warning、error。如果选中多个状态用逗号隔开，比如：\"warning,error\"",
+          "example": "health",
+          "member": "string",
+          "name": "ServiceStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "2",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApmServiceMetricResponse": {
+      "document": "DescribeApmServiceMetric返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用指标列表",
+          "example": "无",
+          "member": "ApmServiceMetric",
+          "name": "ServiceMetricList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合筛选条件的应用数",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "警示异常应用数",
+          "example": "2",
+          "member": "int64",
+          "name": "WarningErrorCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用总数",
+          "example": "7",
+          "member": "int64",
+          "name": "ApplicationCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "2",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常应用数",
+          "example": "1",
+          "member": "int64",
+          "name": "ErrorCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "警示应用数",
+          "example": "1",
+          "member": "int64",
+          "name": "WarningCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2927,6 +3176,111 @@
         }
       ],
       "usage": "in"
+    },
+    "ServiceDetail": {
+      "document": "应用详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "svc-test",
+          "member": "string",
+          "name": "ServiceID",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务系统ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "apm-test",
+          "member": "string",
+          "name": "InstanceKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "string",
+          "name": "CreateUIN",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "describe",
+          "member": "string",
+          "name": "ServiceDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务系统名称",
+          "example": "travy-test",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Span": {
       "document": "Span 对象",

@@ -709,7 +709,7 @@
         {
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "无",
+          "example": "[\"/9j/4AAQSkZJRg.....s97n//2Q==\"]",
           "member": "string",
           "name": "Images",
           "required": false,
@@ -727,7 +727,7 @@
         {
           "disabled": false,
           "document": "只有和该人员已有的人脸相似度超过FaceMatchThreshold值的人脸，才能增加人脸成功。 \n默认值60分。取值范围[0,100] 。",
-          "example": "60",
+          "example": "60.0",
           "member": "float",
           "name": "FaceMatchThreshold",
           "required": false,
@@ -790,7 +790,7 @@
         {
           "disabled": false,
           "document": "加入成功的人脸索引。索引顺序和入参中 Images 或 Urls 的顺序一致。 \n例， Urls 中 有 3 个 url，第二个 url 失败，则 SucIndexes 值为 [0,2] 。",
-          "example": "无",
+          "example": "[0]",
           "member": "uint64",
           "name": "SucIndexes",
           "output_required": true,
@@ -810,7 +810,7 @@
         {
           "disabled": false,
           "document": "人脸识别所用的算法模型版本。",
-          "example": "无",
+          "example": "\"3.0\"",
           "member": "string",
           "name": "FaceModelVersion",
           "output_required": true,
@@ -2462,7 +2462,7 @@
         {
           "disabled": false,
           "document": "人员库 ID。",
-          "example": "",
+          "example": "\"31\"",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -2477,54 +2477,60 @@
         {
           "disabled": false,
           "document": "人员库名称",
-          "example": "",
+          "example": "人员库",
           "member": "string",
           "name": "GroupName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员库ID",
-          "example": "",
+          "example": "\"31\"",
           "member": "string",
           "name": "GroupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员库自定义描述字段",
-          "example": "",
+          "example": "[\"年龄\"]",
           "member": "string",
           "name": "GroupExDescriptions",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员库信息备注",
-          "example": "",
+          "example": "\"不含实习生\"",
           "member": "string",
           "name": "Tag",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸识别所用的算法模型版本。",
-          "example": "",
+          "example": "\"3.0\"",
           "member": "string",
           "name": "FaceModelVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。",
-          "example": "",
+          "example": "1559530931613",
           "member": "uint64",
           "name": "CreationTimestamp",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2599,7 +2605,7 @@
         {
           "disabled": false,
           "document": "人员ID",
-          "example": "",
+          "example": "\"1001\"",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -2614,27 +2620,30 @@
         {
           "disabled": false,
           "document": "人员名称",
-          "example": "",
+          "example": "\"EvanLiao\"",
           "member": "string",
           "name": "PersonName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员性别",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Gender",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "包含的人脸 ID 列表",
-          "example": "",
+          "example": "[\"2873640802022644880\",\"2875186538564559728\"]",
           "member": "string",
           "name": "FaceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3703,7 +3712,7 @@
         {
           "disabled": false,
           "document": "出参Score中，只有超过FaceMatchThreshold值的结果才会返回。默认为0。",
-          "example": "0",
+          "example": "30.0",
           "member": "float",
           "name": "FaceMatchThreshold",
           "required": false,
@@ -3747,7 +3756,7 @@
         {
           "disabled": false,
           "document": "人脸识别所用的算法模型版本。",
-          "example": "无",
+          "example": "\"3.0\"",
           "member": "string",
           "name": "FaceModelVersion",
           "output_required": true,
@@ -4292,7 +4301,7 @@
         {
           "disabled": false,
           "document": "待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。",
-          "example": "11111111",
+          "example": "1001",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -4301,7 +4310,7 @@
         {
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "无",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -4343,20 +4352,20 @@
         {
           "disabled": false,
           "document": "给定的人脸图片与 PersonId 对应人脸的相似度。若 PersonId 下有多张人脸（Face），返回相似度最大的分数。\n\n不同算法版本返回的相似度分数不同。\n若需要验证两张图片中人脸是否为同一人，3.0版本误识率千分之一对应分数为40分，误识率万分之一对应分数为50分，误识率十万分之一对应分数为60分。 一般超过50分则可认定为同一人。\n2.0版本误识率千分之一对应分数为70分，误识率万分之一对应分数为80分，误识率十万分之一对应分数为90分。 一般超过80分则可认定为同一人。",
-          "example": "100",
+          "example": "100.0",
           "member": "float",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否为同一人判断，固定阈值分数为60分，若想更灵活地调整阈值可取Score参数返回进行判断",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "IsMatch",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4366,7 +4375,7 @@
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

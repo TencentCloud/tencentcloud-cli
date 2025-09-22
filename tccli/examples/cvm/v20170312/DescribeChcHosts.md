@@ -66,7 +66,7 @@ Output:
                 "Memory": 256,
                 "NetworkCard": "",
                 "Placement": {
-                    "Zone": "ap-guangzhou-2",
+                    "Zone": "ap-guangzhou-6",
                     "ProjectId": 0
                 },
                 "ResaleAccountId": "",

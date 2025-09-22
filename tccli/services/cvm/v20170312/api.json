@@ -322,20 +322,6 @@
       "output": "DescribeRegionsResponse",
       "status": "online"
     },
-    "DescribeReservedInstancesConfigInfos": {
-      "document": "本接口(DescribeReservedInstancesConfigInfos)供用户列出可购买预留实例机型配置。预留实例当前只针对国际站白名单用户开放。",
-      "input": "DescribeReservedInstancesConfigInfosRequest",
-      "name": "查询预留实例机型配置参数",
-      "output": "DescribeReservedInstancesConfigInfosResponse",
-      "status": "online"
-    },
-    "DescribeReservedInstancesOfferings": {
-      "document": "本接口(DescribeReservedInstancesOfferings)供用户列出可购买的预留实例配置，预留实例当前只针对国际站白名单用户开放。",
-      "input": "DescribeReservedInstancesOfferingsRequest",
-      "name": "列出可购买的预留实例配置",
-      "output": "DescribeReservedInstancesOfferingsResponse",
-      "status": "online"
-    },
     "DescribeTaskInfo": {
       "document": "本接口 (DescribeTaskInfo) 用于查询云服务器维修任务列表及详细信息。\n\n- 可以根据实例ID、实例名称或任务状态等信息来查询维修任务列表。过滤信息详情可参考入参说明。\n- 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的维修任务列表。",
       "input": "DescribeTaskInfoRequest",
@@ -411,13 +397,6 @@
       "input": "ImportKeyPairRequest",
       "name": "导入密钥对",
       "output": "ImportKeyPairResponse",
-      "status": "online"
-    },
-    "InquirePricePurchaseReservedInstancesOffering": {
-      "document": "本接口(InquirePricePurchaseReservedInstancesOffering)用于创建预留实例询价。本接口仅允许针对购买限制范围内的预留实例配置进行询价。预留实例当前只针对国际站白名单用户开放。",
-      "input": "InquirePricePurchaseReservedInstancesOfferingRequest",
-      "name": "创建预留实例询价",
-      "output": "InquirePricePurchaseReservedInstancesOfferingResponse",
       "status": "online"
     },
     "InquiryPriceModifyInstancesChargeType": {
@@ -593,13 +572,6 @@
       "input": "ProgramFpgaImageRequest",
       "name": "在线烧录FPGA镜像",
       "output": "ProgramFpgaImageResponse",
-      "status": "online"
-    },
-    "PurchaseReservedInstancesOffering": {
-      "document": "本接口(PurchaseReservedInstancesOffering)用于用户购买一个或者多个指定配置的预留实例，预留实例当前只针对国际站白名单用户开放。",
-      "input": "PurchaseReservedInstancesOfferingRequest",
-      "name": "购买预留实例",
-      "output": "PurchaseReservedInstancesOfferingResponse",
       "status": "online"
     },
     "RebootInstances": {
@@ -882,7 +854,7 @@
         {
           "disabled": false,
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。",
-          "example": "{     \"Zone\": \"ap-shanghai-2\" }",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -891,7 +863,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。",
-          "example": "a521b4e4-c903-4d37-9de6-8906e3ad8eb7",
+          "example": "a521b4e4-c903-4d37-9de6-8606e3ad8eb7",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -900,7 +872,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "{     \"Period\": 1,     \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",     \"TimeUnit\": \"MONTH\" }",
+          "example": "无",
           "member": "ChargePrepaid",
           "name": "HostChargePrepaid",
           "required": false,
@@ -936,7 +908,7 @@
         {
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例。",
-          "example": "[     {         \"ResourceType\": \"host\",         \"Tags\": [             {                 \"Key\": \"myTag\",                 \"Value\": \"cloud\"             }         ]     } ]",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -2285,7 +2257,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "a521b4e4-c903-4d37-9de6-8906e3ad8eb7",
+          "example": "a521b4e4-c903-4d37-9de6-8096e3ad8eb7",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -2401,6 +2373,15 @@
         },
         {
           "disabled": false,
+          "document": "实例是否开启巨型帧，取值范围：<br><li/> true：表示实例开启巨型帧，只有支持巨型帧的机型可设置为true。<br><li/>false：表示实例关闭巨型帧，只有支持巨型帧的机型可设置为false。<br> 支持巨型帧的实例规格： [实例规格](https://cloud.tencent.com/document/product/213/11518)",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableJumboFrame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "标签描述列表。通过指定该参数可以绑定标签到实例启动模板。",
           "example": "无",
           "member": "TagSpecification",
@@ -2435,7 +2416,7 @@
         {
           "disabled": false,
           "document": "当通过本接口来创建实例启动模板时会返回该参数，表示创建成功的实例启动模板`ID`。",
-          "example": "lt-a5n123lo",
+          "example": "lt-a5n1305lo",
           "member": "string",
           "name": "LaunchTemplateId",
           "output_required": true,
@@ -2592,7 +2573,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "a521b4e4-c903-4d37-9de6-8906e3ad8eb7",
+          "example": "a521b4e4-c903-4d37-9de6-8096e3ad8eb7",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -2703,6 +2684,15 @@
           "example": "false",
           "member": "bool",
           "name": "DisableApiTermination",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例是否开启巨型帧，取值范围：<br><li/> true：表示实例开启巨型帧，只有支持巨型帧的机型可设置为true。<br><li/>false：表示实例关闭巨型帧，只有支持巨型帧的机型可设置为false。<br> 支持巨型帧的实例规格： [实例规格](https://cloud.tencent.com/document/product/213/11518)",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableJumboFrame",
           "required": false,
           "type": "bool"
         },
@@ -3097,7 +3087,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>quota-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>配额类型</strong>】进行过滤。配额类型形如：PostPaidQuotaSet。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：</p><p style=\"padding-left: 30px;\">PostPaidQuotaSet: 后付费配额</p><p style=\"padding-left: 30px;\">PrePaidQuotaSet: 预付费配额</p><p style=\"padding-left: 30px;\">SpotPaidQuotaSet: 竞价配额</p><p style=\"padding-left: 30px;\">ImageQuotaSet: 镜像配额</p><p style=\"padding-left: 30px;\">DisasterRecoverGroupQuotaSet: 置放群组配额</p>",
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>quota-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>配额类型</strong>】进行过滤。配额类型形如：PostPaidQuotaSet。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：</p><p style=\"padding-left: 30px;\">PostPaidQuotaSet: 后付费配额</p><p style=\"padding-left: 30px;\">PrePaidQuotaSet: 预付费配额</p><p style=\"padding-left: 30px;\">SpotPaidQuotaSet: 竞价配额</p><p style=\"padding-left: 30px;\">ImageQuotaSet: 镜像配额</p><p style=\"padding-left: 30px;\">DisasterRecoverGroupQuotaSet: 置放群组配额</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3182,7 +3172,7 @@
         {
           "disabled": false,
           "document": "CHC物理服务器实例ID。每次请求的实例的上限为100。参数不支持同时指定`ChcIds`和`Filters`。",
-          "example": "['chc-1a2b3c4d']",
+          "example": "[\"chc-1a2b3c4d\"]",
           "member": "string",
           "name": "ChcIds",
           "required": false,
@@ -3190,7 +3180,7 @@
         },
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-name</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-state</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例状态</strong>】进行过滤。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>device-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>设备类型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>vpc-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>私有网络唯一ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>subnet-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>私有子网唯一ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>sn</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>设备SN</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>",
+          "document": "<li><strong>zone</strong></li><p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p><li><strong>instance-name</strong></li><p style=\"padding-left: 30px;\">按照【<strong>实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>instance-state</strong></li><p style=\"padding-left: 30px;\">按照【<strong>实例状态</strong>】进行过滤。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>device-type</strong></li><p style=\"padding-left: 30px;\">按照【<strong>设备类型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>vpc-id</strong></li><p style=\"padding-left: 30px;\">按照【<strong>私有网络唯一ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>subnet-id</strong></li><p style=\"padding-left: 30px;\">按照【<strong>私有子网唯一ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>sn</strong></li><p style=\"padding-left: 30px;\">按照【<strong>设备SN</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3884,7 +3874,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。具体取值参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例类型</strong>】进行过滤。实例类型形如：S5.12XLARGE128、S5.12XLARGE96等。具体取值参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为1。",
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。具体取值参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例类型</strong>】进行过滤。实例类型形如：S5.12XLARGE128、S5.12XLARGE96等。具体取值参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为1。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4189,7 +4179,7 @@
         {
           "disabled": false,
           "document": "按照一个或者多个实例ID查询。实例ID例如：`ins-xxxxxxxx`。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的`ids.N`一节）。每次请求的实例的上限为100。参数不支持同时指定`InstanceIds`和`Filters`。",
-          "example": "['ins-rf6ogz49']",
+          "example": "[\"ins-rf6ogz49\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -4197,7 +4187,7 @@
         },
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区例如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p> <li><strong>project-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>项目ID</strong>】进行过滤，可通过调用[DescribeProjects](https://cloud.tencent.com/document/api/651/78725)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/651/81952)创建新的项目。项目ID例如：1002189。</p><p style=\"padding-left: 30px;\">类型：Integer</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>host-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>[CDH](https://cloud.tencent.com/document/product/416) ID</strong>】进行过滤。[CDH](https://cloud.tencent.com/document/product/416) ID例如：host-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>dedicated-cluster-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>[CDC](https://cloud.tencent.com/document/product/1346) ID</strong>】进行过滤。[CDC](https://cloud.tencent.com/document/product/1346) ID例如：cluster-xxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>vpc-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>VPC ID</strong>】进行过滤。VPC ID例如：vpc-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>subnet-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>子网ID</strong>】进行过滤。子网ID例如：subnet-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例ID</strong>】进行过滤。实例ID例如：ins-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>uuid</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例UUID</strong>】进行过滤。实例UUID例如：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>security-group-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>安全组ID</strong>】进行过滤。安全组ID例如: sg-8jlk3f3r。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-name</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-charge-type</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对[CDH](https://cloud.tencent.com/document/product/416)计费，不对[CDH](https://cloud.tencent.com/document/product/416)上的实例计费。)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-state</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例状态</strong>】进行过滤。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>private-ip-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例主网卡的内网IP</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>public-ip-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例主网卡的公网IP</strong>】进行过滤，包含实例创建时自动分配的IP和实例创建后手动绑定的弹性IP。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>ipv6-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例的IPv6地址</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-value</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>creation-start-time</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>创建实例请求的起始时间</strong>】进行过滤。例如：2023-06-01 00:00:00。\n</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>creation-end-time</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>创建实例请求的截止时间</strong>】进行过滤。例如：2023-06-01 00:00:00。\n</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。",
+          "document": "<li><strong>zone</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区例如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p> <li><strong>project-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>项目ID</strong>】进行过滤，可通过调用[DescribeProjects](https://cloud.tencent.com/document/api/651/78725)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/651/81952)创建新的项目。项目ID例如：1002189。</p><p style=\"padding-left: 30px;\">类型：Integer</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>host-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>[CDH](https://cloud.tencent.com/document/product/416) ID</strong>】进行过滤。[CDH](https://cloud.tencent.com/document/product/416) ID例如：host-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>dedicated-cluster-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>[CDC](https://cloud.tencent.com/document/product/1346) ID</strong>】进行过滤。[CDC](https://cloud.tencent.com/document/product/1346) ID例如：cluster-xxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>vpc-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>VPC ID</strong>】进行过滤。VPC ID例如：vpc-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>subnet-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>子网ID</strong>】进行过滤。子网ID例如：subnet-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例ID</strong>】进行过滤。实例ID例如：ins-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>uuid</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例UUID</strong>】进行过滤。实例UUID例如：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>security-group-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>安全组ID</strong>】进行过滤。安全组ID例如: sg-8jlk3f3r。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-name</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-charge-type</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对[CDH](https://cloud.tencent.com/document/product/416)计费，不对[CDH](https://cloud.tencent.com/document/product/416)上的实例计费。)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-state</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例状态</strong>】进行过滤。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>private-ip-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例主网卡的内网IP</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>public-ip-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例主网卡的公网IP</strong>】进行过滤，包含实例创建时自动分配的IP和实例创建后手动绑定的弹性IP。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>ipv6-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例的IPv6地址</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-value</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>creation-start-time</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>创建实例请求的起始时间</strong>】进行过滤。例如：2023-06-01 00:00:00。\n</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>creation-end-time</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>创建实例请求的截止时间</strong>】进行过滤。例如：2023-06-01 00:00:00。\n</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4635,135 +4625,6 @@
       ],
       "type": "object"
     },
-    "DescribeReservedInstancesConfigInfosRequest": {
-      "document": "DescribeReservedInstancesConfigInfos请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "zone\n按照预留实例计费可购买的可用区进行过滤。形如：ap-guangzhou-1。\n类型：String\n必选：否\n可选项：各地域可用区列表\n\nproduct-description\n按照预留实例计费的平台描述（即操作系统）进行过滤。形如：linux。\n类型：String\n必选：否\n可选项：linux\n\nduration\n按照预留实例计费有效期，即预留实例计费购买时长进行过滤。形如：31536000。\n类型：Integer\n计量单位：秒\n必选：否\n可选项：31536000 (1年)",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeReservedInstancesConfigInfosResponse": {
-      "document": "DescribeReservedInstancesConfigInfos返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "预留实例静态配置信息列表。",
-          "example": "无",
-          "member": "ReservedInstanceConfigInfoItem",
-          "name": "ReservedInstanceConfigInfos",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeReservedInstancesOfferingsRequest": {
-      "document": "DescribeReservedInstancesOfferings请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "试运行, 默认为 false。",
-          "example": "false",
-          "member": "bool",
-          "name": "DryRun",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
-          "example": "10",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "以最大有效期作为过滤参数。\n计量单位: 秒\n默认为 94608000。",
-          "example": "10",
-          "member": "int64",
-          "name": "MaxDuration",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "以最小有效期作为过滤参数。\n计量单位: 秒\n默认为 2592000。",
-          "example": "10",
-          "member": "int64",
-          "name": "MinDuration",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照预留实例计费可购买的【<strong>可用区</strong>】进行过滤。形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>duration</strong></li>\n<p style=\"padding-left: 30px;\">按照预留实例计费【<strong>有效期</strong>】即预留实例计费购买时长进行过滤。形如：31536000。</p><p style=\"padding-left: 30px;\">类型：Integer</p><p style=\"padding-left: 30px;\">计量单位：秒</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：31536000 (1年) | 94608000（3年）</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>预留实例计费类型</strong>】进行过滤。形如：S3.MEDIUM4。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/11518\">预留实例计费类型列表</a></p>\n<li><strong>offering-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>付款类型</strong>】进行过滤。形如：All Upfront (预付全部费用)。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：All Upfront (预付全部费用)</p>\n<li><strong>product-description</strong></li>\n<p style=\"padding-left: 30px;\">按照预留实例计费的【<strong>平台描述</strong>】（即操作系统）进行过滤。形如：linux。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：linux</p>\n<li><strong>reserved-instances-offering-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>预留实例计费配置ID</strong>】进行过滤。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeReservedInstancesOfferingsResponse": {
-      "document": "DescribeReservedInstancesOfferings返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "符合条件的预留实例计费数量。",
-          "example": "4",
-          "member": "int64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "符合条件的预留实例计费列表。",
-          "example": "无",
-          "member": "ReservedInstancesOffering",
-          "name": "ReservedInstancesOfferingsSet",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeTaskInfoRequest": {
       "document": "DescribeTaskInfo请求参数结构体",
       "members": [
@@ -4915,7 +4776,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。具体取值参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型</strong>】进行过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/product/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则默认查询筛选条件下所有机型。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-charge-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费  | CDHPAID：表示独享子机 | SPOTPAID：表示竞价付费 | CDCPAID：表示专用集群付费)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>sort-keys</strong></li>\n<p style=\"padding-left: 30px;\">按关键字进行排序,格式为排序字段加排序方式，中间用冒号分隔。 例如： 按cpu数逆序排序 \"cpu:desc\", 按mem大小顺序排序 \"mem:asc\"</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。",
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-6。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。具体取值参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型</strong>】进行过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/product/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则默认查询筛选条件下所有机型。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-charge-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费  | CDHPAID：表示独享子机 | SPOTPAID：表示竞价付费 | CDCPAID：表示专用集群付费)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>sort-keys</strong></li>\n<p style=\"padding-left: 30px;\">按关键字进行排序,格式为排序字段加排序方式，中间用冒号分隔。 例如： 按cpu数逆序排序 \"cpu:desc\", 按mem大小顺序排序 \"mem:asc\"</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5487,7 +5348,7 @@
       "usage": "both"
     },
     "Filter": {
-      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口的`Filter`为例。若我们需要查询可用区（`zone`）为广州一区 ***并且*** 实例计费模式（`instance-charge-type`）为包年包月 ***或者*** 按量计费的实例时，可如下实现：\n```\nFilters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-1\n&Filters.1.Name=instance-charge-type\n&Filters.1.Values.0=PREPAID\n&Filters.1.Values.1=POSTPAID_BY_HOUR\n```",
+      "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口的`Filter`为例。若我们需要查询可用区（`zone`）为广州六区 ***并且*** 实例计费模式（`instance-charge-type`）为包年包月 ***或者*** 按量计费的实例时，可如下实现：\n```\nFilters.0.Name=zone\n&Filters.0.Values.0=ap-guangzhou-6\n&Filters.1.Name=instance-charge-type\n&Filters.1.Values.0=PREPAID\n&Filters.1.Values.1=POSTPAID_BY_HOUR\n```",
       "members": [
         {
           "disabled": false,
@@ -5501,7 +5362,7 @@
         {
           "disabled": false,
           "document": "字段的过滤值。",
-          "example": "[\"ap-guangzhou-2\"]",
+          "example": "[\"ap-guangzhou-6\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -5860,7 +5721,7 @@
         {
           "disabled": false,
           "document": "集群所在可用区",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -5920,7 +5781,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群网络模式",
-          "example": "0～32，一般取28，30",
+          "example": "30",
           "member": "uint64",
           "name": "HpcClusterNetMode",
           "output_required": false,
@@ -5930,7 +5791,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群关联的标签列表",
-          "example": "[{\"Key\": \"APP3\", \"Value\": \"3\"}, {\"Key\": \"APP4\", \"Value\": \"4\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": false,
@@ -6468,79 +6329,6 @@
       ],
       "type": "object"
     },
-    "InquirePricePurchaseReservedInstancesOfferingRequest": {
-      "document": "InquirePricePurchaseReservedInstancesOffering请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "购买预留实例计费数量",
-          "example": "1",
-          "member": "uint64",
-          "name": "InstanceCount",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "预留实例计费配置ID",
-          "example": "noew0342-324f-f3ab-9uut-wrlnth53dcee",
-          "member": "string",
-          "name": "ReservedInstancesOfferingId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "试运行",
-          "example": "false",
-          "member": "bool",
-          "name": "DryRun",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性",
-          "example": "59337876-b254-4c21-847f-7d57d840d227",
-          "member": "string",
-          "name": "ClientToken",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "预留实例显示名称。<br><li>不指定实例显示名称则默认显示‘未命名’。</li><li>最多支持60个字符（包含模式串）。</li>",
-          "example": "myReservedInstance",
-          "member": "string",
-          "name": "ReservedInstanceName",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "InquirePricePurchaseReservedInstancesOfferingResponse": {
-      "document": "InquirePricePurchaseReservedInstancesOffering返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "该参数表示对应配置预留实例的价格。",
-          "example": "无",
-          "member": "ReservedInstancePrice",
-          "name": "Price",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "InquiryPriceModifyInstancesChargeTypeRequest": {
       "document": "InquiryPriceModifyInstancesChargeType请求参数结构体",
       "members": [
@@ -7040,7 +6828,7 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
-          "example": "{         \"DiskSize\": 50     }",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -7121,7 +6909,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "a521b4e4-c903-4d37-9de6-8906e3ad8eb7",
+          "example": "a521b4e4-c903-4d37-9de6-8096e3ad8eb7",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -7368,7 +7156,7 @@
         {
           "disabled": false,
           "document": "实例主网卡的公网`IP`列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"123.207.11.190\"]",
+          "example": "[\"110.207.11.190\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "output_required": true,
@@ -7854,7 +7642,7 @@
         {
           "disabled": false,
           "document": "可用区。",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -7976,7 +7764,7 @@
         {
           "disabled": false,
           "document": "可用区。",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -8255,8 +8043,8 @@
         },
         {
           "disabled": false,
-          "document": "线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。\n\n- BGP：常规 BGP 线路\n\n已开通静态单线IP白名单的用户，可选值：\n\n - CMCC：中国移动\n - CTCC：中国电信\n - CUCC：中国联通\n\n注意：仅部分地域支持静态单线IP。\n示例值：BGP",
-          "example": "CMCC",
+          "document": "线路类型。各种线路类型及支持地区详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。\n<li>BGP：常规 BGP 线路</li>\n已开通静态单线IP白名单的用户，可选值：\n<li>CMCC：中国移动</li>\n<li>CTCC：中国电信</li>\n<li>CUCC：中国联通</li>\n注意：仅部分地域支持静态单线IP。\n",
+          "example": "BGP",
           "member": "string",
           "name": "InternetServiceProvider",
           "output_required": false,
@@ -8266,7 +8054,7 @@
         },
         {
           "disabled": false,
-          "document": "公网 IP 类型。\n\n- WanIP：普通公网IP。\n- HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。\n- AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。\n\n如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。\n\n示例值：WanIP\n\n此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)",
+          "document": "公网 IP 类型。\n\n<li> WanIP：普通公网IP。</li>\n<li> HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>\n<li> AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>\n如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。\n\n此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)",
           "example": "WanIP",
           "member": "string",
           "name": "IPv4AddressType",
@@ -8277,7 +8065,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性公网 IPv6 类型。\n- EIPv6：弹性公网 IPv6。\n- HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。\n\n如需为资源分配IPv6地址，请指定弹性公网IPv6类型。\n示例值：EIPv6\n\n此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)",
+          "document": "弹性公网 IPv6 类型。\n<li> EIPv6：弹性公网 IPv6。</li>\n<li> HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。</li>\n如需为资源分配IPv6地址，请指定弹性公网IPv6类型。\n\n此功能仅部分地区灰度开放，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)",
           "example": "EIPv6",
           "member": "string",
           "name": "IPv6AddressType",
@@ -8288,8 +8076,8 @@
         },
         {
           "disabled": false,
-          "document": "高防包唯一ID，申请高防IP时，该字段必传。\n示例值：bgp-12345678\n",
-          "example": "bgp-12345678",
+          "document": "高防包唯一ID，申请高防IP时，该字段必传。\n",
+          "example": "bgp-00000000",
           "member": "string",
           "name": "AntiDDoSPackageId",
           "output_required": false,
@@ -9360,7 +9148,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。项目可以使用[AddProject](https://cloud.tencent.com/document/api/651/81952)接口创建。可通过[DescribeProject](https://cloud.tencent.com/document/product/378/4400) API返回值中的`projectId`获取。后续使用[DescribeHosts](https://cloud.tencent.com/document/api/213/16474)接口查询实例时，项目ID可用于过滤结果。",
+          "document": "项目ID。项目可以使用 [AddProject](https://cloud.tencent.com/document/api/651/81952) 接口创建。可通过 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725) 接口返回值中的`projectId`获取。后续使用 [DescribeHosts](https://cloud.tencent.com/document/api/213/16474) 接口查询实例时，项目ID可用于过滤结果。",
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
@@ -10299,79 +10087,6 @@
       ],
       "type": "object"
     },
-    "PurchaseReservedInstancesOfferingRequest": {
-      "document": "PurchaseReservedInstancesOffering请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "购买预留实例计费数量",
-          "example": "1",
-          "member": "int64",
-          "name": "InstanceCount",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "预留实例计费配置ID",
-          "example": "13d8e599-b8dc-4e8a-80b4-7dce9eb27043",
-          "member": "string",
-          "name": "ReservedInstancesOfferingId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "试运行",
-          "example": "false",
-          "member": "bool",
-          "name": "DryRun",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。<br>更多详细信息请参阅：如何保证幂等性",
-          "example": "a521b4e4-c903-4d37-9de6-8906e3ad8eb7",
-          "member": "string",
-          "name": "ClientToken",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "预留实例显示名称。<br><li>不指定实例显示名称则默认显示‘未命名’。</li><li>最多支持60个字符（包含模式串）。</li>",
-          "example": "myReservedInstance",
-          "member": "string",
-          "name": "ReservedInstanceName",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "PurchaseReservedInstancesOfferingResponse": {
-      "document": "PurchaseReservedInstancesOffering返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "已购买预留实例计费ID",
-          "example": "ri-rxfkvm5i",
-          "member": "string",
-          "name": "ReservedInstanceId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "RebootInstancesRequest": {
       "document": "RebootInstances请求参数结构体",
       "members": [
@@ -10916,492 +10631,6 @@
       ],
       "usage": "out"
     },
-    "ReservedInstanceConfigInfoItem": {
-      "document": "预留实例静态配置信息。预留实例当前只针对国际站白名单用户开放。",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例规格。",
-          "example": "C",
-          "member": "string",
-          "name": "Type",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例规格名称。",
-          "example": "计算型",
-          "member": "string",
-          "name": "TypeName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "优先级。",
-          "example": "402",
-          "member": "int64",
-          "name": "Order",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例族信息列表。",
-          "example": "无",
-          "member": "ReservedInstanceFamilyItem",
-          "name": "InstanceFamilies",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "ReservedInstanceFamilyItem": {
-      "document": "预留实例相关实例族信息。预留实例当前只针对国际站白名单用户开放。",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例族。",
-          "example": "S5",
-          "member": "string",
-          "name": "InstanceFamily",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "优先级。",
-          "example": "1",
-          "member": "int64",
-          "name": "Order",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例类型信息列表。",
-          "example": "无",
-          "member": "ReservedInstanceTypeItem",
-          "name": "InstanceTypes",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "ReservedInstancePrice": {
-      "document": "预留实例相关价格信息。预留实例当前只针对国际站白名单用户开放。",
-      "members": [
-        {
-          "disabled": false,
-          "document": "预支合计费用的原价，单位：元。",
-          "example": "0.01",
-          "member": "float",
-          "name": "OriginalFixedPrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预支合计费用的折扣价，单位：元。",
-          "example": "0.01",
-          "member": "float",
-          "name": "DiscountFixedPrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "后续合计费用的原价，单位：元/小时",
-          "example": "0.01",
-          "member": "float",
-          "name": "OriginalUsagePrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "后续合计费用的折扣价，单位：元/小时",
-          "example": "0.01",
-          "member": "float",
-          "name": "DiscountUsagePrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预支费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "20.0",
-          "member": "float",
-          "name": "FixedPriceDiscount",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "后续费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "20.0",
-          "member": "float",
-          "name": "UsagePriceDiscount",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "ReservedInstancePriceItem": {
-      "document": "基于付费类型的预留实例相关价格信息。预留实例当前只针对国际站白名单用户开放。",
-      "members": [
-        {
-          "disabled": false,
-          "document": "付费类型，如：\"All Upfront\",\"Partial Upfront\",\"No Upfront\"",
-          "example": "All Upfront",
-          "member": "string",
-          "name": "OfferingType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预支合计费用，单位：元。",
-          "example": "100.00",
-          "member": "float",
-          "name": "FixedPrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "后续合计费用，单位：元/小时",
-          "example": "0.09",
-          "member": "float",
-          "name": "UsagePrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预留实例配置ID",
-          "example": "f24e420f-50e6-4ba9-80b2",
-          "member": "string",
-          "name": "ReservedInstancesOfferingId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预留实例计费可购买的可用区。",
-          "example": "ap-guangzhou-6",
-          "member": "string",
-          "name": "Zone",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。\n计量单位：秒",
-          "example": "31536000",
-          "member": "uint64",
-          "name": "Duration",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预留实例计费的平台描述（即操作系统）。形如：Linux。\n返回项： Linux 。",
-          "example": "Linux",
-          "member": "string",
-          "name": "ProductDescription",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预支合计费用，单位：元。",
-          "example": "0.01",
-          "member": "float",
-          "name": "DiscountUsagePrice",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "后续合计费用的折扣价，单位：元/小时",
-          "example": "0.01",
-          "member": "float",
-          "name": "DiscountFixedPrice",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "ReservedInstanceTypeItem": {
-      "document": "预留实例类型信息。预留实例当前只针对国际站白名单用户开放。",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例类型。",
-          "example": "S5.LARGE4",
-          "member": "string",
-          "name": "InstanceType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "CPU核数。",
-          "example": "4",
-          "member": "uint64",
-          "name": "Cpu",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "内存大小。",
-          "example": "4",
-          "member": "uint64",
-          "name": "Memory",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "GPU数量。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Gpu",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "FPGA数量。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Fpga",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "本地存储块数量。",
-          "example": "5",
-          "member": "uint64",
-          "name": "StorageBlock",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "网卡数。",
-          "example": "1",
-          "member": "uint64",
-          "name": "NetworkCard",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "最大带宽。",
-          "example": "100",
-          "member": "float",
-          "name": "MaxBandwidth",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "主频。",
-          "example": "2.6GHz/3.3GHz",
-          "member": "string",
-          "name": "Frequency",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "CPU型号名称。",
-          "example": "AMD EPYC Genoa",
-          "member": "string",
-          "name": "CpuModelName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "包转发率。",
-          "example": "50",
-          "member": "uint64",
-          "name": "Pps",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "外部信息。",
-          "example": "无",
-          "member": "Externals",
-          "name": "Externals",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "备注信息。",
-          "example": "1 颗 NVIDIA A10",
-          "member": "string",
-          "name": "Remark",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预留实例配置价格信息。",
-          "example": "无",
-          "member": "ReservedInstancePriceItem",
-          "name": "Prices",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "ReservedInstancesOffering": {
-      "document": "描述可购买预留实例计费信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "预留实例计费可购买的可用区。形如：ap-guangzhou-1。\n返回项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a>",
-          "example": "ap-guangzhou-2",
-          "member": "string",
-          "name": "Zone",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "可购买的预留实例计费类型的结算货币，使用ISO 4217标准货币代码。\n返回项：USD（美元）。",
-          "example": "USD",
-          "member": "string",
-          "name": "CurrencyCode",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。\n计量单位：秒",
-          "example": "31536000",
-          "member": "int64",
-          "name": "Duration",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预留实例计费的购买价格。形如：4000.0。\n计量单位：与 currencyCode 一致，目前支持 USD（美元）",
-          "example": "0.01",
-          "member": "float",
-          "name": "FixedPrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预留实例计费的实例类型。形如：S3.MEDIUM4。\n返回项：<a href=\"https://cloud.tencent.com/product/cvm/instances\">预留实例计费类型列表</a>",
-          "example": "S5.LARGE4",
-          "member": "string",
-          "name": "InstanceType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预留实例计费的付款类型。形如：All Upfront。\n返回项： All Upfront (预付全部费用)。",
-          "example": "All Upfront",
-          "member": "string",
-          "name": "OfferingType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "可购买的预留实例计费配置ID。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。",
-          "example": "650c138f-ae7e-4750-952a-96841d6e9fc1",
-          "member": "string",
-          "name": "ReservedInstancesOfferingId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "预留实例计费的平台描述（即操作系统）。形如：linux。\n返回项： linux 。",
-          "example": "linux",
-          "member": "string",
-          "name": "ProductDescription",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "扣除预付费之后的使用价格 (按小时计费)。形如：0.0。\n目前，因为只支持 All Upfront 付款类型，所以默认为 0元/小时。\n计量单位：元/小时，货币单位与 currencyCode 一致，目前支持 USD（美元）",
-          "example": "0.01",
-          "member": "float",
-          "name": "UsagePrice",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "ResetInstanceRequest": {
       "document": "ResetInstance请求参数结构体",
       "members": [
@@ -11811,6 +11040,15 @@
         },
         {
           "disabled": false,
+          "document": "指定创建实例的最小数量，取值范围为不大于InstanceCount的正整数。\n指定最小数量时，承诺最少创建MinCount台实例，并尽量创建InstanceCount台实例。\n库存不足以满足最小数量时，API 会返回库存不足最小数量的错误信息。\n仅对支持部分发货的账号、区域和计费模式（包年包月、按量计费、竞价实例、按量包销）生效。",
+          "example": "1",
+          "member": "int64",
+          "name": "MinCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "实例显示名称。<br><li>不指定实例显示名称则默认显示‘未命名’。</li><li>购买多台实例，如果指定模式串`{R:x}`，表示生成数字`[x, x+n-1]`，其中`n`表示购买实例的数量，例如`server_{R:3}`，购买1台时，实例显示名称为`server_3`；购买2台时，实例显示名称分别为`server_3`，`server_4`。支持指定多个模式串`{R:x}`。</li><li>购买多台实例，如果不指定模式串，则在实例显示名称添加后缀`1、2...n`，其中`n`表示购买实例的数量，例如`server_`，购买2台时，实例显示名称分别为`server_1`，`server_2`。</li><li>最多支持128个字符（包含模式串）。</li>",
           "example": "server_{R:3}",
           "member": "string",
@@ -11875,7 +11113,7 @@
         {
           "disabled": false,
           "document": "置放群组id，仅支持指定一个。",
-          "example": "['ps-3p88qhfo']",
+          "example": "[\"sg-efil73jd\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -12007,7 +11245,7 @@
         {
           "disabled": false,
           "document": "当通过本接口来创建实例时会返回该参数，表示一个或多个实例`ID`。返回实例`ID`列表并不代表实例创建成功，可根据 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询返回的InstancesSet中对应实例的`ID`的状态来判断创建是否完成；如果实例状态由“PENDING(创建中)”变为“RUNNING(运行中)”，则为创建成功。",
-          "example": "['ins-rn99mzt1']",
+          "example": "[\"ins-rn79mzt1\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "output_required": true,
@@ -12446,8 +11684,8 @@
         },
         {
           "disabled": false,
-          "document": "系统盘ID。\n该参数目前仅用于`DescribeInstances`等查询类接口的返回参数，不可用于`RunInstances`等写接口的入参。",
-          "example": "disk-xyzw1234",
+          "document": "系统盘ID。\n该参数目前仅用于 [DescribeInstances](https://cloud.tencent.com/document/product/213/15728) 等查询类接口的返回参数，不可用于 [RunInstances](https://cloud.tencent.com/document/product/213/15730) 等写接口的入参。",
+          "example": "disk-xyzw1a3x",
           "member": "string",
           "name": "DiskId",
           "output_required": false,

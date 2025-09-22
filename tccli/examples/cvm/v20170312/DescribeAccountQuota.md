@@ -19,13 +19,13 @@ Output:
                         "UsedQuota": 0,
                         "RemainingQuota": 288,
                         "TotalQuota": 288,
-                        "Zone": "ap-guangzhou-1"
+                        "Zone": "ap-guangzhou-3"
                     },
                     {
                         "UsedQuota": 2,
                         "RemainingQuota": 1248,
                         "TotalQuota": 1250,
-                        "Zone": "ap-guangzhou-2"
+                        "Zone": "ap-guangzhou-4"
                     }
                 ],
                 "DisasterRecoverGroupQuotaSet": [
@@ -41,14 +41,14 @@ Output:
                     {
                         "UsedQuota": 0,
                         "OnceQuota": 300,
-                        "Zone": "ap-guangzhou-1",
+                        "Zone": "ap-guangzhou-3",
                         "TotalQuota": 255,
                         "RemainingQuota": 255
                     },
                     {
                         "UsedQuota": 0,
                         "OnceQuota": 300,
-                        "Zone": "ap-guangzhou-2",
+                        "Zone": "ap-guangzhou-4",
                         "TotalQuota": 222,
                         "RemainingQuota": 222
                     }
@@ -58,13 +58,13 @@ Output:
                         "UsedQuota": 0,
                         "RemainingQuota": 244,
                         "TotalQuota": 244,
-                        "Zone": "ap-guangzhou-1"
+                        "Zone": "ap-guangzhou-3"
                     },
                     {
                         "UsedQuota": 4,
                         "RemainingQuota": 195,
                         "TotalQuota": 199,
-                        "Zone": "ap-guangzhou-2"
+                        "Zone": "ap-guangzhou-4"
                     }
                 ],
                 "ImageQuotaSet": [

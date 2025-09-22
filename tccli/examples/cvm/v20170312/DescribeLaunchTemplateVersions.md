@@ -28,7 +28,7 @@ Output:
                     "InstanceCount": 1,
                     "Placement": {
                         "ProjectId": 0,
-                        "Zone": "ap-guangzhou-2"
+                        "Zone": "ap-guangzhou-6"
                     },
                     "SystemDisk": {
                         "DiskSize": 50,

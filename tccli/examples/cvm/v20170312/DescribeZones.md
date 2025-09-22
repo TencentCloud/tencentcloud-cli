@@ -14,18 +14,6 @@ Output:
         "TotalCount": 5,
         "ZoneSet": [
             {
-                "ZoneState": "UNAVAILABLE",
-                "ZoneId": "100001",
-                "Zone": "ap-guangzhou-1",
-                "ZoneName": "广州一区"
-            },
-            {
-                "ZoneState": "AVAILABLE",
-                "ZoneId": "100002",
-                "Zone": "ap-guangzhou-2",
-                "ZoneName": "广州二区"
-            },
-            {
                 "ZoneState": "AVAILABLE",
                 "ZoneId": "100003",
                 "Zone": "ap-guangzhou-3",
@@ -64,18 +52,6 @@ Output:
     "Response": {
         "TotalCount": 5,
         "ZoneSet": [
-            {
-                "ZoneState": "UNAVAILABLE",
-                "ZoneId": "100001",
-                "Zone": "ap-guangzhou-1",
-                "ZoneName": "Guangzhou Zone 1"
-            },
-            {
-                "ZoneState": "AVAILABLE",
-                "ZoneId": "100002",
-                "Zone": "ap-guangzhou-2",
-                "ZoneName": "Guangzhou Zone 2"
-            },
             {
                 "ZoneState": "AVAILABLE",
                 "ZoneId": "100003",

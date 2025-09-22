@@ -7776,7 +7776,7 @@
         {
           "disabled": false,
           "document": "TDE透明数据加密配置",
-          "example": "{\"Encryption\":\"disable\", \"CertificateAttribution\":\"self\"}",
+          "example": "无",
           "member": "TDEConfigAttribute",
           "name": "TDEConfig",
           "output_required": true,
@@ -7786,7 +7786,7 @@
         {
           "disabled": false,
           "document": "SSL加密",
-          "example": "{\"IsKMS\":0, \"Encryption\":\"disable\",\"SSLValidity\":0}",
+          "example": "无",
           "member": "SSLConfig",
           "name": "SSLConfig",
           "output_required": true,
@@ -7796,7 +7796,7 @@
         {
           "disabled": false,
           "document": "双节点备机只读信息",
-          "example": "{\"DrInstanceId\":\"mssqldr-0918ha7\", \"Zone\":\"ap-guangzhou\",\"SlaveStatus\":\"disable\"}",
+          "example": "无",
           "member": "DrReadableInfo",
           "name": "DrReadableInfo",
           "output_required": true,
@@ -7806,7 +7806,7 @@
         {
           "disabled": false,
           "document": "等待回收的IP列表",
-          "example": "[{\"Vip\":\"127.0.0.1\",\"RecycleTime\":\"2024-03-26 12:28:41\"}],]",
+          "example": "无",
           "member": "OldVip",
           "name": "OldVipList",
           "output_required": true,
@@ -7826,7 +7826,7 @@
         {
           "disabled": false,
           "document": "多节点备机只读信息",
-          "example": "[{\"DrInstanceId\":\"mssqldr-0918ha7\", \"Zone\":\"ap-guangzhou\",\"SlaveStatus\":\"disable\"}]",
+          "example": "无",
           "member": "DrReadableInfo",
           "name": "MultiDrReadableInfo",
           "output_required": false,
@@ -7862,6 +7862,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢SQL阈值，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "SlowLogThreshold",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

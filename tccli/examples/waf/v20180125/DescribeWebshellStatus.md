@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "Domain": "www.test.com",
+        "Domain": "www.qcloudwaf.com",
         "Status": 1,
         "RequestId": "2d510f3e-9ac9-4282-a62d-9efa61c9825d"
     }

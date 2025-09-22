@@ -930,7 +930,7 @@
       {
         "document": "",
         "input": "https://waf.tencentcloudapi.com/?Action=DescribeWebshellStatus\r\n&Domain=www.qcloudwaf.com\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Domain\": \"www.test.com\",\n        \"Status\": 1,\n        \"RequestId\": \"2d510f3e-9ac9-4282-a62d-9efa61c9825d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Domain\": \"www.qcloudwaf.com\",\n        \"Status\": 1,\n        \"RequestId\": \"2d510f3e-9ac9-4282-a62d-9efa61c9825d\"\n    }\n}",
         "title": "获取域名webshell 状态"
       }
     ],

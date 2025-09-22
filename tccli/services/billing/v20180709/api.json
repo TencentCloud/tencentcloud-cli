@@ -21,6 +21,13 @@
       "output": "CreateAllocationUnitResponse",
       "status": "online"
     },
+    "CreateBudget": {
+      "document": "创建预算信息",
+      "input": "CreateBudgetRequest",
+      "name": "创建预算项目",
+      "output": "CreateBudgetResponse",
+      "status": "online"
+    },
     "CreateGatherRule": {
       "document": "创建归集规则",
       "input": "CreateGatherRuleRequest",
@@ -47,6 +54,13 @@
       "input": "DeleteAllocationUnitRequest",
       "name": "删除分账单元",
       "output": "DeleteAllocationUnitResponse",
+      "status": "online"
+    },
+    "DeleteBudget": {
+      "document": "依据预算ID删除对应预算项目",
+      "input": "DeleteBudgetRequest",
+      "name": "删除预算项目",
+      "output": "DeleteBudgetResponse",
       "status": "online"
     },
     "DeleteGatherRule": {
@@ -252,6 +266,27 @@
       "output": "DescribeBillSummaryForOrganizationResponse",
       "status": "online"
     },
+    "DescribeBudget": {
+      "document": "获取预算详细信息",
+      "input": "DescribeBudgetRequest",
+      "name": "获取预算详细信息",
+      "output": "DescribeBudgetResponse",
+      "status": "online"
+    },
+    "DescribeBudgetOperationLog": {
+      "document": "查询预算修改记录",
+      "input": "DescribeBudgetOperationLogRequest",
+      "name": "获取预算修改记录",
+      "output": "DescribeBudgetOperationLogResponse",
+      "status": "online"
+    },
+    "DescribeBudgetRemindRecordList": {
+      "document": "返回预算提醒记录，包括预算周期、检测时间、提醒时间、提醒类型、提醒内容",
+      "input": "DescribeBudgetRemindRecordListRequest",
+      "name": "获取预算提醒记录",
+      "output": "DescribeBudgetRemindRecordListResponse",
+      "status": "online"
+    },
     "DescribeCostDetail": {
       "document": "查询消耗明细\n\n注意事项：\n1. 对于消耗明细数据量级很大（例如每月消耗明细量级超过100w）的客户，通过 API 调用明细数据会有超时风险，建议您开通消耗账单数据存储功能，通过存储桶中获取账单文件进行分析。[账单存储至COS桶](https://cloud.tencent.com/document/product/555/61275)",
       "input": "DescribeCostDetailRequest",
@@ -376,6 +411,13 @@
       "input": "ModifyAllocationUnitRequest",
       "name": "修改分账单元",
       "output": "ModifyAllocationUnitResponse",
+      "status": "online"
+    },
+    "ModifyBudget": {
+      "document": "更新预算信息",
+      "input": "ModifyBudgetRequest",
+      "name": "更新预算信息",
+      "output": "ModifyBudgetResponse",
       "status": "online"
     },
     "ModifyGatherRule": {
@@ -6401,6 +6443,1039 @@
       ],
       "usage": "both"
     },
+    "BudgetConditionsForm": {
+      "document": "预算管理自定义费用范围参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\" \"]",
+          "member": "string",
+          "name": "Business",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\" \"]",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\" \"]",
+          "member": "string",
+          "name": "ProductCodes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\" \"]",
+          "member": "string",
+          "name": "ComponentCodes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\" \"]",
+          "member": "string",
+          "name": "ZoneIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\" \"]",
+          "member": "string",
+          "name": "RegionIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\" \"]",
+          "member": "string",
+          "name": "ProjectIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\" \"]",
+          "member": "string",
+          "name": "ActionTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消耗类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\" \"]",
+          "member": "string",
+          "name": "ConsumptionTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagsForm",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 末级分账单元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1197623846\"]",
+          "member": "string",
+          "name": "PayerUins",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1197623846\"]",
+          "member": "string",
+          "name": "OwnerUins",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 末级分账单元唯一键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1197623846\"]",
+          "member": "string",
+          "name": "TreeNodeUniqKeys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BudgetExtend": {
+      "document": "查询返回预算完整信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算名称",
+          "example": "API创建预算计划",
+          "member": "string",
+          "name": "BudgetName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算额度",
+          "example": "预算计划类型固定值时传定值, 预算计划类型不同值时传json",
+          "member": "string",
+          "name": "BudgetQuota",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DAY 天，MONTH 月度，QUARTER 季度 ，YEAR 年度",
+          "example": "DAY",
+          "member": "string",
+          "name": "CycleType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "BILL  系统账单，CONSUMPTION  消耗账单",
+          "example": "BILL",
+          "member": "string",
+          "name": "BillType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COST 原价，REAL_COST 实际费用，CASH 现金，INCENTIVE 赠送金，VOUCHER 代金券，TRANSFER 分成金，TAX 税，AMOUNT_BEFORE_TAX 现金支付(税前)",
+          "example": "COST",
+          "member": "string",
+          "name": "FeeType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效期起始时间 2025-01-01",
+          "example": "2025-01",
+          "member": "string",
+          "name": "PeriodBegin",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效期结束时间  2025-12-01",
+          "example": "2025-12",
+          "member": "string",
+          "name": "PeriodEnd",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COST，USAGE，RI，SP",
+          "example": "COST",
+          "member": "string",
+          "name": "Dimensions",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "FIX 固定值，CYCLE 不同值",
+          "example": "FIX",
+          "member": "string",
+          "name": "PlanType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "阈值提醒",
+          "example": "无",
+          "member": "BudgetWarn",
+          "name": "WarnJson",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户Uin",
+          "example": "38495",
+          "member": "uint64",
+          "name": "PayerUin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "波动提醒",
+          "example": "无",
+          "member": "WaveThresholdForm",
+          "name": "WaveThresholdJson",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算备注",
+          "example": "使用使用api创建预算信息",
+          "member": "string",
+          "name": "BudgetNote",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义发送对象信息",
+          "example": "\" \"",
+          "member": "string",
+          "name": "SendDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0:默认uin发送",
+          "example": "0",
+          "member": "int64",
+          "name": "DefaultMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CUS 自定义预算，ZERO_COST 零支出预算模板，BY_MONTH 按月费用预算模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CUS",
+          "member": "string",
+          "name": "TemplateType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "(1, \"未超支\"),\n(2, \"超支\")",
+          "example": "1",
+          "member": "int64",
+          "name": "MoneyStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提醒次数",
+          "example": "0",
+          "member": "int64",
+          "name": "RemindTimes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建预算时间",
+          "example": "2025-09-04 15:49:34",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新预算时间",
+          "example": "2025-09-04 15:49:34",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算关联Id",
+          "example": "12894",
+          "member": "string",
+          "name": "BudgetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NO_FORECAST(没有设置预测),\n FORECAST_NO_DATA(设置了预测,但是没有数据),\nFORECAST_HAS_DATA(设置了预测,且有预测数据)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NO_FORECAST",
+          "member": "string",
+          "name": "HasForecast",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预测费用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "string",
+          "name": "ForecastCost",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预测进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "ForecastProgress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实际费用",
+          "example": "30",
+          "member": "string",
+          "name": "RealCost",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义发送",
+          "example": "无",
+          "member": "BudgetSendInfoDto",
+          "name": "BudgetSendInfoForm",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前周期",
+          "example": "无 ",
+          "member": "string",
+          "name": "CurDateDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " EXPIRED  已过期\nACTIVE 生效中\nUNACTIVATED 已失效\nACTIVATED 待生效",
+          "example": "EXPIRED",
+          "member": "string",
+          "name": "BudgetStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算维度范围条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BudgetConditionsForm",
+          "name": "DimensionsRange",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预算进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "BudgetProgress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预算类型设置为计划预算时返回预算额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BudgetPlan",
+          "name": "BudgetQuotaJson",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BudgetInfoApiResponse": {
+      "document": "预算操作后返回信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算项目id",
+          "example": "389284",
+          "member": "string",
+          "name": "BudgetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新预算时间",
+          "example": "2025-07-22 09:59:21",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BudgetInfoDiffEntity": {
+      "document": "记录预算项目相关字段的变更信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变更属性",
+          "example": "warnType",
+          "member": "string",
+          "name": "Property",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变更前内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FORECAST",
+          "member": "string",
+          "name": "Before",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变更后内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACTUAL",
+          "member": "string",
+          "name": "After",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BudgetOperationLogEntity": {
+      "document": "预算修改记录信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Uin",
+          "example": "15684",
+          "member": "uint64",
+          "name": "PayerUin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主用户Uin\n",
+          "example": "2789453",
+          "member": "uint64",
+          "name": "OwnerUin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作用户Uin",
+          "example": "3452657",
+          "member": "uint64",
+          "name": "OperateUin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日期",
+          "example": "20250902",
+          "member": "uint64",
+          "name": "BillDay",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "月份",
+          "example": "2025-09-01 00:00:00",
+          "member": "string",
+          "name": "BillMonth",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改类型：ADD(新增)、UPDATE(更新)",
+          "example": "ADD",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变更信息",
+          "example": "无",
+          "member": "BudgetInfoDiffEntity",
+          "name": "DiffValue",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-09-02 18:00:48",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2025-09-02 18:00:48",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改渠道：官网修改/API修改",
+          "example": "官网修改",
+          "member": "string",
+          "name": "OperationChannel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算项目id",
+          "example": "27383",
+          "member": "string",
+          "name": "BudgetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BudgetPlan": {
+      "document": "预算计算复杂数据类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "前端页面日期显示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DateDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预算额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Quota",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BudgetRemindRecordList": {
+      "document": "预算管理的分页数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自动优化 COUNT SQL 如果遇到 jSqlParser 无法解析情况，设置该参数为 false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "OptimizeCountSql",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Pages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "排序字段信息，允许前端传入的时候，注意 SQL 注入问题，可以使用 SqlInjectionUtils.check(...) 检查文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrderDto",
+          "name": "Orders",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "xml 自定义 count 查询的 statementId 也可以不用指定在分页 statementId 后面加上 _mpCount 例如分页 selectPageById 指定 count 的查询 statementId 设置为 selectPageById_mpCount 即可默认找到该 SQL 执行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CountId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单页分页条数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MaxLimit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BudgetRemindRecords",
+          "name": "Records",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Current",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否进行 count 查询，如果只想查询到列表不要查询总记录数，设置该参数为 false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "SearchCount",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BudgetRemindRecords": {
+      "document": "预算历史详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算周期",
+          "example": "无",
+          "member": "string",
+          "name": "DateDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实际费用",
+          "example": "无",
+          "member": "string",
+          "name": "RealCost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预算值额度",
+          "example": "无",
+          "member": "string",
+          "name": "BudgetQuota",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提醒类型。\n枚举值:\nBUDGET 预算提醒,\nWAVE 波动提醒.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BUDGET",
+          "member": "string",
+          "name": "AlarmType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MessageContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发送时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SendTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BudgetSendInfoDto": {
+      "document": "预算提醒",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知周期,逗号隔开。\n枚举值:\n周一:1,\n周二:2,\n周天:7\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2,3,4,5,6,7]",
+          "member": "uint64",
+          "name": "WeekDays",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接收类型。\n枚举值:\nUIN 默认模式,\nUSER 用户,\nGROUP 用户组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " 无",
+          "member": "string",
+          "name": "ReceiverType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发送接收窗口HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“23:59:59\"",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预算配置id（预算名称）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "14633",
+          "member": "int64",
+          "name": "BudgetId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接收渠道,逗号隔开;\n枚举值:\nTITLE 标题，\nSITE 站内信,\nEMAIL 邮件,\nSMS 短信,\nWECHAT 微信,\nVOICE 语音,\nQYWX 企业微信;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"SITE\"]",
+          "member": "string",
+          "name": "NoticeWays",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发送开始窗口HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"10:00:00\"",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ADoNrCzyuP\"",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户id,用户组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "ReceiverIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BudgetWarn": {
+      "document": "预算阈值提醒信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ACTUAL 实际金额，\nFORECAST 预测金额",
+          "example": "ACTUAL",
+          "member": "string",
+          "name": "WarnType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "PERCENTAGE 预算金额的百分比，ABS 固定值",
+          "example": "PERCENTAGE",
+          "member": "string",
+          "name": "CalType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "阈值（大于等于0）",
+          "example": "100",
+          "member": "string",
+          "name": "ThresholdValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BusinessSummaryInfo": {
       "document": "产品汇总信息",
       "members": [
@@ -8228,6 +9303,162 @@
       ],
       "type": "object"
     },
+    "CreateBudgetRequest": {
+      "document": "CreateBudget请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算名称",
+          "example": "API创建预算计划",
+          "member": "string",
+          "name": "BudgetName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DAY 天，MONTH 月度，QUARTER 季度 ，YEAR 年度",
+          "example": "DAY",
+          "member": "string",
+          "name": "CycleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期起始时间 2025-01-01(周期: 天) / 2025-01（周期: 月）",
+          "example": "2025-01-01",
+          "member": "string",
+          "name": "PeriodBegin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期结束时间  2025-12-01(周期：天)  / 2025-12（周期：月）",
+          "example": "2025-12-01",
+          "member": "string",
+          "name": "PeriodEnd",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "FIX 固定预算，CYCLE 计划预算",
+          "example": "FIX",
+          "member": "string",
+          "name": "PlanType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预算值额度\n预算计划类型为FIX(固定预算)时传定值；\n预算计划类型为CYCLE(计划预算)时传[{\"dateDesc\":\"2025-07\",\"quota\":\"1000\"},{\"dateDesc\":\"2025-08\",\"quota\":\"2000\"}]；",
+          "example": "1000",
+          "member": "string",
+          "name": "BudgetQuota",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "BILL  系统账单，CONSUMPTION  消耗账单",
+          "example": "BILL",
+          "member": "string",
+          "name": "BillType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "COST 原价，REAL_COST 实际费用，CASH 现金，INCENTIVE 赠送金，VOUCHER 代金券，TRANSFER 分成金，TAX 税，AMOUNT_BEFORE_TAX 现金支付(税前)",
+          "example": "COST",
+          "member": "string",
+          "name": "FeeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "阈值提醒",
+          "example": "无",
+          "member": "BudgetWarn",
+          "name": "WarnJson",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预算备注",
+          "example": "使用api创建预算信息",
+          "member": "string",
+          "name": "BudgetNote",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预算维度范围条件",
+          "example": "无",
+          "member": "BudgetConditionsForm",
+          "name": "DimensionsRange",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "波动提醒",
+          "example": "无",
+          "member": "WaveThresholdForm",
+          "name": "WaveThresholdJson",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBudgetResponse": {
+      "document": "CreateBudget返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建预算返回信息",
+          "example": "无",
+          "member": "BudgetInfoApiResponse",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "create success",
+          "example": "信息提示",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateGatherRuleRequest": {
       "document": "CreateGatherRule请求参数结构体",
       "members": [
@@ -8282,6 +9513,128 @@
         }
       ],
       "type": "object"
+    },
+    "DataForBudgetInfoPage": {
+      "document": "获取预算管理的基础信息分页数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Pages",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BudgetExtend",
+          "name": "Records",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Current",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DataForBudgetOperationLogPage": {
+      "document": "预算修改记录信息分页数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "10",
+          "member": "uint64",
+          "name": "Pages",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "5",
+          "member": "uint64",
+          "name": "Size",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BudgetOperationLogEntity",
+          "name": "Records",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前页",
+          "example": "3",
+          "member": "uint64",
+          "name": "Current",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Deal": {
       "document": "订单数据对象",
@@ -8639,6 +9992,63 @@
     "DeleteAllocationUnitResponse": {
       "document": "DeleteAllocationUnit返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBudgetRequest": {
+      "document": "DeleteBudget请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算项目id",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "BudgetIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBudgetResponse": {
+      "document": "DeleteBudget返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回删除预算项目id",
+          "example": "[\"128463\"]",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "信息提示",
+          "example": "delete success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -12232,6 +13642,258 @@
       ],
       "type": "object"
     },
+    "DescribeBudgetOperationLogRequest": {
+      "document": "DescribeBudgetOperationLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "预算项目id",
+          "example": "25785",
+          "member": "string",
+          "name": "BudgetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBudgetOperationLogResponse": {
+      "document": "DescribeBudgetOperationLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算修改记录详情",
+          "example": "无",
+          "member": "DataForBudgetOperationLogPage",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "信息提示",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBudgetRemindRecordListRequest": {
+      "document": "DescribeBudgetRemindRecordList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，整型",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目，整型",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "预算基础信息关联id",
+          "example": "234322431",
+          "member": "string",
+          "name": "BudgetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBudgetRemindRecordListResponse": {
+      "document": "DescribeBudgetRemindRecordList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算配置属性",
+          "example": "{\"Size\":10,\"Total\":0}",
+          "member": "BudgetRemindRecordList",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fail",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误响应码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBudgetRequest": {
+      "document": "DescribeBudget请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，整型",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目，整型",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "预算项目id",
+          "example": "1231",
+          "member": "string",
+          "name": "BudgetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预算名称",
+          "example": "1元-按日-固定-全产品-三个月",
+          "member": "string",
+          "name": "BudgetName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "EXPIRED失效，ACTIVE生效中， ACTIVATED待生效",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "BudgetStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DAY天 MONTH月度 QUARTER季度 YEAR年度",
+          "example": "[\"DAY\"]",
+          "member": "string",
+          "name": "CycleTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBudgetResponse": {
+      "document": "DescribeBudget返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算项目详情",
+          "example": "无",
+          "member": "DataForBudgetInfoPage",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "信息提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "query success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCostDetailRequest": {
       "document": "DescribeCostDetail请求参数结构体",
       "members": [
@@ -15297,6 +16959,171 @@
       ],
       "type": "object"
     },
+    "ModifyBudgetRequest": {
+      "document": "ModifyBudget请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预算项目id",
+          "example": "1233456",
+          "member": "string",
+          "name": "BudgetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预算名称",
+          "example": "API创建预算计划",
+          "member": "string",
+          "name": "BudgetName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DAY 天，MONTH 月度，QUARTER 季度 ，YEAR 年度",
+          "example": "DAY",
+          "member": "string",
+          "name": "CycleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期起始时间 2025-01-01",
+          "example": "2025-01-01",
+          "member": "string",
+          "name": "PeriodBegin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效期结束时间  2025-12-01",
+          "example": "2025-12-01",
+          "member": "string",
+          "name": "PeriodEnd",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "FIX 固定值，CYCLE 不同值",
+          "example": "FIX",
+          "member": "string",
+          "name": "PlanType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预算值额度 \n预算计划类型固定预算时设为定值；\n预算计划类型为CYCLE(计划预算)时传[{\"dateDesc\":\"2025-07\",\"quota\":\"1000\"},{\"dateDesc\":\"2025-08\",\"quota\":\"2000\"}]；",
+          "example": "1200",
+          "member": "string",
+          "name": "BudgetQuota",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "BILL  系统账单，CONSUMPTION  消耗账单",
+          "example": "BILL",
+          "member": "string",
+          "name": "BillType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "COST 原价，REAL_COST 实际费用，CASH 现金，INCENTIVE 赠送金，VOUCHER 代金券，TRANSFER 分成金，TAX 税，AMOUNT_BEFORE_TAX 现金支付(税前)",
+          "example": "COST",
+          "member": "string",
+          "name": "FeeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "阈值提醒",
+          "example": "无",
+          "member": "BudgetWarn",
+          "name": "WarnJson",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预算备注",
+          "example": "使用使用api创建预算信息",
+          "member": "string",
+          "name": "BudgetNote",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预算维度范围条件",
+          "example": "无",
+          "member": "BudgetConditionsForm",
+          "name": "DimensionsRange",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "波动提醒",
+          "example": "无",
+          "member": "WaveThresholdForm",
+          "name": "WaveThresholdJson",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBudgetResponse": {
+      "document": "ModifyBudget返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新预算返回信息",
+          "example": "无",
+          "member": "BudgetInfoApiResponse",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "update success\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "信息提示",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyGatherRuleRequest": {
       "document": "ModifyGatherRule请求参数结构体",
       "members": [
@@ -15341,6 +17168,34 @@
         }
       ],
       "type": "object"
+    },
+    "OrderDto": {
+      "document": "字段排序",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "Column",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否升序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Asc",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PayDealsRequest": {
       "document": "PayDeals请求参数结构体",
@@ -16034,6 +17889,34 @@
       ],
       "usage": "out"
     },
+    "TagsForm": {
+      "document": "预算管理自定义费用范围，tag 参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "UsageDetails": {
       "document": "购买商品信息",
       "members": [
@@ -16351,6 +18234,56 @@
         }
       ],
       "usage": "out"
+    },
+    "WaveThresholdForm": {
+      "document": "阈值波动预警信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ACTUAL 实际金额，FORECAST 预测金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACTUAL",
+          "member": "string",
+          "name": "WarnType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "波动阈值（大于等于0）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "Threshold",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警类型：chain 环比，yoy 同比，fix 固定值\n（支持类型：日环比 chain day，日同比周维度 chain weekday，日同比月维度 yoy  day，日固定值 fix day，月环比 chain month，月固定值 fix month）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "chain",
+          "member": "string",
+          "name": "MetaType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警维度：day 日，month 月，weekday 周\n（支持类型：日环比 chain day，日同比周维度 chain weekday，日同比月维度 yoy  day，日固定值 fix day，月环比 chain month，月固定值 fix month）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "day",
+          "member": "string",
+          "name": "PeriodType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"
