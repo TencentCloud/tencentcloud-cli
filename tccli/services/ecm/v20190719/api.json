@@ -14742,26 +14742,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签的键。",
-          "example": "",
+          "document": "标签的键。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key-xxxx",
           "member": "string",
           "name": "TagKey",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "标签的值。",
-          "example": "",
+          "document": "标签的值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value-xxxx",
           "member": "string",
           "name": "TagValue",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TagSpecification": {
       "document": "资源类型的Tag",

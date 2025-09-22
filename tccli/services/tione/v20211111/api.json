@@ -8056,6 +8056,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否返回热备资源组",
+          "example": "false",
+          "member": "bool",
+          "name": "IsReturnToHotBackup",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12127,6 +12137,16 @@
           "name": "IsHotBackupResourceGroup",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组负责人",
+          "example": "无",
+          "member": "ResourceGroupSupervisor",
+          "name": "Supervisors",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

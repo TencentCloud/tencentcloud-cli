@@ -30662,7 +30662,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "rasp当前最大cpu限制，0<cpu<=100，默认100表示不限制",
+          "document": "rasp当前最大cpu限制，大于0，小于等于100，默认100表示不限制",
           "example": "100",
           "member": "uint64",
           "name": "RaspMaxCpu",
@@ -48712,7 +48712,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "rasp当前最大cpu限制，0<cpu<=100，默认100表示不限制",
+          "document": "rasp当前最大cpu限制，大于0，小于等于100，默认100表示不限制",
           "example": "80",
           "member": "uint64",
           "name": "RaspMaxCpu",

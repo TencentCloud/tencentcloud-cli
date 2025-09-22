@@ -8,14 +8,14 @@
       "status": "online"
     },
     "QueryHunyuanTo3DProJob": {
-      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供3个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "QueryHunyuanTo3DProJobRequest",
       "name": "查询混元生3D专业版任务",
       "output": "QueryHunyuanTo3DProJobResponse",
       "status": "online"
     },
     "QueryHunyuanTo3DRapidJob": {
-      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供3个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "QueryHunyuanTo3DRapidJobRequest",
       "name": "查询混元生3D极速版任务",
       "output": "QueryHunyuanTo3DRapidJobResponse",
@@ -29,14 +29,14 @@
       "status": "online"
     },
     "SubmitHunyuanTo3DProJob": {
-      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供3个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "SubmitHunyuanTo3DProJobRequest",
       "name": "提交混元生3D专业版任务",
       "output": "SubmitHunyuanTo3DProJobResponse",
       "status": "online"
     },
     "SubmitHunyuanTo3DRapidJob": {
-      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供3个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "SubmitHunyuanTo3DRapidJobRequest",
       "name": "提交混元生3D极速版任务",
       "output": "SubmitHunyuanTo3DRapidJobResponse",

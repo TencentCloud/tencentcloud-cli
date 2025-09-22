@@ -145,7 +145,7 @@
     "GetFlowStatisticByGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowStatisticByGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"cliGrp-xf8rboasbh\",\n    \"BeginTime\": 1711296000,\n    \"EndTime\": 1711987200,\n    \"Type\": 1,\n    \"TimeGranularity\": 2,\n    \"AccessRegion\": \"MC\",\n    \"GatewayType\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowStatisticByGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"cliGrp-xf8rboasbh\",\n    \"BeginTime\": 1711296000,\n    \"EndTime\": 1711987200,\n    \"Type\": 1,\n    \"TimeGranularity\": 2,\n    \"AccessRegion\": \"MC\",\n    \"MpApplicationId\": \"mna-w795bzezug\",\n    \"GatewayType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"AvgValue\": 154434162.5,\n        \"MaxValue\": 305576473,\n        \"NetDetails\": [\n            {\n                \"Current\": 305576473,\n                \"Time\": \"1711555200\"\n            },\n            {\n                \"Current\": 3291852,\n                \"Time\": \"1711641600\"\n            }\n        ],\n        \"RequestId\": \"e5b650a9-d994-439f-9132-3e5c56054903\",\n        \"TotalValue\": 308868325\n    }\n}",
         "title": "根据分组获取用量统计信息"
       }

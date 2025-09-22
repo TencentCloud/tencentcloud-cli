@@ -12,6 +12,7 @@ tccli mna GetFlowStatisticByGroup --cli-unfold-argument  \
     --Type 1 \
     --TimeGranularity 2 \
     --AccessRegion MC \
+    --MpApplicationId mna-w795bzezug \
     --GatewayType 0
 ```
 

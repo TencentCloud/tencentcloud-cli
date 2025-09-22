@@ -596,6 +596,15 @@
         },
         {
           "disabled": false,
+          "document": "自定义拦截哪些告警码，不填默认拦截所有告警码",
+          "example": "[-9101]",
+          "member": "int64",
+          "name": "SelectedWarningCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "透传字段，在获取验证结果时返回，最长1024位。",
           "example": "1",
           "member": "string",
@@ -629,7 +638,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标识一次SDK核验流程的令牌，有效时间为7,200秒。流程结束后可用该令牌获取核验结果信息。",
+          "document": "标识一次SDK核验流程的令牌，有效时间为10分钟。流程结束后可用该令牌获取核验结果信息。",
           "example": "A561B769-C347-4724-A69A-6C3B3483E107",
           "member": "string",
           "name": "SdkToken",
@@ -712,7 +721,7 @@
         },
         {
           "disabled": false,
-          "document": "标识一次Web核验流程的令牌，有效时间为7,200秒。流程结束后可用该令牌获取核验结果信息。",
+          "document": "标识一次Web核验流程的令牌，有效时间为10分钟。流程结束后可用该令牌获取核验结果信息。",
           "example": "81EEF678-28EE-4759-A82E-6CBBBE6BC442",
           "member": "string",
           "name": "BizToken",
@@ -4724,7 +4733,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "活体人脸比对SDK流程的标识，调用GetFaceIdTokenIntl接口时生成。\t",
+          "document": "活体人脸比对SDK流程的标识，调用GetFaceIdTokenIntl接口时生成，支持查询3天内生成的SdkToken对应的核身结果。\t",
           "example": "aeee6d62-b2b2-4634-9662-919a5ac729ab",
           "member": "string",
           "name": "SdkToken",
@@ -5140,7 +5149,7 @@
         {
           "disabled": false,
           "document": "比对照片的base64编码，用于“活体比对”模式。当参数CheckMode为“compare”时，本参数必传。",
-          "example": "\t/9j/4AAQSkZJRg.....s97n//2Q==",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -5181,7 +5190,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "SdkToken，用来串联核身流程，通过该Token可以拉取核身结果",
+          "document": "SdkToken，用来串联核身流程，通过该Token可以拉取核身结果，每个SdkToken的有效期为10分钟。",
           "example": "0749c982-499e-4d1d-9e6a-103390933016",
           "member": "string",
           "name": "SdkToken",
@@ -6588,7 +6597,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "点头确认模式下，系统语音播报使用的问题文本，问题最大长度为150个字符。",
+          "document": "点头确认模式下，系统语音播报使用的问题文本，问题最大长度为250个字符。",
           "example": "请问您本次业务是本人自愿办理吗？如是，请点头确认。",
           "member": "string",
           "name": "Text",
@@ -6665,7 +6674,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当选择语音问答模式时，系统自动播报的问题文本。\n- 最大长度为150个字符。",
+          "document": "当选择语音问答模式时，系统自动播报的问题文本。\n- 最大长度为250个字符。",
           "example": "请问您本次业务是本人自愿办理吗？如是，请回复“我同意”。",
           "member": "string",
           "name": "Question",
@@ -6675,7 +6684,7 @@
         {
           "disabled": false,
           "document": "当选择语音问答模式时，用于判断用户回答是否通过的标准答案列表。\n- 传入后可自动判断用户回答文本是否在标准文本列表中。\n- 列表长度最大为50，单个答案长度限制10个字符。",
-          "example": "“同意”，“我同意”，“确认”，“我确认”",
+          "example": "[\"同意\", \"我同意\", \"确认\", \"我确认\"]",
           "member": "string",
           "name": "Answers",
           "required": true,

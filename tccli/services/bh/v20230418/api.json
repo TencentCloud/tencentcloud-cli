@@ -982,7 +982,7 @@
         {
           "disabled": false,
           "document": "关联的用户列表",
-          "example": "[{\"UserName\":\"zhangsan\"}]",
+          "example": "无",
           "member": "User",
           "name": "UserSet",
           "output_required": true,
@@ -992,7 +992,7 @@
         {
           "disabled": false,
           "document": "关联的用户组列表",
-          "example": "[{\"Id\":1,\"Name\":\"运维组\"}]",
+          "example": "无",
           "member": "Group",
           "name": "UserGroupSet",
           "output_required": true,
@@ -1002,7 +1002,7 @@
         {
           "disabled": false,
           "document": "关联的资产列表",
-          "example": "[{\"Id\":1,\"InstanceId\":\"ins-c6nx\"}]",
+          "example": "无",
           "member": "Device",
           "name": "DeviceSet",
           "output_required": true,
@@ -1012,7 +1012,7 @@
         {
           "disabled": false,
           "document": "关联的资产组列表",
-          "example": "[{\"Id\":1,\"Name\":\"运维组\"}]",
+          "example": "无",
           "member": "Group",
           "name": "DeviceGroupSet",
           "output_required": true,
@@ -1032,7 +1032,7 @@
         {
           "disabled": false,
           "document": "关联的高危命令模板列表",
-          "example": "[{\"Id\":1,\"Name\":\"高危命令模板\"}]",
+          "example": "无",
           "member": "CmdTemplate",
           "name": "CmdTemplateSet",
           "output_required": true,
@@ -1122,7 +1122,7 @@
         {
           "disabled": false,
           "document": "所属部门的信息",
-          "example": "{\"Id\":1,\"Name\":1}",
+          "example": "无",
           "member": "Department",
           "name": "Department",
           "output_required": false,
@@ -1142,7 +1142,7 @@
         {
           "disabled": false,
           "document": "关联的数据库高危命令列表",
-          "example": "[{\"TemplateId\":\"temp-B5J6dasT5P\",\"TemplateName\":\"访问控制模板\"}]",
+          "example": "无",
           "member": "ACTemplate",
           "name": "ACTemplateSet",
           "output_required": false,
@@ -1172,7 +1172,7 @@
         {
           "disabled": false,
           "document": "关联的应用资产列表",
-          "example": "[{\"Id\":1,\"InstanceId\":\"web_c6nx\"}]",
+          "example": "无",
           "member": "AppAsset",
           "name": "AppAssetSet",
           "output_required": false,
@@ -4193,6 +4193,15 @@
         },
         {
           "disabled": false,
+          "document": "访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "StatusSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "部门ID，用于过滤属于某个部门的访问权限",
           "example": "1.2.3",
           "member": "string",
@@ -4212,7 +4221,7 @@
         {
           "disabled": false,
           "document": "过滤数组",
-          "example": "[{\"Name\":\"InstanceId\", \"Values\":[\"ins-aadd-adexd\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4237,7 +4246,7 @@
         {
           "disabled": false,
           "document": "访问权限列表",
-          "example": "[{\"Id\":1,\"Name\":\"运维权限\"}]",
+          "example": "无",
           "member": "Acl",
           "name": "AclSet",
           "output_required": true,
@@ -4479,6 +4488,15 @@
         },
         {
           "disabled": false,
+          "document": "命令模板类型 1-内置模板 2-自定义模板",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "TypeSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "分页偏移位置，默认值为0",
           "example": "0",
           "member": "uint64",
@@ -4504,7 +4522,7 @@
         {
           "disabled": false,
           "document": "命令模板列表",
-          "example": "[{\"Id\":1,\"Name\":\"cmdName\"}]",
+          "example": "无",
           "member": "CmdTemplate",
           "name": "CmdTemplateSet",
           "output_required": true,
@@ -4937,8 +4955,35 @@
         },
         {
           "disabled": false,
+          "document": "资产所属云账号id",
+          "example": "[2,3]",
+          "member": "uint64",
+          "name": "AccountIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "云厂商类型，1-腾讯云，2-阿里云",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "ProviderTypeSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "CloudDeviceStatusSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系",
-          "example": "[\"TagKey\":\"业务部\"，“ TagValue”:[\"研发部\", \"运营部\"]]",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -4947,7 +4992,7 @@
         {
           "disabled": false,
           "document": "过滤数组。支持的Name：\nBindingStatus 绑定状态",
-          "example": "[\"Name\":\"BindingStatus\",\"Values\":[\"unbound\"]]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4972,7 +5017,7 @@
         {
           "disabled": false,
           "document": "资产信息列表",
-          "example": "[{\"Id\":1,\"InstanceId\":\"ins-c6nx\"}]",
+          "example": "无",
           "member": "Device",
           "name": "DeviceSet",
           "output_required": true,
@@ -5239,12 +5284,30 @@
         },
         {
           "disabled": false,
+          "document": "登录入口：1-字符界面,2-图形界面，3-web页面, 4-API",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "EntrySet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "操作结果，1-成功，2-失败",
           "example": "1",
           "member": "uint64",
           "name": "Result",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作结果，1-成功，2-失败",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "ResultSet",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -5273,7 +5336,7 @@
         {
           "disabled": false,
           "document": "登录日志列表",
-          "example": "[{\"UserName\":\"zhangsan\",\"RealName\":\"张三\"}]",
+          "example": "无",
           "member": "LoginEvent",
           "name": "LoginEventSet",
           "output_required": true,
@@ -5358,12 +5421,30 @@
         },
         {
           "disabled": false,
+          "document": "操作类型，参考DescribeOperationType返回结果",
+          "example": "[100,300]",
+          "member": "uint64",
+          "name": "KindSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "操作结果，1-成功，2-失败",
           "example": "1",
           "member": "uint64",
           "name": "Result",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作结果，1-成功，2-失败",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "ResultSet",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -5392,7 +5473,7 @@
         {
           "disabled": false,
           "document": "操作日志列表",
-          "example": "[{\"UserName\":\"zhangsan\",\"RealName\":\"张三\"}]",
+          "example": "无",
           "member": "OperationEvent",
           "name": "OperationEventSet",
           "output_required": true,
@@ -5979,6 +6060,16 @@
         },
         {
           "disabled": false,
+          "document": "地域名称",
+          "example": "广州",
+          "member": "string",
+          "name": "ApName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "操作系统名称",
           "example": "Centos 7",
           "member": "string",
@@ -6010,7 +6101,7 @@
         {
           "disabled": false,
           "document": "所属资产组列表",
-          "example": "[{\"Id\":1,\"Name\":\"运维组\"}]",
+          "example": "无",
           "member": "Group",
           "name": "GroupSet",
           "output_required": true,
@@ -6050,7 +6141,7 @@
         {
           "disabled": false,
           "document": "堡垒机服务信息，注意没有绑定服务时为null",
-          "example": "{\"ResourceId\":\"bh-saas-1a2b3c\"}",
+          "example": "无",
           "member": "Resource",
           "name": "Resource",
           "output_required": false,
@@ -6060,7 +6151,7 @@
         {
           "disabled": false,
           "document": "资产所属部门",
-          "example": "{\"id\":1,\"Name\":\"运维部门\"}",
+          "example": "无",
           "member": "Department",
           "name": "Department",
           "output_required": false,
@@ -6070,7 +6161,7 @@
         {
           "disabled": false,
           "document": "数据库资产的多节点",
-          "example": "[127.0.0.1:2001,127.0.0.1:2002]",
+          "example": "[\"127.0.0.1:2001\"]",
           "member": "string",
           "name": "IpPortSet",
           "output_required": false,
@@ -6183,6 +6274,56 @@
           "example": "20",
           "member": "uint64",
           "name": "TotalPodCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云账号id",
+          "example": "1",
+          "member": "uint64",
+          "name": "CloudAccountId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云账号名称",
+          "example": "开发",
+          "member": "string",
+          "name": "CloudAccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商类型1-腾讯云，2-阿里云",
+          "example": "1",
+          "member": "uint64",
+          "name": "ProviderType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商名称",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "ProviderName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期",
+          "example": "1",
+          "member": "uint64",
+          "name": "SyncCloudDeviceStatus",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6413,7 +6554,7 @@
         {
           "disabled": false,
           "document": "资产多节点：字段ip和端口",
-          "example": "[127.0.0.1:2001,127.0.0.1:2002]",
+          "example": "[\"127.0.0.1:2001\",\"127.0.0.1:2002\"]",
           "member": "string",
           "name": "IpPortSet",
           "required": false,
@@ -6443,6 +6584,60 @@
           "example": "bh-redis-test.crt",
           "member": "string",
           "name": "SSLCertName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资产实例id",
+          "example": "ins-dftadff",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资产所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ApCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域名称",
+          "example": "广州",
+          "member": "string",
+          "name": "ApName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资产所属VPC",
+          "example": "vpc-sduahd",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资产所属子网",
+          "example": "subnet-duhxse",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公网IP",
+          "example": "192.182.23.23",
+          "member": "string",
+          "name": "PublicIp",
           "required": false,
           "type": "string"
         }
@@ -6590,11 +6785,20 @@
         {
           "disabled": false,
           "document": "资产参数列表",
-          "example": "[{\"OsName\":\"Linux\",\"Ip\":\"192.168.1.0\",\"Port\":22}]",
+          "example": "无",
           "member": "ExternalDevice",
           "name": "DeviceSet",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": " 资产所属云账号id",
+          "example": "1",
+          "member": "uint64",
+          "name": "AccountId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8743,6 +8947,16 @@
         },
         {
           "disabled": false,
+          "document": "堡垒机内网ip自定义域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "是否共享clb，true-共享clb，false-独享clb",
           "example": "false",
           "member": "bool",
@@ -9566,8 +9780,17 @@
         },
         {
           "disabled": false,
+          "document": "1-已执行，  2-被阻断",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "AuditActionSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "以Protocol和Method为条件查询",
-          "example": "[{\"Protocol\":\"SFTP\", \"Method\": [1,2]}]",
+          "example": "无",
           "member": "SearchFileTypeFilter",
           "name": "TypeFilters",
           "required": false,
@@ -9592,7 +9815,7 @@
         {
           "disabled": false,
           "document": "某会话的文件操作列表",
-          "example": "[{\"Sid\":\"bh-test-sid-1a2b3c\",\"FileCurr\":\"bhtest1.txt\",\"FileNew\":\"bhtest2.txt\"}]",
+          "example": "无",
           "member": "SearchFileBySidResult",
           "name": "SearchFileBySidResult",
           "output_required": false,
@@ -10403,6 +10626,15 @@
         },
         {
           "disabled": false,
+          "document": "状态，1为活跃，2为结束，3为强制离线",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "StatusSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话",
           "example": "bh-test-sid-1a2b3c",
           "member": "string",
@@ -10436,6 +10668,15 @@
           "name": "DeviceKind",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资产类型 Linux, EKS,TKE",
+          "example": "[\"Linux\"]",
+          "member": "string",
+          "name": "DeviceKindSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10456,7 +10697,7 @@
         {
           "disabled": false,
           "document": "会话信息列表",
-          "example": "[{\"Id\":\"bh-test-sid-1a2b3c\",\"Protocol\":\"SSH\"}]",
+          "example": "无",
           "member": "SessionResult",
           "name": "SessionSet",
           "output_required": true,

@@ -2022,6 +2022,15 @@
           "name": "GatewayType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID, 查询分组流量时无需使用。 查询应用流量时该字段为应用ID，GroupId 填写 \"-1\"",
+          "example": "mna-test1",
+          "member": "string",
+          "name": "MpApplicationId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2032,7 +2041,7 @@
         {
           "disabled": false,
           "document": "流量详细信息",
-          "example": "无",
+          "example": "{         \"Current\": 305576473,         \"Time\": \"1711555200\"       },       {         \"Current\": 3291852,         \"Time\": \"1711641600\"       }",
           "member": "NetDetails",
           "name": "NetDetails",
           "output_required": true,

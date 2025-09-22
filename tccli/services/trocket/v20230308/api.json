@@ -8684,7 +8684,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "xxx",
+          "example": "88cce1ff-b043-404f-8dc5-2cfea60bfd31",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -8694,7 +8694,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "rmq-xxxx",
+          "example": "rmq-1rgrxm9a8",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -8734,7 +8734,7 @@
         {
           "disabled": false,
           "document": "任务状态： 0，迁移中 1，迁移成功 2，迁移完成，只有部分数据完成迁移",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -8744,7 +8744,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "1758510006847",
           "member": "int64",
           "name": "CreateTime",
           "output_required": true,
