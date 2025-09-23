@@ -10391,6 +10391,16 @@
         },
         {
           "disabled": false,
+          "document": "事件名称",
+          "example": "源码泄露",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "事件描述",
           "example": "源码泄露",
           "member": "string",

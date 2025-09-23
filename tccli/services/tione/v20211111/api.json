@@ -4550,6 +4550,36 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "资源组是否开启配额管理",
+          "example": "false",
+          "member": "bool",
+          "name": "QuotaEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组默认配额",
+          "example": "无",
+          "member": "ResourceQuota",
+          "name": "DefaultResourceQuota",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "按之账号配置的配额",
+          "example": "无",
+          "member": "ResourceQuota",
+          "name": "ResourceQuotas",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -12323,6 +12353,78 @@
         }
       ],
       "usage": "out"
+    },
+    "ResourceQuota": {
+      "document": "资源组配额",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配额ID",
+          "example": "45200e4936",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号UIN",
+          "example": "100013812411",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号名",
+          "example": "user-a",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU卡数，单位为卡",
+          "example": "2.0",
+          "member": "float",
+          "name": "Gpu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU核数，单位为核",
+          "example": "10.0",
+          "member": "float",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存大小，单位为G",
+          "example": "1.0",
+          "member": "float",
+          "name": "Memory",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RestartInfo": {
       "document": "任务重启信息",

@@ -34,6 +34,7 @@ Output:
                 "HubName": "string",
                 "Id": 0,
                 "Keyword": "string",
+                "Name": "string",
                 "Remark": "string",
                 "RiskLevel": 0,
                 "Screenshot": "string",

@@ -4793,7 +4793,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\nzone      String      是否必填：否     （过滤条件）按照可用区英文标识符过滤。\nzone-name      String      是否必填：否     （过滤条件）按照可用区中文名过滤,支持模糊匹配。\nmodule-id      String      是否必填：否     （过滤条件）按照模块ID过滤。\ninstance-id      String      是否必填：否      （过滤条件）按照实例ID过滤。\ninstance-name      String      是否必填：否      （过滤条件）按照实例名称过滤,支持模糊匹配。\nip-address      String      是否必填：否      （过滤条件）按照实例的内网/公网IP过滤。\ninstance-uuid   string 是否必填：否 （过滤条件）按照uuid过滤实例列表。\ninstance-state  string  是否必填：否 （过滤条件）按照实例状态更新实例列表。\ninternet-service-provider      String      是否必填：否      （过滤条件）按照实例公网IP所属的运营商进行过滤。\ntag-key      String      是否必填：否      （过滤条件）按照标签键进行过滤。\ntag:tag-key      String      是否必填：否      （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。\ninstance-family      String      是否必填：否      （过滤条件）按照机型family过滤。\nmodule-name      String      是否必填：否      （过滤条件）按照模块名称过滤,支持模糊匹配。\nimage-id      String      是否必填：否      （过滤条件）按照实例的镜像ID过滤。\nvpc-id String      是否必填：否      （过滤条件）按照实例的vpc id过滤。\nsubnet-id String      是否必填：否      （过滤条件）按照实例的subnet id过滤。\n\n若不传Filters参数则表示查询所有相关的实例信息。\n单次请求的Filter.Values的上限为5。",
-          "example": "{\"Filters\":[{\"Values\":[\"ap-ningbo-ecm2-1\"],\"Name\":\"zone\"}]}",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -12066,7 +12066,7 @@
           "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12076,7 +12076,7 @@
           "example": "无",
           "member": "Country",
           "name": "Country",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12086,7 +12086,7 @@
           "example": "无",
           "member": "Area",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12096,7 +12096,7 @@
           "example": "无",
           "member": "Province",
           "name": "Province",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12106,7 +12106,7 @@
           "example": "无",
           "member": "City",
           "name": "City",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12116,17 +12116,17 @@
           "example": "无",
           "member": "RegionInfo",
           "name": "RegionInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例是否支持ipv6\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "Ipv6Supported",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
