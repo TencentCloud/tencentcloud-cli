@@ -700,6 +700,13 @@
       "output": "DescribeStudioProductResponse",
       "status": "online"
     },
+    "DescribeSubscribedTopicPolicy": {
+      "document": "本接口（DescribeSubscribedTopicPolicy）用于获取设备已订阅Topic列表",
+      "input": "DescribeSubscribedTopicPolicyRequest",
+      "name": "获取设备已订阅Topic列表",
+      "output": "DescribeSubscribedTopicPolicyResponse",
+      "status": "online"
+    },
     "DescribeTWeSeeConfig": {
       "document": "拉取 TWeSee 配置",
       "input": "DescribeTWeSeeConfigRequest",
@@ -9538,6 +9545,52 @@
       ],
       "type": "object"
     },
+    "DescribeSubscribedTopicPolicyRequest": {
+      "document": "DescribeSubscribedTopicPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "TRTC3ZCK",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "device001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscribedTopicPolicyResponse": {
+      "document": "DescribeSubscribedTopicPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已订阅Topic信息",
+          "example": "无",
+          "member": "SubscribedTopicItem",
+          "name": "Topics",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTWeSeeConfigRequest": {
       "document": "DescribeTWeSeeConfig请求参数结构体",
       "members": [
@@ -17730,6 +17783,22 @@
         }
       ],
       "type": "object"
+    },
+    "SubscribedTopicItem": {
+      "document": "已订阅Topic信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Topic名称",
+          "example": "$thing/down/property/TRTC3ZC/dev",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TRTCParams": {
       "document": "TRTC 的参数 可以用来加入房间",

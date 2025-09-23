@@ -2571,7 +2571,7 @@
         {
           "disabled": false,
           "document": "非自定义类型规则列表",
-          "example": "[{\"Ioc\":\"1.2.3.4\",\"DirectionList\":\"0\",\"EndTime\":\"3000-01-01 00:00:00\",\"Comment\":\"test\"}]",
+          "example": "无",
           "member": "BanAndAllowRule",
           "name": "Rules",
           "required": true,
@@ -2588,7 +2588,7 @@
         },
         {
           "disabled": false,
-          "document": "是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据",
+          "document": "删除白名单冲突地址并继续添加/删除封禁列表冲突地址并继续添加；表示是否覆盖重复数据，1为覆盖，非1不覆盖，跳过重复数据",
           "example": "0",
           "member": "int64",
           "name": "CoverDuplicate",
@@ -4269,7 +4269,7 @@
         {
           "disabled": false,
           "document": "关联任务详情",
-          "example": "[{\"TaskId\":0,\"TaskName\":\"test\",\"LastTime\":\"2024-09-22 11:22:11\"}]",
+          "example": "无",
           "member": "BetaInfoByACL",
           "name": "BetaList",
           "output_required": true,
@@ -4372,6 +4372,26 @@
           "example": "hn43",
           "member": "string",
           "name": "CityKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则创建时间",
+          "example": "2025-07-24 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则最近更新时间",
+          "example": "2025-07-24 01:00:00",
+          "member": "string",
+          "name": "UpdateTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6381,7 +6401,7 @@
         {
           "disabled": false,
           "document": "每日增加日志存储量柱状图",
-          "example": "[{\"NetFlowSize\":232850065,\"OperateSize\":59072400,\"IdsSize\":584894,\"AclSize\":22095186,\"Time\":\"2024-10-25 00:00:00\"},{\"NetFlowSize\":226512606,\"OperateSize\":1822500,\"IdsSize\":308073,\"AclSize\":56409259,\"Time\":\"2024-10-26 00:00:00\"},{\"NetFlowSize\":312016348,\"OperateSize\":1591200,\"IdsSize\":1136827,\"AclSize\":89038893,\"Time\":\"2024-10-27 00:00:00\"},{\"NetFlowSize\":263122695,\"OperateSize\":1791000,\"IdsSize\":1633817,\"AclSize\":112221690,\"Time\":\"2024-10-28 00:00:00\"},{\"NetFlowSize\":314737760,\"OperateSize\":4045500,\"IdsSize\":11400888,\"AclSize\":58205747,\"Time\":\"2024-10-29 00:00:00\"},{\"NetFlowSize\":1000469317,\"OperateSize\":3949200,\"IdsSize\":69040,\"AclSize\":51893,\"Time\":\"2024-10-30 00:00:00\"},{\"NetFlowSize\":17837072505,\"OperateSize\":1984500,\"IdsSize\":5723094,\"AclSize\":4378551511,\"Time\":\"2024-10-31 00:00:00\"}]",
+          "example": "无",
           "member": "StorageHistogram",
           "name": "TimeHistogram",
           "output_required": true,
@@ -6391,7 +6411,7 @@
         {
           "disabled": false,
           "document": "柱形图格式数据",
-          "example": "{\"StorageType\":[\"访问控制日志\",\"入侵防御日志\",\"流量日志\",\"操作日志\"],\"Dates\":[\"10-25\",\"10-26\",\"10-27\",\"10-28\",\"10-29\",\"10-30\",\"10-31\"],\"Data\":[{\"List\":[22095186,56409259,89038893,112221690,58205747,51893,4378551511]},{\"List\":[584894,308073,1136827,1633817,11400888,69040,5723094]},{\"List\":[232850065,226512606,312016348,263122695,314737760,1000469317,17837072505]},{\"List\":[59072400,1822500,1591200,1791000,4045500,3949200,1984500]}]}",
+          "example": "无",
           "member": "StorageHistogramShow",
           "name": "TimeHistogramShow",
           "output_required": false,
@@ -6404,6 +6424,36 @@
           "example": "1",
           "member": "int64",
           "name": "ArrearsStopWriting",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NDR流量日志存储量，单位B",
+          "example": "1024",
+          "member": "int64",
+          "name": "NDRNetFlowSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NDR风险日志存储量，单位B",
+          "example": "1024",
+          "member": "int64",
+          "name": "NDRRiskSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NDR日志存储天数",
+          "example": "30",
+          "member": "int64",
+          "name": "NDRStorageDay",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -8725,7 +8775,7 @@
         {
           "disabled": false,
           "document": "自动化任务信息",
-          "example": "[{\"TaskId\":\"9001\",\"TaskName\":\"autotest\",\"LastTime\":\"1999-01-01 00:00:01\"}]",
+          "example": "无",
           "member": "EnterpriseSecurityGroupRuleBetaInfo",
           "name": "BetaList",
           "output_required": false,
@@ -8745,11 +8795,31 @@
         {
           "disabled": false,
           "document": "域名解析的IP统计",
-          "example": "{\"ValidCount\":10,\"InvalidCount\":10}",
+          "example": "无",
           "member": "SgDnsParseCount",
           "name": "DnsParseCount",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则创建时间",
+          "example": "2025-07-24 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则最近更新时间",
+          "example": "2025-07-24 01:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -14092,6 +14162,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "NDR流量日志存储量，单位B",
+          "example": "1024",
+          "member": "int64",
+          "name": "NDRNetflowSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NDR风险日志存储量，单位B",
+          "example": "1024",
+          "member": "int64",
+          "name": "NDRRiskSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15495,7 +15585,7 @@
         {
           "disabled": false,
           "document": "规则顺序，-1表示最低，1表示最高",
-          "example": "-1",
+          "example": "1",
           "member": "int64",
           "name": "OrderIndex",
           "output_required": true,
@@ -15605,7 +15695,7 @@
         {
           "disabled": false,
           "document": "beta任务详情",
-          "example": "[{\"TaskId\":\"9001\",\"TaskName\":\"autotest\",\"LastTime\":\"1999-01-01 00:00:01\"}]",
+          "example": "无",
           "member": "BetaInfoByACL",
           "name": "BetaList",
           "output_required": true,
@@ -15677,6 +15767,28 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则创建时间",
+          "example": "2025-07-24 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则最近更新时间",
+          "example": "2025-07-24 01:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

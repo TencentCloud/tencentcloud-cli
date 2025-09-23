@@ -914,6 +914,14 @@
         "title": "获取产品详情"
       }
     ],
+    "DescribeSubscribedTopicPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubscribedTopicPolicy\n<公共请求参数>\n\n{\n    \"ProductId\": \"TRTC3ZCK4P\",\n    \"DeviceName\": \"dev002\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request-id\",\n        \"Topics\": [\n            {\n                \"TopicName\": \"$thing/down/property/TRTC3ZCK4P/dev002\"\n            },\n            {\n                \"TopicName\": \"$video/down/service/TRTC3ZCK4P/dev002\"\n            }\n        ]\n    }\n}",
+        "title": "获取设备已订阅Topic列表"
+      }
+    ],
     "DescribeTWeSeeConfig": [
       {
         "document": "查询 TWeSee 配置",

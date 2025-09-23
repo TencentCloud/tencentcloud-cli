@@ -66,7 +66,7 @@
     "CreateWorkflow": {
       "document": "创建工作流",
       "input": "CreateWorkflowRequest",
-      "name": "创建工作流openapi",
+      "name": "创建工作流",
       "output": "CreateWorkflowResponse",
       "status": "online"
     },
@@ -136,7 +136,7 @@
     "DeleteWorkflow": {
       "document": "删除工作流",
       "input": "DeleteWorkflowRequest",
-      "name": "删除工作流openapi",
+      "name": "删除工作流",
       "output": "DeleteWorkflowResponse",
       "status": "online"
     },
@@ -248,7 +248,7 @@
     "GetWorkflow": {
       "document": "获取工作流信息",
       "input": "GetWorkflowRequest",
-      "name": "获取工作流调度信息openapi",
+      "name": "获取工作流调度信息",
       "output": "GetWorkflowResponse",
       "status": "online"
     },
@@ -409,7 +409,7 @@
     "ListWorkflows": {
       "document": "查询工作流列表",
       "input": "ListWorkflowsRequest",
-      "name": "查询工作流列表 openapi",
+      "name": "查询工作流列表",
       "output": "ListWorkflowsResponse",
       "status": "online"
     },
@@ -528,7 +528,7 @@
     "UpdateWorkflow": {
       "document": "更新工作流（包括工作流基本信息与工作流参数）",
       "input": "UpdateWorkflowRequest",
-      "name": "更新工作流信息openapi",
+      "name": "更新工作流信息",
       "output": "UpdateWorkflowResponse",
       "status": "online"
     },

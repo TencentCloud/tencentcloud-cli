@@ -6407,10 +6407,120 @@
         },
         {
           "disabled": false,
+          "document": "公共字段",
+          "example": "无",
+          "member": "DisplayToolCommon",
+          "name": "DisplayToolCommon",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件名称",
+          "example": "源码泄露",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件描述",
+          "example": "源码泄露",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源",
+          "example": "http://github.com/xxx",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级：1-低危 2-中危 3-高危 4-严重 5-误报",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仓库名称",
+          "example": "http://github.com/test.git",
+          "member": "string",
+          "name": "HubName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "链接",
           "example": "http://github.com/xxx",
           "member": "string",
           "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "截图",
+          "example": "http://test.com/xx.png",
+          "member": "string",
+          "name": "Screenshot",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "建议",
+          "example": "建议删除",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "AKID2534xxx",
+          "member": "string",
+          "name": "Keyword",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态：0-待处理 1-处理中 2-已处理",
+          "example": "0",
+          "member": "int64",
+          "name": "HandlingStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "测试数据",
+          "member": "string",
+          "name": "Remark",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6433,10 +6543,110 @@
         },
         {
           "disabled": false,
+          "document": "公共字段",
+          "example": "无",
+          "member": "DisplayToolCommon",
+          "name": "DisplayToolCommon",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件名称",
+          "example": "数据泄露",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件描述",
+          "example": "数据泄露",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源",
+          "example": "http://test.com/xx",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级：1-低危 2-中危 3-高危 4-严重 5-误报",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "链接",
           "example": "http://test.com/xx",
           "member": "string",
           "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "截图",
+          "example": "http://test.com/xx.png",
+          "member": "string",
+          "name": "Screenshot",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "建议",
+          "example": "建议删除",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "AKID4513xxx",
+          "member": "string",
+          "name": "Keyword",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态：0-待处理 1-处理中 2-已处理",
+          "example": "0",
+          "member": "int64",
+          "name": "HandlingStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "测试数据",
+          "member": "string",
+          "name": "Remark",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6459,10 +6669,90 @@
         },
         {
           "disabled": false,
+          "document": "公共字段",
+          "example": "无",
+          "member": "DisplayToolCommon",
+          "name": "DisplayToolCommon",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "邮箱",
           "example": "test@qq.com",
           "member": "string",
           "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "qqtest",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源",
+          "example": "http://test.com/xx",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级：1-低危 2-中危 3-高危 4-严重 5-误报",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "建议",
+          "example": "建议删除",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "test@qq.com",
+          "member": "string",
+          "name": "Keyword",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态：0-待处理 1-处理中 2-已处理",
+          "example": "0",
+          "member": "int64",
+          "name": "HandlingStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "测试数据",
+          "member": "string",
+          "name": "Remark",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

@@ -57,9 +57,9 @@
       "status": "online"
     },
     "DeleteGroup": {
-      "document": "删除该人员库及包含的所有的人员。同时，人员对应的所有人脸信息将被删除。若某人员同时存在多个人员库中，该人员不会被删除，但属于该人员库中的自定义描述字段信息会被删除，属于其他人员库的自定义描述字段信息不受影响。\n",
+      "document": "删除该人员库及包含的所有的人员。同时，人员对应的所有人脸信息将被删除。若某人员同时存在多个人员库中，该人员不会被删除，但属于该人员库中的自定义描述字段信息会被删除，属于其他人员库的自定义描述字段信息不受影响。",
       "input": "DeleteGroupRequest",
-      "name": "删除人员库",
+      "name": "人员库删除",
       "output": "DeleteGroupResponse",
       "status": "online"
     },
@@ -129,7 +129,7 @@
     "GetPersonList": {
       "document": "获取指定人员库中的人员列表。",
       "input": "GetPersonListRequest",
-      "name": "获取人员列表",
+      "name": "人员列表",
       "output": "GetPersonListResponse",
       "status": "online"
     },
@@ -1109,7 +1109,7 @@
         {
           "disabled": false,
           "document": "人员库ID。",
-          "example": "",
+          "example": "ZhuYuanDormitoryNo1",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -2662,7 +2662,7 @@
         {
           "disabled": false,
           "document": "人员ID",
-          "example": "",
+          "example": "1002",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -2671,7 +2671,7 @@
         {
           "disabled": false,
           "document": "起始序号，默认值为0",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2680,7 +2680,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认值为10，最大值为100",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2695,27 +2695,30 @@
         {
           "disabled": false,
           "document": "包含此人员的人员库及描述字段内容列表",
-          "example": "",
+          "example": "无",
           "member": "PersonGroupInfo",
           "name": "PersonGroupInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员库总数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "30",
           "member": "uint64",
           "name": "GroupNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "人脸识别服务所用的算法模型版本。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "\"3.0\"",
           "member": "string",
           "name": "FaceModelVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2734,7 +2737,7 @@
         {
           "disabled": false,
           "document": "人员库ID",
-          "example": "",
+          "example": "TencentShenZhenEmployee",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -2749,18 +2752,20 @@
         {
           "disabled": false,
           "document": "人员数量",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "PersonNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸数量",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "FaceNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2779,7 +2784,7 @@
         {
           "disabled": false,
           "document": "人员库ID",
-          "example": "",
+          "example": "ZhuYuanDormitory",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -2788,7 +2793,7 @@
         {
           "disabled": false,
           "document": "起始序号，默认值为0",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2797,7 +2802,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认值为10，最大值为1000",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2812,36 +2817,40 @@
         {
           "disabled": false,
           "document": "返回的人员信息",
-          "example": "",
+          "example": "无",
           "member": "PersonInfo",
           "name": "PersonInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该人员库的人员数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "PersonNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该人员库的人脸数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "FaceNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "人脸识别所用的算法模型版本。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "\"3.0\"",
           "member": "string",
           "name": "FaceModelVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3336,7 +3345,7 @@
         {
           "disabled": false,
           "document": "人员库ID",
-          "example": "",
+          "example": "TencentShenZhenEmployee",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -3345,7 +3354,7 @@
         {
           "disabled": false,
           "document": "人员ID",
-          "example": "",
+          "example": "1001",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -3354,7 +3363,7 @@
         {
           "disabled": false,
           "document": "需要修改的人员描述字段内容，key-value",
-          "example": "",
+          "example": "无",
           "member": "PersonExDescriptionInfo",
           "name": "PersonExDescriptionInfos",
           "required": true,
@@ -3397,22 +3406,20 @@
         {
           "disabled": false,
           "document": "人员描述字段Index，从0开始",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "PersonExDescriptionIndex",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "需要更新的人员描述字段内容",
-          "example": "",
+          "example": "年龄",
           "member": "string",
           "name": "PersonExDescription",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3449,60 +3456,60 @@
         {
           "disabled": false,
           "document": "人员名称",
-          "example": "",
+          "example": "韦小宝",
           "member": "string",
           "name": "PersonName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员Id",
-          "example": "",
+          "example": "1001",
           "member": "string",
           "name": "PersonId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员性别",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Gender",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员描述字段内容",
-          "example": "",
+          "example": "[\"年龄\"]",
           "member": "string",
           "name": "PersonExDescriptions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "包含的人脸照片列表",
-          "example": "",
+          "example": "[\"2877244861637985315\"]",
           "member": "string",
           "name": "FaceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。 \nUnix 纪元时间是 1970 年 1 月 1 日星期四，协调世界时 (UTC) 00:00:00。有关更多信息，请参阅 Unix 时间。",
-          "example": "",
+          "example": "1594642823572",
           "member": "uint64",
           "name": "CreationTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3572,35 +3579,35 @@
       "usage": "out"
     },
     "ResultsReturnsByGroup": {
-      "document": "识别结果。\n",
+      "document": "识别结果。",
       "members": [
         {
           "disabled": false,
           "document": "检测出的人脸框位置。",
-          "example": "",
+          "example": "无",
           "member": "FaceRect",
           "name": "FaceRect",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别结果。",
-          "example": "",
+          "example": "无",
           "member": "GroupCandidate",
           "name": "GroupCandidates",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "检测出的人脸图片状态返回码。0 表示正常。 \n-1601代表不符合图片质量控制要求，此时Candidate内容为空。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "RetCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -4054,7 +4061,7 @@
         {
           "disabled": false,
           "document": "希望搜索的人员库列表，上限60个。",
-          "example": "",
+          "example": "[\"TencentShenZhenEmployee\"]",
           "member": "string",
           "name": "GroupIds",
           "required": true,
@@ -4063,7 +4070,7 @@
         {
           "disabled": false,
           "document": "图片 base64 数据，base64 编码后大小不可超过5M。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -4072,7 +4079,7 @@
         {
           "disabled": false,
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "example": "http://test.image.myqcloud.com/testB.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -4081,7 +4088,7 @@
         {
           "disabled": false,
           "document": "最多识别的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为10。\nMaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要搜索的人脸的数量。\n例：输入的Image或Url中的图片包含多张人脸，设MaxFaceNum=5，则会识别图片中面积最大的5张人脸。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "MaxFaceNum",
           "required": false,
@@ -4090,7 +4097,7 @@
         {
           "disabled": false,
           "document": "人脸长和宽的最小尺寸，单位为像素。默认为34。低于34将影响搜索精度。建议设置为80。",
-          "example": "",
+          "example": "80",
           "member": "uint64",
           "name": "MinFaceSize",
           "required": false,
@@ -4099,7 +4106,7 @@
         {
           "disabled": false,
           "document": "被检测到的人脸，对应最多返回的最相似人员数目。默认值为5，最大值为10。  \n例，设MaxFaceNum为3，MaxPersonNumPerGroup为5，GroupIds长度为3，则最多可能返回3*5*3=45个人员。",
-          "example": "",
+          "example": "5",
           "member": "uint64",
           "name": "MaxPersonNumPerGroup",
           "required": false,
@@ -4108,7 +4115,7 @@
         {
           "disabled": false,
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
@@ -4117,7 +4124,7 @@
         {
           "disabled": false,
           "document": "出参Score中，只有超过FaceMatchThreshold值的结果才会返回。默认为0。",
-          "example": "",
+          "example": "0.0",
           "member": "float",
           "name": "FaceMatchThreshold",
           "required": false,
@@ -4126,7 +4133,7 @@
         {
           "disabled": false,
           "document": "是否返回人员具体信息。0 为关闭，1 为开启。默认为 0。其他非0非1值默认为0",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "NeedPersonInfo",
           "required": false,
@@ -4135,7 +4142,7 @@
         {
           "disabled": false,
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -4150,27 +4157,30 @@
         {
           "disabled": false,
           "document": "搜索的人员库中包含的人员数。若输入图片中所有人脸均不符合质量要求，则返回0。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "PersonNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别结果。",
-          "example": "",
+          "example": "无",
           "member": "ResultsReturnsByGroup",
           "name": "ResultsReturnsByGroup",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸识别所用的算法模型版本。",
-          "example": "",
+          "example": "\"3.0\"",
           "member": "string",
           "name": "FaceModelVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4394,7 +4404,7 @@
         {
           "disabled": false,
           "document": "待验证的人员ID。人员ID具体信息请参考人员库管理相关接口。",
-          "example": "",
+          "example": "2001",
           "member": "string",
           "name": "PersonId",
           "required": true,
@@ -4403,7 +4413,7 @@
         {
           "disabled": false,
           "document": "图片 base64 数据。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -4412,7 +4422,7 @@
         {
           "disabled": false,
           "document": "图片的 Url 。 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -4421,7 +4431,7 @@
         {
           "disabled": false,
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
@@ -4430,7 +4440,7 @@
         {
           "disabled": false,
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -4445,27 +4455,30 @@
         {
           "disabled": false,
           "document": "给定的人脸照片与 PersonId 对应的相似度。若 PersonId 下有多张人脸（Face），会融合多张人脸信息进行验证。",
-          "example": "",
+          "example": "100.0",
           "member": "float",
           "name": "Score",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否为同一人的判断。",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsMatch",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸识别所用的算法模型版本。",
-          "example": "",
+          "example": "\"3.0\"",
           "member": "string",
           "name": "FaceModelVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

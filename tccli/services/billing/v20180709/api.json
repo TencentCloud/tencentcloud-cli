@@ -10125,7 +10125,7 @@
         {
           "disabled": false,
           "document": "当前真实可用余额,单位 分",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "RealBalance",
           "output_required": true,
@@ -10135,7 +10135,7 @@
         {
           "disabled": false,
           "document": "现金账户余额,单位 分",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "CashAccountBalance",
           "output_required": true,
@@ -10145,7 +10145,7 @@
         {
           "disabled": false,
           "document": "收益转入账户余额,单位 分",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "IncomeIntoAccountBalance",
           "output_required": true,
@@ -10155,7 +10155,7 @@
         {
           "disabled": false,
           "document": "赠送账户余额,单位 分",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "PresentAccountBalance",
           "output_required": true,
@@ -10165,7 +10165,7 @@
         {
           "disabled": false,
           "document": "冻结金额,单位 分",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "FreezeAmount",
           "output_required": true,
@@ -10175,7 +10175,7 @@
         {
           "disabled": false,
           "document": "欠费金额,单位 分",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "OweAmount",
           "output_required": true,
@@ -10205,7 +10205,7 @@
         {
           "disabled": false,
           "document": "信用额度,单位 分",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "CreditAmount",
           "output_required": true,
@@ -10215,7 +10215,7 @@
         {
           "disabled": false,
           "document": "可用信用额度,单位 分",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "CreditBalance",
           "output_required": true,
@@ -10225,7 +10225,7 @@
         {
           "disabled": false,
           "document": "真实可用信用额度,单位 分",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "RealCreditBalance",
           "output_required": true,
@@ -12710,7 +12710,7 @@
         {
           "disabled": false,
           "document": "交易类型： all所有交易类型，recharge充值，return退款，unblock解冻，agentin资金转入，advanced垫付，cash提现，deduct扣费，block冻结，agentout资金转出，repay垫付回款，repayment还款(仅国际信用账户)，adj_refund调增(仅国际信用账户)，adj_deduct调减(仅国际信用账户)",
-          "example": "['deduct']",
+          "example": "[\"recharge\"]",
           "member": "string",
           "name": "PayType",
           "required": false,
@@ -12718,8 +12718,8 @@
         },
         {
           "disabled": false,
-          "document": "扣费模式，\n当所选的交易类型为扣费deduct时： \nall所有扣费类型;trade预付费支付;hour_h按量小时结;hour_d按量日结;hour_m按量月结;decompensate调账扣费;other第三方扣费;panshi 线下项目扣费;offline 线下产品扣费;\n\n当所选的交易类型为扣费recharge时： \nonline 在线充值;bank-enterprice 银企直连;offline 线下充值;transfer 分成充值\n\n当所选的交易类型为扣费cash时： \nonline 线上提现;offline 线下提现;panshi 赠送金清零\n\n当所选的交易类型为扣费advanced时： \nadvanced 垫付充值\n\n当所选的交易类型为扣费repay时： \npanshi 垫付回款\n\n当所选的交易类型为扣费block时： \nother 第三方冻结;hour 按量冻结;month按月冻结\n\n当所选的交易类型为扣费return时： \ncompensate 调账补偿;trade 预付费退款\n\n当所选的交易类型为扣费unblock时：\nother 第三方解冻;hour 按量解冻;month 按月解冻",
-          "example": "all",
+          "document": "扣费模式，\n当所选的交易类型为扣费deduct时： \nall所有扣费类型;trade预付费支付;hour_h按量小时结;hour_d按量日结;hour_m按量月结;decompensate调账扣费;other第三方扣费;panshi 线下项目扣费;offline 线下产品扣费;\n\n当所选的交易类型为扣费recharge时： \nonline 在线充值;bank-enterprice 银企直联;offline 线下充值;transfer 分成充值\n\n当所选的交易类型为扣费cash时： \nonline 线上提现;offline 线下提现;panshi 赠送金清零\n\n当所选的交易类型为扣费advanced时： \nadvanced 垫付充值\n\n当所选的交易类型为扣费repay时： \npanshi 垫付回款\n\n当所选的交易类型为扣费block时： \nother 第三方冻结;hour 按量冻结;month按月冻结\n\n当所选的交易类型为扣费return时： \ncompensate 调账补偿;trade 预付费退款\n\n当所选的交易类型为扣费unblock时：\nother 第三方解冻;hour 按量解冻;month 按月解冻",
+          "example": "[\"trade\"]",
           "member": "string",
           "name": "SubPayType",
           "required": false,
@@ -12743,108 +12743,120 @@
         {
           "disabled": false,
           "document": "收支明细列表",
-          "example": "[]",
+          "example": "无",
           "member": "BillTransactionInfo",
           "name": "TransactionList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总条数",
-          "example": "1",
+          "example": "11",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "退费总额，单位（分）",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "ReturnAmount",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "充值总额，单位（分）",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "RechargeAmount",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "冻结总额，单位（分）",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "BlockAmount",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "解冻总额，单位（分）",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "UnblockAmount",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "扣费总额，单位（分）",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "DeductAmount",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资金转入总额，单位（分）",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "AgentInAmount",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "垫付充值总额，单位（分）",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "AdvanceRechargeAmount",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "提现扣减总额，单位（分）",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "WithdrawAmount",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资金转出总额，单位（分）",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "AgentOutAmount",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "还垫付总额，单位（分）",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "AdvancePayAmount",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },

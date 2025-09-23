@@ -1318,7 +1318,7 @@
         {
           "disabled": false,
           "document": "镜像关联使用场景Id列表。",
-          "example": "[\"lhsc-123456\"]",
+          "example": "[\"lhsc-3bzsddow\",\"lhsc-h0ug8jtq\"]",
           "member": "string",
           "name": "SceneIdSet",
           "output_required": true,
@@ -1343,6 +1343,16 @@
           "name": "BlueprintShared",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1791,11 +1801,20 @@
         {
           "disabled": false,
           "document": "是否执行强制关机以制作镜像。\n取值范围：\nTrue：表示关机之后制作镜像\nFalse：表示开机状态制作镜像\n默认取值：True\n开机状态制作镜像，可能导致部分数据未备份，影响数据安全。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "ForcePowerOff",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1842,6 +1861,15 @@
           "name": "DiskBackupName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1951,6 +1979,15 @@
           "name": "AutoMountConfiguration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2134,6 +2171,15 @@
           "name": "SnapshotName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2343,6 +2389,15 @@
           "name": "KeyName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2904,7 +2959,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n镜像 ID ，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；DOCKER（Docker容器镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n镜像状态，可通过[数据结构Blueprint](https://cloud.tencent.com/document/api/1207/47576#Blueprint)中的BlueprintState来获取。\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n场景Id，可通过[查看使用场景列表](https://cloud.tencent.com/document/product/1207/83512)接口获取。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 BlueprintIds (可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取BlueprintId)和 Filters 。",
+          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n镜像 ID ，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；DOCKER（Docker容器镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n镜像状态，可通过[数据结构Blueprint](https://cloud.tencent.com/document/api/1207/47576#Blueprint)中的BlueprintState来获取。\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n场景Id，可通过[查看使用场景列表](https://cloud.tencent.com/document/product/1207/83512)接口获取。\n<li>tag-key</li>\n按照【标签键】进行过滤。 类型：String 必选：否\n<li>tag-value</li>\n按照【标签值】进行过滤。 类型：String 必选：否\n<li>tag:tag-key</li>\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 BlueprintIds (可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取BlueprintId)和 Filters 。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3154,7 +3209,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。\n<li>disk-usage</li>按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：\n- SYSTEM_DISK - 系统盘\n- DATA_DISK - 数据盘\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。",
+          "document": "过滤器列表。\n<li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。\n<li>disk-usage</li>按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：\n- SYSTEM_DISK - 系统盘\n- DATA_DISK - 数据盘\n<li>tag-key</li>\n按照【标签键】进行过滤。 类型：String 必选：否\n<li>tag-value</li>\n按照【标签值】进行过滤。 类型：String 必选：否\n<li>tag:tag-key</li>\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3367,7 +3422,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\ndisk-id\n按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\ninstance-id\n按照【实例ID】进行过滤。\n类型：String\n必选：否\ndisk-name\n按照【云硬盘名称】进行过滤。\n类型：String\n必选：否\nzone\n按照【可用区】进行过滤。\n类型：String\n必选：否\ndisk-usage\n按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：SYSTEM_DISK（系统盘）或 DATA_DISK（数据盘）\ndisk-state\n按照【云硬盘状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构[Disk](https://cloud.tencent.com/document/api/1207/47576#Disk)中DiskState取值。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 DiskIds 和 Filters。",
+          "document": "过滤器列表。\ndisk-id\n按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\ninstance-id\n按照【实例ID】进行过滤。\n类型：String\n必选：否\ndisk-name\n按照【云硬盘名称】进行过滤。\n类型：String\n必选：否\nzone\n按照【可用区】进行过滤。\n类型：String\n必选：否\ndisk-usage\n按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：SYSTEM_DISK（系统盘）或 DATA_DISK（数据盘）\ndisk-state\n按照【云硬盘状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构[Disk](https://cloud.tencent.com/document/api/1207/47576#Disk)中DiskState取值。\ntag-key\n按照【标签键】进行过滤。 类型：String 必选：否\ntag-value\n按照【标签值】进行过滤。 类型：String 必选：否\ntag:tag-key\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 DiskIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4653,8 +4708,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>key-id</li>按照【密钥对ID】进行过滤。\n类型：String\n必选：否\n<li>key-name</li>按照【密钥对名称】进行过滤（支持模糊匹配）。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 KeyIds 和 Filters。",
-          "example": "[{\"Name\":\"key-name\",\"Values\":[\"k1\"]}]",
+          "document": "过滤器列表。\n<li>key-id</li>按照【密钥对ID】进行过滤。\n类型：String\n必选：否\n<li>key-name</li>按照【密钥对名称】进行过滤（支持模糊匹配）。\n类型：String\n必选：否\n<li>tag-key</li>\n按照【标签键】进行过滤。 类型：String 必选：否\n<li>tag-value</li>\n按照【标签值】进行过滤。 类型：String 必选：否\n<li>tag:tag-key</li>\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 KeyIds 和 Filters。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5155,7 +5210,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>snapshot-id</li>按照【快照 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\">DescribeSnapshots</a> 接口返回值中的 SnapshotId 获取。\n\n<li>disk-id</li>按照【磁盘 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/66093\">DescribeDisks</a> 接口返回值中的 DiskId 获取。\n\n<li>snapshot-name</li>按照【快照名称】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\">DescribeSnapshots</a> 接口返回值中的 SnapshotName 获取。\n<li>instance-id</li>按照【实例 ID 】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47573\">DescribeInstances</a> 接口返回值中的 InstanceId 获取。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 SnapshotIds 和 Filters。",
+          "document": "过滤器列表。\n<li>snapshot-id</li>按照【快照 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\">DescribeSnapshots</a> 接口返回值中的 SnapshotId 获取。\n<li>disk-id</li>按照【磁盘 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/66093\">DescribeDisks</a> 接口返回值中的 DiskId 获取。\n<li>snapshot-name</li>按照【快照名称】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\">DescribeSnapshots</a> 接口返回值中的 SnapshotName 获取。\n<li>instance-id</li>按照【实例 ID 】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47573\">DescribeInstances</a> 接口返回值中的 InstanceId 获取。\n<li>tag-key</li>\n按照【标签键】进行过滤。 类型：String 必选：否\n<li>tag-value</li>\n按照【标签值】进行过滤。 类型：String 必选：否\n<li>tag:tag-key</li>\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 SnapshotIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5685,6 +5740,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5800,6 +5865,16 @@
           "name": "CreatedTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘备份点绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -6995,6 +7070,15 @@
           "name": "PublicKey",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。 如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。 同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。 如果标签不存在会为您自动创建标签。 数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7008,7 +7092,7 @@
           "example": "lhkp-2xsmy15f",
           "member": "string",
           "name": "KeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8120,6 +8204,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密钥对绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10296,6 +10390,16 @@
           "name": "CreatedTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照绑定的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

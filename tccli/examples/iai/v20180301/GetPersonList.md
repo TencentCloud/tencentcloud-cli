@@ -8,8 +8,7 @@ Input:
 tccli iai GetPersonList --cli-unfold-argument  \
     --GroupId ZhuYuanDormitory \
     --Offset 0 \
-    --Limit 10 \
-    --Version 2018-03-01
+    --Limit 10
 ```
 
 Output: 
@@ -35,8 +34,7 @@ Input:
 tccli iai GetPersonList --cli-unfold-argument  \
     --GroupId ZhuYuanDormitoryNo1 \
     --Offset 0 \
-    --Limit 10 \
-    --Version 2018-03-01
+    --Limit 10
 ```
 
 Output: 
@@ -61,6 +59,7 @@ Output:
         ],
         "PersonNum": 1,
         "FaceNum": 1,
+        "FaceModelVersion": "3.0",
         "RequestId": "337d1bb5-3f88-4681-9291-5194f478f0d1"
     }
 }
@@ -76,8 +75,7 @@ Input:
 tccli iai GetPersonList --cli-unfold-argument  \
     --GroupId TencentShenZhenEmployee \
     --Offset 0 \
-    --Limit 10 \
-    --Version 2018-03-01
+    --Limit 10
 ```
 
 Output: 
@@ -101,6 +99,7 @@ Output:
         ],
         "PersonNum": 1,
         "FaceNum": 1,
+        "FaceModelVersion": "3.0",
         "RequestId": "aa292f16-27d9-423b-9048-cdd43f6e4156"
     }
 }

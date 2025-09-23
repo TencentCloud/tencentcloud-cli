@@ -3971,7 +3971,7 @@
         {
           "disabled": false,
           "document": "密钥ID最近访问列表",
-          "example": "[{\"SecretId\":\"AKID***\",\"LastUsedDate\":\"2022-12-19\",\"LastSecretUsedDate\":1671681023555}]",
+          "example": "无",
           "member": "SecretIdLastUsed",
           "name": "SecretIdLastUsedRows",
           "output_required": true,

@@ -208,6 +208,14 @@
         "title": "删除坐席信息示例"
       }
     ],
+    "DescribeAIAnalysisResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAILatency\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"SessionId\": \"adcf61b8-dbb9-4c20-87bf-c0744c04bade\",\n    \"StartTime\": 1737350008,\n    \"EndTime\": 1737356008\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\",\n        \"ResultList\": [\n            {\n                \"Type\": \"summary\",\n                \"Result\": \"会话小结\"\n            },\n            {\n                \"Type\": \"mood\",\n                \"Result\": \"中性\"\n            },\n            {\n                \"Type\": \"intention\",\n                \"Result\": \"待跟进\"\n            }\n        ]\n    }\n}",
+        "title": "获取 AI 会话分析结果"
+      }
+    ],
     "DescribeAICallExtractResult": [
       {
         "document": "查询 AI 通话内容提取结果示例",

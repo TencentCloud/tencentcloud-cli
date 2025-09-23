@@ -1190,14 +1190,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算资源高级设置",
+          "document": "计算资源高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ComputeResourceAdvanceParams",
           "name": "ComputeResourceAdvanceParams",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1375,7 +1375,7 @@
         {
           "disabled": false,
           "document": "集群实例ID。",
-          "example": "emr-123",
+          "example": "240143022",
           "member": "int64",
           "name": "ClusterId",
           "output_required": true,
@@ -1506,8 +1506,19 @@
         },
         {
           "disabled": false,
+          "document": "对应的计算组",
+          "example": "test11",
+          "member": "string",
+          "name": "WarehouseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "伸缩组状态",
-          "example": "name",
+          "example": "1",
           "member": "int64",
           "name": "GroupStatus",
           "output_required": false,
@@ -1539,14 +1550,14 @@
         },
         {
           "disabled": false,
-          "document": "伸缩组更多设置",
+          "document": "伸缩组更多设置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AutoScaleGroupAdvanceAttrs",
           "name": "ExtraAdvanceAttrs",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -18211,6 +18222,15 @@
           "name": "NodeMarks",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "扩容指定计算组名称",
+          "example": "default_warehouse",
+          "member": "string",
+          "name": "WarehouseName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18261,7 +18281,7 @@
         {
           "disabled": false,
           "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1731867961-23673-5000362",
+          "example": "[\"1731867961-23673-5000362\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": false,
@@ -18559,6 +18579,15 @@
           "name": "NodeMarks",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "扩容指定计算组",
+          "example": "default_warehouse",
+          "member": "string",
+          "name": "WarehouseName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

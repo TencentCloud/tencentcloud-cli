@@ -11882,6 +11882,26 @@
         },
         {
           "disabled": false,
+          "document": "是否开启弹性带宽白名单   \n1:已开启弹性带宽白名单;\n0:未开启弹性带宽白名单;",
+          "example": "1",
+          "member": "int64",
+          "name": "ElasticBandwidthSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性带宽开通状态\n1:未开启弹性带宽;\n16: 开启弹性带宽中;\n32:开启弹性带宽成功;\n33:关闭弹性带宽中;\n34:关闭弹性带宽成功;\n64:开启弹性带宽失败;\n65:关闭弹性带宽失败;",
+          "example": "1",
+          "member": "int64",
+          "name": "ElasticBandwidthOpenStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "集群类型  \nCLOUD_IDC IDC集群\nCLOUD_CVM_SHARE CVM共享集群\nCLOUD_CVM_YUNTI 云梯CVM集群\nCLOUD_CVM    CVM集群\nCLOUD_CDC CDC集群\nCLOUD_EKS_TSE EKS集群",
           "example": "CLOUD_CVM",
           "member": "string",

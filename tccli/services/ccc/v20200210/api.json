@@ -182,6 +182,13 @@
       "output": "DeleteStaffResponse",
       "status": "online"
     },
+    "DescribeAIAnalysisResult": {
+      "document": "获取 AI 会话分析结果",
+      "input": "DescribeAIAnalysisResultRequest",
+      "name": "获取 AI 会话分析结果",
+      "output": "DescribeAIAnalysisResultResponse",
+      "status": "online"
+    },
     "DescribeAICallExtractResult": {
       "document": "获取 AI 通话内容提取结果。",
       "input": "DescribeAICallExtractResultRequest",
@@ -540,6 +547,32 @@
     "serviceShortName": "ccc"
   },
   "objects": {
+    "AIAnalysisResult": {
+      "document": "AI会话分析结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "summary: 会话小结\nmood: 情绪分析\nintention: 意向提取",
+          "example": "summary",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI会话分析结果",
+          "example": "会话小结结果",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AICallExtractConfigElement": {
       "document": "AI 通话提取配置项",
       "members": [
@@ -3862,6 +3895,70 @@
           "member": "string",
           "name": "OnlineStaffList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIAnalysisResultRequest": {
+      "document": "DescribeAIAnalysisResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "6bb56a09-2787-40bc-80c5-dc6dab783eff",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查找起始时间\t",
+          "example": "1737350008",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1737350008",
+          "example": "1737350008",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIAnalysisResultResponse": {
+      "document": "DescribeAIAnalysisResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AI会话分析结果",
+          "example": "无",
+          "member": "AIAnalysisResult",
+          "name": "ResultList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },

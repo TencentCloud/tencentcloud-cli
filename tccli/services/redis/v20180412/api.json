@@ -183,9 +183,9 @@
       "status": "online"
     },
     "DescribeInstanceAccount": {
-      "document": "本接口（DescribeInstanceAccount）用于查看实例子账号信息。",
+      "document": "本接口（DescribeInstanceAccount）用于查看实例账号信息。",
       "input": "DescribeInstanceAccountRequest",
-      "name": "查看实例子账号信息",
+      "name": "查看实例账号信息",
       "output": "DescribeInstanceAccountResponse",
       "status": "online"
     },
@@ -589,7 +589,7 @@
       "status": "online"
     },
     "ModifyInstanceBackupMode": {
-      "document": "修改实例的备份模式",
+      "document": "本接口（ModifyInstanceBackupMode）用于修改实例的备份模式。",
       "input": "ModifyInstanceBackupModeRequest",
       "name": "开启或关闭数据闪回功能",
       "output": "ModifyInstanceBackupModeResponse",
@@ -3354,7 +3354,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小。",
+          "document": "分页大小。默认值为20，最小值为1，最大值为100。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -9471,7 +9471,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的ID，长度在12-36之间。",
+          "document": "实例的ID。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
           "example": "crs-asdasda2",
           "member": "string",
           "name": "InstanceId",
@@ -9480,7 +9480,7 @@
         },
         {
           "disabled": false,
-          "document": "备份模式：\n- SecondLevelBackup   秒级备份\n- NormalLevelBackup    普通备份",
+          "document": "备份模式：\n- SecondLevelBackup   秒级备份。\n- NormalLevelBackup    普通备份。",
           "example": "SecondLevelBackup",
           "member": "string",
           "name": "BackupMode",
@@ -9495,7 +9495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务 ID。",
           "example": "95027",
           "member": "int64",
           "name": "TaskId",
@@ -9526,7 +9526,7 @@
         },
         {
           "disabled": false,
-          "document": "事件 ID。请通过 DescribeInstanceEvents 获取需修改的事件 ID。",
+          "document": "事件 ID。请通过 [DescribeInstanceEvents](https://cloud.tencent.com/document/product/239/104779) 获取需修改的事件 ID。",
           "example": "89",
           "member": "int64",
           "name": "EventId",
