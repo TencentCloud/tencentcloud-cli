@@ -16,14 +16,6 @@
         "title": "检查知识标签是否被引用"
       }
     ],
-    "CreateAgent": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgent\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1906600044720291840\",\n    \"Agent\": {\n        \"Name\": \"浏览器控制 agent\",\n        \"Instructions\": \"根据用户需求进行浏览器的控制\",\n        \"HandoffDescription\": \"涉及到实际浏览器控制和操作的需求都可以交给我\",\n        \"Model\": {\n            \"ModelName\": \"function-call-pro\"\n        }\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"AgentId\": \"845c1ef7-5103-4e95-9e59-3d46fbeabe63\",\n        \"RequestId\": \"84ec404b-729e-47af-9f64-7a3f590c8c27\"\n    }\n}",
-        "title": "创建Agent"
-      }
-    ],
     "CreateApp": [
       {
         "document": "创建应用",
@@ -682,14 +674,6 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListWorkflowRuns\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1854548189164339200\",\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"WorkflowRuns\": [\n            {\n                \"RunEnv\": 1,\n                \"AppBizId\": \"1854548189164339200\",\n                \"WorkflowRunId\": \"run-id-123\",\n                \"WorkflowId\": \"workflow-id-456\",\n                \"State\": 4,\n                \"FailMessage\": \"\",\n                \"TotalTokens\": 100,\n                \"StartTime\": \"1672531200000\",\n                \"EndTime\": \"1672531300000\",\n                \"CreateTime\": \"1672531100000\"\n            }\n        ],\n        \"RequestId\": \"925208e7-46fa-43b3-a429-ddcbccad24f6\"\n    }\n}",
         "title": "查询工作流异步运行实例的列表"
-      }
-    ],
-    "ModifyAgent": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgent\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1906600044720291840\",\n    \"Agent\": {\n        \"AgentId\": \"845c1ef7-5103-4e95-9e59-3d46fbeabe63\",\n        \"Name\": \"新闻搜索agent\",\n        \"Instructions\": \"根据用户的输入，搜索相关新闻，提供相应的web访问地址\",\n        \"HandoffDescription\": \"处理用户新闻搜索的需求\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47a5a3be-b6ad-48bc-aced-7af35781b2be\"\n    }\n}",
-        "title": "修改Agent"
       }
     ],
     "ModifyApp": [

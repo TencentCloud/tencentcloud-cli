@@ -4803,6 +4803,15 @@
         },
         {
           "disabled": false,
+          "document": "复刻音色",
+          "example": "WCIH",
+          "member": "string",
+          "name": "FastVoiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "支持的语言，zh-中文；en-英文；默认zh",
           "example": "en",
           "member": "string",
@@ -15733,6 +15742,15 @@
           "name": "VoiceType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "复刻音色",
+          "example": "WHCH",
+          "member": "string",
+          "name": "FastVoiceType",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,

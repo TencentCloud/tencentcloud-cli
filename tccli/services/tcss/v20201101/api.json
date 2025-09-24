@@ -45863,7 +45863,7 @@
         {
           "disabled": false,
           "document": "漏洞标签",
-          "example": "[None, None]",
+          "example": "[\"tag1\",\"tag2\"]",
           "member": "string",
           "name": "Tags",
           "output_required": true,
@@ -46017,6 +46017,26 @@
           "member": "int64",
           "name": "DefendedCount",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞对应机器的应用防护开启数量",
+          "example": "23",
+          "member": "int64",
+          "name": "RaspOpenNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞对应机器的应用防护关闭数量",
+          "example": "24",
+          "member": "int64",
+          "name": "RaspClosedNodeCount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }

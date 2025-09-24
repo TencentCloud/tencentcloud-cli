@@ -794,7 +794,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanIp\n<公共请求参数>\n\n{\n    \"Ip\": \"1.1.1.1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Bussiness\": \"微信支付\",\n        \"Characteristic\": \"腾讯业务回调\",\n        \"Descibe\": \"微信支付通过回调出口 IP 持续对网络环境进行监测，以达到优化回调效率、提升用户体验的目的。\",\n        \"Referer\": \"https://developers.weixin.qq.com/community/develop/doc/000a2e2dcd48c0f126f08ef4562000\",\n        \"Demo\": \"业务回调\",\n        \"Target\": \"数据传输\",\n        \"Purpose\": \"保障回调顺畅、服务稳定\",\n        \"Announcement\": \"此 IP为 微信支付 的扫描 IP，将定期对您的 数据传输 进行检测，以 保障回调顺畅、服务稳定，若您发现来自此 IP 的扫描行为，请进行放行或加白...\",\n        \"RequestId\": \"aqdraqerqw12313sdff\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Bussiness\": \"微信支付\",\n        \"Characteristic\": \"腾讯业务回调\",\n        \"Descibe\": \"微信支付通过回调出口 IP 持续对网络环境进行监测，以达到优化回调效率、提升用户体验的目的。\",\n        \"Referer\": \"https://developers.weixin.qq.com/community/develop/doc/000a2e2dcd48c0f126f08ef4562000\",\n        \"Demo\": \"业务回调\",\n        \"Target\": \"数据传输\",\n        \"Purpose\": \"保障回调顺畅、服务稳定\",\n        \"Announcement\": \"此 IP为 微信支付 的扫描 IP，将定期对您的 数据传输 进行检测\",\n        \"RequestId\": \"aqdraqerqw12313sdff\"\n    }\n}",
         "title": "查询扫描ip"
       }
     ],

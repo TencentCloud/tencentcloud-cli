@@ -184,6 +184,20 @@
         "title": "设置转码规则"
       }
     ],
+    "CreateSmartEraseTemplate": [
+      {
+        "document": "创建带有提取和翻译功能的擦除字幕模板",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSmartEraseTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"擦除字幕模板2\",\n    \"EraseType\": \"subtitle\",\n    \"EraseSubtitleConfig\": {\n        \"SubtitleEraseMethod\": \"auto\",\n        \"SubtitleModel\": \"standard\",\n        \"OcrSwitch\": \"ON\",\n        \"SubtitleLang\": \"zh_en\",\n        \"SubtitleFormat\": \"vtt\",\n        \"TransSwitch\": \"ON\",\n        \"TransDstLang\": \"en\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 200409,\n        \"RequestId\": \"ac14b422-1c7b-407d-9b95-530f1eea063d\"\n    }\n}",
+        "title": "创建带有提取和翻译功能的擦除字幕模板"
+      },
+      {
+        "document": "创建具有对预设区域检测文本并擦除，同时对指定时间段内指定区域直接擦除能力的擦除字幕模板",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSmartEraseTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"擦除字幕模板2\",\n    \"EraseType\": \"subtitle\",\n    \"EraseSubtitleConfig\": {\n        \"SubtitleEraseMethod\": \"auto\",\n        \"SubtitleModel\": \"standard\",\n        \"CustomAreas\": [\n            {\n                \"BeginMs\": 200,\n                \"EndMs\": 3000,\n                \"Areas\": [\n                    {\n                        \"LeftTopX\": 0.05,\n                        \"LeftTopY\": 0.1,\n                        \"RightBottomX\": 0.75,\n                        \"RightBottomY\": 0.9,\n                        \"Unit\": 1\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 200410,\n        \"RequestId\": \"835f2ecd-8666-4717-998b-02680437a8ef\"\n    }\n}",
+        "title": "创建同时具有自动擦除和区域擦除能力的擦除字幕模板"
+      }
+    ],
     "CreateSmartSubtitleTemplate": [
       {
         "document": "",
@@ -406,6 +420,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSchedule\n<公共请求参数>\n\n{\n    \"ScheduleId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DeleteSmartEraseTemplate": [
+      {
+        "document": "删除指定智能擦除模板",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmartEraseTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 200019\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d3a3b90-9be7-4a3c-bd53-52fe399d976c\"\n    }\n}",
+        "title": "删除指定智能擦除模板"
       }
     ],
     "DeleteSmartSubtitleTemplate": [
@@ -646,6 +668,20 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedules\n<公共请求参数>\n\n{\n    \"ScheduleIds\": [\n        0\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ScheduleInfoSet\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeSmartEraseTemplates": [
+      {
+        "document": "查询包括预设模板和自定义模板在内的所有智能擦除模板信息",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSmartEraseTemplates\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2ad2688-ca7c-4f85-bbb0-1cfbdf258013\",\n        \"SmartEraseTemplateSet\": [\n            {\n                \"AliasName\": \"FaceAndLicensePlateBlur\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-07-15T10:51:04+08:00\",\n                \"Definition\": 302,\n                \"ErasePrivacyConfig\": {\n                    \"PrivacyModel\": \"blur\",\n                    \"PrivacyTargets\": [\n                        \"plate\",\n                        \"face\"\n                    ]\n                },\n                \"EraseSubtitleConfig\": null,\n                \"EraseType\": \"privacy\",\n                \"EraseWatermarkConfig\": null,\n                \"Name\": \"人脸和车牌模糊\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-07-15T10:51:04+08:00\"\n            },\n            {\n                \"AliasName\": \"FaceBlur\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-07-15T10:51:04+08:00\",\n                \"Definition\": 301,\n                \"ErasePrivacyConfig\": {\n                    \"PrivacyModel\": \"blur\",\n                    \"PrivacyTargets\": [\n                        \"face\"\n                    ]\n                },\n                \"EraseSubtitleConfig\": null,\n                \"EraseType\": \"privacy\",\n                \"EraseWatermarkConfig\": null,\n                \"Name\": \"人脸模糊\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-07-15T10:51:04+08:00\"\n            },\n            {\n                \"AliasName\": \"WatermarkRemoval-AdvancedVersion\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-07-15T10:51:04+08:00\",\n                \"Definition\": 201,\n                \"ErasePrivacyConfig\": null,\n                \"EraseSubtitleConfig\": null,\n                \"EraseType\": \"watermark\",\n                \"EraseWatermarkConfig\": {\n                    \"WatermarkEraseMethod\": \"auto\",\n                    \"WatermarkModel\": \"advanced\"\n                },\n                \"Name\": \"去水印-高级版\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-07-15T10:51:04+08:00\"\n            },\n            {\n                \"AliasName\": \"SubtitleRemoval_OCRExtractSubtitlesAndTranslateToEnglish\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-07-15T10:51:04+08:00\",\n                \"Definition\": 103,\n                \"ErasePrivacyConfig\": null,\n                \"EraseSubtitleConfig\": {\n                    \"OcrSwitch\": \"ON\",\n                    \"SubtitleEraseMethod\": \"auto\",\n                    \"SubtitleFormat\": \"vtt\",\n                    \"SubtitleLang\": \"zh_en\",\n                    \"SubtitleModel\": \"standard\",\n                    \"TransDstLang\": \"en\",\n                    \"TransSwitch\": \"ON\"\n                },\n                \"EraseType\": \"subtitle\",\n                \"EraseWatermarkConfig\": null,\n                \"Name\": \"去字幕_OCR提取字幕并翻译为英文\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-07-15T18:36:53+08:00\"\n            },\n            {\n                \"AliasName\": \"SubtitleRemovalAndOCRExtractSubtitles\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-07-15T10:51:04+08:00\",\n                \"Definition\": 102,\n                \"ErasePrivacyConfig\": null,\n                \"EraseSubtitleConfig\": {\n                    \"OcrSwitch\": \"ON\",\n                    \"SubtitleEraseMethod\": \"auto\",\n                    \"SubtitleFormat\": \"vtt\",\n                    \"SubtitleLang\": \"zh_en\",\n                    \"SubtitleModel\": \"standard\",\n                    \"TransSwitch\": \"OFF\"\n                },\n                \"EraseType\": \"subtitle\",\n                \"EraseWatermarkConfig\": null,\n                \"Name\": \"去字幕_OCR提取字幕\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-07-15T18:36:53+08:00\"\n            },\n            {\n                \"AliasName\": \"SubtitleRemoval\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-07-15T10:51:04+08:00\",\n                \"Definition\": 101,\n                \"ErasePrivacyConfig\": null,\n                \"EraseSubtitleConfig\": {\n                    \"OcrSwitch\": \"OFF\",\n                    \"SubtitleEraseMethod\": \"auto\",\n                    \"SubtitleModel\": \"standard\",\n                    \"TransSwitch\": \"OFF\"\n                },\n                \"EraseType\": \"subtitle\",\n                \"EraseWatermarkConfig\": null,\n                \"Name\": \"去字幕\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-07-15T10:51:04+08:00\"\n            },\n            {\n                \"AliasName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-08-04T15:16:25+08:00\",\n                \"Definition\": 200385,\n                \"ErasePrivacyConfig\": null,\n                \"EraseSubtitleConfig\": {\n                    \"OcrSwitch\": \"OFF\",\n                    \"SubtitleEraseMethod\": \"auto\",\n                    \"SubtitleModel\": \"standard\",\n                    \"TransSwitch\": \"OFF\"\n                },\n                \"EraseType\": \"subtitle\",\n                \"EraseWatermarkConfig\": null,\n                \"Name\": \"测试8\",\n                \"Type\": \"Custom\",\n                \"UpdateTime\": \"2025-08-04T20:08:14+08:00\"\n            },\n            {\n                \"AliasName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-07-02T20:49:04+08:00\",\n                \"Definition\": 200022,\n                \"ErasePrivacyConfig\": null,\n                \"EraseSubtitleConfig\": {\n                    \"OcrSwitch\": \"OFF\",\n                    \"SubtitleEraseMethod\": \"auto\",\n                    \"SubtitleLang\": \"zh_en\",\n                    \"SubtitleModel\": \"standard\",\n                    \"TransSwitch\": \"OFF\"\n                },\n                \"EraseType\": \"subtitle\",\n                \"EraseWatermarkConfig\": null,\n                \"Name\": \"测试7\",\n                \"Type\": \"Custom\",\n                \"UpdateTime\": \"2025-08-04T20:08:14+08:00\"\n            },\n            {\n                \"AliasName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-07-02T20:48:48+08:00\",\n                \"Definition\": 200021,\n                \"ErasePrivacyConfig\": null,\n                \"EraseSubtitleConfig\": {\n                    \"OcrSwitch\": \"OFF\",\n                    \"SubtitleEraseMethod\": \"auto\",\n                    \"SubtitleModel\": \"standard\",\n                    \"TransSwitch\": \"OFF\"\n                },\n                \"EraseType\": \"subtitle\",\n                \"EraseWatermarkConfig\": null,\n                \"Name\": \"测试6\",\n                \"Type\": \"Custom\",\n                \"UpdateTime\": \"2025-08-04T20:08:14+08:00\"\n            },\n            {\n                \"AliasName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-07-02T19:21:24+08:00\",\n                \"Definition\": 200019,\n                \"ErasePrivacyConfig\": null,\n                \"EraseSubtitleConfig\": {\n                    \"OcrSwitch\": \"OFF\",\n                    \"SubtitleEraseMethod\": \"custom\",\n                    \"SubtitleModel\": \"standard\",\n                    \"TransSwitch\": \"OFF\"\n                },\n                \"EraseType\": \"subtitle\",\n                \"EraseWatermarkConfig\": null,\n                \"Name\": \"测试5\",\n                \"Type\": \"Custom\",\n                \"UpdateTime\": \"2025-08-04T20:08:14+08:00\"\n            }\n        ],\n        \"TotalCount\": 14\n    }\n}",
+        "title": "查询所有智能擦除模板"
+      },
+      {
+        "document": "查询指定智能擦除模板信息",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSmartEraseTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        200019\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83c6c7c2-3dab-4c6a-bedb-227371c038c0\",\n        \"SmartEraseTemplateSet\": [\n            {\n                \"AliasName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-07-02T19:21:24+08:00\",\n                \"Definition\": 200019,\n                \"ErasePrivacyConfig\": null,\n                \"EraseSubtitleConfig\": {\n                    \"OcrSwitch\": \"OFF\",\n                    \"SubtitleEraseMethod\": \"custom\",\n                    \"SubtitleModel\": \"standard\",\n                    \"TransSwitch\": \"OFF\"\n                },\n                \"EraseType\": \"subtitle\",\n                \"EraseWatermarkConfig\": null,\n                \"Name\": \"测试5\",\n                \"Type\": \"Custom\",\n                \"UpdateTime\": \"2025-08-04T20:08:14+08:00\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询指定智能擦除模板"
       }
     ],
     "DescribeSmartSubtitleTemplates": [
@@ -1074,6 +1110,20 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySchedule\n<公共请求参数>\n\n{\n    \"ScheduleId\": 22435,\n    \"Trigger\": {\n        \"Type\": \"AwsS3FileUpload\",\n        \"AwsS3FileUploadTrigger\": {\n            \"S3Bucket\": \"evanxia-test\",\n            \"S3Region\": \"us-east-1\",\n            \"Dir\": \"/input/\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"974e52bf-1234-49bf-8bcd-fdeca9b2d290\"\n    }\n}",
         "title": "修改编排"
+      }
+    ],
+    "ModifySmartEraseTemplate": [
+      {
+        "document": "修改擦除字幕模板，打开OCR提取以及翻译功能",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmartEraseTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 200410,\n    \"EraseSubtitleConfig\": {\n        \"SubtitleEraseMethod\": \"auto\",\n        \"SubtitleModel\": \"standard\",\n        \"OcrSwitch\": \"ON\",\n        \"SubtitleLang\": \"zh_en\",\n        \"SubtitleFormat\": \"vtt\",\n        \"TransSwitch\": \"ON\",\n        \"TransDstLang\": \"en\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"84265f8e-43ec-4449-9521-b9332f64ee79\"\n    }\n}",
+        "title": "修改擦除字幕模板打开提取功能"
+      },
+      {
+        "document": "修改擦除水印模板，将擦除水印模型更改为高级版",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmartEraseTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 200407,\n    \"EraseWatermarkConfig\": {\n        \"WatermarkEraseMethod\": \"auto\",\n        \"WatermarkModel\": \"advanced\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4d526f3-f1bb-4030-9f0d-00df485a7eae\"\n    }\n}",
+        "title": "修改擦除水印模板更改模型"
       }
     ],
     "ModifySmartSubtitleTemplate": [

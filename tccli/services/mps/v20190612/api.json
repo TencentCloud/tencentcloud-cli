@@ -119,6 +119,13 @@
       "output": "CreateScheduleResponse",
       "status": "online"
     },
+    "CreateSmartEraseTemplate": {
+      "document": "创建自定义智能擦除模板",
+      "input": "CreateSmartEraseTemplateRequest",
+      "name": "创建智能擦除模板",
+      "output": "CreateSmartEraseTemplateResponse",
+      "status": "online"
+    },
     "CreateSmartSubtitleTemplate": {
       "document": "创建自定义智能字幕模板",
       "input": "CreateSmartSubtitleTemplateRequest",
@@ -292,6 +299,13 @@
       "input": "DeleteScheduleRequest",
       "name": "删除编排",
       "output": "DeleteScheduleResponse",
+      "status": "online"
+    },
+    "DeleteSmartEraseTemplate": {
+      "document": "删除用户自定义智能擦除模板。",
+      "input": "DeleteSmartEraseTemplateRequest",
+      "name": "删除智能擦除模板",
+      "output": "DeleteSmartEraseTemplateResponse",
       "status": "online"
     },
     "DeleteSmartSubtitleTemplate": {
@@ -481,6 +495,13 @@
       "input": "DescribeSchedulesRequest",
       "name": "查询编排",
       "output": "DescribeSchedulesResponse",
+      "status": "online"
+    },
+    "DescribeSmartEraseTemplates": {
+      "document": "根据智能擦除模板唯一标识，获取智能擦除模板详情列表。返回结果包含符合条件的所有用户自定义智能擦除模板及系统预置智能擦除模板",
+      "input": "DescribeSmartEraseTemplatesRequest",
+      "name": "获取智能擦除模板列表",
+      "output": "DescribeSmartEraseTemplatesResponse",
       "status": "online"
     },
     "DescribeSmartSubtitleTemplates": {
@@ -782,6 +803,13 @@
       "input": "ModifyScheduleRequest",
       "name": "修改编排",
       "output": "ModifyScheduleResponse",
+      "status": "online"
+    },
+    "ModifySmartEraseTemplate": {
+      "document": "修改用户自定义智能擦除模板。",
+      "input": "ModifySmartEraseTemplateRequest",
+      "name": "修改智能擦除模板",
+      "output": "ModifySmartEraseTemplateResponse",
       "status": "online"
     },
     "ModifySmartSubtitleTemplate": {
@@ -10936,6 +10964,88 @@
       ],
       "type": "object"
     },
+    "CreateSmartEraseTemplateRequest": {
+      "document": "CreateSmartEraseTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能擦除模板名称长度限制：64 个字符。",
+          "example": "智能擦除模板",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "擦除类型\n- subtitle 去字幕\n- watermark 去水印\n- privacy 隐私保护",
+          "example": "subtitle",
+          "member": "string",
+          "name": "EraseType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除模板描述信息长度限制：256 个字符。",
+          "example": "模板2",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕擦除配置，EraseType取subtitle时必填且仅此时生效。",
+          "example": "无",
+          "member": "SmartEraseSubtitleConfig",
+          "name": "EraseSubtitleConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "水印擦除配置，EraseType取watermark时必填且仅此时生效。",
+          "example": "无",
+          "member": "SmartEraseWatermarkConfig",
+          "name": "EraseWatermarkConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "隐私保护配置，EraseType取privacy时必填且仅此时生效。",
+          "example": "无",
+          "member": "SmartErasePrivacyConfig",
+          "name": "ErasePrivacyConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSmartEraseTemplateResponse": {
+      "document": "CreateSmartEraseTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能擦除模板唯一标识",
+          "example": "200",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSmartSubtitleTemplateRequest": {
       "document": "CreateSmartSubtitleTemplate请求参数结构体",
       "members": [
@@ -12181,6 +12291,33 @@
     },
     "DeleteScheduleResponse": {
       "document": "DeleteSchedule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSmartEraseTemplateRequest": {
+      "document": "DeleteSmartEraseTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能擦除模板唯一标识。",
+          "example": "30",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSmartEraseTemplateResponse": {
+      "document": "DeleteSmartEraseTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15249,6 +15386,89 @@
           "example": "无",
           "member": "SchedulesInfo",
           "name": "ScheduleInfoSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmartEraseTemplatesRequest": {
+      "document": "DescribeSmartEraseTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能擦除模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[30]",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模板类型过滤条件，不填则返回所有，可选值：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。",
+          "example": "Preset",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除模板名过滤条件，长度限制：64 个字符。",
+          "example": "擦除模板1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmartEraseTemplatesResponse": {
+      "document": "DescribeSmartEraseTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除模板详情列表。",
+          "example": "无",
+          "member": "SmartEraseTemplateItem",
+          "name": "SmartEraseTemplateSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -25578,6 +25798,87 @@
       ],
       "type": "object"
     },
+    "ModifySmartEraseTemplateRequest": {
+      "document": "ModifySmartEraseTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能擦除模板唯一标识",
+          "example": "30",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除模板名称长度限制：64 个字符。",
+          "example": "模板1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除模板描述信息长度限制：256 个字符。",
+          "example": "模板2",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "擦除类型\n- subtitle 去字幕\n- watermark 去水印\n- privacy 隐私保护",
+          "example": "subtitle",
+          "member": "string",
+          "name": "EraseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕擦除配置，EraseType取subtitle或者EraseType不填，对应模板原EraseType为subtitle时生效。",
+          "example": "无",
+          "member": "SmartEraseSubtitleConfig",
+          "name": "EraseSubtitleConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "水印擦除配置，EraseType取watermark或者EraseType不填，对应模板原EraseType为watermark时生效。",
+          "example": "无",
+          "member": "SmartEraseWatermarkConfig",
+          "name": "EraseWatermarkConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "隐私保护配置，EraseType取privacy或者EraseType不填，对应模板原EraseType为privacy时生效。",
+          "example": "无",
+          "member": "SmartErasePrivacyConfig",
+          "name": "ErasePrivacyConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySmartEraseTemplateResponse": {
+      "document": "ModifySmartEraseTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySmartSubtitleTemplateRequest": {
       "document": "ModifySmartSubtitleTemplate请求参数结构体",
       "members": [
@@ -30715,7 +31016,7 @@
         },
         {
           "disabled": false,
-          "document": "加密key(32字节字符串)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密key(十六进制32字节字符串)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "14367588ab31370e32ae000544bd007d",
           "member": "string",
           "name": "Key",
@@ -30726,7 +31027,7 @@
         },
         {
           "disabled": false,
-          "document": "加密初始化向量(32字节字符串)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密初始化向量(十六进制32字节字符串)。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "452ac1553f19b846e2f2c4cffd8f4a9b",
           "member": "string",
           "name": "Vector",
@@ -31000,6 +31301,122 @@
           "example": "2024-03-21T10:14:06Z",
           "member": "string",
           "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartEraseTemplateItem": {
+      "document": "智能擦除模板详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能擦除模板唯一标识",
+          "example": "30",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除模板名称",
+          "example": "模板1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除模板描述信息",
+          "example": "用于A的模板",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板类型，取值范围：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。",
+          "example": "Preset",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "擦除类型\n- subtitle 去字幕\n- watermark 去水印\n- privacy 隐私保护",
+          "example": "subtitle",
+          "member": "string",
+          "name": "EraseType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕擦除配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartEraseSubtitleConfig",
+          "name": "EraseSubtitleConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "水印擦除配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartEraseWatermarkConfig",
+          "name": "EraseWatermarkConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "隐私保护配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartErasePrivacyConfig",
+          "name": "ErasePrivacyConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "2023-10-05T14:30:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "2024-10-05T14:32:00Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除预设模板别名",
+          "example": "PresetTemplate1",
+          "member": "string",
+          "name": "AliasName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -31964,7 +32381,7 @@
         },
         {
           "disabled": false,
-          "document": "加密初始化向量(32字节字符串)，该字段内容为用户自定义。",
+          "document": "加密初始化向量(十六进制32字节字符串)，该字段内容为用户自定义。",
           "example": "452ac1553f19b846e2f2c4cffd8f4a9b",
           "member": "string",
           "name": "Vector",

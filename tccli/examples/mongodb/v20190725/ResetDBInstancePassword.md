@@ -1,14 +1,14 @@
 **Example 1: 修改实例用户的密码**
 
-
+修改实例用户的密码
 
 Input: 
 
 ```
 tccli mongodb ResetDBInstancePassword --cli-unfold-argument  \
-    --InstanceId cmgo-7pjedvz7 \
+    --InstanceId cmgo-7pje**** \
     --UserName rwuser \
-    --Password 111111
+    --Password *******
 ```
 
 Output: 

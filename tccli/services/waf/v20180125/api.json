@@ -995,9 +995,9 @@
       "status": "online"
     },
     "ModifyDomainWhiteRule": {
-      "document": "更改某一条规则",
+      "document": "修改域名规则白名单",
       "input": "ModifyDomainWhiteRuleRequest",
-      "name": "更改某一条规则",
+      "name": "修改域名规则白名单",
       "output": "ModifyDomainWhiteRuleResponse",
       "status": "online"
     },
@@ -2033,7 +2033,7 @@
         {
           "disabled": false,
           "document": "策略详情",
-          "example": "[             {                 \"Field\": \"URL\",                 \"Arg\": \"\",                 \"CompareFunc\": \"eq\",                 \"Content\": \"/acl\"             }         ]",
+          "example": "无",
           "member": "Strategy",
           "name": "Strategies",
           "required": true,
@@ -2114,7 +2114,7 @@
         {
           "disabled": false,
           "document": "规则执行的时间",
-          "example": "{     \"Timed\": [         {             \"StartDateTime\": 1711618518,             \"EndDateTime\": 1711918518         }     ],     \"Cron\": [         {             \"Day\": 12,             \"WDay\": 2,             \"StartTime\": \"12:11\",             \"EndTime\": \"21:00\"         }     ],     \"TimeTZone\": \"UTC+8\" }",
+          "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -2164,6 +2164,15 @@
           "name": "LogicalOp",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按照动作灰度的比例，默认是100",
+          "example": "2",
+          "member": "uint64",
+          "name": "ActionRatio",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2174,7 +2183,7 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
-          "example": "{\"Code\":\"Success\",\"Message\":\"Success\"}\t",
+          "example": "无",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -2224,7 +2233,7 @@
         {
           "disabled": false,
           "document": "策略详情",
-          "example": "[             {                 \"Field\": \"URL\",                 \"Arg\": \"\",                 \"CompareFunc\": \"eq\",                 \"Content\": \"/acl\"             }         ]",
+          "example": "无",
           "member": "Strategy",
           "name": "Strategies",
           "required": true,
@@ -2269,7 +2278,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "{\"Timed\":[{\"StartDateTime\":1711618518,\"EndDateTime\":1711918518}],\"Cron\":[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}],\"TimeTZone\":\"UTC+8\"}",
+          "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -2293,7 +2302,7 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
-          "example": "{\"Code\":\"Success\",\"Message\":\"Success\"}\t",
+          "example": "无",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -2452,7 +2461,7 @@
         {
           "disabled": false,
           "document": "服务端口列表配置。\nNginxServerId：新增域名时填'0'\nPort：监听端口号\nProtocol：端口协议\nUpstreamPort：与Port相同\nUpstreamProtocol：与Protocol相同",
-          "example": "[{\"NginxServerId\":\"0\",\"Port\":\"80\",\"Protocol\":\"http\",\"UpstreamPort\":\"80\",\"UpstreamProtocol\":\"http\"}]",
+          "example": "无",
           "member": "PortItem",
           "name": "Ports",
           "required": true,
@@ -2475,6 +2484,42 @@
           "name": "InstanceID",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "必填项，是否开启HTTP强制跳转到HTTPS。\n0：不强制跳转\n1：开启强制跳转",
+          "example": "1",
+          "member": "int64",
+          "name": "HttpsRewrite",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "必填项，是否开启HTTP2，需要开启HTTPS协议支持。\n0：关闭\n1：开启",
+          "example": "0",
+          "member": "int64",
+          "name": "IsHttp2",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "必填项，是否开启主动健康检测。\n0：不开启\n1：开启",
+          "example": "1",
+          "member": "int64",
+          "name": "ActiveCheck",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "必填项，加密套件模板。\n0：不支持选择，使用默认模板  \n1：通用型模板 \n2：安全型模板\n3：自定义模板",
+          "example": "0",
+          "member": "int64",
+          "name": "CipherTemplate",
+          "required": true,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2559,15 +2604,6 @@
         },
         {
           "disabled": false,
-          "document": "必填项，是否开启HTTP强制跳转到HTTPS。\n0：不强制跳转\n1：开启强制跳转",
-          "example": "1",
-          "member": "int64",
-          "name": "HttpsRewrite",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "域名回源时的回源域名。UpstreamType为1时，需要填充此字段",
           "example": "www.qq.com",
           "member": "string",
@@ -2583,15 +2619,6 @@
           "name": "SrcList",
           "required": false,
           "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "必填项，是否开启HTTP2，需要开启HTTPS协议支持。\n0：关闭\n1：开启",
-          "example": "0",
-          "member": "int64",
-          "name": "IsHttp2",
-          "required": false,
-          "type": "int"
         },
         {
           "disabled": true,
@@ -2622,28 +2649,10 @@
         },
         {
           "disabled": false,
-          "document": "必填项，是否开启主动健康检测。\n0：不开启\n1：开启",
-          "example": "1",
-          "member": "int64",
-          "name": "ActiveCheck",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "TLS版本信息",
           "example": "1",
           "member": "int64",
           "name": "TLSVersion",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "必填项，加密套件模板。\n0：不支持选择，使用默认模板  \n1：通用型模板 \n2：安全型模板\n3：自定义模板",
-          "example": "0",
-          "member": "int64",
-          "name": "CipherTemplate",
           "required": false,
           "type": "int"
         },
@@ -2655,6 +2664,15 @@
           "name": "Ciphers",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "WAF与源站的连接超时，默认10s。",
+          "example": "10",
+          "member": "int64",
+          "name": "ProxyConnectTimeout",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2812,7 +2830,7 @@
         {
           "disabled": false,
           "document": "分流回源时生效，分流回源的规则。",
-          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0}]",
+          "example": "无",
           "member": "UpstreamRule",
           "name": "UpstreamRules",
           "required": false,
@@ -2824,6 +2842,15 @@
           "example": "0",
           "member": "int64",
           "name": "UseCase",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "gzip开关。0：关闭 1：默认值，打开。",
+          "example": "1",
+          "member": "int64",
+          "name": "Gzip",
           "required": false,
           "type": "int"
         }
@@ -3046,8 +3073,7 @@
           "member": "string",
           "name": "Entity",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3056,8 +3082,7 @@
           "member": "string",
           "name": "Operator",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3066,8 +3091,16 @@
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "[\"200\",\"300\"]",
+          "member": "string",
+          "name": "ValueList",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -4274,7 +4307,7 @@
         {
           "disabled": false,
           "document": "场景ID",
-          "example": "3012321412",
+          "example": "3000000001",
           "member": "string",
           "name": "SceneId",
           "output_required": true,
@@ -4314,7 +4347,7 @@
         {
           "disabled": false,
           "document": "场景模板类型，登录: login  秒杀:seckill  爬内容：crawl 自定义: custom",
-          "example": "login",
+          "example": "[\"login\"]",
           "member": "string",
           "name": "BusinessType",
           "output_required": true,
@@ -4324,7 +4357,7 @@
         {
           "disabled": false,
           "document": "客户端类型，浏览器/H5 : browser  小程序: miniApp  App:",
-          "example": "browser",
+          "example": "[\"browser\"]",
           "member": "string",
           "name": "ClientType",
           "output_required": true,
@@ -4344,7 +4377,7 @@
         {
           "disabled": false,
           "document": "匹配范围",
-          "example": "[{\"key\":\"url\",\"op\":\"eq\",\"value\":\"/luffy\"}]",
+          "example": "无",
           "member": "BotSceneMatchCondition",
           "name": "MatchCondition",
           "output_required": true,
@@ -4464,7 +4497,7 @@
         {
           "disabled": false,
           "document": "简易模式场景：前端对抗配置动作",
-          "example": "monitor",
+          "example": "1",
           "member": "int64",
           "name": "JsInjectAction",
           "output_required": false,
@@ -4484,7 +4517,7 @@
         {
           "disabled": false,
           "document": "简易模式场景：动作策略信息  PS:简易模式只有一个动作策略",
-          "example": "[{\"RuleId\":\"302131414\"}]",
+          "example": "无",
           "member": "BotSceneActionRule",
           "name": "ActionRuleList",
           "output_required": false,
@@ -4544,7 +4577,7 @@
         {
           "disabled": false,
           "document": "改场景的bot token列表",
-          "example": "[{\"Name\":\"name-token\"}]",
+          "example": "无",
           "member": "BotToken",
           "name": "TokenList",
           "output_required": false,
@@ -4858,7 +4891,7 @@
         {
           "disabled": false,
           "document": "场景列表，内容为空表示全部场景应用",
-          "example": "login",
+          "example": "[\"login\"]",
           "member": "string",
           "name": "Scene",
           "output_required": false,
@@ -4873,6 +4906,16 @@
           "name": "Priority",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token有效性配置信息",
+          "example": "无",
+          "member": "TokenValidation",
+          "name": "TokenValidation",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -5195,8 +5238,8 @@
         },
         {
           "disabled": false,
-          "document": "规则详情",
-          "example": "\"[]\"",
+          "document": "key为匹配字段；args为base64编码后的参数，等于号前为匹配参数，等于号后为匹配内容；match为逻辑符号；encodeflag为参数内容是否编码",
+          "example": "\"[{\"key\":\"Cookie\",\"args\":[\"bXl0b2tlbg=dmFsdWUx\"],\"match\":\"0\"}]\"",
           "member": "string",
           "name": "Options",
           "output_required": true,
@@ -5271,6 +5314,26 @@
           "name": "LogicalOp",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页面ID",
+          "example": "\"0\"",
+          "member": "string",
+          "name": "PageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作灰度比例，默认值100",
+          "example": "20",
+          "member": "uint64",
+          "name": "ActionRatio",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5706,7 +5769,7 @@
         {
           "disabled": false,
           "document": "内网地址",
-          "example": "[\"121.123.11.7\"]",
+          "example": "[\"1.1.11.7\"]",
           "member": "string",
           "name": "PrivateIp",
           "output_required": true,
@@ -7511,7 +7574,7 @@
         {
           "disabled": false,
           "document": "批量删除的规则列表",
-          "example": "[{\"Domain\":\"waf.com\"}]",
+          "example": "无",
           "member": "DomainRuleId",
           "name": "DomainRuleIdList",
           "required": false,
@@ -7526,7 +7589,7 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
-          "example": "{\"Code\":\"Success\"}",
+          "example": "无",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -7572,7 +7635,7 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
-          "example": "{\"Code\":\"Success\",\"Message\":\"Success\"}",
+          "example": "无",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -8004,19 +8067,19 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
-          "example": "sparta-waf",
-          "member": "string",
-          "name": "Edition",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "必填项。域名所属实例ID",
           "example": "waf_2kw60zgy0908e8j3",
           "member": "string",
           "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "sparta-waf",
+          "member": "string",
+          "name": "Edition",
           "required": false,
           "type": "string"
         }
@@ -8680,7 +8743,7 @@
         {
           "disabled": false,
           "document": "是否仅查询泛化的，1表示查询，0表示不查询",
-          "example": "1Log",
+          "example": "0",
           "member": "int64",
           "name": "IsPan",
           "required": false,
@@ -8705,7 +8768,7 @@
         {
           "disabled": false,
           "document": "请求参数样例列表",
-          "example": "{\"meyhod\":\"GET\"}",
+          "example": "无",
           "member": "ApiParameterType",
           "name": "ParameterList",
           "output_required": false,
@@ -8725,7 +8788,7 @@
         {
           "disabled": false,
           "document": "敏感字段",
-          "example": "[\"\"]",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "SensitiveFields",
           "output_required": false,
@@ -8815,7 +8878,7 @@
         {
           "disabled": false,
           "document": "历史样例",
-          "example": "[\"\"]",
+          "example": "无",
           "member": "ApiDetailSampleHistory",
           "name": "ApiDetailSampleHistory",
           "output_required": false,
@@ -8864,7 +8927,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "[{\"Entity\":\"waf\"}]",
+          "example": "无",
           "member": "ApiDataFilter",
           "name": "Filters",
           "required": false,
@@ -8873,7 +8936,7 @@
         {
           "disabled": false,
           "document": "排序方法，1 升序，-1 降序",
-          "example": "[\"update_time\":\"1\"]",
+          "example": "[\"update_time:1\"]",
           "member": "string",
           "name": "Sort",
           "required": false,
@@ -8915,7 +8978,7 @@
         {
           "disabled": false,
           "document": "api资产列表",
-          "example": "[{\"Domain\":\"waf\"}]",
+          "example": "无",
           "member": "ApiAsset",
           "name": "Data",
           "output_required": false,
@@ -9835,7 +9898,7 @@
         {
           "disabled": false,
           "document": "当前开启的、匹配范围为全局、优先级最高的场景",
-          "example": "{             \"SceneId\": \"3000004882\",             \"SceneName\": \"登录防护场景2\",             \"Priority\": 1,             \"UpdateTime\": 1667198325353         }",
+          "example": "无",
           "member": "GlobalSceneInfo",
           "name": "CurrentGlobalScene",
           "output_required": false,
@@ -9850,6 +9913,16 @@
           "name": "CustomRuleNums",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图灵盾开关状态",
+          "example": "true",
+          "member": "bool",
+          "name": "TldStatus",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -10596,7 +10669,7 @@
         {
           "disabled": false,
           "document": "策略详情",
-          "example": "[                             {                                 \"Field\": \"ARGS_HEADER\",                                 \"CompareFunc\": \"rematch\",                                 \"Content\": \"W15hLXpBLVowLTktXQ==\",                                 \"Arg\": \"x-wx-call-id\",                                 \"CaseNotSensitive\": 0                             }                         ]",
+          "example": "无",
           "member": "Strategy",
           "name": "Strategies",
           "output_required": true,
@@ -10656,7 +10729,7 @@
         {
           "disabled": false,
           "document": "定时任务配置信息",
-          "example": "2023-10-09T16:03:14+08:00",
+          "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "output_required": false,
@@ -10711,6 +10784,16 @@
           "name": "LogicalOp",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则灰度的比例，默认是100，不灰度",
+          "example": "20",
+          "member": "uint64",
+          "name": "ActionRatio",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -12364,7 +12447,7 @@
         {
           "disabled": false,
           "document": "支持的过滤器:\tObjectId: clb实例ID\tVIP: clb实例的公网IP\tInstanceId: waf实例ID\tDomain: 精准域名\tStatus: waf防护开关状态: 0关闭，1开启\tClsStatus: waf日志开关: 0关闭，1开启   ",
-          "example": "[       {         \"Name\": \"ObjectId\",         \"Values\": [           \"lb-70mdt3ia\"         ],         \"ExactMatch\": false       }     ]",
+          "example": "无",
           "member": "FiltersItemNew",
           "name": "Filters",
           "required": false,
@@ -13174,7 +13257,7 @@
         {
           "disabled": false,
           "document": "ip列表,当入参Ip为all时，返回所有已知ip列表",
-          "example": "[1.1.1.1]",
+          "example": "无",
           "member": "ScanIpInfo",
           "name": "IpList",
           "output_required": false,
@@ -13224,7 +13307,7 @@
         {
           "disabled": false,
           "document": "扫描示例",
-          "example": "GET / HTTP/1.1 Host: cloud.tencent.com Referer: https://cloud.tencent.com/ User-Agent: Tencent Security Team, more information: https://developers.weixin.qq.com/community/minihome/doc/0008ea401c89c02cff2d1345051001 (6720923bf1f686bd27a3a20888be) 7262 Tencent-Leakscan: TST(Tencent Security Team)",
+          "example": "waf",
           "member": "string",
           "name": "Demo",
           "output_required": false,
@@ -13254,7 +13337,7 @@
         {
           "disabled": false,
           "document": "产品文案",
-          "example": "此 IP为 微信小程序安全检测 扫描 IP，将定期对您的 提审小程序后台服务器 进行检测，以 便能及时帮助开发者发现小程序可能存在的安全漏洞，若您发现来自此 IP 的扫描行为，请进行放行或加白...",
+          "example": "此 IP为 微信小程序",
           "member": "string",
           "name": "Announcement",
           "output_required": false,
@@ -15255,7 +15338,7 @@
         {
           "disabled": false,
           "document": "域名端口配置",
-          "example": "[{\"NginxServerId\":231056,\"Port\":\"80\",\"Protocol\":\"http\",\"UpstreamPort\":\"80\",\"UpstreamProtocol\":\"http\"},{\"NginxServerId\":321607,\"Port\":\"443\",\"Protocol\":\"https\",\"UpstreamPort\":\"80\",\"UpstreamProtocol\":\"http\"}]",
+          "example": "无",
           "member": "PortInfo",
           "name": "Ports",
           "output_required": true,
@@ -15349,6 +15432,16 @@
           "member": "int64",
           "name": "CipherTemplate",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WAF与源站的连接超时，默认10s。",
+          "example": "10",
+          "member": "int64",
+          "name": "ProxyConnectTimeout",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15565,7 +15658,7 @@
         {
           "disabled": false,
           "document": "分流回源策略",
-          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0}]",
+          "example": "无",
           "member": "UpstreamRule",
           "name": "UpstreamRules",
           "output_required": false,
@@ -15578,6 +15671,16 @@
           "example": "0",
           "member": "int64",
           "name": "UseCase",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gzip开关。0：关闭 1：默认值，打开。",
+          "example": "1",
+          "member": "int64",
+          "name": "Gzip",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -17616,7 +17719,7 @@
         {
           "disabled": false,
           "document": "UCB的具体规则项",
-          "example": "[{\"key\":\"url\",\"op\":\"eq\",\"value\":\"/luffy\"}]",
+          "example": "无",
           "member": "InOutputUCBRuleEntry",
           "name": "Rule",
           "output_required": true,
@@ -17693,7 +17796,7 @@
         {
           "disabled": false,
           "document": "入参ID",
-          "example": "3012314124",
+          "example": "3300000001",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -17704,7 +17807,7 @@
         {
           "disabled": false,
           "document": "场景ID",
-          "example": "3012314124",
+          "example": "3000000001",
           "member": "string",
           "name": "SceneId",
           "output_required": true,
@@ -17759,7 +17862,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "30123124",
+          "example": "330000001",
           "member": "string",
           "name": "RuleId",
           "output_required": true,
@@ -17792,7 +17895,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "{\"TimeTZone\":\"utc+8\"}",
+          "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "output_required": false,
@@ -17836,7 +17939,7 @@
         {
           "disabled": false,
           "document": "当Action=intercept时，此字段必填",
-          "example": "[{\"Action\":\"monitor\",\"Proportion\":0.5}]",
+          "example": "无",
           "member": "UCBActionProportion",
           "name": "ActionList",
           "output_required": false,
@@ -18145,7 +18248,7 @@
         {
           "disabled": false,
           "document": "qps扩展包信息",
-          "example": "{\"ResourceIds\":\"\",\"ValidTime\":\"\",\"RenewFlag\":0,\"Count\":0,\"Region\":\"\",\"BillingItem\":\"\"}",
+          "example": "无",
           "member": "QPSPackageNew",
           "name": "QPS",
           "output_required": true,
@@ -18156,7 +18259,7 @@
         {
           "disabled": false,
           "document": "域名扩展包信息",
-          "example": "{\"ResourceIds\":\"\",\"ValidTime\":\"\",\"RenewFlag\":0,\"Count\":0,\"Region\":\"\"}",
+          "example": "无",
           "member": "DomainPackageNew",
           "name": "DomainPkg",
           "output_required": true,
@@ -18189,7 +18292,7 @@
         {
           "disabled": false,
           "document": "业务安全包",
-          "example": "{\"ResourceIds\":\"\",\"Status\":0,\"Region\":0,\"BeginTime\":\"\",\"EndTime\":\"\",\"InquireNum\":0,\"UsedNum\":0,\"RenewFlag\":0}",
+          "example": "无",
           "member": "FraudPkg",
           "name": "FraudPkg",
           "output_required": false,
@@ -18200,7 +18303,7 @@
         {
           "disabled": false,
           "document": "Bot资源包",
-          "example": "{\"ResourceIds\":\"waf_2kuil2fm02vqm7z3\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2022-01-05 15:38:04\",\"EndTime\":\"2022-01-15 15:38:04\",\"Type\":\"sv_wsm_waf_scene_bot\",\"InquireNum\":1,\"UsedNum\":0,\"RenewFlag\":0,\"BotCPWaf\":0,\"BotNPWaf\":0,\"IsBotTrial\":0}",
+          "example": "无",
           "member": "BotPkg",
           "name": "BotPkg",
           "output_required": false,
@@ -18211,7 +18314,7 @@
         {
           "disabled": false,
           "document": "bot的qps详情",
-          "example": "{\"ResourceIds\":\"\",\"ValidTime\":\"\",\"Count\":0,\"Region\":\"\",\"MaxBotQPS\":20,\"RenewFlag\":0}",
+          "example": "无",
           "member": "BotQPS",
           "name": "BotQPS",
           "output_required": false,
@@ -18321,7 +18424,7 @@
         {
           "disabled": false,
           "document": "重保包",
-          "example": "{\"ResourceIds\":\"\",\"Status\":0,\"Region\":0,\"BeginTime\":\"\",\"EndTime\":\"\",\"InquireNum\":0,\"UsedNum\":0,\"BillingItem\":\"\",\"RenewFlag\":0,\"HWState\":0}",
+          "example": "无",
           "member": "MajorEventsPkg",
           "name": "MajorEventsPkg",
           "output_required": false,
@@ -18332,7 +18435,7 @@
         {
           "disabled": false,
           "document": "混合云子节点包",
-          "example": "{\"ResourceIds\":\"\",\"Status\":0,\"Region\":0,\"BeginTime\":\"\",\"EndTime\":\"\",\"InquireNum\":0,\"UsedNum\":0,\"RenewFlag\":0}",
+          "example": "无",
           "member": "HybridPkg",
           "name": "HybridPkg",
           "output_required": false,
@@ -18343,7 +18446,7 @@
         {
           "disabled": false,
           "document": "API安全资源包",
-          "example": "{\"ResourceIds\":\"waf_2kw60zgy0908e8j3_0_api\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2024-04-23 00:01:51\",\"EndTime\":\"2024-12-01 00:01:51\",\"InquireNum\":1,\"UsedNum\":0,\"BillingItem\":\"sv_wsm_waf_scene_ent\",\"RenewFlag\":1}",
+          "example": "无",
           "member": "ApiPkg",
           "name": "ApiPkg",
           "output_required": false,
@@ -18354,7 +18457,7 @@
         {
           "disabled": false,
           "document": "小程序安全加速包",
-          "example": "{\"ResourceIds\":\"waf_mini\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2024-04-11 11:31:01\",\"EndTime\":\"2024-12-01 11:31:01\",\"Count\":5,\"BillingItem\":\"sv_wsm_waf_scene_mini\",\"RenewFlag\":1,\"AccessAppidNum\":4,\"DdosThreshold\":300,\"ElasticMode\":1,\"ElasticBilling\":10}",
+          "example": "无",
           "member": "MiniPkg",
           "name": "MiniPkg",
           "output_required": false,
@@ -18398,7 +18501,7 @@
         {
           "disabled": false,
           "document": "小程序安全接入ID数量扩张包",
-          "example": "{\"ResourceIds\":\"waf_2kw60zgy0908e8j3_0_mini_extend\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2024-05-30 23:35:08\",\"EndTime\":\"2024-12-01 23:35:08\",\"Count\":1,\"BillingItem\":\"sv_wsm_waf_exp_exp\",\"RenewFlag\":1}",
+          "example": "无",
           "member": "MiniExtendPkg",
           "name": "MiniExtendPkg",
           "output_required": false,
@@ -18453,7 +18556,7 @@
         {
           "disabled": false,
           "document": "重保增强包",
-          "example": "详情见数据结构",
+          "example": "无",
           "member": "MajorEventsProPkg",
           "name": "MajorEventsProPkg",
           "output_required": false,
@@ -18464,7 +18567,7 @@
         {
           "disabled": false,
           "document": "1是基础2025版本；0不是",
-          "example": "基础2025版本标识",
+          "example": "1",
           "member": "uint64",
           "name": "BasicFlag",
           "output_required": false,
@@ -18475,12 +18578,56 @@
         {
           "disabled": false,
           "document": "实例的网络配置",
-          "example": "详见数据结构",
+          "example": "无",
           "member": "NetworkConfig",
           "name": "NetworkConfig",
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RCE设备安全信息包",
+          "example": "无",
+          "member": "RCEPkg",
+          "name": "RCEPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超量策略。0：超量沙箱\n1：超量限流",
+          "example": "0",
+          "member": "int64",
+          "name": "ExceedPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大模型安全信息包",
+          "example": "无",
+          "member": "LLMPkg",
+          "name": "LLMPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性资源Id",
+          "example": "waf_000qjs0ik_eqps",
+          "member": "string",
+          "name": "ElasticResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -18792,6 +18939,34 @@
       ],
       "usage": "out"
     },
+    "JWTConfig": {
+      "document": "当用户选择JWS/JWE会话管理方式的时候，上传的配置信息以及校验规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "密钥信息",
+          "example": "无",
+          "member": "SecretInfo",
+          "name": "SecretInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Payload校验规则集合",
+          "example": "无",
+          "member": "TokenRuleEntry",
+          "name": "PayloadRule",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "JobDateTime": {
       "document": "规则执行的时间结构体",
       "members": [
@@ -18856,6 +19031,78 @@
         }
       ],
       "usage": "out"
+    },
+    "LLMPkg": {
+      "document": "有效大模型安全包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "waf_2l14oqru09w8yw0b_0_llm",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-09-09 12:56:14",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2025-09-10 12:56:15",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "sv_wsm_waf_llm_advanced",
+          "member": "string",
+          "name": "InquireKey",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "LoadBalancer": {
       "document": "负载均衡的监听器",
@@ -19055,7 +19302,7 @@
         },
         {
           "disabled": false,
-          "document": "地区\n\"多伦多\": \"ca\",\n    \"广州\": \"gz\",\n    \"成都\": \"cd\",\n    \"福州\": \"fzec\",\n    \"深圳\": \"szx\",\n    \"印度\": \"in\",\n    \"济南\": \"jnec\",\n    \"重庆\": \"cq\",\n    \"天津\": \"tsn\",\n    \"欧洲东北\": \"ru\",\n    \"南京\": \"nj\",\n    \"美国硅谷\": \"usw\",\n    \"泰国\": \"th\",\n    \"广州Open\": \"gzopen\",\n    \"深圳金融\": \"szjr\",\n    \"法兰克福\": \"de\",\n    \"日本\": \"jp\",\n    \"弗吉尼亚\": \"use\",\n    \"北京\": \"bj\",\n    \"中国香港\": \"hk\",\n    \"杭州\": \"hzec\",\n    \"北京金融\": \"bjjr\",\n    \"上海金融\": \"shjr\",\n    \"台北\": \"tpe\",\n    \"首尔\": \"kr\",\n    \"上海\": \"sh\",\n    \"新加坡\": \"sg\",\n    \"清远\": \"qy\"",
+          "document": "地区\n    \"多伦多\": \"ca\",\n    \"广州\": \"gz\",\n    \"成都\": \"cd\",\n    \"福州\": \"fzec\",\n    \"深圳\": \"szx\",\n    \"印度\": \"in\",\n    \"济南\": \"jnec\",\n    \"重庆\": \"cq\",\n    \"天津\": \"tsn\",\n    \"欧洲东北\": \"ru\",\n    \"南京\": \"nj\",\n    \"美国硅谷\": \"usw\",\n    \"泰国\": \"th\",\n    \"广州Open\": \"gzopen\",\n    \"深圳金融\": \"szjr\",\n    \"法兰克福\": \"de\",\n    \"日本\": \"jp\",\n    \"弗吉尼亚\": \"use\",\n    \"北京\": \"bj\",\n    \"中国香港\": \"hk\",\n    \"杭州\": \"hzec\",\n    \"北京金融\": \"bjjr\",\n    \"上海金融\": \"shjr\",\n    \"台北\": \"tpe\",\n    \"首尔\": \"kr\",\n    \"上海\": \"sh\",\n    \"新加坡\": \"sg\",\n    \"清远\": \"qy\",\n    \"雅加达\": \"jkt\"",
           "example": "gz",
           "member": "string",
           "name": "Region",
@@ -19976,7 +20223,7 @@
         {
           "disabled": false,
           "document": "需要批量开启的实体列表",
-          "example": "[\"waf.com\"]",
+          "example": "无",
           "member": "TargetEntity",
           "name": "TargetList",
           "required": false,
@@ -20069,7 +20316,7 @@
         {
           "disabled": false,
           "document": "批量操作的api列表",
-          "example": "[{\"ApiName\":\"/waf\"}]",
+          "example": "无",
           "member": "ApiSecKey",
           "name": "ApiNameList",
           "required": false,
@@ -20078,7 +20325,7 @@
         {
           "disabled": false,
           "document": "判断是否删除，包括删除事件和删除资产",
-          "example": "true或者false",
+          "example": "false",
           "member": "bool",
           "name": "IsDelete",
           "required": false,
@@ -20141,7 +20388,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "{     \"Timed\": [         {             \"StartDateTime\": 1711618518,             \"EndDateTime\": 1711918518         }     ],     \"Cron\": [         {             \"Day\": 12,             \"WDay\": 2,             \"StartTime\": \"12:11\",             \"EndTime\": \"21:00\"         }     ],     \"TimeTZone\": \"UTC+8\" }",
+          "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -20539,7 +20786,7 @@
         {
           "disabled": false,
           "document": "规则内容, 增加编码SceneId信息,1.BOT全局白名单处调用时，SceneId为\"global\", RuleType传10, Action为\"permit\";2.BOT场景配置时，SceneId为场景ID",
-          "example": "{         \"RuleType\":\"10\",         \"Name\":\"云图API全局白名单测试改名1\",         \"RuleId\":\"3000004932\",         \"ValidTime\":\"0\",         \"Timestamp\":\"1666164720592\",         \"AdditionArg\":\"none\",         \"Domain\":\"fgsta.qcloudwaf.com\"  }",
+          "example": "无",
           "member": "InOutputBotUCBRule",
           "name": "Rule",
           "required": false,
@@ -20548,7 +20795,7 @@
         {
           "disabled": false,
           "document": "530改批量操作",
-          "example": "[{         \"RuleType\":\"10\",         \"Name\":\"云图API全局白名单测试改名1\",         \"RuleId\":\"3000004932\",         \"ValidTime\":\"0\",         \"Timestamp\":\"1666164720592\",         \"AdditionArg\":\"none\",         \"Domain\":\"fgsta.qcloudwaf.com\"  }]",
+          "example": "无",
           "member": "InOutputBotUCBRule",
           "name": "BatchRules",
           "required": false,
@@ -20573,7 +20820,7 @@
         {
           "disabled": false,
           "document": "[\"1231\"]",
-          "example": "修改成功的ruleid列表",
+          "example": "[\"123121\"]",
           "member": "string",
           "name": "RuleIdList",
           "output_required": false,
@@ -20752,7 +20999,7 @@
         {
           "disabled": false,
           "document": "匹配条件数组",
-          "example": "具体看接口",
+          "example": "无",
           "member": "Strategy",
           "name": "Strategies",
           "required": true,
@@ -20815,7 +21062,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "{     \"Timed\": [         {             \"StartDateTime\": 1711618518,             \"EndDateTime\": 1711918518         }     ],     \"Cron\": [         {             \"Day\": 12,             \"WDay\": 2,             \"StartTime\": \"12:11\",             \"EndTime\": \"21:00\"         }     ],     \"TimeTZone\": \"UTC+8\" }",
+          "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -20856,6 +21103,15 @@
           "name": "LogicalOp",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则生效比例",
+          "example": "30",
+          "member": "uint64",
+          "name": "ActionRatio",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -20866,7 +21122,7 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
-          "example": "响应成功",
+          "example": "无",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -21261,7 +21517,7 @@
         {
           "disabled": false,
           "document": "规则的id列表",
-          "example": "1",
+          "example": "[1]",
           "member": "uint64",
           "name": "Rules",
           "required": false,
@@ -21315,7 +21571,7 @@
         {
           "disabled": false,
           "document": "需要修改的域名列表",
-          "example": "[{\"Domain\":\"waf.com\"}]",
+          "example": "无",
           "member": "DomainURI",
           "name": "Domains",
           "required": true,
@@ -21532,7 +21788,7 @@
         {
           "disabled": false,
           "document": "操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败",
-          "example": "{\"Code\":\"Success\",\"Message\":\"Success\"}\t",
+          "example": "无",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -21600,7 +21856,7 @@
         {
           "disabled": false,
           "document": "域名状态列表",
-          "example": "[       {         \"Status\": 1,         \"Domain\": \"evantt.qcloudwaf.com\",         \"DomainId\": \"waf-cblsyzU7\",         \"InstanceID\": \"waf_2kuil2fm02vqm7z3\"       }     ]",
+          "example": "无",
           "member": "HostStatus",
           "name": "HostsStatus",
           "required": true,
@@ -21615,7 +21871,7 @@
         {
           "disabled": false,
           "document": "成功的状态码，需要JSON解码后再使用，返回的格式是{\"域名\":\"状态\"}，成功的状态码为Success，其它的为失败的状态码（yunapi定义的错误码）",
-          "example": "{                     \"Code\": \"Success\",                     \"Message\": \"Success\"                 }",
+          "example": "无",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -22745,7 +23001,7 @@
         {
           "disabled": false,
           "document": "端口信息，可通过DescribeDomains接口获取具体参数信息。",
-          "example": "[{\"NginxServerId\":257856,\"Port\":\"80\",\"Protocol\":\"http\",\"UpstreamPort\":\"80\",\"UpstreamProtocol\":\"http\"}]",
+          "example": "无",
           "member": "SpartaProtectionPort",
           "name": "Ports",
           "required": false,
@@ -22811,6 +23067,15 @@
           "example": "0",
           "member": "int64",
           "name": "CipherTemplate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "WAF与源站的连接超时时间，默认10s。",
+          "example": "10",
+          "member": "int64",
+          "name": "ProxyConnectTimeout",
           "required": false,
           "type": "int"
         },
@@ -22979,7 +23244,7 @@
         {
           "disabled": false,
           "document": "分流回源时生效，分流回源的规则。",
-          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0}]",
+          "example": "无",
           "member": "UpstreamRule",
           "name": "UpstreamRules",
           "required": false,
@@ -22991,6 +23256,15 @@
           "example": "0",
           "member": "int64",
           "name": "UseCase",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "gzip开关。0：关闭 1：默认值，打开",
+          "example": "1",
+          "member": "int64",
+          "name": "Gzip",
           "required": false,
           "type": "int"
         }
@@ -24642,6 +24916,111 @@
       ],
       "usage": "out"
     },
+    "RCEPkg": {
+      "document": "有效REC设备安全包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "waf_2l145gbu09vhma2p_0_rce",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-08-19 12:18:32",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2025-08-19 12:34:35",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请数量",
+          "example": "1",
+          "member": "int64",
+          "name": "InquireNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用数量",
+          "example": "0",
+          "member": "int64",
+          "name": "UsedNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "续费标志",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "sv_wsm_waf_rce_ad",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RefreshAccessCheckResultRequest": {
       "document": "RefreshAccessCheckResult请求参数结构体",
       "members": [
@@ -25569,6 +25948,45 @@
       ],
       "type": "object"
     },
+    "SecretInfo": {
+      "document": "用于JWT验签的密钥信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "密钥上传方式，可选值：manual、upload",
+          "example": "manual",
+          "member": "string",
+          "name": "SecretSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥内容（用户手动输入/前端从密钥文件提取出的密钥内容）",
+          "example": "b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传的密钥文件文件名",
+          "example": "private_key.pem",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SessionData": {
       "document": "参数包装",
       "members": [
@@ -25651,7 +26069,7 @@
         {
           "disabled": false,
           "document": "更新时间戳",
-          "example": "1719988467123",
+          "example": "1719988467000",
           "member": "string",
           "name": "TsVersion",
           "output_required": true,
@@ -25691,11 +26109,21 @@
         {
           "disabled": false,
           "document": "Session关联的CC规则ID",
-          "example": "0",
+          "example": "[100]",
           "member": "int64",
           "name": "RelatedRuleID",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "精准匹配时，配置的key",
+          "example": "WAF",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -26087,6 +26515,201 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TokenDisplaySetting": {
+      "document": "JWT显示设置（只有当校验方式为JWS/JWE的时候才会有该配置信息）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否使用payload字段作为显示token",
+          "example": "true",
+          "member": "bool",
+          "name": "DisplayWithPayloadEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于显示的payload字段名",
+          "example": "user_id",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TokenRuleEntry": {
+      "document": "Token有效性校验规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验方式，可选值：验签校验、字段校验",
+          "example": "字段校验",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "键",
+          "example": "user_id",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作符",
+          "example": "len_eq",
+          "member": "string",
+          "name": "Op",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "无",
+          "member": "TokenRuleEntryValue",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TokenRuleEntryValue": {
+      "document": "通过复杂类型识别传入的不同类型参数值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "布尔类型值",
+          "example": "false",
+          "member": "bool",
+          "name": "LogicValue",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数组类型值\n可以存储字符串/数值\n如果只有一个元素，则为长度为1的数组",
+          "example": "[\"userId\", \"username\"]",
+          "member": "string",
+          "name": "MultiValue",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指示有效的字段",
+          "example": "BasicValue",
+          "member": "string",
+          "name": "ValidKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TokenValidation": {
+      "document": "token有效性配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启token有效性校验",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token有效性的校验方式，可选值为：jws、jwe、contains、len、regex",
+          "example": "jws",
+          "member": "string",
+          "name": "VerifyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效性校验配置和规则",
+          "example": "无",
+          "member": "TokenVerifyRule",
+          "name": "VerifyRule",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token显示设置（只有当校验方式为jws/jwe的时候才会有该配置信息）",
+          "example": "无",
+          "member": "TokenDisplaySetting",
+          "name": "DisplaySetting",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TokenVerifyRule": {
+      "document": "Token有效性校验规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "JWS、JWE专用校验规则",
+          "example": "无",
+          "member": "JWTConfig",
+          "name": "JWTRule",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其他会话有效性校验方式(contains、length、regex)的校验规则",
+          "example": "无",
+          "member": "TokenRuleEntry",
+          "name": "GeneralRule",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -26743,6 +27366,24 @@
           "name": "LogicalOp",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页面ID",
+          "example": "0",
+          "member": "string",
+          "name": "PageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "动作灰度比例，默认值100",
+          "example": "2",
+          "member": "uint64",
+          "name": "ActionRatio",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -26959,11 +27600,20 @@
         {
           "disabled": false,
           "document": "Session对应ID",
-          "example": "SessionID",
+          "example": "200000001",
           "member": "int64",
           "name": "SessionID",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "精准匹配时配置的key",
+          "example": "waf",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

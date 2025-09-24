@@ -311,25 +311,25 @@
     "ModifyGroup": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=TencentShenZhenEmployee\r\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=0\r\n&GroupExDescriptionInfos.0.GroupExDescription=部门\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\n&GroupId=TencentShenZhenEmployee\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=0\n&GroupExDescriptionInfos.0.GroupExDescription=部门\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.DuplicatedGroupDescription\",\n            \"Message\": \"同一人员库中自定义描述字段不可重复。\"\n        },\n        \"RequestId\": \"4b483679-3f08-4a7c-b827-4a6332dc030f\"\n    }\n}",
         "title": "错误示例"
       },
       {
         "document": "人员库名称不可重复",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=TencentShenZhenEmployee\r\n&GroupName=某某大学竹园1号宿舍楼\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\n&GroupId=TencentShenZhenEmployee\n&GroupName=某某大学竹园1号宿舍楼\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.GroupNameAlreadyExist\",\n            \"Message\": \"人员库名称已经存在。人员库名称不可重复。\"\n        },\n        \"RequestId\": \"2dcce170-30cf-4078-9b3c-309362fbad21\"\n    }\n}",
         "title": "错误示例-2"
       },
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=ZhuYuanDormitoryNo1\r\n&GroupName=某某大学竹园1号宿舍楼\r\n&Tag=研究生入住\r\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=0\r\n&GroupExDescriptionInfos.0.GroupExDescription=学院\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\n&GroupId=ZhuYuanDormitoryNo1\n&GroupName=某某大学竹园1号宿舍楼\n&Tag=研究生入住\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=0\n&GroupExDescriptionInfos.0.GroupExDescription=学院\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"da051f16-0400-49d4-9832-2cfd3b51866f\"\n    }\n}",
         "title": "修改人员库接口"
       },
       {
         "document": "修改人员库名称、备注、自定义描述字段名称",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\r\n&GroupId=TencentShenZhenEmployee\r\n&GroupName=腾讯深圳在职人员库\r\n&Tag=包含实习生\r\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=1\r\n&GroupExDescriptionInfos.0.GroupExDescription=部门\r\n&GroupExDescriptionInfos.1.GroupExDescriptionIndex=2\r\n&GroupExDescriptionInfos.1.GroupExDescription=项目组\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyGroup\n&GroupId=TencentShenZhenEmployee\n&GroupName=腾讯深圳在职人员库\n&Tag=包含实习生\n&GroupExDescriptionInfos.0.GroupExDescriptionIndex=1\n&GroupExDescriptionInfos.0.GroupExDescription=部门\n&GroupExDescriptionInfos.1.GroupExDescriptionIndex=2\n&GroupExDescriptionInfos.1.GroupExDescription=项目组\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"98381738-509f-4749-8a66-dbf54247333d\"\n    }\n}",
         "title": "修改人员库接口-2"
       }
@@ -337,19 +337,19 @@
     "ModifyPersonBaseInfo": [
       {
         "document": "人员性别设置错误",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\r\n&PersonId=1001\r\n&Gender=-1\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\n&PersonId=1001\n&Gender=-1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonGenderIllegal\",\n            \"Message\": \"人员性别设置出错。0代表未填写，1代表男性，2代表女性。\"\n        },\n        \"RequestId\": \"f40bf659-0283-4773-abe8-945f643d5015\"\n    }\n}",
         "title": "错误示例"
       },
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\r\n&PersonId=2001\r\n&PersonName=JunlyWang\r\n&Gender=1\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\n&PersonId=2001\n&PersonName=JunlyWang\n&Gender=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2a0fb7-7c9e-45c7-abf1-338457d1def7\"\n    }\n}",
         "title": "修改人员基础信息接口"
       },
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\r\n&PersonId=1001\r\n&PersonName=EvanLiao\r\n&Gender=1\r\n&Version=2018-03-01\r\n&<公共请求参数>",
+        "input": "https://iai.tencentcloudapi.com/?Action=ModifyPersonBaseInfo\n&PersonId=1001\n&PersonName=EvanLiao\n&Gender=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2a0fb7-7c9e-45c7-abf1-338457d1def7\"\n    }\n}",
         "title": "修改人员基础信息接口-2"
       }

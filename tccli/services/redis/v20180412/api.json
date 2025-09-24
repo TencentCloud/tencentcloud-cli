@@ -4912,7 +4912,7 @@
         {
           "disabled": false,
           "document": "根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。",
-          "example": "无",
+          "example": "[{\"TagKey\":\"key1\",\"TagValue\":\"value1\"}]",
           "member": "InstanceTagInfo",
           "name": "InstanceTags",
           "required": false,
@@ -4973,7 +4973,7 @@
         {
           "disabled": false,
           "document": "实例详细信息列表。",
-          "example": "无",
+          "example": "具体请参考对应数据结构",
           "member": "InstanceSet",
           "name": "InstanceSet",
           "output_required": true,
@@ -8134,8 +8134,8 @@
         },
         {
           "disabled": false,
-          "document": "从节点读取权重。",
-          "example": "1",
+          "document": "从节点读取权重。\n- 0：表示关闭副本只读。\n- 100：表示开启副本只读。",
+          "example": "0",
           "member": "int64",
           "name": "SlaveReadWeight",
           "output_required": true,

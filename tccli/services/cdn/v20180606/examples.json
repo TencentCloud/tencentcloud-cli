@@ -272,14 +272,6 @@
         "title": "违规历史查询"
       }
     ],
-    "DisableCaches": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=DisableCaches\n&Urls.0=http://example.com/path/to.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f13cf55b-69e6-4937-8856-bd8965beea8c\",\n        \"CacheOptResult\": {\n            \"SuccessUrls\": [\n                \"http://example.com/path/to.jpg\"\n            ],\n            \"FailUrls\": []\n        },\n        \"TaskId\": \"9597132570124\"\n    }\n}",
-        "title": "封禁示例"
-      }
-    ],
     "DisableClsLogTopic": [
       {
         "document": "",
@@ -296,28 +288,12 @@
         "title": "拷贝参考域名的配置至新域名"
       }
     ],
-    "EnableCaches": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=EnableCaches\n&Urls.0=http://example.com/path/to.jpg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdasdascsa721d8ha8chsa\",\n        \"CacheOptResult\": {\n            \"FailUrls\": [],\n            \"SuccessUrls\": [\n                \"http://example.com/path/to.jpg\"\n            ]\n        },\n        \"TaskId\": \"1632627566746100176\"\n    }\n}",
-        "title": "解封示例"
-      }
-    ],
     "EnableClsLogTopic": [
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=EnableClsLogTopic\n&Channel=cdn\n&LogsetId=6d04373b-ba59-4a4f-a96e-9fe53b59a536\n&TopicId=d2256449-c6ff-421b-93ef-aa3a7dde2de2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"57460798-8723-45e3-9c75-a0599ef9143a\"\n    }\n}",
         "title": "启动日志主题投递"
-      }
-    ],
-    "GetDisableRecords": [
-      {
-        "document": "",
-        "input": "https://cdn.tencentcloudapi.com/?Action=GetDisableRecords\n&StartTime=2018-12-12 10:24:00\n&EndTime=2018-12-14 10:24:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"f13cf55b-69e6-4937-8856-bd8965beea8c\",\n        \"UrlRecordList\": [\n            {\n                \"Status\": \"enable\",\n                \"RealUrl\": \"https://www.example.com/7349199.txt\",\n                \"CreateTime\": \"2018-12-13 12:25:07\",\n                \"UpdateTime\": \"2018-12-13 12:25:07\"\n            },\n            {\n                \"Status\": \"disable\",\n                \"RealUrl\": \"http://www.example.com/v1/example1.jpg\",\n                \"CreateTime\": \"2018-12-13 14:40:59\",\n                \"UpdateTime\": \"2018-12-13 14:40:59\"\n            }\n        ]\n    }\n}",
-        "title": "获取示例"
       }
     ],
     "ListClsLogTopics": [

@@ -13,21 +13,13 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "e59b15f1-8c26-4f28-8d7a-31fdbb5d2e90",
         "Result": {
-            "TotalCount": 1,
-            "TopicList": [
-                {
-                    "TopicId": "topic-test",
-                    "TopicName": "topic-test"
-                }
-            ],
             "GroupList": [
                 {
-                    "ConsumerGroupName": "group-test",
+                    "ConsumerGroupName": "hh",
                     "SubscribedInfo": [
                         {
-                            "TopicId": "topic-test",
-                            "TopicName": "topic-test",
                             "Partition": [
                                 0,
                                 1,
@@ -35,38 +27,162 @@ Output:
                             ],
                             "PartitionOffset": [
                                 {
-                                    "Partition": "0",
-                                    "Offset": 966186803
+                                    "Offset": 3395,
+                                    "Partition": "0"
                                 },
                                 {
-                                    "Partition": "1",
-                                    "Offset": 968552882
+                                    "Offset": 3269,
+                                    "Partition": "1"
                                 },
                                 {
-                                    "Partition": "2",
-                                    "Offset": 957792934
+                                    "Offset": 3336,
+                                    "Partition": "2"
                                 }
-                            ]
+                            ],
+                            "TopicId": "topic-brany0f0",
+                            "TopicName": "dev"
+                        },
+                        {
+                            "Partition": [
+                                0,
+                                1,
+                                2
+                            ],
+                            "PartitionOffset": [
+                                {
+                                    "Offset": 2110,
+                                    "Partition": "0"
+                                },
+                                {
+                                    "Offset": 2239,
+                                    "Partition": "1"
+                                },
+                                {
+                                    "Offset": 2197,
+                                    "Partition": "2"
+                                }
+                            ],
+                            "TopicId": "topic-4f78nggi",
+                            "TopicName": "te"
+                        }
+                    ]
+                },
+                {
+                    "ConsumerGroupName": "tes",
+                    "SubscribedInfo": [
+                        {
+                            "Partition": [
+                                0,
+                                1,
+                                2
+                            ],
+                            "PartitionOffset": [
+                                {
+                                    "Offset": 3395,
+                                    "Partition": "0"
+                                },
+                                {
+                                    "Offset": 3269,
+                                    "Partition": "1"
+                                },
+                                {
+                                    "Offset": 3336,
+                                    "Partition": "2"
+                                }
+                            ],
+                            "TopicId": "topic-brany0f0",
+                            "TopicName": "dev"
+                        },
+                        {
+                            "Partition": [
+                                0,
+                                1,
+                                2
+                            ],
+                            "PartitionOffset": [
+                                {
+                                    "Offset": 1409,
+                                    "Partition": "0"
+                                },
+                                {
+                                    "Offset": 1474,
+                                    "Partition": "1"
+                                },
+                                {
+                                    "Offset": 1453,
+                                    "Partition": "2"
+                                }
+                            ],
+                            "TopicId": "topic-4f78nggi",
+                            "TopicName": "te"
+                        }
+                    ]
+                },
+                {
+                    "ConsumerGroupName": "vv",
+                    "SubscribedInfo": [
+                        {
+                            "Partition": [
+                                0,
+                                1,
+                                2
+                            ],
+                            "PartitionOffset": [
+                                {
+                                    "Offset": 3395,
+                                    "Partition": "0"
+                                },
+                                {
+                                    "Offset": 3269,
+                                    "Partition": "1"
+                                },
+                                {
+                                    "Offset": 3336,
+                                    "Partition": "2"
+                                }
+                            ],
+                            "TopicId": "topic-brany0f0",
+                            "TopicName": "dev"
                         }
                     ]
                 }
             ],
-            "TotalPartition": 3,
-            "PartitionListForMonitor": [],
-            "TotalTopic": 1,
-            "TopicListForMonitor": [
-                {
-                    "TopicId": "topic-test",
-                    "TopicName": "topic-test"
-                }
-            ],
             "GroupListForMonitor": [
                 {
-                    "GroupName": "group-test"
+                    "GroupName": "hh"
+                },
+                {
+                    "GroupName": "tes"
+                },
+                {
+                    "GroupName": "vv"
                 }
-            ]
-        },
-        "RequestId": "d173b4fb-c6d0-4507-a822-b6f277fc4016"
+            ],
+            "PartitionListForMonitor": [],
+            "TopicList": [
+                {
+                    "TopicId": "topic-brany0f0",
+                    "TopicName": "dev"
+                },
+                {
+                    "TopicId": "topic-4f78nggi",
+                    "TopicName": "te"
+                }
+            ],
+            "TopicListForMonitor": [
+                {
+                    "TopicId": "topic-brany0f0",
+                    "TopicName": "dev"
+                },
+                {
+                    "TopicId": "topic-4f78nggi",
+                    "TopicName": "te"
+                }
+            ],
+            "TotalCount": 3,
+            "TotalPartition": 0,
+            "TotalTopic": 2
+        }
     }
 }
 ```

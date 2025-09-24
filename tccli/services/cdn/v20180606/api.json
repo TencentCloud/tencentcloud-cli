@@ -238,13 +238,6 @@
       "output": "DescribeUrlViolationsResponse",
       "status": "online"
     },
-    "DisableCaches": {
-      "document": "### <font color=red>**该接口已废弃** </font><br>\nDisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中国境内访问会直接返回 403。",
-      "input": "DisableCachesRequest",
-      "name": "禁用 URL(已废弃)",
-      "output": "DisableCachesResponse",
-      "status": "online"
-    },
     "DisableClsLogTopic": {
       "document": "DisableClsLogTopic 用于停止日志主题投递。注意：停止后，所有绑定该日志主题域名的日志将不再继续投递至该主题，已经投递的日志将会继续保留。生效时间约为 5~15 分钟。\n",
       "input": "DisableClsLogTopicRequest",
@@ -259,26 +252,12 @@
       "output": "DuplicateDomainConfigResponse",
       "status": "online"
     },
-    "EnableCaches": {
-      "document": "### <font color=red>**该接口已废弃** </font><br>\nEnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时间约 5~10 分钟。",
-      "input": "EnableCachesRequest",
-      "name": "解禁 URL(已废弃)",
-      "output": "EnableCachesResponse",
-      "status": "online"
-    },
     "EnableClsLogTopic": {
       "document": "EnableClsLogTopic 用于启动日志主题投递。注意：启动后，所有绑定该日志主题域名的日志将继续投递至该主题。生效时间约为 5~15 分钟。",
       "input": "EnableClsLogTopicRequest",
       "name": "启动日志主题投递",
       "output": "EnableClsLogTopicResponse",
       "status": "online"
-    },
-    "GetDisableRecords": {
-      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nGetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。",
-      "input": "GetDisableRecordsRequest",
-      "name": "禁用历史查询(已废弃)",
-      "output": "GetDisableRecordsResponse",
-      "status": "deprecated"
     },
     "ListClsLogTopics": {
       "document": "ListClsLogTopics 用于显示日志主题列表。注意：一个日志集下至多含10个日志主题。",
@@ -2690,32 +2669,6 @@
         }
       ],
       "usage": "both"
-    },
-    "CacheOptResult": {
-      "document": "违规资源封禁/解封返回类型",
-      "members": [
-        {
-          "disabled": false,
-          "document": "成功的url列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://qq.com/SuccessUrls",
-          "member": "string",
-          "name": "SuccessUrls",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "失败的url列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://qq.com/FailUrls",
-          "member": "string",
-          "name": "FailUrls",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "CacheTagKey": {
       "document": "组成CacheKey的一部分",
@@ -6775,53 +6728,6 @@
       ],
       "usage": "out"
     },
-    "DisableCachesRequest": {
-      "document": "DisableCaches请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "禁用的 URL 列表（分协议生效，必须包含http://或https://）\n每次最多可提交 100 条，每日最多可提交 3000 条",
-          "example": "http://www.test.com/1.txt",
-          "member": "string",
-          "name": "Urls",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DisableCachesResponse": {
-      "document": "DisableCaches返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "提交结果",
-          "example": "无",
-          "member": "CacheOptResult",
-          "name": "CacheOptResult",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "9597132570124",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DisableClsLogTopicRequest": {
       "document": "DisableClsLogTopic请求参数结构体",
       "members": [
@@ -7286,62 +7192,6 @@
       ],
       "usage": "out"
     },
-    "EnableCachesRequest": {
-      "document": "EnableCaches请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "解封 URL 列表",
-          "example": "[\"http:\\/\\/example.com\\/path\\/to.jpg\\r\\n\"]",
-          "member": "string",
-          "name": "Urls",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "URL封禁日期",
-          "example": "2021-06-01",
-          "member": "date",
-          "name": "Date",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "EnableCachesResponse": {
-      "document": "EnableCaches返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "结果列表",
-          "example": "无",
-          "member": "CacheOptResult",
-          "name": "CacheOptResult",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "1632627566746100176",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "EnableClsLogTopicRequest": {
       "document": "EnableClsLogTopic请求参数结构体",
       "members": [
@@ -7555,107 +7405,6 @@
         }
       ],
       "usage": "both"
-    },
-    "GetDisableRecordsRequest": {
-      "document": "GetDisableRecords请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "指定 URL 查询",
-          "example": "http://www.test.com/1.txt",
-          "member": "string",
-          "name": "Url",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "开始时间，如：2018-12-12 10:24:00。",
-          "example": "2021-02-01 00:00:00",
-          "member": "datetime",
-          "name": "StartTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间，如：2018-12-14 10:24:00。",
-          "example": "2021-02-01 23:59:59",
-          "member": "datetime",
-          "name": "EndTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "URL 当前状态\ndisable：当前仍为禁用状态，访问返回 403\nenable：当前为可用状态，已解禁，可正常访问",
-          "example": "disable",
-          "member": "string",
-          "name": "Status",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "分页查询偏移量，默认为 0",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页查询限制数目，默认为20。",
-          "example": "100",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "任务ID，任务ID和起始时间需要至少填写一项。",
-          "example": "364332106815435411",
-          "member": "string",
-          "name": "TaskId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetDisableRecordsResponse": {
-      "document": "GetDisableRecords返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "封禁历史记录",
-          "example": "无",
-          "member": "UrlRecord",
-          "name": "UrlRecordList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务总数，用于分页",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "GuetzliAdapter": {
       "document": "图片优化-GuetzliAdapter配置",
@@ -13768,52 +13517,6 @@
         }
       ],
       "type": "object"
-    },
-    "UrlRecord": {
-      "document": "封禁url的详细信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "状态(disable表示封禁，enable表示解封)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "disable",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "对应的url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://qq.com/disable",
-          "member": "string",
-          "name": "RealUrl",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2023-06-28 17:02:24",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2023-06-28 17:02:24",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "UrlRedirect": {
       "document": "访问URL重写配置",

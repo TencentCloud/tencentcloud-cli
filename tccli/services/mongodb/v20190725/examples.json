@@ -3,7 +3,7 @@
     "AssignProject": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=AssignProject\n&InstanceIds.0=cmgo-eqmoa5sf\n&ProjectId=12\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=AssignProject\n&InstanceIds.0=cmgo-eqmo****\n&ProjectId=12\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FlowIds\": [\n            1081\n        ],\n        \"RequestId\": \"8e2a339e-5ba9-4da3-8dc2-65a0a6314811\"\n    }\n}",
         "title": "指定云数据库实例的所属项目"
       }
@@ -388,8 +388,8 @@
     ],
     "ResetDBInstancePassword": [
       {
-        "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=ResetDBInstancePassword\n&InstanceId=cmgo-7pjedvz7\n&UserName=rwuser\n&Password=111111\n&<公共请求参数>",
+        "document": "修改实例用户的密码",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetDBInstancePassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-7pje****\",\n    \"UserName\": \"rwuser\",\n    \"Password\": \"*******\"\n}",
         "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"4769\",\n        \"RequestId\": \"e600a8d0-9014-11ea-84c1-01cccde830c6\"\n    }\n}",
         "title": "修改实例用户的密码"
       }

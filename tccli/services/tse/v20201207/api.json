@@ -757,7 +757,7 @@
       "status": "online"
     },
     "ModifyNetworkBasicInfo": {
-      "document": "修改云原生API网关实例网络基本信息，例如带宽以及描述，只支持修改客户端公网/内网的信息。",
+      "document": "修改云原生API网关实例网络基本信息，例如带宽以及描述、规格升级，只支持修改客户端公网/内网的信息。",
       "input": "ModifyNetworkBasicInfoRequest",
       "name": "修改云原生API网关实例网络基本信息",
       "output": "ModifyNetworkBasicInfoResponse",
@@ -1817,6 +1817,16 @@
           "name": "IPV6FullChain",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡个性化配置内容",
+          "example": "send_timeout 1800s;\\nproxy_read_timeout 1800s;\\nproxy_send_timeout 1800s;\\nclient_max_body_size 256M;",
+          "member": "string",
+          "name": "CustomizedConfigContent",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5346,6 +5356,16 @@
           "name": "Result",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务来源ID",
+          "example": "cls-koqdd0fq",
+          "member": "string",
+          "name": "SourceID",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -9683,6 +9703,15 @@
           "name": "Offset",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务来源ID",
+          "example": "cls-qwertyuw",
+          "member": "string",
+          "name": "SourceID",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -15338,6 +15367,15 @@
           "example": "公网入口",
           "member": "string",
           "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡的规格类型，支持：\n- 不传为共享型。\n- clb.c2.medium：标准型规格\n- clb.c3.small：高阶型1规格\n- clb.c3.medium：高阶型2规格\n- clb.c4.small：超强型1规格\n- clb.c4.medium：超强型2规格\n- clb.c4.large：超强型3规格\n- clb.c4.xlarge：超强型4规格",
+          "example": "clb.c3.medium",
+          "member": "string",
+          "name": "SlaType",
           "required": false,
           "type": "string"
         }

@@ -3403,7 +3403,7 @@
         {
           "disabled": false,
           "document": "预付费包月带宽IP到期时间。\n时间格式：YYYY-MM-DDThh:mm:ssZ\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2024-10-06T07:48:30Z",
+          "example": "2024-10-06",
           "member": "date",
           "name": "DeadlineDate",
           "output_required": true,

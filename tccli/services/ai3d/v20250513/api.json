@@ -8,7 +8,7 @@
       "status": "online"
     },
     "QueryHunyuanTo3DProJob": {
-      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供3个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供3个并发，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "QueryHunyuanTo3DProJobRequest",
       "name": "查询混元生3D专业版任务",
       "output": "QueryHunyuanTo3DProJobResponse",
@@ -29,7 +29,7 @@
       "status": "online"
     },
     "SubmitHunyuanTo3DProJob": {
-      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供3个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供3个并发，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "SubmitHunyuanTo3DProJobRequest",
       "name": "提交混元生3D专业版任务",
       "output": "SubmitHunyuanTo3DProJobResponse",
@@ -431,7 +431,7 @@
         },
         {
           "disabled": false,
-          "document": "生成任务类型，默认Normal，参考值：\nNormal：可生成带纹理的几何模型。\nLowPoly：可生成智能减面后的模型。\nGeometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。\nSketch：可输入草图或线稿图生成模型。",
+          "document": "生成任务类型，默认Normal，参考值：\nNormal：可生成带纹理的几何模型。\nLowPoly：可生成智能减面后的模型。\nGeometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。\nSketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。",
           "example": "Normal",
           "member": "string",
           "name": "GenerateType",

@@ -323,7 +323,7 @@
       "status": "online"
     },
     "ResetDBInstancePassword": {
-      "document": "修改实例用户的密码",
+      "document": "本接口（ResetDBInstancePassword）用于重置实例访问密码。",
       "input": "ResetDBInstancePasswordRequest",
       "name": "修改实例用户的密码",
       "output": "ResetDBInstancePasswordResponse",
@@ -417,7 +417,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID，用户已创建项目的唯一ID。请在控制台账号中心的项目管理中复制项目 ID。",
+          "document": "项目ID，用户已创建项目的唯一ID。请在控制台账号中心的[项目管理](https://console.cloud.tencent.com/project)中复制项目 ID。",
           "example": "12",
           "member": "uint64",
           "name": "ProjectId",
@@ -454,7 +454,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前账号具有的权限信息。\n- 0：无权限。\n- 1：只读。\n- 3：读写。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Mask",
@@ -465,7 +465,7 @@
         },
         {
           "disabled": false,
-          "document": "指具有当前账号权限的数据库名。\n<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指具有当前账号权限的数据库名。\n- \\* ：表示所有数据库。\n- db.name：表示特定 name 的数据库。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"db_test\"",
           "member": "string",
           "name": "NameSpace",
@@ -760,31 +760,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接的客户端IP",
+          "document": "连接的客户端 IP。",
           "example": "192.168.1.1",
           "member": "string",
           "name": "IP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对应客户端IP的连接数",
+          "document": "对应客户端 IP 的连接数。",
           "example": "9",
           "member": "uint64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为内部ip",
+          "document": "是否为内部 IP。",
           "example": "true",
           "member": "bool",
           "name": "InternalService",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -805,7 +805,7 @@
         },
         {
           "disabled": false,
-          "document": "新账号名称。其格式要求如下：<ul><li>字符范围[1,32]。</li><li>可输入[A,Z]、[a,z]、[1,9]范围的字符以及下划线“_”与短划线“-”。</li></ul>",
+          "document": "新账号名称。其格式要求如下：\n- 字符范围[1,64]。\n- 可输入[A,Z]、[a,z]、[1,9]范围的字符以及下划线“\\_”与短划线“-”。",
           "example": "mong_test",
           "member": "string",
           "name": "UserName",
@@ -814,8 +814,8 @@
         },
         {
           "disabled": false,
-          "document": "新账号密码。密码复杂度要求如下：<ul><li>字符长度范围[8,32]。</li><li>至少包含字母、数字和特殊字符（叹号“!”、at\"@\"、井号“#”、百分号“%”、插入符“^”、星号“*”、小括号“()”、下划线“_”）中的两种。</li></ul>",
-          "example": "abc123!@",
+          "document": "新账号密码。密码复杂度要求如下：\n- 字符长度范围[8,32]。\n- 至少包含字母、数字和特殊字符（叹号“!”、at\"@\"、井号“#”、百分号“%”、插入符“^”、星号“\\*”、小括号“()”、下划线“\\_”）中的两种。",
+          "example": "password",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -824,10 +824,10 @@
         {
           "disabled": false,
           "document": "mongouser 账号对应的密码。mongouser 为系统默认账号，即为创建实例时，设置的密码。",
-          "example": "Abc123...",
+          "example": "password...",
           "member": "string",
           "name": "MongoUserPassword",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -1791,7 +1791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "单价",
+          "document": "实例单价。单位：元。",
           "example": "0.17",
           "member": "float",
           "name": "UnitPrice",
@@ -1802,7 +1802,7 @@
         },
         {
           "disabled": false,
-          "document": "原价",
+          "document": "实例原价。单位：元。",
           "example": "210",
           "member": "float",
           "name": "OriginalPrice",
@@ -1813,7 +1813,7 @@
         },
         {
           "disabled": false,
-          "document": "折扣价",
+          "document": "实例折扣价。单位：元。",
           "example": "198",
           "member": "float",
           "name": "DiscountPrice",
@@ -3859,7 +3859,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例所属区域及可用区信息。格式：ap-guangzhou-2。",
+          "document": "实例所属区域及可用区信息。具体信息，请参见[地域和可用区](https://cloud.tencent.com/document/product/240/3637)。",
           "example": "ap-guangzhou-4",
           "member": "string",
           "name": "Zone",
@@ -3895,8 +3895,8 @@
         },
         {
           "disabled": false,
-          "document": "实例版本信息。具体支持的版本，请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。版本信息与版本号对应关系如下：\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。",
-          "example": "MONGO_36_WT",
+          "document": "实例版本信息。具体支持的版本，请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。版本信息与版本号对应关系如下：\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。",
+          "example": "MONGO_50_WT",
           "member": "string",
           "name": "MongoVersion",
           "required": true,
@@ -4040,7 +4040,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同。",
+          "document": "实例 ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-8oij5631",
           "member": "string",
           "name": "InstanceId",
@@ -4049,7 +4049,7 @@
         },
         {
           "disabled": false,
-          "document": "变更配置后实例内存大小，单位：GB。",
+          "document": "变更配置后实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "8",
           "member": "int64",
           "name": "Memory",
@@ -4058,7 +4058,7 @@
         },
         {
           "disabled": false,
-          "document": "变更配置后实例磁盘大小，单位：GB。",
+          "document": "变更配置后实例磁盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。",
           "example": "200",
           "member": "int64",
           "name": "Volume",
@@ -4067,7 +4067,7 @@
         },
         {
           "disabled": false,
-          "document": "实例节点数。默认为不变更节点数，暂不支持变更。",
+          "document": "实例节点数量。请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- 副本集实例，指变更配置后实例的主从节点数量。\n- 分片集群实例，指变更配置后实例每一个分片的主从节点数。\n**说明**：切勿同时发起调整节点数、调整分片数、调整节点规格的任务。",
           "example": "3",
           "member": "int64",
           "name": "NodeNum",
@@ -4076,7 +4076,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分片数。默认为不变更分片数，暂不支持变更。",
+          "document": "分片集群实例，指变更配置后实例的分片数量。取值范围：[2,36] 。\n**说明**：变更后的分片数量不能小于当前现有的数量。切勿同时发起调整节点数、调整分片数与调整节点规格的任务。",
           "example": "2",
           "member": "int64",
           "name": "ReplicateSetNum",
@@ -4095,6 +4095,7 @@
           "example": "无",
           "member": "DBInstancePrice",
           "name": "Price",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6025,7 +6026,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "指定实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-7pjedvz7",
           "member": "string",
           "name": "InstanceId",
@@ -6034,7 +6035,7 @@
         },
         {
           "disabled": false,
-          "document": "实例账号名",
+          "document": "指定需修改密码的账号名称。可通过接口 [DescribeAccountUsers](https://cloud.tencent.com/document/product/240/80800) 获取账号列表，复制需修改密码的账号。",
           "example": "rwuser",
           "member": "string",
           "name": "UserName",
@@ -6043,8 +6044,8 @@
         },
         {
           "disabled": false,
-          "document": "新密码，新密码长度不能少于8位",
-          "example": "111111",
+          "document": "指定账户的新密码。密码复杂度要求：\n- 8-32个字符长度。\n- 至少包含字母、数字和字符（!@#%^\\*()\\_）中的两种。",
+          "example": "test_123***",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -6058,11 +6059,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步请求Id，用户查询该流程的运行状态",
+          "document": "任务请求 ID。",
           "example": "4769",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6297,8 +6298,8 @@
         },
         {
           "disabled": false,
-          "document": "设置账号名称。",
-          "example": "bob",
+          "document": "设置访问实例的账号名称。设置要求为：字母开头的1-64个字符，只可输入[A,Z]、[a,z]、[1,9]范围的字符以及下划线“_”与短划线“-”。",
+          "example": "test_123",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -6307,7 +6308,7 @@
         {
           "disabled": false,
           "document": "设置权限信息。",
-          "example": "11",
+          "example": "无",
           "member": "Auth",
           "name": "AuthRole",
           "required": true,
@@ -6325,6 +6326,7 @@
           "example": "100000",
           "member": "uint64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6954,7 +6956,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定预隔离实例ID。格式如：cmgo-p8vnipr5。",
+          "document": "指定预隔离实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制预隔离实例 ID。",
           "example": "cmgo-7pje****",
           "member": "string",
           "name": "InstanceId",
