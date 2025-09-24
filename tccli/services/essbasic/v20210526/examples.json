@@ -654,8 +654,8 @@
     ],
     "ChannelDescribeAccountBillDetail": [
       {
-        "document": "查询平台子客（对应的OrganizationOpenId为org_dianziqian）子客账号绑定中、剩余可绑定账号等套餐使用情况",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeAccountBillDetail\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDCWpUUckpvv76rqUxjIE8qvXHjCqG4t\"\n    }\n}",
+        "document": "查询平台子客账号绑定中、剩余可绑定账号等套餐使用情况",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeAccountBillDetail\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationId\": \"org_dianziqian\",\n        \"AppId\": \"yDCWpUUckpvv76rqUxjIE8qvXHjCqG4t\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"BoundAccountsNumber\": 1,\n        \"InvalidAccountsNumber\": 0,\n        \"RemainAvailableAccountsNumber\": 9,\n        \"RequestId\": \"d8e66faf-6a5e-4592-9a8e-180b00577571\",\n        \"TotalBuyAccountsNumber\": 0,\n        \"TotalGiftAccountsNumber\": 9\n    }\n}",
         "title": "查询该第三方平台子客账号绑定中、剩余可绑定账号等套餐使用情况"
       }

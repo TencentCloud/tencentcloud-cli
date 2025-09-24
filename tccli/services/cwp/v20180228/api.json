@@ -876,11 +876,11 @@
       "status": "online"
     },
     "DescribeAvailableExpertServiceDetail": {
-      "document": "专家服务-可用订单详情",
+      "document": "该服务已下线\n\n专家服务-可用订单详情",
       "input": "DescribeAvailableExpertServiceDetailRequest",
       "name": "可用订单详情",
       "output": "DescribeAvailableExpertServiceDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeBanMode": {
       "document": "获取爆破阻断模式",
@@ -1240,18 +1240,18 @@
       "status": "online"
     },
     "DescribeExpertServiceList": {
-      "document": "专家服务-安全管家列表",
+      "document": "管家安全服务已下线\n\n专家服务-安全管家列表",
       "input": "DescribeExpertServiceListRequest",
       "name": "安全管家列表",
       "output": "DescribeExpertServiceListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeExpertServiceOrderList": {
-      "document": "专家服务-专家服务订单列表",
+      "document": "该服务已下线\n\n专家服务-专家服务订单列表",
       "input": "DescribeExpertServiceOrderListRequest",
       "name": "专家服务订单列表",
       "output": "DescribeExpertServiceOrderListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeExportMachines": {
       "document": "本接口 (DescribeExportMachines) 用于导出区域主机列表。",
@@ -1688,11 +1688,11 @@
       "status": "online"
     },
     "DescribeMonthInspectionReport": {
-      "document": "专家服务-安全管家月巡检报告下载",
+      "document": "该服务已下线\n\n专家服务-安全管家月巡检报告下载",
       "input": "DescribeMonthInspectionReportRequest",
       "name": "安全管家月巡检报告下载",
       "output": "DescribeMonthInspectionReportResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeNetAttackSetting": {
       "document": "查询网络攻击设置",
@@ -1793,11 +1793,11 @@
       "status": "online"
     },
     "DescribeProtectNetList": {
-      "document": "专家服务-旗舰重保列表",
+      "document": "该服务已下线\n\n专家服务-旗舰重保列表",
       "input": "DescribeProtectNetListRequest",
       "name": "旗舰重保列表",
       "output": "DescribeProtectNetListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribePublicProxyInstallCommand": {
       "document": "获取公网接入代理安装命令",
@@ -14890,15 +14890,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "漏洞id",
-          "example": "1089",
-          "member": "uint64",
-          "name": "VulId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "需要修复漏洞的主机，所有主机必须有VulId的这个漏洞且是待修复状态。",
           "example": "[\"e5b4724c-49af-46ab-bd84-cdbae897e7e0\"]",
           "member": "string",
@@ -14908,10 +14899,28 @@
         },
         {
           "disabled": false,
+          "document": "漏洞id",
+          "example": "1089",
+          "member": "uint64",
+          "name": "VulId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "修复方式 0组件更新或者安装补丁,1禁用服务",
           "example": "0",
           "member": "uint64",
           "name": "FixMethod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "kb id",
+          "example": "1",
+          "member": "uint64",
+          "name": "KbId",
           "required": false,
           "type": "int"
         }
@@ -27893,7 +27902,7 @@
         },
         {
           "disabled": false,
-          "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
+          "document": "机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
@@ -27921,7 +27930,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>Ips - String - 是否必填：否 - 通过ip查询 </li>\n<li>Names - String - 是否必填：否 - 通过实例名查询 </li>\n<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>\n<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>\n<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>\n<li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li>\n<li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>",
-          "example": "[{\"Name\": \"Status\", \"Values\": [\"AGENT_OFF****\"], \"ExactMatch\": true}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -27930,7 +27939,7 @@
         {
           "disabled": false,
           "document": "机器所属业务ID列表",
-          "example": "1",
+          "example": "[1024]",
           "member": "uint64",
           "name": "ProjectIds",
           "required": false,
@@ -27945,7 +27954,7 @@
         {
           "disabled": false,
           "document": "主机列表",
-          "example": "[             {\"Uuid\": \"3377add2-ee61-4c9a-99a3-************\",                 \"VpcId\": \"vpc-1dj4***\"}]",
+          "example": "无",
           "member": "Machine",
           "name": "Machines",
           "output_required": true,
@@ -27985,7 +27994,7 @@
         },
         {
           "disabled": false,
-          "document": "机器所属地域。如：ap-guangzhou，ap-shanghai",
+          "document": "机器所属地域。如：ap-guangzhou，ap-shangha，非腾讯云主机使用：ap-others",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
@@ -28013,7 +28022,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 查询关键字 </li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版 | UnFlagship : 非旗舰版 | PRO_POST_PAY：专业版按量计费 | PRO_PRE_PAY：专业版包年包月）</li>\n<li>TagId - String - 是否必填：否 - 标签ID </li>",
-          "example": "[{\"ExactMatch\": false, \"Name\": \"Version\", \"Values\": [\"PRO_VERSION\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -28022,7 +28031,7 @@
         {
           "disabled": false,
           "document": "机器所属业务ID列表",
-          "example": "1",
+          "example": "[1042,1043]",
           "member": "uint64",
           "name": "ProjectIds",
           "required": false,
@@ -28037,7 +28046,7 @@
         {
           "disabled": false,
           "document": "主机列表",
-          "example": "[{\"MachineName\":\"test-name\",\"MachineOs\":\"Windows Server 2022 数据中心版 64位 中文版\",\"Uuid\":\"24c9be55-c743-4a75-a5c7-2a2912341234\",\"Quuid\":\"24c9be55-c743-4a75-a5c7-2a2912341234\",\"MachineIp\":\"10.0.0.11\",\"IsProVersion\":true,\"MachineWanIp\":\"110.84.0.11\",\"PayMode\":\"\",\"Tag\":[{\"Rid\":0,\"Name\":\"test-name\",\"TagId\":1}],\"RegionInfo\":{\"Region\":\"ap-guangzhou\",\"RegionName\":\"test-name\",\"RegionId\":1,\"RegionCode\":\"gz\",\"RegionNameEn\":\"test-name\"},\"InstanceState\":\"EXPIRED\",\"ProjectId\":0,\"MachineType\":\"CVM\",\"KernelVersion\":\"0.1.1\",\"ProtectType\":\"BASIC_VERSION\",\"LicenseOrder\":{\"LicenseId\":1,\"LicenseType\":1,\"Status\":1,\"SourceType\":1,\"ResourceId\":\"uf6iskfrpy4g3xg2k1jm\"},\"CloudTags\":[],\"InstanceId\":\"i-uf6iskfrpy4g3xg2k1jm\",\"CloudFrom\":1}]",
+          "example": "无",
           "member": "MachineSimple",
           "name": "Machines",
           "output_required": true,
@@ -31691,6 +31700,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "任务扫描的KB编号",
+          "example": "[\"KB4253\"]",
+          "member": "string",
+          "name": "KBNumber",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -31756,7 +31775,7 @@
         {
           "disabled": false,
           "document": "扫描任务信息列表",
-          "example": "[{\"Id\": 69434772, \"HostIp\": \"10.206****\", \"HostName\": \"\\u672a\\u547d\\u540d\", \"OsName\": \"win64\", \"RiskNum\": 0, \"ScanBeginTime\": \"2024-11-01 09:3****\", \"ScanEndTime\": \"2020-11-11 10:1****\", \"Uuid\": \"08a3d4ce-7ae1-49e1-8a67-58685085****\", \"Quuid\": \"08a3d4ce-7ae1-49e1-8a67-58685085****\", \"Status\": \"Scanning\", \"Description\": \"\\u68c0\\u6d4b\\u4e2d\", \"FailType\": 0, \"MachineWanIp\": \"146.56.21****\", \"MachineExtraInfo\": {\"WanIP\": \"146.56.21****\", \"PrivateIP\": \"10.206****\", \"NetworkType\": 0, \"NetworkName\": \"vpc-3gov****\", \"InstanceID\": \"ins-bask****\", \"HostName\": \"demo_****\"}}]",
+          "example": "无",
           "member": "ScanTaskDetails",
           "name": "ScanTaskDetailList",
           "output_required": true,
@@ -31856,7 +31875,7 @@
         {
           "disabled": false,
           "document": "漏洞信息",
-          "example": "[     {         \"CveId\": \"cve- \",         \"CvssScore\": 0,         \"Name\": \"name\",         \"Reference\": \"ref\",         \"Level\": 1,         \"Fix\": \"fix\",         \"Descript\": \"desc\",         \"PublishTime\": \" 2019-12-25 11:57:15\",         \"VulId\": 1,         \"Cvss\": \"cvss\",         \"VulCategory\": 1     } ]",
+          "example": "无",
           "member": "VulDetailInfo",
           "name": "VulInfo",
           "output_required": true,
@@ -31901,6 +31920,16 @@
           "name": "VulCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单独扫描kb时的信息",
+          "example": "无",
+          "member": "PatchInfoDetail",
+          "name": "PatchInfo",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -34732,6 +34761,15 @@
           "name": "Quuid",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "补丁 id",
+          "example": "1",
+          "member": "uint64",
+          "name": "KbId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -34802,7 +34840,7 @@
         {
           "disabled": false,
           "document": "修复快照状态列表",
-          "example": "[{\"Id\": 685817, \"SnapshotName\": \"\\u6f0f\\u6d1e\\u4fee\\u590d_libarchive \\u4ee3\\u7801\\u95ee\\u9898\\u6f0f\\u6d1e(CVE-2022-36****\", \"SnapshotId\": \"snap-nb0l****\", \"Quuid\": \"e5f53d3c-7072-4e2f-ae0c-451c7a14****\", \"ModifyTime\": \"2024-10-25 11:3****\", \"HostName\": \"AI\\u6587\\u6863\\u7ec4\\u624b-p****\", \"HostIp\": \"10.22.****\", \"Status\": 1, \"FailReason\": \"\"}]",
+          "example": "无",
           "member": "VulFixStatusSnapshotInfo",
           "name": "SnapshotList",
           "output_required": true,
@@ -34812,7 +34850,7 @@
         {
           "disabled": false,
           "document": "修复漏洞详情列表",
-          "example": "[{\"VulId\": 38382, \"VulName\": \"libarchive \\u4ee3\\u7801\\u95ee\\u9898\\u6f0f\\u6d1e(CVE-2022-36****\", \"Progress\": 100, \"FailCnt\": 0, \"HostList\": [{\"Quuid\": \"e5f53d3c-7072-4e2f-ae0c-451c7a14****\", \"HostName\": \"AI\\u6587\\u6863\\u7ec4\\u624b-p****\", \"HostIp\": \"10.22.****\", \"Status\": 2, \"FailReason\": \"\\u4fee\\u590d\\u6210\\u529f\", \"ModifyTime\": \"2024-10-25 11:3****\"}], \"FixSuccessCnt\": 1, \"FixMethod\": 0}]",
+          "example": "无",
           "member": "VulFixStatusInfo",
           "name": "VulFixList",
           "output_required": true,
@@ -49866,7 +49904,7 @@
         {
           "disabled": false,
           "document": "主机额外信息",
-          "example": "{'WanIP': '175.178.15****', 'PrivateIP': '10.0.0****', 'NetworkType': 0, 'NetworkName': 'vpc-3gov****', 'InstanceID': 'ins-5hc1****', 'HostName': 'Jszx_DePart02_ECS_Coupon_Maste****'}",
+          "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
           "output_required": false,
@@ -49951,6 +49989,16 @@
           "name": "New",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启应用防护，0关闭，1开启",
+          "example": "1",
+          "member": "int64",
+          "name": "RaspOpen",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -50504,6 +50552,72 @@
           "example": "1",
           "member": "uint64",
           "name": "MachineOSType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PatchInfoDetail": {
+      "document": "补丁信息详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "KB编号",
+          "example": "KB5058381",
+          "member": "string",
+          "name": "KBNo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB名称",
+          "example": "适用于 Windows Server 2008 R2 的",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "2025-05",
+          "example": "发布时间",
+          "member": "string",
+          "name": "PublishTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB影响的漏洞",
+          "example": "[\"CVE-2025-30397\"]",
+          "member": "string",
+          "name": "RelatedCveId",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB说明文档",
+          "example": "https://support.microsoft.com/en-us/help/5058380",
+          "member": "string",
+          "name": "KbDocUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB id编号",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -53604,7 +53718,16 @@
           "example": "2",
           "member": "uint64",
           "name": "VulId",
-          "required": true,
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Kb Id ",
+          "example": "1",
+          "member": "uint64",
+          "name": "KbId",
+          "required": false,
           "type": "int"
         }
       ],
@@ -55531,6 +55654,15 @@
           "name": "Uuids",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0漏洞,1windows 补丁",
+          "example": "0",
+          "member": "uint64",
+          "name": "EventType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -55538,6 +55670,26 @@
     "ScanVulAgainResponse": {
       "document": "ScanVulAgain返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "执行成功主机数",
+          "example": "2",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基础版(不支持)的主机数",
+          "example": "3",
+          "member": "uint64",
+          "name": "BasicVersionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -55621,6 +55773,15 @@
           "name": "ScanMethod",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "kb编号",
+          "example": "[\"KB4545\"]",
+          "member": "string",
+          "name": "KBNumber",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -60068,7 +60229,7 @@
         },
         {
           "disabled": false,
-          "document": "漏洞纰漏时间",
+          "document": "漏洞披露时间",
           "example": "2024-09-13 14:1****",
           "member": "string",
           "name": "PublishTime",
@@ -60114,6 +60275,26 @@
           "name": "SupportDefense",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB对应的ID",
+          "example": "112",
+          "member": "uint64",
+          "name": "KbId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KB号",
+          "example": "KB33425",
+          "member": "string",
+          "name": "KbNumber",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -60256,6 +60437,46 @@
           "name": "FixMethod",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kb的ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "KbId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kb号",
+          "example": "kb23671",
+          "member": "string",
+          "name": "KbNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kb名字",
+          "example": "windows kb23671",
+          "member": "string",
+          "name": "KbName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "前置kb列表",
+          "example": "无",
+          "member": "string",
+          "name": "PreKbList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -60521,6 +60742,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "agent是否在线；0不在线，1在线",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgentStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -60681,7 +60912,7 @@
         {
           "disabled": false,
           "document": "CVSS评分",
-          "example": "9",
+          "example": "9.9",
           "member": "float",
           "name": "CvssScore",
           "output_required": true,
@@ -60806,6 +61037,26 @@
           "name": "LatestFixTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞对应机器的应用防护开启数量",
+          "example": "23",
+          "member": "int64",
+          "name": "RaspOpenNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞对应机器的应用防护关闭数量",
+          "example": "24",
+          "member": "int64",
+          "name": "RaspClosedNodeCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

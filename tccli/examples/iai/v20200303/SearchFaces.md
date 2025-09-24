@@ -29,7 +29,7 @@ Output:
                         "Score": 100,
                         "PersonGroupInfos": [
                             {
-                                "GroupId": "abc",
+                                "GroupId": "TencentShenZhenEmployee",
                                 "PersonExDescriptions": [
                                     "description1",
                                     "description2"

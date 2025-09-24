@@ -11,7 +11,8 @@ tccli tse ModifyNetworkBasicInfo --cli-unfold-argument  \
     --NetworkType Open \
     --Vip 172.10.10.1 \
     --InternetMaxBandwidthOut 1 \
-    --Description 公网入口负载均衡
+    --Description 公网入口负载均衡 \
+    --SlaType clb.c3.small
 ```
 
 Output: 

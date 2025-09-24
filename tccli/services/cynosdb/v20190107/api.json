@@ -21125,6 +21125,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否将libra节点当作普通RO节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApNodeAsRoNode",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "libra节点故障，是否转发给其他节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApQueryToOtherNode",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

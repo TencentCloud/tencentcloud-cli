@@ -1,135 +1,227 @@
-# Release 3.0.1278.1
+# Release 3.0.1279.1
 
-## 云防火墙(cfw) 版本：2019-09-04
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
 
-### 第 79 次发布
+### 第 68 次发布
 
-发布时间：2025-09-24 01:11:04
+发布时间：2025-09-25 01:10:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DisableCaches
+* EnableCaches
+* GetDisableRecords
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* CacheOptResult
+* UrlRecord
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 130 次发布
+
+发布时间：2025-09-25 01:12:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeAvailableExpertServiceDetail
+* DescribeExpertServiceList
+* DescribeExpertServiceOrderList
+* DescribeMonthInspectionReport
+* DescribeProtectNetList
 
 修改接口：
 
-* [DescribeLogStorageStatistic](http://document.tencentcloudapi.woa.com/document/product/1132/87167)
+* [DescribeScanState](http://document.tencentcloudapi.woa.com/document/product/296/60923)
 
-	* 新增出参：NDRNetFlowSize, NDRRiskSize, NDRStorageDay
+	* 新增出参：KBNumber
 
+* [DescribeScanTaskDetails](http://document.tencentcloudapi.woa.com/document/product/296/58238)
 
-修改数据结构：
+	* 新增出参：PatchInfo
 
-* [DescAcItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#DescAcItem)
+* [DescribeVulFixStatus](http://document.tencentcloudapi.woa.com/document/product/296/82174)
 
-	* 新增成员：CreateTime, UpdateTime
+	* 新增入参：KbId
 
-* [EnterpriseSecurityGroupRuleRuleInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EnterpriseSecurityGroupRuleRuleInfo)
+* [RetryVulFix](http://document.tencentcloudapi.woa.com/document/product/296/82166)
 
-	* 新增成员：CreateTime, UpdateTime
+	* 新增入参：KbId
 
-* [StorageHistogram](http://document.tencentcloudapi.woa.com/document/product/1132/49071#StorageHistogram)
+	* <font color="#dd0000">**修改入参**：</font>VulId
 
-	* 新增成员：NDRNetflowSize, NDRRiskSize
+* [ScanVul](http://document.tencentcloudapi.woa.com/document/product/296/57375)
 
-* [VpcRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcRuleItem)
+	* 新增入参：KBNumber
 
-	* 新增成员：CreateTime, UpdateTime
+* [ScanVulAgain](http://document.tencentcloudapi.woa.com/document/product/296/58236)
 
+	* 新增入参：EventType
 
-
-
-## 暴露面管理服务(ctem) 版本：2023-11-28
-
-### 第 5 次发布
-
-发布时间：2025-09-24 01:12:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DisplayLeakageCode](http://document.tencentcloudapi.woa.com/document/product/1792/87475#DisplayLeakageCode)
-
-	* 新增成员：Name
-
-
-
-
-## 边缘计算机器(ecm) 版本：2019-07-19
-
-### 第 26 次发布
-
-发布时间：2025-09-24 01:15:59
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Position](http://document.tencentcloudapi.woa.com/document/product/1108/42574#Position)
-
-	* <font color="#dd0000">**修改成员**：</font>Ipv6Supported
-
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 113 次发布
-
-发布时间：2025-09-24 01:16:39
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ScaleOutCluster](http://document.tencentcloudapi.woa.com/document/product/589/76812)
-
-	* 新增入参：WarehouseName
-
-* [ScaleOutInstance](http://document.tencentcloudapi.woa.com/document/product/589/34264)
-
-	* 新增入参：WarehouseName
-
-
-修改数据结构：
-
-* [AutoScaleResourceConf](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleResourceConf)
-
-	* 新增成员：WarehouseName
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 104 次发布
-
-发布时间：2025-09-24 01:29:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeBillingResourceGroup](http://document.tencentcloudapi.woa.com/document/product/851/82745)
-
-	* 新增出参：QuotaEnabled, DefaultResourceQuota, ResourceQuotas
+	* 新增出参：SuccessCount, BasicVersionCount
 
 
 新增数据结构：
 
-* [ResourceQuota](http://document.tencentcloudapi.woa.com/document/product/851/74915#ResourceQuota)
+* [PatchInfoDetail](http://document.tencentcloudapi.woa.com/document/product/296/19867#PatchInfoDetail)
+
+修改数据结构：
+
+* [CreateVulFixTaskQuuids](http://document.tencentcloudapi.woa.com/document/product/296/19867#CreateVulFixTaskQuuids)
+
+	* 新增成员：KbId
+
+	* <font color="#dd0000">**修改成员**：</font>VulId
+
+* [NetAttackEvent](http://document.tencentcloudapi.woa.com/document/product/296/19867#NetAttackEvent)
+
+	* 新增成员：RaspOpen
+
+* [VulEmergentMsgInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulEmergentMsgInfo)
+
+	* 新增成员：KbId, KbNumber
+
+* [VulFixStatusInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulFixStatusInfo)
+
+	* 新增成员：KbId, KbNumber, KbName, PreKbList
+
+* [VulInfoHostInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulInfoHostInfo)
+
+	* 新增成员：AgentStatus
+
+* [VulInfoList](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulInfoList)
+
+	* 新增成员：RaspOpenNodeCount, RaspClosedNodeCount
 
 
 
-## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 139 次发布
+
+发布时间：2025-09-25 01:14:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ProxyGroupRwInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ProxyGroupRwInfo)
+
+	* 新增成员：ApNodeAsRoNode, ApQueryToOtherNode
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 44 次发布
+
+发布时间：2025-09-25 01:21:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAccountUser](http://document.tencentcloudapi.woa.com/document/product/240/76889)
+
+	* <font color="#dd0000">**修改入参**：</font>MongoUserPassword
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 114 次发布
+
+发布时间：2025-09-25 01:23:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateSmartEraseTemplate](http://document.tencentcloudapi.woa.com/document/product/862/87777)
+* [DeleteSmartEraseTemplate](http://document.tencentcloudapi.woa.com/document/product/862/87776)
+* [DescribeSmartEraseTemplates](http://document.tencentcloudapi.woa.com/document/product/862/87775)
+* [ModifySmartEraseTemplate](http://document.tencentcloudapi.woa.com/document/product/862/87774)
+
+新增数据结构：
+
+* [SmartEraseTemplateItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartEraseTemplateItem)
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 42 次发布
+
+发布时间：2025-09-25 01:28:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VulInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VulInfo)
+
+	* 新增成员：RaspOpenNodeCount, RaspClosedNodeCount
+
+
+
+
+## TSF-Polaris&ZK&网关(tse) 版本：2020-12-07
+
+### 第 95 次发布
+
+发布时间：2025-09-25 01:31:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateNativeGatewayServiceSource](http://document.tencentcloudapi.woa.com/document/product/1364/85483)
+
+	* 新增出参：SourceID
+
+* [DescribeNativeGatewayServiceSources](http://document.tencentcloudapi.woa.com/document/product/1364/85481)
+
+	* 新增入参：SourceID
+
+* [ModifyNetworkBasicInfo](http://document.tencentcloudapi.woa.com/document/product/1364/82882)
+
+	* 新增入参：SlaType
+
+
+修改数据结构：
+
+* [CloudNativeAPIGatewayConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayConfig)
+
+	* 新增成员：CustomizedConfigContent
+
 
 
 

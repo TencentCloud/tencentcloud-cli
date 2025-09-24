@@ -3316,7 +3316,7 @@
         {
           "disabled": false,
           "document": "人员库自定义描述字段Index，从0开始。",
-          "example": "无",
+          "example": "3",
           "member": "uint64",
           "name": "GroupExDescriptionIndex",
           "required": true,
@@ -3862,7 +3862,7 @@
         {
           "disabled": false,
           "document": "检测出的人脸图片状态返回码。\n- 0 表示正常。 \n- -1601代表不符合图片质量控制要求，此时Candidate内容为空。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RetCode",
           "output_required": true,
@@ -3977,7 +3977,7 @@
         {
           "disabled": false,
           "document": "出参Score中，只有超过FaceMatchThreshold值的结果才会返回。默认为0。",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "FaceMatchThreshold",
           "required": false,
