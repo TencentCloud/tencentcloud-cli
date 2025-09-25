@@ -337,7 +337,7 @@
         },
         {
           "disabled": false,
-          "document": "最大生成的token数量，默认为4096，最大可设置为16384",
+          "document": "模型最大输出长度（单位 token），不包含思维链内容。\n默认为4096，取值范围：各个模型不同，参考各个模型最大输出长度（示例：4k，即4096）。\n输出 token 的总长度受模型的上下文长度限制。",
           "example": "8192",
           "member": "int64",
           "name": "MaxTokens",
@@ -668,7 +668,7 @@
         },
         {
           "disabled": false,
-          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD，\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD，\n默认值为0",
+          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD，\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD\n5: 返回全文md，每一页ocr原始json，每一页md\n默认值为0\n",
           "example": "3",
           "member": "string",
           "name": "ResultType",
@@ -783,7 +783,7 @@
         },
         {
           "disabled": true,
-          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD，\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD，\n默认值为3（返回全文MD + 每一页的OCR原始Json）\n\n",
+          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD；\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD；\n5：返回全文md，每一页ocr原始json，每一页md。\n\n",
           "example": "3",
           "member": "string",
           "name": "ResultType",
@@ -816,6 +816,24 @@
           "name": "IgnoreFailedPage",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD；\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD；\n5：返回全文md，每一页ocr原始json，每一页md。\n\n",
+          "example": "0",
+          "member": "string",
+          "name": "SplitResultType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Markdown文件中表格返回的形式\n0，表格以MD形式返回\n1，表格以HTML形式返回\n默认为",
+          "example": "0",
+          "member": "string",
+          "name": "SplitTableResultType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -1400,7 +1418,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "说明：选择生成向量的模型\n备注：仅一个模型可选",
+          "document": "说明：选择生成向量的模型备注：可选[lke-text-embedding-v1,lke-text-embedding-v2]",
           "example": "lke-text-embedding-v1",
           "member": "string",
           "name": "Model",
@@ -1951,8 +1969,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "知识库ID",
-          "example": "4901991032",
+          "document": "说明：知识库ID\n备注：通过创建知识库接口（DeleteKnowledgeBase）得到知识库ID（KnowledgeBaseId）",
+          "example": "34b46fe81750343723503",
           "member": "string",
           "name": "KnowledgeBaseId",
           "required": true,
@@ -1960,7 +1978,7 @@
         },
         {
           "disabled": false,
-          "document": "属性ID",
+          "document": "说明：属性ID\n备注：通过CreateAttributeLabel接口创建属性时会生成AttributeId，通过ListAttributeLabels接口可查询得到AttributeId、AttributeKey、AttributeName以及LabelId、LabelName的对应关系",
           "example": "1830996257459865531",
           "member": "string",
           "name": "AttributeId",
@@ -1969,7 +1987,7 @@
         },
         {
           "disabled": false,
-          "document": "属性标识，最大40个英文字符，如style",
+          "document": "说明：属性标识，\n备注：仅支持英文字符，不支持数字，支持下划线。最大支持40个英文字符，如style",
           "example": "stlye",
           "member": "string",
           "name": "AttributeKey",
@@ -1978,7 +1996,7 @@
         },
         {
           "disabled": false,
-          "document": "属性名称，最大80个英文字符，如风格",
+          "document": "说明：属性名称\n备注：支持中英文字符。最大支持80个中英文字符，如风格",
           "example": "风格",
           "member": "string",
           "name": "AttributeName",
@@ -1987,10 +2005,19 @@
         },
         {
           "disabled": false,
-          "document": "属性标签",
+          "document": "说明：标签ID（LabelId）以及标签名（LabelName）\n备注：\n- 不填写LabelId，默认在当前AttributeId下新增标签值（LabelName）；\n- 若填写该AttributeId下的LabelId以及LabelName，则为修改该LabelId对应的标签值",
           "example": "无",
           "member": "AttributeLabelItem",
           "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "说明：删除的标签id",
+          "example": "[\"157622\"]",
+          "member": "string",
+          "name": "DeleteLabelIds",
           "required": false,
           "type": "list"
         }

@@ -7751,7 +7751,7 @@
         {
           "disabled": false,
           "document": "混流输出控制参数。",
-          "example": "OutputParams",
+          "example": "无",
           "member": "OutputParams",
           "name": "OutputParams",
           "required": true,
@@ -7760,7 +7760,7 @@
         {
           "disabled": false,
           "document": "混流输出编码参数。",
-          "example": "EncodeParams",
+          "example": "无",
           "member": "EncodeParams",
           "name": "EncodeParams",
           "required": true,
@@ -7769,7 +7769,7 @@
         {
           "disabled": false,
           "document": "混流输出布局参数。",
-          "example": "LayoutParams",
+          "example": "无",
           "member": "LayoutParams",
           "name": "LayoutParams",
           "required": true,
@@ -7778,7 +7778,7 @@
         {
           "disabled": false,
           "document": "第三方CDN转推参数。如需转推至腾讯云云直播，此参数无需填写，会默认转推",
-          "example": "PublishCdnParams",
+          "example": "无",
           "member": "PublishCdnParams",
           "name": "PublishCdnParams",
           "required": false,
@@ -7823,7 +7823,7 @@
         {
           "disabled": false,
           "document": "混流输出控制参数。",
-          "example": "OutputParams",
+          "example": "无",
           "member": "OutputParams",
           "name": "OutputParams",
           "required": true,
@@ -7832,7 +7832,7 @@
         {
           "disabled": false,
           "document": "混流输出编码参数。",
-          "example": "EncodeParams",
+          "example": "无",
           "member": "EncodeParams",
           "name": "EncodeParams",
           "required": true,
@@ -7841,7 +7841,7 @@
         {
           "disabled": false,
           "document": "混流输出布局参数。",
-          "example": "LayoutParams",
+          "example": "无",
           "member": "LayoutParams",
           "name": "LayoutParams",
           "required": true,
@@ -7850,7 +7850,7 @@
         {
           "disabled": false,
           "document": "第三方CDN转推参数。如需转推至腾讯云云直播，此参数无需填写，会默认转推",
-          "example": "PublishCdnParams",
+          "example": "无",
           "member": "PublishCdnParams",
           "name": "PublishCdnParams",
           "required": false,
@@ -8861,6 +8861,34 @@
       ],
       "usage": "in"
     },
+    "Terminology": {
+      "document": "翻译术语",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源术语",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标术语翻译结果",
+          "example": "Tencent Cloud",
+          "member": "string",
+          "name": "Target",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TextToSpeechRequest": {
       "document": "TextToSpeech请求参数结构体",
       "members": [
@@ -9153,6 +9181,17 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译术语集合",
+          "example": "无",
+          "member": "Terminology",
+          "name": "Terminology",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

@@ -905,7 +905,7 @@
     "ModifyWebCallback": [
       {
         "document": "修改告警渠道回调配置",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWebCallback\n<公共请求参数>\n\n{\n    \"WebCallbackId\": \"webcallback-d20a21f7-xxxx-xxxx-ba1b-1aa49be5fed1\",\n    \"Name\": \"监控告警专用\",\n    \"Type\": \"Http\",\n    \"Webhook\": \"http://www.xxx.com\",\n    \"Method\": \"POST\",\n    \"Key\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWebCallback\n<公共请求参数>\n\n{\n    \"WebCallbackId\": \"webcallback-d20a21f7-xxxx-xxxx-ba1b-1aa49be5fed1\",\n    \"Name\": \"监控告警专用\",\n    \"Type\": \"Http\",\n    \"Webhook\": \"http://www.xxx.com\",\n    \"Method\": \"POST\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d20a21f7-xxxx-xxxx-ba1b-1aa49be5fed1\"\n    }\n}",
         "title": "修改告警渠道回调配置"
       }

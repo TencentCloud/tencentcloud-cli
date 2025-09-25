@@ -9884,7 +9884,7 @@
         {
           "disabled": false,
           "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。",
-          "example": "Default",
+          "example": "baas_personal",
           "member": "string",
           "name": "PackageId",
           "output_required": true,

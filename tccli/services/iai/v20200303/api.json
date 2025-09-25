@@ -2180,7 +2180,7 @@
         {
           "disabled": false,
           "document": "美丑打分。\n- 取值范围：[0,100]。 \n- FaceAttributesType 不含 Beauty 或检测超过 5 张人脸时，此参数仍返回，但不具备参考意义。",
-          "example": "无",
+          "example": "30",
           "member": "int64",
           "name": "Beauty",
           "output_required": true,

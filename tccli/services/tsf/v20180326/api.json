@@ -15581,7 +15581,7 @@
         {
           "disabled": false,
           "document": "部署组状态过滤字段",
-          "example": "RUNNING",
+          "example": "Running、Waiting、Paused、Updating、RollingBack、Abnormal、Unknown",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -15589,7 +15589,7 @@
         },
         {
           "disabled": false,
-          "document": "无",
+          "document": "部署组ID列表",
           "example": "[\"group-6a79x94v\"]",
           "member": "string",
           "name": "GroupIdList",

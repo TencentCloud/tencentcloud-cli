@@ -6127,7 +6127,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间ID。\n字符数不超过256",
+          "document": "房间ID。",
           "example": "312345678",
           "member": "uint64",
           "name": "RoomId",
@@ -6172,7 +6172,7 @@
         },
         {
           "disabled": false,
-          "document": "房间名称。",
+          "document": "房间名称。\n字符数不超过256",
           "example": "房间名称",
           "member": "string",
           "name": "Name",

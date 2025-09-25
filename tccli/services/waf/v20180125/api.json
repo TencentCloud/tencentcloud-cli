@@ -2487,38 +2487,38 @@
         },
         {
           "disabled": false,
-          "document": "必填项，是否开启HTTP强制跳转到HTTPS。\n0：不强制跳转\n1：开启强制跳转",
+          "document": "是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转",
           "example": "1",
           "member": "int64",
           "name": "HttpsRewrite",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "disabled": false,
-          "document": "必填项，是否开启HTTP2，需要开启HTTPS协议支持。\n0：关闭\n1：开启",
+          "document": "是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启",
           "example": "0",
           "member": "int64",
           "name": "IsHttp2",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "disabled": false,
-          "document": "必填项，是否开启主动健康检测。\n0：不开启\n1：开启",
+          "document": "是否开启主动健康检测。0：不开启1：开启",
           "example": "1",
           "member": "int64",
           "name": "ActiveCheck",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "disabled": false,
-          "document": "必填项，加密套件模板。\n0：不支持选择，使用默认模板  \n1：通用型模板 \n2：安全型模板\n3：自定义模板",
+          "document": "加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板",
           "example": "0",
           "member": "int64",
           "name": "CipherTemplate",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {

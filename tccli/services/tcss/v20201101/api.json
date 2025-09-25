@@ -171,7 +171,7 @@
     "CreateAssetImageScanTask": {
       "document": "容器安全创建镜像扫描任务",
       "input": "CreateAssetImageScanTaskRequest",
-      "name": "创建镜像扫描任务",
+      "name": "创建本地镜像扫描任务",
       "output": "CreateAssetImageScanTaskResponse",
       "status": "online"
     },
@@ -9452,7 +9452,7 @@
         {
           "disabled": true,
           "document": "是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。",
-          "example": "TRUE",
+          "example": "true",
           "member": "bool",
           "name": "All",
           "required": false,
@@ -9470,7 +9470,7 @@
         {
           "disabled": false,
           "document": "扫描漏洞；漏洞，木马和风险需选其一",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "ScanVul",
           "required": false,
@@ -9479,7 +9479,7 @@
         {
           "disabled": false,
           "document": "扫描木马；漏洞，木马和风险需选其一",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ScanVirus",
           "required": false,
@@ -9488,7 +9488,7 @@
         {
           "disabled": false,
           "document": "扫描风险；漏洞，木马和风险需选其一",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ScanRisk",
           "required": false,
@@ -9497,7 +9497,7 @@
         {
           "disabled": false,
           "document": "根据过滤条件筛选出镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。",
-          "example": "[{\"Name\":\"Namespace\",\"Values\":[\"name1\"]}]",
+          "example": "无",
           "member": "AssetFilters",
           "name": "Filters",
           "required": false,
@@ -9506,7 +9506,7 @@
         {
           "disabled": false,
           "document": "根据过滤条件筛选出镜像，再排除个别镜像",
-          "example": "[sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f9211]",
+          "example": "[\"sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f9211\"]",
           "member": "string",
           "name": "ExcludeImageIds",
           "required": false,
@@ -9515,7 +9515,7 @@
         {
           "disabled": false,
           "document": "镜像是否存在运行中的容器",
-          "example": "TRUE",
+          "example": "true",
           "member": "bool",
           "name": "ContainerRunning",
           "required": false,
@@ -9542,7 +9542,7 @@
         {
           "disabled": false,
           "document": "一键扫描任务。默认false表示非一键扫描，true一键扫描",
-          "example": "FALSE",
+          "example": "false",
           "member": "bool",
           "name": "IsOneClickScanningTask",
           "required": false,
