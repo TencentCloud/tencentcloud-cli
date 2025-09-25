@@ -13,7 +13,7 @@ tccli cms DescribeKeywordsLibs --cli-unfold-argument  \
     --UserUin 123 \
     --Type Text \
     --Filters.0.Name LibName \
-    --Filters.0.Values test
+    --Filters.0.Values Lib123
 ```
 
 Output: 
@@ -23,18 +23,18 @@ Output:
         "TotalCount": 0,
         "Infos": [
             {
-                "ID": "abc",
-                "LibName": "abc",
-                "Describe": "abc",
-                "CreateTime": "abc",
-                "Suggestion": "abc",
-                "MatchType": "abc",
+                "ID": "123xxx",
+                "LibName": "Lib123",
+                "Describe": "Lib123",
+                "CreateTime": "2022-06-30 15:32:58",
+                "Suggestion": "pass",
+                "MatchType": "default",
                 "BizTypes": [
-                    "abc"
+                    "biztype1"
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "123xxx-234xxx-345xxx"
     }
 }
 ```

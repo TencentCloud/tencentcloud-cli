@@ -93,8 +93,8 @@
     "DescribeKeywordsLibs": [
       {
         "document": "获取用户词库列表",
-        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKeywordsLibs\n<公共请求参数>\n\n{\n    \"UserAppID\": \"123\",\n    \"UserSubUin\": \"123\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\",\n    \"UserUin\": \"123\",\n    \"Type\": \"Text\",\n    \"Filters\": [\n        {\n            \"Name\": \"LibName\",\n            \"Values\": [\n                \"test\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Infos\": [\n            {\n                \"ID\": \"abc\",\n                \"LibName\": \"abc\",\n                \"Describe\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Suggestion\": \"abc\",\n                \"MatchType\": \"abc\",\n                \"BizTypes\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKeywordsLibs\n<公共请求参数>\n\n{\n    \"UserAppID\": \"123\",\n    \"UserSubUin\": \"123\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\",\n    \"UserUin\": \"123\",\n    \"Type\": \"Text\",\n    \"Filters\": [\n        {\n            \"Name\": \"LibName\",\n            \"Values\": [\n                \"Lib123\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Infos\": [\n            {\n                \"ID\": \"123xxx\",\n                \"LibName\": \"Lib123\",\n                \"Describe\": \"Lib123\",\n                \"CreateTime\": \"2022-06-30 15:32:58\",\n                \"Suggestion\": \"pass\",\n                \"MatchType\": \"default\",\n                \"BizTypes\": [\n                    \"biztype1\"\n                ]\n            }\n        ],\n        \"RequestId\": \"123xxx-234xxx-345xxx\"\n    }\n}",
         "title": "获取用户词库列表"
       }
     ],
@@ -115,8 +115,8 @@
     "DescribeLibSamples": [
       {
         "document": "获取关键词",
-        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibSamples\n<公共请求参数>\n\n{\n    \"Type\": \"abc\",\n    \"UserAppID\": \"abc\",\n    \"UserUin\": \"abc\",\n    \"UserSubUin\": \"abc\",\n    \"LibID\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Content\": \"abc\",\n    \"EvilTypeList\": [\n        0\n    ],\n    \"SampleIDs\": [\n        \"123\",\n        \"456\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Infos\": [\n            {\n                \"ID\": \"abc\",\n                \"Content\": \"abc\",\n                \"Label\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Remark\": \"abc\",\n                \"WordType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLibSamples\n<公共请求参数>\n\n{\n    \"Type\": \"text\",\n    \"UserAppID\": \"11234\",\n    \"UserUin\": \"11223344\",\n    \"UserSubUin\": \"11223344\",\n    \"LibID\": \"xxx-xxx-xxx\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Content\": \"keyword\",\n    \"EvilTypeList\": [\n        0\n    ],\n    \"SampleIDs\": [\n        \"23231\",\n        \"45236\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Infos\": [\n            {\n                \"ID\": \"xxx-xxx-xxx\",\n                \"Content\": \"keyword\",\n                \"Label\": \"Normal\",\n                \"CreateTime\": \"2012-01-02 15:04:05:06\",\n                \"Remark\": \"remark\",\n                \"WordType\": \"Default\"\n            }\n        ],\n        \"RequestId\": \"xxxx-xxxxx-xxxx\"\n    }\n}",
         "title": "获取关键词接口"
       }
     ],

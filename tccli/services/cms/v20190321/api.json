@@ -1251,7 +1251,7 @@
         {
           "disabled": false,
           "document": "终端用户的AppID",
-          "example": "12345",
+          "example": "1289345",
           "member": "string",
           "name": "UserAppID",
           "required": false,
@@ -1303,11 +1303,21 @@
         {
           "disabled": false,
           "document": "词库详情",
-          "example": "1",
+          "example": "无",
           "member": "KeywordsLibInfo",
           "name": "Infos",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户总词库记录数",
+          "example": "50",
+          "member": "int64",
+          "name": "TotalSample",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1398,7 +1408,7 @@
         {
           "disabled": false,
           "document": "终端用户的AppID",
-          "example": "12345",
+          "example": "112345",
           "member": "string",
           "name": "UserAppID",
           "required": false,
@@ -1457,6 +1467,15 @@
           "name": "SampleIDs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "时间排序",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2821,10 +2840,10 @@
         {
           "disabled": false,
           "document": "关键词库ID",
-          "example": "1111",
+          "example": "123xxx456",
           "member": "string",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2834,7 +2853,7 @@
           "example": "Default",
           "member": "string",
           "name": "LibName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2844,7 +2863,7 @@
           "example": "user defined",
           "member": "string",
           "name": "Describe",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2854,7 +2873,17 @@
           "example": "2021-11-22 11:12",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键词库更新时间",
+          "example": "2021-11-22 11:12",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2864,7 +2893,7 @@
           "example": "Review",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2874,17 +2903,17 @@
           "example": "FuzzyMatch",
           "member": "string",
           "name": "MatchType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "关联策略BizType列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"bizType1\", \"bizType2\"]",
           "member": "string",
           "name": "BizTypes",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

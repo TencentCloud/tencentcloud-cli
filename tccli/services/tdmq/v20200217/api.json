@@ -3720,7 +3720,7 @@
         {
           "disabled": false,
           "document": "用户专享物理集群ID，如果不传，则默认在公共集群上创建用户集群资源。",
-          "example": "sh_cluster_1",
+          "example": "1",
           "member": "uint64",
           "name": "BindClusterId",
           "required": false,
@@ -16951,6 +16951,24 @@
           "name": "EnableDeletionProtection",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除所有标签，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "RemoveAllTags",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "修改实例的标签信息，全量标签信息，非增量",
+          "example": "[{\"TagKey\":\"key\",\"TagValue\":\"value\"}]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

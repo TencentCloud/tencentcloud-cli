@@ -72,14 +72,6 @@
         "title": "查询活动ID为10000的非敏感信息"
       }
     ],
-    "DescribeCvmRenewInstanceDetail": [
-      {
-        "document": "获取新购CVM的信息，用于续费场景",
-        "input": "https://opc.tencentcloudapi.com/?Action=DescribeCvmRenewInstanceDetail\r\n&GoodsId=12616\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"InstanceDetail\": {\n            \"AddTimeStamp\": \"2019-11-22 18:01:24\",\n            \"Alias\": \"部署\",\n            \"AppId\": 1300674097,\n            \"ApplicationRole\": \"\",\n            \"AutoRenewFlag\": 0,\n            \"Bandwidth\": 200,\n            \"Cpu\": 4,\n            \"CustomId\": 1,\n            \"CvmPayMode\": 1,\n            \"Deadline\": \"2020-11-22 18:01:24\",\n            \"DeviceAssetId\": \"C4e46f48-b06b-4277-8248-8687a86cffa6\",\n            \"DeviceClass\": \"VSELF4\",\n            \"DeviceClassFlag\": 0,\n            \"DeviceId\": 682248220,\n            \"DeviceImageId\": 0,\n            \"DeviceLanIp\": \"172.17.0.11\",\n            \"DeviceWanIp\": \"106.54.180.250\",\n            \"Disk\": 0,\n            \"DiskType\": 6,\n            \"ErrorCode\": 0,\n            \"Fpga\": 0,\n            \"Gpu\": 0,\n            \"HypervisorUpdateFlag\": 0,\n            \"IdcName\": \"上海腾讯宝信DC电信7号楼M1-2-3\",\n            \"IsSafeIsolated\": 0,\n            \"IsVpcGateway\": 0,\n            \"IsolateTime\": \"0000-00-00 00:00:00\",\n            \"IspName\": \"腾讯CAP\",\n            \"ItemId\": 0,\n            \"LastOperation\": \"ResetInstancesPassword\",\n            \"LatestOperation\": \"ResetInstancesPassword\",\n            \"LatestOperationState\": \"SUCCESS\",\n            \"LocalEthDev\": \"Eth0\",\n            \"Mem\": 8,\n            \"NetworkPayMode\": 2,\n            \"OsName\": \"Centos7.6.0X64\",\n            \"ProjectId\": 0,\n            \"RecycleFlag\": 0,\n            \"RegionId\": 4,\n            \"RootSize\": 50,\n            \"RootType\": 6,\n            \"Runflag\": 0,\n            \"SafeIsolatedInfo\": \"\",\n            \"State\": \"RUNNING\",\n            \"Status\": 1,\n            \"SubnetId\": 872305,\n            \"SwapSize\": 0,\n            \"TmpDeviceId\": 12753981,\n            \"UInstanceId\": \"Ins-05q7204t\",\n            \"UpdateTimestamp\": \"2019-11-22 18:02:29\",\n            \"Uuid\": \"A01e4412-b315-409e-b891-445d3018a0d0\",\n            \"VpcId\": 2897064,\n            \"ZoneId\": 200002,\n            \"ZoneName\": \"上海二区\"\n        },\n        \"RequestId\": \"e4ce770c-66ea-4917-b533-6884774788d5\"\n    }\n}",
-        "title": "获取新购CVM的信息，用于续费场景"
-      }
-    ],
     "GetActivityRegFormRecordList": [
       {
         "document": "",
