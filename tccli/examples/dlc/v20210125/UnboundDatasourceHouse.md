@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli dlc UnboundDatasourceHouse --cli-unfold-argument  \
-    --NetworkConnectionName abc
+    --NetworkConnectionName connection_tmp
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "sjeisds-23dskda-ekdo2-dsaoe1-1erewr"
     }
 }
 ```

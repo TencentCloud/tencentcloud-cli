@@ -805,6 +805,13 @@
       "output": "DescribeTaskMonitorInfosResponse",
       "status": "online"
     },
+    "DescribeTaskResourceUsage": {
+      "document": "返回任务洞察资源用量",
+      "input": "DescribeTaskResourceUsageRequest",
+      "name": "任务资源用量信息",
+      "output": "DescribeTaskResourceUsageResponse",
+      "status": "online"
+    },
     "DescribeTaskResult": {
       "document": "查询任务结果，仅支持30天以内的任务查询结果，且返回数据大小超过近50M会进行截断。",
       "input": "DescribeTaskResultRequest",
@@ -3244,6 +3251,34 @@
       ],
       "usage": "out"
     },
+    "CoreInfo": {
+      "document": "任务 core 用量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间戳(毫秒)数组",
+          "example": "[1749193814000]",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "core 用量",
+          "example": "[1,1]",
+          "member": "int64",
+          "name": "CoreUsage",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CosPermission": {
       "document": "cos权限描述",
       "members": [
@@ -3922,6 +3957,16 @@
     "CreateDataMaskStrategyResponse": {
       "document": "CreateDataMaskStrategy返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "策略id",
+          "example": "71a88499-266f-4b24-9944-2d80078ec0a6",
+          "member": "string",
+          "name": "StrategyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5277,7 +5322,7 @@
         {
           "disabled": false,
           "document": "标准引擎资源组名称",
-          "example": "无",
+          "example": "rg-demo",
           "member": "string",
           "name": "EngineResourceGroupName",
           "required": true,
@@ -5286,7 +5331,7 @@
         {
           "disabled": false,
           "document": "标准引擎名称",
-          "example": "无",
+          "example": "house-demo",
           "member": "string",
           "name": "DataEngineName",
           "required": true,
@@ -5295,7 +5340,7 @@
         {
           "disabled": false,
           "document": "自动启动，（任务提交自动拉起资源组）0-自动启动，1-不自动启动",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "AutoLaunch",
           "required": false,
@@ -5304,7 +5349,7 @@
         {
           "disabled": false,
           "document": "自动挂起资源组。0-自动挂起，1-不自动挂起",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "AutoPause",
           "required": false,
@@ -5313,7 +5358,7 @@
         {
           "disabled": false,
           "document": "driver的cu规格：\n当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu），内存型cu为cpu：men=1:8，m.small（1cu内存型）、m.medium（2cu内存型）、m.large（4cu内存型）、m.xlarge（8cu内存型）",
-          "example": "无",
+          "example": "2",
           "member": "string",
           "name": "DriverCuSpec",
           "required": false,
@@ -5322,7 +5367,7 @@
         {
           "disabled": false,
           "document": "executor的cu规格：\n当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu），内存型cu为cpu：men=1:8，m.small（1cu内存型）、m.medium（2cu内存型）、m.large（4cu内存型）、m.xlarge（8cu内存型）",
-          "example": "无",
+          "example": "16",
           "member": "string",
           "name": "ExecutorCuSpec",
           "required": false,
@@ -5331,7 +5376,7 @@
         {
           "disabled": false,
           "document": "executor最小数量，",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "MinExecutorNums",
           "required": false,
@@ -5340,7 +5385,7 @@
         {
           "disabled": false,
           "document": "executor最大数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "MaxExecutorNums",
           "required": false,
@@ -5349,7 +5394,7 @@
         {
           "disabled": false,
           "document": "创建资源组后是否直接拉起，0-拉起，1-不拉起",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IsLaunchNow",
           "required": false,
@@ -5358,7 +5403,7 @@
         {
           "disabled": false,
           "document": "自动挂起时间，单位分钟，取值范围在1-999（在无任务AutoPauseTime后，资源组自动挂起）",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AutoPauseTime",
           "required": false,
@@ -5385,7 +5430,7 @@
         {
           "disabled": false,
           "document": "任务并发数，默人是5个",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "MaxConcurrency",
           "required": false,
@@ -5394,7 +5439,7 @@
         {
           "disabled": false,
           "document": "网络配置名称",
-          "example": "无",
+          "example": "[\"connectionName\"]",
           "member": "string",
           "name": "NetworkConfigNames",
           "required": false,
@@ -5439,7 +5484,7 @@
         {
           "disabled": false,
           "document": "镜像名称",
-          "example": "image-xxx",
+          "example": "image-xxx，若使用内置镜像，即ImageType为bulit-in，则不同框架对应的ImageName为machine-learning: pytorch-v2.5.1, scikit-learn-v1.6.0, tensorflow-v2.18.0 python: python-v3.10 spark-m: Standard-S 1.1",
           "member": "string",
           "name": "ImageName",
           "required": false,
@@ -5505,6 +5550,51 @@
           "example": "64",
           "member": "int64",
           "name": "SparkSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPUDriver规格",
+          "example": "1",
+          "member": "int64",
+          "name": "DriverGPUSpec",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPUExecutor规格",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecutorGPUSpec",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPU上限",
+          "example": "1",
+          "member": "int64",
+          "name": "GPULimitSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "GPU规格",
+          "example": "1",
+          "member": "int64",
+          "name": "GPUSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Pod GPU规格上限",
+          "example": "1",
+          "member": "int64",
+          "name": "PythonGPUSpec",
           "required": false,
           "type": "int"
         }
@@ -5819,7 +5909,7 @@
         {
           "disabled": false,
           "document": "任务Id集合，按照执行顺序排列",
-          "example": "[alcas,asdfasd]",
+          "example": "[\"esjkdss-23sdask-essadaa-dsalooe2\"]",
           "member": "string",
           "name": "TaskIdSet",
           "output_required": true,
@@ -6106,7 +6196,7 @@
         {
           "disabled": false,
           "document": "需要绑定到工作组的用户Id集合",
-          "example": "[\"123456\"]",
+          "example": "[\"213609\",\"214508\"]",
           "member": "string",
           "name": "UserIds",
           "required": false,
@@ -13753,6 +13843,43 @@
       ],
       "type": "object"
     },
+    "DescribeTaskResourceUsageRequest": {
+      "document": "DescribeTaskResourceUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 id",
+          "example": "87edc6a2-94a2-47fb-8044-3fdda2243c01",
+          "member": "string",
+          "name": "TaskInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskResourceUsageResponse": {
+      "document": "DescribeTaskResourceUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "core 用量信息",
+          "example": "无",
+          "member": "CoreInfo",
+          "name": "CoreInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTaskResultRequest": {
       "document": "DescribeTaskResult请求参数结构体",
       "members": [
@@ -17743,7 +17870,7 @@
         {
           "disabled": false,
           "document": "用户Id，和CAM侧Uin匹配",
-          "example": "12345678",
+          "example": "1000xxxx8195",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -23471,11 +23598,21 @@
         {
           "disabled": false,
           "document": "获取结果消耗的时间",
-          "example": "150",
+          "example": "150.1",
           "member": "float",
           "name": "QueryResultTime",
           "output_required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "base64 编码结果集",
+          "example": "fd19j9u1jc1j",
+          "member": "string",
+          "name": "ResultSetEncode",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -23761,7 +23898,7 @@
         {
           "disabled": false,
           "document": "网络配置名称",
-          "example": "test",
+          "example": "connection_tmp",
           "member": "string",
           "name": "NetworkConnectionName",
           "required": false,
@@ -24316,7 +24453,7 @@
         {
           "disabled": false,
           "document": "引擎资源组名称",
-          "example": "无",
+          "example": "rg-1",
           "member": "string",
           "name": "EngineResourceGroupName",
           "required": true,
@@ -24325,7 +24462,7 @@
         {
           "disabled": false,
           "document": "driver的cu规格：\n当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu），内存型cu为cpu：men=1:8，m.small（1cu内存型）、m.medium（2cu内存型）、m.large（4cu内存型）、m.xlarge（8cu内存型）",
-          "example": "无",
+          "example": "small",
           "member": "string",
           "name": "DriverCuSpec",
           "required": false,
@@ -24334,7 +24471,7 @@
         {
           "disabled": false,
           "document": "executor的cu规格：\n当前支持：small（默认，1cu）、medium（2cu）、large（4cu）、xlarge（8cu），内存型cu为cpu：men=1:8，m.small（1cu内存型）、m.medium（2cu内存型）、m.large（4cu内存型）、m.xlarge（8cu内存型）",
-          "example": "无",
+          "example": "small",
           "member": "string",
           "name": "ExecutorCuSpec",
           "required": false,
@@ -24343,7 +24480,7 @@
         {
           "disabled": false,
           "document": "executor最小数量，",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "MinExecutorNums",
           "required": false,
@@ -24352,7 +24489,7 @@
         {
           "disabled": false,
           "document": "executor最大数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "MaxExecutorNums",
           "required": false,
@@ -24361,7 +24498,7 @@
         {
           "disabled": false,
           "document": "是否立即重启资源组生效，0--立即生效，1--只保持不重启生效",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IsEffectiveNow",
           "required": false,
@@ -24463,6 +24600,51 @@
           "example": "64",
           "member": "int64",
           "name": "SparkSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "gpuDriver规格",
+          "example": "1",
+          "member": "int64",
+          "name": "DriverGPUSpec",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "gpuExcutor 规格",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecutorGPUSpec",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "gpu 上限",
+          "example": "1",
+          "member": "int64",
+          "name": "GPULimitSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "gpu 规格",
+          "example": "1",
+          "member": "int64",
+          "name": "GPUSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "gpupod 规格",
+          "example": "1",
+          "member": "int64",
+          "name": "PythonGPUSpec",
           "required": false,
           "type": "int"
         }

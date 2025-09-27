@@ -15,7 +15,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "812228c6-45c7-43a2-af77-c7e67dc0b524"
+        "RequestId": "812228c6-45c7-43a2-af77-c7e67dc0b524",
+        "StrategyId": "71a88499-266f-4b24-9944-2d80078ec0a6"
     }
 }
 ```

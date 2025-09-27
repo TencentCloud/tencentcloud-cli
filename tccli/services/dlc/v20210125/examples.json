@@ -204,7 +204,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataMaskStrategy\n<公共请求参数>\n\n{\n    \"Strategy\": {\n        \"StrategyName\": \"create_data_mask_tag\",\n        \"Groups\": [\n            {\n                \"WorkGroupId\": 46920,\n                \"StrategyType\": \"MASK_HASH\"\n            }\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"812228c6-45c7-43a2-af77-c7e67dc0b524\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"812228c6-45c7-43a2-af77-c7e67dc0b524\",\n        \"StrategyId\": \"71a88499-266f-4b24-9944-2d80078ec0a6\"\n    }\n}",
         "title": "创建数据脱敏策略"
       }
     ],
@@ -938,6 +938,14 @@
         "title": "获取任务监控信息"
       }
     ],
+    "DescribeTaskResourceUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskResourceUsage\n<公共请求参数>\n\n{\n    \"TaskInstanceId\": \"15eb48854c1c11f083e8525400e26adf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"请求ID的值\",\n        \"CoreInfo\": {\n            \"Timestamp\": [\n                1750238853000\n            ],\n            \"CoreUsage\": [\n                1\n            ]\n        }\n    }\n}",
+        "title": "任务洞察资源用量"
+      }
+    ],
     "DescribeTaskResult": [
       {
         "document": "查询任务结果，每次返回1000行数据",
@@ -1357,8 +1365,8 @@
     "UnboundDatasourceHouse": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnboundDatasourceHouse\n<公共请求参数>\n\n{\n    \"NetworkConnectionName\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnboundDatasourceHouse\n<公共请求参数>\n\n{\n    \"NetworkConnectionName\": \"connection_tmp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sjeisds-23dskda-ekdo2-dsaoe1-1erewr\"\n    }\n}",
         "title": "test"
       }
     ],
