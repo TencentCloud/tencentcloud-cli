@@ -136,6 +136,7 @@ tccli teo CreateL7AccRules --cli-unfold-argument  \
     --Rules.0.Branches.0.SubRules.18.Description '回源 HTTPS示例' '修改 HTTP 回源请求头示例' 'Host Header 重写示例' '访问 URL 重定向示例' 'Token 鉴权示例' \
     --Rules.0.Branches.0.SubRules.18.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
     --Rules.0.Branches.0.SubRules.18.Branches.0.Actions.0.Name OriginPullProtocol \
+    --Rules.0.Branches.0.SubRules.18.Branches.0.Actions.0.OriginPullProtocolParameters.Protocol follow \
     --Rules.0.Branches.0.SubRules.18.Branches.0.Actions.1.Name ModifyRequestHeader \
     --Rules.0.Branches.0.SubRules.18.Branches.0.Actions.1.ModifyRequestHeaderParameters.HeaderActions.0.Action add \
     --Rules.0.Branches.0.SubRules.18.Branches.0.Actions.1.ModifyRequestHeaderParameters.HeaderActions.0.Name EO-Client-Browser \

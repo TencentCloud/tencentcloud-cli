@@ -1094,6 +1094,14 @@
         "title": "开启或关闭CDB日志投递CLS"
       }
     ],
+    "ModifyDBInstanceModes": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceModes\n&InstanceId=cdb-xxxx\n&Mode=protectMode\n&ProtectMode=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"9ad9c2d5-88007b27-7d2c8b8c-f2598f12\"\n    }\n}",
+        "title": "更改云数据库的模式"
+      }
+    ],
     "ModifyDBInstanceName": [
       {
         "document": "",

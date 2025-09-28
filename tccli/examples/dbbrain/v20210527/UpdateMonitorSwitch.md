@@ -8,7 +8,7 @@ Input:
 tccli dbbrain UpdateMonitorSwitch --cli-unfold-argument  \
     --Switch on \
     --InstanceId mysql-069yc1dda \
-    --Product ap-chengdu
+    --Product dbbrain-mysql
 ```
 
 Output: 

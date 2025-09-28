@@ -5876,7 +5876,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳, 单位为秒",
+          "document": "开始时间戳, 单位为秒(废弃)",
           "example": "\"1754816440\"",
           "member": "string",
           "name": "StartTime",
@@ -5885,7 +5885,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳, 单位为秒",
+          "document": "结束时间戳, 单位为秒(废弃)",
           "example": "\"1754816440\"",
           "member": "string",
           "name": "EndTime",
@@ -5927,6 +5927,24 @@
           "name": "SpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳, 单位为秒",
+          "example": "1754816440",
+          "member": "int64",
+          "name": "StatStartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳, 单位为秒",
+          "example": "1754816440",
+          "member": "int64",
+          "name": "StatEndTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5967,20 +5985,20 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳, 单位为秒",
+          "document": "开始时间戳, 单位为秒(废弃)",
           "example": "1754817316",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "结束时间戳, 单位为秒",
+          "document": "结束时间戳, 单位为秒(废弃)",
           "example": "1754817316",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -6036,6 +6054,24 @@
           "name": "SpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳, 单位为秒",
+          "example": "1758988800",
+          "member": "int64",
+          "name": "StatStartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳, 单位为秒",
+          "example": "1759075199",
+          "member": "int64",
+          "name": "StatEndTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6096,20 +6132,20 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳, 单位为秒",
+          "document": "开始时间戳, 单位为秒(废弃)",
           "example": "1754817316",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "结束时间戳, 单位为秒",
+          "document": "结束时间戳, 单位为秒(废弃)",
           "example": "1754817316",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -6129,6 +6165,24 @@
           "name": "SpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳, 单位为秒",
+          "example": "1754817316",
+          "member": "int64",
+          "name": "StatStartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳, 单位为秒",
+          "example": "1754817316",
+          "member": "int64",
+          "name": "StatEndTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7270,7 +7324,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳, 单位为秒",
+          "document": "开始时间戳, 单位为秒(废弃)",
           "example": "1754816440",
           "member": "string",
           "name": "StartTime",
@@ -7279,7 +7333,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳, 单位为秒",
+          "document": "结束时间戳, 单位为秒(废弃)",
           "example": "1754816440",
           "member": "string",
           "name": "EndTime",
@@ -7303,6 +7357,24 @@
           "name": "SpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳, 单位为秒",
+          "example": "1754816440",
+          "member": "int64",
+          "name": "StatStartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳, 单位为秒",
+          "example": "1754816440",
+          "member": "int64",
+          "name": "StatEndTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7598,7 +7670,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳, 单位为秒",
+          "document": "开始时间戳, 单位为秒(废弃)",
           "example": "\"1754816440\"",
           "member": "string",
           "name": "StartTime",
@@ -7607,7 +7679,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳, 单位为秒",
+          "document": "结束时间戳, 单位为秒(废弃)",
           "example": "\"1754816440\"",
           "member": "string",
           "name": "EndTime",
@@ -7640,6 +7712,24 @@
           "name": "SubScenes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳, 单位为秒",
+          "example": "1754817316",
+          "member": "int64",
+          "name": "StatStartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳, 单位为秒",
+          "example": "1754817316",
+          "member": "int64",
+          "name": "StatEndTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7736,7 +7826,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳, 单位为秒(默认值0)",
+          "document": "开始时间戳, 单位为秒(默认值0)(废弃)",
           "example": "\"7463235\"",
           "member": "string",
           "name": "StartTime",
@@ -7745,7 +7835,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳, 单位为秒(默认值0， 必须大于开始时间戳)",
+          "document": "结束时间戳, 单位为秒(默认值0， 必须大于开始时间戳)(废弃)",
           "example": "\"7463235\"",
           "member": "string",
           "name": "EndTime",
@@ -7787,6 +7877,24 @@
           "name": "SpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳, 单位为秒",
+          "example": "6000005624511",
+          "member": "int64",
+          "name": "StatStartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳, 单位为秒",
+          "example": "6000005624511",
+          "member": "int64",
+          "name": "StatEndTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -13633,24 +13741,6 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
-          "example": "1754817104",
-          "member": "string",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间",
-          "example": "1754817104",
-          "member": "string",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "页码（从1开始）",
           "example": "1",
           "member": "uint64",
@@ -13666,6 +13756,24 @@
           "name": "PageSize",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间(废弃)",
+          "example": "1754817104",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间(废弃)",
+          "example": "1754817104",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -13729,6 +13837,24 @@
           "name": "SpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳, 单位为秒",
+          "example": "1754817104",
+          "member": "int64",
+          "name": "StatStartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳, 单位为秒",
+          "example": "1754817104",
+          "member": "int64",
+          "name": "StatEndTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -15376,7 +15502,7 @@
         {
           "disabled": false,
           "document": "链接",
-          "example": "todo",
+          "example": "https://xxxxxx.com/xxx",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -15431,7 +15557,7 @@
         {
           "disabled": false,
           "document": "知识库业务id",
-          "example": "知识库标识 ",
+          "example": "知识库标识",
           "member": "string",
           "name": "KnowledgeBizId",
           "output_required": false,

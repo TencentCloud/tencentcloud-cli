@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb DescribeSlowLogPatterns --cli-unfold-argument  \
-    --InstanceId cmgo-a3bm93hf \
+    --InstanceId cmgo-a3bm**** \
     --StartTime '2020-04-20 00:00:00' \
     --EndTime '2020-04-20 22:00:00' \
     --SlowMS 100 \

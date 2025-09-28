@@ -13,18 +13,19 @@ Output:
 ```
 {
     "Response": {
-        "TransparentDataEncryptionStatus": "open",
         "KeyInfoList": [
             {
-                "KeyId": "65362a4b-5ec4-11ef-8467-**********",
-                "KeyName": "myKey",
-                "CreateTime": "2021-10-10 19:55:12",
-                "Status": "Enabled",
-                "KeyUsage": "TENCENT_KMS",
-                "KeyOrigin": "TENCENT_KMS"
+                "CreateTime": "2025-08-01 11:22:18",
+                "KeyId": "***********************************",
+                "KeyName": "******_test",
+                "KeyOrigin": "******_KMS",
+                "KeyUsage": "ENCRYPT_DECRYPT",
+                "KmsRegion": "ap-guangzhou",
+                "Status": "Enabled"
             }
         ],
-        "RequestId": "59b477da-6473-4ea8-85b3-7f4473744981"
+        "RequestId": "38cac06f-7c6e-4596-9bd1-64eba8ed3e36",
+        "TransparentDataEncryptionStatus": "open"
     }
 }
 ```

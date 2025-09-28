@@ -1,31 +1,25 @@
-**Example 1: 搜索服务折线图详情**
+**Example 1: 查询搜索服务调用折线图示例**
 
-搜索服务折线图详情
+查询搜索服务调用折线图示例
 
 Input: 
 
 ```
 tccli lke DescribeSearchStatsGraph --cli-unfold-argument  \
-    --ModelName cs-normal \
-    --StartTime 1726070400 \
-    --EndTime 1726156799
+    --ModelName cs-normal-70b \
+    --StartTime 1758988800 \
+    --EndTime 1759075199 \
+    --SpaceId default_space \
+    --StatStartTime 1758988800 \
+    --StatEndTime 1759075199
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "List": [
-            {
-                "X": "202411190930",
-                "Y": 23
-            },
-            {
-                "X": "202411190915",
-                "Y": 41
-            }
-        ],
-        "RequestId": "b547fd5a-4d82-4fcc-adb8-899e63c166fc"
+        "List": [],
+        "RequestId": "cef68b22-98ba-435a-be50-c57d936949f2"
     }
 }
 ```

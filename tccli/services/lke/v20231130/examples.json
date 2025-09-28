@@ -202,10 +202,10 @@
     ],
     "DescribeCallStatsGraph": [
       {
-        "document": "接口调用折线图",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallStatsGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal\",\n    \"StartTime\": \"1726070400\",\n    \"EndTime\": \"1726156799\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"X\": \"202411190930\",\n                \"Y\": 12\n            },\n            {\n                \"X\": \"202411190915\",\n                \"Y\": 11\n            }\n        ],\n        \"RequestId\": \"85e7259e-7810-4301-8f44-cf2d94ec0a0f\"\n    }\n}",
-        "title": "接口调用折线图"
+        "document": "接口调用折线图示例",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCallStatsGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal-70b\",\n    \"StartTime\": \"1758988800\",\n    \"EndTime\": \"1759075199\",\n    \"UinAccount\": [],\n    \"AppBizIds\": [],\n    \"SubScenes\": [],\n    \"AppType\": \"knowledge_qa\",\n    \"SpaceId\": \"default_space\",\n    \"StatStartTime\": 1758988800,\n    \"StatEndTime\": 1759075199\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"X\": \"202509281730\",\n                \"Y\": 1078\n            },\n            {\n                \"X\": \"202509281710\",\n                \"Y\": 9\n            },\n            {\n                \"X\": \"202509281310\",\n                \"Y\": 1\n            },\n            {\n                \"X\": \"202509281155\",\n                \"Y\": 5\n            },\n            {\n                \"X\": \"202509281140\",\n                \"Y\": 5\n            },\n            {\n                \"X\": \"202509281120\",\n                \"Y\": 12\n            },\n            {\n                \"X\": \"202509281110\",\n                \"Y\": 8\n            },\n            {\n                \"X\": \"202509280030\",\n                \"Y\": 1\n            },\n            {\n                \"X\": \"202509281840\",\n                \"Y\": 16\n            },\n            {\n                \"X\": \"202509281805\",\n                \"Y\": 1\n            },\n            {\n                \"X\": \"202509281725\",\n                \"Y\": 1356\n            },\n            {\n                \"X\": \"202509281430\",\n                \"Y\": 4\n            },\n            {\n                \"X\": \"202509281210\",\n                \"Y\": 5\n            },\n            {\n                \"X\": \"202509281145\",\n                \"Y\": 9\n            },\n            {\n                \"X\": \"202509281130\",\n                \"Y\": 1\n            },\n            {\n                \"X\": \"202509281055\",\n                \"Y\": 5\n            },\n            {\n                \"X\": \"202509281915\",\n                \"Y\": 1\n            },\n            {\n                \"X\": \"202509281905\",\n                \"Y\": 3\n            },\n            {\n                \"X\": \"202509281900\",\n                \"Y\": 958\n            },\n            {\n                \"X\": \"202509281845\",\n                \"Y\": 827\n            },\n            {\n                \"X\": \"202509281200\",\n                \"Y\": 7\n            },\n            {\n                \"X\": \"202509281150\",\n                \"Y\": 5\n            },\n            {\n                \"X\": \"202509281030\",\n                \"Y\": 11\n            }\n        ],\n        \"RequestId\": \"cee3d1f4-ee89-4e7b-9918-76a197ec53e0\"\n    }\n}",
+        "title": "接口调用折线图示例"
       }
     ],
     "DescribeConcurrencyUsage": [
@@ -218,10 +218,10 @@
     ],
     "DescribeConcurrencyUsageGraph": [
       {
-        "document": "并发折线图示例",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrencyUsageGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal-70b\",\n    \"StartTime\": \"1724688000\",\n    \"EndTime\": \"1724774400\",\n    \"AppBizIds\": [\n        \"1812732010083385344\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"AvailableY\": [\n            5,\n            4,\n            3\n        ],\n        \"RequestId\": \"ad439868-ed56-44f5-a716-81cc7402e83e\",\n        \"SuccessCallY\": [\n            1,\n            2,\n            3\n        ],\n        \"X\": [\n            \"2024082700\",\n            \"2024082701\",\n            \"2024082702\"\n        ]\n    }\n}",
-        "title": "并发折线图示例"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrencyUsageGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"lke-deepseek-r1-vip\",\n    \"SpaceId\": \"default-space\",\n    \"StatStartTime\": 1758988800,\n    \"StatEndTime\": 1759075199\n}",
+        "output": "{\n    \"Response\": {\n        \"AvailableY\": [],\n        \"SuccessCallY\": [],\n        \"X\": [],\n        \"RequestId\": \"3c427973-6a12-443b-aa63-ca3df61cd402\"\n    }\n}",
+        "title": "DescribeConcurrencyUsageGraph"
       }
     ],
     "DescribeDoc": [
@@ -298,10 +298,10 @@
     ],
     "DescribeSearchStatsGraph": [
       {
-        "document": "搜索服务折线图详情",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSearchStatsGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal\",\n    \"StartTime\": \"1726070400\",\n    \"EndTime\": \"1726156799\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"X\": \"202411190930\",\n                \"Y\": 23\n            },\n            {\n                \"X\": \"202411190915\",\n                \"Y\": 41\n            }\n        ],\n        \"RequestId\": \"b547fd5a-4d82-4fcc-adb8-899e63c166fc\"\n    }\n}",
-        "title": "搜索服务折线图详情"
+        "document": "查询搜索服务调用折线图示例",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMinuteDosageUsageGraph\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal-70b\",\n    \"StartTime\": \"1758988800\",\n    \"EndTime\": \"1759075199\",\n    \"UinAccount\": [],\n    \"AppBizIds\": [],\n    \"SpaceId\": \"default_space\",\n    \"StatStartTime\": 1758988800,\n    \"StatEndTime\": 1759075199\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"cef68b22-98ba-435a-be50-c57d936949f2\"\n    }\n}",
+        "title": "查询搜索服务调用折线图示例"
       }
     ],
     "DescribeSegments": [
@@ -336,10 +336,10 @@
     ],
     "DescribeTokenUsage": [
       {
-        "document": "获取调用统计",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenUsage\n<公共请求参数>\n\n{\n    \"UinAccount\": [\n        \"700001187441\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ApiCallStats\": 10,\n        \"InputTokenUsage\": 1120,\n        \"OutputTokenUsage\": 101,\n        \"RequestId\": \"716109cc-ee93-423a-85f0-a21fb7afcc4f\",\n        \"SearchUsage\": 10,\n        \"TotalTokenUsage\": 1221\n    }\n}",
-        "title": "获取调用统计"
+        "document": "接口调用token详情示例",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenUsage\n<公共请求参数>\n\n{\n    \"ModelName\": \"cs-normal-70b\",\n    \"StartTime\": \"1758988800\",\n    \"EndTime\": \"1759075199\",\n    \"UinAccount\": [],\n    \"AppBizIds\": [],\n    \"SubScenes\": [],\n    \"AppType\": \"knowledge_qa\",\n    \"SpaceId\": \"default_space\",\n    \"StatStartTime\": 1758988800,\n    \"StatEndTime\": 1759075199\n}",
+        "output": "{\n    \"Response\": {\n        \"ApiCallStats\": 4909,\n        \"DosageTypeCurr\": 0,\n        \"DosageTypeLimit\": 0,\n        \"InputTokenUsage\": 3178475,\n        \"InternetSearchUsage\": 0,\n        \"OutputTokenUsage\": 439374,\n        \"PageUsage\": 0,\n        \"RagSearchUsage\": 0,\n        \"RequestId\": \"a35fa69b-118b-4b25-8f1d-e5478f2b7159\",\n        \"SearchUsage\": 0,\n        \"SplitTokenUsage\": 0,\n        \"TotalTokenUsage\": 3617849\n    }\n}",
+        "title": "接口调用token详情示例"
       }
     ],
     "DescribeTokenUsageGraph": [
@@ -662,10 +662,10 @@
     ],
     "ListUsageCallDetail": [
       {
-        "document": "列表查询单次调用明细",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUsageCallDetail\n<公共请求参数>\n\n{\n    \"CallType\": \"AllCallType\",\n    \"ModelName\": \"cs-normal-70b\",\n    \"StartTime\": \"1723564800\",\n    \"EndTime\": \"1726156799\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppName\": \"\",\n                \"CallTime\": \"1724946200\",\n                \"CallType\": \"对话调用\",\n                \"Id\": \"e8h_20240701_194330_474_XRMUA92T\",\n                \"InputTokenUsage\": 471,\n                \"ModelName\": \"精调知识大模型高级版\",\n                \"OutputTokenUsage\": 886,\n                \"SearchUsage\": 0,\n                \"TotalTokenUsage\": 1357,\n                \"UinAccount\": \"600000562455\"\n            }\n        ],\n        \"RequestId\": \"9332ab9b-dec8-481e-87a8-af6983ac9fe7\",\n        \"Total\": 1\n    }\n}",
-        "title": "列表查询单次调用明细"
+        "document": "列表查询单次调用明细示例",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListUsageCallDetail\n<公共请求参数>\n\n{\n    \"AppBizIds\": [],\n    \"ModelName\": \"cs-normal-70b\",\n    \"StartTime\": \"1758988800\",\n    \"EndTime\": \"1759075199\",\n    \"CallType\": \"AllCallType\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"SubScenes\": [],\n    \"AppType\": \"knowledge_qa\",\n    \"SpaceId\": \"default_space\",\n    \"StatStartTime\": 1758988800,\n    \"StatEndTime\": 1759075199\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppName\": \"jacobs-0926\",\n                \"BillingTag\": \"null\",\n                \"CallTime\": \"1759057890\",\n                \"CallType\": \"对话调用-分享用户端对话\",\n                \"Id\": \"Bd4_20250928_191127_831_tlwHTOyB\",\n                \"InputTokenUsage\": 168,\n                \"ModelName\": \"youtu-mrc-pro\",\n                \"OutputTokenUsage\": 15,\n                \"PageUsage\": 183,\n                \"SearchUsage\": 0,\n                \"SubScene\": \"\",\n                \"TotalTokenUsage\": 183,\n                \"UinAccount\": \"700000963993\"\n            },\n            {\n                \"AppName\": \"jacobs-0926\",\n                \"BillingTag\": \"null\",\n                \"CallTime\": \"1759057441\",\n                \"CallType\": \"对话调用-分享用户端对话\",\n                \"Id\": \"M2B_20250928_190357_441_Uyk4R1tn\",\n                \"InputTokenUsage\": 145,\n                \"ModelName\": \"youtu-mrc-pro\",\n                \"OutputTokenUsage\": 15,\n                \"PageUsage\": 160,\n                \"SearchUsage\": 0,\n                \"SubScene\": \"\",\n                \"TotalTokenUsage\": 160,\n                \"UinAccount\": \"700000963993\"\n            }\n        ],\n        \"RequestId\": \"e8d2fc9c-0cbd-4ca6-87cf-01fa5d8bd6bf\",\n        \"Total\": 2\n    }\n}",
+        "title": "列表查询单次调用明细示例"
       }
     ],
     "ListWorkflowRuns": [

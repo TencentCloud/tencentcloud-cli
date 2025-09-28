@@ -485,7 +485,10 @@ Output:
                                         "Condition": "${http.request.host} in ['www.example.com']",
                                         "Actions": [
                                             {
-                                                "Name": "OriginPullProtocol"
+                                                "Name": "OriginPullProtocol",
+                                                "OriginPullProtocolParameters": {
+                                                    "Protocol": "follow"
+                                                }
                                             },
                                             {
                                                 "Name": "ModifyRequestHeader",

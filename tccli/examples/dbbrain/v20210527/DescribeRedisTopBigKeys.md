@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbbrain DescribeRedisTopBigKeys --cli-unfold-argument  \
-    --InstanceId cdb-test \
+    --InstanceId crs-occia4d6 \
     --Date 2022-04-12 \
     --Product redis
 ```

@@ -50,16 +50,16 @@
       "status": "online"
     },
     "CreateConsumerGroup": {
-      "document": "为订阅实例创建消费者组",
+      "document": "为订阅实例创建消费者组。\n只有状态为运行中的实例支持创建消费组。",
       "input": "CreateConsumerGroupRequest",
       "name": "创建消费组",
       "output": "CreateConsumerGroupResponse",
       "status": "online"
     },
     "CreateMigrateCheckJob": {
-      "document": "校验迁移任务，\n在开始迁移前, 必须调用本接口创建校验迁移任务, 且校验成功后才能开始迁移. 校验的结果可以通过DescribeMigrationCheckJob查看，\n校验成功后,迁移任务若有修改, 则必须重新校验并通过后, 才能开始迁移\n",
+      "document": "创建校验迁移任务，\n在开始迁移前, 必须调用本接口创建校验迁移任务, 且校验成功后才能开始迁移. 校验的结果可以通过DescribeMigrationCheckJob查看，\n校验成功后,迁移任务若有修改, 则必须重新校验并通过后, 才能开始迁移",
       "input": "CreateMigrateCheckJobRequest",
-      "name": "校验迁移任务",
+      "name": "创建校验迁移任务",
       "output": "CreateMigrateCheckJobResponse",
       "status": "online"
     },
@@ -253,7 +253,7 @@
       "status": "online"
     },
     "IsolateSyncJob": {
-      "document": "隔离同步任务，隔离后可通过查询同步任务信息接口DescribeSyncJobs获取隔离后状态。在任务隔离后可进行解除隔离(RecoverSyncJob)操作或直接进行下线操作。对于不计费任务，调用此接口后会直接删除任务，无法进行恢复操作。",
+      "document": "隔离同步任务，隔离后可通过查询同步任务信息接口DescribeSyncJobs获取隔离后状态。在任务隔离后可进行解除隔离(RecoverSyncJob)操作或直接进行下线(DestroySyncJob)操作。对于不计费任务，调用此接口后会直接删除任务，无法进行恢复操作。",
       "input": "IsolateSyncJobRequest",
       "name": "隔离同步任务",
       "output": "IsolateSyncJobResponse",
@@ -379,7 +379,7 @@
       "status": "online"
     },
     "RecoverSyncJob": {
-      "document": "解除隔离同步任务，任务在已隔离状态下可调用该接口解除隔离状态任务，同时可通过查询同步任务信息接口DescribeSyncJobs，获取操作后状态。",
+      "document": "解除隔离同步任务，任务在已隔离状态下可调用该接口解除隔离状态任务，同时可通过查询同步任务信息接口DescribeSyncJobs，获取操作后状态。注意，此接口只支持按量计费实例。",
       "input": "RecoverSyncJobRequest",
       "name": "解除隔离同步任务",
       "output": "RecoverSyncJobResponse",
@@ -393,7 +393,7 @@
       "status": "online"
     },
     "ResetSubscribe": {
-      "document": "本接口(ResetSubscribe)用于重置订阅实例，重置后，可以重新配置订阅任务。\n可以调用 DescribeSubscribeDetail 查询订阅信息判断是否置成功。当SubsStatus变为notStarted时，表示重置成功。",
+      "document": "本接口(ResetSubscribe)用于重置订阅实例，重置后，可以重新配置订阅任务。\n可以调用 [DescribeSubscribeDetail](https://cloud.tencent.com/document/product/571/102944) 查询订阅信息判断是否置成功。当SubsStatus变为notStarted时，表示重置成功。",
       "input": "ResetSubscribeRequest",
       "name": "重置订阅任务",
       "output": "ResetSubscribeResponse",
@@ -1474,7 +1474,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23",
+          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -1483,7 +1483,7 @@
         },
         {
           "disabled": false,
-          "document": "源端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云),注意具体可选值依赖当前链路",
+          "document": "源端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云),注意具体可选值依赖当前链路",
           "example": "cdb",
           "member": "string",
           "name": "SrcAccessType",
@@ -1492,7 +1492,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)、ckafka(CKafka实例),注意具体可选值依赖当前链路",
+          "document": "目标端接入类型，cdb(云数据库)、cvm(云服务器自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)、ckafka(CKafka实例),注意具体可选值依赖当前链路",
           "example": "extranet",
           "member": "string",
           "name": "DstAccessType",
@@ -1701,7 +1701,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-xxxxxxxx",
           "member": "string",
           "name": "JobId",
@@ -1728,7 +1728,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-xxxxxx",
           "member": "string",
           "name": "JobId",
@@ -1755,7 +1755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-n8deuq7e",
           "member": "string",
           "name": "JobId",
@@ -1855,7 +1855,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例id",
+          "document": "订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。\n",
           "example": "subs-jvxbbos7c0",
           "member": "string",
           "name": "SubscribeId",
@@ -1918,7 +1918,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
@@ -2045,7 +2045,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
           "example": "sync-cxsasdaq",
           "member": "string",
           "name": "JobId",
@@ -2072,7 +2072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-xxxxxx",
           "member": "string",
           "name": "SubscribeId",
@@ -3230,7 +3230,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。\n",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -3239,7 +3239,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。\n请务必保证消费组名称正确。",
+          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。\n请务必保证消费组名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "consumer-grp-subs-9jyki7hniw-test",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -3248,7 +3248,7 @@
         },
         {
           "disabled": false,
-          "document": "账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。\n请务必保证账户名称正确。",
+          "document": "账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。\n请务必保证账户名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "account-subs-9jyki7hniw-test",
           "member": "string",
           "name": "AccountName",
@@ -3275,7 +3275,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23，此值必填",
+          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23，此值必填，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -3331,7 +3331,7 @@
         {
           "disabled": false,
           "document": "步骤信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "StepInfos",
+          "example": "无",
           "member": "StepInfo",
           "name": "StepInfos",
           "output_required": true,
@@ -3352,7 +3352,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id",
+          "document": "迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
@@ -3361,7 +3361,7 @@
         },
         {
           "disabled": false,
-          "document": "校验任务 Id",
+          "document": "校验任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。",
           "example": "dts-amm1jw5q-cmp-bmuum7jk",
           "member": "string",
           "name": "CompareTaskId",
@@ -3563,7 +3563,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例id",
+          "document": "订阅实例id，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-47damshnra",
           "member": "string",
           "name": "SubscribeId",
@@ -3756,7 +3756,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-1ewjspuw",
           "member": "string",
           "name": "JobId",
@@ -4252,7 +4252,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-csasweee",
           "member": "string",
           "name": "JobId",
@@ -4329,7 +4329,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -4472,7 +4472,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例ID",
+          "document": "订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-xxxxxx",
           "member": "string",
           "name": "SubscribeId",
@@ -4974,7 +4974,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID",
+          "document": "数据订阅实例的ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -5185,7 +5185,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID",
+          "document": "数据订阅实例的ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -5212,7 +5212,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-j7bt5sid",
           "member": "string",
           "name": "JobId",
@@ -5239,7 +5239,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -6568,7 +6568,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例ID",
+          "document": "订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -6595,7 +6595,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -7294,7 +7294,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -7303,7 +7303,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。\n请务必保证消费组名称正确。",
+          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。\n请务必保证消费组名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "consumer-grp-subs-9jyki7hniw-group-1",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -7312,7 +7312,7 @@
         },
         {
           "disabled": false,
-          "document": "账户名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。\n请务必保证账户名称正确。",
+          "document": "账户名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。\n请务必保证账户名称正确。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "account-subs-9jyki7hniw-jason",
           "member": "string",
           "name": "AccountName",
@@ -7348,7 +7348,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。\n",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -7357,7 +7357,7 @@
         },
         {
           "disabled": false,
-          "document": "账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}",
+          "document": "账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "account-subs-9jyki7hniw-jason",
           "member": "string",
           "name": "AccountName",
@@ -7366,7 +7366,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}",
+          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。可通过[DescribeConsumerGroups](https://cloud.tencent.com/document/product/571/102947)接口获取。",
           "example": "consumer-grp-subs-9jyki7hniw-group-1",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -7681,7 +7681,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅实例ID",
+          "document": "订阅实例ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -7717,7 +7717,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID",
+          "document": "数据订阅实例的ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -7753,7 +7753,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID",
+          "document": "数据订阅实例的ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -7771,7 +7771,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后的订阅数据库表信息。会覆盖原来的订阅对象，所以除非 SubscribeObjectType = 0或2，否则改字段必填。",
+          "document": "修改后的订阅数据库表信息。会覆盖原来的订阅对象，所以除非 SubscribeObjectType = 0或2，否则该字段必填。",
           "example": "无",
           "member": "ModifiedSubscribeObject",
           "name": "Objects",
@@ -8256,7 +8256,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID",
+          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-xxxxxxxx",
           "member": "string",
           "name": "JobId",
@@ -8283,7 +8283,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-xxxxxx",
           "member": "string",
           "name": "JobId",
@@ -8567,7 +8567,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "任务id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
           "example": "dts-7o16y2qy",
           "member": "string",
           "name": "JobId",
@@ -8594,7 +8594,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23",
+          "document": "同步实例id（即标识一个同步作业），形如sync-werwfs23，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
@@ -8693,7 +8693,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID",
+          "document": "数据订阅实例的ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。\n",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -8819,7 +8819,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
@@ -8846,7 +8846,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-09vy1os1",
           "member": "string",
           "name": "JobId",
@@ -9173,7 +9173,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-csasssww",
           "member": "string",
           "name": "JobId",
@@ -9200,7 +9200,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的 ID",
+          "document": "数据订阅实例的 ID，可通过[DescribeSubscribeJobs](https://cloud.tencent.com/document/product/571/102943)接口获取。",
           "example": "subs-xxxxxx",
           "member": "string",
           "name": "SubscribeId",
@@ -9577,7 +9577,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步任务id",
+          "document": "同步任务id，可通过[DescribeSyncJobs](https://cloud.tencent.com/document/product/571/82103)接口获取。\n",
           "example": "sync-n8deuq7e",
           "member": "string",
           "name": "JobId",

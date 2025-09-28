@@ -749,11 +749,21 @@
         {
           "disabled": false,
           "document": "账号数组",
-          "example": "[{\"InstanceId\":\"cdwpg-rzshdeh1\",\"Perms\":[\"Create role\",\"Create DB\"],\"Username\":\"dbadmin\"}]",
+          "example": "无",
           "member": "AccountInfo",
           "name": "Accounts",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "error:...",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

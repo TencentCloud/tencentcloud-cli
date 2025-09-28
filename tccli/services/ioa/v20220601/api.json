@@ -1108,6 +1108,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组名称数组",
+          "example": "[\"全网账户\"]",
+          "member": "string",
+          "name": "NamePathArr",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

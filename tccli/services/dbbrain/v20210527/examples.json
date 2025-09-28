@@ -43,7 +43,7 @@
     "CloseAuditService": [
       {
         "document": "不使用审计日志时，关闭数据库审计",
-        "input": "https://dbbrain.tencentcloudapi.com/?Action= DescribeAuditInstanceList\n&Product=dcdb\n&NodeRequestType=dcdb\n&InstanceId=tdsqlsdfsd\n&<公共请求参数>",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action= DescribeAuditInstanceList\n&Product=dcdb\n&NodeRequestType=dcdb\n&InstanceId=tdsqlshard-1i9nzc30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 0,\n        \"RequestId\": \"b39db780-0b49-11ee-8525-17d65d16bdaf\"\n    }\n}",
         "title": "关闭数据库审计"
       }
@@ -344,6 +344,14 @@
         "title": "获取邮件配置"
       }
     ],
+    "DescribeMetricTopProxies": [
+      {
+        "document": "获取redis proxy 指标",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMetricTopProxies\n<公共请求参数>\n\n{\n    \"StartTime\": \"2025-09-03T10:41:59+08:00\",\n    \"EndTime\": \"2025-09-03T10:41:59+08:00\",\n    \"InstanceId\": \"crs-qjdkzsat\",\n    \"Product\": \"redis\",\n    \"Metric\": \"connections\",\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Host\": \"30.86.245.14\",\n                \"InstanceProxyId\": \"149c8a81e5321ebab810a5da07c298c764311c43\",\n                \"Port\": 8461,\n                \"Series\": [\n                    {\n                        \"Metric\": \"cpu_util\",\n                        \"Unit\": \"%\",\n                        \"Values\": [\n                            0.4\n                        ]\n                    }\n                ],\n                \"Timestamp\": [\n                    1758183175\n                ],\n                \"Value\": 1.33\n            }\n        ],\n        \"RequestId\": \"afc81d5e-499a-4800-b032-442fc0c4b7eb\"\n    }\n}",
+        "title": "DescribeMetricTopProxies test case"
+      }
+    ],
     "DescribeMySqlProcessList": [
       {
         "document": "",
@@ -427,7 +435,7 @@
     "DescribeRedisTopBigKeys": [
       {
         "document": "",
-        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeRedisTopBigKeys\n&InstanceId=cdb-test\n&Date=2022-04-12\n&Product=redis\n&<公共请求参数>",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeRedisTopBigKeys\n&InstanceId=crs-occia4d6\n&Date=2022-04-12\n&Product=redis\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8108c1c0-bbcc-11ec-adb9-eb9c1358e03a\",\n        \"TopKeys\": [\n            {\n                \"ShardId\": \"1\",\n                \"Type\": \"set\",\n                \"AveElementSize\": 15894,\n                \"Length\": 93542932,\n                \"ItemCount\": 4999,\n                \"Encoding\": \"skiplist\",\n                \"ExpireTime\": 0,\n                \"MaxElementSize\": 34431,\n                \"Key\": \"test-key\"\n            }\n        ],\n        \"Timestamp\": 162072183\n    }\n}",
         "title": "查询redis实例大key列表"
       }
@@ -655,7 +663,7 @@
     "UpdateMonitorSwitch": [
       {
         "document": "更新Agent实例状态（停止或者重连实例）",
-        "input": "https://dbbrain.tencentcloudapi.com/?Action=UpdateMonitorSwitch\n&Switch=on\n&InstanceId=mysql-069yc1dda\n&Product=ap-chengdu\n&<公共请求参数>",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=UpdateMonitorSwitch\n&Switch=on\n&InstanceId=mysql-069yc1dda\n&Product=dbbrain-mysql\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b49053b9-f21c-40ec-a1ce-d1a5fae5193f\"\n    }\n}",
         "title": "更新Agent实例状态"
       }

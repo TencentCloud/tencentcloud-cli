@@ -1,37 +1,25 @@
-**Example 1: 并发折线图示例**
+**Example 1: DescribeConcurrencyUsageGraph**
 
-并发折线图示例
+
 
 Input: 
 
 ```
 tccli lke DescribeConcurrencyUsageGraph --cli-unfold-argument  \
-    --ModelName cs-normal-70b \
-    --StartTime 1724688000 \
-    --EndTime 1724774400 \
-    --AppBizIds 1812732010083385344
+    --ModelName lke-deepseek-r1-vip \
+    --SpaceId default-space \
+    --StatStartTime 1758988800 \
+    --StatEndTime 1759075199
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AvailableY": [
-            5,
-            4,
-            3
-        ],
-        "RequestId": "ad439868-ed56-44f5-a716-81cc7402e83e",
-        "SuccessCallY": [
-            1,
-            2,
-            3
-        ],
-        "X": [
-            "2024082700",
-            "2024082701",
-            "2024082702"
-        ]
+        "AvailableY": [],
+        "SuccessCallY": [],
+        "X": [],
+        "RequestId": "3c427973-6a12-443b-aa63-ca3df61cd402"
     }
 }
 ```

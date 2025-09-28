@@ -6931,7 +6931,7 @@
         {
           "disabled": false,
           "document": "固定值，为\"monitor\"",
-          "example": "",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -6940,7 +6940,7 @@
         {
           "disabled": false,
           "document": "监控类型过滤 \"MT_QCE\"=云产品监控",
-          "example": "",
+          "example": "MT_QCE",
           "member": "string",
           "name": "MonitorType",
           "required": true,
@@ -6949,7 +6949,7 @@
         {
           "disabled": false,
           "document": "告警策略类型，由 DescribeAllNamespaces 获得，例如 cvm_device",
-          "example": "",
+          "example": "cvm_device",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -6964,9 +6964,10 @@
         {
           "disabled": false,
           "document": "告警指标列表",
-          "example": "",
+          "example": "无",
           "member": "Metric",
           "name": "Metrics",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

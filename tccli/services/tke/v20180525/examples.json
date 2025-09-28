@@ -1699,7 +1699,7 @@
     "ModifyMasterComponent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckComponentVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-pd41w15e\",\n    \"Component\": \"kube-apiserver\",\n    \"Operation\": \"shutdown\",\n    \"DryRun\": false\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMasterComponent\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-pd41w15e\",\n    \"Component\": \"kube-apiserver\",\n    \"Operation\": \"shutdown\",\n    \"DryRun\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
         "title": "停机kube-apiserver"
       }

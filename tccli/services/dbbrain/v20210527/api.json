@@ -301,6 +301,13 @@
       "output": "DescribeMailProfileResponse",
       "status": "online"
     },
+    "DescribeMetricTopProxies": {
+      "document": "获取指定时间段内Redis 访问命令 cost top N",
+      "input": "DescribeMetricTopProxiesRequest",
+      "name": "获取Redis Proxy 指标",
+      "output": "DescribeMetricTopProxiesResponse",
+      "status": "online"
+    },
     "DescribeMySqlProcessList": {
       "document": "查询关系型数据库的实时线程列表。",
       "input": "DescribeMySqlProcessListRequest",
@@ -759,7 +766,7 @@
         {
           "disabled": false,
           "document": "更新用户的uin",
-          "example": "000001",
+          "example": "100000",
           "member": "int64",
           "name": "UpdateUin",
           "output_required": false,
@@ -788,7 +795,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "更新时间，格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2024-12-04 17:16:35",
           "member": "string",
           "name": "UpdateTime",
@@ -1161,7 +1168,7 @@
         {
           "disabled": false,
           "document": "文件大小，单位为 KB。",
-          "example": "233",
+          "example": "233.0",
           "member": "float",
           "name": "FileSize",
           "output_required": true,
@@ -1190,8 +1197,8 @@
         },
         {
           "disabled": false,
-          "document": "文件生成进度。",
-          "example": "20",
+          "document": "文件生成进度。（单位：%）",
+          "example": "20.0",
           "member": "float",
           "name": "Progress",
           "output_required": true,
@@ -1200,7 +1207,7 @@
         },
         {
           "disabled": false,
-          "document": "文件生成成功时间。",
+          "document": "文件生成成功时间。格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2019-03-20 17:09:13",
           "member": "string",
           "name": "FinishTime",
@@ -1306,7 +1313,7 @@
         },
         {
           "disabled": false,
-          "document": "自治任务触发时间。",
+          "document": "自治任务触发时间。格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2025-03-12 00:00:00",
           "member": "string",
           "name": "TriggerTime",
@@ -1316,7 +1323,7 @@
         },
         {
           "disabled": false,
-          "document": "自治任务创建时间。",
+          "document": "自治任务创建时间。格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2025-03-12 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -1326,7 +1333,7 @@
         },
         {
           "disabled": false,
-          "document": "自治任务更新时间",
+          "document": "自治任务更新时间，格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2025-03-12 00:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -1336,7 +1343,7 @@
         },
         {
           "disabled": false,
-          "document": "自治任务完成时间。",
+          "document": "自治任务完成时间。格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2025-03-12 00:00:00",
           "member": "string",
           "name": "FinishTime",
@@ -1366,7 +1373,7 @@
         },
         {
           "disabled": false,
-          "document": "自治任务状态：支持 RUNNING，FINISHED，TERMINATED，CANCELLED",
+          "document": "自治任务状态：RUNNING，FINISHED，TERMINATED，CANCELLED\n其中：\nRUNNING    - 运行中  \nFINISHED   - 已完成  \nTERMINATED - 已终止  \nCANCELLED  - 已取消  \n",
           "example": "RUNNING",
           "member": "string",
           "name": "Status",
@@ -1478,7 +1485,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启自治。",
+          "document": "是否开启自治。枚举值：true，false。\n其中：\ntrue - 开启\nfalse - 关闭",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
@@ -1519,7 +1526,7 @@
         {
           "disabled": false,
           "document": "自治功能类型。",
-          "example": "RedisAutoScaleUp",
+          "example": "[\"RedisAutoScaleUp\"]",
           "member": "string",
           "name": "EnabledItems",
           "output_required": false,
@@ -1734,7 +1741,7 @@
         },
         {
           "disabled": false,
-          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"。",
+          "document": "NodeRequestType主要标识数据库产品类型，与Product保持一致。如：\"dcdb\" ,\"mariadb\"。",
           "example": "dcdb",
           "member": "string",
           "name": "NodeRequestType",
@@ -1743,7 +1750,7 @@
         },
         {
           "disabled": false,
-          "document": "实例Id。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "tdsql-shartsdf",
           "member": "string",
           "name": "InstanceId",
@@ -1906,7 +1913,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID 。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "tdsqlshard-eg8b01gr",
           "member": "string",
           "name": "InstanceId",
@@ -1915,8 +1922,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，如“2019-09-10 12:13:14”。\t",
-          "example": "2019-01-01 00:00:00",
+          "document": "开始时间，如“2025-03-17T00:00:00+00:00”。",
+          "example": "2025-03-17T01:00:00+00:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -1924,8 +1931,8 @@
         },
         {
           "disabled": false,
-          "document": "截止时间，如“2019-09-11 10:13:14”。",
-          "example": "2019-01-01 01:00:00",
+          "document": "结束时间，如“2025-03-17T01:00:00+00:00”。",
+          "example": "2025-03-17T01:00:00+00:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -1970,7 +1977,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-6396zzr5",
           "member": "string",
           "name": "InstanceId",
@@ -2007,7 +2014,7 @@
         {
           "disabled": false,
           "document": "接收邮件的联系人ID数组。",
-          "example": "[\"1\\n\"]",
+          "example": "[1]",
           "member": "int64",
           "name": "ContactPerson",
           "required": false,
@@ -2016,7 +2023,7 @@
         {
           "disabled": false,
           "document": "接收邮件的联系组ID数组。",
-          "example": "[\"1\\n\"]",
+          "example": "[1]",
           "member": "int64",
           "name": "ContactGroup",
           "required": false,
@@ -2024,7 +2031,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，\"redis\" - 云数据库 Redis，默认值为\"mysql\"。",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，\"mongodb\" - 云数据库 MongoDB，\"mariadb\" - 云数据库 MariaDB，\"dcdb\" - 云数据库 TDSQL MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -2061,7 +2068,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。\n示例值：cdb-dctw4edd",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -2070,7 +2077,7 @@
         },
         {
           "disabled": false,
-          "document": "健康报告相应的任务ID，可通过DescribeDBDiagReportTasks查询。",
+          "document": "健康报告相应的任务ID，可通过[DescribeDBDiagReportTasks](https://cloud.tencent.com/document/product/1130/54873)查询。",
           "example": "63452",
           "member": "int64",
           "name": "AsyncRequestId",
@@ -2079,7 +2086,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，\"mongodb\" - 云数据库 MongoDB，\"mariadb\" - 云数据库 MariaDB，\"dcdb\" - 云数据库 TDSQL MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -2245,7 +2252,7 @@
         {
           "disabled": false,
           "document": "邮件配置内容。",
-          "example": "{\"Language\":\"zh\",\"MailConfiguration\":{\"Region\":[\"ap-guangzhou\"],\"SendMail\":1,\"ContactPerson\":[24332],\"ContactGroup\":[],\"HealthStatus\":[\"HIGH_RISK\"],\"SendTime\":\"10:00-12:00\"}}",
+          "example": "无",
           "member": "ProfileInfo",
           "name": "ProfileInfo",
           "required": true,
@@ -2262,8 +2269,8 @@
         },
         {
           "disabled": false,
-          "document": "配置名称，需要保持唯一性，数据库巡检邮件配置名称自拟；定期生成邮件配置命名格式：\"scheduler_\" + {instanceId}，如\"schduler_cdb-test\"。",
-          "example": "schduler_cdb-test1234",
+          "document": "配置名称，需要保持唯一性，数据库巡检邮件配置名称自拟；定期生成邮件配置命名格式：\"scheduler_\" + {instanceId}，如\"scheduler_cdb-test\"。",
+          "example": "scheduler_cdb-test1234",
           "member": "string",
           "name": "ProfileName",
           "required": true,
@@ -2280,7 +2287,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL。",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，\"mongodb\" - 云数据库 MongoDB，\"mariadb\" - 云数据库 MariaDB，\"dcdb\" - 云数据库 TDSQL MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -2289,7 +2296,7 @@
         },
         {
           "disabled": false,
-          "document": "配置绑定的实例ID，当配置级别为\"Instance\"时需要传入且只能为一个实例；当配置级别为“User”时，此参数不填。",
+          "document": "配置绑定的实例ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。当配置级别为\"Instance\"时需要传入且只能为一个实例；当配置级别为“User”时，此参数不填。",
           "example": "[\"cdb-test\"]",
           "member": "string",
           "name": "BindInstanceIds",
@@ -2371,7 +2378,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -2445,7 +2452,7 @@
         {
           "disabled": false,
           "document": "邮件配置内容。",
-          "example": "-",
+          "example": "无",
           "member": "ProfileInfo",
           "name": "ProfileInfo",
           "required": true,
@@ -2453,7 +2460,7 @@
         },
         {
           "disabled": false,
-          "document": "配置名称，需要保持唯一性，定期生成邮件配置命名格式：\"scheduler_\" + {instanceId}，如\"schduler_cdb-test\"。",
+          "document": "配置名称，需要保持唯一性，定期生成邮件配置命名格式：\"scheduler_\" + {instanceId}，如\"scheduler_cdb-test\"。",
           "example": "scheduler_cdb-test",
           "member": "string",
           "name": "ProfileName",
@@ -2462,8 +2469,8 @@
         },
         {
           "disabled": false,
-          "document": "配置订阅的实例ID。",
-          "example": "cdb-123456",
+          "document": "配置订阅的实例ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "cdb-12156",
           "member": "string",
           "name": "BindInstanceId",
           "required": true,
@@ -2471,7 +2478,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，\"mongodb\" - 云数据库 MongoDB，\"mariadb\" - 云数据库 MariaDB，\"dcdb\" - 云数据库 TDSQL MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -2571,7 +2578,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -2580,7 +2587,7 @@
         },
         {
           "disabled": false,
-          "document": "SQL类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。",
+          "document": "SQL语句的类型，取值包括SELECT, UPDATE, DELETE, INSERT, REPLACE。\n其中：\nSELECT   - 查询  \nUPDATE   - 更新  \nDELETE   - 删除  \nINSERT   - 插入  \nREPLACE  - 替换",
           "example": "SELECT",
           "member": "string",
           "name": "SqlType",
@@ -2616,7 +2623,7 @@
         },
         {
           "disabled": false,
-          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "document": "通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
           "example": "cAuth",
           "member": "string",
           "name": "SessionToken",
@@ -2662,7 +2669,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置类型，为需要配置的功能枚举值，目前包含一下枚举值：AutonomyGlobal（自治功能全局配置）、RedisAutoScaleUp（Redis自治扩容配置）",
+          "document": "配置类型，为需要配置的功能枚举值，目前包含以下枚举值：AutonomyGlobal（自治功能全局配置）、RedisAutoScaleUp（Redis自治扩容配置）",
           "example": "RedisAutoScaleUp",
           "member": "string",
           "name": "ProfileType",
@@ -2671,7 +2678,7 @@
         },
         {
           "disabled": false,
-          "document": "实列ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "crs-qtmkik3e",
           "member": "string",
           "name": "InstanceId",
@@ -2716,7 +2723,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB。",
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB， \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB for MySQL， \"postgres\" - 云数据库 PostgreSQL。",
           "example": "dcdb",
           "member": "string",
           "name": "Product",
@@ -2725,7 +2732,7 @@
         },
         {
           "disabled": false,
-          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"\t",
+          "document": "NodeRequestType主要标识数据库产品类型，与Product保持一致。该字段规则如下： 当product为\"dcdb\"则输入\"dcdb\"， 当product为\"mariadb\"则输入\"mariadb\"， 当product为\"mysql\"则输入\"mysql\"， 当product为\"cynosdb\"则输入\"mysql\"， 当product为\"postgres\"则输入\"postgres\"。",
           "example": "dcdb",
           "member": "string",
           "name": "NodeRequestType",
@@ -2734,7 +2741,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID 。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "tdsqlshard-eg8b01gr",
           "member": "string",
           "name": "InstanceId",
@@ -2743,7 +2750,7 @@
         },
         {
           "disabled": false,
-          "document": "审计日志文件生成异步任务ID。",
+          "document": "审计日志文件生成异步任务ID。可通过[查询审计日志文件](https://cloud.tencent.com/document/product/1130/90371)获得。",
           "example": "12",
           "member": "int64",
           "name": "AsyncRequestId",
@@ -2770,7 +2777,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要删除的任务id列表",
+          "document": "需要删除的任务id列表。可通过[查询健康报告生成任务列表](https://cloud.tencent.com/document/product/1130/57805)获取",
           "example": "[123,12]",
           "member": "int64",
           "name": "AsyncRequestIds",
@@ -2779,7 +2786,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "crs-hor87q50",
           "member": "string",
           "name": "InstanceId",
@@ -2788,7 +2795,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"dbbrain-mysql\" - 自建 MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -2807,6 +2814,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2924,7 +2932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -2933,8 +2941,8 @@
         },
         {
           "disabled": false,
-          "document": "限流任务ID列表。",
-          "example": "1432970",
+          "document": "限流任务ID列表。通过接口[创建实例SQL限流任务](https://cloud.tencent.com/document/product/1130/72835)获得。",
+          "example": "[1432970]",
           "member": "int64",
           "name": "FilterIds",
           "required": true,
@@ -2942,7 +2950,7 @@
         },
         {
           "disabled": false,
-          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "document": "通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
           "example": "aOqcrCnPLZgCh41VqZVHda2Y+HI=:26872060",
           "member": "string",
           "name": "SessionToken",
@@ -2987,7 +2995,7 @@
         },
         {
           "disabled": false,
-          "document": "返回限制长度",
+          "document": "返回限制长度，最大值: 50，默认值: 50",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -2996,7 +3004,7 @@
         },
         {
           "disabled": false,
-          "document": "偏置",
+          "document": "偏置，最大值: 无限制，默认值: 0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3005,7 +3013,7 @@
         },
         {
           "disabled": false,
-          "document": "mysql -  mysql\ncynosdb -  tdsql-c",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -3031,7 +3039,7 @@
         {
           "disabled": false,
           "document": "模板总数",
-          "example": "总数",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -3173,7 +3181,7 @@
         },
         {
           "disabled": false,
-          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"。",
+          "document": "NodeRequestType主要标识数据库产品类型，与Product保持一致。如：\"dcdb\" ,\"mariadb\"。",
           "example": "dcdb",
           "member": "string",
           "name": "NodeRequestType",
@@ -3209,7 +3217,7 @@
         },
         {
           "disabled": false,
-          "document": "查询实例的搜索条件。",
+          "document": "查询实例的搜索条件。Name包括：InstanceId， InstanceName。",
           "example": "无",
           "member": "AuditInstanceFilter",
           "name": "Filters",
@@ -3274,7 +3282,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID 。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "tdsqlshard-eg8b01gr",
           "member": "string",
           "name": "InstanceId",
@@ -3339,7 +3347,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自治任务ID。",
+          "document": "自治任务ID。可通过 [DescribeDBAutonomyActions](https://cloud.tencent.com/document/product/1130/116974) 接口获取。",
           "example": "12",
           "member": "int64",
           "name": "ActionId",
@@ -3348,7 +3356,7 @@
         },
         {
           "disabled": false,
-          "document": "实列ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "crs-qtmkik3e",
           "member": "string",
           "name": "InstanceId",
@@ -3412,7 +3420,7 @@
         },
         {
           "disabled": false,
-          "document": "自治任务触发时间。",
+          "document": "自治任务触发时间。格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2025-03-12 00:00:00",
           "member": "string",
           "name": "TriggerTime",
@@ -3422,7 +3430,7 @@
         },
         {
           "disabled": false,
-          "document": "自治任务创建时间。",
+          "document": "自治任务创建时间。格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2025-03-12 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -3432,7 +3440,7 @@
         },
         {
           "disabled": false,
-          "document": "自治任务更新时间。",
+          "document": "自治任务更新时间。格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2025-03-12 00:00:00",
           "member": "string",
           "name": "UpdateTime",
@@ -3442,7 +3450,7 @@
         },
         {
           "disabled": false,
-          "document": "自治任务完成时间。",
+          "document": "自治任务完成时间。格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2025-03-12 00:00:00",
           "member": "string",
           "name": "FinishTime",
@@ -3472,7 +3480,7 @@
         },
         {
           "disabled": false,
-          "document": "自治任务状态：支持 RUNNING，FINISHED，TERMINATED，CANCELLED",
+          "document": "自治任务状态：支持 RUNNING，FINISHED，TERMINATED，CANCELLED\n其中：\nRUNNING    - 运行中  \nFINISHED   - 已完成  \nTERMINATED - 已终止  \nCANCELLED  - 已取消  \n",
           "example": "RUNNING",
           "member": "string",
           "name": "Status",
@@ -3504,7 +3512,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件ID。",
+          "document": "事件ID。可通过 [DescribeDBDiagHistory](https://cloud.tencent.com/document/product/1130/39559) 接口获取。",
           "example": "12",
           "member": "int64",
           "name": "EventId",
@@ -3513,7 +3521,7 @@
         },
         {
           "disabled": false,
-          "document": "实列ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "crs-qtmkik3e",
           "member": "string",
           "name": "InstanceId",
@@ -3661,8 +3669,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
-          "example": "cdb-test1234",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "cdb-test156",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3670,7 +3678,7 @@
         },
         {
           "disabled": false,
-          "document": "事件 ID 。通过“获取实例诊断历史DescribeDBDiagHistory”获取。",
+          "document": "事件 ID 。通过“获取实例诊断历史[DescribeDBDiagHistory](https://cloud.tencent.com/document/product/1130/39559) ”获取。",
           "example": "5",
           "member": "int64",
           "name": "EventId",
@@ -3704,7 +3712,7 @@
         },
         {
           "disabled": false,
-          "document": "诊断类型。",
+          "document": "诊断类型。支持值包括\"高危账号\",\"自增键耗尽\",\"连接性检查\",\"CPU利用率\",\"死锁\",\"全表扫描\",\"高并发/压力请求\",\"预编译语句过多\",\"内存利用率\",\"Metadata lock\",\"磁盘超限\",\"内存超限\",\"只读锁\",\"只读实例剔除\",\"行锁\",\"活跃会话\",\"慢SQL\",\"数据库快照\",\"磁盘空间利用率\",\"执行计划变化\",\"主从切换\",\"Table open cache命中率低\",\"大表\",\"事务未提交\",\"事务导致复制延迟\"等。",
           "example": "数据库快照",
           "member": "string",
           "name": "DiagType",
@@ -3764,7 +3772,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间。格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2019-11-06 12:05:40",
           "member": "datetime",
           "name": "StartTime",
@@ -3794,7 +3802,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。格式: \"yyyy-MM-dd HH:mm:ss\"",
           "example": "2019-11-06 12:05:50",
           "member": "datetime",
           "name": "EndTime",
@@ -3917,7 +3925,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-test",
           "member": "string",
           "name": "InstanceId",
@@ -3926,7 +3934,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，如“2019-09-10 12:13:14”。",
+          "document": "开始时间，如“2019-09-10 12:13:14”。结束时间与开始时间的间隔最大可为2天。",
           "example": "2019-01-01 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -3963,7 +3971,7 @@
           "example": "无",
           "member": "DiagHistoryEventItem",
           "name": "Events",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4597,7 +4605,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cmgo-2jrxxlx",
           "member": "string",
           "name": "InstanceId",
@@ -4624,8 +4632,8 @@
         },
         {
           "disabled": false,
-          "document": "签名。这个值是DescribelndexRecommendInfo接口返回",
-          "example": "d6e6fe0025c258592dd6f442312f26ww",
+          "document": "签名。这个值是 [DescribeIndexRecommendInfo](https://cloud.tencent.com/document/product/1130/98911) 接口返回",
+          "example": "[\"d6e6fe0025c258592dd6f442312f26ww\"]",
           "member": "string",
           "name": "Signs",
           "required": true,
@@ -4640,7 +4648,7 @@
         {
           "disabled": false,
           "document": "查询实例慢查询聚合结果。",
-          "example": "{\"AvgExecTime\":1208,\"AvgDocsExamined\":12660,\"SlowLogCount\":3,\"SlowLogs\":[],\"SortCount\":0}",
+          "example": "无",
           "member": "Aggregation",
           "name": "Aggregation",
           "output_required": true,
@@ -4670,7 +4678,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cmgo-2jrxxlx",
           "member": "string",
           "name": "InstanceId",
@@ -4706,7 +4714,7 @@
         {
           "disabled": false,
           "document": "索引项。",
-          "example": " ",
+          "example": "无",
           "member": "MongoDBIndex",
           "name": "Items",
           "output_required": true,
@@ -4835,12 +4843,94 @@
       ],
       "type": "object"
     },
+    "DescribeMetricTopProxiesRequest": {
+      "document": "DescribeMetricTopProxies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。",
+          "example": "2025-09-03T10:41:59+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，如“2021-05-27 01:00:00”，支持的最早查询时间为当前时间的前30天。",
+          "example": "2025-09-03T10:41:59+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID列表。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "crs-qjdkzsat",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括：\"mysql\" - 云数据库 MySQL，\"redis\" - 云数据库 Redis，\"mariadb\"-数据库mariadb    默认为\"mysql\"。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标 eg: cpu_util, connections",
+          "example": "connections",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认前20条",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricTopProxiesResponse": {
+      "document": "DescribeMetricTopProxies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命令列表",
+          "example": "无",
+          "member": "RedisMetricTopProxiesData",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMySqlProcessListRequest": {
       "document": "DescribeMySqlProcessList请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -4885,7 +4975,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作状态，用于筛选线程列表。",
+          "document": "线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等",
           "example": "updating",
           "member": "string",
           "name": "State",
@@ -4894,7 +4984,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的执行类型，用于筛选线程列表。",
+          "document": "线程的操作状态，用于筛选线程列表。包含以下值：Sending data，Updating, Opening tables 等",
           "example": "Execute",
           "member": "string",
           "name": "Command",
@@ -4986,7 +5076,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -5329,8 +5419,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
-          "example": "crs-test1234",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "crs-test1214",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5374,7 +5464,7 @@
         },
         {
           "disabled": false,
-          "document": "监控指标，以逗号分隔",
+          "document": "监控指标，包括：qps,latency_p99,latency_avg,latency_max，以逗号分隔\n其中：\nqps          - 每秒查询率  \nlatency_p99  - 99分位延迟  \nlatency_avg  - 平均延迟  \nlatency_max  - 最大延迟  \n",
           "example": "\"qps,latency_p99,latency_avg,latency_max\"",
           "member": "string",
           "name": "Metric",
@@ -5383,7 +5473,7 @@
         },
         {
           "disabled": false,
-          "document": "监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值",
+          "document": "Period，监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值",
           "example": "60",
           "member": "int64",
           "name": "Period",
@@ -5420,8 +5510,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
-          "example": "crs-test1234",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "crs-test1214",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5484,8 +5574,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
-          "example": "crs-test1234",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "crs-test1214",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5548,7 +5638,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Redis 实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "crs-qylqkl4f",
           "member": "string",
           "name": "InstanceId",
@@ -5741,8 +5831,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
-          "example": "cdb-c1nl9rpv",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "crs-occia4d6",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5924,8 +6014,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
-          "example": "crs-test1234",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "crs-test1214",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6236,8 +6326,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
-          "example": "cdb-test1234",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "cdb-test1254",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6245,7 +6335,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，如“2019-09-10 12:13:14”。",
+          "document": "开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。",
           "example": "2019-01-01 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -6281,7 +6371,7 @@
         },
         {
           "disabled": false,
-          "document": "实列节点ID。",
+          "document": "实例节点ID。",
           "example": "cmgo-8d8e5c87_0-node-slave0",
           "member": "string",
           "name": "InstanceNodeId",
@@ -6290,7 +6380,7 @@
         },
         {
           "disabled": false,
-          "document": "查询类型，目前支持值：mongod，mongos。",
+          "document": "查询类型，目前支持值：mongod，mongos。\n其中：\nmongod - MongoDB的数据存储节点\nmongos - MongoDB的路由节点",
           "example": "mongod",
           "member": "string",
           "name": "Type",
@@ -6698,7 +6788,7 @@
         {
           "disabled": false,
           "document": "开始时间，如“2019-09-10 12:13:14”。",
-          "example": "2019-01-01 00:00:00",
+          "example": "2025-09-02T01:14:01+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -6707,7 +6797,7 @@
         {
           "disabled": false,
           "document": "截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。",
-          "example": "2019-01-01 01:00:00",
+          "example": "2025-09-02T01:15:01+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -6734,7 +6824,7 @@
         {
           "disabled": false,
           "document": "数据库列表",
-          "example": "[\"test\"]",
+          "example": "[\"db\"]",
           "member": "string",
           "name": "DB",
           "required": false,
@@ -6752,7 +6842,7 @@
         {
           "disabled": false,
           "document": "用户",
-          "example": "[\"root\",\"test\"]",
+          "example": "[\"user1\",\"user2\"]",
           "member": "string",
           "name": "User",
           "required": false,
@@ -6795,7 +6885,7 @@
         {
           "disabled": false,
           "document": "慢日志明细",
-          "example": "[{\"LockTime\":0,\"UserHost\":\"169.254.128.9\",\"RowsSent\":1,\"UserName\":\"root\",\"Database\":\"information_schema\",\"SqlText\":\"/* dbbrain user mark */select SLEEP(10)\",\"QueryTime\":10,\"RowsExamined\":0,\"Timestamp\":\"2023-03-31 10:47:35\"}]",
+          "example": "无",
           "member": "SlowLogInfoItem",
           "name": "Rows",
           "output_required": true,
@@ -6816,7 +6906,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -6835,7 +6925,7 @@
         {
           "disabled": false,
           "document": "任务状态列表，用于筛选任务列表，取值包括RUNNING - 运行中, FINISHED - 已完成, TERMINATED - 已终止。",
-          "example": "RUNNING",
+          "example": "[\"RUNNING\"]",
           "member": "string",
           "name": "Statuses",
           "required": false,
@@ -6908,8 +6998,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
-          "example": "cdb-test1234",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "cdb-test1214",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6980,7 +7070,7 @@
         },
         {
           "disabled": false,
-          "document": "SQL模版内容。",
+          "document": "SQL模板内容。",
           "example": "select * from test limit ?",
           "member": "string",
           "name": "SqlTemplate",
@@ -6990,7 +7080,7 @@
         },
         {
           "disabled": false,
-          "document": "SQL模版ID。",
+          "document": "SQL模板ID。",
           "example": "-5602209514906915428",
           "member": "int64",
           "name": "SqlId",
@@ -7094,7 +7184,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -7112,7 +7202,7 @@
         },
         {
           "disabled": false,
-          "document": "筛选Top库所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize（仅云数据库 MySQL实例支持），云数据库 MySQL实例默认为 PhysicalFileSize，其他产品实例默认为TotalLength。",
+          "document": "筛选Top库所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize（仅云数据库 MySQL实例支持），云数据库 MySQL实例默认为 PhysicalFileSize，其他产品实例默认为TotalLength。\n其中：\nDataLength       - 数据长度  \nIndexLength      - 索引长度  \nTotalLength      - 总长度  \nDataFree         - 空闲空间  \nFragRatio        - 碎片率  \nTableRows        - 表行数  \nPhysicalFileSize - 物理文件大小",
           "example": "TableRows",
           "member": "string",
           "name": "SortBy",
@@ -7140,7 +7230,7 @@
           "example": "无",
           "member": "SchemaSpaceData",
           "name": "TopSpaceSchemas",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7150,7 +7240,7 @@
           "example": "1603819881",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7250,8 +7340,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
-          "example": "cdb-test1234",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "cdb-test1214",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7268,7 +7358,7 @@
         },
         {
           "disabled": false,
-          "document": "筛选Top表所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize（仅云数据库 MySQL实例支持），云数据库 MySQL实例默认为 PhysicalFileSize，其他产品实例默认为TotalLength。",
+          "document": "筛选Top表所用的排序字段，可选字段包含DataLength、IndexLength、TotalLength、DataFree、FragRatio、TableRows、PhysicalFileSize（仅云数据库 MySQL实例支持），云数据库 MySQL实例默认为 PhysicalFileSize，其他产品实例默认为TotalLength。\n其中：\nDataLength       - 数据长度  \nIndexLength      - 索引长度  \nTotalLength      - 总长度  \nDataFree         - 空闲空间  \nFragRatio        - 碎片率  \nTableRows        - 表行数  \nPhysicalFileSize - 物理文件大小",
           "example": "TableRows",
           "member": "string",
           "name": "SortBy",
@@ -7399,7 +7489,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -8811,7 +8901,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-test1",
           "member": "string",
           "name": "InstanceId",
@@ -8829,8 +8919,8 @@
         },
         {
           "disabled": false,
-          "document": "需要kill的sql会话ID列表，此参数用于Prepare阶段。",
-          "example": "[\"4714056\"]",
+          "document": "需要kill的sql会话ID列表，通过接口[查询实时线程列表](https://cloud.tencent.com/document/product/1130/57824)\n此参数用于Prepare阶段。",
+          "example": "[4714056]",
           "member": "int64",
           "name": "Threads",
           "required": false,
@@ -8907,6 +8997,7 @@
           "example": "1",
           "member": "int64",
           "name": "SendMail",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -8917,16 +9008,18 @@
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "发送指定的健康等级的报告, 如[\"HEALTH\", \"SUB_HEALTH\", \"RISK\", \"HIGH_RISK\"]。",
+          "document": "包含的健康等级，包括值：HEALTH-健康，SUB_HEALTH-亚健康，RISK-风险，HIGH_RISK-高危。",
           "example": "[\"HEALTH\"]",
           "member": "string",
           "name": "HealthStatus",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -8937,6 +9030,7 @@
           "example": "[1,2]",
           "member": "int64",
           "name": "ContactPerson",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -8947,6 +9041,7 @@
           "example": "[1,2]",
           "member": "int64",
           "name": "ContactGroup",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -8995,7 +9090,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型",
+          "document": "策略类型，固定值：instance， instance-代表实例类型策略",
           "example": "instance",
           "member": "string",
           "name": "ApplyType",
@@ -9004,7 +9099,7 @@
         },
         {
           "disabled": false,
-          "document": "开启策略",
+          "document": "策略是否开启，0-代表开启，1-代表关闭",
           "example": "1",
           "member": "int64",
           "name": "Enable",
@@ -9013,8 +9108,8 @@
         },
         {
           "disabled": false,
-          "document": "列表",
-          "example": "[{InstanceId: \"cdb-k9p7z9l9\"}]",
+          "document": "实例id列表，可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "无",
           "member": "InstanceID",
           "name": "InstanceIds",
           "required": true,
@@ -9031,7 +9126,7 @@
         },
         {
           "disabled": false,
-          "document": "新策略名",
+          "document": "新策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。",
           "example": "demoProfileName",
           "member": "string",
           "name": "NewProfileName",
@@ -9040,7 +9135,7 @@
         },
         {
           "disabled": false,
-          "document": "旧策略名",
+          "document": "旧策略名，包含中文英文数字，长度在60个字符以内，不能以“_”开头。",
           "example": "oldProfileName",
           "member": "string",
           "name": "ProfileName",
@@ -9049,7 +9144,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型",
+          "document": "策略类型，固定值：alarm_policy",
           "example": "alarm_policy",
           "member": "string",
           "name": "ProfileType",
@@ -9085,7 +9180,7 @@
         },
         {
           "disabled": false,
-          "document": "快速规则  支持包括fatal-致命, critical-严重,\nwarning-告警,\ninformation-通知",
+          "document": "快速规则  支持包括fatal-致命, critical-严重,\nwarning-告警,\ninformation-通知，与Rules互斥",
           "example": "fatal",
           "member": "string",
           "name": "QuickRule",
@@ -9094,7 +9189,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义规则",
+          "document": "自定义规则，与QuickRule互斥。",
           "example": "无",
           "member": "AlarmsRules",
           "name": "Rules",
@@ -9203,7 +9298,7 @@
         },
         {
           "disabled": false,
-          "document": "生效实例地域，取值为\"All\"，代表全地域。",
+          "document": "生效实例地域，固定为\"All\"，代表全地域。",
           "example": "All",
           "member": "string",
           "name": "Regions",
@@ -9221,8 +9316,8 @@
         },
         {
           "disabled": false,
-          "document": "指定更改巡检状态的实例ID。",
-          "example": "[\"cdb-fyclrp7r\\n\"]",
+          "document": "指定更改巡检状态的实例ID。\n可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。\n",
+          "example": "[\"cdb-fyclrp7rn\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -9248,7 +9343,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -9257,7 +9352,7 @@
         },
         {
           "disabled": false,
-          "document": "SQL限流任务ID列表。",
+          "document": "SQL限流任务ID列表。可通过接口[查询实例SQL限流任务列表\n](https://cloud.tencent.com/document/product/1130/72831)获得。",
           "example": "[1433288]",
           "member": "int64",
           "name": "FilterIds",
@@ -9266,7 +9361,7 @@
         },
         {
           "disabled": false,
-          "document": "限流任务状态，取值支持TERMINATED - 终止。",
+          "document": "限流任务状态，仅支持传参TERMINATED - 终止。",
           "example": "TERMINATED",
           "member": "string",
           "name": "Status",
@@ -9275,7 +9370,7 @@
         },
         {
           "disabled": false,
-          "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
+          "document": "通过 [VerifyUserAccount](https://cloud.tencent.com/document/product/1130/72828) 获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
           "example": "cauth",
           "member": "string",
           "name": "SessionToken",
@@ -9320,7 +9415,7 @@
         },
         {
           "disabled": false,
-          "document": "实列ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "crs-qtmkik3e",
           "member": "string",
           "name": "InstanceId",
@@ -9540,7 +9635,7 @@
         {
           "disabled": false,
           "document": "监控指标。",
-          "example": "[{\"Values\":[1.0,1.0],\"Metric\":\"cpu_use_rate\",\"Unit\":\"%\"}]",
+          "example": "无",
           "member": "MonitorMetric",
           "name": "Series",
           "output_required": true,
@@ -9549,7 +9644,7 @@
         },
         {
           "disabled": false,
-          "document": "监控指标对应的时间戳。",
+          "document": "监控指标对应的时间戳。（精度：秒）",
           "example": "[1622087750,1622087760]",
           "member": "int64",
           "name": "Timestamp",
@@ -9734,7 +9829,7 @@
         },
         {
           "disabled": false,
-          "document": "访问来源，IP 地址和端口号。",
+          "document": "访问来源，IP 地址和端口号。\n格式：IP:Port",
           "example": "100.1.232.215:3006",
           "member": "string",
           "name": "Address",
@@ -9846,7 +9941,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "语言, 如\"zh\"。",
+          "document": "语言类型, 包含“zh”-中文，“en”-英文。",
           "example": "zh",
           "member": "string",
           "name": "Language",
@@ -9884,7 +9979,7 @@
         },
         {
           "disabled": false,
-          "document": "最后接收时间",
+          "document": "最后接收时间，格式: \"HH:mm:ss\"",
           "example": "23:59:59",
           "member": "string",
           "name": "EndReceiveTime",
@@ -9914,7 +10009,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间，格式: \"HH:mm:ss\"",
           "example": "00:00:00",
           "member": "string",
           "name": "StartReceiveTime",
@@ -9925,7 +10020,7 @@
         {
           "disabled": false,
           "document": "接收用户列表",
-          "example": "[{\"UinName\":\"zhangsan\",\"Uin\":\"100020880953\"}]",
+          "example": "无",
           "member": "ReceiveUin",
           "name": "ReceiveUin",
           "output_required": false,
@@ -10217,6 +10312,72 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RedisMetricTopProxiesData": {
+      "document": "Redis  DescribeMetricTopProxies 接口返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30.86.245.14",
+          "member": "string",
+          "name": "Host",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Proxy Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "149c8a81e5321ebab810a5da07c298c764311c43",
+          "member": "string",
+          "name": "InstanceProxyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8461",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.33",
+          "member": "float",
+          "name": "Value",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间（秒）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1758183175]",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "序列数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MonitorFloatMetric",
+          "name": "Series",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -11319,8 +11480,8 @@
         },
         {
           "disabled": false,
-          "document": "耗时占比。",
-          "example": "100",
+          "document": "耗时占比。单位（%）",
+          "example": "100.0",
           "member": "float",
           "name": "Ratio",
           "output_required": true,
@@ -11755,7 +11916,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板id",
+          "document": "模板id,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。",
           "example": "23002",
           "member": "string",
           "name": "TemplateId",
@@ -11764,7 +11925,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名",
+          "document": "模板名,通过接口[通知模板查询](https://cloud.tencent.com/document/product/1130/97726)获得。",
           "example": "demoTemplate",
           "member": "string",
           "name": "TemplateName",
@@ -11861,7 +12022,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Agent标识。",
+          "document": "Agent标识。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "a6a7fccd-3cca-4310-b31e-2a60598d3414",
           "member": "string",
           "name": "AgentId",
@@ -11915,7 +12076,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "mysql-069yc1dda",
           "member": "string",
           "name": "InstanceId",
@@ -12007,7 +12168,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -12026,7 +12187,7 @@
         {
           "disabled": false,
           "document": "数据库账号密码。",
-          "example": "t123456",
+          "example": "t121416",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -12053,7 +12214,7 @@
           "example": "QCth",
           "member": "string",
           "name": "SessionToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

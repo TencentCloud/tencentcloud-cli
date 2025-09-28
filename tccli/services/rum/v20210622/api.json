@@ -2931,7 +2931,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "\"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}\"",
+          "example": "\"{\\\"request_id\\\":\\\"dc0ca023-0c87-4ab2-aee2-fde2aa196e9e\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"},{\\\"statement_id\\\":1,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -3700,7 +3700,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "\"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}\"",
+          "example": "\"{\\\"request_id\\\":\\\"dc0ca023-0c87-4ab2-aee2-fde2aa196e9e\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"},{\\\"statement_id\\\":1,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -5192,7 +5192,7 @@
         },
         {
           "disabled": false,
-          "document": "获取临时签名的bucket是国内站还是国际站（1表示国际站，其它表示国内站）",
+          "document": "获取临时签名的bucket是境内还是境外（1表示境外，其它表示境内）",
           "example": "0",
           "member": "int64",
           "name": "Site",
@@ -5549,7 +5549,7 @@
         {
           "disabled": false,
           "document": "返回字符串",
-          "example": "\"{\"code\":0,\"data\":{\"page\\\":1,\"pageSize\":999,\"totalCount\":1}\"",
+          "example": "\"{\\\"code\\\":0,\\\"data\\\":{\\\"page\\\":1,\\\"pageSize\\\":999,\\\"totalCount\\\":1}}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,

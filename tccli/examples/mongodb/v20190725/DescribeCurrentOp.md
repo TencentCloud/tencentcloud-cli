@@ -6,29 +6,30 @@ Input:
 
 ```
 tccli mongodb DescribeCurrentOp --cli-unfold-argument  \
-    --InstanceId cmgo-p8vn****
+    --InstanceId cmgo-r3p8**** \
+    --State primary
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "CurrentOps": [
             {
-                "OpId": 1804858933,
-                "Ns": "db.****",
-                "Query": "",
+                "ExecNode": "主节点",
+                "MicrosecsRunning": 103,
+                "NodeName": "**.**.**.**:****:*********",
+                "Ns": "admin.$cmd.aggregate",
                 "Op": "command",
-                "ReplicaSetName": "salve-1",
-                "NodeName": "salve-1",
-                "Operation": "****",
-                "State": "Primary",
-                "MicrosecsRunning": 30353723,
-                "ExecNode": "从节点"
+                "OpId": 42431451,
+                "Operation": "{\"Active\":true,\"AppName\":\"CMongo\",\"Client\":\"**.**.**.**:**\",\"ClientMetadata\":{\"application\":{\"name\":\"CMongo\"},\"driver\":{\"name\":\"mongo-go-driver\",\"version\":\"v1.*.*\"},\"os\":{\"architecture\":\"amd64\",\"type\":\"linux\"},\"platform\":\"***.**.*\"},\"Command\":{\"$db\":\"admin\",\"$readPreference\":{\"mode\":\"primaryPreferred\"},\"currentOp\":1,\"lsid\":{\"id\":{\"Data\":\"************************==\",\"Subtype\":4}},\"microsecs_running\":{\"$gt\":0}},\"ConnectionId\":********,\"CurrentOpTime\":\"2025-09-25T17:41:42.146+0800\",\"Desc\":\"conn*******\",\"Host\":\"*******64.site:7029\",\"Insert\":null,\"KillPending\":false,\"LockStats\":{},\"Locks\":{},\"Lsid\":{\"id\":{\"Data\":\"*******************==\",\"Subtype\":4},\"uid\":{\"Data\":\"********************************=\",\"Subtype\":0}},\"MicroSecsRunning\":103,\"Msg\":\"\",\"Ns\":\"admin.$cmd.aggregate\",\"NumYields\":0,\"Op\":\"command\",\"OpId\":********,\"OriginatingCommand\":null,\"PlanSummary\":\"\",\"Progress\":null,\"Query\":null,\"SecsRunning\":0,\"Transaction\":null,\"WaitingForLock\":false}",
+                "Query": "{\"$db\":\"admin\",\"$readPreference\":{\"mode\":\"primaryPreferred\"},\"currentOp\":1,\"lsid\":{\"id\":{\"Data\":\"***********************==\",\"Subtype\":4}},\"microsecs_running\":{\"$gt\":0}}",
+                "ReplicaSetName": "cmgo-r3p8****_0",
+                "State": "primary"
             }
         ],
-        "RequestId": "66956cf3-2d10-4c68-87c0-7bd558deae7e"
+        "RequestId": "a1f20aaa-83c2-4062-b4f3-7c46ad2e1157",
+        "TotalCount": 1
     }
 }
 ```

@@ -399,7 +399,7 @@
     "ModifySubscribeObjects": [
       {
         "document": "修改数据订阅的订阅规则，如添加或者移除某些库表",
-        "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeObjects\r\n&SubscribeId=subs-ieuwi83j2e\r\n&SubscribeObjectType=0\r\n&<公共请求参数>",
+        "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeObjects\n&SubscribeId=subs-ieuwi83j2e\n&SubscribeObjectType=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "修改数据订阅通道的订阅规则"
       }
@@ -463,7 +463,7 @@
     "ResetSubscribe": [
       {
         "document": "重置数据订阅任务",
-        "input": "https://dts.tencentcloudapi.com/?Action=ResetSubscribe\r\n&SubscribeId=subs-ieuwi83j2e\r\n&<公共请求参数>",
+        "input": "https://dts.tencentcloudapi.com/?Action=ResetSubscribe\n&SubscribeId=subs-ieuwi83j2e\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "重置数据订阅任务"
       }

@@ -2527,7 +2527,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板 ID。",
+          "document": "参数模板 ID。请登录 [Redis 控制台的参数模版](https://console.cloud.tencent.com/redis/templates)页面获取模版 ID。",
           "example": "crs-cfg-rhlppeye",
           "member": "string",
           "name": "TemplateId",
@@ -4558,7 +4558,7 @@
         },
         {
           "disabled": false,
-          "document": "是否过滤掉从节信息。\n- true；过滤从节点。\n- false：不过滤。",
+          "document": "指定是否过滤掉从节信息。\n- true；过滤从节点。\n- false：不过滤。默认为 false。",
           "example": "false",
           "member": "bool",
           "name": "FilterSlave",
@@ -6108,7 +6108,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称。",
+          "document": "实例名称。请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例名称。",
           "example": "crs-rhlppeye",
           "member": "string",
           "name": "InstanceName",
@@ -6126,7 +6126,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。",
+          "document": "分页偏移量。取值需为 Limit 的整数倍：offset=limit*(页码-1)，默认值为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -6136,7 +6136,7 @@
         {
           "disabled": true,
           "document": "该字段已废弃, 请忽略, 项目 ID",
-          "example": "11322",
+          "example": "[11322]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -6145,7 +6145,7 @@
         {
           "disabled": false,
           "document": "任务类型。\n\n- FLOW_CREATE: \"001\"，新建实例。\n- FLOW_RESIZE ： \"002\"，配置变更。\n- FLOW_CLOSE：\"003\"，关闭实例。\n- FLOW_CLEAN： \"004\"，清空实例。\n- FLOW_STARTUP：\"005\"，实例启用。\n- FLOW_DELETE：\"006\"，删除实例。\n- FLOW_SETPWD：\"007\"，重置密码。\n- FLOW_EXPORTBACKUP：\"009\"，导出备份文件。\n- FLOW_RESTOREBACKUP：\"010\"，恢复备份。\n- FLOW_BACKUPINSTANCE：\"012\"，备份实例。\n- FLOW_MIGRATEINSTANCE：\"013\"，迁移实例。\n- FLOW_DELBACKUP：\"014\"，删除备份。\n- FLOW_EXCHANGEINSTANCE： \"016\"，切换实例流程。\n- FLOW_AUTOBACKUP：\"017\"，自动备份实例。\n- FLOW_MIGRATECHECK： \"022\"，迁移参数校验。\n- FLOW_MIGRATETASK：\"023\"，数据迁移中。\n- FLOW_CLEANDB：\"025\"，清空某个数据库。\n- FLOW_CLONEBACKUP：\"026\"，克隆备份。\n- FLOW_CHANGEVIP： \"027\"，改变vip地址。\n- FLOW_EXPORSHR ：\"028\"，扩缩容。\n- FLOW_ADDNODES：\"029\"，加（减）节点。\n- FLOW_CHANGENET：\"031\"，改变网络类型。\n- FLOW_MODIFYINSTACEREADONLY：\"033\"，只读策略变更。\n- FLOW_MODIFYINSTANCEPARAMS：\"034\"，修改实例参数。\n- FLOW_MODIFYINSTANCEPASSWORDFREE：\"035\"，设置免密。\n- FLOW_SWITCHINSTANCEVIP：\"036\"，实例VIP切换。\n- FLOW_MODIFYINSTANCEACCOUNT：\"037\"，实例账号变更。\n- FLOW_MODIFYINSTANCEBANDWIDTH：\"038\"，实例带宽变更。\n- FLOW_ENABLEINSTANCE_REPLICATE：\"039\"，开启副本只读。\n- FLOW_DISABLEINSTANCE_REPLICATE：\"040\"，关闭副本只读。\n- FLOW_UpgradeArch：\"041\"，实例架构升级，主从升集群。\n- FLOW_DowngradeArch： \"042\"，实例架构降级，集群降主从。\n- FLOW_UpgradeVersion： \"043\"，版本升级。\n- FLOW_MODIFYCONNECTIONCONFIG：\"044\"，带宽连接数调整，\n- FLOW_CLEARNETWORK：\"045\"，更换网络，\n- FLOW_REMOVE_BACKUP_FILE：\"046\"，删除备份。\n- FLOW_UPGRADE_SUPPORT_MULTI_AZ：\"047\"，升级实例支持多可用区。\n- FLOW_SHUTDOWN_MASTER：\"048\"，模拟故障。\n- FLOW_CHANGE_REPLICA_TO_MASTER：\"049\"，手动提主。\n- FLOW_CODE_ADD_REPLICATION_INSTANCE：\"050\"，新增复制组。\n- FLOW_OPEN_WAN：\"052\"，开通外网。\n- FLOW_CLOSE_WAN：\"053\"，关闭外网FLOW_UPDATE_WAN：\"054\"，更新外网。\n- FLOW_CODE_DELETE_REPLICATION_INSTANCE：\"055\"，解绑复制组。\n- FLOW_CODE_CHANGE_MASTER_INSTANCE：\"056\"，复制组实例切主。\n- FLOW_CODE_CHANGE_INSTANCE_ROLE： \"057\"，更改复制组实例角色。\n- FLOW_MIGRATE_NODE：\"058\"，迁移节点。\n- FLOW_SWITCH_NODE：\"059\"，切换节点。\n- FLOW_UPGRADE_SMALL_VERSION：\"060\"，升级 Redis版本。\n- FLOW_UPGRADE_PROXY_VERSION：\"061\"，升级 Proxy 版本。\n- FLOW_MODIFY_INSTANCE_NETWORK： \"062\"，实例修改网络。\n- FLOW_MIGRATE_PROXY_NODE：\"063\"，迁移proxy节点。\n- FLOW_MIGRATION_INSTANCE_ZONE：\"066\"，实例可用区迁移中。\n- FLOW_UPGRADE_INSTANCE_CACHE_AND_PROXY： \"067\"，实例版本升级中。\n- FLOW_MODIFY_PROXY_NUM：\"069\"，加（减）Proxy 节点。\n- FLOW_MODIFYBACKUPMOD：\"070\"，变更实例备份模式。",
-          "example": "037",
+          "example": "[\"037\"]",
           "member": "string",
           "name": "TaskTypes",
           "required": false,
@@ -6172,7 +6172,7 @@
         {
           "disabled": false,
           "document": "该参数为内部使用，请忽略。",
-          "example": "[0.1.2]",
+          "example": "[0,1,2]",
           "member": "int64",
           "name": "TaskStatus",
           "required": false,
@@ -6199,7 +6199,7 @@
         {
           "disabled": false,
           "document": "操作者账号 ID，UIN。",
-          "example": "[\"10002274123\"]",
+          "example": "[\"12458915647\"]",
           "member": "string",
           "name": "OperateUin",
           "required": false,
@@ -6802,7 +6802,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的可用区ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。",
+          "document": "实例所属的可用区 ID，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。\n**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。",
           "example": "100002",
           "member": "uint64",
           "name": "ZoneId",
@@ -6811,7 +6811,7 @@
         },
         {
           "disabled": false,
-          "document": "实例分片数量。2.8 标准架构无需配置分片，其余版本标准架构需要配置分片数量为1。集群架构需指定需购买的分片数量。",
+          "document": "实例分片数量。\n- 标准架构需要配置分片数量为1。\n- 集群架构分片数量支持设置为1、3、5、8、12、16、24、32、40、48、64、80、96、128。",
           "example": "1",
           "member": "int64",
           "name": "RedisShardNum",
@@ -6820,7 +6820,7 @@
         },
         {
           "disabled": false,
-          "document": "实例副本数量。2.8 标准架构无需配置副本数量。",
+          "document": "实例副本数量。取值范围为：1、2、3、4、5。",
           "example": "1",
           "member": "int64",
           "name": "RedisReplicasNum",
@@ -6838,7 +6838,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。",
+          "document": "实例所属的可用区名称，可参考[地域和可用区](https://cloud.tencent.com/document/product/239/4106)  。\n**说明**：请在 **ZoneId** 与 **ZoneName** 中至少指定一个参数。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ZoneName",
@@ -6863,7 +6863,7 @@
         {
           "disabled": false,
           "document": "价格",
-          "example": "30400",
+          "example": "30400.0",
           "member": "float",
           "name": "Price",
           "output_required": true,

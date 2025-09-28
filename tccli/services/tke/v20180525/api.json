@@ -2218,7 +2218,7 @@
         },
         {
           "disabled": false,
-          "document": "存储仓库状态",
+          "document": "存储仓库状态\n- Available: 可用\n- Unavailable: 不可用",
           "example": "Available/Unavailable",
           "member": "string",
           "name": "State",
@@ -3002,7 +3002,7 @@
         },
         {
           "disabled": false,
-          "document": "集群网络类型。包括GR（全局路由）和VPC-CNI两种模式，默认为GR。",
+          "document": "集群网络类型，默认为GR。\n- GR: 全局路由\n- VPC-CNI: VPC-CNI模式\n- CiliumOverlay: CiliumOverlay模式",
           "example": "GR",
           "member": "string",
           "name": "NetworkType",
@@ -11330,7 +11330,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加密状态",
+          "document": "加密状态\n- Opening: 开启中\n- Opened: 已开启\n- Closing: 关闭中\n- Closed: 已关闭",
           "example": "Closed",
           "member": "string",
           "name": "Status",
@@ -18080,7 +18080,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "kms id",
+          "document": "kms id，可以在密钥管理控制台获取",
           "example": "38098f4c-f5ef-11ed-8c28-525400b4ad52",
           "member": "string",
           "name": "KeyId",
@@ -23487,7 +23487,7 @@
         },
         {
           "disabled": false,
-          "document": "地域状态",
+          "document": "地域状态\\n- alluser: 所有用户可见",
           "example": "ALL",
           "member": "string",
           "name": "Status",
@@ -26900,7 +26900,7 @@
         },
         {
           "disabled": false,
-          "document": "Remark",
+          "document": "备注",
           "example": "SUITABLE_FOR_INDEPENDENT_CLUSTER",
           "member": "string",
           "name": "Remark",
