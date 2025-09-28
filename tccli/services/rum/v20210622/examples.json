@@ -196,7 +196,7 @@
       {
         "document": "",
         "input": "https://rum.tencentcloudapi.com/?Action=DescribeDataLogUrlStatistics\n&ID=1\n&StartTime=1625444040\n&EndTime=1625454840\n&Type=pagepv\n&Level=1\n&Isp=中国移动\n&Area=中国\n&NetType=2\n&Platform=2\n&Device=三星\n&VersionNum=版本\n&ExtFirst=自定义1\n&ExtSecond=自定义2\n&ExtThird=自定义3\n&IsAbroad=1\n&Browser=ie\n&Os=apple\n&Engine=ie2\n&Brand=apple\n&From=index.html\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"},{\\\"statement_id\\\":2,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\",\n        \"RequestId\": \"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"},{\\\"statement_id\\\":1,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\",\n        \"RequestId\": \"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\"\n    }\n}",
         "title": "获取LogUrlStatistics信息"
       }
     ],
@@ -246,7 +246,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataReportCount\n<公共请求参数>\n\n{\n    \"EndTime\": 1625454840,\n    \"ReportType\": \"custom\",\n    \"ID\": 1,\n    \"StartTime\": 1625444040\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"request_id\\\":\\\"65a8fec7-2b39-4b11-893f-3715279d235f\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"},{\\\"statement_id\\\":1,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取上报量"
       }
     ],

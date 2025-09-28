@@ -8,7 +8,7 @@ Input:
 tccli dbbrain CloseAuditService --cli-unfold-argument  \
     --Product dcdb \
     --NodeRequestType dcdb \
-    --InstanceId tdsqlsdfsd
+    --InstanceId tdsqlshard-1i9nzc30
 ```
 
 Output: 

@@ -15646,7 +15646,7 @@
         {
           "disabled": false,
           "document": "Serverless实例最大规格",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "MaxRoCpu",
           "required": false,
@@ -16123,7 +16123,7 @@
         {
           "disabled": false,
           "document": "隔离实例的订单id（预付费实例）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"1234\"]",
+          "example": "[\"8345452\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": true,
@@ -16828,7 +16828,7 @@
         {
           "disabled": false,
           "document": "该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份",
-          "example": "[full,full,full,full,full,full,full]",
+          "example": "[\"full\",\"full\",\"full\",\"full\",\"full\",\"full\",\"full\"]",
           "member": "string",
           "name": "BackupFreq",
           "required": false,
@@ -16846,7 +16846,7 @@
         {
           "disabled": false,
           "document": "逻辑备份配置",
-          "example": "[{\"LogicBackupEnable\": \"ON\",\"LogicBackupTimeBeg\": \"2023-04-24 15:06:04\",\"LogicBackupTimeEnd\": \"2024-04-24 15:06:04\",\"LogicReserveDuration\": \"60\",\"LogicCrossRegionsEnable\": \"yes\",\"LogicCrossRegions\": [\"ap-guangzhou\"]}]",
+          "example": "无",
           "member": "LogicBackupConfigInfo",
           "name": "LogicBackupConfig",
           "required": false,
@@ -16855,7 +16855,7 @@
         {
           "disabled": false,
           "document": "是否删除自动逻辑备份",
-          "example": "ture",
+          "example": "false",
           "member": "bool",
           "name": "DeleteAutoLogicBackup",
           "required": false,
@@ -23616,7 +23616,7 @@
         {
           "disabled": false,
           "document": "集群创建需要绑定的tag数组信息",
-          "example": "[{\"TagKey\":\"PayMode\",\"TagValue\":\"PayMode0\"},{\"TagKey\":\"StoragePayMode\",\"TagValue\":\"StoragePayMode0\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
@@ -23688,7 +23688,7 @@
         {
           "disabled": false,
           "document": "参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感",
-          "example": "[{\"CurrentValue\":\"utf8mb4\",\"ParamName\":\"character_set_server\"},{\"CurrentValue\":\"1\",\"ParamName\":\"lower_case_table_names\"}]",
+          "example": "无",
           "member": "ParamItem",
           "name": "ClusterParams",
           "required": false,
@@ -23706,7 +23706,7 @@
         {
           "disabled": false,
           "document": "实例初始化配置信息，主要用于购买集群时选不同规格实例",
-          "example": "[{\"Cpu\":1,\"InstanceCount\":1,\"InstanceType\":\"rw\",\"Memory\":1}]",
+          "example": "无",
           "member": "InstanceInitInfo",
           "name": "InstanceInitInfos",
           "required": false,
@@ -23751,7 +23751,7 @@
         {
           "disabled": false,
           "document": "回档库信息",
-          "example": "[{\"NewDatabase\":\"db2\",\"OldDatabase\":\"db1\"}]",
+          "example": "无",
           "member": "RollbackDatabase",
           "name": "RollbackDatabases",
           "required": false,
@@ -23760,7 +23760,7 @@
         {
           "disabled": false,
           "document": "回档表信息",
-          "example": "[{\"Database\":\"db1\",\"Tables\":[{\"OldTable\":\"table1\",\"newTable\":\"table2\"}]}]",
+          "example": "无",
           "member": "RollbackTable",
           "name": "RollbackTables",
           "required": false,

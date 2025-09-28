@@ -32,7 +32,7 @@ Output:
 ```
 {
     "Response": {
-        "Result": "{\"request_id\":\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\",\"results\":[{\"statement_id\":1,\"series\":[{\"name\":\"log_url_statistics\",\"columns\":[\"time\",\"allCount\"],\"values\":[],\"total\":1,\"offset\":\"\"},{\"statement_id\":2,\"total\":0,\"offset\":\"\"}]}",
+        "Result": "{\"request_id\":\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\",\"results\":[{\"statement_id\":0,\"total\":0,\"offset\":\"\"},{\"statement_id\":1,\"total\":0,\"offset\":\"\"}]}",
         "RequestId": "4d50a7e7-cb3a-47af-a4ff-f545bfd54880"
     }
 }

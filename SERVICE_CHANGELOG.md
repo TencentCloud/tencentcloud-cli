@@ -1,122 +1,109 @@
-# Release 3.0.1280.1
+# Release 3.0.1281.1
 
-## 内容安全(cms) 版本：2019-03-21
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
-### 第 9 次发布
+### 第 45 次发布
 
-发布时间：2025-09-26 01:11:29
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeKeywordsLibs](http://document.tencentcloudapi.woa.com/document/product/1604/76791)
-
-	* 新增出参：TotalSample
-
-* [DescribeLibSamples](http://document.tencentcloudapi.woa.com/document/product/1604/76789)
-
-	* 新增入参：OrderDirection
-
-
-修改数据结构：
-
-* [KeywordsLibInfo](http://document.tencentcloudapi.woa.com/document/product/1604/76800#KeywordsLibInfo)
-
-	* 新增成员：UpdateTime
-
-	* <font color="#dd0000">**修改成员**：</font>BizTypes
-
-
-
-
-## 知识引擎原子能力(lkeap) 版本：2024-05-22
-
-### 第 34 次发布
-
-发布时间：2025-09-26 01:21:19
+发布时间：2025-09-29 01:14:27
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [ModifyAttributeLabel](http://document.tencentcloudapi.woa.com/document/product/1764/85625)
-
-	* 新增入参：DeleteLabelIds
-
-
-修改数据结构：
-
-* [CreateSplitDocumentFlowConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#CreateSplitDocumentFlowConfig)
-
-	* 新增成员：SplitResultType, SplitTableResultType
-
-
-
-
-## 运营产品中心(opc) 版本：2018-07-19
-
-### 第 14 次发布
-
-发布时间：2025-09-26 01:23:49
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* DescribeCvmRenewInstanceDetail
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* InstanceDetail
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 159 次发布
-
-发布时间：2025-09-26 01:28:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77252)
-
-	* 新增入参：RemoveAllTags, Tags
-
-
-
-
-## 实时音视频(trtc) 版本：2019-07-22
-
-### 第 105 次发布
-
-发布时间：2025-09-26 01:30:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
+* [DescribeMetricTopProxies](http://document.tencentcloudapi.woa.com/document/product/1130/87779)
 
 新增数据结构：
 
-* [Terminology](http://document.tencentcloudapi.woa.com/document/product/647/44055#Terminology)
+* [RedisMetricTopProxiesData](http://document.tencentcloudapi.woa.com/document/product/1130/57812#RedisMetricTopProxiesData)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 204 次发布
+
+发布时间：2025-09-29 01:20:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateSealPolicy](http://document.tencentcloudapi.woa.com/document/product/1595/77035)
+
+	* 新增入参：Options
+
+	* 新增出参：SealOperatorVerifyPath, SealOperatorVerifyQrcodeUrl
+
+* [ChannelUpdateSealStatus](http://document.tencentcloudapi.woa.com/document/product/1595/77075)
+
+	* 新增入参：Options
+
+	* 新增出参：SealOperatorVerifyPath, SealOperatorVerifyQrcodeUrl
+
+* [CreateSealByImage](http://document.tencentcloudapi.woa.com/document/product/1595/75256)
+
+	* 新增入参：Options
+
+	* 新增出参：SealOperatorVerifyPath, SealOperatorVerifyQrcodeUrl
+
+
+新增数据结构：
+
+* [Option](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Option)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
+
+### 第 26 次发布
+
+发布时间：2025-09-29 01:22:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [TranslationConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#TranslationConfig)
+* [DescribeAccountGroupsData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeAccountGroupsData)
 
-	* 新增成员：Terminology
+	* 新增成员：NamePathArr
 
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 45 次发布
+
+发布时间：2025-09-29 01:25:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/240/38576#BackupInfo)
+
+	* 新增成员：RestoreTime
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
 
 
 
