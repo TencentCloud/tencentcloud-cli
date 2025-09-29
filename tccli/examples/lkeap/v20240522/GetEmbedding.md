@@ -29,3 +29,36 @@ Output:
 }
 ```
 
+**Example 2: 获取特征向量v2**
+
+
+
+Input: 
+
+```
+tccli lkeap GetEmbedding --cli-unfold-argument  \
+    --Model lke-text-embedding-v2 \
+    --Inputs 1 \
+    --TextType document \
+    --Instruction 问题:
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": [
+            {
+                "Embedding": [
+                    0.009212733
+                ]
+            }
+        ],
+        "Usage": {
+            "TotalTokens": 3
+        },
+        "RequestId": "d4b6b8fb-597c-43f3-860d-715916c787b8"
+    }
+}
+```
+

@@ -1,34 +1,10 @@
-# Release 3.0.1281.1
+# Release 3.0.1282.1
 
-## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+## 腾讯混元生3D(ai3d) 版本：2025-05-13
 
-### 第 45 次发布
+### 第 4 次发布
 
-发布时间：2025-09-29 01:14:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeMetricTopProxies](http://document.tencentcloudapi.woa.com/document/product/1130/87779)
-
-新增数据结构：
-
-* [RedisMetricTopProxiesData](http://document.tencentcloudapi.woa.com/document/product/1130/57812#RedisMetricTopProxiesData)
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 204 次发布
-
-发布时间：2025-09-29 01:20:29
+发布时间：2025-09-30 01:07:36
 
 本次发布包含了以下内容：
 
@@ -36,40 +12,25 @@
 
 修改接口：
 
-* [ChannelCreateSealPolicy](http://document.tencentcloudapi.woa.com/document/product/1595/77035)
+* [SubmitHunyuanTo3DProJob](http://document.tencentcloudapi.woa.com/document/product/1800/87646)
 
-	* 新增入参：Options
-
-	* 新增出参：SealOperatorVerifyPath, SealOperatorVerifyQrcodeUrl
-
-* [ChannelUpdateSealStatus](http://document.tencentcloudapi.woa.com/document/product/1595/77075)
-
-	* 新增入参：Options
-
-	* 新增出参：SealOperatorVerifyPath, SealOperatorVerifyQrcodeUrl
-
-* [CreateSealByImage](http://document.tencentcloudapi.woa.com/document/product/1595/75256)
-
-	* 新增入参：Options
-
-	* 新增出参：SealOperatorVerifyPath, SealOperatorVerifyQrcodeUrl
+	* 新增入参：PolygonType
 
 
-新增数据结构：
+修改数据结构：
 
-* [Option](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Option)
+* [ViewImage](http://document.tencentcloudapi.woa.com/document/product/1800/87325#ViewImage)
+
+	* 新增成员：ViewImageBase64
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
+### 第 69 次发布
 
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
-
-### 第 26 次发布
-
-发布时间：2025-09-29 01:22:36
+发布时间：2025-09-30 01:10:50
 
 本次发布包含了以下内容：
 
@@ -77,18 +38,48 @@
 
 修改数据结构：
 
-* [DescribeAccountGroupsData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeAccountGroupsData)
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
 
-	* 新增成员：NamePathArr
-
-
+	* 新增成员：CosPkgCapacity, UseManagedBucket
 
 
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
 
-### 第 45 次发布
 
-发布时间：2025-09-29 01:25:47
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 115 次发布
+
+发布时间：2025-09-30 01:22:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTasks](http://document.tencentcloudapi.woa.com/document/product/862/37613)
+
+	* 新增入参：SubTaskHasFailed
+
+
+修改数据结构：
+
+* [AdaptiveDynamicStreamingTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AdaptiveDynamicStreamingTaskInput)
+
+	* 新增成员：KeyPTSList
+
+* [AddOnSubtitle](http://document.tencentcloudapi.woa.com/document/product/862/37615#AddOnSubtitle)
+
+	* 新增成员：OutputFormat, DefaultTrack
+
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 47 次发布
+
+发布时间：2025-09-30 01:24:22
 
 本次发布包含了以下内容：
 
@@ -96,14 +87,10 @@
 
 修改数据结构：
 
-* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/240/38576#BackupInfo)
+* [DBInstance](http://document.tencentcloudapi.woa.com/document/product/409/16778#DBInstance)
 
-	* 新增成员：RestoreTime
+	* 新增成员：ExpandedCpu
 
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
 
 
 
