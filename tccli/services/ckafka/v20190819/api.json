@@ -12704,6 +12704,72 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络类型：PUBLIC公网；VPC",
+          "example": "PUBLIC",
+          "member": "string",
+          "name": "NetworkType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpcId，NetworkType=VPC时必传",
+          "example": "vpc-test",
+          "member": "string",
+          "name": "UniqVpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vip，NetworkType=VPC时必传",
+          "example": "10.0.0.5",
+          "member": "string",
+          "name": "ServiceVip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口，NetworkType=VPC时必传",
+          "example": "9092",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨云同步下需要客户传递唯一Id标志一组资源",
+          "example": "id-test",
+          "member": "string",
+          "name": "CrossNetResourceUniqueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨云子网ID",
+          "example": "subnet-test",
+          "member": "string",
+          "name": "CrossNetVpcSubNetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

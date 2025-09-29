@@ -9821,7 +9821,7 @@
         {
           "disabled": false,
           "document": "当TotalCount为0时，返回空",
-          "example": "[       {         \"SceneId\": \"3000004602\",         \"Type\": \"default\",         \"SceneName\": \"默认场景\",         \"UpdateTime\": 1666262225512]",
+          "example": "无",
           "member": "BotSceneInfo",
           "name": "BotSceneList",
           "output_required": true,

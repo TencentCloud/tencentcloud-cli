@@ -480,7 +480,7 @@
         {
           "disabled": false,
           "document": "描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有： instance-id，实例id； instance-state，实例状态：RUNNING，PENDING，STOPPED，ARREARS，STOPPED_NO_CHARGE； charge-type，付费方式：PREPAID_BY_MONTH，POSTPAID_BY_HOUR； public-ip-address，公网IP过滤",
-          "example": "[{\"Name\":\"instance-state\", \"Values\":[\"RUNNING\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -523,7 +523,7 @@
         {
           "disabled": false,
           "document": "分页实例详情\n",
-          "example": "[{\"InstanceId\":\"hai-jklfaded\"}]",
+          "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
           "output_required": true,

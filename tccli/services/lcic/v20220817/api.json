@@ -889,8 +889,8 @@
         },
         {
           "disabled": false,
-          "document": "创建课堂ID列表",
-          "example": "[123,456]",
+          "document": "批量创建课堂的配置信息",
+          "example": "无",
           "member": "RoomInfo",
           "name": "RoomInfos",
           "required": true,

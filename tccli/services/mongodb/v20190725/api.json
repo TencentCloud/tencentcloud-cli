@@ -6766,7 +6766,7 @@
         {
           "disabled": false,
           "document": "实例存储引擎版本信息。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。",
-          "example": "MONGO_36_WT",
+          "example": "MONGO_50_WT",
           "member": "string",
           "name": "MongoVersionCode",
           "output_required": true,

@@ -218,7 +218,7 @@
       "status": "online"
     },
     "DescribeNodeRun": {
-      "document": "通过DescribeWorkflowRun接口获取了工作流异步运行的整体内容，其中包含了基本的节点信息，再通用本接口可查看节点的运行详情（包括输入、输出、日志等）。",
+      "document": "通过DescribeWorkflowRun接口获取了工作流异步运行的整体内容，其中包含了基本的节点信息，再通过本接口可查看节点的运行详情（包括输入、输出、日志等）。",
       "input": "DescribeNodeRunRequest",
       "name": "查看工作流异步运行实例的节点的运行详情",
       "output": "DescribeNodeRunResponse",
@@ -4863,21 +4863,21 @@
       "members": [
         {
           "disabled": false,
+          "document": "应用ID",
+          "example": "1854548189164339200",
+          "member": "string",
+          "name": "AppBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "运行环境。0: 测试环境； 1: 正式环境",
           "example": "1",
           "member": "uint64",
           "name": "RunEnv",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "应用ID",
-          "example": "1854548189164339200",
-          "member": "string",
-          "name": "AppBizId",
-          "required": false,
-          "type": "string"
         },
         {
           "disabled": false,
@@ -6657,7 +6657,7 @@
           "example": "1963140753734418240",
           "member": "string",
           "name": "AppBizId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -6666,7 +6666,7 @@
           "example": "1dcf5a21-6223-4358-b8a0-b4d6571",
           "member": "string",
           "name": "NodeRunId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -8094,7 +8094,7 @@
           "example": "1963140753734418240",
           "member": "string",
           "name": "AppBizId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -8103,7 +8103,7 @@
           "example": "1dcf5a21-6223-4358-b8a0-b4d6571",
           "member": "string",
           "name": "WorkflowRunId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -9904,6 +9904,23 @@
       ],
       "type": "object"
     },
+    "InputBoxConfig": {
+      "document": "输入框配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入框按钮，1：上传图片、2：上传文档，3：腾讯文档，4：联网搜索",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "InputBoxButtons",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IntentAchievement": {
       "document": "意图达成方式",
       "members": [
@@ -10811,6 +10828,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输入框按钮配置",
+          "example": "无",
+          "member": "InputBoxConfig",
+          "name": "InputBoxConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13896,6 +13924,24 @@
       "members": [
         {
           "disabled": false,
+          "document": "应用ID",
+          "example": "1854548189164339200",
+          "member": "string",
+          "name": "AppBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "运行环境。0: 测试环境； 1: 正式环境",
           "example": "1",
           "member": "uint64",
@@ -13905,28 +13951,10 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
-          "example": "1854548189164339200",
-          "member": "string",
-          "name": "AppBizId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "页码",
           "example": "1",
           "member": "uint64",
           "name": "Page",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "每页数量",
-          "example": "20",
-          "member": "uint64",
-          "name": "PageSize",
           "required": false,
           "type": "int"
         },
@@ -17475,7 +17503,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "1967890027340365504",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -17483,12 +17511,21 @@
         },
         {
           "disabled": false,
-          "document": "文档ID",
-          "example": "无",
+          "document": "废弃",
+          "example": "1968403813394523392",
           "member": "string",
           "name": "DocBizId",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集合最大上限50个，DocBizIds有值使用DocBizIds，为空时则使用DocBizId(兼容废弃字段)",
+          "example": "[\"1968403813394523392\"]",
+          "member": "string",
+          "name": "DocBizIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -18246,7 +18283,7 @@
           "example": "1963140753734418240",
           "member": "string",
           "name": "AppBizId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -18255,7 +18292,7 @@
           "example": "1dcf5a21-6223-4358-b8a0-b4d6571",
           "member": "string",
           "name": "WorkflowRunId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],

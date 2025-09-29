@@ -4025,8 +4025,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群状态，例如：Serving",
-          "example": "str",
+          "document": "集群状态 \n Init  创建中 \nServing   运行中 \nIsolated   已隔离 \nChanging  变更中",
+          "example": "Serving",
           "member": "string",
           "name": "InstanceState",
           "output_required": true,
@@ -4036,7 +4036,7 @@
         {
           "disabled": false,
           "document": "集群操作创建时间",
-          "example": "str",
+          "example": "2025-09-01 23:01:23",
           "member": "string",
           "name": "FlowCreateTime",
           "output_required": true,
@@ -5404,7 +5404,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例ID, \"cdw-xxxx\" 字符串类型",
+          "document": "集群实例ID, \"cdwdoris-xxxx\" 字符串类型",
           "example": "cdwch-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -5424,8 +5424,8 @@
         },
         {
           "disabled": false,
-          "document": "状态,\nInit 创建中; Serving 运行中； \nDeleted已销毁；Deleting 销毁中；\nModify 集群变更中；",
-          "example": "Running",
+          "document": "状态,\nInit  创建中\nServing   运行中\nIsolated   已隔离\nChanging  变更中",
+          "example": "Serving",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -5584,7 +5584,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区说明，例如 \"广州二区\"",
+          "document": "可用区说明，例如 \"广州三区\"",
           "example": "广州三区",
           "member": "string",
           "name": "ZoneDesc",
@@ -5665,7 +5665,7 @@
         {
           "disabled": false,
           "document": "日志集ID",
-          "example": "seqeas-123q1",
+          "example": "seqeas-13q1",
           "member": "string",
           "name": "ClsLogSetId",
           "output_required": true,
@@ -5725,7 +5725,7 @@
         {
           "disabled": false,
           "document": "cos桶",
-          "example": "bucketName-cos-apps-cq-12382198",
+          "example": "bucketName-cos-apps-cq-12782193",
           "member": "string",
           "name": "CosBucketName",
           "output_required": false,
@@ -5775,7 +5775,7 @@
         {
           "disabled": false,
           "document": "页面特性，用于前端屏蔽一些页面入口",
-          "example": "[\"catalog\",\"xx\"]",
+          "example": "[\"catalog\",\"notthis\"]",
           "member": "string",
           "name": "Characteristic",
           "output_required": false,
@@ -5865,7 +5865,7 @@
         {
           "disabled": false,
           "document": "冷热分层使用COS桶",
-          "example": "bucketName-cos-apps-cq-12382198",
+          "example": "bucketName-cos-apps-cq-1382198",
           "member": "string",
           "name": "CoolDownBucket",
           "output_required": false,
@@ -5948,6 +5948,26 @@
           "example": "true",
           "member": "bool",
           "name": "IsMasterNonVM",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos容量包大小",
+          "example": "3130",
+          "member": "int64",
+          "name": "CosPkgCapacity",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群是否使用托管桶",
+          "example": "false",
+          "member": "bool",
+          "name": "UseManagedBucket",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false

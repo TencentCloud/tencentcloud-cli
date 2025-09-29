@@ -114,6 +114,12 @@
         "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"lke-text-embedding-v1\",\n    \"Inputs\": [\n        \"你好\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Usage\": {\n            \"TotalTokens\": 3\n        }\n    }\n}",
         "title": "获取特征向量"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"lke-text-embedding-v2\",\n    \"Inputs\": [\n        \"1\"\n    ],\n    \"TextType\": \"document\",\n    \"Instruction\": \"问题:\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0.009212733\n                ]\n            }\n        ],\n        \"Usage\": {\n            \"TotalTokens\": 3\n        },\n        \"RequestId\": \"d4b6b8fb-597c-43f3-860d-715916c787b8\"\n    }\n}",
+        "title": "获取特征向量v2"
       }
     ],
     "GetReconstructDocumentResult": [

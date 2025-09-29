@@ -3252,7 +3252,7 @@
         {
           "disabled": false,
           "document": "实例绑定的标签信息。",
-          "example": "[     {         \"TagKey\": \"tag1\",         \"TagValue\": \"v1\"     } ]",
+          "example": "无",
           "member": "Tag",
           "name": "TagList",
           "output_required": true,
@@ -3302,7 +3302,7 @@
         {
           "disabled": false,
           "document": "实例的节点信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {         \"Role\": \"Primary\",         \"Zone\": \"ap-guangzhou-2\"     } ]",
+          "example": "无",
           "member": "DBNode",
           "name": "DBNodeSet",
           "output_required": true,
@@ -3332,7 +3332,7 @@
         {
           "disabled": false,
           "document": "数据库引擎的配置信息，配置格式如下：\n{\"$key1\":\"$value1\", \"$key2\":\"$value2\"}\n各引擎支持如下：\nmssql_compatible引擎：\n<li>migrationMode：数据库模式，可选参数，可取值：single-db（单数据库模式），multi-db（多数据库模式）。默认为single-db。</li>\n<li>defaultLocale：排序区域规则，可选参数，在初始化后不可修改，默认为en_US，可选值如下：\n\"af_ZA\", \"sq_AL\", \"ar_DZ\", \"ar_BH\", \"ar_EG\", \"ar_IQ\", \"ar_JO\", \"ar_KW\", \"ar_LB\", \"ar_LY\", \"ar_MA\", \"ar_OM\", \"ar_QA\", \"ar_SA\", \"ar_SY\", \"ar_TN\", \"ar_AE\", \"ar_YE\", \"hy_AM\", \"az_Cyrl_AZ\", \"az_Latn_AZ\", \"eu_ES\", \"be_BY\", \"bg_BG\", \"ca_ES\", \"zh_HK\", \"zh_MO\", \"zh_CN\", \"zh_SG\", \"zh_TW\", \"hr_HR\", \"cs_CZ\", \"da_DK\", \"nl_BE\", \"nl_NL\", \"en_AU\", \"en_BZ\", \"en_CA\", \"en_IE\", \"en_JM\", \"en_NZ\", \"en_PH\", \"en_ZA\", \"en_TT\", \"en_GB\", \"en_US\", \"en_ZW\", \"et_EE\", \"fo_FO\", \"fa_IR\", \"fi_FI\", \"fr_BE\", \"fr_CA\", \"fr_FR\", \"fr_LU\", \"fr_MC\", \"fr_CH\", \"mk_MK\", \"ka_GE\", \"de_AT\", \"de_DE\", \"de_LI\", \"de_LU\", \"de_CH\", \"el_GR\", \"gu_IN\", \"he_IL\", \"hi_IN\", \"hu_HU\", \"is_IS\", \"id_ID\", \"it_IT\", \"it_CH\", \"ja_JP\", \"kn_IN\", \"kok_IN\", \"ko_KR\", \"ky_KG\", \"lv_LV\", \"lt_LT\", \"ms_BN\", \"ms_MY\", \"mr_IN\", \"mn_MN\", \"nb_NO\", \"nn_NO\", \"pl_PL\", \"pt_BR\", \"pt_PT\", \"pa_IN\", \"ro_RO\", \"ru_RU\", \"sa_IN\", \"sr_Cyrl_RS\", \"sr_Latn_RS\", \"sk_SK\", \"sl_SI\", \"es_AR\", \"es_BO\", \"es_CL\", \"es_CO\", \"es_CR\", \"es_DO\", \"es_EC\", \"es_SV\", \"es_GT\", \"es_HN\", \"es_MX\", \"es_NI\", \"es_PA\", \"es_PY\",\"es_PE\", \"es_PR\", \"es_ES\", \"es_TRADITIONAL\", \"es_UY\", \"es_VE\", \"sw_KE\", \"sv_FI\", \"sv_SE\", \"tt_RU\", \"te_IN\", \"th_TH\", \"tr_TR\", \"uk_UA\", \"ur_IN\", \"ur_PK\", \"uz_Cyrl_UZ\", \"uz_Latn_UZ\", \"vi_VN\"。</li>\n<li>serverCollationName：排序规则名称，可选参数，在初始化后不可修改，默认为sql_latin1_general_cp1_ci_as，可选值如下：\"bbf_unicode_general_ci_as\", \"bbf_unicode_cp1_ci_as\", \"bbf_unicode_CP1250_ci_as\", \"bbf_unicode_CP1251_ci_as\", \"bbf_unicode_cp1253_ci_as\", \"bbf_unicode_cp1254_ci_as\", \"bbf_unicode_cp1255_ci_as\", \"bbf_unicode_cp1256_ci_as\", \"bbf_unicode_cp1257_ci_as\", \"bbf_unicode_cp1258_ci_as\", \"bbf_unicode_cp874_ci_as\", \"sql_latin1_general_cp1250_ci_as\", \"sql_latin1_general_cp1251_ci_as\", \"sql_latin1_general_cp1_ci_as\", \"sql_latin1_general_cp1253_ci_as\", \"sql_latin1_general_cp1254_ci_as\", \"sql_latin1_general_cp1255_ci_as\",\"sql_latin1_general_cp1256_ci_as\", \"sql_latin1_general_cp1257_ci_as\", \"sql_latin1_general_cp1258_ci_as\", \"chinese_prc_ci_as\", \"cyrillic_general_ci_as\", \"finnish_swedish_ci_as\", \"french_ci_as\", \"japanese_ci_as\", \"korean_wansung_ci_as\", \"latin1_general_ci_as\", \"modern_spanish_ci_as\", \"polish_ci_as\", \"thai_ci_as\", \"traditional_spanish_ci_as\", \"turkish_ci_as\", \"ukrainian_ci_as\", \"vietnamese_ci_as\"。</li>",
-          "example": "{     \"migrationMode\": \"single-db\",     \"defaultLocale\": \"zh_CN\",     \"serverCollationName\": \"sql_latin1_general_cp1250_ci_as\" }",
+          "example": "{     \"migrationMode\": \"single-db\",     \"DefaultLocale\": \"zh_CN\",     \"serverCollationName\": \"sql_latin1_general_cp1250_ci_as\" }",
           "member": "string",
           "name": "DBEngineConfig",
           "output_required": true,
@@ -3356,6 +3356,16 @@
           "member": "uint64",
           "name": "SupportIpv6",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例已经弹性扩容的cpu核数",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExpandedCpu",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -6365,8 +6375,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-master-instance-id：按照主实例过滤，类型为string。\nread-only-group-id：按照只读组ID过滤，类型为string。",
-          "example": "[{\"Name\": \"db-master-instance-id\", \"Value\": \"aa\"}]",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-master-instance-id：按照主实例过滤，类型为string。\nread-only-group-id：按照只读组ID过滤，类型为string。\n注：该参数的过滤条件中，db-master-instance-id为必须指定项。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -6374,7 +6384,7 @@
         },
         {
           "disabled": false,
-          "document": "查询每一页的条数，默认为10",
+          "document": "查询每一页的条数，默认为10，最大值99。",
           "example": "1",
           "member": "int64",
           "name": "PageSize",
@@ -6392,7 +6402,7 @@
         },
         {
           "disabled": false,
-          "document": "查询排序依据，目前支持:ROGroupId,CreateTime,Name",
+          "document": "查询排序依据，目前支持:ROGroupId,CreateTime,Name。默认值CreateTime",
           "example": "ROGroupId",
           "member": "string",
           "name": "OrderBy",
@@ -6401,7 +6411,7 @@
         },
         {
           "disabled": false,
-          "document": "查询排序依据类型，目前支持:desc,asc",
+          "document": "查询排序依据类型，目前支持:desc,asc。默认值asc。",
           "example": "desc",
           "member": "string",
           "name": "OrderByType",
@@ -6417,7 +6427,7 @@
         {
           "disabled": false,
           "document": "只读组列表",
-          "example": "空",
+          "example": "无",
           "member": "ReadOnlyGroup",
           "name": "ReadOnlyGroupList",
           "output_required": true,
@@ -9799,7 +9809,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟空间大小阈值",
+          "document": "延迟空间大小阈值。单位MB。",
           "example": "0",
           "member": "int64",
           "name": "MaxReplayLatency",
@@ -9809,7 +9819,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟大小开关",
+          "document": "延迟大小开关。0 - 关闭； 1 - 开启。",
           "example": "0",
           "member": "int64",
           "name": "ReplayLatencyEliminate",
@@ -9819,7 +9829,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟时间大小阈值",
+          "document": "延迟时间大小阈值，单位：秒。",
           "example": "0",
           "member": "float",
           "name": "MaxReplayLag",
@@ -9829,7 +9839,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟时间开关",
+          "document": "延迟时间开关。0 - 关闭； 1 - 开启。",
           "example": "0",
           "member": "int64",
           "name": "ReplayLagEliminate",
@@ -9879,7 +9889,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态。枚举值：creating、ok、modifying、deleting、deleted",
           "example": "ok",
           "member": "string",
           "name": "Status",

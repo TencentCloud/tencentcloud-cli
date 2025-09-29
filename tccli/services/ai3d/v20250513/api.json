@@ -422,7 +422,7 @@
         },
         {
           "disabled": false,
-          "document": "生成3D模型的面数，默认值为500000。\n可支持生成面数范围，参考值：40000-500000。",
+          "document": "生成3D模型的面数，默认值为500000。\n可支持生成面数范围，参考值：40000-1500000。",
           "example": "400000",
           "member": "int64",
           "name": "FaceCount",
@@ -435,6 +435,15 @@
           "example": "Normal",
           "member": "string",
           "name": "GenerateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "该参数仅在GenerateType中选择LowPoly模式可生效。\n\n多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:\ntriangle: 三角形面。\nquadrilateral: 四边形面与三角形面混合生成。",
+          "example": "triangle",
+          "member": "string",
+          "name": "PolygonType",
           "required": false,
           "type": "string"
         }
@@ -554,6 +563,15 @@
           "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "ViewImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片base64地址",
+          "example": "\t/9j/4QlQaHR0c...N6a2M5ZCI",
+          "member": "string",
+          "name": "ViewImageBase64",
           "required": false,
           "type": "string"
         }

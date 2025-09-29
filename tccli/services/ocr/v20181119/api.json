@@ -6973,7 +6973,7 @@
         {
           "disabled": false,
           "document": "场景字段，默认不用填写。\n可选值:only_hw  表示只输出手写体识别结果，过滤印刷体。",
-          "example": "无",
+          "example": "-无-",
           "member": "string",
           "name": "Scene",
           "required": false,
@@ -7016,7 +7016,7 @@
         {
           "disabled": true,
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "Angel",
           "output_required": true,
@@ -7026,7 +7026,7 @@
         {
           "disabled": false,
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "Angle",
           "output_required": true,

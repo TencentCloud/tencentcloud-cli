@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli lke DescribeWorkflowRun --cli-unfold-argument  \
+    --AppBizId 1963140753734418240 \
     --WorkflowRunId 1dcf5a21-6223-4358-b8a0-b4d6571
 ```
 

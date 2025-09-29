@@ -1982,6 +1982,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕输出格式。取值{\"WebVTT\",\"TTML\"}。\n默认值：\"WebVTT\"",
+          "example": "WebVTT",
+          "member": "string",
+          "name": "OutputFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认字幕轨道。为true时指定当前字幕为默认字幕轨道，最多可指定1条默认字幕轨道。\n默认值：false",
+          "example": "false",
+          "member": "bool",
+          "name": "DefaultTrack",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -16737,12 +16759,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件：任务状态，可选值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。",
+          "document": "任务状态过滤条件，可选值：\n- WAITING（等待中）\n- PROCESSING（处理中）\n- FINISH（已完成）。",
           "example": "FINISH",
           "member": "string",
           "name": "Status",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时子任务是否有失败。",
+          "example": "false",
+          "member": "bool",
+          "name": "SubTaskHasFailed",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -28614,7 +28645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异常类型，取值范围：\nJitter：抖动，\nBlur：模糊，\nLowLighting：低光照，\nHighLighting：过曝，\nCrashScreen：花屏，\nBlackWhiteEdge：黑白边，\nSolidColorScreen：纯色屏，\nNoise：噪点，\nMosaic：马赛克，\nQRCode：二维码，\nAppletCode：小程序码，\nBarCode：条形码，\nLowVoice：低音，\nHighVoice：爆音，\nNoVoice：静音，\nLowEvaluation：无参考打分低于阈值。",
+          "document": "异常类型，取值范围：\nJitter：抖动，\nBlur：模糊，\nLowLighting：低光照，\nHighLighting：过曝，\nCrashScreen：花屏，\nBlackWhiteEdge：黑白边，\nSolidColorScreen：纯色屏，\nNoise：噪点，\nMosaic：马赛克，\nQRCode：二维码，\nAppletCode：小程序码，\nBarCode：条形码，\nLowVoice：低音，\nHighVoice：爆音，\nNoVoice：静音，\nLowEvaluation：视频无参考评分（MOS）低于阈值，\nAudioEvaluation：音频无参考评分（MOS）低于阈值，\nAudioNoise：音频噪声。",
           "example": "Jitter",
           "member": "string",
           "name": "Type",
