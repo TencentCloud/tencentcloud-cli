@@ -9,7 +9,7 @@ tccli mps CreateLiveRecordTemplate --cli-unfold-argument  \
     --HLSConfigure.ItemDuration 10 \
     --HLSConfigure.Interval 3600 \
     --Name 模板1 \
-    --Comment test
+    --Comment 模版说明
 ```
 
 Output: 

@@ -1,10 +1,10 @@
-# Release 3.0.1282.1
+# Release 3.0.1283.1
 
-## 腾讯混元生3D(ai3d) 版本：2025-05-13
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
 
-### 第 4 次发布
+### 第 46 次发布
 
-发布时间：2025-09-30 01:07:36
+发布时间：2025-10-01 01:21:07
 
 本次发布包含了以下内容：
 
@@ -12,44 +12,22 @@
 
 修改接口：
 
-* [SubmitHunyuanTo3DProJob](http://document.tencentcloudapi.woa.com/document/product/1800/87646)
+* [DescribeAsyncRequestInfo](http://document.tencentcloudapi.woa.com/document/product/240/46601)
 
-	* 新增入参：PolygonType
-
-
-修改数据结构：
-
-* [ViewImage](http://document.tencentcloudapi.woa.com/document/product/1800/87325#ViewImage)
-
-	* 新增成员：ViewImageBase64
+	* 新增出参：StartTime, EndTime
 
 
 
 
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
-
-### 第 69 次发布
-
-发布时间：2025-09-30 01:10:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
-
-	* 新增成员：CosPkgCapacity, UseManagedBucket
-
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
 
 
 
 ## 媒体处理(mps) 版本：2019-06-12
 
-### 第 115 次发布
+### 第 116 次发布
 
-发布时间：2025-09-30 01:22:26
+发布时间：2025-10-01 01:22:04
 
 本次发布包含了以下内容：
 
@@ -57,40 +35,40 @@
 
 修改接口：
 
-* [DescribeTasks](http://document.tencentcloudapi.woa.com/document/product/862/37613)
+* [ParseNotification](http://document.tencentcloudapi.woa.com/document/product/862/39228)
 
-	* 新增入参：SubTaskHasFailed
+	* 新增出参：BatchTaskEvent
 
+
+新增数据结构：
+
+* [AiAnalysisTaskVideoRemakeInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskVideoRemakeInput)
+* [AiAnalysisTaskVideoRemakeOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskVideoRemakeOutput)
+* [AiAnalysisTaskVideoRemakeResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskVideoRemakeResult)
 
 修改数据结构：
 
-* [AdaptiveDynamicStreamingTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AdaptiveDynamicStreamingTaskInput)
+* [AiAnalysisResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisResult)
 
-	* 新增成员：KeyPTSList
-
-* [AddOnSubtitle](http://document.tencentcloudapi.woa.com/document/product/862/37615#AddOnSubtitle)
-
-	* 新增成员：OutputFormat, DefaultTrack
+	* 新增成员：VideoRemakeTask
 
 
 
 
-## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+## 容器安全服务(tcss) 版本：2020-11-01
 
-### 第 47 次发布
+### 第 43 次发布
 
-发布时间：2025-09-30 01:24:22
+发布时间：2025-10-01 01:27:00
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [DBInstance](http://document.tencentcloudapi.woa.com/document/product/409/16778#DBInstance)
-
-	* 新增成员：ExpandedCpu
-
+* [CreateClusterAccess](http://document.tencentcloudapi.woa.com/document/product/1662/87780)
+* [ModifyDefendStatus](http://document.tencentcloudapi.woa.com/document/product/1662/87781)
 
 
 
