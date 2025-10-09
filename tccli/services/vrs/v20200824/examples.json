@@ -20,7 +20,7 @@
       {
         "document": "声音复刻任务结果查询",
         "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVrsTaskStatus\n<公共请求参数>\n\n{\n    \"TaskId\": \"ed461a019355c5cd1ce31ab4dfb8cb12\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"ed461a019355c5cd1ce31ab4dfb8cb12\",\n            \"Status\": 2,\n            \"StatusStr\": \"waiting in queue\",\n            \"VoiceType\": 100000,\n            \"ErrorMsg\": \"\"\n        },\n        \"RequestId\": \"63f43c3d6e30af6bd63735b0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"ce68122c-0ca8-4fa6-99b1-90a2867\",\n            \"Status\": 2,\n            \"StatusStr\": \"waiting in queue\",\n            \"VoiceType\": 200000000,\n            \"FastVoiceType\": \"WCHN-353xxxx0f3eace0c1\",\n            \"ErrorMsg\": \"\"\n        },\n        \"RequestId\": \"63f43c3d6e30af6bd63735b0\"\n    }\n}",
         "title": "声音复刻任务结果查询"
       }
     ],
