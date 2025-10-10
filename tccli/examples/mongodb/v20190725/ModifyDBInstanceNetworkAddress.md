@@ -10,8 +10,8 @@ tccli mongodb ModifyDBInstanceNetworkAddress --cli-unfold-argument  \
     --OldIpExpiredTime 1 \
     --NetworkAddresses.0.NewIPAddress 10.0.0.10 \
     --NetworkAddresses.0.OldIpAddress 10.0.0.1 \
-    --NewUniqVpcId vpc-gfb3pqo1 \
-    --NewUniqSubnetId ins-wsdn61fw
+    --NewUniqVpcId vpc-gfb3**** \
+    --NewUniqSubnetId subnet-6fe2****
 ```
 
 Output: 

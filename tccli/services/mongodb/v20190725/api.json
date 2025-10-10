@@ -1957,7 +1957,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步请求Id，涉及到异步流程的接口返回，如CreateBackupDBInstance",
+          "document": "指定需查询的异步请求 ID。当接口操作涉及异步流程时（如 [CreateBackupDBInstance](https://cloud.tencent.com/document/product/240/46599)），其返回值中的 AsyncRequestId 即为本参数所需填入的 ID。",
           "example": "4762",
           "member": "string",
           "name": "AsyncRequestId",
@@ -1977,6 +1977,26 @@
           "member": "string",
           "name": "Status",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行开始时间。",
+          "example": "2022-05-30 15:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行结束时间。",
+          "example": "2022-05-30 15:01:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3712,7 +3732,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开启按 Key 回档的实例 ID。",
+          "document": "开启按 Key 回档的实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制需开启按 Key 回档的实例 ID。",
           "example": "cmgo-iga0****",
           "member": "string",
           "name": "InstanceId",
@@ -3721,7 +3741,7 @@
         },
         {
           "disabled": false,
-          "document": "源数据想恢复到的时间。",
+          "document": "指定数据回档的具体时间点，即将数据恢复到指定时间点的状态。",
           "example": "2023-08-04 14:00:00",
           "member": "string",
           "name": "TargetFlashbackTime",
@@ -3730,8 +3750,8 @@
         },
         {
           "disabled": false,
-          "document": "源数据所在的库表信息。",
-          "example": "[{\"DBName\":\"mydb\",\"Collections\":[{\"CollectionName\":\"my_collection\",\"KeyValues\":[{\"Key\":\"_id\",\"Value\":\"\\\"******\\\"\"}],",
+          "document": "指定回档数据的目标库表。",
+          "example": "无",
           "member": "FlashbackDatabase",
           "name": "TargetDatabases",
           "required": true,
@@ -3739,7 +3759,7 @@
         },
         {
           "disabled": false,
-          "document": "数据最终写入的实例 ID。",
+          "document": "数据回档的目标实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制目标实例 ID。",
           "example": "cmgo-iga0****",
           "member": "string",
           "name": "TargetInstanceId",
@@ -3755,7 +3775,7 @@
         {
           "disabled": false,
           "document": "回档数据异步任务 ID。",
-          "example": "16033****",
+          "example": "1234567",
           "member": "int64",
           "name": "FlowId",
           "output_required": false,
@@ -5207,7 +5227,7 @@
         },
         {
           "disabled": false,
-          "document": "切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。",
+          "document": "切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络 ID。",
           "example": "vpc-****",
           "member": "string",
           "name": "NewUniqVpcId",
@@ -5216,7 +5236,7 @@
         },
         {
           "disabled": false,
-          "document": "切换私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。",
+          "document": "切换后私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。请通过接口 [DescribeDBInstances](https://cloud.tencent.com/document/product/240/38568) 获取私有网络的子网 ID。",
           "example": "subnet-****",
           "member": "string",
           "name": "NewUniqSubnetId",
@@ -5316,7 +5336,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。例如：cmgo-7pje****。",
+          "document": "实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-7pjedvz7",
           "member": "string",
           "name": "InstanceId",
@@ -5325,7 +5345,7 @@
         },
         {
           "disabled": false,
-          "document": "目标安全组 ID。请通过接口[DescribeSecurityGroup](https://cloud.tencent.com/document/product/240/55675)查看具体的安全组 ID。\n**注意**：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
+          "document": "目标安全组 ID。请登录[安全组控制台页面](https://console.cloud.tencent.com/vpc/security-group)复制目标安全组 ID。\n**注意**：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
           "example": "[\"sg-a\", \"sg-b\"]",
           "member": "string",
           "name": "SecurityGroupIds",

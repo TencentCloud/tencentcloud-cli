@@ -1256,6 +1256,20 @@
         "title": "印章授权申请下发"
       }
     ],
+    "CreateSingleSignOnEmployees": [
+      {
+        "document": "创建单点登录员工账号成功\n应用号：yDtrTUUckp94bix0UEbASLp1TuHxTYTS\nOpenId：OpenId [rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0] \n姓名：电子签\n手机号：18888888888\n角色：合同管理员和印章管理员的 roleId",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSingleSignOnEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"SsoApplicationId\": \"yDtrTUUckp94bix0UEbASLp1TuHxTYTS\",\n    \"Employees\": [\n        {\n            \"OpenId\": \"rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0\",\n            \"Name\": \"典子谦\",\n            \"Mobile\": \"18888888888\",\n            \"RoleIds\": [\n                \"32bd40938602d1ee5f7735ee84af5785\",\n                \"yDCHgUUckpbubr9cUxrnpngClLR5YIkR\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessages\": [\n            \"\"\n        ],\n        \"RequestId\": \"s1758723146173417020\",\n        \"Status\": 0\n    }\n}",
+        "title": "创建一个单点登录的员工成功示例"
+      },
+      {
+        "document": "创建单点登录员工账号失败\n应用号：yDtrTUUckp94bix0UEbASLp1TuHxTYTS\n原因：OpenId [rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0] 已存在于系统中\n建议：请检查当前员工是否已经导入，如果确定没有被导入使用其他OpenId。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSingleSignOnEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"SsoApplicationId\": \"yDtrTUUckp94bix0UEbASLp1TuHxTYTS\",\n    \"Employees\": [\n        {\n            \"OpenId\": \"rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0\",\n            \"Name\": \"典子谦\",\n            \"Mobile\": \"18888888888\",\n            \"RoleIds\": [\n                \"32bd40938602d1ee5f7735ee84af5785\",\n                \"yDCHgUUckpbubr9cUxrnpngClLR5YIkR\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessages\": [\n            \"导入员工失败，错误信息:[当前openId[rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0]已经被绑定了，请更换openId进行绑定]\"\n        ],\n        \"RequestId\": \"s1758723146173417020\",\n        \"Status\": 2\n    }\n}",
+        "title": "创建一个单点登录的员工失败示例"
+      }
+    ],
     "CreateUserAutoSignEnableUrl": [
       {
         "document": "将UrlType参数设置为 H5SIGN，即可获得H5页面开通链接",
@@ -1422,6 +1436,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSealPolicies\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"11234567890123456789012345678901\"\n    },\n    \"PolicyIds\": [\n        \"string\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"test\"\n    }\n}",
         "title": "撤销印章授权"
+      }
+    ],
+    "DeleteSingleSignOnEmployees": [
+      {
+        "document": "删除单点登录应用号为【yDtrTUUckp94bix0UEbASLp1TuHxTYTS】下面OpenId 为【rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0】的员工。\n当前员工仅做过导入，并没有跟腾讯电子签里面的企业员工进行绑定，\n解除绑定成功。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSingleSignOnEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"SsoApplicationId\": \"yDtrTUUckp94bix0UEbASLp1TuHxTYTS\",\n    \"OpenId\": \"rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1758723730900664241\"\n    }\n}",
+        "title": "删除单点登录企业员工"
       }
     ],
     "DescribeBatchOrganizationRegistrationTasks": [
@@ -1796,6 +1818,14 @@
         "title": "查询签署认证人脸视频结果"
       }
     ],
+    "DescribeSingleSignOnEmployees": [
+      {
+        "document": "查询单点登录员工账号信息\n应用号：yDtrTUUckp94bix0UEbASLp1TuHxTYTS\nOpenId： rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0\n当前 OpenId 还没有在腾讯电子签实名。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSingleSignOnEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"SsoApplicationId\": \"yDtrTUUckp94bix0UEbASLp1TuHxTYTS\",\n    \"OpenIds\": [\n        \"rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Employees\": [\n            {\n                \"CreatedOn\": 1758717608,\n                \"Email\": \"\",\n                \"IsVerified\": false,\n                \"Mobile\": \"138****8888\",\n                \"Name\": \"典*谦\",\n                \"OpenId\": \"rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0\",\n                \"RoleIds\": [\n                    \"32bd40938602d1ee5f7735ee84af5785\",\n                    \"yDCHgUUckpbubr9cUxrnpngClLR5YIkR\"\n                ],\n                \"UserId\": \"\"\n            }\n        ],\n        \"RequestId\": \"s1758723951932552989\"\n    }\n}",
+        "title": "查询单点登录企业员工信息"
+      }
+    ],
     "DescribeThirdPartyAuthCode": [
       {
         "document": "通过AuthCode查询用户是否实名，AuthCode 查询后作废，只能查询一次",
@@ -1980,6 +2010,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPartnerAutoSignAuthUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"AuthorizedOrganizationId\": \"yDRt2UUgygqxuvlqUuO4zjEySqVWqO9J\"\n}",
         "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1747966900,\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=yDttjUsO8wXIPLi8dM02\",\n        \"RequestId\": \"s1747362100925380930\",\n        \"Url\": \"https://test.essurl.cn/lrtXUBLTtI\"\n    }\n}",
         "title": "修改授权"
+      }
+    ],
+    "ModifySingleSignOnEmployees": [
+      {
+        "document": "修改单点登录应用号为【yDtrTUUckp94bix0UEbASLp1TuHxTYTS】下面OpenId 为【rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0】的员工。\n当前员工仅做过导入，并没有跟腾讯电子签里面的企业员工进行绑定，\n修改姓名和手机号成功。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySingleSignOnEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"SsoApplicationId\": \"yDtrTUUckp94bix0UEbASLp1TuHxTYTS\",\n    \"Employee\": {\n        \"OpenId\": \"rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0\",\n        \"Name\": \"典子谦\",\n        \"Mobile\": \"13200000008\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1758722757358561301\"\n    }\n}",
+        "title": "修改单点登录企业员工"
       }
     ],
     "OperateSeals": [

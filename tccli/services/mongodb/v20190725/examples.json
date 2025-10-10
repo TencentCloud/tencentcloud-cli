@@ -313,7 +313,7 @@
     "ModifyDBInstanceNetworkAddress": [
       {
         "document": "修改云数据库实例的VIP信息",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceNetworkAddress\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p****\",\n    \"OldIpExpiredTime\": 1,\n    \"NetworkAddresses\": [\n        {\n            \"NewIPAddress\": \"10.0.0.10\",\n            \"OldIpAddress\": \"10.0.0.1\"\n        }\n    ],\n    \"NewUniqVpcId\": \"vpc-gfb3pqo1\",\n    \"NewUniqSubnetId\": \"ins-wsdn61fw\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceNetworkAddress\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p****\",\n    \"OldIpExpiredTime\": 1,\n    \"NetworkAddresses\": [\n        {\n            \"NewIPAddress\": \"10.0.0.10\",\n            \"OldIpAddress\": \"10.0.0.1\"\n        }\n    ],\n    \"NewUniqVpcId\": \"vpc-gfb3****\",\n    \"NewUniqSubnetId\": \"subnet-6fe2****\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1679402995,\n        \"RequestId\": \"8279f6c2-db93-4b2e-931b-233d780b1a91\"\n    }\n}",
         "title": "修改云数据库实例网络信息"
       }

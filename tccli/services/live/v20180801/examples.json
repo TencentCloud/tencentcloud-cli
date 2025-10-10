@@ -1349,7 +1349,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"LayoutInfo\": {\n        \"LayoutIndex\": \"1\",\n        \"InputIndexList\": \"2|3\",\n        \"LayoutTemplateId\": \"20\"\n    },\n    \"CasterId\": 63501\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "修改模版20的布局使用的布局为输入2，输入3"
+        "title": "修改模板20的布局使用的布局为输入2，输入3"
       }
     ],
     "ModifyCasterMarkPicInfo": [

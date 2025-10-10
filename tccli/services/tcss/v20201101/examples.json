@@ -234,6 +234,14 @@
         "title": "安装检查组件示例"
       }
     ],
+    "CreateClusterAccess": [
+      {
+        "document": "创建集群接入",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterAccess\n<公共请求参数>\n\n{\n    \"ClusterIDs\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建集群接入"
+      }
+    ],
     "CreateClusterCheckTask": [
       {
         "document": "",
@@ -2440,6 +2448,14 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyContainerNetStatus\n<公共请求参数>\n\n{\n    \"ContainerID\": \"289899476e81\",\n    \"Status\": \"EVENT_ISOLATE_CONTAINER\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"29b37d86-f63d-43d1-b21a-640e82965198\"\n    }\n}",
         "title": "隔离容器网络状态"
+      }
+    ],
+    "ModifyDefendStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDefendStatus\n<公共请求参数>\n\n{\n    \"SwitchOn\": true,\n    \"InstanceType\": \"abc\",\n    \"IsAll\": true,\n    \"InstanceIDs\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改防护状态"
       }
     ],
     "ModifyEscapeEventStatus": [

@@ -302,7 +302,7 @@
       "status": "online"
     },
     "DescribeMetricTopProxies": {
-      "document": "获取指定时间段内Redis 访问命令 cost top N",
+      "document": "获取指定时间段内Redis Proxy 指标",
       "input": "DescribeMetricTopProxiesRequest",
       "name": "获取Redis Proxy 指标",
       "output": "DescribeMetricTopProxiesResponse",

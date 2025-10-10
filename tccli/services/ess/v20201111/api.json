@@ -406,6 +406,13 @@
       "output": "CreateSealPolicyResponse",
       "status": "online"
     },
+    "CreateSingleSignOnEmployees": {
+      "document": "此接口（CreateSingleSignOnEmployees）用于创建单点登录企业员工。\n创建好的员工，可以通过腾讯电子签提供的链接， 如下图位置，进行登录。\n此操作的功能：\n1. 可以绑定已经实名的员工，然后 sso 登录实名绑定。\n2. 可以提前导入员工，在 sso 登录的时候进行实名。\n3. 如果已经绑定过，可以直接通过 sso 链接登录腾讯电子签。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/0cd98ca2cc49ea1472a2397cea9a3ef6.png)",
+      "input": "CreateSingleSignOnEmployeesRequest",
+      "name": "创建单点登录企业员工信息",
+      "output": "CreateSingleSignOnEmployeesResponse",
+      "status": "online"
+    },
     "CreateUserAutoSignEnableUrl": {
       "document": "获取个人用户自动签的开通链接。\n\n注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`",
       "input": "CreateUserAutoSignEnableUrlRequest",
@@ -488,6 +495,13 @@
       "input": "DeleteSealPoliciesRequest",
       "name": "撤销企业员工的印章授权",
       "output": "DeleteSealPoliciesResponse",
+      "status": "online"
+    },
+    "DeleteSingleSignOnEmployees": {
+      "document": "此接口（DeleteSingleSignOnEmployees）用于删除单点登录企业员工。\n注意：\n此接口只能删除未跟腾讯电子签绑定的单点登录企业员工，\n如果企业员工的单点登录信息已经和腾讯电子签里面的企业员工绑定，需要企业的超级管理员或者组织管理员在腾讯电子签控制台对当前企业员工进行离职操作，如下图操作。\n![image](https://qcloudimg.tencent-cloud.cn/raw/5e69f6e11859972d466900040f68c105.png)",
+      "input": "DeleteSingleSignOnEmployeesRequest",
+      "name": "删除单点登录企业员工信息",
+      "output": "DeleteSingleSignOnEmployeesResponse",
       "status": "online"
     },
     "DescribeBatchOrganizationRegistrationTasks": {
@@ -679,6 +693,13 @@
       "output": "DescribeSignFaceVideoResponse",
       "status": "online"
     },
+    "DescribeSingleSignOnEmployees": {
+      "document": "此接口（DescribeSingleSignOnEmployees）用于查询单点登录企业员工。",
+      "input": "DescribeSingleSignOnEmployeesRequest",
+      "name": "查询单点登录企业员工信息",
+      "output": "DescribeSingleSignOnEmployeesResponse",
+      "status": "online"
+    },
     "DescribeThirdPartyAuthCode": {
       "document": "通过AuthCode查询个人用户是否实名\n\n\n注意: \n<ul>\n<li>此接口为合作引流场景使用，使用<b>有白名单限制</b>，使用前请联系对接的客户经理沟通。</li>\n<li><b>AuthCode 只能使用一次</b>，查询一次再次查询会返回错误</li>\n</ul>",
       "input": "DescribeThirdPartyAuthCodeRequest",
@@ -761,6 +782,13 @@
       "input": "ModifyPartnerAutoSignAuthUrlRequest",
       "name": "更新他方自动签授权链接",
       "output": "ModifyPartnerAutoSignAuthUrlResponse",
+      "status": "online"
+    },
+    "ModifySingleSignOnEmployees": {
+      "document": "此接口（ModifySingleSignOnEmployees）用于修改单点登录企业员工。\n 注意： 此接口只能修改未跟腾讯电子签绑定的单点登录企业员工， 如果企业员工的单点登录信息已经和腾讯电子签里面的企业员工绑定，需要在腾讯电子签小程序进行个人信息变更操作。",
+      "input": "ModifySingleSignOnEmployeesRequest",
+      "name": "修改单点登录企业员工信息",
+      "output": "ModifySingleSignOnEmployeesResponse",
       "status": "online"
     },
     "OperateSeals": {
@@ -8388,6 +8416,80 @@
       ],
       "type": "object"
     },
+    "CreateSingleSignOnEmployeesRequest": {
+      "document": "CreateSingleSignOnEmployees请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "待创建员工的信息最多不超过200个。\n\n注意：\n1. 传递的 openId 不能重复， 且字符不能超过64位。\n2. 传递的手机号不能重复。\n3. 绑定的角色必须存在且不能超过 10 个。",
+          "example": "无",
+          "member": "SingleSignOnEmployees",
+          "name": "Employees",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "单点登录应用号的id,获取位置如下图![image](https://qcloudimg.tencent-cloud.cn/raw/9e61aaf390a5f90ea7606fe29b9a65fd.png)",
+          "example": "yDtrTUUckp94bix0UEbASLp1TuHxTYTS",
+          "member": "string",
+          "name": "SsoApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSingleSignOnEmployeesResponse": {
+      "document": "CreateSingleSignOnEmployees返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导入员工返回的错误信息，信息数组的顺序跟导入的保持一致",
+          "example": "[\"导入员工失败，错误信息:[当前openId[rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0]已经被绑定了，请更换openId进行绑定]\"]",
+          "member": "string",
+          "name": "ErrorMessages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导入员工返回的状态码\n0-全部成功\n1-部分成功\n2-全部失败",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateStaffResult": {
       "document": "创建员工的结果",
       "members": [
@@ -9462,6 +9564,60 @@
     },
     "DeleteSealPoliciesResponse": {
       "document": "DeleteSealPolicies返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSingleSignOnEmployeesRequest": {
+      "document": "DeleteSingleSignOnEmployees请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "单点登录应用号的id,获取位置如下图![image](https://qcloudimg.tencent-cloud.cn/raw/9e61aaf390a5f90ea7606fe29b9a65fd.png)",
+          "example": "yDtrTUUckp94bix0UEbASLp1TuHxTYTS",
+          "member": "string",
+          "name": "SsoApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的单点登录员工的唯一Id 值",
+          "example": "rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSingleSignOnEmployeesResponse": {
+      "document": "DeleteSingleSignOnEmployees返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11802,6 +11958,88 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSingleSignOnEmployeesRequest": {
+      "document": "DescribeSingleSignOnEmployees请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "单点登录应用号的id,获取位置如下图![image](https://qcloudimg.tencent-cloud.cn/raw/9e61aaf390a5f90ea7606fe29b9a65fd.png)",
+          "example": "yDtrTUUckp94bix0UEbASLp1TuHxTYTS",
+          "member": "string",
+          "name": "SsoApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的单点登录员工的唯一Id 值.不能超过 200 个。\n如果传递了 openIds，limit 和 offset 参数无效，",
+          "example": "[\"rUHYMgaz8aNm2IP3Pn8m5q6I3yJDojClFl555uLyeM0\"]",
+          "member": "string",
+          "name": "OpenIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定分页每页返回的数据条数，单页最大支持 200。如果不传， 则默认是 20.",
+          "example": "200",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "OFFSET 用于指定查询结果的偏移量，如果不传默认偏移为0,最大20000。 分页参数, 需要limit, offset 配合使用 例如: 您希望得到第三页的数据, 且每页限制最多10条 您可以使用 LIMIT 10 OFFSET 20\t",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSingleSignOnEmployeesResponse": {
+      "document": "DescribeSingleSignOnEmployees返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "单点登录企业员工信息",
+          "example": "无",
+          "member": "SingleSignOnEmployees",
+          "name": "Employees",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15301,6 +15539,60 @@
       ],
       "type": "object"
     },
+    "ModifySingleSignOnEmployeesRequest": {
+      "document": "ModifySingleSignOnEmployees请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "单点登录应用号的id,获取位置如下图![image](https://qcloudimg.tencent-cloud.cn/raw/9e61aaf390a5f90ea7606fe29b9a65fd.png)",
+          "example": "yDtrTUUckp94bix0UEbASLp1TuHxTYTS",
+          "member": "string",
+          "name": "SsoApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待修改员工的信息。",
+          "example": "无",
+          "member": "SingleSignOnEmployees",
+          "name": "Employee",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySingleSignOnEmployeesResponse": {
+      "document": "ModifySingleSignOnEmployees返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "NeedReviewApproverInfo": {
       "document": "需要进行签署审核的签署人信息",
       "members": [
@@ -17396,6 +17688,100 @@
         }
       ],
       "usage": "out"
+    },
+    "SingleSignOnEmployees": {
+      "document": "单点登录企业员工信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户在idp分配的唯一值，需要保持跟在电子签应用集成->单点登录配置->端点配置中配置的。\n如下图配置![image](https://qcloudimg.tencent-cloud.cn/raw/6ff22248c930b2a7684322cac9401a9c.png)。",
+          "example": "jO9PmCBpse8R4maF4sYzTNNNddyioonBEseA70z",
+          "member": "string",
+          "name": "OpenId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业员工姓名。 员工的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。\t",
+          "example": "典子谦",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。",
+          "example": "18888888888",
+          "member": "string",
+          "name": "Mobile",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n注：`创建和更新场景无需填写。`",
+          "example": "查询企业角色列表",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户邮箱。",
+          "example": "abc@def.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "员工角色信息。\n此处roleId为电子签配置的 RoleId，可通过接口[查询企业角色列表](https://qian.tencent.com/developers/companyApis/roles/DescribeIntegrationRoles) 获取",
+          "example": "[\"d2865fec7e498905f95eb1d8f147f972\"]",
+          "member": "string",
+          "name": "RoleIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "员工是否实名。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsVerified",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "员工创建时间戳，单位秒。",
+          "example": "1758685647",
+          "member": "int64",
+          "name": "CreatedOn",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Staff": {
       "document": "企业员工信息。",
