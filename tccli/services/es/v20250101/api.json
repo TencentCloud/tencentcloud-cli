@@ -36,7 +36,7 @@
       "status": "online"
     },
     "GetTextEmbedding": {
-      "document": "Embedding是一种将高维数据映射到低维空间的技术，通常用于将非结构化数据，如文本、图像或音频转化为向量表示，使其更容易输入机器模型进行处理，并且向量之间的距离可以反映对象之间的相似性。\n本接口有单账号调用上限控制，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。",
+      "document": "Embedding是一种将高维数据映射到低维空间的技术，通常用于将非结构化数据，如文本、图像或音频转化为向量表示，使其更容易输入机器模型进行处理，并且向量之间的距离可以反映对象之间的相似性。\n本接口有模型维度调用上限控制，单个模型qps限制20，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。",
       "input": "GetTextEmbeddingRequest",
       "name": "获取特征向量",
       "output": "GetTextEmbeddingResponse",
@@ -740,7 +740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称，可选模型列表：bge-base-zh-v1.5,conan-embedding-v1,bge-m3,KaLM-embedding-multilingual-mini-v1。",
+          "document": "模型名称，可选模型列表：bge-base-zh-v1.5,Conan-embedding-v1,bge-m3,KaLM-embedding-multilingual-mini-v1,Qwen3-Embedding-0.6B。",
           "example": "bge-base-zh-v1.5",
           "member": "string",
           "name": "ModelName",

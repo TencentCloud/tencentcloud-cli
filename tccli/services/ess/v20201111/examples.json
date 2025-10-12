@@ -1498,6 +1498,14 @@
         "title": "查询批量撤销任务结果"
       }
     ],
+    "DescribeContractComparisonTask": [
+      {
+        "document": "本接口（DescribeContractComparisonTask）用于查询合同对比任务结果详情。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractComparisonTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwqbUUckp3o2rzmUxHsV0j1FlhYIKo7\"\n    },\n    \"TaskId\": \"yDtrrUUckp94goxhUyjVZ8rSEQ0lg7vb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AddDiffCount\": 7,\n        \"ChangeDiffCount\": 2,\n        \"Comment\": \"备注备注备注\",\n        \"CreateTime\": 1758526698,\n        \"DeleteDiffCount\": 3,\n        \"DiffFileResourceId\": \"yDtryUUckp9tv5kcUEdITpJ9VXDn080c\",\n        \"Message\": \"\",\n        \"Operator\": \"yDtGuUUckp955n9yUECLj6JusBmg10dc\",\n        \"OriginalFileResourceId\": \"yDtryUUckp9tv5odUEdITpJvu1v2faCj\",\n        \"RequestId\": \"s1760000134519523795\",\n        \"Status\": 2,\n        \"TaskId\": \"yDtrrUUckp94goxhUyjVZ8rSEQ0lg7vb\",\n        \"TotalDiffCount\": 12\n    }\n}",
+        "title": "查询合同对比任务结果"
+      }
+    ],
     "DescribeContractDiffTaskWebUrl": [
       {
         "document": "",

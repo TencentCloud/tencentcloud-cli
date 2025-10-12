@@ -316,7 +316,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallInstanceModel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"UsrCosModelUrlList\": [\n        \"https://modeltestxxxx-sh-12560502xx.cos.ap-shanghai.myqcloud.com/bge-base-zh-v1.5.zip\"\n    ],\n    \"ModelNames\": [\n        \"wit-test\"\n    ],\n    \"TaskTypes\": [\n        \"text_embedding\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6c1d15f-5eab-11ef-9b1d-525400a23f29\",\n        \"FlowId\": \"17279\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6c1d15f-5eab-11ef-9b1d-525400a23f29\",\n        \"FlowId\": \"17219\"\n    }\n}",
         "title": "安装模型调用示例"
       }
     ],

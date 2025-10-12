@@ -7943,6 +7943,16 @@
         },
         {
           "disabled": false,
+          "document": "是否正在开启审计。目前支持的值包括：\"false\"-否，\"true\"-是",
+          "example": "\"true\"",
+          "member": "string",
+          "name": "IsOpening",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "审计服务开通时间。",
           "example": "\"2021-07-13 11:34:35“",
           "member": "string",
@@ -14629,7 +14639,7 @@
         {
           "disabled": false,
           "document": "实例相关信息",
-          "example": "[{\"ProjectId\": \"23414\",\"TagList\": [{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}],\"DbType\": \"MYSQL\",\"DbVersion\": \"5.7\"}]",
+          "example": "无",
           "member": "AuditInstanceInfo",
           "name": "InstanceInfo",
           "output_required": true,
@@ -14664,6 +14674,56 @@
           "name": "RuleTemplateIds",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限免状态",
+          "example": "\"TRIAL/EXPIRED/NONE\"",
+          "member": "string",
+          "name": "TrialStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限免开启时间",
+          "example": "1",
+          "member": "int64",
+          "name": "TrialStartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限免持续时间",
+          "example": "1",
+          "member": "int64",
+          "name": "TrialDuration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限免关闭时间",
+          "example": "1",
+          "member": "int64",
+          "name": "TrialCloseTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限免期查询日志时长",
+          "example": "1",
+          "member": "int64",
+          "name": "TrialDescribeLogHours",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -16252,7 +16312,7 @@
         {
           "disabled": true,
           "document": "废弃。",
-          "example": "full",
+          "example": "无",
           "member": "AuditRuleFilters",
           "name": "AuditRuleFilters",
           "required": false,
@@ -16261,7 +16321,7 @@
         {
           "disabled": false,
           "document": "规则模板 ID。可通过 [DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811) 接口获取。",
-          "example": "cdb-art-nuf7e111",
+          "example": "[\"cdb-art-nuf7e111\"]",
           "member": "string",
           "name": "RuleTemplateIds",
           "required": false,
@@ -17886,7 +17946,7 @@
         {
           "disabled": true,
           "document": "审计规则（该参数已废弃，不再生效）。",
-          "example": "[{\"RuleFilters\": [{\"Compare\": \"NEQ\",\"Type\": \"host\",\"Value\": [\"127.0.0.1\"]}]}]",
+          "example": "无",
           "member": "AuditRuleFilters",
           "name": "AuditRuleFilters",
           "required": false,

@@ -331,6 +331,26 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "V3",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入点业务类型，枚举值：NORMAL-标准接入点，CDZ：EZ/CDZ接入点，COOPERATIVE-合作POP",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "AccessPointServiceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -393,6 +413,17 @@
     "BFDInfo": {
       "document": "BFD配置信息",
       "members": [
+        {
+          "disabled": false,
+          "document": "使能BFD多跳，0:未开启，2-255:BFD跳数",
+          "example": "5",
+          "member": "int64",
+          "name": "EnableBfdMultiHop",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "健康检查次数",
@@ -509,7 +540,7 @@
         {
           "disabled": false,
           "document": "合作伙伴的AppId",
-          "example": "1234353",
+          "example": "1254277469",
           "member": "string",
           "name": "IapId",
           "output_required": true,
@@ -619,7 +650,7 @@
         {
           "disabled": false,
           "document": "用户的AppId",
-          "example": "1235464",
+          "example": "1254277469",
           "member": "string",
           "name": "AppId",
           "output_required": true,
@@ -629,7 +660,7 @@
         {
           "disabled": false,
           "document": "用户的Uin",
-          "example": "1234544",
+          "example": "100001332514",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -684,6 +715,36 @@
           "name": "ArRegion",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运营商代码",
+          "example": "China_Mobile_ShenZhen",
+          "member": "string",
+          "name": "IapCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方",
+          "example": "CLOUD",
+          "member": "string",
+          "name": "IdcPointType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运营商链路是否有保护",
+          "example": "true",
+          "member": "bool",
+          "name": "BIapLinkProtected",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -780,6 +841,24 @@
           "name": "ArRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IDC侧类型，默认为OTHER。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方",
+          "example": "CLOUD",
+          "member": "string",
+          "name": "IdcPointType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商链路是否有保护",
+          "example": "true",
+          "member": "bool",
+          "name": "BIapLinkProtected",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -2030,6 +2109,16 @@
           "example": "15802738654",
           "member": "string",
           "name": "FaultReportContactNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报障联系邮箱。",
+          "example": "lisi@tencent.com",
+          "member": "string",
+          "name": "FaultReportContactEmail",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3652,6 +3741,15 @@
           "name": "CustomerIPv6Address",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "互联IP重分布状态",
+          "example": "true",
+          "member": "bool",
+          "name": "ImportDirectRoute",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

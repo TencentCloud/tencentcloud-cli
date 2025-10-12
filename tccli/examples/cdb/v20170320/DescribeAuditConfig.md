@@ -1,4 +1,4 @@
-**Example 1: 查询审计服务配置**
+**Example 1: 查询实例配置**
 
 
 
@@ -6,18 +6,19 @@ Input:
 
 ```
 tccli cdb DescribeAuditConfig --cli-unfold-argument  \
-    --InstanceId cdb-txcniupi
+    --InstanceId cdbro-6zpy4ei1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "LogExpireDay": 365,
-        "LogType": "storage",
+        "RequestId": "507f6863-2827-4c2c-9c3b-fbbcc32e1ed4",
+        "CreateTime": "2025-04-11 15:13:07",
         "IsClosing": "false",
-        "CreateTime": "2021-07-13 11:34:35"
+        "IsOpening": "false",
+        "LogExpireDay": 90,
+        "LogType": "storage"
     }
 }
 ```

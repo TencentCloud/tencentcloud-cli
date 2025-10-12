@@ -25,6 +25,7 @@ Output:
                 "ID": "171588317",
                 "User": "root",
                 "Info": "",
+                "SqlType": "",
                 "DB": "demo_db"
             }
         ]

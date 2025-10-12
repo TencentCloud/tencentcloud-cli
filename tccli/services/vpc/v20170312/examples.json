@@ -1320,12 +1320,28 @@
         "title": "查询弹性公网IP配额"
       }
     ],
+    "DescribeAddressTemplateGroupInstances": [
+      {
+        "document": "查询参数模板IP地址组关联的实例列表",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAddressTemplateGroupInstances\n&AddressTemplateGroupId=ipmg-12345678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5efe6fa7-6de2-4ce9-911a-f7438bf697d4\"\n    }\n}",
+        "title": "查询参数模板IP地址组关联的实例列表"
+      }
+    ],
     "DescribeAddressTemplateGroups": [
       {
         "document": "查询IP地址模板集合",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAddressTemplateGroups\n&Filters.0.Name=address-template-group-name\n&Filters.0.Values.0=demo\n&Filters.1.Name=address-template-group-id\n&Filters.1.Values.0=ipmg-mdunqeb6\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"8ed052ce-dddf-4af9-9cf5-9c150ff75210\",\n        \"AddressTemplateGroupSet\": [\n            {\n                \"AddressTemplateGroupName\": \"demo\",\n                \"AddressTemplateGroupId\": \"ipmg-mdunqeb6\",\n                \"AddressTemplateIdSet\": [\n                    \"ipm-xxxxxxxx\",\n                    \"ipm-yyyyyyyy\"\n                ],\n                \"AddressTemplateSet\": [\n                    {\n                        \"AddressTemplateId\": \"ipm-siqmaox1\",\n                        \"AddressTemplateName\": \"ipm demo\",\n                        \"From\": \"\",\n                        \"To\": \"\"\n                    }\n                ],\n                \"CreatedTime\": \"2022-12-06 20:00:00\"\n            }\n        ]\n    }\n}",
         "title": "查询IP地址模板集合"
+      }
+    ],
+    "DescribeAddressTemplateInstances": [
+      {
+        "document": "查询参数模板IP地址关联的实例列表",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAddressTemplateInstances\n&AddressTemplateId=ipm-12345678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5efe6fa7-6de2-4ce9-911a-f7438bf697d4\"\n    }\n}",
+        "title": "查询参数模板IP地址关联的实例列表"
       }
     ],
     "DescribeAddressTemplates": [
@@ -2064,12 +2080,28 @@
         "title": "查看绑定标签的安全组"
       }
     ],
+    "DescribeServiceTemplateGroupInstances": [
+      {
+        "document": "查询参数模板协议端口组关联的实例列表",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeServiceTemplateGroupInstances\n&ServiceTemplateGroupId=ppmg-12345678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5efe6fa7-6de2-4ce9-911a-f7438bf697d4\"\n    }\n}",
+        "title": "查询参数模板协议端口组关联的实例列表"
+      }
+    ],
     "DescribeServiceTemplateGroups": [
       {
         "document": "查看协议端口模板集合",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeServiceTemplateGroups\n&Filters.0.Name=service-template-group-name\n&Filters.0.Values.0=demo\n&Limit=2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ServiceTemplateGroupSet\": [\n            {\n                \"ServiceTemplateGroupName\": \"demo\",\n                \"ServiceTemplateGroupId\": \"ppmg-2klmrefu\",\n                \"ServiceTemplateIdSet\": [\n                    \"ppm-529nwwj8\"\n                ],\n                \"ServiceTemplateSet\": [\n                    {\n                        \"ServiceTemplateId\": \"ppm-529nwwj8\",\n                        \"ServiceTemplateName\": \"demo\",\n                        \"CreatedTime\": \"2018-04-03 22:05:32\",\n                        \"ServiceSet\": [\n                            \"tcp:80\"\n                        ],\n                        \"ServiceExtraSet\": [\n                            {\n                                \"Service\": \"tcp:80\",\n                                \"Description\": \"web service\"\n                            }\n                        ]\n                    }\n                ],\n                \"CreatedTime\": \"2018-04-03 22:05:32\"\n            }\n        ],\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "查看协议端口模板集合"
+      }
+    ],
+    "DescribeServiceTemplateInstances": [
+      {
+        "document": "查询参数模板协议端口关联的实例列表",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeServiceTemplateInstances\n&ServiceTemplateId=ppm-12345678\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5efe6fa7-6de2-4ce9-911a-f7438bf697d4\"\n    }\n}",
+        "title": "查询参数模板协议端口关联的实例列表"
       }
     ],
     "DescribeServiceTemplates": [

@@ -1,5 +1,19 @@
 {
   "actions": {
+    "AddCalcEnginesToProject": {
+      "document": "关联项目集群",
+      "input": "AddCalcEnginesToProjectRequest",
+      "name": "关联引擎到某个项目",
+      "output": "AddCalcEnginesToProjectResponse",
+      "status": "online"
+    },
+    "AssociateResourceGroupToProject": {
+      "document": "该接口用于将指定执行资源组绑定到项目",
+      "input": "AssociateResourceGroupToProjectRequest",
+      "name": "关联资源组到某个项目",
+      "output": "AssociateResourceGroupToProjectResponse",
+      "status": "online"
+    },
     "CreateCodeFile": {
       "document": "新建代码文件",
       "input": "CreateCodeFileRequest",
@@ -21,11 +35,32 @@
       "output": "CreateDataBackfillPlanResponse",
       "status": "online"
     },
+    "CreateDataSource": {
+      "document": "该接口用于在指定项目中创建数据源",
+      "input": "CreateDataSourceRequest",
+      "name": "创建数据源",
+      "output": "CreateDataSourceResponse",
+      "status": "online"
+    },
     "CreateOpsAlarmRule": {
       "document": "设置告警规则",
       "input": "CreateOpsAlarmRuleRequest",
       "name": "设置告警规则",
       "output": "CreateOpsAlarmRuleResponse",
+      "status": "online"
+    },
+    "CreateProject": {
+      "document": "创建项目，创建时包含集群信息",
+      "input": "CreateProjectRequest",
+      "name": "新建项目",
+      "output": "CreateProjectResponse",
+      "status": "online"
+    },
+    "CreateProjectMember": {
+      "document": "添加项目用户角色",
+      "input": "CreateProjectMemberRequest",
+      "name": "创建项目成员",
+      "output": "CreateProjectMemberResponse",
       "status": "online"
     },
     "CreateResourceFile": {
@@ -40,6 +75,13 @@
       "input": "CreateResourceFolderRequest",
       "name": "创建资源文件夹",
       "output": "CreateResourceFolderResponse",
+      "status": "online"
+    },
+    "CreateResourceGroup": {
+      "document": "该接口用于购买资源",
+      "input": "CreateResourceGroupRequest",
+      "name": "创建资源组",
+      "output": "CreateResourceGroupResponse",
       "status": "online"
     },
     "CreateSQLFolder": {
@@ -91,11 +133,32 @@
       "output": "DeleteCodeFolderResponse",
       "status": "online"
     },
+    "DeleteDataSource": {
+      "document": "该接口用于删除数据源",
+      "input": "DeleteDataSourceRequest",
+      "name": "删除数据源",
+      "output": "DeleteDataSourceResponse",
+      "status": "online"
+    },
+    "DeleteLineage": {
+      "document": "RegisterLineage",
+      "input": "DeleteLineageRequest",
+      "name": "血缘删除",
+      "output": "DeleteLineageResponse",
+      "status": "online"
+    },
     "DeleteOpsAlarmRule": {
       "document": "删除告警规则",
       "input": "DeleteOpsAlarmRuleRequest",
       "name": "删除告警规则",
       "output": "DeleteOpsAlarmRuleResponse",
+      "status": "online"
+    },
+    "DeleteProjectMember": {
+      "document": "删除项目用户",
+      "input": "DeleteProjectMemberRequest",
+      "name": "移除项目成员",
+      "output": "DeleteProjectMemberResponse",
       "status": "online"
     },
     "DeleteResourceFile": {
@@ -110,6 +173,13 @@
       "input": "DeleteResourceFolderRequest",
       "name": "删除资源文件夹",
       "output": "DeleteResourceFolderResponse",
+      "status": "online"
+    },
+    "DeleteResourceGroup": {
+      "document": "该接口用于销毁资源",
+      "input": "DeleteResourceGroupRequest",
+      "name": "销毁资源组",
+      "output": "DeleteResourceGroupResponse",
       "status": "online"
     },
     "DeleteSQLFolder": {
@@ -147,6 +217,27 @@
       "output": "DeleteWorkflowFolderResponse",
       "status": "online"
     },
+    "DisableProject": {
+      "document": "禁用项目",
+      "input": "DisableProjectRequest",
+      "name": "禁用项目",
+      "output": "DisableProjectResponse",
+      "status": "online"
+    },
+    "DissociateResourceGroupFromProject": {
+      "document": "该接口用于将指定执行资源组解除与项目的绑定",
+      "input": "DissociateResourceGroupFromProjectRequest",
+      "name": "解绑项目关联的资源组",
+      "output": "DissociateResourceGroupFromProjectResponse",
+      "status": "online"
+    },
+    "EnableProject": {
+      "document": "启用项目",
+      "input": "EnableProjectRequest",
+      "name": "激活项目",
+      "output": "EnableProjectResponse",
+      "status": "online"
+    },
     "GetAlarmMessage": {
       "document": "查询告警信息详情",
       "input": "GetAlarmMessageRequest",
@@ -159,6 +250,20 @@
       "input": "GetCodeFileRequest",
       "name": "查看代码文件详情",
       "output": "GetCodeFileResponse",
+      "status": "online"
+    },
+    "GetDataSource": {
+      "document": "该接口用于查看指定数据源的详细信息",
+      "input": "GetDataSourceRequest",
+      "name": "查看数据源详情",
+      "output": "GetDataSourceResponse",
+      "status": "online"
+    },
+    "GetDataSourceRelatedTasks": {
+      "document": "数据源关联任务详情",
+      "input": "GetDataSourceRelatedTasksRequest",
+      "name": "查看数据源关联任务列表",
+      "output": "GetDataSourceRelatedTasksResponse",
       "status": "online"
     },
     "GetOpsAlarmRule": {
@@ -196,6 +301,13 @@
       "output": "GetOpsWorkflowResponse",
       "status": "online"
     },
+    "GetProject": {
+      "document": "获取项目信息",
+      "input": "GetProjectRequest",
+      "name": "查看项目详情",
+      "output": "GetProjectResponse",
+      "status": "online"
+    },
     "GetResourceFile": {
       "document": "获取资源文件详情",
       "input": "GetResourceFileRequest",
@@ -203,11 +315,32 @@
       "output": "GetResourceFileResponse",
       "status": "online"
     },
+    "GetResourceGroupMetrics": {
+      "document": "该接口用于查看指定执行资源组的监控指标",
+      "input": "GetResourceGroupMetricsRequest",
+      "name": "查看某个资源组的监控指标",
+      "output": "GetResourceGroupMetricsResponse",
+      "status": "online"
+    },
     "GetSQLScript": {
       "document": "查询脚本详情",
       "input": "GetSQLScriptRequest",
       "name": "查看SQL脚本详情",
       "output": "GetSQLScriptResponse",
+      "status": "online"
+    },
+    "GetTable": {
+      "document": "查询表详情",
+      "input": "GetTableRequest",
+      "name": "获取表详情",
+      "output": "GetTableResponse",
+      "status": "online"
+    },
+    "GetTableColumns": {
+      "document": "查询表所有字段列表",
+      "input": "GetTableColumnsRequest",
+      "name": "获取表字段列表",
+      "output": "GetTableColumnsResponse",
       "status": "online"
     },
     "GetTask": {
@@ -248,8 +381,15 @@
     "GetWorkflow": {
       "document": "获取工作流信息",
       "input": "GetWorkflowRequest",
-      "name": "获取工作流调度信息",
+      "name": "获取工作流信息",
       "output": "GetWorkflowResponse",
+      "status": "online"
+    },
+    "GrantMemberProjectRole": {
+      "document": "修改项目用户角色",
+      "input": "GrantMemberProjectRoleRequest",
+      "name": "授予项目成员项目角色",
+      "output": "GrantMemberProjectRoleResponse",
       "status": "online"
     },
     "KillTaskInstancesAsync": {
@@ -266,6 +406,13 @@
       "output": "ListAlarmMessagesResponse",
       "status": "online"
     },
+    "ListCatalog": {
+      "document": "获取资产目录信息",
+      "input": "ListCatalogRequest",
+      "name": "查询类目树列表",
+      "output": "ListCatalogResponse",
+      "status": "online"
+    },
     "ListCodeFolderContents": {
       "document": "获取文件夹内容",
       "input": "ListCodeFolderContentsRequest",
@@ -273,11 +420,32 @@
       "output": "ListCodeFolderContentsResponse",
       "status": "online"
     },
+    "ListColumnLineage": {
+      "document": "获取表字段血缘信息",
+      "input": "ListColumnLineageRequest",
+      "name": "查询表列血缘列表",
+      "output": "ListColumnLineageResponse",
+      "status": "online"
+    },
     "ListDataBackfillInstances": {
       "document": "获取单次补录的所有实例详情",
       "input": "ListDataBackfillInstancesRequest",
       "name": "获取单次补录的所有实例详情",
       "output": "ListDataBackfillInstancesResponse",
+      "status": "online"
+    },
+    "ListDataSources": {
+      "document": "该接口用于查询指定项目中的数据源列表",
+      "input": "ListDataSourcesRequest",
+      "name": "查看数据源列表",
+      "output": "ListDataSourcesResponse",
+      "status": "online"
+    },
+    "ListDatabase": {
+      "document": "获取资产数据库信息",
+      "input": "ListDatabaseRequest",
+      "name": "通过参数查询数据库列表",
+      "output": "ListDatabaseResponse",
       "status": "online"
     },
     "ListDownstreamOpsTasks": {
@@ -301,6 +469,13 @@
       "output": "ListDownstreamTasksResponse",
       "status": "online"
     },
+    "ListLineage": {
+      "document": "获取资产血缘信息",
+      "input": "ListLineageRequest",
+      "name": "查询血缘列表",
+      "output": "ListLineageResponse",
+      "status": "online"
+    },
     "ListOpsAlarmRules": {
       "document": "查询告警规则列表",
       "input": "ListOpsAlarmRulesRequest",
@@ -322,6 +497,34 @@
       "output": "ListOpsWorkflowsResponse",
       "status": "online"
     },
+    "ListProcessLineage": {
+      "document": "获取资产血缘信息",
+      "input": "ListProcessLineageRequest",
+      "name": "查询任务血缘列表",
+      "output": "ListProcessLineageResponse",
+      "status": "online"
+    },
+    "ListProjectMembers": {
+      "document": "获取项目下的用户，分页返回",
+      "input": "ListProjectMembersRequest",
+      "name": "查看项目成员列表",
+      "output": "ListProjectMembersResponse",
+      "status": "online"
+    },
+    "ListProjectRoles": {
+      "document": "获取角色列表信息",
+      "input": "ListProjectRolesRequest",
+      "name": "查看项目级角色详情列表",
+      "output": "ListProjectRolesResponse",
+      "status": "online"
+    },
+    "ListProjects": {
+      "document": "租户全局范围的项目列表，与用户查看范围无关.",
+      "input": "ListProjectsRequest",
+      "name": "查看项目详情列表",
+      "output": "ListProjectsResponse",
+      "status": "online"
+    },
     "ListResourceFiles": {
       "document": "获取资源文件列表",
       "input": "ListResourceFilesRequest",
@@ -336,6 +539,13 @@
       "output": "ListResourceFoldersResponse",
       "status": "online"
     },
+    "ListResourceGroups": {
+      "document": "该接口用于查询执行资源组列表",
+      "input": "ListResourceGroupsRequest",
+      "name": "查看资源组列表",
+      "output": "ListResourceGroupsResponse",
+      "status": "online"
+    },
     "ListSQLFolderContents": {
       "document": "查询数据探索文件夹树，包括文件夹下的脚本",
       "input": "ListSQLFolderContentsRequest",
@@ -348,6 +558,20 @@
       "input": "ListSQLScriptRunsRequest",
       "name": "查询SQL运行记录",
       "output": "ListSQLScriptRunsResponse",
+      "status": "online"
+    },
+    "ListSchema": {
+      "document": "获取资产数据库Schema信息",
+      "input": "ListSchemaRequest",
+      "name": "通过参数查询数据库模式列表",
+      "output": "ListSchemaResponse",
+      "status": "online"
+    },
+    "ListTable": {
+      "document": "获取资产表信息",
+      "input": "ListTableRequest",
+      "name": "通过参数查询数据表列表",
+      "output": "ListTableResponse",
       "status": "online"
     },
     "ListTaskInstanceExecutions": {
@@ -376,6 +600,13 @@
       "input": "ListTasksRequest",
       "name": "查询任务列表",
       "output": "ListTasksResponse",
+      "status": "online"
+    },
+    "ListTenantRoles": {
+      "document": "获取所有主账号角色列表",
+      "input": "ListTenantRolesRequest",
+      "name": "查看全局级角色详情列表",
+      "output": "ListTenantRolesResponse",
       "status": "online"
     },
     "ListUpstreamOpsTasks": {
@@ -418,6 +649,20 @@
       "input": "PauseOpsTasksAsyncRequest",
       "name": "异步批量暂停任务",
       "output": "PauseOpsTasksAsyncResponse",
+      "status": "online"
+    },
+    "RegisterLineage": {
+      "document": "RegisterLineage",
+      "input": "RegisterLineageRequest",
+      "name": "血缘注册",
+      "output": "RegisterLineageResponse",
+      "status": "online"
+    },
+    "RemoveMemberProjectRole": {
+      "document": "删除项目用户角色",
+      "input": "RemoveMemberProjectRoleRequest",
+      "name": "撤销项目成员项目角色",
+      "output": "RemoveMemberProjectRoleResponse",
       "status": "online"
     },
     "RerunTaskInstancesAsync": {
@@ -476,6 +721,13 @@
       "output": "UpdateCodeFolderResponse",
       "status": "online"
     },
+    "UpdateDataSource": {
+      "document": "该接口用于更新数据源",
+      "input": "UpdateDataSourceRequest",
+      "name": "更新数据源",
+      "output": "UpdateDataSourceResponse",
+      "status": "online"
+    },
     "UpdateOpsAlarmRule": {
       "document": "修改告警规则",
       "input": "UpdateOpsAlarmRuleRequest",
@@ -490,6 +742,13 @@
       "output": "UpdateOpsTasksOwnerResponse",
       "status": "online"
     },
+    "UpdateProject": {
+      "document": "修改项目基础信息。",
+      "input": "UpdateProjectRequest",
+      "name": "更新项目",
+      "output": "UpdateProjectResponse",
+      "status": "online"
+    },
     "UpdateResourceFile": {
       "document": "更新资源文件",
       "input": "UpdateResourceFileRequest",
@@ -498,10 +757,17 @@
       "status": "online"
     },
     "UpdateResourceFolder": {
-      "document": "创建资源文件文件夹",
+      "document": "更新资源文件夹",
       "input": "UpdateResourceFolderRequest",
       "name": "更新资源文件夹",
       "output": "UpdateResourceFolderResponse",
+      "status": "online"
+    },
+    "UpdateResourceGroup": {
+      "document": "该接口用于变配/续费资源",
+      "input": "UpdateResourceGroupRequest",
+      "name": "更新资源组",
+      "output": "UpdateResourceGroupResponse",
       "status": "online"
     },
     "UpdateSQLFolder": {
@@ -547,6 +813,42 @@
     "serviceShortName": "wedata"
   },
   "objects": {
+    "AddCalcEnginesToProjectRequest": {
+      "document": "AddCalcEnginesToProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改的项目ID",
+          "example": "1452",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DLC集群信息",
+          "example": "无",
+          "member": "DLCClusterInfo",
+          "name": "DLCInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCalcEnginesToProjectResponse": {
+      "document": "AddCalcEnginesToProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AlarmGroup": {
       "document": "告警规则接收人配置",
       "members": [
@@ -1011,6 +1313,52 @@
       ],
       "usage": "both"
     },
+    "AssociateResourceGroupToProjectRequest": {
+      "document": "AssociateResourceGroupToProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "20250715195858735487",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "2887093688679612416",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateResourceGroupToProjectResponse": {
+      "document": "AssociateResourceGroupToProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceStatus",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BackfillInstance": {
       "document": "单次补录实例详情",
       "members": [
@@ -1142,6 +1490,122 @@
         }
       ],
       "usage": "out"
+    },
+    "BindProject": {
+      "document": "关联绑定的project",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20250728105857482734",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test1",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test1",
+          "member": "string",
+          "name": "ProjectDisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BriefTask": {
+      "document": "展示任务id和任务名称信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务责任人id，一个任务可能有多个责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "OwnerUinList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BusinessMetadata": {
+      "document": "BusinessMetadata",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "TagNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CatalogInfo": {
+      "document": "目录信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目录名称",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ChildDependencyConfigPage": {
       "document": "任务下游依赖详情分页",
@@ -1527,6 +1991,78 @@
       ],
       "usage": "out"
     },
+    "ColumnInfo": {
+      "document": "ColumnInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Length",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段的顺序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Position",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为分区字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "IsPartition",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAlarmRuleData": {
       "document": "创建告警规则响应结果",
       "members": [
@@ -1841,6 +2377,115 @@
       ],
       "usage": "out"
     },
+    "CreateDataSourceRequest": {
+      "document": "CreateDataSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源项目ID",
+          "example": "289125457566",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源名称",
+          "example": "mysql_test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型:枚举值\n\n- MYSQL\n- TENCENT_MYSQL\n- POSTGRE\n- ORACLE\n- SQLSERVER\n- FTP\n- HIVE\n- HUDI\n- HDFS\n- ICEBERG\n- KAFKA\n- DTS_KAFKA\n- HBASE\n- SPARK\n- TBASE\n- DB2\n- DM\n- GAUSSDB\n- GBASE\n- IMPALA\n- ES\n- TENCENT_ES\n- GREENPLUM\n- SAP_HANA\n- SFTP\n- OCEANBASE\n- CLICKHOUSE\n- KUDU\n- VERTICA\n- REDIS\n- COS\n- DLC\n- DORIS\n- CKAFKA\n- S3_DATAINSIGHT\n- TDSQL\n- TDSQL_MYSQL\n- MONGODB\n- TENCENT_MONGODB\n- REST_API\n- TiDB\n- StarRocks\n- Trino\n- Kyuubi\n- TCHOUSE_X\n- TCHOUSE_P\n- TCHOUSE_C\n- TCHOUSE_D\n- INFLUXDB\n- BIG_QUERY\n- SSH\n- BLOB\n- TDSQL_POSTGRE\n- GDB\n- TDENGINE\n- TDSQLC\n",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同\n\n> deployType: \nCONNSTR_PUBLICDB(公网实例) \nCONNSTR_CVMDB(自建实例)\nINSTANCE(云实例)\n\n```\nmysql: 自建实例\n{\n    \"deployType\": \"CONNSTR_CVMDB\",\n    \"url\": \"jdbc:mysql://1.1.1.1:1111/database\",\n    \"username\": \"root\",\n    \"password\": \"root\",\n    \"region\": \"ap-shanghai\",\n    \"vpcId\": \"vpc-kprq42yo\",\n    \"type\": \"MYSQL\"\n}\nmysql: 云实例\n{\n    \"instanceid\": \"cdb-12uxdo5e\",\n    \"db\": \"db\",\n    \"region\": \"ap-shanghai\",\n    \"username\": \"msyql\",\n    \"password\": \"mysql\",\n    \"deployType\": \"INSTANCE\",\n    \"type\": \"TENCENT_MYSQL\"\n}\nsql_server: \n{\n    \"deployType\": \"CONNSTR_PUBLICDB\",\n    \"url\": \"jdbc:sqlserver://1.1.1.1:223;DatabaseName=database\",\n    \"username\": \"user_1\",\n    \"password\": \"pass_2\",\n    \"type\": \"SQLSERVER\"\n}\nredis:\n    redisType:\n    -NO_ACCOUT(免账号)\n    -SELF_ACCOUNT(自定义账号)\n{\n    \"deployType\": \"CONNSTR_PUBLICDB\",\n    \"username\":\"\"\n    \"password\": \"pass\",\n    \"ip\": \"1.1.1.1\",\n    \"port\": \"6379\",\n    \"redisType\": \"NO_ACCOUT\",\n    \"type\": \"REDIS\"\n}\noracle: \n{\n    \"deployType\": \"CONNSTR_CVMDB\",\n    \"url\": \"jdbc:oracle:thin:@1.1.1.1:1521:prod\",\n    \"username\": \"oracle\",\n    \"password\": \"pass\",\n    \"region\": \"ap-shanghai\",\n    \"vpcId\": \"vpc-kprq42yo\",\n    \"type\": \"ORACLE\"\n}\nmongodb:\n    advanceParams(自定义参数，会拼接至url后)\n{\n    \"advanceParams\": [\n        {\n            \"key\": \"authSource\",\n            \"value\": \"auth\"\n        }\n    ],\n    \"db\": \"admin\",\n    \"deployType\": \"CONNSTR_PUBLICDB\",\n    \"username\": \"user\",\n    \"password\": \"pass\",\n    \"type\": \"MONGODB\",\n    \"host\": \"1.1.1.1:9200\"\n}\npostgresql:\n{\n    \"deployType\": \"CONNSTR_PUBLICDB\",\n    \"url\": \"jdbc:postgresql://1.1.1.1:1921/database\",\n    \"username\": \"user\",\n    \"password\": \"pass\",\n    \"type\": \"POSTGRE\"\n}\nkafka:\n    authType:\n        - sasl\n        - jaas\n        - sasl_plaintext\n        - sasl_ssl\n        - GSSAPI\n    ssl:\n        -PLAIN\n        -GSSAPI\n{\n    \"deployType\": \"CONNSTR_PUBLICDB\",\n    \"host\": \"1.1.1.1:9092\",\n    \"ssl\": \"GSSAPI\",\n    \"authType\": \"sasl\",\n    \"type\": \"KAFKA\",\n    \"principal\": \"aaaa\",\n    \"serviceName\": \"kafka\"\n}\n\ncos:\n{\n    \"region\": \"ap-shanghai\",\n    \"deployType\": \"INSTANCE\",\n    \"secretId\": \"aaaaa\",\n    \"secretKey\": \"sssssss\",\n    \"bucket\": \"aaa\",\n    \"type\": \"COS\"\n}\n\n```",
+          "example": "{\"deployType\":\"CONNSTR_CVMDB\",\"url\":\"jdbc:mysql://1.1.1.1:1111/database\",\"username\":\"aaaa\",\"password\":\"aaaa\",\"region\":\"ap-guangzhou\",\"vpcId\":\"vpc-ds5rpnxh\"}",
+          "member": "string",
+          "name": "ProdConProperties",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开发环境数据源配置信息，若项目为标准模式，则此字段必填",
+          "example": "{\"deployType\":\"CONNSTR_CVMDB\",\"url\":\"jdbc:mysql://1.1.1.1:1111/database\",\"username\":\"aaaa\",\"password\":\"aaaa\",\"region\":\"ap-guangzhou\",\"vpcId\":\"vpc-ds5rpnxh\"}",
+          "member": "string",
+          "name": "DevConProperties",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生产环境数据源文件上传",
+          "example": "无",
+          "member": "DataSourceFileUpload",
+          "name": "ProdFileUpload",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "开发环境数据源文件上传",
+          "example": "无",
+          "member": "DataSourceFileUpload",
+          "name": "DevFileUpload",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据源展示名，为了可视化查看",
+          "example": "mysql_1",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源描述信息",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataSourceResponse": {
+      "document": "CreateDataSource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataSourceResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateFolderResult": {
       "document": "创建文件夹结果",
       "members": [
@@ -1965,6 +2610,132 @@
         }
       ],
       "type": "object"
+    },
+    "CreateProjectMemberRequest": {
+      "document": "CreateProjectMember请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1 2627832231084032",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "[\"100028721707\"]",
+          "member": "string",
+          "name": "UseUins",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "角色id",
+          "example": "[\"3083352602742540\"]",
+          "member": "string",
+          "name": "RoleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectMemberResponse": {
+      "document": "CreateProjectMember返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "ProjectResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectRequest": {
+      "document": "CreateProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目基本信息",
+          "example": "无",
+          "member": "ProjectRequest",
+          "name": "Project",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "DLC绑定集群信息",
+          "example": "无",
+          "member": "DLCClusterInfo",
+          "name": "DLCInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "绑定资源组的id列表",
+          "example": "[\"2917360018413740032\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectResponse": {
+      "document": "CreateProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建项目结果",
+          "example": "无",
+          "member": "CreateProjectResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectResult": {
+      "document": "创建项目的结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateResourceFileRequest": {
       "document": "CreateResourceFile请求参数结构体",
@@ -2123,6 +2894,115 @@
           "document": "创建文件夹结果，如果创建失败则报错。",
           "example": "无",
           "member": "CreateFolderResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceGroupRequest": {
+      "document": "CreateResourceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。",
+          "example": "test8",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开通的资源组信息",
+          "example": "无",
+          "member": "ResourceType",
+          "name": "Type",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRenewEnabled",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长，单位月",
+          "example": "1",
+          "member": "int64",
+          "name": "PurchasePeriod",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "vpcId",
+          "example": "vpc-kprq42xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网",
+          "example": "subnet-ga23jxxxx",
+          "member": "string",
+          "name": "SubNet",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源购买地域",
+          "example": "ap-singapore",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联项目空间项目id",
+          "example": "1357924680",
+          "member": "string",
+          "name": "AssociatedProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组描述",
+          "example": "this is description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceGroupResponse": {
+      "document": "CreateResourceGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启成功",
+          "example": "无",
+          "member": "ResourceResult",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -2921,6 +3801,78 @@
       ],
       "usage": "out"
     },
+    "DLCClusterInfo": {
+      "document": "dlc集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "dlc资源名称（需要添加角色Uin到dlc中，否则可能获取不到资源）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"svmgao_superSQL_Spark作业\"]",
+          "member": "string",
+          "name": "ComputeResources",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "dlc地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定DLC集群的默认数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lgx_test_0825",
+          "member": "string",
+          "name": "DefaultDatabase",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群配置标记（ 仅对标准模式的项目生效并且标准模式必填），枚举值：\n- Prod  (生产环境)\n- Dev  (开发环境)",
+          "example": "Dev",
+          "member": "string",
+          "name": "StandardModeEnvTag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问账号（ 仅对标准模式的项目生效并且标准模式必填），用于提交dlc任务的账号\n建议使用指定子账号，给子账号设置对应库表的权限；任务负责人模式在负责人离职后容易造成任务失败；主账号模式在多个项目权限不同的情况下不易做权限控制。\n\n枚举值：\n- TASK_RUNNER （任务负责人）\n- OWNER （主账号模式）\n- SUB （子账号模式）",
+          "example": "SUB",
+          "member": "string",
+          "name": "AccessAccount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号id（ 仅对标准模式的项目生效），AccessAccount为子账号模式时，需要指定子账号的id信息，其他模式不需要指定",
+          "example": "153574",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DataBackfillRange": {
       "document": "补录计划日期范围",
       "members": [
@@ -2970,6 +3922,454 @@
         }
       ],
       "usage": "both"
+    },
+    "DataSource": {
+      "document": "数据源对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "归属项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13524679",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1357",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型:枚举值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mysql1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源展示名，为了可视化查看\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mysql1",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "归属项目Name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "项目A",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user1",
+          "member": "string",
+          "name": "CreateUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-10-10 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user1",
+          "member": "string",
+          "name": "ModifyUser",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-10-10 12:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"deployType\":\"CONNSTR_CVMDB\",\"url\":\"jdbc:mysql://1.1.1.1:1111/database\",\"username\":\"aaaa\",\"password\":\"aaaa\",\"region\":\"ap-guangzhou\",\"vpcId\":\"vpc-ds5rpnxh\"}",
+          "member": "string",
+          "name": "ProdConProperties",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同params 内容为开发数据源的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"deployType\":\"CONNSTR_CVMDB\",\"url\":\"jdbc:mysql://1.1.1.1:1111/database\",\"username\":\"aaaa\",\"password\":\"aaaa\",\"region\":\"ap-guangzhou\",\"vpcId\":\"vpc-ds5rpnxh\"}",
+          "member": "string",
+          "name": "DevConProperties",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源类别：\n\n- DB ---自定义源\n- CLUSTER --- 系统源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DB",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DataSourceFileUpload": {
+      "document": "数据源文件上传",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Truststore认证文件，默认文件名truststore.jks",
+          "example": "",
+          "member": "string",
+          "name": "TrustStore",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Keystore认证文件，默认文件名keystore.jks",
+          "example": "",
+          "member": "string",
+          "name": "KeyStore",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "core-site.xml文件",
+          "example": "",
+          "member": "string",
+          "name": "CoreSite",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "hdfs-site.xml文件",
+          "example": "",
+          "member": "string",
+          "name": "HdfsSite",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "hive-site.xml文件",
+          "example": "",
+          "member": "string",
+          "name": "HiveSite",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "hbase-site文件",
+          "example": "",
+          "member": "string",
+          "name": "HBASESite",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "keytab文件，默认文件名[数据源名].keytab",
+          "example": "",
+          "member": "string",
+          "name": "KeyTab",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "krb5.conf文件",
+          "example": "",
+          "member": "string",
+          "name": "KRB5Conf",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私钥,默认文件名private_key.pem",
+          "example": "",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公钥,默认文件名public_key.pem",
+          "example": "",
+          "member": "string",
+          "name": "PublicKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DataSourceInfo": {
+      "document": "查询数据源分页列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "DataSource",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "TotalPageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DataSourceResult": {
+      "document": "数据源操作结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1357",
+          "member": "int64",
+          "name": "DataSourceId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DataSourceStatus": {
+      "document": "数据源操作结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源操作状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DatabaseInfo": {
+      "document": "数据库信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库GUID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Guid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "StorageSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DatasourceRelationTaskInfo": {
+      "document": "数据源关联任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2467542",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "项目",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源关联任务信息，本期仅支持数据开发任务接口返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RelateTask",
+          "name": "TaskInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DeleteAlarmRuleResult": {
       "document": "删除告警规则响应结果",
@@ -3079,6 +4479,52 @@
       ],
       "type": "object"
     },
+    "DeleteDataSourceRequest": {
+      "document": "DeleteDataSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1357924680",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "62267",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataSourceResponse": {
+      "document": "DeleteDataSource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否删除成功",
+          "example": "无",
+          "member": "DataSourceStatus",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteFolderResult": {
       "document": "删除资源文件夹结果",
       "members": [
@@ -3094,6 +4540,43 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteLineageRequest": {
+      "document": "DeleteLineage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要删除的血缘关系列表",
+          "example": "无",
+          "member": "LineagePair",
+          "name": "Relations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLineageResponse": {
+      "document": "DeleteLineage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除结果",
+          "example": "无",
+          "member": "OperateResult",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteOpsAlarmRuleRequest": {
       "document": "DeleteOpsAlarmRule请求参数结构体",
@@ -3132,6 +4615,42 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectMemberRequest": {
+      "document": "DeleteProjectMember请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1521813957238786585",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID列表",
+          "example": "[\"100042327609\"]",
+          "member": "string",
+          "name": "UserUins",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectMemberResponse": {
+      "document": "DeleteProjectMember返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3235,6 +4754,43 @@
           "document": "true代表删除成功，false代表删除失败",
           "example": "无",
           "member": "DeleteFolderResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceGroupRequest": {
+      "document": "DeleteResourceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "13579",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResourceGroupResponse": {
+      "document": "DeleteResourceGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否销毁成功",
+          "example": "无",
+          "member": "ResourceStatus",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -3496,7 +5052,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回删除成功的工作流任务个数、失败个数、任务总数",
+          "document": "是否删除成功",
           "example": "无",
           "member": "DeleteWorkflowResult",
           "name": "Data",
@@ -3685,6 +5241,126 @@
       ],
       "usage": "both"
     },
+    "DisableProjectRequest": {
+      "document": "DisableProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "2536",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableProjectResponse": {
+      "document": "DisableProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "ProjectResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DissociateResourceGroupFromProjectRequest": {
+      "document": "DissociateResourceGroupFromProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "20250715195858735487",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "2887093688679612416",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DissociateResourceGroupFromProjectResponse": {
+      "document": "DissociateResourceGroupFromProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否绑定成功，失败返回异常",
+          "example": "无",
+          "member": "ResourceStatus",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableProjectRequest": {
+      "document": "EnableProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1342",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableProjectResponse": {
+      "document": "EnableProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "ProjectResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "EventListener": {
       "document": "监听事件器",
       "members": [
@@ -3734,6 +5410,158 @@
         }
       ],
       "usage": "both"
+    },
+    "ExecutorResourceGroupData": {
+      "document": "ExecutorResourceGroup分页对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果list\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecutorResourceGroupInfo",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalPageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ExecutorResourceGroupInfo": {
+      "document": "资源组详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组唯一标识",
+          "example": "",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行资源组类型，不能为空\n\n- Schedule --- 调度资源组\n- Integration --- 集成资源组\n- DataService -- 数据服务资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ResourceGroupType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "BindProject",
+          "name": "AssociateProjects",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "beijing",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "SubNet",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "AutoRenewEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "GetAlarmMessageRequest": {
       "document": "GetAlarmMessage请求参数结构体",
@@ -3835,6 +5663,89 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataSourceRelatedTasksRequest": {
+      "document": "GetDataSourceRelatedTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "61964",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataSourceRelatedTasksResponse": {
+      "document": "GetDataSourceRelatedTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "DatasourceRelationTaskInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataSourceRequest": {
+      "document": "GetDataSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1357924680",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "62268",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataSourceResponse": {
+      "document": "GetDataSource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataSource",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4075,6 +5986,43 @@
       ],
       "type": "object"
     },
+    "GetProjectRequest": {
+      "document": "GetProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id。一般使用项目Id来查询，与projectName必须存在一个。",
+          "example": "10023212",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetProjectResponse": {
+      "document": "GetProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Project",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetResourceFileRequest": {
       "document": "GetResourceFile请求参数结构体",
       "members": [
@@ -4121,6 +6069,79 @@
       ],
       "type": "object"
     },
+    "GetResourceGroupMetricsRequest": {
+      "document": "GetResourceGroupMetrics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行资源组id",
+          "example": "20240401132517098618",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用趋势开始时间(毫秒)，默认最近一小时",
+          "example": "1757391457258",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "使用趋势结束时间(毫秒)，默认当前",
+          "example": "1757395057258",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指标维度\n\n- all --- 全部\n- task --- 任务指标\n- system --- 系统指标",
+          "example": "all",
+          "member": "string",
+          "name": "MetricType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标采集粒度，单位分钟，默认 1分钟",
+          "example": "5",
+          "member": "uint64",
+          "name": "Granularity",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetResourceGroupMetricsResponse": {
+      "document": "GetResourceGroupMetrics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行组指标信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceGroupMetrics",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetSQLScriptRequest": {
       "document": "GetSQLScript请求参数结构体",
       "members": [
@@ -4153,6 +6174,80 @@
           "document": "脚本详情\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "",
           "member": "SQLScript",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTableColumnsRequest": {
+      "document": "GetTableColumns请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据表GUID",
+          "example": "byV1bs2QGzbTepNlHhi2gA",
+          "member": "string",
+          "name": "TableGuid",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTableColumnsResponse": {
+      "document": "GetTableColumns返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表字段列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ColumnInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTableRequest": {
+      "document": "GetTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表GUID",
+          "example": "byV1bs2QGzbTepNlHhi2gA",
+          "member": "string",
+          "name": "TableGuid",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTableResponse": {
+      "document": "GetTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据表详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableInfo",
           "name": "Data",
           "output_required": false,
           "type": "object",
@@ -4488,6 +6583,51 @@
       ],
       "type": "object"
     },
+    "GrantMemberProjectRoleRequest": {
+      "document": "GrantMemberProjectRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "25844270020317184",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "100028721707",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色id",
+          "example": "308335260274237440",
+          "member": "string",
+          "name": "RoleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GrantMemberProjectRoleResponse": {
+      "document": "GrantMemberProjectRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InTaskParameter": {
       "document": "参数传递-引用参数",
       "members": [
@@ -4708,6 +6848,30 @@
         }
       ],
       "usage": "out"
+    },
+    "IntegrationResource": {
+      "document": "集成资源组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实时集成资源组\n\n- i32c(实时数据同步-16C64G)",
+          "example": "无",
+          "member": "ResourceGroupSpecification",
+          "name": "RealTimeDataSync",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "离线集成资源组\n\n- integrated(离线数据同步-8C16G)\n- i16(离线数据同步-8C32G)",
+          "example": "无",
+          "member": "ResourceGroupSpecification",
+          "name": "OfflineDataSync",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
     },
     "JobDto": {
       "document": "数据探索任务JOB",
@@ -5186,6 +7350,427 @@
       ],
       "type": "object"
     },
+    "LineageNodeInfo": {
+      "document": "LineageNodeInfo  血缘关系实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "LineageResource",
+          "name": "Resource",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageRelation",
+          "name": "Relation",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LineagePair": {
+      "document": "血缘Pair对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来源",
+          "example": "无",
+          "member": "LineageResouce",
+          "name": "Source",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标",
+          "example": "无",
+          "member": "LineageResouce",
+          "name": "Target",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "血缘加工过程",
+          "example": "无",
+          "member": "LineageProcess",
+          "name": "Processes",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LineageProcess": {
+      "document": "LineageProcess 血缘产出过程",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原始唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "110111121",
+          "member": "string",
+          "name": "ProcessId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务类型\n    //调度任务\n    SCHEDULE_TASK,\n    //集成任务\n    INTEGRATION_TASK,\n    //第三方上报\n    THIRD_REPORT,\n    //数据建模\n    TABLE_MODEL,\n    //模型创建指标\n    MODEL_METRIC,\n    //原子指标创建衍生指标\n    METRIC_METRIC,\n    //数据服务\n    DATA_SERVICE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SCHEDULE_TASK",
+          "member": "string",
+          "name": "ProcessType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "WEDATA, THIRD;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WEDATA",
+          "member": "string",
+          "name": "Platform",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务子类型\n SQL_TASK,\n    //集成实时任务血缘\n    INTEGRATED_STREAM,\n    //集成离线任务血缘\n    INTEGRATED_OFFLINE;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SQL_TASK",
+          "member": "string",
+          "name": "ProcessSubType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外扩展参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageProperty",
+          "name": "ProcessProperties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "血缘任务唯一节点ID",
+          "example": "",
+          "member": "string",
+          "name": "LineageNodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LineageProperty": {
+      "document": "LineageProperty额外扩展参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LineageRelation": {
+      "document": "LineageRelation 血缘关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关联ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "r90Fgu4vYm6UHyBrPDZ",
+          "member": "string",
+          "name": "RelationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源端唯一血缘ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "SourceUniqueId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标端唯一血缘ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "TargetUniqueId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "血缘加工过程\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageProcess",
+          "name": "Processes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LineageResouce": {
+      "document": "血缘资源实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实体原始唯一ID\\n\n备注：当血缘为表的列时候 唯一ID传表ResourceUniqueId::字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ResourceUniqueId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实体类型\nTABLE|METRIC|MODEL|SERVICE|COLUMN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TABLE",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源：WEDATA|THIRD\n默认wedata\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WEDATA",
+          "member": "string",
+          "name": "Platform",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务名称：库名.表名｜指标名称｜模型名称|字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx.xxx.xxx",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述：表类型｜指标描述｜模型描述|字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HIVE",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-08-14 00:00:00 ",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-08-14 00:00:00 ",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "resource 额外扩展参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageProperty",
+          "name": "ResourceProperties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "血缘节点唯一标识符号",
+          "example": "",
+          "member": "string",
+          "name": "LineageNodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LineageResource": {
+      "document": "血缘资源实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实体原始唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ResourceUniqueId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务名称：库名.表名｜指标名称｜模型名称|字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实体类型\nTABLE|METRIC|MODEL|SERVICE|COLUMN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "血缘节点唯一标识符号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "LineageNodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述：表类型｜指标描述｜模型描述|字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源：WEDATA|THIRD\n默认wedata\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Platform",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "resource 额外扩展参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "LineageProperty",
+          "name": "ResourceProperties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ListAlarmMessages": {
       "document": "告警信息列表",
       "members": [
@@ -5398,6 +7983,117 @@
       ],
       "usage": "out"
     },
+    "ListCatalogPage": {
+      "document": "ListCatalogPage",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目录记录列表",
+          "example": "",
+          "member": "CatalogInfo",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页总页数",
+          "example": "",
+          "member": "int64",
+          "name": "PageCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页页码",
+          "example": "",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListCatalogRequest": {
+      "document": "ListCatalog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，最大500",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "父目录ID",
+          "example": "0",
+          "member": "string",
+          "name": "ParentCatalogId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCatalogResponse": {
+      "document": "ListCatalog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页数据",
+          "example": "无",
+          "member": "ListCatalogPage",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListCodeFolderContentsRequest": {
       "document": "ListCodeFolderContents请求参数结构体",
       "members": [
@@ -5471,6 +8167,88 @@
       ],
       "type": "object"
     },
+    "ListColumnLineageRequest": {
+      "document": "ListColumnLineage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表唯一ID",
+          "example": "",
+          "member": "string",
+          "name": "TableUniqueId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "血缘方向 INPUT｜OUTPUT",
+          "example": "OUTPUT",
+          "member": "string",
+          "name": "Direction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列名称",
+          "example": "name",
+          "member": "string",
+          "name": "ColumnName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源：WEDATA|THIRD 默认WEDATA",
+          "example": "",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListColumnLineageResponse": {
+      "document": "ListColumnLineage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页数据",
+          "example": "无",
+          "member": "ListLineagePage",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListDataBackfillInstancesRequest": {
       "document": "ListDataBackfillInstances请求参数结构体",
       "members": [
@@ -5530,6 +8308,226 @@
           "document": "单个补录计划下的所有补录实例",
           "example": "无",
           "member": "BackfillInstanceCollection",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListDataSourcesRequest": {
+      "document": "ListDataSources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "13524679",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认10",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码，默认1",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据源名称",
+          "example": "mysql1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源展示名",
+          "example": "mysql_1",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型:枚举值\n\n- MYSQL\n- TENCENT_MYSQL\n- POSTGRE\n- ORACLE\n- SQLSERVER\n- FTP\n- HIVE\n- HUDI\n- HDFS\n- ICEBERG\n- KAFKA\n- HBASE\n- SPARK\n- VIRTUAL\n- TBASE\n- DB2\n- DM\n- GAUSSDB\n- GBASE\n- IMPALA\n- ES\n- TENCENT_ES\n- GREENPLUM\n- PHOENIX\n- SAP_HANA\n- SFTP\n- OCEANBASE\n- CLICKHOUSE\n- KUDU\n- VERTICA\n- REDIS\n- COS\n- DLC\n- DORIS\n- CKAFKA\n- S3\n- TDSQL\n- TDSQL_MYSQL\n- MONGODB\n- TENCENT_MONGODB\n- REST_API\n- SuperSQL\n- PRESTO\n- TiDB\n- StarRocks\n- Trino\n- Kyuubi\n- TCHOUSE_X\n- TCHOUSE_P\n- TCHOUSE_C\n- TCHOUSE_D\n- INFLUXDB\n- BIG_QUERY\n- SSH\n- BLOB",
+          "example": "[\"MYSQL\"]",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "创建人",
+          "example": "user1",
+          "member": "string",
+          "name": "Creator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListDataSourcesResponse": {
+      "document": "ListDataSources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataSourceInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListDatabasePage": {
+      "document": "ListDatabasePage",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库记录列表",
+          "example": "",
+          "member": "DatabaseInfo",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页总页数",
+          "example": "",
+          "member": "int64",
+          "name": "PageCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页页码",
+          "example": "",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListDatabaseRequest": {
+      "document": "ListDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，最大500",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目录名称",
+          "example": "0",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源ID",
+          "example": "8586",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称搜索关键字",
+          "example": "orcl",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListDatabaseResponse": {
+      "document": "ListDatabase返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页数据",
+          "example": "无",
+          "member": "ListDatabasePage",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -5731,6 +8729,144 @@
           "document": "下游依赖详情",
           "example": "无",
           "member": "DependencyConfigPage",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListLineagePage": {
+      "document": "ListLineagePage",
+      "members": [
+        {
+          "disabled": false,
+          "document": "血缘记录列表",
+          "example": "无",
+          "member": "LineageNodeInfo",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页总页数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListLineageRequest": {
+      "document": "ListLineage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实体唯一ID",
+          "example": "",
+          "member": "string",
+          "name": "ResourceUniqueId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实体类型 TABLE|METRIC|MODEL|SERVICE|COLUMN",
+          "example": "TABLE",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "血缘方向 INPUT｜OUTPUT",
+          "example": "INPUT",
+          "member": "string",
+          "name": "Direction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "来源：WEDATA|THIRD 默认WEDATA",
+          "example": "",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListLineageResponse": {
+      "document": "ListLineage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页数据",
+          "example": "无",
+          "member": "ListLineagePage",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -6254,6 +9390,354 @@
       ],
       "type": "object"
     },
+    "ListProcessLineagePage": {
+      "document": "ListLineagePage",
+      "members": [
+        {
+          "disabled": false,
+          "document": "血缘pair列表",
+          "example": "无",
+          "member": "LineagePair",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页总页数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListProcessLineageRequest": {
+      "document": "ListProcessLineage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务唯一ID",
+          "example": "110111121",
+          "member": "string",
+          "name": "ProcessId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型    //调度任务     SCHEDULE_TASK,     //集成任务     INTEGRATION_TASK,     //第三方上报     THIRD_REPORT,     //数据建模     TABLE_MODEL,     //模型创建指标     MODEL_METRIC,     //原子指标创建衍生指标     METRIC_METRIC,     //数据服务     DATA_SERVICE",
+          "example": "SCHEDULE_TASK",
+          "member": "string",
+          "name": "ProcessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "来源：WEDATA|THIRD 默认WEDATA",
+          "example": "",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListProcessLineageResponse": {
+      "document": "ListProcessLineage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页数据",
+          "example": "无",
+          "member": "ListProcessLineagePage",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListProjectMembersRequest": {
+      "document": "ListProjectMembers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "2872196915042496512",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用成员名过滤，支持模糊查询",
+          "example": "jianwjwang",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用成员id过滤，支持模糊查询",
+          "example": "100028721707",
+          "member": "string",
+          "name": "UserUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，默认第一页",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页条数，默认10条",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListProjectMembersResponse": {
+      "document": "ListProjectMembers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目列表",
+          "example": "无",
+          "member": "ProjectUsersBrief",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListProjectRolesRequest": {
+      "document": "ListProjectRoles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "352683",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色中文展示名模糊查询，只能传一个值",
+          "example": "管理员",
+          "member": "string",
+          "name": "RoleDisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页信息",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListProjectRolesResponse": {
+      "document": "ListProjectRoles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色列表",
+          "example": "无",
+          "member": "PageRoles",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListProjectsRequest": {
+      "document": "ListProjects请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id列表",
+          "example": "[\"2916098084817846272\"]",
+          "member": "string",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "项目名或项目唯一标识名，支持模糊搜索",
+          "example": "jian_pro1",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目状态，可选值：0（禁用）、1（正常）",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目模式，可选值：SIMPLE、STANDARD",
+          "example": "SIMPLE",
+          "member": "string",
+          "name": "ProjectModel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求的数据页数，用于翻页",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页显示的条数，默认为 10 条",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListProjectsResponse": {
+      "document": "ListProjects返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目列表",
+          "example": "无",
+          "member": "ProjectBrief",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListResourceFilesRequest": {
       "document": "ListResourceFiles请求参数结构体",
       "members": [
@@ -6436,6 +9920,88 @@
       ],
       "type": "object"
     },
+    "ListResourceGroupsRequest": {
+      "document": "ListResourceGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行资源组类型，不能为空\n\n- Schedule --- 调度资源组\n- Integration --- 集成资源组\n- DataService -- 数据服务资源组",
+          "example": "Schedule",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索的执行资源组名称",
+          "example": "test1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目空间id查询列表",
+          "example": "[\"20250804165728181516\"]",
+          "member": "string",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListResourceGroupsResponse": {
+      "document": "ListResourceGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页结果",
+          "example": "无",
+          "member": "ExecutorResourceGroupData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListSQLFolderContentsRequest": {
       "document": "ListSQLFolderContents请求参数结构体",
       "members": [
@@ -6598,6 +10164,291 @@
           "name": "Data",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSchemaPage": {
+      "document": "ListSchemaPage",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Schema记录列表",
+          "example": "",
+          "member": "SchemaInfo",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页总页数",
+          "example": "",
+          "member": "int64",
+          "name": "PageCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页页码",
+          "example": "",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListSchemaRequest": {
+      "document": "ListSchema请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，最大500",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目录名称",
+          "example": "0",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源ID",
+          "example": "8499",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "orcl",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库模式搜索关键字",
+          "example": "dev",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSchemaResponse": {
+      "document": "ListSchema返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页数据",
+          "example": "无",
+          "member": "ListSchemaPage",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTablePage": {
+      "document": "ListTablePage",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Schema记录列表",
+          "example": "",
+          "member": "TableInfo",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页总页数",
+          "example": "",
+          "member": "int64",
+          "name": "PageCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页页码",
+          "example": "",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListTableRequest": {
+      "document": "ListTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，最大500",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目录名称",
+          "example": "0",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源ID",
+          "example": "62159",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "test_db",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库Schema名称",
+          "example": "public",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表搜索关键字",
+          "example": "table",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTableResponse": {
+      "document": "ListTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页数据",
+          "example": "无",
+          "member": "ListTablePage",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -7239,6 +11090,43 @@
       ],
       "type": "object"
     },
+    "ListTenantRolesRequest": {
+      "document": "ListTenantRoles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色中文展示名模糊查询，只能传一个值",
+          "example": "管理",
+          "member": "string",
+          "name": "RoleDisplayName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTenantRolesResponse": {
+      "document": "ListTenantRoles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主账号角色列表",
+          "example": "无",
+          "member": "SystemRole",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListUpstreamOpsTasksRequest": {
       "document": "ListUpstreamOpsTasks请求参数结构体",
       "members": [
@@ -7687,6 +11575,42 @@
       ],
       "type": "object"
     },
+    "MetricData": {
+      "document": "监控指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标名称\n\n- ConcurrencyUsage --- 并发使用率\n- CpuCoreUsage --- cpu使用率\n- CpuLoad --- cpu负载\n- DevelopQueueTask --- 正在队列中的开发任务数量\n- DevelopRunningTask --- 正在运行的开发任务数量\n- DevelopSchedulingTask --- 正在调度的开发任务数量\n- DiskUsage --- 磁盘使用情况\n- DiskUsed --- 磁盘已用量\n- MaximumConcurrency --- 最大并发\n- MemoryLoad --- 内存负载\n- MemoryUsage --- 内存使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cpu",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "SnapshotValue",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标趋势\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TrendData",
+          "name": "TrendList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAlarmRuleResult": {
       "document": "更新告警规则响应",
       "members": [
@@ -7766,6 +11690,23 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "OperateResult": {
+      "document": "OperateResult",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果1 成功 其他失败",
+          "example": "",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8515,6 +12456,62 @@
       ],
       "usage": "both"
     },
+    "PageRoles": {
+      "document": "角色列表分页信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "SystemRole",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "TotalPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ParamInfo": {
       "document": "参数",
       "members": [
@@ -8654,6 +12651,158 @@
       ],
       "type": "object"
     },
+    "Project": {
+      "document": "项目信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目标识，英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目显示名称，可以为中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目创建人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目责任人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ProjectOwnerUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目状态：0：禁用，1：启用，-3:禁用中，2：启用中",
+          "example": "",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目模式，SIMPLE：简单模式 STANDARD：标准模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ProjectModel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectBrief": {
+      "document": "查询数据源分页列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "Project",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "TotalPageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ProjectInstanceStatisticsAlarmInfo": {
       "document": "告警规则项目波动率告警配置信息",
       "members": [
@@ -8737,6 +12886,227 @@
       ],
       "usage": "both"
     },
+    "ProjectRequest": {
+      "document": "项目信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目标识，英文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符",
+          "example": "xiangmu1",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目显示名称，可以为中文名，以字母开头，可包含字母、数字和下划线，不能超过32个字符",
+          "example": "xiangmu1",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目模式，SIMPLE（默认）：简单模式 STANDARD：标准模式",
+          "example": "SIMPLE",
+          "member": "string",
+          "name": "ProjectModel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ProjectResult": {
+      "document": "项目返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的结果 true/false",
+          "example": "",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectUserRole": {
+      "document": "项目的用户对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主账号id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RootAccountId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "UserUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "显示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户角色对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "SystemRole",
+          "name": "Roles",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "IsCreator",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否项目负责人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "IsProjectOwner",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "PhoneNum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectUsersBrief": {
+      "document": "项目下的用户集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "ProjectUserRole",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "TotalPageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ReconciliationStrategyInfo": {
       "document": "离线集成对账告警规则",
       "members": [
@@ -8786,6 +13156,124 @@
         }
       ],
       "usage": "both"
+    },
+    "RegisterLineageRequest": {
+      "document": "RegisterLineage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要注册的血缘关系列表",
+          "example": "无",
+          "member": "LineagePair",
+          "name": "Relations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterLineageResponse": {
+      "document": "RegisterLineage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "注册结果",
+          "example": "无",
+          "member": "OperateResult",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RelateTask": {
+      "document": "数据源相关任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务类型\n\n- OfflineIntegration --- 离线集成任务\n- RealtimeIntegration --- 实时集成任务\n- DataDevelopment --- 数据开发任务\n- DataQuality --- 数据质量任务\n- DataService --- 数据服务任务\n- MetadataCollection --- 元数据采集任务",
+          "example": "OfflineIntegration",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务数量",
+          "example": "",
+          "member": "int64",
+          "name": "TaskNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "BriefTask",
+          "name": "TaskList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RemoveMemberProjectRoleRequest": {
+      "document": "RemoveMemberProjectRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "25844270020317184",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "100028721707",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色id",
+          "example": "308335260636390624",
+          "member": "string",
+          "name": "RoleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveMemberProjectRoleResponse": {
+      "document": "RemoveMemberProjectRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RerunTaskInstancesAsyncRequest": {
       "document": "RerunTaskInstancesAsync请求参数结构体",
@@ -9221,7 +13709,7 @@
       "usage": "out"
     },
     "ResourceFolderPage": {
-      "document": "资源文件分页",
+      "document": "资源文件夹分页",
       "members": [
         {
           "disabled": false,
@@ -9275,6 +13763,214 @@
         }
       ],
       "usage": "out"
+    },
+    "ResourceGroupMetrics": {
+      "document": "资源组监控指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组规格相关：cpu个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "CpuNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组规格相关：磁盘规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "DiskVolume",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组规格相关：内存大小，单位:G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "MemSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组生命周期, 单位：天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "LifeCycle",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组规格相关：最高并发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "MaximumConcurrency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组状态\n\n- 0 --- 初始化中\n- 1 --- 运行中\n- 2 --- 运行异常\n- 3 --- 释放中\n- 4 --- 已释放\n- 5 --- 创建中\n- 6 --- 创建失败\n- 7 --- 更新中\n- 8 --- 更新失败\n- 9 --- 已到期\n- 10 --- 释放失败\n- 11 --- 使用中\n- 12 --- 未使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标详情",
+          "example": "",
+          "member": "MetricData",
+          "name": "MetricSnapshots",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceGroupSpecification": {
+      "document": "资源组规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组规格",
+          "example": "",
+          "member": "string",
+          "name": "Specification",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "",
+          "member": "int64",
+          "name": "Number",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "ResourceNumber": {
+      "document": "操作资源包数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "增加/减少枚举\n\n- ADD -- 增加\n- DELETE -- 减少",
+          "example": "ADD",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "增加/减少资源包的数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Quantity",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "ResourceResult": {
+      "document": "资源组操作结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123457",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceStatus": {
+      "document": "资源组操作状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组操作状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceType": {
+      "document": "开通的资源组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组类型\n\n- Schedule --- 调度资源组\n- Integration --- 集成资源组\n- DataService -- 数据服务资源组",
+          "example": "Schedule",
+          "member": "string",
+          "name": "ResourceGroupType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集成资源组，细分实时资源组和离线资源组(集成、调度、数据服务资源组不可以同时购买)",
+          "example": "无",
+          "member": "IntegrationResource",
+          "name": "Integration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "调度资源组(集成、调度、数据服务资源组不可以同时购买)\n\n- s_test(测试规格)\n- s_small(基础规格)\n- s_medium(普及规格)\n- s_large(专业规格)\n\n\n",
+          "example": "无",
+          "member": "ResourceGroupSpecification",
+          "name": "Schedule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据服务资源组(集成、调度、数据服务资源组不可以同时购买)\n\n- ds_t(测试规格)\n- ds_s(基础规格)\n- ds_m(普及规格)\n- ds_l(专业规格)",
+          "example": "无",
+          "member": "ResourceGroupSpecification",
+          "name": "DataService",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
     },
     "RunSQLScriptRequest": {
       "document": "RunSQLScript请求参数结构体",
@@ -9706,6 +14402,45 @@
       ],
       "usage": "out"
     },
+    "SchemaInfo": {
+      "document": "Schema信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Schema GUID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Guid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Schema名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SetSuccessTaskInstancesAsyncRequest": {
       "document": "SetSuccessTaskInstancesAsync请求参数结构体",
       "members": [
@@ -9950,6 +14685,168 @@
         }
       ],
       "usage": "out"
+    },
+    "SystemRole": {
+      "document": "角色对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色id",
+          "example": "",
+          "member": "string",
+          "name": "RoleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色展示名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RoleDisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableInfo": {
+      "document": "数据库信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据表GUID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Guid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库Schema名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "TableType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表的技术元数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "TechnicalMetadata",
+          "name": "TechnicalMetadata",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表的业务元数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "BusinessMetadata",
+          "name": "BusinessMetadata",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Task": {
       "document": "任务对象",
@@ -12077,6 +16974,45 @@
       ],
       "usage": "out"
     },
+    "TechnicalMetadata": {
+      "document": "TechnicalMetadata",
+      "members": [
+        {
+          "disabled": false,
+          "document": "责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Owner",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据表位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "StorageSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TimeOutStrategyInfo": {
       "document": "告警超时配置规则信息",
       "members": [
@@ -12137,6 +17073,32 @@
         }
       ],
       "usage": "both"
+    },
+    "TrendData": {
+      "document": "资源组指标趋势",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间戳",
+          "example": "",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标值",
+          "example": "",
+          "member": "uint64",
+          "name": "Value",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UpdateCodeFileRequest": {
       "document": "UpdateCodeFile请求参数结构体",
@@ -12243,6 +17205,106 @@
           "document": "执行结果",
           "example": "",
           "member": "CodeStudioFolderActionResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataSourceRequest": {
+      "document": "UpdateDataSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "62266",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "146094787944777296",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源的配置信息，以JSON KV存储，根据每个数据源类型不同，而KV存储信息不同\n\n> deployType: \nCONNSTR_PUBLICDB(公网实例) \nCONNSTR_CVMDB(自建实例)\nINSTANCE(云实例)\n\n```\nmysql: 自建实例\n{\n    \"deployType\": \"CONNSTR_CVMDB\",\n    \"url\": \"jdbc:mysql://1.1.1.1:1111/database\",\n    \"username\": \"root\",\n    \"password\": \"root\",\n    \"region\": \"ap-shanghai\",\n    \"vpcId\": \"vpc-kprq42yo\",\n    \"type\": \"MYSQL\"\n}\nmysql: 云实例\n{\n    \"instanceid\": \"cdb-12uxdo5e\",\n    \"db\": \"db\",\n    \"region\": \"ap-shanghai\",\n    \"username\": \"msyql\",\n    \"password\": \"mysql\",\n    \"deployType\": \"INSTANCE\",\n    \"type\": \"TENCENT_MYSQL\"\n}\nsql_server: \n{\n    \"deployType\": \"CONNSTR_PUBLICDB\",\n    \"url\": \"jdbc:sqlserver://1.1.1.1:223;DatabaseName=database\",\n    \"username\": \"user_1\",\n    \"password\": \"pass_2\",\n    \"type\": \"SQLSERVER\"\n}\nredis:\n    redisType:\n    -NO_ACCOUT(免账号)\n    -SELF_ACCOUNT(自定义账号)\n{\n    \"deployType\": \"CONNSTR_PUBLICDB\",\n    \"username\":\"\"\n    \"password\": \"pass\",\n    \"ip\": \"1.1.1.1\",\n    \"port\": \"6379\",\n    \"redisType\": \"NO_ACCOUT\",\n    \"type\": \"REDIS\"\n}\noracle: \n{\n    \"deployType\": \"CONNSTR_CVMDB\",\n    \"url\": \"jdbc:oracle:thin:@1.1.1.1:1521:prod\",\n    \"username\": \"oracle\",\n    \"password\": \"pass\",\n    \"region\": \"ap-shanghai\",\n    \"vpcId\": \"vpc-kprq42yo\",\n    \"type\": \"ORACLE\"\n}\nmongodb:\n    advanceParams(自定义参数，会拼接至url后)\n{\n    \"advanceParams\": [\n        {\n            \"key\": \"authSource\",\n            \"value\": \"auth\"\n        }\n    ],\n    \"db\": \"admin\",\n    \"deployType\": \"CONNSTR_PUBLICDB\",\n    \"username\": \"user\",\n    \"password\": \"pass\",\n    \"type\": \"MONGODB\",\n    \"host\": \"1.1.1.1:9200\"\n}\npostgresql:\n{\n    \"deployType\": \"CONNSTR_PUBLICDB\",\n    \"url\": \"jdbc:postgresql://1.1.1.1:1921/database\",\n    \"username\": \"user\",\n    \"password\": \"pass\",\n    \"type\": \"POSTGRE\"\n}\nkafka:\n    authType:\n        - sasl\n        - jaas\n        - sasl_plaintext\n        - sasl_ssl\n        - GSSAPI\n    ssl:\n        -PLAIN\n        -GSSAPI\n{\n    \"deployType\": \"CONNSTR_PUBLICDB\",\n    \"host\": \"1.1.1.1:9092\",\n    \"ssl\": \"GSSAPI\",\n    \"authType\": \"sasl\",\n    \"type\": \"KAFKA\",\n    \"principal\": \"aaaa\",\n    \"serviceName\": \"kafka\"\n}\n\ncos:\n{\n    \"region\": \"ap-shanghai\",\n    \"deployType\": \"INSTANCE\",\n    \"secretId\": \"aaaaa\",\n    \"secretKey\": \"sssssss\",\n    \"bucket\": \"aaa\",\n    \"type\": \"COS\"\n}\n\n```",
+          "example": "{     \"deployType\": \"CONNSTR_PUBLICDB\",     \"url\": \"jdbc:mysql://1.1.1.1:1111/database\",     \"username\": \"root\",     \"password\": \"root\" }",
+          "member": "string",
+          "name": "ProdConProperties",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "若项目为标准模式，则此字段必填",
+          "example": "{     \"deployType\": \"CONNSTR_PUBLICDB\",     \"url\": \"jdbc:mysql://1.1.1.1:1111/database\",     \"username\": \"root\",     \"password\": \"root\" }",
+          "member": "string",
+          "name": "DevConProperties",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生产环境数据源文件上传",
+          "example": "无",
+          "member": "DataSourceFileUpload",
+          "name": "ProdFileUpload",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "开发环境数据源文件上传",
+          "example": "无",
+          "member": "DataSourceFileUpload",
+          "name": "DevFileUpload",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据源展示名，为了可视化查看",
+          "example": "mysql_22_33",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源描述信息",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataSourceResponse": {
+      "document": "UpdateDataSource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "无",
+          "member": "DataSourceStatus",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -12455,6 +17517,60 @@
       ],
       "type": "object"
     },
+    "UpdateProjectRequest": {
+      "document": "UpdateProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标修改的项目ID",
+          "example": "1426",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目显示名称，可以为中文名,需要租户范围内唯一",
+          "example": "testpj",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目负责人id",
+          "example": "1426",
+          "member": "string",
+          "name": "ProjectOwnerUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProjectResponse": {
+      "document": "UpdateProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateResourceFileRequest": {
       "document": "UpdateResourceFile请求参数结构体",
       "members": [
@@ -12594,6 +17710,79 @@
           "document": "更新文件夹结果，如果更新失败则报错。",
           "example": "无",
           "member": "UpdateFolderResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateResourceGroupRequest": {
+      "document": "UpdateResourceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "1357924680",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**变更配置(变配、续费、修改资源包数量 不能同时操作), 变配无法修改资源组类型**\n\n实时集成资源组  \n- i32c(实时数据同步-16C64G)\n\n离线集成资源组\n- integrated(离线数据同步-8C16G)\n- i16(离线数据同步-8C32G)\n\n调度资源组\n- s_test(测试规格)\n- s_small(基础规格)\n- s_medium(普及规格)\n- s_large(专业规格)\n\n数据服务资源组\n- ds_t(测试规格)\n- ds_s(基础规格)\n- ds_m(普及规格)\n- ds_l(专业规格)",
+          "example": "integrated",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费时长，单位月(变配、续费、修改资源包数量 不能同时操作)",
+          "example": "1",
+          "member": "int64",
+          "name": "PurchasePeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "增加/减少资源包的数量(变配、续费、修改资源包数量 不能同时操作)",
+          "example": "无",
+          "member": "ResourceNumber",
+          "name": "Number",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费，续费参数PurchasePeriod不为空时可以生效",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRenewEnabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateResourceGroupResponse": {
+      "document": "UpdateResourceGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否修改成功",
+          "example": "无",
+          "member": "ResourceStatus",
           "name": "Data",
           "output_required": true,
           "type": "object",

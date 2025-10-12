@@ -3602,7 +3602,7 @@
         {
           "disabled": false,
           "document": "日志搜索的关键词，默认为空",
-          "example": "无",
+          "example": "key",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -3611,7 +3611,7 @@
         {
           "disabled": false,
           "document": "日志搜索的游标，可透传上次返回的值，默认为空",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Cursor",
           "required": false,
@@ -3674,7 +3674,7 @@
         {
           "disabled": false,
           "document": "该时间段内符合关键字的所有的作业实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "JobInstanceForSubmissionLog",
           "name": "JobInstanceList",
           "output_required": true,
@@ -3684,7 +3684,7 @@
         {
           "disabled": false,
           "document": "废弃，请使用LogContentList\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " [             \"2020-04-08 11:57:32.703 [queuedThreadPool-57106 ",
+          "example": " [\"2020-04-08 11:57:32.703\"]",
           "member": "string",
           "name": "LogList",
           "output_required": true,
@@ -3694,7 +3694,7 @@
         {
           "disabled": false,
           "document": "日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "LogContent",
           "name": "LogContentList",
           "output_required": true,

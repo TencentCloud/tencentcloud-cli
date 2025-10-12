@@ -6799,6 +6799,15 @@
           "name": "DefaultComputeGroup",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0: 灵活场景 1: 固定场景",
+          "example": "1",
+          "member": "int64",
+          "name": "ComputeGroupType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

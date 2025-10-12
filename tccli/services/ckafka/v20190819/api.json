@@ -14723,6 +14723,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "MQTT的连接port",
+          "example": "9092",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "MQTT连接源的用户名",
           "example": "username-test",
           "member": "string",
@@ -14749,6 +14760,17 @@
           "example": "resource-test",
           "member": "string",
           "name": "Resource",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MQTT的连接ip",
+          "example": "10.0.0.30",
+          "member": "string",
+          "name": "ServiceVip",
           "output_required": false,
           "required": true,
           "type": "string",
@@ -14793,6 +14815,17 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP",
+          "example": "10.0.0.30",
+          "member": "string",
+          "name": "Ip",
           "output_required": false,
           "required": false,
           "type": "string",

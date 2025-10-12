@@ -296,6 +296,28 @@
         },
         {
           "disabled": false,
+          "document": "参数 Id",
+          "example": "PARAM_BHFHICABHI3452",
+          "member": "string",
+          "name": "ParamId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值 Id",
+          "example": "PARAM_BHFHICABHI0423",
+          "member": "string",
+          "name": "ParamValueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "售卖参数值，当ParamType=Quant时，该值有可能为Null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "string",
@@ -326,6 +348,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模块ID",
+          "example": "PARAM_BHFHICABHI000",
+          "member": "string",
+          "name": "ModuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模块key",
+          "example": "phone",
+          "member": "string",
+          "name": "ModuleKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模块名称",
+          "example": "手机模块",
+          "member": "string",
+          "name": "ModuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

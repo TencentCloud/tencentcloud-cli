@@ -383,9 +383,9 @@
     "DescribeAuditConfig": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditConfig\n&InstanceId=cdb-txcniupi\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"LogExpireDay\": 365,\n        \"LogType\": \"storage\",\n        \"IsClosing\": \"false\",\n        \"CreateTime\": \"2021-07-13 11:34:35\"\n    }\n}",
-        "title": "查询审计服务配置"
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdbro-6zpy4ei1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"507f6863-2827-4c2c-9c3b-fbbcc32e1ed4\",\n        \"CreateTime\": \"2025-04-11 15:13:07\",\n        \"IsClosing\": \"false\",\n        \"IsOpening\": \"false\",\n        \"LogExpireDay\": 90,\n        \"LogType\": \"storage\"\n    }\n}",
+        "title": "查询实例配置"
       }
     ],
     "DescribeAuditInstanceList": [

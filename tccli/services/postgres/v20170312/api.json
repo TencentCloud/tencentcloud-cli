@@ -246,7 +246,7 @@
       "status": "online"
     },
     "DescribeDBInstanceHAConfig": {
-      "document": "本接口（DescribeDBInstanceHAConfig）用于查询实例HA配置信息。其中HA配置信息包括：\n<li>允许备节点切换为主节点的条件配置\n<li>半同步实例使用同步复制或异步复制的条件配置",
+      "document": "本接口（DescribeDBInstanceHAConfig）用于查询实例HA配置信息。其中HA配置信息包括：\n<li>允许备节点切换为主节点的条件配置</li>\n<li>半同步实例使用同步复制或异步复制的条件配置</li>",
       "input": "DescribeDBInstanceHAConfigRequest",
       "name": "查询实例HA配置",
       "output": "DescribeDBInstanceHAConfigResponse",
@@ -5143,7 +5143,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
           "example": "postgres-aser1j2o",
           "member": "string",
           "name": "DBInstanceId",
@@ -5158,7 +5158,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主从同步方式：\n<li>Semi-sync：半同步\n<li>Async：异步",
+          "document": "主从同步方式：\n<li>Semi-sync：半同步</li>\n<li>Async：异步</li>",
           "example": "Async",
           "member": "string",
           "name": "SyncMode",
@@ -5168,7 +5168,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。\n<li>单位：byte\n<li>参数范围：[1073741824, 322122547200]",
+          "document": "高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。\n<li>单位：byte</li>\n<li>参数范围：[1073741824, 322122547200]</li>",
           "example": "2000000000",
           "member": "uint64",
           "name": "MaxStandbyLatency",
@@ -5178,7 +5178,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。\n<li>单位：s\n<li>参数范围：[5, 10]",
+          "document": "高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。\n<li>单位：s</li>\n<li>参数范围：[5, 10]</li>",
           "example": "10",
           "member": "uint64",
           "name": "MaxStandbyLag",

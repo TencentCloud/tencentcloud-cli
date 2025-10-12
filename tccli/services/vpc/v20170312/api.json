@@ -1029,11 +1029,25 @@
       "output": "DescribeAddressQuotaResponse",
       "status": "online"
     },
+    "DescribeAddressTemplateGroupInstances": {
+      "document": "本接口（DescribeAddressTemplateGroupInstances）用于查询参数模板IP地址组口关联的实例列表。本接口不会返回查询的结果，需要根据返回的RequestId调用DescribeVpcTaskResult接口获取结果。",
+      "input": "DescribeAddressTemplateGroupInstancesRequest",
+      "name": "查询参数模板IP地址组关联的实例列表",
+      "output": "DescribeAddressTemplateGroupInstancesResponse",
+      "status": "online"
+    },
     "DescribeAddressTemplateGroups": {
       "document": "本接口（DescribeAddressTemplateGroups）用于查询IP地址模板集合。",
       "input": "DescribeAddressTemplateGroupsRequest",
       "name": "查询IP地址模板集合",
       "output": "DescribeAddressTemplateGroupsResponse",
+      "status": "online"
+    },
+    "DescribeAddressTemplateInstances": {
+      "document": "本接口（DescribeAddressTemplateInstances）用于查询参数模板IP地址关联的实例列表。本接口不会返回查询的结果，需要根据返回的RequestId调用DescribeVpcTaskResult接口获取结果。",
+      "input": "DescribeAddressTemplateInstancesRequest",
+      "name": "查询参数模板IP地址关联的实例列表",
+      "output": "DescribeAddressTemplateInstancesResponse",
       "status": "online"
     },
     "DescribeAddressTemplates": {
@@ -1554,11 +1568,25 @@
       "output": "DescribeSecurityGroupsResponse",
       "status": "online"
     },
+    "DescribeServiceTemplateGroupInstances": {
+      "document": "本接口（DescribeServiceTemplateGroupInstances）用于查询参数模板协议端口组关联的实例列表。本接口不会返回查询的结果，需要根据返回的RequestId调用DescribeVpcTaskResult接口获取结果。",
+      "input": "DescribeServiceTemplateGroupInstancesRequest",
+      "name": "查询参数模板协议端口组关联的实例列表",
+      "output": "DescribeServiceTemplateGroupInstancesResponse",
+      "status": "online"
+    },
     "DescribeServiceTemplateGroups": {
       "document": "本接口（DescribeServiceTemplateGroups）用于查询协议端口模板集合。",
       "input": "DescribeServiceTemplateGroupsRequest",
       "name": "查询协议端口模板集合",
       "output": "DescribeServiceTemplateGroupsResponse",
+      "status": "online"
+    },
+    "DescribeServiceTemplateInstances": {
+      "document": "本接口（DescribeServiceTemplateInstances）用于查询参数模板协议端口关联的实例列表。本接口不会返回查询的结果，需要根据返回的RequestId调用DescribeVpcTaskResult接口获取结果。",
+      "input": "DescribeServiceTemplateInstancesRequest",
+      "name": "查询参数模板协议端口关联的实例列表",
+      "output": "DescribeServiceTemplateInstancesResponse",
       "status": "online"
     },
     "DescribeServiceTemplates": {
@@ -14161,6 +14189,51 @@
       ],
       "type": "object"
     },
+    "DescribeAddressTemplateGroupInstancesRequest": {
+      "document": "DescribeAddressTemplateGroupInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP地址组实例ID。例如：ipmg-12345678。",
+          "example": "ipmg-12345678",
+          "member": "string",
+          "name": "AddressTemplateGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddressTemplateGroupInstancesResponse": {
+      "document": "DescribeAddressTemplateGroupInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAddressTemplateGroupsRequest": {
       "document": "DescribeAddressTemplateGroups请求参数结构体",
       "members": [
@@ -14262,6 +14335,51 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddressTemplateInstancesRequest": {
+      "document": "DescribeAddressTemplateInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP地址实例ID。例如：ipm-12345678。",
+          "example": "ipm-12345678",
+          "member": "string",
+          "name": "AddressTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddressTemplateInstancesResponse": {
+      "document": "DescribeAddressTemplateInstances返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -19361,6 +19479,51 @@
       ],
       "type": "object"
     },
+    "DescribeServiceTemplateGroupInstancesRequest": {
+      "document": "DescribeServiceTemplateGroupInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "协议端口实例ID。例如：ppmg-12345678。",
+          "example": "ppmg-12345678",
+          "member": "string",
+          "name": "ServiceTemplateGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceTemplateGroupInstancesResponse": {
+      "document": "DescribeServiceTemplateGroupInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeServiceTemplateGroupsRequest": {
       "document": "DescribeServiceTemplateGroups请求参数结构体",
       "members": [
@@ -19462,6 +19625,51 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceTemplateInstancesRequest": {
+      "document": "DescribeServiceTemplateInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "协议端口实例ID。例如：ppm-12345678。",
+          "example": "ppm-12345678",
+          "member": "string",
+          "name": "ServiceTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceTemplateInstancesResponse": {
+      "document": "DescribeServiceTemplateInstances返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -21125,7 +21333,7 @@
         },
         {
           "disabled": false,
-          "document": "内网`IP`地址列表，批量查询单次请求最多支持`10`个。",
+          "document": "内网`IP`地址列表，批量查询单次请求最多支持`100`个。",
           "example": "[\"10.4.2.2\\n\",\"10.4.2.3\\n\",\"10.4.2.17\\n\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
@@ -21144,6 +21352,7 @@
           "example": "无",
           "member": "VpcPrivateIpAddress",
           "name": "VpcPrivateIpAddressSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -28701,8 +28910,17 @@
           "example": "\"newtest\"",
           "member": "string",
           "name": "NatGatewayName",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私网NAT实例是否开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtectionEnabled",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

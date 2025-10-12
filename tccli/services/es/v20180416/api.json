@@ -4227,7 +4227,7 @@
         {
           "disabled": false,
           "document": "cos 快照信息列表",
-          "example": "[{\"CosBucket\":\"es-ap-beijing\"}]",
+          "example": "无",
           "member": "CosSnapShotInfo",
           "name": "CosSnapshotInfoList",
           "output_required": false,
@@ -6148,7 +6148,7 @@
         {
           "disabled": false,
           "document": "客户指定安装的模型名称，可为空，默认为模型文件名",
-          "example": "[******]",
+          "example": "[\"test1\"]",
           "member": "string",
           "name": "ModelNames",
           "required": false,
@@ -6172,7 +6172,7 @@
         {
           "disabled": false,
           "document": "发起异步流程的flowId",
-          "example": "1111111",
+          "example": "1725",
           "member": "string",
           "name": "FlowId",
           "output_required": false,

@@ -4227,7 +4227,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源名列表，可取值:\n- GENERAL_BUNDLE_INSTANCE 通用型套餐实例\n- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 \n- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 \n- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例\n- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例\n- STARTER_BUNDLE_INSTANCE 入门型套餐实例\n- HK_EXCLUSIVE_BUNDLE_INSTANCE 中国香港专属型套餐实例\n- CAREFREE_BUNDLE_INSTANCE 无忧型套餐实例\n- USER_KEY_PAIR 密钥对\n- SNAPSHOT 快照\n- BLUEPRINT 自定义镜像\n- FREE_BLUEPRINT 免费自定义镜像\n- DATA_DISK 数据盘",
+          "document": "资源名列表，可取值:\n- GENERAL_BUNDLE_INSTANCE 通用型套餐实例\n- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 \n- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 \n- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例\n- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例\n- STARTER_BUNDLE_INSTANCE 入门型套餐实例\n- HK_EXCLUSIVE_BUNDLE_INSTANCE 中国香港专属型套餐实例\n- CAREFREE_BUNDLE_INSTANCE 无忧型套餐实例\n- EXCLUSIVE_BUNDLE_02_INSTANCE 境外专属Ⅱ型\n- NEWCOMER_BUNDLE_INSTANCE 新客专享型\n- GAME_PORTAL_BUNDLE_INSTANCE 游戏专区实例\n- ECONOMY_BUNDLE_INSTANCE 经济型套餐实例\n- BUDGET_BUNDLE_INSTANCE 特惠型套餐实例\n- RAZOR_SPEED_BUNDLE_INSTANCE 锐驰套餐实例\n- BANDWIDTH_BUNDLE_INSTANCE 带宽型套餐实例\n- USER_KEY_PAIR 密钥对\n- SNAPSHOT 快照\n- BLUEPRINT 自定义镜像\n- FREE_BLUEPRINT 免费自定义镜像\n- DATA_DISK 数据盘",
           "example": "[\"GENERAL_BUNDLE_INSTANCE\"]",
           "member": "string",
           "name": "ResourceNames",
