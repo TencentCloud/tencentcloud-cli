@@ -176,6 +176,14 @@
         "title": "购买新集群"
       }
     ],
+    "CreateIntegrateCluster": [
+      {
+        "document": "Create Integrate Cluster",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrateCluster\n<公共请求参数>\n\n{\n    \"DbVersion\": \"8.0\",\n    \"InstanceInitInfos\": [\n        {\n            \"Cpu\": 1,\n            \"DeviceType\": \"common\",\n            \"InstanceCount\": 1,\n            \"InstanceType\": \"rw\",\n            \"Memory\": 2\n        }\n    ],\n    \"IntegrateCreateClusterConfig\": {\n        \"BackupSaveDays\": 7,\n        \"BinlogSaveDays\": 8,\n        \"SemiSyncTimeout\": 1000\n    },\n    \"SubnetId\": \"subnet-3du8lpau\",\n    \"VpcId\": \"vpc-r2dqqiyv\",\n    \"Zone\": \"ap-guangzhou-4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [],\n        \"ClusterIds\": [],\n        \"DealNames\": [\n            \"20250909448021542853581\"\n        ],\n        \"RequestId\": \"081ec9cb-d476-4202-8943-966e1e552e3f\",\n        \"ResourceIds\": [],\n        \"TranId\": \"20250909448021542853591\"\n    }\n}",
+        "title": "创建集成集群"
+      }
+    ],
     "CreateParamTemplate": [
       {
         "document": "创建参数模板",
@@ -632,6 +640,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesWithinSameCluster\n<公共请求参数>\n\n{\n    \"UniqVpcId\": \"vpc-gy34u12n\",\n    \"Vip\": \"172.1.1.1\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"InstanceIds\": [\n            \"cynosdbmysql-ins-pgbpxt11\"\n        ],\n        \"RequestId\": \"51169b54-61d4-4604-a07e-e519a5527923\"\n    }\n}",
         "title": "查询统一集群下实例ID列表"
+      }
+    ],
+    "DescribeIntegrateTask": [
+      {
+        "document": "Describe Integrate Task",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrateTask\n<公共请求参数>\n\n{\n    \"DealNames\": [\n        \"20250922456021575003931\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CurrentProgress\": \"5/5\",\n        \"CurrentStep\": \"FinishTask\",\n        \"RequestId\": \"de351c1d-72fa-477b-997a-8ae045f90da2\",\n        \"TaskStatus\": \"success\"\n    }\n}",
+        "title": "查询集成任务"
       }
     ],
     "DescribeIsolatedInstances": [

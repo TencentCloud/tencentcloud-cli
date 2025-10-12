@@ -3411,6 +3411,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群是否支持AI",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSupportAI",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10536,7 +10546,7 @@
         {
           "disabled": false,
           "document": "集群地域",
-          "example": "集群地域",
+          "example": "1",
           "member": "uint64",
           "name": "ZoneId",
           "output_required": true,
@@ -10786,7 +10796,7 @@
         {
           "disabled": false,
           "document": "体外客户端组件信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"hdfs-2.8.5\",true]",
+          "example": "无",
           "member": "SoftDependInfo",
           "name": "OutSideSoftInfo",
           "output_required": true,
@@ -10819,6 +10829,16 @@
           "example": "true",
           "member": "bool",
           "name": "IsSupportClone",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群是否支持AI",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSupportAI",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false

@@ -5469,7 +5469,7 @@
         {
           "disabled": false,
           "document": "cos 快照信息列表",
-          "example": "[{\"CosBucket\":\"es-ap-beijing\"}]",
+          "example": "无",
           "member": "CosSnapShotInfo",
           "name": "CosSnapshotInfoList",
           "output_required": false,
@@ -6813,7 +6813,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "节点ID",
           "example": "171234124",
           "member": "uint64",
@@ -6821,6 +6821,28 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据节点磁盘用量校验不通过时使用。磁盘低水位线设置，百分比、小数或带单位数值三种格式。",
+          "example": "\"85%\"",
+          "member": "string",
+          "name": "DiskUsageExceededDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点ID字符串",
+          "example": "\"171234124\"",
+          "member": "string",
+          "name": "NodeIdStr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8029,7 +8051,7 @@
         {
           "disabled": false,
           "document": "客户指定安装的模型名称，可为空，默认为模型文件名",
-          "example": "[******]",
+          "example": "[\"test1\"]",
           "member": "string",
           "name": "ModelNames",
           "required": false,
@@ -8053,7 +8075,7 @@
         {
           "disabled": false,
           "document": "发起异步流程的flowId",
-          "example": "1111111",
+          "example": "1725",
           "member": "string",
           "name": "FlowId",
           "output_required": false,
