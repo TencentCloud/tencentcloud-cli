@@ -156,7 +156,7 @@ Output:
     "scale-down-unneeded-time": string, 节点连续空闲触发缩容时间，例如：10m
     "scale-down-utilization-threshold": float, 触发缩容节点利用率阈值，例如：0.5
     "skip-nodes-with-local-storage": bool, 不缩容包含本地存储的节点，例如：true
-    "skip-nodes-with-system-pods": bool 不缩容kube-system namespace下非DaemonSet管理的Pod的节点，例如：ture
+    "skip-nodes-with-system-pods": bool 不缩容kube-system namespace下非DaemonSet管理的Pod的节点，例如：true
   }
 }
 ```

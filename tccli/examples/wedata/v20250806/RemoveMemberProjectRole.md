@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli wedata RemoveMemberProjectRole --cli-unfold-argument  \
-    --ProjectId 2917360018413740032 \
+    --ProjectId 2982744633770700800 \
     --UserUin 100028721707 \
-    --RoleId 308335260676890624
+    --RoleIds 308335260945326080
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5bc9ed3c-1593-4a86-a76f-7c09dc4a5996"
+        "RequestId": "cada41f6-d18e-4173-9407-d9dd13351f50"
     }
 }
 ```

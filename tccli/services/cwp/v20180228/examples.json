@@ -3904,9 +3904,9 @@
     ],
     "ModifyWebHookReceiver": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWebHookReceiver\n<公共请求参数>\n\n{\n    \"Id\": 33,\n    \"Name\": \"2\",\n    \"Addr\": \"http://21147\",\n    \"IsModify\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b24a145a-a2d3-4c17-8019-576ebb12823f\"\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWebHookReceiver\n<公共请求参数>\n\n{\n    \"Name\": \"tttest\",\n    \"Addr\": \"http://example1.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7b73422-baf8-4623-95b3-dee6f2abb273\"\n    }\n}",
         "title": "示例"
       }
     ],

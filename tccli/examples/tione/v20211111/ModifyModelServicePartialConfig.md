@@ -20,7 +20,104 @@ Output:
             "ServiceId": "ms-kxqfprc5-1",
             "ServiceGroupName": "test-ls-onnx-fp16",
             "ServiceDescription": "",
+            "Tags": [],
+            "ResourceGroupName": "new-H20",
             "ServiceInfo": {
+                "PodInfos": [
+                    {
+                        "Name": "ms-2794vjx2-1-qelz0o1z-master-0",
+                        "Uid": "474bcc9d-bff8-4bbb-8d30-4ebd0e6f9cac",
+                        "ChargeType": "PREPAID",
+                        "Phase": "Running",
+                        "IP": "172.17.2.36",
+                        "CreateTime": "2025-09-16T14:36:24+08:00",
+                        "CrossTenantENIInfo": {
+                            "PrimaryIP": "",
+                            "Port": "8501"
+                        },
+                        "Status": "Running",
+                        "Containers": null,
+                        "ContainerInfos": [
+                            {
+                                "Name": "main",
+                                "ContainerId": "docker://ce672fd80d7076ab2d03e3889d05b74eab9793613bb9e3b9c672157290fded17",
+                                "Image": "tione.tencentcloudcr.com/qcloud-ti-platform/llm-infer:sglang-v0.5.2-cu126-dev20250915",
+                                "Status": {
+                                    "RestartCount": 0,
+                                    "State": "running",
+                                    "Ready": true,
+                                    "Reason": "",
+                                    "Message": ""
+                                }
+                            }
+                        ],
+                        "StartScheduleTime": "2025-09-16T14:36:24+08:00",
+                        "NodeIP": "172.17.0.139",
+                        "NodeId": "sm-jxv5fwlc",
+                        "ResourceGroupId": "rsg-bwr55qrn",
+                        "ResourceInfo": {
+                            "Cpu": 380300,
+                            "Memory": 2267648,
+                            "Gpu": 800,
+                            "RealGpu": 800,
+                            "GpuType": "HCC-H20",
+                            "RealGpuDetailSet": [
+                                {
+                                    "Name": "HCC-H20",
+                                    "Value": 800
+                                }
+                            ]
+                        },
+                        "ResourceGroupName": "new-H20"
+                    },
+                    {
+                        "Name": "ms-2794vjx2-1-qelz0o1z-worker-0",
+                        "Uid": "6df992ca-d25b-42a4-9626-d43724e150db",
+                        "ChargeType": "PREPAID",
+                        "Phase": "Running",
+                        "IP": "172.20.3.43",
+                        "CreateTime": "2025-09-16T14:36:24+08:00",
+                        "CrossTenantENIInfo": {
+                            "PrimaryIP": "",
+                            "Port": "8501"
+                        },
+                        "Status": "Running",
+                        "Containers": null,
+                        "ContainerInfos": [
+                            {
+                                "Name": "main",
+                                "ContainerId": "docker://3dbd9858d284e13e08360f51e280efd17099def2102c769485217f354a8a2be4",
+                                "Image": "tione.tencentcloudcr.com/qcloud-ti-platform/llm-infer:sglang-v0.5.2-cu126-dev20250915",
+                                "Status": {
+                                    "RestartCount": 0,
+                                    "State": "running",
+                                    "Ready": true,
+                                    "Reason": "",
+                                    "Message": ""
+                                }
+                            }
+                        ],
+                        "StartScheduleTime": "2025-09-16T14:36:24+08:00",
+                        "Message": "",
+                        "NodeIP": "172.20.3.14",
+                        "NodeId": "sm-hfwrhpjk",
+                        "ResourceGroupId": "rsg-bwr55qrn",
+                        "ResourceInfo": {
+                            "Cpu": 380300,
+                            "Memory": 2267648,
+                            "Gpu": 800,
+                            "RealGpu": 800,
+                            "GpuType": "HCC-H20",
+                            "RealGpuDetailSet": [
+                                {
+                                    "Name": "HCC-H20",
+                                    "Value": 800
+                                }
+                            ]
+                        },
+                        "ResourceGroupName": "new-H20"
+                    }
+                ],
                 "Replicas": 1,
                 "ImageInfo": {
                     "ImageType": "PRE_SET",
@@ -120,6 +217,8 @@ Output:
                 "HybridBillingPrepaidReplicas": 0,
                 "OldHybridBillingPrepaidReplicas": 0,
                 "ServiceLimit": {
+                    "EnableInstanceReqLimit": true,
+                    "InstanceReqLimit": 22,
                     "EnableInstanceRpsLimit": true,
                     "InstanceRpsLimit": 22
                 },

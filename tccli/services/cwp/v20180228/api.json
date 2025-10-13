@@ -35880,7 +35880,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "[{\"Name\":\"Id\",\"Values\":[\"12657\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filter",
           "required": false,
@@ -35931,7 +35931,7 @@
         {
           "disabled": false,
           "document": "策略列表",
-          "example": "[             {                 \"CustomFields\": [                     {                         \"Key\": \"机器a\",                         \"Value\": \"文本\"                     }                 ],                 \"Events\": [                     {                         \"ControlBit\": \"11\",                         \"Type\": 4                     },                     {                         \"ControlBit\": \"11\",                         \"Type\": 13                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 14                     },                     {                         \"ControlBit\": \"\",                         \"Type\": 22                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 23                     },                     {                         \"ControlBit\": \"\",                         \"Type\": 1                     },                     {                         \"ControlBit\": \"11\",                         \"Type\": 3                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 7                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 12                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 19                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 20                     },                     {                         \"ControlBit\": \"\",                         \"Type\": 25                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 8                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 18                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 17                     },                     {                         \"ControlBit\": \"11111\",                         \"Type\": 2                     },                     {                         \"ControlBit\": \"111\",                         \"Type\": 6                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 9                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 10                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 11                     },                     {                         \"ControlBit\": \"11\",                         \"Type\": 15                     },                     {                         \"ControlBit\": \"1111\",                         \"Type\": 16                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 21                     },                     {                         \"ControlBit\": \"1\",                         \"Type\": 24                     }                 ],                 \"Format\": 0,                 \"HostCount\": 3,                 \"HostLabels\": [                     {                         \"Type\": 4,                         \"Values\": []                     }                 ],                 \"Id\": 38,                 \"IsDisabled\": 0,                 \"Name\": \"只有机器a；文本\",                 \"Quuids\": [                     \"058e0cf8-ba52-47fc-a100-2fdcc1e73e96\",                     \"00e800cb-7202-4d83-90c2-6e920758dd42\",                     \"380add75-bb06-4cc4-84c5-cf806d102fba\"                 ],                 \"Receivers\": [                     {                         \"Addr\": \"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=d0c2fc25-23a2-4285-ab98-d8a862146a73\",                         \"Id\": 17,                         \"Name\": \"企微\"                     }                 ]             }         ]",
+          "example": "无",
           "member": "WebHookPolicy",
           "name": "List",
           "output_required": false,
@@ -36046,7 +36046,7 @@
         {
           "disabled": false,
           "document": "告警接收人列表",
-          "example": "[{\"Id\": 20}]",
+          "example": "无",
           "member": "WebHookReceiver",
           "name": "List",
           "required": false,
@@ -36061,7 +36061,7 @@
         {
           "disabled": false,
           "document": "告警接收人的关联策略使用信息",
-          "example": "[             {                 \"PolicyName\": \"相同IM机器a，b\",                 \"ReceiverId\": 28,                 \"ReceiverName\": \"小小机器\"             }]",
+          "example": "无",
           "member": "WebHookReceiverUsage",
           "name": "List",
           "output_required": false,
@@ -49401,7 +49401,7 @@
         {
           "disabled": false,
           "document": "事件类型",
-          "example": "[{\"ControlBit\": \"11000\", \"Type\": 2}]",
+          "example": "无",
           "member": "WebHookEventKv",
           "name": "Events",
           "required": false,
@@ -49410,7 +49410,7 @@
         {
           "disabled": false,
           "document": "主机范围",
-          "example": "[{\"Type\": 4, \"Values\": []}]",
+          "example": "无",
           "member": "WebHookHostLabel",
           "name": "HostLabels",
           "required": false,
@@ -49419,7 +49419,7 @@
         {
           "disabled": false,
           "document": "接收人",
-          "example": "[{\"Id\":1,\"Name\":\"recv_name\",\"Addr\":\"addr.com\"}]",
+          "example": "无",
           "member": "WebHookReceiver",
           "name": "Receivers",
           "required": false,
@@ -49437,7 +49437,7 @@
         {
           "disabled": false,
           "document": "自定义透传字段",
-          "example": "[{\"Key\": \"\\u8fd9\\u662f\\u817e\\u8baf\\u4e91\\u6807\\u7b7e\", \"Value\": \"111\"}]",
+          "example": "无",
           "member": "WebHookCustomField",
           "name": "CustomFields",
           "required": false,
@@ -49554,11 +49554,65 @@
         {
           "disabled": false,
           "document": "是否修改",
-          "example": "FALSE",
+          "example": "false",
           "member": "bool",
           "name": "IsModify",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SCFRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数名称",
+          "example": "flask_demo",
+          "member": "string",
+          "name": "FunctionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数版本",
+          "example": "latest",
+          "member": "string",
+          "name": "FunctionVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "别名",
+          "example": "alias",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -61698,6 +61752,72 @@
           "example": "www.webhook.com",
           "member": "string",
           "name": "Addr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SCFRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "ns",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数名称",
+          "example": "fn",
+          "member": "string",
+          "name": "FunctionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "latest",
+          "member": "string",
+          "name": "FunctionVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "别名",
+          "example": "alias",
+          "member": "string",
+          "name": "Alias",
           "output_required": false,
           "required": false,
           "type": "string",

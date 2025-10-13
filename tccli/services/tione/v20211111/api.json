@@ -8096,6 +8096,72 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点网络状态信息",
+          "example": "无",
+          "member": "InstanceNetworkInfo",
+          "name": "InstanceNetworkInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceNetworkInfo": {
+      "document": "节点网络信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点公网地址",
+          "example": "",
+          "member": "string",
+          "name": "PublicIpAddress",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点内网地址",
+          "example": "",
+          "member": "string",
+          "name": "PrivateIpAddress",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点网络VPC信息",
+          "example": "",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平台VPC信息",
+          "example": "",
+          "member": "VirtualPrivateCloud",
+          "name": "PlatformVirtualPrivateCloud",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点网络状态码",
+          "example": "",
+          "member": "string",
+          "name": "NetworkConditionCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8157,6 +8223,67 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LoadBalancerConfig": {
+      "document": "用于描述负载均衡绑定的配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡类型",
+          "example": "CLB",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例Id",
+          "example": "clb-test",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口映射",
+          "example": "无",
+          "member": "PortMapping",
+          "name": "PortMappings",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定状态",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "error",
+          "member": "string",
+          "name": "Error",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9315,6 +9442,15 @@
           "name": "ServiceLimit",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "服务描述",
+          "example": "LLM服务",
+          "member": "string",
+          "name": "ServiceDescription",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9328,7 +9464,7 @@
           "example": "无",
           "member": "Service",
           "name": "Service",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11170,6 +11306,67 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PortMapping": {
+      "document": "用于描述端口映射",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口映射用途",
+          "example": "ssh",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端口",
+          "example": "22",
+          "member": "int64",
+          "name": "ServicePort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对外暴露端口",
+          "example": "22",
+          "member": "int64",
+          "name": "ExternalPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议类型",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权重",
+          "example": "100",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -13394,7 +13591,7 @@
         {
           "disabled": false,
           "document": "创建者",
-          "example": "222222",
+          "example": "creater",
           "member": "string",
           "name": "CreatedBy",
           "output_required": true,
@@ -13609,6 +13806,16 @@
           "name": "SubUinName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡配置",
+          "example": "无",
+          "member": "LoadBalancerConfig",
+          "name": "LoadBalancerConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -15911,6 +16118,67 @@
         }
       ],
       "usage": "out"
+    },
+    "VirtualPrivateCloud": {
+      "document": "私有网络相关信息配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpcid",
+          "example": "vpcid",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网id",
+          "example": "子网id",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是VpcGateway",
+          "example": "false",
+          "member": "bool",
+          "name": "AsVpcGateway",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip",
+          "example": "ip",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0",
+          "example": "ipv6数量",
+          "member": "int64",
+          "name": "Ipv6AddressCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VolumeMount": {
       "document": "外部挂载信息",

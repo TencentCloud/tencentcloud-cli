@@ -2086,7 +2086,7 @@
         },
         {
           "disabled": false,
-          "document": "addon的状态",
+          "document": "addon的状态：\n- Installing：安装中\n- Upgrading：升级中\n- Terminating：删除中\n- Succeeded：安装/升级成功\n- InstallFailed：安装失败\n- UpgradFailed：升级失败",
           "example": "Succeeded",
           "member": "string",
           "name": "Phase",
@@ -7889,7 +7889,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。",
           "example": "cls-kihzth22",
           "member": "string",
           "name": "ClusterId",
@@ -7898,7 +7898,7 @@
         },
         {
           "disabled": false,
-          "document": "addon名称",
+          "document": "addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。",
           "example": "nvidia-gpu",
           "member": "string",
           "name": "AddonName",
@@ -9072,7 +9072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。",
           "example": "cls-kihzth22",
           "member": "string",
           "name": "ClusterId",
@@ -9118,7 +9118,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。",
           "example": "cls-kihzth22",
           "member": "string",
           "name": "ClusterId",
@@ -9127,7 +9127,7 @@
         },
         {
           "disabled": false,
-          "document": "addon名称",
+          "document": "addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。",
           "example": "nvidia-gpu",
           "member": "string",
           "name": "AddonName",
@@ -18752,7 +18752,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID（仅支持标准tke集群）",
+          "document": "集群ID（仅支持标准tke集群），请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。",
           "example": "cls-qbc3zefo",
           "member": "string",
           "name": "ClusterId",
@@ -18761,7 +18761,7 @@
         },
         {
           "disabled": false,
-          "document": "addon名称",
+          "document": "addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。",
           "example": "cbs",
           "member": "string",
           "name": "AddonName",
@@ -18780,7 +18780,7 @@
         {
           "disabled": false,
           "document": "addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取）",
-          "example": "base64加密values",
+          "example": "eyJ0b2xlcmF0aW9ucyI6eyJlZmZlY3QiOiJOb0V4ZWN1dGUifX0=",
           "member": "string",
           "name": "RawValues",
           "required": false,
@@ -18788,7 +18788,7 @@
         },
         {
           "disabled": false,
-          "document": "是否仅做安装检查，设置为true时仅做检查，不会安装组件",
+          "document": "是否仅做安装检查，设置为true时仅做检查，不会安装组件。默认值为 false。",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
@@ -27657,7 +27657,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，请从容器服务控制台集群列表中获取（https://console.cloud.tencent.com/tke2/cluster）。",
           "example": "cls-qbc3zefo",
           "member": "string",
           "name": "ClusterId",
@@ -27666,7 +27666,7 @@
         },
         {
           "disabled": false,
-          "document": "addon名称",
+          "document": "addon名称，请从容器服务控制台进入集群详情页后，在组件管理页面中获取。",
           "example": "cbs",
           "member": "string",
           "name": "AddonName",
@@ -27684,7 +27684,7 @@
         },
         {
           "disabled": false,
-          "document": "addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））",
+          "document": "addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传）。",
           "example": "eyJ2cGNDbmkiOnsic2VjdXJpdHlHcm91cHMiOnsic2VjdXJpdHlHcm91cHMiOltdfX19",
           "member": "string",
           "name": "RawValues",
@@ -27702,7 +27702,7 @@
         },
         {
           "disabled": false,
-          "document": "是否仅做更新检查，设置为true时仅做检查，不会更新组件",
+          "document": "是否仅做更新检查，设置为true时仅做检查，不会更新组件。默认值为 false。",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
