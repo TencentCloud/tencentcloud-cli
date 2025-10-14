@@ -259,6 +259,13 @@
       "output": "GetCodeFolderResponse",
       "status": "online"
     },
+    "GetDataBackfillPlan": {
+      "document": "获取补录计划详情",
+      "input": "GetDataBackfillPlanRequest",
+      "name": "查看补录计划配置详情",
+      "output": "GetDataBackfillPlanResponse",
+      "status": "online"
+    },
     "GetDataSource": {
       "document": "该接口用于查看指定数据源的详细信息",
       "input": "GetDataSourceRequest",
@@ -698,6 +705,13 @@
       "input": "SetSuccessTaskInstancesAsyncRequest",
       "name": "实例批量置成功(异步)",
       "output": "SetSuccessTaskInstancesAsyncResponse",
+      "status": "online"
+    },
+    "StartOpsTasks": {
+      "document": "异步批量启动任务",
+      "input": "StartOpsTasksRequest",
+      "name": "异步批量启动任务",
+      "output": "StartOpsTasksResponse",
       "status": "online"
     },
     "StopOpsTasksAsync": {
@@ -3907,6 +3921,202 @@
       ],
       "usage": "both"
     },
+    "DataBackfill": {
+      "document": "补录计划详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据补录计划id",
+          "example": "",
+          "member": "string",
+          "name": "DataBackfillPlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据补录计划名称",
+          "example": "",
+          "member": "string",
+          "name": "DataBackfillPlanName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录任务集合",
+          "example": "",
+          "member": "string",
+          "name": "TaskIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录任务的数据配置列表",
+          "example": "",
+          "member": "DataBackfillRange",
+          "name": "DataBackfillRangeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CheckParentType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补录是否忽略事件依赖\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "SkipEventListening",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义实例运行并发度, 返回为null或者不返回，则表示任务原有自依赖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "RedefineParallelNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RedefineSelfWorkflowDependency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "SchedulerResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集成资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "IntegrationResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补录自定义的生成周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RedefineCycleType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "KVPair",
+          "name": "RedefineParamList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补录任务的执行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补录任务的执行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建用户id",
+          "example": "",
+          "member": "string",
+          "name": "CreateUserUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录计划实例完成百分数",
+          "example": "",
+          "member": "uint64",
+          "name": "CompletePercent",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录计划实例成功百分数",
+          "example": "",
+          "member": "uint64",
+          "name": "SuccessPercent",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录是实例数据时间顺序，生效必须满足2个条件:1. 必须同周期任务2. 优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行 可选值- NORMAL: 不设置- ORDER: 顺序- REVERSE: 逆序不设置默认为NORMAL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "DataTimeOrder",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DataBackfillRange": {
       "document": "补录计划日期范围",
       "members": [
@@ -5739,6 +5949,61 @@
           "document": "codestudio文件夹",
           "example": "无",
           "member": "CodeFolderNode",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataBackfillPlanRequest": {
+      "document": "GetDataBackfillPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1460947878944567296",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "补录计划id",
+          "example": "13faeebf-4c61-4289-924b-7fc8b6f8ca6a",
+          "member": "string",
+          "name": "DataBackfillPlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "展示时区，默认UTC+8",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataBackfillPlanResponse": {
+      "document": "GetDataBackfillPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "补录详情",
+          "example": "无",
+          "member": "DataBackfill",
           "name": "Data",
           "output_required": false,
           "type": "object",
@@ -14629,6 +14894,77 @@
         }
       ],
       "usage": "both"
+    },
+    "StartOpsTasksRequest": {
+      "document": "StartOpsTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所属项目Id",
+          "example": "2763518183736183934",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务Id列表",
+          "example": "[\"20250630162948606\", \"20250725151016827\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "启动时是否补录上次暂停到当前的中间实例，默认false即不补录",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDataBackfill",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "StartOpsTasksResponse": {
+      "document": "StartOpsTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步操作结果",
+          "example": "无",
+          "member": "StartTasks",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartTasks": {
+      "document": "批量启动任务返回参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务启动是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "StopOpsTasksAsyncRequest": {
       "document": "StopOpsTasksAsync请求参数结构体",

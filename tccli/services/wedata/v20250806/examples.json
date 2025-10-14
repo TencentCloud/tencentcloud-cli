@@ -302,6 +302,14 @@
         "title": "获取codestudio文件夹详情"
       }
     ],
+    "GetDataBackfillPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDataBackfillPlan\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"DataBackfillPlanId\": \"13faeebf-4c61-4289-924b-7fc8b6f8ca6a\",\n    \"TimeZone\": \"UTC+8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CheckParentType\": \"NONE\",\n            \"CompletePercent\": 0,\n            \"CreateUserUin\": \"100028579606\",\n            \"DataBackfillPlanId\": \"13faeebf-4c61-4289-924b-7fc8b6f8ca6a\",\n            \"DataBackfillPlanName\": \"5949f539-721c-499c-87ce-3f027550b02a\",\n            \"DataBackfillRangeList\": [\n                {\n                    \"EndDate\": \"2025-09-02\",\n                    \"ExecutionEndTime\": \"23:59\",\n                    \"ExecutionStartTime\": \"00:00\",\n                    \"StartDate\": \"2025-09-02\"\n                }\n            ],\n            \"DataTimeOrder\": \"NORMAL\",\n            \"EndTime\": null,\n            \"IntegrationResourceGroupId\": null,\n            \"ProjectId\": \"1460947878944567296\",\n            \"RedefineCycleType\": null,\n            \"RedefineParallelNum\": null,\n            \"RedefineParamList\": null,\n            \"RedefineSelfWorkflowDependency\": \"no\",\n            \"SchedulerResourceGroupId\": \"20240222212719833743\",\n            \"SkipEventListening\": true,\n            \"StartTime\": null,\n            \"SuccessPercent\": 0,\n            \"TaskIds\": [\n                \"20250827115253729\"\n            ]\n        },\n        \"RequestId\": \"d755a2d0-fb5c-463b-8d7e-5e360b46a941\"\n    }\n}",
+        "title": "获取补录详情"
+      }
+    ],
     "GetDataSource": [
       {
         "document": "",
@@ -840,6 +848,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetSuccessTaskInstancesAsync\n<公共请求参数>\n\n{\n    \"ProjectId\": \"2428908825624145920\",\n    \"InstanceKeyList\": [\n        \"20250828163920570_2025-08-28 16:40:00\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AsyncId\": \"f6eb7cd7-263b-4a28-99d3-3af9d0732144\"\n        },\n        \"RequestId\": \"53045056-6e7b-4949-80f8-1f7a794bef01\"\n    }\n}",
         "title": "异步置成功实例"
+      }
+    ],
+    "StartOpsTasks": [
+      {
+        "document": "运维中心-任务运维-启动任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartOpsTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"TaskIds\": [\n        \"20250630162948606\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": false\n        },\n        \"RequestId\": \"4836d926-ec18-4c77-9e73-f5365843758c\"\n    }\n}",
+        "title": "启动任务"
       }
     ],
     "StopOpsTasksAsync": [

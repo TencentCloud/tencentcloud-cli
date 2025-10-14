@@ -4762,7 +4762,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的节点规格，需要输入对应的规格标识：\n2C8G：rabbit-vip-basic-2c8g\n4C16G：rabbit-vip-basic-4c16g\n8C32G：rabbit-vip-basic-8c32g\n16C32G：rabbit-vip-basic-4\n16C64G：rabbit-vip-basic-16c64g\n2C4G：rabbit-vip-basic-5\n4C8G：rabbit-vip-basic-1\n8C16G（已售罄）：rabbit-vip-basic-2\n不传默认为 4C8G：rabbit-vip-basic-1",
+          "document": "集群的节点规格，需要输入对应的规格标识：\n2C8G：rabbit-vip-profession-2c8g\n4C16G：rabbit-vip-profession-4c16g\n8C32G：rabbit-vip-profession-8c32g\n16C32G：rabbit-vip-basic-4\n16C64G：rabbit-vip-profession-16c64g\n2C4G：rabbit-vip-basic-5\n4C8G：rabbit-vip-basic-1\n8C16G（已售罄）：rabbit-vip-basic-2\n不传默认为 4C8G：rabbit-vip-basic-1",
           "example": "rabbit-vip-basic-1",
           "member": "string",
           "name": "NodeSpec",
@@ -4844,7 +4844,7 @@
         {
           "disabled": false,
           "document": "资源标签列表",
-          "example": "[{\"tagKey\":\"业务\",\"tagValue\":\"num77083\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
@@ -20735,7 +20735,7 @@
         },
         {
           "disabled": false,
-          "document": "集群的节点规格，需要输入对应的规格标识：\n2C8G：rabbit-vip-basic-2c8g\n4C16G：rabbit-vip-basic-4c16g\n8C32G：rabbit-vip-basic-8c32g\n16C32G：rabbit-vip-basic-4\n16C64G：rabbit-vip-basic-16c64g\n2C4G：rabbit-vip-basic-5\n4C8G：rabbit-vip-basic-1\n8C16G（已售罄）：rabbit-vip-basic-2\n不传默认为4C8G：rabbit-vip-basic-1",
+          "document": "集群的节点规格，对应的规格标识：\n2C8G：rabbit-vip-profession-2c8g\n4C16G：rabbit-vip-profession-4c16g\n8C32G：rabbit-vip-profession-8c32g\n16C32G：rabbit-vip-basic-4\n16C64G：rabbit-vip-profession-16c64g\n2C4G：rabbit-vip-basic-5\n4C8G：rabbit-vip-basic-1\n8C16G（已售罄）：rabbit-vip-basic-2\n不传默认为 4C8G：rabbit-vip-basic-1",
           "example": "rabbit-vip-basic-1",
           "member": "string",
           "name": "SpecName",
