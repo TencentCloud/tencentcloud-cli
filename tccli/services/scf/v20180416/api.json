@@ -309,11 +309,11 @@
       "status": "online"
     },
     "PushSysLogs": {
-      "document": "推送SCF On TKE中系统组件的日志",
+      "document": "接口不再使用\n\n推送SCF On TKE中系统组件的日志",
       "input": "PushSysLogsRequest",
       "name": "推送系统日志",
       "output": "PushSysLogsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "PutProvisionedConcurrencyConfig": {
       "document": "设置函数某一非$LATEST版本的预置并发。",

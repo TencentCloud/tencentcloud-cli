@@ -2066,14 +2066,6 @@
         "title": "示例"
       }
     ],
-    "DescribeProtectNetList": [
-      {
-        "document": "专家服务-旗舰重保列表",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProtectNetList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"TaskId\": \"cve2021-1616989795566547835\",\n                \"ProtectDays\": 1,\n                \"Status\": 1,\n                \"StartTime\": \"2021-03-29 12:49:55\",\n                \"EndTime\": \"--\",\n                \"ReportPath\": \"/a/b\"\n            },\n            {\n                \"TaskId\": \"cve2021-1617009909259812569\",\n                \"ProtectDays\": 1,\n                \"Status\": 0,\n                \"StartTime\": \"--\",\n                \"EndTime\": \"--\",\n                \"ReportPath\": \"/a/b\"\n            }\n        ],\n        \"RequestId\": \"F00A8503-6233-452E-913E-DAFEE9******\",\n        \"TotalCount\": 2\n    }\n}",
-        "title": "专家服务-旗舰重保列表"
-      }
-    ],
     "DescribePublicProxyInstallCommand": [
       {
         "document": " ",

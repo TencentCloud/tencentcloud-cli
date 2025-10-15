@@ -1,33 +1,30 @@
-# Release 3.0.1287.1
+# Release 3.0.1288.1
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+## 主机安全(cwp) 版本：2018-02-28
 
-### 第 205 次发布
+### 第 132 次发布
 
-发布时间：2025-10-15 01:31:15
+发布时间：2025-10-16 01:19:44
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**删除接口**：</font>
 
-* [ChannelCreateOrganizationBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82075)
+* DescribeProtectNetList
 
-	* 新增入参：CanBatchReject
+<font color="#dd0000">**删除数据结构**：</font>
 
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+* ProtectNetInfo
 
 
 
-## 网关负载均衡(gwlb) 版本：2024-09-06
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
 
-### 第 7 次发布
+### 第 27 次发布
 
-发布时间：2025-10-15 01:34:16
+发布时间：2025-10-16 01:47:04
 
 本次发布包含了以下内容：
 
@@ -35,19 +32,68 @@
 
 新增接口：
 
-* [DescribeGatewayLoadBalancersResources](http://document.tencentcloudapi.woa.com/document/product/1776/87830)
+* [CreateInboundEndpoint](http://document.tencentcloudapi.woa.com/document/product/1338/87837)
+* [DeleteInboundEndpoint](http://document.tencentcloudapi.woa.com/document/product/1338/87836)
+* [DescribeInboundEndpointList](http://document.tencentcloudapi.woa.com/document/product/1338/87835)
+* [ModifyInboundEndpoint](http://document.tencentcloudapi.woa.com/document/product/1338/87834)
 
 新增数据结构：
 
-* [ZoneResource](http://document.tencentcloudapi.woa.com/document/product/1776/85075#ZoneResource)
+* [EndPointServiceInfo](http://document.tencentcloudapi.woa.com/document/product/1338/55947#EndPointServiceInfo)
+* [InboundEndpointSet](http://document.tencentcloudapi.woa.com/document/product/1338/55947#InboundEndpointSet)
+* [SubnetIpInfo](http://document.tencentcloudapi.woa.com/document/product/1338/55947#SubnetIpInfo)
 
 
 
-## 消息队列 MQTT 版(mqtt) 版本：2024-05-16
+## 云函数(scf) 版本：2018-04-16
 
-### 第 20 次发布
+### 第 65 次发布
 
-发布时间：2025-10-15 01:46:35
+发布时间：2025-10-16 01:49:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* PushSysLogs
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 160 次发布
+
+发布时间：2025-10-16 01:56:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeRocketMQSmoothMigrationTaskList
+* DescribeRocketMQSourceClusterGroupList
+* DescribeRocketMQSourceClusterTopicList
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* RocketMQGroupConfigOutput
+* RocketMQSmoothMigrationTaskItem
+* RocketMQTopicConfigOutput
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 99 次发布
+
+发布时间：2025-10-16 01:59:22
 
 本次发布包含了以下内容：
 
@@ -55,48 +101,35 @@
 
 修改接口：
 
-* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1773/84913)
+* [CreateReservedInstances](http://document.tencentcloudapi.woa.com/document/product/457/81920)
 
-	* 新增出参：TransportLayerSecurity
+	* 新增入参：DryRun
 
-
-
-
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
-
-### 第 70 次发布
-
-发布时间：2025-10-15 01:47:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateVariable](http://document.tencentcloudapi.woa.com/document/product/849/87831)
 
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2025-08-06
 
-### 第 5 次发布
+### 第 6 次发布
 
-发布时间：2025-10-15 02:07:25
+发布时间：2025-10-16 02:03:51
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [GetDataBackfillPlan](http://document.tencentcloudapi.woa.com/document/product/1607/87833)
-* [StartOpsTasks](http://document.tencentcloudapi.woa.com/document/product/1607/87832)
+* [CreateProjectMember](http://document.tencentcloudapi.woa.com/document/product/1607/87802)
 
-新增数据结构：
+	* 新增入参：UserUins
 
-* [DataBackfill](http://document.tencentcloudapi.woa.com/document/product/1607/87707#DataBackfill)
-* [StartTasks](http://document.tencentcloudapi.woa.com/document/product/1607/87707#StartTasks)
+	* <font color="#dd0000">**删除入参**：</font>UseUins
+
+* [ListResourceGroups](http://document.tencentcloudapi.woa.com/document/product/1607/87808)
+
+	* <font color="#dd0000">**修改入参**：</font>Type
+
 
 
 

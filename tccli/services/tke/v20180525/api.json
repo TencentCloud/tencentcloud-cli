@@ -7539,6 +7539,15 @@
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否只预检此次请求。\ntrue：只预检，不会创建实例。默认值为：false。",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

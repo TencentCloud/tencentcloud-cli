@@ -73,8 +73,8 @@
     "CreateProjectMember": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProjectMember\n<公共请求参数>\n\n{\n    \"ProjectId\": \"2917360018413740032\",\n    \"UseUins\": [\n        \"100028721707\"\n    ],\n    \"RoleIds\": [\n        \"308335260274237440\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"b2e40f2d-0179-412b-a71e-9a96636fd7c3\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProjectMember\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1470547050521227264\",\n    \"UserUins\": [\n        \"100028721707\"\n    ],\n    \"RoleIds\": [\n        \"308335260274237440\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"f432ec95-2d32-4f97-836d-e8af6612a66a\"\n    }\n}",
         "title": "成功调用"
       }
     ],

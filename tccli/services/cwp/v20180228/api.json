@@ -1792,13 +1792,6 @@
       "output": "DescribeProtectDirRelatedServerResponse",
       "status": "online"
     },
-    "DescribeProtectNetList": {
-      "document": "该服务已下线\n\n专家服务-旗舰重保列表",
-      "input": "DescribeProtectNetListRequest",
-      "name": "旗舰重保列表",
-      "output": "DescribeProtectNetListResponse",
-      "status": "deprecated"
-    },
     "DescribePublicProxyInstallCommand": {
       "document": "获取公网接入代理安装命令",
       "input": "DescribePublicProxyInstallCommandRequest",
@@ -29759,89 +29752,6 @@
       ],
       "type": "object"
     },
-    "DescribeProtectNetListRequest": {
-      "document": "DescribeProtectNetList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "过滤条件。\n<li>Keyword- String - 是否必填：否 - 关键词过滤，</li>\n<li>Uuids - String - 是否必填：否 - 主机id过滤</li>",
-          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"dev\"]}]",
-          "member": "Filters",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "需要返回的数量，最大值为100",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "排序步长",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "排序方法",
-          "example": "desc",
-          "member": "string",
-          "name": "Order",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "排序字段 StartTime，EndTime",
-          "example": "StartTime",
-          "member": "string",
-          "name": "By",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeProtectNetListResponse": {
-      "document": "DescribeProtectNetList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总条数",
-          "example": "100",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "安全管家数据",
-          "example": "[{\"TaskId\": \"cve2021-161698979556654****\", \"ProtectDays\": 1, \"Status\": 1, \"StartTime\": \"2021-03-29 12:4****\", \"EndTime\": \"--\", \"ReportPath\": \"\"}]",
-          "member": "ProtectNetInfo",
-          "name": "List",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribePublicProxyInstallCommandRequest": {
       "document": "DescribePublicProxyInstallCommand请求参数结构体",
       "members": [
@@ -51930,72 +51840,6 @@
           "example": "2020-11-21 15:16:00",
           "member": "string",
           "name": "ExpireTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "ProtectNetInfo": {
-      "document": "专家服务-旗舰重保信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务id",
-          "example": "cve2021-41651531",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "重保天数",
-          "example": "10",
-          "member": "uint64",
-          "name": "ProtectDays",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "重保状态 0未启动，1重保中，2已完成",
-          "example": "1",
-          "member": "uint64",
-          "name": "Status",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "重保启动时间",
-          "example": "2021-02-01 17:12:28",
-          "member": "string",
-          "name": "StartTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "重保完成时间",
-          "example": "2021-02-01 17:12:28",
-          "member": "string",
-          "name": "EndTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "报告下载地址",
-          "example": "http://1.pdf",
-          "member": "string",
-          "name": "ReportPath",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

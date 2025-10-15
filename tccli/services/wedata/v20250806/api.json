@@ -2448,7 +2448,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源类型:枚举值\n\n- MYSQL\n- TENCENT_MYSQL\n- POSTGRE\n- ORACLE\n- SQLSERVER\n- FTP\n- HIVE\n- HUDI\n- HDFS\n- ICEBERG\n- KAFKA\n- DTS_KAFKA\n- HBASE\n- SPARK\n- TBASE\n- DB2\n- DM\n- GAUSSDB\n- GBASE\n- IMPALA\n- ES\n- TENCENT_ES\n- GREENPLUM\n- SAP_HANA\n- SFTP\n- OCEANBASE\n- CLICKHOUSE\n- KUDU\n- VERTICA\n- REDIS\n- COS\n- DLC\n- DORIS\n- CKAFKA\n- S3_DATAINSIGHT\n- TDSQL\n- TDSQL_MYSQL\n- MONGODB\n- TENCENT_MONGODB\n- REST_API\n- TiDB\n- StarRocks\n- Trino\n- Kyuubi\n- TCHOUSE_X\n- TCHOUSE_P\n- TCHOUSE_C\n- TCHOUSE_D\n- INFLUXDB\n- BIG_QUERY\n- SSH\n- BLOB\n- TDSQL_POSTGRE\n- GDB\n- TDENGINE\n- TDSQLC\n",
+          "document": "数据源类型:枚举值\n\n- MYSQL\n- TENCENT_MYSQL\n- POSTGRE\n- ORACLE\n- SQLSERVER\n- FTP\n- HIVE\n- HUDI\n- HDFS\n- ICEBERG\n- KAFKA\n- DTS_KAFKA\n- HBASE\n- SPARK\n- TBASE\n- DB2\n- DM\n- GAUSSDB\n- GBASE\n- IMPALA\n- ES\n- TENCENT_ES\n- GREENPLUM\n- SAP_HANA\n- SFTP\n- OCEANBASE\n- CLICKHOUSE\n- KUDU\n- VERTICA\n- REDIS\n- COS\n- DLC\n- DORIS\n- CKAFKA\n- S3_DATAINSIGHT\n- TDSQL\n- TDSQL_MYSQL\n- MONGODB\n- TENCENT_MONGODB\n- REST_API\n- TiDB\n- StarRocks\n- Trino\n- Kyuubi\n- TCHOUSE_X\n- TCHOUSE_P\n- TCHOUSE_C\n- TCHOUSE_D\n- INFLUXDB\n- BIG_QUERY\n- SSH\n- BLOB\n- TDSQL_POSTGRE\n- GDB\n- TDENGINE\n- TDSQLC\n- FileSystem\n",
           "example": "MYSQL",
           "member": "string",
           "name": "Type",
@@ -2665,7 +2665,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "1 2627832231084032",
+          "example": "12627832231084032",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -2676,7 +2676,7 @@
           "document": "用户id",
           "example": "[\"100028721707\"]",
           "member": "string",
-          "name": "UseUins",
+          "name": "UserUins",
           "required": true,
           "type": "list"
         },
@@ -10316,17 +10316,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行资源组类型，不能为空\n\n- Schedule --- 调度资源组\n- Integration --- 集成资源组\n- DataService -- 数据服务资源组",
+          "document": "执行资源组类型\n\n- Schedule --- 调度资源组\n- Integration --- 集成资源组\n- DataService -- 数据服务资源组",
           "example": "Schedule",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
           "document": "资源组id",
-          "example": "",
+          "example": "1357",
           "member": "string",
           "name": "Id",
           "required": false,
