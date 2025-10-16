@@ -6016,7 +6016,7 @@
         {
           "disabled": false,
           "document": "作业名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -6096,7 +6096,7 @@
         {
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -6116,7 +6116,7 @@
         {
           "disabled": false,
           "document": "集群名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
@@ -6125,13 +6125,23 @@
         },
         {
           "disabled": false,
-          "document": "最新配置版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最新配置版本号，包括已经删除的版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "LatestJobConfigVersion",
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新的版本号，不包括已经删除的版本号",
+          "example": "1",
+          "member": "int64",
+          "name": "LatestValidJobConfigVersion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6306,7 +6316,7 @@
         {
           "disabled": false,
           "document": "使用CPU数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "RunningCpu",
           "output_required": false,
@@ -6316,7 +6326,7 @@
         {
           "disabled": false,
           "document": "使用内存数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "2.0",
           "member": "float",
           "name": "RunningMem",
           "output_required": false,
@@ -6349,6 +6359,16 @@
           "example": "1",
           "member": "int64",
           "name": "ContinueAlarm",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业重启次数",
+          "example": "1",
+          "member": "int64",
+          "name": "RestartCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9130,7 +9150,7 @@
         {
           "disabled": false,
           "document": "RunningCpu\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1.0",
           "member": "float",
           "name": "RunningCpu",
           "output_required": false,
@@ -9140,7 +9160,7 @@
         {
           "disabled": false,
           "document": "RunningMem\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1.0",
           "member": "float",
           "name": "RunningMem",
           "output_required": false,
@@ -9156,6 +9176,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发布版本配置id",
+          "example": "1",
+          "member": "int64",
+          "name": "PublishedJobConfigId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

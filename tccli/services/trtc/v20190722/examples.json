@@ -94,6 +94,14 @@
         "title": "上传图片"
       }
     ],
+    "CreateRecognizeVocab": [
+      {
+        "document": "用户通过上传词权重数组方式创建热词表",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRecognizeVocab\n<公共请求参数>\n\n{\n    \"Name\": \"创建测试\",\n    \"WordWeights\": [\n        {\n            \"Word\": \"创建测试\",\n            \"Weight\": 2\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"53d09013-d356-4455-affd-0e1a149f863f\",\n        \"VocabId\": \"81fce185dabd450e95bf6a98b741455e\"\n    }\n}",
+        "title": "创建热词表"
+      }
+    ],
     "DeleteBasicModeration": [
       {
         "document": "停止基础审核任务",
@@ -132,6 +140,14 @@
         "input": "https://trtc.tencentcloudapi.com/?Action=DeletePicture\n&PictureId=18813\n&SdkAppId=140000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "删除图片"
+      }
+    ],
+    "DeleteRecognizeVocab": [
+      {
+        "document": "用户通过该API，传入热词表ID，可以删除对应的热词表",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecognizeVocab\n<公共请求参数>\n\n{\n    \"VocabId\": \"a6c66d9721b840219674660c32755599\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff9910cd-186d-4715-ba4b-302703cf4e11\"\n    }\n}",
+        "title": "删除热词表"
       }
     ],
     "DeleteVoicePrint": [
@@ -428,6 +444,30 @@
         "title": "解散房间"
       }
     ],
+    "DownloadRecognizeVocab": [
+      {
+        "document": "用户通过该接口可以获得相应热词表里的内容， 即 word|weight 形式的 base64 值。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadRecognizeVocab\n<公共请求参数>\n\n{\n    \"VocabId\": \"a6c66d9721b840219674660c32755599\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584f361d-004e-4781-a3d6-ce6aa9713bcf\",\n        \"VocabId\": \"a6c66d9721b840219674660c32755599\",\n        \"WordWeightStr\": \"5rWL6K+V5Yib5bu6NXwzCua1i+ivleWIm+W7ujZ8Nw==\"\n    }\n}",
+        "title": "下载热词表"
+      }
+    ],
+    "GetRecognizeVocab": [
+      {
+        "document": "用户通过热词表ID获取热词表内容",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRecognizeVocab\n<公共请求参数>\n\n{\n    \"VocabId\": \"a6c66d9721b840219674660c32755599\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2025-08-05T12:09:36+08:00\",\n        \"Description\": \"\",\n        \"Name\": \"test3\",\n        \"RequestId\": \"e599e38a-d9e1-4c7c-a245-5a7f29f2632f\",\n        \"State\": 0,\n        \"UpdateTime\": \"2025-08-05T12:09:36+08:00\",\n        \"VocabId\": \"a6c66d9721b840219674660c32755599\",\n        \"WordWeights\": [\n            {\n                \"Weight\": 2,\n                \"Word\": \"test3\"\n            }\n        ]\n    }\n}",
+        "title": "获取智能识别热词表 "
+      }
+    ],
+    "GetRecognizeVocabList": [
+      {
+        "document": "用户通过该接口，可获得所有的热词表及其信息。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRecognizeVocabList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d59cf4f8-cab8-44a6-b95f-2a1b2ba7ebe7\",\n        \"TotalCount\": 2,\n        \"VocabList\": [\n            {\n                \"CreateTime\": \"2025-08-05T21:03:04+08:00\",\n                \"Description\": \"\",\n                \"Name\": \"test5\",\n                \"State\": 0,\n                \"UpdateTime\": \"2025-08-05T21:03:04+08:00\",\n                \"VocabId\": \"08cf39889eae427a9bc85d263f9a37f8\",\n                \"WordWeights\": [\n                    {\n                        \"Weight\": 3,\n                        \"Word\": \"测试创建\"\n                    },\n                    {\n                        \"Weight\": 7,\n                        \"Word\": \"测试创建2\"\n                    }\n                ]\n            },\n            {\n                \"CreateTime\": \"2025-08-05T21:03:28+08:00\",\n                \"Description\": \"\",\n                \"Name\": \"test5\",\n                \"State\": 0,\n                \"UpdateTime\": \"2025-09-10T12:15:25+08:00\",\n                \"VocabId\": \"2f3970e3515b4acaa26eaff759e223e8\",\n                \"WordWeights\": [\n                    {\n                        \"Weight\": 3,\n                        \"Word\": \"测试创建5\"\n                    },\n                    {\n                        \"Weight\": 7,\n                        \"Word\": \"测试创建6\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "列举热词表"
+      }
+    ],
     "GetRoomList": [
       {
         "document": "获取TRTC房间列表",
@@ -522,6 +562,14 @@
         "input": "https://trtc.tencentcloudapi.com/?Action=SetUserBlockedByStrRoomId\n&SdkAppId=1400188366\n&StrRoomId=”10006“\n&UserId=“29376”\n&IsMute=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"44e494f6-8010-4bb2-9a9d-ba5fd191353a\"\n    }\n}",
         "title": "设置字符串房间音视频状态"
+      }
+    ],
+    "SetVocabState": [
+      {
+        "document": "用户通过该接口可以将热词表设置为默认状态（State=1），或者取消默认状态（State=0）。",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetVocabState\n<公共请求参数>\n\n{\n    \"VocabId\": \"2f3970e3515b4acaa26eaff759e223e8\",\n    \"State\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23a7370e-d38f-4451-8940-b5dd6021f8cd\",\n        \"VocabId\": \"2f3970e3515b4acaa26eaff759e223e8\"\n    }\n}",
+        "title": "设置热词表状态"
       }
     ],
     "StartAIConversation": [
@@ -716,6 +764,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePublishCdnStream\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"TaskId\": \"-m97l2ZU7kOlV5cTRMoU6yoGp2nDYkzbJ13EC4K-4pycoZXVv+XVrNoUXQ8++8Z2PwUlAQ..\",\n    \"SequenceNumber\": 20,\n    \"WithTranscoding\": 1,\n    \"AudioParams\": {\n        \"SubscribeAudioList\": [\n            {\n                \"UserInfo\": {\n                    \"RoomId\": \"48111\",\n                    \"RoomIdType\": 0,\n                    \"UserId\": \"Trtc_User_0\"\n                }\n            },\n            {\n                \"UserInfo\": {\n                    \"RoomId\": \"48111\",\n                    \"RoomIdType\": 0,\n                    \"UserId\": \"Trtc_User_3\"\n                }\n            }\n        ]\n    },\n    \"VideoParams\": {\n        \"LayoutParams\": {\n            \"MixLayoutMode\": 4,\n            \"MixLayoutList\": [\n                {\n                    \"UserMediaStream\": {\n                        \"UserInfo\": {\n                            \"RoomId\": \"48111\",\n                            \"RoomIdType\": 0,\n                            \"UserId\": \"Trtc_User_3\"\n                        },\n                        \"StreamType\": 0\n                    },\n                    \"ImageWidth\": 640,\n                    \"ImageHeight\": 720,\n                    \"LocationX\": 0,\n                    \"LocationY\": 0,\n                    \"ZOrder\": 0,\n                    \"RenderMode\": 0\n                },\n                {\n                    \"UserMediaStream\": {\n                        \"UserInfo\": {\n                            \"RoomId\": \"48111\",\n                            \"RoomIdType\": 0,\n                            \"UserId\": \"Trtc_User_0\"\n                        },\n                        \"StreamType\": 0\n                    },\n                    \"ImageWidth\": 640,\n                    \"ImageHeight\": 720,\n                    \"LocationX\": 640,\n                    \"LocationY\": 360,\n                    \"ZOrder\": 0,\n                    \"RenderMode\": 0\n                }\n            ]\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\",\n        \"TaskId\": \"-nHPekVU7h******sceOqAZ1YVQE.\"\n    }\n}",
         "title": "更新混音和布局参数"
+      }
+    ],
+    "UpdateRecognizeVocab": [
+      {
+        "document": "用户通过该API传入已经创建的热词表ID，可以更新其相应的内容",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecognizeVocab\n<公共请求参数>\n\n{\n    \"VocabId\": \"e88178ea56d94397a9acd6a82ec212ce\",\n    \"WordWeights\": [\n        {\n            \"Word\": \"test\",\n            \"Weight\": 3\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"61644a68-cd77-472b-9fe6-ad763a9ac8e0\",\n        \"VocabId\": \"e88178ea56d94397a9acd6a82ec212ce\"\n    }\n}",
+        "title": "更新热词表"
       }
     ],
     "UpdateStreamIngest": [

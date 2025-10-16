@@ -1,0 +1,1076 @@
+{
+  "actions": {
+    "AcquireSandboxInstanceToken": {
+      "document": "获取访问沙箱工具时所需要使用的访问Token，创建沙箱实例后需调用此接口获取沙箱实例访问Token。\n此Token可用于调用代码沙箱实例执行代码，或浏览器沙箱实例进行浏览器操作等。",
+      "input": "AcquireSandboxInstanceTokenRequest",
+      "name": "获取沙箱实例的访问Token",
+      "output": "AcquireSandboxInstanceTokenResponse",
+      "status": "online"
+    },
+    "CreateAPIKey": {
+      "document": "创建新的API密钥，用于调用Agent Sandbox接口。相较于腾讯云Secret ID Secret Key支持调用所有接口使用，仅有部分接口支持使用API密钥调用。",
+      "input": "CreateAPIKeyRequest",
+      "name": "创建新的API密钥",
+      "output": "CreateAPIKeyResponse",
+      "status": "online"
+    },
+    "CreateSandboxTool": {
+      "document": "创建沙箱工具",
+      "input": "CreateSandboxToolRequest",
+      "name": "创建沙箱工具",
+      "output": "CreateSandboxToolResponse",
+      "status": "online"
+    },
+    "DeleteAPIKey": {
+      "document": "删除API密钥。注意区别于腾讯云Secret ID Secret Key，本接口删除的是Agent Sandbox专用API key。",
+      "input": "DeleteAPIKeyRequest",
+      "name": "删除API密钥",
+      "output": "DeleteAPIKeyResponse",
+      "status": "online"
+    },
+    "DeleteSandboxTool": {
+      "document": "删除沙箱工具",
+      "input": "DeleteSandboxToolRequest",
+      "name": "删除沙箱工具",
+      "output": "DeleteSandboxToolResponse",
+      "status": "online"
+    },
+    "DescribeAPIKeyList": {
+      "document": "获取API密钥列表，包含API密钥简略信息，包含名称、创建时间等。",
+      "input": "DescribeAPIKeyListRequest",
+      "name": "获取API密钥列表",
+      "output": "DescribeAPIKeyListResponse",
+      "status": "online"
+    },
+    "DescribeSandboxInstanceList": {
+      "document": "查询沙箱实例列表",
+      "input": "DescribeSandboxInstanceListRequest",
+      "name": "查询沙箱实例列表",
+      "output": "DescribeSandboxInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeSandboxToolList": {
+      "document": "查询沙箱工具列表",
+      "input": "DescribeSandboxToolListRequest",
+      "name": "查询沙箱工具列表",
+      "output": "DescribeSandboxToolListResponse",
+      "status": "online"
+    },
+    "StartSandboxInstance": {
+      "document": "启动沙箱实例",
+      "input": "StartSandboxInstanceRequest",
+      "name": "启动沙箱实例",
+      "output": "StartSandboxInstanceResponse",
+      "status": "online"
+    },
+    "StopSandboxInstance": {
+      "document": "停止沙箱实例",
+      "input": "StopSandboxInstanceRequest",
+      "name": "停止沙箱实例",
+      "output": "StopSandboxInstanceResponse",
+      "status": "online"
+    },
+    "UpdateSandboxInstance": {
+      "document": "更新沙箱实例",
+      "input": "UpdateSandboxInstanceRequest",
+      "name": "更新沙箱实例",
+      "output": "UpdateSandboxInstanceResponse",
+      "status": "online"
+    },
+    "UpdateSandboxTool": {
+      "document": "更新沙箱工具",
+      "input": "UpdateSandboxToolRequest",
+      "name": "更新沙箱工具",
+      "output": "UpdateSandboxToolResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-09-20",
+    "api_brief": "Agent Sandbox API密钥管理，沙箱管理、调用等",
+    "serviceNameCN": "Agent 沙箱服务",
+    "serviceShortName": "ags"
+  },
+  "objects": {
+    "APIKeyInfo": {
+      "document": "API密钥简略信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API密钥名称",
+          "example": "LocalDev",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API密钥ID",
+          "example": "ark-3edcft6y",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥状态。可以为API_KEY_STATUS_ACTIVE，或API_KEY_STATUS_INACTIVE",
+          "example": "API_KEY_STATUS_ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隐藏部分字符的API密钥，方便用户辨认",
+          "example": "ark_g9****ztdA",
+          "member": "string",
+          "name": "MaskedKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API密钥创建时间",
+          "example": "2025-09-12T09:00:03.094Z",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AcquireSandboxInstanceTokenRequest": {
+      "document": "AcquireSandboxInstanceToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱实例ID，生成的访问Token将仅可用于访问此沙箱实例",
+          "example": "a123478903213307971e7bc5793",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AcquireSandboxInstanceTokenResponse": {
+      "document": "AcquireSandboxInstanceToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问Token",
+          "example": "sit_1XXJWXVbosp4ZeSSlnZBMs4wsWirZtx3Ixp1Ndz2_gQ",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "2025-09-12T09:00:03.094Z",
+          "member": "string",
+          "name": "ExpiresAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAPIKeyRequest": {
+      "document": "CreateAPIKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API密钥名称，方便用户记忆",
+          "example": "LocalDev",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAPIKeyResponse": {
+      "document": "CreateAPIKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户传入的API密钥名称，方便用户记忆",
+          "example": "LocalDev",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的API密钥，仅返回此一次，后续无法获取",
+          "example": "ark_abce1958asjwi",
+          "member": "string",
+          "name": "APIKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API密钥ID",
+          "example": "ark-9ijnhy66",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSandboxToolRequest": {
+      "document": "CreateSandboxTool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱工具名称，长度 1-50 字符，支持英文、数字、下划线和连接线。同一 AppId 下沙箱工具名称必须唯一",
+          "example": "code-interpreter-v1",
+          "member": "string",
+          "name": "ToolName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具类型，目前支持：browser、code-interpreter",
+          "example": "code-interpreter",
+          "member": "string",
+          "name": "ToolType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络配置",
+          "example": "无",
+          "member": "NetworkConfiguration",
+          "name": "NetworkConfiguration",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具描述，最大长度 200 字符",
+          "example": "代码解释器沙箱工具",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认超时时间，支持格式：5m、300s、1h 等，不指定则使用系统默认值（5 分钟）。最大 24 小时",
+          "example": "5m",
+          "member": "string",
+          "name": "DefaultTimeout",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签规格，为沙箱工具绑定标签，支持多种资源类型的标签绑定",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "幂等性 Token，长度不超过 64 字符",
+          "example": "your-unique-client-token",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSandboxToolResponse": {
+      "document": "CreateSandboxTool返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的沙箱工具 ID",
+          "example": "sdt-dibk4rra",
+          "member": "string",
+          "name": "ToolId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAPIKeyRequest": {
+      "document": "DeleteAPIKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要删除的API密钥ID",
+          "example": "ark-2wsxdr5t",
+          "member": "string",
+          "name": "KeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAPIKeyResponse": {
+      "document": "DeleteAPIKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSandboxToolRequest": {
+      "document": "DeleteSandboxTool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱工具ID",
+          "example": "sdt-dibk4rra",
+          "member": "string",
+          "name": "ToolId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSandboxToolResponse": {
+      "document": "DeleteSandboxTool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAPIKeyListRequest": {
+      "document": "DescribeAPIKeyList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAPIKeyListResponse": {
+      "document": "DescribeAPIKeyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API密钥简略信息列表。",
+          "example": "无",
+          "member": "APIKeyInfo",
+          "name": "APIKeySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列表中API密钥数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxInstanceListRequest": {
+      "document": "DescribeSandboxInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱实例ID列表，指定要查询的实例。如果为空则查询所有实例。最大支持100个ID",
+          "example": "[\"c8f390ac57ce454db5cefff77fc8174a\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具ID，指定时查询该沙箱模板下的实例，为空则查询所有沙箱模板的实例",
+          "example": "sdt-ee4ywozw",
+          "member": "string",
+          "name": "ToolId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxInstanceListResponse": {
+      "document": "DescribeSandboxInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱实例列表",
+          "example": "无",
+          "member": "SandboxInstance",
+          "name": "InstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的实例总数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxToolListRequest": {
+      "document": "DescribeSandboxToolList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱工具ID列表，指定要查询的工具。如果为空则查询所有工具。最大支持100个ID",
+          "example": "[\"sdt-dibk4rra\", \"sdt-lxoi5oiq\"]",
+          "member": "string",
+          "name": "ToolIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxToolListResponse": {
+      "document": "DescribeSandboxToolList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱工具列表",
+          "example": "无",
+          "member": "SandboxTool",
+          "name": "SandboxToolSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的沙箱工具总数",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "过滤列表规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
+          "example": "FILTER_KEY_NAME",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+          "example": "[\"LocalDev\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NetworkConfiguration": {
+      "document": "沙箱网络配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络模式（当前支持 PUBLIC）",
+          "example": "PUBLIC",
+          "member": "string",
+          "name": "NetworkMode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SandboxInstance": {
+      "document": "沙箱实例结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱实例唯一标识符",
+          "example": "sdi-xyz789abc123",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属沙箱工具 ID",
+          "example": "sdt-def456ghi789",
+          "member": "string",
+          "name": "ToolId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属沙箱工具名称",
+          "example": "code-interpreter-v1",
+          "member": "string",
+          "name": "ToolName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态：STARTING（启动中）、RUNNING（运行中）、STOPPING（停止中）、STOPPED（已停止）、STOP_FAILED（停止失败）、FAILED（失败状态）",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超时时间（秒），null 表示无超时设置",
+          "example": "600",
+          "member": "uint64",
+          "name": "TimeoutSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间（ISO 8601 格式），null 表示无过期时间",
+          "example": "2024-01-01T10:30:00Z",
+          "member": "string",
+          "name": "ExpiresAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "停止原因：manual（手动）、timeout（超时）、error（错误）、system（系统），仅在状态为 STOPPED、STOP_FAILED 或 FAILED 时有值。当 provider 停止失败时，状态为 STOP_FAILED，原因为 error",
+          "example": "timeout",
+          "member": "string",
+          "name": "StopReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（ISO 8601 格式）",
+          "example": "2024-01-01T10:00:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间（ISO 8601 格式）",
+          "example": "2024-01-01T10:10:00Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SandboxTool": {
+      "document": "沙箱工具结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱工具唯一标识符",
+          "example": "sdt-ee4ywozw",
+          "member": "string",
+          "name": "ToolId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具名称，长度 1-50 字符，支持中英文、数字、下划线。同一 AppId 下沙箱工具名称必须唯一",
+          "example": "browser-sandbox",
+          "member": "string",
+          "name": "ToolName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具类型，取值：browser（浏览器工具）、code-interpreter（代码解释器工具）、computer（计算机控制工具）、mobile（移动设备工具）",
+          "example": "browser",
+          "member": "string",
+          "name": "ToolType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具状态，取值：CREATING（创建中）、ACTIVE（可用）、DELETING（删除中）、FAILED（失败）",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具描述信息，最大长度 200 字符",
+          "example": "浏览器沙箱环境",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认超时时间，支持格式：5m、300s、1h 等，不指定则使用系统默认值（5 分钟）。最大 24 小时",
+          "example": "600",
+          "member": "uint64",
+          "name": "DefaultTimeoutSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络配置",
+          "example": "无",
+          "member": "NetworkConfiguration",
+          "name": "NetworkConfiguration",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签规格，包含资源标签绑定关系。用于为沙箱工具绑定标签，支持多种资源类型的标签绑定",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具创建时间，格式：ISO8601",
+          "example": "2024-01-15T10:30:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具更新时间，格式：ISO8601",
+          "example": "2024-01-15T10:30:00Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StartSandboxInstanceRequest": {
+      "document": "StartSandboxInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱工具 ID，与 ToolName 至少有一个要填",
+          "example": "sdt-ee4ywozw",
+          "member": "string",
+          "name": "ToolId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具名称，与 ToolId 至少有一个要填",
+          "example": "my-browser-sandbox",
+          "member": "string",
+          "name": "ToolName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h",
+          "example": "10m",
+          "member": "string",
+          "name": "Timeout",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "幂等性 Token，长度不超过 64 字符",
+          "example": "instance-token-456",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartSandboxInstanceResponse": {
+      "document": "StartSandboxInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的沙箱实例完整信息",
+          "example": "无",
+          "member": "SandboxInstance",
+          "name": "Instance",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopSandboxInstanceRequest": {
+      "document": "StopSandboxInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱实例ID",
+          "example": "12345678123412341234123456789abc",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopSandboxInstanceResponse": {
+      "document": "StopSandboxInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "business",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "biz1",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateSandboxInstanceRequest": {
+      "document": "UpdateSandboxInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱实例ID",
+          "example": "953e15d3655e4daab120b885c908edf7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的超时时间（从设置时开始重新计算超时），支持格式：5m、300s、1h等。最小30s，最大24h。如果不指定则保持原有超时设置",
+          "example": "1h",
+          "member": "string",
+          "name": "Timeout",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSandboxInstanceResponse": {
+      "document": "UpdateSandboxInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSandboxToolRequest": {
+      "document": "UpdateSandboxTool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱工具ID",
+          "example": "sdt-dibk4rra",
+          "member": "string",
+          "name": "ToolId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具描述，最大长度200字符",
+          "example": "这是一个沙箱",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络配置",
+          "example": "无",
+          "member": "NetworkConfiguration",
+          "name": "NetworkConfiguration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSandboxToolResponse": {
+      "document": "UpdateSandboxTool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

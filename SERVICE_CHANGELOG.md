@@ -1,30 +1,52 @@
-# Release 3.0.1288.1
+# Release 3.0.1289.1
 
-## 主机安全(cwp) 版本：2018-02-28
+## 云加密机(cloudhsm) 版本：2019-11-12
 
-### 第 132 次发布
+### 第 6 次发布
 
-发布时间：2025-10-16 01:19:44
+发布时间：2025-10-17 01:11:42
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**删除接口**：</font>
+修改接口：
 
-* DescribeProtectNetList
+* [InquiryPriceBuyVsm](http://document.tencentcloudapi.woa.com/document/product/639/41442)
 
-<font color="#dd0000">**删除数据结构**：</font>
-
-* ProtectNetInfo
+	* <font color="#dd0000">**修改入参**：</font>Type, HsmType
 
 
 
-## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+## 暴露面管理服务(ctem) 版本：2023-11-28
+
+### 第 6 次发布
+
+发布时间：2025-10-17 01:12:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DisplayWechatApplet](http://document.tencentcloudapi.woa.com/document/product/1792/87475#DisplayWechatApplet)
+
+	* 新增成员：RecordSubject, AccountAppid
+
+* [DisplayWechatOfficialAccount](http://document.tencentcloudapi.woa.com/document/product/1792/87475#DisplayWechatOfficialAccount)
+
+	* 新增成员：RecordSubject
+
+
+
+
+## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
 
 ### 第 27 次发布
 
-发布时间：2025-10-16 01:47:04
+发布时间：2025-10-17 01:19:04
 
 本次发布包含了以下内容：
 
@@ -32,108 +54,94 @@
 
 新增接口：
 
-* [CreateInboundEndpoint](http://document.tencentcloudapi.woa.com/document/product/1338/87837)
-* [DeleteInboundEndpoint](http://document.tencentcloudapi.woa.com/document/product/1338/87836)
-* [DescribeInboundEndpointList](http://document.tencentcloudapi.woa.com/document/product/1338/87835)
-* [ModifyInboundEndpoint](http://document.tencentcloudapi.woa.com/document/product/1338/87834)
+* [CreateDLPFileDetectTask](http://document.tencentcloudapi.woa.com/document/product/1794/87869)
+* [DescribeDLPEdgeNodeGroups](http://document.tencentcloudapi.woa.com/document/product/1794/87868)
+* [DescribeDLPEdgeNodes](http://document.tencentcloudapi.woa.com/document/product/1794/87867)
+* [DescribeDLPFileDetectTaskResult](http://document.tencentcloudapi.woa.com/document/product/1794/87866)
 
 新增数据结构：
 
-* [EndPointServiceInfo](http://document.tencentcloudapi.woa.com/document/product/1338/55947#EndPointServiceInfo)
-* [InboundEndpointSet](http://document.tencentcloudapi.woa.com/document/product/1338/55947#InboundEndpointSet)
-* [SubnetIpInfo](http://document.tencentcloudapi.woa.com/document/product/1338/55947#SubnetIpInfo)
+* [CreateDLPFileDetectTaskData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#CreateDLPFileDetectTaskData)
+* [DescribeDLPEdgeNodeGroupsRspData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeDLPEdgeNodeGroupsRspData)
+* [DescribeDLPEdgeNodeGroupsRspItem](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeDLPEdgeNodeGroupsRspItem)
+* [DescribeDLPEdgeNodesPageData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeDLPEdgeNodesPageData)
+* [DescribeDLPEdgeNodesRspItem](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeDLPEdgeNodesRspItem)
+* [DescribeDLPFileDetectTaskResult](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeDLPFileDetectTaskResult)
 
 
 
-## 云函数(scf) 版本：2018-04-16
+## 媒体处理(mps) 版本：2019-06-12
 
-### 第 65 次发布
+### 第 117 次发布
 
-发布时间：2025-10-16 01:49:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* PushSysLogs
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 160 次发布
-
-发布时间：2025-10-16 01:56:01
+发布时间：2025-10-17 01:24:19
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**删除接口**：</font>
+新增数据结构：
 
-* DescribeRocketMQSmoothMigrationTaskList
-* DescribeRocketMQSourceClusterGroupList
-* DescribeRocketMQSourceClusterTopicList
+* [AiAnalysisTaskVideoComprehensionInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskVideoComprehensionInput)
+* [AiAnalysisTaskVideoComprehensionOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskVideoComprehensionOutput)
+* [AiAnalysisTaskVideoComprehensionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskVideoComprehensionResult)
 
-<font color="#dd0000">**删除数据结构**：</font>
+修改数据结构：
 
-* RocketMQGroupConfigOutput
-* RocketMQSmoothMigrationTaskItem
-* RocketMQTopicConfigOutput
+* [AiAnalysisResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisResult)
 
-
-
-## 容器服务(tke) 版本：2022-05-01
+	* 新增成员：VideoComprehensionTask
 
 
 
-## 容器服务(tke) 版本：2018-05-25
 
-### 第 99 次发布
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
-发布时间：2025-10-16 01:59:22
+### 第 71 次发布
+
+发布时间：2025-10-17 01:25:24
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [CreateReservedInstances](http://document.tencentcloudapi.woa.com/document/product/457/81920)
+* [JobV1](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobV1)
 
-	* 新增入参：DryRun
+	* 新增成员：LatestValidJobConfigVersion, RestartCount
+
+* [TreeJobSets](http://document.tencentcloudapi.woa.com/document/product/849/52010#TreeJobSets)
+
+	* 新增成员：PublishedJobConfigId
 
 
 
 
-## 数据开发治理平台 WeData(wedata) 版本：2025-08-06
+## 实时音视频(trtc) 版本：2019-07-22
 
-### 第 6 次发布
+### 第 107 次发布
 
-发布时间：2025-10-16 02:03:51
+发布时间：2025-10-17 01:32:26
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateProjectMember](http://document.tencentcloudapi.woa.com/document/product/1607/87802)
+* [CreateRecognizeVocab](http://document.tencentcloudapi.woa.com/document/product/647/87876)
+* [DeleteRecognizeVocab](http://document.tencentcloudapi.woa.com/document/product/647/87875)
+* [DownloadRecognizeVocab](http://document.tencentcloudapi.woa.com/document/product/647/87874)
+* [GetRecognizeVocab](http://document.tencentcloudapi.woa.com/document/product/647/87873)
+* [GetRecognizeVocabList](http://document.tencentcloudapi.woa.com/document/product/647/87872)
+* [SetVocabState](http://document.tencentcloudapi.woa.com/document/product/647/87871)
+* [UpdateRecognizeVocab](http://document.tencentcloudapi.woa.com/document/product/647/87870)
 
-	* 新增入参：UserUins
+新增数据结构：
 
-	* <font color="#dd0000">**删除入参**：</font>UseUins
-
-* [ListResourceGroups](http://document.tencentcloudapi.woa.com/document/product/1607/87808)
-
-	* <font color="#dd0000">**修改入参**：</font>Type
-
-
-
-
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+* [HotWord](http://document.tencentcloudapi.woa.com/document/product/647/44055#HotWord)
+* [Vocab](http://document.tencentcloudapi.woa.com/document/product/647/44055#Vocab)
 
 
 

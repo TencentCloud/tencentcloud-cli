@@ -58,6 +58,8 @@ tccli/services/afc/__init__.py
 tccli/services/afc/afc_client.py
 tccli/services/afc/v20200226/api.json
 tccli/services/afc/v20200226/examples.json
+tccli/services/ags/__init__.py
+tccli/services/ags/ags_client.py
 tccli/services/ai3d/__init__.py
 tccli/services/ai3d/ai3d_client.py
 tccli/services/aiart/__init__.py

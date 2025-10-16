@@ -1,0 +1,101 @@
+{
+  "actions": {
+    "AcquireSandboxInstanceToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AcquireSandboxInstanceToken\n<公共请求参数>\n\n{\n    \"InstanceId\": \"a123478903213307971e7bc5793\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"sit_1XXJWXVbosp4ZeSSlnZBMs4wsWirZtx3Ixp1Ndz2_gQ\",\n        \"ExpiresAt\": \"2025-09-12T09:00:03.116Z\",\n        \"RequestId\": \"e3e03fc7-0194-436a-a179-6c5ac824e287\"\n    }\n}",
+        "title": "获取访问沙箱工具时所需要使用的访问Token"
+      }
+    ],
+    "CreateAPIKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAPIKey\n<公共请求参数>\n\n{\n    \"Name\": \"LocalDev\"\n}",
+        "output": "{\n    \"Response\": {\n        \"APIKey\": \"ark_nXe8gccx2MGJ0oZ3bCf3Rq1I6bMtLEbJKB5k1NPK_rg\",\n        \"KeyId\": \"ark-3edcft6y\",\n        \"Name\": \"str\",\n        \"RequestId\": \"fb33859c-a89b-4626-bee1-bab5e53803b3\"\n    }\n}",
+        "title": "创建API密钥"
+      }
+    ],
+    "CreateSandboxTool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolName\": \"browser-sandbox\",\n    \"ToolType\": \"browser\",\n    \"Description\": \"浏览器沙箱环境\",\n    \"DefaultTimeout\": \"30m\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"PUBLIC\"\n    },\n    \"Tags\": [\n        {\n            \"Key\": \"Environment\",\n            \"Value\": \"Production\"\n        },\n        {\n            \"Key\": \"Team\",\n            \"Value\": \"AI-Agent\"\n        }\n    ],\n    \"ClientToken\": \"unique-token-123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ToolId\": \"sdt-ee4ywozw\",\n        \"RequestId\": \"custom-request-id-123\"\n    }\n}",
+        "title": "创建沙箱工具"
+      }
+    ],
+    "DeleteAPIKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAPIKey\n<公共请求参数>\n\n{\n    \"KeyId\": \"ark-3edcft6y\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4e9c251-3387-423b-9b5c-cfbe628cb5b2\"\n    }\n}",
+        "title": "删除API密钥"
+      }
+    ],
+    "DeleteSandboxTool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"custom-request-id-123\"\n    }\n}",
+        "title": "删除沙箱工具"
+      }
+    ],
+    "DescribeAPIKeyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAPIKeyList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"APIKeySet\": [\n            {\n                \"CreatedAt\": \"2025-09-12T14:09:05.242Z\",\n                \"KeyId\": \"ark-3edcft6y\",\n                \"MaskedKey\": \"ark_Au****kKjo\",\n                \"Name\": \"LocalDev\",\n                \"Status\": \"API_KEY_STATUS_ACTIVE\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"37e8ed19-80cd-49f3-9b5a-eaea1bf9c6c1\"\n    }\n}",
+        "title": "获取API密钥简略信息列表"
+      }
+    ],
+    "DescribeSandboxInstanceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxInstanceList\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"RUNNING\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"12345678123412341234123456789abc\",\n                \"ToolId\": \"sdt-ee4ywozw\",\n                \"ToolName\": \"my-browser-tool\",\n                \"Status\": \"RUNNING\",\n                \"TimeoutSeconds\": 600,\n                \"ExpiresAt\": \"2024-01-01T10:30:00Z\",\n                \"CreateTime\": \"2024-01-01T10:00:00Z\",\n                \"UpdateTime\": \"2024-01-01T10:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
+        "title": "查询沙箱实例列表"
+      }
+    ],
+    "DescribeSandboxToolList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxToolList\n<公共请求参数>\n\n{\n    \"ToolIds\": [\n        \"sdt-ee4ywozw\",\n        \"sdt-another123\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SandboxToolSet\": [\n            {\n                \"ToolId\": \"sdt-ee4ywozw\",\n                \"ToolName\": \"browser-sandbox\",\n                \"ToolType\": \"browser\",\n                \"Status\": \"ACTIVE\",\n                \"Description\": \"浏览器沙箱环境\",\n                \"Tags\": [],\n                \"CreateTime\": \"2024-01-15T10:30:00Z\",\n                \"UpdateTime\": \"2024-01-15T10:30:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"custom-request-id-123\"\n    }\n}",
+        "title": "查询沙箱工具列表"
+      }
+    ],
+    "StartSandboxInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSandboxInstance\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Timeout\": \"10m\",\n    \"ClientToken\": \"instance-token-456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"12345678123412341234123456789abc\",\n            \"ToolId\": \"sdt-ee4ywozw\",\n            \"ToolName\": \"my-browser-tool\",\n            \"Status\": \"RUNNING\",\n            \"TimeoutSeconds\": 600,\n            \"ExpiresAt\": \"2024-01-01T10:30:00Z\",\n            \"CreateTime\": \"2024-01-01T10:00:00Z\",\n            \"UpdateTime\": \"2024-01-01T10:00:00Z\"\n        },\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
+        "title": "启动沙箱实例"
+      }
+    ],
+    "StopSandboxInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"12345678123412341234123456789abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
+        "title": "停止沙箱实例"
+      }
+    ],
+    "UpdateSandboxInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"12345678123412341234123456789abc\",\n    \"Timeout\": \"1h\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
+        "title": "更新沙箱实例"
+      }
+    ],
+    "UpdateSandboxTool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Description\": \"更新后的浏览器沙箱环境\",\n    \"Tags\": [\n        {\n            \"Key\": \"Environment\",\n            \"Value\": \"Staging\"\n        },\n        {\n            \"Key\": \"Team\",\n            \"Value\": \"AI-Agent\"\n        },\n        {\n            \"Key\": \"Version\",\n            \"Value\": \"v2.0\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"custom-request-id-456\"\n    }\n}",
+        "title": "更新沙箱工具"
+      }
+    ]
+  },
+  "version": "1.0"
+}

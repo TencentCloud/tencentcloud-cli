@@ -12562,6 +12562,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证主体",
+          "example": "string",
+          "member": "string",
+          "name": "RecordSubject",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号Appid",
+          "example": "string",
+          "member": "string",
+          "name": "AccountAppid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12635,6 +12655,16 @@
           "example": "暴露面测试",
           "member": "string",
           "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证主体",
+          "example": "string",
+          "member": "string",
+          "name": "RecordSubject",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
