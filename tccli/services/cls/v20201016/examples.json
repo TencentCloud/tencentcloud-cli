@@ -321,9 +321,15 @@
     "CreateTopic": [
       {
         "document": "创建日志主题",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"PartitionCount\": 1,\n    \"Tags\": [],\n    \"Period\": 12\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"Period\": 12\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建日志主题"
+      },
+      {
+        "document": "创建指标主题",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"BizType\": 1,\n    \"Period\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"6d069a26-1606-4142-9fa6-17ccee4f9bc9\",\n        \"RequestId\": \"c1731e60-e00d-45ee-a9e8-5343d4f38325\"\n    }\n}",
+        "title": "创建指标主题"
       }
     ],
     "CreateTopicExtendConfig": [
@@ -708,6 +714,22 @@
         "title": "获取Kakfa协议消费信息"
       }
     ],
+    "DescribeKafkaConsumerGroupDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaConsumerGroupDetail\n<公共请求参数>\n\n{\n    \"TopicId\": \"5023192e-1254139626\",\n    \"Group\": \"same_group_id\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Group\": \"same_group_id\",\n        \"LogsetId\": \"a8248746-c989-468e-b931-a9bf6c999c89\",\n        \"PartitionInfos\": [\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 0\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 1\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 2\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 3\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 4\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 5\n            },\n            {\n                \"CommitTimestamp\": 3223609680,\n                \"Consumer\": \"\",\n                \"PartitionId\": 6\n            }\n        ],\n        \"RequestId\": \"b4a11979-760c-42e2-92b8-5945eb93ee98\",\n        \"State\": \"Empty\"\n    }\n}",
+        "title": "获取Kafka协议消费组详情"
+      }
+    ],
+    "DescribeKafkaConsumerGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaConsumerGroupList\n<公共请求参数>\n\n{\n    \"TopicId\": \"5023192e-1254139626\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"Group\": \"same_group_id\",\n                \"ProtocolName\": \"\",\n                \"State\": \"Empty\"\n            }\n        ],\n        \"LogsetId\": \"a8248746-c989-468e-b931-a9bf6c999c89\",\n        \"RequestId\": \"53ac1397-336a-4d4b-87ff-a2a16ff97519\",\n        \"TopicName\": \"1254139626-5023192e\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取Kafka协议消费组详情"
+      }
+    ],
     "DescribeKafkaRecharges": [
       {
         "document": "获取Kafka导入配置信息",
@@ -882,6 +904,14 @@
         "title": "根据正则规则获取metricName列表"
       }
     ],
+    "GetTopicDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTopicDetail\n<公共请求参数>\n\n{\n    \"TopicId\": \"67c85f5f-57a0-433c-9176-109ad0d5496e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicInfo\": {\n            \"AssumerName\": \"\",\n            \"AutoSplit\": true,\n            \"BizType\": 0,\n            \"CreateTime\": \"2025-04-18 10:45:14\",\n            \"Describes\": \"\",\n            \"EffectiveDate\": \"\",\n            \"Extends\": {\n                \"AnonymousAccess\": null\n            },\n            \"HotPeriod\": 0,\n            \"Index\": false,\n            \"IsWebTracking\": false,\n            \"LogsetId\": \"0af7e6bb-fc91-4ee8-ad24-1129e9c91c6c\",\n            \"MaxSplitPartitions\": 300,\n            \"MigrationStatus\": 0,\n            \"PartitionCount\": 1,\n            \"Period\": 30,\n            \"Status\": true,\n            \"StorageType\": \"hot\",\n            \"SubAssumerName\": \"\",\n            \"Tags\": [\n                {\n                    \"Key\": \"bowww***est1\",\n                    \"Value\": \"bowww***alue1\"\n                }\n            ],\n            \"TopicAsyncTaskID\": \"\",\n            \"TopicId\": \"67c85f5f-57a0-433c-9176-109ad0d5496e\",\n            \"TopicName\": \"bowwwang***iod-hot\"\n        },\n        \"RequestId\": \"1085ad97-2560-44fa-bfaf-ead7d831d62e\"\n    }\n}",
+        "title": "获取日志主题详情"
+      }
+    ],
     "MergePartition": [
       {
         "document": "",
@@ -1016,6 +1046,14 @@
         "title": "修改Kafka协议消费信息"
       }
     ],
+    "ModifyKafkaConsumerGroupOffset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKafkaConsumerGroupOffset\n<公共请求参数>\n\n{\n    \"TopicId\": \"5023192e-1254139626\",\n    \"Group\": \"same_group_id-1\",\n    \"ShiftTimestamp\": -1\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"RequestId\": \"c3ae291d-8ffd-4a26-b5ae-00b6863cdf44\"\n    }\n}",
+        "title": "修改Kafka协议消费组点位"
+      }
+    ],
     "ModifyKafkaRecharge": [
       {
         "document": "修改Kafka导入配置",
@@ -1081,7 +1119,7 @@
     "ModifyTopic": [
       {
         "document": "修改日志主题",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n    \"TopicName\": \"testname\",\n    \"Status\": false,\n    \"Tags\": [],\n    \"Period\": 10\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n    \"TopicName\": \"testname\",\n    \"Period\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改日志主题"
       }
@@ -1089,7 +1127,7 @@
     "ModifyWebCallback": [
       {
         "document": "修改告警渠道回调配置",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWebCallback\n<公共请求参数>\n\n{\n    \"WebCallbackId\": \"webcallback-d20a21f7-xxxx-xxxx-ba1b-1aa49be5fed1\",\n    \"Name\": \"监控告警专用\",\n    \"Type\": \"Http\",\n    \"Webhook\": \"http://www.xxx.com\",\n    \"Method\": \"POST\",\n    \"Key\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWebCallback\n<公共请求参数>\n\n{\n    \"WebCallbackId\": \"webcallback-d20a21f7-xxxx-xxxx-ba1b-1aa49be5fed1\",\n    \"Name\": \"监控告警专用\",\n    \"Type\": \"Http\",\n    \"Webhook\": \"http://www.xxx.com\",\n    \"Method\": \"POST\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d20a21f7-xxxx-xxxx-ba1b-1aa49be5fed1\"\n    }\n}",
         "title": "修改告警渠道回调配置"
       }

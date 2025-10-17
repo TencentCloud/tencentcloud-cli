@@ -1,4 +1,4 @@
-# Release 3.0.1289.1
+# Release 3.0.1290.1
 
 ## 云加密机(cloudhsm) 版本：2019-11-12
 
@@ -16,6 +16,41 @@
 
 	* <font color="#dd0000">**修改入参**：</font>Type, HsmType
 
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 126 次发布
+
+发布时间：2025-10-17 11:42:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeKafkaConsumerGroupDetail](http://document.tencentcloudapi.woa.com/document/product/614/87880)
+* [DescribeKafkaConsumerGroupList](http://document.tencentcloudapi.woa.com/document/product/614/87879)
+* [GetTopicDetail](http://document.tencentcloudapi.woa.com/document/product/614/87877)
+* [ModifyKafkaConsumerGroupOffset](http://document.tencentcloudapi.woa.com/document/product/614/87878)
+
+修改接口：
+
+* [CreateEsRecharge](http://document.tencentcloudapi.woa.com/document/product/614/87560)
+
+	* 新增入参：HasServicesLog
+
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/614/56456)
+
+	* 新增入参：BizType
+
+
+新增数据结构：
+
+* [ConsumerGroup](http://document.tencentcloudapi.woa.com/document/product/614/56471#ConsumerGroup)
+* [GroupPartitionInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#GroupPartitionInfo)
 
 
 

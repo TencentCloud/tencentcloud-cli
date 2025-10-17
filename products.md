@@ -73,7 +73,7 @@
 | cloudhsm | [云加密机](http://document.tencentcloudapi.woa.com/document/product/639) | [查看](http://document.tencentcloudapi.woa.com/document/product/639/41453) | 2025-10-17 01:11:42 |
 | cloudrc | [资源中心](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1782/87024) | 2025-06-11 16:47:48 |
 | cloudstudio | [Cloud Studio（云端 IDE）](http://document.tencentcloudapi.woa.com/document/product/1039) | [查看](http://document.tencentcloudapi.woa.com/document/product/1640/78605) | 2025-09-05 01:12:37 |
-| cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | [查看](http://document.tencentcloudapi.woa.com/document/product/614/56481) | 2025-09-11 01:17:01 |
+| cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | [查看](http://document.tencentcloudapi.woa.com/document/product/614/56481) | 2025-10-17 11:42:44 |
 | cm | [云监控](http://document.tencentcloudapi.woa.com/document/product/248) | [查看](http://document.tencentcloudapi.woa.com/document/product/1698/80105) | 2024-03-20 01:12:27 |
 | cme | [多媒体创作引擎](http://document.tencentcloudapi.woa.com/document/product/1156) | [查看](http://document.tencentcloudapi.woa.com/document/product/1156/40345) | 2024-09-24 16:18:24 |
 | cmg | [迁移服务平台](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1793/86755) | 2025-05-12 17:02:26 |

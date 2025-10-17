@@ -253,9 +253,9 @@
       "status": "online"
     },
     "CreateTopic": {
-      "document": "本接口用于创建日志主题。",
+      "document": "本接口用于创建日志或指标主题。",
       "input": "CreateTopicRequest",
-      "name": "创建日志主题",
+      "name": "创建主题",
       "output": "CreateTopicResponse",
       "status": "online"
     },
@@ -442,9 +442,9 @@
       "status": "online"
     },
     "DeleteTopic": {
-      "document": "本接口用于删除日志主题。",
+      "document": "本接口用于删除日志或指标主题。",
       "input": "DeleteTopicRequest",
-      "name": "删除日志主题",
+      "name": "删除主题",
       "output": "DeleteTopicResponse",
       "status": "online"
     },
@@ -588,6 +588,20 @@
       "output": "DescribeKafkaConsumerResponse",
       "status": "online"
     },
+    "DescribeKafkaConsumerGroupDetail": {
+      "document": "获取Kafka协议消费组详情",
+      "input": "DescribeKafkaConsumerGroupDetailRequest",
+      "name": "获取Kafka协议消费组详情",
+      "output": "DescribeKafkaConsumerGroupDetailResponse",
+      "status": "online"
+    },
+    "DescribeKafkaConsumerGroupList": {
+      "document": "获取Kafka协议消费组信息列表",
+      "input": "DescribeKafkaConsumerGroupListRequest",
+      "name": "获取Kafka协议消费组列表",
+      "output": "DescribeKafkaConsumerGroupListResponse",
+      "status": "online"
+    },
     "DescribeKafkaRecharges": {
       "document": "本接口用于获取Kafka数据订阅任务",
       "input": "DescribeKafkaRechargesRequest",
@@ -687,9 +701,9 @@
       "status": "online"
     },
     "DescribeTopics": {
-      "document": "本接口用于获取日志主题列表，支持分页",
+      "document": "本接口用于获取日志或指标主题列表，支持分页",
       "input": "DescribeTopicsRequest",
-      "name": "获取日志主题列表",
+      "name": "获取主题列表",
       "output": "DescribeTopicsResponse",
       "status": "online"
     },
@@ -733,6 +747,13 @@
       "input": "GetMetricSeriesRequest",
       "name": "获取标签列表",
       "output": "GetMetricSeriesResponse",
+      "status": "online"
+    },
+    "GetTopicDetail": {
+      "document": "本接口用于获取日志或指标主题详情",
+      "input": "GetTopicDetailRequest",
+      "name": "获取主题详情",
+      "output": "GetTopicDetailResponse",
       "status": "online"
     },
     "MergePartition": {
@@ -847,6 +868,13 @@
       "output": "ModifyKafkaConsumerResponse",
       "status": "online"
     },
+    "ModifyKafkaConsumerGroupOffset": {
+      "document": "修改Kafka协议消费组点位",
+      "input": "ModifyKafkaConsumerGroupOffsetRequest",
+      "name": "修改Kafka协议消费组点位",
+      "output": "ModifyKafkaConsumerGroupOffsetResponse",
+      "status": "online"
+    },
     "ModifyKafkaRecharge": {
       "document": "本接口用于修改Kafka数据订阅任务",
       "input": "ModifyKafkaRechargeRequest",
@@ -897,9 +925,9 @@
       "status": "online"
     },
     "ModifyTopic": {
-      "document": "本接口用于修改日志主题。",
+      "document": "本接口用于修改日志或指标主题。",
       "input": "ModifyTopicRequest",
-      "name": "修改日志主题",
+      "name": "修改主题",
       "output": "ModifyTopicResponse",
       "status": "online"
     },
@@ -3611,7 +3639,7 @@
         {
           "disabled": false,
           "document": "允许访问的资源列表，目前仅支持一个Resource",
-          "example": "当Type为1时:['qcs::cls::uin/1000:dashboard/dashboard-xx']; 当Type为2时:['qcs::cls:ap-guangzhou:uin/10000:topic/cxxx']",
+          "example": "[\"qcs::cls::uin/10000xxxxx:dashboard/dashboard-xx\", \"qcs::cls:ap-guangzhou:uin/10000xxxxx:topic/cxxx\"]",
           "member": "string",
           "name": "Resources",
           "output_required": true,
@@ -3677,7 +3705,7 @@
         {
           "disabled": false,
           "document": "默认的检索分析语句，仅当Type为2时使用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {         \"Name\":\"query\",         \"Values\":[             \"* | select *\"         ]     } ]",
+          "example": "无",
           "member": "ConsoleSharingParam",
           "name": "Params",
           "output_required": false,
@@ -3903,6 +3931,42 @@
         }
       ],
       "usage": "both"
+    },
+    "ConsumerGroup": {
+      "document": "kafka协议消费组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "消费组1",
+          "member": "string",
+          "name": "Group",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态。\n\n- Empty：组内没有成员，但存在已提交的偏移量。所有消费者都离开但保留了偏移量\n- Dead：组内没有成员，且没有已提交的偏移量。组被删除或长时间无活动\n- Stable：组内成员正常消费，分区分配平衡。正常运行状态\n- PreparingRebalance：组正在准备重新平衡。有新成员加入或现有成员离开\n- CompletingRebalance：组正在准备重新平衡。有新成员加入或现有成员离开\n",
+          "example": "Empty",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区分配策略均衡算法名称。\n\n- 常见均衡算法如下：\n    - range:按分区范围分配\n    - roundrobin:轮询式分配\n    - sticky:粘性分配（避免不必要的重平衡）",
+          "example": "roundrobin",
+          "member": "string",
+          "name": "ProtocolName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ContainerFileInfo": {
       "document": "自建k8s-容器文件路径信息",
@@ -4984,7 +5048,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT:  gz\n- MongoDB-AUDIT:  gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT:  gz\n- MongoDB-AUDIT:  gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -5142,7 +5206,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT:  gz\n- MongoDB-AUDIT:  gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT:  gz\n- MongoDB-AUDIT:  gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -5527,7 +5591,7 @@
         {
           "disabled": false,
           "document": "用户自定义采集规则，Json格式序列化的字符串。当LogType为user_define_log时，必填。",
-          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]}]}\"",
+          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]}}]}\"",
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
@@ -6349,6 +6413,15 @@
           "name": "TimeInfo",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递服务日志。1：关闭，2：开启。默认开启。",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6915,7 +6988,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID，格式为：用户自定义部分-用户appid，用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符，尾部需要使用-拼接用户appid",
+          "document": "日志集ID，格式为：用户自定义部分-用户APPID。未填写该参数时将自动生成ID。\n\n- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符。\n- 尾部需要使用-拼接用户APPID，APPID可在https://console.cloud.tencent.com/developer页面查询。\n- 如果指定该字段，需保证全地域唯一",
           "example": "user-diy-1254139626",
           "member": "string",
           "name": "LogsetId",
@@ -7832,7 +7905,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]\n",
+          "document": "主题名称\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]\n",
           "example": "testname",
           "member": "string",
           "name": "TopicName",
@@ -7841,7 +7914,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题分区个数。默认创建1个，最大支持创建10个分区。",
+          "document": "主题分区个数。默认创建1个，最大支持创建10个分区。",
           "example": "1",
           "member": "int64",
           "name": "PartitionCount",
@@ -7850,7 +7923,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -7877,7 +7950,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。",
+          "document": "日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。指标主题不支持该配置。",
           "example": "hot",
           "member": "string",
           "name": "StorageType",
@@ -7886,7 +7959,7 @@
         },
         {
           "disabled": false,
-          "document": "存储时间，单位天。\n- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。\n- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。",
+          "document": "存储时间，单位天。\n- 日志主题：日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。\n- 日志主题：日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。\n- 指标主题：支持1至3600天，值为3640时代表永久保存。",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -7904,7 +7977,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题描述",
+          "document": "主题描述",
           "example": "xx部门xx任务topic",
           "member": "string",
           "name": "Describes",
@@ -7913,7 +7986,7 @@
         },
         {
           "disabled": false,
-          "document": "0：关闭日志沉降。\n非0：开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。\n仅在StorageType为 hot 时生效。",
+          "document": "0：日志主题关闭日志沉降。\n非0：日志主题开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。\n仅在StorageType为 hot 时生效，指标主题不支持该配置。",
           "example": "7",
           "member": "uint64",
           "name": "HotPeriod",
@@ -7922,7 +7995,16 @@
         },
         {
           "disabled": false,
-          "document": "主题自定义ID，格式为：用户自定义部分-APPID。未填写该参数时将自动生成ID。\n- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符\n- APPID可在https://console.cloud.tencent.com/developer页面查询",
+          "document": "主题类型\n- 0:日志主题，默认值\n- 1:指标主题",
+          "example": "0",
+          "member": "uint64",
+          "name": "BizType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主题自定义ID，格式为：用户自定义部分-用户APPID。未填写该参数时将自动生成ID。\n- 用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符\n- 尾部需要使用-拼接用户APPID，APPID可在https://console.cloud.tencent.com/developer页面查询。\n- 如果指定该字段，需保证全地域唯一",
           "example": "eb9ec10d-1343-4386-9a6e-75fd9d68726e",
           "member": "string",
           "name": "TopicId",
@@ -7931,7 +8013,7 @@
         },
         {
           "disabled": false,
-          "document": "免鉴权开关。 false：关闭； true：开启。默认为false。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。",
+          "document": "免鉴权开关。 false：关闭； true：开启。默认为false。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。指标主题不支持该配置。",
           "example": "false",
           "member": "bool",
           "name": "IsWebTracking",
@@ -7940,7 +8022,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题扩展信息",
+          "document": "主题扩展信息",
           "example": "无",
           "member": "TopicExtendInfo",
           "name": "Extends",
@@ -7955,7 +8037,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "主题ID",
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "TopicId",
@@ -9074,7 +9156,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "云产品地域。 不同日志类型(LogType)地域入参格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -9138,7 +9220,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -9742,7 +9824,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "主题ID- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "a5ce0c9c-0690-44a5-bc79-5f2190626bd0",
           "member": "string",
           "name": "TopicId",
@@ -10966,6 +11048,176 @@
       ],
       "type": "object"
     },
+    "DescribeKafkaConsumerGroupDetailRequest": {
+      "document": "DescribeKafkaConsumerGroupDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "消费组1",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaConsumerGroupDetailResponse": {
+      "document": "DescribeKafkaConsumerGroupDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集id",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130223",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "消费组1",
+          "member": "string",
+          "name": "Group",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组信息列表",
+          "example": "无",
+          "member": "GroupPartitionInfo",
+          "name": "PartitionInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Empty：组内没有成员，但存在已提交的偏移量。所有消费者都离开但保留了偏移量\nDead：组内没有成员，且没有已提交的偏移量。组被删除或长时间无活动\nStable：组内成员正常消费，分区分配平衡。正常运行状态\nPreparingRebalance：组正在准备重新平衡。有新成员加入或现有成员离开\nCompletingRebalance：组正在准备重新平衡。有新成员加入或现有成员离开",
+          "example": "Empty",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaConsumerGroupListRequest": {
+      "document": "DescribeKafkaConsumerGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "- group\n按照【消费组名称】进行过滤。\n类型：String\n必选：否\n示例：消费组1\n\n每次请求的Filters的上限为10，Filter.Values的上限为10。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaConsumerGroupListResponse": {
+      "document": "DescribeKafkaConsumerGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题名称",
+          "example": "日志a主题",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集id",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130223",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组信息列表",
+          "example": "无",
+          "member": "ConsumerGroup",
+          "name": "Groups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeKafkaConsumerRequest": {
       "document": "DescribeKafkaConsumer请求参数结构体",
       "members": [
@@ -12147,7 +12399,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<ul><li>topicName 按照【日志主题名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>logsetName 按照【日志集名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>topicId 按照【日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>logsetId 按照【日志集ID】进行过滤，可通过调用 <a href=\"https://cloud.tencent.com/document/product/614/58624\">DescribeLogsets</a> 查询已创建的日志集列表或登录控制台进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/614/58626\">CreateLogset</a> 创建新的日志集。类型：String。必选：否</li>\n<li>tagKey 按照【标签键】进行过滤。类型：String。必选：否</li>\n<li>tag:tagKey 按照【标签键值对】进行过滤。tagKey 使用具体的标签键进行替换，例如 tag:exampleKey。类型：String。必选：否</li>\n<li>storageType 按照【日志主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String。必选：否</li></ul>\n注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。",
+          "document": "<ul><li>topicName 按照【主题名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>logsetName 按照【日志集名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>topicId 按照【主题ID】进行过滤。类型：String。必选：否</li>\n<li>logsetId 按照【日志集ID】进行过滤，可通过调用 <a href=\"https://cloud.tencent.com/document/product/614/58624\">DescribeLogsets</a> 查询已创建的日志集列表或登录控制台进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/614/58626\">CreateLogset</a> 创建新的日志集。类型：String。必选：否</li>\n<li>tagKey 按照【标签键】进行过滤。类型：String。必选：否</li>\n<li>tag:tagKey 按照【标签键值对】进行过滤。tagKey 使用具体的标签键进行替换，例如 tag:exampleKey。类型：String。必选：否</li>\n<li>storageType 按照【主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String。必选：否</li></ul>\n注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -12198,7 +12450,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题列表",
+          "document": "主题列表",
           "example": "无",
           "member": "TopicInfo",
           "name": "Topics",
@@ -13974,6 +14226,88 @@
         }
       ],
       "type": "object"
+    },
+    "GetTopicDetailRequest": {
+      "document": "GetTopicDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id",
+          "example": "67c85f5f-57a0-433c-9176-109ad0d5496e",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题类型\n- 0:日志主题，默认值\n- 1:指标主题",
+          "example": "0",
+          "member": "uint64",
+          "name": "BizType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTopicDetailResponse": {
+      "document": "GetTopicDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题详情",
+          "example": "无",
+          "member": "TopicInfo",
+          "name": "TopicInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GroupPartitionInfo": {
+      "document": "kafka协议消费组区分信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区id",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区最新数据时间戳，单位：s",
+          "example": "2",
+          "member": "int64",
+          "name": "CommitTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者",
+          "example": "app_as",
+          "member": "string",
+          "name": "Consumer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "GroupTriggerConditionInfo": {
       "document": "分组触发条件",
@@ -16274,7 +16608,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -16337,7 +16671,7 @@
         },
         {
           "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
+          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(中国香港地区和其他)/fsi-polaris(金融区)/general-polaris(普通区)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudProductRegion",
@@ -16626,7 +16960,7 @@
         {
           "disabled": false,
           "document": "用户自定义解析字符串，Json格式序列化的字符串。",
-          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]}]}\"",
+          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]}}]}\"",
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
@@ -17197,6 +17531,61 @@
       ],
       "type": "object"
     },
+    "ModifyKafkaConsumerGroupOffsetRequest": {
+      "document": "ModifyKafkaConsumerGroupOffset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "消费组11",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间戳移位，单位ms。\n- -1：表示最新时间\n- -2：表示最早时间\n- 秒级unix时间戳",
+          "example": "-1",
+          "member": "int64",
+          "name": "ShiftTimestamp",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyKafkaConsumerGroupOffsetResponse": {
+      "document": "ModifyKafkaConsumerGroupOffset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码。0：成功，-1：失败",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyKafkaConsumerRequest": {
       "document": "ModifyKafkaConsumer请求参数结构体",
       "members": [
@@ -17634,7 +18023,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模板ID。-通过[获取通知内容模板](https://cloud.tencent.com/document/api/614/111714)获取通知内容模版ID",
+          "document": "通知内容模板ID。-通过[获取通知内容模板](https://cloud.tencent.com/document/api/614/111714)获取通知内容模板ID",
           "example": "noticetemplate-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
           "member": "string",
           "name": "NoticeContentId",
@@ -17949,7 +18338,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "主题ID\n- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。",
           "example": "eb9ec10d-1343-4386-9a6e-75fd9d68726e",
           "member": "string",
           "name": "TopicId",
@@ -17958,7 +18347,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称\n输入限制：\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]",
+          "document": "主题名称\n输入限制：\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]",
           "example": "testname",
           "member": "string",
           "name": "TopicName",
@@ -17967,7 +18356,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，并且不能有重复的键值对。",
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，并且不能有重复的键值对。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -17994,7 +18383,7 @@
         },
         {
           "disabled": false,
-          "document": "若开启最大分裂，该主题能够能够允许的最大分区数；\n默认为50；必须为正数",
+          "document": "若开启最大分裂，该主题能够允许的最大分区数；\n默认为50；必须为正数",
           "example": "50",
           "member": "int64",
           "name": "MaxSplitPartitions",
@@ -18012,7 +18401,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题描述",
+          "document": "主题描述",
           "example": "xx部门xx业务topic",
           "member": "string",
           "name": "Describes",
@@ -18021,7 +18410,7 @@
         },
         {
           "disabled": false,
-          "document": "0：关闭日志沉降。\n非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效",
+          "document": "0：日志主题关闭日志沉降。\n非0：日志主题开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。\n仅在StorageType为 hot 时生效，指标主题不支持该配置。",
           "example": "1",
           "member": "uint64",
           "name": "HotPeriod",
@@ -18039,7 +18428,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题扩展信息",
+          "document": "主题扩展信息",
           "example": "无",
           "member": "TopicExtendInfo",
           "name": "Extends",
@@ -18048,7 +18437,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题分区数量。\n默认为1；\n取值范围及约束：\n- 当输入值<=0，系统自动调整为1。\n- 如果未传MaxSplitPartitions，需要PartitionCount<=50；\n- 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；",
+          "document": "主题分区数量。\n默认为1；\n取值范围及约束：\n- 当输入值<=0，系统自动调整为1。\n- 如果未传MaxSplitPartitions，需要PartitionCount<=50；\n- 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；",
           "example": "10",
           "member": "uint64",
           "name": "PartitionCount",
@@ -18173,7 +18562,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云监控通知模版ID",
+          "document": "腾讯云可观测平台通知模板 ID",
           "example": "notice-erictest",
           "member": "string",
           "name": "NoticeId",
@@ -18184,7 +18573,7 @@
         },
         {
           "disabled": false,
-          "document": "云监控内容模版ID，不传默认内容模版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "腾讯云可观测平台内容模板ID，不传默认内容模板\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tmpl-erictest",
           "member": "string",
           "name": "ContentTmplId",
@@ -20006,7 +20395,7 @@
         },
         {
           "disabled": false,
-          "document": "状态。\n- 0：成功\n- 10000：参数错误，请确认参数\n- 10001：授权失败，请确认授权\n- 10002：获取文件列表失败，请稍后再试。若无法解决，请联系智能客服或提交工单\n- 10003：桶内无相应前缀文件，请使用正确的桶、文件前缀和压缩方式\n- 10004：文件下载失败，请稍后再试。若无法解决，请联系智能客服或提交工单\n- 10005：文件解压缩失败，请选择正确的压缩方式然后再试\n- 10006：读取文件内容失败，请确认文件可读\n- 10007：文件预览失败，请稍后再试。若无法解决，请联系智能客服或提交工单",
+          "document": "状态。\n- 0：成功\n- 10000：参数错误，请确认参数\n- 10001：授权失败，请确认授权\n- 10002：获取文件列表失败，请稍后再试。若无法解决，请咨询 [在线支持](https://cloud.tencent.com/online-service) 或 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=469&source=14&data_title=%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1&step=1) 处理。\n- 10003：桶内无相应前缀文件，请使用正确的桶、文件前缀和压缩方式\n- 10004：文件下载失败，请稍后再试。若无法解决，请咨询 [在线支持](https://cloud.tencent.com/online-service) 或 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=469&source=14&data_title=%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1&step=1) 处理。\n- 10005：文件解压缩失败，请选择正确的压缩方式然后再试\n- 10006：读取文件内容失败，请确认文件可读\n- 10007：文件预览失败，请稍后再试。若无法解决，请咨询 [在线支持](https://cloud.tencent.com/online-service) 或 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=469&source=14&data_title=%E6%97%A5%E5%BF%97%E6%9C%8D%E5%8A%A1&step=1) 处理。",
           "example": "0",
           "member": "int64",
           "name": "Status",

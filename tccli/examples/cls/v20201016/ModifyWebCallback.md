@@ -10,8 +10,7 @@ tccli cls ModifyWebCallback --cli-unfold-argument  \
     --Name 监控告警专用 \
     --Type Http \
     --Webhook http://www.xxx.com \
-    --Method POST \
-    --Key 
+    --Method POST
 ```
 
 Output: 
