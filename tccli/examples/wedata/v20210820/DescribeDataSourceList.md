@@ -6,8 +6,23 @@ Input:
 
 ```
 tccli wedata DescribeDataSourceList --cli-unfold-argument  \
-    --PageNumber 0 \
-    --PageSize 10
+    --PageNumber 1 \
+    --PageSize 10 \
+    --OrderFields.0.Name create_time \
+    --OrderFields.0.Direction DESC \
+    --Filters.0.Name Keyword \
+    --Filters.1.Name Types \
+    --Filters.2.Name datasourceCategory \
+    --Filters.2.Values CLUSTER \
+    --Filters.3.Name ownerProjectId \
+    --Filters.3.Values 2683801941587324928 \
+    --Filters.4.Name IsBandOwnerProjectId \
+    --Filters.4.Values false \
+    --Filters.5.Name AuthProjectId \
+    --Filters.6.Name ownerAccountId \
+    --Filters.7.Name spaceId \
+    --Filters.7.Values 2683801941587324928 \
+    --Filters.8.Name connectStatus
 ```
 
 Output: 

@@ -1544,73 +1544,13 @@
         },
         {
           "disabled": false,
-          "document": "加速域名状态，取值有：\n<li>online：已生效；</li>\n<li>process：部署中；</li>\n<li>offline：已停用；</li>\n<li>forbidden：已封禁；</li>\n<li>init：未生效，待激活站点；</li>",
+          "document": "加速域名状态，取值有：\n<li>online：已生效；</li>\n<li>process：部署中；</li>\n<li>offline：已停用；</li>\n<li>forbidden：已封禁；</li>\n<li>init：未生效，待激活站点。</li>",
           "example": "online",
           "member": "string",
           "name": "DomainStatus",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "源站信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "OriginDetail",
-          "name": "OriginDetail",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "回源协议，取值有：\n<li>FOLLOW: 协议跟随；</li>\n<li>HTTP: HTTP协议回源；</li>\n<li>HTTPS: HTTPS协议回源。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "FOLLOW",
-          "member": "string",
-          "name": "OriginProtocol",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "域名证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "AccelerationDomainCertificate",
-          "name": "Certificate",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "HTTP回源端口。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "80",
-          "member": "uint64",
-          "name": "HttpOriginPort",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "HTTPS回源端口。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "443",
-          "member": "uint64",
-          "name": "HttpsOriginPort",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "IPv6状态，取值有：\n<li>follow：遵循站点IPv6配置；</li>\n<li>on：开启状态；</li>\n<li>off：关闭状态。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "follow",
-          "member": "string",
-          "name": "IPv6Status",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1624,7 +1564,17 @@
         },
         {
           "disabled": false,
-          "document": "加速域名归属权验证状态，取值有： <li>pending：待验证；</li> <li>finished：已完成验证。</li>\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv6 状态，取值有：\n<li>follow：遵循站点IPv6配置；</li>\n<li>on：开启状态；</li>\n<li>off：关闭状态。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "follow",
+          "member": "string",
+          "name": "IPv6Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加速域名归属权验证状态，取值有： \n<li>pending：待验证；</li>\n<li>finished：已完成验证。</li>\t\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pending",
           "member": "string",
           "name": "IdentificationStatus",
@@ -1634,8 +1584,68 @@
         },
         {
           "disabled": false,
+          "document": "加速域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OwnershipVerification",
+          "name": "OwnershipVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源站信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OriginDetail",
+          "name": "OriginDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回源协议，取值有：\n<li>FOLLOW：协议跟随；</li>\n<li>HTTP：HTTP协议回源；</li>\n<li>HTTPS：HTTPS协议回源。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FOLLOW",
+          "member": "string",
+          "name": "OriginProtocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 回源端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "HttpOriginPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTPS 回源端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "443",
+          "member": "uint64",
+          "name": "HttpsOriginPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加速域名证书信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccelerationDomainCertificate",
+          "name": "Certificate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "创建时间。",
-          "example": "2020-09-22T00:00:00+00:00",
+          "example": "2025-09-17T15:01:14Z",
           "member": "datetime_iso",
           "name": "CreatedOn",
           "output_required": true,
@@ -1645,22 +1655,12 @@
         {
           "disabled": false,
           "document": "修改时间。",
-          "example": "2020-09-22T00:00:00+00:00",
+          "example": "2025-09-17T15:01:14Z",
           "member": "datetime_iso",
           "name": "ModifiedOn",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当域名需要进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "OwnershipVerification",
-          "name": "OwnershipVerification",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
         }
       ],
       "usage": "out"

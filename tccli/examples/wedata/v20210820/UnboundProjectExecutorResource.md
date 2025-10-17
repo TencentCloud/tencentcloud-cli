@@ -1,29 +1,4 @@
-**Example 1: ewe**
-
-32
-
-Input: 
-
-```
-tccli wedata UnboundProjectExecutorResource --cli-unfold-argument  \
-    --ExecutorGroupId 0 \
-    --ProjectId 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "UnauthorizedOperation",
-            "Message": "未授权操作"
-        },
-        "RequestId": "ad1f4c7c-d84a-44ce-a2a9-308f236c0ed1"
-    }
-}
-```
-
-**Example 2: 解绑项目**
+**Example 1: 解绑项目**
 
 解绑多个
 

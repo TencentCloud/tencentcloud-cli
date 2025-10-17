@@ -6423,6 +6423,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认0为普通集群，2为tke集群",
+          "example": "0",
+          "member": "int64",
+          "name": "ClusterType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -7,7 +7,7 @@ Input:
 ```
 tccli wedata BatchCreateTaskVersionAsync --cli-unfold-argument  \
     --Tasks.0.TaskId 20250227112817430 \
-    --Tasks.0.VersionRemark test \
+    --Tasks.0.VersionRemark 备注 \
     --AutoRun True \
     --AlarmWays true \
     --AlarmRecipientTypes all \

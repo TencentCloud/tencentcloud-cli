@@ -46,16 +46,16 @@ Output:
                 },
                 {
                     "Name": "SiblingNodes",
-                    "Value": "[]"
+                    "Value": "[test]"
                 }
             ],
             "ExtConfig": [
                 {
-                    "Name": "x",
+                    "Name": "testx",
                     "Value": "280"
                 },
                 {
-                    "Name": "y",
+                    "Name": "testy",
                     "Value": "150"
                 },
                 {
@@ -87,8 +87,8 @@ Output:
                             "Value": "ab23123c"
                         }
                     ],
-                    "Alias": "1111",
-                    "Comment": "1111"
+                    "Alias": "132",
+                    "Comment": "132"
                 }
             ],
             "NodeMapping": {

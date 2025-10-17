@@ -12,8 +12,8 @@ tccli wedata DescribeColumnLineage --cli-unfold-argument  \
     --Data.ColumnName col_a1 \
     --Data.ColumnNameCn  \
     --Data.Description  \
-    --Data.DatasourceId - \
-    --Data.QualifiedName - \
+    --Data.DatasourceId 10 \
+    --Data.QualifiedName 名称 \
     --Data.TableName 0210_biao1 \
     --Data.DownStreamCount 0 \
     --Data.UpStreamCount 0 \
@@ -33,11 +33,11 @@ Output:
             "ChildSet": null,
             "ColumnInfoSet": [
                 {
-                    "ColumnName": "a",
+                    "ColumnName": "id",
                     "ColumnNameCn": "",
                     "ColumnType": "",
                     "CreateTime": "",
-                    "DatasourceId": "",
+                    "DatasourceId": "10",
                     "Description": "",
                     "DownStreamCount": 0,
                     "Id": null,
@@ -51,7 +51,7 @@ Output:
                 }
             ],
             "MetastoreType": null,
-            "ParentId": "-",
+            "ParentId": "10",
             "ParentSet": null,
             "TableName": "0210_biao1"
         },

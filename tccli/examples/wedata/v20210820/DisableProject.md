@@ -6,8 +6,7 @@ Input:
 
 ```
 tccli wedata DisableProject --cli-unfold-argument  \
-    --ProjectId abc \
-    --ModuleKey abc
+    --ProjectId 1486804694126882816
 ```
 
 Output: 
@@ -15,7 +14,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "abc"
+        "RequestId": "65e5aa2b-a9a2-4399-a56d-719fc95de858"
     }
 }
 ```

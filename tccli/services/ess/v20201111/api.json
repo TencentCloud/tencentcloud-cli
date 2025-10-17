@@ -91,6 +91,13 @@
       "output": "CreateBatchSignUrlResponse",
       "status": "online"
     },
+    "CreateContractComparisonTask": {
+      "document": "此接口（CreateContractComparisonTask）用于创建合同对比任务。\n适用场景：对比两份合同中字段（如：金额、日期、甲方名称等）的内容差异。",
+      "input": "CreateContractComparisonTaskRequest",
+      "name": "创建合同对比任务",
+      "output": "CreateContractComparisonTaskResponse",
+      "status": "online"
+    },
     "CreateContractDiffTaskWebUrl": {
       "document": "接口（CreateContractDiffTaskWebUrl）用于创建合同对比的可嵌入web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。\n注：本接口生成的web页面暂不支持<a href=\"https://qian.tencent.com/developers/companyApis/embedPages/CreateWebThemeConfig\" target=\"_blank\">设置本企业嵌入式页面主题配置</a>\n\n未跳过上传确认的嵌入页面长相如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/32f3526ad7152757202a7e4e760356db.jpg)\n跳过上传确认的嵌入页面长相如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/c68047feddbc106e261870687b6ab89d.jpg)",
       "input": "CreateContractDiffTaskWebUrlRequest",
@@ -742,6 +749,13 @@
       "output": "DisableUserAutoSignResponse",
       "status": "online"
     },
+    "ExportContractComparisonTask": {
+      "document": "本接口（ExportContractComparisonTask）用于导出指定的合同对比任务的结果文件。任务完成后，用户可根据不同的使用场景，选择导出可视化对比报告（PDF）或结构化差异明细（EXCEL）。",
+      "input": "ExportContractComparisonTaskRequest",
+      "name": "导出合同对比任务详情",
+      "output": "ExportContractComparisonTaskResponse",
+      "status": "online"
+    },
     "GetTaskResultApi": {
       "document": "此接口（GetTaskResultApi）用来查询转换任务的状态。如需发起转换任务，请使用<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行资源文件的转换操作<br />\n前提条件：已调用 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行文件转换，并得到了返回的转换任务Id。<br />\n\n适用场景：已创建一个文件转换任务，想查询该文件转换任务的状态，或获取转换后的文件资源Id。<br />\n注：\n1. `大文件转换所需的时间可能会比较长`\n2.  `本接口返回的文件资源ID就是PDF资源ID，可以直接用于【用PDF文件创建签署流程】接口发起合同。`",
       "input": "GetTaskResultApiRequest",
@@ -885,7 +899,7 @@
         {
           "disabled": false,
           "document": "超管手机号，打码显示\n示例值：138****1569\n",
-          "example": "18888888888",
+          "example": "1888****888",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -2130,7 +2144,7 @@
         {
           "disabled": false,
           "document": "被抄送方手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。\n请确认手机号所有方为此业务通知方。",
-          "example": "13200000000",
+          "example": "1320****000",
           "member": "string",
           "name": "Mobile",
           "required": false,
@@ -2174,6 +2188,52 @@
         }
       ],
       "usage": "in"
+    },
+    "ComparisonDetail": {
+      "document": "合同对比差异结果详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对比前后差异类型，具体如下：\n<ul><li> **add**：新增</li>\n<li> **change**：变更</li>\n<li> **delete**：删除</li>\n</ul>",
+          "example": "add",
+          "member": "string",
+          "name": "ComparisonType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对比内容类型，具体如下：\n<ul><li> **text**：文本</li>\n<li> **table**：表格</li>\n<li> **picture**：图片</li>\n</ul>",
+          "example": "text",
+          "member": "string",
+          "name": "ContentType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原文文本。",
+          "example": "******",
+          "member": "string",
+          "name": "OriginText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对比文本。",
+          "example": "-----",
+          "member": "string",
+          "name": "DiffText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Component": {
       "document": "此结构体 (Component) 用于描述控件属性。\n\n在通过文件发起合同时，对应的component有三种定位方式\n1. 绝对定位方式 （可以通过 [PDF坐标计算助手](https://qian.tencent.com/developers/tools/template-editor)计算控件的坐标）\n2. 表单域(FIELD)定位方式\n3. 关键字(KEYWORD)定位方式，使用关键字定位时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找",
@@ -2876,7 +2936,7 @@
         {
           "disabled": false,
           "document": "组织机构超管手机号。 在注册流程中，必须是超管本人进行操作。此参数需要跟[创建企业批量认证链接](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchOrganizationRegistrationTasks)中 Admin Mobile保持一致。",
-          "example": "13200000000",
+          "example": "1320****000",
           "member": "string",
           "name": "AdminMobile",
           "required": true,
@@ -3133,7 +3193,7 @@
         {
           "disabled": false,
           "document": "生成H5签署链接时，您可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：\n<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>\n<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>\n注：\n`不指定该值时，默认为签署方自行选择。`",
-          "example": "LoginWithoutMobile ",
+          "example": "0",
           "member": "uint64",
           "name": "SignTypeSelector",
           "required": false,
@@ -3168,7 +3228,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许此链接中签署方批量拒签。\n <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>\n\n注：`合同组暂不支持批量拒签功能。`\n",
+          "document": "是否允许此链接中签署方批量拒签。\n <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>\n\n注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`\n",
           "example": "false",
           "member": "bool",
           "name": "CanBatchReject",
@@ -3340,7 +3400,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>\n注：`1. 合同组暂不支持批量拒签功能。2. 如果是链接直接跳转至详情页（JumpToDetail参数为true），也不支持批量拒签功能`",
+          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>\n注：`1. 当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。2. 如果是链接直接跳转至详情页（JumpToDetail参数为true），也不支持批量拒签功能`",
           "example": "false",
           "member": "bool",
           "name": "CanBatchReject",
@@ -3401,6 +3461,98 @@
       ],
       "type": "object"
     },
+    "CreateContractComparisonTaskRequest": {
+      "document": "CreateContractComparisonTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行合同审查任务的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "原版文件ID，对比基准的旧版本文件唯一标识，通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">UploadFiles</a>接口获取文件资源ID。",
+          "example": "yD*******************Cj",
+          "member": "string",
+          "name": "OriginFileResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新版文件ID，与旧版进行对比的新版本文件唯一标识，通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">UploadFiles</a>接口获取文件资源ID。",
+          "example": "yD*******************Ed",
+          "member": "string",
+          "name": "DiffFileResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比任务备注，长度不能超过50个字符。",
+          "example": "这是一项对比任务",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。\n\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。",
+          "example": "QmFzZTY0IEJhc2U2NCA",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表，用户自定义的键值对（Key-Value），可绑定到资源上，用于资源的分类、管理和访问控制。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateContractComparisonTaskResponse": {
+      "document": "CreateContractComparisonTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。",
+          "example": "QmFzZTY0IEJhc2U2NCA",
+          "member": "string",
+          "name": "UserData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同对比任务ID，可以调用接口<a href=\"https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/DescribeContractComparisonTask\" target=\"_blank\">查询合同对比任务结果</a>查看对比任务的结果。",
+          "example": "yD*******************Qi",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateContractDiffTaskWebUrlRequest": {
       "document": "CreateContractDiffTaskWebUrl请求参数结构体",
       "members": [
@@ -3439,6 +3591,24 @@
           "name": "DiffFileResourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。\n\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。",
+          "example": "QmFzZTY0IEJhc2U2NCA",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表，用户自定义的键值对（Key-Value），可绑定到资源上，用于资源的分类、管理和访问控制。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3463,6 +3633,16 @@
           "member": "string",
           "name": "WebUrl",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。",
+          "example": "QmFzZTY0IEJhc2U2NCA",
+          "member": "string",
+          "name": "UserData",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6881,7 +7061,7 @@
         {
           "disabled": false,
           "document": "为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。\n您可以通过查询合同接口（DescribeFlowInfo）查询此参数。\n若传了此参数，则可以不传 UserId, Name, Mobile等参数",
-          "example": "yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E",
+          "example": "[\"yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E\"]",
           "member": "string",
           "name": "RecipientIds",
           "required": false,
@@ -6895,6 +7075,15 @@
           "name": "FlowGroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`当前合同组不支持批量拒签功能。请对合同组中的每个子合同逐一执行拒签操作，以达到拒签整个合同组的效果。`",
+          "example": "false",
+          "member": "bool",
+          "name": "CanBatchReject",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10070,6 +10259,15 @@
           "name": "TaskId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回详细的对比结果。为 true时，响应中将包含详细的对比信息，如相似度、文本差异具体内容等；为 false时，仅返回任务基本状态信息。\n注：`详细结果数据量可能较大，请按需开启。`",
+          "example": "true",
+          "member": "bool",
+          "name": "ShowDetail",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10195,6 +10393,16 @@
           "name": "CreateTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对比差异详情，请求参数ShowDetail为true时返回。",
+          "example": "无",
+          "member": "ComparisonDetail",
+          "name": "ComparisonDetail",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -11877,8 +12085,8 @@
         },
         {
           "disabled": false,
-          "document": "印章种类列表（均为组织机构印章）。 若无特定需求，将展示所有类型的印章。 目前支持以下几种：<ul> <li><strong>OFFICIAL</strong>：企业公章；</li> <li><strong>CONTRACT</strong>：合同专用章；</li> <li><strong>ORGANIZATION_SEAL</strong>：企业印章（通过图片上传创建）；</li> <li><strong>LEGAL_PERSON_SEAL</strong>：法定代表人章。</li> <li><strong>EMPLOYEE_QUALIFICATION_SEAL</strong>：员工执业章。</li> </ul>",
-          "example": "OFFICIAL",
+          "document": "印章种类列表（均为组织机构印章）。 若无特定需求，将展示所有类型的印章。 目前支持以下几种：<ul> <li><strong>OFFICIAL</strong>：企业公章；</li> <li><strong>CONTRACT</strong>：合同专用章；</li> <li><strong>FINANCE</strong>：财务专用章；</li> <li><strong>PERSONNEL</strong>：人事专用章；</li><li><strong>INVOICE</strong>：发票专用章；</li><li><strong>LEGAL_PERSON_SEAL</strong>：法定代表人章。</li> <li><strong>EMPLOYEE_QUALIFICATION_SEAL</strong>：员工执业章。</li> </ul>",
+          "example": "[\"OFFICIAL\"]",
           "member": "string",
           "name": "SealTypes",
           "required": false,
@@ -11896,7 +12104,7 @@
         {
           "disabled": false,
           "document": "需查询的印章状态列表。\n<ul>\n<li>空：（默认）仅查询启用状态的印章；</li>\n<li><strong>ALL</strong>：查询所有状态的印章；</li>\n<li><strong>CHECKING</strong>：查询待审核的印章；</li>\n<li><strong>SUCCESS</strong>：查询启用状态的印章；</li>\n<li><strong>FAIL</strong>：查询印章审核拒绝的印章；</li>\n<li><strong>DISABLE</strong>：查询已停用的印章；</li>\n<li><strong>STOPPED</strong>：查询已终止的印章；</li>\n<li><strong>VOID</strong>：查询已作废的印章；</li>\n<li><strong>INVALID</strong>：查询已失效的印章。</li>\n</ul>",
-          "example": "ALL",
+          "example": "[\"ALL\"]",
           "member": "string",
           "name": "SealStatuses",
           "required": false,
@@ -12669,6 +12877,80 @@
       ],
       "usage": "in"
     },
+    "ExportContractComparisonTaskRequest": {
+      "document": "ExportContractComparisonTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行合同审查任务的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同对比任务ID，该参数通过调用接口CreateContractComparisonTask获取。",
+          "example": "yD*******************ob",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "导出对比结果文件类型。\n类型如下：\n<ul>\n<li> **0**：【PDF】以新合同文件为基础，导出带有可视化对比点标注的PDF文件。</li>\n<li> **1**：【EXCEL】导出结构化的对比点明细表格，以列表形式罗列每一个差异点，包含改动位置、类型、标签及修改前后的完整内容。</li>\n</ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "ExportType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否忽略，适用于PDF。\n<ul>\n<li> **true**：导出文件标注去掉忽略项。</li>\n<li> **false**：导出文件包含所有对比点。</li>\n</ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "Ignore",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportContractComparisonTaskResponse": {
+      "document": "ExportContractComparisonTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对比任务详情下载链接。",
+          "example": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF",
+          "member": "string",
+          "name": "ResourceUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下载链接有效截止时间。",
+          "example": "1760009219",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ExtendAuthInfo": {
       "document": "扩展服务开通和授权的详细信息",
       "members": [
@@ -12807,7 +13089,7 @@
         },
         {
           "disabled": false,
-          "document": "用于描述字段信息。\n\n注意：\n1、`如果Type值为OPTION时，需要在字段描述中填写选项值，用,分隔`\n2、描述字段不能超过100个字符",
+          "document": "用于描述字段信息。\n\n注意：\n1、描述字段不能超过100个字符",
           "example": "字段描述",
           "member": "string",
           "name": "Description",
@@ -12822,6 +13104,17 @@
           "example": "[\"张三\"]",
           "member": "string",
           "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当字段类型`Type`为OPTION时为必输项，输入选项值",
+          "example": "[\"选项值1\"]",
+          "member": "string",
+          "name": "ChoiceList",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -13445,7 +13738,7 @@
         {
           "disabled": true,
           "document": "模板配置中的参与方ID,与控件绑定",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "ReceiptId",
           "output_required": true,
@@ -13465,7 +13758,7 @@
         {
           "disabled": false,
           "document": "签署人手机号",
-          "example": "13200000000",
+          "example": "1320****000",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -13611,7 +13904,7 @@
         {
           "disabled": false,
           "document": "签署人手机号。",
-          "example": "13200000000",
+          "example": "1320****000",
           "member": "string",
           "name": "ApproverMobile",
           "output_required": true,
@@ -16295,7 +16588,7 @@
         {
           "disabled": false,
           "document": "组织机构企业统一社会信用代码。\n请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。",
-          "example": "37000019890303000X",
+          "example": "370000****0303000X",
           "member": "string",
           "name": "UniformSocialCreditCode",
           "output_required": false,
@@ -16328,7 +16621,7 @@
         {
           "disabled": false,
           "document": "组织机构法人的证件号码",
-          "example": "37000019890303000X",
+          "example": "370000****0303000X",
           "member": "string",
           "name": "LegalIdCardNumber",
           "output_required": false,
@@ -16350,7 +16643,7 @@
         {
           "disabled": false,
           "document": "组织机构超管手机号。\n",
-          "example": "18888888888",
+          "example": "1888****888",
           "member": "string",
           "name": "AdminMobile",
           "output_required": false,
@@ -16372,7 +16665,7 @@
         {
           "disabled": false,
           "document": "组织机构超管证件号码\n",
-          "example": "37000019890303000X",
+          "example": "370000****0303000X",
           "member": "string",
           "name": "AdminIdCardNumber",
           "output_required": false,
@@ -16394,7 +16687,7 @@
         {
           "disabled": false,
           "document": "原超管手机号",
-          "example": "15100000000",
+          "example": "1510****000",
           "member": "string",
           "name": "OldAdminMobile",
           "output_required": false,
@@ -16416,7 +16709,7 @@
         {
           "disabled": false,
           "document": "原超管证件号码",
-          "example": "65000019870404000X",
+          "example": "650000****0404000X",
           "member": "string",
           "name": "OldAdminIdCardNumber",
           "output_required": false,
@@ -17435,7 +17728,7 @@
         {
           "disabled": false,
           "document": "签署人手机号。",
-          "example": "13200000000",
+          "example": "1320****000",
           "member": "string",
           "name": "Mobile",
           "required": true,
@@ -17444,7 +17737,7 @@
         {
           "disabled": true,
           "document": "要更换的原合同参与人RecipientId编号。(可通过接口<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "RelievedApproverReceiptId",
           "required": false,
@@ -17974,7 +18267,7 @@
         {
           "disabled": false,
           "document": "用户手机号码， 支持中国大陆手机号11位数字(无需加+86前缀或其他字符)。",
-          "example": "13200000000",
+          "example": "1320****000",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -18377,7 +18670,7 @@
         {
           "disabled": false,
           "document": "传入的手机号，没有打码",
-          "example": "13200000000",
+          "example": "1320****000",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -18406,6 +18699,34 @@
         }
       ],
       "usage": "out"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键，最大长度不超过50字符。",
+          "example": "Key",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值，最大长度不超过50字符。",
+          "example": "Value",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TemplateInfo": {
       "document": "此结构体 (TemplateInfo) 用于描述模板的信息。\n\n> **模板组成** \n>\n>  一个模板通常会包含以下结构信息\n>- 模板基本信息\n>- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n>- 填写控件 Components\n>- 签署控件 SignComponents\n>- 生成模板的文件基础信息 FileInfos",

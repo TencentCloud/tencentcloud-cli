@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateDLPFileDetectTask": {
+      "document": "创建文件鉴定任务，私有化调用path为：capi/DlpOpenApi/CreateDLPFileDetectTask",
+      "input": "CreateDLPFileDetectTaskRequest",
+      "name": "创建文件鉴定任务",
+      "output": "CreateDLPFileDetectTaskResponse",
+      "status": "online"
+    },
     "CreateDLPFileDetectionTask": {
       "document": "提交送检任务",
       "input": "CreateDLPFileDetectionTaskRequest",
@@ -56,11 +63,32 @@
       "output": "DescribeAggrSoftDeviceListResponse",
       "status": "online"
     },
+    "DescribeDLPEdgeNodeGroups": {
+      "document": "查询边缘节点分组，私有化调用path为：capi/Connectors/DescribeDLPEdgeNodeGroups",
+      "input": "DescribeDLPEdgeNodeGroupsRequest",
+      "name": "查询DLP边缘节点分组",
+      "output": "DescribeDLPEdgeNodeGroupsResponse",
+      "status": "online"
+    },
+    "DescribeDLPEdgeNodes": {
+      "document": "查询边缘节点列表，私有化调用path为：capi/DlpOpenApi/DescribeDLPEdgeNodes",
+      "input": "DescribeDLPEdgeNodesRequest",
+      "name": "查询边缘节点列表",
+      "output": "DescribeDLPEdgeNodesResponse",
+      "status": "online"
+    },
     "DescribeDLPFileDetectResult": {
       "document": "webservice查询文件检测结果",
       "input": "DescribeDLPFileDetectResultRequest",
       "name": "查询文件检测结果",
       "output": "DescribeDLPFileDetectResultResponse",
+      "status": "online"
+    },
+    "DescribeDLPFileDetectTaskResult": {
+      "document": "查询文件鉴定任务结果",
+      "input": "DescribeDLPFileDetectTaskResultRequest",
+      "name": "查询文件鉴定任务结果",
+      "output": "DescribeDLPFileDetectTaskResultResponse",
       "status": "online"
     },
     "DescribeDeviceChildGroups": {
@@ -580,6 +608,113 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateDLPFileDetectTaskData": {
+      "document": "文件鉴定任务分页数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务请求唯一Id",
+          "example": "[\"35dfsdfaserwvead\"]",
+          "member": "string",
+          "name": "TaskRequestId",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateDLPFileDetectTaskRequest": {
+      "document": "CreateDLPFileDetectTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件下载Url",
+          "example": "https://www.cos.com/downloadurl",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名",
+          "example": "test.txt",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件Md5",
+          "example": "xavdaeraveageacaegeav",
+          "member": "string",
+          "name": "FileMd5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "负载类型  1 从GroupId中选一节点 鉴定  2使用所有SelectNodeIds节点鉴定",
+          "example": "1",
+          "member": "int64",
+          "name": "BalanceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "选中节点唯一Id列表,BalanceType=2时必填",
+          "example": "[\"lolocdsacsss\",\"dlocelodeead\"]",
+          "member": "string",
+          "name": "SelectNodeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点组唯一Id,BalanceType=1时必填",
+          "example": "caitealddaaveasf",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDLPFileDetectTaskResponse": {
+      "document": "CreateDLPFileDetectTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建文件鉴定任务数据",
+          "example": "无",
+          "member": "CreateDLPFileDetectTaskData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDLPFileDetectionTaskData": {
       "document": "提交送检任务相应数据",
@@ -1569,6 +1704,328 @@
       ],
       "type": "object"
     },
+    "DescribeDLPEdgeNodeGroupsRequest": {
+      "document": "DescribeDLPEdgeNodeGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLPEdgeNodeGroupsResponse": {
+      "document": "DescribeDLPEdgeNodeGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务响应数据",
+          "example": "无",
+          "member": "DescribeDLPEdgeNodeGroupsRspData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLPEdgeNodeGroupsRspData": {
+      "document": "业务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组信息",
+          "example": "无",
+          "member": "DescribeDLPEdgeNodeGroupsRspItem",
+          "name": "Items",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页信息",
+          "example": "无",
+          "member": "Paging",
+          "name": "Page",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeDLPEdgeNodeGroupsRspItem": {
+      "document": "节点分组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自增id，数据库中唯一",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点分组名称",
+          "example": "saaskb",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点分组id",
+          "example": "ct9at4pgiv8f3vdmk9s0",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包含边缘节点数量",
+          "example": "8",
+          "member": "int64",
+          "name": "EdgeCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeDLPEdgeNodesPageData": {
+      "document": "业务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页信息",
+          "example": "无",
+          "member": "Paging",
+          "name": "Page",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点列表",
+          "example": "无",
+          "member": "DescribeDLPEdgeNodesRspItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDLPEdgeNodesRequest": {
+      "document": "DescribeDLPEdgeNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件、分页参数<li>EdgeNodeName - string - 是否必填：否 - 操作符: ilike  - 排序支持：否- 按节点名称过滤。</li>",
+          "example": "无",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLPEdgeNodesResponse": {
+      "document": "DescribeDLPEdgeNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务响应数据",
+          "example": "无",
+          "member": "DescribeDLPEdgeNodesPageData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLPEdgeNodesRspItem": {
+      "document": "边缘节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自增id，数据库中唯一",
+          "example": "22",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点分组唯一id",
+          "example": "cl6uga713okpvh4bp5mg",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点id",
+          "example": "2XybyThLH1JXG1s2KQYLoI8wokH",
+          "member": "string",
+          "name": "EdgeNodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "默认节点名称",
+          "member": "string",
+          "name": "EdgeNodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否活跃/连通",
+          "example": "true",
+          "member": "bool",
+          "name": "IsActive",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点分组名称",
+          "example": "默认专线分组",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点IP",
+          "example": "10.100.8.89",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点版本",
+          "example": "2109.8.20016.62000",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持升级连接器",
+          "example": "false",
+          "member": "bool",
+          "name": "IsUpgradeEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "升级状态: 0(升级中) , 1(升级失败) 或 2(升级成功)",
+          "example": "0",
+          "member": "int64",
+          "name": "UpgradeStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "升级状态描述",
+          "example": "升级中...",
+          "member": "string",
+          "name": "UpgradeDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则版本",
+          "example": "354821568",
+          "member": "string",
+          "name": "RuleVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeDLPFileDetectResultData": {
       "document": "查询文件检测结果响应数据",
       "members": [
@@ -1647,6 +2104,108 @@
           "document": "文件鉴定任务结果数据。详情查看具体数据结构",
           "example": "无",
           "member": "DescribeDLPFileDetectResultData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLPFileDetectTaskResult": {
+      "document": "查询文件检测结果响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "提交任务时的文件md5",
+          "example": "dtsveastedfsdvaefadfsdad",
+          "member": "string",
+          "name": "FileMd5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提交任务时的文件名",
+          "example": "产品交易订单.docx",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测执行状态：0未执行 1等待执行 2执行中 3执行失败 4执行完成 ",
+          "example": "4",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "    FileAbstract:文件摘要\n    FileAttr:文件属性\n    FileCategory:命中分级分类 array\n    FileContent:命中信息json(array)\n\t            RuleId:规则Id\n\t\t\t\tRuleName:规则名称\n\t\t\t\tRuleLevel:规则等级\n\t\t\t\tHits：命中词库内容\n\t\t\t\t    LibraryId：词库Id\n\t\t\t\t\tLibraryType:词库类型\n\t\t\t\t\tLibraryName:词库名称\n\t\t\t\t\tAttribute: 命中属性 doc.Content文件内容|doc.FileSize文件大小|doc.Name文件名|doc.Type文件类型\n\t\t\t\t\tString  待匹配内容\n\t\t\t\t\tContent 命中内容\n                HitsTotal 规则命中次数\n    FileMd5 文件ND5\n    FileName 文件名\n    FileSize 文件大小\n    FileType 文件后缀\n    FileTypeName 文件类型名称\n    FinalDataLevel 命中最高等级\n    NodeId 节点唯一Id\n    NodeIp 节点IP\n    NodeName 节点名称\n    OperateTime 文件操作时间\n    Url 文件下载Url",
+          "example": "（内容过长:见示例）",
+          "member": "string",
+          "name": "DetectResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测执行状态描述",
+          "example": "task:d3jhnmbjsehhr3dhnji0检测成功",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDLPFileDetectTaskResultRequest": {
+      "document": "DescribeDLPFileDetectTaskResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务请求Id",
+          "example": "dfsvadfs121312asdaf",
+          "member": "string",
+          "name": "TaskRequestId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLPFileDetectTaskResultResponse": {
+      "document": "DescribeDLPFileDetectTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件鉴定任务结果数据。详情查看具体数据结构",
+          "example": "无",
+          "member": "DescribeDLPFileDetectTaskResult",
           "name": "Data",
           "output_required": false,
           "type": "object",

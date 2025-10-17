@@ -63,6 +63,13 @@
       "output": "CreateResourceConfigResponse",
       "status": "online"
     },
+    "CreateVariable": {
+      "document": "创建变量 ",
+      "input": "CreateVariableRequest",
+      "name": "创建变量",
+      "output": "CreateVariableResponse",
+      "status": "online"
+    },
     "CreateWorkSpace": {
       "document": "创建工作空间",
       "input": "CreateWorkSpaceRequest",
@@ -215,6 +222,13 @@
       "input": "DescribeTreeResourcesRequest",
       "name": "查询树状结构资源列表",
       "output": "DescribeTreeResourcesResponse",
+      "status": "online"
+    },
+    "DescribeVariables": {
+      "document": "变量列表展示",
+      "input": "DescribeVariablesRequest",
+      "name": "变量描述",
+      "output": "DescribeVariablesResponse",
       "status": "online"
     },
     "DescribeWorkSpaces": {
@@ -2639,6 +2653,79 @@
       ],
       "type": "object"
     },
+    "CreateVariableRequest": {
+      "document": "CreateVariable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变量名",
+          "example": "Key",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变量值",
+          "example": "Value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变量类型  1：显式   2：隐藏",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVariableResponse": {
+      "document": "CreateVariable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变量Id",
+          "example": "无",
+          "member": "string",
+          "name": "VariableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateWorkSpaceRequest": {
       "document": "CreateWorkSpace请求参数结构体",
       "members": [
@@ -4549,6 +4636,33 @@
       ],
       "usage": "out"
     },
+    "DescribeVariablesRequest": {
+      "document": "DescribeVariables请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVariablesResponse": {
+      "document": "DescribeVariables返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeWorkSpacesRequest": {
       "document": "DescribeWorkSpaces请求参数结构体",
       "members": [
@@ -5771,7 +5885,7 @@
         {
           "disabled": false,
           "document": "作业名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -5851,7 +5965,7 @@
         {
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -5871,7 +5985,7 @@
         {
           "disabled": false,
           "document": "集群名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
@@ -5880,13 +5994,23 @@
         },
         {
           "disabled": false,
-          "document": "最新配置版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最新配置版本号，包括已经删除的版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "LatestJobConfigVersion",
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新的版本号，不包括已经删除的版本号",
+          "example": "1",
+          "member": "int64",
+          "name": "LatestValidJobConfigVersion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6061,7 +6185,7 @@
         {
           "disabled": false,
           "document": "使用CPU数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "RunningCpu",
           "output_required": false,
@@ -6071,7 +6195,7 @@
         {
           "disabled": false,
           "document": "使用内存数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "2.0",
           "member": "float",
           "name": "RunningMem",
           "output_required": false,
@@ -6104,6 +6228,16 @@
           "example": "1",
           "member": "int64",
           "name": "ContinueAlarm",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业重启次数",
+          "example": "1",
+          "member": "int64",
+          "name": "RestartCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -8830,7 +8964,7 @@
         {
           "disabled": false,
           "document": "RunningCpu\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1.0",
           "member": "float",
           "name": "RunningCpu",
           "output_required": false,
@@ -8840,7 +8974,7 @@
         {
           "disabled": false,
           "document": "RunningMem\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1.0",
           "member": "float",
           "name": "RunningMem",
           "output_required": false,
@@ -8856,6 +8990,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发布版本配置id",
+          "example": "1",
+          "member": "int64",
+          "name": "PublishedJobConfigId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

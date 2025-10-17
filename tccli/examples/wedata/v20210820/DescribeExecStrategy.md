@@ -17,7 +17,7 @@ Output:
         "Data": {
             "RuleGroupId": 1,
             "MonitorType": 1,
-            "ExecQueue": "test",
+            "ExecQueue": "queue",
             "ExecutorGroupId": "5678987567",
             "ExecutorGroupName": "执行队列",
             "Tasks": [
@@ -29,7 +29,7 @@ Output:
             ],
             "StartTime": "2023-10-01",
             "EndTime": "2023-10-01",
-            "CycleType": "abc",
+            "CycleType": "D",
             "DelayTime": 1,
             "CycleStep": 1,
             "TaskAction": "2",

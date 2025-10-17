@@ -5883,7 +5883,7 @@
         {
           "disabled": false,
           "document": "子上课班号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "['a','b']",
+          "example": "[\"groupID1\",\"groupID2\"]",
           "member": "string",
           "name": "SubGroupId",
           "output_required": true,
@@ -5892,7 +5892,7 @@
         },
         {
           "disabled": false,
-          "document": "用户的上台状态",
+          "document": "本堂课用户是否上过台。0 否；1 是",
           "example": "0",
           "member": "int64",
           "name": "Stage",

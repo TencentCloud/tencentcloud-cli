@@ -11,17 +11,17 @@ tccli wedata ModifyIntegrationNode --cli-unfold-argument  \
     --NodeInfo.Name mysql \
     --NodeInfo.NodeType OUTPUT \
     --NodeInfo.DataSourceType MYSQL \
-    --NodeInfo.Description 描述 \
+    --NodeInfo.Description Description \
     --NodeInfo.DatasourceId 913032 \
     --NodeInfo.Config.0.Name isClean \
     --NodeInfo.Config.0.Value 0 \
-    --NodeInfo.ExtConfig.0.Name x \
+    --NodeInfo.ExtConfig.0.Name Name \
     --NodeInfo.ExtConfig.0.Value 269 \
     --NodeInfo.Schema.0.Id 913935552 \
     --NodeInfo.Schema.0.Name id \
     --NodeInfo.Schema.0.Value null \
     --NodeInfo.Schema.0.Type int \
-    --NodeInfo.Schema.0.Properties.0.Name 111 \
+    --NodeInfo.Schema.0.Properties.0.Name Name \
     --NodeInfo.Schema.0.Properties.0.Value 1 \
     --NodeInfo.Schema.0.Alias id \
     --NodeInfo.Schema.0.Comment 主键ID \

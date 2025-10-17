@@ -252,6 +252,20 @@
       "output": "GetCodeFileResponse",
       "status": "online"
     },
+    "GetCodeFolder": {
+      "document": "获取sql文件夹详情",
+      "input": "GetCodeFolderRequest",
+      "name": "获取codestudio文件夹详情",
+      "output": "GetCodeFolderResponse",
+      "status": "online"
+    },
+    "GetDataBackfillPlan": {
+      "document": "获取补录计划详情",
+      "input": "GetDataBackfillPlanRequest",
+      "name": "查看补录计划配置详情",
+      "output": "GetDataBackfillPlanResponse",
+      "status": "online"
+    },
     "GetDataSource": {
       "document": "该接口用于查看指定数据源的详细信息",
       "input": "GetDataSourceRequest",
@@ -320,6 +334,13 @@
       "input": "GetResourceGroupMetricsRequest",
       "name": "查看某个资源组的监控指标",
       "output": "GetResourceGroupMetricsResponse",
+      "status": "online"
+    },
+    "GetSQLFolder": {
+      "document": "获取sql文件夹详情",
+      "input": "GetSQLFolderRequest",
+      "name": "获取SQL文件夹详情",
+      "output": "GetSQLFolderResponse",
       "status": "online"
     },
     "GetSQLScript": {
@@ -684,6 +705,13 @@
       "input": "SetSuccessTaskInstancesAsyncRequest",
       "name": "实例批量置成功(异步)",
       "output": "SetSuccessTaskInstancesAsyncResponse",
+      "status": "online"
+    },
+    "StartOpsTasks": {
+      "document": "异步批量启动任务",
+      "input": "StartOpsTasksRequest",
+      "name": "异步批量启动任务",
+      "output": "StartOpsTasksResponse",
       "status": "online"
     },
     "StopOpsTasksAsync": {
@@ -1775,6 +1803,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父文件夹路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/aaa/bbb/ccc",
+          "member": "string",
+          "name": "ParentFolderPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1918,6 +1956,16 @@
           "name": "Children",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父文件夹路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/aaa/bbb/ccc",
+          "member": "string",
+          "name": "ParentFolderPath",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -2400,7 +2448,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源类型:枚举值\n\n- MYSQL\n- TENCENT_MYSQL\n- POSTGRE\n- ORACLE\n- SQLSERVER\n- FTP\n- HIVE\n- HUDI\n- HDFS\n- ICEBERG\n- KAFKA\n- DTS_KAFKA\n- HBASE\n- SPARK\n- TBASE\n- DB2\n- DM\n- GAUSSDB\n- GBASE\n- IMPALA\n- ES\n- TENCENT_ES\n- GREENPLUM\n- SAP_HANA\n- SFTP\n- OCEANBASE\n- CLICKHOUSE\n- KUDU\n- VERTICA\n- REDIS\n- COS\n- DLC\n- DORIS\n- CKAFKA\n- S3_DATAINSIGHT\n- TDSQL\n- TDSQL_MYSQL\n- MONGODB\n- TENCENT_MONGODB\n- REST_API\n- TiDB\n- StarRocks\n- Trino\n- Kyuubi\n- TCHOUSE_X\n- TCHOUSE_P\n- TCHOUSE_C\n- TCHOUSE_D\n- INFLUXDB\n- BIG_QUERY\n- SSH\n- BLOB\n- TDSQL_POSTGRE\n- GDB\n- TDENGINE\n- TDSQLC\n",
+          "document": "数据源类型:枚举值\n\n- MYSQL\n- TENCENT_MYSQL\n- POSTGRE\n- ORACLE\n- SQLSERVER\n- FTP\n- HIVE\n- HUDI\n- HDFS\n- ICEBERG\n- KAFKA\n- DTS_KAFKA\n- HBASE\n- SPARK\n- TBASE\n- DB2\n- DM\n- GAUSSDB\n- GBASE\n- IMPALA\n- ES\n- TENCENT_ES\n- GREENPLUM\n- SAP_HANA\n- SFTP\n- OCEANBASE\n- CLICKHOUSE\n- KUDU\n- VERTICA\n- REDIS\n- COS\n- DLC\n- DORIS\n- CKAFKA\n- S3_DATAINSIGHT\n- TDSQL\n- TDSQL_MYSQL\n- MONGODB\n- TENCENT_MONGODB\n- REST_API\n- TiDB\n- StarRocks\n- Trino\n- Kyuubi\n- TCHOUSE_X\n- TCHOUSE_P\n- TCHOUSE_C\n- TCHOUSE_D\n- INFLUXDB\n- BIG_QUERY\n- SSH\n- BLOB\n- TDSQL_POSTGRE\n- GDB\n- TDENGINE\n- TDSQLC\n- FileSystem\n",
           "example": "MYSQL",
           "member": "string",
           "name": "Type",
@@ -2617,7 +2665,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "1 2627832231084032",
+          "example": "12627832231084032",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -2628,7 +2676,7 @@
           "document": "用户id",
           "example": "[\"100028721707\"]",
           "member": "string",
-          "name": "UseUins",
+          "name": "UserUins",
           "required": true,
           "type": "list"
         },
@@ -3872,6 +3920,202 @@
         }
       ],
       "usage": "both"
+    },
+    "DataBackfill": {
+      "document": "补录计划详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据补录计划id",
+          "example": "",
+          "member": "string",
+          "name": "DataBackfillPlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据补录计划名称",
+          "example": "",
+          "member": "string",
+          "name": "DataBackfillPlanName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录任务集合",
+          "example": "",
+          "member": "string",
+          "name": "TaskIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录任务的数据配置列表",
+          "example": "",
+          "member": "DataBackfillRange",
+          "name": "DataBackfillRangeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查父任务类型，取值范围：- NONE-全部不检查- ALL-检查全部上游父任务- MAKE_SCOPE-只在（当前补录计划）选中任务中检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "CheckParentType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补录是否忽略事件依赖\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "SkipEventListening",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义实例运行并发度, 返回为null或者不返回，则表示任务原有自依赖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "RedefineParallelNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义的工作流自依赖，yes或者no；如果不配置，则使用工作流原有自依赖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RedefineSelfWorkflowDependency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "SchedulerResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集成资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "IntegrationResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补录自定义的生成周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "RedefineCycleType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "KVPair",
+          "name": "RedefineParamList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补录任务的执行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补录任务的执行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建用户id",
+          "example": "",
+          "member": "string",
+          "name": "CreateUserUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录计划实例完成百分数",
+          "example": "",
+          "member": "uint64",
+          "name": "CompletePercent",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录计划实例成功百分数",
+          "example": "",
+          "member": "uint64",
+          "name": "SuccessPercent",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录是实例数据时间顺序，生效必须满足2个条件:1. 必须同周期任务2. 优先按依赖关系执行，无依赖关系影响的情况下按配置执行顺序执行 可选值- NORMAL: 不设置- ORDER: 顺序- REVERSE: 逆序不设置默认为NORMAL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "DataTimeOrder",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DataBackfillRange": {
       "document": "补录计划日期范围",
@@ -5673,6 +5917,107 @@
       ],
       "type": "object"
     },
+    "GetCodeFolderRequest": {
+      "document": "GetCodeFolder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1464962169590902784",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件夹id",
+          "example": "dqkwwijcwq",
+          "member": "string",
+          "name": "FolderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetCodeFolderResponse": {
+      "document": "GetCodeFolder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "codestudio文件夹",
+          "example": "无",
+          "member": "CodeFolderNode",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataBackfillPlanRequest": {
+      "document": "GetDataBackfillPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1460947878944567296",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "补录计划id",
+          "example": "13faeebf-4c61-4289-924b-7fc8b6f8ca6a",
+          "member": "string",
+          "name": "DataBackfillPlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "展示时区，默认UTC+8",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataBackfillPlanResponse": {
+      "document": "GetDataBackfillPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "补录详情",
+          "example": "无",
+          "member": "DataBackfill",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetDataSourceRelatedTasksRequest": {
       "document": "GetDataSourceRelatedTasks请求参数结构体",
       "members": [
@@ -6142,6 +6487,52 @@
       ],
       "type": "object"
     },
+    "GetSQLFolderRequest": {
+      "document": "GetSQLFolder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1464962169590902784",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件夹id",
+          "example": "aduqwiunca",
+          "member": "string",
+          "name": "FolderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSQLFolderResponse": {
+      "document": "GetSQLFolder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "sql文件夹",
+          "example": "无",
+          "member": "SQLFolderNode",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetSQLScriptRequest": {
       "document": "GetSQLScript请求参数结构体",
       "members": [
@@ -6589,7 +6980,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "25844270020317184",
+          "example": "2982744633770700800",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -6606,12 +6997,12 @@
         },
         {
           "disabled": false,
-          "document": "角色id",
-          "example": "308335260274237440",
+          "document": "角色id列表，目前支持的项目角色有\n- 308335260274237440 (项目管理员)\n- 308335260676890624 (数据工程师)\n- 308335260844662784 (运维工程师)\n- 308335260945326080 (普通成员)",
+          "example": "[\"308335260945326080\"]",
           "member": "string",
-          "name": "RoleId",
+          "name": "RoleIds",
           "required": true,
-          "type": "string"
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9925,17 +10316,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行资源组类型，不能为空\n\n- Schedule --- 调度资源组\n- Integration --- 集成资源组\n- DataService -- 数据服务资源组",
+          "document": "执行资源组类型\n\n- Schedule --- 调度资源组\n- Integration --- 集成资源组\n- DataService -- 数据服务资源组",
           "example": "Schedule",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
           "document": "资源组id",
-          "example": "",
+          "example": "1357",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -13253,12 +13644,12 @@
         },
         {
           "disabled": false,
-          "document": "角色id",
-          "example": "308335260636390624",
+          "document": "角色id列表，目前支持的项目角色有\n- 308335260274237440 (项目管理员)\n- 308335260676890624 (数据工程师)\n- 308335260844662784 (运维工程师)\n- 308335260945326080 (普通成员)",
+          "example": "[\"308335260274237440\"]",
           "member": "string",
-          "name": "RoleId",
+          "name": "RoleIds",
           "required": true,
-          "type": "string"
+          "type": "list"
         }
       ],
       "type": "object"
@@ -14503,6 +14894,77 @@
         }
       ],
       "usage": "both"
+    },
+    "StartOpsTasksRequest": {
+      "document": "StartOpsTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所属项目Id",
+          "example": "2763518183736183934",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务Id列表",
+          "example": "[\"20250630162948606\", \"20250725151016827\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "启动时是否补录上次暂停到当前的中间实例，默认false即不补录",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDataBackfill",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "StartOpsTasksResponse": {
+      "document": "StartOpsTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步操作结果",
+          "example": "无",
+          "member": "StartTasks",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartTasks": {
+      "document": "批量启动任务返回参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务启动是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "StopOpsTasksAsyncRequest": {
       "document": "StopOpsTasksAsync请求参数结构体",

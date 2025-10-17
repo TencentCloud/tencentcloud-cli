@@ -62,6 +62,14 @@
         "title": "指定标签查询网关负载均衡"
       }
     ],
+    "DescribeGatewayLoadBalancersResources": [
+      {
+        "document": "查询部署了GWLB集群的可用区",
+        "input": "POST / HTTP/1.1\nHost: gwlb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatewayLoadBalancersResources\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33a90f66-209e-4554-948a-c9652c08776e\",\n        \"TotalCount\": 1,\n        \"ZoneResourceSet\": [\n            {\n                \"MasterZone\": \"ap-guangzhou-2\"\n            }\n        ]\n    }\n}",
+        "title": "查询部署了GWLB集群的可用区"
+      }
+    ],
     "DescribeTargetGroupInstanceStatus": [
       {
         "document": "批量查询gwlb目标组后端服务状态",

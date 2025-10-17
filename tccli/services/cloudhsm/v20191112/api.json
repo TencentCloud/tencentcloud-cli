@@ -1079,20 +1079,11 @@
         },
         {
           "disabled": false,
-          "document": "货币类型，默认为CNY",
-          "example": "CNY",
-          "member": "string",
-          "name": "Currency",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "默认为CREATE，可选RENEW",
           "example": "CREATE",
           "member": "string",
           "name": "Type",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -1101,6 +1092,15 @@
           "example": "virtualization",
           "member": "string",
           "name": "HsmType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "货币类型，默认为CNY",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
           "required": false,
           "type": "string"
         }

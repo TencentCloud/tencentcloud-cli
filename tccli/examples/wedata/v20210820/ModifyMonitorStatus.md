@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata ModifyMonitorStatus --cli-unfold-argument  \
-    --ProjectId 657890432 \
+    --ProjectId 1934035434134845 \
     --RuleGroupId 1 \
     --MonitorStatus True
 ```

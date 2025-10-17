@@ -441,7 +441,7 @@
         {
           "disabled": false,
           "document": "应用程序软件包的远程存储路径",
-          "example": "cos://kelvin-test-1251762227.cos.ap-nanjing.myqcloud.com/batch_test/",
+          "example": "cos://kelvin-test-1251762227.cos.ap-nanjing.myqcloud.com/batch_test/demon_job.tar.gz",
           "member": "string",
           "name": "PackagePath",
           "output_required": false,

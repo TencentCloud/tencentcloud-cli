@@ -7,12 +7,11 @@ Input:
 ```
 tccli wedata DeleteTaskDs --cli-unfold-argument  \
     --ProjectId 1470547050521227264 \
-    --DeleteScript True \
-    --OperateInform True \
-    --TaskId 20230523111838986 \
-    --VirtualTaskId 20230523111838986 \
-    --VirtualFlag True \
-    --DeleteMode True
+    --DeleteScript False \
+    --OperateInform False \
+    --TaskId 20250812113455352 \
+    --VirtualFlag False \
+    --DeleteMode False
 ```
 
 Output: 
@@ -20,7 +19,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "77b63b69-b3c5-48ea-809e-d1bbfc1b3da0"
+        "RequestId": "3d0c7ddc-d0e5-4ea9-9e24-0f315de1fe3b"
     }
 }
 ```

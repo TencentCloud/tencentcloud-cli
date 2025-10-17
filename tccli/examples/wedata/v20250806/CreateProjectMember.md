@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata CreateProjectMember --cli-unfold-argument  \
-    --ProjectId 2917360018413740032 \
-    --UseUins 100028721707 \
+    --ProjectId 1470547050521227264 \
+    --UserUins 100028721707 \
     --RoleIds 308335260274237440
 ```
 
@@ -18,7 +18,7 @@ Output:
         "Data": {
             "Status": true
         },
-        "RequestId": "b2e40f2d-0179-412b-a71e-9a96636fd7c3"
+        "RequestId": "f432ec95-2d32-4f97-836d-e8af6612a66a"
     }
 }
 ```

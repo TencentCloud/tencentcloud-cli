@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata DescribeTaskTableMetricOverview --cli-unfold-argument  \
-    --TaskId 123 \
+    --TaskId taskId \
     --NodeType NodeType \
     --TaskType 0 \
     --Filters.0.Name Name \
@@ -33,7 +33,7 @@ Output:
                 "Topic": "Topic",
                 "Collection": "Collection",
                 "DataSourceName": "DataSourceName",
-                "NodeId": "123"
+                "NodeId": "nodeId"
             }
         ],
         "TotalCount": 0,

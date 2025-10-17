@@ -18,8 +18,8 @@ Output:
         "TrendsData": [
             {
                 "StatisticName": [
-                    "a",
-                    "b"
+                    "testa",
+                    "testb"
                 ],
                 "StatisticValue": [
                     2,

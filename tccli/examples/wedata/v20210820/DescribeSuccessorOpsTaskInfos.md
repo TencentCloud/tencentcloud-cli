@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DescribeSuccessorOpsTaskInfos --cli-unfold-argument  \
-    --TaskId 123 \
-    --ProjectId 213
+    --TaskId 20250807170933305 \
+    --ProjectId 2763518183736183934
 ```
 
 Output: 

@@ -10761,7 +10761,7 @@
         {
           "disabled": false,
           "document": "创建者",
-          "example": "222222",
+          "example": "creater",
           "member": "string",
           "name": "CreatedBy",
           "output_required": true,

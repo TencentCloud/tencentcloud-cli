@@ -6,13 +6,12 @@ Input:
 
 ```
 tccli wedata DescribeRelatedTasksByTaskId --cli-unfold-argument  \
-    --ProjectId 1464962169590902784 \
-    --TaskId 20250606112506283 \
+    --ProjectId 1470547050521227264 \
+    --TaskId 20250731175055049 \
     --PageNumber 1 \
     --PageSize 10 \
-    --DependencyDirection UP \
-    --Environment DEV \
-    --TaskName 
+    --DependencyDirection DOWN \
+    --Environment DEV
 ```
 
 Output: 
@@ -25,21 +24,21 @@ Output:
             "RelatedTaskList": [
                 {
                     "CycleType": "D",
-                    "DependencyDirection": "UP",
-                    "OwnerName": "peanutzhu",
-                    "ProjectDisplayName": "wedata数据开发",
-                    "ProjectId": "1464962169590902784",
+                    "DependencyDirection": "DOWN",
+                    "OwnerName": "jasonzcwang",
+                    "ProjectDisplayName": "wedata数据开发_新",
+                    "ProjectId": "1470547050521227264",
                     "Status": "N",
-                    "TaskId": "20250606112604725",
-                    "TaskName": "test_0606_1",
-                    "TaskTypeId": 35,
-                    "WorkflowId": "ab43623e-2473-413a-8c80-59e875167c96",
-                    "WorkflowName": "test_ceshi"
+                    "TaskId": "20250805162149172",
+                    "TaskName": "test_ds",
+                    "TaskTypeId": 46,
+                    "WorkflowId": "a6557acf-1dc4-4251-84c2-c1210d5a6390",
+                    "WorkflowName": "wf2"
                 }
             ],
             "TotalCount": 1
         },
-        "RequestId": "49c7dfc2-c145-4937-830d-96ab1608a430"
+        "RequestId": "02b7c343-0225-4685-99d4-59a5e468793d"
     }
 }
 ```

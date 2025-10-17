@@ -19,14 +19,14 @@ Output:
             "AlarmTables": [
                 {
                     "TableId": "asfert6345690uijn",
-                    "TableName": "test",
+                    "TableName": "test11",
                     "Cnt": 1
                 }
             ],
             "PipelineTables": [
                 {
                     "TableId": "7896tyguhbi79tygui",
-                    "TableName": "test",
+                    "TableName": "test11",
                     "Cnt": 1
                 }
             ]

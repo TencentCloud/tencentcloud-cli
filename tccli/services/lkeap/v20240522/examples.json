@@ -117,9 +117,15 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"lke-text-embedding-v2\",\n    \"Inputs\": [\n        \"1\"\n    ],\n    \"TextType\": \"document\",\n    \"Instruction\": \"问题:\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"lke-text-embedding-v2\",\n    \"Inputs\": [\n        \"1\"\n    ],\n    \"TextType\": \"document\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0.009212733\n                ]\n            }\n        ],\n        \"Usage\": {\n            \"TotalTokens\": 3\n        },\n        \"RequestId\": \"d4b6b8fb-597c-43f3-860d-715916c787b8\"\n    }\n}",
         "title": "获取特征向量v2"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"youtu-embedding-llm-v1\",\n    \"Inputs\": [\n        \"1\"\n    ],\n    \"TextType\": \"query\",\n    \"Instruction\": \"query:\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0.009212733\n                ]\n            }\n        ],\n        \"Usage\": {\n            \"TotalTokens\": 3\n        },\n        \"RequestId\": \"b69e784e-8807-440e-a8df-f970eca48f3c\"\n    }\n}",
+        "title": "获取特征向量-自定义Instruction"
       }
     ],
     "GetReconstructDocumentResult": [

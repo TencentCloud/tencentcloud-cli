@@ -2013,7 +2013,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务的类型，可以取的值有：\n<li>Classification：智能分类</li>\n<li>Cover：智能封面</li>\n<li>Tag：智能标签</li>\n<li>FrameTag：智能按帧标签</li>\n<li>Highlight：智能精彩集锦</li>\n<li>DeLogo：智能擦除</li>\n<li>Description：大模型摘要</li>\n<li>Dubbing：智能译制</li>\n<li>VideoRemake: 视频去重</li>",
+          "document": "任务的类型，可以取的值有：\n<li>Classification：智能分类</li>\n<li>Cover：智能封面</li>\n<li>Tag：智能标签</li>\n<li>FrameTag：智能按帧标签</li>\n<li>Highlight：智能精彩集锦</li>\n<li>DeLogo：智能擦除</li>\n<li>Description：大模型摘要</li>\n<li>Dubbing：智能译制</li>\n<li>VideoRemake: 视频去重</li>\n<li>VideoComprehension: 视频（音频）理解</li>",
           "example": "Classification",
           "member": "string",
           "name": "Type",
@@ -2137,6 +2137,16 @@
           "example": "无",
           "member": "AiAnalysisTaskVideoRemakeResult",
           "name": "VideoRemakeTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频（音频）理解任务的查询结果，当任务类型为 VideoComprehension 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskVideoComprehensionResult",
+          "name": "VideoComprehensionTask",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3316,6 +3326,134 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskVideoComprehensionInput": {
+      "document": "视频（音频）理解任务输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频（音频）理解模板ID",
+          "example": "33",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskVideoComprehensionOutput": {
+      "document": "视频（音频）理解输出内容结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频（音频）理解内容详情",
+          "example": "您好！作为一名专业的音乐分析师，非常荣幸能为您分析这段《梦中的婚礼》的钢琴弹奏。这是一首非常优美且广为人知的曲子，能选择它来练习，说明您对音乐有很好的品味和追求....",
+          "member": "string",
+          "name": "VideoComprehensionAnalysisResult",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskVideoComprehensionResult": {
+      "document": "视频（音频）理解结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 `PROCESSING`，`SUCCESS` 和 `FAIL` 三种。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0：成功，其他值：失败",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频（音频）理解输入",
+          "example": "无",
+          "member": "AiAnalysisTaskVideoComprehensionInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频（音频）理解输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskVideoComprehensionOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 媒体处理类错误码 列表",
+          "example": "InvalidInput",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务开始执行的时间，采用 ISO 日期格式。",
+          "example": "2024-05-25T02:55:55Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行完毕时间，采用 ISO 日期格式。",
+          "example": "2024-05-25T02:55:58Z",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16876,7 +17014,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束时子任务是否有失败。",
+          "document": "任务结束时子任务是否有失败。如果不传则忽略。\n<li>false: 过滤子任务没有失败的任务；</li>\n<li>true: 过滤子任务有失败的任务。</li>",
           "example": "false",
           "member": "bool",
           "name": "SubTaskHasFailed",

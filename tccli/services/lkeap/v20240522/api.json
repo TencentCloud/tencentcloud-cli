@@ -1445,7 +1445,7 @@
         },
         {
           "disabled": false,
-          "document": "说明：自定义任务指令词，当且仅当TextType=query时，生效",
+          "document": "说明：自定义任务指令词，当且仅当TextType=query且Model为youtu-embedding-llm-v1时，生效",
           "example": "问题：",
           "member": "string",
           "name": "Instruction",

@@ -2527,7 +2527,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板 ID。请登录 [Redis 控制台的参数模版](https://console.cloud.tencent.com/redis/templates)页面获取模版 ID。",
+          "document": "参数模板 ID。请登录 [Redis 控制台的参数模板](https://console.cloud.tencent.com/redis/templates)页面获取模板 ID。",
           "example": "crs-cfg-rhlppeye",
           "member": "string",
           "name": "TemplateId",

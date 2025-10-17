@@ -613,7 +613,7 @@
     "VoiceClone": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoiceClone\n<公共请求参数>\n\n{\n  \"SdkAppId\": 1466000000,\n  \"VoiceName\": \"xiaoming_02\",\n  \"APIKey\": \"sk-xxxxxx\",\n  \"PromptAudio\": \"ejxxxxxx\"\n}\n\n",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoiceClone\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1466000000,\n    \"VoiceName\": \"xiaoming_02\",\n    \"PromptAudio\": \"ejxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"VoiceId\": \"xiaoming_02_aidniwqndq\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建一个声音克隆"
       }

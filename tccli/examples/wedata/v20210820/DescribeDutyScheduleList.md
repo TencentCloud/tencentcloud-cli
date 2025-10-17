@@ -1,45 +1,4 @@
-**Example 1: 获取值班表列表**
-
-
-
-Input: 
-
-```
-tccli wedata DescribeDutyScheduleList --cli-unfold-argument  \
-    --PageNumber 1 \
-    --PageSize 15
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "52571d9f-1b14-4aaf-833e-15546b220665",
-        "Data": {
-            "Rows": [
-                {
-                    "Id": 1,
-                    "Name": "值班表A"
-                },
-                {
-                    "Id": 2,
-                    "Name": "值班表D"
-                },
-                {
-                    "Id": 3,
-                    "Name": "值班表B"
-                }
-            ],
-            "PageNumber": 1,
-            "PageSize": 15,
-            "TotalCount": 3,
-            "TotalPageNumber": 1
-        }
-    }
-}
-```
-
-**Example 2: 获取值班表列表，携带创建者信息**
+**Example 1: 获取值班表列表，携带创建者信息**
 
 
 
@@ -65,7 +24,7 @@ Output:
                 },
                 {
                     "Id": 88,
-                    "Name": "xxx",
+                    "Name": "ss1",
                     "Creator": "100022256608"
                 },
                 {

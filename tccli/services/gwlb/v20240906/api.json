@@ -49,6 +49,13 @@
       "output": "DescribeGatewayLoadBalancersResponse",
       "status": "online"
     },
+    "DescribeGatewayLoadBalancersResources": {
+      "document": "查询用户在当前地域支持可用区列表",
+      "input": "DescribeGatewayLoadBalancersResourcesRequest",
+      "name": "查询用户在当前地域支持可用区列表",
+      "output": "DescribeGatewayLoadBalancersResourcesResponse",
+      "status": "online"
+    },
     "DescribeTargetGroupInstanceStatus": {
       "document": "查询目标组后端服务状态。目前仅支持网关负载均衡类型的目标组支持查询后端服务状态。",
       "input": "DescribeTargetGroupInstanceStatusRequest",
@@ -587,6 +594,62 @@
           "member": "string",
           "name": "SearchKey",
           "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayLoadBalancersResourcesRequest": {
+      "document": "DescribeGatewayLoadBalancersResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回可用区资源列表数目，默认20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回可用区资源列表起始偏移量，默认0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatewayLoadBalancersResourcesResponse": {
+      "document": "DescribeGatewayLoadBalancersResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区支持的资源列表。",
+          "example": "无",
+          "member": "ZoneResource",
+          "name": "ZoneResourceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区资源列表数目。",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
           "type": "string"
         }
       ],
@@ -2026,6 +2089,23 @@
         }
       ],
       "usage": "out"
+    },
+    "ZoneResource": {
+      "document": "可用区资源列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "MasterZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

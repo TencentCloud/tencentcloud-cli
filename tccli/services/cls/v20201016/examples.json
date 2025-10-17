@@ -233,9 +233,15 @@
     "CreateTopic": [
       {
         "document": "创建日志主题",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"PartitionCount\": 1,\n    \"Tags\": [],\n    \"Period\": 12\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"Period\": 12\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建日志主题"
+      },
+      {
+        "document": "创建指标主题",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"LogsetId\": \"29ccb4c0-ab2f-47ab-9dcd-31413b057812\",\n    \"TopicName\": \"testname\",\n    \"BizType\": 1,\n    \"Period\": 12\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"6d069a26-1606-4142-9fa6-17ccee4f9bc9\",\n        \"RequestId\": \"c1731e60-e00d-45ee-a9e8-5343d4f38325\"\n    }\n}",
+        "title": "创建指标主题"
       }
     ],
     "CreateWebCallback": [
@@ -897,7 +903,7 @@
     "ModifyTopic": [
       {
         "document": "修改日志主题",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n    \"TopicName\": \"testname\",\n    \"Status\": false,\n    \"Tags\": [],\n    \"Period\": 10\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"TopicId\": \"866f8a15-ae8e-4ab4-afb2-4ff169fa3dc0\",\n    \"TopicName\": \"testname\",\n    \"Period\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改日志主题"
       }

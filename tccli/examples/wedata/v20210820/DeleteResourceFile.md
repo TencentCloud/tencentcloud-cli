@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DeleteResourceFile --cli-unfold-argument  \
-    --ProjectId 1470575647377821696 \
-    --ResourceId bd9211c6-3388-41e1-868f-cabd751c8877
+    --ProjectId 1470547050521227264 \
+    --ResourceId 2709a175-042d-4d43-b15a-cb616db16213
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "77b63b69-b3c5-48ea-809e-d1bbfc1b3da0"
+        "RequestId": "519f9afc-9099-41b5-a459-d7f7a58e35c7"
     }
 }
 ```

@@ -4481,7 +4481,7 @@
         {
           "disabled": false,
           "document": "指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。",
-          "example": "[{\"PrivateIpAddress\": \"172.16.32.237\"}]",
+          "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddresses",
           "required": false,
@@ -4523,7 +4523,7 @@
         {
           "disabled": false,
           "document": "内网IP详细信息。",
-          "example": "[{\"PrivateIpAddress\": \"172.16.32.237\", \"Primary\": false, \"PublicIpAddress\": \"\", \"AddressId\": \"\", \"Description\": \"\", \"IsWanIpBlocked\": false, \"State\": \"PENDING\", \"ResourceId\": \"\", \"QosLevel\": \"DEFAULT\"}]",
+          "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddressSet",
           "output_required": true,
@@ -27786,6 +27786,15 @@
           "name": "FlowLogDescription",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流日志采集周期，只支持CCN类型流日志。 取值范围（单位s）：60， 300， 600。",
+          "example": "300",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli wedata GrantMemberProjectRole --cli-unfold-argument  \
-    --ProjectId 2917360018413740032 \
+    --ProjectId 2982744633770700800 \
     --UserUin 100028721707 \
-    --RoleId 308335260274237440
+    --RoleIds 308335260945326080
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "17f03be1-e726-44e3-b10d-b844007a7183"
+        "RequestId": "e12df3f7-62ec-4fcc-989d-3ea3d99ae32f"
     }
 }
 ```

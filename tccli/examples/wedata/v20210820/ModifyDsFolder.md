@@ -6,10 +6,9 @@ Input:
 
 ```
 tccli wedata ModifyDsFolder --cli-unfold-argument  \
-    --ProjectId 1460947878944567296 \
-    --ParentsFolderId fe6d12bb-0f1b-4a72-9c9e-8ec2a131c084 \
-    --FolderName anyone \
-    --FolderId 860a23d6-ea4a-11ed-8909-bc97e105ba60
+    --ProjectId 1464962169590902784 \
+    --FolderName z1 \
+    --FolderId 5b9cc89a-7838-11f0-9366-7c8c09fca71c
 ```
 
 Output: 
@@ -17,7 +16,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "860a23d6-ea4a-11ed-8909-bc97e105ba60"
+        "RequestId": "e7d8d62a-346a-41bb-acf4-3dfdb8924952"
     }
 }
 ```

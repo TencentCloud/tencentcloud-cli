@@ -90,6 +90,14 @@
         "title": "创建依赖版本"
       }
     ],
+    "CreateVariable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVariable\n<公共请求参数>\n\n{\n    \"Name\": \"MyPassword\",\n    \"Value\": \"abcabc\",\n    \"Type\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"VariableId\": \"var-b035ds\",\n        \"RequestId\": \"5f124d6f-b035-4d29-9467-dd62eccdbf23\"\n    }\n}",
+        "title": "创建变量"
+      }
+    ],
     "CreateWorkSpace": [
       {
         "document": "",
@@ -282,6 +290,14 @@
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTreeResources\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"ResourceName\",\n            \"Values\": [\n                \"111\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Children\": [\n            {\n                \"ParentId\": \"root\",\n                \"Id\": \"folder-xxxxx\",\n                \"Name\": \"folder-name\",\n                \"Items\": null,\n                \"Children\": null,\n                \"TotalCount\": 0\n            }\n        ],\n        \"Id\": \"root\",\n        \"Items\": [\n            {\n                \"ResourceId\": \"resource-xxxxxx\",\n                \"Name\": \"flink-connector-jdbc.jar\",\n                \"ResourceType\": 1,\n                \"Remark\": \"pgsql1\",\n                \"FileName\": \"flink-connector-jdbc.jar\",\n                \"FolderId\": \"root\",\n                \"RefJobStatusCountSet\": [\n                    {\n                        \"JobStatus\": 5,\n                        \"Count\": 2\n                    }\n                ]\n            }\n        ],\n        \"Name\": \"依赖目录\",\n        \"ParentId\": \"\",\n        \"RequestId\": \"4aafc302-4fc5-44f5-9e90-2e0a2702ab81\",\n        \"TotalCount\": 333\n    }\n}",
         "title": "分类中的自定义树状结构并筛选"
+      }
+    ],
+    "DescribeVariables": [
+      {
+        "document": "查询变量列表",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVariables\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "变量列表展示"
       }
     ],
     "DescribeWorkSpaces": [

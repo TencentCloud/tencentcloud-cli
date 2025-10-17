@@ -24,7 +24,8 @@ Output:
                 "Info": "/* p = 2342 , f=abd */  select sleep(1000)",
                 "State": "User sleep",
                 "Time": "103",
-                "User": "root"
+                "User": "root",
+                "SqlType": "SQLSelectStatement"
             }
         ],
         "RequestId": "7d0d84f2-d4c0-4349-b5a3-cd70b6efbdfe",

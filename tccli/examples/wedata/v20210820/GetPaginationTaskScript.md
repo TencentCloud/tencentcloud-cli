@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli wedata GetPaginationTaskScript --cli-unfold-argument  \
-    --ProjectId abc \
-    --TaskId abc \
-    --PageNum 0
+    --ProjectId 1470547050521227264 \
+    --TaskId 20250808113834792
 ```
 
 Output: 
@@ -17,15 +16,15 @@ Output:
     "Response": {
         "Data": [
             {
-                "ProjectId": "abc",
-                "TaskId": "abc",
-                "PageSize": 0,
-                "PageNum": 0,
-                "PageTotal": 0,
-                "Base64ScriptContent": "abc"
+                "Base64ScriptContent": "IyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiMKIyNhdXRob3I6IGphc29uemN3YW5nCiMjY3JlYXRlIHRpbWU6IDIwMjUtMDgtMDggMTE6Mzg6MzAKIyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiMKcHJpbnQoIjEiKQ==",
+                "PageNum": 1,
+                "PageSize": 4096,
+                "PageTotal": 1,
+                "ProjectId": "1470547050521227264",
+                "TaskId": "20250808113834792"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1925b36c-ef69-4aad-be44-974eb9adc05e"
     }
 }
 ```

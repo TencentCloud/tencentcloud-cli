@@ -25,7 +25,7 @@ Output:
                 {
                     "RuleTemplateId": 1,
                     "Name": "规则1",
-                    "Description": "描述",
+                    "Description": "描述11",
                     "Type": 1,
                     "SourceObjectType": 1,
                     "SourceObjectDataType": 1,

@@ -7,7 +7,7 @@ Input:
 ```
 tccli wedata DescribeTablePartitions --cli-unfold-argument  \
     --PageNumber 0 \
-    --TableId xx \
+    --TableId guid \
     --PageSize 0
 ```
 
@@ -16,14 +16,14 @@ Output:
 {
     "Response": {
         "TotalCount": 0,
-        "RequestId": "xx",
+        "RequestId": "",
         "TablePartitionSet": [
             {
                 "ModifiedTime": "2020-09-22T00:00:00+00:00",
                 "RecordCount": 0,
-                "StorageSizeWithUnit": "xx",
-                "PartitionName": "xx",
-                "StorageSize": "xx",
+                "StorageSizeWithUnit": "",
+                "PartitionName": "",
+                "StorageSize": "10",
                 "CreateTime": "2020-09-22T00:00:00+00:00"
             }
         ]

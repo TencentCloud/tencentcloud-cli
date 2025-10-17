@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli wedata DescribeDatabaseMetas --cli-unfold-argument  \
-    --Filters.0.Name a \
+    --Filters.0.Name a1 \
     --Filters.0.Values 1 \
-    --OrderFields.0.Name abc \
-    --OrderFields.0.Direction abc \
-    --PageSize 0 \
+    --OrderFields.0.Name a1b1c \
+    --OrderFields.0.Direction a1b1c \
+    --PageSize 10 \
     --PageNumber 1
 ```
 
@@ -22,15 +22,25 @@ Output:
             {
                 "Catalog": null,
                 "Category": null,
-                "CreateTime": null,
-                "DatabaseId": "8MEGW08VQmavVIEC5iaabbcc",
-                "DatabaseName": "wedata_dev-db-name",
-                "DatasourceId": 8729,
-                "DatasourceName": "hbase_emr-bbnfaabbcc",
+                "ClusterId": null,
+                "ClusterName": null,
+                "CollectJobId": null,
+                "CollectJobName": null,
+                "CreateTime": "2025-08-12T16:00:53+08:00",
+                "DatabaseGuid": "FB-gjv53p2TZcPaaZmsGHw",
+                "DatabaseId": "31712",
+                "DatabaseName": "barry_4",
+                "DatasourceId": 93731,
+                "DatasourceList": null,
+                "DatasourceName": "hive_emr-3f0wn6y7",
                 "Description": null,
-                "DisplayName": "hbase_emr-bbnfaabb",
+                "DisplayName": "hive_emr-3f0wn6y7.barry_4",
+                "Environment": null,
                 "Instance": null,
-                "MetastoreType": "HBASE",
+                "LastAccessTimeByTables": null,
+                "MetastoreType": "HIVE",
+                "ModifiedTimeByTables": null,
+                "OwnerAccountName": null,
                 "ProjectDisplayName": null,
                 "ProjectId": null,
                 "ProjectName": null,
@@ -38,10 +48,10 @@ Output:
                 "Status": null,
                 "StorageSize": null,
                 "StorageSizeWithUnit": null,
-                "OwnerAccountName": null
+                "TableCount": null
             }
         ],
-        "RequestId": "7925e47c-5456-4591-9898-f76fbcfd36fa"
+        "RequestId": "d271201e-984c-439c-9672-142817b5414d"
     }
 }
 ```

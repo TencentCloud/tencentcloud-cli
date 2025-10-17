@@ -6,18 +6,19 @@ Input:
 
 ```
 tccli wedata CreateTaskFolder --cli-unfold-argument  \
-    --ProjectId 1522676572149563392 \
-    --FolderName FFFOOOLLLDDDEERR \
-    --ParentFolderId 6cccb832-b76a-11ed-b7fc-043f72e73c62 \
-    --WorkflowId 63b3878f-0602-11ee-b7fc-043f72e73c62
+    --ProjectId 1470547050521227264 \
+    --FolderName we3 \
+    --WorkflowId f13295ee-eac1-406a-ad8f-f4652e1386ef \
+    --ParentFolderId  \
+    --TaskNodeType GENERAL
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "277e97b2-8475-11ee-bfeb-b8cef68a6637",
-        "RequestId": "7d1d9f10-fb66-40c3-b704-5e174ebc95dd"
+        "Data": "f09452b7-de8b-42fc-b5bc-b5f247b66f38",
+        "RequestId": "e3e0db80-b1e4-4a86-9f36-501485d4c848"
     }
 }
 ```

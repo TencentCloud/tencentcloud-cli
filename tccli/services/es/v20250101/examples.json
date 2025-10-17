@@ -40,6 +40,14 @@
         "title": "获取文档解析任务结果"
       }
     ],
+    "GetMultiModalEmbedding": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMultiModalEmbedding\n<公共请求参数>\n\n{\n    \"ModelName\": \"WeCLIPv2-Base\",\n    \"Texts\": [\n        \"红色帽子\"\n    ],\n    \"ImageData\": [\n        \"data:image/jpeg;base64,/AAA/BBB/CCC\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5623e99-ea0c-9509-9b25-20bcc99d03e9\",\n        \"Data\": {\n            \"TextEmbeddings\": [\n                {\n                    \"Embedding\": [\n                        -0.007741480600088835,\n                        -0.017921222373843193,\n                        -0.04486401379108429,\n                        -0.0073757413774728775,\n                        0.014934351667761803,\n                        -0.025723660364747047,\n                        0.03559861704707146,\n                        -0.034379489719867706,\n                        0.027674268931150436,\n                        0.04876523092389107,\n                        -0.04266957566142082\n                    ],\n                    \"Index\": 0\n                }\n            ],\n            \"ImageEmbeddings\": [\n                {\n                    \"Embedding\": [\n                        -0.007741480600088835,\n                        -0.017921222373843193,\n                        -0.04486401379108429,\n                        -0.0073757413774728775,\n                        0.014934351667761803,\n                        -0.025723660364747047,\n                        0.03559861704707146,\n                        -0.034379489719867706,\n                        0.027674268931150436,\n                        0.04876523092389107,\n                        -0.04266957566142082\n                    ],\n                    \"Index\": 0\n                }\n            ]\n        },\n        \"Usage\": {\n            \"TotalTokens\": 4,\n            \"TotalImages\": 1\n        }\n    }\n}",
+        "title": "获取多模态特征向量"
+      }
+    ],
     "GetTextEmbedding": [
       {
         "document": "",

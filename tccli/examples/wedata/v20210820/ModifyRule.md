@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata ModifyRule --cli-unfold-argument  \
-    --ProjectId 1234 \
+    --ProjectId 308672372046875 \
     --RuleId 1 \
     --RuleGroupId 1 \
     --Name 规则1 \
@@ -18,7 +18,7 @@ tccli wedata ModifyRule --cli-unfold-argument  \
     --SourceObjectValue name \
     --ConditionType 1 \
     --ConditionExpression >0 \
-    --CustomSql abc \
+    --CustomSql select count(*) \
     --CompareRule.Items.0.CompareType 1 \
     --CompareRule.Items.0.Operator < \
     --CompareRule.Items.0.ValueComputeType 1 \
@@ -37,7 +37,7 @@ tccli wedata ModifyRule --cli-unfold-argument  \
     --FieldConfig.TableConfig.0.DatabaseId 78ughibj8t6ygihb \
     --FieldConfig.TableConfig.0.DatabaseName dbName \
     --FieldConfig.TableConfig.0.TableId 8iuyhbf2we9fu \
-    --FieldConfig.TableConfig.0.TableName test \
+    --FieldConfig.TableConfig.0.TableName tb \
     --FieldConfig.TableConfig.0.TableKey table_1 \
     --FieldConfig.TableConfig.0.FieldConfig.0.FieldKey table_1.column_1 \
     --FieldConfig.TableConfig.0.FieldConfig.0.FieldValue id \

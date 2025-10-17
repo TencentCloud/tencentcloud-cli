@@ -9875,15 +9875,6 @@
         },
         {
           "disabled": false,
-          "document": "TTS的API密钥",
-          "example": "sk-xxxxxxx",
-          "member": "string",
-          "name": "APIKey",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "声音克隆的名称, 只允许使用数字、字母、下划线，不能超过36位",
           "example": "xiaoming_01",
           "member": "string",
@@ -9898,6 +9889,15 @@
           "member": "string",
           "name": "PromptAudio",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TTS的API密钥",
+          "example": "sk-xxxxxxx",
+          "member": "string",
+          "name": "APIKey",
+          "required": false,
           "type": "string"
         },
         {

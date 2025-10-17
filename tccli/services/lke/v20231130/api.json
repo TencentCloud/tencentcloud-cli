@@ -8114,7 +8114,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "工作流的详情",
           "example": "无",
           "member": "WorkflowRunDetail",
           "name": "WorkflowRun",

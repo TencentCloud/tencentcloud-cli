@@ -9275,6 +9275,15 @@
           "name": "SyncToGlobalRegistry",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤筛选条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "StatusFilter",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12088,7 +12097,7 @@
         {
           "disabled": false,
           "document": "该服务对哪些命名空间可见\t",
-          "example": "[Namespace-1, Namespace-2]",
+          "example": "[ \"Namespace-2\"]",
           "member": "string",
           "name": "ExportTo",
           "output_required": false,
@@ -12113,6 +12122,26 @@
           "name": "SyncToGlobalRegistry",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隔离实例数",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsolateInstanceCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务健康状态",
+          "example": "1",
+          "member": "int64",
+          "name": "ServiceStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

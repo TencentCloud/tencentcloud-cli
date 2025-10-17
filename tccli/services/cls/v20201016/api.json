@@ -176,9 +176,9 @@
       "status": "online"
     },
     "CreateTopic": {
-      "document": "本接口用于创建日志主题。",
+      "document": "本接口用于创建日志或指标主题。",
       "input": "CreateTopicRequest",
-      "name": "创建日志主题",
+      "name": "创建主题",
       "output": "CreateTopicResponse",
       "status": "online"
     },
@@ -337,9 +337,9 @@
       "status": "online"
     },
     "DeleteTopic": {
-      "document": "本接口用于删除日志主题。",
+      "document": "本接口用于删除日志或指标主题。",
       "input": "DeleteTopicRequest",
-      "name": "删除日志主题",
+      "name": "删除主题",
       "output": "DeleteTopicResponse",
       "status": "online"
     },
@@ -568,9 +568,9 @@
       "status": "online"
     },
     "DescribeTopics": {
-      "document": "本接口用于获取日志主题列表，支持分页",
+      "document": "本接口用于获取日志或指标主题列表，支持分页",
       "input": "DescribeTopicsRequest",
-      "name": "获取日志主题列表",
+      "name": "获取主题列表",
       "output": "DescribeTopicsResponse",
       "status": "online"
     },
@@ -736,9 +736,9 @@
       "status": "online"
     },
     "ModifyTopic": {
-      "document": "本接口用于修改日志主题。",
+      "document": "本接口用于修改日志或指标主题。",
       "input": "ModifyTopicRequest",
-      "name": "修改日志主题",
+      "name": "修改主题",
       "output": "ModifyTopicResponse",
       "status": "online"
     },
@@ -2832,7 +2832,7 @@
         {
           "disabled": false,
           "document": "允许访问的资源列表，目前仅支持一个Resource",
-          "example": "当Type为1时:['qcs::cls::uin/1000:dashboard/dashboard-xx']; 当Type为2时:['qcs::cls:ap-guangzhou:uin/10000:topic/cxxx']",
+          "example": "[\"qcs::cls::uin/10000xxxxx:dashboard/dashboard-xx\", \"qcs::cls:ap-guangzhou:uin/10000xxxxx:topic/cxxx\"]",
           "member": "string",
           "name": "Resources",
           "output_required": true,
@@ -2898,7 +2898,7 @@
         {
           "disabled": false,
           "document": "默认的检索分析语句，仅当Type为2时使用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {         \"Name\":\"query\",         \"Values\":[             \"* | select *\"         ]     } ]",
+          "example": "无",
           "member": "ConsoleSharingParam",
           "name": "Params",
           "output_required": false,
@@ -5815,7 +5815,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]\n",
+          "document": "主题名称\n名称限制\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]\n",
           "example": "testname",
           "member": "string",
           "name": "TopicName",
@@ -5824,7 +5824,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题分区个数。默认创建1个，最大支持创建10个分区。",
+          "document": "主题分区个数。默认创建1个，最大支持创建10个分区。",
           "example": "1",
           "member": "int64",
           "name": "PartitionCount",
@@ -5833,7 +5833,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，同一个资源只能绑定到同一个标签键下。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -5860,7 +5860,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。",
+          "document": "日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot。指标主题不支持该配置。",
           "example": "hot",
           "member": "string",
           "name": "StorageType",
@@ -5869,7 +5869,7 @@
         },
         {
           "disabled": false,
-          "document": "存储时间，单位天。\n- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。\n- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。",
+          "document": "存储时间，单位天。\n- 日志主题：日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。\n- 日志主题：日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。\n- 指标主题：支持1至3600天，值为3640时代表永久保存。",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -5878,7 +5878,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题描述",
+          "document": "主题描述",
           "example": "xx部门xx任务topic",
           "member": "string",
           "name": "Describes",
@@ -5887,10 +5887,19 @@
         },
         {
           "disabled": false,
-          "document": "0：关闭日志沉降。\n非0：开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。\n仅在StorageType为 hot 时生效。",
+          "document": "0：日志主题关闭日志沉降。\n非0：日志主题开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。\n仅在StorageType为 hot 时生效，指标主题不支持该配置。",
           "example": "7",
           "member": "uint64",
           "name": "HotPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主题类型\n- 0:日志主题，默认值\n- 1:指标主题",
+          "example": "0",
+          "member": "uint64",
+          "name": "BizType",
           "required": false,
           "type": "int"
         },
@@ -5905,7 +5914,7 @@
         },
         {
           "disabled": false,
-          "document": "免鉴权开关。 false：关闭； true：开启。默认为false。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。",
+          "document": "免鉴权开关。 false：关闭； true：开启。默认为false。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。指标主题不支持该配置。",
           "example": "false",
           "member": "bool",
           "name": "IsWebTracking",
@@ -5914,7 +5923,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题扩展信息",
+          "document": "主题扩展信息",
           "example": "无",
           "member": "TopicExtendInfo",
           "name": "Extends",
@@ -5929,7 +5938,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "主题ID",
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "TopicId",
@@ -7358,7 +7367,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "主题ID- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
           "example": "a5ce0c9c-0690-44a5-bc79-5f2190626bd0",
           "member": "string",
           "name": "TopicId",
@@ -9651,7 +9660,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<ul><li>topicName 按照【日志主题名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>logsetName 按照【日志集名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>topicId 按照【日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>logsetId 按照【日志集ID】进行过滤，可通过调用 <a href=\"https://cloud.tencent.com/document/product/614/58624\">DescribeLogsets</a> 查询已创建的日志集列表或登录控制台进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/614/58626\">CreateLogset</a> 创建新的日志集。类型：String。必选：否</li>\n<li>tagKey 按照【标签键】进行过滤。类型：String。必选：否</li>\n<li>tag:tagKey 按照【标签键值对】进行过滤。tagKey 使用具体的标签键进行替换，例如 tag:exampleKey。类型：String。必选：否</li>\n<li>storageType 按照【日志主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String。必选：否</li></ul>\n注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。",
+          "document": "<ul><li>topicName 按照【主题名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>logsetName 按照【日志集名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>topicId 按照【主题ID】进行过滤。类型：String。必选：否</li>\n<li>logsetId 按照【日志集ID】进行过滤，可通过调用 <a href=\"https://cloud.tencent.com/document/product/614/58624\">DescribeLogsets</a> 查询已创建的日志集列表或登录控制台进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/614/58626\">CreateLogset</a> 创建新的日志集。类型：String。必选：否</li>\n<li>tagKey 按照【标签键】进行过滤。类型：String。必选：否</li>\n<li>tag:tagKey 按照【标签键值对】进行过滤。tagKey 使用具体的标签键进行替换，例如 tag:exampleKey。类型：String。必选：否</li>\n<li>storageType 按照【主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String。必选：否</li></ul>\n注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9702,7 +9711,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题列表",
+          "document": "主题列表",
           "example": "无",
           "member": "TopicInfo",
           "name": "Topics",
@@ -13860,7 +13869,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "document": "主题ID\n- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。",
           "example": "eb9ec10d-1343-4386-9a6e-75fd9d68726e",
           "member": "string",
           "name": "TopicId",
@@ -13869,7 +13878,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称\n输入限制：\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]",
+          "document": "主题名称\n输入限制：\n- 不能为空字符串\n- 不能包含字符'|'\n- 不能使用以下名称[\"cls_service_log\",\"loglistener_status\",\"loglistener_alarm\",\"loglistener_business\",\"cls_service_metric\"]",
           "example": "testname",
           "member": "string",
           "name": "TopicName",
@@ -13878,7 +13887,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的日志主题。最大支持10个标签键值对，并且不能有重复的键值对。",
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的主题。最大支持10个标签键值对，并且不能有重复的键值对。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -13905,7 +13914,7 @@
         },
         {
           "disabled": false,
-          "document": "若开启最大分裂，该主题能够能够允许的最大分区数；\n默认为50；必须为正数",
+          "document": "若开启最大分裂，该主题能够允许的最大分区数；\n默认为50；必须为正数",
           "example": "50",
           "member": "int64",
           "name": "MaxSplitPartitions",
@@ -13923,7 +13932,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题描述",
+          "document": "主题描述",
           "example": "xx部门xx业务topic",
           "member": "string",
           "name": "Describes",
@@ -13932,7 +13941,7 @@
         },
         {
           "disabled": false,
-          "document": "0：关闭日志沉降。\n非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效",
+          "document": "0：日志主题关闭日志沉降。\n非0：日志主题开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。\n仅在StorageType为 hot 时生效，指标主题不支持该配置。",
           "example": "1",
           "member": "uint64",
           "name": "HotPeriod",
@@ -13950,7 +13959,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题扩展信息",
+          "document": "主题扩展信息",
           "example": "无",
           "member": "TopicExtendInfo",
           "name": "Extends",
@@ -13959,7 +13968,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题分区数量。\n默认为1；\n取值范围及约束：\n- 当输入值<=0，系统自动调整为1。\n- 如果未传MaxSplitPartitions，需要PartitionCount<=50；\n- 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；",
+          "document": "主题分区数量。\n默认为1；\n取值范围及约束：\n- 当输入值<=0，系统自动调整为1。\n- 如果未传MaxSplitPartitions，需要PartitionCount<=50；\n- 如果传递了MaxSplitPartitions，需要PartitionCount<=MaxSplitPartitions；",
           "example": "10",
           "member": "uint64",
           "name": "PartitionCount",
