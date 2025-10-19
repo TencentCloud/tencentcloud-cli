@@ -160,10 +160,22 @@
     ],
     "CreateFunctionRule": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFunctionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-293e7s5jne1i\",\n    \"FunctionRuleConditions\": [\n        {\n            \"RuleConditions\": [\n                {\n                    \"Operator\": \"equal\",\n                    \"Values\": [\n                        \"/123\"\n                    ],\n                    \"Target\": \"url\"\n                }\n            ]\n        }\n    ],\n    \"FunctionId\": \"ef-1pakhnuy\",\n    \"Remark\": \"my function rule\"\n}",
+        "document": "为站点 zone-293e7s5jne1i 创建一个边缘函数规则，当请求host为 www.function.com 时命中规则，采用 direct（直接指定）的方式选择目标函数，目标函数 ID 为 ef-1pakhnuy 。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFunctionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-293e7s5jne1i\",\n    \"FunctionRuleConditions\": [\n        {\n            \"RuleConditions\": [\n                {\n                    \"Operator\": \"equal\",\n                    \"Values\": [\n                        \"www.function.com\"\n                    ],\n                    \"Target\": \"host\"\n                }\n            ]\n        }\n    ],\n    \"TriggerType\": \"direct\",\n    \"FunctionId\": \"ef-1pakhnuy\",\n    \"Remark\": \"function rule trigger direct\"\n}",
         "output": "{\n    \"Response\": {\n        \"RuleId\": \"rule-vnqup0uc\",\n        \"RequestId\": \"aab9a28a-4cce-434d-852f-5442275817aa\"\n    }\n}",
-        "title": "创建边缘函数规则"
+        "title": "创建边缘函数规则命中规则后执行指定函数"
+      },
+      {
+        "document": "为站点 zone-293e7s5jne1i 创建一个边缘函数规则，当请求host为 www.function.com 时命中规则，采用 region（基于客户端 IP 国家/地区）的方式选择目标函数，如果客户端的 IP 归属地为中国大陆，则执行函数 ef-1pakhnuy ，如果客户端的 IP 归属地为其他地区，则执行函数 ef-1wekxwnu 。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFunctionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-293e7s5jne1i\",\n    \"FunctionRuleConditions\": [\n        {\n            \"RuleConditions\": [\n                {\n                    \"Operator\": \"equal\",\n                    \"Values\": [\n                        \"www.function.com\"\n                    ],\n                    \"Target\": \"host\"\n                }\n            ]\n        }\n    ],\n    \"TriggerType\": \"region\",\n    \"RegionMappingSelections\": [\n        {\n            \"FunctionId\": \"ef-1pakhnuy\",\n            \"Regions\": [\n                \"CN\"\n            ]\n        },\n        {\n            \"FunctionId\": \"ef-1wekxwnu\",\n            \"Regions\": [\n                \"Default\"\n            ]\n        }\n    ],\n    \"Remark\": \"function rule trigger region\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleId\": \"rule-vnqup0uc\",\n        \"RequestId\": \"aab9a28a-4cce-434d-852f-5442275817aa\"\n    }\n}",
+        "title": "创建边缘函数规则命中规则后根据客户请求地区执行不同的函数"
+      },
+      {
+        "document": "为站点 zone-293e7s5jne1i 创建一个边缘函数规则，当请求host为 www.function.com 时命中规则，采用 weight（基于权重）的方式选择目标函数，有20%的概率，执行函数 ef-1pakhnuy ，有80%的概率，执行函数 ef-1wekxwnu 。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFunctionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-293e7s5jne1i\",\n    \"FunctionRuleConditions\": [\n        {\n            \"RuleConditions\": [\n                {\n                    \"Operator\": \"equal\",\n                    \"Values\": [\n                        \"www.function.com\"\n                    ],\n                    \"Target\": \"host\"\n                }\n            ]\n        }\n    ],\n    \"TriggerType\": \"weight\",\n    \"WeightedSelections\": [\n        {\n            \"FunctionId\": \"ef-1wekxwnu\",\n            \"Weight\": 80\n        },\n        {\n            \"FunctionId\": \"ef-1pakhnuy\",\n            \"Weight\": 20\n        }\n    ],\n    \"Remark\": \"function rule trigger weight\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleId\": \"rule-vnqup0uc\",\n        \"RequestId\": \"aab9a28a-4cce-434d-852f-5442275817aa\"\n    }\n}",
+        "title": "创建边缘函数规则命中规则后根据客户设置的权重执行不同的函数"
       }
     ],
     "CreateJustInTimeTranscodeTemplate": [
@@ -894,9 +906,9 @@
     ],
     "DescribeFunctionRules": [
       {
-        "document": "",
+        "document": "查询站点 zone-293e7s5jne1i 下的函数规则。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctionRules\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-293e7s5jne1i\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7213f7f-a67b-4602-b630-ed6740e1a124\",\n        \"FunctionRules\": [\n            {\n                \"RuleId\": \"rule-53qpdadi\",\n                \"FunctionRuleConditions\": [\n                    {\n                        \"RuleConditions\": [\n                            {\n                                \"Operator\": \"equal\",\n                                \"Target\": \"url\",\n                                \"Values\": [\n                                    \"/test3\"\n                                ],\n                                \"IgnoreCase\": false,\n                                \"Name\": \"\"\n                            }\n                        ]\n                    }\n                ],\n                \"FunctionId\": \"ef-n1j14wfm\",\n                \"FunctionName\": \"testfunction\",\n                \"Priority\": 2,\n                \"Remark\": \"my function rule\",\n                \"CreateTime\": \"2023-04-19T07:32:09Z\",\n                \"UpdateTime\": \"2023-04-19T07:36:43Z\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7213f7f-a67b-4602-b630-ed6740e1a124\",\n        \"FunctionRules\": [\n            {\n                \"RuleId\": \"rule-53qpdadi\",\n                \"FunctionRuleConditions\": [\n                    {\n                        \"RuleConditions\": [\n                            {\n                                \"Operator\": \"equal\",\n                                \"Target\": \"url\",\n                                \"Values\": [\n                                    \"/test3\"\n                                ],\n                                \"IgnoreCase\": false,\n                                \"Name\": \"\"\n                            }\n                        ]\n                    }\n                ],\n                \"TriggerType\": \"region\",\n                \"RegionMappingSelections\": [\n                    {\n                        \"FunctionId\": \"ef-1pakhnuy\",\n                        \"Regions\": [\n                            \"CN\"\n                        ]\n                    },\n                    {\n                        \"FunctionId\": \"ef-1wekxwnu\",\n                        \"Regions\": [\n                            \"Default\"\n                        ]\n                    }\n                ],\n                \"FunctionId\": \"\",\n                \"FunctionName\": \"\",\n                \"Priority\": 2,\n                \"Remark\": \"my function rule\",\n                \"CreateTime\": \"2023-04-19T07:32:09Z\",\n                \"UpdateTime\": \"2023-04-19T07:36:43Z\"\n            }\n        ]\n    }\n}",
         "title": "查询边缘函数触发规则列表"
       }
     ],
@@ -1616,10 +1628,22 @@
     ],
     "ModifyFunctionRule": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFunctionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2gqxim9jstab\",\n    \"RuleId\": \"rule-vnqup0uc\",\n    \"FunctionRuleConditions\": [\n        {\n            \"RuleConditions\": [\n                {\n                    \"Operator\": \"equal\",\n                    \"Values\": [\n                        \"/test\"\n                    ],\n                    \"Target\": \"url\"\n                }\n            ]\n        }\n    ],\n    \"FunctionId\": \"ef-1pakhnuy\",\n    \"Remark\": \"my function\"\n}",
+        "document": "修改函数规则 rule-vnqup0uc ，当请求host为 www.function.com 时命中规则，采用 direct（直接指定）的方式选择目标函数，目标函数 ID 为 ef-1pakhnuy 。\n\n",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFunctionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-293e7s5jne1i\",\n    \"RuleId\": \"rule-vnqup0uc\",\n    \"FunctionRuleConditions\": [\n        {\n            \"RuleConditions\": [\n                {\n                    \"Operator\": \"equal\",\n                    \"Values\": [\n                        \"www.function.com\"\n                    ],\n                    \"Target\": \"host\"\n                }\n            ]\n        }\n    ],\n    \"TriggerType\": \"direct\",\n    \"FunctionId\": \"ef-1pakhnuy\",\n    \"Remark\": \"function rule trigger direct\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7a1e998f-fa00-4670-8457-ed4b4fe5018a\"\n    }\n}",
-        "title": "修改边缘函数规则"
+        "title": "修改边缘函数规则命中规则后执行指定函数"
+      },
+      {
+        "document": "修改函数规则 rule-vnqup0uc，当请求host为 www.function.com 时命中规则，采用 region（基于客户端 IP 国家/地区）的方式选择目标函数，如果客户端的 IP 归属地为中国大陆，则执行函数 ef-1pakhnuy ，如果客户端的 IP 归属地为其他地区，则执行函数 ef-1wekxwnu 。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFunctionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-293e7s5jne1i\",\n    \"RuleId\": \"rule-vnqup0uc\",\n    \"FunctionRuleConditions\": [\n        {\n            \"RuleConditions\": [\n                {\n                    \"Operator\": \"equal\",\n                    \"Values\": [\n                        \"www.function.com\"\n                    ],\n                    \"Target\": \"host\"\n                }\n            ]\n        }\n    ],\n    \"TriggerType\": \"region\",\n    \"RegionMappingSelections\": [\n        {\n            \"FunctionId\": \"ef-1pakhnuy\",\n            \"Regions\": [\n                \"CN\"\n            ]\n        },\n        {\n            \"FunctionId\": \"ef-1wekxwnu\",\n            \"Regions\": [\n                \"Default\"\n            ]\n        }\n    ],\n    \"Remark\": \"function rule trigger region\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7a1e998f-fa00-4670-8457-ed4b4fe5018a\"\n    }\n}",
+        "title": "修改边缘函数规则命中规则后根据客户请求地区执行不同的函数"
+      },
+      {
+        "document": "修改函数规则 rule-vnqup0uc，当请求host为 www.function.com 时命中规则，采用 weight（基于权重）的方式选择目标函数，有20%的概率，执行函数 ef-1pakhnuy ，有80%的概率，执行函数 ef-1wekxwnu 。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFunctionRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-293e7s5jne1i\",\n    \"RuleId\": \"rule-vnqup0uc\",\n    \"FunctionRuleConditions\": [\n        {\n            \"RuleConditions\": [\n                {\n                    \"Operator\": \"equal\",\n                    \"Values\": [\n                        \"www.function.com\"\n                    ],\n                    \"Target\": \"host\"\n                }\n            ]\n        }\n    ],\n    \"TriggerType\": \"weight\",\n    \"WeightedSelections\": [\n        {\n            \"FunctionId\": \"ef-1wekxwnu\",\n            \"Weight\": 80\n        },\n        {\n            \"FunctionId\": \"ef-1pakhnuy\",\n            \"Weight\": 20\n        }\n    ],\n    \"Remark\": \"function rule trigger weight\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7a1e998f-fa00-4670-8457-ed4b4fe5018a\"\n    }\n}",
+        "title": "修改边缘函数规则命中规则后根据客户设置的权重执行不同的函数"
       }
     ],
     "ModifyFunctionRulePriority": [

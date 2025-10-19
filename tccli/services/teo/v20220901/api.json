@@ -113,7 +113,7 @@
       "status": "online"
     },
     "CreateFunctionRule": {
-      "document": "创建边缘函数的触发规则。",
+      "document": "创建边缘函数的触发规则。支持通过自定义过滤条件来决定是否需要执行函数，当需要执行函数时，提供了多种选择目标函数的方式，包括：直接指定，基于客户端归属地区选择和基于权重选择。",
       "input": "CreateFunctionRuleRequest",
       "name": "创建边缘函数触发规则",
       "output": "CreateFunctionRuleResponse",
@@ -1114,7 +1114,7 @@
       "status": "online"
     },
     "ModifyFunctionRule": {
-      "document": "修改边缘函数触发规则，支持修改规则条件、执行函数以及描述信息。",
+      "document": "修改边缘函数触发规则，支持修改规则条件、执行函数以及描述信息。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。",
       "input": "ModifyFunctionRuleRequest",
       "name": "修改边缘函数触发规则",
       "output": "ModifyFunctionRuleResponse",
@@ -6112,12 +6112,39 @@
         },
         {
           "disabled": false,
-          "document": "函数 ID，命中触发规则条件后执行的函数。",
+          "document": "函数选择配置类型：\n<li> direct：直接指定执行函数；</li>\n<li> weight：基于权重比选择函数；</li>\n<li> region：基于客户端 IP 的国家/地区选择函数。</li>\n不填时默认为 direct 。",
+          "example": "direct",
+          "member": "string",
+          "name": "TriggerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。",
           "example": "ef-0agikbrr",
           "member": "string",
           "name": "FunctionId",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中至少包含一项 Regions 为 Default 的配置。",
+          "example": "无",
+          "member": "FunctionRegionSelection",
+          "name": "RegionMappingSelections",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。",
+          "example": "无",
+          "member": "FunctionWeightedSelection",
+          "name": "WeightedSelections",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -16509,6 +16536,34 @@
       ],
       "usage": "both"
     },
+    "FunctionRegionSelection": {
+      "document": "地区策略配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数 ID 。",
+          "example": "ef-0agikbrr",
+          "member": "string",
+          "name": "FunctionId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国家/地区列表。示例值：CN：中国，CN.GD：中国广东。取值请参考：[国家/地区及对应代码枚举](https://cloud.tencent.com/document/product/1552/112542)。",
+          "example": "[\"CN\"]",
+          "member": "string",
+          "name": "Regions",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FunctionRule": {
       "document": "边缘函数触发规则。",
       "members": [
@@ -16534,7 +16589,17 @@
         },
         {
           "disabled": false,
-          "document": "函数 ID，命中触发规则条件后执行的函数。",
+          "document": "函数选择配置类型：\n<li> direct：直接指定执行函数；</li>\n<li> weight：基于权重比选择函数；</li>\n<li> region：基于客户端 IP 的国家/地区选择函数。</li>\n",
+          "example": "direct",
+          "member": "string",
+          "name": "TriggerType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定执行的函数 ID。当 TriggerType 为 direct 时有效。",
           "example": "ef-jjhvk7ec",
           "member": "string",
           "name": "FunctionId",
@@ -16544,22 +16609,32 @@
         },
         {
           "disabled": false,
-          "document": "规则描述。",
-          "example": "鉴权",
+          "document": "指定执行的函数名称。",
+          "example": "TestFunction",
           "member": "string",
-          "name": "Remark",
+          "name": "FunctionName",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "函数名称。",
-          "example": "TestFunction",
-          "member": "string",
-          "name": "FunctionName",
-          "output_required": true,
-          "type": "string",
+          "document": "基于客户端 IP 国家/地区的函数选择配置。",
+          "example": "无",
+          "member": "FunctionRegionSelection",
+          "name": "RegionMappingSelections",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基于权重的函数选择配置。",
+          "example": "无",
+          "member": "FunctionWeightedSelection",
+          "name": "WeightedSelections",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -16574,8 +16649,18 @@
         },
         {
           "disabled": false,
+          "document": "规则描述。",
+          "example": "鉴权",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
-          "example": "2017-09-17T16:30:58.410670+00:00",
+          "example": "2017-09-17T16:30:58+00:00",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -16585,7 +16670,7 @@
         {
           "disabled": false,
           "document": "更新时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
-          "example": "2017-09-17T16:30:58.410670+00:00",
+          "example": "2017-09-17T16:30:58+00:00",
           "member": "datetime_iso",
           "name": "UpdateTime",
           "output_required": true,
@@ -16607,6 +16692,34 @@
           "output_required": true,
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FunctionWeightedSelection": {
+      "document": "权重策略配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数 ID 。",
+          "example": "ef-0agikbrr",
+          "member": "string",
+          "name": "FunctionId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "选中权重。取值范围0-100，所有的权重之和需要为100。\n选中概率计算方式为：\nweight/100。例如设置了两个函数 A 和 B ，其中 A 的权重为30，那么 B 的权重必须为70，最终选中 A 的概率为30%，选中 B 的概率为70%。",
+          "example": "30",
+          "member": "uint64",
+          "name": "Weight",
+          "output_required": true,
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -20031,7 +20144,7 @@
         },
         {
           "disabled": false,
-          "document": "规则 ID。",
+          "document": "规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。",
           "example": "rule-02y3grbu",
           "member": "string",
           "name": "RuleId",
@@ -20049,12 +20162,39 @@
         },
         {
           "disabled": false,
-          "document": "函数 ID，命中触发规则条件后执行的函数，不填写保持原有配置。",
+          "document": "函数选择配置类型：\n<li> direct：直接指定执行函数；</li>\n<li> weight：基于权重比选择函数；</li>\n<li> region：基于客户端 IP 的国家/地区选择函数。</li>\n不填时默认为 direct 。",
+          "example": "direct",
+          "member": "string",
+          "name": "TriggerType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。",
           "example": "ef-jjhvk7ec",
           "member": "string",
           "name": "FunctionId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中至少包含一项 Regions 为 Default 的配置。",
+          "example": "无",
+          "member": "FunctionRegionSelection",
+          "name": "RegionMappingSelections",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。",
+          "example": "无",
+          "member": "FunctionWeightedSelection",
+          "name": "WeightedSelections",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,

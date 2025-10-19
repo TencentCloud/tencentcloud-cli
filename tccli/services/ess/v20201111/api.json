@@ -252,6 +252,13 @@
       "output": "CreateFlowSignUrlResponse",
       "status": "online"
     },
+    "CreateInformationExtractionWebUrl": {
+      "document": "此接口（CreateInformationExtractionWebUrl）用来创建合同信息提取web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。\n\n注: \n1. pdf、word格式限制大小为10M以下\n2. pdg、jpeg、jpg格式限制大小为5M以下",
+      "input": "CreateInformationExtractionWebUrlRequest",
+      "name": "创建合同智能提取web页面",
+      "output": "CreateInformationExtractionWebUrlResponse",
+      "status": "online"
+    },
     "CreateIntegrationDepartment": {
       "document": "此接口（CreateIntegrationDepartment）用于创建企业的部门信息，支持绑定客户系统部门ID。",
       "input": "CreateIntegrationDepartmentRequest",
@@ -642,6 +649,13 @@
       "input": "DescribeInformationExtractionTaskRequest",
       "name": "获取合同智能提取任务详情",
       "output": "DescribeInformationExtractionTaskResponse",
+      "status": "online"
+    },
+    "DescribeInformationExtractionWebUrl": {
+      "document": "此接口（DescribeInformationExtractionWebUrl）用来获取合同信息提取web页面链接（此web页面可以通过iframe方式嵌入到贵方系统的网页中）。",
+      "input": "DescribeInformationExtractionWebUrlRequest",
+      "name": "获取合同智能提取结果web页面",
+      "output": "DescribeInformationExtractionWebUrlResponse",
       "status": "online"
     },
     "DescribeIntegrationDepartments": {
@@ -5792,6 +5806,70 @@
           "name": "FlowApproverUrlInfos",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInformationExtractionWebUrlRequest": {
+      "document": "CreateInformationExtractionWebUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "需要提取的合同文件资源ID,可通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">UploadFiles</a>接口获取文件资源ID。\n\n注: \n-  `word、pdf文件每个文件限制在10M以下`\n-  `png、jpg、jpeg文件每个限制在5M以下`",
+          "example": "[\"yDtGEUUgydz\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1024长度。\n\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。",
+          "example": "5rWL6K+V5pWw5o2u",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "个性化参数，用于控制页面展示内容",
+          "example": "无",
+          "member": "WebUrlOption",
+          "name": "Option",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInformationExtractionWebUrlResponse": {
+      "document": "CreateInformationExtractionWebUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同信息提取嵌入式web页面链接。\n\n注意：`链接有效期为5分钟，且链接仅能使用一次。`",
+          "example": "https://embed.test.qian.tencent.cn/ai-contract-info-extract-embed?embed=1&code=xxx&channel=TENCENTCLOUD&embedType=CONTRACT_EXTRACTION&shortKey=xx",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -11510,6 +11588,52 @@
           "name": "Results",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInformationExtractionWebUrlRequest": {
+      "document": "DescribeInformationExtractionWebUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同信息提取任务ID，该参数可通过回调事件[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)获取或者从控制台信息提取任务列表获取。\n\n注意：`不填写任务ID时返回信息提取任务列表URL，填写任务ID时返回信息提取任务详情URL`",
+          "example": "yDtGEUUgydjcwqRz",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInformationExtractionWebUrlResponse": {
+      "document": "DescribeInformationExtractionWebUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同信息提取嵌入式web页面链接。\n注意：`链接有效期为5分钟，且链接仅能使用一次。`",
+          "example": "https://embed.test.qian.tencent.cn/ai-contract-info-extract-e",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -19758,6 +19882,45 @@
         }
       ],
       "usage": "in"
+    },
+    "WebUrlOption": {
+      "document": "提取web嵌入页面个性化设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "禁用链接预览",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableLinkPreview",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁用任务编辑",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableTaskEditing",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁用任务结果编辑",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableTaskResultEditing",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"
