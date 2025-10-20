@@ -483,6 +483,27 @@
       "output": "CreateReserveIpAddressesResponse",
       "status": "online"
     },
+    "CreateRoutePolicy": {
+      "document": "创建VPC路由接收策略，包括名字，描述和策略条目。",
+      "input": "CreateRoutePolicyRequest",
+      "name": "创建路由策略及策略条目。",
+      "output": "CreateRoutePolicyResponse",
+      "status": "online"
+    },
+    "CreateRoutePolicyAssociations": {
+      "document": "本接口（CreateRoutePolicyAssociations）用于创建路由接收策略绑定(路由策略实例和路由表实例的绑定关系以及绑定优先级)。",
+      "input": "CreateRoutePolicyAssociationsRequest",
+      "name": "创建路由接收策略绑定",
+      "output": "CreateRoutePolicyAssociationsResponse",
+      "status": "online"
+    },
+    "CreateRoutePolicyEntries": {
+      "document": "本接口（CreateRoutePolicyEntries）用于创建路由接收策略条目。",
+      "input": "CreateRoutePolicyEntriesRequest",
+      "name": "创建路由接收策略条目",
+      "output": "CreateRoutePolicyEntriesResponse",
+      "status": "online"
+    },
     "CreateRouteTable": {
       "document": "本接口(CreateRouteTable)用于创建路由表。\n* 创建了VPC后，系统会创建一个默认路由表，所有新建的子网都会关联到默认路由表。默认情况下您可以直接使用默认路由表来管理您的路由策略。当您的路由策略较多时，您可以调用创建路由表接口创建更多路由表管理您的路由策略。\n* 创建路由表同时可以绑定标签, 应答里的标签列表代表添加成功的标签。",
       "input": "CreateRouteTableRequest",
@@ -859,6 +880,27 @@
       "input": "DeleteReserveIpAddressesRequest",
       "name": "删除内网保留IP",
       "output": "DeleteReserveIpAddressesResponse",
+      "status": "online"
+    },
+    "DeleteRoutePolicy": {
+      "document": "本接口（DeleteRoutePolicy）用于删除路由接收策略和条目。",
+      "input": "DeleteRoutePolicyRequest",
+      "name": "删除路由接收策略和条目。",
+      "output": "DeleteRoutePolicyResponse",
+      "status": "online"
+    },
+    "DeleteRoutePolicyAssociations": {
+      "document": "本接口(DeleteRoutePolicyAssociations)用于删除路由接收策略绑定（路由接收策略对象和路由表的绑定关系）。",
+      "input": "DeleteRoutePolicyAssociationsRequest",
+      "name": "删除路由接收策略绑定",
+      "output": "DeleteRoutePolicyAssociationsResponse",
+      "status": "online"
+    },
+    "DeleteRoutePolicyEntries": {
+      "document": "本接口(DeleteRoutePolicyEntries)用于删除路由接收策略条目。",
+      "input": "DeleteRoutePolicyEntriesRequest",
+      "name": "删除路由接收策略条目",
+      "output": "DeleteRoutePolicyEntriesResponse",
       "status": "online"
     },
     "DeleteRouteTable": {
@@ -1503,6 +1545,13 @@
       "input": "DescribeRouteListRequest",
       "name": "查询路由条目列表",
       "output": "DescribeRouteListResponse",
+      "status": "online"
+    },
+    "DescribeRoutePolicyEntries": {
+      "document": "本接口（DescribeRoutePolicyEntries）用于查询路由接收策略条目列表。",
+      "input": "DescribeRoutePolicyEntriesRequest",
+      "name": "查看路由接收策略条目",
+      "output": "DescribeRoutePolicyEntriesResponse",
       "status": "online"
     },
     "DescribeRouteTableAssociatedInstances": {
@@ -2457,6 +2506,13 @@
       "output": "ModifyReserveIpAddressResponse",
       "status": "online"
     },
+    "ModifyRoutePolicyAttribute": {
+      "document": "本接口（ModifyRoutePolicyAttribute）用于修改路由接收策略属性属性。",
+      "input": "ModifyRoutePolicyAttributeRequest",
+      "name": "修改路由策略属性",
+      "output": "ModifyRoutePolicyAttributeResponse",
+      "status": "online"
+    },
     "ModifyRouteTableAttribute": {
       "document": "本接口（ModifyRouteTableAttribute）用于修改路由表（RouteTable）属性。",
       "input": "ModifyRouteTableAttributeRequest",
@@ -2716,6 +2772,20 @@
       "output": "ReplaceHighPriorityRoutesResponse",
       "status": "online"
     },
+    "ReplaceRoutePolicyAssociations": {
+      "document": "本接口（ReplaceRoutePolicyAssociations）根据路由接收策略实例ID（RoutePolicyId）和路由表实例ID（RouteTableId）修改绑定优先级（Priority），支持批量修改。",
+      "input": "ReplaceRoutePolicyAssociationsRequest",
+      "name": "替换路由接收策略绑定",
+      "output": "ReplaceRoutePolicyAssociationsResponse",
+      "status": "online"
+    },
+    "ReplaceRoutePolicyEntries": {
+      "document": "本接口（ReplaceRoutePolicyEntries）根据路由接收策略规则ID（RoutePolicyEntryId）修改指定的路由策略条目（RoutePolicyEntry），支持批量修改。",
+      "input": "ReplaceRoutePolicyEntriesRequest",
+      "name": "替换路由表接收策略条目",
+      "output": "ReplaceRoutePolicyEntriesResponse",
+      "status": "online"
+    },
     "ReplaceRouteTableAssociation": {
       "document": "本接口（ReplaceRouteTableAssociation）用于修改子网（Subnet）关联的路由表（RouteTable）。\n* 一个子网只能关联一个路由表。",
       "input": "ReplaceRouteTableAssociationRequest",
@@ -2763,6 +2833,20 @@
       "input": "ResetNatGatewayConnectionRequest",
       "name": "调整NAT网关并发连接上限",
       "output": "ResetNatGatewayConnectionResponse",
+      "status": "online"
+    },
+    "ResetRoutePolicyAssociations": {
+      "document": "本接口（ResetRoutePolicyAssociations）用于对某个路由表实例已经绑定的路由策略实例解除绑定关系，并重新设置新的绑定路由策略及优先级。<br />",
+      "input": "ResetRoutePolicyAssociationsRequest",
+      "name": "重置路由策略绑定",
+      "output": "ResetRoutePolicyAssociationsResponse",
+      "status": "online"
+    },
+    "ResetRoutePolicyEntries": {
+      "document": "本接口（ResetRoutePolicyEntries）根据路由接收策略规则ID（RoutePolicyId）重置指定的路由接收策略条目（RoutePolicyEntry），支持批量修改。",
+      "input": "ResetRoutePolicyEntriesRequest",
+      "name": "重置路由接收策略条目",
+      "output": "ResetRoutePolicyEntriesResponse",
       "status": "online"
     },
     "ResetRoutes": {
@@ -9933,6 +10017,123 @@
       ],
       "type": "object"
     },
+    "CreateRoutePolicyAssociationsRequest": {
+      "document": "CreateRoutePolicyAssociations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由接收策略绑定对象列表。",
+          "example": "无",
+          "member": "RoutePolicyAssociation",
+          "name": "RoutePolicyAssociationSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoutePolicyAssociationsResponse": {
+      "document": "CreateRoutePolicyAssociations返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoutePolicyEntriesRequest": {
+      "document": "CreateRoutePolicyEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由接收策略实例ID。",
+          "example": "rrp-q7ywkx3w",
+          "member": "string",
+          "name": "RoutePolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由接收策略条目列表。",
+          "example": "无",
+          "member": "RoutePolicyEntry",
+          "name": "RoutePolicyEntrySet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoutePolicyEntriesResponse": {
+      "document": "CreateRoutePolicyEntries返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoutePolicyRequest": {
+      "document": "CreateRoutePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由策略描述。",
+          "example": "TEST",
+          "member": "string",
+          "name": "RoutePolicyDescription",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由策略名。",
+          "example": "TEST",
+          "member": "string",
+          "name": "RoutePolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由策略条目列表。",
+          "example": "无",
+          "member": "RoutePolicyEntry",
+          "name": "RoutePolicyEntrySet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoutePolicyResponse": {
+      "document": "CreateRoutePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由策略ID及规则。",
+          "example": "无",
+          "member": "RoutePolicy",
+          "name": "RoutePolicy",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRouteTableRequest": {
       "document": "CreateRouteTable请求参数结构体",
       "members": [
@@ -13412,6 +13613,96 @@
     },
     "DeleteReserveIpAddressesResponse": {
       "document": "DeleteReserveIpAddresses返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoutePolicyAssociationsRequest": {
+      "document": "DeleteRoutePolicyAssociations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由策略绑定对象列表，删除路由策略绑定时，仅需使用RoutePolicyAssociation的RouteTableId字段和RoutePolicyId字段（不需要填写Priority字段）。",
+          "example": "无",
+          "member": "RoutePolicyAssociation",
+          "name": "RoutePolicyAssociationSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoutePolicyAssociationsResponse": {
+      "document": "DeleteRoutePolicyAssociations返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoutePolicyEntriesRequest": {
+      "document": "DeleteRoutePolicyEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由接收策略实例ID。",
+          "example": "rrp-q7ywkx3w",
+          "member": "string",
+          "name": "RoutePolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由接收策略条目列表，删除路由策略规则时，仅需使用RoutePolicyEntry的RoutePolicyEntryIdId字段。",
+          "example": "无",
+          "member": "RoutePolicyEntry",
+          "name": "RoutePolicyEntrySet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoutePolicyEntriesResponse": {
+      "document": "DeleteRoutePolicyEntries返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoutePolicyRequest": {
+      "document": "DeleteRoutePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由接收策略唯一ID。",
+          "example": "rrp-pguby7ma",
+          "member": "string",
+          "name": "RoutePolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoutePolicyResponse": {
+      "document": "DeleteRoutePolicy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18945,6 +19236,98 @@
           "example": "无",
           "member": "Route",
           "name": "RouteSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的实例数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoutePolicyEntriesRequest": {
+      "document": "DescribeRoutePolicyEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件，参数不支持同时指定RoutePolicyEntryIds和Filters。\n<li>route-policy-id - String - （过滤条件）路由接收策略实例ID，形如：rrp-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）CIDR(只取掩码前的子网部分)，形如：10.0.0.0/8。</li>\n<li>priority - Integer - （过滤条件）优先级，形如：20。</li>\n<li>gateway-type - String - （过滤条件）下一跳类型，形如：CVM。</li>\n<li>gateway-id - String - （过滤条件）下一跳实例唯一ID，形如：ccn-f49l6u0z。</li>\n<li>route-type - String - （过滤条件）路由类型，取值：USER（用户路由），NETD（网络探测下发的路由），CCN（云联网路由）。</li>\n<li>action - String - （过滤条件）动作，取值：DROP（丢弃），DISABLE（接收且禁用），ACCEPT（接收且启用）。</li>\n<li>description - String - （过滤条件）描述，形如：TEST。</li>\n<li>route-policy-item-id - String - （过滤条件）路由接收策略条目唯一ID，形如：rrpi-dq782kw7。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求对象个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段。当前只支持优先级Prioriry字段。",
+          "example": "Priority",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方向。\nASC：升序。\nDESC：降序。",
+          "example": "ASC",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由策略条目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RoutePolicyEntryIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoutePolicyEntriesResponse": {
+      "document": "DescribeRoutePolicyEntries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由接收策略条目列表。",
+          "example": "无",
+          "member": "RoutePolicyEntry",
+          "name": "RoutePolicyEntrySet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -29153,6 +29536,51 @@
       ],
       "type": "object"
     },
+    "ModifyRoutePolicyAttributeRequest": {
+      "document": "ModifyRoutePolicyAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由接收策略实例ID，例如：rrp-dz0219jq。",
+          "example": "rrp-dz0219jq",
+          "member": "string",
+          "name": "RoutePolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由接收策略名称。",
+          "example": "name",
+          "member": "string",
+          "name": "RoutePolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由接收策略描述。",
+          "example": "TEST",
+          "member": "string",
+          "name": "RoutePolicyDescription",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoutePolicyAttributeResponse": {
+      "document": "ModifyRoutePolicyAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRouteTableAttributeRequest": {
       "document": "ModifyRouteTableAttribute请求参数结构体",
       "members": [
@@ -33239,6 +33667,69 @@
       ],
       "type": "object"
     },
+    "ReplaceRoutePolicyAssociationsRequest": {
+      "document": "ReplaceRoutePolicyAssociations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由接收策略绑定对象列表。需要指定路由接收策略实例ID（RoutePolicyId）和路由表实例ID（RouteTableId）。",
+          "example": "无",
+          "member": "RoutePolicyAssociation",
+          "name": "RoutePolicyAssociationSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceRoutePolicyAssociationsResponse": {
+      "document": "ReplaceRoutePolicyAssociations返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceRoutePolicyEntriesRequest": {
+      "document": "ReplaceRoutePolicyEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由策略实例ID，例如：rrp-azd4dt1c。",
+          "example": "rrp-azd4dt1c",
+          "member": "string",
+          "name": "RoutePolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由策略规则列表。需要指定路由策略规则ID（RoutePolicyEntryId）。",
+          "example": "无",
+          "member": "RoutePolicyEntry",
+          "name": "RoutePolicyEntrySet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaceRoutePolicyEntriesResponse": {
+      "document": "ReplaceRoutePolicyEntries返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReplaceRouteTableAssociationRequest": {
       "document": "ReplaceRouteTableAssociation请求参数结构体",
       "members": [
@@ -33653,6 +34144,96 @@
     },
     "ResetNatGatewayConnectionResponse": {
       "document": "ResetNatGatewayConnection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRoutePolicyAssociationsRequest": {
+      "document": "ResetRoutePolicyAssociations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由表实例ID，例如：rtb-azd4dt1c。",
+          "example": "rtb-n0yejvje",
+          "member": "string",
+          "name": "RouteTableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由策略绑定对象（RoutePolicyAssociation）列表。注意：路由策略绑定中的路由表实例ID（RouteTableId）需要和该接口的RouteTableId参数保持一致（也就是该接口只支持修改同一个路由表实例下的路有策略绑定关系及优先级）。",
+          "example": "无",
+          "member": "RoutePolicyAssociation",
+          "name": "RoutePolicyAssociationSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRoutePolicyAssociationsResponse": {
+      "document": "ResetRoutePolicyAssociations返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRoutePolicyEntriesRequest": {
+      "document": "ResetRoutePolicyEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由接收策略实例ID，例如：rrp-azd4dt1c。",
+          "example": "rrp-azd4dt1c",
+          "member": "string",
+          "name": "RoutePolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由接收策略条目列表。需要指定路由策略条目ID（RoutePolicyEntryId）。",
+          "example": "无",
+          "member": "RoutePolicyEntry",
+          "name": "RoutePolicyEntrySet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "路由接收策略描述。",
+          "example": "TEST",
+          "member": "string",
+          "name": "RoutePolicyDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由接收策略名字。",
+          "example": "TEST",
+          "member": "string",
+          "name": "RoutePolicyName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetRoutePolicyEntriesResponse": {
+      "document": "ResetRoutePolicyEntries返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -34731,6 +35312,244 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RoutePolicy": {
+      "document": "路由接收策略。当云联网或其他业务添加路由到VPC自定义路由表时，可以丢弃或启用，禁用相应的路由条目。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由策略唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rrp-pguby7ma",
+          "member": "string",
+          "name": "RoutePolicyId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由策略名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "RoutePolicyName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由策略描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "RoutePolicyDescription",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由策略规则列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "RoutePolicyEntry",
+          "name": "RoutePolicyEntrySet",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由策略绑定。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"RouteTableId\": \"\trtb-qk8eyn9g\", \"RoutePolicyId\": \"rrp-r70ctaia\", \"Priority\": 100}]",
+          "member": "RoutePolicyAssociation",
+          "name": "RoutePolicyAssociationSet",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-20 15:21:54",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对。",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RoutePolicyAssociation": {
+      "document": "路由接收策略绑定。用来绑定路由表和路由接收策略以及绑定的优先级。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由表唯一ID。",
+          "example": "rtb-qk8eyn9g",
+          "member": "string",
+          "name": "RouteTableId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由接收策略唯一ID。",
+          "example": "rrp-r70ctaia",
+          "member": "string",
+          "name": "RoutePolicyId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Priority",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RoutePolicyEntry": {
+      "document": "路由接收策略条目。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由策略条目IPv4唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rrpi-hd7hsfhh",
+          "member": "string",
+          "name": "RoutePolicyEntryId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标网段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13.0.0.0/16",
+          "member": "string",
+          "name": "CidrBlock",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由策略规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由类型。\nUSER：用户自定义类型。\nNETD：网络探测下发的路由。\nCCN：云联网路由。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CCN",
+          "member": "string",
+          "name": "RouteType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下一跳类型。目前我们支持的类型有：\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nHAVIP：高可用虚拟IP；\nNAT：NAT网关; \nEIP：云服务器的公网IP；\nLOCAL_GATEWAY：本地网关;\nPVGW：PVGW网关。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVM",
+          "member": "string",
+          "name": "GatewayType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "172.16.16.37",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优先级。数值越小，优先级越高。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Priority",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "动作。\nDROP：丢弃。\nDISABLE：接收且禁用。\nACCEPT：接收且启用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACCEPT",
+          "member": "string",
+          "name": "Action",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-20 15:06:34",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

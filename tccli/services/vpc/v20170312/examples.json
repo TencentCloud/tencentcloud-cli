@@ -648,6 +648,30 @@
         "title": "指定个数，申请自动分配的保留 IP"
       }
     ],
+    "CreateRoutePolicy": [
+      {
+        "document": "创建VPC路由接收策略。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateRoutePolicy\n&RoutePolicyName=TEST\n&RoutePolicyDescription=TEST\n&RoutePolicyEntrySet.0.Description=TEST\n&RoutePolicyEntrySet.0.CidrBlock=192.168.0.0/16\n&RoutePolicyEntrySet.0.GatewayType=CVM\n&RoutePolicyEntrySet.0.GatewayId=172.16.16.37\n&RoutePolicyEntrySet.0.Priority=100\n&RoutePolicyEntrySet.0.Action=ACCEPT\n&RoutePolicyEntrySet.0.RouteType=USER\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"RoutePolicy\": {\n            \"RoutePolicyId\": \"rrp-azd4dt1c\",\n            \"RoutePolicyName\": \"TEST\",\n            \"RoutePolicyEntrySet\": [\n                {\n                    \"Description\": \"\",\n                    \"CidrBlock\": \"192.168.0.0/16\",\n                    \"GatewayType\": \"CVM\",\n                    \"GatewayId\": \"172.16.16.37\",\n                    \"Priority\": 100,\n                    \"Action\": \"ACCEPT\",\n                    \"RouteType\": \"USER\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "创建VPC路由接收策略。"
+      }
+    ],
+    "CreateRoutePolicyAssociations": [
+      {
+        "document": "创建路由接收策略绑定。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoutePolicyAssociations\n<公共请求参数>\n\n{\n    \"RoutePolicyAssociationSet\": [\n        {\n            \"RouteTableId\": \"rtb-qk8eyn9g\",\n            \"RoutePolicyId\": \"rrp-q7ywkx3w\",\n            \"Priority\": 100\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建路由接收策略绑定"
+      }
+    ],
+    "CreateRoutePolicyEntries": [
+      {
+        "document": "创建路由接收策略条目。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateRoutePolicyEntries\n&RoutePolicyId=rrp-azd4dt1c\n&RoutePolicyEntrySet.0.CidrBlock=192.168.0.0/16\n&RoutePolicyEntrySet.0.GatewayType=CVM\n&RoutePolicyEntrySet.0.GatewayId=172.16.16.37\n&RoutePolicyEntrySet.0.Priority=100\n&RoutePolicyEntrySet.0.Action=ACCEPT\n&RoutePolicyEntrySet.0.RouteType=USER\n&<公共请求参数>\n",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "创建路由接收策略条目。"
+      }
+    ],
     "CreateRouteTable": [
       {
         "document": "创建路由表",
@@ -1090,6 +1114,30 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReserveIpAddresses\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-mcqaoy0f\",\n    \"ReserveIpIds\": [\n        \"rsvip-calhlymy\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"116b4d96-f745-4173-bee5-c464a4363757\"\n    }\n}",
         "title": "删除内网保留IP"
+      }
+    ],
+    "DeleteRoutePolicy": [
+      {
+        "document": "删除路由接收策略实例",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteRoutePolicy\n&RoutePolicyId=rrp-azd4dt1c\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "删除路由接收策略实例"
+      }
+    ],
+    "DeleteRoutePolicyAssociations": [
+      {
+        "document": "删除路由接收策略绑定。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoutePolicyAssociations\n<公共请求参数>\n\n{\n    \"RoutePolicyAssociationSet\": [\n        {\n            \"RouteTableId\": \"rtb-qk8eyn9g\",\n            \"RoutePolicyId\": \"rrp-q7ywkx3w\",\n            \"Priority\": 100\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "删除路由接收策略绑定"
+      }
+    ],
+    "DeleteRoutePolicyEntries": [
+      {
+        "document": "删除路由接收策略条目。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteRoutePolicyEntries\n&RoutePolicyId=rrp-azd4dt1c\n&RoutePolicyEntrySet.0.RoutePolicyEntryId=rrpi-la0vk0g3\n&<公共请求参数>\n",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "删除路由接收策略条目"
       }
     ],
     "DeleteRouteTable": [
@@ -1994,6 +2042,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRouteList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"route-table-id\",\n            \"Values\": [\n                \"rtb-la2qkgku\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4525a651-aa66-451e-bb20-839c967e9172\",\n        \"RouteSet\": [\n            {\n                \"CdcId\": \"\",\n                \"CreatedTime\": \"2024-12-27 16:44:44\",\n                \"DestinationCidrBlock\": \"\",\n                \"DestinationIpv6CidrBlock\": \"2402:4e00:1717:bc00::/64\",\n                \"Enabled\": true,\n                \"GatewayId\": \"ccn-j0w29irz\",\n                \"GatewayType\": \"CCN\",\n                \"PublishedToVbc\": false,\n                \"RouteDescription\": \"\",\n                \"RouteId\": 0,\n                \"RouteItemId\": \"rti6-exmyaywi\",\n                \"RouteTableId\": \"rtb-la2qkgku\",\n                \"RouteType\": \"CCN\"\n            }\n        ],\n        \"TotalCount\": 7\n    }\n}",
         "title": "查询路由条目"
+      }
+    ],
+    "DescribeRoutePolicyEntries": [
+      {
+        "document": "查询路由策略规则列表。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoutePolicyEntries\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"route-policy-id\",\n            \"Values\": [\n                \"rrp-fcrulzf8\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"OrderField\": \"abc\",\n    \"OrderDirection\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoutePolicyEntrySet\": [\n            {\n                \"RoutePolicyEntryId\": \"rrpi-5j5wut37\",\n                \"Description\": \"\",\n                \"GatewayType\": \"PVGW\",\n                \"GatewayId\": \"172.16.16.37\",\n                \"Priority\": 1113,\n                \"Action\": \"DROP\",\n                \"RouteType\": \"ANY\",\n                \"CidrBlock\": \"10.0.0.0/16\",\n                \"CreatedTime\": \"2021-09-08 15:20:14\",\n                \"Region\": \"ap-guangtzhou\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"2cd67e99-9376-421d-a5bb-044a10c9d744\"\n    }\n}",
+        "title": "查询路由策略规则列表"
       }
     ],
     "DescribeRouteTableAssociatedInstances": [
@@ -3204,6 +3260,14 @@
         "title": "修改内网保留IP"
       }
     ],
+    "ModifyRoutePolicyAttribute": [
+      {
+        "document": "修改路由接收策略属性。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoutePolicyAttribute\n<公共请求参数>\n\n{\n    \"RoutePolicyId\": \"rrp-n0qp4w5a\",\n    \"RoutePolicyName\": \"TEST\",\n    \"RoutePolicyDescription\": \"TEST\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49a4e5e2-28d6-492c-ac6b-55192e7dd29b\"\n    }\n}",
+        "title": "修改路由接收策略属性。"
+      }
+    ],
     "ModifyRouteTableAttribute": [
       {
         "document": "修改路由表属性",
@@ -3530,6 +3594,22 @@
         "title": "替换高优路由表条目信息"
       }
     ],
+    "ReplaceRoutePolicyAssociations": [
+      {
+        "document": "替换路由接收策略绑定。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceRoutePolicyAssociations\n<公共请求参数>\n\n{\n    \"RoutePolicyAssociationSet\": [\n        {\n            \"RouteTableId\": \"rtb-qk8eyn9g\",\n            \"RoutePolicyId\": \"rrp-q7ywkx3w\",\n            \"Priority\": 100\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "替换路由接收策略绑定"
+      }
+    ],
+    "ReplaceRoutePolicyEntries": [
+      {
+        "document": "替换VPC路由策略中的规则。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ReplaceRoutePolicyEntries\n&RoutePolicyId=rrp-azd4dt1c\n&RoutePolicyEntrySet.0.RoutePolicyEntryId=rrpi-la0vk0g3\n&RoutePolicyEntrySet.0.Priority=1222\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "替换VPC路由策略中的规则"
+      }
+    ],
     "ReplaceRouteTableAssociation": [
       {
         "document": "替换路由表绑定关系",
@@ -3584,6 +3664,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ResetNatGatewayConnection\n&NatGatewayId=nat-ig8xpno8\n&MaxConcurrentConnection=3000000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbffc3f0-1807-4683-89ee-2d2b96425ee1\"\n    }\n}",
         "title": "升级NAT网关并发连接上限"
+      }
+    ],
+    "ResetRoutePolicyAssociations": [
+      {
+        "document": "重置路由策略绑定。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetRoutePolicyAssociations\n<公共请求参数>\n\n{\n    \"RoutePolicyAssociationSet\": [\n        {\n            \"RouteTableId\": \"rtb-cinupu2w\",\n            \"RoutePolicyId\": \"rrp-q7ywkx3w\",\n            \"Priority\": 100\n        }\n    ],\n    \"RouteTableId\": \"rtb-cinupu2w\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "重置路由策略绑定"
+      }
+    ],
+    "ResetRoutePolicyEntries": [
+      {
+        "document": "重置路由接收策略规则。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ResetRoutePolicyEntries\n&RoutePolicyId=rrp-azd4dt1c\n&RoutePolicyDescription=TEST\n&RoutePolicyName=TEST\n&RoutePolicyEntrySet.0.CidrBlock=192.168.0.0/16\n&RoutePolicyEntrySet.0.GatewayType=CVM\n&RoutePolicyEntrySet.0.GatewayId=172.16.16.37\n&RoutePolicyEntrySet.0.Priority=100\n&RoutePolicyEntrySet.0.Action=ACCEPT\n&RoutePolicyEntrySet.0.RouteType=USER\n&<公共请求参数>\n",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "重置路由接收策略规则"
       }
     ],
     "ResetRoutes": [

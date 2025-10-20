@@ -110,6 +110,34 @@
       ],
       "usage": "out"
     },
+    "Coord": {
+      "document": "坐标详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "X坐标",
+          "example": "10",
+          "member": "int64",
+          "name": "X",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Y坐标",
+          "example": "10",
+          "member": "int64",
+          "name": "Y",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FileTranslateRequest": {
       "document": "FileTranslate请求参数结构体",
       "members": [
@@ -668,6 +696,45 @@
       ],
       "type": "object"
     },
+    "RotateParagraphRect": {
+      "document": "段落文本旋转信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "段落文本坐标",
+          "example": "无",
+          "member": "Coord",
+          "name": "Coord",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旋转角度",
+          "example": "1.0",
+          "member": "float",
+          "name": "TiltAngle",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "段落文本信息是否有效",
+          "example": "true",
+          "member": "bool",
+          "name": "Valid",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SpeechTranslateRequest": {
       "document": "SpeechTranslate请求参数结构体",
       "members": [
@@ -1131,7 +1198,7 @@
         {
           "disabled": false,
           "document": "段落文本框位置",
-          "example": "{           \"Height\": 26,           \"Width\": 356,           \"X\": 527,           \"Y\": 25         }",
+          "example": "无",
           "member": "BoundingBox",
           "name": "BoundingBox",
           "output_required": false,
@@ -1166,6 +1233,16 @@
           "name": "SpamCode",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "段落文本旋转信息，只在valid为true时表示坐标有效",
+          "example": "无",
+          "member": "RotateParagraphRect",
+          "name": "RotateParagraphRect",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

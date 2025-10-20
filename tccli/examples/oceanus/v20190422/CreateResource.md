@@ -10,7 +10,7 @@ tccli oceanus CreateResource --cli-unfold-argument  \
     --ResourceLoc.Param.Bucket oceanus-online-resource01-gz-1257058918 \
     --ResourceLoc.Param.Path 1257058945/100006386216/upload/20231120142441/flink-hello-world-1.0.0-jar-with-dependencies.jar \
     --ResourceLoc.Param.Region ap-guangzhou \
-    --Remark test \
+    --Remark connector \
     --Name flink-hello-world-1.0.0-jar-with-dependencies.jar \
     --ResourceType 1 \
     --WorkSpaceId space-53rqk422

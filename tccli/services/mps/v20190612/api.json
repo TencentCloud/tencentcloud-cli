@@ -7360,7 +7360,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流的采样率，不同编码标准支持的采样率选项不同。详细参考[音频采样率支持范围文档](https://cloud.tencent.com/document/product/862/77166#f3b039f1-d817-4a96-b4e4-90132d31cd53)\n单位：Hz\n注意：请确保源音频流的采样率在上述选项范围内，否则可能导致转码失败！",
+          "document": "音频流的采样率，不同编码标准支持的采样率选项不同。填0代表使用源音频的采样率数值。\n详细参考[音频采样率支持范围文档](https://cloud.tencent.com/document/product/862/77166#f3b039f1-d817-4a96-b4e4-90132d31cd53)\n单位：Hz\n注意：请确保源音频流的采样率在上述选项范围内，否则可能导致转码失败！",
           "example": "44100",
           "member": "uint64",
           "name": "SampleRate",
@@ -7421,7 +7421,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流的采样率，不同编码标准支持的采样率选项不同。详细参考[音频采样率支持范围文档](https://cloud.tencent.com/document/product/862/77166#f3b039f1-d817-4a96-b4e4-90132d31cd53)\n单位：Hz\n注意：请确保源音频流的采样率在上述选项范围内，否则可能导致转码失败！\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音频流的采样率，不同编码标准支持的采样率选项不同。填0代表使用源音频的采样率数值。\n详细参考[音频采样率支持范围文档](https://cloud.tencent.com/document/product/862/77166#f3b039f1-d817-4a96-b4e4-90132d31cd53)\n单位：Hz\n注意：请确保源音频流的采样率在上述选项范围内，否则可能导致转码失败！\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "44100",
           "member": "uint64",
           "name": "SampleRate",
@@ -7444,7 +7444,7 @@
         {
           "disabled": false,
           "document": "指定输出要保留的音频轨道。默认是全部保留源的。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "[0]",
           "member": "int64",
           "name": "StreamSelects",
           "output_required": false,
@@ -7939,7 +7939,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型名称。取值如下：\n\n<li>Whiten：美白</li>\n<li>Smooth：磨皮</li>\n<li>BeautyThinFace：瘦脸</li>\n<li>NatureFace：自然脸型</li>\n<li>VFace：V脸</li>\n<li>EnlargeEye：大眼</li>\n<li>EyeLighten：亮眼</li>\n<li>RemoveEyeBags：祛眼袋</li>\n<li>ThinNose：瘦鼻</li>\n<li>RemoveLawLine：祛法令纹</li>\n<li>ToothWhiten：牙齿美白</li>\n\n",
+          "document": "类型名称。取值如下：\n<li>Whiten：美白</li>\n<li>BlackAlpha1：美黑</li>\n<li>BlackAlpha2：较强美黑</li>\n<li>FoundationAlpha2：美白-粉白</li>\n<li>Clear：清晰度</li>\n<li>Sharpen：锐化</li>\n<li>Smooth：磨皮</li>\n<li>BeautyThinFace：瘦脸</li>\n<li>NatureFace：自然脸型</li>\n<li>VFace：V脸</li>\n<li>EnlargeEye：大眼</li>\n<li>EyeLighten：亮眼</li>\n<li>RemoveEyeBags：祛眼袋</li>\n<li>ThinNose：瘦鼻</li>\n<li>RemoveLawLine：祛法令纹</li>\n<li>CheekboneThin：瘦颧骨</li>\n<li>FaceFeatureLipsLut：口红</li>\n<li>ToothWhiten：牙齿美白</li>\n<li>FaceFeatureSoftlight：柔光</li>\n<li>Makeup：美妆</li>",
           "example": "Whiten",
           "member": "string",
           "name": "Type",
@@ -7968,6 +7968,28 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "附加资源路径。",
+          "example": "/makeupRes/video_makeup_mitao",
+          "member": "string",
+          "name": "ResourcePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数。",
+          "example": "{\\\"Color\\\":\\\"#ff0000\\\"}",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

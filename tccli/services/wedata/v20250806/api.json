@@ -1258,7 +1258,7 @@
         {
           "disabled": false,
           "document": "补录重跑触发时机\n\n1 –  首次失败触发\n2 – 所有重试完成触发\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "DataBackfillOrRerunTrigger",
           "output_required": false,
@@ -1280,7 +1280,7 @@
         {
           "disabled": false,
           "document": "重跑补录实例超时配置明细\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TimeOutStrategyInfo",
           "name": "DataBackfillOrRerunTimeOutExtInfo",
           "output_required": false,
@@ -1291,7 +1291,7 @@
         {
           "disabled": false,
           "document": "项目波动告警配置明细\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ProjectInstanceStatisticsAlarmInfo",
           "name": "ProjectInstanceStatisticsAlarmInfoList",
           "output_required": false,
@@ -1302,13 +1302,24 @@
         {
           "disabled": false,
           "document": "离线集成对账告警配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ReconciliationStrategyInfo",
           "name": "ReconciliationExtInfo",
           "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控对象的白名单配置",
+          "example": "无",
+          "member": "MonitorWhiteTask",
+          "name": "MonitorWhiteTasks",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12017,6 +12028,34 @@
         }
       ],
       "usage": "out"
+    },
+    "MonitorWhiteTask": {
+      "document": "告警规则监控白名单配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置白名单的对应的工作流/项目的id",
+          "example": "5c2836a****25",
+          "member": "string",
+          "name": "MonitorObjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "白名单任务列表",
+          "example": "[\"2025****28299\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "NotebookSessionInfo": {
       "document": "notebook kernel session信息",

@@ -10247,7 +10247,7 @@
         {
           "disabled": false,
           "document": "健康检查相关参数",
-          "example": "{\"Method\":\"GET\"}",
+          "example": "无",
           "member": "RuleCheckParams",
           "name": "CheckParams",
           "output_required": true,
@@ -10257,7 +10257,7 @@
         {
           "disabled": false,
           "document": "已绑定的源站相关信息",
-          "example": "{\"RealServerId\":\"rs-123456\"}",
+          "example": "无",
           "member": "BindRealServer",
           "name": "RealServerSet",
           "output_required": true,
@@ -10266,7 +10266,7 @@
         },
         {
           "disabled": false,
-          "document": "源站的服务状态，0表示异常，1表示正常。\n未开启健康检查时，该状态始终未正常。\n只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。",
+          "document": "源站的服务状态，0表示异常，1表示正常。\n未开启健康检查时，该状态始终为正常。\n只要有一个源站健康状态为异常时，该状态为异常，具体源站的状态请查看RealServerSet。",
           "example": "1",
           "member": "uint64",
           "name": "BindStatus",
@@ -10313,6 +10313,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "七层转发规则的回源协议类型",
+          "example": "HTTP",
+          "member": "string",
+          "name": "ForwardProtocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

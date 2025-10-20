@@ -1268,6 +1268,15 @@
           "name": "CallInInterface",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "绑定号码类型: inner: 内线号码 | number: 正常线路号码",
+          "example": "number",
+          "member": "string",
+          "name": "NumberType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

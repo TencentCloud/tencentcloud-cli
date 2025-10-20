@@ -698,6 +698,24 @@
           "name": "InstanceType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费类型",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewalType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费阈值",
+          "example": "10",
+          "member": "int64",
+          "name": "AutoRenewalThreshold",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

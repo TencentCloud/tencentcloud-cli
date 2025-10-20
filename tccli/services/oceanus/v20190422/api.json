@@ -2558,7 +2558,7 @@
         {
           "disabled": false,
           "document": "资源位置",
-          "example": "[]",
+          "example": "无",
           "member": "ResourceLoc",
           "name": "ResourceLoc",
           "required": true,
@@ -2612,7 +2612,7 @@
         {
           "disabled": false,
           "document": "工作空间 SerialId",
-          "example": "space-1237",
+          "example": "space-12",
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,

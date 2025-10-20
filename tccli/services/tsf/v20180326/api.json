@@ -20148,6 +20148,7 @@
           "example": "foo",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -20158,6 +20159,7 @@
           "example": "bar",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -20168,6 +20170,7 @@
           "example": "无",
           "member": "ValueFrom",
           "name": "ValueFrom",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true

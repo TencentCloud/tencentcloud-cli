@@ -936,7 +936,7 @@
       {
         "document": "向两个地域同步自定义镜像。",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncBlueprint\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-ls883feh\",\n    \"DestinationRegions\": [\n        \"ap-singapore\",\n        \"ap-hongkong\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"647f2a53-c672-45fa-980b-385423898a69\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DestinationRegionBlueprintSet\": [\n            {\n                \"Region\": \"ap-singapore\",\n                \"BlueprintId\": \"lhbp-lf3gjs2f\"\n            },\n            {\n                \"Region\": \"ap-hongkong\",\n                \"BlueprintId\": \"lhbp-lfle246l\"\n            }\n        ],\n        \"RequestId\": \"e35a5b7b-4dfa-49f8-8729-ba5c504807e0\"\n    }\n}",
         "title": "跨地域同步自定义镜像"
       }
     ],

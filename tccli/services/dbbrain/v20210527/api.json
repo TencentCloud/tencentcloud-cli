@@ -10950,7 +10950,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命令模版。",
+          "document": "命令模板。",
           "example": "bgsave",
           "member": "string",
           "name": "Cmd",
@@ -10980,7 +10980,7 @@
         },
         {
           "disabled": false,
-          "document": "总耗时。",
+          "document": "总耗时。单位：s",
           "example": "0.01",
           "member": "float",
           "name": "QueryTime",
@@ -10990,7 +10990,7 @@
         },
         {
           "disabled": false,
-          "document": "平均执行时间。",
+          "document": "平均执行时间。单位：s",
           "example": "0.01",
           "member": "float",
           "name": "QueryTimeAvg",
@@ -11000,7 +11000,7 @@
         },
         {
           "disabled": false,
-          "document": "最大执行时间。",
+          "document": "最大执行时间。单位：s",
           "example": "0.02",
           "member": "float",
           "name": "QueryTimeMax",
@@ -11010,7 +11010,7 @@
         },
         {
           "disabled": false,
-          "document": "最小执行时间。",
+          "document": "最小执行时间。单位：s",
           "example": "0.001",
           "member": "float",
           "name": "QueryTimeMin",
@@ -11020,8 +11020,8 @@
         },
         {
           "disabled": false,
-          "document": "总耗时占比",
-          "example": "100",
+          "document": "总耗时占比。单位：%",
+          "example": "100.0",
           "member": "float",
           "name": "QueryTimeRatio",
           "output_required": false,

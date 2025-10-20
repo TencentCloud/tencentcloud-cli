@@ -240,6 +240,14 @@
         "title": "示例1"
       }
     ],
+    "ExportDeviceDownloadTask": [
+      {
+        "document": "测试全网终端分组（ID=1120）的数据导出",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportDeviceDownloadTask\n<公共请求参数>\n\n{\n    \"OsType\": 0,\n    \"DomainInstanceId\": \"1\",\n    \"GroupId\": 1120,\n    \"ExportType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DownloadURL\": \"\",\n            \"TaskId\": 186954\n        },\n        \"RequestId\": \"23b2ad49-f082-401c-a3f1-8b903291d5a6\"\n    }\n}",
+        "title": "测试全网终端分组（ID=1120）的数据导出"
+      }
+    ],
     "ExportSoftwareInformationList": [
       {
         "document": "",

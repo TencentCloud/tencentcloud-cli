@@ -5326,6 +5326,32 @@
       ],
       "type": "object"
     },
+    "DestinationRegionBlueprint": {
+      "document": "目标地域镜像信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标地域镜像ID。",
+          "example": "lhbp-lf3gjs2f",
+          "member": "string",
+          "name": "BlueprintId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DetachCcnRequest": {
       "document": "DetachCcn请求参数结构体",
       "members": [
@@ -10813,6 +10839,16 @@
     "SyncBlueprintResponse": {
       "document": "SyncBlueprint返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "目标地域镜像信息。",
+          "example": "无",
+          "member": "DestinationRegionBlueprint",
+          "name": "DestinationRegionBlueprintSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
