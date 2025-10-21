@@ -19679,7 +19679,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，请从容器服务集群控制台获取（https://console.cloud.tencent.com/tke2/cluster）。",
           "example": "cls-abcd1234",
           "member": "string",
           "name": "ClusterId",
@@ -19689,7 +19689,7 @@
         {
           "disabled": false,
           "document": "修改的策略列表，目前仅支持修改EnforcementAction字段",
-          "example": "[     {       \"EnforcementAction\": \"dryrun\",       \"Name\": \"block-namespace-deletion-rule\",       \"Kind\": \"blocknamespacedeletion\"     }   ]",
+          "example": "无",
           "member": "OpenPolicySwitch",
           "name": "OpenPolicyInfoList",
           "required": false,
@@ -20824,7 +20824,7 @@
         },
         {
           "disabled": false,
-          "document": "策略模板类型",
+          "document": "策略模板类型，可选值：\n优选策略：\nblocknamespacedeletion：存在pod的命名空间不允许删除\nblockcrddeletion：存在cr的crd不允许删除\nblockmountablevolumetype：禁止挂载指定的volume类型\ndisallowalwayspullimage：禁止镜像拉取策略使用Always\ntkeallowedrepos：容器镜像来源限制\nblockunknowndaemonset：禁止未知的DaemonSet部署\nblockpvdeletion：PV处于绑定状态则不允许删除\ncorednsprotect：CoreDNS组件删除保护\nblockschedulablenodedelete：非封锁状态的Node不允许删除\nresourcesdeletionprotection：资源删除保护\ntkeenirequest：弹性网卡资源配置限制\nblockworkloadcrossversionupgrade：工作负载镜像版本升级策略管控\nblockserviceaccountgranthighprivilegepermission：ServiceAccount权限管控\nblockclusteripserviceexist：不允许Service为ClusterIP类型\nblockinternetaccess：禁止公网访问\nassign：禁止访问Metadata Server\nblockhostnetworkpod：禁止创建HostNetwork类型Pod\n\n可选策略：\nblockvolumemountpath：禁止容器挂载指定的目录\nk8sallowedrepos：容器镜像必须以指定字符串列表中的字符串开头\nk8sblockendpointeditdefaultrole：禁止默认ClusterRole修改Endpoints\nk8sblockloadbalancer：不允许Service为LoadBalancer类型\nk8sblocknodeport：不允许Service为NodePort类型\nk8sblockwildcardingress：禁止ingress配置空白或通配符类型的hostname\nk8scontainerlimits：限制容器必须设置CPU和内存Limit\nk8scontainerratios：限制CPU和内存的Request与Limit的最大比率\nk8scontainerrequests：限制CPU和内存的Request必须设置且小于配置的最大值\nk8srequiredresources：必须配置内存的Limit，CPU和内存的Request\nk8sdisallowanonymous：不允许将白名单以外的ClusterRole和Role关联到system:anonymous User和system:unauthenticated Group\nk8sdisallowedtags：约束容器镜像tag\nk8sexternalips：限制服务externalIP仅为允许的IP地址列表\nk8simagedigests：容器镜像必须包含digest\nnoupdateserviceaccount：拒绝白名单外的资源更新ServiceAccount\nk8sreplicalimits：要求具有spec.replicas字段的对象（Deployments、ReplicaSets等）在定义的范围内\nk8srequiredannotations：要求资源包含指定的annotations，其值与提供的正则表达式匹配\nk8srequiredlabels：要求资源包含指定的标签，其值与提供的正则表达式匹配\nk8srequiredprobes：要求Pod具有Readiness或Liveness Probe\nk8spspautomountserviceaccounttokenpod：约束容器不能设置automountServiceAccountToken为true\nk8spspallowprivilegeescalationcontainer：约束PodSecurityPolicy中的allowPrivilegeEscalation字段为false\nk8spspapparmor：约束AppArmor字段列表\nk8spspcapabilities：限制PodSecurityPolicy中的allowedCapabilities和requiredDropCapabilities字段\nk8spspflexvolumes：约束PodSecurityPolicy中的allowedFlexVolumes字段类型\nk8spspforbiddensysctls：约束PodSecurityPolicy中的sysctls字段不能使用的name\nk8spspfsgroup：控制PodSecurityPolicy中的fsGroup字段在限制范围内\nk8spsphostfilesystem：约束PodSecurityPolicy中的hostPath字段的参数\nk8spsphostnamespace：限制PodSecurityPolicy中的hostPID和hostIPC字段\nk8spsphostnetworkingports：约束PodSecurityPolicy中的hostNetwork和hostPorts字段\nk8spspprivilegedcontainer：禁止PodSecurityPolicy中的privileged字段为true\nk8spspprocmount：约束PodSecurityPolicy中的allowedProcMountTypes字段\nk8spspreadonlyrootfilesystem：约束PodSecurityPolicy中的readOnlyRootFilesystem字段\nk8spspseccomp：约束PodSecurityPolicy上的seccomp.security.alpha.kubernetes.io/allowedProfileNames注解\nk8spspselinuxv2：约束Pod定义SELinux配置的允许列表\nk8spspallowedusers：约束PodSecurityPolicy中的runAsUser、runAsGroup、supplementalGroups和fsGroup字段\nk8spspvolumetypes：约束PodSecurityPolicy中的volumes字段类型",
           "example": "BlockCrdDeletion",
           "member": "string",
           "name": "Kind",

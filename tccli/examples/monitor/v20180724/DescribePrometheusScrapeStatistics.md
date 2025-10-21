@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli monitor DescribePrometheusScrapeStatistics --cli-unfold-argument ```
+tccli monitor DescribePrometheusScrapeStatistics --cli-unfold-argument  \
+    --InstanceIds prom-ejhf
+```
 
 Output: 
 ```

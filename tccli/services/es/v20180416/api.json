@@ -2887,6 +2887,51 @@
           "name": "OrderByType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志级别",
+          "example": "[\"INFO\"]",
+          "member": "string",
+          "name": "LogLevels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "[\"167890354315\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引名",
+          "example": "index",
+          "member": "string",
+          "name": "IndexName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引分片",
+          "example": "[index][0]",
+          "member": "string",
+          "name": "ShardId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "慢日志查询耗时",
+          "example": "100",
+          "member": "uint64",
+          "name": "QueryCost",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7216,6 +7261,36 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引名",
+          "example": "index",
+          "member": "string",
+          "name": "IndexName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引分片",
+          "example": "[index][0]",
+          "member": "string",
+          "name": "Shard",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引查询耗时",
+          "example": "100",
+          "member": "string",
+          "name": "QueryCost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10088,7 +10163,7 @@
         {
           "disabled": false,
           "document": "空间白名单\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"WhiteIpList\":[\"127.0.0.1\"],\"BlackIpList\":[]}",
+          "example": "无",
           "member": "EsAcl",
           "name": "KibanaPublicAcl",
           "output_required": false,
@@ -10118,7 +10193,7 @@
         {
           "disabled": false,
           "document": "空间vpc信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"VpcId\":\"vpc-xxxxxxx\",\"SubnetId\":\"subnet-xxxxxxx\",\"VpcUid\":11111111,\"SubnetUid\":11111111,\"AvailableIpAddressCount\":0}]",
+          "example": "无",
           "member": "VpcInfo",
           "name": "VpcInfo",
           "output_required": false,
@@ -10188,7 +10263,7 @@
         {
           "disabled": false,
           "document": "0\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0:普通集群；1:T-Search集群",
+          "example": "0",
           "member": "int64",
           "name": "ClusterType",
           "output_required": false,
@@ -10198,12 +10273,32 @@
         {
           "disabled": false,
           "document": "空间标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "key:value",
+          "example": "无",
           "member": "TagInfo",
           "name": "TagList",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启mcp服务",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableMcpAccess",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mcp的访问地址",
+          "example": "http://ip:port/sse",
+          "member": "string",
+          "name": "McpAccess",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

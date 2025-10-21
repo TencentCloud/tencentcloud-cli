@@ -17196,7 +17196,7 @@
         {
           "disabled": false,
           "document": "发送消息内容(单次请求最多500条)",
-          "example": "[{\"Body\":\"body-test\",\"Key\":\"key-test\"}]",
+          "example": "无",
           "member": "BatchContent",
           "name": "Message",
           "required": true,

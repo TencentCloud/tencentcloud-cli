@@ -7286,32 +7286,29 @@
         {
           "disabled": false,
           "document": "资源ID",
-          "example": "",
+          "example": "resource-ayglrn06",
           "member": "string",
           "name": "ResourceId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "资源版本ID，-1表示使用最新版本",
-          "example": "",
+          "document": "0-引用 JAR 程序包，1-主程序包，2-引用配置文件，3-Python程序包，4-Python数据文件",
+          "example": "1",
           "member": "int64",
           "name": "Version",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "引用资源类型，例如主资源设置为1，代表main class所在的jar包",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

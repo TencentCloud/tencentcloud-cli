@@ -241,7 +241,7 @@
   },
   "metadata": {
     "apiVersion": "2022-04-10",
-    "api_brief": "提供音视频终端引擎能力",
+    "api_brief": "通过 API 实现 License 文件的创建，续期等管理功能，并分发到CDN。",
     "serviceNameCN": "音视频终端引擎",
     "serviceShortName": "vcube"
   },

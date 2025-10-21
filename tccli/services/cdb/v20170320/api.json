@@ -7807,6 +7807,24 @@
           "name": "AccountRegexp",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认无排序，支持：ASC、DESC、asc、desc",
+          "example": "desc",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7827,7 +7845,7 @@
         {
           "disabled": false,
           "document": "符合查询条件的账号详细信息。",
-          "example": "[{\"Notes\": \"andy1\",\"Host\": \"localhost\",\"User\": \"andy_user\",\"ModifyTime\": \"2020-11-10 01:00:00\",\"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\"CreateTime\": \"2020-11-10 01:00:00\",\"MaxUserConnections\": 20},{\"Notes\": \"andy2\",\"Host\": \"localhost\",\"User\": \"root\",\"ModifyTime\": \"2020-11-10 01:00:00\",\"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\"CreateTime\": \"2020-11-10 01:00:00\",\"MaxUserConnections\": 20}]",
+          "example": "无",
           "member": "AccountInfo",
           "name": "Items",
           "output_required": true,
