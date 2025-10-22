@@ -14136,6 +14136,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "实例ID列表",
+          "example": "[\"prom-osje\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "job 类型",
           "example": "podMonitor",
           "member": "string",
@@ -15558,7 +15567,7 @@
         {
           "disabled": false,
           "document": "实例对象的维度组合，格式为key-value键值对形式的集合。不同类型的实例字段完全不同，如CVM为[{\"Name\":\"InstanceId\",\"Value\":\"ins-j0hk02zo\"}]，Ckafka为[{\"Name\":\"instanceId\",\"Value\":\"ckafka-l49k54dd\"}]，COS为[{\"Name\":\"appid\",\"Value\":\"1258344699\"},{\"Name\":\"bucket\",\"Value\":\"rig-1258344699\"}]。各个云产品的维度请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的维度列即为维度组合的key，value为key对应的值。单请求最多支持批量拉取10个实例的监控数据。",
-          "example": "[{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"9f25c238-4e82-46e4-a0fe-76443480c8db\"}]}]",
+          "example": "无",
           "member": "Instance",
           "name": "Instances",
           "required": true,
@@ -15593,7 +15602,7 @@
         },
         {
           "disabled": false,
-          "document": "返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合。注意: 仅支持对API配置文档中展示的统计方式返回对应的统计数据。如所需的统计方式不满足您的查询需求，请提工单反馈。",
+          "document": "返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合。特别说明：建议查询时严格参考API配置文档中提供的统计方式。如选择其他未提供的统计方式，可能有数据统计误差。",
           "example": "1",
           "member": "int64",
           "name": "SpecifyStatistics",
@@ -15629,7 +15638,7 @@
         {
           "disabled": false,
           "document": "数据点数组",
-          "example": "[{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"9f25c238-4e82-46e4-a0fe-76443480c8db\"}],\"Timestamps\":[1535079000],\"Values\":[2.5]}]",
+          "example": "无",
           "member": "DataPoint",
           "name": "DataPoints",
           "output_required": true,

@@ -96,6 +96,8 @@ tccli/services/apigateway/__init__.py
 tccli/services/apigateway/apigateway_client.py
 tccli/services/apigateway/v20180808/api.json
 tccli/services/apigateway/v20180808/examples.json
+tccli/services/apis/__init__.py
+tccli/services/apis/apis_client.py
 tccli/services/apm/__init__.py
 tccli/services/apm/apm_client.py
 tccli/services/apm/v20210622/api.json

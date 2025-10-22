@@ -1,0 +1,245 @@
+{
+  "actions": {
+    "BindActMcpSecurityRule": [
+      {
+        "document": "绑定处置动作mcp 安全规则",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindActMcpSecurityRule\n<公共请求参数>\n\n{\n    \"ID\": \"mr-2bdbbf32\",\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"Act\": \"watch\",\n    \"McpServerIDs\": [\n        \"mcp-8d5c4195\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mr-2bdbbf32\"\n        },\n        \"RequestId\": \"cbe4e2a9-d2e2-4f3a-8805-019536f9169e\"\n    }\n}",
+        "title": "绑定处置动作mcp 安全规则"
+      }
+    ],
+    "BindActToolMcpSecurityRule": [
+      {
+        "document": "工具绑定处置动作mcp 安全规则",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindActToolMcpSecurityRule\n<公共请求参数>\n\n{\n    \"ID\": \"mr-c00eb39f\",\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"Act\": \"filter\",\n    \"ToolNames\": [\n        \"add-todo\"\n    ],\n    \"McpServerID\": \"mcp-8d5c4195\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mr-8d5c4195\"\n        },\n        \"RequestId\": \"388289da-01b2-4be6-8ba9-7b40028ac05b\"\n    }\n}",
+        "title": "工具绑定处置动作mcp 安全规则"
+      }
+    ],
+    "BindStatusMcpSecurityRule": [
+      {
+        "document": "绑定状态mcp 安全规则",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindStatusMcpSecurityRule\n<公共请求参数>\n\n{\n    \"ID\": \"mr-2bdbbf32\",\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"Status\": \"open\",\n    \"McpServerIDs\": [\n        \"mcp-8d5c4195\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mr-2bdbbf32\"\n        },\n        \"RequestId\": \"cbe4e2a9-d2e2-4f3a-8805-019536f9169e\"\n    }\n}",
+        "title": "绑定状态mcp 安全规则"
+      }
+    ],
+    "BindStatusToolMcpSecurityRule": [
+      {
+        "document": "工具绑定（解绑）mcp 安全规则",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindStatusToolMcpSecurityRule\n<公共请求参数>\n\n{\n    \"ID\": \"mr-c00eb39f\",\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"Status\": \"close\",\n    \"ToolNames\": [\n        \"add-todo\"\n    ],\n    \"McpServerID\": \"mcp-8d5c4195\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mr-c00eb39f\"\n        },\n        \"RequestId\": \"cb6189ab-e520-409d-b0e5-1b563c0bfe37\"\n    }\n}",
+        "title": "工具绑定（解绑）mcp 安全规则"
+      }
+    ],
+    "CheckMcpServerUnique": [
+      {
+        "document": "查询mcp server唯一性",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckMcpServerUnique\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"Field\": \"name\",\n    \"Value\": \"hh\",\n    \"ID\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"IsConflict\": false,\n            \"Message\": \"\"\n        },\n        \"RequestId\": \"3fcd8e59-0c84-434e-9f07-9091f1de997d\"\n    }\n}",
+        "title": "查询mcp server唯一性"
+      }
+    ],
+    "CreateAgentApp": [
+      {
+        "document": "创建app",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentApp\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"Name\": \"hello1\",\n    \"AuthType\": \"apiKey\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"aga-2b2e0214\"\n        },\n        \"RequestId\": \"aaa7c5ac-d5fc-4f34-81a0-aeb0af415e28\"\n    }\n}",
+        "title": "创建app"
+      }
+    ],
+    "CreateAgentAppApiKey": [
+      {
+        "document": "创建app的apiKey",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentAppApiKey\n<公共请求参数>\n\n{\n    \"ID\": \"aga-71702335\",\n    \"InstanceID\": \"ins-e6fbc9b9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ApiKey\": \"sk-5846e48d04C55509a4449e2f4DF95CC0\"\n        },\n        \"RequestId\": \"890a8922-9a2d-4fba-82e2-58c89fd7d92b\"\n    }\n}",
+        "title": "创建app的apiKey"
+      }
+    ],
+    "CreateAgentAppMcpServers": [
+      {
+        "document": "创建app的mcp server关联",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentAppMcpServers\n<公共请求参数>\n\n{\n    \"ID\": \"aga-71702335\",\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"McpServers\": [\n        {\n            \"ID\": \"mcp-6a63b40b\",\n            \"NeedAuth\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"6a63b40b\"\n        },\n        \"RequestId\": \"c613fd7b-5f4b-41b9-80f0-8c18ab8cccdf\"\n    }\n}",
+        "title": "创建app的mcp server关联"
+      }
+    ],
+    "CreateAgentAppSecretKey": [
+      {
+        "document": "创建app的secretKey",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentAppSecretKey\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"ID\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SecretID\": \"AK51a1185e86E4E5B10c6e3c8fB4EDF5A8\",\n            \"SecretKey\": \"a7d93ae078A04DF35bd2c84e490DDB72\"\n        },\n        \"RequestId\": \"fe886567-b0f7-47f0-81a8-4b990ce09492\"\n    }\n}",
+        "title": "创建app的secretKey"
+      }
+    ],
+    "CreateMcpServer": [
+      {
+        "document": "创建mcp server",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMcpServer\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"Mode\": \"proxy\",\n    \"McpVersion\": \"2024-11-05\",\n    \"Name\": \"testmcp\",\n    \"PaasID\": \"app-83a7a4aa\",\n    \"Description\": \"\",\n    \"LabelIDs\": [],\n    \"CategoryIDs\": [],\n    \"AuthType\": \"sign\",\n    \"SignType\": \"sha256\",\n    \"WrapServices\": [],\n    \"TargetSelect\": \"random\",\n    \"TargetHosts\": [\n        {\n            \"Host\": \"127.0.0.1:3002\",\n            \"Rank\": 10\n        }\n    ],\n    \"HttpProtocolType\": \"http\",\n    \"CheckTargetCertsError\": false,\n    \"TargetPath\": \"/sse\",\n    \"InvokeLimitConfigStatus\": false,\n    \"InvokeLimitConfig\": {\n        \"Type\": \"tokenBucket\",\n        \"TokenBucketMaxNum\": 20000,\n        \"TokenBucketRate\": 1,\n        \"FunnelMaxNum\": 20000,\n        \"FunnelRate\": 1,\n        \"SlidingWindowMaxNum\": 20000,\n        \"SlidingWindowSize\": 1,\n        \"TimeWindow\": 20000,\n        \"TimeWindowInterval\": 1\n    },\n    \"IpWhiteStatus\": false,\n    \"IpWhiteConfig\": {\n        \"Ips\": [],\n        \"EffectType\": \"always\",\n        \"EffectTimes\": [],\n        \"Comment\": \"\"\n    },\n    \"IpBlackStatus\": false,\n    \"IpBlackConfig\": {\n        \"Ips\": [],\n        \"EffectType\": \"always\",\n        \"EffectTimes\": [],\n        \"Comment\": \"\"\n    },\n    \"CustomHttpHost\": \"\",\n    \"HttpHostType\": \"targetHost\",\n    \"Timeout\": 60,\n    \"McpSecurityRules\": [\n        {\n            \"ID\": \"mr-2bdbbf32\",\n            \"Act\": \"watch\",\n            \"Status\": \"open\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mcp-aa12c447\"\n        },\n        \"RequestId\": \"388289da-01b2-4be6-8ba9-7b40028ac05b\"\n    }\n}",
+        "title": "创建mcp server"
+      }
+    ],
+    "DeleteAgentApp": [
+      {
+        "document": "删除app",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgentApp\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"ID\": \"aga-2b2e0214\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"aga-2b2e0214\"\n        },\n        \"RequestId\": \"aaa7c5ac-d5fc-4f34-81a0-aeb0af415e28\"\n    }\n}",
+        "title": "删除app"
+      }
+    ],
+    "DeleteAgentAppApiKey": [
+      {
+        "document": "删除app的apiKey",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgentAppApiKey\n<公共请求参数>\n\n{\n    \"ID\": \"aga-71702335\",\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"Index\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"aga-71702335\"\n        },\n        \"RequestId\": \"0c61b0f7-5467-440d-b7ec-7f20f798a69e\"\n    }\n}",
+        "title": "删除app的apiKey"
+      }
+    ],
+    "DeleteAgentAppMcpServers": [
+      {
+        "document": "删除app的mcp server",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgentAppMcpServers\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"ID\": \"aga-71702335\",\n    \"McpServerIDs\": [\n        \"mcp-6a63b40b\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"aga-71702335\"\n        },\n        \"RequestId\": \"35433e7a-0634-4b3b-ab95-2ea7de191c38\"\n    }\n}",
+        "title": "删除app的mcp server"
+      }
+    ],
+    "DeleteAgentAppSecret": [
+      {
+        "document": "删除app的secretKey",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgentAppSecret\n<公共请求参数>\n\n{\n    \"ID\": \"aga-71702335\",\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"Index\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"aga-71702335\"\n        },\n        \"RequestId\": \"0c61b0f7-5467-440d-b7ec-7f20f798a69e\"\n    }\n}",
+        "title": "删除app的secretKey"
+      }
+    ],
+    "DeleteMcpServer": [
+      {
+        "document": "删除mcp server",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMcpServer\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"ID\": \"mcp-aa12c447\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mcp-aa12c447\"\n        },\n        \"RequestId\": \"1eed7b01-8b36-4b06-97c2-242e461856db\"\n    }\n}",
+        "title": "删除mcp server"
+      }
+    ],
+    "DescribeAgentApp": [
+      {
+        "document": "查询app详情",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentApp\n<公共请求参数>\n\n{\n    \"ID\": \"aga-71702335\",\n    \"InstanceID\": \"ins-e6fbc9b9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ApiKeys\": [\n                \"sk-d3b6f59b27B792B7dd6aeb26554D0DAC\"\n            ],\n            \"AppID\": 1300273807,\n            \"AuthType\": \"apiKey\",\n            \"CreateTime\": \"2025-07-14T06:09:49.354Z\",\n            \"Description\": \"测试desp\",\n            \"ID\": \"aga-71702335\",\n            \"InstanceID\": \"ins-e6fbc9b9\",\n            \"McpServers\": [],\n            \"Name\": \"测试app\",\n            \"SecretKeys\": [],\n            \"Status\": \"normal\",\n            \"Uin\": \"700001136234\",\n            \"UpdateTime\": \"2025-07-14T06:13:55.995Z\"\n        },\n        \"RequestId\": \"7020c298-312c-4cc6-9f77-66d64c22936e\"\n    }\n}",
+        "title": "查询app详情"
+      }
+    ],
+    "DescribeAgentApps": [
+      {
+        "document": "查询app列表",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentApps\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"InstanceID\": \"ins-e6fbc9b9\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"ApiKeys\": [\n                        \"sk-***************************\"\n                    ],\n                    \"AppID\": 1300273807,\n                    \"AuthType\": \"apiKey\",\n                    \"CreateTime\": \"2025-07-14T06:09:49.354Z\",\n                    \"Description\": \"desp\",\n                    \"ID\": \"aga-71702335\",\n                    \"InstanceID\": \"ins-e6fbc9b9\",\n                    \"McpServers\": [],\n                    \"Name\": \"测试\",\n                    \"SecretKeys\": [],\n                    \"Status\": \"normal\",\n                    \"Uin\": \"700001136234\",\n                    \"UpdateTime\": \"2025-07-14T06:09:49.354Z\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"73c48cae-cbf1-4377-b230-f1f42c89ff4c\"\n    }\n}",
+        "title": "查询app列表"
+      }
+    ],
+    "DescribeMcpSecurityRule": [
+      {
+        "document": "查询安全规则",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMcpSecurityRule\n<公共请求参数>\n\n{\n    \"ID\": \"mr-1f32be6a\",\n    \"InstanceID\": \"ins-9c4a1db3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppID\": 1300273807,\n            \"BodyType\": \"text\",\n            \"BuildIn\": true,\n            \"ByPass\": \"close\",\n            \"Contents\": [\n                {\n                    \"Content\": \"\",\n                    \"FunctionType\": \"mcpResponseBodyFilter\",\n                    \"SwitchMs\": false\n                }\n            ],\n            \"CreateTime\": \"2025-05-20T06:41:16.539Z\",\n            \"DefaultStatus\": \"close\",\n            \"Description\": \"识别mcp服务调用过程中，响应参数文本信息中可能涉及到的安全合规问题\",\n            \"ID\": \"mr-1f32be6a\",\n            \"IconType\": \"text\",\n            \"InstanceID\": \"ins-9c4a1db3\",\n            \"Name\": \"文本内容安全检测\",\n            \"RiskLevel\": \"high\",\n            \"SupportActs\": [\n                \"watch\",\n                \"intercept\"\n            ],\n            \"SupportToolBind\": false,\n            \"Type\": \"tencent_content_security_check\",\n            \"Uin\": \"700001136234\",\n            \"UpdateTime\": \"2025-05-20T06:42:02.402Z\",\n            \"UseCount\": 0,\n            \"VersionNumber\": \"20250509_v1\"\n        },\n        \"RequestId\": \"5adb40d7-25a9-46a1-834f-a834c3b6547a\"\n    }\n}",
+        "title": "查询安全规则"
+      }
+    ],
+    "DescribeMcpSecurityRuleByPass": [
+      {
+        "document": "查询mcp 安全规则ByPass状态",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMcpSecurityRuleByPass\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"Type\": \"security_event_check\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ByPass\": \"open\"\n        },\n        \"RequestId\": \"85598f6d-547d-4663-970a-5277ab17ee26\"\n    }\n}",
+        "title": "查询mcp 安全规则ByPass状态"
+      }
+    ],
+    "DescribeMcpSecurityRules": [
+      {
+        "document": "查询mcp 安全规则列表",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMcpSecurityRules\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AppID\": 1300273807,\n                    \"BodyType\": \"text\",\n                    \"BuildIn\": true,\n                    \"ByPass\": \"close\",\n                    \"Contents\": [\n                        {\n                            \"Content\": \"\",\n                            \"FunctionType\": \"mcpResponseBodyFilter\",\n                            \"SwitchMs\": false\n                        }\n                    ],\n                    \"CreateTime\": \"2025-05-20T06:41:16.539Z\",\n                    \"DefaultStatus\": \"close\",\n                    \"Description\": \"识别mcp服务调用过程中，响应参数文本信息中可能涉及到的安全合规问题\",\n                    \"ID\": \"mr-1f32be6a\",\n                    \"IconType\": \"text\",\n                    \"InstanceID\": \"ins-9c4a1db3\",\n                    \"Name\": \"文本内容安全检测\",\n                    \"RiskLevel\": \"high\",\n                    \"SupportActs\": [\n                        \"watch\",\n                        \"intercept\"\n                    ],\n                    \"SupportToolBind\": false,\n                    \"Type\": \"tencent_content_security_check\",\n                    \"Uin\": \"700001136234\",\n                    \"UpdateTime\": \"2025-05-20T06:42:02.402Z\",\n                    \"UseCount\": 0,\n                    \"VersionNumber\": \"20250509_v1\"\n                }\n            ],\n            \"Total\": 32\n        },\n        \"RequestId\": \"eabb1cd1-d8a1-428c-9d2f-bb3b2c74f520\"\n    }\n}",
+        "title": "查询mcp 安全规则列表"
+      }
+    ],
+    "DescribeMcpServer": [
+      {
+        "document": "查询mcp server详情",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMcpServer\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"ID\": \"mcp-8d5c4195\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppID\": 1300273807,\n            \"Uin\": \"700001136234\",\n            \"InstanceID\": \"ins-9c4a1db3\",\n            \"Name\": \"test\",\n            \"PaasID\": \"app-83a7a4aa\",\n            \"Description\": \"\",\n            \"LabelIDs\": [],\n            \"CategoryIDs\": [],\n            \"AuthType\": \"sign\",\n            \"SignType\": \"sha256\",\n            \"Mode\": \"proxy\",\n            \"McpVersion\": \"2024-11-05\",\n            \"WrapServices\": [],\n            \"TargetSelect\": \"random\",\n            \"TargetHosts\": [\n                {\n                    \"Host\": \"127.0.0.1:3002\",\n                    \"Rank\": 10\n                }\n            ],\n            \"HttpProtocolType\": \"http\",\n            \"CheckTargetCertsError\": false,\n            \"TargetPath\": \"/sse\",\n            \"InvokeLimitConfigStatus\": false,\n            \"InvokeLimitConfig\": {\n                \"Type\": \"tokenBucket\",\n                \"TokenBucketMaxNum\": 20000,\n                \"TokenBucketRate\": 1,\n                \"FunnelMaxNum\": 20000,\n                \"FunnelRate\": 1,\n                \"SlidingWindowMaxNum\": 20000,\n                \"SlidingWindowSize\": 1,\n                \"TimeWindow\": 20000,\n                \"TimeWindowInterval\": 1\n            },\n            \"IpWhiteStatus\": false,\n            \"IpWhiteConfig\": {\n                \"Ips\": [],\n                \"EffectType\": \"always\",\n                \"EffectTimes\": [],\n                \"Comment\": \"\"\n            },\n            \"IpBlackStatus\": false,\n            \"IpBlackConfig\": {\n                \"Ips\": [],\n                \"EffectType\": \"always\",\n                \"EffectTimes\": [],\n                \"Comment\": \"\"\n            },\n            \"CustomHttpHost\": \"\",\n            \"HttpHostType\": \"targetHost\",\n            \"Timeout\": 60,\n            \"ID\": \"mcp-8d5c4195\",\n            \"Status\": \"disabled\",\n            \"Url\": \"http://test.com/_llmsgw_/mcp?server=mcp-8d5c4195&paasid=app-83a7a4aa\",\n            \"App\": {\n                \"ID\": \"app-83a7a4aa\",\n                \"Name\": \"test\"\n            },\n            \"Catalogs\": [],\n            \"Labels\": [],\n            \"ToolNum\": -1,\n            \"CreateTime\": \"2025-05-20T08:24:18.702Z\",\n            \"LastUpdateTime\": \"2025-05-20T08:42:05.916Z\",\n            \"McpSecurityRulesVO\": [\n                {\n                    \"ID\": \"mr-2bdbbf32\",\n                    \"Type\": \"sensitive_data_check\",\n                    \"BodyType\": \"\",\n                    \"IconType\": \"code\",\n                    \"Name\": \"验证码\",\n                    \"Description\": \"识别mcp服务调用过程中，响应参数可能存在的验证码\",\n                    \"RiskLevel\": \"middle\",\n                    \"VersionNumber\": \"20250509_v1\",\n                    \"Status\": \"open\",\n                    \"Act\": \"watch\",\n                    \"SupportActs\": [\n                        \"watch\",\n                        \"desensitization\",\n                        \"filter\"\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"7ecfb435-bc50-49b8-b206-4278f2b08db1\"\n    }\n}",
+        "title": "查询mcp server详情"
+      }
+    ],
+    "DescribeMcpServers": [
+      {
+        "document": "查询mcp server列表",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMcpServers\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"PaasIDs\": [],\n    \"Statuses\": [],\n    \"Modes\": [],\n    \"Keyword\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Total\": 1,\n            \"Items\": [\n                {\n                    \"AppID\": 1300273807,\n                    \"Uin\": \"700001136234\",\n                    \"InstanceID\": \"ins-9c4a1db3\",\n                    \"Name\": \"test\",\n                    \"PaasID\": \"app-83a7a4aa\",\n                    \"Description\": \"\",\n                    \"LabelIDs\": [],\n                    \"CategoryIDs\": [],\n                    \"AuthType\": \"sign\",\n                    \"SignType\": \"sha256\",\n                    \"Mode\": \"proxy\",\n                    \"McpVersion\": \"2024-11-05\",\n                    \"WrapServices\": [],\n                    \"TargetSelect\": \"random\",\n                    \"TargetHosts\": [\n                        {\n                            \"Host\": \"127.0.0.1:3002\",\n                            \"Rank\": 10\n                        }\n                    ],\n                    \"HttpProtocolType\": \"http\",\n                    \"CheckTargetCertsError\": false,\n                    \"TargetPath\": \"/sse\",\n                    \"InvokeLimitConfigStatus\": false,\n                    \"InvokeLimitConfig\": {\n                        \"Type\": \"tokenBucket\",\n                        \"TokenBucketMaxNum\": 20000,\n                        \"TokenBucketRate\": 1,\n                        \"FunnelMaxNum\": 20000,\n                        \"FunnelRate\": 1,\n                        \"SlidingWindowMaxNum\": 20000,\n                        \"SlidingWindowSize\": 1,\n                        \"TimeWindow\": 20000,\n                        \"TimeWindowInterval\": 1\n                    },\n                    \"IpWhiteStatus\": false,\n                    \"IpWhiteConfig\": {\n                        \"Ips\": [],\n                        \"EffectType\": \"always\",\n                        \"EffectTimes\": [],\n                        \"Comment\": \"\"\n                    },\n                    \"IpBlackStatus\": false,\n                    \"IpBlackConfig\": {\n                        \"Ips\": [],\n                        \"EffectType\": \"always\",\n                        \"EffectTimes\": [],\n                        \"Comment\": \"\"\n                    },\n                    \"CustomHttpHost\": \"\",\n                    \"HttpHostType\": \"targetHost\",\n                    \"Timeout\": 60,\n                    \"ID\": \"mcp-8d5c4195\",\n                    \"Status\": \"disabled\",\n                    \"Url\": \"http://test.com/_llmsgw_/mcp?server=mcp-8d5c4195&paasid=app-83a7a4aa\",\n                    \"App\": {\n                        \"ID\": \"app-83a7a4aa\",\n                        \"Name\": \"test\"\n                    },\n                    \"Catalogs\": [],\n                    \"Labels\": [],\n                    \"ToolNum\": -1,\n                    \"CreateTime\": \"2025-05-20T08:24:18.702Z\",\n                    \"LastUpdateTime\": \"2025-05-20T08:42:05.916Z\",\n                    \"McpSecurityRulesVO\": [\n                        {\n                            \"ID\": \"mr-2bdbbf32\",\n                            \"Type\": \"sensitive_data_check\",\n                            \"BodyType\": \"\",\n                            \"IconType\": \"code\",\n                            \"Name\": \"验证码\",\n                            \"Description\": \"识别mcp服务调用过程中，响应参数可能存在的验证码\",\n                            \"RiskLevel\": \"middle\",\n                            \"VersionNumber\": \"20250509_v1\",\n                            \"Status\": \"open\",\n                            \"Act\": \"watch\",\n                            \"SupportActs\": [\n                                \"watch\",\n                                \"desensitization\",\n                                \"filter\"\n                            ]\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"3fcd8e59-0c84-434e-9f07-9091f1de997d\"\n    }\n}",
+        "title": "查询mcp server列表"
+      }
+    ],
+    "DisableByPassMcpSecurityRule": [
+      {
+        "document": "禁用绕过mcp 安全规则",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableByPassMcpSecurityRule\n<公共请求参数>\n\n{\n    \"Type\": \"security_event_check\",\n    \"InstanceID\": \"ins-9c4a1db3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mr-4431f5d2\"\n        },\n        \"RequestId\": \"6bef837d-b7be-488c-9693-ea503d93faf0\"\n    }\n}",
+        "title": "禁用绕过mcp 安全规则"
+      }
+    ],
+    "DisableMcpServer": [
+      {
+        "document": "下线mcp server",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableMcpServer\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"ID\": \"mcp-aa12c447\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mcp-aa12c447\"\n        },\n        \"RequestId\": \"1eed7b01-8b36-4b06-97c2-242e461856db\"\n    }\n}",
+        "title": "下线mcp server"
+      }
+    ],
+    "EnableByPassMcpSecurityRule": [
+      {
+        "document": "启用绕过mcp 安全规则",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMcpSecurityRule\n<公共请求参数>\n\n{\n    \"Type\": \"security_event_check\",\n    \"InstanceID\": \"ins-9c4a1db3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mr-4431f5d2\"\n        },\n        \"RequestId\": \"6bef837d-b7be-488c-9693-ea503d93faf0\"\n    }\n}",
+        "title": "启用绕过mcp 安全规则"
+      }
+    ],
+    "EnableMcpServer": [
+      {
+        "document": "上线mcp server",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableMcpServer\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"ID\": \"mcp-aa12c447\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mcp-aa12c447\"\n        },\n        \"RequestId\": \"1eed7b01-8b36-4b06-97c2-242e461856db\"\n    }\n}",
+        "title": "上线mcp server"
+      }
+    ],
+    "ModifyAgentApp": [
+      {
+        "document": "修改app",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgentApp\n<公共请求参数>\n\n{\n    \"ID\": \"aga-71702335\",\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"Name\": \"测试app\",\n    \"Description\": \"测试desp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"aga-71702335\"\n        },\n        \"RequestId\": \"ccb7929f-710a-4e1a-beff-192ec3f28da0\"\n    }\n}",
+        "title": "修改app"
+      }
+    ],
+    "ModifyAgentAppMcpServers": [
+      {
+        "document": "修改app的mcp server关联",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgentAppMcpServers\n<公共请求参数>\n\n{\n    \"ID\": \"aga-71702335\",\n    \"InstanceID\": \"ins-e6fbc9b9\",\n    \"McpServers\": [\n        {\n            \"ID\": \"mcp-6a63b40b\",\n            \"NeedAuth\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"6a63b40b\"\n        },\n        \"RequestId\": \"c613fd7b-5f4b-41b9-80f0-8c18ab8cccdf\"\n    }\n}",
+        "title": "修改app的mcp server关联"
+      }
+    ],
+    "ModifyMcpServer": [
+      {
+        "document": "修改mcp server",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMcpServer\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"ID\": \"mcp-aa12c447\",\n    \"Mode\": \"proxy\",\n    \"McpVersion\": \"2024-11-05\",\n    \"Name\": \"testmcp\",\n    \"PaasID\": \"app-83a7a4aa\",\n    \"Description\": \"\",\n    \"LabelIDs\": [],\n    \"CategoryIDs\": [],\n    \"AuthType\": \"sign\",\n    \"SignType\": \"sha256\",\n    \"WrapServices\": [],\n    \"TargetSelect\": \"random\",\n    \"TargetHosts\": [\n        {\n            \"Host\": \"127.0.0.1:3000\",\n            \"Rank\": 10\n        }\n    ],\n    \"HttpProtocolType\": \"http\",\n    \"CheckTargetCertsError\": false,\n    \"TargetPath\": \"/sse\",\n    \"InvokeLimitConfigStatus\": false,\n    \"InvokeLimitConfig\": {\n        \"Type\": \"tokenBucket\",\n        \"TokenBucketMaxNum\": 20000,\n        \"TokenBucketRate\": 1,\n        \"FunnelMaxNum\": 20000,\n        \"FunnelRate\": 1,\n        \"SlidingWindowMaxNum\": 20000,\n        \"SlidingWindowSize\": 1,\n        \"TimeWindow\": 20000,\n        \"TimeWindowInterval\": 1\n    },\n    \"IpWhiteStatus\": false,\n    \"IpWhiteConfig\": {\n        \"Ips\": [],\n        \"EffectType\": \"always\",\n        \"EffectTimes\": [],\n        \"Comment\": \"\"\n    },\n    \"IpBlackStatus\": false,\n    \"IpBlackConfig\": {\n        \"Ips\": [],\n        \"EffectType\": \"always\",\n        \"EffectTimes\": [],\n        \"Comment\": \"\"\n    },\n    \"CustomHttpHost\": \"\",\n    \"HttpHostType\": \"targetHost\",\n    \"Timeout\": 60,\n    \"McpSecurityRules\": [\n        {\n            \"ID\": \"mr-2bdbbf32\",\n            \"Act\": \"watch\",\n            \"Status\": \"open\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mcp-aa12c447\"\n        },\n        \"RequestId\": \"388289da-01b2-4be6-8ba9-7b40028ac05b\"\n    }\n}",
+        "title": "修改mcp server"
+      }
+    ],
+    "ModifyMcpServerToolConfig": [
+      {
+        "document": "修改mcp服务工具集配置",
+        "input": "POST / HTTP/1.1\nHost: apis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMcpServerToolConfig\n<公共请求参数>\n\n{\n    \"InstanceID\": \"ins-9c4a1db3\",\n    \"ID\": \"mcp-8d5c4195\",\n    \"ToolConfigs\": [\n        {\n            \"ToolName\": \"add-todo\",\n            \"InvokeLimitConfigStatus\": true,\n            \"InvokeLimitConfig\": {\n                \"Type\": \"tokenBucket\",\n                \"TokenBucketMaxNum\": 20000,\n                \"TokenBucketRate\": 1\n            },\n            \"McpSecurityRules\": [\n                {\n                    \"ID\": \"mr-c00eb39f\",\n                    \"Act\": \"watch\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ID\": \"mcp-8d5c4195\"\n        },\n        \"RequestId\": \"93c3520a-7ecd-496d-abe5-92cf8b5a8d4d\"\n    }\n}",
+        "title": "修改mcp服务工具集配置"
+      }
+    ]
+  },
+  "version": "1.0"
+}

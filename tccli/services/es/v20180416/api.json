@@ -3866,6 +3866,51 @@
           "name": "OrderByType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志级别",
+          "example": "[\"INFO\"]",
+          "member": "string",
+          "name": "LogLevels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "[\"167890354315\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引名",
+          "example": "index",
+          "member": "string",
+          "name": "IndexName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引分片",
+          "example": "[index][0]",
+          "member": "string",
+          "name": "ShardId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "慢日志查询耗时",
+          "example": "100",
+          "member": "uint64",
+          "name": "QueryCost",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9129,6 +9174,36 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引名",
+          "example": "index",
+          "member": "string",
+          "name": "IndexName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引分片",
+          "example": "[index][0]",
+          "member": "string",
+          "name": "Shard",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢日志索引查询耗时",
+          "example": "100",
+          "member": "string",
+          "name": "QueryCost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11834,7 +11909,7 @@
         {
           "disabled": false,
           "document": "数据源集群id",
-          "example": "无",
+          "example": "\"abc-jabbmk6iq\"",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -11843,7 +11918,7 @@
         {
           "disabled": false,
           "document": "集群节点ip",
-          "example": "无",
+          "example": "[\"9.0.12.3\"]",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -11852,7 +11927,7 @@
         {
           "disabled": false,
           "document": "集群节点日志路径",
-          "example": "无",
+          "example": "[\"var\"]",
           "member": "string",
           "name": "LogPath",
           "required": true,
@@ -11861,7 +11936,7 @@
         {
           "disabled": false,
           "document": "查询时间戳起始时间",
-          "example": "无",
+          "example": "1757260800000",
           "member": "string",
           "name": "From",
           "required": true,
@@ -11870,7 +11945,7 @@
         {
           "disabled": false,
           "document": "查询时间戳截止时间",
-          "example": "无",
+          "example": "1757260900000",
           "member": "string",
           "name": "To",
           "required": true,
@@ -11879,7 +11954,7 @@
         {
           "disabled": false,
           "document": "查询过滤条件，支持AND、OR等语法",
-          "example": "无",
+          "example": "*",
           "member": "string",
           "name": "Query",
           "required": true,
@@ -11888,7 +11963,7 @@
         {
           "disabled": false,
           "document": "Serverless索引id",
-          "example": "无",
+          "example": "index-abc",
           "member": "string",
           "name": "ServerlessId",
           "required": true,
@@ -11897,7 +11972,7 @@
         {
           "disabled": false,
           "document": "翻页标记：0向上滚动、1向下滚动",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Scroll",
           "required": true,
@@ -11906,7 +11981,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "无",
+          "example": "elastic",
           "member": "string",
           "name": "Username",
           "required": true,
@@ -11915,7 +11990,7 @@
         {
           "disabled": false,
           "document": "密码",
-          "example": "无",
+          "example": "pwd-abc",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -11924,7 +11999,7 @@
         {
           "disabled": false,
           "document": "翻页标识",
-          "example": "无",
+          "example": "[\"1757310599977\",\"9359780\"]",
           "member": "string",
           "name": "SearchAfterKey",
           "required": false,
@@ -11939,18 +12014,20 @@
         {
           "disabled": false,
           "document": "第一条数据的翻页标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[1757310599977,9359779]",
           "member": "int64",
           "name": "SearchAfterKeyFirst",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "最后一条数据的翻页标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[1757310599977,9359780]",
           "member": "int64",
           "name": "SearchAfterKeyLast",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11960,15 +12037,17 @@
           "example": "无",
           "member": "SearchServerlessDataHitArray",
           "name": "Results",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "查询数据条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "Count",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12078,7 +12157,7 @@
         {
           "disabled": false,
           "document": "0: query_string类型, 1: SQL类型",
-          "example": "/",
+          "example": "0",
           "member": "uint64",
           "name": "QueryType",
           "required": true,
@@ -12087,7 +12166,7 @@
         {
           "disabled": false,
           "document": "查询时间戳起始时间",
-          "example": "无",
+          "example": "1760889127619",
           "member": "string",
           "name": "TimeStampFrom",
           "required": true,
@@ -12096,7 +12175,7 @@
         {
           "disabled": false,
           "document": "查询时间戳终止时间",
-          "example": "无",
+          "example": "1760975527619",
           "member": "string",
           "name": "TimeStampTo",
           "required": true,
@@ -12105,7 +12184,7 @@
         {
           "disabled": false,
           "document": "Serverless索引id",
-          "example": "无",
+          "example": "index-abc",
           "member": "string",
           "name": "ServerlessId",
           "required": true,
@@ -12114,7 +12193,7 @@
         {
           "disabled": false,
           "document": "查询路由preference，可以传递数据源集群id，保持查询排序稳定",
-          "example": "无",
+          "example": "10e395c2-a25d-4445-a25e-8d8d0240bde1",
           "member": "string",
           "name": "Preference",
           "required": true,
@@ -12123,7 +12202,7 @@
         {
           "disabled": false,
           "document": "用户名，建议创建内部专用用户",
-          "example": "无",
+          "example": "elastic",
           "member": "string",
           "name": "Username",
           "required": true,
@@ -12132,7 +12211,7 @@
         {
           "disabled": false,
           "document": "密码",
-          "example": "无",
+          "example": "Elastic-test",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -12168,7 +12247,7 @@
         {
           "disabled": false,
           "document": "上次查询的search_after的锚点，没有携带则为第一次请求",
-          "example": "无",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "SearchAfterKey",
           "required": false,
@@ -12177,7 +12256,7 @@
         {
           "disabled": false,
           "document": "单页数据条数",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "PageSize",
           "required": false,
@@ -12186,7 +12265,7 @@
         {
           "disabled": false,
           "document": "类似SearchAfterKey, SQL类型的查询中用于分页",
-          "example": "无",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "Cursor",
           "required": false,
@@ -12201,7 +12280,7 @@
         {
           "disabled": false,
           "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "[\"1760971411188\",\"51650\"]",
           "member": "string",
           "name": "SearchAfterKeyFirst",
           "output_required": false,
@@ -12211,7 +12290,7 @@
         {
           "disabled": false,
           "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "[\"1760971408864\",\"68377\"]",
           "member": "string",
           "name": "SearchAfterKeyLast",
           "output_required": false,
@@ -12221,7 +12300,7 @@
         {
           "disabled": false,
           "document": "数据total hit\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "100",
           "member": "uint64",
           "name": "Count",
           "output_required": false,
@@ -12231,7 +12310,7 @@
         {
           "disabled": false,
           "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "无",
           "member": "SearchServerlessHitDataString",
           "name": "Results",
           "output_required": false,
@@ -12241,7 +12320,7 @@
         {
           "disabled": false,
           "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "无",
           "member": "SQLColumn",
           "name": "Columns",
           "output_required": false,
@@ -12251,7 +12330,7 @@
         {
           "disabled": false,
           "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "[\"1760971411188\",\"51650\"]",
           "member": "string",
           "name": "Rows",
           "output_required": false,
@@ -12261,7 +12340,7 @@
         {
           "disabled": false,
           "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "[\"1760971411188\",\"51650\"]",
           "member": "string",
           "name": "Cursor",
           "output_required": false,
@@ -12895,7 +12974,7 @@
         {
           "disabled": false,
           "document": "空间白名单\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"WhiteIpList\":[\"127.0.0.1\"],\"BlackIpList\":[]}",
+          "example": "无",
           "member": "EsAcl",
           "name": "KibanaPublicAcl",
           "output_required": false,
@@ -12925,7 +13004,7 @@
         {
           "disabled": false,
           "document": "空间vpc信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"VpcId\":\"vpc-xxxxxxx\",\"SubnetId\":\"subnet-xxxxxxx\",\"VpcUid\":11111111,\"SubnetUid\":11111111,\"AvailableIpAddressCount\":0}]",
+          "example": "无",
           "member": "VpcInfo",
           "name": "VpcInfo",
           "output_required": false,
@@ -12995,7 +13074,7 @@
         {
           "disabled": false,
           "document": "0\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0:普通集群；1:T-Search集群",
+          "example": "0",
           "member": "int64",
           "name": "ClusterType",
           "output_required": false,
@@ -13005,12 +13084,32 @@
         {
           "disabled": false,
           "document": "空间标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "key:value",
+          "example": "无",
           "member": "TagInfo",
           "name": "TagList",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启mcp服务",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableMcpAccess",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mcp的访问地址",
+          "example": "http://ip:port/sse",
+          "member": "string",
+          "name": "McpAccess",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

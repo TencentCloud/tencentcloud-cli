@@ -1,0 +1,5054 @@
+{
+  "actions": {
+    "BindActMcpSecurityRule": {
+      "document": "绑定处置动作mcp 安全规则",
+      "input": "BindActMcpSecurityRuleRequest",
+      "name": "批量绑定处置动作mcp 安全规则",
+      "output": "BindActMcpSecurityRuleResponse",
+      "status": "online"
+    },
+    "BindActToolMcpSecurityRule": {
+      "document": "工具绑定处置动作mcp 安全规则",
+      "input": "BindActToolMcpSecurityRuleRequest",
+      "name": "工具绑定处置动作mcp 安全规则",
+      "output": "BindActToolMcpSecurityRuleResponse",
+      "status": "online"
+    },
+    "BindStatusMcpSecurityRule": {
+      "document": "绑定状态mcp 安全规则",
+      "input": "BindStatusMcpSecurityRuleRequest",
+      "name": "批量绑定状态mcp 安全规则",
+      "output": "BindStatusMcpSecurityRuleResponse",
+      "status": "online"
+    },
+    "BindStatusToolMcpSecurityRule": {
+      "document": "工具绑定（解绑）mcp 安全规则",
+      "input": "BindStatusToolMcpSecurityRuleRequest",
+      "name": "工具批量绑定（解绑）mcp 安全规则",
+      "output": "BindStatusToolMcpSecurityRuleResponse",
+      "status": "online"
+    },
+    "CheckMcpServerUnique": {
+      "document": "检测mcp server的唯一性",
+      "input": "CheckMcpServerUniqueRequest",
+      "name": "mcp server检测唯一性",
+      "output": "CheckMcpServerUniqueResponse",
+      "status": "online"
+    },
+    "CreateAgentApp": {
+      "document": "创建app",
+      "input": "CreateAgentAppRequest",
+      "name": "创建app",
+      "output": "CreateAgentAppResponse",
+      "status": "online"
+    },
+    "CreateAgentAppApiKey": {
+      "document": "创建app的apiKey",
+      "input": "CreateAgentAppApiKeyRequest",
+      "name": "创建app的apiKey",
+      "output": "CreateAgentAppApiKeyResponse",
+      "status": "online"
+    },
+    "CreateAgentAppMcpServers": {
+      "document": "创建app的mcp server关联",
+      "input": "CreateAgentAppMcpServersRequest",
+      "name": "创建app的mcp server关联",
+      "output": "CreateAgentAppMcpServersResponse",
+      "status": "online"
+    },
+    "CreateAgentAppSecretKey": {
+      "document": "创建app的secretKey",
+      "input": "CreateAgentAppSecretKeyRequest",
+      "name": "创建app的secretKey",
+      "output": "CreateAgentAppSecretKeyResponse",
+      "status": "online"
+    },
+    "CreateMcpServer": {
+      "document": "创建mcp server",
+      "input": "CreateMcpServerRequest",
+      "name": "创建mcp server",
+      "output": "CreateMcpServerResponse",
+      "status": "online"
+    },
+    "DeleteAgentApp": {
+      "document": "删除app",
+      "input": "DeleteAgentAppRequest",
+      "name": "删除app",
+      "output": "DeleteAgentAppResponse",
+      "status": "online"
+    },
+    "DeleteAgentAppApiKey": {
+      "document": "删除app的apiKey",
+      "input": "DeleteAgentAppApiKeyRequest",
+      "name": "删除app的apiKey",
+      "output": "DeleteAgentAppApiKeyResponse",
+      "status": "online"
+    },
+    "DeleteAgentAppMcpServers": {
+      "document": "删除app的mcp server",
+      "input": "DeleteAgentAppMcpServersRequest",
+      "name": "删除app的mcp server",
+      "output": "DeleteAgentAppMcpServersResponse",
+      "status": "online"
+    },
+    "DeleteAgentAppSecret": {
+      "document": "删除app的secretKey",
+      "input": "DeleteAgentAppSecretRequest",
+      "name": "删除app的secretKey",
+      "output": "DeleteAgentAppSecretResponse",
+      "status": "online"
+    },
+    "DeleteMcpServer": {
+      "document": "删除mcp server",
+      "input": "DeleteMcpServerRequest",
+      "name": "删除mcp server",
+      "output": "DeleteMcpServerResponse",
+      "status": "online"
+    },
+    "DescribeAgentApp": {
+      "document": "查询app详情",
+      "input": "DescribeAgentAppRequest",
+      "name": "查询app详情",
+      "output": "DescribeAgentAppResponse",
+      "status": "online"
+    },
+    "DescribeAgentApps": {
+      "document": "查询app列表",
+      "input": "DescribeAgentAppsRequest",
+      "name": "查询app列表",
+      "output": "DescribeAgentAppsResponse",
+      "status": "online"
+    },
+    "DescribeMcpSecurityRule": {
+      "document": "查询mcp 安全规则详情",
+      "input": "DescribeMcpSecurityRuleRequest",
+      "name": "查询mcp 安全规则详情",
+      "output": "DescribeMcpSecurityRuleResponse",
+      "status": "online"
+    },
+    "DescribeMcpSecurityRuleByPass": {
+      "document": "查询mcp 安全规则ByPass状态",
+      "input": "DescribeMcpSecurityRuleByPassRequest",
+      "name": "查询mcp 安全规则ByPass状态",
+      "output": "DescribeMcpSecurityRuleByPassResponse",
+      "status": "online"
+    },
+    "DescribeMcpSecurityRules": {
+      "document": "查询mcp 安全规则列表",
+      "input": "DescribeMcpSecurityRulesRequest",
+      "name": "查询mcp 安全规则列表",
+      "output": "DescribeMcpSecurityRulesResponse",
+      "status": "online"
+    },
+    "DescribeMcpServer": {
+      "document": "查询mcp server详情",
+      "input": "DescribeMcpServerRequest",
+      "name": "查询mcp server详情",
+      "output": "DescribeMcpServerResponse",
+      "status": "online"
+    },
+    "DescribeMcpServers": {
+      "document": "查询mcp server列表",
+      "input": "DescribeMcpServersRequest",
+      "name": "查询mcp server列表",
+      "output": "DescribeMcpServersResponse",
+      "status": "online"
+    },
+    "DisableByPassMcpSecurityRule": {
+      "document": "禁用绕过mcp 安全规则",
+      "input": "DisableByPassMcpSecurityRuleRequest",
+      "name": "禁用绕过mcp 安全规则",
+      "output": "DisableByPassMcpSecurityRuleResponse",
+      "status": "online"
+    },
+    "DisableMcpServer": {
+      "document": "下线mcp server",
+      "input": "DisableMcpServerRequest",
+      "name": "下线mcp server",
+      "output": "DisableMcpServerResponse",
+      "status": "online"
+    },
+    "EnableByPassMcpSecurityRule": {
+      "document": "启用绕过mcp 安全规则",
+      "input": "EnableByPassMcpSecurityRuleRequest",
+      "name": "启用绕过mcp 安全规则",
+      "output": "EnableByPassMcpSecurityRuleResponse",
+      "status": "online"
+    },
+    "EnableMcpServer": {
+      "document": "上线mcp server",
+      "input": "EnableMcpServerRequest",
+      "name": "上线mcp server",
+      "output": "EnableMcpServerResponse",
+      "status": "online"
+    },
+    "ModifyAgentApp": {
+      "document": "修改app",
+      "input": "ModifyAgentAppRequest",
+      "name": "修改app",
+      "output": "ModifyAgentAppResponse",
+      "status": "online"
+    },
+    "ModifyAgentAppMcpServers": {
+      "document": "修改app的mcp server关联",
+      "input": "ModifyAgentAppMcpServersRequest",
+      "name": "修改app的mcp server关联",
+      "output": "ModifyAgentAppMcpServersResponse",
+      "status": "online"
+    },
+    "ModifyMcpServer": {
+      "document": "修改mcp server",
+      "input": "ModifyMcpServerRequest",
+      "name": "修改mcp server",
+      "output": "ModifyMcpServerResponse",
+      "status": "online"
+    },
+    "ModifyMcpServerToolConfig": {
+      "document": "修改mcp服务工具集配置",
+      "input": "ModifyMcpServerToolConfigRequest",
+      "name": "修改mcp服务工具集配置",
+      "output": "ModifyMcpServerToolConfigResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-08-01",
+    "api_brief": "大模型安全网关",
+    "serviceNameCN": "大模型安全网关",
+    "serviceShortName": "apis"
+  },
+  "objects": {
+    "AgentAppMcpServerDTO": {
+      "document": "关联的mcp服务配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcpserver id",
+          "example": "mcp-0101010",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否需要鉴权",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedAuth",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据代填的ID",
+          "example": "agc-010101",
+          "member": "string",
+          "name": "AgentCredentialID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentAppMcpServerVO": {
+      "document": "应用关联的mcp响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp id",
+          "example": "mcp-0101010",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要认证",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedAuth",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据ID",
+          "example": "agc-01010101",
+          "member": "string",
+          "name": "AgentCredentialID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据详情",
+          "example": "无",
+          "member": "DescribeAgentCredentialResp",
+          "name": "AgentCredentialVO",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mcp详情",
+          "example": "无",
+          "member": "DescribeMcpServerResponseVO",
+          "name": "McpServerVO",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联时间",
+          "example": "关联时间",
+          "member": "string",
+          "name": "RelateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AgentAppSecretKeyVO": {
+      "document": "secretKey的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "secret id",
+          "example": "11110000000aaaa",
+          "member": "string",
+          "name": "SecretID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "secret key",
+          "example": "111******************aa",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AgentCredentialContentDTO": {
+      "document": "凭证内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "如果认证类型为sts时，该项必填",
+          "example": "tencentCam",
+          "member": "string",
+          "name": "STSSystem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果认证类型为sts时，该项必填",
+          "example": "cls",
+          "member": "string",
+          "name": "STSService",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果认证类型为reqKey时，该项必填",
+          "example": "无",
+          "member": "AgentCredentialContentHeaderDTO",
+          "name": "Headers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentCredentialContentHeaderDTO": {
+      "document": "凭证内容头",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭据header key",
+          "example": "auth",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据header value",
+          "example": "basic 101010101010",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BindActMcpSecurityRuleRequest": {
+      "document": "BindActMcpSecurityRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "10000xxxxxx",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "10000xxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定处置动作",
+          "example": "watch",
+          "member": "string",
+          "name": "Act",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mcp server id列表",
+          "example": "[\"100000xxxxx\"]",
+          "member": "string",
+          "name": "McpServerIDs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindActMcpSecurityRuleResponse": {
+      "document": "BindActMcpSecurityRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp安全规则详情",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindActToolMcpSecurityRuleRequest": {
+      "document": "BindActToolMcpSecurityRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "10000xxxxxx",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "10000xxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定处置动作",
+          "example": "watch",
+          "member": "string",
+          "name": "Act",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工具列表",
+          "example": "[\"getUser\"]",
+          "member": "string",
+          "name": "ToolNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "mcp server id",
+          "example": "mcp-sss",
+          "member": "string",
+          "name": "McpServerID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindActToolMcpSecurityRuleResponse": {
+      "document": "BindActToolMcpSecurityRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp安全规则详情",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindMcpSecurityRuleDTO": {
+      "document": "BindMcpSecurityRuleDTO，替换之前的McpSecurityRule",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置动作",
+          "example": "watch",
+          "member": "string",
+          "name": "Act",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BindMcpSecurityRuleVO": {
+      "document": "BindMcpSecurityRuleVO，重新定义了之前的McpSecurityRulesVO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "无",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "无",
+          "member": "string",
+          "name": "VersionNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前选择的处置动作",
+          "example": "无",
+          "member": "string",
+          "name": "Act",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的处置动作",
+          "example": "无",
+          "member": "string",
+          "name": "SupportActs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容类型",
+          "example": "无",
+          "member": "string",
+          "name": "BodyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "icon类型",
+          "example": "无",
+          "member": "string",
+          "name": "IconType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BindStatusMcpSecurityRuleRequest": {
+      "document": "BindStatusMcpSecurityRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "10000xxxxxx",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "10000xxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定开关",
+          "example": "open",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mcp server id列表",
+          "example": "[\"100000xxxxx\"]",
+          "member": "string",
+          "name": "McpServerIDs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindStatusMcpSecurityRuleResponse": {
+      "document": "BindStatusMcpSecurityRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp安全规则详情",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindStatusToolMcpSecurityRuleRequest": {
+      "document": "BindStatusToolMcpSecurityRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "10000xxxxxx",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "10000xxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定开关",
+          "example": "open",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工具列表",
+          "example": "[\"getUser\"]",
+          "member": "string",
+          "name": "ToolNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "mcp server id",
+          "example": "mcp-ssss",
+          "member": "string",
+          "name": "McpServerID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindStatusToolMcpSecurityRuleResponse": {
+      "document": "BindStatusToolMcpSecurityRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp安全规则详情",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckMcpServerUniqueRequest": {
+      "document": "CheckMcpServerUnique请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检测唯一性字段，例如:name",
+          "example": "name",
+          "member": "string",
+          "name": "Field",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检测唯一性字段的值",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "填了ID就是校验修改值是否唯一，没填就是校验新增值是否唯一",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckMcpServerUniqueResponse": {
+      "document": "CheckMcpServerUnique返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测唯一性",
+          "example": "无",
+          "member": "CheckMcpServerUniqueVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckMcpServerUniqueVO": {
+      "document": "检测唯一值的返回值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否冲突",
+          "example": "false",
+          "member": "bool",
+          "name": "IsConflict",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "冲突描述",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateAgentAppApiKeyRequest": {
+      "document": "CreateAgentAppApiKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "aga-1010101",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentAppApiKeyResp": {
+      "document": "创建Agent应用的ApiKey的返回值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成的apiKey",
+          "example": "lsk-*****************01",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateAgentAppApiKeyResponse": {
+      "document": "CreateAgentAppApiKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "apiKey",
+          "example": "无",
+          "member": "CreateAgentAppApiKeyResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentAppMcpServersRequest": {
+      "document": "CreateAgentAppMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "aga-1010101",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联的mcp server",
+          "example": "[{\"ID\":\"\",\"NeedAuth\":false}]",
+          "member": "AgentAppMcpServerDTO",
+          "name": "McpServers",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentAppMcpServersResponse": {
+      "document": "CreateAgentAppMcpServers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app id",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentAppRequest": {
+      "document": "CreateAgentApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "name01",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证类型",
+          "example": "apiKey",
+          "member": "string",
+          "name": "AuthType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "description 01",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentAppResp": {
+      "document": "创建Agent应用的返回值，根据创建的AuthType，返回ApiKey或者SecretKey",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app id ",
+          "example": "aga-0101010",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果authType为apiKey时，返回该字段",
+          "example": "sk-01010100101010",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果authType为secretKey时，返回该字段",
+          "example": "AK01010100101010",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果authType为secretKey时，返回该字段",
+          "example": "010101001010100101010",
+          "member": "string",
+          "name": "SecretID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateAgentAppResponse": {
+      "document": "CreateAgentApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app id",
+          "example": "无",
+          "member": "CreateAgentAppResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentAppSecretKeyRequest": {
+      "document": "CreateAgentAppSecretKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "aga-1010101",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentAppSecretKeyResponse": {
+      "document": "CreateAgentAppSecretKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "secretKey",
+          "example": "无",
+          "member": "AgentAppSecretKeyVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMcpServerRequest": {
+      "document": "CreateMcpServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模式：proxy代理模式； wrap封装模式；",
+          "example": "proxy",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本号：2024-11-05 2025-03-26",
+          "example": "2024-11-05",
+          "member": "string",
+          "name": "McpVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "testname",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "testdesc",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "应用ID",
+          "example": "app-xxxxxxxx",
+          "member": "string",
+          "name": "PaasID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "鉴权方式：sign签名； none免鉴权",
+          "example": "sign",
+          "member": "string",
+          "name": "AuthType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签ID数组",
+          "example": "[\"lab-xxxxxxxx\"]",
+          "member": "string",
+          "name": "LabelIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "目录ID数组",
+          "example": "[\"cat-xxxxxxxx\"]",
+          "member": "string",
+          "name": "CategoryIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "签名方式：sha256 sm3",
+          "example": "sha256",
+          "member": "string",
+          "name": "SignType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "封装服务列表",
+          "example": "[\"svr-xxxxxxxx\"]",
+          "member": "string",
+          "name": "WrapServices",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "负载方式，robin random consistentHash",
+          "example": "random",
+          "member": "string",
+          "name": "TargetSelect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标服务器",
+          "example": "无",
+          "member": "TargetHostDTO",
+          "name": "TargetHosts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "后端协议：http https",
+          "example": "http",
+          "member": "string",
+          "name": "HttpProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书检查",
+          "example": "false",
+          "member": "bool",
+          "name": "CheckTargetCertsError",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "目标路径",
+          "example": "/sse",
+          "member": "string",
+          "name": "TargetPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量控制开启状态",
+          "example": "false",
+          "member": "bool",
+          "name": "InvokeLimitConfigStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "流量控制配置",
+          "example": "无",
+          "member": "InvokeLimitConfigDTO",
+          "name": "InvokeLimitConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "IP白名单开启状态",
+          "example": "false",
+          "member": "bool",
+          "name": "IpWhiteStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "IP白名单配置",
+          "example": "无",
+          "member": "IpConfig",
+          "name": "IpWhiteConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "IP黑名单开启状态",
+          "example": "false",
+          "member": "bool",
+          "name": "IpBlackStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "IP黑名单配置",
+          "example": "无",
+          "member": "IpConfig",
+          "name": "IpBlackConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义host",
+          "example": "test.com",
+          "member": "string",
+          "name": "CustomHttpHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host；  customHost 自定义host",
+          "example": "useRequestHost",
+          "member": "string",
+          "name": "HttpHostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求的超时时间",
+          "example": "10",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全规则集",
+          "example": "无",
+          "member": "McpSecurityRule",
+          "name": "McpSecurityRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工具集配置（openapi时或许用的是）",
+          "example": "无",
+          "member": "ToolConfigDTO",
+          "name": "ToolConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "封装的API分组ID",
+          "example": "paasid",
+          "member": "string",
+          "name": "WrapPaasID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "插件配置",
+          "example": "无",
+          "member": "PluginConfigDTO",
+          "name": "PluginConfigs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMcpServerResponse": {
+      "document": "CreateMcpServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp server ID",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAppApiKeyRequest": {
+      "document": "DeleteAgentAppApiKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "aga-1010101",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "apikey的索引",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAppApiKeyResponse": {
+      "document": "DeleteAgentAppApiKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app id",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAppMcpServersRequest": {
+      "document": "DeleteAgentAppMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "aga-1010101",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mcpserver id数组",
+          "example": "[\"mcp-0101010\"]",
+          "member": "string",
+          "name": "McpServerIDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAppMcpServersResponse": {
+      "document": "DeleteAgentAppMcpServers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app id",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAppRequest": {
+      "document": "DeleteAgentApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "aga-1010101",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAppResponse": {
+      "document": "DeleteAgentApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app id",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAppSecretRequest": {
+      "document": "DeleteAgentAppSecret请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "aga-1010101",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "secretkey的索引",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentAppSecretResponse": {
+      "document": "DeleteAgentAppSecret返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app id",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMcpServerRequest": {
+      "document": "DeleteMcpServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mcp server ID",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMcpServerResponse": {
+      "document": "DeleteMcpServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp server ID",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAppRequest": {
+      "document": "DescribeAgentApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "app id",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAppResp": {
+      "document": "查询app详情响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户appID",
+          "example": "1000000",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "1000000",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-1010101",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "aga-1010101",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "name01",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "description……",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-07-11 15:18:09",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2025-07-11 15:18:09",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证类型",
+          "example": "apiKey",
+          "member": "string",
+          "name": "AuthType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "apiKeys列表，脱敏",
+          "example": "[\"lsk-*************010\"]",
+          "member": "string",
+          "name": "ApiKeys",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "secretKey列表，脱敏",
+          "example": "[{\"SecretID\":\"\",\"SecretKey\":\"\"}]",
+          "member": "AgentAppSecretKeyVO",
+          "name": "SecretKeys",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的mcp列表",
+          "example": "无",
+          "member": "AgentAppMcpServerVO",
+          "name": "McpServers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAgentAppResponse": {
+      "document": "DescribeAgentApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app详情",
+          "example": "无",
+          "member": "DescribeAgentAppResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAppsRequest": {
+      "document": "DescribeAgentApps请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-010101",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "notID列表",
+          "example": "[\"aga-010101\"]",
+          "member": "string",
+          "name": "NotIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "状态：normal正常状态，disabled下线状态",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "key",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务ID数组",
+          "example": "[\"aga-010101\"]",
+          "member": "string",
+          "name": "IDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "认证类型：apiKey，secretKey",
+          "example": "apiKey",
+          "member": "string",
+          "name": "AuthType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联的mcp",
+          "example": "mcp-01010101",
+          "member": "string",
+          "name": "McpServerID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "没有关联的mcp",
+          "example": "mcp-01010101",
+          "member": "string",
+          "name": "NotMcpServerID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "无",
+          "member": "DescribeAgentAppsSortDTO",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "凭据ID",
+          "example": "agc-01010101",
+          "member": "string",
+          "name": "AgentCredentialID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAppsResp": {
+      "document": "查询App列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条目总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "具体条目",
+          "example": "无",
+          "member": "DescribeAgentAppResp",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAgentAppsResponse": {
+      "document": "DescribeAgentApps返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app列表",
+          "example": "无",
+          "member": "DescribeAgentAppsResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentAppsSortDTO": {
+      "document": "agentApp查询排序",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "1",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "1",
+          "member": "int64",
+          "name": "Name",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeAgentCredentialResp": {
+      "document": "凭据详情响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户应用ID",
+          "example": "1000000000",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "1000000000",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据ID",
+          "example": "agc-0101010",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据名称",
+          "example": "name01",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联应用数",
+          "example": "10",
+          "member": "int64",
+          "name": "RelateAgentAppNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联mcp数",
+          "example": "10",
+          "member": "int64",
+          "name": "RelateMcpServerNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭据内容",
+          "example": "无",
+          "member": "AgentCredentialContentDTO",
+          "name": "Content",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-07-11 15:18:09",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2025-07-11 15:18:09",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "reqKey",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMcpSecurityRuleByPassRequest": {
+      "document": "DescribeMcpSecurityRuleByPass请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "100000xxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "other",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpSecurityRuleByPassResponse": {
+      "document": "DescribeMcpSecurityRuleByPass返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp安全规则列表",
+          "example": "无",
+          "member": "DescribeMcpSecurityRuleByPassVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpSecurityRuleByPassVO": {
+      "document": "ByPass查询响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ByPass响应",
+          "example": "open",
+          "member": "string",
+          "name": "ByPass",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMcpSecurityRuleRequest": {
+      "document": "DescribeMcpSecurityRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "10000xxxxxx",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "10000xxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpSecurityRuleResponse": {
+      "document": "DescribeMcpSecurityRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp安全规则详情",
+          "example": "无",
+          "member": "McpSecurityRuleItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpSecurityRuleSortDTO": {
+      "document": "查询mcp安全规则排序",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建时间排序",
+          "example": "1",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间排序",
+          "example": "1",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称排序",
+          "example": "1",
+          "member": "int64",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ByPass排序",
+          "example": "1",
+          "member": "int64",
+          "name": "ByPass",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认状态",
+          "example": "1",
+          "member": "int64",
+          "name": "DefaultStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeMcpSecurityRulesRequest": {
+      "document": "DescribeMcpSecurityRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID数组",
+          "example": "无",
+          "member": "string",
+          "name": "IDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "安全规则名称",
+          "example": "名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关键词查询",
+          "example": "hello",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "custom_plugin",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否绕过",
+          "example": "open",
+          "member": "string",
+          "name": "ByPass",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "{\"Name\":-1}",
+          "member": "DescribeMcpSecurityRuleSortDTO",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "100000xxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否内置",
+          "example": "true",
+          "member": "bool",
+          "name": "BuildIn",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "默认状态",
+          "example": "open",
+          "member": "string",
+          "name": "DefaultStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支持的处置动作",
+          "example": "watch",
+          "member": "string",
+          "name": "SupportAct",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "与IDs互斥，只能二者用其一",
+          "example": "无",
+          "member": "string",
+          "name": "NotIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "支持工具绑定",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportToolBind",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否接入了门神",
+          "example": "false",
+          "member": "bool",
+          "name": "SwitchMs",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "支持的方法",
+          "example": "tools/call",
+          "member": "string",
+          "name": "SupportMethod",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpSecurityRulesResponse": {
+      "document": "DescribeMcpSecurityRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp安全规则列表",
+          "example": "无",
+          "member": "DescribeMcpSecurityRulesVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpSecurityRulesVO": {
+      "document": "查询mcp 安全规则列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条目",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "无",
+          "member": "McpSecurityRuleItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMcpServerRequest": {
+      "document": "DescribeMcpServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mcp server ID",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServerResponse": {
+      "document": "DescribeMcpServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp server详情",
+          "example": "无",
+          "member": "DescribeMcpServerResponseVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServerResponseVO": {
+      "document": "DescribeMcpServerResponseVO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testname",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app-xxxxxxxx",
+          "member": "string",
+          "name": "PaasID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testdesc",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"lab-xxxxxxxx\"]",
+          "member": "string",
+          "name": "LabelIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目录ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cat-xxxxxxxx\"]",
+          "member": "string",
+          "name": "CategoryIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "鉴权方式：sign签名； none免鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sign",
+          "member": "string",
+          "name": "AuthType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "签名方式：sha256 sm3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sha256",
+          "member": "string",
+          "name": "SignType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载方式，robin random consistentHash\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "random",
+          "member": "string",
+          "name": "TargetSelect",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标服务器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetHostDTO",
+          "name": "TargetHosts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端协议：http https\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http",
+          "member": "string",
+          "name": "HttpProtocolType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "CheckTargetCertsError",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/sse",
+          "member": "string",
+          "name": "TargetPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流量控制状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "InvokeLimitConfigStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流量控制配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InvokeLimitConfigDTO",
+          "name": "InvokeLimitConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IP白名单开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IpWhiteStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IP白名单配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IpConfig",
+          "name": "IpWhiteConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IP黑名单开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IpBlackStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IP黑名单配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IpConfig",
+          "name": "IpBlackConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "mcp server ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mcp-010101",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预览地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://aaa.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IDNameVO",
+          "name": "App",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IDNameVO",
+          "name": "Catalogs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IDNameVO",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-07-10",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-07-10",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户appID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101010101",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101010101",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test.com",
+          "member": "string",
+          "name": "CustomHttpHost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " Http 请求host类型 useRequestHost 保持源请求host targetHost 修正为源站host  customHost 自定义host\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "useRequestHost",
+          "member": "string",
+          "name": "HttpHostType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求的超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Timeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "mcp server模式",
+          "example": "proxy",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mcp version",
+          "example": "2024-11-05",
+          "member": "string",
+          "name": "McpVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "封装模式下绑定的服务ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ee\"]",
+          "member": "string",
+          "name": "WrapServices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工具数量",
+          "example": "1",
+          "member": "int64",
+          "name": "ToolNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全规则集响应",
+          "example": "无",
+          "member": "McpSecurityRulesVO",
+          "name": "McpSecurityRulesVO",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "真实工具级别配置，实时拉取了tool/list做渲染的，如果tool/list不通，就拉不到。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ToolConfigVO",
+          "name": "ToolConfigs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问URL",
+          "example": "无",
+          "member": "McpUrlObj",
+          "name": "UrlObj",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端mcp服务是否正常",
+          "example": "err",
+          "member": "string",
+          "name": "ToolMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端mcp服务的工具列表",
+          "example": "无",
+          "member": "McpTool",
+          "name": "Tools",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "封装的API分组ID",
+          "example": "app-xxxxxxxx",
+          "member": "string",
+          "name": "WrapPaasID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的agentApp数量",
+          "example": "1",
+          "member": "int64",
+          "name": "RelateAgentAppNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PluginConfigDTO",
+          "name": "PluginConfigs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMcpServersRequest": {
+      "document": "DescribeMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-010101",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "paasID列表",
+          "example": "[\"passid\"]",
+          "member": "string",
+          "name": "PaasIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "状态数组：normal正常状态，disabled下线状态",
+          "example": "[\"normal\"]",
+          "member": "string",
+          "name": "Statuses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "filter",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务ID数组",
+          "example": "[\"mcp-01010101\"]",
+          "member": "string",
+          "name": "IDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模式：proxy代理模式； wrap封装模式；",
+          "example": "[\"wrap\"]",
+          "member": "string",
+          "name": "Modes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的安全规则ID",
+          "example": "mc-0101010",
+          "member": "string",
+          "name": "McpSecurityRuleID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "没有绑定的安全规则ID",
+          "example": "mc-0101010",
+          "member": "string",
+          "name": "NotMcpSecurityRuleID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定安全规则的处置动作（填写时McpSecurityRuleID得必填）",
+          "example": "filter",
+          "member": "string",
+          "name": "McpSecurityRuleAct",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排除服务ID数组",
+          "example": "[\"mcp-01010101\"]",
+          "member": "string",
+          "name": "NotIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "aga-dbe4d418",
+          "member": "string",
+          "name": "AgentAppID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已绑定插件id",
+          "example": "plg-093e25ca",
+          "member": "string",
+          "name": "PluginID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "未绑定插件id",
+          "example": "plg-093e25ca",
+          "member": "string",
+          "name": "ExcludedPluginID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServersResponse": {
+      "document": "DescribeMcpServers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp server列表",
+          "example": "无",
+          "member": "DescribeMcpServersResponseVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServersResponseVO": {
+      "document": "ServicesVO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMcpServerResponseVO",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DisableByPassMcpSecurityRuleRequest": {
+      "document": "DisableByPassMcpSecurityRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "other",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "10000xxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableByPassMcpSecurityRuleResponse": {
+      "document": "DisableByPassMcpSecurityRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp安全规则详情",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableMcpServerRequest": {
+      "document": "DisableMcpServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mcp server ID",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableMcpServerResponse": {
+      "document": "DisableMcpServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp server ID",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableByPassMcpSecurityRuleRequest": {
+      "document": "EnableByPassMcpSecurityRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "other",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "10000xxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableByPassMcpSecurityRuleResponse": {
+      "document": "EnableByPassMcpSecurityRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp安全规则详情",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableMcpServerRequest": {
+      "document": "EnableMcpServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mcp server ID",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableMcpServerResponse": {
+      "document": "EnableMcpServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp server ID",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IDNameVO": {
+      "document": "IDNameVO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InvokeLimitConfigDTO": {
+      "document": "InvokeLimitConfigDTO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Type类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "令牌桶最大容量\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TokenBucketMaxNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "令牌生成速率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TokenBucketRate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏斗容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FunnelMaxNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏嘴流速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FunnelRate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "滑动窗口最大请求数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SlidingWindowMaxNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "滑动窗口长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SlidingWindowSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间窗口最大请求数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TimeWindow",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间窗口长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TimeWindowInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求的超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "IpConfig": {
+      "document": "ip黑白名单配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ip数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Ips",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "always fixedTime",
+          "member": "string",
+          "name": "EffectType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StartEndTime",
+          "name": "EffectTimes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "McpInputOutSchema": {
+      "document": "出入参说明",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "必填字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Required",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "McpSecurityRule": {
+      "document": "mcp安全规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置动作",
+          "example": "watch",
+          "member": "string",
+          "name": "Act",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "McpSecurityRuleContent": {
+      "document": "mcp安全规则内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数类型",
+          "example": "mcpRequestBodyFilter",
+          "member": "string",
+          "name": "FunctionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否接入门神",
+          "example": "false",
+          "member": "bool",
+          "name": "SwitchMs",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "门神规则集ID列表",
+          "example": "[\"30000000\"]",
+          "member": "int64",
+          "name": "TIDs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "McpSecurityRuleItem": {
+      "document": "mcp安全规则详情响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户应用ID",
+          "example": "10000000",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "10000xxxxx",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "10000xxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "100000xxxxxx",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "checkSql",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "检测sql注入",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "custom_plugin",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容",
+          "example": "[         {             \"FunctionType\": \"\",             \"Content\": \"\"         }     ]",
+          "member": "McpSecurityRuleContent",
+          "name": "Contents",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "级别",
+          "example": "high",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开启绕过",
+          "example": "open",
+          "member": "string",
+          "name": "ByPass",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内置",
+          "example": "true",
+          "member": "bool",
+          "name": "BuildIn",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多少服务用到",
+          "example": "10",
+          "member": "int64",
+          "name": "UseCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "20250508172233",
+          "member": "string",
+          "name": "VersionNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认状态",
+          "example": "open",
+          "member": "string",
+          "name": "DefaultStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的处置动作",
+          "example": "[\"watch\"]",
+          "member": "string",
+          "name": "SupportActs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容类型",
+          "example": "image",
+          "member": "string",
+          "name": "BodyType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "icon类型",
+          "example": "qq",
+          "member": "string",
+          "name": "IconType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持工具绑定",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportToolBind",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的mcp调用方法",
+          "example": "[\"tools/call\"]",
+          "member": "string",
+          "name": "SupportMethods",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "McpSecurityRulesVO": {
+      "document": "绑定的安全规则列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "无",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "无",
+          "member": "string",
+          "name": "VersionNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态开关",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前选择的处置动作",
+          "example": "无",
+          "member": "string",
+          "name": "Act",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的处置动作",
+          "example": "无",
+          "member": "string",
+          "name": "SupportActs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容类型",
+          "example": "无",
+          "member": "string",
+          "name": "BodyType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "icon类型",
+          "example": "无",
+          "member": "string",
+          "name": "IconType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "McpTool": {
+      "document": "mcp工具",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入参参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "McpInputOutSchema",
+          "name": "InputSchema",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "McpToolAnnotation",
+          "name": "Annotations",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出参参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "McpInputOutSchema",
+          "name": "OutputSchema",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "McpToolAnnotation": {
+      "document": "mcp工具注解",
+      "members": [
+        {
+          "disabled": false,
+          "document": "title for the tool\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "If true, the tool does not modify its environment\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ReadOnlyHint",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "If true, the tool may perform destructive updates\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "DestructiveHint",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "If true, repeated calls with same args have no additional effect\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IdempotentHint",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "If true, tool interacts with external entities\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "OpenWorldHint",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "McpUrlObj": {
+      "document": "Mcp的访问URL",
+      "members": [
+        {
+          "disabled": false,
+          "document": "sse访问URL",
+          "example": "无",
+          "member": "string",
+          "name": "SSEUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "streamable访问URL",
+          "example": "无",
+          "member": "string",
+          "name": "StreamAbleUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyAgentAppMcpServersRequest": {
+      "document": "ModifyAgentAppMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "aga-1010101",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联的mcp server",
+          "example": "[{\"ID\":\"\",\"NeedAuth\":false}]",
+          "member": "AgentAppMcpServerDTO",
+          "name": "McpServers",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentAppMcpServersResponse": {
+      "document": "ModifyAgentAppMcpServers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app id",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentAppRequest": {
+      "document": "ModifyAgentApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "aga-0101011",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "name01",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "description 01",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentAppResponse": {
+      "document": "ModifyAgentApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "app id",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMcpServerRequest": {
+      "document": "ModifyMcpServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp server ID",
+          "example": "mcp-xxxxxxxx",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模式：proxy代理模式； wrap封装模式；",
+          "example": "proxy",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本号：2024-11-05 2025-03-26",
+          "example": "2024-11-05",
+          "member": "string",
+          "name": "McpVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "testname",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "应用ID",
+          "example": "app-xxxxxxxx",
+          "member": "string",
+          "name": "PaasID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "testdesc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签ID数组",
+          "example": "[\"lab-xxxxxxxx\"]",
+          "member": "string",
+          "name": "LabelIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "目录ID数组",
+          "example": "[\"cat-xxxxxxxx\"]",
+          "member": "string",
+          "name": "CategoryIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "鉴权方式：sign签名； none免鉴权",
+          "example": "sign",
+          "member": "string",
+          "name": "AuthType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签名方式：sha256 sm3",
+          "example": "sha256",
+          "member": "string",
+          "name": "SignType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "封装服务列表",
+          "example": "[\"svr-xxxxxxxx\"]",
+          "member": "string",
+          "name": "WrapServices",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "负载方式，robin random consistentHash",
+          "example": "random",
+          "member": "string",
+          "name": "TargetSelect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标服务器",
+          "example": "无",
+          "member": "TargetHostDTO",
+          "name": "TargetHosts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "后端协议：http https",
+          "example": "http",
+          "member": "string",
+          "name": "HttpProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书检查",
+          "example": "false",
+          "member": "bool",
+          "name": "CheckTargetCertsError",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "目标路径",
+          "example": "/sse",
+          "member": "string",
+          "name": "TargetPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量控制开启状态",
+          "example": "false",
+          "member": "bool",
+          "name": "InvokeLimitConfigStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "流量控制配置",
+          "example": "无",
+          "member": "InvokeLimitConfigDTO",
+          "name": "InvokeLimitConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "IP白名单开启状态",
+          "example": "false",
+          "member": "bool",
+          "name": "IpWhiteStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "IP白名单配置",
+          "example": "无",
+          "member": "IpConfig",
+          "name": "IpWhiteConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "IP黑名单开启状态",
+          "example": "false",
+          "member": "bool",
+          "name": "IpBlackStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "IP黑名单配置",
+          "example": "无",
+          "member": "IpConfig",
+          "name": "IpBlackConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "目标Host类型 0 默认 1 vpc",
+          "example": "1",
+          "member": "int64",
+          "name": "TargetHostType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义host",
+          "example": "test.com",
+          "member": "string",
+          "name": "CustomHttpHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Http 请求host类型：useRequestHost 保持源请求；host targetHost 修正为源站host； customHost 自定义host",
+          "example": "useRequestHost",
+          "member": "string",
+          "name": "HttpHostType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求的超时时间",
+          "example": "10",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全规则集",
+          "example": "无",
+          "member": "McpSecurityRule",
+          "name": "McpSecurityRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工具集配置（openapi可能会用到）",
+          "example": "无",
+          "member": "ToolConfigDTO",
+          "name": "ToolConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "封装的API分组ID",
+          "example": "app-010101",
+          "member": "string",
+          "name": "WrapPaasID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "插件配置",
+          "example": "无",
+          "member": "PluginConfigDTO",
+          "name": "PluginConfigs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMcpServerResponse": {
+      "document": "ModifyMcpServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp server ID",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMcpServerToolConfigRequest": {
+      "document": "ModifyMcpServerToolConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mcp server id",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工具配置",
+          "example": "无",
+          "member": "ToolConfigDTO",
+          "name": "ToolConfigs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMcpServerToolConfigResponse": {
+      "document": "ModifyMcpServerToolConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应ID",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PluginConfigDTO": {
+      "document": "PluginConfigDTO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PluginName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PluginID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Level",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表单配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PluginFormValueDTO",
+          "name": "PluginFormValues",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PluginFormValueDTO": {
+      "document": "PluginFormValueDTO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Field",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ResultIDVO": {
+      "document": "ResultIDVO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StartEndTime": {
+      "document": "开始结束时间结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TargetHostDTO": {
+      "document": "TargetHostDTO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Rank",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ToolConfigDTO": {
+      "document": "工具级别配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工具名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ToolName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启限流配置",
+          "example": "无",
+          "member": "bool",
+          "name": "InvokeLimitConfigStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限流配置",
+          "example": "无",
+          "member": "InvokeLimitConfigDTO",
+          "name": "InvokeLimitConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定安全规则",
+          "example": "无",
+          "member": "BindMcpSecurityRuleDTO",
+          "name": "McpSecurityRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ToolConfigVO": {
+      "document": "工具配置响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工具名称",
+          "example": "无",
+          "member": "string",
+          "name": "ToolName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启限流配置",
+          "example": "无",
+          "member": "bool",
+          "name": "InvokeLimitConfigStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限流配置",
+          "example": "无",
+          "member": "InvokeLimitConfigDTO",
+          "name": "InvokeLimitConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定安全规则（响应）",
+          "example": "无",
+          "member": "BindMcpSecurityRuleVO",
+          "name": "McpSecurityRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

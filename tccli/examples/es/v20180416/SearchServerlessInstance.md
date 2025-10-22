@@ -10,7 +10,7 @@ tccli es SearchServerlessInstance --cli-unfold-argument  \
     --QueryType 1 \
     --TimeStampFrom 2023-03-08T11:06:07.000Z \
     --TimeStampTo 2023-09-25T11:06:07.000Z \
-    --ServerlessId index-1u6t05yf \
+    --ServerlessId index-1u6t01yf \
     --Preference ddd \
     --Username elastic \
     --Password W*Fk=L?!62K38J_g51a7

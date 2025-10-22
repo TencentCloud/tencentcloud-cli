@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli es SearchServerlessData --cli-unfold-argument  \
-    --ServerlessId index-35sj24o2 \
+    --ServerlessId index-abc \
     --Host 10.0.0.84 10.0.0.1 \
     --LogPath /root/filebeat-7.14.2-linux-x86_64/access.log \
     --From 1609905184000 \

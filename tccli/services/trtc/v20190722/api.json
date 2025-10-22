@@ -2252,6 +2252,15 @@
           "name": "WordWeightStr",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义热词表ID，存在和现有热词表ID冲突的可能",
+          "example": "",
+          "member": "string",
+          "name": "VocabId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

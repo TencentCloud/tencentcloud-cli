@@ -3233,7 +3233,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "1",
+          "example": "329",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -3388,6 +3388,16 @@
           "name": "ArchName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskSource",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
