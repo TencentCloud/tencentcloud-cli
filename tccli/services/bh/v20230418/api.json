@@ -1178,6 +1178,36 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限类型 0-默认普通权限 1-工单权限,2-权限工单权限",
+          "example": "1",
+          "member": "uint64",
+          "name": "AclType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限所属工单id",
+          "example": "id-adwaszd",
+          "member": "string",
+          "name": "TicketId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限所属工单名称",
+          "example": "开发测试",
+          "member": "string",
+          "name": "TicketName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

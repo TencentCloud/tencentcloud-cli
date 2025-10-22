@@ -14,6 +14,13 @@
       "output": "DescribeImageAnimateJobResponse",
       "status": "online"
     },
+    "DescribeImageToVideoGeneralJob": {
+      "document": "查询图生视频通用能力任务接口",
+      "input": "DescribeImageToVideoGeneralJobRequest",
+      "name": "查询图生视频通用能力任务",
+      "output": "DescribeImageToVideoGeneralJobResponse",
+      "status": "online"
+    },
     "DescribePortraitSingJob": {
       "document": "用于查询图片唱演任务。\n支持提交音频和图片生成唱演视频，满足社交娱乐、互动营销等场景的需求。",
       "input": "DescribePortraitSingJobRequest",
@@ -40,6 +47,13 @@
       "input": "SubmitImageAnimateJobRequest",
       "name": "提交图片跳舞任务",
       "output": "SubmitImageAnimateJobResponse",
+      "status": "online"
+    },
+    "SubmitImageToVideoGeneralJob": {
+      "document": "图生视频通用能力接口",
+      "input": "SubmitImageToVideoGeneralJobRequest",
+      "name": "提交图生视频通用能力任务",
+      "output": "SubmitImageToVideoGeneralJobResponse",
       "status": "online"
     },
     "SubmitPortraitSingJob": {
@@ -208,6 +222,73 @@
           "example": "https://aiar.com/xxx/mask.mp4",
           "member": "string",
           "name": "MaskVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageToVideoGeneralJobRequest": {
+      "document": "DescribeImageToVideoGeneralJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1350360280588853248",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImageToVideoGeneralJobResponse": {
+      "document": "DescribeImageToVideoGeneralJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "example": "RUN",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误码。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "FailedOperation.DriverFailed",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误信息。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "驱动失败",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果视频 URL。有效期 24 小时。",
+          "example": "https://console.cloud.tencent.com/result.mp4",
+          "member": "string",
+          "name": "ResultVideoUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -653,6 +734,70 @@
           "disabled": false,
           "document": "图片跳舞任务ID。",
           "example": "1194931538865782784",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitImageToVideoGeneralJobRequest": {
+      "document": "SubmitImageToVideoGeneralJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入图片\nBase64 和 Url 必须提供一个，如果都提供以ImageUrl为准。\n上传图url大小不超过 8M\n支持jpg，png，jpeg，webp，bmp，tiff 格式\n单边分辨率不超过5000，不小于50，长宽限制1:4 ~ 4:1",
+          "example": "无",
+          "member": "Image",
+          "name": "Image",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视频内容的描述，中文正向提示词。最多支持200个 utf-8 字符（首尾空格不计入字符数）。",
+          "example": "一只猫在草原上奔跑，写实风格",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成视频添加标识的开关，默认为1，0 需前往 控制台 申请开启显示标识自主完成方可生效。  1：添加标识；  0：不添加标识；  其他数值：默认按1处理。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "默认在生成视频的右下角添加“ AI 生成”字样，如需替换为其他的标识图片，需前往 控制台 申请开启显示标识自主完成。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitImageToVideoGeneralJobResponse": {
+      "document": "SubmitImageToVideoGeneralJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1350360280588853248",
           "member": "string",
           "name": "JobId",
           "output_required": false,
