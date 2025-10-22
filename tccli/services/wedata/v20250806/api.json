@@ -365,7 +365,7 @@
       "status": "online"
     },
     "GetTask": {
-      "document": "创建任务接口",
+      "document": "获取任务详情接口",
       "input": "GetTaskRequest",
       "name": "获取任务详情信息",
       "output": "GetTaskResponse",
@@ -813,7 +813,7 @@
       "status": "online"
     },
     "UpdateTask": {
-      "document": "创建任务接口",
+      "document": "更新任务接口",
       "input": "UpdateTaskRequest",
       "name": "更新任务",
       "output": "UpdateTaskResponse",
@@ -827,7 +827,7 @@
       "status": "online"
     },
     "UpdateWorkflowFolder": {
-      "document": "创建文件夹",
+      "document": "更新工作流文件夹",
       "input": "UpdateWorkflowFolderRequest",
       "name": "更新工作流文件夹",
       "output": "UpdateWorkflowFolderResponse",
