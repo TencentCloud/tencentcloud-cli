@@ -17,7 +17,8 @@ tccli tsf DescribeStatistics --cli-unfold-argument  \
     --OrderType 1 \
     --EndTime 2020-05-12 14:43:12 \
     --Type Service \
-    --NamespaceId namespace-xxxxxxxx
+    --NamespaceId namespace-xxxxxxxx \
+    --ServiceFilter normal
 ```
 
 Output: 

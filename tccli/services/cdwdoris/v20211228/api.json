@@ -3070,7 +3070,7 @@
         {
           "disabled": false,
           "document": "返回实例的配置文件相关的信息",
-          "example": "[ ]",
+          "example": "无",
           "member": "ClusterConfigsInfoFromEMR",
           "name": "ClusterConfList",
           "output_required": true,
@@ -3105,6 +3105,16 @@
           "name": "HasCN",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例已经存在的jar包列表",
+          "example": "无",
+          "member": "ClusterConfigsInfoFromEMR",
+          "name": "ExistingJarConfList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

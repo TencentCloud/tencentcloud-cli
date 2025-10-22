@@ -12083,6 +12083,15 @@
           "name": "Partition",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否是增量部署，增量部署只运行增量覆盖一级参数，不支持对一级参数中的子参数进行增量更新，例如更新VolumeMountInfoList时必须传入VolumeMountInfoList更新后的全量参数",
+          "example": "false",
+          "member": "bool",
+          "name": "IncrementalDeployment",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -18580,6 +18589,15 @@
           "name": "AppMicroServiceType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按照【部署组名称】进行过滤，不填写时查询全量。可通过调用[DescribeContainerGroups](https://cloud.tencent.com/document/product/649/36068)查询已创建的部署组列表或登录[控制台](https://console.cloud.tencent.com/tsf/app-detail?rid=1&id=application-zvw6zp9a&tab=publish&subTab=group)进行查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
+          "example": "test-group",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18877,6 +18895,15 @@
           "example": "ins-6a79x94v",
           "member": "string",
           "name": "ConfigCenterInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务过滤",
+          "example": "normal",
+          "member": "string",
+          "name": "ServiceFilter",
           "required": false,
           "type": "string"
         }
@@ -20246,6 +20273,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group-6a73eg5v",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1757324401000",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1757324863000",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

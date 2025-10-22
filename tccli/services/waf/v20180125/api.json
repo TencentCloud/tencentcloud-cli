@@ -1298,7 +1298,7 @@
   },
   "metadata": {
     "apiVersion": "2018-01-25",
-    "api_brief": "介绍如果用API对web应用防火墙进行相关操作，比如接入设置，防护设置等",
+    "api_brief": "## 概述\n腾讯云 Web 应用防火墙（Web Application Firewall，WAF）是一款基于 AI 的一站式 Web 业务运营风险防护方案。通过 AI + 规则双引擎识别恶意流量，保护网站安全，提高 Web 站点的安全性和可靠性。通过 BOT 行为分析，防御恶意访问行为，保护网站核心业务安全和数据安全。\n腾讯云 WAF 提供两种类型的云上 WAF，SaaS 型 WAF 和负载均衡型 WAF，两种 WAF 提供的安全防护能力基本相同，接入方式不同。\n- SaaS 型 WAF 通过 DNS 解析，将域名解析到 WAF 集群提供的 CNAME 地址上，通过 WAF 配置源站服务器 IP，实现域名恶意流量清洗和过滤，将正常流量回源到源站，保护网站安全。\n- 负载均衡型 WAF 通过和腾讯云负载均衡集群进行联动，将负载均衡的 HTTP/HTTPS 流量镜像到 WAF 集群，WAF 进行旁路威胁检测和清洗，将用户请求的可信状态同步到负载均衡集群进行威胁拦截或放行，实现网站安全防护。\n\n腾讯云 WAF 可以有效防御 SQL 注入、XSS 跨站脚本、木马上传、非授权访问等 OWASP 攻击。此外还可以有效过滤 CC 攻击、提供 0day 漏洞补丁、防止网页篡改等，通过多种手段全方位保护网站的系统以及业务安全。\n本章节介绍的腾讯云 Web 应用防火墙 API 接口均为 API 3.0接口。\n您可以调用 API 对腾讯云 Web 应用防火墙进行操作，例如管理计费、管理防护设置、管理IP等。\n腾讯云 Web 应用防火墙支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/627/53618)。\n\n## 术语表\n腾讯云 Web 应用防火墙 API 接口的常见术语请参见下表：\n\n| 术语 | 描述 | \n|---------|---------|\n| Edition |  WAF产品版本标识，clb-waf代表负载均衡型WAF，sparta-waf代表SaaS型WAF| \n| QPS | 每秒查询率，衡量WAF实例处理请求能力的核心性能指标 | \n\n## 使用限制\n对于 API 接口的参数限制，请参考各接口文档中的参数说明。\n\n## API 快速入门\n您可以使用 API Explorer 工具在线调用 API。\n本文以增加域名规则白名单为例，通过 API Explorer 工具调用 API 接口的步骤如下：\n1. 进入 [API Explorer](https://console.cloud.tencent.com/api/explorer) 工具页面。更多 API Explorer 工具使用信息，请参见 [使用 API Explorer](https://cloud.tencent.com/document/product/1278/46697)。\n2. 调用 [AddDomainWhiteRule](https://cloud.tencent.com/document/product/627/72650) 接口，增加域名规则白名单。\n3. 增加域名规则白名单后，即可在 [黑白名单](https://console.cloud.tencent.com/guanjia/tea-iplist) > **白名单**页面查看新增加的域名规则白名单条目，并对其进行配置。具体操作步骤请参见 [IP 白名单](https://cloud.tencent.com/document/product/627/64381)。",
     "serviceNameCN": "Web 应用防火墙",
     "serviceShortName": "waf"
   },

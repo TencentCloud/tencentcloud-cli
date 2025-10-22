@@ -1,5 +1,19 @@
 {
   "actions": {
+    "CreateFinancialLLMTask": {
+      "document": "创建金融大模型审校任务",
+      "input": "CreateFinancialLLMTaskRequest",
+      "name": "创建金融大模型审校任务",
+      "output": "CreateFinancialLLMTaskResponse",
+      "status": "online"
+    },
+    "GetFinancialLLMTaskResult": {
+      "document": "获取金融大模型审校任务结果",
+      "input": "GetFinancialLLMTaskResultRequest",
+      "name": "查询金融大模型审校任务结果",
+      "output": "GetFinancialLLMTaskResultResponse",
+      "status": "online"
+    },
     "TextModeration": {
       "document": "本接口（Text Moderation）用于提交文本内容进行智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通文本内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。\n\n### 接口使用说明\n- 前往“[内容安全控制台-文本内容安全](https://console.cloud.tencent.com/cms)”开启使用文本内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**3000条**文本识别额度，有效期为15天。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云文本内容安全定价](https://cloud.tencent.com/product/tms/pricing)。\n\n### 接口功能说明：\n- 支持对文本文件进行检测，通过深度学习技术，识别可能令人反感、不安全或不适宜的违规文本内容；\n- 支持识别多种违规场景，包括：低俗、谩骂、色情、广告等场景；\n- 支持根据不同的业务场景配置自定义的审核策略，可在控制台文本内容安全-策略管理中配置；\n- 支持用户自定义配置词库黑白名单，打击自定义识别类型的违规文本（目前仅支持黑名单配置）；\n- 支持在审核文本内容时同时关联账号或设备信息，可识别违规风险账号或设备。\n\n### 接口调用说明：\n- 文本内容大小支持：文本原文长度不能超过unicode编码长度10000个字符；\n- 文本审核语言支持：目前支持中文、英文、阿拉伯数字的检测；\n- 默认接口请求频率限制：**1000次/秒**，超过该频率限制则接口会报错。",
       "input": "TextModerationRequest",
@@ -15,6 +29,70 @@
     "serviceShortName": "tms"
   },
   "objects": {
+    "CreateFinancialLLMTaskRequest": {
+      "document": "CreateFinancialLLMTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核策略BizType",
+          "example": "finance",
+          "member": "string",
+          "name": "BizType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待审文件类型，目前支持：PDF, DOC, DOCX",
+          "example": "PDF",
+          "member": "string",
+          "name": "FileType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "送审内容类型：1-文档，2-文本",
+          "example": "1",
+          "member": "int64",
+          "name": "ContentType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "送审内容，根据ContentType字段的取值，传入送审文档的Url链接，或送审文本的Base64编码\n\n文档限制：\n\n- 文件下载时间不超过15秒（文件存储于腾讯云的Url可保障更高的下载速度和稳定性，建议文件存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。）\n- 所下载文件经 Base64 编码后不超过支持的文件大小：PDF/DOC/DOCX - 200M\n- 文档解析后的纯文本长度不超过 10000字\n\n文本限制：Base64解码后的文本长度不超过10000字\n",
+          "example": "http://xxx/test.pdf",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFinancialLLMTaskResponse": {
+      "document": "CreateFinancialLLMTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "金融大模型审校任务ID",
+          "example": "aafcf232-e46b-43af-9c1e-02a9c5dac072",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetailResults": {
       "document": "文本审核返回的详细结果",
       "members": [
@@ -189,6 +267,155 @@
         }
       ],
       "usage": "in"
+    },
+    "FinancialLLMViolationDetail": {
+      "document": "金融大模型审校 违规明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "违规点",
+          "example": "违规荐股荐基",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置建议",
+          "example": "Block",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "违规原因列表",
+          "example": "无",
+          "member": "FinancialLLMViolationReason",
+          "name": "Reasons",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FinancialLLMViolationReason": {
+      "document": "金融大模型审校-违规原因",
+      "members": [
+        {
+          "disabled": false,
+          "document": "违规原文片段",
+          "example": "阳光总在风雨后，股市的形势一旦好转，通常会回升得非常迅速。",
+          "member": "string",
+          "name": "TargetText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "违规原因",
+          "example": "虽后续提及回升可能，但整体仍以消极情景描述为主导，可能对投资者产生误导性负面影响。",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetFinancialLLMTaskResultRequest": {
+      "document": "GetFinancialLLMTaskResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "金融大模型审校任务ID",
+          "example": "aafcf232-e46b-43af-9c1e-02a9c5dac072",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFinancialLLMTaskResultResponse": {
+      "document": "GetFinancialLLMTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审校任务状态：\n\n- Success: 成功\n- Processing: 处理中，请等待\n- Failed: 失败",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大模型审校结果",
+          "example": "当前检测的原子能力：...",
+          "member": "string",
+          "name": "ModerationResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审校任务失败原因，仅当任务失败时有值",
+          "example": "文档解析失败",
+          "member": "string",
+          "name": "FailureReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审校任务开始时间",
+          "example": "2025-09-25 19:42:35",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次检测的违规点列表",
+          "example": "[\"宏观走势造谣\",\"数据来源缺失\",\"违规荐股荐基\"]",
+          "member": "string",
+          "name": "ReviewedLabels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "违规明细",
+          "example": "无",
+          "member": "FinancialLLMViolationDetail",
+          "name": "Details",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "HitInfo": {
       "document": "关键词命中位置信息",

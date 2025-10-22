@@ -3748,7 +3748,7 @@
         {
           "disabled": false,
           "document": "索引名",
-          "example": "[\"test\"]",
+          "example": "[\"abc-abcdefgh\"]",
           "member": "string",
           "name": "IndexNames",
           "required": false,
@@ -3802,7 +3802,7 @@
         {
           "disabled": false,
           "document": "索引空间ID列表",
-          "example": "[space-12345]",
+          "example": "[\"space-13489\"]",
           "member": "string",
           "name": "SpaceIds",
           "required": false,

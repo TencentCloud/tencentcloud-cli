@@ -357,6 +357,13 @@
       "output": "QuestionOCRResponse",
       "status": "online"
     },
+    "QuestionSplitLayoutOCR": {
+      "document": "试卷切题（仅检测）可将整页练习册、试卷或教辅中的题目进行自动切题，返回试题边框和题目元素的坐标位置。\n\n默认接口请求频率限制：2次/秒。",
+      "input": "QuestionSplitLayoutOCRRequest",
+      "name": "试卷切题（仅检测）",
+      "output": "QuestionSplitLayoutOCRResponse",
+      "status": "online"
+    },
     "QuestionSplitOCR": {
       "document": "试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置。\n\n默认接口请求频率限制：2次/秒。",
       "input": "QuestionSplitOCRRequest",
@@ -12975,6 +12982,88 @@
       ],
       "usage": "out"
     },
+    "QuestionSplitLayoutOCRRequest": {
+      "document": "QuestionSplitLayoutOCR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/SmartStructuralOCR/SmartStructuralPro1.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启切边增强和弯曲矫正,默认为false不开启",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableImageCrop",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "false: 使用当前默认模型  true: 使用新的多模态推理模型，速度更快推理效果更强，仅 `EnableOnlyDetectBorder` 为 `true` 时生效，公测中",
+          "example": "false",
+          "member": "bool",
+          "name": "UseNewModel",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "QuestionSplitLayoutOCRResponse": {
+      "document": "QuestionSplitLayoutOCR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测到的文本信息",
+          "example": "无",
+          "member": "QuestionInfo",
+          "name": "QuestionInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QuestionSplitOCRRequest": {
       "document": "QuestionSplitOCR请求参数结构体",
       "members": [
@@ -14129,7 +14218,7 @@
         {
           "disabled": false,
           "document": "图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负",
-          "example": "0",
+          "example": "0.0",
           "member": "float",
           "name": "Angle",
           "output_required": true,

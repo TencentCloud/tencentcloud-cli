@@ -16,6 +16,14 @@
         "title": "调用成功示例"
       }
     ],
+    "DescribeImageToVideoGeneralJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageToVideoGeneralJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1355169569101660160\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"6757832e-7ae1-4174-ab0f-278aca3edd75\",\n        \"ResultVideoUrl\": \"\",\n        \"Status\": \"RUN\"\n    }\n}",
+        "title": "查询图生视频通用任务"
+      }
+    ],
     "DescribePortraitSingJob": [
       {
         "document": "任务完成",
@@ -46,6 +54,14 @@
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitImageAnimateJob\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://console.cloud.tencent.com/cos/image.png\",\n    \"TemplateId\": \"ke3\",\n    \"EnableAudio\": true,\n    \"EnableBodyJoins\": true,\n    \"EnableSegment\": true,\n    \"LogoAdd\": 1,\n    \"LogoParam\": {\n        \"LogoUrl\": \"https://console.cloud.tencent.com/cos/logo.png\",\n        \"LogoRect\": {\n            \"X\": -222,\n            \"Y\": -54,\n            \"Width\": 202,\n            \"Height\": 34\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1194931538865782784\",\n        \"RequestId\": \"4e6722ba-367b-454e-add0-681a5c50fe20\"\n    }\n}",
         "title": "调用成功示例"
+      }
+    ],
+    "SubmitImageToVideoGeneralJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitImageToVideoGeneralJob\n<公共请求参数>\n\n{\n    \"Image\": {\n        \"Url\": \"https://test.cos.ap-guangzhou.myqcloud.com/1-fps15.png\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1355169569101660160\",\n        \"RequestId\": \"90eaa0a4-fde3-4df0-a764-8dccaff6bd1c\"\n    }\n}",
+        "title": "提交图生视频通用任务"
       }
     ],
     "SubmitPortraitSingJob": [

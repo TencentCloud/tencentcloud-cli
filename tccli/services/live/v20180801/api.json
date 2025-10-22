@@ -19532,7 +19532,7 @@
         },
         {
           "disabled": false,
-          "document": "录制存储时长。\n单位秒，取值范围： 0 - 1500天。\n0：表示永久存储。",
+          "document": "录制存储时长。\n单位秒，取值范围： 0 - 1500天。\n0：表示永久存储。\n注：此参数只对录制到VOD有效。",
           "example": "800",
           "member": "int64",
           "name": "StorageTime",

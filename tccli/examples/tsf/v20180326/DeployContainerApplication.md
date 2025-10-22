@@ -77,11 +77,11 @@ while true; do echo hello; sleep 10; done \
     --HealthCheckSettings.LivenessProbe.FailureThreshold 3 \
     --HealthCheckSettings.LivenessProbe.Port 30000 \
     --HealthCheckSettings.LivenessProbe.Scheme HTTP \
-    --HealthCheckSettings.LivenessProbe.Path / \
+    --HealthCheckSettings.LivenessProbe.Path /test \
     --HealthCheckSettings.ReadinessProbe.Type TSF_DEFAULT \
     --JvmOpts -Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m \
     --VolumeMountInfoList.0.VolumeMountPath /tmp \
-    --VolumeMountInfoList.0.VolumeMountSubPath / \
+    --VolumeMountInfoList.0.VolumeMountSubPath /test \
     --VolumeMountInfoList.0.ReadOrWrite 1 \
     --VolumeMountInfoList.0.VolumeMountName test-data-emptydir \
     --AgentCpuRequest 0.1 \
