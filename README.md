@@ -33,10 +33,11 @@ docker run --rm -it tencentcom/tencentcloud-cli --version
 docker run --rm -it tencentcom/tencentcloud-cli help
 ```
 
-## 在 Coding-CI 上使用
+## 在 CNB 上使用
 
 ```yaml
-master:
+# .cnb.yml
+main:
   push:
   - stages:
     - name: run with tencentcloud-cli
@@ -44,7 +45,7 @@ master:
       commands: |
         tccli --version
         tccli help
-```        
+```
 
 # 配置TCCLI
 要使用腾讯云命令行工具，您还需要进行一些初始化配置，使其完成使用 云 API的必要前提条件。
