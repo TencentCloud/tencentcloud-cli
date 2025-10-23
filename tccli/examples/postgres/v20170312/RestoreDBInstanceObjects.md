@@ -15,7 +15,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90"
+        "RequestId": "6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90",
+        "TaskId": 5432
     }
 }
 ```
@@ -37,7 +38,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "3d49f48c-7d27-4820-8724-ed5b15787373"
+        "RequestId": "3d49f48c-7d27-4820-8724-ed5b15787373",
+        "TaskId": 5432
     }
 }
 ```

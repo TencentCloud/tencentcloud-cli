@@ -16,7 +16,7 @@ Output:
         "RequestId": "08fdf411-5d39-44f2-8e1d-a58ee60b237d",
         "DBInstance": {
             "Region": "ap-guangzhou",
-            "Zone": "ap-guangzhou-2",
+            "Zone": "ap-guangzhou-7",
             "AppId": 100000000,
             "Uid": 1000001,
             "ProjectId": 0,
@@ -82,7 +82,7 @@ Output:
             "DBNodeSet": [
                 {
                     "Role": "Primary",
-                    "Zone": "ap-guangzhou-2",
+                    "Zone": "ap-guangzhou-7",
                     "DedicatedClusterId": ""
                 },
                 {

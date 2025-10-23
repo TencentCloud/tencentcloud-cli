@@ -46,7 +46,8 @@ Output:
             "Options": {
                 "Method": "dataCheck",
                 "SampleRate": 100,
-                "ThreadCount": 1
+                "ThreadCount": 1,
+                "Type": "builtin"
             },
             "SkippedTables": 0,
             "SrcSampleRows": 0,

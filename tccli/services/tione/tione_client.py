@@ -695,7 +695,7 @@ def doCreateNotebookInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeTrainingJobs(args, parsed_globals):
+def doCreateNotebookLifecycleScript(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -724,11 +724,11 @@ def doDescribeTrainingJobs(args, parsed_globals):
     client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeTrainingJobsRequest()
+    model = models.CreateNotebookLifecycleScriptRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeTrainingJobs(model)
+        rsp = client.CreateNotebookLifecycleScript(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -903,6 +903,58 @@ def doDeleteNotebookLifecycleScript(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeExport(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeExportRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeExport(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeNotebook(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1041,6 +1093,58 @@ def doDescribeNotebookInstances(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeNotebookInstances(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateExport(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateExportRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateExport(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3503,7 +3607,7 @@ def doDeleteCodeRepo(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateNotebookLifecycleScript(args, parsed_globals):
+def doDescribeTrainingJobs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3532,11 +3636,11 @@ def doCreateNotebookLifecycleScript(args, parsed_globals):
     client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateNotebookLifecycleScriptRequest()
+    model = models.DescribeTrainingJobsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateNotebookLifecycleScript(model)
+        rsp = client.DescribeTrainingJobs(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3641,6 +3745,58 @@ def doDescribeModelServiceGroups(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeModelServiceGroups(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteExport(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteExportRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteExport(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4127,7 +4283,7 @@ def doDescribeModelServiceHotUpdated(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteTrainingModelVersion(args, parsed_globals):
+def doCreatePrivateLink(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4156,11 +4312,11 @@ def doDeleteTrainingModelVersion(args, parsed_globals):
     client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteTrainingModelVersionRequest()
+    model = models.CreatePrivateLinkRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteTrainingModelVersion(model)
+        rsp = client.CreatePrivateLink(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4647,7 +4803,7 @@ def doDescribeBillingResourceGroup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreatePrivateLink(args, parsed_globals):
+def doDeleteTrainingModelVersion(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4676,11 +4832,11 @@ def doCreatePrivateLink(args, parsed_globals):
     client = mod.TioneClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreatePrivateLinkRequest()
+    model = models.DeleteTrainingModelVersionRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreatePrivateLink(model)
+        rsp = client.DeleteTrainingModelVersion(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4777,13 +4933,15 @@ ACTION_MAP = {
     "ModifyModelServiceAuthToken": doModifyModelServiceAuthToken,
     "CreatePresignedNotebookUrl": doCreatePresignedNotebookUrl,
     "CreateNotebookInstance": doCreateNotebookInstance,
-    "DescribeTrainingJobs": doDescribeTrainingJobs,
+    "CreateNotebookLifecycleScript": doCreateNotebookLifecycleScript,
     "StopModelAccelerateTask": doStopModelAccelerateTask,
     "DescribeModelServices": doDescribeModelServices,
     "DeleteNotebookLifecycleScript": doDeleteNotebookLifecycleScript,
+    "DescribeExport": doDescribeExport,
     "DescribeNotebook": doDescribeNotebook,
     "UpdateCodeRepository": doUpdateCodeRepository,
     "DescribeNotebookInstances": doDescribeNotebookInstances,
+    "CreateExport": doCreateExport,
     "StopTrainingJob": doStopTrainingJob,
     "CreateCodeRepo": doCreateCodeRepo,
     "DescribeNotebooks": doDescribeNotebooks,
@@ -4831,9 +4989,10 @@ ACTION_MAP = {
     "ModifyModelService": doModifyModelService,
     "DescribeTrainingTask": doDescribeTrainingTask,
     "DeleteCodeRepo": doDeleteCodeRepo,
-    "CreateNotebookLifecycleScript": doCreateNotebookLifecycleScript,
+    "DescribeTrainingJobs": doDescribeTrainingJobs,
     "DescribeBillingResourceGroups": doDescribeBillingResourceGroups,
     "DescribeModelServiceGroups": doDescribeModelServiceGroups,
+    "DeleteExport": doDeleteExport,
     "ModifyModelServicePartialConfig": doModifyModelServicePartialConfig,
     "CreateTrainingTask": doCreateTrainingTask,
     "DescribeBillingResourceGroupHealthCheckTasks": doDescribeBillingResourceGroupHealthCheckTasks,
@@ -4843,7 +5002,7 @@ ACTION_MAP = {
     "StartNotebookInstance": doStartNotebookInstance,
     "DescribeNotebookLifecycleScript": doDescribeNotebookLifecycleScript,
     "DescribeModelServiceHotUpdated": doDescribeModelServiceHotUpdated,
-    "DeleteTrainingModelVersion": doDeleteTrainingModelVersion,
+    "CreatePrivateLink": doCreatePrivateLink,
     "CreateModelServiceAuthToken": doCreateModelServiceAuthToken,
     "ModifyServiceGroupWeights": doModifyServiceGroupWeights,
     "DescribeTrainingTaskPods": doDescribeTrainingTaskPods,
@@ -4853,7 +5012,7 @@ ACTION_MAP = {
     "DeleteTrainingTask": doDeleteTrainingTask,
     "DescribePlatformImages": doDescribePlatformImages,
     "DescribeBillingResourceGroup": doDescribeBillingResourceGroup,
-    "CreatePrivateLink": doCreatePrivateLink,
+    "DeleteTrainingModelVersion": doDeleteTrainingModelVersion,
     "DescribeInferTemplates": doDescribeInferTemplates,
 
 }

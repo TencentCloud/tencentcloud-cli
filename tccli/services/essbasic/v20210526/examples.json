@@ -1035,13 +1035,13 @@
       },
       {
         "document": "授权给张三示例企业能发完我方的自动签署的合同",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAutoSignAuthUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        }\n    },\n    \"AuthorizedOrganizationName\": \"张三示例企业\",\n    \"SealTypes\": [\n        \"OFFICIAL\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAutoSignAuthUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        }\n    },\n    \"AuthorizedOrganizationNames\": [\n        \"张三示例企业\"\n    ],\n    \"SealTypes\": [\n        \"OFFICIAL\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1702982931,\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=002XCUHfPi \",\n        \"RequestId\": \"49500cb4-ca5e-4da0-93fb-e15f3a710ed7 \",\n        \"Url\": \"https://essurl.cn/003hGUFil8 \"\n    }\n}",
         "title": "我方授权他方"
       },
       {
         "document": "让王五示例企业授权给我方能发起他们的自动签署合同",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAutoSignAuthUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        }\n    },\n    \"AuthorizedOrganizationName\": \"王五示例企业\",\n    \"AuthToMe\": true,\n    \"SealTypes\": [\n        \"OFFICIAL\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAutoSignAuthUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        }\n    },\n    \"AuthorizedOrganizationNames\": [\n        \"王五示例企业\"\n    ],\n    \"AuthToMe\": true,\n    \"SealTypes\": [\n        \"OFFICIAL\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1702982931,\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=002XCUHfPi \",\n        \"RequestId\": \"49500cb4-ca5e-4da0-93fb-e15f3a710ed7 \",\n        \"Url\": \"https://essurl.cn/003hGUFil8 \"\n    }\n}",
         "title": "他方授权我方"
       }
