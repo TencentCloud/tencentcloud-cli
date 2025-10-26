@@ -896,6 +896,14 @@
         "title": "变配预付费资源询价"
       }
     ],
+    "InquirePriceMultiSpec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceMultiSpec\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-4\",\n    \"InstancePayMode\": \"PREPAID\",\n    \"StoragePayMode\": \"POSTPAID\",\n    \"GoodsSpecs\": [\n        {\n            \"GoodsNum\": 1,\n            \"Cpu\": 1,\n            \"Memory\": 1,\n            \"TimeSpan\": 1,\n            \"TimeUnit\": \"m\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GoodsPrice\": [\n            {\n                \"GoodsSpec\": {\n                    \"Ccu\": 0,\n                    \"Cpu\": 1,\n                    \"DeviceType\": \"\",\n                    \"GoodsNum\": 1,\n                    \"Memory\": 1,\n                    \"StorageLimit\": 0,\n                    \"TimeSpan\": 1,\n                    \"TimeUnit\": \"m\"\n                },\n                \"InstancePrice\": {\n                    \"ChargeUnit\": \"m\",\n                    \"Discount\": 100,\n                    \"TotalPrice\": 6000,\n                    \"TotalPriceDiscount\": 6000,\n                    \"UnitPrice\": 0,\n                    \"UnitPriceDiscount\": 0\n                },\n                \"StoragePrice\": {\n                    \"ChargeUnit\": \"\",\n                    \"Discount\": 0,\n                    \"TotalPrice\": 0,\n                    \"TotalPriceDiscount\": 0,\n                    \"UnitPrice\": 0,\n                    \"UnitPriceDiscount\": 0\n                }\n            }\n        ],\n        \"RequestId\": \"b30bbeef-370b-4176c085\"\n    }\n}",
+        "title": "查询多规格价格"
+      }
+    ],
     "InquirePriceRenew": [
       {
         "document": "",

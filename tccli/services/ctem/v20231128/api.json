@@ -50,11 +50,11 @@
       "status": "online"
     },
     "DescribeBannerData": {
-      "document": "查看漏洞指纹",
+      "document": "接口不再使用\n\n查看漏洞指纹",
       "input": "DescribeBannerDataRequest",
       "name": "查看指纹数据",
       "output": "DescribeBannerDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeConfigs": {
       "document": "查看目录爆破数据",
@@ -239,11 +239,11 @@
       "status": "online"
     },
     "DescribePortGroups": {
-      "document": "查看端口分组数据",
+      "document": "接口不再使用\n\n查看端口分组数据",
       "input": "DescribePortGroupsRequest",
       "name": "查看端口分组数据",
       "output": "DescribePortGroupsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribePorts": {
       "document": "查看端口数据",
@@ -358,11 +358,11 @@
       "status": "online"
     },
     "DescribeVulAssetData": {
-      "document": "获取漏洞资产数据",
+      "document": "接口不再使用\n\n获取漏洞资产数据",
       "input": "DescribeVulAssetDataRequest",
       "name": "获取漏洞资产数据",
       "output": "DescribeVulAssetDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeVulGroups": {
       "document": "查看漏洞分组",

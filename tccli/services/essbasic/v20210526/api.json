@@ -7243,7 +7243,7 @@
         {
           "disabled": false,
           "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  <a href=\"https://qcloudimg.tencent-cloud.cn/raw/a71872de3d540d55451e3e73a2ad1a6e.png\" target=\"_blank\">Agent.AppId</a></li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>\n</ul>注:\n`1. 企业激活时， 此时的Agent.ProxyOrganizationOpenId将会是企业激活后企业的唯一标识，建议开发者保存企业ProxyOrganizationOpenId，后续各项接口调用皆需要此参数。 `\n`2. 员工认证时， 此时的Agent.ProxyOperator.OpenId将会是员工认证加入企业后的唯一标识，建议开发者保存此员工的OpenId，后续各项接口调用皆需要此参数。 `\n`3. 同渠道应用(Agent.AppId)下，企业唯一标识ProxyOrganizationOpenId需要保持唯一，员工唯一标识OpenId也要保持唯一 (而不是企业下唯一)。 `",
-          "example": " \"Agent\": {         \"ProxyOperator\": {             \"OpenId\": \"n9527\"         },         \"ProxyOrganizationOpenId\": \"org_dianziqian\",         \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"     }",
+          "example": "无",
           "member": "Agent",
           "name": "Agent",
           "required": true,
@@ -7323,7 +7323,7 @@
         },
         {
           "disabled": false,
-          "document": "触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：\n<ul><li> **VERIFIED** :企业认证完成/员工认证完成后跳回原App/小程序</li></ul>",
+          "document": "<font color=\"red\">已废弃</font> 请使用 JumpEvents 参数，进行替换。\n触发自动跳转事件，仅对EndPoint为App类型有效，可选值包括：\n<ul><li> **VERIFIED** :企业认证完成/员工认证完成后跳回原App/小程序</li></ul>",
           "example": "VERIFIED",
           "member": "string",
           "name": "AutoJumpBackEvent",
@@ -7350,7 +7350,7 @@
         },
         {
           "disabled": false,
-          "document": "认证完成跳转链接。\n注意：`此功能仅在Endpoint参数设置成 H5 或 PC时才有效`。",
+          "document": "<font color=\"red\">已废弃</font> 请使用 JumpEvents 参数，进行替换。\n认证完成跳转链接。\n注意：`此功能仅在Endpoint参数设置成 H5 或 PC时才有效`。",
           "example": "https://qian.tencent.com/",
           "member": "string",
           "name": "AutoJumpUrl",
@@ -7414,7 +7414,7 @@
         {
           "disabled": false,
           "document": "企业认证时个性化能力信息",
-          "example": "{\"OrganizationAuthorizationOptions\": {          \"BankAccountNumberSame\": true,      \"OrganizationNameSame\": true, \"LegalNameSame\": true, \"UniformSocialCreditCodeSame\": true }}",
+          "example": "无",
           "member": "OrganizationAuthorizationOptions",
           "name": "OrganizationAuthorizationOptions",
           "required": false,
@@ -7432,11 +7432,20 @@
         {
           "disabled": true,
           "document": "无",
-          "example": "    \"Operator\": {         \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"}",
+          "example": "无",
           "member": "UserInfo",
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。\np.s.Endpoint如果是APP 类型，请传递JumpUrl为<font color=\"red\">\"true\" </font>\n如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 p.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。",
+          "example": "无",
+          "member": "JumpEvent",
+          "name": "JumpEvents",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11886,6 +11895,30 @@
         }
       ],
       "usage": "out"
+    },
+    "JumpEvent": {
+      "document": "跳转事件的结构体，其中包括认证期间收录，授权书审核，企业认证的回跳事件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跳转事件枚举，\n* 1 - 企业收录。\n* 2 - 超管授权书审核。\n* 3 - 认证完成。",
+          "example": "1",
+          "member": "uint64",
+          "name": "JumpEventType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。\nEndpoint如果是APP 类型，请传递<font color=\"red\">\"true\"</font>\n如果 Endpoint 是 H5 类型，请参考文档[跳转电子签H5](https://qian.tencent.com/developers/partner/openqianh5)\np.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。",
+          "example": "https://qian.tencent.com/",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ModifyExtendedServiceRequest": {
       "document": "ModifyExtendedService请求参数结构体",

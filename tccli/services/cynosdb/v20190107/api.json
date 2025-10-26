@@ -763,6 +763,13 @@
       "output": "InquirePriceModifyResponse",
       "status": "online"
     },
+    "InquirePriceMultiSpec": {
+      "document": "此接口（InquirePriceMultiSpec）用于批量询价",
+      "input": "InquirePriceMultiSpecRequest",
+      "name": "查询多规格价格",
+      "output": "InquirePriceMultiSpecResponse",
+      "status": "online"
+    },
     "InquirePriceRenew": {
       "document": "本接口（InquirePriceRenew）用于查询续费集群价格。",
       "input": "InquirePriceRenewRequest",
@@ -15187,6 +15194,136 @@
       ],
       "usage": "out"
     },
+    "GoodsPrice": {
+      "document": "商品价格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TradePrice",
+          "name": "InstancePrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TradePrice",
+          "name": "StoragePrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "商品规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GoodsSpec",
+          "name": "GoodsSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GoodsSpec": {
+      "document": "商品规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CPU核数，PREPAID与POSTPAID实例类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存大小，单位G，PREPAID与POSTPAID实例类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Ccu大小，serverless类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "Ccu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储大小，PREPAID存储类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "StorageLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购买时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时长单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机器类型",
+          "example": "common",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GrantAccountPrivilegesRequest": {
       "document": "GrantAccountPrivileges请求参数结构体",
       "members": [
@@ -15492,6 +15629,70 @@
           "name": "StoragePrice",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceMultiSpecRequest": {
+      "document": "InquirePriceMultiSpec请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区,每个地域提供最佳实践",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstancePayMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储购买类型，可选值为：PREPAID, POSTPAID",
+          "example": "POSTPAID",
+          "member": "string",
+          "name": "StoragePayMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "商品规格",
+          "example": "无",
+          "member": "GoodsSpec",
+          "name": "GoodsSpecs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceMultiSpecResponse": {
+      "document": "InquirePriceMultiSpec返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品价格",
+          "example": "无",
+          "member": "GoodsPrice",
+          "name": "GoodsPrice",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

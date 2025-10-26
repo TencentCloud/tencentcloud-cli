@@ -13,6 +13,7 @@ tccli trtc StartWebRecord --cli-unfold-argument  \
     --StorageParams.CloudStorage.AccessKey AKxxxxxx \
     --StorageParams.CloudStorage.SecretKey Idxxxxxx \
     --StorageParams.CloudStorage.FileNamePrefix record video \
+    --SdkAppId 1600011111 \
     --MaxDurationLimit 3600 \
     --WebRecordVideoParams.Width 1280 \
     --WebRecordVideoParams.Height 720 \
