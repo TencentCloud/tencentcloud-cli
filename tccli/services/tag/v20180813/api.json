@@ -1132,7 +1132,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签过滤数组",
+          "document": "标签过滤数组，数量最多6个",
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
@@ -1262,7 +1262,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签过滤数组",
+          "document": "标签过滤数组，数量最多六个",
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
@@ -2636,7 +2636,7 @@
       "usage": "both"
     },
     "TagFilter": {
-      "document": "tag过滤数组多个是与的关系",
+      "document": "标签键值过滤条件",
       "members": [
         {
           "disabled": false,

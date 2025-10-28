@@ -16,6 +16,14 @@
         "title": "创建数据集"
       }
     ],
+    "CreateExport": [
+      {
+        "document": "创建任务式建模训练任务，Notebook，在线服务和批量预测任务日志下载任务API",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExport\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "创建日志下载任务"
+      }
+    ],
     "CreateModelService": [
       {
         "document": "创建一个基于自定义镜像的服务",
@@ -70,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataset\n<公共请求参数>\n\n{\n    \"DatasetId\": \"ds-m95jmpb5\",\n    \"DeleteLabelEnable\": true\n}",
         "output": "{\n    \"Response\": {\n        \"DatasetId\": \"ds-m95jmpb5\",\n        \"RequestId\": \"22225ac6-aadc-4732-be03-0583f26caa3a\"\n    }\n}",
         "title": "删除数据集"
+      }
+    ],
+    "DeleteExport": [
+      {
+        "document": "删除任务式建模训练任务，Notebook，在线服务和批量预测任务日志导出任务API",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExport\n<公共请求参数>\n\n{\n    \"ExportId\": \"57196a6a-7622-47be-bc92-d2ebea959a0f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "删除日志下载任务"
       }
     ],
     "DeleteModelService": [
@@ -190,6 +206,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"Service\": \"INFER\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"ResourceKind\",\n            \"Values\": [\n                \"Pod\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"Id\": \"44b40fe5-9546-42fd-b75d-557802e0029d\",\n                \"Message\": \"Created container sidecar-nginx\",\n                \"FirstTimestamp\": \"2022-01-10T19:22:04+08:00\",\n                \"LastTimestamp\": \"2022-01-10T19:22:04+08:00\",\n                \"Count\": 1,\n                \"Type\": \"Normal\",\n                \"ResourceKind\": \"Pod\",\n                \"ResourceName\": \"ms-cp6rgw9r-1-864587bdb4-p5cv6\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"090e057a-0d4e-488a-978b-83b1636fee99\"\n    }\n}",
         "title": "获取事件"
+      }
+    ],
+    "DescribeExport": [
+      {
+        "document": "查看任务式建模训练任务，Notebook，在线服务和批量预测任务日志下载任务状态API",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExports\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"FileSize\": \"6112993\",\n        \"Status\": \"Completed\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "查询日志下载任务详情"
       }
     ],
     "DescribeInferTemplates": [

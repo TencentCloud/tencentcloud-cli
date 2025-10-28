@@ -6730,7 +6730,7 @@
         {
           "disabled": false,
           "document": "预算备注",
-          "example": "使用使用api创建预算信息",
+          "example": "使用api创建预算信息",
           "member": "string",
           "name": "BudgetNote",
           "output_required": false,
@@ -6884,7 +6884,7 @@
         {
           "disabled": false,
           "document": "当前周期",
-          "example": "无 ",
+          "example": "2025-09-11",
           "member": "string",
           "name": "CurDateDesc",
           "output_required": false,
@@ -7011,7 +7011,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Uin",
+          "document": "支付者Uin",
           "example": "15684",
           "member": "uint64",
           "name": "PayerUin",
@@ -7022,7 +7022,7 @@
         },
         {
           "disabled": false,
-          "document": "主用户Uin\n",
+          "document": "使用者Uin\n",
           "example": "2789453",
           "member": "uint64",
           "name": "OwnerUin",
@@ -7066,7 +7066,7 @@
         },
         {
           "disabled": false,
-          "document": "修改类型：ADD(新增)、UPDATE(更新)",
+          "document": "修改类型：ADD(新增)、UPDATE(更新)、DELETE(删除)",
           "example": "ADD",
           "member": "string",
           "name": "Action",
@@ -7110,8 +7110,8 @@
         },
         {
           "disabled": false,
-          "document": "修改渠道：官网修改/API修改",
-          "example": "官网修改",
+          "document": "修改渠道：CONSOLE/API",
+          "example": "API",
           "member": "string",
           "name": "OperationChannel",
           "output_required": false,
@@ -17067,7 +17067,7 @@
         {
           "disabled": false,
           "document": "预算备注",
-          "example": "使用使用api创建预算信息",
+          "example": "使用api创建预算信息",
           "member": "string",
           "name": "BudgetNote",
           "required": false,

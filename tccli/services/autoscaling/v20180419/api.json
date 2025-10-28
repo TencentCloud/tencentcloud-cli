@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateNotificationConfiguration": {
-      "document": "本接口（CreateNotificationConfiguration）用于创建通知。\n通知到 CMQ 主题或队列时，消息内容如下：\n```\n{\n    \"Service\": \"Tencent Cloud Auto Scaling\",\n    \"CreatedTime\": \"2021-10-11T10:15:11Z\", // 活动创建时间\n    \"AppId\": \"100000000\",\n    \"ActivityId\": \"asa-fznnvrja\", // 伸缩活动ID\n    \"AutoScalingGroupId\": \"asg-pc2oqu2z\", // 伸缩组ID\n    \"ActivityType\": \"SCALE_OUT\",  // 伸缩活动类型\n    \"StatusCode\": \"SUCCESSFUL\",   // 伸缩活动结果\n    \"Description\": \"Activity was launched in response to a difference between desired capacity and actual capacity,\n    scale out 1 instance(s).\", // 伸缩活动描述\n    \"StartTime\": \"2021-10-11T10:15:11Z\",  // 活动开始时间\n    \"EndTime\": \"2021-10-11T10:15:32Z\",    // 活动结束时间\n    \"DetailedStatusMessageSet\": [ // 活动内部错误集合（非空不代表活动失败）\n        {\n            \"Code\": \"InvalidInstanceType\",\n            \"Zone\": \"ap-guangzhou-2\",\n            \"InstanceId\": \"\",\n            \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n            \"SubnetId\": \"subnet-4t5mgeuu\",\n            \"Message\": \"The specified instance type `S5.LARGE8` is invalid in `subnet-4t5mgeuu`, `ap-guangzhou-2`.\",\n            \"InstanceType\": \"S5.LARGE8\"\n        }\n    ]\n}\n```",
+      "document": "本接口（CreateNotificationConfiguration）用于创建通知。\n通知到 CMQ 主题或队列时，消息内容如下：\n```\n{\n    \"Service\": \"Tencent Cloud Auto Scaling\",\n    \"CreatedTime\": \"2021-10-11T10:15:11Z\", // 活动创建时间\n    \"AppId\": \"100000000\",\n    \"ActivityId\": \"asa-fznnvrja\", // 伸缩活动ID\n    \"AutoScalingGroupId\": \"asg-pc2oqu2z\", // 伸缩组ID\n    \"ActivityType\": \"SCALE_OUT\",  // 伸缩活动类型\n    \"StatusCode\": \"SUCCESSFUL\",   // 伸缩活动结果\n    \"Description\": \"Activity was launched in response to a difference between desired capacity and actual capacity,\n    scale out 1 instance(s).\", // 伸缩活动描述\n    \"StartTime\": \"2021-10-11T10:15:11Z\",  // 活动开始时间\n    \"EndTime\": \"2021-10-11T10:15:32Z\",    // 活动结束时间\n    \"DetailedStatusMessageSet\": [ // 活动内部错误集合（非空不代表活动失败）\n        {\n            \"Code\": \"InvalidInstanceType\",\n            \"Zone\": \"ap-guangzhou-6\",\n            \"InstanceId\": \"\",\n            \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",\n            \"SubnetId\": \"subnet-4t5mgeuu\",\n            \"Message\": \"The specified instance type `S5.LARGE8` is invalid in `subnet-4t5mgeuu`, `ap-guangzhou-6`.\",\n            \"InstanceType\": \"S5.LARGE8\"\n        }\n    ]\n}\n```",
       "input": "CreateNotificationConfigurationRequest",
       "name": "创建通知",
       "output": "CreateNotificationConfigurationResponse",
@@ -4079,6 +4079,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云服务器的主机名分隔符。\n默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为主机名的分隔符。如果不设置，则默认采用点号（.）分隔符。\n通过分割符连接多段。\n\n假设原主机名为“product-as-host”，分隔符HostNameDelimiter为“-”，设置主机名后缀\"suffix\"，那么最终主机名为“product-as-host-suffix”。",
+          "example": ".",
+          "member": "string",
+          "name": "HostNameDelimiter",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4394,6 +4405,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云服务器实例名分隔符。 默认的分隔符是点号（.），可选短横线（-）。仅有点号（.）和短横线（-）能作为实例名的分隔符。如果不设置，则默认采用点号（.）分隔符。 通过分割符连接多段。\n\n假设原实例名为“product-as-instance”，分隔符InstanceNameDelimiter为“-”，设置实例名后缀\"suffix\"，那么最终实例名为“product-as-instance-suffix”。",
+          "example": ".",
+          "member": "string",
+          "name": "InstanceNameDelimiter",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

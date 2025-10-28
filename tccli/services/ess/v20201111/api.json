@@ -6831,7 +6831,7 @@
         {
           "disabled": false,
           "document": "操作人信息",
-          "example": "{\"Operator\": {       \"UserId\": \"yDt33UU2ns3dahUE5lf4LSmTI0H5jnhi\"    } }",
+          "example": "无",
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -6875,7 +6875,7 @@
         },
         {
           "disabled": false,
-          "document": "认证完成跳回的链接，最长500个字符",
+          "document": "<font color=\"red\">即将废弃</font>，入参请使用JumpEvents。\n认证完成跳回的链接，最长500个字符。\n",
           "example": "https://auth.qq.com/action-next?uid=12345",
           "member": "string",
           "name": "AutoJumpUrl",
@@ -7002,7 +7002,7 @@
         {
           "disabled": false,
           "document": "指定企业初始化引导，现在可以配置如下的选项：\n\n<b>1</b>: 启用此选项后，在企业认证的最终步骤将添加创建印章的引导。如下图的位置\n![image](https://qcloudimg.tencent-cloud.cn/raw/88e0b45095a5c589de8995462ad755dc.jpg)",
-          "example": "1",
+          "example": "[1]",
           "member": "uint64",
           "name": "Initialization",
           "required": false,
@@ -7011,7 +7011,7 @@
         {
           "disabled": false,
           "document": "授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 \n授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。\np.s. 如果上传授权书 ，需遵循以下条件 \n1.  超管的信息（超管姓名，超管手机号）必须为必填参数。\n2.  认证方式AuthorizationTypes必须只能是上传授权书方式 ",
-          "example": "UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAANAAAAeGwvc3R5bGVzLnhtbKyYXW",
+          "example": "[\"UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAANAAAAeGwvc3R5bGVzLnhtbKyYXW\"]",
           "member": "string",
           "name": "PowerOfAttorneys",
           "required": false,
@@ -7043,6 +7043,15 @@
           "name": "BankAccountNumberSame",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "跳转事件，其中包括认证期间收录，授权书审核，企业认证的回跳事件。\np.s.\nEndpoint如果是APP 类型，请传递JumpUrl为<font color=\"red\">\"true\" </font>\n如果 Endpoint 是 H5 类型，请参考文档跳转电子签H5 \n\np.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。",
+          "example": "无",
+          "member": "JumpEvent",
+          "name": "JumpEvents",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15527,6 +15536,30 @@
         }
       ],
       "usage": "out"
+    },
+    "JumpEvent": {
+      "document": "跳转事件的结构体，其中包括认证期间收录，授权书审核，企业认证的回跳事件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跳转事件枚举，\n* 1 - 企业收录。\n* 2 - 超管授权书审核。\n* 3 - 认证完成。",
+          "example": "1",
+          "member": "uint64",
+          "name": "JumpEventType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "为认证成功后页面进行回跳的URL，请确保回跳地址的可用性。\nEndpoint如果是APP 类型，请传递<font color=\"red\">\"true\"</font>\n如果 Endpoint 是 H5 类型，请参考文档[跳转电子签H5](https://qian.tencent.com/developers/company/openqianh5/)\n\np.s. 如果Endpoint是 APP，传递的跳转地址无效，不会进行跳转，仅会进行回跳。",
+          "example": "https://qian.tencent.com/",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "MiniAppCreateApproverInfo": {
       "document": "创建流程的签署方信息",

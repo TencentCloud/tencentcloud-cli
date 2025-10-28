@@ -76,7 +76,7 @@
       {
         "document": "克隆实例",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloneInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-qddzg***\",\n    \"GoodsNum\": 1,\n    \"ZoneId\": 200005,\n    \"BillingMode\": 0,\n    \"Period\": 1,\n    \"SecurityGroupIdList\": [\n        \"sg-o0lb0***\"\n    ],\n    \"BackupId\": \"331006369-11071477-*******\",\n    \"VpcId\": \"vpc-c9v9o***\",\n    \"SubnetId\": \"subnet-7054l***\",\n    \"InstanceName\": \"InstanceName-redis-preversion\",\n    \"Password\": \"pwd**********\",\n    \"NodeSet\": [\n        {\n            \"NodeType\": 0,\n            \"ZoneName\": \"ap-shanghai-5\"\n        },\n        {\n            \"NodeType\": 1,\n            \"ZoneName\": \"ap-shanghai-2\"\n        }\n    ],\n    \"ProjectId\": 1,\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"key1\",\n            \"TagValue\": \"value2\"\n        }\n    ],\n    \"AlarmPolicyList\": [\n        \"policy-r7529***\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a836c00-175f-11eb-aeb3-db134c8dXXXX\",\n        \"InstanceIds\": [\n            \"crs-kic3****\"\n        ],\n        \"DealId\": \"crs-qd3d3XXX\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a836c00-175f-11eb-aeb3-db134c8dXXXX\",\n        \"InstanceIds\": [\n            \"crs-kic3****\"\n        ],\n        \"DealName\": \"20250825297021530591847\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -100,13 +100,13 @@
       {
         "document": "购买包年包月的Redis5.0内存版（集群架构）实例",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"TypeId\": 9,\n    \"VpcId\": \"vpc-fmh*****\",\n    \"GoodsNum\": 1,\n    \"RedisShardNum\": 3,\n    \"Period\": 3,\n    \"BillingMode\": 1,\n    \"NoAuth\": \"true\",\n    \"MemSize\": 2048,\n    \"SubnetId\": \"subnet-680c****\",\n    \"RedisReplicasNum\": 1,\n    \"ZoneId\": 200002\n}",
-        "output": "{\n    \"Response\": {\n        \"DealId\": \"crs-7xij3fjf\",\n        \"InstanceIds\": [\n            \"crs-7xij3fjf\"\n        ],\n        \"RequestId\": \"a974649c-6776-45aa-ab24-7e450cccd275\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20250825297021530591847\",\n        \"InstanceIds\": [\n            \"crs-7xij3fjf\"\n        ],\n        \"RequestId\": \"a974649c-6776-45aa-ab24-7e450cccd275\"\n    }\n}",
         "title": "请求示例一"
       },
       {
         "document": "购买按量计费的Redis4.0内存版（标准架构）实例",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"TypeId\": 6,\n    \"Password\": \"**********\",\n    \"GoodsNum\": 1,\n    \"Period\": 1,\n    \"BillingMode\": 0,\n    \"MemSize\": 1024,\n    \"ZoneId\": 100002\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a836c00-175f-11eb-aeb3-db134c8d8fec\",\n        \"InstanceIds\": [\n            \"crs-kic39axx\"\n        ],\n        \"DealId\": \"crs-kic39axx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a836c00-175f-11eb-aeb3-db134c8d8fec\",\n        \"InstanceIds\": [\n            \"crs-kic39axx\"\n        ],\n        \"DealName\": \"20250825297021530591847\"\n    }\n}",
         "title": "请求示例二"
       }
     ],
@@ -564,7 +564,7 @@
       {
         "document": "",
         "input": "https://redis.tencentcloudapi.com/?Action=DestroyPrepaidInstance\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\",\n        \"DealId\": \"6977675\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\",\n        \"DealName\": \"20250825297021508048753\"\n    }\n}",
         "title": "包年包月实例退还"
       }
     ],
@@ -812,7 +812,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-5a4py64p\",\n    \"Period\": 12\n}",
-        "output": "{\n    \"Response\": {\n        \"DealId\": \"6954225\",\n        \"RequestId\": \"495d8e9f-61bf-465e-aa4e-14be54a9095a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20250825297021530591847\",\n        \"RequestId\": \"495d8e9f-61bf-465e-aa4e-14be54a9095a\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -868,7 +868,7 @@
       {
         "document": "变更实例的内存配置",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-5qlr****\",\n    \"MemSize\": 4096\n}",
-        "output": "{\n    \"Response\": {\n        \"DealId\": \"6954227\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20250825297021509398751\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
         "title": "变更规格"
       }
     ],
@@ -876,7 +876,7 @@
       {
         "document": "升级当前实例至Redis 4.0 集群架构",
         "input": "https://redis.tencentcloudapi.com/?Action=UpgradeInstanceVersion\n&InstanceId=crs-5qlr****\n&SwitchOption=2\n&TargetInstanceType=7\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DealId\": \"6954227\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20250825297021820475193\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
         "title": "示例"
       }
     ],

@@ -2098,6 +2098,14 @@
         "title": "查询安全组关联的实例统计"
       }
     ],
+    "DescribeSecurityGroupExpandedPolicies": [
+      {
+        "document": "查看参数模板展开后的安全组规则。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupExpandedPolicies\n<公共请求参数>\n\n{\n    \"SecurityGroupId\": \"sg-brf5xqjr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SecurityGroupPolicySet\": {\n            \"Egress\": [],\n            \"Ingress\": [],\n            \"PolicyStatistics\": {\n                \"EgressIPv4TotalCount\": 0,\n                \"EgressIPv6TotalCount\": 0,\n                \"IngressIPv4TotalCount\": 0,\n                \"IngressIPv6TotalCount\": 0\n            },\n            \"Version\": \"0\"\n        },\n        \"RequestId\": \"492355a4-e313-4f33-8f9a-b5f6a1556e45\"\n    }\n}",
+        "title": "查看参数模板展开后的安全组规则"
+      }
+    ],
     "DescribeSecurityGroupLimits": [
       {
         "document": "查询用户安全组配额",

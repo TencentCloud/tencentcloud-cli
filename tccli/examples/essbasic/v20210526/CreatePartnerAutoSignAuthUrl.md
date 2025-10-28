@@ -35,7 +35,7 @@ tccli essbasic CreatePartnerAutoSignAuthUrl --cli-unfold-argument  \
     --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
     --Agent.ProxyOrganizationOpenId org_dianziqian \
     --Agent.ProxyOperator.OpenId n9527 \
-    --AuthorizedOrganizationName 张三示例企业 \
+    --AuthorizedOrganizationNames 张三示例企业 \
     --SealTypes OFFICIAL
 ```
 
@@ -62,7 +62,7 @@ tccli essbasic CreatePartnerAutoSignAuthUrl --cli-unfold-argument  \
     --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
     --Agent.ProxyOrganizationOpenId org_dianziqian \
     --Agent.ProxyOperator.OpenId n9527 \
-    --AuthorizedOrganizationName 王五示例企业 \
+    --AuthorizedOrganizationNames 王五示例企业 \
     --AuthToMe True \
     --SealTypes OFFICIAL
 ```

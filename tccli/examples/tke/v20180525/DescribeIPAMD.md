@@ -13,16 +13,18 @@ Output:
 ```
 {
     "Response": {
+        "ClaimExpiredDuration": "0s",
         "DisableVpcCniMode": false,
-        "EnableCustomizedPodCidr": false,
-        "EnableIPAMD": false,
+        "EnableCustomizedPodCidr": true,
+        "EnableIPAMD": true,
+        "EnableTrunkingENI": false,
         "Phase": "running",
         "Reason": "",
-        "RequestId": "c692a3b6-11cd-4a9d-8e36-409545d332a2",
+        "RequestId": "93f7457a-4c95-4e23-b75f-e3bdbf1ab81e",
         "SubnetIds": [
-            "subnet-imgoatdg"
-        ],
-        "ClaimExpiredDuration": "300s"
+            "subnet-7fxdi13h",
+            "subnet-502b2uw9"
+        ]
     }
 }
 ```

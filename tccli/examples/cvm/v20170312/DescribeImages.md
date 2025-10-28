@@ -35,8 +35,8 @@ Output:
                 "SnapshotSet": [],
                 "Tags": [
                     {
-                        "Value": "myKey",
-                        "Key": "myValue"
+                        "Key": "myKey",
+                        "Value": "myValue"
                     }
                 ]
             }
@@ -76,7 +76,7 @@ Output:
                 "ImageName": "test-image",
                 "ImageCreator": "3205597606",
                 "ImageState": "NORMAL",
-                "SyncPercent": null,
+                "SyncPercent": 20,
                 "SnapshotSet": [
                     {
                         "SnapshotId": "snap-gqa37j2p",
@@ -86,8 +86,8 @@ Output:
                 ],
                 "Tags": [
                     {
-                        "Value": "myKey",
-                        "Key": "myValue"
+                        "Key": "myKey",
+                        "Value": "myValue"
                     }
                 ],
                 "Architecture": "x86_64",
@@ -96,6 +96,57 @@ Output:
             }
         ],
         "RequestId": "5908394c-5b3f-42e0-a537-8410553890a5"
+    }
+}
+```
+
+**Example 3: 查询本地专用集群CDC的镜像缓存列表**
+
+查询本地专用集群CDC的镜像缓存列表, 对于cdc-cache-status 可选的参数为CACHED_ALL（全部状态）、CACHING（缓存中）、CACHED（已缓存）、CACHE_INVALID（缓存失效）和 CACHE_FAILED（缓存失败）
+
+Input: 
+
+```
+tccli cvm DescribeImages --cli-unfold-argument  \
+    --Filters.0.Name dedicated-cluster-id \
+    --Filters.0.Values cluster-12345678 \
+    --Filters.1.Name cdc-cache-status \
+    --Filters.1.Values CACHED_ALL
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 1,
+        "ImageSet": [
+            {
+                "LicenseType": "TencentCloud",
+                "ImageId": "img-9qabwvbn",
+                "OsName": "CentOS 7.6 64位",
+                "ImageSize": 50,
+                "ImageType": "PUBLIC_IMAGE",
+                "CreatedTime": "2020-09-22T00:00:00+00:00",
+                "ImageState": "NORMAL",
+                "ImageSource": "OFFICIAL",
+                "ImageName": "CentOS 7.6 64位",
+                "ImageDescription": "CentOS 7.6 64位",
+                "ImageCreator": "tencent",
+                "SyncPercent": 20,
+                "IsSupportCloudinit": true,
+                "Platform": "CentOS",
+                "Architecture": "x86_64",
+                "SnapshotSet": [],
+                "Tags": [
+                    {
+                        "Key": "myKey",
+                        "Value": "myValue"
+                    }
+                ],
+                "CdcCacheStatus": "CACHED"
+            }
+        ],
+        "RequestId": "8b56af0b-f8ec-401e-9b80-30767ae4d432"
     }
 }
 ```

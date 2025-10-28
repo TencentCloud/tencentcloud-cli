@@ -348,6 +348,14 @@
         "title": "创建目标检测任务"
       }
     ],
+    "CreateTWeSeeService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeService\n<公共请求参数>\n\n{\n    \"Service\": \"VideoSummary\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21d73508-3a88-41c7-927c-3952301b67c0\"\n    }\n}",
+        "title": "twesee开通"
+      }
+    ],
     "CreateTWeTalkProductConfig": [
       {
         "document": "",
@@ -1720,6 +1728,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOtaModule\n<公共请求参数>\n\n{\n    \"ProductID\": \"8Q7X2QKV59\",\n    \"FwType\": \"mcu\",\n    \"Name\": \"mcu\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e786a7af-c084-42b0-958d-70d5e567904e\"\n    }\n}",
         "title": "更新模块"
+      }
+    ],
+    "UpdateOtaTaskStatus": [
+      {
+        "document": "当固件任务在升级过程需要取消时可使用。或修改为其它允许的状态\n\n",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOtaTaskStatus\n<公共请求参数>\n\n{\n    \"ProductId\": \"ABCDE12345\",\n    \"TaskId\": 11001,\n    \"Status\": 6\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sjalifekj-dsakfjleija-3dskjf-sdaklfj\"\n    }\n}",
+        "title": "修改固件升级任务状态为取消状态"
       }
     ],
     "UploadFirmware": [

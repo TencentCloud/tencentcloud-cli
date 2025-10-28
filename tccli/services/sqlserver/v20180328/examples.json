@@ -1215,7 +1215,7 @@
     "UpgradeDBInstance": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=UpgradeDBInstance\n&InstanceId=mssql-j8kv137v\n&Memory=4\n&Storage=400\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=UpgradeDBInstance\n&InstanceId=mssql-j8kv137v\n&UpgradeCompatLevel=0\n&Memory=4\n&Storage=400\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4be5990d-a4b5-49dc-b2b4-e713b6aa7ba3\",\n        \"DealName\": \"201806261980\"\n    }\n}",
         "title": "升级实例"
       }

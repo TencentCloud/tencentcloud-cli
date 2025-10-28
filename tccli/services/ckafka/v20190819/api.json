@@ -14800,14 +14800,14 @@
         },
         {
           "disabled": false,
-          "document": "是否更新到关联的Dip任务",
+          "document": "是否更新到关联的Dip任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsUpdate",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,

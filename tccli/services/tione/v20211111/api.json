@@ -14,6 +14,13 @@
       "output": "CreateDatasetResponse",
       "status": "online"
     },
+    "CreateExport": {
+      "document": "创建任务式建模训练任务，Notebook，在线服务和批量预测任务日志下载任务API",
+      "input": "CreateExportRequest",
+      "name": "创建日志下载任务",
+      "output": "CreateExportResponse",
+      "status": "online"
+    },
     "CreateModelService": {
       "document": "用于创建、发布一个新的模型服务",
       "input": "CreateModelServiceRequest",
@@ -61,6 +68,13 @@
       "input": "DeleteDatasetRequest",
       "name": "删除数据集",
       "output": "DeleteDatasetResponse",
+      "status": "online"
+    },
+    "DeleteExport": {
+      "document": "删除任务式建模训练任务，Notebook，在线服务和批量预测任务日志导出任务API",
+      "input": "DeleteExportRequest",
+      "name": "删除日志下载任务",
+      "output": "DeleteExportResponse",
       "status": "online"
     },
     "DeleteModelService": {
@@ -166,6 +180,13 @@
       "input": "DescribeEventsRequest",
       "name": "获取事件",
       "output": "DescribeEventsResponse",
+      "status": "online"
+    },
+    "DescribeExport": {
+      "document": "查看任务式建模训练任务，Notebook，在线服务和批量预测任务日志下载任务状态API",
+      "input": "DescribeExportRequest",
+      "name": "查询日志下载任务详情",
+      "output": "DescribeExportResponse",
       "status": "online"
     },
     "DescribeInferTemplates": {
@@ -1087,6 +1108,23 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExportRequest": {
+      "document": "CreateExport请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateExportResponse": {
+      "document": "CreateExport返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3390,6 +3428,33 @@
       ],
       "type": "object"
     },
+    "DeleteExportRequest": {
+      "document": "DeleteExport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志下载任务的ID",
+          "example": "export-a85ac32e-42a8-49e3-b19b-c2a9ba831b40",
+          "member": "string",
+          "name": "ExportId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExportResponse": {
+      "document": "DeleteExport返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteModelServiceAuthTokenRequest": {
       "document": "DeleteModelServiceAuthToken请求参数结构体",
       "members": [
@@ -4250,6 +4315,43 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportRequest": {
+      "document": "DescribeExport请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeExportResponse": {
+      "document": "DescribeExport返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志文件大小",
+          "example": "65535",
+          "member": "string",
+          "name": "FileSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中",
+          "example": "Expired",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

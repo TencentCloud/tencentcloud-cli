@@ -11091,7 +11091,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -11192,7 +11192,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -11320,7 +11320,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -13257,7 +13257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点ID。该参数必填。",
+          "document": "站点ID。此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。",
           "example": "zone-xxx",
           "member": "string",
           "name": "ZoneId",
@@ -13302,7 +13302,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values 的上限为 20。详细的过滤条件如下：<li>job-id：按照任务 ID 进行过滤。job-id 形如：1379afjk91u32h，暂不支持多值，不支持模糊查询；</li><li>target：按照目标资源信息进行过滤。target 形如：http://www.qq.com/1.txt，暂不支持多值，不支持模糊查询；</li><li>domains：按照域名行过滤。domains 形如：www.qq.com，不支持模糊查询；</li><li>statuses：按照任务状态进行过滤，不支持模糊查询。可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时<br>   invalid：无效。即源站响应非 2xx 状态码，请检查源站服务。</li>",
+          "document": "过滤条件，Filters.Values 的上限为 20。详细的过滤条件如下：<li>job-id：按照任务 ID 进行过滤。job-id 形如：1379afjk91u32h，暂不支持多值，不支持模糊查询；</li><li>target：按照目标资源信息进行过滤。target 形如：http://www.qq.com/1.txt，暂不支持多值，不支持模糊查询；</li><li>domains：按照域名行过滤。domains 形如：www.qq.com，不支持模糊查询；</li><li>statuses：按照任务状态进行过滤，不支持模糊查询。可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时<br>   canceled：已取消<br>   invalid：无效。即源站响应非 2xx 状态码，请检查源站服务。</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -13349,7 +13349,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点 ID。该参数必填。",
+          "document": "站点 ID。此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。",
           "example": "zone-xxxxxx",
           "member": "string",
           "name": "ZoneId",
@@ -13394,7 +13394,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>job-id：按照任务 ID 进行过滤。job-id 形如：1379afjk91u32h，暂不支持多值，不支持模糊查询；</li>\n<li>target：按照目标资源信息进行过滤，target 形如：http://www.qq.com/1.txt 或者 tag1，暂不支持多值，支持模糊查询；</li>\n<li>domains：按照域名进行过滤，形如：www.qq.com，不支持模糊查询；</li>\n<li>statuses：按照任务状态进行过滤，不支持模糊查询。可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时</li>\n<li>type：按照清除缓存类型进行过滤，暂不支持多值，不支持模糊查询。可选项：<br>   purge_url：URL<br>   purge_prefix：前缀<br>   purge_all：全部缓存内容<br>   purge_host：Hostname<br>   purge_cache_tag：CacheTag</li>",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>job-id：按照任务 ID 进行过滤。job-id 形如：1379afjk91u32h，暂不支持多值，不支持模糊查询；</li>\n<li>target：按照目标资源信息进行过滤，target 形如：http://www.qq.com/1.txt 或者 tag1，暂不支持多值，支持模糊查询；</li>\n<li>domains：按照域名进行过滤，形如：www.qq.com，不支持模糊查询；</li>\n<li>statuses：按照任务状态进行过滤，不支持模糊查询。可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时<br>   canceled：已取消</li>\n<li>type：按照清除缓存类型进行过滤，暂不支持多值，不支持模糊查询。可选项：<br>   purge_url：URL<br>   purge_prefix：前缀<br>   purge_all：全部缓存内容<br>   purge_host：Hostname<br>   purge_cache_tag：CacheTag</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -14180,7 +14180,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点ID，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。\n最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zone-2rntun0a1z6t\",\"zone-323urc8a9j0q\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -14290,7 +14290,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"*\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -14584,7 +14584,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"*\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -15799,7 +15799,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。",
+          "document": "站点 ID 集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。",
           "example": "[\"zone-2m6jx63f6k3x\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -15891,7 +15891,7 @@
         },
         {
           "disabled": false,
-          "document": "站点ID集合，此参数必填。",
+          "document": "站点ID集合，此参数将于2024年05月30日后由可选改为必填，详见公告：[【腾讯云 EdgeOne】云 API 变更通知](https://cloud.tencent.com/document/product/1552/104902)。",
           "example": "[\"zone-2nepupfjtjlf\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -17949,7 +17949,7 @@
         },
         {
           "disabled": false,
-          "document": "Tls 版本设置，取值有：\n<li>TLSv1：TLSv1版本；</li>\n<li>TLSV1.1：TLSv1.1版本；</li>\n<li>TLSV1.2：TLSv1.2版本；</li>\n<li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。",
+          "document": "Tls 版本设置，取值有：\n<li>TLSv1：TLSv1版本；</li>\n<li>TLSv1.1：TLSv1.1版本；</li>\n<li>TLSv1.2：TLSv1.2版本；</li>\n<li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。",
           "example": "[\"TLSv1\", \"TLSv1.1\"]",
           "member": "string",
           "name": "TlsVersion",
@@ -19858,16 +19858,18 @@
           "example": "on/off",
           "member": "string",
           "name": "FollowOrigin",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "MaxAge 时间设置，单位秒，最大365天。\n注意：时间为0，即不缓存。",
+          "document": "MaxAge 时间设置，单位为秒，取值：0～315360000。\n注意：时间为0，即不缓存。",
           "example": "600",
           "member": "int64",
           "name": "MaxAgeTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false

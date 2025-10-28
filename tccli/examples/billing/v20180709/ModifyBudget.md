@@ -18,7 +18,7 @@ tccli billing ModifyBudget --cli-unfold-argument  \
     --WarnJson.0.WarnType ACTUAL \
     --WarnJson.0.CalType PERCENTAGE \
     --WarnJson.0.ThresholdValue 100 \
-    --BudgetNote 使用使用api创建预算信息 \
+    --BudgetNote 使用api创建预算信息 \
     --DimensionsRange.Business p_cvm \
     --WaveThresholdJson.0.WarnType ACTUAL \
     --WaveThresholdJson.0.Threshold 100 \

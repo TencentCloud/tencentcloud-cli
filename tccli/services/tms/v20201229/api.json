@@ -15,7 +15,7 @@
       "status": "online"
     },
     "TextModeration": {
-      "document": "本接口（Text Moderation）用于提交文本内容进行智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通文本内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。\n\n### 接口使用说明\n- 前往“[内容安全控制台-文本内容安全](https://console.cloud.tencent.com/cms)”开启使用文本内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**3000条**文本识别额度，有效期为15天。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云文本内容安全定价](https://cloud.tencent.com/product/tms/pricing)。\n\n### 接口功能说明：\n- 支持对文本文件进行检测，通过深度学习技术，识别可能令人反感、不安全或不适宜的违规文本内容；\n- 支持识别多种违规场景，包括：低俗、谩骂、色情、广告等场景；\n- 支持根据不同的业务场景配置自定义的审核策略，可在控制台文本内容安全-策略管理中配置；\n- 支持用户自定义配置词库黑白名单，打击自定义识别类型的违规文本（目前仅支持黑名单配置）；\n- 支持在审核文本内容时同时关联账号或设备信息，可识别违规风险账号或设备。\n\n### 接口调用说明：\n- 文本内容大小支持：文本原文长度不能超过unicode编码长度10000个字符；\n- 文本审核语言支持：目前支持中文、英文、阿拉伯数字的检测；\n- 默认接口请求频率限制：**1000次/秒**，超过该频率限制则接口会报错。",
+      "document": "本接口（Text Moderation）用于提交文本内容进行智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通文本内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。\n\n### 接口使用说明\n- 前往“[内容安全控制台-文本内容安全](https://console.cloud.tencent.com/cms)”开启使用文本内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**3000条**文本识别额度，有效期为15天。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云文本内容安全定价](https://cloud.tencent.com/product/tms/pricing)。\n\n### 接口功能说明：\n- 支持对文本文件进行检测，通过深度学习技术，识别可能令人反感、不安全或不适宜的违规文本内容；\n- 支持识别多种违规场景，包括：低俗、谩骂、色情、广告等场景；\n- 支持根据不同的业务场景配置自定义的审核策略，可在控制台文本内容安全-策略管理中配置；\n- 支持用户自定义配置词库黑白名单，打击自定义识别类型的违规文本（目前仅支持黑名单配置）；\n- 支持在审核文本内容时同时关联账号或设备信息，可识别违规风险账号或设备；\n- 支持大模型、聊天室等场景下的流式上下文审核。\n\n### 接口调用说明：\n- 文本内容大小支持：文本原文长度不能超过unicode编码长度10000个字符；\n- 文本审核语言支持：目前支持中文、英文、阿拉伯数字的检测；\n- 默认接口请求频率限制：**1000次/秒**，超过该频率限制则接口会报错。",
       "input": "TextModerationRequest",
       "name": "文本内容安全服务",
       "output": "TextModerationResponse",
@@ -698,6 +698,15 @@
           "name": "Type",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流式审核策略维度下的唯一会话ID",
+          "example": "ZGxsLTE5OTgwNjAx",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -831,6 +840,16 @@
           "example": "text_nlp_tianji",
           "member": "string",
           "name": "HitType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流式审核策略维度下的唯一会话ID",
+          "example": "ZGxsLTE5OTgwNjAx",
+          "member": "string",
+          "name": "SessionId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

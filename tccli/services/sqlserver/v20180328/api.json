@@ -5423,6 +5423,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是可用性组 0：否 1：是",
+          "example": "0",
+          "member": "string",
+          "name": "IsAvailabilityGroups",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AG组数据库同步状态",
+          "example": "0",
+          "member": "string",
+          "name": "AGSyncState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12000,7 +12020,7 @@
         },
         {
           "disabled": false,
-          "document": "事件记录状态，1-成功，2-失败",
+          "document": "事件记录状态，1-成功，2-失败，3-文件待删除，4-写入中",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -12020,7 +12040,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展文件生成开始时间",
+          "document": "扩展文件最后更新时间",
           "example": "2023-01-01 12:05:00",
           "member": "string",
           "name": "EndTime",
@@ -18315,6 +18335,15 @@
           "name": "DrZones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动升级数据库的兼容性级别，默认0。0-否，1-是",
+          "example": "0",
+          "member": "int64",
+          "name": "UpgradeCompatLevel",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -832,7 +832,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSAttackData\n<公共请求参数>\n\n{\n    \"MetricNames\": [\n        \"ddos_attackMaxBandwidth\"\n    ],\n    \"Interval\": \"min\",\n    \"PolicyIds\": [\n        1706\n    ],\n    \"ZoneIds\": [\n        \"zone-21xfqlh4qjee\"\n    ],\n    \"StartTime\": \"2022-08-22T00:00:00+00:00\",\n    \"EndTime\": \"2022-08-23T00:00:00+00:00\",\n    \"Area\": \"overseas\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"Value\": [\n                    {\n                        \"Max\": 100,\n                        \"Metric\": \"ddos_attackMaxBandwidth\",\n                        \"Avg\": 100.0,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1660010100,\n                                \"Value\": 100\n                            }\n                        ],\n                        \"Sum\": 100.0\n                    }\n                ],\n                \"Key\": \"ddos_attackMaxBandwidth\"\n            }\n        ],\n        \"RequestId\": \"a79e60f8-34cc-4ee5-a7f9-a24adb572c68\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"Value\": [\n                    {\n                        \"Max\": 100,\n                        \"Metric\": \"ddos_attackMaxBandwidth\",\n                        \"Avg\": 100,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1660010100,\n                                \"Value\": 100\n                            }\n                        ],\n                        \"Sum\": 100\n                    }\n                ],\n                \"Key\": \"ddos_attackMaxBandwidth\"\n            }\n        ],\n        \"RequestId\": \"a79e60f8-34cc-4ee5-a7f9-a24adb572c68\"\n    }\n}",
         "title": "查询DDoS攻击时序数据"
       }
     ],
@@ -1134,16 +1134,16 @@
     ],
     "DescribePrefetchTasks": [
       {
-        "document": "通过 CreatePrefetchTasks 提交预热任务后，通过该查询接口查询预热任务记录及执行进度。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrefetchTasks\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-z8m9mgx\",\n    \"StartTime\": \"2022-02-09T00:00:00+08:00\",\n    \"EndTime\": \"2022-02-09T23:59:00+08:00\",\n    \"Limit\": 1,\n    \"Offset\": 7\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-afhhakf-24hkahf-2424\",\n        \"Tasks\": [\n            {\n                \"JobId\": \"20g9wz8m9mgx\",\n                \"Status\": \"success\",\n                \"Target\": \"http://www.qq.com/a.txt\",\n                \"Type\": \"prefetch_url\",\n                \"CreateTime\": \"2022-02-09T02:28:43Z\",\n                \"UpdateTime\": \"2022-02-09T02:28:52Z\"\n            }\n        ],\n        \"TotalCount\": 8\n    }\n}",
+        "document": "通过 CreatePrefetchTasks 提交预热任务后，用该查询接口查询预热任务记录及执行进度。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrefetchTasks\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-z8m9mgx\",\n    \"StartTime\": \"2022-02-09T00:00:00+08:00\",\n    \"EndTime\": \"2022-02-09T23:59:00+08:00\",\n    \"Limit\": 2,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-afhhakf-24hkahf-2424\",\n        \"Tasks\": [\n            {\n                \"JobId\": \"20g9wz8m9mgx\",\n                \"Status\": \"success\",\n                \"Target\": \"http://www.qq.com/a.txt\",\n                \"Type\": \"prefetch_url\",\n                \"CreateTime\": \"2022-02-09T02:28:43Z\",\n                \"UpdateTime\": \"2022-02-09T02:28:52Z\"\n            },\n            {\n                \"JobId\": \"3duxkechrr0c\",\n                \"Status\": \"failed\",\n                \"Target\": \"http://www.qq.com/b.txt\",\n                \"Type\": \"prefetch_url\",\n                \"FailType\": \"originPullFailed\",\n                \"FailMessage\": \"回源失败，请重试或检查源站是否存在，服务不可用或响应超时、触发限速策略、安全策略限制、网络故障、带宽/连接数上限。\",\n                \"CreateTime\": \"2022-02-09T02:28:43Z\",\n                \"UpdateTime\": \"2022-02-09T02:28:52Z\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询预热任务"
       }
     ],
     "DescribePurgeTasks": [
       {
-        "document": "通过 CreatePurgeTasks 提交刷新任务后，通过该查询接口 查询刷新任务记录及处理进度。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePurgeTasks\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-wz8m9mgx\",\n    \"StartTime\": \"2022-02-09T00:00:00+08:00\",\n    \"EndTime\": \"2022-02-09T23:59:00+08:00\",\n    \"Limit\": 1,\n    \"Offset\": 7\n}",
+        "document": "通过 CreatePurgeTasks 提交刷新任务后，用该查询接口查询刷新任务记录及处理进度。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePurgeTasks\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-wz8m9mgx\",\n    \"StartTime\": \"2022-02-09T00:00:00+08:00\",\n    \"EndTime\": \"2022-02-09T23:59:00+08:00\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-afhhakf-24hkahf-2424\",\n        \"Tasks\": [\n            {\n                \"JobId\": \"20g9wz8m9mgx\",\n                \"Status\": \"success\",\n                \"Target\": \"http://www.qq.com/a.txt\",\n                \"Type\": \"purge_url\",\n                \"CreateTime\": \"2022-02-09T02:28:43Z\",\n                \"UpdateTime\": \"2022-02-09T02:28:52Z\"\n            }\n        ],\n        \"TotalCount\": 8\n    }\n}",
         "title": "查询清除缓存历史记录"
       }

@@ -10231,7 +10231,7 @@
       "usage": "out"
     },
     "RedisKeySpaceData": {
-      "document": "redis key空间信息。",
+      "document": "redis key的内存占用等信息。",
       "members": [
         {
           "disabled": false,
@@ -10255,7 +10255,7 @@
         },
         {
           "disabled": false,
-          "document": "key编码方式。",
+          "document": "key编码方式。包括 int、string、linkedlist、hashtable、skiplist、zipmap、ziplist、intset、quicklist、listpack。",
           "example": "string",
           "member": "string",
           "name": "Encoding",
@@ -10321,6 +10321,16 @@
           "name": "ShardId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "key所属数据库编号。",
+          "example": "0",
+          "member": "int64",
+          "name": "Db",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

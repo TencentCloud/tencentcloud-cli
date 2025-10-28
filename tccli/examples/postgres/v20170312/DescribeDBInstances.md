@@ -59,12 +59,12 @@ Output:
                     {
                         "DedicatedClusterId": "",
                         "Role": "Primary",
-                        "Zone": "ap-guangzhou-2"
+                        "Zone": "ap-guangzhou-7"
                     },
                     {
                         "DedicatedClusterId": "",
                         "Role": "Standby",
-                        "Zone": "ap-guangzhou-2"
+                        "Zone": "ap-guangzhou-7"
                     }
                 ],
                 "DBVersion": "16.2",
@@ -86,7 +86,7 @@ Output:
                 "Uid": 421842,
                 "UpdateTime": "2024-09-29 10:10:57",
                 "VpcId": "vpc-49ab5lb9",
-                "Zone": "ap-guangzhou-2"
+                "Zone": "ap-guangzhou-7"
             }
         ],
         "RequestId": "9e87cd50-5daf-44bf-8f67-3d3f017a87e7",
@@ -158,12 +158,12 @@ Output:
                     {
                         "DedicatedClusterId": "",
                         "Role": "Primary",
-                        "Zone": "ap-guangzhou-2"
+                        "Zone": "ap-guangzhou-7"
                     },
                     {
                         "DedicatedClusterId": "",
                         "Role": "Standby",
-                        "Zone": "ap-guangzhou-2"
+                        "Zone": "ap-guangzhou-7"
                     }
                 ],
                 "DBVersion": "16.2",
@@ -185,7 +185,7 @@ Output:
                 "Uid": 421842,
                 "UpdateTime": "2024-09-29 10:10:57",
                 "VpcId": "vpc-49ab5lb9",
-                "Zone": "ap-guangzhou-2"
+                "Zone": "ap-guangzhou-7"
             }
         ],
         "RequestId": "9e87cd50-5daf-44bf-8f67-3d3f017a87e7",

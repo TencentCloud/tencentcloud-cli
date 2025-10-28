@@ -160,6 +160,14 @@
         "title": "查询license列表"
       }
     ],
+    "GetDurationDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDurationDetails\n<公共请求参数>\n\n{\n    \"StartTime\": 1703433600,\n    \"EndTime\": 1703443600,\n    \"ProjectId\": \"m82k5408n675phvb\",\n    \"DeviceId\": \"dev1\",\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ab8afa4-4d7c-842e-ff00-b9893318fef0\",\n        \"DurationDetails\": [\n            {\n                \"SessionTime\": \"1719331200\",\n                \"Voice\": 0,\n                \"SD\": 0,\n                \"HD\": 3240,\n                \"FHD\": 0,\n                \"TwoK\": 0,\n                \"FourK\": 0,\n                \"Online\": 432\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "时长明细"
+      }
+    ],
     "GetLicenseStat": [
       {
         "document": "统计各个类型的license数量",
@@ -174,6 +182,14 @@
         "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLicenses\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"Licenses\": [\n            {\n                \"Status\": 0,\n                \"Duration\": \"86400\",\n                \"ExpireTime\": \"1686362610\",\n                \"RemainDay\": 82,\n                \"Count\": 2,\n                \"LicenseIds\": [\n                    \"trro-2e24a74a-67ea-1732-076d-75bf772529a\",\n                    \"trro-2e24a74a-67ea-1732-073d-75bf772579a\"\n                ]\n            },\n            {\n                \"Status\": 0,\n                \"Duration\": \"186400\",\n                \"ExpireTime\": \"1689386610\",\n                \"RemainDay\": 117,\n                \"LicenseIds\": [\n                    \"trro-2e24a74a-67ea-1732-076d-75bf772529a\",\n                    \"trro-2e24a74a-67ea-1732-073d-75bf772579a\"\n                ],\n                \"Count\": 2\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"33086049-513e-561c-8bce-484e18244613\"\n    }\n}",
         "title": "license列表"
+      }
+    ],
+    "GetTotalDuration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTotalDuration\n<公共请求参数>\n\n{\n    \"StartTime\": 1680076919,\n    \"EndTime\": 1688025719,\n    \"ProjectId\": \"dadad\",\n    \"DeviceId\": \"asdad\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Voice\": 0,\n        \"SD\": 0,\n        \"HD\": 3240,\n        \"FHD\": 0,\n        \"TwoK\": 0,\n        \"FourK\": 0,\n        \"Online\": 432,\n        \"RequestId\": \"17082975-0c65-503a-b249-ea27c34f8af9\"\n    }\n}",
+        "title": "查询该时间段、对应项目、设备的不同分辨率的通话时长汇总"
       }
     ],
     "ModifyCallbackUrl": [

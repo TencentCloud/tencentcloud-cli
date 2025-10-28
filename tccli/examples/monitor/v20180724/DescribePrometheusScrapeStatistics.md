@@ -6,6 +6,8 @@ Input:
 
 ```
 tccli monitor DescribePrometheusScrapeStatistics --cli-unfold-argument  \
+    --Job test-job \
+    --ClusterId cls-oebw \
     --InstanceIds prom-ejhf
 ```
 

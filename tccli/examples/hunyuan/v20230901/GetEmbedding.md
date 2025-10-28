@@ -1,10 +1,6 @@
 **Example 1: 请求成功示例**
 
-POST / HTTP/1.1
-Host: hunyuan.tencentcloudapi.com
-Content-Type: application/json
-X-TC-Action: GetEmbedding
-<公共请求参数>
+
 
 Input: 
 

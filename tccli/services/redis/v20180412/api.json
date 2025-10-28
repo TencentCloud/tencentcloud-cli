@@ -1839,9 +1839,9 @@
       "document": "CloneInstances返回参数结构体",
       "members": [
         {
-          "disabled": false,
-          "document": "请求任务 ID。",
-          "example": "\"crs-bzssy0cp,crs-a47h97c1\"",
+          "disabled": true,
+          "document": "交易的ID。",
+          "example": "20250825297021530591847",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -1856,6 +1856,16 @@
           "name": "InstanceIds",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250825297021530591847",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2026,7 +2036,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型。\n<ul><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li><li>15：Redis 6.2 内存版（标准架构）。</li><li>16：Redis 6.2 内存版（集群架构）。</li><li>17：Redis 7.0 内存版（标准架构）。</li><li>18：Redis 7.0 内存版（集群架构）。</li><li>200：Memcached 1.6 内存版（集群架构）。</li>说明：CKV 版本当前有存量用户使用，暂时保留。</ul>",
+          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 3：CKV 3.2 内存版（标准架构）。\n- 4：CKV 3.2 内存版（集群架构）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。\n- 200：Memcached 1.6 内存版（集群架构）。\n**说明**：CKV 版本当前有存量用户使用，暂时保留。",
           "example": "6",
           "member": "uint64",
           "name": "TypeId",
@@ -2152,7 +2162,7 @@
         },
         {
           "disabled": false,
-          "document": "实例副本数量。\n- Redis 内存版 4.0、5.0、6.2 标准架构和集群架构支持副本数量范围为[1,5]。\n- Redis 2.8标准版、CKV标准版只支持1副本。",
+          "document": "实例副本数量。\n- Redis 内存版 4.0、5.0、6.2、7.0 标准架构和集群架构支持副本数量范围为[1,5]。\n- Redis 2.8标准版、CKV标准版只支持1副本。",
           "example": "1",
           "member": "int64",
           "name": "RedisReplicasNum",
@@ -2242,7 +2252,7 @@
         },
         {
           "disabled": false,
-          "document": "独享集群 ID。当**ProductVersion**设置为**cdc**时，该参数必须设置。",
+          "document": "独享集群 ID。\n\n- 当 **ProductVersion** 设置为 **cdc** 时，该参数必须设置。\n- 请通过接口[ DescribeRedisClusters](https://cloud.tencent.com/document/product/239/109628) 获取集群 ID。",
           "example": "crs-cdc-0xigvn3t",
           "member": "string",
           "name": "RedisClusterId",
@@ -2274,9 +2284,9 @@
       "document": "CreateInstances返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "交易的ID。",
-          "example": "\"crs-bzssy0cp,crs-a47h97c1\"",
+          "example": "20250825297021530591847",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -2291,6 +2301,16 @@
           "name": "InstanceIds",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250825297021530591847",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -3703,13 +3723,22 @@
       "document": "DescribeInstanceDealDetail请求参数结构体",
       "members": [
         {
-          "disabled": false,
-          "document": "订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的输出参数DealId。数组最大长度限制为10",
-          "example": "[\"6959052\\n\"]",
+          "disabled": true,
+          "document": "订单号，即 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的输出参数DealId。数组最大长度限制为10",
+          "example": "[\"20250825297021508048753\"]",
           "member": "string",
           "name": "DealIds",
-          "required": true,
+          "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "订单号，即 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的输出参数DealName。数组最大长度限制为10",
+          "example": "20250825297021508048753",
+          "member": "string",
+          "name": "DealName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6388,12 +6417,22 @@
       "document": "DestroyPrepaidInstance返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "订单Id",
-          "example": "6977675",
+          "example": "20250825297021508048753",
           "member": "string",
           "name": "DealId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250825297021508048753",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9063,7 +9102,7 @@
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]",
           "member": "string",
           "name": "WeekDays",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -9072,7 +9111,7 @@
           "example": "04:00-05:00",
           "member": "string",
           "name": "TimePeriod",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -9086,7 +9125,7 @@
         },
         {
           "disabled": false,
-          "document": "全量备份文件保存天数。单位：天。",
+          "document": "全量备份文件保存天数。 仅支持设置为 7，单位：天。如需更长天数，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请。",
           "example": "7",
           "member": "int64",
           "name": "BackupStorageDays",
@@ -11456,7 +11495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "购买时长，单位：月。",
+          "document": "购买时长。\n- 单位：月。\n- 取值范围 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。",
           "example": "12",
           "member": "uint64",
           "name": "Period",
@@ -11465,7 +11504,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
+          "document": "实例 ID，请登录 [Redis 控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -11474,7 +11513,7 @@
         },
         {
           "disabled": false,
-          "document": "标识是否修改计费模式。<ul><li>当前实例计费模式为按量计费方式，预转换为包年包月而续费，请指定该参数为 <b>prepaid</b>。</li><li>当前实例计费模式为包年包月方式，可不设置该参数。</li></ul>",
+          "document": "标识是否修改计费模式。\n- 当前实例计费模式为按量计费方式，预转换为包年包月而续费，请指定该参数为 <b>prepaid</b>。\n- 当前实例计费模式为包年包月方式，可不设置该参数。",
           "example": "PREPAID",
           "member": "string",
           "name": "ModifyPayMode",
@@ -11488,12 +11527,22 @@
       "document": "RenewInstance返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "交易ID。",
-          "example": "6954225",
+          "example": "20250825297021530591847",
           "member": "string",
           "name": "DealId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250825297021530591847",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12411,9 +12460,9 @@
       "document": "订单交易信息",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "订单号ID，调用云API时使用此ID",
-          "example": "192314****",
+          "example": "2024112****",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -12523,7 +12572,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "100035***,100036***",
+          "example": "[\"crs-d8glo9rf\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
@@ -12547,7 +12596,7 @@
         },
         {
           "disabled": false,
-          "document": "指实例每个分片内存变更后的大小。<ul><li>单位 MB。</li><li>每次只能修改参数MemSize、RedisShardNum和RedisReplicasNum其中的一个，不能同时修改。且修改其中一个参数时，其他两个参数需输入实例原有的配置规格。</li><li>缩容时，缩容后的规格务必要大于等于使用容量的1.3倍，否则将执行失败。</li></ul>",
+          "document": "指实例每个分片内存变更后的大小。\n- 单位 MB。\n- 每次只能修改参数MemSize、RedisShardNum和RedisReplicasNum其中的一个，不能同时修改。且修改其中一个参数时，其他两个参数需输入实例原有的配置规格。\n- 缩容时，缩容后的规格务必要大于等于使用容量的1.3倍，否则将执行失败。",
           "example": "3096",
           "member": "uint64",
           "name": "MemSize",
@@ -12556,7 +12605,7 @@
         },
         {
           "disabled": false,
-          "document": "指实例变更后的分片数量。<ul><li>标准架构不需要配置该参数，集群架构为必填参数。</li><li>集群架构，每次只能修改参数RedisShardNum、MemSize和RedisReplicasNum其中的一个，不能同时修改。且修改其中一个参数时，其他两个参数需输入实例原有的配置规格。</li></ul>",
+          "document": "指实例变更后的分片数量。\n- 标准架构不需要配置该参数，集群架构为必填参数。\n- 集群架构，每次只能修改参数RedisShardNum、MemSize和RedisReplicasNum其中的一个，不能同时修改。且修改其中一个参数时，其他两个参数需输入实例原有的配置规格。",
           "example": "3",
           "member": "uint64",
           "name": "RedisShardNum",
@@ -12565,7 +12614,7 @@
         },
         {
           "disabled": false,
-          "document": "指实例变更后的副本数量。<ul><li>每次只能修改参数RedisReplicasNum、MemSize和RedisShardNum其中的一个，不能同时修改。且修改其中一个参数时，其他两个参数需输入实例原有的配置规格。</li><li>多AZ实例修改副本时必须要传入NodeSet。</li></ul>",
+          "document": "指实例变更后的副本数量。\n- 每次只能修改参数 RedisReplicasNum、MemSize 和 RedisShardNum 其中的一个，不能同时修改。且修改其中一个参数时，其他两个参数需输入实例原有的配置规格。\n- 多AZ实例修改副本时必须要传入 NodeSet。",
           "example": "2",
           "member": "uint64",
           "name": "RedisReplicasNum",
@@ -12597,12 +12646,22 @@
       "document": "UpgradeInstance返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "订单ID。",
-          "example": "200010798",
+          "example": "20250825297021509398751",
           "member": "string",
           "name": "DealId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250825297021509398751",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12652,12 +12711,22 @@
       "document": "UpgradeInstanceVersion返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "订单ID",
-          "example": "6954227",
+          "example": "20250825297021820475193",
           "member": "string",
           "name": "DealId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250825297021820475193",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

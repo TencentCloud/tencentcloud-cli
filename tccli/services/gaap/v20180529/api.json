@@ -9533,7 +9533,7 @@
         {
           "disabled": false,
           "document": "接入地域详细信息，包括地域ID和地域名。",
-          "example": "{\"RegionId\":\"NorthChina\"}\"}",
+          "example": "无",
           "member": "RegionDetail",
           "name": "AccessRegionInfo",
           "output_required": true,
@@ -9543,7 +9543,7 @@
         {
           "disabled": false,
           "document": "源站地域详细信息，包括地域ID和地域名。",
-          "example": "{\"RegionId\":\"SouthChina\"}\"}",
+          "example": "无",
           "member": "RegionDetail",
           "name": "RealServerRegionInfo",
           "output_required": true,
@@ -9593,7 +9593,7 @@
         {
           "disabled": false,
           "document": "关联了解析的域名列表",
-          "example": "www.test.com",
+          "example": "[\"www.test.com\"]",
           "member": "string",
           "name": "RelatedGlobalDomains",
           "output_required": true,
@@ -9623,7 +9623,7 @@
         {
           "disabled": false,
           "document": "通道获取客户端IP的方式，0表示TOA，1表示Proxy Protocol",
-          "example": "0",
+          "example": "[0]",
           "member": "int64",
           "name": "ClientIPMethod",
           "output_required": true,
@@ -9673,7 +9673,7 @@
         {
           "disabled": false,
           "document": "IP列表",
-          "example": "[{\"ip\": \"1.2.3.4\"}]",
+          "example": "无",
           "member": "IPDetail",
           "name": "IPList",
           "output_required": true,

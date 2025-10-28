@@ -4691,7 +4691,7 @@
         {
           "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
-          "example": "{\"UnMatchLogKey\": null, \"UnMatchUpLoadSwitch\": false }",
+          "example": "无",
           "member": "ExtractRuleInfo",
           "name": "ExtractRuleInfo",
           "required": false,
@@ -12970,7 +12970,7 @@
         {
           "disabled": false,
           "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
-          "example": "{\"UnMatchLogKey\": null, \"UnMatchUpLoadSwitch\": false }",
+          "example": "无",
           "member": "ExtractRuleInfo",
           "name": "ExtractRuleInfo",
           "required": false,

@@ -10552,7 +10552,7 @@
         {
           "disabled": false,
           "document": "输出的SRT的配置。",
-          "example": "0",
+          "example": "无",
           "member": "CreateOutputSRTSettings",
           "name": "SRTSettings",
           "required": false,
@@ -10561,7 +10561,7 @@
         {
           "disabled": false,
           "document": "输出的RTMP的配置。",
-          "example": "0",
+          "example": "无",
           "member": "CreateOutputRTMPSettings",
           "name": "RTMPSettings",
           "required": false,
@@ -10570,7 +10570,7 @@
         {
           "disabled": false,
           "document": "输出的RTP的配置。",
-          "example": "0",
+          "example": "无",
           "member": "CreateOutputInfoRTPSettings",
           "name": "RTPSettings",
           "required": false,
@@ -10579,7 +10579,7 @@
         {
           "disabled": false,
           "document": "IP白名单列表，格式为CIDR，如0.0.0.0/0。\n当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。",
-          "example": "0",
+          "example": "[\"0.0.0.0\"]",
           "member": "string",
           "name": "AllowIpList",
           "required": false,
@@ -10622,11 +10622,20 @@
           "type": "object"
         },
         {
-          "disabled": false,
-          "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",
+          "disabled": true,
+          "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个",
           "example": "无",
           "member": "PidSelector",
           "name": "PidSelector",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道。PidSelector 与 TrackSelector 只能存在一个",
+          "example": "无",
+          "member": "StreamSelector",
+          "name": "StreamSelector",
           "required": false,
           "type": "object"
         }
@@ -14135,7 +14144,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型，目前取值有：\n<li>WorkflowTask：工作流处理任务。</li>\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务类型，目前取值有：\n<li>WorkflowTask：工作流处理任务。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "WorkflowTask",
           "member": "string",
           "name": "TaskType",
@@ -14152,6 +14161,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务失败时的错误码。",
+          "example": "40000",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "InvalidParameterValue.FaceNotFound",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务异常Message。",
+          "example": "Face Not Found",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -14944,7 +14983,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",
           "example": "无",
           "member": "PidSelector",
@@ -14961,6 +15000,16 @@
           "name": "StreamUrls",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",
+          "example": "无",
+          "member": "StreamSelector",
+          "name": "StreamSelector",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -25690,7 +25739,7 @@
         {
           "disabled": false,
           "document": "绑定的安全组 ID。 仅支持关联一组安全组。\t",
-          "example": "[\"035hk1fd7ab41ea506497cdecbb9\"]",
+          "example": "[\"035hk1fd7ab41ea5064bb9\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -25724,11 +25773,20 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",
           "example": "无",
           "member": "PidSelector",
           "name": "PidSelector",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",
+          "example": "无",
+          "member": "StreamSelector",
+          "name": "StreamSelector",
           "required": false,
           "type": "object"
         }
@@ -32855,6 +32913,45 @@
       ],
       "usage": "out"
     },
+    "StreamSelector": {
+      "document": "选择指定的音轨或者视频输出",
+      "members": [
+        {
+          "disabled": false,
+          "document": "选择类型: PID | TRACK",
+          "example": "PID",
+          "member": "string",
+          "name": "SelectorType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "根据 PID 配置选择器",
+          "example": "无",
+          "member": "PidSelector",
+          "name": "PidSelector",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "根据 Track 配置选择器",
+          "example": "无",
+          "member": "TrackSelector",
+          "name": "TrackSelector",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "StreamUrlDetail": {
       "document": "描述 URL 的完整信息",
       "members": [
@@ -33946,6 +34043,34 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TrackSelector": {
+      "document": "音视频轨道选择",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频轨道序号，从1开始.",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "VideoIndex",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频轨道序号，从1开始.",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "AudioIndex",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -1897,7 +1897,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群 ID，请[登录控制台](https://console.cloud.tencent.com/tke2/cluster)在集群列表复制ID",
           "example": "cls-brehdsf",
           "member": "string",
           "name": "ClusterId",
@@ -1907,7 +1907,7 @@
         {
           "disabled": false,
           "document": "为集群容器网络增加的子网列表",
-          "example": "[\"subnet-gsdfggf\\n\"]",
+          "example": "[\"subnet-gsdfggf\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": true,
@@ -4639,7 +4639,7 @@
         },
         {
           "disabled": false,
-          "document": "当前集群类型支持tke、eks",
+          "document": "当前集群类型支持tke（标准集群）、eks（serverless集群）",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -10042,7 +10042,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "路由表名称。",
+          "document": "路由表名称。与集群 ID 一致，可以到[集群控制台](https://console.cloud.tencent.com/tke2)进行复制。",
           "example": "cls-e55paxnt",
           "member": "string",
           "name": "RouteTableName",
@@ -10052,7 +10052,7 @@
         {
           "disabled": false,
           "document": "过滤条件,当前只支持按照单个条件GatewayIP进行过滤（可选）",
-          "example": "[{\"Name\":\"GatewayIP\",\"Values\":\"10.0.0.3\"}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -11648,7 +11648,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群 ID，请[登录控制台](https://console.cloud.tencent.com/tke2/cluster)在集群列表复制ID",
           "example": "cls-8k33qz0w",
           "member": "string",
           "name": "ClusterId",
@@ -14063,7 +14063,7 @@
         },
         {
           "disabled": false,
-          "document": "路由表绑定的VPC",
+          "document": "路由表绑定的VPC，请到 [VPC 控制台](https://console.cloud.tencent.com/vpc/vpc)复制 VPC ID",
           "example": "vpc-sgdfgfhs",
           "member": "string",
           "name": "VpcId",
@@ -15926,7 +15926,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志集ID",
+          "document": "CLS日志集ID，可以通过cls接口或者控制台获取",
           "example": "d93d9f91-a27a-4756-8575-e367fe885556",
           "member": "string",
           "name": "LogsetId",
@@ -15935,7 +15935,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志主题ID",
+          "document": "CLS日志主题ID，可以通过cls接口或者控制台获取",
           "example": "11305b73-15f1-42fe-9256-5b1495e40zx121",
           "member": "string",
           "name": "TopicId",
@@ -16043,7 +16043,7 @@
         },
         {
           "disabled": false,
-          "document": "cls服务的logsetID",
+          "document": "cls服务的logsetID，通过cls接口或者控制台获取",
           "example": "cddc14ab-947c-4326-87b9-7b226f371xxxx",
           "member": "string",
           "name": "LogsetId",
@@ -16052,7 +16052,7 @@
         },
         {
           "disabled": false,
-          "document": "cls服务的topicID",
+          "document": "cls服务的topicID，通过cls接口或者控制台获取",
           "example": "11305b73-15f1-42fe-9256-5b1495e4xxzzx",
           "member": "string",
           "name": "TopicId",
@@ -24611,8 +24611,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "路由表类型。",
-          "example": "tencent",
+          "document": "路由表类型。\n枚举值：CcsCluster、Vpc、VpcRouteTable、CcsClusterRouteTable",
+          "example": "CcsCluster",
           "member": "string",
           "name": "RouteTableType",
           "output_required": true,
@@ -24642,7 +24642,7 @@
         {
           "disabled": false,
           "document": "路由表ID。",
-          "example": "1873637889",
+          "example": "rtb-e1w3jy7t",
           "member": "string",
           "name": "RouteTableId",
           "output_required": true,

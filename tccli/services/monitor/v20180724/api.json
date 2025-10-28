@@ -13285,10 +13285,28 @@
         },
         {
           "disabled": false,
+          "document": "集群ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "job 类型",
           "example": "podMonitor",
           "member": "string",
           "name": "JobType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "job 过滤，不写就是全部 job",
+          "example": "cadvisor",
+          "member": "string",
+          "name": "Job",
           "required": false,
           "type": "string"
         }

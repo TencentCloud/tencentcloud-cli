@@ -11676,6 +11676,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "资源组总规格",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalSpec",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组当前可用规格",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalAvailable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -21354,6 +21374,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，STARTING、RUNNING、TERMINATED",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

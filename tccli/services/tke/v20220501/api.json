@@ -1867,18 +1867,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "后付费计费周期，单位（月）：\n1，2，3，4，5，，6，7， 8，9，10，11，12，24，36，48，60",
+          "document": "后付费计费周期，单位（月）：\n1，2，3，4，5，6，7， 8，9，10，11，12，24，36，48，60",
           "example": "1",
           "member": "uint64",
           "name": "Period",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预付费续费方式：\n- NOTIFY_AND_AUTO_RENEW：通知用户过期，且自动续费 (默认）\n- NOTIFY_AND_MANUAL_RENEW：通知用户过期，但不自动续费\n- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知用户过期，也不自动续费\n",
+          "document": "预付费续费方式：\n- NOTIFY_AND_AUTO_RENEW：通知用户过期，且自动续费 \n- NOTIFY_AND_MANUAL_RENEW：通知用户过期，但不自动续费(默认)\n- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知用户过期，也不自动续费\n",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -3851,6 +3851,15 @@
           "name": "Replicas",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否更新存量节点",
+          "example": "false",
+          "member": "bool",
+          "name": "UpdateExistedNode",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,

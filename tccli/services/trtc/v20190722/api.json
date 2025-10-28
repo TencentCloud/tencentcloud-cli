@@ -8175,7 +8175,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要录制的网页URL\n",
+          "document": "【必填】需要录制的网页URL",
           "example": "https://web-record-xxxx.cos.ap-xxx.xxx.com/test/xxx.mp4",
           "member": "string",
           "name": "RecordUrl",
@@ -8184,21 +8184,30 @@
         },
         {
           "disabled": false,
-          "document": "录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)\n",
-          "example": "36000",
-          "member": "uint64",
-          "name": "MaxDurationLimit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储；输出文件的存储格式仅支持hls或mp4",
           "example": "无",
           "member": "StorageParams",
           "name": "StorageParams",
-          "required": false,
+          "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "【必填】TRTC的SdkAppId",
+          "example": "1600011111",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "录制最大时长限制， 单位 s, 合法取值范围[1800, 86400], 默认 86400s(24 小时)",
+          "example": "86400",
+          "member": "uint64",
+          "name": "MaxDurationLimit",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8208,15 +8217,6 @@
           "name": "WebRecordVideoParams",
           "required": false,
           "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "【必填】TRTC的SdkAppId",
-          "example": "1600011111",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": false,
-          "type": "int"
         },
         {
           "disabled": false,

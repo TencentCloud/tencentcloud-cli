@@ -1925,6 +1925,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否压缩。\n1:压缩  2:不压缩",
+          "example": "1",
+          "member": "uint64",
+          "name": "Compress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

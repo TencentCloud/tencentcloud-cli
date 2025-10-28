@@ -10279,9 +10279,18 @@
         {
           "disabled": false,
           "document": "要导出的资产ID列表或检测项ID列表，由ExportByAsset的取值决定。",
-          "example": "6788",
+          "example": "[6788]",
           "member": "uint64",
           "name": "IdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "筛选",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
           "required": false,
           "type": "list"
         }
@@ -15218,7 +15227,7 @@
         {
           "disabled": false,
           "document": "是否信任镜像",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "IsTrustImage",
           "output_required": true,
@@ -15393,6 +15402,26 @@
           "name": "IsAuthorized",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "解决方案",
+          "member": "string",
+          "name": "Solution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原因",
+          "example": "原因",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -15751,7 +15780,7 @@
         {
           "disabled": false,
           "document": "层文件信息",
-          "example": "2024-10-16 10:18:03COPY /rootfs/ / # buildkit2024-10-16 10:18:03CMD [\"/bin/bash\"]2024-10-16 10:18:03ARG version=11.0.25.9-12024-10-16 10:18:03RUN |1 version=11.0.25.9-1 /bin/sh -c set -eux     && export GNUPGHOME=\"$(mktemp -d)\"     && curl -fL -o corretto.key https://yum.corretto.aws/corretto.key     && gpg --batch --import corretto.key     && gpg --batch --export --armor '6DC3636DAE534049C8B94623A122542AB04F24E3' > corretto.key     && rpm --import corretto.key     && rm -r \"$GNUPGHOME\" corretto.key     && curl -fL -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo     && grep -q '^gpgcheck=1' /etc/yum.repos.d/corretto.repo     && echo \"priority=9\" >> /etc/yum.repos.d/corretto.repo     && yum install -y java-11-amazon-corretto-devel-$version     && (find /usr/lib/jvm/java-11-amazon-corretto -name src.zip -delete || true)     && yum install -y fontconfig     && yum clean all # buildkit2024-10-16 10:18:03ENV LANG=C.UTF-82024-10-16 10:18:03ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto2024-10-25 17:07:21/bin/sh -c #(nop) WORKDIR /app2024-10-25 17:07:22/bin/sh -c #(nop)  ARG TIME_ZONE=Asia/Shanghai2024-10-31 15:36:40/bin/sh -c #(nop)  ENV LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 TZ=Asia/Shanghai2024-10-31 15:36:41/bin/sh -c #(nop) COPY dir:b6be22d5f6b7ecac64178d9ecb1776130408ba2ceefd1ccb00a8a74e963020c6 in /apps 2024-10-31 15:36:41/bin/sh -c #(nop) WORKDIR /agent2024-10-31 15:36:43/bin/sh -c #(nop) COPY dir:d820fbe9b16780dc71f1dde615f814fa61606b4016d71379d146e6ca0f3241a4 in /agent 2024-10-31 15:36:43/bin/sh -c #(nop)  ENTRYPOINT [\"/bin/sh\" \"-c\" \"bash****]",
+          "example": "2024-10-16 10:18:03COPY /rootfs/ / # buildkit2024-10-16 10:18:03CMD [\"/bin/bash\"] 2024-10-31 15:36:43/bin/sh -c #(nop)  ENTRYPOINT [\"/bin/sh\" \"-c\" \"bash****]",
           "member": "string",
           "name": "LayerInfo",
           "output_required": true,
@@ -15921,7 +15950,7 @@
         {
           "disabled": false,
           "document": "镜像创建的时间",
-          "example": "2019-10-24T14:20:51+0800",
+          "example": "2019-10-24T14:20:51+08:00",
           "member": "datetime_iso",
           "name": "ImageCreateTime",
           "output_required": true,
@@ -15946,6 +15975,26 @@
           "name": "Id",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "解决方案",
+          "member": "string",
+          "name": "Solution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原因",
+          "example": "原因",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -16539,7 +16588,7 @@
           "example": "[\"Name\"]",
           "member": "string",
           "name": "ExportField",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -16572,7 +16621,7 @@
         {
           "disabled": false,
           "document": "镜像信息",
-          "example": "{\"Force\":\"true\",\"ImageDigest\":\"sha256:1319b1eaa0b7bcebae63af321fa67559b9517e8494060403d083bb3508fe52c8\",\"ImageName\":\"imageName-01\",\"ImageRepoAddress\":\"ccr.ccs.tencentyun.com\",\"ImageTag\":\"imageTag:1.0\",\"InstanceId\":\"instanceid-01\",\"InstanceName\":\"instanceName-01\",\"Namespace\":\"instanceNamespace-01\",\"RegistryType\":\"ccr\"}",
+          "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "required": false,
@@ -16596,9 +16645,19 @@
         {
           "disabled": false,
           "document": "excel文件下载地址",
-          "example": "https://cwp-1258344699.cos.ap-guangzhou.myqcloud.com/ImageRiskListExport-1256299843-241101101930.csv?q-sign-algorithm=sha1&q-ak=AKID******&q-sign-time=1730427570%3B1730434770&q-key-time=1730427570%3B1730434770&q-header-list=host&q-url-param-list=&q-signature=5a8affd5ac54f2ed659c2618ef194eb0ecd947d9",
+          "example": "https://cwp-125834xx.xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导出任务id",
+          "example": "1012",
+          "member": "string",
+          "name": "JobId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -32924,7 +32983,7 @@
         {
           "disabled": false,
           "document": "是否可信镜像",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "IsTrustImage",
           "output_required": true,
@@ -33124,7 +33183,7 @@
         {
           "disabled": false,
           "document": "镜像创建的时间",
-          "example": "\"2019-10-24T14:20:51+0800\"",
+          "example": "2019-10-24T14:20:51+08:00",
           "member": "datetime_iso",
           "name": "ImageCreateTime",
           "output_required": true,
@@ -33239,6 +33298,26 @@
           "name": "RecommendedFix",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "解决方案",
+          "member": "string",
+          "name": "Solution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原因",
+          "example": "原因",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -34601,6 +34680,26 @@
           "name": "RecommendedFix",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "解决方案",
+          "member": "string",
+          "name": "Solution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原因\n",
+          "example": "原因",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
