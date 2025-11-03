@@ -1415,7 +1415,7 @@
       "status": "online"
     },
     "ModifyClusterRuntimeConfig": {
-      "document": "修改集群及节点池纬度运行时配置",
+      "document": "修改集群及节点池维度运行时配置",
       "input": "ModifyClusterRuntimeConfigRequest",
       "name": "修改集群运行时配置",
       "output": "ModifyClusterRuntimeConfigResponse",
@@ -2961,7 +2961,7 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关",
+          "document": "集群删除保护开关，打开：true，关闭：false",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
@@ -2971,7 +2971,7 @@
         },
         {
           "disabled": false,
-          "document": "集群是否开启第三方节点支持",
+          "document": "集群是否开启第三方节点支持，开启：true，关闭：false",
           "example": "false",
           "member": "bool",
           "name": "EnableExternalNode",
@@ -2991,7 +2991,7 @@
         },
         {
           "disabled": false,
-          "document": "自动变配集群等级，针对托管集群生效",
+          "document": "自动变配集群等级，针对托管集群生效。开启：true，关闭：false",
           "example": "true",
           "member": "bool",
           "name": "AutoUpgradeClusterLevel",
@@ -3001,7 +3001,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启QGPU共享",
+          "document": "是否开启QGPU共享，开启：true，关闭：false",
           "example": "false",
           "member": "bool",
           "name": "QGPUShareEnable",
@@ -5336,7 +5336,7 @@
         },
         {
           "disabled": false,
-          "document": "集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)",
+          "document": "集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)。获取方式：https://cloud.tencent.com/document/product/215/15784\n",
           "example": "subnet-3ht1odzw",
           "member": "string",
           "name": "SubnetId",
@@ -5363,7 +5363,7 @@
         },
         {
           "disabled": false,
-          "document": "使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）",
+          "document": "使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）。获取方式：https://cloud.tencent.com/document/api/215/15808",
           "example": "sg-kineiakx",
           "member": "string",
           "name": "SecurityGroup",
@@ -9183,7 +9183,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 Id。若只查询某个集群可升级的版本，需填写此项。",
+          "document": "集群 Id。若只查询某个集群可升级的版本，需填写此项，与ClusterIds 参数二选一。",
           "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
@@ -9192,7 +9192,7 @@
         },
         {
           "disabled": false,
-          "document": "集群 Id 列表。若查询多个集群可升级的版本，需填写此项。",
+          "document": "集群 Id 列表。若查询多个集群可升级的版本，需填写此项，与ClusterId 参数二选一。",
           "example": "[\"cls-7ph3twqe\"]",
           "member": "string",
           "name": "ClusterIds",
@@ -9684,7 +9684,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启）",
+          "document": "查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启，CreateFailed 开启失败）",
           "example": "Created",
           "member": "string",
           "name": "Status",
@@ -11135,7 +11135,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型，例如：MANAGED_CLUSTER",
+          "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。",
           "example": "MANAGED_CLUSTER",
           "member": "string",
           "name": "ClusterType",
@@ -14996,7 +14996,7 @@
         },
         {
           "disabled": false,
-          "document": "Pod使用量",
+          "document": "Pod使用量，单位：个数",
           "example": "100",
           "member": "uint64",
           "name": "PodUsage",
@@ -15006,7 +15006,7 @@
         },
         {
           "disabled": false,
-          "document": "ReplicaSet使用量",
+          "document": "ReplicaSet使用量，单位：个数",
           "example": "100",
           "member": "uint64",
           "name": "RSUsage",
@@ -15016,7 +15016,7 @@
         },
         {
           "disabled": false,
-          "document": "ConfigMap使用量",
+          "document": "ConfigMap使用量，单位：个数",
           "example": "100",
           "member": "uint64",
           "name": "ConfigMapUsage",
@@ -20851,7 +20851,7 @@
         },
         {
           "disabled": false,
-          "document": "当需要修改运行时版本是根据另外的K8S版本获取时，需填写。例如升级校验有冲突后修改场景",
+          "document": "运行时版本需依据指定的Kubernetes版本进行设置。典型情况为，在升级过程中因版本冲突而需要调整运行时版本时。",
           "example": "1.24.4",
           "member": "string",
           "name": "DstK8SVersion",
@@ -20860,7 +20860,7 @@
         },
         {
           "disabled": false,
-          "document": "需要修改集群运行时时填写",
+          "document": "需要修改集群运行时填写",
           "example": "{\"RuntimeType\":\"containerd\",\"RuntimeVersion\":\"1.6.9\"}",
           "member": "RuntimeConfig",
           "name": "ClusterRuntimeConfig",
@@ -20869,7 +20869,7 @@
         },
         {
           "disabled": false,
-          "document": "需要修改节点池运行时时，填需要修改的部分",
+          "document": "需要修改节点池运行时，填需要修改的部分",
           "example": "[{\"NodePoolId\":\"np-3z37njiu\",\"RuntimeType\":\"containerd\",\"RuntimeVersion\":\"1.6.9\",\"NodePoolName\":\"np-test\"}]",
           "member": "NodePoolRuntime",
           "name": "NodePoolRuntimeConfig",
@@ -22123,7 +22123,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时类型",
+          "document": "运行时类型，参考：https://cloud.tencent.com/document/api/457/105241",
           "example": "containerd",
           "member": "string",
           "name": "RuntimeType",
@@ -22134,7 +22134,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时版本",
+          "document": "运行时版本，参考：https://cloud.tencent.com/document/api/457/105241",
           "example": "1.6.9",
           "member": "string",
           "name": "RuntimeVersion",
@@ -22145,7 +22145,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池名称",
+          "document": "节点池名称，限制 255 字符",
           "example": "tke",
           "member": "string",
           "name": "NodePoolName",
@@ -26049,7 +26049,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型",
+          "document": "资源类型，参考k8s 官方资源",
           "example": "Pod",
           "member": "string",
           "name": "Name",
@@ -26059,7 +26059,7 @@
         },
         {
           "disabled": false,
-          "document": "资源使用量",
+          "document": "资源使用量，单位：个数",
           "example": "100",
           "member": "uint64",
           "name": "Usage",
@@ -26495,7 +26495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "运行时类型",
+          "document": "运行时类型，支持的类型有 docker、containerd",
           "example": "containerd",
           "member": "string",
           "name": "RuntimeType",
@@ -26506,7 +26506,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时版本",
+          "document": "运行时版本，参考：https://cloud.tencent.com/document/api/457/105241",
           "example": "1.6.24",
           "member": "string",
           "name": "RuntimeVersion",
