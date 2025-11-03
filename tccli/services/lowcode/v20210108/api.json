@@ -3780,7 +3780,7 @@
         {
           "disabled": false,
           "document": "数据源 Id",
-          "example": "无",
+          "example": "\"data-abc\"",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -3789,7 +3789,7 @@
         {
           "disabled": false,
           "document": "数据源环境",
-          "example": "无",
+          "example": "\"lowcode-123\"",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -3798,7 +3798,7 @@
         {
           "disabled": false,
           "document": "数据源名称",
-          "example": "无",
+          "example": "\"this is a Title\"",
           "member": "string",
           "name": "Title",
           "required": false,
@@ -3807,7 +3807,7 @@
         {
           "disabled": false,
           "document": "数据源描述",
-          "example": "无",
+          "example": "\"this is a Description\"",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -3816,7 +3816,7 @@
         {
           "disabled": false,
           "document": "数据源配置",
-          "example": "无",
+          "example": "{\"properties\":{\"key\":{\"type\":\"string\"}}}",
           "member": "string",
           "name": "Schema",
           "required": false,
@@ -3825,7 +3825,7 @@
         {
           "disabled": false,
           "document": "自定义方法",
-          "example": "无",
+          "example": "\"this Is methods\"",
           "member": "string",
           "name": "Methods",
           "required": false,
@@ -3834,7 +3834,7 @@
         {
           "disabled": false,
           "document": "是否异步调用 0 同步 1 异步",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AsyncCall",
           "required": false,
@@ -3843,7 +3843,7 @@
         {
           "disabled": false,
           "document": "属性配置json",
-          "example": "无",
+          "example": "\"configuration\"",
           "member": "string",
           "name": "Configuration",
           "required": false,
@@ -3852,7 +3852,7 @@
         {
           "disabled": false,
           "document": "授权id",
-          "example": "无",
+          "example": "\"ticket-id\"",
           "member": "string",
           "name": "TicketId",
           "required": false,

@@ -140,6 +140,13 @@
       "output": "GetDevicesResponse",
       "status": "online"
     },
+    "GetDurationDetails": {
+      "document": "查询该时间段、对应项目、设备的不同分辨率的通话时长流水，流水以日期（天）为单位",
+      "input": "GetDurationDetailsRequest",
+      "name": "累计时长明细",
+      "output": "GetDurationDetailsResponse",
+      "status": "online"
+    },
     "GetLicenseStat": {
       "document": "统计license类型数量",
       "input": "GetLicenseStatRequest",
@@ -152,6 +159,13 @@
       "input": "GetLicensesRequest",
       "name": "查看license列表",
       "output": "GetLicensesResponse",
+      "status": "online"
+    },
+    "GetTotalDuration": {
+      "document": "查询该时间段、对应项目、设备的不同分辨率的通话时长汇总",
+      "input": "GetTotalDurationRequest",
+      "name": "累计时长",
+      "output": "GetTotalDurationResponse",
       "status": "online"
     },
     "ModifyCallbackUrl": {
@@ -1713,6 +1727,162 @@
       ],
       "usage": "out"
     },
+    "DurationDetails": {
+      "document": "会话时长明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话时间",
+          "example": "1703433600",
+          "member": "string",
+          "name": "SessionTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音:min",
+          "example": "0",
+          "member": "int64",
+          "name": "Voice",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标清:min",
+          "example": "1",
+          "member": "int64",
+          "name": "SD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高清:min",
+          "example": "2",
+          "member": "int64",
+          "name": "HD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超高清:min",
+          "example": "4",
+          "member": "int64",
+          "name": "FHD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "2k:min",
+          "example": "0",
+          "member": "int64",
+          "name": "TwoK",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "4k:min",
+          "example": "0",
+          "member": "int64",
+          "name": "FourK",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在线时长:min",
+          "example": "4",
+          "member": "int64",
+          "name": "Online",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网标清:min",
+          "example": "2",
+          "member": "int64",
+          "name": "MultiSD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网高清:min",
+          "example": "4",
+          "member": "int64",
+          "name": "MultiHD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网超高清:min",
+          "example": "9",
+          "member": "int64",
+          "name": "MultiFHD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网2k:min",
+          "example": "0",
+          "member": "int64",
+          "name": "MultiTwoK",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网4k:min",
+          "example": "0",
+          "member": "int64",
+          "name": "MultiFourK",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网在线时长:min",
+          "example": "50",
+          "member": "int64",
+          "name": "MultiOnline",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抵扣时长:min",
+          "example": "100",
+          "member": "int64",
+          "name": "DeductDuration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GetDeviceLicenseRequest": {
       "document": "GetDeviceLicense请求参数结构体",
       "members": [
@@ -1822,6 +1992,98 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDurationDetailsRequest": {
+      "document": "GetDurationDetails请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1680076919",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1688025719",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页面数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "asda",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备ID，不传查全部设备",
+          "example": "dasda",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDurationDetailsResponse": {
+      "document": "GetDurationDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时长明细列表",
+          "example": "无",
+          "member": "DurationDetails",
+          "name": "DurationDetails",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1971,6 +2233,200 @@
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTotalDurationRequest": {
+      "document": "GetTotalDuration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备id，不传查全部",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTotalDurationResponse": {
+      "document": "GetTotalDuration返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "语音:min",
+          "example": "0",
+          "member": "int64",
+          "name": "Voice",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标清:min",
+          "example": "10",
+          "member": "int64",
+          "name": "SD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高清:min",
+          "example": "20",
+          "member": "int64",
+          "name": "HD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超高清:min",
+          "example": "20",
+          "member": "int64",
+          "name": "FHD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "2k:min",
+          "example": "0",
+          "member": "int64",
+          "name": "TwoK",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "4k:min",
+          "example": "0",
+          "member": "int64",
+          "name": "FourK",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在线时长:min ",
+          "example": "50",
+          "member": "int64",
+          "name": "Online",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网标清:min",
+          "example": "10",
+          "member": "int64",
+          "name": "MultiSD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网高清:min",
+          "example": "20",
+          "member": "int64",
+          "name": "MultiHD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网超高清:min",
+          "example": "20",
+          "member": "int64",
+          "name": "MultiFHD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网2k:min",
+          "example": "0",
+          "member": "int64",
+          "name": "MultiTwoK",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网4k:min",
+          "example": "0",
+          "member": "int64",
+          "name": "MultiFourK",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多网在线时长:min ",
+          "example": "50",
+          "member": "int64",
+          "name": "MultiOnline",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总抵扣时长:min ",
+          "example": "500",
+          "member": "int64",
+          "name": "DeductDuration",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },

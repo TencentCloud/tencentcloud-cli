@@ -6,6 +6,20 @@
       "name": "告警列表",
       "output": "DescribeSecurityAlarmTableListResponse",
       "status": "online"
+    },
+    "GetAsyncSearchResult": {
+      "document": "获取异步检索结果",
+      "input": "GetAsyncSearchResultRequest",
+      "name": "获取异步查询结果",
+      "output": "GetAsyncSearchResultResponse",
+      "status": "online"
+    },
+    "SearchAsync": {
+      "document": "异步检索数据",
+      "input": "SearchAsyncRequest",
+      "name": "检索数据异步查询",
+      "output": "SearchAsyncResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -144,6 +158,250 @@
         }
       ],
       "type": "object"
+    },
+    "GetAsyncSearchResultRequest": {
+      "document": "GetAsyncSearchResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询任务id",
+          "example": "538c47be-48e1-444c-b9a1-493a87e8998a",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "sdl-12",
+          "member": "string",
+          "name": "SdlId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "limit",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAsyncSearchResultResponse": {
+      "document": "GetAsyncSearchResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索任务id",
+          "example": "538c47be-48e1-444c-b9a1-493a87e8998a",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每行结果，JSON字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ab\"]",
+          "member": "string",
+          "name": "JsonRows",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总结果数",
+          "example": "3000",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IN_PROGRESS: 查询中, SUCCESS: 查询成功\", FAILED: 查询失败",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索结果详细信息",
+          "example": "检索成功",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索用时，单位毫秒",
+          "example": "1000",
+          "member": "uint64",
+          "name": "UseTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索结果列的元信息，字段名和字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchResultColumn",
+          "name": "Columns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "2025-10-16 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchAsyncRequest": {
+      "document": "SearchAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索语句内容(经过base64编码)",
+          "example": "c2VsZWN0ICogZnJvbSAic3lzdGVtLl9hdWRpdCI=",
+          "member": "string",
+          "name": "SearchContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Limit值, 取值范围: [1,10000]",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间表达式，例如: now-24h/h,now/h",
+          "example": "now-24h,now",
+          "member": "string",
+          "name": "TimeValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "sdl-free0224",
+          "member": "string",
+          "name": "SdlId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间毫秒",
+          "example": "1741017600000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间毫秒",
+          "example": "1741027600000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchAsyncResponse": {
+      "document": "SearchAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步检索任务id",
+          "example": "538c47be-48e1-444c-b9a1-493a87e8998a",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchResultColumn": {
+      "document": "检索结果行",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名",
+          "example": "username",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段类型",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SecurityAlarmTable": {
       "document": "告警列表",

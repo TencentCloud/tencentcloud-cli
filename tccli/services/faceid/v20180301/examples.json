@@ -199,7 +199,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectAIFakeFaces\n<公共请求参数>\n\n{\n    \"FaceInputType\": 1,\n    \"FaceInput\": \"VBORw0KGgoAAAANSUhEUgAAAkYAAAI9CAYAAADfOLduAAABQ2lDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSCwoyGFhYGDIzSspCnJ3UoiIjFJgf87AziDBwMcgwqCQmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsgsz5I1BWZcn/xff7Y4dPvimWmY6lEAV0pqcTKQ/gPEyckFRSUMDIwJQLZyeUkBiN0CZIsUAR0FZM8AsdMh7DUgdhKEfQCsJiTIGci+AmQLJGckpgDZT4BsnSQk8XQkNtReEOD0CFBwNTI3LiTgVpJBSWpFCYh2zi+oLMpMzyhRcASGUKqCZ16yno6CkYGRMQMDKLwhqj/fAIcjoxgHQqzwKgODhTyQ8RQhlniBgWH3OgYG4Z8IMWUDBgYeoGn7/AsSixLhDmD8xlKcZmwEYXNvZ2Bgnfb//+dwBgZ2TQaGv9f///+9/f//v8sYGJhvMTAc+AYADqxgzYM88zoAAAA4ZVhJZk1NACoAAAAIAAGHaQAEAAAAAQAAABoAAAAAAAKgAgAEAAAAAQAAAkagAwAEAAAAAQAAAj0AAAAAi/M5dAAAQABJREFUeAHsvWd35EiSbYsIRlCkViW6pmq6Wry71vz/fzEf3n2fpufd\"\n}",
         "output": "{\n    \"Response\": {\n        \"AttackRiskDetailList\": [\n            {\n                \"Type\": \"SuspectedWatermark\"\n            }\n        ],\n        \"AttackRiskLevel\": \"High\",\n        \"RequestId\": \"2dd93e6f-5121-4bac-8c64-d6ad646663d2\"\n    }\n}",
-        "title": " 不加密请求示例"
+        "title": "不加密请求示例"
       },
       {
         "document": "",

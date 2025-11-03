@@ -26,10 +26,10 @@
     ],
     "DescribeDocWriteList": [
       {
-        "document": "通过写写id获取对应文档信息",
-        "input": "POST / HTTP/1.1\nHost: tencentcloudintl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocWriteList\n<公共请求参数>\n\n{\n    \"WriteNodeId\": \"127809374270681088\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"297b8763-c48e-4923-959a-a18ed01fc83c\",\n        \"Response\": {\n            \"DocWriteData\": [\n                {\n                    \"Id\": 495,\n                    \"Lang\": \"ind\",\n                    \"WriteLatestVersion\": \"1709778540\",\n                    \"WriteNodeId\": \"138381141413535744\",\n                    \"WritePublishedVersion\": \"1709778540\"\n                },\n                {\n                    \"Id\": 495,\n                    \"Lang\": \"ko\",\n                    \"WriteLatestVersion\": \"1700100875\",\n                    \"WriteNodeId\": \"127809374270681088\",\n                    \"WritePublishedVersion\": \"1700100875\"\n                }\n            ],\n            \"RequestId\": \"297b8763-c48e-4923-959a-a18ed01fc83c\"\n        }\n    }\n}",
-        "title": "通过写写id获取对应文档信息"
+        "document": "依据写写id获取文档信息",
+        "input": "POST / HTTP/1.1\nHost: tencentcloudintl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocWriteList\n<公共请求参数>\n\n{\n    \"WriteNodeId\": \"182618756708614144\",\n    \"Lang\": \"en\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Response\": {\n            \"DocWriteData\": [\n                {\n                    \"CategoryId\": 1237,\n                    \"DocUrl\": \"https://www.tencentcloud.com/document/product/1237/54319\",\n                    \"Id\": 54319,\n                    \"Lang\": \"en\",\n                    \"WriteLatestVersion\": \"182618765651791870\",\n                    \"WriteNodeId\": \"182618756708614144\",\n                    \"WritePublishedVersion\": \"182618765651791870\"\n                }\n            ],\n            \"RequestId\": \"66fe36e6-fa2b-418f-beea-04a7bac3e196\"\n        },\n        \"RequestId\": \"66fe36e6-fa2b-418f-beea-04a7bac3e196\"\n    }\n}",
+        "title": "依据写写id获取文档信息"
       }
     ],
     "DescribeDocumentList": [

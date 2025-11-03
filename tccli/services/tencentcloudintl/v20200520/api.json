@@ -635,6 +635,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类id",
+          "example": "1237",
+          "member": "int64",
+          "name": "CategoryId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "官网地址",
+          "example": "https://www.tencentcloud.com/document/product/1237/54319",
+          "member": "string",
+          "name": "DocUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -695,7 +715,7 @@
         {
           "disabled": false,
           "document": "文档与写写列表信息",
-          "example": "{\"Response\":{\"DocWriteData\":[{\"Id\":495,\"WriteNodeId\":\"127809374270681088\",\"WritePublishedVersion\":\"1700100875\",\"WriteLatestVersion\":\"1700100875\",\"Lang\":\"ko\"}],\"RequestId\":\"\"}}",
+          "example": "无",
           "member": "DescribeDocWriteList",
           "name": "Response",
           "output_required": false,

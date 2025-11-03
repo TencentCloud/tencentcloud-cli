@@ -44,7 +44,7 @@
       {
         "document": "创建实例",
         "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"ShardNum\": \"3\",\n    \"TypeId\": \"14\",\n    \"GoodsNum\": \"1\",\n    \"UniqVpcId\": \"vpc-qicyv9mz\",\n    \"MachineMemory\": \"2\",\n    \"Period\": \"1\",\n    \"ZoneId\": \"100002\",\n    \"ReplicasNum\": \"1\",\n    \"UniqSubnetId\": \"subnet-4rohwntq\",\n    \"DiskSize\": \"100\",\n    \"MemSize\": \"8\",\n    \"MachineCpu\": \"1\",\n    \"Password\": \"Test123456\",\n    \"InstanceName\": \"测试实例2\",\n    \"BillingMode\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DealId\": \"229126199\",\n        \"InstanceIds\": [\n            \"kee-emg6bltn\"\n        ],\n        \"RequestId\": \"365b3029-06d5-4016-8054-518994bba781\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20250925297021530748195\",\n        \"InstanceIds\": [\n            \"kee-emg6bltn\"\n        ],\n        \"RequestId\": \"365b3029-06d5-4016-8054-518994bba781\"\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -91,7 +91,7 @@
     "DescribeInstanceDealDetail": [
       {
         "document": "新购订单发货中",
-        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceDealDetail\n<公共请求参数>\n\n{\n    \"DealIds\": [\n        \"138172054\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceDealDetail\n<公共请求参数>\n\n{\n    \"DealName\": \"20250925297021530748195\"\n}",
         "output": "{\n    \"Response\": {\n        \"DealDetails\": [\n            {\n                \"CreatTime\": \"2023-03-13 11:28:10\",\n                \"Creater\": \"100xxxxxxxxx\",\n                \"DealId\": \"138172054\",\n                \"DealName\": \"20230313xxxxxxxxxxxxxxx\",\n                \"Description\": \"发货中\",\n                \"EndTime\": \"\",\n                \"GoodsNum\": 1,\n                \"InstanceIds\": [\n                    \"kee-w7xxxxxx\"\n                ],\n                \"OverdueTime\": \"2023-03-28 11:28:09\",\n                \"Price\": 0,\n                \"Status\": 3,\n                \"ZoneId\": 100006\n            }\n        ],\n        \"RequestId\": \"b835a553-b98c-49bd-be22-e3e1ce465438\"\n    }\n}",
         "title": "示例1"
       }
@@ -204,7 +204,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyPrepaidInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-ldmm****\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DealId\": \"229125413\",\n        \"RequestId\": \"6094d5ee-84ae-4bd3-8b76-ead8bdd2986d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20250925297021530748195\",\n        \"RequestId\": \"6094d5ee-84ae-4bd3-8b76-ead8bdd2986d\"\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -276,7 +276,7 @@
       {
         "document": "给实例续费",
         "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewInstance\n<公共请求参数>\n\n{\n    \"Period\": 1,\n    \"InstanceId\": \"kee-lagg****\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DealId\": \"1655902381\",\n        \"RequestId\": \"12eb8b4f-8aab-43df-aea4-7cae92b134a5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20250925297021530748195\",\n        \"RequestId\": \"12eb8b4f-8aab-43df-aea4-7cae92b134a5\"\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -300,7 +300,7 @@
       {
         "document": "扩容实例内存容量、分片数量以及磁盘容量。",
         "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"ShardNum\": \"6\",\n    \"InstanceId\": \"kee-lagg****\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DealId\": \"1655902380\",\n        \"RequestId\": \"12eb8b4f-8aab-43df-aea4-d4192e18eac7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20250925297021530748195\",\n        \"RequestId\": \"12eb8b4f-8aab-43df-aea4-d4192e18eac7\"\n    }\n}",
         "title": "扩分片数示例"
       }
     ]

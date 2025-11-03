@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "DealId": "1655902381",
+        "DealName": "20250925297021530748195",
         "RequestId": "12eb8b4f-8aab-43df-aea4-7cae92b134a5"
     }
 }

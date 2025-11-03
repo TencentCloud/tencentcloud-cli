@@ -11,7 +11,7 @@ tccli thpc SubmitJob --cli-unfold-argument  \
     --Job.Tasks.0.Application.StorageMounts.0.Source /mnt/ \
     --Job.Tasks.0.Application.StorageMounts.0.Target /data/ \
     --Job.Tasks.0.Application.EnvVars.0.Name ENV \
-    --Job.Tasks.0.Application.EnvVars.0.Value test \
+    --Job.Tasks.0.Application.EnvVars.0.Value prod \
     --Job.Tasks.0.Application.Docker.Image test:test \
     --Job.Tasks.0.Application.Docker.RunArgs --privileged --cap-add=IPC_LOCK --net=host --ipc=host ' --gpus all' \
     --Job.Tasks.0.Application.OutputRedirect.Driver local \
@@ -19,7 +19,7 @@ tccli thpc SubmitJob --cli-unfold-argument  \
     --Job.Tasks.0.TaskName task-test-v1 \
     --Job.Tasks.0.TaskInstanceNum 2 \
     --Job.Tasks.0.Timeout 3600 \
-    --Job.JobName test \
+    --Job.JobName hello world \
     --Job.JobDescription job test \
     --Job.Priority 1 \
     --QueueName compute

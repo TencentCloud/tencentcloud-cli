@@ -118,14 +118,6 @@ Output:
                                             "Switch": "abc",
                                             "Type": "abc"
                                         },
-                                        "SharpEnhance": {
-                                            "Switch": "abc",
-                                            "Intensity": 0
-                                        },
-                                        "FaceEnhance": {
-                                            "Switch": "abc",
-                                            "Intensity": 0
-                                        },
                                         "LowLightEnhance": {
                                             "Switch": "abc",
                                             "Type": "abc"

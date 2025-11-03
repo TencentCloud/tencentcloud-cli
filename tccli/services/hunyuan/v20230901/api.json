@@ -119,6 +119,13 @@
       "output": "QueryHunyuanImageJobResponse",
       "status": "online"
     },
+    "QueryHunyuanTo3DProJob": {
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供3个并发，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "QueryHunyuanTo3DProJobRequest",
+      "name": "查询混元生3D专业版任务",
+      "output": "QueryHunyuanTo3DProJobResponse",
+      "status": "online"
+    },
     "ReportUsage": {
       "document": "上报用量",
       "input": "ReportUsageRequest",
@@ -152,6 +159,13 @@
       "input": "SubmitHunyuanImageJobRequest",
       "name": "提交混元生图任务",
       "output": "SubmitHunyuanImageJobResponse",
+      "status": "online"
+    },
+    "SubmitHunyuanTo3DProJob": {
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供3个并发，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "SubmitHunyuanTo3DProJobRequest",
+      "name": "提交混元生3D专业版任务",
+      "output": "SubmitHunyuanTo3DProJobResponse",
       "status": "online"
     },
     "TextToImageLite": {
@@ -1143,6 +1157,45 @@
         }
       ],
       "usage": "out"
+    },
+    "File3D": {
+      "document": "3D文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "3D文件的格式。取值范围：GIF, OBJ",
+          "example": "GIF",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件的Url（有效期24小时）",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/gif.gif",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预览图片Url",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.png",
+          "member": "string",
+          "name": "PreviewImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "FileObject": {
       "document": "已上传的文件对象。",
@@ -3004,6 +3057,73 @@
       ],
       "type": "object"
     },
+    "QueryHunyuanTo3DProJobRequest": {
+      "document": "QueryHunyuanTo3DProJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "1357237233311637504",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryHunyuanTo3DProJobResponse": {
+      "document": "QueryHunyuanTo3DProJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "InvalidParameter",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "参数错误。",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的3D文件数组。",
+          "example": "无",
+          "member": "File3D",
+          "name": "ResultFile3Ds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Reference": {
       "document": "翻译对话参考示例",
       "members": [
@@ -3853,6 +3973,106 @@
       ],
       "type": "object"
     },
+    "SubmitHunyuanTo3DProJobRequest": {
+      "document": "SubmitHunyuanTo3DProJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文生3D，3D内容的描述，中文正向提示词。\n最多支持1024个 utf-8 字符。\n文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。",
+          "example": "1",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输入图 Base64 数据。\n大小：单边分辨率要求不小于128，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过6m）\n格式：jpg，png，jpeg，webp。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "example": "1",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输入图Url。\n大小：单边分辨率要求不小于128，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过6m）\n格式：jpg，png，jpeg，webp。\nImageBase64/ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "example": "1",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多视角的模型图片，视角参考值：\nleft：左视图；\nright：右视图；\nback：后视图；\n\n每个视角仅限制一张图片。\n●图片大小限制：编码后大小不可超过8M。\n●图片分辨率限制：单边分辨率小于5000且大于128。\n●支持图片格式：支持jpg或png",
+          "example": "无",
+          "member": "ViewImage",
+          "name": "MultiViewImages",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启 PBR材质生成，默认 false。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePBR",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "生成3D模型的面数，默认值为500000。\n可支持生成面数范围，参考值：40000-1500000。",
+          "example": "400000",
+          "member": "int64",
+          "name": "FaceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "生成任务类型，默认Normal，参考值：\nNormal：可生成带纹理的几何模型。\nLowPoly：可生成智能减面后的模型。\nGeometry：可生成不带纹理的几何模型（白模），选择此任务时，EnablePBR参数不生效。\nSketch：可输入草图或线稿图生成模型，此模式下prompt和ImageUrl/ImageBase64可一起输入。",
+          "example": "Normal",
+          "member": "string",
+          "name": "GenerateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "该参数仅在GenerateType中选择LowPoly模式可生效。\n\n多边形类型，表示模型的表面由几边形网格构成，默认为triangle,参考值:\ntriangle: 三角形面。\nquadrilateral: 四边形面与三角形面混合生成。",
+          "example": "triangle",
+          "member": "string",
+          "name": "PolygonType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuanTo3DProJobResponse": {
+      "document": "SubmitHunyuanTo3DProJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID（有效期24小时）",
+          "example": "1357237233311637504",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TextToImageLiteRequest": {
       "document": "TextToImageLite请求参数结构体",
       "members": [
@@ -4535,6 +4755,45 @@
         }
       ],
       "usage": "in"
+    },
+    "ViewImage": {
+      "document": "多视角图片",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视角类型。\n取值：back、left、right",
+          "example": "back",
+          "member": "string",
+          "name": "ViewType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片Url地址",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
+          "member": "string",
+          "name": "ViewImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片base64地址",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
+          "member": "string",
+          "name": "ViewImageBase64",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "WebSearchOptions": {
       "document": "知识注入相关的参数信息",

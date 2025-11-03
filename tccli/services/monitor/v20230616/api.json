@@ -43,6 +43,34 @@
     "serviceShortName": "monitor"
   },
   "objects": {
+    "AlarmLable": {
+      "document": "告警中的Label",
+      "members": [
+        {
+          "disabled": false,
+          "document": "label name",
+          "example": "key1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "label value",
+          "example": "value1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AlarmNotifyHistory": {
       "document": "单个告警通知历史",
       "members": [
@@ -139,7 +167,7 @@
         {
           "disabled": false,
           "document": "渠道的接收人信息",
-          "example": "[{}]",
+          "example": "无",
           "member": "ChannelsReceivers",
           "name": "ChannelsReceivers",
           "output_required": false,
@@ -179,7 +207,7 @@
         {
           "disabled": false,
           "document": "通知模板相关的配置信息",
-          "example": "[{\"NoticeId\": \"notice-xxx\", \"NoticeName\": \"default\"}]",
+          "example": "无",
           "member": "NotifyRelatedNotice",
           "name": "Notices",
           "output_required": false,
@@ -194,6 +222,16 @@
           "name": "TriggerStatus",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警的lable",
+          "example": "无",
+          "member": "AlarmLable",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

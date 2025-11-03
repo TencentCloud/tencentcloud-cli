@@ -511,7 +511,7 @@
           "example": "10856",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -539,7 +539,7 @@
         {
           "disabled": false,
           "document": "实例访问密码。\n实例为免密访问，则无需设置该参数。",
-          "example": "zy456987",
+          "example": "Mypassword1",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -842,9 +842,9 @@
       "document": "CreateInstances返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "交易 ID。",
-          "example": "199878234",
+          "example": "20250925297021530748195",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -854,11 +854,21 @@
         {
           "disabled": false,
           "document": "实例 ID 。",
-          "example": "kee-7djvzcnx",
+          "example": "[\"kee-7djvzcnx\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。\t",
+          "example": "20250925297021530748195",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1269,13 +1279,22 @@
       "document": "DescribeInstanceDealDetail请求参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealId。",
           "example": "[\"8159037\"]\t",
           "member": "string",
           "name": "DealIds",
-          "required": true,
+          "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "订单号，订单交易ID数组，即 [CreateInstances](https://cloud.tencent.com/document/api/1520/86207) 的输出参数DealName。",
+          "example": "20250925297021530748195",
+          "member": "string",
+          "name": "DealName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1289,6 +1308,7 @@
           "example": "无",
           "member": "TradeDealDetail",
           "name": "DealDetails",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2412,7 +2432,7 @@
           "example": "6954227",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2444,12 +2464,22 @@
       "document": "DestroyPrepaidInstance返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "交易ID。",
-          "example": "6977675",
+          "example": "20250925297021530748195",
           "member": "string",
           "name": "DealId",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250925297021530748195",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3925,7 +3955,7 @@
           "example": "true",
           "member": "bool",
           "name": "Changed",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3935,7 +3965,7 @@
           "example": "327",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4562,11 +4592,22 @@
       "document": "RenewInstance返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "交易 ID。",
-          "example": "6977675",
+          "example": "20250925297021530748195",
           "member": "string",
           "name": "DealId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250925297021530748195",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5171,11 +5212,22 @@
       "document": "UpgradeInstance返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "交易ID。",
-          "example": "301310691",
+          "example": "20250925297021530748195",
           "member": "string",
           "name": "DealId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号。",
+          "example": "20250925297021530748195",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

@@ -448,6 +448,22 @@
         "title": "获取实例部分数据库"
       }
     ],
+    "DescribeDbTknPwdRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDbTknPwdRules\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"postgres-bd0t2ayr\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"cam_test_2\",\n    \"InstanceType\": \"postgres\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ee2e9808-2a44-47b5-8cde-659c5502bee8\",\n        \"RequiredLength\": 32,\n        \"Rules\": [\n            {\n                \"CharacterType\": \"uppercase\",\n                \"Choices\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                \"MinimumLength\": 1,\n                \"MustStart\": true\n            },\n            {\n                \"CharacterType\": \"lowercase\",\n                \"Choices\": \"abcdefghijklmnopqrstuvwxyz\",\n                \"MinimumLength\": 1,\n                \"MustStart\": false\n            },\n            {\n                \"CharacterType\": \"numbers\",\n                \"Choices\": \"1234567890\",\n                \"MinimumLength\": 1,\n                \"MustStart\": false\n            },\n            {\n                \"CharacterType\": \"specialcharacter\",\n                \"Choices\": \"()`~!@#$%^&*-+=_|{}[]:<>,.?\",\n                \"MinimumLength\": 1,\n                \"MustStart\": false\n            }\n        ]\n    }\n}",
+        "title": "查看实例账号的密码规则"
+      }
+    ],
+    "DescribeDbTknResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDbTknResource\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"postgres-6bwgamo3\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"root\",\n    \"InstanceType\": \"postgres\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93705d62-b156-43db-b7d7-0e24715a4f1c\",\n        \"EnabledRotate\": true\n    }\n}",
+        "title": "SSM侧检验对应数据库账户的合法性"
+      }
+    ],
     "DescribeDedicatedClusters": [
       {
         "document": "查询所有专属集群",
@@ -898,6 +914,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetAccountPassword\n<公共请求参数>\n\n{\n    \"UserName\": \"test_app\",\n    \"Password\": \"1234Qwer()\",\n    \"DBInstanceId\": \"postgres-lnp6j6172\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
         "title": "重置postgres-lnp6j6172的账户密码，成功"
+      }
+    ],
+    "ResetInstancePassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstancePassword\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"postgres-r95q23pn\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"root\",\n    \"Password\": \"1357Wer=\",\n    \"PasswordEncrypt\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f3d27d1-1462-4287-87a4-2b1cccb51681\",\n        \"TimeCost\": 3000,\n        \"ResetTimestamp\": 1760346593000\n    }\n}",
+        "title": "重置数据库账户密码"
       }
     ],
     "RestartDBInstance": [

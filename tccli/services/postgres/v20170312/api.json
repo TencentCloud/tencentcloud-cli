@@ -308,6 +308,20 @@
       "output": "DescribeDatabasesResponse",
       "status": "online"
     },
+    "DescribeDbTknPwdRules": {
+      "document": "SSM侧用于获取数据库账户的密码复杂度规则",
+      "input": "DescribeDbTknPwdRulesRequest",
+      "name": "SSM侧查询 Dbtkn 数据库实例的密码规则",
+      "output": "DescribeDbTknPwdRulesResponse",
+      "status": "online"
+    },
+    "DescribeDbTknResource": {
+      "document": "SSM侧校验数据库账号的合法性",
+      "input": "DescribeDbTknResourceRequest",
+      "name": "SSM侧检验对应数据库账户的合法性",
+      "output": "DescribeDbTknResourceResponse",
+      "status": "online"
+    },
     "DescribeDedicatedClusters": {
       "document": "查询专属集群",
       "input": "DescribeDedicatedClustersRequest",
@@ -649,6 +663,13 @@
       "input": "ResetAccountPasswordRequest",
       "name": "重置账户密码",
       "output": "ResetAccountPasswordResponse",
+      "status": "online"
+    },
+    "ResetInstancePassword": {
+      "document": "SSM侧修改数据库账户密码",
+      "input": "ResetInstancePasswordRequest",
+      "name": "SSM侧重置数据库账户密码",
+      "output": "ResetInstancePasswordResponse",
       "status": "online"
     },
     "RestartDBInstance": {
@@ -5954,6 +5975,144 @@
       ],
       "type": "object"
     },
+    "DescribeDbTknPwdRulesRequest": {
+      "document": "DescribeDbTknPwdRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "postgres-lnp6j617",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源所处地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户名称",
+          "example": "root",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "postgres",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknPwdRulesResponse": {
+      "document": "DescribeDbTknPwdRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成密码的长度",
+          "example": "32",
+          "member": "int64",
+          "name": "RequiredLength",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述密码生成规则",
+          "example": "无",
+          "member": "Rule",
+          "name": "Rules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknResourceRequest": {
+      "document": "DescribeDbTknResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "postgres-6bwgamo3",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源所处地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户名称",
+          "example": "root",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "postgres",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknResourceResponse": {
+      "document": "DescribeDbTknResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询的账户是否开启了密码轮转",
+          "example": "false",
+          "member": "bool",
+          "name": "EnabledRotate",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDedicatedClustersRequest": {
       "document": "DescribeDedicatedClusters请求参数结构体",
       "members": [
@@ -10458,6 +10617,89 @@
       ],
       "type": "object"
     },
+    "ResetInstancePasswordRequest": {
+      "document": "ResetInstancePassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "postgres-6bwgamo3",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源所处地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户名称",
+          "example": "root",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "将要修改至账户的新密码",
+          "example": "1357Wer=",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码是否加密",
+          "example": "false",
+          "member": "bool",
+          "name": "PasswordEncrypt",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancePasswordResponse": {
+      "document": "ResetInstancePassword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重置密码耗时，毫秒维度",
+          "example": "250",
+          "member": "uint64",
+          "name": "TimeCost",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重置密码成功时的时间戳，按照毫秒时间戳返回",
+          "example": "123456789",
+          "member": "uint64",
+          "name": "ResetTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RestartDBInstanceRequest": {
       "document": "RestartDBInstance请求参数结构体",
       "members": [
@@ -10568,6 +10810,52 @@
         }
       ],
       "type": "object"
+    },
+    "Rule": {
+      "document": "回传给SSM侧，用于描述密码复杂度规则的结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字符类型。可选：uppercase、lowercase、numbers、specialcharacter，分别表示大写字母、小写字母、数字、特殊字符",
+          "example": "uppercase",
+          "member": "string",
+          "name": "CharacterType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可选字符集合",
+          "example": "QWKVBFO LXTZDGMHRSCYEJNIPU",
+          "member": "string",
+          "name": "Choices",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码中该类型字符的最少个数",
+          "example": "1",
+          "member": "int64",
+          "name": "MinimumLength",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码是否必须以这种字符开头",
+          "example": "false",
+          "member": "bool",
+          "name": "MustStart",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SecurityGroup": {
       "document": "安全组信息",

@@ -27,7 +27,7 @@ Output:
                     "BillType": "BILL",
                     "BudgetId": "1963509727611473921",
                     "BudgetName": "API创建预算计划",
-                    "BudgetNote": "使用使用api创建预算信息",
+                    "BudgetNote": "使用api创建预算信息",
                     "BudgetProgress": "0.00",
                     "BudgetQuota": "1200",
                     "BudgetQuotaJson": null,

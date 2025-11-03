@@ -966,7 +966,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageRegistryRiskListExport\n<公共请求参数>\n\n{\n    \"ExportField\": [\n        \"Path\",\n        \"RiskLevel\",\n        \"Category\",\n        \"VirusName\",\n        \"Tags\"\n    ],\n    \"Id\": 1001\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"488e3711-8515-450a-9a40-df3e95c806fa\",\n        \"DownloadUrl\": \"https://download.url\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"488e3711-8515-450a-9a40-df3e95c806fa\",\n        \"DownloadUrl\": \"https://download.url\",\n        \"JobId\": \"1012\"\n    }\n}",
         "title": "镜像仓库敏感信息列表导出"
       }
     ],

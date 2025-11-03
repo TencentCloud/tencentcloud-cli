@@ -6168,8 +6168,8 @@
         },
         {
           "disabled": false,
-          "document": "资源包大小，计算资源单位：万个；存储资源：GB",
-          "example": "2000",
+          "document": "资源包大小，计算资源单位：个；存储资源：GB",
+          "example": "2000.00",
           "member": "float",
           "name": "PackageSpec",
           "required": true,
