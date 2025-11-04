@@ -7943,6 +7943,33 @@
           "name": "SignAfterStart",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "隐藏操作步骤: 具体的控件类型如下\n\n<ul><li>1 : 选择文件及签署方</li>\n<li>2 : 补充文件内容</li>\n<li>4 : 发起前合同信息与设置确认</li>\n</ul>\n注：仅对新版页面生效",
+          "example": "[1,2,4]",
+          "member": "uint64",
+          "name": "HideOperationSteps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "本企业简称，注：仅对新版页面生效",
+          "example": "典子签企业",
+          "member": "string",
+          "name": "SelfName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发起后签署码隐藏，默认false，注：仅对新版页面生效",
+          "example": "false",
+          "member": "bool",
+          "name": "HideSignCodeAfterStart",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

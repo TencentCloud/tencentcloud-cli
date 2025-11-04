@@ -11516,8 +11516,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "被调用的集团账号的成员id",
-          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "OperatedMemberId",
           "required": false,

@@ -26160,7 +26160,7 @@
         {
           "disabled": false,
           "document": "本次请求唯一标识， 与请求包中一致\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"xxafa\"",
           "member": "string",
           "name": "ReferenceId",
           "output_required": true,

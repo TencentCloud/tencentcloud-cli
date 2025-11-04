@@ -2815,6 +2815,15 @@
           "name": "UserType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要重置密码： true: 需要重置  false: 不需要重置密码。 默认false",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedResetPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2825,7 +2834,7 @@
         {
           "disabled": false,
           "document": "用户详情",
-          "example": "{\"ZoneId\": \"z-3fee3r3r3\"}",
+          "example": "无",
           "member": "UserInfo",
           "name": "UserInfo",
           "output_required": true,
@@ -13135,6 +13144,15 @@
           "name": "NewEmail",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要重置密码",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedResetPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -13449,6 +13467,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下次登录是否需要重置密码， true: 需要重置密码， false：不需要重置密码",
+          "example": "",
+          "member": "bool",
+          "name": "NeedResetPassword",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
