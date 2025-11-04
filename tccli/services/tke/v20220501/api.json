@@ -42,6 +42,13 @@
       "output": "DescribeClusterInstancesResponse",
       "status": "online"
     },
+    "DescribeClusters": {
+      "document": "查询集群列表",
+      "input": "DescribeClustersRequest",
+      "name": "查询集群列表",
+      "output": "DescribeClustersResponse",
+      "status": "online"
+    },
     "DescribeHealthCheckPolicies": {
       "document": "查询健康检测策略",
       "input": "DescribeHealthCheckPoliciesRequest",
@@ -229,6 +236,112 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Cluster": {
+      "document": "集群信息结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-xxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "集群",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群描述",
+          "example": "示例集群",
+          "member": "string",
+          "name": "ClusterDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群版本（默认值为1.10.5）",
+          "example": "1.20.6",
+          "member": "string",
+          "name": "ClusterVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。",
+          "example": "INDEPENDENT_CLUSTER",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签描述列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群状态 (Trading 集群开通中,Creating 创建中,Running 运行中,Deleting 删除中,Idling 闲置中,Recovering 唤醒中,Upgrading 升级中,NodeUpgrading 节点升级中,RuntimeUpgrading 节点运行时升级中,MasterScaling Master扩缩容中,ClusterLevelUpgrading 调整规格中,ResourceIsolate 欠费隔离中,ResourceIsolated 欠费已隔离,ResourceReverse 冲正恢复中,Abnormal 异常)",
+          "example": "Running",
+          "member": "string",
+          "name": "ClusterStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-06-16T07:42:57Z",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群等级，针对托管集群生效\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "L5",
+          "member": "string",
+          "name": "ClusterLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群所在vpc的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -933,6 +1046,96 @@
           "member": "string",
           "name": "Errors",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersRequest": {
+      "document": "DescribeClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID列表(为空时，\n表示获取账号下所有集群)",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量,默认0",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条数，默认20，最大为100",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "·  ClusterName\n    按照【集群名】进行过滤。\n    类型：String\n    必选：否\n\n·  ClusterType\n    按照【集群类型】进行过滤。\n    类型：String\n    必选：否\n\n·  ClusterStatus\n    按照【集群状态】进行过滤。\n    类型：String\n    必选：否\n\n·  Tags\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否\n\n·  vpc-id\n    按照【VPC】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-key\n    按照【标签键】进行过滤。\n    类型：String\n    必选：否\n\n·  tag-value\n    按照【标签值】进行过滤。\n    类型：String\n    必选：否\n\n·  tag:tag-key\n    按照【标签键值对】进行过滤。\n    类型：String\n    必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型，例如：MANAGED_CLUSTER",
+          "example": "MANAGED_CLUSTER",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClustersResponse": {
+      "document": "DescribeClusters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群总个数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群信息列表",
+          "example": "无",
+          "member": "Cluster",
+          "name": "Clusters",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息集合",
+          "example": "无",
+          "member": "string",
+          "name": "Errors",
           "type": "list",
           "value_allowed_null": false
         },

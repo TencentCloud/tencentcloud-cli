@@ -64,6 +64,14 @@
         "title": "调用示例"
       }
     ],
+    "QueryTextToImageJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTextToImageJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1344213737283272704\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"e4a4eef5-f4aa-40ff-aae0-5e51c5ef5b1e\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https://cos.ap-guangzhou.myqcloud.com/xxx.jpg\"\n        ],\n        \"RevisedPrompt\": [\n            \"一只可爱的小狗正蹲在草地上，它的小耳朵竖立着，鼻子微微皱起，显得十分警觉，小狗的毛色是鲜亮的红色\"\n        ]\n    }\n}",
+        "title": "查询文生图任务"
+      }
+    ],
     "QueryTextToImageProJob": [
       {
         "document": "成功调用",
@@ -126,6 +134,14 @@
         "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitMemeJob\n<公共请求参数>\n\n{\n    \"Pose\": \"aiyobudeliao\",\n    \"InputUrl\": \"https://cos.ap-guangzhou.myqcloud.com/image.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"251197749-1736402968-49025b63-ce50-11ef-9ce4-5254006b9705-0\",\n        \"RequestId\": \"97781219-f994-4169-b0a6-032b9fab4742\"\n    }\n}",
         "title": "调用示例"
+      }
+    ],
+    "SubmitTextToImageJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTextToImageJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"小狗\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1344213737283272704\",\n        \"RequestId\": \"af61e1d4-0931-4dc5-b5a9-eb89bae54616\"\n    }\n}",
+        "title": "提交文生图任务"
       }
     ],
     "SubmitTextToImageProJob": [

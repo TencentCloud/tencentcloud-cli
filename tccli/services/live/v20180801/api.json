@@ -2386,7 +2386,7 @@
         {
           "disabled": false,
           "document": "描述信息。",
-          "example": "场景1回调模版配置",
+          "example": "场景1回调模板配置",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -3085,7 +3085,7 @@
         },
         {
           "disabled": false,
-          "document": "布局模板Id。\n有效值[1，20，21，31，32，41]\n当使用布局模版时，无需LayoutParams参数，导播台将使用模版布局参数。\n",
+          "document": "布局模板Id。\n有效值[1，20，21，31，32，41]\n当使用布局模板时，无需LayoutParams参数，导播台将使用模板布局参数。\n",
           "example": "21",
           "member": "int64",
           "name": "LayoutTemplateId",
@@ -3108,7 +3108,7 @@
         {
           "disabled": false,
           "document": "详细的布局参数列表。",
-          "example": "1",
+          "example": "无",
           "member": "CasterLayoutParam",
           "name": "LayoutParams",
           "output_required": true,

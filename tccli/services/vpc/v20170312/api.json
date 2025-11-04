@@ -11350,11 +11350,20 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "[]",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRouteVpcPublish",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11365,7 +11374,7 @@
         {
           "disabled": false,
           "document": "Vpc对象。",
-          "example": "{\"VpcFlag\": 1, \"VpcId\": \"vpc-2ln96dly\", \"IsShare\": true, \"DomainName\": \"TEST\", \"Ipv6CidrBlock\": \"2001::85b:3c51:f5ff:ffdb\", \"Region\": \"ap-guangzhou\", \"EnableRouteVpcPublish\": false, \"Ipv6CidrBlockSet\": [], \"EnableDhcp\": true, \"VpcNumId\": 1, \"DnsServerSet\": [\"183.60.82.98\"], \"EnableMulticast\": false, \"VpcName\": \"TEST\", \"TagSet\": [], \"DhcpOptionsId\": \"dopt-058pu85z\", \"CreatedTime\": \"2020-10-12 10:00:00\", \"CidrBlock\": \"10.0.0.0/16\", \"IsDefault\": false}",
+          "example": "无",
           "member": "Vpc",
           "name": "Vpc",
           "output_required": true,
@@ -11657,7 +11666,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "{'Period':1, 'RenewFlag': 'NOTIFY_AND_AUTO_RENEW'}",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -11684,7 +11693,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "[{\"Key\": \"name\", \"Value\": \"123\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -21131,7 +21140,7 @@
         {
           "disabled": false,
           "document": "流量调度规则。",
-          "example": "[{'CcnId': 'ccn-0puqax1n', 'QosId': 1, 'QosPolicyDescription': '1', 'QosPolicyName': '1', 'Bandwidth': 1}]",
+          "example": "无",
           "member": "TrafficQosPolicySet",
           "name": "TrafficQosPolicySet",
           "output_required": false,
@@ -22516,7 +22525,7 @@
         },
         {
           "disabled": false,
-          "document": "源端口",
+          "document": "映射前端口",
           "example": "80",
           "member": "int64",
           "name": "OriginalPort",
@@ -22527,7 +22536,7 @@
         },
         {
           "disabled": false,
-          "document": "源IP",
+          "document": "映射前IP",
           "example": "\"10.0.13.19\"",
           "member": "string",
           "name": "OriginalIp",
@@ -22538,7 +22547,7 @@
         },
         {
           "disabled": false,
-          "document": "目的端口",
+          "document": "映射后端口",
           "example": "8081",
           "member": "int64",
           "name": "TranslationPort",
@@ -22549,7 +22558,7 @@
         },
         {
           "disabled": false,
-          "document": "目的IP",
+          "document": "映射后IP",
           "example": "\"10.0.13.1\"",
           "member": "string",
           "name": "TranslationIp",
@@ -22571,7 +22580,7 @@
         },
         {
           "disabled": false,
-          "document": "旧源端口",
+          "document": "旧映射前端口",
           "example": "80",
           "member": "int64",
           "name": "OldOriginalPort",
@@ -22582,7 +22591,7 @@
         },
         {
           "disabled": false,
-          "document": "旧源IP",
+          "document": "旧映射前IP",
           "example": "\"10.0.13.19\"",
           "member": "string",
           "name": "OldOriginalIp",
@@ -22593,7 +22602,7 @@
         },
         {
           "disabled": false,
-          "document": "旧目的端口",
+          "document": "旧映射后端口",
           "example": "8081",
           "member": "int64",
           "name": "OldTranslationPort",
@@ -22604,7 +22613,7 @@
         },
         {
           "disabled": false,
-          "document": "旧目的IP",
+          "document": "旧映射后IP",
           "example": "\"10.0.13.1\"",
           "member": "string",
           "name": "OldTranslationIp",
@@ -27064,7 +27073,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "协议",
+          "document": "协议，包含TCP和UDP",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -27075,7 +27084,7 @@
         },
         {
           "disabled": false,
-          "document": "源端口",
+          "document": "映射前端口",
           "example": "80",
           "member": "int64",
           "name": "OriginalPort",
@@ -27086,7 +27095,7 @@
         },
         {
           "disabled": false,
-          "document": "源IP",
+          "document": "映射前IP",
           "example": "192.168.4.43",
           "member": "string",
           "name": "OriginalIp",
@@ -27097,7 +27106,7 @@
         },
         {
           "disabled": false,
-          "document": "目的端口",
+          "document": "映射后端口",
           "example": "80",
           "member": "int64",
           "name": "TranslationPort",
@@ -27108,7 +27117,7 @@
         },
         {
           "disabled": false,
-          "document": "目的IP",
+          "document": "映射后IP",
           "example": "10.254.4.43",
           "member": "string",
           "name": "TranslationIp",
@@ -30159,6 +30168,15 @@
         },
         {
           "disabled": false,
+          "document": "vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRouteVpcPublish",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "发布cdc 子网到云联网的开关。true: 发布, false: 不发布。",
           "example": "false",
           "member": "bool",
@@ -32753,7 +32771,7 @@
         },
         {
           "disabled": false,
-          "document": "原端口",
+          "document": "映射前端口",
           "example": "80",
           "member": "int64",
           "name": "OriginalPort",
@@ -32764,7 +32782,7 @@
         },
         {
           "disabled": false,
-          "document": "原IP",
+          "document": "映射前IP",
           "example": "\"10.0.13.20\"",
           "member": "string",
           "name": "OriginalIp",
@@ -32775,7 +32793,7 @@
         },
         {
           "disabled": false,
-          "document": "映射端口",
+          "document": "映射后端口",
           "example": "8081",
           "member": "int64",
           "name": "TranslationPort",
@@ -32786,7 +32804,7 @@
         },
         {
           "disabled": false,
-          "document": "映射IP",
+          "document": "映射后IP",
           "example": "\"10.0.13.20\"",
           "member": "string",
           "name": "TranslationIp",
@@ -32916,7 +32934,7 @@
         },
         {
           "disabled": false,
-          "document": "私网网关类型",
+          "document": "私网网关类型。可选类型：\"DCG\",\"VPC\",\"CCN\"，分别对应专线网关、私有网络、云联网。",
           "example": "DCG",
           "member": "string",
           "name": "NatType",
@@ -36879,7 +36897,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED",
+          "document": "资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED，分别表示子网、网卡、自定义网段",
           "example": "SUBNET",
           "member": "string",
           "name": "ResourceType",
@@ -38299,7 +38317,7 @@
           "member": "uint64",
           "name": "AclRuleId",
           "output_required": true,
-          "required": false,
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -38344,7 +38362,7 @@
         },
         {
           "disabled": false,
-          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
+          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。分别对应三层和四层。",
           "example": "\"NETWORK_LAYER\"",
           "member": "string",
           "name": "TranslationType",
@@ -38355,7 +38373,7 @@
         },
         {
           "disabled": false,
-          "document": "转换`IP`,当转换规则类型为四层时为`IP`池。",
+          "document": "映射后IP,当转换规则类型为四层时为`IP`池。",
           "example": "\"10.0.13.21\"",
           "member": "string",
           "name": "TranslationIp",
@@ -38377,7 +38395,7 @@
         },
         {
           "disabled": false,
-          "document": "源`IP`,当转换规则类型为三层时有效。",
+          "document": "映射前IP,当转换规则类型为三层时有效。",
           "example": "\"10.0.13.20\"",
           "member": "string",
           "name": "OriginalIp",
@@ -38425,7 +38443,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
+          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。分别对应三层、四层。",
           "example": "\"NETWORK_LAYER\"",
           "member": "string",
           "name": "TranslationType",
@@ -38434,10 +38452,19 @@
         },
         {
           "disabled": false,
-          "document": "转发规则映射`IP`,当转发规则类型为四层时为`IP`池",
+          "document": "转发规则映射后`IP`,当转发规则类型为四层时为`IP`池",
           "example": "\"10.0.13.21\"",
           "member": "string",
           "name": "TranslationIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "旧转发规则映射后`IP`,当转发规则类型为四层时为`IP`池",
+          "example": "\"10.0.13.21\"",
+          "member": "string",
+          "name": "OldTranslationIp",
           "required": true,
           "type": "string"
         },
@@ -38447,21 +38474,12 @@
           "example": "my service",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "旧转发规则映射`IP`,当转发规则类型为四层时为`IP`池",
-          "example": "\"10.0.13.21\"",
-          "member": "string",
-          "name": "OldTranslationIp",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "新转发规则源`IP`,当转发规则类型为三层时有效",
+          "document": "新转发规则映射前`IP`,当转发规则类型为三层时有效",
           "example": "\"10.0.13.20\"",
           "member": "string",
           "name": "OriginalIp",
@@ -38470,7 +38488,7 @@
         },
         {
           "disabled": false,
-          "document": "旧转发规则源`IP`,当转发规则类型为三层时有效",
+          "document": "旧转发规则映射前`IP`,当转发规则类型为三层时有效",
           "example": "\"10.0.13.19\"",
           "member": "string",
           "name": "OldOriginalIp",
@@ -38494,7 +38512,7 @@
         },
         {
           "disabled": false,
-          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
+          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。分别对应三层、四层。",
           "example": "\"NETWORK_LAYER\"",
           "member": "string",
           "name": "TranslationType",
@@ -38503,7 +38521,7 @@
         },
         {
           "disabled": false,
-          "document": "转换`IP`,当转换规则类型为四层时为`IP`池。",
+          "document": "映射后`IP`,当转换规则类型为四层时为`IP`池。",
           "example": "\"10.0.13.21\"",
           "member": "string",
           "name": "TranslationIp",
@@ -38516,12 +38534,12 @@
           "example": "my service",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "源`IP`,当转换规则类型为三层时有效。",
+          "document": "映射前`IP`,当转换规则类型为三层时有效。",
           "example": "\"10.0.13.20\"",
           "member": "string",
           "name": "OriginalIp",
@@ -38979,7 +38997,7 @@
         {
           "disabled": false,
           "document": "是否开启组播。",
-          "example": "true ",
+          "example": "true",
           "member": "bool",
           "name": "EnableMulticast",
           "output_required": true,
@@ -39049,7 +39067,7 @@
         {
           "disabled": false,
           "document": "标签键值对",
-          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -39059,7 +39077,7 @@
         {
           "disabled": false,
           "document": "辅助CIDR",
-          "example": "{\"VpcId\":\"vpc-5k6fot41\", \"CidrBlock\":\"172.16.1.0/24\", \"AssistantType\":0, \"SubnetSet\":[{\"VpcId\": \"vpc-7zqx75u3\", \"SubnetId\": \"subnet-9b1gk064\", \"CidrBlock\": \"11.0.0.0/16\", \"Zone\": \"ap-guangzhou-2\", \"SubnetName\": \"demo\"}], \"Region\":\"ap-guangzhou\"}",
+          "example": "无",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
           "output_required": false,
@@ -39068,8 +39086,18 @@
         },
         {
           "disabled": false,
+          "document": "vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRouteVpcPublish",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "返回多运营商IPv6 Cidr Block",
-          "example": "[{\"IPv6CidrBlock\": \"2402:4e00:1717:8200::/56\", \"ISPType\": \"BGP\", \"AddressType\": \"GUA\"}]",
+          "example": "无",
           "member": "ISPIPv6CidrBlock",
           "name": "Ipv6CidrBlockSet",
           "output_required": true,

@@ -2008,6 +2008,78 @@
       ],
       "usage": "both"
     },
+    "AdvancedSuperResolutionConfig": {
+      "document": "超分配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型，可选值：\n<li>standard：通用超分</li>\n<li>super：高级超分。</li>\n默认值：standard。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "standard",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出图片模式，默认percent。\n<li> aspect: 超分至指定宽高的较大矩形。</li>\n<li> fixed: 超分至固定宽高，强制缩放。</li>\n<li> percent: 超分倍率，可以为小数。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "percent",
+          "member": "string",
+          "name": "Mode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超分倍率，可以为小数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.0",
+          "member": "float",
+          "name": "Percent",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标图片宽度，不能超过4096。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1280",
+          "member": "int64",
+          "name": "Width",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标图片高度，不能超过4096。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "720",
+          "member": "int64",
+          "name": "Height",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AiAnalysisResult": {
       "document": "智能分析结果",
       "members": [
@@ -9182,7 +9254,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流允许触发的文件格式列表，如 [\"mp4\", \"flv\", \"mov\"]。不填代表所有格式的文件都可以触发工作流。",
+          "document": "支持的所有格式如下：\n\n- 视频文件扩展名，支持以下选择，共15种：\n`.mp4`、`.avi`、`.mov`、`.wmv`、`.flv`、`.mkv`、`.mpg`、`.mpeg`、`.rm`、`.rmvb`、`.asf`、`.3gp`、`.webm`、`.ts`、`.m4v`\n\n- 音频文件扩展名，支持以下选择，共7种：\n`.mp3`、`.wav`、`.aac`、`.flac`、`.ogg`、`.m4a`、`.amr`\n\n- 字幕文件扩展名，支持以下选择，共2种：\n`.vtt`、`.srt`\n\n- `*`：支持任意文件格式\n\n- 不传或者传空列表：支持系统预设文件格式（视频：`.mp4`、`.ts`、`.flv`、`.wmv`、`.asf`、`.rm`、`.rmvb`、`.mpg`、`.mpeg`、`.3gp`、`.mov`、`.webm`、`.mkv`、`.avi`、`.m4v`，音频：`.mp3`、`.m4a`、`.flac`、`.ogg`、`.wav`、`.amr`、`.aac`，字幕：`.vtt`、`.srt`）\n\n**注意**：\n1. 如果传入的格式列表中有`*`则表示为支持任意文件格式。\n2. 扩展名传入时带不带`.`都可以，比如 `.mp4` 或 `mp4` 均支持。\n3. 自定义文件扩展名需满足数字、字母字符，长度在[1,64]范围内。",
           "example": "[\"mp4\",\"flv\",\"mov\"]",
           "member": "string",
           "name": "Formats",
@@ -11359,7 +11431,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言\nzh_en: 中英\nprime_zh: 中英方言",
+          "document": "智能字幕视频源语言\n当前支持以下语言：\n`zh`：简体中文\n`yue`：中文粵语\n`zh-PY`：中英粤\n`zh_medical`：中文医疗\n`zh_dialect`：中文方言\n`prime_zh`：中英方言\n`zh_en`：中英\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语\n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语\n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n`auto`：自动识别（仅在纯字幕翻译中支持）",
           "example": "zh",
           "member": "string",
           "name": "VideoSrcLanguage",
@@ -11386,7 +11458,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式\n vtt: WebVTT 格式\n srt: SRT 格式\n不填或填空：不生成字幕文件",
+          "document": "智能字幕文件格式:\n- ASR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n     - 不填或填空：不生成字幕文件\n- 纯字幕翻译处理类型下：\n    - original：与源文件一致\n    - vtt: WebVTT 格式字幕\n    - srt: SRT 格式字幕\n\n**注意**：\n- ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；\n- 纯字幕翻译方式下，不允许传空或不传",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -11404,7 +11476,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译开关\nON: 开启翻译\nOFF: 关闭翻译",
+          "document": "字幕翻译开关\n`ON`: 开启翻译\n`OFF`: 关闭翻译\n\n**注意**：纯字幕翻译方式下，不传默认是打开的，不允许传空或`OFF`；",
           "example": "ON",
           "member": "string",
           "name": "TranslateSwitch",
@@ -11413,12 +11485,21 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nfr：法语\nes：西班牙语\nit：意大利语\nde：德语\ntr：土耳其语\nru：俄语\npt：葡萄牙语\nvi：越南语\nid：印度尼西亚语\nms：马来语\nth：泰语\nar：阿拉伯语\nhi：印地语",
+          "document": "字幕翻译目标语言，当TranslateSwitch为`ON`的时候生效\n当前支持以下语言：\n\n`zh`：简体中文\n`zh-TW`：繁体中文\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语 \n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语 \n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。",
           "example": "en",
           "member": "string",
           "name": "TranslateDstLanguage",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译\n\n**注意**：不传的情况下默认类型为 ASR识别字幕",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProcessType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -15868,6 +15949,15 @@
           "name": "Name",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProcessType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -17265,6 +17355,33 @@
           "name": "CompressType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "增强场景配置，可选值：\n<li>common（通用），通用增强参数，适用于各种视频类型的基础优化参数，提升整体画质。</li>\n<li>AIGC，整体分辨率提升，利用AI技术提升视频整体分辨率，增强画面清晰度。</li>\n<li>short_play（短剧），增强面部与字幕细节，突出人物面部表情细节和字幕清晰度，提升观剧体验。</li>\n<li>short_video（短视频），优化复杂多样的画质问题，针对短视频的复杂场景，优化画质，解决多种视觉问题。</li>\n<li>game（游戏视频），修复运动模糊，提升细节，重点提升游戏细节清晰度，恢复运动模糊区域，使游戏画面内容更清晰，更丰富。</li>\n<li>HD_movie_series（超高清影视剧），获得超高清流畅效果，针对广电/OTT超高清视频的诉求，生成4K 60fps HDR的超高清标准视频。支持广电场景格式标准要求。</li>\n<li>LQ_material（低清素材/老片修复），整体分辨率提升，针对老旧视频由于拍摄年代较久存在的分辨率不足、模糊失真、划痕损伤和色温等问题进行专门优化。</li>\n<li>lecture（秀场/电商/大会/讲座），美化提升面部效果，针对秀场/电商/大会/讲座等存在人物进行讲解的场景，进行人脸区域、噪声消除、毛刺处理的专门优化。</li>",
+          "example": "common",
+          "member": "string",
+          "name": "EnhanceSceneType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "增强转码类型，可选值：\n<li>Common（普通转码）</li>\n<li>TEHD-100（极速高清视频转码）</li>\n<li>TEHD-200（极速高清音频转码）</li>",
+          "example": "TEHD-100",
+          "member": "string",
+          "name": "EnhanceTranscodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "增强类型，可选值：\n<li>VideoEnhance（仅视频增强）</li>\n<li>AudioEnhance（仅音频增强）</li>\n<li>VideoAudioEnhance（视频音频增强都含）</li>",
+          "example": "VideoEnhance",
+          "member": "string",
+          "name": "EnhanceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17721,6 +17838,34 @@
       ],
       "usage": "out"
     },
+    "DiffusionEnhanceConfig": {
+      "document": "大模型增强",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n\nON：开启；\nOFF：关闭。\n默认，OFF。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "强度类型，可选值：\n\nweak\nnormal\nstrong\n默认值：normal。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "strong",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DisableScheduleRequest": {
       "document": "DisableSchedule请求参数结构体",
       "members": [
@@ -17816,7 +17961,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加密类型：\n\n- simpleaes\n只能用于HLS，切片格式支持ts和mp4\n只能使用切片模式，不能使用singlefile模式\n\n- fairplay：\n只能用于HLS，切片格式只能是mp4\n可以使用切片模式或singlefile模式\n\n- widevine：\n可以用于HLS和DASH，切片格式只能是mp4\n输出HLS：可以使用切片模式或singlefile模式\n输出DASH：只能singlefile模式\n\n- playready：\n可以用于HLS和DASH，切片格式只能是mp4\n输出HLS：可以使用切片模式或singlefile模式\n输出DASH：只能singlefile模式\n",
+          "document": "加密类型：\n\n- simpleaes\n只能用于HLS，切片格式支持ts和mp4\n只能使用切片模式，不能使用singlefile模式\n\n- fairplay：\n只能用于HLS，切片格式只能是mp4\n可以使用切片模式或singlefile模式\n\n- widevine：\n可以用于HLS和DASH，切片格式只能是mp4\n输出HLS：可以使用切片模式或singlefile模式\n输出DASH：只能singlefile模式\n\n- playready：\n可以用于HLS和DASH，切片格式只能是mp4\n输出HLS：可以使用切片模式或singlefile模式\n输出DASH：只能singlefile模式\n\n- widevine+fairplay:\n 只能用于HLS，切片格式只能是mp4\n 可以使用切片模式或singfile模式\n",
           "example": "widevine",
           "member": "string",
           "name": "Type",
@@ -19842,6 +19987,45 @@
       ],
       "usage": "both"
     },
+    "FrameRateWithDenConfig": {
+      "document": "新插帧配置，支持分数帧率",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "帧率分子，取值范围：非负数，除以分母后小于120，单位：Hz。 默认值 0。 注意：对于转码，该参数会覆盖 VideoTemplate 内部的 Fps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FpsNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "帧率分母，取值范围：大于等于1。 默认值 1。 注意：对于转码，该参数会覆盖 VideoTemplate 内部的 FpsDenominator。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FpsDen",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FrameTagConfigureInfo": {
       "document": "智能按帧标签任务控制参数",
       "members": [
@@ -19945,7 +20129,7 @@
         },
         {
           "disabled": false,
-          "document": "类型，可选值：\n<li>HDR10</li>\n<li>HLG</li>\n默认值：HDR10。\n注意：video的编码方式需要为h265；\n注意：视频编码位深为10。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型，可选值：\n<li>HDR10</li>\n<li>HLG</li>\n默认值：HDR10。\n注意：video的编码方式需要为h264或h265；\n注意：视频编码位深为10。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HDR10",
           "member": "string",
           "name": "Type",
@@ -20182,6 +20366,17 @@
         },
         {
           "disabled": false,
+          "document": "高级超分配置。",
+          "example": "无",
+          "member": "AdvancedSuperResolutionConfig",
+          "name": "AdvancedSuperResolutionConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "降噪配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageDenoiseConfig",
@@ -20353,6 +20548,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "InvalidParameterValue.FaceNotFound",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -26250,7 +26455,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译开关\nON: 开启翻译\nOFF: 关闭翻译",
+          "document": "字幕翻译开关\n`ON`: 开启翻译\n`OFF`: 关闭翻译\n\n**注意**：纯字幕翻译方式下，不传默认是打开的，不允许传空或`OFF`；",
           "example": "ON",
           "member": "string",
           "name": "TranslateSwitch",
@@ -26277,7 +26482,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言\nzh_en: 中英\nprime_zh: 中英方言",
+          "document": "智能字幕视频源语言\n当前支持以下语言：\n\n`zh`：简体中文\n`yue`：中文粵语\n`zh-PY`：中英粤\n`zh_medical`：中文医疗\n`zh_dialect`：中文方言\n`prime_zh`：中英方言\n`zh_en`：中英\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语\n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语\n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n`auto`：自动识别（仅在纯字幕翻译中支持）",
           "example": "zh",
           "member": "string",
           "name": "VideoSrcLanguage",
@@ -26286,7 +26491,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式\n vtt: WebVTT 格式\nsrt: SRT格式\n不填或填空：不生成字幕文件",
+          "document": "智能字幕文件格式:\n- ASR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n     - 不填或填空：不生成字幕文件\n- 纯字幕翻译处理类型下：\n    - original：与源文件一致\n    - vtt: WebVTT 格式字幕\n    - srt: SRT 格式字幕\n\n**注意**：\n- ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；\n- 纯字幕翻译方式下，不允许传空或不传",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -26313,12 +26518,21 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nfr：法语\nes：西班牙语\nit：意大利语\nde：德语\ntr：土耳其语\nru：俄语\npt：葡萄牙语\nvi：越南语\nid：印度尼西亚语\nms：马来语\nth：泰语\nar：阿拉伯语\nhi：印地语",
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n当前支持以下语言：\n\n`zh`：简体中文\n`zh-TW`：繁体中文\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语 \n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语 \n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。",
           "example": "en",
           "member": "string",
           "name": "TranslateDstLanguage",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译\n\n**注意**：不传的情况下，默认是ASR方式",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProcessType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -28842,6 +29056,108 @@
       ],
       "usage": "in"
     },
+    "PureSubtitleTransResult": {
+      "document": "纯字幕翻译结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态（有以下三种）： \n- PROCESSING\n- SUCCESS \n- FAIL",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 媒体处理类错误码 列表。",
+          "example": "InvalidInput",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "错误信息",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译任务输入信息。",
+          "example": "{\"Definition\": 20}",
+          "member": "SmartSubtitleTaskResultInput",
+          "name": "Input",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "纯字幕翻译输出结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"SubtitleSet\":[]}",
+          "member": "PureSubtitleTransResultOutput",
+          "name": "Output",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进度。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PureSubtitleTransResultOutput": {
+      "document": "翻译详细输出结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字幕文件存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多语言翻译的结果集合",
+          "example": "无",
+          "member": "SubtitleTransResultItem",
+          "name": "SubtitleResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QualityControlData": {
       "document": "媒体质检结果输出。",
       "members": [
@@ -29372,7 +29688,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言\nzh_en: 中英\nprime_zh: 中英方言",
+          "document": "智能字幕视频源语言\n当前支持以下语言：\n`zh`：简体中文\n`yue`：中文粵语\n`zh-PY`：中英粤\n`zh_medical`：中文医疗\n`zh_dialect`：中文方言\n`prime_zh`：中英方言\n`zh_en`：中英\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语\n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语\n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n`auto`：自动识别（仅在纯字幕翻译中支持）",
           "example": "zh",
           "member": "string",
           "name": "VideoSrcLanguage",
@@ -29383,7 +29699,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式\n vtt: WebVTT 格式\nsrt: SRT格式\n不填或填空：不生成字幕文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能字幕文件格式:\n- ASR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n     - 不填或填空：不生成字幕文件\n- 纯字幕翻译处理类型下：\n    - original：与源文件一致\n    - vtt: WebVTT 格式字幕\n    - srt: SRT 格式字幕\n\n**注意**：\n- ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；\n- 纯字幕翻译方式下，不允许传空或不传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -29394,7 +29710,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译开关\nON: 开启翻译\nOFF: 关闭翻译\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字幕翻译开关\n`ON`: 开启翻译\n`OFF`: 关闭翻译\n\n**注意**：纯字幕翻译方式下，不传默认是打开的，不允许传空或`OFF`；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OFF",
           "member": "string",
           "name": "TranslateSwitch",
@@ -29405,7 +29721,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nfr：法语\nes：西班牙语\nit：意大利语\nde：德语\ntr：土耳其语\nru：俄语\npt：葡萄牙语\nvi：越南语\nid：印度尼西亚语\nms：马来语\nth：泰语\nar：阿拉伯语\nhi：印地语\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效，翻译语言列表：\n`zh`：简体中文\n`zh-TW`：繁体中文\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语 \n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语 \n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "en",
           "member": "string",
           "name": "TranslateDstLanguage",
@@ -29434,6 +29750,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译\n\n**注意**：不传的情况下默认类型为 ASR识别字幕",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProcessType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -31993,6 +32320,16 @@
         },
         {
           "disabled": false,
+          "document": "字幕文件路径",
+          "example": "/subtitles/1027/31*******8.vtt",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "字幕文件地址。",
           "example": "http://smart-subtitle-test-12******.cos.ap-shanghai.myqcloud.com/31*******8.vtt",
           "member": "string",
@@ -32270,6 +32607,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕文件地址",
+          "example": "/subtitles/1027/310*****.vtt",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多语言翻译时返回翻译结果。\t",
+          "example": "无",
+          "member": "SubtitleTransResultItem",
+          "name": "SubtitleResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -32405,7 +32762,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言",
+          "document": "智能字幕视频源语言列表：\n\n`zh`：简体中文\n`yue`：中文粵语\n`zh-PY`：中英粤\n`zh_medical`：中文医疗\n`zh_dialect`：中文方言\n`prime_zh`：中英方言\n`zh_en`：中英\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语\n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语\n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n`auto`：自动识别（仅在纯字幕翻译中支持）",
           "example": "zh",
           "member": "string",
           "name": "VideoSrcLanguage",
@@ -32415,7 +32772,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式\n vtt: WebVTT 格式\n不填或填空：不生成字幕文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能字幕文件格式\n- vtt: WebVTT 格式\n- srt: SRT格式\n- original：与源字幕文件一致（用于纯字幕翻译模版）\n- 不填或填空：不生成字幕文件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -32445,7 +32802,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nfr：法语\nes：西班牙语\nit：意大利语\nde：德语\ntr：土耳其语\nru：俄语\npt：葡萄牙语\nvi：越南语\nid：印度尼西亚语\nms：马来语\nth：泰语\nar：阿拉伯语\nhi：印地语\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n`zh`：简体中文\n`zh-TW`：繁体中文\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语 \n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语 \n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "en",
           "member": "string",
           "name": "TranslateDstLanguage",
@@ -32482,6 +32839,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProcessType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -32491,7 +32858,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务的类型，取值范围： \n<li>AsrFullTextRecognition：语音全文识别，</li> \n<li>TransTextRecognition：语音翻译。</li>",
+          "document": "任务的类型，取值范围：\n- AsrFullTextRecognition：语音全文识别\n- TransTextRecognition：语音翻译\n- PureSubtitleTrans:   纯字幕翻译",
           "example": "AsrFullTextRecognition",
           "member": "string",
           "name": "Type",
@@ -32515,6 +32882,16 @@
           "example": "无",
           "member": "SmartSubtitleTaskTransTextResult",
           "name": "TransTextTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当翻译类型为：PureSubtitleTrans 是返回纯字幕文件翻译结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PureSubtitleTransResult",
+          "name": "PureSubtitleTransTask",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -32787,7 +33164,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源标记，该字段内容为用户自定义；\n支持1-128个字符的数字、字母、下划线(_)、中划线(-)。",
+          "document": "资源标记，该字段内容为用户自定义；\n支持1-128个字符的数字、字母、下划线(`_`)、中划线(-)。\n该字段对应Speke请求中的cid字段。\n注：不同DRM厂商对该字段的限制有所区别（如：华曦达不支持该字段带`_`），具体规则请与DRM厂商进行确认。",
           "example": "123xx",
           "member": "string",
           "name": "ResourceId",
@@ -32820,7 +33197,7 @@
         },
         {
           "disabled": false,
-          "document": "加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc\n\ncbcs：PlayReady，Widevine，FairPlay 支持；\ncenc：PlayReady，Widevine支持；",
+          "document": "加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc\n加密方式选择WideVine+FairPlay时，仅支持cbcs\n\ncbcs：PlayReady，Widevine，FairPlay，WideVine+FairPlay 支持；\ncenc：PlayReady，Widevine支持；",
           "example": "cbcs",
           "member": "string",
           "name": "EncryptionMethod",
@@ -33240,6 +33617,52 @@
         }
       ],
       "usage": "both"
+    },
+    "SubtitleTransResultItem": {
+      "document": "字幕翻译输出结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻译标识：\n- Success\n- Error",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源语言（如\"en\"）",
+          "example": "en",
+          "member": "string",
+          "name": "TransSrc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标语言（如\"zh\"）",
+          "example": "zh",
+          "member": "string",
+          "name": "TransDst",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕文件地址",
+          "example": "/subtitles/1027/xxx.vtt",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SuperResolutionConfig": {
       "document": "超分配置",
@@ -35196,20 +35619,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "插帧帧率配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "插帧帧率配置（旧）。新用户建议使用FrameRateWithDen配置插帧帧率，支持分数，且效果更好。注意，FrameRate 与FrameRateWithDen 只能二选一，同时配置可能导致任务失败。源帧率大于等于目标帧率时能力不会生效。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FrameRateConfig",
           "name": "FrameRate",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "超分配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "超分配置。源分辨率高于目标分辨率时不对视频做处理。注意与大模型增强不可同时开启。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SuperResolutionConfig",
           "name": "SuperResolution",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -35220,26 +35645,29 @@
           "example": "无",
           "member": "HdrConfig",
           "name": "Hdr",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "视频降噪配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频降噪配置。注意与大模型增强不可同时开启。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VideoDenoiseConfig",
           "name": "Denoise",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "综合增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "综合增强配置。注意大模型、综合增强、去毛刺三项里最多配置一项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageQualityEnhanceConfig",
           "name": "ImageQualityEnhance",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -35250,26 +35678,7 @@
           "example": "无",
           "member": "ColorEnhanceConfig",
           "name": "ColorEnhance",
-          "required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "细节增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "SharpEnhanceConfig",
-          "name": "SharpEnhance",
-          "required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "人脸增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "FaceEnhanceConfig",
-          "name": "FaceEnhance",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -35280,6 +35689,7 @@
           "example": "无",
           "member": "LowLightEnhanceConfig",
           "name": "LowLightEnhance",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -35290,16 +35700,51 @@
           "example": "无",
           "member": "ScratchRepairConfig",
           "name": "ScratchRepair",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "去伪影（毛刺）配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "去伪影（毛刺）配置。注意大模型、综合增强、去毛刺三项里最多配置一项\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ArtifactRepairConfig",
           "name": "ArtifactRepair",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "增强场景配置，可选值：\n<li>common（通用），通用增强参数，适用于各种视频类型的基础优化参数，提升整体画质。</li>\n<li>AIGC，整体分辨率提升，利用AI技术提升视频整体分辨率，增强画面清晰度。</li>\n<li>short_play（短剧），增强面部与字幕细节，突出人物面部表情细节和字幕清晰度，提升观剧体验。</li>\n<li>short_video（短视频），优化复杂多样的画质问题，针对短视频的复杂场景，优化画质，解决多种视觉问题。</li>\n<li>game（游戏视频），修复运动模糊，提升细节，重点提升游戏细节清晰度，恢复运动模糊区域，使游戏画面内容更清晰，更丰富。</li>\n<li>HD_movie_series（超高清影视剧），获得超高清流畅效果，针对广电/OTT超高清视频的诉求，生成4K 60fps HDR的超高清标准视频。支持广电场景格式标准要求。</li>\n<li>LQ_material（低清素材/老片修复），整体分辨率提升，针对老旧视频由于拍摄年代较久存在的分辨率不足、模糊失真、划痕损伤和色温等问题进行专门优化。</li>\n<li>lecture（秀场/电商/大会/讲座），美化提升面部效果，针对秀场/电商/大会/讲座等存在人物进行讲解的场景，进行人脸区域、噪声消除、毛刺处理的专门优化。</li>\n<li>填空字符串代表不使用增强场景</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "common",
+          "member": "string",
+          "name": "EnhanceSceneType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "大模型增强配置。注意大模型、综合增强、去毛刺三项里最多配置一项。且不可与超分、降噪同时开启。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiffusionEnhanceConfig",
+          "name": "DiffusionEnhance",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新插帧帧率配置，支持分数。注意与FrameRate二选一。源帧率大于等于目标帧率时能力不会生效。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FrameRateWithDenConfig",
+          "name": "FrameRateWithDen",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true

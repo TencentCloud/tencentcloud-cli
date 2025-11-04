@@ -23,7 +23,8 @@ Output:
                 "JobName": "nj-test",
                 "JobState": "RUNNING",
                 "Priority": 1,
-                "QueueName": "compute"
+                "QueueName": "compute",
+                "OccupyResources": "计算节点: 2"
             }
         ],
         "RequestId": "a0a8bfa0-43cd-424e-9b12-eb01fadfadc6c1",

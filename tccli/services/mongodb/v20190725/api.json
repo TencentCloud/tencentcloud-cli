@@ -49,11 +49,25 @@
       "output": "CreateDBInstanceParamTplResponse",
       "status": "online"
     },
+    "CreateLogDownloadTask": {
+      "document": "创建日志下载任务",
+      "input": "CreateLogDownloadTaskRequest",
+      "name": "创建日志下载任务",
+      "output": "CreateLogDownloadTaskResponse",
+      "status": "online"
+    },
     "DeleteAccountUser": {
       "document": "本接口（DeleteAccountUser）用于删除实例的自定义账号。",
       "input": "DeleteAccountUserRequest",
       "name": "删除账号",
       "output": "DeleteAccountUserResponse",
+      "status": "online"
+    },
+    "DeleteLogDownloadTask": {
+      "document": "删除日志下载任务",
+      "input": "DeleteLogDownloadTaskRequest",
+      "name": "删除日志下载任务",
+      "output": "DeleteLogDownloadTaskResponse",
       "status": "online"
     },
     "DescribeAccountUsers": {
@@ -166,6 +180,20 @@
       "input": "DescribeInstanceParamsRequest",
       "name": "获取当前实例可修改的参数列表",
       "output": "DescribeInstanceParamsResponse",
+      "status": "online"
+    },
+    "DescribeLogDownloadTasks": {
+      "document": "日志下载任务查询",
+      "input": "DescribeLogDownloadTasksRequest",
+      "name": "日志下载任务查询",
+      "output": "DescribeLogDownloadTasksResponse",
+      "status": "online"
+    },
+    "DescribeMongodbLogs": {
+      "document": "该接口（DescribeMongodbLogs）用于查询运行日志。",
+      "input": "DescribeMongodbLogsRequest",
+      "name": "日志查询接口",
+      "output": "DescribeMongodbLogsResponse",
       "status": "online"
     },
     "DescribeSecurityGroup": {
@@ -369,6 +397,20 @@
       "input": "TerminateDBInstancesRequest",
       "name": "包年包月退货退费",
       "output": "TerminateDBInstancesResponse",
+      "status": "online"
+    },
+    "UpgradeDBInstanceKernelVersion": {
+      "document": "本接口(UpgradeDBInstanceKernelVersion)用于升级数据库实例内核版本。",
+      "input": "UpgradeDBInstanceKernelVersionRequest",
+      "name": "升级实例内核小版本号",
+      "output": "UpgradeDBInstanceKernelVersionResponse",
+      "status": "online"
+    },
+    "UpgradeDbInstanceVersion": {
+      "document": "本接口用于跨版本升级数据库内核。当前仅支持3.6版本升级为4.0版本、4.0版本升级为4.2版本、4.2版本升级为4.4版本及4.4版本升级为5.0版本。",
+      "input": "UpgradeDbInstanceVersionRequest",
+      "name": "升级数据库版本",
+      "output": "UpgradeDbInstanceVersionResponse",
       "status": "online"
     }
   },
@@ -1664,6 +1706,115 @@
       ],
       "type": "object"
     },
+    "CreateLogDownloadTaskRequest": {
+      "document": "CreateLogDownloadTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cmgo-b6nit818p",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2023-03-02 10:51:21",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2023-03-0310:51:21",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "[\"cmgo-xxx_0-node-primary\"]",
+          "member": "string",
+          "name": "NodeNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志类别",
+          "example": "[\"COMMAND\"]",
+          "member": "string",
+          "name": "LogComponents",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志等级",
+          "example": "[\"WARNING\"]",
+          "member": "string",
+          "name": "LogLevels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志ID",
+          "example": "[\"5626700\"]",
+          "member": "string",
+          "name": "LogIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志连接信息",
+          "example": "[\"conn268164\"]",
+          "member": "string",
+          "name": "LogConnections",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志详情过滤字段",
+          "example": "[\"*\"]",
+          "member": "string",
+          "name": "LogDetailParams",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLogDownloadTaskResponse": {
+      "document": "CreateLogDownloadTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CurrentOp": {
       "document": "云数据库实例当前操作",
       "members": [
@@ -1903,6 +2054,52 @@
           "example": "1",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLogDownloadTaskRequest": {
+      "document": "DeleteLogDownloadTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "cmgo-b6nit818p",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1373039ed2ee07bcd6ae1d5e",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLogDownloadTaskResponse": {
+      "document": "DeleteLogDownloadTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，0:成功",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3288,6 +3485,226 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogDownloadTasksRequest": {
+      "document": "DescribeLogDownloadTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "cmgo-b6nit818p",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "下载任务的开始时间",
+          "example": "2024-03-07 9:22:15",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下载任务的结束时间",
+          "example": "2024-03-07 11:22:15",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogDownloadTasksResponse": {
+      "document": "DescribeLogDownloadTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Task",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMongodbLogsRequest": {
+      "document": "DescribeMongodbLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb#/)在实例列表复制实例 ID。",
+          "example": "cmgo-k2p5su09",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询日志的开启时间。\n- 格式：yyyy-mm-dd hh:mm:ss，如：2019-06-01 10:00:00。\n- 查询时间范围：仅支持查询最近 7 天内的日志数据。",
+          "example": "2020-04-20 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询日志的结束时间。\n- 格式：yyyy-mm-dd hh:mm:ss，如：2019-06-01 10:00:00。\n- 查询时间范围：仅支持查询最近 7 天内的日志数据。",
+          "example": "2020-04-20 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)的**节点管理**页面获取查询的节点 ID。",
+          "example": "[\"cmgo-xxx_0-node-primary\"]",
+          "member": "string",
+          "name": "NodeNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志类别。\n- 日志类别包括但不限于 COMMAND、ACCESS、CONTROL、FTDC、INDEX、NETWORK、QUERY、REPL、SHARDING、STORAGE、RECOVERY、JOURNAL 和 WRITE 等。具体支持的类别可能会因 MongoDB 的版本而存在差异。具体信息，请参见[日志消息](https://www.mongodb.com/zh-cn/docs/v5.0/reference/log-messages/#log-message-examples)。\n- 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在**日志管理**页面的**错误日志**页签，也可查看**日志类别**。",
+          "example": "[\"COMMAND\"]",
+          "member": "string",
+          "name": "LogComponents",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志级别。\n- 日志级别按严重性从高到低依次为：FATAL、ERROR、WARNING。\n- 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在**日志管理**页面的**错误日志**页签，可查看**日志级别**。",
+          "example": "[\"WARNING\"]",
+          "member": "string",
+          "name": "LogLevels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志 ID。登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在**日志管理**页面的**错误日志**页签，可查看**日志 ID**。",
+          "example": "[\"1245\"]",
+          "member": "string",
+          "name": "LogIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志连接信息。登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在**日志管理**页面的**错误日志**页签，可查看**日志连接信息**。",
+          "example": "[\"conn268164\"]",
+          "member": "string",
+          "name": "LogConnections",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定日志筛选的字段。",
+          "example": "[\"*\"]",
+          "member": "string",
+          "name": "LogDetailParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，最小值为0，最大值为10000，默认值为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，最小值为1，最大值为100，默认值为20。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMongodbLogsResponse": {
+      "document": "DescribeMongodbLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志总数。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogInfo",
+          "name": "LogList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5204,6 +5621,72 @@
       ],
       "type": "object"
     },
+    "LogInfo": {
+      "document": "日志详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogComponent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志产生时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志连接信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogConnection",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyDBInstanceNetworkAddressRequest": {
       "document": "ModifyDBInstanceNetworkAddress请求参数结构体",
       "members": [
@@ -6980,6 +7463,100 @@
       ],
       "usage": "both"
     },
+    "Task": {
+      "document": "日志下载任务描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下载任务类型，0:慢日志，1:错误日志",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，0:初始化，1:运行中，2:成功，3:失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Percent",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TerminateDBInstancesRequest": {
       "document": "TerminateDBInstances请求参数结构体",
       "members": [
@@ -6998,6 +7575,107 @@
     "TerminateDBInstancesResponse": {
       "document": "TerminateDBInstances返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDBInstanceKernelVersionRequest": {
+      "document": "UpgradeDBInstanceKernelVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-p8vnipr5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否维护时间内升级。0-否，1-是",
+          "example": "无",
+          "member": "int64",
+          "name": "InMaintenance",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDBInstanceKernelVersionResponse": {
+      "document": "UpgradeDBInstanceKernelVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程任务ID",
+          "example": "1367",
+          "member": "uint64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDbInstanceVersionRequest": {
+      "document": "UpgradeDbInstanceVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cmgo-p8vnipr5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新升级的数据库版本，当前仅支持MONGO_40_WT（MongoDB 4.0 WiredTiger存储引擎版本）及MONGO_42_WT（MongoDB 4.0 WiredTiger存储引擎版本）。",
+          "example": "MONGO_42_WT",
+          "member": "string",
+          "name": "MongoVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否在维护时间内升级。0-立即升级 1-维护时间内升级",
+          "example": "无",
+          "member": "int64",
+          "name": "InMaintenance",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDbInstanceVersionResponse": {
+      "document": "UpgradeDbInstanceVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程任务ID",
+          "example": "1367",
+          "member": "uint64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

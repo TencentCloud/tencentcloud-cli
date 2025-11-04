@@ -161,6 +161,13 @@
       "output": "DetachNodesResponse",
       "status": "online"
     },
+    "ModifyClusterDeletionProtection": {
+      "document": "修改集群删除保护状态",
+      "input": "ModifyClusterDeletionProtectionRequest",
+      "name": "修改集群删除保护状态",
+      "output": "ModifyClusterDeletionProtectionResponse",
+      "status": "online"
+    },
     "ModifyInitNodeScripts": {
       "document": "本接口 (ModifyInitNodeScripts) 用于修改节点初始化脚本。",
       "input": "ModifyInitNodeScriptsRequest",
@@ -556,11 +563,22 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "表示所选训练框架，支持可选参数\n \n- PyTorch：表示提交PyTorch训练作业\n- Custom：表示用户自定义作业\n\n默认参数为：Custom",
           "example": "Custom",
           "member": "string",
           "name": "JobType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示所选训练框架，支持可选参数\n \n- PyTorch：表示提交PyTorch训练作业\n- Custom：表示用户自定义作业\n\n默认参数为：Custom",
+          "example": "Custom",
+          "member": "string",
+          "name": "TaskType",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -900,7 +918,7 @@
         {
           "disabled": false,
           "document": "集群位置信息。",
-          "example": "{ \"Zone\": \"ap-guangzhou-6\" }\t",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "output_required": true,
@@ -910,7 +928,7 @@
         {
           "disabled": false,
           "document": "集群创建时间。",
-          "example": "2024-12-18T13:46:34Z\t",
+          "example": "2025-10-29T09:55:45Z",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -950,7 +968,7 @@
         {
           "disabled": false,
           "document": "计算节点概览。",
-          "example": "[{\"NodeId\":\"ins-riredadfj6\"},{\"NodeId\":\"ins-mdafdsai\"},{\"NodeId\":\"ins-5icofadac\"},{\"NodeId\":\"ins-icfdadfy\"}]\t",
+          "example": "无",
           "member": "ComputeNodeOverview",
           "name": "ComputeNodeSet",
           "output_required": true,
@@ -970,7 +988,7 @@
         {
           "disabled": false,
           "document": "管控节点概览。",
-          "example": "[{\"NodeId\":\"node-rirfdafa\"}]\t",
+          "example": "无",
           "member": "ManagerNodeOverview",
           "name": "ManagerNodeSet",
           "output_required": true,
@@ -980,7 +998,7 @@
         {
           "disabled": false,
           "document": "登录节点概览。",
-          "example": "[{\"NodeId\":\"ins-riredadfj6\"},{\"NodeId\":\"ins-mdafdsai\"},{\"NodeId\":\"ins-5icofadac\"},{\"NodeId\":\"ins-icfdadfy\"}]\t",
+          "example": "无",
           "member": "LoginNodeOverview",
           "name": "LoginNodeSet",
           "output_required": true,
@@ -1024,6 +1042,16 @@
           "member": "string",
           "name": "ClusterType",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群销毁保护开关状态，当前支持参数：\n\n- ON: 集群销毁保护打开\n- OFF: 集群销毁保护关闭",
+          "example": "OFF",
+          "member": "string",
+          "name": "DeletionProtection",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1156,16 +1184,16 @@
         {
           "disabled": false,
           "document": "集群中实例所在的位置。",
-          "example": "{ \"Zone\": \"ap-guangzhou-6\" }\t",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
           "disabled": false,
           "document": "指定管理节点。",
-          "example": "{\"InstanceType\": \"S2.SMALL2\"}",
+          "example": "无",
           "member": "ManagerNode",
           "name": "ManagerNode",
           "required": false,
@@ -1183,7 +1211,7 @@
         {
           "disabled": false,
           "document": "指定计算节点。",
-          "example": "{\"InstanceType\": \"S2.SMALL2\"}",
+          "example": "无",
           "member": "ComputeNode",
           "name": "ComputeNode",
           "required": false,
@@ -1228,7 +1256,7 @@
         {
           "disabled": false,
           "document": "私有网络相关信息配置。",
-          "example": "{ \"VpcId\": \"vpc-rhfaxx31\", \"SubnetId\": \"subnet-x7vxgqe\" }",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": false,
@@ -1237,7 +1265,7 @@
         {
           "disabled": false,
           "document": "集群登录设置。",
-          "example": "{ \"KeyIds\": [ \"skey-9tzxxb4j\" ] }",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -1264,7 +1292,7 @@
         {
           "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -1291,7 +1319,7 @@
         {
           "disabled": false,
           "document": "集群存储选项",
-          "example": "{\"CFSOptions\":[{\"LocalPath\":\"/mnt/\",\"RemotePath\":\"127.0.0.1@tcp0:/test/cfs/\",\"Protocol\":\"TURBO\",\"StorageType\":\"TP\"}]}\t",
+          "example": "无",
           "member": "StorageOption",
           "name": "StorageOption",
           "required": false,
@@ -1300,7 +1328,7 @@
         {
           "disabled": false,
           "document": "指定登录节点。",
-          "example": "{\"InstanceType\": \"S2.SMALL2\"}",
+          "example": "无",
           "member": "LoginNode",
           "name": "LoginNode",
           "required": false,
@@ -1318,7 +1346,7 @@
         {
           "disabled": false,
           "document": "创建集群时同时绑定的标签对说明。",
-          "example": "[{\"Key\": \"test\", \"Value\": \"test\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1336,7 +1364,7 @@
         {
           "disabled": false,
           "document": "节点初始化脚本信息列表。",
-          "example": "{\"ScriptPath\": \"cos://demo-xxxxxxxx.cos.ap-guangzhou.myqcloud.com/test/echo.sh\", \"Timeout\": \"30\"}",
+          "example": "无",
           "member": "NodeScript",
           "name": "InitNodeScripts",
           "required": false,
@@ -2123,12 +2151,52 @@
     },
     "DescribeJobsOverviewRequest": {
       "document": "DescribeJobsOverview请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "hpc-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeJobsOverviewResponse": {
       "document": "DescribeJobsOverview返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "作业任务数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "JobTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排队中的作业任务数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "QueuingJobTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行中的作业数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "RunningJobTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2144,7 +2212,7 @@
         {
           "disabled": false,
           "document": "作业任务ID列表",
-          "example": "无",
+          "example": "[\"job-xxx\"]",
           "member": "string",
           "name": "JobIds",
           "required": false,
@@ -3296,6 +3364,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyClusterDeletionProtectionRequest": {
+      "document": "ModifyClusterDeletionProtection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID。",
+          "example": "hpc-cjaqo2i7",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群删除保护开关。 \n可选值：<li>OFF：关闭集群删除保护。</li><li>ON：打开集群删除保护。</li>",
+          "example": "OFF",
+          "member": "string",
+          "name": "DeletionProtection",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterDeletionProtectionResponse": {
+      "document": "ModifyClusterDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyInitNodeScriptsRequest": {
       "document": "ModifyInitNodeScripts请求参数结构体",
@@ -4624,12 +4728,50 @@
     },
     "SubmitJobRequest": {
       "document": "SubmitJob请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "hpc-cy4pnyp9",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作业任务参数配置",
+          "example": "无",
+          "member": "Job",
+          "name": "Job",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "队列名称。不指定则为默认队列：\nSLURM默认队列为：compute。 \nSGE默认队列为：all.q。",
+          "example": "compute",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "SubmitJobResponse": {
       "document": "SubmitJob返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "作业任务ID",
+          "example": "job-xxxx",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

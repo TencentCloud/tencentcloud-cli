@@ -112,6 +112,14 @@
         "title": "获取自己名下名称中含有“app_game”字样的应用列表"
       }
     ],
+    "DescribeAuditResultExternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditResultExternal\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c052505d-d220-4703-bab2-f4766d581322\"\n    }\n}",
+        "title": "获审核结果明细（外部API）"
+      }
+    ],
     "DescribeRealtimeScanConfig": [
       {
         "document": "获取用户自定义送检信息",

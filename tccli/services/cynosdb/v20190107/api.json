@@ -133,6 +133,13 @@
       "output": "CreateClustersResponse",
       "status": "online"
     },
+    "CreateIntegrateCluster": {
+      "document": "本接口（CreateClusters）用于新购集群。",
+      "input": "CreateIntegrateClusterRequest",
+      "name": "购买集成集群",
+      "output": "CreateIntegrateClusterResponse",
+      "status": "online"
+    },
     "CreateParamTemplate": {
       "document": "本接口（CreateParamTemplate）用于创建参数模板。",
       "input": "CreateParamTemplateRequest",
@@ -490,6 +497,13 @@
       "output": "DescribeInstancesWithinSameClusterResponse",
       "status": "online"
     },
+    "DescribeIntegrateTask": {
+      "document": "本接口（DescribeIntegrateTask）用于查询集群任务。",
+      "input": "DescribeIntegrateTaskRequest",
+      "name": "查询集成集群创建任务",
+      "output": "DescribeIntegrateTaskResponse",
+      "status": "online"
+    },
     "DescribeIsolatedInstances": {
       "document": "本接口（DescribeIsolatedInstances）用于查询回收站实例列表。",
       "input": "DescribeIsolatedInstancesRequest",
@@ -677,6 +691,13 @@
       "input": "InquirePriceModifyRequest",
       "name": "变配预付费集群询价",
       "output": "InquirePriceModifyResponse",
+      "status": "online"
+    },
+    "InquirePriceMultiSpec": {
+      "document": "此接口（InquirePriceMultiSpec）用于批量询价",
+      "input": "InquirePriceMultiSpecRequest",
+      "name": "查询多规格价格",
+      "output": "InquirePriceMultiSpecResponse",
       "status": "online"
     },
     "InquirePriceRenew": {
@@ -4999,6 +5020,353 @@
       ],
       "type": "object"
     },
+    "CreateIntegrateClusterRequest": {
+      "document": "CreateIntegrateCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属VPC网络ID",
+          "example": "vpc-ba48u0jt",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属子网ID",
+          "example": "subnet-nw2hec3g",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本，取值范围: \n<li> MYSQL可选值：5.7，8.0 </li>",
+          "example": "5.7",
+          "member": "string",
+          "name": "DbVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属项目ID",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）",
+          "example": "集群-demo",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号密码(8-64个字符，包含大小写英文字母、数字和符号~!@#$%^&*_-+=`|\\(){}[]:;'<>,.?/中的任意三种)",
+          "example": "test@km1",
+          "member": "string",
+          "name": "AdminPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端口，默认3306，取值范围[0, 65535)",
+          "example": "3306",
+          "member": "int64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式，按量计费：0，包年包月：1。默认按量计费。",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买集群数，可选值范围[1,3]，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "普通实例存储上限，单位GB\n当DbType为MYSQL，且存储计费模式为预付费时，该参数需不大于cpu与memory对应存储规格上限",
+          "example": "10",
+          "member": "int64",
+          "name": "StorageLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "包年包月购买时长",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "包年包月购买时长单位，['s','d','m','y']",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "包年包月购买是否自动续费，默认为0。\n0标识默认续费方式，1表示自动续费，2表示不自动续费。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动选择代金券 1是 0否 默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群创建需要绑定的tag数组信息",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群存储计费模式，按量计费：0，包年包月：1。默认按量计费\n当DbType为MYSQL时，在集群计算计费模式为后付费（包括DbMode为SERVERLESS）时，存储计费模式仅可为按量计费\n回档与克隆均不支持包年包月存储",
+          "example": "0",
+          "member": "int64",
+          "name": "StoragePayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全组id数组",
+          "example": "[\"sg-1kdfm1\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "告警策略Id数组",
+          "example": "[\"p-1kdfm1\"]",
+          "member": "string",
+          "name": "AlarmPolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感",
+          "example": "无",
+          "member": "ParamItem",
+          "name": "ClusterParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "交易模式，0-下单且支付，1-下单",
+          "example": "0",
+          "member": "int64",
+          "name": "DealMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ParamTemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "多可用区地址",
+          "example": "ap-guangzhou-4",
+          "member": "string",
+          "name": "SlaveZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例初始化配置信息，主要用于购买集群时选不同规格实例",
+          "example": "无",
+          "member": "IntegrateInstanceInfo",
+          "name": "InstanceInitInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "全球数据库唯一标识",
+          "example": "cynosmysql-gdn-dbsgxagb",
+          "member": "string",
+          "name": "GdnId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理配置",
+          "example": "无",
+          "member": "ProxyConfigInfo",
+          "name": "ProxyConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动归档",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoArchive",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "暂停后的归档处理时间",
+          "example": "12",
+          "member": "int64",
+          "name": "AutoArchiveDelayHours",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "加密方法（由加密算法和密钥对版本组成）",
+          "example": "RSA-2048-v1",
+          "member": "string",
+          "name": "EncryptMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集成集群配置信息",
+          "example": "无",
+          "member": "IntegrateCreateClusterConfig",
+          "name": "IntegrateCreateClusterConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "存储架构类型。 枚举值：1.0/2.0 默认值：1.0",
+          "example": "1.0",
+          "member": "string",
+          "name": "StorageVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIntegrateClusterResponse": {
+      "document": "CreateIntegrateCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "冻结流水ID",
+          "example": "20250812065021475117821",
+          "member": "string",
+          "name": "TranId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号",
+          "example": "[       \"20250812065021475117801\",        \"20250812065021475117811\"     ]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）",
+          "example": "[       \"cynosdbmysql-ins-i085h27o\"     ]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）",
+          "example": "[       \"cynosdbmysql-aembgh5z\"     ]",
+          "member": "string",
+          "name": "ClusterIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20250812065021475117801\",        \"20250812065021475117811\" ]",
+          "member": "string",
+          "name": "BigDealIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateParamTemplateRequest": {
       "document": "CreateParamTemplate请求参数结构体",
       "members": [
@@ -5488,8 +5856,8 @@
         },
         {
           "disabled": false,
-          "document": "资源包大小，计算资源单位：万个；存储资源：GB",
-          "example": "2000",
+          "document": "资源包大小，计算资源单位：个；存储资源：GB",
+          "example": "2000.00",
           "member": "float",
           "name": "PackageSpec",
           "required": true,
@@ -11553,6 +11921,72 @@
       ],
       "type": "object"
     },
+    "DescribeIntegrateTaskRequest": {
+      "document": "DescribeIntegrateTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "大订单id，大订单id和子订单id必须二选一",
+          "example": "20250922456021575047851",
+          "member": "string",
+          "name": "BigDealId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订单列表",
+          "example": "[\"20250922456021575003931\"]",
+          "member": "string",
+          "name": "DealNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntegrateTaskResponse": {
+      "document": "DescribeIntegrateTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前步骤",
+          "example": "CreateIntegrateCluster",
+          "member": "string",
+          "name": "CurrentStep",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前进度",
+          "example": "1/6",
+          "member": "string",
+          "name": "CurrentProgress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "success",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIsolatedInstancesRequest": {
       "document": "DescribeIsolatedInstances请求参数结构体",
       "members": [
@@ -13645,6 +14079,136 @@
       ],
       "usage": "out"
     },
+    "GoodsPrice": {
+      "document": "商品价格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TradePrice",
+          "name": "InstancePrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TradePrice",
+          "name": "StoragePrice",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "商品规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GoodsSpec",
+          "name": "GoodsSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GoodsSpec": {
+      "document": "商品规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CPU核数，PREPAID与POSTPAID实例类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存大小，单位G，PREPAID与POSTPAID实例类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Ccu大小，serverless类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.5",
+          "member": "float",
+          "name": "Ccu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储大小，PREPAID存储类型必传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "StorageLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购买时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时长单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机器类型",
+          "example": "common",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GrantAccountPrivilegesRequest": {
       "document": "GrantAccountPrivileges请求参数结构体",
       "members": [
@@ -13950,6 +14514,70 @@
           "name": "StoragePrice",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceMultiSpecRequest": {
+      "document": "InquirePriceMultiSpec请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区,每个地域提供最佳实践",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstancePayMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储购买类型，可选值为：PREPAID, POSTPAID",
+          "example": "POSTPAID",
+          "member": "string",
+          "name": "StoragePayMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "商品规格",
+          "example": "无",
+          "member": "GoodsSpec",
+          "name": "GoodsSpecs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceMultiSpecResponse": {
+      "document": "InquirePriceMultiSpec返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品价格",
+          "example": "无",
+          "member": "GoodsPrice",
+          "name": "GoodsPrice",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -14492,7 +15120,7 @@
         {
           "disabled": false,
           "document": "Serverless实例最大规格",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "MaxRoCpu",
           "required": false,
@@ -14506,6 +15134,30 @@
           "name": "DeviceType",
           "required": false,
           "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "InstanceNameWeight": {
+      "document": "实例权重",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称，创建集群中InstanceInitInfo.InstanceName所指定名称",
+          "example": "ro-1",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权重",
+          "example": "1",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -14778,6 +15430,99 @@
       ],
       "usage": "out"
     },
+    "IntegrateCreateClusterConfig": {
+      "document": "集成集群配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "binlog保留天数[7,1830]",
+          "example": "8",
+          "member": "int64",
+          "name": "BinlogSaveDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备份保留天数[7,1830]",
+          "example": "7",
+          "member": "int64",
+          "name": "BackupSaveDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "半同步超时时间[1000,4294967295]",
+          "example": "1002",
+          "member": "int64",
+          "name": "SemiSyncTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "proxy连接地址配置信息",
+          "example": "无",
+          "member": "ProxyEndPointConfigInfo",
+          "name": "ProxyEndPointConfigs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "IntegrateInstanceInfo": {
+      "document": "实例初始化配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例cpu",
+          "example": "1",
+          "member": "int64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例内存",
+          "example": "1",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型 rw/ro",
+          "example": "rw",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例个数,范围[1,15]",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例机器类型 common-公通用型,exclusive-独享型",
+          "example": "common",
+          "member": "string",
+          "name": "DeviceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "IsolateClusterRequest": {
       "document": "IsolateCluster请求参数结构体",
       "members": [
@@ -14919,7 +15664,7 @@
         {
           "disabled": false,
           "document": "隔离实例的订单id（预付费实例）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"1234\"]",
+          "example": "[\"8345452\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": true,
@@ -15508,7 +16253,7 @@
         {
           "disabled": false,
           "document": "该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份",
-          "example": "[full,full,full,full,full,full,full]",
+          "example": "[\"full\",\"full\",\"full\",\"full\",\"full\",\"full\",\"full\"]",
           "member": "string",
           "name": "BackupFreq",
           "required": false,
@@ -15526,7 +16271,7 @@
         {
           "disabled": false,
           "document": "逻辑备份配置",
-          "example": "[{\"LogicBackupEnable\": \"ON\",\"LogicBackupTimeBeg\": \"2023-04-24 15:06:04\",\"LogicBackupTimeEnd\": \"2024-04-24 15:06:04\",\"LogicReserveDuration\": \"60\",\"LogicCrossRegionsEnable\": \"yes\",\"LogicCrossRegions\": [\"ap-guangzhou\"]}]",
+          "example": "无",
           "member": "LogicBackupConfigInfo",
           "name": "LogicBackupConfig",
           "required": false,
@@ -15535,7 +16280,7 @@
         {
           "disabled": false,
           "document": "是否删除自动逻辑备份",
-          "example": "ture",
+          "example": "false",
           "member": "bool",
           "name": "DeleteAutoLogicBackup",
           "required": false,
@@ -16906,7 +17651,7 @@
         {
           "disabled": false,
           "document": "实例只读权重。\n该参数必填。",
-          "example": "[{\"InstanceId\": \"cynosdbmysql-ins-1rfvx111\",\"Weight\": \"10\"}]",
+          "example": "无",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",
           "required": false,
@@ -16992,6 +17737,24 @@
           "name": "ConnectionPoolTimeOut",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否将libra节点当作普通RO节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApNodeAsRoNode",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "libra节点故障，是否转发给其他节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApQueryToOtherNode",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -19319,6 +20082,57 @@
       ],
       "usage": "in"
     },
+    "ProxyConfigInfo": {
+      "document": "访问代理配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库代理组节点个数。该参数不再建议使用,建议使用ProxyZones",
+          "example": "1",
+          "member": "int64",
+          "name": "ProxyCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "cpu核数",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "4000",
+          "member": "int64",
+          "name": "Mem",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "描述说明",
+          "example": "只读代理",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库节点信息（该参数与ProxyCount需要任选一个输入）",
+          "example": "无",
+          "member": "ProxyZone",
+          "name": "ProxyZones",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "ProxyConnectionPoolInfo": {
       "document": "数据库代理连接池信息",
       "members": [
@@ -19357,6 +20171,75 @@
         }
       ],
       "usage": "both"
+    },
+    "ProxyEndPointConfigInfo": {
+      "document": "集成集群proxy地址配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所属VPC网络ID",
+          "example": "vpc-1ptuei0b",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属子网ID",
+          "example": "subnet-1tmw9t4o",
+          "member": "string",
+          "name": "UniqueSubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安全组id数组",
+          "example": "[\"sg-ajr1jzgj\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "权重模式： system-系统分配，custom-自定义",
+          "example": "system",
+          "member": "string",
+          "name": "WeightMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动添加只读实例，yes-是，no-不自动添加",
+          "example": "no",
+          "member": "string",
+          "name": "AutoAddRo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "读写属性： READWRITE,READONLY",
+          "example": "READONLY",
+          "member": "string",
+          "name": "RwType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权重信息",
+          "example": "无",
+          "member": "InstanceNameWeight",
+          "name": "InstanceNameWeights",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "ProxyGroup": {
       "document": "proxy组",
@@ -19631,6 +20514,28 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否将libra节点当作普通RO节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApNodeAsRoNode",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "libra节点故障，是否转发给其他节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApQueryToOtherNode",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -21196,7 +22101,7 @@
         {
           "disabled": false,
           "document": "集群创建需要绑定的tag数组信息",
-          "example": "[{\"TagKey\":\"PayMode\",\"TagValue\":\"PayMode0\"},{\"TagKey\":\"StoragePayMode\",\"TagValue\":\"StoragePayMode0\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
@@ -21268,7 +22173,7 @@
         {
           "disabled": false,
           "document": "参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感",
-          "example": "[{\"CurrentValue\":\"utf8mb4\",\"ParamName\":\"character_set_server\"},{\"CurrentValue\":\"1\",\"ParamName\":\"lower_case_table_names\"}]",
+          "example": "无",
           "member": "ParamItem",
           "name": "ClusterParams",
           "required": false,
@@ -21286,7 +22191,7 @@
         {
           "disabled": false,
           "document": "实例初始化配置信息，主要用于购买集群时选不同规格实例",
-          "example": "[{\"Cpu\":1,\"InstanceCount\":1,\"InstanceType\":\"rw\",\"Memory\":1}]",
+          "example": "无",
           "member": "InstanceInitInfo",
           "name": "InstanceInitInfos",
           "required": false,
@@ -21331,7 +22236,7 @@
         {
           "disabled": false,
           "document": "回档库信息",
-          "example": "[{\"NewDatabase\":\"db2\",\"OldDatabase\":\"db1\"}]",
+          "example": "无",
           "member": "RollbackDatabase",
           "name": "RollbackDatabases",
           "required": false,
@@ -21340,7 +22245,7 @@
         {
           "disabled": false,
           "document": "回档表信息",
-          "example": "[{\"Database\":\"db1\",\"Tables\":[{\"OldTable\":\"table1\",\"newTable\":\"table2\"}]}]",
+          "example": "无",
           "member": "RollbackTable",
           "name": "RollbackTables",
           "required": false,

@@ -140,15 +140,15 @@
       {
         "document": "查询指定作业ID的任务列表信息",
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobs\n<公共请求参数>\n\n{\n    \"JobIds\": [\n        \"job-mudo8mj\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"JobSet\": [\n            {\n                \"ClusterId\": \"hpc-59wddafa\",\n                \"CreateTime\": \"2024-12-17 15:31:14\",\n                \"EndTime\": \"1753-01-01 00:00:00\",\n                \"JobDescription\": \"job test\",\n                \"JobId\": \"job-mudo8mij\",\n                \"JobName\": \"nj-test\",\n                \"JobState\": \"RUNNING\",\n                \"Priority\": 1,\n                \"QueueName\": \"compute\"\n            }\n        ],\n        \"RequestId\": \"a0a8bfa0-43cd-424e-9b12-eb01fadfadc6c1\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobSet\": [\n            {\n                \"ClusterId\": \"hpc-59wddafa\",\n                \"CreateTime\": \"2024-12-17 15:31:14\",\n                \"EndTime\": \"1753-01-01 00:00:00\",\n                \"JobDescription\": \"job test\",\n                \"JobId\": \"job-mudo8mij\",\n                \"JobName\": \"nj-test\",\n                \"JobState\": \"RUNNING\",\n                \"Priority\": 1,\n                \"QueueName\": \"compute\",\n                \"OccupyResources\": \"计算节点: 2\"\n            }\n        ],\n        \"RequestId\": \"a0a8bfa0-43cd-424e-9b12-eb01fadfadc6c1\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询指定作业ID的任务列表信息"
       }
     ],
     "DescribeJobsOverview": [
       {
         "document": "thpc查看集群下的作业概览信息",
-        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobs\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0a8bfa0-43cd-424e-9b12-eb01fadfadc6c1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobTotal\": 3,\n        \"QueuingJobTotal\": 2,\n        \"RunningJobTotal\": 1,\n        \"RequestId\": \"a0a8bfa0-43cd-424e-9b12-eb01fadfadc6c1\"\n    }\n}",
         "title": "thpc查看集群下的作业概览信息"
       }
     ],
@@ -182,6 +182,14 @@
         "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-2j8ntf9l\",\n    \"NodeIds\": [\n        \"node-8workmoi\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"40c2e07e-8500-4460-8db8-666d0e791ee5\"\n    }\n}",
         "title": "从集群解绑计算节点"
+      }
+    ],
+    "ModifyClusterDeletionProtection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterDeletionProtection\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-cjaqo2i7\",\n    \"DeletionProtection\": \"OFF\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efbbe00e-0175-4ee7-92c5-debc5763142d\"\n    }\n}",
+        "title": "关闭集群删除保护状态"
       }
     ],
     "ModifyInitNodeScripts": [
@@ -219,8 +227,8 @@
     "SubmitJob": [
       {
         "document": "提交一个\"hello world\"作业任务",
-        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitJob\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ef8a9572-db7f-450b-b736-265feffafda34\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitJob\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-5fdafdsas\",\n    \"Job\": {\n        \"Tasks\": [\n            {\n                \"Application\": {\n                    \"Commands\": [\n                        {\n                            \"Command\": \"echo hello world\"\n                        }\n                    ],\n                    \"StorageMounts\": [\n                        {\n                            \"Source\": \"/mnt/\",\n                            \"Target\": \"/data/\"\n                        }\n                    ],\n                    \"EnvVars\": [\n                        {\n                            \"Name\": \"ENV\",\n                            \"Value\": \"prod\"\n                        }\n                    ],\n                    \"Docker\": {\n                        \"Image\": \"test:test\",\n                        \"RunArgs\": [\n                            \"--privileged\",\n                            \"--cap-add=IPC_LOCK\",\n                            \"--net=host\",\n                            \"--ipc=host\",\n                            \" --gpus all\"\n                        ]\n                    },\n                    \"OutputRedirect\": {\n                        \"Driver\": \"local\",\n                        \"Options\": [\n                            \"stdout=/data/${BATCH_JOB_ID}.log\",\n                            \"stderr=/data/${BATCH_JOB_ID}.log\"\n                        ]\n                    }\n                },\n                \"TaskName\": \"task-test-v1\",\n                \"TaskInstanceNum\": 2,\n                \"Timeout\": 3600\n            }\n        ],\n        \"JobName\": \"hello world\",\n        \"JobDescription\": \"job test\",\n        \"Priority\": 1\n    },\n    \"QueueName\": \"compute\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"job-mudfdafada\",\n        \"RequestId\": \"ef8a9572-db7f-450b-b736-265feffafda34\"\n    }\n}",
         "title": "提交一个\"hello world\"作业任务"
       }
     ],

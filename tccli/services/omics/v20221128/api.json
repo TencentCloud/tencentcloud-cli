@@ -617,6 +617,34 @@
       ],
       "type": "object"
     },
+    "CromwellConfig": {
+      "document": "Cromwell工作流引擎设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作流并发数",
+          "example": "20",
+          "member": "uint64",
+          "name": "MaxConcurrentWorkflows",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作业并发数",
+          "example": "100",
+          "member": "uint64",
+          "name": "ConcurrentJobLimit",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DatabaseOption": {
       "document": "数据库配置。",
       "members": [
@@ -1193,7 +1221,7 @@
         {
           "disabled": false,
           "document": "环境名称。",
-          "example": "test name",
+          "example": "新环境",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -1203,7 +1231,7 @@
         {
           "disabled": false,
           "document": "环境描述信息。",
-          "example": "test description",
+          "example": "用于测试",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -1243,7 +1271,7 @@
         {
           "disabled": false,
           "document": "环境是否可用。环境需要可用才能投递计算任务。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "Available",
           "output_required": true,
@@ -1253,7 +1281,7 @@
         {
           "disabled": false,
           "document": "环境是否为默认环境。",
-          "example": "False",
+          "example": "true",
           "member": "bool",
           "name": "IsDefault",
           "output_required": true,
@@ -1263,7 +1291,7 @@
         {
           "disabled": false,
           "document": "环境是否为托管环境。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "IsManaged",
           "output_required": true,
@@ -1273,7 +1301,7 @@
         {
           "disabled": false,
           "document": "环境信息。",
-          "example": "message",
+          "example": "环境正常",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -1283,7 +1311,7 @@
         {
           "disabled": false,
           "document": "云资源ID。",
-          "example": "{\"CFSId\": \"cfs-iwee8gk3\",\"CFSStorageType\": \"SD\",\"CVMId\": \"ins-jcbptifa\",\"EKSId\": \"cls-9j9zh13o\",\"SecurityGroupId\": \"sg-gzsfk3r5\",\"SubnetId\": \"subnet-qdkfn4xe\", \"TDSQLCId\": \"cynosdbmysql-kzwghvxj\", \"VPCId\": \"vpc-8yhq1v63\"}",
+          "example": "无",
           "member": "ResourceIds",
           "name": "ResourceIds",
           "output_required": true,
@@ -1308,6 +1336,16 @@
           "name": "CreationTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行时配置。",
+          "example": "无",
+          "member": "EnvironmentRuntimeConfig",
+          "name": "RuntimeConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -1372,6 +1410,34 @@
         }
       ],
       "usage": "in"
+    },
+    "EnvironmentRuntimeConfig": {
+      "document": "环境运行时配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Cromwell工作流引擎设置",
+          "example": "无",
+          "member": "CromwellConfig",
+          "name": "CromwellConfig",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Nextflow工作流引擎设置",
+          "example": "无",
+          "member": "NextflowConfig",
+          "name": "NextflowConfig",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ExecutionTime": {
       "document": "执行时间。",
@@ -1882,6 +1948,23 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NextflowConfig": {
+      "document": "Nextflow工作流引擎设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作流任务并发数",
+          "example": "100",
+          "member": "uint64",
+          "name": "ExecutorQueueSize",
+          "output_required": false,
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -252,13 +252,6 @@
       "output": "ImageEnhancementResponse",
       "status": "online"
     },
-    "InstitutionOCR": {
-      "document": "不再维护，功能已切到其它接口\n\n<b>因技术原因，本接口将不再迭代升级。文档抽取(基础版)可支持此类证书的识别抽取，效果、功能更强并将持续迭代优化，建议使用<a href=\"https://cloud.tencent.com/document/product/866/119452\">文档抽取（基础版）</a>。</b>\n本接口支持事业单位法人证书关键字段识别，包括注册号、有效期、住所、名称、法定代表人等。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "InstitutionOCRRequest",
-      "name": "事业单位法人证书识别",
-      "output": "InstitutionOCRResponse",
-      "status": "deprecated"
-    },
     "InsuranceBillOCR": {
       "document": "本接口支持病案首页、费用清单、结算单、医疗发票四种保险理赔单据的文本识别和结构化输出。\n\n默认接口请求频率限制：1次/秒。",
       "input": "InsuranceBillOCRRequest",
@@ -315,13 +308,6 @@
       "output": "MixedInvoiceOCRResponse",
       "status": "online"
     },
-    "OrgCodeCertOCR": {
-      "document": "不再维护，功能已切到其它接口\n\n<b>因技术原因，本接口将不再迭代升级。文档抽取(基础版)可支持此类证书的识别抽取，效果、功能更强并将持续迭代优化，建议使用<a href=\"https://cloud.tencent.com/document/product/866/119452\">文档抽取（基础版）</a>。</b>\n本接口支持组织机构代码证关键字段的识别，包括代码、有效期、地址、机构名称等。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "OrgCodeCertOCRRequest",
-      "name": "组织机构代码证识别",
-      "output": "OrgCodeCertOCRResponse",
-      "status": "deprecated"
-    },
     "PassportOCR": {
       "document": "<b>此接口为护照识别（中国大陆地区护照）的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/37657\">护照识别（多国多地区护照）</a>。</b>\n\n本接口支持中国大陆地区护照个人资料页多个字段的检测与识别。已支持字段包括英文姓名、中文姓名、国家码、护照号、出生地、出生日期、国籍英文、性别英文、有效期、签发地点英文、签发日期、持证人签名、护照机读码（MRZ码）等。\n\n默认接口请求频率限制：10次/秒。",
       "input": "PassportOCRRequest",
@@ -335,13 +321,6 @@
       "name": "港澳台通行证识别",
       "output": "PermitOCRResponse",
       "status": "online"
-    },
-    "PropOwnerCertOCR": {
-      "document": "不再维护，功能已切到其它接口\n\n<b>因技术原因，本接口将不再迭代升级。文档抽取(基础版)可支持此类证书的识别抽取，效果、功能更强并将持续迭代优化，建议使用<a href=\"https://cloud.tencent.com/document/product/866/119452\">文档抽取（基础版）</a>。</b>\n本接口支持房产证关键字段的识别，包括房地产权利人、共有情况、登记时间、规划用途、房屋性质、房屋坐落等。\n目前接口对合肥、成都、佛山三个城市的房产证版式识别较好。\n\n默认接口请求频率限制：5次/秒。",
-      "input": "PropOwnerCertOCRRequest",
-      "name": "房产证识别",
-      "output": "PropOwnerCertOCRResponse",
-      "status": "deprecated"
     },
     "QrcodeOCR": {
       "document": "本接口支持条形码和二维码的识别（包括 DataMatrix 和 PDF417）。\n\n默认接口请求频率限制：5次/秒。",
@@ -392,13 +371,6 @@
       "output": "RecognizeEncryptedIDCardOCRResponse",
       "status": "online"
     },
-    "RecognizeForeignPermanentResidentIdCard": {
-      "document": "不再维护，功能已切到其它接口\n\n<b>因技术原因，本接口将不再迭代升级。有效身份证件识别（鉴伪版）可支持此类证件的识别，并包含质量和PS告警，效果、功能更强并将持续迭代优化，建议使用<a href=\"https://cloud.tencent.com/document/product/866/112345\">有效身份证件识别（鉴伪版）</a>。</b>\n外国人永久居留身份证识别",
-      "input": "RecognizeForeignPermanentResidentIdCardRequest",
-      "name": "外国人永久居留身份证识别",
-      "output": "RecognizeForeignPermanentResidentIdCardResponse",
-      "status": "deprecated"
-    },
     "RecognizeFormulaOCR": {
       "document": "公式识别是教育的基础OCR识别能力，可支持理科（数学、物理、化学、生物）的印刷体和手写体的公式识别。\n\n默认接口请求频率限制：2次/秒。",
       "input": "RecognizeFormulaOCRRequest",
@@ -419,13 +391,6 @@
       "name": "通用票据识别（高级版）",
       "output": "RecognizeGeneralInvoiceResponse",
       "status": "online"
-    },
-    "RecognizeGeneralTextImageWarn": {
-      "document": "不再维护，功能已切到其它接口\n\n<b>因技术原因，本接口将不再迭代升级。通用卡证鉴伪可支持更多告警类型，效果、功能更强并将持续迭代优化，建议使用<a href=\"https://cloud.tencent.com/document/product/866/115916\">通用卡证鉴伪</a>。</b>\n本接口支持多种类型证件有效性检测告警，包括卡证复印件告警、卡证翻拍告警等功能。可以应用于各种证件信息有效性校验场景，例如银行开户、用户注册等场景。",
-      "input": "RecognizeGeneralTextImageWarnRequest",
-      "name": "通用文本图像告警",
-      "output": "RecognizeGeneralTextImageWarnResponse",
-      "status": "deprecated"
     },
     "RecognizeHealthCodeOCR": {
       "document": "本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖北、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。\n\n默认接口请求频率限制：10次/秒。",
@@ -7145,42 +7110,6 @@
       ],
       "usage": "out"
     },
-    "GeneralWarnInfo": {
-      "document": "通用告警详情",
-      "members": [
-        {
-          "disabled": false,
-          "document": "是否存在该告警",
-          "example": "false",
-          "member": "bool",
-          "name": "IsWarn",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "告警位置四点坐标",
-          "example": "无",
-          "member": "Polygon",
-          "name": "Polygon",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "特殊判定，支持包括\n\nFinger：由手指导致的不完整，仅在不完整告警中返回",
-          "example": "Finger",
-          "member": "string",
-          "name": "SpecificMatter",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "GetOCRResultRequest": {
       "document": "GetOCRResult请求参数结构体",
       "members": [
@@ -7602,7 +7531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -7611,7 +7540,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/HmtResidentPermitOCR/HmtResidentPermitOCR1.png",
           "member": "string",
           "name": "ImageUrl",
@@ -7745,7 +7674,7 @@
         {
           "disabled": false,
           "document": "头像和坐标信息",
-          "example": "{\"ImageCoordinates\":{\"X\":0,\"Y\":0,\"Width\":0,\"Height\":0},\"PortraitImage\":\"\"}",
+          "example": "无",
           "member": "PortraitImageInfo",
           "name": "PortraitImageInfo",
           "output_required": false,
@@ -8472,92 +8401,6 @@
         }
       ],
       "usage": "out"
-    },
-    "InstitutionOCRRequest": {
-      "document": "InstitutionOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "InstitutionOCRResponse": {
-      "document": "InstitutionOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "注册号",
-          "example": "100XXX",
-          "member": "string",
-          "name": "RegId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "有效期",
-          "example": "自xxxx年xx月xx日至20xx年xx月xx日",
-          "member": "string",
-          "name": "ValidDate",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "住所",
-          "example": "武汉市武昌区雄楚路xxx号",
-          "member": "string",
-          "name": "Location",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "名称",
-          "example": "长江",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "法定代表人",
-          "example": "李明",
-          "member": "string",
-          "name": "LegalPerson",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "InsuranceBillInfo": {
       "document": "保险单据信息",
@@ -11456,7 +11299,7 @@
         {
           "disabled": false,
           "document": "发票名称",
-          "example": "无",
+          "example": "行程单",
           "member": "string",
           "name": "Title",
           "output_required": true,
@@ -11465,9 +11308,9 @@
         },
         {
           "disabled": false,
-          "document": "识别出的字段名称(关键字)",
+          "document": "识别出的字段名称",
           "example": "无",
-          "member": "OtherInvoiceItem",
+          "member": "OnlineTaxiItineraryInfo",
           "name": "Content",
           "output_required": true,
           "type": "list",
@@ -11511,82 +11354,6 @@
         }
       ],
       "usage": "out"
-    },
-    "OrgCodeCertOCRRequest": {
-      "document": "OrgCodeCertOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "OrgCodeCertOCRResponse": {
-      "document": "OrgCodeCertOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "代码",
-          "example": "300000-3",
-          "member": "string",
-          "name": "OrgCode",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "机构名称",
-          "example": "望江县xxx店",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "地址",
-          "example": "望江县天鹅购物广场xxx铺",
-          "member": "string",
-          "name": "Address",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "有效期",
-          "example": "自2019年07月01日至2023年06月30日",
-          "member": "string",
-          "name": "ValidDate",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "OtherInvoice": {
       "document": "其他发票",
@@ -12480,102 +12247,6 @@
         }
       ],
       "usage": "out"
-    },
-    "PropOwnerCertOCRRequest": {
-      "document": "PropOwnerCertOCR请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "PropOwnerCertOCRResponse": {
-      "document": "PropOwnerCertOCR返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "房地产权利人",
-          "example": "李明",
-          "member": "string",
-          "name": "Owner",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "共有情况",
-          "example": "单独所有",
-          "member": "string",
-          "name": "Possession",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "登记时间",
-          "example": "2015-02-22",
-          "member": "string",
-          "name": "RegisterTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "规划用途",
-          "example": "成套住宅",
-          "member": "string",
-          "name": "Purpose",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "房屋性质",
-          "example": "商品房",
-          "member": "string",
-          "name": "Nature",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "房地坐落",
-          "example": "上海市徐汇区田林路397号腾云大厦",
-          "member": "string",
-          "name": "Location",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "QrcodeImgSize": {
       "document": "图片大小",
@@ -14007,169 +13678,6 @@
       ],
       "type": "object"
     },
-    "RecognizeForeignPermanentResidentIdCardRequest": {
-      "document": "RecognizeForeignPermanentResidentIdCard请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。示例值：https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/docume",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/ForeignPermanentResidentIdCard/ForeignPermanentResidentIdCard1.jpg",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
-          "example": "true",
-          "member": "bool",
-          "name": "EnablePdf",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，传入时仅支持PDF单页识别，当上传文件为PDF且EnablePdf参数值为true时有效，默认值为1。\n示例值：1",
-          "example": "1",
-          "member": "uint64",
-          "name": "PdfPageNumber",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "是否返回头像和位置坐标",
-          "example": "false",
-          "member": "bool",
-          "name": "CropPortrait",
-          "required": false,
-          "type": "bool"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeForeignPermanentResidentIdCardResponse": {
-      "document": "RecognizeForeignPermanentResidentIdCard返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "中文姓名。",
-          "example": "吴全斌",
-          "member": "string",
-          "name": "CnName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "英文名。",
-          "example": "QUANBIN,WU",
-          "member": "string",
-          "name": "EnName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "性别。",
-          "example": "男/M",
-          "member": "string",
-          "name": "Sex",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "出生日期。规范格式为 XXXX年XX月XX日。",
-          "example": "1981年08月03日",
-          "member": "string",
-          "name": "DateOfBirth",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "国籍。",
-          "example": "加拿大/CAN",
-          "member": "string",
-          "name": "Nationality",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "有效期限。",
-          "example": "自2023年09月15日至2033年09月14日",
-          "member": "string",
-          "name": "PeriodOfValidity",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "证件号码。",
-          "example": "911124198108030024",
-          "member": "string",
-          "name": "No",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "曾持证件号码。",
-          "example": "PAK310080010103",
-          "member": "string",
-          "name": "PreviousNumber",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "签发机关。",
-          "example": "**机构签发",
-          "member": "string",
-          "name": "IssuedAuthority",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "头像和坐标信息。",
-          "example": "无",
-          "member": "PortraitImageInfo",
-          "name": "PortraitImageInfo",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "RecognizeFormulaOCRRequest": {
       "document": "RecognizeFormulaOCR请求参数结构体",
       "members": [
@@ -14543,119 +14051,6 @@
           "name": "TotalPDFCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeGeneralTextImageWarnRequest": {
-      "document": "RecognizeGeneralTextImageWarn请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/RecognizeGeneralTextImageWarn/RecognizeGeneralTextImageWarn1.png",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。 示例值：false",
-          "example": "true",
-          "member": "bool",
-          "name": "EnablePdf",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，传入时仅支持PDF单页识别，当上传文件为PDF且EnablePdf参数值为true时有效，默认值为1。 示例值：1",
-          "example": "1",
-          "member": "int64",
-          "name": "PdfPageNumber",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "支持的模板类型\n- General 通用告警（支持所有类型告警）\n- LicensePlate 车牌告警（支持翻拍告警）",
-          "example": "General ",
-          "member": "string",
-          "name": "Type",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RecognizeGeneralTextImageWarnResponse": {
-      "document": "RecognizeGeneralTextImageWarn返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "复印告警信息",
-          "example": "无",
-          "member": "GeneralWarnInfo",
-          "name": "Copy",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "翻拍告警信息",
-          "example": "无",
-          "member": "GeneralWarnInfo",
-          "name": "Reprint",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "模糊告警信息",
-          "example": "无",
-          "member": "GeneralWarnInfo",
-          "name": "Blur",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "反光告警信息",
-          "example": "无",
-          "member": "GeneralWarnInfo",
-          "name": "Reflection",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "边框不完整告警信息",
-          "example": "无",
-          "member": "GeneralWarnInfo",
-          "name": "BorderIncomplete",
-          "output_required": true,
-          "type": "object",
           "value_allowed_null": false
         },
         {

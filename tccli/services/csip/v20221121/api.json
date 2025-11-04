@@ -577,7 +577,7 @@
   },
   "metadata": {
     "apiVersion": "2022-11-21",
-    "api_brief": null,
+    "api_brief": "介绍如何使用API对云安全中心进行操作，包括云上资产管理、安全体检、多云多账号管理等。",
     "serviceNameCN": "云安全一体化平台",
     "serviceShortName": "csip"
   },

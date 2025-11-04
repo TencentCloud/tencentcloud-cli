@@ -1303,7 +1303,7 @@
       "status": "online"
     },
     "ModifyClusterAttribute": {
-      "document": "修改集群属性",
+      "document": "修改集群属性，至少选择一个参数更新",
       "input": "ModifyClusterAttributeRequest",
       "name": "修改集群属性",
       "output": "ModifyClusterAttributeResponse",
@@ -1338,7 +1338,7 @@
       "status": "online"
     },
     "ModifyClusterRuntimeConfig": {
-      "document": "修改集群及节点池纬度运行时配置",
+      "document": "修改集群及节点池维度运行时配置",
       "input": "ModifyClusterRuntimeConfigRequest",
       "name": "修改集群运行时配置",
       "output": "ModifyClusterRuntimeConfigResponse",
@@ -1695,7 +1695,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）",
           "example": "cls-berpx5vg",
           "member": "string",
           "name": "ClusterId",
@@ -1704,7 +1704,7 @@
         },
         {
           "disabled": false,
-          "document": "实例列表，不支持竞价实例",
+          "document": "实例列表，不支持竞价实例（请登录 [CVM控制台](https://console.cloud.tencent.com/cvm) 获取待添加节点ID ）",
           "example": "[\"ins-6pptcds4\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -1853,7 +1853,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "[cls-ny2v7ra2]",
+          "example": "cls-ny2v7ra2",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1862,7 +1862,7 @@
         {
           "disabled": false,
           "document": "节点池id",
-          "example": "[np-lquhxcic]",
+          "example": "np-lquhxcic",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
@@ -1870,8 +1870,8 @@
         },
         {
           "disabled": false,
-          "document": "节点id",
-          "example": "[ins-wsw4j631]",
+          "document": "节点id，获取参考 https://cloud.tencent.com/document/product/213/15728",
+          "example": "[\"ins-wsw4j631\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -2772,7 +2772,7 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关",
+          "document": "集群删除保护开关，打开：true，关闭：false",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
@@ -2782,7 +2782,7 @@
         },
         {
           "disabled": false,
-          "document": "集群是否开启第三方节点支持",
+          "document": "集群是否开启第三方节点支持，开启：true，关闭：false",
           "example": "false",
           "member": "bool",
           "name": "EnableExternalNode",
@@ -2802,7 +2802,7 @@
         },
         {
           "disabled": false,
-          "document": "自动变配集群等级，针对托管集群生效",
+          "document": "自动变配集群等级，针对托管集群生效。开启：true，关闭：false",
           "example": "true",
           "member": "bool",
           "name": "AutoUpgradeClusterLevel",
@@ -2812,7 +2812,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启QGPU共享",
+          "document": "是否开启QGPU共享，开启：true，关闭：false",
           "example": "false",
           "member": "bool",
           "name": "QGPUShareEnable",
@@ -3263,7 +3263,7 @@
         },
         {
           "disabled": false,
-          "document": "表示未准备就绪的节点在有资格进行缩减之前应该停留多长时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表示未准备就绪的节点在有资格进行缩减之前应该停留多少分钟\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10m",
           "member": "int64",
           "name": "ScaleDownUnreadyTime",
@@ -3274,7 +3274,7 @@
         },
         {
           "disabled": false,
-          "document": "CA删除未在Kubernetes中注册的节点之前等待的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CA删除未在Kubernetes中注册的节点之前等待的分钟数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "UnregisteredNodeRemovalTime",
@@ -4558,7 +4558,7 @@
         },
         {
           "disabled": false,
-          "document": "对象存储桶名称，如果是COS必须是tke-backup前缀开头",
+          "document": "对象存储桶名称，如果是COS必须是tke-backup前缀开头，字符长度是19",
           "example": "tke-backup-test",
           "member": "string",
           "name": "Bucket",
@@ -4567,7 +4567,7 @@
         },
         {
           "disabled": false,
-          "document": "备份仓库名称",
+          "document": "备份仓库名称，字符长度为63",
           "example": "tke-storage-backup",
           "member": "string",
           "name": "Name",
@@ -4675,7 +4675,7 @@
         },
         {
           "disabled": false,
-          "document": "集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)",
+          "document": "集群端口所在的子网ID  (仅在开启非外网访问时需要填，必须为集群所在VPC内的子网)。获取方式：https://cloud.tencent.com/document/product/215/15784\n",
           "example": "subnet-3ht1odzw",
           "member": "string",
           "name": "SubnetId",
@@ -4702,7 +4702,7 @@
         },
         {
           "disabled": false,
-          "document": "使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）",
+          "document": "使用的安全组，只有外网访问需要传递（开启外网访问且不使用已有clb时必传）。获取方式：https://cloud.tencent.com/document/api/215/15808",
           "example": "sg-kineiakx",
           "member": "string",
           "name": "SecurityGroup",
@@ -7465,7 +7465,7 @@
         {
           "disabled": false,
           "document": "需要删除的节点池 Id 列表",
-          "example": "[\"np-e55paxnt\\n\"]",
+          "example": "[\"np-e55paxnt\"]",
           "member": "string",
           "name": "NodePoolIds",
           "required": true,
@@ -8485,7 +8485,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 Id。若只查询某个集群可升级的版本，需填写此项。",
+          "document": "集群 Id。若只查询某个集群可升级的版本，需填写此项，与ClusterIds 参数二选一。",
           "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
@@ -8494,7 +8494,7 @@
         },
         {
           "disabled": false,
-          "document": "集群 Id 列表。若查询多个集群可升级的版本，需填写此项。",
+          "document": "集群 Id 列表。若查询多个集群可升级的版本，需填写此项，与ClusterId 参数二选一。",
           "example": "[\"cls-7ph3twqe\"]",
           "member": "string",
           "name": "ClusterIds",
@@ -8986,7 +8986,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启）",
+          "document": "查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启，CreateFailed 开启失败）",
           "example": "Created",
           "member": "string",
           "name": "Status",
@@ -10410,7 +10410,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型，例如：MANAGED_CLUSTER",
+          "document": "集群类型，托管集群：MANAGED_CLUSTER，独立集群：INDEPENDENT_CLUSTER。",
           "example": "MANAGED_CLUSTER",
           "member": "string",
           "name": "ClusterType",
@@ -14002,7 +14002,7 @@
         },
         {
           "disabled": false,
-          "document": "Pod使用量",
+          "document": "Pod使用量，单位：个数",
           "example": "100",
           "member": "uint64",
           "name": "PodUsage",
@@ -14012,7 +14012,7 @@
         },
         {
           "disabled": false,
-          "document": "ReplicaSet使用量",
+          "document": "ReplicaSet使用量，单位：个数",
           "example": "100",
           "member": "uint64",
           "name": "RSUsage",
@@ -14022,7 +14022,7 @@
         },
         {
           "disabled": false,
-          "document": "ConfigMap使用量",
+          "document": "ConfigMap使用量，单位：个数",
           "example": "100",
           "member": "uint64",
           "name": "ConfigMapUsage",
@@ -16819,7 +16819,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群规格，托管集群询价",
+          "document": "集群规格，托管集群询价，集群等级：L20、L50、L100、L200、L500、L1000、L3000、L5000",
           "example": "L5",
           "member": "string",
           "name": "ClusterLevel",
@@ -18370,6 +18370,26 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断数据开始时间",
+          "example": "2025-10-29 08:04:00 +0000 UTC",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断数据结束时间",
+          "example": "2025-10-28 11:56:14 +0000 UTC",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18491,7 +18511,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "诊断结果的健康水平",
+          "document": "诊断结果的健康水平，健康水平取值：\nserious：高风险\nrisk：中风险\nwarn：低风险\ngood：健康\nfailed：诊断流程异常",
           "example": "good",
           "member": "string",
           "name": "HealthyLevel",
@@ -18545,7 +18565,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标集群ID",
+          "document": "目标集群ID\n\n取值可参考：\n[查询TKE集群列表](https://cloud.tencent.com/document/api/457/31862)",
           "example": "cls-abc",
           "member": "string",
           "name": "ClusterId",
@@ -18879,7 +18899,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "集群名称,字符长度50",
           "example": "cls-2wds9k9p",
           "member": "string",
           "name": "ClusterName",
@@ -18897,7 +18917,7 @@
         },
         {
           "disabled": false,
-          "document": "集群等级",
+          "document": "集群等级，等级类型：L20、L50、L100、L200、L500、L1000、L3000、L5000",
           "example": "L5",
           "member": "string",
           "name": "ClusterLevel",
@@ -19165,7 +19185,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "名称，最长63个字符，只能包含小写字母、数字及分隔符“_”，且必须以小写字母开头，数字或小写字母结尾",
           "example": "node-pool",
           "member": "string",
           "name": "Name",
@@ -19354,7 +19374,7 @@
         },
         {
           "disabled": false,
-          "document": "当需要修改运行时版本是根据另外的K8S版本获取时，需填写。例如升级校验有冲突后修改场景",
+          "document": "运行时版本需依据指定的Kubernetes版本进行设置。典型情况为，在升级过程中因版本冲突而需要调整运行时版本时。",
           "example": "1.24.4",
           "member": "string",
           "name": "DstK8SVersion",
@@ -19363,7 +19383,7 @@
         },
         {
           "disabled": false,
-          "document": "需要修改集群运行时时填写",
+          "document": "需要修改集群运行时填写",
           "example": "{\"RuntimeType\":\"containerd\",\"RuntimeVersion\":\"1.6.9\"}",
           "member": "RuntimeConfig",
           "name": "ClusterRuntimeConfig",
@@ -19372,7 +19392,7 @@
         },
         {
           "disabled": false,
-          "document": "需要修改节点池运行时时，填需要修改的部分",
+          "document": "需要修改节点池运行时，填需要修改的部分",
           "example": "[{\"NodePoolId\":\"np-3z37njiu\",\"RuntimeType\":\"containerd\",\"RuntimeVersion\":\"1.6.9\",\"NodePoolName\":\"np-test\"}]",
           "member": "NodePoolRuntime",
           "name": "NodePoolRuntimeConfig",
@@ -19408,7 +19428,7 @@
         },
         {
           "disabled": false,
-          "document": "集群标签",
+          "document": "集群标签:\n[{\"TagKey\":\"env\",\"TagValue\":\"dev\"}]}]",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -19590,7 +19610,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "cls-xxxxxxxx",
+          "example": "cls-hca1bmif",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -19599,7 +19619,7 @@
         {
           "disabled": false,
           "document": "节点池id",
-          "example": "np-xxxxxxxx",
+          "example": "np-5tx2jmn9",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
@@ -19652,8 +19672,8 @@
         },
         {
           "disabled": false,
-          "document": "机型列表，主实例机型不支持修改",
-          "example": "[\"ins-e55paxnt\\n\"]",
+          "document": "机型列表，参考 https://cloud.tencent.com/document/product/213/11518，主实例机型不支持修改",
+          "example": "[\"S6.MEDIUM4\",\"S5.MEDIUM4\",\"SA3.MEDIUM4\"]",
           "member": "string",
           "name": "InstanceTypes",
           "required": true,
@@ -20517,7 +20537,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时类型",
+          "document": "运行时类型，参考：https://cloud.tencent.com/document/api/457/105241",
           "example": "containerd",
           "member": "string",
           "name": "RuntimeType",
@@ -20528,7 +20548,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时版本",
+          "document": "运行时版本，参考：https://cloud.tencent.com/document/api/457/105241",
           "example": "1.6.9",
           "member": "string",
           "name": "RuntimeVersion",
@@ -20539,7 +20559,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池名称",
+          "document": "节点池名称，限制 255 字符",
           "example": "tke",
           "member": "string",
           "name": "NodePoolName",
@@ -24413,7 +24433,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型",
+          "document": "资源类型，参考k8s 官方资源",
           "example": "Pod",
           "member": "string",
           "name": "Name",
@@ -24423,7 +24443,7 @@
         },
         {
           "disabled": false,
-          "document": "资源使用量",
+          "document": "资源使用量，单位：个数",
           "example": "100",
           "member": "uint64",
           "name": "Usage",
@@ -24813,7 +24833,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "运行时类型",
+          "document": "运行时类型，支持的类型有 docker、containerd",
           "example": "containerd",
           "member": "string",
           "name": "RuntimeType",
@@ -24824,7 +24844,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时版本",
+          "document": "运行时版本，参考：https://cloud.tencent.com/document/api/457/105241",
           "example": "1.6.24",
           "member": "string",
           "name": "RuntimeVersion",
@@ -25062,7 +25082,7 @@
         {
           "disabled": false,
           "document": "节点id",
-          "example": "[\"ins-e55paxnt\\n\"]",
+          "example": "[\"ins-e55paxnt\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -26033,8 +26053,8 @@
         },
         {
           "disabled": false,
-          "document": "可容忍的最大不可用pod数目",
-          "example": "100",
+          "document": "可容忍的最大不可用pod数目。默认0",
+          "example": "100.00",
           "member": "float",
           "name": "MaxNotReadyPercent",
           "required": false,
@@ -26042,7 +26062,7 @@
         },
         {
           "disabled": false,
-          "document": "是否跳过预检查阶段",
+          "document": "是否跳过预检查阶段，默认false",
           "example": "false",
           "member": "bool",
           "name": "SkipPreCheck",

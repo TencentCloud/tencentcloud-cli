@@ -1,61 +1,38 @@
 **Example 1: 回档到新集群**
 
-
+Rollback To New Cluster
 
 Input: 
 
 ```
 tccli cynosdb RollbackToNewCluster --cli-unfold-argument  \
-    --Zone ap-guangzhou-5 \
-    --UniqVpcId vpc-tsnp6wjk \
-    --UniqSubnetId subnet-tsrq2i9e \
-    --ClusterName MyClusterName \
-    --RollbackId 1 \
-    --OriginalClusterId cynosdbmysql-tsr2ubsj \
-    --ExpectTime 2024-10-01 12:01:01 \
-    --AutoVoucher 0 \
-    --ResourceTags.0.TagKey tagKey-1 \
-    --ResourceTags.0.TagValue tagValue-1 \
-    --DbMode MYSQL \
-    --MinCpu 0 \
-    --MaxCpu 0 \
-    --AutoPause yes \
-    --AutoPauseDelay 0 \
-    --SecurityGroupIds sg-sjcgywls \
-    --AlarmPolicyIds policy-jylgsf32 \
-    --ClusterParams.0.ParamName binlog_cache_size \
-    --ClusterParams.0.CurrentValue 200 \
-    --ClusterParams.0.OldValue 3000 \
-    --ParamTemplateId 0 \
+    --Zone ap-guangzhou-3 \
+    --ClusterName  \
+    --ProjectId 0 \
+    --PayMode 0 \
+    --OriginalClusterId cynosdbmysql-0fs2nhc7 \
+    --RollbackId 64142 \
     --InstanceInitInfos.0.Cpu 1 \
-    --InstanceInitInfos.0.Memory 2 \
+    --InstanceInitInfos.0.Memory 1 \
+    --InstanceInitInfos.0.DeviceType common \
     --InstanceInitInfos.0.InstanceType rw \
     --InstanceInitInfos.0.InstanceCount 1 \
-    --InstanceInitInfos.0.MinRoCount 1 \
-    --InstanceInitInfos.0.MaxRoCount 2 \
-    --InstanceInitInfos.0.MinRoCpu 1 \
-    --InstanceInitInfos.0.MaxRoCpu 4 \
-    --DealMode 0
+    --UniqVpcId vpc-ns1jr6ff \
+    --UniqSubnetId subnet-gncsqeuq
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TranId": "12635123871523612735",
+        "BigDealIds": [],
+        "ClusterIds": [],
         "DealNames": [
-            "126351238715236127011"
+            "20250928456021591536011"
         ],
-        "ResourceIds": [
-            "cynosdbmysql-ins-tsk5bs6w"
-        ],
-        "ClusterIds": [
-            "cynosdbmysql-kshc2bxu"
-        ],
-        "BigDealIds": [
-            "12635123871523612735012"
-        ],
-        "RequestId": "91331f25-7342-4c58-925c-3deb5aee4a61"
+        "RequestId": "0c646e65-3597-44d7-b68b-d43391eedb33",
+        "ResourceIds": [],
+        "TranId": "20250928456021591536021"
     }
 }
 ```

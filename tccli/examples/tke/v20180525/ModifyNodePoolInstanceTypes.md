@@ -7,7 +7,7 @@ Input:
 ```
 tccli tke ModifyNodePoolInstanceTypes --cli-unfold-argument  \
     --ClusterId cls-e55paxnt \
-    --InstanceTypes ins-e55paxnt \
+    --InstanceTypes S6.MEDIUM4 S5.MEDIUM4 SA3.MEDIUM4 \
     --NodePoolId np-e55paxnt
 ```
 

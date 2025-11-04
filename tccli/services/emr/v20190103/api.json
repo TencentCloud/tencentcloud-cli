@@ -13429,6 +13429,15 @@
           "name": "PassWord",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否同步密码",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncPwd",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

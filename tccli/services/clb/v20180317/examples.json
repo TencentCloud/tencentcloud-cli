@@ -1,21 +1,5 @@
 {
   "actions": {
-    "AddCustomizedConfig": [
-      {
-        "document": "新增个性化配置",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCustomizedConfig\n<公共请求参数>\n\n{\n    \"ConfigName\": \"test_xxxx\",\n    \"ConfigType\": \"CLB\",\n    \"ConfigContent\": \"test-xxxxxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ConfigId\": \"pz-rnac4p7u\",\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
-        "title": "新增个性化配置"
-      }
-    ],
-    "AssociateCustomizedConfig": [
-      {
-        "document": "关联配置",
-        "input": "https://clb.tencentcloudapi.com/?Action=AssociateCustomizedConfig\r\n&UconfigId=pz-asdfs\r\n&BindList.0.LoadBalancerId=asdfasdf\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
-        "title": "关联配置"
-      }
-    ],
     "AssociateTargetGroups": [
       {
         "document": "",
@@ -116,6 +100,12 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateListener\n<公共请求参数>\n\n{\n    \"ListenerNames\": [\n        \"lis1\",\n        \"lis0\"\n    ],\n    \"Protocol\": \"TCP\",\n    \"Ports\": [\n        7570,\n        7569\n    ],\n    \"LoadBalancerId\": \"lb-cuxw2rm0\"\n}",
         "output": "{\n    \"Response\": {\n        \"ListenerIds\": [\n            \"lbl-d1ubsydq\",\n            \"lbl-4udz130k\"\n        ],\n        \"RequestId\": \"8f272cef-14ff-458c-b67e-1bd21bd2942b\"\n    }\n}",
         "title": "创建两个TCP监听器，分别监听7569和7570端口，并分别命名为lis0和lis1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateListener\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"lb-fd9kpk4s\",\n    \"Ports\": [\n        5689\n    ],\n    \"Protocol\": \"tcp\",\n    \"RescheduleTargetZeroWeight\": true,\n    \"RescheduleUnhealthy\": true,\n    \"RescheduleExpandTarget\": true,\n    \"RescheduleStartTime\": 25,\n    \"RescheduleInterval\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"ListenerIds\": [\n            \"lbl-1sf4yxie\"\n        ],\n        \"RequestId\": \"6aa274e5-ff78-4e9e-b13c-30a9e21b107e\"\n    }\n}",
+        "title": "创建监听器，开启重新调度功能"
       }
     ],
     "CreateLoadBalancer": [
@@ -168,14 +158,6 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"PartitionCount\": 3,\n    \"TopicName\": \"clb-topic\"\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"b046ae5f-00cf-4e90-880c-215e5ae7b6xy\",\n        \"RequestId\": \"dccf2ce3-0277-465a-9c60-260cfb141d65\"\n    }\n}",
         "title": "创建主题。"
-      }
-    ],
-    "DeleteCustomizedConfig": [
-      {
-        "document": "删除配置",
-        "input": "https://clb.tencentcloudapi.com/?Action=DeleteCustomizedConfig\r\n&UconfigIdList.0=pz-asdf\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
-        "title": "删除配置"
       }
     ],
     "DeleteListener": [
@@ -560,14 +542,6 @@
         "title": "查询异步任务状态"
       }
     ],
-    "DisassociateCustomizedConfig": [
-      {
-        "document": "解绑配置",
-        "input": "https://clb.tencentcloudapi.com/?Action=DisassociateCustomizedConfig\r\n&UconfigId=pz-asdfs\r\n&BindList.0.LoadBalancerId=asdfasdf\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
-        "title": "解绑配置"
-      }
-    ],
     "DisassociateTargetGroups": [
       {
         "document": "",
@@ -656,14 +630,6 @@
         "title": "设置header，开启黑名单功能"
       }
     ],
-    "ModifyCustomizedConfig": [
-      {
-        "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=ModifyCustomizedConfig\n&ConfigName=testname\n&UconfigId=pz-sdf\n&ConfigContent=client_max_body_size 100M;\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
-        "title": "更新配置"
-      }
-    ],
     "ModifyDomain": [
       {
         "document": "",
@@ -700,6 +666,12 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyListener\n<公共请求参数>\n\n{\n    \"HealthCheck\": {\n        \"UnHealthNum\": 5,\n        \"HealthNum\": 5,\n        \"IntervalTime\": 60,\n        \"TimeOut\": 35,\n        \"HealthSwitch\": 1\n    },\n    \"LoadBalancerId\": \"lb-cuxw2rm0\",\n    \"ListenerId\": \"lbl-d1ubsydq\",\n    \"ListenerName\": \"newlis\",\n    \"Scheduler\": \"LEAST_CONN\",\n    \"SessionExpireTime\": 120\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8cd88c83-fd30-47c0-8e7a-89bf13a7a83c\"\n    }\n}",
         "title": "修改TCP监听器的名称、健康检查参数及转发策略"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyListener\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"lb-fd9kpk4s\",\n    \"ListenerId\": \"lbl-1sf4yxie\",\n    \"RescheduleTargetZeroWeight\": false,\n    \"RescheduleUnhealthy\": false,\n    \"RescheduleExpandTarget\": false,\n    \"RescheduleStartTime\": 0,\n    \"RescheduleInterval\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5854a85-faee-485e-8892-0a7cbca45080\"\n    }\n}",
+        "title": "修改监听器重新调度参数"
       }
     ],
     "ModifyLoadBalancerAttributes": [

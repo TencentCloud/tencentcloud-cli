@@ -4631,12 +4631,87 @@
     },
     "DescribeInstanceSpecBandwidthRequest": {
       "document": "DescribeInstanceSpecBandwidth请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。填写实例id或者规格，两者必选其一。",
+          "example": "crs-xjhsdj****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分片大小，单位：MB",
+          "example": "4096",
+          "member": "int64",
+          "name": "ShardSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分片数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "ShardNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "复制组数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReplicateNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "只读权重。\n- 100：开启从只读。\n- 0：关闭从只读。",
+          "example": "0",
+          "member": "int64",
+          "name": "ReadOnlyWeight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型，同 [CreateInstances](https://cloud.tencent.com/document/api/239/20026) 的Type。",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeInstanceSpecBandwidthResponse": {
       "document": "DescribeInstanceSpecBandwidth返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "基础带宽。",
+          "example": "16777216",
+          "member": "int64",
+          "name": "Bandwidth",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接限制。",
+          "example": "10000",
+          "member": "int64",
+          "name": "ClientLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

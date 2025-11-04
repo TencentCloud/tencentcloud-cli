@@ -150,7 +150,7 @@
   },
   "metadata": {
     "apiVersion": "2023-09-01",
-    "api_brief": "## 概述\n腾讯混元大模型（Tencent Hunyuan）由腾讯公司全链路自研，在高质量内容创作、数理逻辑、代码生成和多轮对话上性能表现卓越，处于业界领先水平。混元 API 支持 AI 搜索联网插件，通过整合腾讯优质的内容生态，提供强大的时新、深度内容获取和 AI 问答能力。\n腾讯混元大模型支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/1729/101848)。\n\n## 术语表\n\n| 术语 | 说明 | \n|---------|---------|\n| 并发任务数 | 并发任务数（并发）指能同时处理的任务数量，如果并发任务数为1，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。 | \n| API 密钥 | API 密钥是用户访问腾讯云 API 进行身份验证时需要用到的安全凭证，由 SecretId 和 SecretKey 一起组成。 | \n\n## 使用限制\n对于 API 接口的参数限制，请参考各接口文档中的参数说明。\n\n## API 快速入门\n您可以使用 API Explorer 工具在线调用 API。\n本文以创建应用为例，通过 API Explorer 工具调用 API 接口的步骤如下：\n1.进入 [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions) 页面。更多 API Explorer 工具使用信息，请参见[文档](https://cloud.tencent.com/document/product/1278/46697) 。\n2.调用 [ChatCompletions](https://cloud.tencent.com/document/product/1729/105701) 接口，调用腾讯混元大模型。",
+    "api_brief": "## 概述\n腾讯混元大模型（Tencent Hunyuan）由腾讯公司全链路自研，在高质量内容创作、数理逻辑、代码生成和多轮对话上性能表现卓越，处于业界领先水平。混元 API 支持 AI 搜索联网插件，通过整合腾讯优质的内容生态，提供强大的时新、深度内容获取和 AI 问答能力。\n腾讯混元大模型支持的所有接口信息，请参见 [API 概览](https://cloud.tencent.com/document/product/1729/101848)。",
     "serviceNameCN": "腾讯混元大模型",
     "serviceShortName": "hunyuan"
   },

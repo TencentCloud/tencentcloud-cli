@@ -56,6 +56,13 @@
       "output": "QueryMemeJobResponse",
       "status": "online"
     },
+    "QueryTextToImageJob": {
+      "document": "混元生图接口，基于混元大模型，根据输入的文本描述快速生成图片。\n默认提供0个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "QueryTextToImageJobRequest",
+      "name": "查询混元生图3.0任务",
+      "output": "QueryTextToImageJobResponse",
+      "status": "online"
+    },
     "QueryTextToImageProJob": {
       "document": "本接口已迁移至腾讯混元大模型-混元生图，即将停止此处维护，可切换至 [混元生图 API](https://cloud.tencent.com/document/product/1729/105970) 继续使用。\n文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。\n提交任务：输入文本等，提交一个文生图（高级版）异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。\n并发任务数（并发）说明：并发任务数指能同时处理的任务数量。文生图（高级版）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "QueryTextToImageProJobRequest",
@@ -110,6 +117,13 @@
       "input": "SubmitMemeJobRequest",
       "name": "提交表情动图生成任务",
       "output": "SubmitMemeJobResponse",
+      "status": "online"
+    },
+    "SubmitTextToImageJob": {
+      "document": "混元生图接口，基于混元大模型，根据输入的文本描述快速生成图片。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "SubmitTextToImageJobRequest",
+      "name": "提交混元生图3.0任务",
+      "output": "SubmitTextToImageJobResponse",
       "status": "online"
     },
     "SubmitTextToImageProJob": {
@@ -1071,6 +1085,103 @@
       ],
       "type": "object"
     },
+    "QueryTextToImageJobRequest": {
+      "document": "QueryTextToImageJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "1344213737283272704",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryTextToImageJobResponse": {
+      "document": "QueryTextToImageJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前任务状态码：\n1：等待中、2：运行中、4：处理失败、5：处理完成。",
+          "example": "1",
+          "member": "string",
+          "name": "JobStatusCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前任务状态：排队中、处理中、处理失败或者处理完成。\n",
+          "example": "1",
+          "member": "string",
+          "name": "JobStatusMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误码。\n",
+          "example": "1",
+          "member": "string",
+          "name": "JobErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误信息。\n",
+          "example": "1",
+          "member": "string",
+          "name": "JobErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成图 URL 列表，有效期1小时，请及时保存。\n",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "ResultImage",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果 detail 数组，Success 代表成功。\n",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "ResultDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应 SubmitTextToImageProJob 接口中 Revise 参数。开启扩写时，返回扩写后的 prompt 文本。 如果关闭扩写，将直接返回原始输入的 prompt。",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "RevisedPrompt",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryTextToImageProJobRequest": {
       "document": "QueryTextToImageProJob请求参数结构体",
       "members": [
@@ -1837,6 +1948,88 @@
           "member": "string",
           "name": "JobId",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitTextToImageJobRequest": {
+      "document": "SubmitTextToImageJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本描述。 \n算法将根据输入的文本智能生成与之相关的图像。 \n不能为空，推荐使用中文。最多可传1024个 utf-8 字符。",
+          "example": "雨中, 竹林, 小路",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成图分辨率，仅支持以下分辨率：\n640:1408,704:1344,768:1280,832:1216,896:1152,960:1088,1024:1024,1088:960,1152:896,1216:832,1280:768,1344:704,1408:640",
+          "example": "1",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "随机种子，默认随机。\n不传：随机种子生成。\n正数：固定种子生成。\n扩写开启时固定种子不生效，将保持随机。",
+          "example": "1",
+          "member": "int64",
+          "name": "Seed",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "为生成结果图添加显式水印标识的开关，默认为1。  \n1：添加。  \n0：不添加。  \n其他数值：默认按1处理。  \n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启prompt改写，默认开启，改写预计会增加20s左右耗时。\n\n如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)",
+          "example": "0",
+          "member": "int64",
+          "name": "Revise",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitTextToImageJobResponse": {
+      "document": "SubmitTextToImageJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "jobid",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

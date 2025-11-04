@@ -19,8 +19,8 @@
     "CreateExport": [
       {
         "document": "创建任务式建模训练任务，Notebook，在线服务和批量预测任务日志下载任务API",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExport\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExport\n<公共请求参数>\n\n{\n    \"Service\": \"TRAIN\",\n    \"ServiceId\": \"train-1051209973208673664-7zimubsiul1c\",\n    \"StartTime\": \"2022-01-10T12:15:03+08:00\",\n    \"EndTime\": \"2022-01-11T12:15:03+08:00\",\n    \"Format\": \"csv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExportId\": \"57196a6a-7622-47be-bc92-d2ebea959a0f\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建日志下载任务"
       }
     ],
@@ -211,8 +211,8 @@
     "DescribeExport": [
       {
         "document": "查看任务式建模训练任务，Notebook，在线服务和批量预测任务日志下载任务状态API",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExports\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"FileSize\": \"6112993\",\n        \"Status\": \"Completed\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExports\n<公共请求参数>\n\n{\n    \"ExportId\": \"57196a6a-7622-47be-bc92-d2ebea959a0f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExportId\": \"export-57196a6a-7622-47be-bc92-d2ebea959a0f\",\n        \"FileName\": \"train-1051209973208673664-7zimubsiul1c_1610001073.tar.gz\",\n        \"CosPath\": \"https://clstest01-xxxxxx.cos.ap-shanghai.myqcloud.com/xxxxxx\",\n        \"CreateTime\": \"2020-08-08 12:12:12\",\n        \"FileSize\": \"6112993\",\n        \"Status\": \"Completed\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "查询日志下载任务详情"
       }
     ],

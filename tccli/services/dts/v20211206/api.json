@@ -923,6 +923,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表结构不一致详情，pg用",
+          "example": "无",
+          "member": "DifferenceSchemaDetail",
+          "name": "DifferenceSchema",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象owner不一致详情，pg用",
+          "example": "无",
+          "member": "DifferenceOwnerDetail",
+          "name": "DifferenceOwner",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5704,6 +5724,32 @@
       ],
       "usage": "out"
     },
+    "DifferenceOwnerDetail": {
+      "document": "pg owner不一致性详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "owner不一致总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "owner不一致详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OwnerDifference",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DifferenceRowDetail": {
       "document": "mongodb行数校验不一致性详情结果",
       "members": [
@@ -5722,6 +5768,32 @@
           "document": "不一致列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RowsCountDifference",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DifferenceSchemaDetail": {
+      "document": "表结构不一致信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表结构不一致的数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表结构不一致信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SchemaDifference",
           "name": "Items",
           "output_required": false,
           "type": "list",
@@ -8312,6 +8384,72 @@
       ],
       "usage": "both"
     },
+    "OwnerDifference": {
+      "document": "pg对象owner不一致信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "owner不一致的pg对象所在库",
+          "example": "db1",
+          "member": "string",
+          "name": "Db",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "owner不一致的pg对象所在schema",
+          "example": "schema1",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "owner不一致的pg对象名",
+          "example": "tab1",
+          "member": "string",
+          "name": "ObjectName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "owner不一致的pg对象类型",
+          "example": "tableSchema",
+          "member": "string",
+          "name": "ObjectType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源库对象owner",
+          "example": "root",
+          "member": "string",
+          "name": "SrcOwner",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标库对象owner",
+          "example": "user_123",
+          "member": "string",
+          "name": "DstOwner",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PartitionAssignment": {
       "document": "数据订阅中kafka消费者组的分区分配情况。该数据是实时查询的，如果需要最新数据，需重新掉接口查询。",
       "members": [
@@ -9024,6 +9162,62 @@
           "name": "DstCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SchemaDifference": {
+      "document": "结构不一致详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结构不一致的表所在库",
+          "example": "db1",
+          "member": "string",
+          "name": "Db",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结构不一致的表所在schema",
+          "example": "schema1",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结构不一致的表",
+          "example": "tab1",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源库表结构",
+          "example": "create table tab1...",
+          "member": "string",
+          "name": "SrcSchema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标库表结构",
+          "example": "create table tab1...",
+          "member": "string",
+          "name": "DstSchema",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

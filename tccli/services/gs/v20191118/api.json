@@ -2343,7 +2343,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求的实例的上限为 500。",
-          "example": "[ \"cai-abcd1234\" ]",
+          "example": "[ \"cai-a1b2c3d4\" ]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,

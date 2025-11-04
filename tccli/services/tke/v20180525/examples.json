@@ -386,9 +386,9 @@
     ],
     "DeleteClusterNodePool": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"KeepInstance\": \"true\",\n    \"NodePoolIds\": [\n        \"np-e55paxnt\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d174dcb6-659b-4ab6-9533-e470a7d91e43\"\n    }\n}",
+        "document": "删除节点池",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-7tz3n309\",\n    \"NodePoolIds\": [\n        \"np-e55paxnt\"\n    ],\n    \"KeepInstance\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ebc80be1-c6a7-4c1f-870e-74eba8471969\"\n    }\n}",
         "title": "删除节点池"
       }
     ],
@@ -1708,14 +1708,14 @@
       {
         "document": "修改节点池关联伸缩组的期望实例数示例",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePoolDesiredCapacityAboutAsg\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxx\",\n    \"DesiredCapacity\": 6,\n    \"NodePoolId\": \"np-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed\"\n    }\n}",
         "title": "修改节点池关联伸缩组的期望实例数示例"
       }
     ],
     "ModifyNodePoolInstanceTypes": [
       {
         "document": "修改节点池机型",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePoolInstanceTypes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"InstanceTypes\": [\n        \"ins-e55paxnt\"\n    ],\n    \"NodePoolId\": \"np-e55paxnt\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePoolInstanceTypes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"InstanceTypes\": [\n        \"S6.MEDIUM4\",\n        \"S5.MEDIUM4\",\n        \"SA3.MEDIUM4\"\n    ],\n    \"NodePoolId\": \"np-e55paxnt\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d174dcb6-659b-4ab6-9533-e470a7d91e43\"\n    }\n}",
         "title": "修改节点池机型"
       }
@@ -1889,7 +1889,7 @@
     "SetNodePoolNodeProtection": [
       {
         "document": "当触发缩容时（包括手动和自动），节点不会被伸缩组从集群中移除",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNodePoolNodeProtection\n<公共请求参数>\n\n{\n    \"ProtectedFromScaleIn\": \"true\",\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"InstanceIds\": [\n        \"ins-e55paxnt\"\n    ],\n    \"NodePoolId\": \"np-e55paxnt\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNodePoolNodeProtection\n<公共请求参数>\n\n{\n    \"ProtectedFromScaleIn\": true,\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"InstanceIds\": [\n        \"ins-e55paxnt\"\n    ],\n    \"NodePoolId\": \"np-e55paxnt\"\n}",
         "output": "{\n    \"Response\": {\n        \"SucceedInstanceIds\": [\n            \"ins-rvob5o5\"\n        ],\n        \"FailedInstanceIds\": [\n            \"ins-abocc5o\"\n        ],\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "给节点池中的节点设置移出保护"
       }
@@ -1970,7 +1970,7 @@
     ],
     "UpdateClusterVersion": [
       {
-        "document": "升级集群到指定版本",
+        "document": "",
         "input": "https://tke.tencentcloudapi.com/?Action=UpdateClusterVersion\n&ClusterId=cls-e55paxnt\n&DstVersion=1.18.4\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
         "title": "升级集群到指定版本"

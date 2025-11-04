@@ -147,13 +147,6 @@
       "output": "DeleteMigrationTaskResponse",
       "status": "online"
     },
-    "DeleteMountTarget": {
-      "document": "本接口（DeleteMountTarget）用于删除挂载点\n说明：2022年6月1日之后创建的CFS文件系统删除时无需单独调用删除挂载点操作，此API仅适用老版本的CFS实例。",
-      "input": "DeleteMountTargetRequest",
-      "name": "删除挂载点",
-      "output": "DeleteMountTargetResponse",
-      "status": "online"
-    },
     "DeleteUserQuota": {
       "document": "指定条件删除文件系统配额（仅部分Turbo实例能使用，若需要调用请提交工单与我们联系）",
       "input": "DeleteUserQuotaRequest",
@@ -2445,42 +2438,6 @@
     },
     "DeleteMigrationTaskResponse": {
       "document": "DeleteMigrationTask返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteMountTargetRequest": {
-      "document": "DeleteMountTarget请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "文件系统 ID",
-          "example": "cfs-12345",
-          "member": "string",
-          "name": "FileSystemId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "挂载点 ID",
-          "example": "mount-12345",
-          "member": "string",
-          "name": "MountTargetId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteMountTargetResponse": {
-      "document": "DeleteMountTarget返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -1119,12 +1119,113 @@
     },
     "CreateExportRequest": {
       "document": "CreateExport请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测枚举值：- TRAIN- NOTEBOOK- INFER- BATCH",
+          "example": "TRAIN",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：- Service类型为TRAIN：  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId- Service类型为NOTEBOOK：  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName- Service类型为INFER：  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId- Service类型为BATCH：  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId",
+          "example": "train-fsdjl-1",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时",
+          "example": "2021-11-30T16:22:09+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志查询结束时间（RFC3339格式的时间字符串），开始时间和结束时间必须同时填或同时不填，默认值为当前时间",
+          "example": "2021-11-30T16:22:09+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志导出数据格式。json，csv，默认为csv",
+          "example": "csv",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：- Service类型为TRAIN：  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames- Service类型为NOTEBOOK：  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName- Service类型为INFER：  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos- Service类型为BATCH：  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList注：支持结尾通配符*",
+          "example": "train-fsdjl-1",
+          "member": "string",
+          "name": "PodName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述任务的类型",
+          "example": "FullManagedJob",
+          "member": "string",
+          "name": "JobCategory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例的类型",
+          "example": "INFER",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查实例Id",
+          "example": "ms-mcgxxxxx-1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型： PLATFORM_INIT, PLATFORM_SANITY_CHECK, USER",
+          "example": "PLATFORM_INIT",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateExportResponse": {
       "document": "CreateExport返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "日志下载任务的ID",
+          "example": "export-a85ac32e-42a8-49e3-b19b-c2a9ba831b40",
+          "member": "string",
+          "name": "ExportId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4327,12 +4428,62 @@
     },
     "DescribeExportRequest": {
       "document": "DescribeExport请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志下载任务的ID",
+          "example": "export-a85ac32e-42a8-49e3-b19b-c2a9ba831b40",
+          "member": "string",
+          "name": "ExportId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeExportResponse": {
       "document": "DescribeExport返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "日志下载任务的ID",
+          "example": "export-a85ac32e-42a8-49e3-b19b-c2a9ba831b40",
+          "member": "string",
+          "name": "ExportId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志下载文件名",
+          "example": "log_001a191a-aaff-4bde-9267-94e2ecf6f8da_20240528_export-a85ac32e-42a8-49e3-b19b-c2a9ba831b40.tar.gz",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志导出路径,有效期一个小时，请尽快使用该路径下载。",
+          "example": "https://clstest01-xxxxxx.cos.ap-shanghai.myqcloud.com/xxxxxx",
+          "member": "string",
+          "name": "CosPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下载任务创建时间",
+          "example": "2024-05-28T03:39:06Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "日志文件大小",
@@ -9331,7 +9482,7 @@
         {
           "disabled": false,
           "document": "pod资源配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Role\": \"WORKER\", \"Cpu\": 180000,\"Memory\": 921600,\"GpuType\": \"HCC-A100\",\"Gpu\": 800,                           \"InstanceType\": \"\",\"InstanceTypeAlias\": \"\", \"InstanceNum\": 2,\"RDMAConfig\": {\"Enable\": true                             }}",
+          "example": "无",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfo",
           "output_required": false,
@@ -12869,7 +13020,7 @@
         {
           "disabled": false,
           "document": "训练任务名称",
-          "example": "test",
+          "example": "测试训练任务",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -12939,7 +13090,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": "[{\"Role\":\"WORKER\",\"Cpu\":1000,\"Memory\":1024,\"GpuType\":\"\",\"Gpu\":0,\"InstanceType\":\"\",\"InstanceTypeAlias\":\"\",\"InstanceNum\":1,\"RDMAConfig\":{\"Enable\":false},\"ExtendedResourceList\":{},\"ArchType\":\"\"}]",
+          "example": "无",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfos",
           "output_required": true,
@@ -12959,7 +13110,7 @@
         {
           "disabled": false,
           "document": "任务状态，eg：SUBMITTING提交中、PENDING排队中、\nSTARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成",
-          "example": "无",
+          "example": "SUBMITTING",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -12979,7 +13130,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -12989,7 +13140,7 @@
         {
           "disabled": false,
           "document": "训练开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
@@ -12999,7 +13150,7 @@
         {
           "disabled": false,
           "document": "训练结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -13019,7 +13170,7 @@
         {
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Failed",
           "member": "string",
           "name": "FailureReason",
           "output_required": true,
@@ -13029,7 +13180,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -13049,7 +13200,7 @@
         {
           "disabled": false,
           "document": "预付费专用资源组名称",
-          "example": "无",
+          "example": "测试资源组",
           "member": "string",
           "name": "ResourceGroupName",
           "output_required": true,
@@ -13069,7 +13220,7 @@
         {
           "disabled": false,
           "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "测试任务",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -13079,7 +13230,7 @@
         {
           "disabled": false,
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"test\":\"test\"]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -13089,7 +13240,7 @@
         {
           "disabled": false,
           "document": "回调地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "callbackurl",
           "member": "string",
           "name": "CallbackUrl",
           "output_required": true,
@@ -13099,7 +13250,7 @@
         {
           "disabled": false,
           "document": "任务subUin信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "834573",
           "member": "string",
           "name": "SubUin",
           "output_required": false,

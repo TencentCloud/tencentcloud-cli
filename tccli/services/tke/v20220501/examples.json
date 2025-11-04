@@ -48,6 +48,14 @@
         "title": "查询集群实例信息"
       }
     ],
+    "DescribeClusters": [
+      {
+        "document": "查询集群列表",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusters\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"ClusterDescription\": \"\",\n                \"ClusterId\": \"cls-padxxv08\",\n                \"ClusterLevel\": \"L5\",\n                \"ClusterName\": \"勿删 feeli-1.16.7-1\",\n                \"ClusterStatus\": \"Running\",\n                \"ClusterType\": \"EDGE_CLUSTER\",\n                \"ClusterVersion\": \"1.16.7\",\n                \"CreatedTime\": \"2022-11-09T17:12:15Z\",\n                \"TagSpecification\": []\n            }\n        ],\n        \"Errors\": [],\n        \"RequestId\": \"55777e90-1af7-4108-abd5-fca0638a7bb6\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询集群列表"
+      }
+    ],
     "DescribeHealthCheckPolicies": [
       {
         "document": "",

@@ -138,3 +138,33 @@ Output:
 }
 ```
 
+**Example 6: 创建监听器，开启重新调度功能**
+
+
+
+Input: 
+
+```
+tccli clb CreateListener --cli-unfold-argument  \
+    --LoadBalancerId lb-fd9kpk4s \
+    --Ports 5689 \
+    --Protocol tcp \
+    --RescheduleTargetZeroWeight True \
+    --RescheduleUnhealthy True \
+    --RescheduleExpandTarget True \
+    --RescheduleStartTime 25 \
+    --RescheduleInterval 50
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ListenerIds": [
+            "lbl-1sf4yxie"
+        ],
+        "RequestId": "6aa274e5-ff78-4e9e-b13c-30a9e21b107e"
+    }
+}
+```
+

@@ -1,21 +1,21 @@
-**Example 1: test**
+**Example 1: 修改用户密码**
 
-test
+
 
 Input: 
 
 ```
 tccli emr ModifyUserManagerPwd --cli-unfold-argument  \
-    --InstanceId emr-test \
-    --UserName emr-test \
-    --PassWord emr-test
+    --InstanceId emr-jcyh6gqk \
+    --PassWord EyKkiwbj2Nmmpg74 \
+    --UserName pu203356
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "f9b28a61-ad66-4b30-bbeb-9b1539a73ded"
+        "RequestId": "4ce4ef55-4b01-47ad-a4e2-23f256b865e2"
     }
 }
 ```

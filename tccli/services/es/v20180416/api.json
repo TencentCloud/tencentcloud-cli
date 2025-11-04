@@ -7205,6 +7205,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群内网tcp地址",
+          "example": "10.1.2.3:9300",
+          "member": "string",
+          "name": "EsPrivateTcpUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11570,7 +11580,7 @@
         {
           "disabled": false,
           "document": "实例绑定的ES集群信息",
-          "example": "{\"ESInstanceId\":\"es-1ta7zxxx\"}",
+          "example": "无",
           "member": "LogstashBindedES",
           "name": "BindedES",
           "required": false,
@@ -11620,6 +11630,15 @@
           "name": "OperationDuration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "多可用区部署",
+          "example": "无",
+          "member": "ZoneDetail",
+          "name": "MultiZoneInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

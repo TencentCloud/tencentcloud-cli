@@ -2307,7 +2307,7 @@ def doDescribeOSImages(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusters(args, parsed_globals):
+def doModifyClusterTags(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2336,11 +2336,11 @@ def doDescribeClusters(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClustersRequest()
+    model = models.ModifyClusterTagsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeClusters(model)
+        rsp = client.ModifyClusterTags(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4283,7 +4283,7 @@ def doDescribeEdgeLogSwitches(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyClusterTags(args, parsed_globals):
+def doDescribeClusters(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4312,11 +4312,11 @@ def doModifyClusterTags(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyClusterTagsRequest()
+    model = models.DescribeClustersRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyClusterTags(model)
+        rsp = client.DescribeClusters(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -12816,7 +12816,7 @@ ACTION_MAP = {
     "AddNodeToNodePool": doAddNodeToNodePool,
     "ModifyReservedInstanceScope": doModifyReservedInstanceScope,
     "DescribeOSImages": doDescribeOSImages,
-    "DescribeClusters": doDescribeClusters,
+    "ModifyClusterTags": doModifyClusterTags,
     "CreateCLSLogConfig": doCreateCLSLogConfig,
     "EnableClusterAudit": doEnableClusterAudit,
     "CreateBackupStorageLocation": doCreateBackupStorageLocation,
@@ -12854,7 +12854,7 @@ ACTION_MAP = {
     "DescribeClusterRouteTables": doDescribeClusterRouteTables,
     "DeleteEdgeCVMInstances": doDeleteEdgeCVMInstances,
     "DescribeEdgeLogSwitches": doDescribeEdgeLogSwitches,
-    "ModifyClusterTags": doModifyClusterTags,
+    "DescribeClusters": doDescribeClusters,
     "DescribeClusterEndpointStatus": doDescribeClusterEndpointStatus,
     "CreateReservedInstances": doCreateReservedInstances,
     "DeleteClusterMachines": doDeleteClusterMachines,

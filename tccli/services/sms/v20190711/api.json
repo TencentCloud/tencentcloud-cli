@@ -64,7 +64,7 @@
       "status": "online"
     },
     "PullSmsReplyStatus": {
-      "document": "本接口 (PullSmsReplyStatus) 用于拉取短信回复状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>此接口需要联系  <a href=\"https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81\">腾讯云短信小助手</a> 开通。</li><li>上行回复也支持 <a href=\"https://cloud.tencent.com/document/product/382/42907\">配置回复回调</a> 的方式获取。</li></ul></blockquote>",
+      "document": "本接口 (PullSmsReplyStatus) 用于拉取短信回复状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>此接口需要联系  <a href=\"https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81\">腾讯云短信小助手</a> 开通。接口拉取的状态数据为队列模式，同一号码一次下发的状态数据仅能拉取一次。</li><li>上行回复也支持 <a href=\"https://cloud.tencent.com/document/product/382/42907\">配置回复回调</a> 的方式获取。</li></ul></blockquote>",
       "input": "PullSmsReplyStatusRequest",
       "name": "拉取短信回复状态",
       "output": "PullSmsReplyStatusResponse",
@@ -78,14 +78,14 @@
       "status": "online"
     },
     "PullSmsSendStatus": {
-      "document": "本接口 (PullSmsSendStatus) 用于拉取短信下发状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>此接口需要联系  <a href=\"https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81\">腾讯云短信小助手</a> 开通。</li><li>下发状态也支持 <a href=\"https://cloud.tencent.com/document/product/382/37809#.E7.9F.AD.E4.BF.A1.E7.8A.B6.E6.80.81.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE\">配置回调</a> 的方式获取。</li></ul></blockquote>",
+      "document": "本接口 (PullSmsSendStatus) 用于拉取短信下发状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>此接口需要联系  <a href=\"https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81\">腾讯云短信小助手</a> 开通。接口拉取的状态数据为队列模式，同一号码一次下发的状态数据仅能拉取一次。</li><li>下发状态也支持 <a href=\"https://cloud.tencent.com/document/product/382/37809#sendingstatus\">配置回调</a> 的方式获取。</li></ul></blockquote>",
       "input": "PullSmsSendStatusRequest",
       "name": "拉取短信下发状态",
       "output": "PullSmsSendStatusResponse",
       "status": "online"
     },
     "PullSmsSendStatusByPhoneNumber": {
-      "document": "本接口 (PullSmsSendStatusByPhoneNumber) 用于拉取单个号码短信下发状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>下发状态也支持 <a href=\"https://cloud.tencent.com/document/product/382/37809#.E7.9F.AD.E4.BF.A1.E7.8A.B6.E6.80.81.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE\">配置回调</a> 的方式获取。</li></ul></blockquote>",
+      "document": "本接口 (PullSmsSendStatusByPhoneNumber) 用于拉取单个号码短信下发状态。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>下发状态也支持 <a href=\"https://cloud.tencent.com/document/product/382/37809#sendingstatus\">配置回调</a> 的方式获取。</li></ul></blockquote>",
       "input": "PullSmsSendStatusByPhoneNumberRequest",
       "name": "拉取单个号码短信下发状态",
       "output": "PullSmsSendStatusByPhoneNumberResponse",
@@ -666,7 +666,7 @@
         },
         {
           "disabled": false,
-          "document": "申请签名状态。其中0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。",
+          "document": "签名状态，其中：\n国内短信0表示签名可用，1表示审核中，2表示审核通过待生效，-1表示审核未通过、审核失败或未完成首次报备等原因导致签名不可用。具体可参考 [国内短信签名状态值说明](https://cloud.tencent.com/document/product/382/39022#ea7b2b63-ee71-404f-a525-c5a572d12ccd)。\n国际短信0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。",
           "example": "0",
           "member": "int64",
           "name": "StatusCode",
@@ -1325,7 +1325,7 @@
         {
           "disabled": false,
           "document": "回复状态响应集合。",
-          "example": "[{\"ReplyContent\":\"2\", \"ReplyUnixTime\":1620734188, \"ExtendCode\":\"11\", \"ReplyTime\":\"2021-05-11 19:56:28\", \"Sign\":\"腾讯云\", \"PhoneNumber\":\"+8618501234444\", \"NationCode\":\"86\"}]",
+          "example": "无",
           "member": "PullSmsReplyStatus",
           "name": "PullSmsReplyStatusSet",
           "output_required": true,
@@ -1406,7 +1406,7 @@
         },
         {
           "disabled": false,
-          "document": "实际是否收到短信接收状态，SUCCESS（成功）、FAIL（失败）。",
+          "document": "实际是否收到的短信接收状态，SUCCESS（下发成功）、FAIL（下发失败）。\n注：仅当运营商有返回短信接收状态时回包中才会有状态数据。",
           "example": "SUCCESS",
           "member": "string",
           "name": "ReportStatus",
@@ -1493,7 +1493,7 @@
         {
           "disabled": false,
           "document": "下发状态响应集合。",
-          "example": "[{\"Description\":\"DELIVRD\", \"SerialNo\":\"5000:1045710669157053657849499619\", \"PurePhoneNumber\":\"+8618501234444\", \"ReportStatus\":\"SUCCESS\", \"UserReceiveUnixTime\":1570526317, \"PhoneNumber\":\"18501234444\", \"UserReceiveTime\":\"2019-10-08 17:18:37\", \"NationCode\":\"86\"}]",
+          "example": "无",
           "member": "PullSmsSendStatus",
           "name": "PullSmsSendStatusSet",
           "output_required": true,
@@ -1539,7 +1539,7 @@
         {
           "disabled": false,
           "document": "下发状态响应集合。",
-          "example": "[{\"UserReceiveTime\":\"2019-10-08 17:18:37\", \"UserReceiveUnixTime\":1570526317, \"NationCode\":\"86\", \"PurePhoneNumber\":\"+8618501234444\", \"PhoneNumber\":\"18501234444\", \"SerialNo\":\"5000:1045710669157053657849499619\", \"ReportStatus\":\"SUCCESS\", \"Description\":\"DELIVRD\"}]",
+          "example": "无",
           "member": "PullSmsSendStatus",
           "name": "PullSmsSendStatusSet",
           "output_required": true,
@@ -1623,7 +1623,7 @@
         },
         {
           "disabled": false,
-          "document": "国内短信无senderid，无需填写该项；若需开通国际/港澳台短信senderid，请联系smshelper。",
+          "document": "国际/港澳台短信 Sender ID。可参考 [Sender ID 说明](https://cloud.tencent.com/document/product/382/102831)。\n注：国内短信无需填写该项；国际/港澳台短信已申请独立 SenderId 需要填写该字段，默认使用公共 SenderId，无需填写该字段。",
           "example": "Qsms",
           "member": "string",
           "name": "SenderId",
@@ -1638,7 +1638,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "短信发送状态。",
+          "document": "短信发送状态。\n注：可参考 <a href=\"#4.-.E7.A4.BA.E4.BE.8B\">示例</a> ，包含短信发送成功和发送失败的输出示例。",
           "example": "无",
           "member": "SendStatus",
           "name": "SendStatusSet",
@@ -1700,7 +1700,7 @@
         },
         {
           "disabled": false,
-          "document": "短信请求错误码，具体含义请参考错误码。",
+          "document": "短信请求错误码，具体含义请参考 [错误码](https://cloud.tencent.com/document/product/382/59177#.E7.9F.AD.E4.BF.A1-API-3.0-.E5.8F.91.E9.80.81.E9.94.99.E8.AF.AF.E7.A0.81)。",
           "example": "Ok",
           "member": "string",
           "name": "Code",

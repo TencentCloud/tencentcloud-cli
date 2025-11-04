@@ -29,9 +29,9 @@
       "status": "online"
     },
     "CreatePrivateDNSAccount": {
-      "document": "跨账号关联VPC时绑定其他账号",
+      "document": "跨账号关联VPC时，可通过该API接口添加关联账号",
       "input": "CreatePrivateDNSAccountRequest",
-      "name": "添加绑定账号",
+      "name": "添加关联账号",
       "output": "CreatePrivateDNSAccountResponse",
       "status": "online"
     },
@@ -71,9 +71,9 @@
       "status": "online"
     },
     "DeletePrivateDNSAccount": {
-      "document": "删除私有域解析账号",
+      "document": "适用于跨账号绑定VPC时需要移除关联账号的场景，解除账号关联后，将无法获取对应账号下的 VPC资源。",
       "input": "DeletePrivateDNSAccountRequest",
-      "name": "删除私有域解析账号",
+      "name": "移除账号关联",
       "output": "DeletePrivateDNSAccountResponse",
       "status": "online"
     },
@@ -141,9 +141,9 @@
       "status": "online"
     },
     "DescribePrivateDNSAccountList": {
-      "document": "获取私有域解析账号列表",
+      "document": "在跨账号绑定VPC的场景下，可通过该API接口获取所有已关联账号的列表",
       "input": "DescribePrivateDNSAccountListRequest",
-      "name": "获取私有域解析账号列表",
+      "name": "获取关联账号列表",
       "output": "DescribePrivateDNSAccountListResponse",
       "status": "online"
     },
@@ -788,7 +788,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域解析账号",
+          "document": "私有域解析账号，该账号不能与主账号一致且需要子账号授权",
           "example": "无",
           "member": "PrivateDNSAccount",
           "name": "Account",
@@ -2898,7 +2898,7 @@
         {
           "disabled": false,
           "document": "主账号名称",
-          "example": "privatedns@qcloud.com",
+          "example": "testname@qq.com",
           "member": "string",
           "name": "Account",
           "output_required": true,

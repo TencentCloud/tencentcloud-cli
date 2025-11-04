@@ -16741,6 +16741,15 @@
           "name": "EncryptionStatus",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设置实例新增的自动日志备份文件默认加密状态。可选值为 on或者off。",
+          "example": "on",
+          "member": "string",
+          "name": "BinlogEncryptionStatus",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

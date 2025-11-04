@@ -1280,6 +1280,51 @@
           "name": "VirtualHost",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按哪个字段排序，支持：channel(channel数),incoming_bytes(入流量大小),outgoing_bytes(出流量大小)",
+          "example": "channel",
+          "member": "string",
+          "name": "SortElement",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式：ASC,DESC",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，从第几条数据开始",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "一页大小",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "连接名模糊搜索",
+          "example": "156.23.76.13",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1334,7 +1379,7 @@
           "example": "testVhost",
           "member": "string",
           "name": "VirtualHost",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -1343,7 +1388,7 @@
           "example": "testQueueName",
           "member": "string",
           "name": "QueueName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -1370,6 +1415,15 @@
           "example": "testSearchWord",
           "member": "string",
           "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "channelId",
+          "example": "156.141.4.7",
+          "member": "string",
+          "name": "Channel",
           "required": false,
           "type": "string"
         }
@@ -2745,6 +2799,24 @@
           "name": "SendReceiveRatio",
           "required": false,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除所有标签，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "DeleteAllTags",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "修改的实例标签列表",
+          "example": "无",
+          "member": "RabbitMQServerlessTag",
+          "name": "InstanceTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2879,6 +2951,33 @@
           "example": "testRemark",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MessageTTL参数单位ms,classic类型专用\t",
+          "example": "1000",
+          "member": "int64",
+          "name": "MessageTTL",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "DeadLetterExchange参数。可将过期或被拒绝的消息投往指定的死信 exchange。",
+          "example": "testDeadLetterExchange",
+          "member": "string",
+          "name": "DeadLetterExchange",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DeadLetterRoutingKey参数。只能包含字母、数字、\".\"、\"-\"，\"@\"，\"_\"",
+          "example": "testDeadLetterRoutingKey",
+          "member": "string",
+          "name": "DeadLetterRoutingKey",
           "required": false,
           "type": "string"
         }
@@ -3436,6 +3535,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例标签列表",
+          "example": "无",
+          "member": "RabbitMQServerlessTag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3552,7 +3661,7 @@
         {
           "disabled": false,
           "document": "连接名称",
-          "example": "1.1.1.1:2340 -> 10.1.1.1:5672",
+          "example": "167.4.51.5",
           "member": "string",
           "name": "ConnectionName",
           "output_required": true,
@@ -3618,6 +3727,56 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "入流量大小，单位 bytes",
+          "example": "50.4",
+          "member": "float",
+          "name": "IncomingBytes",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出流量大小，单位bytes",
+          "example": "189.0",
+          "member": "float",
+          "name": "OutgoingBytes",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "心跳间隔时间，默认60s",
+          "example": "60",
+          "member": "uint64",
+          "name": "Heartbeat",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "一个链接最大的channel数，默认1024",
+          "example": "1024",
+          "member": "uint64",
+          "name": "MaxChannel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空闲时间点",
+          "example": "2025-05-01 12:10:40",
+          "member": "string",
+          "name": "IdleSince",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3642,6 +3801,76 @@
           "member": "string",
           "name": "ConsumerTag",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费目标队列",
+          "example": "test-queue",
+          "member": "string",
+          "name": "QueueName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否需要消费者手动 ack",
+          "example": "true",
+          "member": "bool",
+          "name": "AckRequired",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者 qos 值",
+          "example": "500",
+          "member": "uint64",
+          "name": "PrefetchCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者状态",
+          "example": "up",
+          "member": "string",
+          "name": "Active",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一次投递消息时间",
+          "example": "2025-09-12 13:10:09",
+          "member": "string",
+          "name": "LastDeliveredTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者未确认消息数",
+          "example": "100",
+          "member": "int64",
+          "name": "UnAckMsgCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "consumer 所属的 channel ",
+          "example": "11.151.193.8:4316 -> 21.63.172.169:5672 (1)",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4240,7 +4469,7 @@
         {
           "disabled": false,
           "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败",
-          "example": "集群状态",
+          "example": "0",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -4416,9 +4645,47 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例标签列表",
+          "example": "无",
+          "member": "RabbitMQServerlessTag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "RabbitMQServerlessTag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "无",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "无",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RabbitMQServerlessWhiteListInfo": {
       "document": "公网白名单信息",

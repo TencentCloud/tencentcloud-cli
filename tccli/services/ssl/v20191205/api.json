@@ -1621,6 +1621,15 @@
           "name": "SignAlgo",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用交叉根证书",
+          "example": "true",
+          "member": "bool",
+          "name": "UseCrossSignRoot",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -5142,6 +5151,16 @@
           "name": "CertType",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否使用交叉根",
+          "example": "false",
+          "member": "bool",
+          "name": "UseCrossSignRoot",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -9601,6 +9620,15 @@
           "name": "SignAlgo",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用交叉根证书，默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "UseCrossSignRoot",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -30,3 +30,37 @@ Output:
 }
 ```
 
+**Example 2: 正常获取消费者列表**
+
+
+
+Input: 
+
+```
+tccli trabbit DescribeRabbitMQServerlessConsumers --cli-unfold-argument  \
+    --InstanceId amqp-slbswcjhay \
+    --VirtualHost / \
+    --QueueName normal-queue \
+    --SearchWord amq.ctag-0b29cd9c
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ConsumerInfoList": [
+            {
+                "AckRequired": true,
+                "Active": "up",
+                "ClientIp": "11.151.193.8",
+                "ConsumerTag": "amq.ctag-0b29cd9c",
+                "PrefetchCount": 500,
+                "QueueName": "normal-queue"
+            }
+        ],
+        "RequestId": "271eecb0-9c34-43d0-b06d-4a539abda5f8",
+        "TotalCount": 1
+    }
+}
+```
+
