@@ -2191,7 +2191,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。",
+          "document": "数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。",
           "example": "无",
           "member": "VolumeMount",
           "name": "VolumeMounts",
@@ -10054,7 +10054,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-资源组缓存”。",
+          "document": "数据盘批量挂载配置，当前仅支持CFS，仅针对“模型来源-腾讯云存储、模型来源-腾讯云容器镜像、模型来源-资源组、模型来源-数据源”。",
           "example": "无",
           "member": "VolumeMount",
           "name": "VolumeMounts",
@@ -12864,7 +12864,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号名",
+          "document": "子账号名，出参中展示",
           "example": "user-a",
           "member": "string",
           "name": "SubUinName",
@@ -12904,6 +12904,39 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组ID",
+          "example": "373981",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组名称，出参中展示",
+          "example": "department-a",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额授予对象类型，可选值为USER、USER_GROUP，默认值为USER",
+          "example": "USER_GROUP",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

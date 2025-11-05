@@ -1517,7 +1517,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间登陆设置",
+          "document": "工作空间登录设置",
           "example": "{ \"KeyIds\": [ \"skey-9tzxxb4j\" ] }",
           "member": "LoginSettings",
           "name": "LoginSettings",

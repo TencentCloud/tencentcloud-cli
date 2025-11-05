@@ -614,7 +614,7 @@
         {
           "disabled": false,
           "document": "按照一个或者多个媒体库 ID 查询，每次请求的上限为 100 个。",
-          "example": "[ 'smh3ptyc9mscifdi', 'smh2dugfmc1jrnzd' ]",
+          "example": "[ \"smh3ptyc9mscifdi\", \"smh2dugfmc1jrnzd\" ]",
           "member": "string",
           "name": "LibraryIds",
           "required": false,
@@ -635,6 +635,24 @@
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，从0开始。",
+          "example": "40",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单次列出的数量限制，不超过100.",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
           "required": false,
           "type": "int"
         }

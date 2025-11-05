@@ -13,7 +13,7 @@ tccli cfs CreateDataFlow --cli-unfold-argument  \
     --TargetPath /cfs/test11 \
     --SecretId AKIDbzzYj65vue75sC1yg8P4cyBHBpLk \
     --SecretKey onE8m9NN82ik6h3FCvXt2uc3Sjp \
-    --DataFlowName test
+    --DataFlowName abctest
 ```
 
 Output: 

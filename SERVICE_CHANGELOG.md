@@ -1,10 +1,73 @@
-# Release 3.0.1298.1
+# Release 3.0.1299.1
 
-## 云安全一体化平台(csip) 版本：2022-11-21
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 36 次发布
+
+发布时间：2025-11-06 01:16:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataFlow](http://document.tencentcloudapi.woa.com/document/product/582/87276)
+
+	* 新增入参：AutoRefresh, UserKafkaTopic, ServerAddr, UserName, Password
+
+* [DescribeLifecycleDataTask](http://document.tencentcloudapi.woa.com/document/product/582/87272)
+
+	* 新增入参：CfsVersion
+
+* [ModifyDataFlow](http://document.tencentcloudapi.woa.com/document/product/582/87271)
+
+	* 新增入参：UserKafkaTopic, ServerAddr, UserName, Password, AutoRefresh
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
 
 ### 第 59 次发布
 
-发布时间：2025-11-05 01:19:45
+发布时间：2025-11-06 01:27:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyDomainCNAMESpeedupStatusBatch](http://document.tencentcloudapi.woa.com/document/product/1427/87954)
+* [ModifyDomainRecursiveStatusBatch](http://document.tencentcloudapi.woa.com/document/product/1427/87953)
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 62 次发布
+
+发布时间：2025-11-06 01:50:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceClusterShard](http://document.tencentcloudapi.woa.com/document/product/239/20022#InstanceClusterShard)
+
+	* 新增成员：ZoneId, ReplicasNodeId
+
+
+
+
+## 智能媒资托管(smh) 版本：2021-07-12
+
+### 第 5 次发布
+
+发布时间：2025-11-06 01:52:24
 
 本次发布包含了以下内容：
 
@@ -12,120 +75,18 @@
 
 修改接口：
 
-* [DescribePayInfo](http://document.tencentcloudapi.woa.com/document/product/1726/83936)
+* [DescribeLibraries](http://document.tencentcloudapi.woa.com/document/product/1689/79769)
 
-	* 新增入参：MemberId
+	* 新增入参：Offset, Limit
 
-
-
-
-## 事件总线(eb) 版本：2021-04-16
-
-### 第 17 次发布
-
-发布时间：2025-11-05 01:29:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [CkafkaTargetParams](http://document.tencentcloudapi.woa.com/document/product/1359/67704#CkafkaTargetParams)
-
-	* 新增成员：EventDeliveryFormat
-
-
-
-
-## Elasticsearch Service(es) 版本：2018-04-16
-
-### 第 93 次发布
-
-发布时间：2025-11-05 01:31:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [UpdateLogstashInstance](http://document.tencentcloudapi.woa.com/document/product/845/75141)
-
-	* 新增入参：MultiZoneInfo
-
-
-修改数据结构：
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
-
-	* 新增成员：EsPrivateTcpUrl
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 210 次发布
-
-发布时间：2025-11-05 01:32:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CreateFlowOption)
-
-	* 新增成员：HideOperationSteps, SelfName, HideSignCodeAfterStart
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 集团账号管理(organization) 版本：2021-03-31
-
-### 第 60 次发布
-
-发布时间：2025-11-05 01:47:47
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateUser](http://document.tencentcloudapi.woa.com/document/product/850/84603)
-
-	* 新增入参：NeedResetPassword
-
-* [UpdateUser](http://document.tencentcloudapi.woa.com/document/product/850/84599)
-
-	* 新增入参：NeedResetPassword
-
-
-修改数据结构：
-
-* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/850/67060#UserInfo)
-
-	* 新增成员：NeedResetPassword
-
-
-
-
-## 集团账号管理(organization) 版本：2018-12-25
 
 
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
 
-### 第 109 次发布
+### 第 110 次发布
 
-发布时间：2025-11-05 02:02:21
+发布时间：2025-11-06 02:00:33
 
 本次发布包含了以下内容：
 
@@ -133,14 +94,37 @@
 
 修改数据结构：
 
-* [PortElement](http://document.tencentcloudapi.woa.com/document/product/851/74915#PortElement)
+* [ResourceQuota](http://document.tencentcloudapi.woa.com/document/product/851/74915#ResourceQuota)
 
-	* 新增成员：Protocol
+	* 新增成员：GroupId, GroupName, TargetType
 
 
 
 
 ## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 101 次发布
+
+发布时间：2025-11-06 02:01:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteClusterInstances](http://document.tencentcloudapi.woa.com/document/product/457/31864)
+
+	* 新增入参：ResourceDeleteOptions
+
 
 
 
