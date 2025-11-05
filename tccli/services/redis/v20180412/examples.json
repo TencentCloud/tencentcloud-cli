@@ -362,7 +362,7 @@
       {
         "document": "获取集群版实例分片信息",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceShards\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-7pon****\",\n    \"FilterSlave\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceShards\": [\n            {\n                \"Connected\": 1,\n                \"Keys\": 0,\n                \"Role\": 0,\n                \"RunId\": \"562cbff8e8a393e2d3d7166f764125a37f5cXXX\",\n                \"Runid\": \"562cbff8e8a393e2d3d7166f764125a37f5cXXX\",\n                \"ShardId\": \"1\",\n                \"ShardName\": \"crs-kp52mXXX-001-01\",\n                \"Slots\": \"[\\\"0-16383\\\"]\",\n                \"Storage\": 36795120,\n                \"StorageSlope\": 0\n            }\n        ],\n        \"RequestId\": \"06be2b8b-23f4-473f-b0f8-423552ff7XXX\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceShards\": [\n            {\n                \"Connected\": 1,\n                \"Keys\": 0,\n                \"ReplicasNodeId\": 10086,\n                \"Role\": 0,\n                \"RunId\": \"562cbff8e8a393e2d3d7166f764125a37f5cXXX\",\n                \"Runid\": \"562cbff8e8a393e2d3d7166f764125a37f5cXXX\",\n                \"ShardId\": \"1\",\n                \"ShardName\": \"crs-kp52mXXX-001-01\",\n                \"Slots\": \"[\\\"0-16383\\\"]\",\n                \"Storage\": 36795120,\n                \"StorageSlope\": 0,\n                \"ZoneId\": \"ap-shanghai-4\"\n            }\n        ],\n        \"RequestId\": \"06be2b8b-23f4-473f-b0f8-423552ff7XXX\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "请求示例"
       }
     ],

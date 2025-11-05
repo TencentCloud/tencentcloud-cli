@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateDomain": {
-      "document": "添加域名\n\n备注：该接口不支持添加子域名。",
+      "document": "添加域名",
       "input": "CreateDomainRequest",
       "name": "添加域名",
       "output": "CreateDomainResponse",
@@ -469,6 +469,13 @@
       "output": "DownloadSnapshotResponse",
       "status": "online"
     },
+    "ModifyDomainCNAMESpeedupStatusBatch": {
+      "document": "批量修改域名CNAME加速状态",
+      "input": "ModifyDomainCNAMESpeedupStatusBatchRequest",
+      "name": "批量修改域名CNAME加速状态",
+      "output": "ModifyDomainCNAMESpeedupStatusBatchResponse",
+      "status": "online"
+    },
     "ModifyDomainCustomLine": {
       "document": "修改域名的自定义线路",
       "input": "ModifyDomainCustomLineRequest",
@@ -488,6 +495,13 @@
       "input": "ModifyDomainOwnerRequest",
       "name": "域名过户",
       "output": "ModifyDomainOwnerResponse",
+      "status": "online"
+    },
+    "ModifyDomainRecursiveStatusBatch": {
+      "document": "批量修改域名递归解析加速状态",
+      "input": "ModifyDomainRecursiveStatusBatchRequest",
+      "name": "批量修改域名递归解析加速状态",
+      "output": "ModifyDomainRecursiveStatusBatchResponse",
       "status": "online"
     },
     "ModifyDomainRemark": {
@@ -1708,7 +1722,7 @@
         },
         {
           "disabled": false,
-          "document": "是否星标域名，”yes”、”no” 分别代表是和否。",
+          "document": "是否星标域名，\"yes\"、\"no\" 分别代表是和否。",
           "example": "no",
           "member": "string",
           "name": "IsMark",
@@ -6659,7 +6673,7 @@
         },
         {
           "disabled": false,
-          "document": "域名状态",
+          "document": "域名状态，正常：ENABLE，暂停：PAUSE，封禁：SPAM",
           "example": "enable",
           "member": "string",
           "name": "Status",
@@ -6699,7 +6713,7 @@
         },
         {
           "disabled": false,
-          "document": "TTL(DNS记录缓存时间)",
+          "document": "TTL(DNS记录缓存时间)，单位：秒",
           "example": "600",
           "member": "uint64",
           "name": "TTL",
@@ -6739,7 +6753,7 @@
         },
         {
           "disabled": false,
-          "document": "域名DNS状态",
+          "document": "域名DNS状态，错误：dnserror，正常：空字符串",
           "example": "dnserror",
           "member": "string",
           "name": "DnsStatus",
@@ -6750,7 +6764,7 @@
         {
           "disabled": false,
           "document": "域名的NS列表",
-          "example": "[ns3.dnsv3.com]",
+          "example": "[\"ns3.dnsv3.com\"]",
           "member": "string",
           "name": "DnspodNsList",
           "output_required": true,
@@ -6850,7 +6864,7 @@
         {
           "disabled": false,
           "document": "域名实际使用的NS列表",
-          "example": "[ns3.dnsv3.com]",
+          "example": "[\"ns3.dnsv3.com\"]",
           "member": "string",
           "name": "ActualNsList",
           "output_required": true,
@@ -7911,6 +7925,52 @@
       ],
       "usage": "out"
     },
+    "ModifyDomainCNAMESpeedupStatusBatchRequest": {
+      "document": "ModifyDomainCNAMESpeedupStatusBatch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "[\"dnspod.com\", \"dnspod.cn\"]",
+          "member": "string",
+          "name": "DomainList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "状态。ENABLE-开启；DISABLE-关闭。",
+          "example": "ENABLE",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainCNAMESpeedupStatusBatchResponse": {
+      "document": "ModifyDomainCNAMESpeedupStatusBatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "1817413",
+          "member": "uint64",
+          "name": "JobId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDomainCustomLineRequest": {
       "document": "ModifyDomainCustomLine请求参数结构体",
       "members": [
@@ -8065,6 +8125,52 @@
     "ModifyDomainOwnerResponse": {
       "document": "ModifyDomainOwner返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainRecursiveStatusBatchRequest": {
+      "document": "ModifyDomainRecursiveStatusBatch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "[\"dnspod.com\", \"dnspod.cn\"]",
+          "member": "string",
+          "name": "DomainList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ENABLE-开启；DISABLE-关闭。",
+          "example": "ENABLE",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainRecursiveStatusBatchResponse": {
+      "document": "ModifyDomainRecursiveStatusBatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "1817425",
+          "member": "uint64",
+          "name": "JobId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9235,7 +9341,7 @@
         {
           "disabled": false,
           "document": "主机记录，如 www，如果不传，默认为 @。",
-          "example": "www",
+          "example": "m",
           "member": "string",
           "name": "SubDomain",
           "required": false,
@@ -9243,7 +9349,7 @@
         },
         {
           "disabled": false,
-          "document": "线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
+          "document": "线路的 ID，通过 API 记录线路获得，字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
           "example": "10=1",
           "member": "string",
           "name": "RecordLineId",
@@ -9252,7 +9358,7 @@
         },
         {
           "disabled": false,
-          "document": "TTL，范围1-604800，不同等级域名最小值不同。",
+          "document": "TTL，范围1-604800，不同等级域名最小值不同。单位：秒",
           "example": "600",
           "member": "uint64",
           "name": "TTL",
@@ -10082,7 +10188,7 @@
         {
           "disabled": false,
           "document": "主机名",
-          "example": "www",
+          "example": "m",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -10161,7 +10267,7 @@
         },
         {
           "disabled": false,
-          "document": "MX值，只有MX记录有",
+          "document": "MX值",
           "example": "10",
           "member": "uint64",
           "name": "MX",
@@ -10942,7 +11048,7 @@
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "5299600",
+          "example": "1000",
           "member": "int64",
           "name": "Id",
           "output_required": true,
@@ -10952,7 +11058,7 @@
         {
           "disabled": false,
           "document": "用户账号, 邮箱格式",
-          "example": "qcloud_uin_100000000328@qcloud.com",
+          "example": "qcloud_uin_1000@qcloud.com",
           "member": "string",
           "name": "Email",
           "output_required": true,
@@ -10961,7 +11067,7 @@
         },
         {
           "disabled": false,
-          "document": "账号状态：”enabled”: 正常；”disabled”: 被封禁",
+          "document": "账号状态: \"enabled\": 正常; \"disabled\": 被封禁",
           "example": "enabled",
           "member": "string",
           "name": "Status",
@@ -10972,7 +11078,7 @@
         {
           "disabled": false,
           "document": "电话号码",
-          "example": "187****3214",
+          "example": "188****8888",
           "member": "string",
           "name": "Telephone",
           "output_required": true,
@@ -10981,7 +11087,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱是否通过验证：”yes”: 通过；”no”: 未通过",
+          "document": "邮箱是否通过验证：\"yes\": 通过; \"no\": 未通过",
           "example": "yes",
           "member": "string",
           "name": "EmailVerified",
@@ -10991,7 +11097,7 @@
         },
         {
           "disabled": false,
-          "document": "手机是否通过验证：”yes”: 通过；”no”: 未通过",
+          "document": "手机是否通过验证：\"yes\": 通过； \"no\": 未通过",
           "example": "yes",
           "member": "string",
           "name": "TelephoneVerified",
@@ -11021,7 +11127,7 @@
         },
         {
           "disabled": false,
-          "document": "是否绑定微信：”yes”: 通过；”no”: 未通过",
+          "document": "是否绑定微信： \"yes\": 通过； \"no\": 未通过",
           "example": "yes",
           "member": "string",
           "name": "WechatBinded",
@@ -11032,7 +11138,7 @@
         {
           "disabled": false,
           "document": "用户UIN",
-          "example": "100000000328",
+          "example": "1000",
           "member": "int64",
           "name": "Uin",
           "output_required": true,

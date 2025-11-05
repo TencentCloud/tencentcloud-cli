@@ -2780,6 +2780,14 @@
         "title": "镜像仓库资产刷新"
       }
     ],
+    "UninstallClusterContainerSecurity": [
+      {
+        "document": "卸载集群容器安全",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UninstallClusterContainerSecurity\n<公共请求参数>\n\n{\n    \"ClusterIDs\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "卸载集群容器安全"
+      }
+    ],
     "UpdateAndPublishNetworkFirewallPolicyDetail": [
       {
         "document": "",

@@ -7431,6 +7431,26 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区信息。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点组 ID。",
+          "example": "7250",
+          "member": "int64",
+          "name": "ReplicasNodeId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

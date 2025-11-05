@@ -115,8 +115,8 @@
     "DescribeAuditResultExternal": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditResultExternal\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c052505d-d220-4703-bab2-f4766d581322\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditResultExternal\n<公共请求参数>\n\n{\n    \"BizId\": 1500000001,\n    \"PageNo\": 1,\n    \"PageSize\": 10,\n    \"BeginTime\": 1761224396,\n    \"EndTime\": 1761224570,\n    \"MinRate\": 50,\n    \"MaxRate\": 100,\n    \"OpenId\": \"10086\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"c052505d-d220-4703-bab2-f4766d581322\"\n    }\n}",
         "title": "获审核结果明细（外部API）"
       }
     ],

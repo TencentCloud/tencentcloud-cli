@@ -67,7 +67,7 @@
     "CreateDataFlow": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataFlow\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-44d53b63e\",\n    \"SourceStorageType\": \"S3_COS\",\n    \"SourceStorageAddress\": \"https://aileen-data-flow-1251000004.cos.ap-guangzhou.myqcloud.com\",\n    \"SourcePath\": \"test3\",\n    \"TargetPath\": \"/cfs/test11\",\n    \"SecretId\": \"AKIDbzzYj65vue75sC1yg8P4cyBHBpLk\",\n    \"SecretKey\": \"onE8m9NN82ik6h3FCvXt2uc3Sjp\",\n    \"DataFlowName\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataFlow\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-44d53b63e\",\n    \"SourceStorageType\": \"S3_COS\",\n    \"SourceStorageAddress\": \"https://aileen-data-flow-1251000004.cos.ap-guangzhou.myqcloud.com\",\n    \"SourcePath\": \"test3\",\n    \"TargetPath\": \"/cfs/test11\",\n    \"SecretId\": \"AKIDbzzYj65vue75sC1yg8P4cyBHBpLk\",\n    \"SecretKey\": \"onE8m9NN82ik6h3FCvXt2uc3Sjp\",\n    \"DataFlowName\": \"abctest\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataFlowId\": \"cfs-dataflow-4f827203\",\n        \"RequestId\": \"c5369436-a47c-4504-9cfa-f1f40c2c969f\"\n    }\n}",
         "title": "创建数据流动"
       }

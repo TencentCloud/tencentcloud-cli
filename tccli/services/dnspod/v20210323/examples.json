@@ -30,12 +30,6 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\",\n    \"IsMark\": \"no\",\n    \"GroupId\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"DomainInfo\": {\n            \"Id\": 62,\n            \"Punycode\": \"dnspod.com\",\n            \"Domain\": \"dnspod.com\",\n            \"GradeNsList\": [\n                \"source.dnspod.net\",\n                \"low.dnspod.net\"\n            ]\n        }\n    }\n}",
         "title": "添加域名"
-      },
-      {
-        "document": " ",
-        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"iceice.club\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"674a208e-4829-4c2d-a519-a85f2f9bb223\",\n        \"DomainInfo\": {\n            \"GradeNsList\": [\n                \"eunice.dnspod.net\",\n                \"country.dnspod.net\"\n            ],\n            \"Id\": 15,\n            \"Punycode\": \"iceice.club\",\n            \"Domain\": \"iceice.club\"\n        }\n    }\n}",
-        "title": "CreateDomain_success"
       }
     ],
     "CreateDomainAlias": [
@@ -572,6 +566,14 @@
         "title": "下载快照"
       }
     ],
+    "ModifyDomainCNAMESpeedupStatusBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainCNAMESpeedupStatusBatch\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"dnspod.com\",\n        \"dnspod.cn\"\n    ],\n    \"Status\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b73e095d-87d8-4a4f-b78b-f1aec07202ff\",\n        \"JobId\": 1817401\n    }\n}",
+        "title": "批量修改域名CNAME加速状态"
+      }
+    ],
     "ModifyDomainCustomLine": [
       {
         "document": "修改域名的自定义线路",
@@ -594,6 +596,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainOwner\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\",\n    \"Account\": \"100000000328\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
         "title": "域名过户"
+      }
+    ],
+    "ModifyDomainRecursiveStatusBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainRecursiveStatusBatch\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"dnspod.com\",\n        \"dnspod.cn\"\n    ],\n    \"Status\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff6e1e46-2a6e-4290-bb45-f71379938209\",\n        \"JobId\": 1817425\n    }\n}",
+        "title": "批量修改域名递归解析加速状态"
       }
     ],
     "ModifyDomainRemark": [

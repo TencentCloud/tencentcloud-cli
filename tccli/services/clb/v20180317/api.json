@@ -9719,6 +9719,15 @@
           "name": "OAuth",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义cookie名",
+          "example": "test_cookie",
+          "member": "string",
+          "name": "CookieName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10814,7 +10823,7 @@
         {
           "disabled": false,
           "document": "健康检查信息。详情请参见：[健康检查](https://cloud.tencent.com/document/product/214/6097)",
-          "example": "{\"HealthSwitch\": 1, \"TimeOut\": 5, \"IntervalTime\": 5, \"HealthNum\"",
+          "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
           "required": false,
@@ -10823,7 +10832,7 @@
         {
           "disabled": false,
           "document": "证书信息；此参数和MultiCertInfo不能同时传入。",
-          "example": "{\"SSLMode\": \"UNIDIRECTIONAL\", \"CertId\": \"fF6AGfxE\"}",
+          "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
           "required": false,
@@ -10918,6 +10927,15 @@
           "name": "MultiCertInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义cookie名",
+          "example": "test_cookie",
+          "member": "string",
+          "name": "CookieName",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -11148,7 +11166,7 @@
         {
           "disabled": false,
           "document": "绑定的目标组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroupList",
           "output_required": true,
@@ -11163,6 +11181,16 @@
           "name": "OAuth",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义cookie名。",
+          "example": "test_cookie",
+          "member": "string",
+          "name": "CookieName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

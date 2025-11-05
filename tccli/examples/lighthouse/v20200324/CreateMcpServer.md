@@ -26,3 +26,29 @@ Output:
 }
 ```
 
+**Example 2: 创建MCP Server-指定传输类型**
+
+演示如何创建一个指定传输类型的MCP Server
+
+Input: 
+
+```
+tccli lighthouse CreateMcpServer --cli-unfold-argument  \
+    --InstanceId lhins-ah48gaor \
+    --Name Sequential Thinking \
+    --Command bnB4IC15IEBtb2RlbGNvbnRleHRwcm90b2NvbC9zZXJ2ZXItc2VxdWVudGlhbC10aGlua2luZw== \
+    --Envs.0.Key TEST_ENV_KEY \
+    --Envs.0.Value TEST_ENV_VALUE \
+    --TransportType STREAMABLE_HTTP
+```
+
+Output: 
+```
+{
+    "Response": {
+        "McpServerId": "lhms-9v3z57px",
+        "RequestId": "9b58cd17-6586-404f-ac93-7b2913024080"
+    }
+}
+```
+

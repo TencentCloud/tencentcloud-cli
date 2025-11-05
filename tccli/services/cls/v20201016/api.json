@@ -1171,7 +1171,7 @@
         },
         {
           "disabled": false,
-          "document": "云监控通知渠道相关信息，和AlarmNoticeIds互斥",
+          "document": "腾讯云可观测平台通知渠道相关信息，和AlarmNoticeIds互斥",
           "example": "无",
           "member": "MonitorNotice",
           "name": "MonitorNotice",
@@ -1858,7 +1858,7 @@
         },
         {
           "disabled": false,
-          "document": "通知渠道类型，0默认代表cls内部通知渠道，1代表云监控通知渠道",
+          "document": "通知渠道类型，0默认代表cls内部通知渠道，1代表腾讯云可观测平台通知渠道",
           "example": "0",
           "member": "uint64",
           "name": "SendType",
@@ -14089,7 +14089,7 @@
       "usage": "both"
     },
     "MonitorNoticeRule": {
-      "document": "云监控通知渠道组信息",
+      "document": "腾讯云可观测平台通知渠道组信息",
       "members": [
         {
           "disabled": false,

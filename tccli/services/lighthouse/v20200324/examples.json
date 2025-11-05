@@ -134,6 +134,12 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMcpServer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-5h3s0lht\",\n    \"Name\": \"腾讯云 Lighthouse MCP Server\",\n    \"Command\": \"bnB4IC15IGxpZ2h0aG91c2UtbWNwLXNlcnZlcg==\",\n    \"Description\": \"基于MCP协议的腾讯云Lighthouse MCP Server，借助大模型即可完成实例防火墙配置、实例检测、监控分析等常用功能。\",\n    \"Envs\": [\n        {\n            \"Key\": \"TENCENTCLOUD_SECRET_KEY\",\n            \"Value\": \"YOUR_TENCENT_SECRET_KEY\"\n        },\n        {\n            \"Key\": \"TENCENTCLOUD_SECRET_ID\",\n            \"Value\": \"YOUR_TENCENT_SECRET_ID\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"McpServerId\": \"lhms-p2dophob\",\n        \"RequestId\": \"54a37c92-9e77-4ba2-a791-925ae44f37f2\"\n    }\n}",
         "title": "创建MCP Server"
+      },
+      {
+        "document": "演示如何创建一个指定传输类型的MCP Server",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMcpServer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-ah48gaor\",\n    \"Name\": \"Sequential Thinking\",\n    \"Command\": \"bnB4IC15IEBtb2RlbGNvbnRleHRwcm90b2NvbC9zZXJ2ZXItc2VxdWVudGlhbC10aGlua2luZw==\",\n    \"Envs\": [\n        {\n            \"Key\": \"TEST_ENV_KEY\",\n            \"Value\": \"TEST_ENV_VALUE\"\n        }\n    ],\n    \"TransportType\": \"STREAMABLE_HTTP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"McpServerId\": \"lhms-9v3z57px\",\n        \"RequestId\": \"9b58cd17-6586-404f-ac93-7b2913024080\"\n    }\n}",
+        "title": "创建MCP Server-指定传输类型"
       }
     ],
     "DeleteBlueprints": [

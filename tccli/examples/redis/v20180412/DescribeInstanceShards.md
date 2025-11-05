@@ -18,6 +18,7 @@ Output:
             {
                 "Connected": 1,
                 "Keys": 0,
+                "ReplicasNodeId": 10086,
                 "Role": 0,
                 "RunId": "562cbff8e8a393e2d3d7166f764125a37f5cXXX",
                 "Runid": "562cbff8e8a393e2d3d7166f764125a37f5cXXX",
@@ -25,7 +26,8 @@ Output:
                 "ShardName": "crs-kp52mXXX-001-01",
                 "Slots": "[\"0-16383\"]",
                 "Storage": 36795120,
-                "StorageSlope": 0
+                "StorageSlope": 0,
+                "ZoneId": "ap-shanghai-4"
             }
         ],
         "RequestId": "06be2b8b-23f4-473f-b0f8-423552ff7XXX",

@@ -2471,6 +2471,15 @@
           "name": "Envs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "传输类型。枚举值如下：\n\n<li>STREAMABLE_HTTP：HTTP协议的流式传输方式。未传传输类型字段时，默认创建此类型的MCP Server</li>\n<li>SSE：Server-Sent Events，服务器发送事件</li>",
+          "example": "STREAMABLE_HTTP",
+          "member": "string",
+          "name": "TransportType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8298,8 +8307,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "MCP Server ID。",
-          "example": "lhms-oartxxxz",
+          "document": "MCP Server ID",
+          "example": "lhms-bi8sl6ut",
           "member": "string",
           "name": "McpServerId",
           "output_required": true,
@@ -8310,7 +8319,7 @@
         {
           "disabled": false,
           "document": "MCP Server名称。最大长度：64",
-          "example": "map",
+          "example": "test-modify",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -8320,7 +8329,7 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server类型。枚举值：PUBLIC_PACKAGE，公共包安装；AGENT_GENERATED，AI生成。",
+          "document": "MCP Server类型。枚举值如下：\n\n<li>PUBLIC_PACKAGE：公共包安装</li>\n<li>AGENT_GENERATED：AI生成</li>",
           "example": "PUBLIC_PACKAGE",
           "member": "string",
           "name": "McpServerType",
@@ -8332,7 +8341,7 @@
         {
           "disabled": false,
           "document": "MCP Server图标地址",
-          "example": "http://127.0.0.1/map/icon.png",
+          "example": "https://cloudcache.tencent-cloud.com",
           "member": "string",
           "name": "IconUrl",
           "output_required": false,
@@ -8343,7 +8352,7 @@
         {
           "disabled": false,
           "document": "Base64编码后的MCP Server启动命令。最大长度：2048",
-          "example": "ZW5jb2RlZCBtY3Agc2VydmVyIGNvbW1hbmQ=",
+          "example": "bnB4IEBwbGF5d3JpZ2h0L21jcEBsYXRlc3QgLS1oZWFkbGVzcw==",
           "member": "string",
           "name": "Command",
           "output_required": true,
@@ -8353,7 +8362,7 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server状态。枚举值如下：\n\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nSTOPPED：表示关闭\nSTARTING：表示开启中\nSTOPPING：表示关闭中\nRESTARTING：表示重启中\nREMOVING：表示删除中\nUNKNOWN：表示未知\nENV_ERROR：表示环境错误",
+          "document": "MCP Server状态。枚举值如下：\n\n<li>PENDING：表示创建中</li>\n<li>LAUNCH_FAILED：表示创建失败</li>\n<li>RUNNING：表示运行中</li>\n<li>STOPPED：表示关闭</li>\n<li>STARTING：表示开启中</li>\n<li>STOPPING：表示关闭中</li>\n<li>RESTARTING：表示重启中</li>\n<li>REMOVING：表示删除中</li>\n<li>UNKNOWN：表示未知</li>\n<li>ENV_ERROR：表示环境错误</li>",
           "example": "RUNNING",
           "member": "string",
           "name": "State",
@@ -8364,8 +8373,8 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server访问地址。",
-          "example": "http://127.0.0.1/map/sse",
+          "document": "MCP Server访问地址。传输类型 TransportType 为 STREAMABLE_HTTP 时以 /mcp结尾，为 SSE 时以 /sse结尾。",
+          "example": "http://1.14.54.109/lhms-bi8sl6ut/mcp",
           "member": "string",
           "name": "ServerUrl",
           "output_required": true,
@@ -8376,7 +8385,7 @@
         {
           "disabled": false,
           "document": "MCP Server配置",
-          "example": "{\\\"mcpServers\\\":{\\\"map\\\":{\\\"url\\\":\\\"http://127.0.0.1/map/sse\\\"}}}",
+          "example": "{\"mcpServers\":{\"test-modify\":{\"url\":\"http://1.14.54.109/lhms-bi8sl6ut/mcp\"}}}",
           "member": "string",
           "name": "Config",
           "output_required": true,
@@ -8387,7 +8396,7 @@
         {
           "disabled": false,
           "document": "MCP Server备注",
-          "example": "此MCP Server用于提供地图访问功能。",
+          "example": "Playwright Mcp",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -8398,7 +8407,7 @@
         {
           "disabled": false,
           "document": "MCP Server创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
-          "example": "2025-05-09T17:50:14Z",
+          "example": "2025-10-22T10:46:45Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": true,
@@ -8409,7 +8418,7 @@
         {
           "disabled": false,
           "document": "MCP Server修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
-          "example": "2025-05-09T17:50:14Z",
+          "example": "2025-10-22T10:49:49Z",
           "member": "datetime_iso",
           "name": "UpdatedTime",
           "output_required": true,
@@ -8426,6 +8435,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传输类型。枚举值如下：\n\n<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>\n<li>SSE：Server-Sent Events，服务器发送事件</li>",
+          "example": "STREAMABLE_HTTP",
+          "member": "string",
+          "name": "TransportType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -9199,7 +9219,7 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server ID。可以通过DescribeMcpServers接口返回值中的McpServerId获取。",
+          "document": "MCP Server ID。可以通[DescribeMcpServers](https://cloud.tencent.com/document/product/1207/122837)接口返回值中的McpServerId获取。",
           "example": "lhms-p2dophob",
           "member": "string",
           "name": "McpServerId",
@@ -9241,6 +9261,15 @@
           "name": "Envs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "传输类型。枚举值如下：\n\n<li>STREAMABLE_HTTP：HTTP协议的流式传输方式</li>\n<li>SSE：Server-Sent Events，服务器发送事件</li>",
+          "example": "STREAMABLE_HTTP",
+          "member": "string",
+          "name": "TransportType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

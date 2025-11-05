@@ -208,6 +208,14 @@
         "title": "删除坐席信息示例"
       }
     ],
+    "DescribeAIAgentInfoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIAgentInfoList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400692008,\n    \"PageSize\": 1,\n    \"PageNumber\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"AIAgentInfoList\": [\n            {\n                \"AIAgentId\": 69,\n                \"AIAgentName\": \"u65b0u667au80fdu4f53\"\n            }\n        ],\n        \"TotalCount\": 373,\n        \"RequestId\": \"1e6e8974-de10-4485-b53d-25d8c1bef18d\"\n    }\n}",
+        "title": "获取智能体信息列表"
+      }
+    ],
     "DescribeAIAnalysisResult": [
       {
         "document": "",

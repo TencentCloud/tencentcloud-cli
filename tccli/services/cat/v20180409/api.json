@@ -175,7 +175,7 @@
         {
           "disabled": false,
           "document": "资源标签值",
-          "example": "[{\"TagKey\":\"运营部门\", \"TagValue\": \"云产一\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tag",
           "required": false,

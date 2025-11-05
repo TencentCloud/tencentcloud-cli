@@ -9794,7 +9794,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。",
+          "document": "查询的结束时间，默认为当前时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。",
           "example": "1750994218",
           "member": "int64",
           "name": "EndTime",
@@ -9812,7 +9812,7 @@
         },
         {
           "disabled": false,
-          "document": "分页入参",
+          "document": "分页入参，默认20",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -9828,7 +9828,7 @@
         {
           "disabled": false,
           "document": "满足查询要求的扩容历史",
-          "example": "[{\"OperationType\":\"extend\",\"...\"}]",
+          "example": "无",
           "member": "HistoryJob",
           "name": "Items",
           "output_required": false,

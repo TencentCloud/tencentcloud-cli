@@ -2480,7 +2480,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）",
           "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
@@ -2507,7 +2507,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Offset",
+          "document": "偏移量，默认为0。关于 Offset 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2516,7 +2516,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Limit",
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -2525,7 +2525,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤",
+          "document": "过滤条件列表，Name 可选值为ip、instanceId、hostname、label\n\n- Name 为 ip 时，Value 为待查询节点 ip\n- Name 为 hostname 时，Value 为待查询节点名称\n- Name 为 label 时，Value 为待查询 K8S 节点 label\n- Name 为 instanceId 时，Value 为 待查询节点 id",
           "example": "无",
           "member": "Filter",
           "name": "Filter",
@@ -7371,7 +7371,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）",
           "example": "cls-e55paxnt",
           "member": "string",
           "name": "ClusterId",
@@ -7380,8 +7380,8 @@
         },
         {
           "disabled": false,
-          "document": "主机InstanceId列表",
-          "example": "[\"ins-e55paxnt\\r\\n\"]",
+          "document": "主机 InstanceId 列表",
+          "example": "[\"ins-e55paxnt\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -7404,6 +7404,15 @@
           "name": "ForceDelete",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "集群删除时资源的删除策略，目前支持CBS（默认保留CBS）",
+          "example": "无",
+          "member": "ResourceDeleteOption",
+          "name": "ResourceDeleteOptions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7414,7 +7423,7 @@
         {
           "disabled": false,
           "document": "删除成功的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " [\"ins-e55paxnt\"]",
+          "example": "[\"ins-e55paxnt\"]",
           "member": "string",
           "name": "SuccInstanceIds",
           "output_required": true,
@@ -7424,7 +7433,7 @@
         {
           "disabled": false,
           "document": "删除失败的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " [\"ins-e55paxnt\"]",
+          "example": "[\"ins-e55paxnt\"]",
           "member": "string",
           "name": "FailedInstanceIds",
           "output_required": true,
@@ -7434,7 +7443,7 @@
         {
           "disabled": false,
           "document": "未匹配到的实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " [\"ins-e55paxnt\"]",
+          "example": "[\"ins-e55paxnt\"]",
           "member": "string",
           "name": "NotFoundInstanceIds",
           "output_required": true,
@@ -9282,7 +9291,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）",
           "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
@@ -9309,7 +9318,7 @@
         },
         {
           "disabled": false,
-          "document": "需要获取的节点实例Id列表。如果为空，表示拉取集群下所有节点实例。",
+          "document": "需要获取的节点实例 ID 列表。如果为空，表示拉取集群下所有节点实例。普通节点用 CVM ID（如 ins-1cghhuuu ），原生节点用节点池内机器 ID （如 np-1ade4uid-0a2dc ）。",
           "example": "[\"ins-1cghhuuu\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -9318,7 +9327,7 @@
         },
         {
           "disabled": false,
-          "document": "节点角色, MASTER, WORKER, ETCD, MASTER_ETCD,ALL, 默认为WORKER。默认为WORKER类型。",
+          "document": "节点角色，默认为WORKER类型\n\n- WOKRER 集群内常规计算节点\n- MASTER 独立集群控制面组件节点\n- ETCD 独立集群 etcd 存储节点\n- MASTER_ETCD 独立集群控制面、etcd 共同部署的 master 节点\n",
           "example": "WORKER",
           "member": "string",
           "name": "InstanceRole",
@@ -26641,7 +26650,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）",
           "example": "cls-1cghhuuu",
           "member": "string",
           "name": "ClusterId",
@@ -26668,7 +26677,7 @@
         },
         {
           "disabled": false,
-          "document": "需要升级的节点列表",
+          "document": "需要升级的节点列表，可以通过控制台或 [查询待升级节点接口\n](https://cloud.tencent.com/document/api/457/50366) 获取",
           "example": "[\"ins-1cghhuuu\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -26686,7 +26695,7 @@
         },
         {
           "disabled": false,
-          "document": "是否忽略节点升级前检查",
+          "document": "是否忽略节点升级前检查，默认值 false",
           "example": "false",
           "member": "bool",
           "name": "SkipPreCheck",

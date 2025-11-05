@@ -232,7 +232,7 @@
       "status": "online"
     },
     "DescribeLifecycleDataTask": {
-      "document": "查询生命周期任务的接口",
+      "document": "查询生命周期任务的接口。仅支持查询最近三个月内的任务数据。",
       "input": "DescribeLifecycleDataTaskRequest",
       "name": "查询生命周期任务的接口",
       "output": "DescribeLifecycleDataTaskResponse",
@@ -1654,7 +1654,7 @@
         {
           "disabled": false,
           "document": "文件系统内目标路径",
-          "example": "/cfs/123",
+          "example": "/cfs/12a3",
           "member": "string",
           "name": "TargetPath",
           "required": true,
@@ -1684,6 +1684,51 @@
           "example": "default",
           "member": "string",
           "name": "DataFlowName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 0：不开启自动更新  1：开启自动更新",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoRefresh",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "KafkaConsumer 消费时使用的Topic参数",
+          "example": "1251000004-e37d71b2-4fb1-4b2c-b7d0-522946d17d93",
+          "member": "string",
+          "name": "UserKafkaTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t服务地址 示例值：kafkaconsumer-ap-beijing.cls.tencentyun.com:9095",
+          "example": "kafkaconsumer-ap-beijing.cls.tencentyun.com:9095",
+          "member": "string",
+          "name": "ServerAddr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Kafka消费用户名.示例值：name",
+          "example": "name",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Kafka消费用户密码。默认${SecretId}#${SecretKey}。",
+          "example": "xbxcxdxexcxdxa",
+          "member": "string",
+          "name": "Password",
           "required": false,
           "type": "string"
         }
@@ -3160,7 +3205,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间。须早于 EndTime ，仅支持查询最近3个月内的任务数据。",
           "example": "2024-11-19 10:15:37",
           "member": "string",
           "name": "StartTime",
@@ -3169,7 +3214,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "结束时间。须晚于 StartTime ，仅支持查询最近3个月内的任务数据。",
           "example": "2024-10-19 10:15:37",
           "member": "string",
           "name": "EndTime",
@@ -3178,7 +3223,7 @@
         },
         {
           "disabled": false,
-          "document": "\t任务ID",
+          "document": "任务ID",
           "example": "c1a2b3f4",
           "member": "string",
           "name": "TaskId",
@@ -3211,6 +3256,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统版本；v3.1: pcfs/hifs v4.0:Turbo",
+          "example": "v3.1",
+          "member": "string",
+          "name": "CfsVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4797,6 +4851,51 @@
           "name": "SecretKey",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "KafkaConsumer 消费时使用的Topic参数",
+          "example": "1251000004-e37d71b2-4fb1-4b2c-b7d0-522946d17d93",
+          "member": "string",
+          "name": "UserKafkaTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务地址",
+          "example": "kafkaconsumer-ap-beijing.cls.tencentyun.com:9095",
+          "member": "string",
+          "name": "ServerAddr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "name",
+          "example": "Kafka消费用户名",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Kafka消费用户密码",
+          "example": "axxgbadga",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "元数据增量更新开关；1开启，0关闭",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRefresh",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
