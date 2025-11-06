@@ -2376,6 +2376,14 @@
         "title": "示例1"
       }
     ],
+    "DescribePhishAttackChain": [
+      {
+        "document": "按输入构造钓鱼攻击链",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePhishAttackChain\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2feda7f-c18c-4eb7-a51f-a552ae5bdfc1\"\n    }\n}",
+        "title": "查询钓鱼攻击链"
+      }
+    ],
     "DescribePolicyContent": [
       {
         "document": "",

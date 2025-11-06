@@ -8028,6 +8028,15 @@
           "name": "Extends",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "开启记录公网来源ip和服务端接收时间",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSourceFrom",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

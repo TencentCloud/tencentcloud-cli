@@ -19,7 +19,7 @@ Output:
             {
                 "Name": "app-name",
                 "Namespace": "default",
-                "Revision": "1",
+                "Revision": 1,
                 "Status": "deployed",
                 "Chart": "redis-10.5.3",
                 "AppVersion": "5.0.7",

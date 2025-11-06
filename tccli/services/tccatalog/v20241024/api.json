@@ -109,6 +109,72 @@
       ],
       "type": "object"
     },
+    "Audit": {
+      "document": "审计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "allen",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-11-01 11:01:01",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后修改者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "allen",
+          "member": "string",
+          "name": "LastModifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-11-01 11:01:01",
+          "member": "string",
+          "name": "LastModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "124141241241",
+          "member": "int64",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后修改时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "42421414234",
+          "member": "int64",
+          "name": "LastModifiedAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BindTccVpcEndPointServiceWhiteListRequest": {
       "document": "BindTccVpcEndPointServiceWhiteList请求参数结构体",
       "members": [
@@ -228,7 +294,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "创建时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
@@ -238,7 +304,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "更新时间",
           "example": "2024-01-01 12:00:00",
           "member": "string",
@@ -265,6 +331,16 @@
           "name": "Id",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计信息",
+          "example": "",
+          "member": "Audit",
+          "name": "Audit",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

@@ -31,7 +31,8 @@ Output:
                     "Gpu": 400,
                     "GpuType": "4090D",
                     "RealGpu": 0,
-                    "RealGpuDetailSet": []
+                    "RealGpuDetailSet": [],
+                    "EnableRDMA": false
                 },
                 "TotalResource": {
                     "Cpu": 78200,
@@ -39,7 +40,8 @@ Output:
                     "Gpu": 400,
                     "GpuType": "4090D",
                     "RealGpu": 0,
-                    "RealGpuDetailSet": []
+                    "RealGpuDetailSet": [],
+                    "EnableRDMA": false
                 },
                 "InstanceStatus": "RUNNING",
                 "SubUin": "100023251204",

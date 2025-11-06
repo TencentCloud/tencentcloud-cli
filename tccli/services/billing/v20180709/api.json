@@ -24986,8 +24986,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作动作。取值：\nreturn-退资源\ndestroy-销毁资源\nrecover-恢复资源\nblock-冻结资源(仅支持通知)\nunblock-解冻资源(仅支持通知)",
-          "example": "return",
+          "document": "操作动作。\n取值：\nreturn-退资源(已下线，需要走交易接口)\ndestroy-销毁资源\nrecover-恢复资源\nblock-合规冻结资源(仅支持通知)\nunblock-合规解冻资源(仅支持通知)",
+          "example": "destroy",
           "member": "string",
           "name": "ActionType",
           "required": true,
@@ -25085,7 +25085,7 @@
         {
           "disabled": false,
           "document": "交易订单号列表，仅当操作会产生交易行为时，才会存在订单号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"12434\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": true,

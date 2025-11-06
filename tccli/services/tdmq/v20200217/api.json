@@ -4804,7 +4804,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版本，不传默认为 3.8.30，可选值为 3.8.30 和 3.11.8",
+          "document": "集群版本，不传默认为 3.8.30，可选值为 3.8.30、3.11.8和3.13.7",
           "example": "3.8.30",
           "member": "string",
           "name": "ClusterVersion",

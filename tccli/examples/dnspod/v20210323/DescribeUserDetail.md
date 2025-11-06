@@ -11,23 +11,24 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "ab4f1426-ea15-42ea-8183-dc1b44151166",
+        "RequestId": "8b7a2ed1-0f04-4cf6-b5b1-b77f91572f34",
         "UserInfo": {
-            "Nick": "jionly",
-            "Id": 5299600,
-            "Email": "qcloud_uin_100000000328@qcloud.com",
-            "Status": "enabled",
-            "Telephone": "187****3214",
+            "AllowTransferIn": false,
+            "Email": "qcloud_uin_123456@qcloud.com",
             "EmailVerified": "yes",
-            "TelephoneVerified": "yes",
-            "UserGrade": "DP_Free",
-            "RealName": "王小云",
-            "WechatBinded": "no",
-            "Uin": 100000000328,
             "FreeNs": [
-                "hannah.dnspod.net",
-                "perch.dnspod.net"
-            ]
+                "v4u4f.dnspod.net",
+                "c6b8q.dnspod.net"
+            ],
+            "Id": 123456,
+            "Nick": "",
+            "RealName": "",
+            "Status": "enabled",
+            "Telephone": "",
+            "TelephoneVerified": "yes",
+            "Uin": 123456,
+            "UserGrade": "DP_Free",
+            "WechatBinded": "no"
         }
     }
 }

@@ -66,7 +66,8 @@ Output:
                                     "Name": "HCC-H20",
                                     "Value": 800
                                 }
-                            ]
+                            ],
+                            "EnableRDMA": false
                         },
                         "ResourceGroupName": "new-H20"
                     },
@@ -113,7 +114,8 @@ Output:
                                     "Name": "HCC-H20",
                                     "Value": 800
                                 }
-                            ]
+                            ],
+                            "EnableRDMA": false
                         },
                         "ResourceGroupName": "new-H20"
                     }
