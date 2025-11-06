@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke CreateClusterRelease --cli-unfold-argument  \
-    --ChartFrom tke \
+    --ChartFrom tke-market \
     --Name app-05 \
     --ClusterId cls-65r1c5nu \
     --Namespace lwj \

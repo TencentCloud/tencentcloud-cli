@@ -688,7 +688,7 @@ Output:
 
 1. 签署方包括本方企业和个人（在Approvers中包含两个ApproverInfo元素）。
 2. 本方企业采用自动签署方式（在approver中将approverType设置为3）。
-3. 在发起合同之前，需要为本方经办人开通并授权自动签署功能（登录腾讯电子签控制台 -> 更多能力 -> 企业设置 -> 拓展服务 -> 企业自动签署），详见<a href="https://qian.tencent.com/document/92776/">企业自动签署开通参考文档</a>
+3. 在发起合同之前，需要为本方经办人开通并授权自动签署功能（登录【腾讯电子签控制台】 -> 【更多】 -> 【高级签署能力】-> 【企业自动签署】），详见<a href="https://qian.tencent.com/document/92776/">企业自动签署开通参考文档</a>
 4. 自动签署方的签署人默认为发起方。
 5. 本方企业的签署区仅包含一个印章签署控件：印章（在SignComponents中包含一个Component元素，印章（SIGN_SEAL）采用绝对定位方式，即指定具体的ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage）。
 6. 本方企业的印章控件必须指定印章（ComponentValue必须指定当前员工已经授权的印章Id，可登录腾讯电子签控制台 -> 印章 -> 印章中心 选择某一个印章，在页面上显示为印章ID）。

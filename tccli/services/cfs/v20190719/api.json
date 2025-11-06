@@ -2150,7 +2150,7 @@
         {
           "disabled": false,
           "document": "目录路径",
-          "example": "/cfs/123",
+          "example": "/cfs/defaule-test",
           "member": "string",
           "name": "TargetPath",
           "output_required": true,
@@ -2184,6 +2184,66 @@
           "member": "string",
           "name": "FileSystemId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：不开启自动更新\n\n1：开启自动更新",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRefresh",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KafkaConsumer 消费时使用的Topic参数",
+          "example": "1251000004-e37d71b2-4fb1-4b2c-b7d0-522946d17d93",
+          "member": "string",
+          "name": "UserKafkaTopic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务地址",
+          "example": "kafkaconsumer-ap-beijing.cls.tencentyun.com:9095",
+          "member": "string",
+          "name": "ServerAddr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Kafka消费用户名",
+          "example": "name",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动刷新的状态，available：已生效\npending：配置中\nunavailable：失效",
+          "example": "pending",
+          "member": "string",
+          "name": "AutoRefreshStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动刷新开启时间",
+          "example": "2024-10-30 12:43",
+          "member": "string",
+          "name": "AutoRefreshTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4471,7 +4531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据转储后的存储类型",
+          "document": "数据转储后的存储类型。其中：InfrequentAccess：低频介质存储；ColdStorage：冷存储。",
           "example": "InfrequentAccess",
           "member": "string",
           "name": "StorageType",
@@ -4482,7 +4542,7 @@
         },
         {
           "disabled": false,
-          "document": "数据转储文件类型",
+          "document": "数据转储文件类型。其中，BIG_FILE：超大文件；STD_FILE：普通文件；SMALL_FILE：小文件；ALL：所有文件。",
           "example": "All",
           "member": "string",
           "name": "FileType",
@@ -4493,7 +4553,7 @@
         },
         {
           "disabled": false,
-          "document": "数据转储行为",
+          "document": "数据转储行为。其中，Archive：沉降；Noarchive：不沉降。",
           "example": "Archive",
           "member": "string",
           "name": "Action",
@@ -4504,7 +4564,7 @@
         },
         {
           "disabled": false,
-          "document": "数据转储触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据转储触发时间。由“DEFAULT_ATIME_”与“数字”组成，单位为天。当 Action 为 Noarchive，请保持为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DEFAULT_ATIME_14",
           "member": "string",
           "name": "Interval",
@@ -4515,7 +4575,7 @@
         },
         {
           "disabled": false,
-          "document": "数据转储文件最大规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据转储文件最大规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1G",
           "member": "string",
           "name": "FileMaxSize",
@@ -4526,7 +4586,7 @@
         },
         {
           "disabled": false,
-          "document": "数据转储文件最小规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据转储文件最小规格。其数值需使用“数字+单位”格式进行表示，单位支持K（KiB）、M（MiB）、G（GiB）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1M",
           "member": "string",
           "name": "FileMinSize",

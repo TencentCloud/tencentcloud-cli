@@ -1,5 +1,19 @@
 {
   "actions": {
+    "ApplyFreeCertificate": [
+      {
+        "document": "站点（ZoneId 为 zone-2fgd17m17xw）下的域名（abc.test.com）使用 HTTP 访问文件验证方式申请免费证书。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyFreeCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2fgd17m17xw\",\n    \"Domain\": \"abc.test.com\",\n    \"VerificationMethod\": \"http_challenge\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"064a8c04-2d3e-4c9d-9473-39a8f76276ea\",\n        \"FileVerification\": {\n            \"Content\": \"9i8vhsvt9y8y3sx1s2d\",\n            \"Path\": \"/.well-known/teo-verification/yvnu7sesms\"\n        }\n    }\n}",
+        "title": "使用 HTTP 访问文件验证方式申请免费证书"
+      },
+      {
+        "document": "站点（ZoneId 为 zone-2fgd17m17xw）下的域名（qwe.test.com） 使用 DNS 委派验证方式申请免费证书。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyFreeCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2fgd17m17xw\",\n    \"Domain\": \"qwe.test.com\",\n    \"VerificationMethod\": \"dns_challenge\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"064a8c04-2d3e-4c9d-9473-39a8f76276ea\",\n        \"DnsVerification\": {\n            \"RecordType\": \"CNAME\",\n            \"RecordValue\": \"_acme-challenge\",\n            \"Subdomain\": \"www.example.com.edgeone.com\"\n        }\n    }\n}",
+        "title": "使用 DNS 委派验证方式申请免费证书"
+      }
+    ],
     "BindSecurityTemplateToEntity": [
       {
         "document": "此方法会把已经绑定策略模板的指定域名从策略模板解绑。目前仅支持同时解绑一个域名。解绑时，支持下列选项：\n1. 在规则配额允许情况下，保留当前策略。解绑时，将会为域名生成一条独立安全策略，该策略使用与当前策略模板相同的配置，其中的规则将额外占用规则配额。\n2. 使用空白安全策略。使用默认空白策略，预设规则将使用默认配置，自定义规则内容将不再生效。\n\n例如：将 a.test.com 从已有策略模板（策略模板 ID 为 temp-cuwg1hki，所属站点 ID 为 zone-2aq0e8rhu6jx ）解绑，可以参考以下示例进行解绑操作。\n\n注意：如您选择保留当前策略配置，请确保当前站点有足够安全规则配额。剩余配额不足以支持保留当前策略时，解绑失败，域名将仍然绑定于当前策略模板上。",
@@ -42,6 +56,20 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCnameStatus\n<公共请求参数>\n\n{\n    \"RecordNames\": [\n        \"example.qq.com\"\n    ],\n    \"ZoneId\": \"zone-20hyebgyfsko\"\n}",
         "output": "{\n    \"Response\": {\n        \"CnameStatus\": [\n            {\n                \"RecordName\": \"test.qq.com\",\n                \"Cname\": \"test.qq.com.acc.tyxcdn.com\",\n                \"Status\": \"active\"\n            }\n        ],\n        \"RequestId\": \"d08bed0d-15bf-4d65-ab56-906aee0c845\"\n    }\n}",
         "title": "查询域名 CNAME 状态"
+      }
+    ],
+    "CheckFreeCertificateVerification": [
+      {
+        "document": "针对站点（ZoneId 为 zone-28v607hq8d3m）下的域名（cc.xzone.cloud）在触发申请免费证书后，检查免费证书是否申请成功。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckFreeCertificateVerification\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-28v607hq8d3m\",\n    \"Domain\": \"cc.xzone.cloud\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceUnavailable.RecordUnExpected\",\n            \"Message\": \"无法正确检测到验证值，请检查当前域名是否配置了分区域解析或者安全策略拦截。\"\n        },\n        \"RequestId\": \"ed93f3cb-f35e-473f-b9f3-0d451b8b79c6\"\n    }\n}",
+        "title": "检查免费证书申请结果，免费证书申请失败"
+      },
+      {
+        "document": "针对站点（ZoneId 为 zone-28v607hq8d3m）下的域名（aa.xzone.cloud）在触发申请免费证书后，检查免费证书是否申请成功。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckFreeCertificateVerification\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-28v607hq8d3m\",\n    \"Domain\": \"aa.xzone.cloud\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc1ba58b-4e4e-4a71-bed6-2b777c48d17e\",\n        \"CommonName\": \"aa.xzone.cloud\",\n        \"SignatureAlgorithm\": \"RSA 2048\",\n        \"ExpireTime\": \"2025-07-31T07:06:57Z\"\n    }\n}",
+        "title": "检查免费证书申请结果，免费证书申请成功"
       }
     ],
     "ConfirmMultiPathGatewayOriginACL": [

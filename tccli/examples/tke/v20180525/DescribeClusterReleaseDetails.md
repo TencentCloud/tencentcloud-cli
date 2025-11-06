@@ -18,7 +18,7 @@ Output:
         "Release": {
             "Name": "app-name",
             "Namespace": "default",
-            "Version": "1",
+            "Version": 1,
             "Status": "deployed",
             "Description": "Install complete",
             "Notes": "",

@@ -1281,6 +1281,50 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持开启全局加密",
+          "example": "yes",
+          "member": "string",
+          "name": "IsSupportGlobalEncryption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不支持全局加密的原因",
+          "example": "mysql version 8.0 , >= 3.1.15.005; Other versions are not supported",
+          "member": "string",
+          "name": "NoSupportGlobalEncryptionReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不支持透明加密原因状态码",
+          "example": "InvalidDbVersion",
+          "member": "string",
+          "name": "NoSupportTransparentDataEncryptionReasonCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不支持全局加密原因状态码",
+          "example": "NotInWhitelist",
+          "member": "string",
+          "name": "NoSupportGlobalEncryptionReasonCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2860,7 +2904,7 @@
         {
           "disabled": false,
           "document": "用户appid",
-          "example": "13347**48",
+          "example": "1334748",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -2930,7 +2974,7 @@
         {
           "disabled": false,
           "document": "任务输入信息",
-          "example": "{\\\"AppId\\\":251232125,\\\"uin\\\":\\\"700000433509\\\",...\\\"}",
+          "example": "{\"uin\":\"7043509\"}",
           "member": "string",
           "name": "Input",
           "output_required": true,
@@ -11095,6 +11139,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "秘钥类型",
+          "example": "custom",
+          "member": "string",
+          "name": "KeyType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已经开启全局加密",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOpenGlobalEncryption",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -11209,7 +11273,7 @@
         },
         {
           "disabled": false,
-          "document": "实例组ID（InstanceId与InstanceGroupId必须任选一个传入）",
+          "document": "实例组 ID，可通过 [DescribeClusterInstanceGroups](https://cloud.tencent.com/document/product/1003/103934) 接口查询。",
           "example": "cynosdbmysql-grp-as124sa5",
           "member": "string",
           "name": "InstanceGroupId",
@@ -11225,7 +11289,7 @@
         {
           "disabled": false,
           "document": "安全组信息",
-          "example": " [{\"CreateTime\": \"2017-04-13 15:00:06\",\"Inbound\": [],\"Outbound\": [],\"ProjectId\": 0,\"SecurityGroupId\": \"sg-ajr1jzdd\",\"SecurityGroupName\": \"CynosDB\",\"SecurityGroupRemark\": \"\"}]",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
           "output_required": true,
@@ -18784,6 +18848,15 @@
           "name": "KeyRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启全局加密",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOpenGlobalEncryption",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

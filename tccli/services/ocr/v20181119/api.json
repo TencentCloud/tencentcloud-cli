@@ -5496,7 +5496,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模板 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nTable -- 表格模板\nSteelLabel -- 实物标签识别模板\nCarInsurance -- 车辆保险单识别模板\nMultiRealEstateCertificate -- 房产材料识别模板\nMultiRealEstateMaterial -- 房产证明识别模板\nHongKongUtilityBill -- 中国香港水电煤单识别模板\nOverseasCheques -- 海外支票\nRegistrationCertificate -- 备案证\n​GridPhoto -- 电网系统照片\n​SignaturePage -- 签署页\n\n",
+          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模板 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nTable -- 表格模板\nSteelLabel -- 实物标签识别模板\nCarInsurance -- 车辆保险单识别模板\nMultiRealEstateCertificate -- 房产材料识别模板\nMultiRealEstateMaterial -- 房产证明识别模板\nHongKongUtilityBill -- 中国香港水电煤单识别模板\nOverseasCheques -- 海外支票\nRegistrationCertificate -- 备案证\n​GridPhoto -- 电网系统照片\n​SignaturePage -- 签署页\n​SalesDeliveryNote -- 销售发货单\n\n\n",
           "example": "General",
           "member": "string",
           "name": "ConfigId",

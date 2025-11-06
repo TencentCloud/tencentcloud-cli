@@ -497,6 +497,13 @@
       "output": "ResumePredictiveDialingCampaignResponse",
       "status": "online"
     },
+    "SetStaffStatus": {
+      "document": "设置 staff 状态",
+      "input": "SetStaffStatusRequest",
+      "name": "设置 staff 状态",
+      "output": "SetStaffStatusResponse",
+      "status": "online"
+    },
     "StopAutoCalloutTask": {
       "document": "停止自动外呼任务",
       "input": "StopAutoCalloutTaskRequest",
@@ -9287,6 +9294,168 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SetStaffStatusItem": {
+      "document": "创建 staff 的信息 item",
+      "members": [
+        {
+          "disabled": false,
+          "document": "座席账号",
+          "example": "",
+          "member": "string",
+          "name": "StaffUserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态，free 示闲 notReady 示忙 rest 小休\t",
+          "example": "",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果设置小休状态，这里是原因",
+          "example": "",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "SetStaffStatusRequest": {
+      "document": "SetStaffStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400692008",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设置座席状态列表，最大个数 10",
+          "example": "无",
+          "member": "SetStaffStatusItem",
+          "name": "StaffStatusList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetStaffStatusResponse": {
+      "document": "SetStaffStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设置座席状态应答列表",
+          "example": "无",
+          "member": "SetStaffStatusRspItem",
+          "name": "StaffStatusList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetStaffStatusRspItem": {
+      "document": "设置 staff 状态应答 item",
+      "members": [
+        {
+          "disabled": false,
+          "document": "座席账号",
+          "example": "",
+          "member": "string",
+          "name": "StaffUserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，参考协议整体错误码",
+          "example": "",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前状态",
+          "example": "",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前状态如果是小休，这里是原因",
+          "example": "",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "之前状态",
+          "example": "",
+          "member": "string",
+          "name": "PreviousStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "之前状态如果是小休，这里是原因",
+          "example": "",
+          "member": "string",
+          "name": "PreviousReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

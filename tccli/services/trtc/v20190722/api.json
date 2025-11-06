@@ -930,13 +930,24 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的音频格式，默认pcm，目前支持的格式列表：[pcm]。",
+          "document": "生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]",
           "example": "pcm",
           "member": "string",
           "name": "Format",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采样率，默认24000， 可选16000, 24000 ",
+          "example": "24000",
+          "member": "uint64",
+          "name": "SampleRate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -8770,6 +8781,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TTS 的模型，默认是：flow_01_turbo, 可选: [ flow_01_turbo, flow_01_ex]",
+          "example": "flow_01_turbo",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8929,11 +8951,29 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "TTS的API密钥",
           "example": "sk-xxxxxx",
           "member": "string",
           "name": "APIKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TTS的模型：flow_01_turbo，flow_01_ex",
+          "example": "flow_01_turbo",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语言参数，默认为空， 参考： (ISO 639-1) ",
+          "example": "zh",
+          "member": "string",
+          "name": "Language",
           "required": false,
           "type": "string"
         }
@@ -9007,6 +9047,24 @@
           "example": "sk-xxxxxxx",
           "member": "string",
           "name": "APIKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TTS的模型：flow_01_turbo，flow_01_ex",
+          "example": "flow_01_turbo",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语言参数，默认为空， 参考： (ISO 639-1) ",
+          "example": "zh",
+          "member": "string",
+          "name": "Language",
           "required": false,
           "type": "string"
         }
@@ -9857,6 +9915,39 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语速，范围 0.5-2.0，默认 1.0",
+          "example": "1.0",
+          "member": "float",
+          "name": "Speed",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "(0, 10]   默认值1.0 ",
+          "example": "1.0",
+          "member": "float",
+          "name": "Volume",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "取值[-12,12],默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Pitch",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9906,6 +9997,24 @@
           "example": "你好，我要复刻一个我的音色。",
           "member": "string",
           "name": "PromptText",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TTS的模型：flow_01_turbo，flow_01_ex",
+          "example": "flow_01_turbo",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语言参数，默认为空， 参考： (ISO 639-1) ",
+          "example": "zh",
+          "member": "string",
+          "name": "Language",
           "required": false,
           "type": "string"
         }

@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ApplyFreeCertificate": {
+      "document": "申请免费证书时，如果您需要通过使用 DNS 委派验证或者文件验证进行申请，您可以调用该接口来进行发起证书申请并根据申请方式来获取对应的验证内容。调用接口的顺序如下：\n第一步：调用 ApplyFreeCertificate，指定申请免费证书的校验方式，获取验证内容；\n第二步：为相应域名按照验证内容配置；\n第三步：调用CheckFreeCertificateVerification 验证，验证通过后即完成免费证书申请；\n第四步：调用ModifyHostsCertificate，下发域名证书为使用 EdgeOne 免费证书配置。\n\n申请方式的介绍可参考文档：[免费证书申请说明](https://cloud.tencent.com/document/product/1552/90437) \n说明：\n- 仅 CNAME 接入模式可调用该接口来指定免费证书申请方式。NS/DNSPod 托管接入模式都是使用自动验证来申请免费证书，无需调用该接口。\n- 如果您需要切换免费证书验证方式，您可以重新调用本接口通过修改 VerificationMethod 字段来进行变更。\n- 同个域名只能申请一本免费证书，在调用本接口后，后台会触发申请免费证书相关任务，您需要在2 天内，完成域名验证信息的相关配置，然后完成证书验证。",
+      "input": "ApplyFreeCertificateRequest",
+      "name": "申请免费证书",
+      "output": "ApplyFreeCertificateResponse",
+      "status": "online"
+    },
     "BindSecurityTemplateToEntity": {
       "document": "操作安全策略模板，支持将域名绑定或换绑到指定的策略模板，或者从指定的策略模板解绑。",
       "input": "BindSecurityTemplateToEntityRequest",
@@ -26,6 +33,13 @@
       "input": "CheckCnameStatusRequest",
       "name": "校验域名 CNAME 状态",
       "output": "CheckCnameStatusResponse",
+      "status": "online"
+    },
+    "CheckFreeCertificateVerification": {
+      "document": "该接口用于验证免费证书并获取免费证书申请结果。如果验证通过，可通过该接口查询到对应域名申请的免费证书信息，如果申请失败，该接口将返回对应的验证失败信息。\n在触发[申请免费证书接口](https://cloud.tencent.com/document/product/1552/90437)后，您可以通过本接口检查免费证书申请结果。在免费证书申请成功后， 还需要通过[配置域名证书](https://tcloud4api.woa.com/document/product/1657/80723?!preview)接口配置，才能将免费证书部署至加速域上。",
+      "input": "CheckFreeCertificateVerificationRequest",
+      "name": "检查免费证书申请结果",
+      "output": "CheckFreeCertificateVerificationResponse",
       "status": "online"
     },
     "ConfirmMultiPathGatewayOriginACL": {
@@ -2868,6 +2882,71 @@
       ],
       "usage": "both"
     },
+    "ApplyFreeCertificateRequest": {
+      "document": "ApplyFreeCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。",
+          "example": "zone-343vqcswn9zj",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请免费证书的目标域名。",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请免费证书时验证方式，详细验证方式说明参考[免费证书申请方式说明文档](https://cloud.tencent.com/document/product/1552/90437) ，相关取值有：\n<li>http_challenge：HTTP 访问文件验证方式，通过 HTTP 访问域名指定 URL 获取文件信息以完成免费证书申请验证；</li>\n<li>dns_challenge：DNS 委派验证方式，通过添加指定的主机记录解析指向 EdgeOne 以完成免费证书申请验证。</li>\n注意：在触发本接口后，你需要根据返回的验证信息，完成验证内容配置。配置完成后，还需要通过<a href = 'https://tcloud4api.woa.com/document/product/1657/927938?!preview&!document=1'>检查免费证书申请结果</a>接口进行验证，验证通过后，即可申请成功。在免费证书申请成功后，你可以调用<a href = 'https://cloud.tencent.com/document/product/1552/80764'>配置域名证书</a>接口为当前域名部署免费证书。",
+          "example": "http_challenge",
+          "member": "string",
+          "name": "VerificationMethod",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyFreeCertificateResponse": {
+      "document": "ApplyFreeCertificate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当 VerificationMethod 为 dns_challenge 时，域名申请免费证书的相关验证信息。",
+          "example": "无",
+          "member": "DnsVerification",
+          "name": "DnsVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当 VerificationMethod 为 http_challenge 时，域名申请免费证书的相关验证信息。",
+          "example": "无",
+          "member": "FileVerification",
+          "name": "FileVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AscriptionInfo": {
       "document": "站点归属信息",
       "members": [
@@ -5024,6 +5103,72 @@
           "name": "CnameStatus",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckFreeCertificateVerificationRequest": {
+      "document": "CheckFreeCertificateVerification请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-28v607hq8d3m",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加速域名，该域名为[申请免费证书](https://tcloud4api.woa.com/document/product/1657/927654?!preview&!document=1)时使用的域名。",
+          "example": "qq.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckFreeCertificateVerificationResponse": {
+      "document": "CheckFreeCertificateVerification返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "免费证书申请成功时，该证书颁发给的域名。\n注意：一个域名只允许申请一本免费证书， 如果已经有泛域名申请了免费证书的情况下，其子域名会匹配使用该泛域名证书。",
+          "example": "aa.test.com",
+          "member": "string",
+          "name": "CommonName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费证书申请成功时，该证书使用的签名算法，当前仅支持 RSA 2048。",
+          "example": "RSA 2048",
+          "member": "string",
+          "name": "SignatureAlgorithm",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费证书申请成功时，该证书的过期时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

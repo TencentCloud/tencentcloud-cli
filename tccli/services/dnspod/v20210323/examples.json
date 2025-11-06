@@ -538,7 +538,7 @@
       {
         "document": "获取账户信息",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDetail\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"UserInfo\": {\n            \"Nick\": \"jionly\",\n            \"Id\": 5299600,\n            \"Email\": \"qcloud_uin_100000000328@qcloud.com\",\n            \"Status\": \"enabled\",\n            \"Telephone\": \"187****3214\",\n            \"EmailVerified\": \"yes\",\n            \"TelephoneVerified\": \"yes\",\n            \"UserGrade\": \"DP_Free\",\n            \"RealName\": \"王小云\",\n            \"WechatBinded\": \"no\",\n            \"Uin\": 100000000328,\n            \"FreeNs\": [\n                \"hannah.dnspod.net\",\n                \"perch.dnspod.net\"\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b7a2ed1-0f04-4cf6-b5b1-b77f91572f34\",\n        \"UserInfo\": {\n            \"AllowTransferIn\": false,\n            \"Email\": \"qcloud_uin_123456@qcloud.com\",\n            \"EmailVerified\": \"yes\",\n            \"FreeNs\": [\n                \"v4u4f.dnspod.net\",\n                \"c6b8q.dnspod.net\"\n            ],\n            \"Id\": 123456,\n            \"Nick\": \"\",\n            \"RealName\": \"\",\n            \"Status\": \"enabled\",\n            \"Telephone\": \"\",\n            \"TelephoneVerified\": \"yes\",\n            \"Uin\": 123456,\n            \"UserGrade\": \"DP_Free\",\n            \"WechatBinded\": \"no\"\n        }\n    }\n}",
         "title": "获取账户信息"
       }
     ],

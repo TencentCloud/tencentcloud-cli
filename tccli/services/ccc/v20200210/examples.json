@@ -568,6 +568,14 @@
         "title": "恢复预测式外呼任务示例"
       }
     ],
+    "SetStaffStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetStaffStatus\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400692008,\n    \"StaffStatusList\": [\n        {\n            \"StaffUserId\": \"weijuny***nt.com\",\n            \"Status\": \"free\",\n            \"Reason\": \"huiyi\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"StaffStatusList\": [\n            {\n                \"ErrorCode\": \"\",\n                \"ErrorMessage\": \"\",\n                \"PreviousReason\": \"\",\n                \"PreviousStatus\": \"rest\",\n                \"Reason\": \"huiyi\",\n                \"StaffUserId\": \"weijuny***nt.com\",\n                \"Status\": \"free\"\n            }\n        ],\n        \"RequestId\": \"6980f29d-c779-4a49-bf65-736bfc3b76a0\"\n    }\n}",
+        "title": "设置座席状态"
+      }
+    ],
     "StopAutoCalloutTask": [
       {
         "document": "",

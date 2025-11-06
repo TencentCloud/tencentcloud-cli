@@ -18508,9 +18508,10 @@
         {
           "disabled": false,
           "document": "策略名称",
-          "example": "无",
+          "example": "test-alert",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -18521,6 +18522,7 @@
           "example": "无",
           "member": "PrometheusAlertRule",
           "name": "Rules",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -18528,9 +18530,10 @@
         {
           "disabled": false,
           "document": "告警策略 id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "alert-xa2asdxz",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18538,9 +18541,10 @@
         {
           "disabled": false,
           "document": "如果该告警来自模板下发，则TemplateId为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "temp-xs1sd24",
           "member": "string",
           "name": "TemplateId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18551,6 +18555,7 @@
           "example": "无",
           "member": "PrometheusNotificationItem",
           "name": "Notification",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -18558,9 +18563,10 @@
         {
           "disabled": false,
           "document": "最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-10-24 20:15:39",
           "member": "string",
           "name": "UpdatedAt",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -18568,9 +18574,10 @@
         {
           "disabled": false,
           "document": "如果告警策略来源于用户集群CRD资源定义，则ClusterId为所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cls-23as23sdf2",
           "member": "string",
           "name": "ClusterId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

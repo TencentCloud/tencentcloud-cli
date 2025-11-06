@@ -259,6 +259,13 @@
       "output": "GetDiagnoseSettingsResponse",
       "status": "online"
     },
+    "GetIpTraceStatus": {
+      "document": "查询IP溯源状态",
+      "input": "GetIpTraceStatusRequest",
+      "name": "查询集群IP溯源状态",
+      "output": "GetIpTraceStatusResponse",
+      "status": "online"
+    },
     "GetRequestTargetNodeTypes": {
       "document": "获取接收客户端请求的节点类型",
       "input": "GetRequestTargetNodeTypesRequest",
@@ -285,6 +292,13 @@
       "input": "ModifyEsVipSecurityGroupRequest",
       "name": "修改集群VIP绑定的安全组",
       "output": "ModifyEsVipSecurityGroupResponse",
+      "status": "online"
+    },
+    "QueryIpTraceLog": {
+      "document": "查询IP溯源日志",
+      "input": "QueryIpTraceLogRequest",
+      "name": "查询IP溯源日志",
+      "output": "QueryIpTraceLogResponse",
       "status": "online"
     },
     "RestartInstance": {
@@ -369,6 +383,13 @@
       "input": "UpdateInstanceRequest",
       "name": "更新ES集群实例",
       "output": "UpdateInstanceResponse",
+      "status": "online"
+    },
+    "UpdateIpTraceStatus": {
+      "document": "更新ES集群IP溯源状态",
+      "input": "UpdateIpTraceStatusRequest",
+      "name": "更新IP溯源状态",
+      "output": "UpdateIpTraceStatusResponse",
       "status": "online"
     },
     "UpdateJdk": {
@@ -5666,6 +5687,93 @@
       ],
       "type": "object"
     },
+    "GetIpTraceStatusRequest": {
+      "document": "GetIpTraceStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "es-xassddsa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetIpTraceStatusResponse": {
+      "document": "GetIpTraceStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启IP溯源",
+          "example": "true",
+          "member": "bool",
+          "name": "OpenIpTrace",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源开启持续时间，单位：秒",
+          "example": "300",
+          "member": "int64",
+          "name": "DurationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源配置",
+          "example": "无",
+          "member": "IpTraceConfig",
+          "name": "IpTraceConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次执行时间",
+          "example": "2024-12-28 14:35:31",
+          "member": "string",
+          "name": "LastStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次关闭时间",
+          "example": "2024-12-29 14:35:31",
+          "member": "string",
+          "name": "LastEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤Kibana节点IP",
+          "example": "false",
+          "member": "bool",
+          "name": "FilterKibanaIp",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetRequestTargetNodeTypesRequest": {
       "document": "GetRequestTargetNodeTypes请求参数结构体",
       "members": [
@@ -7328,6 +7436,205 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群节点IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "NodeIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IpTraceConfig": {
+      "document": "IP溯源配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求溯源开关",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRequest",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回溯源开关",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableResponse",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求消息体溯源开关",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRequestBody",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回消息体溯源开关",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableResponseBody",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排除IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "RemoteIpInclude",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包含IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "RemoteIpExclude",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排除uri",
+          "example": "[\"/idx/_search*\"]",
+          "member": "string",
+          "name": "UriInclude",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包含uri",
+          "example": "[\"/abc/_search*\"]",
+          "member": "string",
+          "name": "UriExclude",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IpTraceLogEntry": {
+      "document": "IP溯源日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "2020-12-28 14:37:36",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "RemoteIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "溯源类型rsp/req",
+          "example": "rsp",
+          "member": "string",
+          "name": "TraceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问网络类型，公网/私网",
+          "example": "Public",
+          "member": "string",
+          "name": "NetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始消息",
+          "example": "[o.e.h.HttpTracer ] [1720516351009725632] [147501421][null][OK][application/json; charset=UTF-8][308090] sent response to [Netty4HttpChannel{localAddress=/9.118.68.121:9200, remoteAddress=/10.13.90.41:58078}] success [false]",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问uri",
+          "example": "/idx/_search",
+          "member": "string",
+          "name": "Uri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IP",
+          "example": "null",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求类型或返回状态",
+          "example": "OK",
+          "member": "string",
+          "name": "ReqTypeOrRspStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -9314,6 +9621,152 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryIpTraceLogRequest": {
+      "document": "QueryIpTraceLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ES集群ID",
+          "example": "es-xasdsfsa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2020-12-28 14:37:36",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2020-12-28 14:37:36",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "访问IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "RemoteIp",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Request/Response 请求/返回, 非必填",
+          "example": "[\"Request\"]",
+          "member": "string",
+          "name": "TraceType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Public/Private 公网访问/内网访问, 非必填",
+          "example": "[\"Public\"]",
+          "member": "string",
+          "name": "NetType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "POST/GET/PUT/DELETE/HEAD/OPTIONS/PATCH/CONNECT/TRACE/CONNECT等, 非必填",
+          "example": "[\"OK\",\"GET\"]",
+          "member": "string",
+          "name": "ReqTypeOrRspStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关键字模糊查询，支持Lucene Query String",
+          "example": "message:abc",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Uri搜索",
+          "example": "/index/_search",
+          "member": "string",
+          "name": "Uri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群节点IP",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "NodeIp",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryIpTraceLogResponse": {
+      "document": "QueryIpTraceLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "123",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源日志列表",
+          "example": "无",
+          "member": "IpTraceLogEntry",
+          "name": "IpTraceLogList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RestartInstanceRequest": {
       "document": "RestartInstance请求参数结构体",
@@ -11484,6 +11937,69 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateIpTraceStatusRequest": {
+      "document": "UpdateIpTraceStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "es-xasdasd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源配置开关",
+          "example": "true",
+          "member": "bool",
+          "name": "OpenIpTrace",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源开启持续时间，单位：秒",
+          "example": "300",
+          "member": "int64",
+          "name": "DurationTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "IP溯源配置",
+          "example": "无",
+          "member": "IpTraceConfig",
+          "name": "IpTraceConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤kibana节点IP",
+          "example": "false",
+          "member": "bool",
+          "name": "FilterKibanaIp",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateIpTraceStatusResponse": {
+      "document": "UpdateIpTraceStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

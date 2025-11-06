@@ -1668,7 +1668,7 @@
         },
         {
           "disabled": false,
-          "document": "是否忽略ClusterCIDR与VPC路由表的冲突",
+          "document": "是否忽略ClusterCIDR与VPC路由表的冲突，默认false，为true时忽略冲突",
           "example": "false",
           "member": "bool",
           "name": "IgnoreClusterCIDRConflict",
@@ -2314,7 +2314,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-xxx",
+          "example": "cls-lir8gyoz",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -2322,7 +2322,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "集群类型，支持传入 tke(标准集群), eks(Serverless集群), external(注册集群）",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -5029,7 +5029,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "应用名称，最长63个字符，只能包含小写字母、数字及分隔符“-”，且必须以小写字母开头，数字或小写字母结尾",
           "example": "app-05",
           "member": "string",
           "name": "Name",
@@ -5038,7 +5038,7 @@
         },
         {
           "disabled": false,
-          "document": "应用命名空间",
+          "document": "应用命名空间，从集群详情命名空间获取",
           "example": "lwj",
           "member": "string",
           "name": "Namespace",
@@ -5047,7 +5047,7 @@
         },
         {
           "disabled": false,
-          "document": "制品名称或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz",
+          "document": "制品名称(从应用市场获取)或从第三方repo 安装chart时，制品压缩包下载地址, 不支持重定向类型chart 地址，结尾为*.tgz",
           "example": "redis",
           "member": "string",
           "name": "Chart",
@@ -9688,8 +9688,8 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
-          "example": "tke/eks/tkeedge/external",
+          "document": "集群类型，支持传入tke（标准集群），eks（Serverless集群)，external（注册集群）",
+          "example": "tke",
           "member": "string",
           "name": "ClusterType",
           "required": false,
@@ -9782,7 +9782,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "集群类型，传入 tke(标准集群), eks(Serverless集群), external(注册集群）",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -9846,7 +9846,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "集群类型，传入 tke(标准集群), eks(Serverless集群), external(注册集群）",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -9902,7 +9902,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量限制",
+          "document": "每页数量限制，默认值为20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -9911,7 +9911,7 @@
         },
         {
           "disabled": false,
-          "document": "页偏移量",
+          "document": "页偏移量，默认值为0",
           "example": "10",
           "member": "int64",
           "name": "Offset",
@@ -9920,7 +9920,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型, 目前支持传入 tke, eks, tkeedge, external ",
+          "document": "集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -16987,7 +16987,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID（请登录 [TKE 控制台](https://console.cloud.tencent.com/tke2) 获取集群 ID ）",
           "example": "cls-7ph3twqe",
           "member": "string",
           "name": "ClusterId",
@@ -17040,7 +17040,7 @@
         },
         {
           "disabled": false,
-          "document": "升级任务生命周期\nprocess 运行中\npaused 已停止\npauing 正在停止\ndone  已完成\ntimeout 已超时\naborted 已取消",
+          "document": "升级任务生命周期\n\npending 还未开始\nprocess 运行中\npaused 已停止\npauing 正在停止\ndone  已完成\ntimeout 已超时\naborted 已取消\n",
           "example": "done",
           "member": "string",
           "name": "LifeState",
@@ -20946,7 +20946,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "nginx",
+          "example": "0b49c73e-a2eb-41d7-8a9b-c0e61cf1aabb",
           "member": "string",
           "name": "ID",
           "output_required": true,
@@ -20975,7 +20975,7 @@
         },
         {
           "disabled": false,
-          "document": "应用状态(参考helm的发布状态： unknown, deployed, uninstalled, superseded, failed, uninstalling, pending-install, pending-upgrade 或 pending-rollback)",
+          "document": "应用状态，参考 Helm 发布状态。\n可选值及其释义如下：\n• ​​unknown​​: 状态未知\n• ​​deployed​​: 已成功部署\n• ​​uninstalled​​: 已卸载\n• ​​superseded​​: 已被新版本替代\n• ​​failed​​: 部署失败\n• ​​uninstalling​​: 正在卸载中\n• ​​pending-install​​: 等待安装/安装进行中\n• ​​pending-upgrade​​: 等待升级/升级进行中\n• ​​pending-rollback​​: 等待回滚/回滚进行中",
           "example": "deployed",
           "member": "string",
           "name": "Status",
@@ -23601,7 +23601,7 @@
         },
         {
           "disabled": false,
-          "document": "应用状态",
+          "document": "应用状态，参考 Helm 发布状态。\n可选值及其释义如下：\n• ​​unknown​​: 状态未知\n• ​​deployed​​: 已成功部署\n• ​​uninstalled​​: 已卸载\n• ​​superseded​​: 已被新版本替代\n• ​​failed​​: 部署失败\n• ​​uninstalling​​: 正在卸载中\n• ​​pending-install​​: 等待安装/安装进行中\n• ​​pending-upgrade​​: 等待升级/升级进行中\n• ​​pending-rollback​​: 等待回滚/回滚进行中",
           "example": "deployed",
           "member": "string",
           "name": "Status",
@@ -23697,7 +23697,7 @@
         },
         {
           "disabled": false,
-          "document": "应用状态",
+          "document": "应用状态，参考 Helm 发布状态。 \n可选值及其释义如下：\n• ​​unknown​​: 状态未知 \n• ​​deployed​​: 已成功部署 \n• ​​uninstalled​​: 已卸载 \n• ​​superseded​​: 已被新版本替代 \n• ​​failed​​: 部署失败 \n• ​​uninstalling​​: 正在卸载中\n• ​​pending-install​​: 等待安装/安装进行中\n• ​​pending-upgrade​​: 等待升级/升级进行中 \n• ​​pending-rollback​​: 等待回滚/回滚进行中",
           "example": "deployed",
           "member": "string",
           "name": "Status",
@@ -23883,7 +23883,7 @@
         },
         {
           "disabled": false,
-          "document": "应用状态",
+          "document": "应用状态，参考 Helm 发布状态。 \n可选值及其释义如下：\n• ​​unknown​​: 状态未知 \n• ​​deployed​​: 已成功部署 \n• ​​uninstalled​​: 已卸载 \n• ​​superseded​​: 已被新版本替代 \n• ​​failed​​: 部署失败 \n• ​​uninstalling​​: 正在卸载中\n• ​​pending-install​​: 等待安装/安装进行中\n• ​​pending-upgrade​​: 等待升级/升级进行中 \n• ​​pending-rollback​​: 等待回滚/回滚进行中",
           "example": "deployed",
           "member": "string",
           "name": "Status",
@@ -24567,7 +24567,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "集群类型，传入 tke(标准集群)，eks(Serverless集群)，external(注册集群）",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -25826,7 +25826,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "集群类型，传入 tke(标准集群)， eks(Serverless集群)，external(注册集群）",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",

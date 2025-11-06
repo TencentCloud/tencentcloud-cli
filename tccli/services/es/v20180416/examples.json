@@ -296,6 +296,14 @@
         "title": "查看智能运维配置"
       }
     ],
+    "GetIpTraceStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetIpTraceStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xasddassd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OpenIpTrace\": false,\n        \"FilterKibanaIp\": false,\n        \"DurationTime\": 0,\n        \"IpTraceConfig\": {\n            \"EnableRequest\": false,\n            \"EnableResponse\": false,\n            \"EnableRequestBody\": false,\n            \"EnableResponseBody\": false,\n            \"RemoteIpInclude\": [\n                \"\"\n            ],\n            \"RemoteIpExclude\": [\n                \"\"\n            ],\n            \"UriInclude\": [\n                \"\"\n            ],\n            \"UriExclude\": [\n                \"\"\n            ]\n        },\n        \"LastStartTime\": \"2020-12-28 14:37:36\",\n        \"LastEndTime\": \"2020-12-28 14:37:36\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询IP溯源状态"
+      }
+    ],
     "GetRequestTargetNodeTypes": [
       {
         "document": "对于冷热分离的集群，可以通过该接口获取到当前集群用于接收客户端请求的节点类型",
@@ -326,6 +334,14 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEsVipSecurityGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-3p7lkvxx\",\n    \"SecurityGroupIds\": [\n        \"sg-1\",\n        \"sg-2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "修改集群VIP绑定的安全组信息"
+      }
+    ],
+    "QueryIpTraceLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryIpTraceLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"StartTime\": \"2024-08-11 12:00:00\",\n    \"EndTime\": \"2024-08-11 12:10:00\",\n    \"Offset\": 1,\n    \"Limit\": 100,\n    \"RemoteIp\": [\n        \"127.0.0.1\"\n    ],\n    \"TraceType\": [\n        \"Request\"\n    ],\n    \"NetType\": [\n        \"Public\"\n    ],\n    \"ReqTypeOrRspStatus\": [\n        \"POST\"\n    ],\n    \"SearchKey\": \"idx-abc\",\n    \"NodeIp\": [\n        \"127.0.0.1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IpTraceLogList\": [\n            {\n                \"Timestamp\": \"\",\n                \"RemoteIp\": \"127.0.0.1\",\n                \"TraceType\": \"req\",\n                \"NetType\": \"Public\",\n                \"Message\": \"\",\n                \"Uri\": \"message\",\n                \"PublicIp\": \"null\",\n                \"ReqTypeOrRspStatus\": \"\",\n                \"NodeIp\": \"127.0.0.1\"\n            }\n        ],\n        \"Total\": 12,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询IP溯源日志"
       }
     ],
     "RestartInstance": [
@@ -446,6 +462,14 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"EsConfig\": \"{\\\"action.destructive_requires_name\\\":\\\"true\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
         "title": "修改ES集群实例配置"
+      }
+    ],
+    "UpdateIpTraceStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIpTraceStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xasdadas\",\n    \"FilterKibanaIp\": false,\n    \"OpenIpTrace\": false,\n    \"DurationTime\": 0,\n    \"IpTraceConfig\": {\n        \"EnableRequest\": false,\n        \"EnableResponse\": false,\n        \"EnableRequestBody\": false,\n        \"EnableResponseBody\": false,\n        \"RemoteIpInclude\": [\n            \"\"\n        ],\n        \"RemoteIpExclude\": [\n            \"\"\n        ],\n        \"UriInclude\": [\n            \"\"\n        ],\n        \"UriExclude\": [\n            \"\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "更新ES集群IP溯源状态"
       }
     ],
     "UpdateJdk": [
