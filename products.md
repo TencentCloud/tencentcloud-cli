@@ -1,7 +1,7 @@
 | 包名 | 产品中文名 | 更新历史 | 更新时间 |
 |:-:|:-:|:-:|:-:|
 | aa | [活动防刷](http://document.tencentcloudapi.woa.com/document/product/1189) | [查看](http://document.tencentcloudapi.woa.com/document/product/1189/43969) | 2024-08-30 01:06:49 |
-| aai | [智能语音](http://document.tencentcloudapi.woa.com/document/product/441) | [查看](http://document.tencentcloudapi.woa.com/document/product/1622/78398) | 2024-08-06 01:07:17 |
+| aai | [智能语音](http://document.tencentcloudapi.woa.com/document/product/441) | [查看](http://document.tencentcloudapi.woa.com/document/product/1622/78398) | 2025-11-10 01:07:11 |
 | account | [账号中心](http://document.tencentcloudapi.woa.com/document/product/378) | [查看](http://document.tencentcloudapi.woa.com/document/product/1594/75182) | 2025-08-27 01:07:20 |
 | acp | [应用合规平台](http://document.tencentcloudapi.woa.com/document/product/1553) | [查看](http://document.tencentcloudapi.woa.com/document/product/1708/80356) | 2025-03-19 01:07:12 |
 | advisor | [云顾问](http://document.tencentcloudapi.woa.com/document/product/1264) | [查看](http://document.tencentcloudapi.woa.com/document/product/1660/78763) | 2025-09-09 01:07:20 |
@@ -27,7 +27,7 @@
 | batch | [批量计算](http://document.tencentcloudapi.woa.com/document/product/599) | [查看](http://document.tencentcloudapi.woa.com/document/product/599/16731) | 2025-09-11 01:08:29 |
 | bcrpc | [腾讯云区块链 RPC](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1743/81750) | 2023-08-29 01:11:42 |
 | bda | [人体分析](http://document.tencentcloudapi.woa.com/document/product/1208) | [查看](http://document.tencentcloudapi.woa.com/document/product/1208/42989) | 2025-10-31 01:10:42 |
-| bh | [运维安全中心（堡垒机）](http://document.tencentcloudapi.woa.com/document/product/1025) | [查看](http://document.tencentcloudapi.woa.com/document/product/1780/85247) | 2025-10-23 01:11:22 |
+| bh | [运维安全中心（堡垒机）](http://document.tencentcloudapi.woa.com/document/product/1025) | [查看](http://document.tencentcloudapi.woa.com/document/product/1780/85247) | 2025-11-10 01:10:46 |
 | bi | [商业智能分析 BI](http://document.tencentcloudapi.woa.com/document/product/590) | [查看](http://document.tencentcloudapi.woa.com/document/product/1707/80335) | 2025-09-11 01:08:53 |
 | billing | [费用中心](http://document.tencentcloudapi.woa.com/document/product/555) | [查看](http://document.tencentcloudapi.woa.com/document/product/555/19176) | 2025-11-07 01:11:34 |
 | bizlive | [小程序 · 云直播](http://document.tencentcloudapi.woa.com/document/product/1078) | [查看](http://document.tencentcloudapi.woa.com/document/product/1678/79542) | 2024-03-20 01:08:23 |
@@ -92,7 +92,7 @@
 | cvm | [云服务器](http://document.tencentcloudapi.woa.com/document/product/213) | [查看](http://document.tencentcloudapi.woa.com/document/product/213/78263) | 2025-06-17 19:16:39 |
 | cwp | [主机安全](http://document.tencentcloudapi.woa.com/document/product/296) | [查看](http://document.tencentcloudapi.woa.com/document/product/296/19831) | 2025-10-31 01:21:32 |
 | cxm | [cxm](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1752/82741) | 2024-11-15 01:33:59 |
-| cynosdb | [TDSQL-C MySQL 版](http://document.tencentcloudapi.woa.com/document/product/1003) | [查看](http://document.tencentcloudapi.woa.com/document/product/1003/48107) | 2025-11-07 01:24:07 |
+| cynosdb | [TDSQL-C MySQL 版](http://document.tencentcloudapi.woa.com/document/product/1003) | [查看](http://document.tencentcloudapi.woa.com/document/product/1003/48107) | 2025-11-10 01:24:25 |
 | dasb | [运维安全中心（堡垒机）](http://document.tencentcloudapi.woa.com/document/product/1025) | [查看](http://document.tencentcloudapi.woa.com/document/product/1492/74905) | 2024-11-19 01:31:35 |
 | dayu | [DDoS 高防包](http://document.tencentcloudapi.woa.com/document/product/1021) | [查看](http://document.tencentcloudapi.woa.com/document/product/1021/39222) | 2025-03-27 01:28:15 |
 | dbbrain | [数据库智能管家 DBbrain](http://document.tencentcloudapi.woa.com/document/product/1130) | [查看](http://document.tencentcloudapi.woa.com/document/product/1130/57822) | 2025-10-29 01:26:08 |

@@ -231,6 +231,13 @@
       "output": "DescribeAclsResponse",
       "status": "online"
     },
+    "DescribeAssetSyncFlag": {
+      "document": "查询资产自动同步开关",
+      "input": "DescribeAssetSyncFlagRequest",
+      "name": "查询资产自动同步开关",
+      "output": "DescribeAssetSyncFlagResponse",
+      "status": "online"
+    },
     "DescribeAssetSyncStatus": {
       "document": "查询资产同步状态",
       "input": "DescribeAssetSyncStatusRequest",
@@ -350,6 +357,20 @@
       "output": "DescribeUsersResponse",
       "status": "online"
     },
+    "DisableIntranetAccess": {
+      "document": "关闭内网访问",
+      "input": "DisableIntranetAccessRequest",
+      "name": "关闭内网访问",
+      "output": "DisableIntranetAccessResponse",
+      "status": "online"
+    },
+    "EnableIntranetAccess": {
+      "document": "开通内网访问",
+      "input": "EnableIntranetAccessRequest",
+      "name": "开通内网访问",
+      "output": "EnableIntranetAccessResponse",
+      "status": "online"
+    },
     "ImportExternalDevice": {
       "document": "导入外部资产信息",
       "input": "ImportExternalDeviceRequest",
@@ -357,11 +378,39 @@
       "output": "ImportExternalDeviceResponse",
       "status": "online"
     },
+    "ModifyAccessWhiteListAutoStatus": {
+      "document": "修改访问白名单自动添加IP状态：开启或关闭自动添加IP",
+      "input": "ModifyAccessWhiteListAutoStatusRequest",
+      "name": "修改访问白名单自动添加IP状态",
+      "output": "ModifyAccessWhiteListAutoStatusResponse",
+      "status": "online"
+    },
+    "ModifyAccessWhiteListRule": {
+      "document": "修改访问白名单规则",
+      "input": "ModifyAccessWhiteListRuleRequest",
+      "name": "修改访问白名单规则",
+      "output": "ModifyAccessWhiteListRuleResponse",
+      "status": "online"
+    },
+    "ModifyAccessWhiteListStatus": {
+      "document": "修改访问白名单状态：开启或关闭放开全部来源IP。",
+      "input": "ModifyAccessWhiteListStatusRequest",
+      "name": "修改访问白名单状态",
+      "output": "ModifyAccessWhiteListStatusResponse",
+      "status": "online"
+    },
     "ModifyAcl": {
       "document": "修改访问权限",
       "input": "ModifyAclRequest",
       "name": "修改访问权限",
       "output": "ModifyAclResponse",
+      "status": "online"
+    },
+    "ModifyAuthModeSetting": {
+      "document": "修改认证方式配置信息",
+      "input": "ModifyAuthModeSettingRequest",
+      "name": "修改认证方式配置信息",
+      "output": "ModifyAuthModeSettingResponse",
       "status": "online"
     },
     "ModifyChangePwdTask": {
@@ -411,6 +460,13 @@
       "input": "ModifyOperationTaskRequest",
       "name": "修改运维任务",
       "output": "ModifyOperationTaskResponse",
+      "status": "online"
+    },
+    "ModifyReconnectionSetting": {
+      "document": "修改运维资产连接重连次数",
+      "input": "ModifyReconnectionSettingRequest",
+      "name": "修改运维连接资产的重试次数",
+      "output": "ModifyReconnectionSettingResponse",
       "status": "online"
     },
     "ModifyResource": {
@@ -1475,6 +1531,32 @@
           "name": "Department",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetSyncFlags": {
+      "document": "资产同步标志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否已完成角色授权",
+          "example": "true",
+          "member": "bool",
+          "name": "RoleGranted",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已开启自动资产同步",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSync",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -4292,6 +4374,33 @@
       ],
       "type": "object"
     },
+    "DescribeAssetSyncFlagRequest": {
+      "document": "DescribeAssetSyncFlag请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAssetSyncFlagResponse": {
+      "document": "DescribeAssetSyncFlag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产同步标志",
+          "example": "{\"RoleGranted\":true,\"AutoSync\":true}",
+          "member": "AssetSyncFlags",
+          "name": "AssetSyncFlags",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAssetSyncStatusRequest": {
       "document": "DescribeAssetSyncStatus请求参数结构体",
       "members": [
@@ -6437,6 +6546,33 @@
       ],
       "usage": "out"
     },
+    "DisableIntranetAccessRequest": {
+      "document": "DisableIntranetAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堡垒机id",
+          "example": "bh-saas-sdafwe3e",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableIntranetAccessResponse": {
+      "document": "DisableIntranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Domain": {
       "document": "网络域",
       "members": [
@@ -6532,6 +6668,69 @@
         }
       ],
       "usage": "out"
+    },
+    "EnableIntranetAccessRequest": {
+      "document": "EnableIntranetAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堡垒机实例id",
+          "example": "bh-saas-ssafee1d",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开通内网访问的vpc id",
+          "example": "vpc-dfawsdae",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpc的网段",
+          "example": "10.0.0.0/0",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开通内网访问的subnet id",
+          "example": "subnet-weafawe",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内网ip的自定义域名，可为空",
+          "example": "test.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableIntranetAccessResponse": {
+      "document": "EnableIntranetAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExternalDevice": {
       "document": "主机参数，导入外部主机时使用",
@@ -6921,6 +7120,105 @@
       ],
       "usage": "out"
     },
+    "ModifyAccessWhiteListAutoStatusRequest": {
+      "document": "ModifyAccessWhiteListAutoStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true：放开自动添加IP；false：不放开自动添加IP",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowAuto",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessWhiteListAutoStatusResponse": {
+      "document": "ModifyAccessWhiteListAutoStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessWhiteListRuleRequest": {
+      "document": "ModifyAccessWhiteListRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "白名单规则ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "ip或网段信息，如10.10.10.1或10.10.10.0/24，最大长度40字节",
+          "example": "10.10.10.1",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息，最大长度64字符。",
+          "example": "规则1",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessWhiteListRuleResponse": {
+      "document": "ModifyAccessWhiteListRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessWhiteListStatusRequest": {
+      "document": "ModifyAccessWhiteListStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true：放开全部来源IP；false：不放开全部来源IP",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowAny",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccessWhiteListStatusResponse": {
+      "document": "ModifyAccessWhiteListStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAclRequest": {
       "document": "ModifyAcl请求参数结构体",
       "members": [
@@ -7199,6 +7497,42 @@
     },
     "ModifyAclResponse": {
       "document": "ModifyAcl返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuthModeSettingRequest": {
+      "document": "ModifyAuthModeSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "双因子认证，0-不开启，1-OTP，2-短信，3-USB Key",
+          "example": "1",
+          "member": "uint64",
+          "name": "AuthMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，0：普通 1：国密",
+          "example": "0",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuthModeSettingResponse": {
+      "document": "ModifyAuthModeSetting返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7973,6 +8307,42 @@
     },
     "ModifyOperationTaskResponse": {
       "document": "ModifyOperationTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReconnectionSettingRequest": {
+      "document": "ModifyReconnectionSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重试次数,取值范围：0-20",
+          "example": "0",
+          "member": "uint64",
+          "name": "ReconnectionMaxCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "true：限制重连次数，false：不限制重连次数",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReconnectionSettingResponse": {
+      "document": "ModifyReconnectionSetting返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
