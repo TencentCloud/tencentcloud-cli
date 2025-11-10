@@ -8791,7 +8791,7 @@
         },
         {
           "disabled": false,
-          "document": "生成的签署链接在签署页面隐藏的按钮列表，可设置如下：\n\n<ul><li> **0** :合同签署页面更多操作按钮</li>\n<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>\n<li> **2** :合同签署页面更多操作的转他人处理按钮</li>\n<li> **3** :签署成功页的查看详情按钮</li></ul>\n\n注:  `字段为数组, 可以传值隐藏多个按钮`",
+          "document": "生成的签署链接在签署页面隐藏的按钮列表，可设置如下：\n\n<ul><li> **0** :合同签署页面更多操作按钮</li>\n<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>\n<li> **2** :合同签署页面更多操作的转他人处理按钮</li>\n<li> **3** :签署成功页的查看详情按钮</li>\n<li> **4** :合同签署页面更多操作的查看合同基本信息按钮</li>\n<li> **5** :合同签署页面更多操作的撤销按钮</li></ul>\n\n注:  `字段为数组, 可以传值隐藏多个按钮`",
           "example": "[0, 1, 2]",
           "member": "int64",
           "name": "Hides",
@@ -10176,12 +10176,21 @@
         },
         {
           "disabled": false,
-          "document": "跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)\n- false: 展示上传文件页\n- true: 不展示上传文件页\n \n\n注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，",
+          "document": "跳过上传文件，默认为false(展示上传文件页)![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)\n- false: 展示上传文件页\n- true: 不展示上传文件页\n \n\n注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，",
           "example": "true",
-          "member": "string",
+          "member": "bool",
           "name": "SkipUploadFile",
           "required": false,
-          "type": "string"
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "隐藏下载文件按钮，默认为false(展示下载文件按钮)\n\n- false: 展示下载文件按钮\n- true: 不展示下载文件按钮\n\n\n\n注意: 此参数仅针对**EmbedType=PREVIEW_FLOW_DETAIL(查看合同详情)**有效",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipDownloadFile",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,

@@ -6388,7 +6388,7 @@
         {
           "disabled": false,
           "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n支持填入集团子公司经办人 userId 代发合同。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
-          "example": "{\"UserId\":\"yDxjOUUgydjfxgnzUuO5zjEWA07rC5xl\"}",
+          "example": "无",
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -6424,7 +6424,7 @@
         {
           "disabled": false,
           "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
-          "example": "{\"ProxyOrganizationId\":\"yDwiyUUckpodg1g9UuDwx6KuPMVKNEnk\"}",
+          "example": "无",
           "member": "Agent",
           "name": "Agent",
           "required": false,
@@ -6433,7 +6433,7 @@
         {
           "disabled": false,
           "document": "合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息。",
-          "example": "[{\"ApproverType\":1,\"ApproverName\":\"张某\",\"ApproverMobile\":\"18200000000\"}]",
+          "example": "无",
           "member": "MiniAppCreateApproverInfo",
           "name": "Approvers",
           "required": false,
@@ -6442,7 +6442,7 @@
         {
           "disabled": false,
           "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。\n\n**注：暂不支持通过NotifyType参数控制抄送人通知方式**",
-          "example": "[{\"CcType\":0,\"Name\":\"程某\",\"Mobile\":\"18700000000\"}]",
+          "example": "无",
           "member": "CcInfo",
           "name": "CcInfos",
           "required": false,
@@ -6478,7 +6478,7 @@
         {
           "disabled": false,
           "document": "发起合同个性化参数\n用于满足小程序合同创建的个性化要求\n具体定制化内容详见数据接口说明",
-          "example": "{\"RemindedOn\":1753286400,\"NeedCreateReview\":false,\"FlowDisplayType\":1}",
+          "example": "无",
           "member": "MiniAppCreateFlowOption",
           "name": "FlowOption",
           "required": false,
@@ -6487,7 +6487,7 @@
         {
           "disabled": false,
           "document": "发起合同小程序页面个性化参数 \n用于满足小程序合同创建页面的个性化要求 具体定制化内容详见数据接口说明",
-          "example": "{\"HideSignCodeAfterStart\":true}",
+          "example": "无",
           "member": "MiniAppCreateFlowPageOption",
           "name": "PageOption",
           "required": false,
@@ -6501,6 +6501,15 @@
           "name": "UserData",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成的签署链接在签署页面隐藏的按钮列表，可设置如下：\n\n<ul><li> **0** :合同签署页面更多操作按钮</li>\n<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>\n<li> **2** :合同签署页面更多操作的转他人处理按钮</li>\n<li> **3** :签署成功页的查看详情按钮</li>\n<li> **4** :合同签署页面更多操作的查看合同基本信息按钮</li>\n<li> **5** :合同签署页面更多操作的撤销按钮</li></ul>\n\n注:  `字段为数组, 可以传值隐藏多个按钮`",
+          "example": "[0,1,2]",
+          "member": "int64",
+          "name": "Hides",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8354,7 +8363,7 @@
         },
         {
           "disabled": false,
-          "document": "生成的签署链接在签署页面隐藏的按钮列表，可设置如下：\n\n<ul><li> **0** :合同签署页面更多操作按钮</li>\n<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>\n<li> **2** :合同签署页面更多操作的转他人处理按钮</li>\n<li> **3** :签署成功页的查看详情按钮</li></ul>\n\n注:  `字段为数组, 可以传值隐藏多个按钮`",
+          "document": "生成的签署链接在签署页面隐藏的按钮列表，可设置如下：\n\n<ul><li> **0** :合同签署页面更多操作按钮</li>\n<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>\n<li> **2** :合同签署页面更多操作的转他人处理按钮</li>\n<li> **3** :签署成功页的查看详情按钮</li>\n<li> **4** :合同签署页面更多操作的查看合同基本信息按钮</li>\n<li> **5** :合同签署页面更多操作的撤销按钮</li></ul>\n\n\n注:  `字段为数组, 可以传值隐藏多个按钮`",
           "example": "[1,2]",
           "member": "int64",
           "name": "Hides",
@@ -13045,10 +13054,19 @@
         },
         {
           "disabled": false,
-          "document": "跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)\n- false: 展示上传文件页\n- true: 不展示上传文件页\n \n\n注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)和EmbedType=CREATE_CONTRACT_DRAFT_COOPEDIT(创建起草合同)有效**，",
+          "document": "跳过上传文件，默认为false(展示上传文件页)![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)\n- false: 展示上传文件页\n- true: 不展示上传文件页\n \n\n注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)和EmbedType=CREATE_CONTRACT_DRAFT_COOPEDIT(创建起草合同)有效**，",
           "example": "true",
           "member": "bool",
           "name": "SkipUploadFile",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "隐藏下载文件按钮，默认为false(展示下载文件按钮)\n\n- false: 展示下载文件按钮\n- true: 不展示下载文件按钮\n\n \n\n注意: 此参数仅针对**EmbedType=PREVIEW_FLOW_DETAIL(查看合同详情)**有效",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipDownloadFile",
           "required": false,
           "type": "bool"
         },

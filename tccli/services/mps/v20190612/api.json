@@ -9615,7 +9615,7 @@
         },
         {
           "disabled": false,
-          "document": "hls 分片类型，可选值： <li>ts-segment：HLS+TS 切片</li> <li>ts-byterange：HLS+TS byte range</li> <li>mp4-segment：HLS+MP4 切片</li> <li>mp4-byterange：HLS+MP4 byte range</li> <li>ts-packed-audio：TS+Packed Audio</li> <li>mp4-packed-audio：MP4+Packed Audio</li> 默认值：ts-segment \n注：自适应码流的hls分片格式已此字段为准",
+          "document": "分片类型，可选值： <li>ts-segment：HLS+TS 切片</li> <li>ts-byterange：HLS+TS byte range</li> <li>mp4-segment：HLS+MP4 切片</li> <li>mp4-byterange：HLS+MP4 byte range</li> <li>ts-packed-audio：TS+Packed Audio</li> <li>mp4-packed-audio：MP4+Packed Audio</li> 默认值：ts-segment \n注：自适应码流的分片格式以此字段为准",
           "example": "ts-segment",
           "member": "string",
           "name": "SegmentType",
@@ -11701,6 +11701,15 @@
           "name": "EventId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流的输出组。",
+          "example": "无",
+          "member": "CreateOutputInfo",
+          "name": "OutputGroup",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -35867,7 +35876,7 @@
         },
         {
           "disabled": false,
-          "document": "分片平均时长，范围：（0-10]，单位：秒\n不填表示自动，将根据视频的GOP等特征自动选择合适的分片时长。\n注意：只能在封装格式hls的情况下使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分片平均时长，范围：（0-10]，单位：秒\n不填表示自动，将根据视频的GOP等特征自动选择合适的分片时长。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
           "name": "HlsTime",

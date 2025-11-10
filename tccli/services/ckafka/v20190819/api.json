@@ -521,7 +521,7 @@
     "InstanceScalingDown": {
       "document": "按量实例缩容",
       "input": "InstanceScalingDownRequest",
-      "name": "按量实例缩容",
+      "name": "按量实例扩缩容",
       "output": "InstanceScalingDownResponse",
       "status": "online"
     },
@@ -4187,7 +4187,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例id,可通过[DescribeInstances](https://cloud.tencent.com/document/product/597/40835)接口获取",
+          "document": "<p>ckafka集群实例id,可通过<a href=\"https://cloud.tencent.com/document/product/597/40835\">DescribeInstances</a>接口获取</p>",
           "example": "ckafka-test",
           "member": "string",
           "name": "InstanceId",
@@ -4196,7 +4196,7 @@
         },
         {
           "disabled": false,
-          "document": "路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)",
+          "document": "<p>路由网络类型(3:vpc路由;7:内部支撑路由;1:公网路由)</p>",
           "example": "1",
           "member": "int64",
           "name": "VipType",
@@ -4205,7 +4205,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc网络Id,当vipType为3时必填",
+          "document": "<p>vpc网络Id,当vipType为3时必填</p>",
           "example": "vpc-test",
           "member": "string",
           "name": "VpcId",
@@ -4214,7 +4214,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc子网id,当vipType为3时必填",
+          "document": "<p>vpc子网id,当vipType为3时必填</p>",
           "example": "subnet-test",
           "member": "string",
           "name": "SubnetId",
@@ -4223,7 +4223,7 @@
         },
         {
           "disabled": false,
-          "document": "访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0\nvipType=3,支持 0,1,3,4,5\nvipType=7,支持0,1,3\nvipType=1,支持1,3\n",
+          "document": "<p>访问类型：0-plaintext；1-sasl_plaintext；3-sasl_ssl; 4-sasl_scram_sha_256; 5-sasl_scram_sha_512  默认为0vipType=3,支持 0,1,3,4,5vipType=7,支持0,1,3vipType=1,支持1,3</p>",
           "example": "1",
           "member": "int64",
           "name": "AccessType",
@@ -4232,7 +4232,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要权限管理,该字段已废弃",
+          "document": "<p>是否需要权限管理,该字段已废弃</p>",
           "example": "1",
           "member": "int64",
           "name": "AuthFlag",
@@ -4241,7 +4241,7 @@
         },
         {
           "disabled": false,
-          "document": "调用方appId",
+          "document": "<p>调用方appId</p>",
           "example": "1000000001",
           "member": "int64",
           "name": "CallerAppid",
@@ -4250,7 +4250,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽,公网路由必传,且是3的倍数,无默认值",
+          "document": "<p>公网带宽,公网路由必传,且是3的倍数,无默认值</p>",
           "example": "3",
           "member": "int64",
           "name": "PublicNetwork",
@@ -4259,7 +4259,7 @@
         },
         {
           "disabled": false,
-          "document": "vip地址",
+          "document": "<p>vip地址</p>",
           "example": "10.0.0.30",
           "member": "string",
           "name": "Ip",
@@ -4268,12 +4268,21 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "<p>备注信息</p>",
           "example": "note-test",
           "member": "string",
           "name": "Note",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联安全组有序列表</p>",
+          "example": "[\"sg-test\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4283,7 +4292,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果",
+          "document": "<p>返回结果</p>",
           "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",

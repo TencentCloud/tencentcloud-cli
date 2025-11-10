@@ -2682,6 +2682,15 @@
           "name": "HasExpirationRisk",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否只查询离线网站",
+          "example": "false",
+          "member": "bool",
+          "name": "OnlyOffline",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2702,7 +2711,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplayHttp",
           "name": "List",
           "output_required": false,
@@ -4115,6 +4124,15 @@
           "name": "Ignored",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否只查询离线子域名",
+          "example": "false",
+          "member": "bool",
+          "name": "OnlyOffline",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4135,7 +4153,7 @@
         {
           "disabled": false,
           "document": "数组",
-          "example": "[ ]",
+          "example": "无",
           "member": "DisplaySubDomain",
           "name": "List",
           "output_required": false,
@@ -5173,6 +5191,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为云资产",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCloudAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云资产状态，-1为下线",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5288,6 +5326,26 @@
           "name": "Suggestion",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为云资产",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCloudAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云资产状态，-1为下线",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5430,6 +5488,26 @@
           "name": "DisplayToolCommon",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为云资产",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCloudAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云资产状态，-1为下线",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -6183,6 +6261,66 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCloudAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云资产是否下线：-1-已下线 0-正常",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用率（百分比）",
+          "example": "0",
+          "member": "int64",
+          "name": "AvailabilityRate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用状态 1:异常 0:正常",
+          "example": "0",
+          "member": "int64",
+          "name": "AvailabilityState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均响应时间：单位ms",
+          "example": "0",
+          "member": "int64",
+          "name": "ResponseTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名解析状态 1:异常 0:正常",
+          "example": "0",
+          "member": "int64",
+          "name": "AnalysisState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6852,6 +6990,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCloudAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云资产是否下线：-1-已下线 0-正常",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7044,6 +7202,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCloudAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云资产是否下线：-1-已下线 0-正常",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名解析状态 1:异常 0:正常",
+          "example": "0",
+          "member": "int64",
+          "name": "AnalysisState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7099,6 +7287,26 @@
           "name": "DisplayToolCommon",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCloudAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云资产是否下线：-1-已下线 0-正常",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -7185,6 +7393,76 @@
           "name": "DisplayToolCommon",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCloudAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云资产是否下线：-1-已下线 0-正常",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用率（百分比）",
+          "example": "0",
+          "member": "int64",
+          "name": "AvailabilityRate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用状态 1:异常 0:正常",
+          "example": "0",
+          "member": "int64",
+          "name": "AvailabilityState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名解析状态 1:异常 0:正常",
+          "example": "0",
+          "member": "int64",
+          "name": "AnalysisState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均时延：单位ms",
+          "example": "0",
+          "member": "int64",
+          "name": "AverageDelay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "丢包率（百分比）",
+          "example": "0",
+          "member": "int64",
+          "name": "LossRate",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -7644,6 +7922,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCloudAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云资产是否下线：-1-已下线 0-正常",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名解析状态 1:异常 0:正常",
+          "example": "0",
+          "member": "int64",
+          "name": "AnalysisState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7733,7 +8041,7 @@
         },
         {
           "disabled": false,
-          "document": "是否蜜罐",
+          "document": "是否为蜜罐",
           "example": "false",
           "member": "bool",
           "name": "IsHoneypot",
@@ -7769,6 +8077,26 @@
           "name": "LastCheckTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为云资产：0-非云资产 1-是云资产",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCloudAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云资产是否下线：-1-已下线 0-正常",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudAssetStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

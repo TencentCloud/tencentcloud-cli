@@ -4877,6 +4877,24 @@
           "name": "DataTransformType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "保留失败日志状态，1:不保留(默认)，2:保留。",
+          "example": "1",
+          "member": "uint64",
+          "name": "KeepFailureLog",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "失败日志的字段名称",
+          "example": "ETLParseFailure",
+          "member": "string",
+          "name": "FailureLogKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
