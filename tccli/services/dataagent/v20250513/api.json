@@ -1,0 +1,102 @@
+{
+  "actions": {
+    "AddChunk": {
+      "document": "文档切片新增",
+      "input": "AddChunkRequest",
+      "name": "添加文档切片",
+      "output": "AddChunkResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-05-13",
+    "api_brief": "产品功能接口和管控接口",
+    "serviceNameCN": "腾讯云数据分析智能体",
+    "serviceShortName": "dataagent"
+  },
+  "objects": {
+    "AddChunkRequest": {
+      "document": "AddChunk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "da-fje88",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件ID",
+          "example": "nbnius",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新增chunk的后面一个ChunkID。如果是空就是插到队尾。插入位置的下一个 chunkId。如果插到最前面，传入原切片的第一个。",
+          "example": "xzcjjjij",
+          "member": "string",
+          "name": "BeforeChunkId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "显式指定的位置,实际的位置。从 0 开始计算。0 代表插到最前面，chunk total 代表插到最后面。",
+          "example": "1",
+          "member": "int64",
+          "name": "InsertPos",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "chunk内容",
+          "example": "test",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t 新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId",
+          "example": "xzcjjjij",
+          "member": "string",
+          "name": "AfterChunkId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddChunkResponse": {
+      "document": "AddChunk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增的chunkid",
+          "example": "xzcjjjij",
+          "member": "string",
+          "name": "ChunkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

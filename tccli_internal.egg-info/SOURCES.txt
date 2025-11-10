@@ -336,6 +336,8 @@ tccli/services/dasb/__init__.py
 tccli/services/dasb/dasb_client.py
 tccli/services/dasb/v20191018/api.json
 tccli/services/dasb/v20191018/examples.json
+tccli/services/dataagent/__init__.py
+tccli/services/dataagent/dataagent_client.py
 tccli/services/dayu/__init__.py
 tccli/services/dayu/dayu_client.py
 tccli/services/dayu/v20180709/api.json

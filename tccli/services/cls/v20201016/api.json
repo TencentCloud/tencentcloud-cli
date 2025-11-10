@@ -6108,6 +6108,24 @@
         },
         {
           "disabled": false,
+          "document": "保留失败日志状态，1:不保留(默认)，2:保留。",
+          "example": "1",
+          "member": "uint64",
+          "name": "KeepFailureLog",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "失败日志的字段名称",
+          "example": "ETLParseFailure",
+          "member": "string",
+          "name": "FailureLogKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "指定加工数据的开始时间, 秒级时间戳。\n - 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。",
           "example": "1746686554",
           "member": "uint64",
