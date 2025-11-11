@@ -7932,7 +7932,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www.waf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -7941,7 +7941,7 @@
         {
           "disabled": false,
           "document": "规则ID列表",
-          "example": "[10000000,20000000]",
+          "example": "[\"10000000\",\"20000000\"]",
           "member": "string",
           "name": "RuleIDs",
           "required": true,
@@ -22390,7 +22390,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www.waf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -22417,7 +22417,7 @@
         {
           "disabled": false,
           "document": "规则ID列表",
-          "example": "[10000000,20000000]",
+          "example": "[\"10000000\",\"20000000\"]",
           "member": "string",
           "name": "RuleIDs",
           "required": false,
@@ -22462,7 +22462,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www.waf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -22471,7 +22471,7 @@
         {
           "disabled": false,
           "document": "规则类型ID列表",
-          "example": "[10000000,20000000]",
+          "example": "[\"10000000\",\"20000000\"]",
           "member": "string",
           "name": "TypeIDs",
           "required": true,
@@ -22507,7 +22507,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www.waf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -22516,7 +22516,7 @@
         {
           "disabled": false,
           "document": "规则类型ID列表",
-          "example": "[10000000,20000000]",
+          "example": "[\"10000000\",\"20000000\"]",
           "member": "string",
           "name": "TypeIDs",
           "required": true,
@@ -22552,7 +22552,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www.waf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -22561,7 +22561,7 @@
         {
           "disabled": false,
           "document": "规则类型ID列表",
-          "example": "[10000000,20000000]",
+          "example": "[\"10000000\",\"20000000\"]",
           "member": "string",
           "name": "TypeIDs",
           "required": true,

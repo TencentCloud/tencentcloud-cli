@@ -4058,7 +4058,7 @@
         {
           "disabled": false,
           "document": "指定IP地址申请EIP，每个账户每个月只有三次配额",
-          "example": "['1.1.1.1']",
+          "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "VipCluster",
           "required": false,
@@ -4067,7 +4067,7 @@
         {
           "disabled": true,
           "document": "<b>[已废弃]</b> AnycastEIP不再区分是否负载均衡。原参数说明如下：\nAnycastEIP是否用于绑定负载均衡。\n<ul style=\"margin:0\"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>TRUE：AnycastEIP可绑定对象为负载均衡</li>\n<li>FALSE：AnycastEIP可绑定对象为云服务器、NAT网关、高可用虚拟IP等</li></ul>默认值：FALSE。</li></ul>",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ApplicableForCLB",
           "required": false,
@@ -4112,7 +4112,7 @@
         {
           "disabled": false,
           "document": "是否使用独占资源池，默认值：True\n- True：表示使用独占资源池\n- False：表示使用共享资源池\n\n说明：如需使用独占资源池，请 提交工单(https://console.cloud.tencent.com/workorder/category) 咨询，具体费用请咨询商务经理。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "IsDedicatedAddressPool",
           "required": false,
@@ -4142,6 +4142,15 @@
           "example": "123e4567-e89b-12d3-a456-426655440000",
           "member": "string",
           "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原生EIP IP资源的计费方式。\n<ul style=\"margin:0\"><li>账号为标准账户类型的用户，可选值：<ul>\n<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>\n<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>\n</ul></li>\n</ul>",
+          "example": "IP_POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "IPChargeType",
           "required": false,
           "type": "string"
         }
@@ -25927,6 +25936,15 @@
           "name": "AddressType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原生EIP IP资源的计费方式。\n<ul style=\"margin:0\"><li>账号为标准账户类型的用户，可选值：<ul>\n<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>\n<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>\n</ul></li>\n</ul>",
+          "example": "IP_POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "IPChargeType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -26389,12 +26407,42 @@
       "members": [
         {
           "disabled": false,
-          "document": "公网IP询价详细参数。",
+          "document": "公网IP网络费询价详细参数。",
           "example": "无",
           "member": "InternetPriceDetail",
           "name": "AddressPrice",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IP资源费询价详细参数。仅原生IP价格查询返回。",
+          "example": "无",
+          "member": "InternetPriceDetail",
+          "name": "IPPrice",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总原价，单位：元，仅预付费价格查询返回。",
+          "example": "80",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣后的总价格，单位：元。仅预付费价格查询返回。",
+          "example": "80",
+          "member": "float",
+          "name": "DiscountPrice",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

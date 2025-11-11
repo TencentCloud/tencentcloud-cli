@@ -2357,6 +2357,24 @@
           "name": "ExpirationDuration",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模式。\nSTANDARD：默认值，标准模式\nACCELERATED：加速模式，该模式需要开通加速服务才能生效",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 IP。在加速模式下，该字段必填。",
+          "example": "125.127.178.228",
+          "member": "string",
+          "name": "UserIP",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

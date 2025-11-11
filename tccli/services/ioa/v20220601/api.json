@@ -4269,7 +4269,7 @@
         {
           "disabled": false,
           "document": "高危补丁列表",
-          "example": "{                    \"VulCriticalList\": [                         \"5043051\",                         \"4132216\"                     ]}",
+          "example": "[\"5043051\",\"4132216\"]",
           "member": "string",
           "name": "VulCriticalList",
           "output_required": false,
@@ -4459,6 +4459,28 @@
           "example": "1",
           "member": "int64",
           "name": "AccountGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启录屏权限，仅macOS， 0： 未开启 、1： 开启",
+          "example": "0",
+          "member": "int64",
+          "name": "ScreenRecordingPermission",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启磁盘访问权限，仅macOS， 0： 未开启、 1： 开启",
+          "example": "0",
+          "member": "int64",
+          "name": "DiskAccessPermission",
           "output_required": false,
           "required": false,
           "type": "int",

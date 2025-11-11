@@ -14939,6 +14939,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为特殊的数据盘，如：单副本盘",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSpecialDisk",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
