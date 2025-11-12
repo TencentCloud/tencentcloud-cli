@@ -1,59 +1,44 @@
-# Release 3.0.1303.1
+# Release 3.0.1304.1
 
-## 日志服务(cls) 版本：2020-10-16
+## 腾讯云数据分析智能体(dataagent) 版本：2025-05-13
 
-### 第 129 次发布
+### 第 2 次发布
 
-发布时间：2025-11-12 01:18:35
+发布时间：2025-11-13 01:25:13
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateDataTransform](http://document.tencentcloudapi.woa.com/document/product/614/72184)
+* [ChatAI](http://document.tencentcloudapi.woa.com/document/product/1806/87993)
+* [CreateDataAgentSession](http://document.tencentcloudapi.woa.com/document/product/1806/87992)
+* [DeleteChunk](http://document.tencentcloudapi.woa.com/document/product/1806/87987)
+* [DeleteDataAgentSession](http://document.tencentcloudapi.woa.com/document/product/1806/87991)
+* [GetKnowledgeBaseList](http://document.tencentcloudapi.woa.com/document/product/1806/87983)
+* [GetSessionDetails](http://document.tencentcloudapi.woa.com/document/product/1806/87990)
+* [ModifyChunk](http://document.tencentcloudapi.woa.com/document/product/1806/87986)
+* [ModifyKnowledgeBase](http://document.tencentcloudapi.woa.com/document/product/1806/87982)
+* [QueryChunkList](http://document.tencentcloudapi.woa.com/document/product/1806/87985)
+* [StopChatAI](http://document.tencentcloudapi.woa.com/document/product/1806/87989)
 
-	* 新增入参：HasServicesLog, TaskId
+新增数据结构：
 
-* [ModifyDataTransform](http://document.tencentcloudapi.woa.com/document/product/614/72181)
-
-	* 新增入参：KeepFailureLog, FailureLogKey
-
-
-修改数据结构：
-
-* [DataTransformTaskInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#DataTransformTaskInfo)
-
-	* 新增成员：HasServicesLog, TaskDstCount
-
+* [Chunk](http://document.tencentcloudapi.woa.com/document/product/1806/87994#Chunk)
+* [KnowledgeBase](http://document.tencentcloudapi.woa.com/document/product/1806/87994#KnowledgeBase)
+* [Record](http://document.tencentcloudapi.woa.com/document/product/1806/87994#Record)
+* [StepExpand](http://document.tencentcloudapi.woa.com/document/product/1806/87994#StepExpand)
+* [StepInfo](http://document.tencentcloudapi.woa.com/document/product/1806/87994#StepInfo)
+* [Task](http://document.tencentcloudapi.woa.com/document/product/1806/87994#Task)
 
 
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
 
-### 第 116 次发布
+### 第 117 次发布
 
-发布时间：2025-11-12 01:31:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [NodeSpecDisk](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeSpecDisk)
-
-	* 新增成员：IsSpecialDisk
-
-
-
-
-## 云游戏(gs) 版本：2019-11-18
-
-### 第 43 次发布
-
-发布时间：2025-11-12 01:35:08
+发布时间：2025-11-13 01:31:54
 
 本次发布包含了以下内容：
 
@@ -61,48 +46,39 @@
 
 修改接口：
 
-* [CreateAndroidInstancesAccessToken](http://document.tencentcloudapi.woa.com/document/product/1162/87032)
+* [ModifyUserGroup](http://document.tencentcloudapi.woa.com/document/product/589/85485)
 
-	* 新增入参：Mode, UserIP
-
-
-
-
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
-
-### 第 31 次发布
-
-发布时间：2025-11-12 01:37:16
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DeviceDetail](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DeviceDetail)
-
-	* 新增成员：ScreenRecordingPermission, DiskAccessPermission
+	* 新增入参：InstanceId
 
 
 
 
-## 媒体处理(mps) 版本：2019-06-12
+## 容器服务(tke) 版本：2022-05-01
 
-### 第 125 次发布
 
-发布时间：2025-11-12 01:46:25
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 102 次发布
+
+发布时间：2025-11-13 02:02:13
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateStreamLinkFlow](http://document.tencentcloudapi.woa.com/document/product/862/76528)
+* [DescribeClusterAvailableExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/87998)
+* [DescribeTasks](http://document.tencentcloudapi.woa.com/document/product/457/87997)
+* [ModifyClusterExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/87996)
+* [ModifyClusterExtraArgsTaskState](http://document.tencentcloudapi.woa.com/document/product/457/87995)
 
-	* <font color="#dd0000">**修改入参**：</font>OutputGroup
+新增数据结构：
 
+* [AvailableExtraArgs](http://document.tencentcloudapi.woa.com/document/product/457/31866#AvailableExtraArgs)
+* [Flag](http://document.tencentcloudapi.woa.com/document/product/457/31866#Flag)
+* [Task](http://document.tencentcloudapi.woa.com/document/product/457/31866#Task)
 
 
 

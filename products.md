@@ -52,7 +52,7 @@
 | cdata | [企业罗盘](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1645/78664) | 2025-02-28 01:14:26 |
 | cdb | [云数据库 MySQL](http://document.tencentcloudapi.woa.com/document/product/236) | [查看](http://document.tencentcloudapi.woa.com/document/product/236/16787) | 2025-08-22 01:15:16 |
 | cdc | [本地专用集群](http://document.tencentcloudapi.woa.com/document/product/1346) | [查看](http://document.tencentcloudapi.woa.com/document/product/1676/79513) | 2025-09-11 01:11:05 |
-| cdn | [内容分发网络 CDN](http://document.tencentcloudapi.woa.com/document/product/228) | [查看](http://document.tencentcloudapi.woa.com/document/product/228/30981) | 2025-11-05 01:14:51 |
+| cdn | [内容分发网络 CDN](http://document.tencentcloudapi.woa.com/document/product/228) | [查看](http://document.tencentcloudapi.woa.com/document/product/228/30981) | 2025-11-13 01:14:54 |
 | cds | [T-Sec-数据安全审计（DSA）](http://document.tencentcloudapi.woa.com/document/product/856) | [查看](http://document.tencentcloudapi.woa.com/document/product/856/33906) | 2024-11-08 01:20:11 |
 | cdwch | [腾讯云数据仓库TCHouse-C](http://document.tencentcloudapi.woa.com/document/product/1299) | [查看](http://document.tencentcloudapi.woa.com/document/product/1667/79293) | 2025-08-07 01:17:29 |
 | cdwdoris | [腾讯云数据仓库 TCHouse-D](http://document.tencentcloudapi.woa.com/document/product/1387) | [查看](http://document.tencentcloudapi.woa.com/document/product/1706/80320) | 2025-10-23 01:16:26 |
@@ -94,7 +94,7 @@
 | cxm | [cxm](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1752/82741) | 2024-11-15 01:33:59 |
 | cynosdb | [TDSQL-C MySQL 版](http://document.tencentcloudapi.woa.com/document/product/1003) | [查看](http://document.tencentcloudapi.woa.com/document/product/1003/48107) | 2025-11-10 01:24:25 |
 | dasb | [运维安全中心（堡垒机）](http://document.tencentcloudapi.woa.com/document/product/1025) | [查看](http://document.tencentcloudapi.woa.com/document/product/1492/74905) | 2024-11-19 01:31:35 |
-| dataagent | [腾讯云数据分析智能体](http://document.tencentcloudapi.woa.com/document/product/1800) | [查看](http://document.tencentcloudapi.woa.com/document/product/1806/87980) | 2025-11-10 20:07:27 |
+| dataagent | [腾讯云数据分析智能体](http://document.tencentcloudapi.woa.com/document/product/1800) | [查看](http://document.tencentcloudapi.woa.com/document/product/1806/87980) | 2025-11-13 01:25:13 |
 | dayu | [DDoS 高防包](http://document.tencentcloudapi.woa.com/document/product/1021) | [查看](http://document.tencentcloudapi.woa.com/document/product/1021/39222) | 2025-03-27 01:28:15 |
 | dbbrain | [数据库智能管家 DBbrain](http://document.tencentcloudapi.woa.com/document/product/1130) | [查看](http://document.tencentcloudapi.woa.com/document/product/1130/57822) | 2025-10-29 01:26:08 |
 | dbdc | [云数据库独享集群](http://document.tencentcloudapi.woa.com/document/product/1322) | [查看](http://document.tencentcloudapi.woa.com/document/product/1671/79419) | 2025-08-15 01:35:49 |
@@ -117,7 +117,7 @@
 | ecm | [边缘计算机器](http://document.tencentcloudapi.woa.com/document/product/1108) | [查看](http://document.tencentcloudapi.woa.com/document/product/1108/42577) | 2025-11-07 01:30:19 |
 | eiam | [数字身份管控平台（员工版）](http://document.tencentcloudapi.woa.com/document/product/1442) | [查看](http://document.tencentcloudapi.woa.com/document/product/1442/57941) | 2024-06-25 01:15:42 |
 | eis | [数据连接器](http://document.tencentcloudapi.woa.com/document/product/1270) | [查看](http://document.tencentcloudapi.woa.com/document/product/1270/57978) | 2023-08-10 01:23:55 |
-| emr | [弹性 MapReduce](http://document.tencentcloudapi.woa.com/document/product/589) | [查看](http://document.tencentcloudapi.woa.com/document/product/589/33978) | 2025-11-12 01:31:14 |
+| emr | [弹性 MapReduce](http://document.tencentcloudapi.woa.com/document/product/589) | [查看](http://document.tencentcloudapi.woa.com/document/product/589/33978) | 2025-11-13 01:31:54 |
 | ep | [企业画像](http://document.tencentcloudapi.woa.com/document/product/1061) | [查看](http://document.tencentcloudapi.woa.com/document/product/1677/79527) | 2024-03-20 01:16:43 |
 | eportrait | [企业画像服务](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1731/80918) | 2024-03-20 01:16:44 |
 | es | [Elasticsearch Service](http://document.tencentcloudapi.woa.com/document/product/845) | [查看](http://document.tencentcloudapi.woa.com/document/product/845/30627) | 2025-11-07 01:32:11 |
