@@ -7322,7 +7322,7 @@
         {
           "disabled": false,
           "document": "监听器的属性",
-          "example": "Stop",
+          "example": "[\"Stop\"]",
           "member": "string",
           "name": "AttrFlags",
           "output_required": true,
@@ -7371,7 +7371,7 @@
         },
         {
           "disabled": false,
-          "document": "调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配",
+          "document": "重新调度触发持续时间，取值0~3600s。仅TCP/UDP监听器支持。触发重新调度后，长连接将会在设置的调度时间内断开并完成重新分配。",
           "example": "600",
           "member": "uint64",
           "name": "RescheduleInterval",
@@ -7387,6 +7387,16 @@
           "name": "DataCompressMode",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重新调度启动时间，配置了重新调度启动时间后，会在启动时间到达时触发重新调度。",
+          "example": "600",
+          "member": "int64",
+          "name": "RescheduleStartTime",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

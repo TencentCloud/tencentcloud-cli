@@ -539,6 +539,13 @@
       "output": "DescribeClusterAuthenticationOptionsResponse",
       "status": "online"
     },
+    "DescribeClusterAvailableExtraArgs": {
+      "document": "查询集群可用的自定义参数",
+      "input": "DescribeClusterAvailableExtraArgsRequest",
+      "name": "查询集群可用的自定义参数",
+      "output": "DescribeClusterAvailableExtraArgsResponse",
+      "status": "online"
+    },
     "DescribeClusterCommonNames": {
       "document": "获取指定子账户在RBAC授权模式中对应kube-apiserver客户端证书的CommonName字段，如果没有客户端证书，将会签发一个，此接口有最大传入子账户数量上限，当前为50",
       "input": "DescribeClusterCommonNamesRequest",
@@ -1127,6 +1134,13 @@
       "output": "DescribeTKEEdgeScriptResponse",
       "status": "online"
     },
+    "DescribeTasks": {
+      "document": "查询任务相关信息，只会查询对应任务类型的最新的一条任务状态",
+      "input": "DescribeTasksRequest",
+      "name": "查询任务相关信息",
+      "output": "DescribeTasksResponse",
+      "status": "online"
+    },
     "DescribeVersions": {
       "document": "获取集群版本信息",
       "input": "DescribeVersionsRequest",
@@ -1321,6 +1335,20 @@
       "input": "ModifyClusterEndpointSPRequest",
       "name": "修改托管集群外网端口的安全策略",
       "output": "ModifyClusterEndpointSPResponse",
+      "status": "online"
+    },
+    "ModifyClusterExtraArgs": {
+      "document": "更新集群自定义参数，只支持托管集群",
+      "input": "ModifyClusterExtraArgsRequest",
+      "name": "更新集群自定义参数",
+      "output": "ModifyClusterExtraArgsResponse",
+      "status": "online"
+    },
+    "ModifyClusterExtraArgsTaskState": {
+      "document": "暂停或者取消集群更新参数任务",
+      "input": "ModifyClusterExtraArgsTaskStateRequest",
+      "name": "集群更新参数任务控制",
+      "output": "ModifyClusterExtraArgsTaskStateResponse",
       "status": "online"
     },
     "ModifyClusterImage": {
@@ -2159,6 +2187,52 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AvailableExtraArgs": {
+      "document": "集群可用的自定义参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "kube-apiserver可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Flag",
+          "name": "KubeAPIServer",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kube-controller-manager可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Flag",
+          "name": "KubeControllerManager",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kube-scheduler可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Flag",
+          "name": "KubeScheduler",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kubelet可用的自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Flag",
+          "name": "Kubelet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8874,6 +8948,72 @@
       ],
       "type": "object"
     },
+    "DescribeClusterAvailableExtraArgsRequest": {
+      "document": "DescribeClusterAvailableExtraArgs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群版本",
+          "example": "1.20.6",
+          "member": "string",
+          "name": "ClusterVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型(MANAGED_CLUSTER或INDEPENDENT_CLUSTER)",
+          "example": "MANAGED_CLUSTER",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAvailableExtraArgsResponse": {
+      "document": "DescribeClusterAvailableExtraArgs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群版本",
+          "example": "1.20.6",
+          "member": "string",
+          "name": "ClusterVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用的自定义参数",
+          "example": "{}",
+          "member": "AvailableExtraArgs",
+          "name": "AvailableExtraArgs",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型",
+          "example": "MANAGED_CLUSTER",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClusterCommonNamesRequest": {
       "document": "DescribeClusterCommonNames请求参数结构体",
       "members": [
@@ -14529,6 +14669,51 @@
       ],
       "type": "object"
     },
+    "DescribeTasksRequest": {
+      "document": "DescribeTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "根据filter做过滤，支持ClusterId（取值示例：cls-xxxx）、TaskType（任务类型，取值示例：add_cluster_cidr、node_upgrade、node_upgrade_ctl等）其中任务类型必传",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "表示最新的任务条目，此值为true的话，输出任务列表中只会有最新的一条",
+          "example": "无",
+          "member": "bool",
+          "name": "Latest",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksResponse": {
+      "document": "DescribeTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务步骤信息",
+          "example": "无",
+          "member": "Task",
+          "name": "Tasks",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVersionsRequest": {
       "document": "DescribeVersions请求参数结构体",
       "members": [],
@@ -16670,6 +16855,62 @@
         }
       ],
       "usage": "in"
+    },
+    "Flag": {
+      "document": "参数描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数类型",
+          "example": "",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数描述",
+          "example": "",
+          "member": "string",
+          "name": "Usage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数默认值",
+          "example": "",
+          "member": "string",
+          "name": "Default",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数可选范围（目前包含range和in两种，\"[]\"代表range，如\"[1, 5]\"表示参数必须>=1且 <=5, \"()\"代表in， 如\"('aa', 'bb')\"表示参数只能为字符串'aa'或者'bb'，该参数为空表示不校验）",
+          "example": "",
+          "member": "string",
+          "name": "Constraint",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ForwardTKEEdgeApplicationRequestV3Request": {
       "document": "ForwardTKEEdgeApplicationRequestV3请求参数结构体",
@@ -19125,6 +19366,78 @@
     },
     "ModifyClusterEndpointSPResponse": {
       "document": "ModifyClusterEndpointSP返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterExtraArgsRequest": {
+      "document": "ModifyClusterExtraArgs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标集群ID",
+          "example": "cls-kda25mj1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群自定义参数",
+          "example": "[]",
+          "member": "ClusterExtraArgs",
+          "name": "ClusterExtraArgs",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterExtraArgsResponse": {
+      "document": "ModifyClusterExtraArgs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterExtraArgsTaskStateRequest": {
+      "document": "ModifyClusterExtraArgsTaskState请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "cls-jh29sx2l",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型：\nabort 取消并回退任务",
+          "example": "abort",
+          "member": "string",
+          "name": "Operation",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterExtraArgsTaskStateResponse": {
+      "document": "ModifyClusterExtraArgsTaskState返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -25661,6 +25974,102 @@
         }
       ],
       "usage": "both"
+    },
+    "Task": {
+      "document": "任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态（process(运行中)、pause(暂停)、pausing(暂停中)、paused(已暂停)、done(已完成)、abort(中止)、aborted(已中止)、resume(重新执行)）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LifeState",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务目标ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetObj",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Param",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastError",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建任务唯一请求ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TaskStepInfo": {
       "document": "任务步骤信息",

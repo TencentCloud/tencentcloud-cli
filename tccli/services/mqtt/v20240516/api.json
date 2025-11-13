@@ -308,6 +308,13 @@
       "output": "DescribeUserListResponse",
       "status": "online"
     },
+    "KickOutClient": {
+      "document": "踢出客户端",
+      "input": "KickOutClientRequest",
+      "name": "踢出客户端",
+      "output": "KickOutClientResponse",
+      "status": "online"
+    },
     "ModifyAuthorizationPolicy": {
       "document": "修改策略规则，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)",
       "input": "ModifyAuthorizationPolicyRequest",
@@ -4360,6 +4367,42 @@
         }
       ],
       "usage": "both"
+    },
+    "KickOutClientRequest": {
+      "document": "KickOutClient请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端id",
+          "example": "client1",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KickOutClientResponse": {
+      "document": "KickOutClient返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "MQTTAuthenticatorItem": {
       "document": "MQTT认证器信息",

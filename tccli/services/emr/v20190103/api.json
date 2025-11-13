@@ -13351,6 +13351,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集群字符串ID",
+          "example": "emr-o88f3whr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "用户信息列表",
           "example": "[\"user1\"]",
           "member": "string",

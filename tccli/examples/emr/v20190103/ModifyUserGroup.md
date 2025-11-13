@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli emr ModifyUserGroup --cli-unfold-argument  \
+    --InstanceId emr-o88f3whr \
     --Users user1 \
     --UserGroup group4 \
     --Groups group4 \

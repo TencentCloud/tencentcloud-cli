@@ -652,6 +652,14 @@
         "title": "查看集群认证配置"
       }
     ],
+    "DescribeClusterAvailableExtraArgs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterAvailableExtraArgs\n<公共请求参数>\n\n{\n    \"ClusterVersion\": \"1.20.6\",\n    \"ClusterType\": \"MANAGED_CLUSTER\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterVersion\": \"1.20.6\",\n        \"ClusterType\": \"MANAGED_CLUSTER\",\n        \"AvailableExtraArgs\": {\n            \"KubeAPIServer\": [\n                {\n                    \"Name\": \"max-mutating-requests-inflight\",\n                    \"Type\": \"int\",\n                    \"Usage\": \"The maximum number of mutating requests in flight at a given time. When the server exceeds this, it rejects requests. Zero for no limit. (default 200)\",\n                    \"Default\": \"200\"\n                }\n            ],\n            \"KubeControllerManager\": [\n                {\n                    \"Name\": \"kube-api-burst\",\n                    \"Type\": \"int32\",\n                    \"Usage\": \"Burst to use while talking with kubernetes apiserver. (default 30)\",\n                    \"Default\": \"30\"\n                }\n            ],\n            \"KubeScheduler\": [],\n            \"Kubelet\": []\n        },\n        \"RequestId\": \"74f06cc7-145d-4a3c-91ec-318561dd4b4d\"\n    }\n}",
+        "title": "查询集群可用的自定义参数"
+      }
+    ],
     "DescribeClusterCommonNames": [
       {
         "document": "",
@@ -1408,6 +1416,14 @@
         "title": "获取边缘脚本链接"
       }
     ],
+    "DescribeTasks": [
+      {
+        "document": "查询任务相关信息",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Filter\": [\n        {\n            \"Name\": \"ClusterId\",\n            \"Values\": [\n                \"cls-xxxxx\"\n            ]\n        },\n        {\n            \"Name\": \"TaskType\",\n            \"Values\": [\n                \"master_upgrade\"\n            ]\n        }\n    ],\n    \"Latest\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Tasks\": [\n            {\n                \"LifeState\": \"xx\",\n                \"TargetObj\": \"xx\",\n                \"Param\": \"xx\",\n                \"TaskType\": \"xx\",\n                \"LastError\": \"xx\",\n                \"ClusterID\": \"xx\",\n                \"CreatedAt\": \"xx\",\n                \"UpdatedAt\": \"xx\",\n                \"TaskID\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "查询任务相关信息"
+      }
+    ],
     "DescribeVersions": [
       {
         "document": "",
@@ -1654,6 +1670,22 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterEndpointSP\n<公共请求参数>\n\n{\n    \"SecurityPolicies\": [\n        \"192.168.1.0/24\"\n    ],\n    \"ClusterId\": \"cls-7ph3twqe\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改托管集群外网端口的安全策略"
+      }
+    ],
+    "ModifyClusterExtraArgs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterExtraArgs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"ClusterExtraArgs\": {\n        \"KubeAPIServer\": [\n            \"feature-gates=CustomResourceSubresources=true\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7d741a2-e028-48bc-8c27-7be9e3e350db\"\n    }\n}",
+        "title": "更新集群自定义参数"
+      }
+    ],
+    "ModifyClusterExtraArgsTaskState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterExtraArgsState\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-da481xax\",\n    \"Operation\": \"abort\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ec3f44c-3460-4c61-89e4-fe97f14c3fc7\"\n    }\n}",
+        "title": "暂停或者取消集群更新参数任务"
       }
     ],
     "ModifyClusterImage": [
