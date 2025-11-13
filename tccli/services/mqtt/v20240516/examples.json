@@ -352,6 +352,14 @@
         "title": "示例"
       }
     ],
+    "KickOutClient": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KickOutClient\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-pjn3nqdm\",\n    \"ClientId\": \"mqtt_chongfu\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"902a374b-fe13-4078-837a-9fde320acf6c\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ModifyAuthorizationPolicy": [
       {
         "document": "示例",

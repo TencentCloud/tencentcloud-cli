@@ -32,14 +32,6 @@
         "title": "查询TCC中UIN的关联关系"
       }
     ],
-    "CheckUinShowAddFansEntrance": [
-      {
-        "document": "检查用户是否展示加粉入口",
-        "input": "POST / HTTP/1.1\nHost: opc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckUinShowAddFansEntranceReq\n<公共请求参数>\n\n{\n    \"AccountId\": \"10000232211\",\n    \"UnionId\": \"o_x4KwXJGDWzEf0lN4k6iIBbugJk\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CheckResult\": true,\n        \"Msg\": \"\",\n        \"RequestId\": \"axyz130\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
     "CheckUserOrgInfo": [
       {
         "document": "",

@@ -17102,7 +17102,7 @@
         },
         {
           "disabled": false,
-          "document": "必填参数，镜像唯一ID，可通过DescribeAssetImageRegistryList接口获取",
+          "document": "镜像唯一ID，可通过DescribeAssetImageRegistryList接口获取",
           "example": "135109910",
           "member": "uint64",
           "name": "Id",
@@ -17185,7 +17185,7 @@
         },
         {
           "disabled": false,
-          "document": "必填参数，镜像唯一ID，可通过DescribeAssetImageRegistryList接口获取",
+          "document": "镜像唯一ID，可通过DescribeAssetImageRegistryList接口获取",
           "example": "137884016",
           "member": "uint64",
           "name": "Id",

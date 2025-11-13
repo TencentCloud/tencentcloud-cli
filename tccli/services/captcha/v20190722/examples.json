@@ -139,7 +139,7 @@
     "UpdateCaptchaAppIdInfo": [
       {
         "document": "",
-        "input": "https://captcha.tencentcloudapi.com/?Action=UpdateCaptchaAppIdInfo\n&CaptchaAppId=2054955025\n&AppName=\"登陆场景\"\n&DomainLimit=login.com\n&SceneType=1\n&CapType=14\n&EvilInterceptGrade=100\n&SmartVerify=0\n&SmartEngine=0\n&SchemeColor=#1a79ff\n&CaptchaLanguage=2052\n&MailAlarm=null\n&TopFullScreen=0\n&TrafficThreshold=0\n&<公共请求参数>",
+        "input": "https://captcha.tencentcloudapi.com/?Action=UpdateCaptchaAppIdInfo\n&CaptchaAppId=2054955025\n&AppName=\"登录场景\"\n&DomainLimit=login.com\n&SceneType=1\n&CapType=14\n&EvilInterceptGrade=100\n&SmartVerify=0\n&SmartEngine=0\n&SchemeColor=#1a79ff\n&CaptchaLanguage=2052\n&MailAlarm=null\n&TopFullScreen=0\n&TrafficThreshold=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"80115345-6be7-48c9-bbdf-b9c6c9b1e111\",\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"OK\"\n    }\n}",
         "title": "请求和返回示例"
       }

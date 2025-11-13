@@ -160,6 +160,14 @@
         "title": "创建服务来源实例"
       }
     ],
+    "CreateOrModifyCloudNativeAPIGatewayIPRestriction": [
+      {
+        "document": "创建或编辑云原生网关访问控制",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayServiceRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-2f2e3c40\",\n    \"SourceType\": \"route\",\n    \"SourceId\": \"31f3bf99-f289-4b6e-8edc-5e09d9d8ce4e\",\n    \"Enabled\": \"true\",\n    \"RestrictionType\": \"whiteList\",\n    \"AddressList\": [\n        \"1.1.1.1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
+        "title": "创建或编辑云原生网关访问控制"
+      }
+    ],
     "CreateOrUpdateConfigFileAndRelease": [
       {
         "document": "创建或更新配置并发布",
@@ -206,6 +214,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayCertificate\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b70\",\n    \"Id\": \"6190e57f-f5b2-4295-a8c0-34d4a6d0e6e5\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "删除云原生网关证书"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayIPRestriction": [
+      {
+        "document": "删除云原生网关访问控制",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayServiceRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-2f2e3c42\",\n    \"SourceType\": \"route\",\n    \"SourceId\": \"31f3bf99-f289-4b6e-8edc-5e09d9d8ce4e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
+        "title": "删除云原生网关访问控制"
       }
     ],
     "DeleteCloudNativeAPIGatewayPublicNetwork": [
@@ -406,6 +422,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConfig\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-dde03767\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"534d0349-0663-4dfa-882e-172fe893608e\",\n        \"Result\": {\n            \"GatewayId\": \"gateway-dde03767\",\n            \"ConfigList\": [\n                {\n                    \"ConsoleType\": \"Konga\",\n                    \"NetType\": \"Open\",\n                    \"Status\": \"Open\",\n                    \"AccessControl\": {\n                        \"Mode\": \"Whitelist\",\n                        \"CidrWhiteList\": [\n                            \"0.0.0.0\"\n                        ],\n                        \"CidrBlackList\": []\n                    },\n                    \"VpcId\": \"\",\n                    \"SubnetId\": \"\",\n                    \"HttpUrl\": \"\",\n                    \"HttpsUrl\": \"https://gateway-dde03767-konga.gz.apigw.tencentcs.com:1337/\",\n                    \"AdminUser\": \"admin\",\n                    \"AdminPassword\": \"husdqwe1zd3sjwSIx4@\",\n                    \"Vip\": \"\",\n                    \"InternetMaxBandwidthOut\": 0,\n                    \"Description\": \"\",\n                    \"SlaType\": \"\",\n                    \"SlaName\": \"\",\n                    \"MultiZoneFlag\": false,\n                    \"MasterZoneId\": \"\",\n                    \"SlaveZoneId\": \"\",\n                    \"MasterZoneName\": \"\",\n                    \"SlaveZoneName\": \"\",\n                    \"NetworkId\": \"\"\n                }\n            ],\n            \"GroupVpcId\": \"vpc-k0dl0rk1\",\n            \"GroupSubnetId\": \"subnet-ec94pnyu\",\n            \"GroupId\": \"group-d2bdcff3\"\n        }\n    }\n}",
         "title": "测试获取云原生API网关配置信息"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayIPRestriction": [
+      {
+        "document": "查询云原生网关访问控制",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayServiceRateLimit\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-2f2e3c40\",\n    \"SourceType\": \"route\",\n    \"SourceId\": \"31f3bf99-f289-4b6e-8edc-5e09d9d8ce4f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\",\n        \"Result\": {\n            \"SourceType\": \"route\",\n            \"SourceId\": \"31f3bf99-f289-4b6e-8edc-5e09d9d8ce4f\",\n            \"Enabled\": true,\n            \"RestrictionType\": \"whiteList\",\n            \"AddressList\": [\n                \"1.1.1.1\"\n            ]\n        }\n    }\n}",
+        "title": "查询云原生网关访问控制"
       }
     ],
     "DescribeCloudNativeAPIGatewayInfoByIp": [

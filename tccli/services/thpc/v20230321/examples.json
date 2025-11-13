@@ -3,7 +3,7 @@
     "AddClusterStorageOption": [
       {
         "document": "集群添加CFS挂载选项。",
-        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddClusterStorageOption\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-eq97tf4u\",\n    \"StorageOption\": {\n        \"CFSOptions\": [\n            {\n                \"LocalPath\": \"/data/\",\n                \"RemotePath\": \"172.30.3.90:/\",\n                \"Protocol\": \"NFS 4.0\",\n                \"StorageType\": \"SD\"\n            },\n            {\n                \"LocalPath\": \"/tmp/\",\n                \"RemotePath\": \"172.30.2.180@tcp0:/4fe1839b/cfs\",\n                \"Protocol\": \"TURBO\",\n                \"StorageType\": \"TB\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddClusterStorageOption\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-eq97tf4u\",\n    \"StorageOption\": {\n        \"CFSOptions\": [\n            {\n                \"LocalPath\": \"/data/\",\n                \"RemotePath\": \"172.30.3.90:/\",\n                \"Protocol\": \"NFS 4.0\",\n                \"StorageType\": \"SD\"\n            },\n            {\n                \"LocalPath\": \"/tmp/\",\n                \"FileSystemId\": \"cfs-odp2ivgf\"\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2ac2379-6453-4eab-8f63-7ade00cb67b0\"\n    }\n}",
         "title": "添加集群存储选项"
       }

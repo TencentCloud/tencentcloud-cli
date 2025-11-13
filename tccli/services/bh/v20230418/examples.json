@@ -408,6 +408,14 @@
         "title": "查询资源信息"
       }
     ],
+    "DescribeSecuritySetting": [
+      {
+        "document": "查询安全配置信息",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecuritySetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8ebf0b3-ecf5-49bf-9f9d-86341c4072f1\"\n    }\n}",
+        "title": "查询安全配置信息"
+      }
+    ],
     "DescribeUserGroupMembers": [
       {
         "document": "",
@@ -438,12 +446,28 @@
         "title": "根据主机查询有访问权限的用户信息"
       }
     ],
+    "DisableExternalAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableExternalAccess\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-sefwlij\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fc5a1ab8-a235-11ef-bdc5-52540015314d\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DisableIntranetAccess": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableIntranetAccess\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-sefwlij\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fc5a1ab8-a235-11ef-bdc5-52540015314d\"\n    }\n}",
         "title": "关闭内网访问"
+      }
+    ],
+    "EnableExternalAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableExternalAccess\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-sefwlij\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fc5a1ab8-a235-11ef-bdc5-52540015314d\"\n    }\n}",
+        "title": "实例1"
       }
     ],
     "EnableIntranetAccess": [
@@ -504,6 +528,14 @@
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAcl\n<公共请求参数>\n\n{\n    \"AllowClipTextUp\": true,\n    \"MaxFileDownSize\": 1,\n    \"CmdTemplateIdSet\": [\n        1\n    ],\n    \"AllowFileDown\": true,\n    \"Name\": \"test-name\",\n    \"UserGroupIdSet\": [\n        1\n    ],\n    \"DeviceGroupIdSet\": [\n        1\n    ],\n    \"AllowDiskRedirect\": true,\n    \"AllowClipFileUp\": true,\n    \"AccountSet\": [\n        \"root\"\n    ],\n    \"AllowAnyAccount\": true,\n    \"AllowClipFileDown\": true,\n    \"DeviceIdSet\": [\n        1\n    ],\n    \"AllowFileUp\": true,\n    \"MaxFileUpSize\": 1,\n    \"UserIdSet\": [\n        1\n    ],\n    \"Id\": 1,\n    \"AllowClipTextDown\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec7676f4-a498-4ef5-ad68-6678b16e45d7\"\n    }\n}",
         "title": "修改访问权限"
+      }
+    ],
+    "ModifyAssetSyncFlag": [
+      {
+        "document": "开启资产自动同步",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetSyncFlag\n<公共请求参数>\n\n{\n    \"AutoSync\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "开启资产自动同步"
       }
     ],
     "ModifyAuthModeSetting": [

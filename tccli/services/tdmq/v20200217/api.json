@@ -11608,7 +11608,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "test_namespace",
+          "example": "test_ns",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -11683,6 +11683,15 @@
           "example": "[\"TCP\"]",
           "member": "string",
           "name": "Types",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤器",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
           "required": false,
           "type": "list"
         }
@@ -13653,7 +13662,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "prod",
+          "example": "test_ns",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -13671,7 +13680,7 @@
         {
           "disabled": false,
           "document": "按主题名称搜索，支持模糊查询",
-          "example": "example",
+          "example": "test_topic",
           "member": "string",
           "name": "FilterName",
           "required": false,
@@ -13680,11 +13689,20 @@
         {
           "disabled": false,
           "document": "按订阅消费组名称过滤",
-          "example": "consume1",
+          "example": "test_group",
           "member": "string",
           "name": "FilterGroup",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤器",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -17060,6 +17078,15 @@
           "name": "EnableDeletionProtection",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5",
+          "example": "0.6",
+          "member": "float",
+          "name": "SendReceiveRatio",
+          "required": false,
+          "type": "float"
         }
       ],
       "type": "object"
@@ -19126,7 +19153,7 @@
         {
           "disabled": false,
           "document": "已废弃",
-          "example": "true/false",
+          "example": "true",
           "member": "bool",
           "name": "PublicAccessEndpointStatus",
           "output_required": true,
@@ -19136,7 +19163,7 @@
         {
           "disabled": false,
           "document": "已废弃",
-          "example": "true/false",
+          "example": "true",
           "member": "bool",
           "name": "PublicControlConsoleSwitchStatus",
           "output_required": true,
@@ -19146,7 +19173,7 @@
         {
           "disabled": false,
           "document": "已废弃",
-          "example": "true/false",
+          "example": "true",
           "member": "bool",
           "name": "VpcControlConsoleSwitchStatus",
           "output_required": true,
@@ -19196,7 +19223,7 @@
         {
           "disabled": false,
           "document": "Prometheus信息",
-          "example": "Prometheus信息",
+          "example": "无",
           "member": "PrometheusEndpointInfo",
           "name": "PrometheusEndpointInfo",
           "output_required": true,
@@ -19216,7 +19243,7 @@
         {
           "disabled": false,
           "document": "控制面所使用的VPC信息",
-          "example": "{\"VpcId\":\"vpc-test\",\"SubnetId\":\"subnet-test\",\"VpcEndpoint\":\"amqp://10.0.0.11:5672\",\"VpcDataStreamEndpointStatus\":\"ON\"}",
+          "example": "无",
           "member": "VpcEndpointInfo",
           "name": "ControlPlaneEndpointInfo",
           "output_required": false,
@@ -19231,6 +19258,16 @@
           "name": "PublicTlsAccessEndpoint",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IP是否复用",
+          "example": "true",
+          "member": "bool",
+          "name": "PublicIpReused",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -22161,6 +22198,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -22397,6 +22444,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "控制生产和消费消息的 TPS 占比，取值范围0～1，默认值为0.5",
+          "example": "0.5",
+          "member": "float",
+          "name": "SendReceiveRatio",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -23188,6 +23245,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -24767,6 +24834,30 @@
         }
       ],
       "usage": "both"
+    },
+    "TagFilter": {
+      "document": "标签过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键名称",
+          "example": "test_key",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签值列表",
+          "example": "test_value",
+          "member": "string",
+          "name": "TagValues",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "TenantSetOpt": {
       "document": "运营端租户信息",
