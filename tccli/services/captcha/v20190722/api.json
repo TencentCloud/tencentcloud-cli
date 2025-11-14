@@ -510,7 +510,7 @@
         {
           "disabled": false,
           "document": "注册应用名称",
-          "example": "\"登陆验证码\"",
+          "example": "\"登录验证码\"",
           "member": "string",
           "name": "AppName",
           "output_required": true,

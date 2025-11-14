@@ -27,8 +27,8 @@
     "CheckRechargeKafkaServer": [
       {
         "document": "校验用户输入Kafka服务地址是否可访问",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosRecharge\n<公共请求参数>\n\n{\n    \"KafkaType\": 1,\n    \"ServerAddr\": \"test.cls.tencentyun.com:9095\",\n    \"IsEncryptionAddr\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\",\n        \"Status\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckRechargeKafkaServer\n<公共请求参数>\n\n{\n    \"KafkaType\": 0,\n    \"KafkaInstance\": \"ckafka-8j4ro59xx\",\n    \"UserKafkaMeta\": {\n        \"KafkaVersion\": \"2.0.0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"add346ce-36c5-4961-917f-c020b5fc4bfd\"\n    }\n}",
         "title": "校验用户输入Kafka服务地址是否可访问"
       }
     ],

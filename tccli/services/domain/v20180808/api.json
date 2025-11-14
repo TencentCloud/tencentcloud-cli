@@ -903,6 +903,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交割时间\n格式:YYYY-MM-DD HH:mm:ss",
+          "example": "",
+          "member": "string",
+          "name": "ModifyOwnerEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2641,6 +2651,16 @@
           "name": "Status",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交割时间\n格式:YYYY-MM-DD HH:mm:ss",
+          "example": "2025-01-02 15:04:05",
+          "member": "string",
+          "name": "ModifyOwnerEndTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

@@ -1400,7 +1400,7 @@
         {
           "disabled": false,
           "document": "告警对象",
-          "example": "ins-abcdef",
+          "example": "ins-ybc",
           "member": "string",
           "name": "AlarmObject",
           "output_required": true,
@@ -1450,7 +1450,7 @@
         {
           "disabled": false,
           "document": "告警策略 Id",
-          "example": "policy-abcdef",
+          "example": "policy-demo",
           "member": "string",
           "name": "PolicyId",
           "output_required": true,
@@ -1510,7 +1510,7 @@
         {
           "disabled": false,
           "document": "接收人列表",
-          "example": "无",
+          "example": "[1,4]",
           "member": "int64",
           "name": "ReceiverUids",
           "output_required": true,
@@ -1520,7 +1520,7 @@
         {
           "disabled": false,
           "document": "接收组列表",
-          "example": "无",
+          "example": "[502]",
           "member": "int64",
           "name": "ReceiverGroups",
           "output_required": true,
@@ -1530,7 +1530,7 @@
         {
           "disabled": false,
           "document": "告警渠道列表 SMS=短信 EMAIL=邮件 CALL=电话 WECHAT=微信",
-          "example": "无",
+          "example": "[\"SMS\"]",
           "member": "string",
           "name": "NoticeWays",
           "output_required": true,
@@ -1540,7 +1540,7 @@
         {
           "disabled": false,
           "document": "可用于实例、实例组的绑定和解绑接口（[BindingPolicyObject](https://cloud.tencent.com/document/product/248/40421)、[UnBindingAllPolicyObject](https://cloud.tencent.com/document/product/248/40568)、[UnBindingPolicyObject](https://cloud.tencent.com/document/product/248/40567)）的策略 ID",
-          "example": "12345",
+          "example": "418",
           "member": "string",
           "name": "OriginId",
           "output_required": true,
@@ -1670,7 +1670,7 @@
         {
           "disabled": false,
           "document": "屏蔽原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "测试",
+          "example": "Quick",
           "member": "string",
           "name": "AlarmShieldReason",
           "output_required": false,
@@ -1680,7 +1680,7 @@
         {
           "disabled": false,
           "document": "告警实例的维度信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Name\": \"uInstanceId\", \"Value\": \"ins-demo\"}]",
           "member": "string",
           "name": "InternalDimensions",
           "output_required": false,
@@ -1690,7 +1690,7 @@
         {
           "disabled": false,
           "document": "指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CPUUsage",
           "member": "string",
           "name": "MetricName",
           "output_required": false,
@@ -6772,7 +6772,7 @@
         {
           "disabled": false,
           "document": "根据监控类型过滤，不选默认查所有类型。\"MT_QCE\"=云产品监控，支持的枚举值有：\"MT_QCE\"=云产品监控；\"MT_TAW\"=应用性能监控；\"MT_RUM\"=前端性能监控；\"MT_PROBE\"=云拨测，\"MT_TRTC\"=实时音视频，\n\"MT_RUMAPP\"=终端性能监控",
-          "example": "MT_QCE",
+          "example": "[\"MT_QCE\"]",
           "member": "string",
           "name": "MonitorTypes",
           "required": false,
@@ -6790,7 +6790,7 @@
         {
           "disabled": false,
           "document": "根据告警状态过滤 ALARM=未恢复 OK=已恢复 NO_CONF=已失效 NO_DATA=数据不足，不选默认查所有",
-          "example": "ALARM",
+          "example": "[\"ALARM\"]",
           "member": "string",
           "name": "AlarmStatus",
           "required": false,
@@ -6817,7 +6817,7 @@
         {
           "disabled": false,
           "document": "根据策略类型过滤，策略类型是监控类型之下的概念，在这里两者都需要传入，例如 `[{\"MonitorType\": \"MT_QCE\", \"Namespace\": \"cvm_device\"}]`\n可使用 [查询所有名字空间 DescribeAllNamespaces](https://cloud.tencent.com/document/product/248/48683) 接口查询",
-          "example": "[{\"MonitorType\": \"MT_QCE\", \"Namespace\": \"cvm_device\"}]",
+          "example": "无",
           "member": "MonitorTypeNamespace",
           "name": "Namespaces",
           "required": false,
@@ -6826,7 +6826,7 @@
         {
           "disabled": false,
           "document": "根据指标名过滤",
-          "example": "CpuUsage",
+          "example": "[\"CpuUsage\"]",
           "member": "string",
           "name": "MetricNames",
           "required": false,
@@ -6871,7 +6871,7 @@
         {
           "disabled": false,
           "document": "根据告警策略 Id 列表搜索",
-          "example": "[policy-abtvedf]",
+          "example": "[\"policy-abtvedf\"]",
           "member": "string",
           "name": "PolicyIds",
           "required": false,
@@ -6889,7 +6889,7 @@
         {
           "disabled": false,
           "document": "收敛历史的唯一id",
-          "example": "112344",
+          "example": "[\"112344\"]",
           "member": "string",
           "name": "ConvergenceHistoryIDs",
           "required": false,
@@ -6898,9 +6898,18 @@
         {
           "disabled": false,
           "document": "告警类型",
-          "example": "[\"METRIC\"，\"PRODUCT\",\"PLATFORM\"]",
+          "example": "[\"alarm\"]",
           "member": "string",
           "name": "AlarmTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否已屏蔽",
+          "example": "[\"SHIELD\"]",
+          "member": "string",
+          "name": "ShieldStatus",
           "required": false,
           "type": "list"
         }

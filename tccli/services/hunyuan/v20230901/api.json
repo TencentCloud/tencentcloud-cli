@@ -798,7 +798,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "内容类型\n注意：\n需包含至少一个 Type 为\"text\"的参数。\n参数值可选范围：[text\", \"image_url\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容类型\n注意：\n需包含至少一个 Type 为\"text\"的参数。\n参数值可选范围：[text\", \"image_url\",\"video_url\"]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "text",
           "member": "string",
           "name": "Type",
@@ -824,6 +824,28 @@
           "example": "无",
           "member": "ImageUrl",
           "name": "ImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当type为video_url时使用，标识具体的视频链接内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoUrl",
+          "name": "VideoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当type为video_frames时使用，标识具体的视频内图像帧内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoFrames",
+          "name": "VideoFrames",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -4171,6 +4193,51 @@
         }
       ],
       "usage": "in"
+    },
+    "VideoFrames": {
+      "document": "当type为video_frames时使用，标识具体的视频内图像帧内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频图像帧列表，图像帧传url",
+          "example": "无",
+          "member": "string",
+          "name": "Frames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VideoUrl": {
+      "document": "当type为video_url时使用，标识具体的视频链接内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频的url，如\"https://your-video-path.mp/4\"",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "控制视频抽帧频率，取值范围为 0.1 ~5，表示每隔 1/fps 秒抽取一帧，默认为 1s抽取一帧",
+          "example": "1",
+          "member": "float",
+          "name": "Fps",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "WebSearchOptions": {
       "document": "知识注入相关的参数信息",

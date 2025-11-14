@@ -615,7 +615,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "req-123456",
+          "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -735,14 +735,25 @@
         },
         {
           "disabled": false,
-          "document": "1753153590\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "创建时间",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1753153590",
           "member": "int64",
           "name": "CreateTime",
           "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2092,6 +2103,15 @@
         },
         {
           "disabled": false,
+          "document": "标签过滤器",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤查询条件列表，请在引用此参数的API说明中了解使用方法。",
           "example": "无",
           "member": "Filter",
@@ -2854,6 +2874,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "proxy节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "NodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "proxy调度详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneScheduledItem",
+          "name": "ZoneScheduledList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5027,6 +5067,15 @@
         },
         {
           "disabled": false,
+          "document": "标签过滤器",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤查询条件列表，请在引用此参数的API说明中了解使用方法。",
           "example": "无",
           "member": "Filter",
@@ -5640,7 +5689,7 @@
         {
           "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {         \"TagKey\": \"test_key\",         \"TagValue\": \"test_value\"     } ]",
+          "example": "无",
           "member": "Tag",
           "name": "TagList",
           "output_required": true,
@@ -5746,6 +5795,26 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1754029376000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性TPS开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ScaledTpsEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9028,6 +9097,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9091,6 +9171,34 @@
         }
       ],
       "usage": "in"
+    },
+    "ZoneScheduledItem": {
+      "document": "proxy调度时各个可用区有无调度任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "16001",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有剔除的调度任务且没有切回的可用区时，该值为true，反之为false",
+          "example": "true",
+          "member": "bool",
+          "name": "NodePermWipeFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

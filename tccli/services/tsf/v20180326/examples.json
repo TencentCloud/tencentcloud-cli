@@ -1456,6 +1456,14 @@
         "title": "更新部署组详情"
       }
     ],
+    "ModifyGroupLane": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGroupLane\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-2vzee8vp\",\n    \"LaneList\": [\n        {\n            \"GroupId\": \"group-2vzee8vp\",\n            \"LaneId\": \"lane-yxld94dy\",\n            \"Entrance\": true\n        },\n        {\n            \"GroupId\": \"group-2vzee8vp\",\n            \"LaneId\": \"lane-alb9gjxv\",\n            \"Entrance\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"794f1bce-97a8-447b-9059-e179b550f13d\"\n    }\n}",
+        "title": "更新部署组泳道信息"
+      }
+    ],
     "ModifyLane": [
       {
         "document": "",

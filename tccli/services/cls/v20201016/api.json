@@ -2124,6 +2124,15 @@
           "name": "Protocol",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用户kafka拓展信息",
+          "example": "无",
+          "member": "UserKafkaMeta",
+          "name": "UserKafkaMeta",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2787,6 +2796,16 @@
           "member": "string",
           "name": "AdvancedConfig",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file",
+          "example": "file",
+          "member": "string",
+          "name": "InputType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4477,6 +4496,15 @@
           "name": "AdvancedConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file",
+          "example": "file",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5329,6 +5357,15 @@
           "name": "ConsumerGroupName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户kafka拓展信息",
+          "example": "无",
+          "member": "UserKafkaMeta",
+          "name": "UserKafkaMeta",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -11309,7 +11346,7 @@
         {
           "disabled": false,
           "document": "用户Kafka消费组名称\t",
-          "example": "cls-xxxxx\t",
+          "example": "cls-xxxxx",
           "member": "string",
           "name": "ConsumerGroupName",
           "output_required": true,
@@ -11363,6 +11400,16 @@
           "member": "LogRechargeRuleInfo",
           "name": "LogRechargeRule",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户kafka拓展信息",
+          "example": "无",
+          "member": "UserKafkaMeta",
+          "name": "UserKafkaMeta",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         }
@@ -11847,7 +11894,7 @@
         },
         {
           "disabled": false,
-          "document": "日志Key列表，RechargeType为full_regex_log时必填",
+          "document": "日志Key列表，RechargeType为full_regex_log、delimiter_log时必填",
           "example": "[\"name\",\"address\"]",
           "member": "string",
           "name": "Keys",
@@ -11865,6 +11912,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分隔符解析模式-分隔符\n当解析格式为分隔符提取时，该字段必填",
+          "example": ",",
+          "member": "string",
+          "name": "Delimiter",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -13029,6 +13087,15 @@
           "name": "AdvancedConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file",
+          "example": "file",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13704,6 +13771,15 @@
           "name": "StatusControl",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户kafka拓展信息",
+          "example": "无",
+          "member": "UserKafkaMeta",
+          "name": "UserKafkaMeta",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -15141,6 +15217,15 @@
           "example": "无",
           "member": "LogRechargeRuleInfo",
           "name": "LogRechargeRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用户kafka拓展信息",
+          "example": "无",
+          "member": "UserKafkaMeta",
+          "name": "UserKafkaMeta",
           "required": false,
           "type": "object"
         }
@@ -17064,6 +17149,23 @@
         }
       ],
       "type": "object"
+    },
+    "UserKafkaMeta": {
+      "document": "用户kafka扩展信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户kafka version\n支持如下版本：\n  - 0.10.2.0\n  - 1.0.0\n  - 2.0.0\n  - 2.2.0\n  - 2.4.0\n  - 2.6.0\n  - 2.7.0\n  - 2.8.0\n  - 3.0.0\n  - 3.2.0",
+          "example": "2.0.0",
+          "member": "string",
+          "name": "KafkaVersion",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ValueInfo": {
       "document": "需要开启键值索引的字段的索引描述信息",

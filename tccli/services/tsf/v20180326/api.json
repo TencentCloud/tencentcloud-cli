@@ -1274,6 +1274,13 @@
       "output": "ModifyGroupResponse",
       "status": "online"
     },
+    "ModifyGroupLane": {
+      "document": "更新部署组泳道信息",
+      "input": "ModifyGroupLaneRequest",
+      "name": "更新部署组泳道信息",
+      "output": "ModifyGroupLaneResponse",
+      "status": "online"
+    },
     "ModifyLane": {
       "document": "更新泳道配置信息",
       "input": "ModifyLaneRequest",
@@ -25073,6 +25080,52 @@
         {
           "disabled": false,
           "document": "结果true：成功；false：失败；",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGroupLaneRequest": {
+      "document": "ModifyGroupLane请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署组ID。该参数可以通过调用 [DescribeSimpleGroups](https://cloud.tencent.com/document/product/649/36064) 的返回值中的 GroupId 字段来获取或通过登录[控制台](https://console.cloud.tencent.com/tsf/resource)-查看部署组页查看；也可以调用[CreateGroup](https://cloud.tencent.com/document/product/649/36074)创建新的部署组。",
+          "example": "group-ab2md7wa",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "泳道部署组列表。",
+          "example": "无",
+          "member": "LaneGroup",
+          "name": "LaneList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGroupLaneResponse": {
+      "document": "ModifyGroupLane返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果。- true：成功- false：失败",
           "example": "true",
           "member": "bool",
           "name": "Result",

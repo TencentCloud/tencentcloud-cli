@@ -7,7 +7,7 @@ Input:
 ```
 tccli captcha UpdateCaptchaAppIdInfo --cli-unfold-argument  \
     --CaptchaAppId 2054955025 \
-    --AppName "登陆场景" \
+    --AppName "登录场景" \
     --DomainLimit login.com \
     --SceneType 1 \
     --CapType 14 \
