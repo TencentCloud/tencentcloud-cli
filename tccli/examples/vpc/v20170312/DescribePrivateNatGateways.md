@@ -17,6 +17,7 @@ Output:
             {
                 "NatGatewayId": "intranat-0g3blj80",
                 "NatGatewayName": "test_nat",
+                "DeletionProtectionEnabled": false,
                 "GatewayType": "NORMAL",
                 "NatType": "DCG",
                 "VpcId": "vpc-noanwmed",
@@ -54,6 +55,7 @@ Output:
             {
                 "NatGatewayId": "intranat-ryur99m8",
                 "NatGatewayName": "example",
+                "DeletionProtectionEnabled": false,
                 "VpcId": "vpc-d3rrkwej",
                 "Status": "AVAILABLE",
                 "CrossDomain": false,

@@ -62,7 +62,8 @@ Output:
                         "Key": "city",
                         "Value": "shanghai"
                     }
-                ]
+                ],
+                "DeletionProtectionEnabled": false
             }
         ],
         "TotalCount": 1,
@@ -114,7 +115,8 @@ Output:
                 "DedicatedClusterId": "",
                 "RestrictState": "NORMAL",
                 "NatProductVersion": 2,
-                "ExclusiveGatewayBandwidth": 0
+                "ExclusiveGatewayBandwidth": 0,
+                "DeletionProtectionEnabled": false
             }
         ],
         "TotalCount": 1,

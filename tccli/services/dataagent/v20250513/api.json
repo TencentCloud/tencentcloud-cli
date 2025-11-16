@@ -64,7 +64,7 @@
       "status": "online"
     },
     "QueryChunkList": {
-      "document": "分配查询",
+      "document": "文档切片查询",
       "input": "QueryChunkListRequest",
       "name": "文档切片查询",
       "output": "QueryChunkListResponse",
@@ -91,7 +91,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-fje88",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -100,7 +100,7 @@
         {
           "disabled": false,
           "document": "文件ID",
-          "example": "nbnius",
+          "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -127,7 +127,7 @@
         {
           "disabled": false,
           "document": "chunk内容",
-          "example": "test",
+          "example": "this is  my test",
           "member": "string",
           "name": "Content",
           "required": false,
@@ -135,8 +135,8 @@
         },
         {
           "disabled": false,
-          "document": "\t 新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId",
-          "example": "xzcjjjij",
+          "document": "新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId",
+          "example": "64bd3527-6ad9-4eda-a809-4e1a7ecaf86a",
           "member": "string",
           "name": "AfterChunkId",
           "required": false,
@@ -150,8 +150,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "新增的chunkid",
-          "example": "xzcjjjij",
+          "document": "新增的ChunkId",
+          "example": "4c49fb67-38c7-4dea-b61c-bb545c9cac67",
           "member": "string",
           "name": "ChunkId",
           "output_required": false,
@@ -182,7 +182,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-e5b6a2e4",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -191,7 +191,7 @@
         {
           "disabled": false,
           "document": "问题内容",
-          "example": "hello",
+          "example": "what are you doing ?",
           "member": "string",
           "name": "Question",
           "required": false,
@@ -200,7 +200,7 @@
         {
           "disabled": false,
           "document": "上下文",
-          "example": "{\\\"k\\\":\\\"v\\\"}",
+          "example": "{\\\"KnowledgeBases\\\":[{\\\"KnowledgeBaseId\\\":\\\"klbase-kSnxNtvrXI\\\",\\\"FileIds\\\":[],\\\"Databases\\\":[{\\\"MCP\\\":{\\\"DataSourceId\\\":\\\"datasource_tchoused_example\\\"},\\\"DbTables\\\":[]}]}],\\\"WhiteList\\\":[]}",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -227,7 +227,7 @@
         {
           "disabled": false,
           "document": "数据源id",
-          "example": "e5b6a2e4",
+          "example": "[\"cdb-8zau2hln\",\"cdwdoris-1yxlfzhj\"]",
           "member": "string",
           "name": "DataSourceIds",
           "required": false,
@@ -357,7 +357,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-jdsf81",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -366,7 +366,7 @@
         {
           "disabled": false,
           "document": "文件ID",
-          "example": "sdfcjiej89",
+          "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -375,7 +375,7 @@
         {
           "disabled": false,
           "document": "切片ID",
-          "example": "dfjj8ew",
+          "example": "[\"4c49fb67-38c7-4dea-b61c-bb545c9cac67\"]",
           "member": "string",
           "name": "ChunkIds",
           "required": true,
@@ -402,7 +402,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-e5b6a2e4-3b9b",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -485,7 +485,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-e5b6a2e4-3b9b",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -634,7 +634,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-j8jfsk",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -643,7 +643,7 @@
         {
           "disabled": false,
           "document": "文件ID",
-          "example": "jf8829sd",
+          "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -652,7 +652,7 @@
         {
           "disabled": false,
           "document": "切片ID",
-          "example": "dsfn8u8",
+          "example": "4c49fb67-38c7-4dea-b61c-bb545c9cac67",
           "member": "string",
           "name": "ChunkId",
           "required": false,
@@ -661,7 +661,7 @@
         {
           "disabled": false,
           "document": "编辑后的文本",
-          "example": "文本",
+          "example": "this is  my test. hello world",
           "member": "string",
           "name": "Content",
           "required": false,
@@ -761,7 +761,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-ji81kj0",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -770,7 +770,7 @@
         {
           "disabled": false,
           "document": "文件id",
-          "example": "fejii-jf88-j8jf2d-suei",
+          "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -787,7 +787,7 @@
         },
         {
           "disabled": false,
-          "document": "默认 1 表示第一页",
+          "document": "表示第一页",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -796,7 +796,7 @@
         },
         {
           "disabled": false,
-          "document": "\t 默认 10 一页展示 10 条",
+          "document": "默认一页展示 10 条",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -1146,7 +1146,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-e5b6a2e4-3b9b",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": false,

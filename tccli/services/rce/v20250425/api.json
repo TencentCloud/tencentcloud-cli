@@ -1,5 +1,19 @@
 {
   "actions": {
+    "DescribeCameraRisk": {
+      "document": "相机指纹检测",
+      "input": "DescribeCameraRiskRequest",
+      "name": "相机指纹检测",
+      "output": "DescribeCameraRiskResponse",
+      "status": "online"
+    },
+    "DescribeDeviceRisk": {
+      "document": "设备风险检测",
+      "input": "DescribeDeviceRiskRequest",
+      "name": "检测设备风险",
+      "output": "DescribeDeviceRiskResponse",
+      "status": "online"
+    },
     "DescribeRiskLabels": {
       "document": "此接口用于查询风险标签",
       "input": "DescribeRiskLabelsRequest",
@@ -15,6 +29,140 @@
     "serviceShortName": "rce"
   },
   "objects": {
+    "CameraRiskBizData": {
+      "document": "相机指纹检测的业务参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "慧眼业务场景码",
+          "example": "1",
+          "member": "int64",
+          "name": "FaceIdBizCode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品模式\t",
+          "example": "PLUS",
+          "member": "string",
+          "name": "ProductMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件场景码",
+          "example": "e_activity_1357",
+          "member": "string",
+          "name": "SceneCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "交易流水号\t",
+          "example": "face_id_token_01",
+          "member": "string",
+          "name": "FaceIdToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "相机指纹特征Token",
+          "example": "AYIAwde9ZhP4QUSmT***I25tVdlxR",
+          "member": "string",
+          "name": "CamToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户标识\t",
+          "example": "user_id_01",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeCameraRiskRequest": {
+      "document": "DescribeCameraRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务参数",
+          "example": "无",
+          "member": "CameraRiskBizData",
+          "name": "BizData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCameraRiskResponse": {
+      "document": "DescribeCameraRisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputCameraRisk",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceRiskRequest": {
+      "document": "DescribeDeviceRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务参数",
+          "example": "无",
+          "member": "DeviceRiskBizData",
+          "name": "BizData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceRiskResponse": {
+      "document": "DescribeDeviceRisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputDeviceRisk",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRiskLabelsRequest": {
       "document": "DescribeRiskLabels请求参数结构体",
       "members": [
@@ -51,6 +199,309 @@
         }
       ],
       "type": "object"
+    },
+    "DeviceRiskBizData": {
+      "document": "设备风险检测的业务参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务场景码",
+          "example": "1",
+          "member": "int64",
+          "name": "FaceIdBizCode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品模式",
+          "example": "PLUS",
+          "member": "string",
+          "name": "ProductMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件场景码",
+          "example": "e_strategy_trade_1332",
+          "member": "string",
+          "name": "SceneCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "交易流水号",
+          "example": "face_id_token_01",
+          "member": "string",
+          "name": "FaceIdToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源请求",
+          "example": "faceid",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备风险识别token",
+          "example": "AYIAwde9ZhP4QUSmT***9WZ9AcY",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户标识",
+          "example": "userId_01",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "OutputCameraRisk": {
+      "document": "检测相机指纹风险的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回码\t",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息\t",
+          "example": "OK",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputCameraRiskInfo",
+          "name": "Value",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求id\t",
+          "example": "\t****-a88508484ebb",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputCameraRiskInfo": {
+      "document": "检测相机指纹风险的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "决策结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pass",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskScore",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wswdef",
+          "member": "string",
+          "name": "OpenId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中的规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"rule1\":\"1001\",\"rule2\":\"1002\"}",
+          "member": "string",
+          "name": "HitRules",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1755656258-42479905301-34-25771",
+          "member": "string",
+          "name": "Seq",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拓展字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1001",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDeviceRisk": {
+      "document": "检测设备风险的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回码\t",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息\t",
+          "example": "OK",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputDeviceRiskInfo",
+          "name": "Value",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求id\t",
+          "example": "****-a88508484ebb\t",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputDeviceRiskInfo": {
+      "document": "检测设备风险的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "决策结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pass",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险分数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskScore",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wdaerf",
+          "member": "string",
+          "name": "OpenId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相机指纹参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sdsadfiuefbweif12ehr8912fhr",
+          "member": "string",
+          "name": "CamParam",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中规则id和名称集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"rule1\":\"1001\",\"rule2\":\"1002\"}",
+          "member": "string",
+          "name": "HitRules",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1755656258-42479905301-34-25771",
+          "member": "string",
+          "name": "Seq",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拓展字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1001",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OutputRiskLabels": {
       "document": "查询风险标签出参",

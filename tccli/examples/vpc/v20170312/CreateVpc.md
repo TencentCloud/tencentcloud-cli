@@ -18,6 +18,7 @@ Output:
     "Response": {
         "RequestId": "0a74f7fe-0cfe-4bc7-b1d2-6575168d7a44",
         "Vpc": {
+            "VpcFlag": 1,
             "VpcId": "vpc-2ln96dly",
             "DomainName": "TEST",
             "Ipv6CidrBlock": "2001::85b:3c51:f5ff:ffdb",

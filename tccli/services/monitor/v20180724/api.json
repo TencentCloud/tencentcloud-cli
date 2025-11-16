@@ -78,7 +78,7 @@
       "status": "online"
     },
     "CreateGrafanaInstance": {
-      "document": "本接口（CreateGrafanaInstance）用于创建 Grafana 包年包月实例，默认基础版、到期自动续费、不可使用代金券。",
+      "document": "本接口（CreateGrafanaInstance）用于创建 Grafana 包年包月实例，默认基础版、到期自动续费。",
       "input": "CreateGrafanaInstanceRequest",
       "name": "创建 Grafana 实例",
       "output": "CreateGrafanaInstanceResponse",
@@ -4477,7 +4477,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID 数组(VPC ID下的子网 ID，只取第一个)",
+          "document": "子网 ID 数组(VPC ID下的子网 ID，只取第一个)。\n注意：并不是所有可用区都可用（可通过 monitor:DescribePrometheusZones 接口获取可用区状态，选择 ZoneState 和ZoneResourceState 都为1的可用区）",
           "example": "[\"subnet-id1\"]",
           "member": "string",
           "name": "SubnetIds",

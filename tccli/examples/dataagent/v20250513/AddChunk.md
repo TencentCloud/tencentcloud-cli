@@ -1,13 +1,15 @@
-**Example 1: 示例**
+**Example 1: 文档切片新增**
 
-示例
+文档切片新增
 
 Input: 
 
 ```
 tccli dataagent AddChunk --cli-unfold-argument  \
-    --InstanceId dataagent-haBKQxLt \
-    --FileId sdfa-sdf2qjij-dxcjljv
+    --InstanceId dataagent-hLhMpd0H \
+    --FileId 3fd5442a-2764-4f3d-a589-5399ce087284 \
+    --Content this is  my test. \
+    --AfterChunkId 64bd3527-6ad9-4eda-a809-4e1a7ecaf86a
 ```
 
 Output: 

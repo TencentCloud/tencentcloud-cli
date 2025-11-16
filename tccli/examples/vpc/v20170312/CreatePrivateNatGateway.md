@@ -24,7 +24,8 @@ Output:
                 "NatGatewayId": "intranat-0g3blj80",
                 "TagSet": [],
                 "DirectConnectGatewayIds": [],
-                "CreatedTime": "2022-10-01 00:00:00"
+                "CreatedTime": "2022-10-01 00:00:00",
+                "DeletionProtectionEnabled": true
             }
         ],
         "RequestId": "cd37ad3b-6b94-41f4-bd83-8a2b0d801aae",

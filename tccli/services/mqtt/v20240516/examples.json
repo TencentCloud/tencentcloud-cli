@@ -16,6 +16,14 @@
         "title": "示例"
       }
     ],
+    "AddClientSubscription": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddMQTTClientSubscription\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-2vnk55xv\",\n    \"ClientId\": \"sub_client1\",\n    \"TopicFilter\": \"home/lyx\",\n    \"Qos\": \"2\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"e6ce51ed-bc8e-4cc7-9cf0-f6bfcf5003dc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ApplyRegistrationCode": [
       {
         "document": "示例",
@@ -133,6 +141,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCaCertificate\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4x85z\",\n    \"CaSn\": \"1b1e3bf3702110125887a3a721a7e66f05522513\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"c180b739-df35-41a7-b7d0-796c8b4e9c55\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DeleteClientSubscription": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMQTTClientSubscription\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-2vnk55xv\",\n    \"ClientId\": \"sub_client1\",\n    \"TopicFilter\": \"home/lyx\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"8f068485-7252-481d-bdf9-62fdda0229f2\"\n    }\n}",
         "title": "示例"
       }
     ],

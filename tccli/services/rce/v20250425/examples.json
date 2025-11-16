@@ -1,5 +1,21 @@
 {
   "actions": {
+    "DescribeCameraRisk": [
+      {
+        "document": "相机指纹风险检测示例",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCameraRisk\n<公共请求参数>\n\n{\n    \"BizData\": {\n        \"UserId\": \"userId\",\n        \"FaceIdBizCode\": 1,\n        \"ProductMode\": \"PLUS\",\n        \"SceneCode\": \"e_activity_9291\",\n        \"FaceIdToken\": \"a24fr3g****b5de3\",\n        \"CamToken\": \"v3:AAAAA****YyWjqZdo=\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Uuid\": \"743a2698-****-****-****-e2ab389e81b1\",\n            \"Value\": {\n                \"Extra\": \"{\\\"ActionSequence\\\":\\\"1\\\",\\\"EnableCameraRisk\\\":\\\"false\\\"}\",\n                \"HitRules\": \"{\\\"默认策略\\\":\\\"10000\\\"}\",\n                \"OpenId\": \"MRF3A****12F1E\",\n                \"RiskLevel\": \"pass\",\n                \"RiskScore\": 1,\n                \"Seq\": \"1757318214-****-**-169\"\n            }\n        },\n        \"RequestId\": \"eedd5977-****-****-****-4d4c78a1e96c\"\n    }\n}",
+        "title": "相机指纹风险检测示例"
+      }
+    ],
+    "DescribeDeviceRisk": [
+      {
+        "document": "设备风险检测示例",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceRisk\n<公共请求参数>\n\n{\n    \"BizData\": {\n        \"UserId\": \"userId\",\n        \"FaceIdBizCode\": 1,\n        \"ProductMode\": \"PLUS\",\n        \"SceneCode\": 1,\n        \"FaceIdToken\": \"a24fr3g****b5de3\",\n        \"Source\": \"faceid\",\n        \"DeviceToken\": \"AYIAwde9ZhP4QUS***Ddqsr\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Uuid\": \"ee291cae-****-****-****-3d5787e84a93\",\n            \"Value\": {\n                \"CamParam\": \"DQABAShTeeC40****N292UzBucmRiWT0=\",\n                \"Extra\": \"{\\\"ActionSequence\\\":\\\"1\\\",\\\"EnableCameraRisk\\\":\\\"false\\\"}\",\n                \"HitRules\": \"{\\\"默认策略\\\":\\\"10000\\\"}\",\n                \"OpenId\": \"MRF3A2995****E12F1E\",\n                \"RiskLevel\": \"pass\",\n                \"RiskScore\": 1,\n                \"Seq\": \"1757222262-****-34-1705\"\n            }\n        },\n        \"RequestId\": \"4c40d8f8-***-***-***-2d2e31dd7b42\"\n    }\n}",
+        "title": "设备风险检测示例"
+      }
+    ],
     "DescribeRiskLabels": [
       {
         "document": "查询风险标签示例",

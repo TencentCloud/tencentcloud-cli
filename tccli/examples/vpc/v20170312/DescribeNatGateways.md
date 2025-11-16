@@ -101,6 +101,7 @@ Output:
             }
         ],
         "TotalCount": 2,
+        "VerboseLevel": "DETAIL",
         "RequestId": "a3964872-e2f5-4180-8607-0b49ec8e0109"
     }
 }
@@ -208,6 +209,7 @@ Output:
             }
         ],
         "TotalCount": 2,
+        "VerboseLevel": "DETAIL",
         "RequestId": "fed7e087-083f-49e4-8754-17fb130828e0"
     }
 }
