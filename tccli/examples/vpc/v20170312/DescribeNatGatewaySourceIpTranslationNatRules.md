@@ -18,7 +18,7 @@ Output:
         "TotalCount": 1,
         "SourceIpTranslationNatRuleSet": [
             {
-                "NatGatewaySnatId": "subnet-0yi4hekt",
+                "NatGatewaySnatId": "snat-0yi4hekt",
                 "ResourceId": "subnet-0yi4hekt",
                 "ResourceType": "SUBNET",
                 "PublicIpAddresses": [

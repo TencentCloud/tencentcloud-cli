@@ -10,10 +10,10 @@
     ],
     "DescribeInstance": [
       {
-        "document": "获取集群实例信息",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: tchousex.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstance\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "DescribeInstance"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"62b5415a-badd-43aa-bbf1-bc1ae8881be8\"\n    }\n}",
+        "title": "实例详情"
       }
     ],
     "DescribeInstanceVip": [

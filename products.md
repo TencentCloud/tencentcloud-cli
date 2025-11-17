@@ -4,7 +4,7 @@
 | aai | [智能语音](http://document.tencentcloudapi.woa.com/document/product/441) | [查看](http://document.tencentcloudapi.woa.com/document/product/1622/78398) | 2025-11-10 01:07:11 |
 | account | [账号中心](http://document.tencentcloudapi.woa.com/document/product/378) | [查看](http://document.tencentcloudapi.woa.com/document/product/1594/75182) | 2025-08-27 01:07:20 |
 | acp | [应用合规平台](http://document.tencentcloudapi.woa.com/document/product/1553) | [查看](http://document.tencentcloudapi.woa.com/document/product/1708/80356) | 2025-03-19 01:07:12 |
-| advisor | [云顾问](http://document.tencentcloudapi.woa.com/document/product/1264) | [查看](http://document.tencentcloudapi.woa.com/document/product/1660/78763) | 2025-09-09 01:07:20 |
+| advisor | [云顾问](http://document.tencentcloudapi.woa.com/document/product/1264) | [查看](http://document.tencentcloudapi.woa.com/document/product/1660/78763) | 2025-11-18 01:07:31 |
 | af | [借贷反欺诈](http://document.tencentcloudapi.woa.com/document/product/668) | [查看](http://document.tencentcloudapi.woa.com/document/product/668/44006) | 2025-03-24 01:07:43 |
 | afc | [定制建模](http://document.tencentcloudapi.woa.com/document/product/1029) | [查看](http://document.tencentcloudapi.woa.com/document/product/1029/44022) | 2025-07-01 01:07:38 |
 | ags | [Agent 沙箱服务](http://document.tencentcloudapi.woa.com/document/product/1814) | [查看](http://document.tencentcloudapi.woa.com/document/product/1804/87865) | 2025-10-28 01:07:51 |
@@ -60,7 +60,7 @@
 | cem | [商机生命周期管理平台](http://document.tencentcloudapi.woa.com/document/product/-1) | [查看](http://document.tencentcloudapi.woa.com/document/product/1709/80369) | 2024-03-20 01:10:57 |
 | cetcd | [云原生 ETCD](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1601/75914) | 2022-08-30 11:15:23 |
 | cfg | [云顾问-混沌演练](http://document.tencentcloudapi.woa.com/document/product/1500) | [查看](http://document.tencentcloudapi.woa.com/document/product/1694/79918) | 2025-10-22 01:11:21 |
-| cfs | [文件存储](http://document.tencentcloudapi.woa.com/document/product/582) | [查看](http://document.tencentcloudapi.woa.com/document/product/582/38152) | 2025-11-07 01:16:20 |
+| cfs | [文件存储](http://document.tencentcloudapi.woa.com/document/product/582) | [查看](http://document.tencentcloudapi.woa.com/document/product/582/38152) | 2025-11-18 01:16:25 |
 | cfw | [云防火墙](http://document.tencentcloudapi.woa.com/document/product/1132) | [查看](http://document.tencentcloudapi.woa.com/document/product/1132/49081) | 2025-10-31 01:17:04 |
 | chc | [云托付物理服务器](http://document.tencentcloudapi.woa.com/document/product/1448) | [查看](http://document.tencentcloudapi.woa.com/document/product/1790/87389) | 2025-09-11 01:12:32 |
 | chdfs | [云 HDFS](http://document.tencentcloudapi.woa.com/document/product/1105) | [查看](http://document.tencentcloudapi.woa.com/document/product/1105/51168) | 2025-08-15 01:23:04 |
@@ -74,7 +74,7 @@
 | cloudhsm | [云加密机](http://document.tencentcloudapi.woa.com/document/product/639) | [查看](http://document.tencentcloudapi.woa.com/document/product/639/41453) | 2025-10-17 01:11:42 |
 | cloudrc | [资源中心](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1782/87024) | 2025-10-23 01:19:02 |
 | cloudstudio | [Cloud Studio（云端 IDE）](http://document.tencentcloudapi.woa.com/document/product/1039) | [查看](http://document.tencentcloudapi.woa.com/document/product/1640/78605) | 2025-09-05 01:12:37 |
-| cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | [查看](http://document.tencentcloudapi.woa.com/document/product/614/56481) | 2025-11-14 01:19:36 |
+| cls | [日志服务](http://document.tencentcloudapi.woa.com/document/product/614) | [查看](http://document.tencentcloudapi.woa.com/document/product/614/56481) | 2025-11-18 01:18:30 |
 | cm | [云监控](http://document.tencentcloudapi.woa.com/document/product/248) | [查看](http://document.tencentcloudapi.woa.com/document/product/1698/80105) | 2024-03-20 01:12:27 |
 | cme | [多媒体创作引擎](http://document.tencentcloudapi.woa.com/document/product/1156) | [查看](http://document.tencentcloudapi.woa.com/document/product/1156/40345) | 2024-09-24 16:18:24 |
 | cmg | [迁移服务平台](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1793/86755) | 2025-05-12 17:02:26 |
@@ -85,7 +85,7 @@
 | controlcenter | [控制中心](http://document.tencentcloudapi.woa.com/document/product/1708) | [查看](http://document.tencentcloudapi.woa.com/document/product/1770/84567) | 2025-10-17 01:12:05 |
 | cpdp | [企业收付平台](http://document.tencentcloudapi.woa.com/document/product/1122) | [查看](http://document.tencentcloudapi.woa.com/document/product/1122/40646) | 2023-09-21 01:42:49 |
 | cpp | [版权保护平台](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1745/82355) | 2024-03-20 01:12:41 |
-| csip | [云安全一体化平台](http://document.tencentcloudapi.woa.com/document/product/664) | [查看](http://document.tencentcloudapi.woa.com/document/product/1726/80825) | 2025-11-05 01:19:45 |
+| csip | [云安全一体化平台](http://document.tencentcloudapi.woa.com/document/product/664) | [查看](http://document.tencentcloudapi.woa.com/document/product/1726/80825) | 2025-11-18 01:20:15 |
 | csxg | [5G入云服务](http://document.tencentcloudapi.woa.com/document/product/1687) | [查看](http://document.tencentcloudapi.woa.com/document/product/1730/80886) | 2025-06-18 01:22:45 |
 | ctem | [暴露面管理服务](http://document.tencentcloudapi.woa.com/document/product/1755) | [查看](http://document.tencentcloudapi.woa.com/document/product/1792/87486) | 2025-11-11 01:20:29 |
 | cube | [高性能弹性计算底座](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1760/83638) | 2025-07-31 01:25:55 |
@@ -106,7 +106,7 @@
 | dms | [邮件发送服务](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1663/79146) | 2024-03-20 01:15:23 |
 | dnshg | [解析合规](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1768/84346) | 2024-07-30 15:27:46 |
 | dnspod | [DNSPod](http://document.tencentcloudapi.woa.com/document/product/1427) | [查看](http://document.tencentcloudapi.woa.com/document/product/1427/56195) | 2025-11-06 01:27:25 |
-| domain | [域名注册](http://document.tencentcloudapi.woa.com/document/product/242) | [查看](http://document.tencentcloudapi.woa.com/document/product/242/38891) | 2025-11-14 01:29:56 |
+| domain | [域名注册](http://document.tencentcloudapi.woa.com/document/product/242) | [查看](http://document.tencentcloudapi.woa.com/document/product/242/38891) | 2025-11-18 01:28:42 |
 | drm | [数字版权管理](http://document.tencentcloudapi.woa.com/document/product/1000) | [查看](http://document.tencentcloudapi.woa.com/document/product/1000/30705) | 2025-04-30 01:17:10 |
 | ds | [文档服务](http://document.tencentcloudapi.woa.com/document/product/869) | [查看](http://document.tencentcloudapi.woa.com/document/product/869/17784) | 2024-03-20 01:15:44 |
 | dtf | [分布式事务](http://document.tencentcloudapi.woa.com/document/product/1224) | [查看](http://document.tencentcloudapi.woa.com/document/product/1224/58111) | 2022-03-08 08:00:26 |
@@ -122,9 +122,9 @@
 | eportrait | [企业画像服务](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1731/80918) | 2024-03-20 01:16:44 |
 | es | [Elasticsearch Service](http://document.tencentcloudapi.woa.com/document/product/845) | [查看](http://document.tencentcloudapi.woa.com/document/product/845/30627) | 2025-11-07 01:32:11 |
 | ess | [腾讯电子签企业版](http://document.tencentcloudapi.woa.com/document/product/1323) | [查看](http://document.tencentcloudapi.woa.com/document/product/1668/79371) | 2025-09-11 01:24:37 |
-| essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | [查看](http://document.tencentcloudapi.woa.com/document/product/1595/75268) | 2025-11-17 01:17:59 |
+| essbasic | [腾讯电子签（基础版）](http://document.tencentcloudapi.woa.com/document/product/1420) | [查看](http://document.tencentcloudapi.woa.com/document/product/1595/75268) | 2025-11-18 01:32:58 |
 | facefusion | [人脸融合](http://document.tencentcloudapi.woa.com/document/product/670) | [查看](http://document.tencentcloudapi.woa.com/document/product/670/78454) | 2025-11-04 01:32:22 |
-| faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | [查看](http://document.tencentcloudapi.woa.com/document/product/1007/31327) | 2025-10-30 01:33:14 |
+| faceid | [人脸核身](http://document.tencentcloudapi.woa.com/document/product/1007) | [查看](http://document.tencentcloudapi.woa.com/document/product/1007/31327) | 2025-11-18 01:34:03 |
 | fele | [联邦学习](http://document.tencentcloudapi.woa.com/document/product/1192) | [查看](http://document.tencentcloudapi.woa.com/document/product/1654/78706) | 2025-07-15 01:17:57 |
 | fibona | [fibona](http://document.tencentcloudapi.woa.com/document/product/-1) | [查看](http://document.tencentcloudapi.woa.com/document/product/1777/85170) | 2024-12-09 11:21:09 |
 | fmu | [人脸试妆](http://document.tencentcloudapi.woa.com/document/product/1172) | [查看](http://document.tencentcloudapi.woa.com/document/product/1172/40704) | 2025-08-07 01:38:24 |
@@ -187,7 +187,7 @@
 | mongodb | [云数据库 MongoDB](http://document.tencentcloudapi.woa.com/document/product/240) | [查看](http://document.tencentcloudapi.woa.com/document/product/240/38561) | 2025-11-03 01:43:01 |
 | monitor | [腾讯云可观测平台](http://document.tencentcloudapi.woa.com/document/product/248) | [查看](http://document.tencentcloudapi.woa.com/document/product/248/86910) | 2025-10-29 01:45:21 |
 | mps | [媒体处理](http://document.tencentcloudapi.woa.com/document/product/862) | [查看](http://document.tencentcloudapi.woa.com/document/product/862/37576) | 2025-11-17 01:23:29 |
-| mqtt | [消息队列 MQTT 版](http://document.tencentcloudapi.woa.com/document/product/1778) | [查看](http://document.tencentcloudapi.woa.com/document/product/1773/84909) | 2025-11-17 01:24:09 |
+| mqtt | [消息队列 MQTT 版](http://document.tencentcloudapi.woa.com/document/product/1778) | [查看](http://document.tencentcloudapi.woa.com/document/product/1773/84909) | 2025-11-18 01:47:17 |
 | mrs | [医疗报告结构化](http://document.tencentcloudapi.woa.com/document/product/1314) | [查看](http://document.tencentcloudapi.woa.com/document/product/1314/56240) | 2023-09-07 02:14:35 |
 | ms | [移动应用安全](http://document.tencentcloudapi.woa.com/document/product/283) | [查看](http://document.tencentcloudapi.woa.com/document/product/1617/78380) | 2024-11-14 02:03:45 |
 | msp | [迁移服务平台](http://document.tencentcloudapi.woa.com/document/product/659) | [查看](http://document.tencentcloudapi.woa.com/document/product/659/18597) | 2025-02-12 01:23:34 |
@@ -208,7 +208,7 @@
 | pds | [私域安全](http://document.tencentcloudapi.woa.com/document/product/1473) | [查看](http://document.tencentcloudapi.woa.com/document/product/1596/75285) | 2024-12-09 11:27:13 |
 | plm | [产品库](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1797/87249) | 2025-07-25 01:56:24 |
 | portal | [官网](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1732/80934) | 2025-07-31 01:58:12 |
-| postgres | [云数据库 PostgreSQL](http://document.tencentcloudapi.woa.com/document/product/409) | [查看](http://document.tencentcloudapi.woa.com/document/product/409/16779) | 2025-11-03 01:48:28 |
+| postgres | [云数据库 PostgreSQL](http://document.tencentcloudapi.woa.com/document/product/409) | [查看](http://document.tencentcloudapi.woa.com/document/product/409/16779) | 2025-11-18 01:50:00 |
 | privatedns | [私有域解析 Private DNS](http://document.tencentcloudapi.woa.com/document/product/1338) | [查看](http://document.tencentcloudapi.woa.com/document/product/1338/55957) | 2025-10-31 01:53:42 |
 | pts | [云压测](http://document.tencentcloudapi.woa.com/document/product/1484) | [查看](http://document.tencentcloudapi.woa.com/document/product/1597/75238) | 2025-10-21 01:26:15 |
 | qinge | [青鹅大数据运营平台](http://document.tencentcloudapi.woa.com/document/product/-1) | [查看](http://document.tencentcloudapi.woa.com/document/product/1763/83960) | 2024-05-24 01:23:18 |
@@ -237,7 +237,7 @@
 | ssm | [凭据管理系统](http://document.tencentcloudapi.woa.com/document/product/1140) | [查看](http://document.tencentcloudapi.woa.com/document/product/1140/40513) | 2025-11-17 01:27:50 |
 | sts | [安全凭证服务](http://document.tencentcloudapi.woa.com/document/product/1312) | [查看](http://document.tencentcloudapi.woa.com/document/product/1312/48208) | 2025-11-17 01:27:57 |
 | subcontract | [采购供应商管理](http://document.tencentcloudapi.woa.com/document/product/1472) | [查看](http://document.tencentcloudapi.woa.com/document/product/1687/79744) | 2024-12-26 01:47:51 |
-| svp | [节省计划](http://document.tencentcloudapi.woa.com/document/product/1761) | [查看](http://document.tencentcloudapi.woa.com/document/product/1757/83157) | 2025-10-29 01:54:06 |
+| svp | [节省计划](http://document.tencentcloudapi.woa.com/document/product/1761) | [查看](http://document.tencentcloudapi.woa.com/document/product/1757/83157) | 2025-11-18 02:00:46 |
 | taf | [流量反欺诈](http://document.tencentcloudapi.woa.com/document/product/1031) | [查看](http://document.tencentcloudapi.woa.com/document/product/1031/43314) | 2025-04-09 01:27:56 |
 | tag | [标签](http://document.tencentcloudapi.woa.com/document/product/651) | [查看](http://document.tencentcloudapi.woa.com/document/product/651/35314) | 2025-11-05 01:54:27 |
 | tan | [碳引擎](http://document.tencentcloudapi.woa.com/document/product/1498) | [查看](http://document.tencentcloudapi.woa.com/document/product/1715/80521) | 2025-04-16 02:03:50 |
@@ -245,7 +245,7 @@
 | taop | [腾讯觅影开放实验平台](http://document.tencentcloudapi.woa.com/document/product/1353) | [查看](http://document.tencentcloudapi.woa.com/document/product/1673/79450) | 2024-11-11 01:33:47 |
 | tat | [自动化助手](http://document.tencentcloudapi.woa.com/document/product/1340) | [查看](http://document.tencentcloudapi.woa.com/document/product/1340/52697) | 2024-12-31 01:39:37 |
 | tbaas | [腾讯云区块链服务平台 TBaaS](http://document.tencentcloudapi.woa.com/document/product/663) | [查看](http://document.tencentcloudapi.woa.com/document/product/663/19461) | 2025-08-19 02:05:29 |
-| tbase | [TDSQL PostgreSQL 版](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1644/78651) | 2025-07-28 02:08:17 |
+| tbase | [TDSQL PostgreSQL 版](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1644/78651) | 2025-11-18 02:01:31 |
 | tbp | [腾讯智能对话平台](http://document.tencentcloudapi.woa.com/document/product/1060) | [查看](http://document.tencentcloudapi.woa.com/document/product/1060/37435) | 2025-08-07 02:04:31 |
 | tcaplusdb | [游戏数据库 TcaplusDB](http://document.tencentcloudapi.woa.com/document/product/596) | [查看](http://document.tencentcloudapi.woa.com/document/product/596/39655) | 2025-09-10 01:32:47 |
 | tcb | [云开发 CloudBase](http://document.tencentcloudapi.woa.com/document/product/876) | [查看](http://document.tencentcloudapi.woa.com/document/product/876/34816) | 2023-03-30 01:35:13 |
@@ -253,7 +253,7 @@
 | tccatalog | [统一Catalog服务](http://document.tencentcloudapi.woa.com/document/product/1784) | [查看](http://document.tencentcloudapi.woa.com/document/product/1785/85716) | 2025-11-07 01:55:58 |
 | tcex | [腾讯云释义](http://document.tencentcloudapi.woa.com/document/product/1266) | [查看](http://document.tencentcloudapi.woa.com/document/product/1266/49002) | 2022-07-21 06:03:13 |
 | tchd | [腾讯云健康看板](http://document.tencentcloudapi.woa.com/document/product/1688) | [查看](http://document.tencentcloudapi.woa.com/document/product/1737/81055) | 2025-07-22 01:30:27 |
-| tchousex | [腾讯云数据仓库TCHouse-X](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1741/81606) | 2025-08-28 21:01:24 |
+| tchousex | [腾讯云数据仓库TCHouse-X](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1741/81606) | 2025-11-18 02:02:06 |
 | tcm | [服务网格](http://document.tencentcloudapi.woa.com/document/product/1261) | [查看](http://document.tencentcloudapi.woa.com/document/product/1593/75062) | 2025-01-06 01:30:09 |
 | tcmpp | [腾讯云小程序平台](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1754/84484) | 2024-08-23 01:27:48 |
 | tcop | [腾讯课堂开放平台](http://document.tencentcloudapi.woa.com/document/product/-1) | [查看](http://document.tencentcloudapi.woa.com/document/product/1692/79852) | 2024-07-30 01:23:54 |
@@ -301,7 +301,7 @@
 | vm | [视频内容安全](http://document.tencentcloudapi.woa.com/document/product/1265) | [查看](http://document.tencentcloudapi.woa.com/document/product/1265/74914) | 2024-07-26 01:26:39 |
 | vms | [语音消息](http://document.tencentcloudapi.woa.com/document/product/1128) | [查看](http://document.tencentcloudapi.woa.com/document/product/1128/51570) | 2025-09-16 01:31:24 |
 | vod | [云点播](http://document.tencentcloudapi.woa.com/document/product/266) | [查看](http://document.tencentcloudapi.woa.com/document/product/266/31760) | 2023-07-03 01:53:25 |
-| vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | [查看](http://document.tencentcloudapi.woa.com/document/product/215/15761) | 2025-11-14 11:57:32 |
+| vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | [查看](http://document.tencentcloudapi.woa.com/document/product/215/15761) | 2025-11-18 02:12:39 |
 | vpcdefensor | [网络守护神](http://document.tencentcloudapi.woa.com/document/product/-1) | [查看](http://document.tencentcloudapi.woa.com/document/product/1691/79835) | 2024-03-20 01:29:50 |
 | vrs | [声音复刻](http://document.tencentcloudapi.woa.com/document/product/1283) | [查看](http://document.tencentcloudapi.woa.com/document/product/1664/79163) | 2025-10-10 01:29:42 |
 | vtc | [视频转译](http://document.tencentcloudapi.woa.com/document/product/1769) | [查看](http://document.tencentcloudapi.woa.com/document/product/1761/83893) | 2025-09-22 01:50:44 |

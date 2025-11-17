@@ -1,6 +1,6 @@
-**Example 1: DescribeInstance**
+**Example 1: 实例详情**
 
-获取集群实例信息
+
 
 Input: 
 
@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "62b5415a-badd-43aa-bbf1-bc1ae8881be8"
     }
 }
 ```

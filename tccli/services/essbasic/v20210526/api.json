@@ -3629,7 +3629,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li></ul>",
+          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li>\n<li> **3**：草稿</li>\n</ul>",
           "example": "2",
           "member": "int64",
           "name": "ResourceType",
@@ -3656,7 +3656,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
+          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n<li>草稿Id（通过嵌入页面保存草稿后获取草稿Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
           "example": "yDwqFUUckp3em41rUwWPgIBjsYgG5bba",
           "member": "string",
           "name": "ResourceId",
@@ -7968,6 +7968,15 @@
           "example": "false",
           "member": "bool",
           "name": "HideSignCodeAfterStart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发起过程中是否保存草稿\t",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedFlowDraft",
           "required": false,
           "type": "bool"
         }

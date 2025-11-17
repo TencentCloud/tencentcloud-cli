@@ -1,4 +1,4 @@
-**Example 1: 1**
+**Example 1: 获取用户访问密钥资产列表**
 
 
 
@@ -18,21 +18,21 @@ Output:
                 "AKInfo": [
                     {
                         "ID": 10079,
-                        "Name": "AKIDb********CxidW",
+                        "Name": "AKID******",
                         "Remark": "",
-                        "User": "fengqqian"
+                        "User": "name"
                     },
                     {
                         "ID": 10086,
-                        "Name": "AKIDuI*******FHvbH3",
+                        "Name": "AKID******",
                         "Remark": "",
-                        "User": "cloudyue"
+                        "User": "name"
                     },
                     {
                         "ID": 10093,
                         "Name": "临时密钥",
-                        "Remark": "飞快的云镜-临时密钥",
-                        "User": "飞快的云镜"
+                        "Remark": "临时密钥",
+                        "User": "name"
                     }
                 ],
                 "AccessKeyAlarmList": [
@@ -42,22 +42,22 @@ Output:
                     }
                 ],
                 "ActionCount": 145,
-                "AppID": 1256299843,
+                "AppID": 1200001,
                 "EventType": 1,
                 "ID": 10009,
                 "IPType": 1,
                 "InstanceID": "",
                 "InstanceName": "",
                 "LastAccessTime": "2025-03-13 16:39:00",
-                "Nickname": "飞快的云镜",
+                "Nickname": "name",
                 "Region": "中国 广东省 广州市",
                 "Remark": "",
-                "SourceIP": "106.55.200.246",
-                "Uin": "100004506473"
+                "SourceIP": "106.55.200.***",
+                "Uin": "1000001"
             }
         ],
         "RequestId": "e9780808-1e10-4a63-bd2b-dbd74264091a",
-        "Total": 124
+        "Total": 2
     }
 }
 ```

@@ -3232,6 +3232,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "活体检测的动作顺序，多动作以“,”分隔。\n输出格式如：“1,2”表示“张嘴+眨眼”。\n- 详细序列值含义如下： \n   1：张嘴\n2：眨眼\n3：点头\n4：摇头\n5：静默\n注：仅浮层H5产品返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1,2",
+          "member": "string",
+          "name": "LivenessActionSequence",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

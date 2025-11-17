@@ -43,11 +43,11 @@
       "status": "online"
     },
     "DescribeResourceBelong": {
-      "document": "获取资源归属",
+      "document": "下线\n\n获取资源归属",
       "input": "DescribeResourceBelongRequest",
       "name": "获取资源归属",
       "output": "DescribeResourceBelongResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeStrategies": {
       "document": "用于查询评估项的信息",

@@ -26,7 +26,8 @@ Output:
                 "SourcePort": "0-65535",
                 "SourceCidr": "0.0.0.0/0",
                 "DestinationPort": "0-65535",
-                "DestinationCidr": "0.0.0.0/0"
+                "DestinationCidr": "0.0.0.0/0",
+                "Description": "ACL规则描述"
             },
             {
                 "Protocol": "TCP",
@@ -35,7 +36,8 @@ Output:
                 "SourcePort": "5666",
                 "SourceCidr": "10.0.0.14",
                 "DestinationPort": "8888",
-                "DestinationCidr": "10.0.0.24"
+                "DestinationCidr": "10.0.0.24",
+                "Description": "ACL规则描述"
             }
         ],
         "RequestId": "41fe53eb-6f90-4fde-9e37-c48fa4f8f2ed"

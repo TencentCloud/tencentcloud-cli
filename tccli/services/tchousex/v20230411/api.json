@@ -216,7 +216,17 @@
     },
     "DescribeInstancesV1Request": {
       "document": "DescribeInstancesV1请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "cam临时凭证",
+          "example": "sdfsdf",
+          "member": "string",
+          "name": "CamToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeInstancesV1Response": {

@@ -24,6 +24,7 @@ Output:
                     "33"
                 ],
                 "SavingAmount": "600",
+                "SpId": "svp-ivm000e-D4l9f66",
                 "SpType": "svp_common",
                 "StartTime": "2023-03-30 14:00:00",
                 "Status": 1,
