@@ -169,7 +169,7 @@ class CLIArgument(BaseArgument):
         'Float': float,
         'Integer': int,
         'Timestamp': str,
-        'Boolean': str
+        'Boolean': bool
     }
 
     def __init__(self, name, argument_model, action_model,
