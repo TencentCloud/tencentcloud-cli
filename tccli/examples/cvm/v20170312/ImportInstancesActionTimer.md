@@ -7,7 +7,7 @@ Input:
 ```
 tccli cvm ImportInstancesActionTimer --cli-unfold-argument  \
     --ActionTimer.TimerAction TerminateInstances \
-    --ActionTimer.ActionTime 2018-08-01 20:00:00 \
+    --ActionTimer.ActionTime 2025-11-29T16:00:00Z \
     --InstanceIds ins-37qv3ucj
 ```
 

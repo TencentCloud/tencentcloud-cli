@@ -1451,7 +1451,7 @@
         {
           "disabled": false,
           "document": "批量购买的域名,最多为4000个",
-          "example": "qq.com",
+          "example": "[\"qq.com\"]",
           "member": "string",
           "name": "Domains",
           "required": true,

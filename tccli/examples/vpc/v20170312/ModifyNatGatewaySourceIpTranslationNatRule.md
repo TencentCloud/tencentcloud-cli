@@ -1,6 +1,6 @@
 **Example 1: 修改NAT的SNAT转发规则**
 
-修改NAT的SNAT转发规则时，SourceIpTranslationNatRule只需要传递NatGatewaySnatId，PublicIpAddresses，Description。
+
 
 Input: 
 

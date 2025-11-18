@@ -49,8 +49,8 @@ Output:
                 ],
                 "Tags": [
                     {
-                        "Value": "myKey",
-                        "Key": "myValue"
+                        "Key": "myKey",
+                        "Value": "myValue"
                     }
                 ],
                 "InstanceId": "ins-xlsyru2j",
@@ -266,8 +266,8 @@ Output:
                 ],
                 "Tags": [
                     {
-                        "Value": "myKey",
-                        "Key": "myValue"
+                        "Key": "myKey",
+                        "Value": "myValue"
                     }
                 ],
                 "InstanceId": "ins-xlsyru2j",

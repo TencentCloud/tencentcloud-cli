@@ -8,12 +8,36 @@
         "title": "创建 APM 业务系统"
       }
     ],
+    "CreateApmPrometheusRule": [
+      {
+        "document": "创建apm业务系统与Prometheus实例的指标匹配规则",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApmPrometheusRule\n<公共请求参数>\n\n{\n    \"Name\": \"MyRuleTest\",\n    \"ServiceName\": \"java-market-service\",\n    \"MetricMatchType\": 1,\n    \"MetricNameRule\": \"task.duration\",\n    \"InstanceId\": \"apm-059oXBfTL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72159d4a-265c-43e8-b653-c62358f1e17b\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "CreateApmSampleConfig": [
+      {
+        "document": "创建采样配置",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApmSampleConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"apm-ewyzCXlxj\",\n    \"SampleRate\": 100,\n    \"SampleName\": \"testCreate\",\n    \"ServiceName\": \"test\",\n    \"OperationName\": \"1\",\n    \"OperationType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ApmSampleConfig\": {\n            \"Id\": 159,\n            \"InstanceKey\": \"apm-ewyzCXlxj\",\n            \"OperationName\": \"1\",\n            \"OperationType\": 1,\n            \"SampleName\": \"testCreate\",\n            \"SampleRate\": 100,\n            \"ServiceName\": \"test\",\n            \"SpanNum\": 0,\n            \"Status\": 0,\n            \"Tags\": null\n        },\n        \"RequestId\": \"ba26351b-4ad0-404b-b138-c86e442cabd9\"\n    }\n}",
+        "title": "创建采样配置"
+      }
+    ],
     "CreateProfileTask": [
       {
         "document": "成功示例",
         "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProfileTask\n<公共请求参数>\n\n{\n    \"ServiceName\": \"springboot-service\",\n    \"InstanceId\": \"apm-ewyzCXlxj\",\n    \"ServiceInstance\": \"127.0.0.1\",\n    \"StartTime\": 0,\n    \"Duration\": 5000,\n    \"Event\": \"cpu\",\n    \"AllTimes\": 1,\n    \"TaskInterval\": 10000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac7cf53-1900-4367-9076-a5649ddd4dbb\",\n        \"TaskId\": 10001\n    }\n}",
         "title": "成功示例"
+      }
+    ],
+    "DeleteApmSampleConfig": [
+      {
+        "document": "删除采样配置",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApmSampleConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"1o8yMC47u\",\n    \"SampleName\": \"testSample232\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-test-test\"\n    }\n}",
+        "title": "删除采样配置"
       }
     ],
     "DescribeApmAgent": [
@@ -24,12 +48,50 @@
         "title": "获取 APM 接入点"
       }
     ],
+    "DescribeApmApplicationConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApmApplicationConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"apm-6xYKFXYxo\",\n    \"ServiceName\": \"java-order-service\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApmAppConfig\": {\n            \"InstanceKey\": \"apm-6xYKFXYxo\",\n            \"ServiceName\": \"java-order-service\",\n            \"UrlConvergenceSwitch\": 0,\n            \"UrlConvergenceThreshold\": 1000,\n            \"UrlConvergence\": \"\",\n            \"ExceptionFilter\": \"io.grpc.StatusRuntimeException\",\n            \"ErrorCodeFilter\": \"\",\n            \"Components\": \"\",\n            \"UrlExclude\": \"1\",\n            \"IgnoreOperationName\": \"\",\n            \"TraceRateLimit\": 100,\n            \"LogSource\": \"\",\n            \"LogRegion\": \"\",\n            \"IsRelatedLog\": 0,\n            \"LogTopicID\": \"\",\n            \"LogSet\": \"\"\n        },\n        \"RequestId\": \"8cf3871f-b23c-4f4e-922e-0a7847a9436d\"\n    }\n}",
+        "title": "成功示例"
+      },
+      {
+        "document": "查询应用配置接口",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApmApplicationConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"1o8yMC47u\",\n    \"ServiceName\": \"java-order-service\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApmAppConfig\": {\n            \"InstanceKey\": \"1o8yMC47u\",\n            \"ServiceName\": \"java-order-service\",\n            \"UrlConvergenceSwitch\": 1,\n            \"UrlConvergenceThreshold\": 0,\n            \"UrlConvergence\": \"\",\n            \"ExceptionFilter\": \"io.grpc.StatusRuntimeException,java.sql.SQLSyntaxErrorException\",\n            \"ErrorCodeFilter\": \"333\",\n            \"Components\": \"Redis,grpc,mysql,springMVC,springRestTemplate\",\n            \"UrlExclude\": \"\"\n        },\n        \"RequestId\": \"test-test-test\"\n    }\n}",
+        "title": "查询应用配置"
+      }
+    ],
+    "DescribeApmAssociation": [
+      {
+        "document": "查询apm业务系统与其他产品的关联关系",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApmAssociation\n<公共请求参数>\n\n{\n    \"ProductName\": \"Prometheus\",\n    \"InstanceId\": \"apm-059oXBfTL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApmAssociation\": {\n            \"PeerId\": \"\",\n            \"Status\": 2\n        },\n        \"RequestId\": \"fac525bd-27a5-4411-b226-70e7d0a5529f\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "DescribeApmInstances": [
       {
         "document": "获取 APM 业务系统列表",
         "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApmInstances\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"Key\": \"appId\",\n            \"Value\": \"251005942\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"AmountOfUsedStorage\": 100,\n                \"AppId\": 251005942,\n                \"BillingInstance\": 0,\n                \"ClientCount\": 0,\n                \"CountOfReportSpanPerDay\": 0,\n                \"CreateUin\": \"1500000686\",\n                \"CustomShowTags\": [],\n                \"DashboardTopicID\": \"\",\n                \"DefaultTSF\": 0,\n                \"Description\": \"\",\n                \"ErrRateThreshold\": 5,\n                \"ErrorSample\": 1,\n                \"Free\": 2,\n                \"InstanceId\": \"apm-u6HNYVXhz\",\n                \"IsDeleteAnyFileAnalysis\": 1,\n                \"IsDeserializationAnalysis\": 1,\n                \"IsDirectoryTraversalAnalysis\": 1,\n                \"IsExpressionInjectionAnalysis\": 1,\n                \"IsIncludeAnyFileAnalysis\": 1,\n                \"IsInstrumentationVulnerabilityScan\": 1,\n                \"IsJNDIInjectionAnalysis\": 1,\n                \"IsJNIInjectionAnalysis\": 1,\n                \"IsMemoryHijackingAnalysis\": 1,\n                \"IsReadAnyFileAnalysis\": 1,\n                \"IsRelatedDashboard\": 0,\n                \"IsRelatedLog\": 0,\n                \"IsRemoteCommandExecutionAnalysis\": 1,\n                \"IsScriptEngineInjectionAnalysis\": 1,\n                \"IsSqlInjectionAnalysis\": 1,\n                \"IsTemplateEngineInjectionAnalysis\": 1,\n                \"IsUploadAnyFileAnalysis\": 1,\n                \"IsWebshellBackdoorAnalysis\": 1,\n                \"LogIndexType\": 0,\n                \"LogRegion\": \"\",\n                \"LogSet\": \"\",\n                \"LogSource\": \"\",\n                \"LogTopicID\": \"\",\n                \"LogTraceIdKey\": \"\",\n                \"MetricDuration\": 3,\n                \"Name\": \"test1\",\n                \"PayMode\": 0,\n                \"PayModeEffective\": true,\n                \"Region\": \"ap-guangzhou\",\n                \"ResponseDurationWarningThreshold\": 500,\n                \"SampleRate\": 100,\n                \"ServiceCount\": 0,\n                \"SlowRequestSavedThreshold\": 500,\n                \"SpanDailyCounters\": 0,\n                \"Status\": 1,\n                \"StopReason\": 0,\n                \"UrlNumberSegmentThreshold\": 40,\n                \"UrlLongSegmentThreshold\": 40,\n                \"Tags\": [\n                    {\n                        \"Key\": \"负责人\",\n                        \"Value\": \"archerkang\"\n                    },\n                    {\n                        \"Key\": \"运营产品\",\n                        \"Value\": \"云监控产品\"\n                    },\n                    {\n                        \"Key\": \"运营部门\",\n                        \"Value\": \"/../../../../../../../../../../../../../../../../../../../../etc/./////.////.///.//./passwd\"\n                    }\n                ],\n                \"TotalCount\": 0,\n                \"TraceDuration\": 7\n            }\n        ],\n        \"RequestId\": \"1afaff9e-88c9-4949-9c84-fd5eae88a88a\"\n    }\n}",
         "title": "获取 APM 业务系统列表"
+      }
+    ],
+    "DescribeApmPrometheusRule": [
+      {
+        "document": "查询apm业务系统与Prometheus实例的指标匹配规则",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApmPrometheusRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"apm-059oXBfTL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApmPrometheusRules\": [\n            {\n                \"Id\": 1,\n                \"MetricMatchType\": 1,\n                \"MetricNameRule\": \"task\",\n                \"Name\": \"test\",\n                \"ServiceName\": \"pro\",\n                \"Status\": 1\n            },\n            {\n                \"Id\": 2,\n                \"MetricMatchType\": 0,\n                \"MetricNameRule\": \"task.duration\",\n                \"Name\": \"MyRule\",\n                \"ServiceName\": \"\",\n                \"Status\": 1\n            },\n            {\n                \"Id\": 3,\n                \"MetricMatchType\": 1,\n                \"MetricNameRule\": \"task.duration\",\n                \"Name\": \"testRule\",\n                \"ServiceName\": \"\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"fbacd0d1-d208-435f-a74b-e395213fe420\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeApmSampleConfig": [
+      {
+        "document": "查询采样配置",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApmSampleConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"1o8yMC47u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApmSampleConfigs\": [\n            {\n                \"InstanceKey\": \"1o8yMC47u\",\n                \"ServiceName\": \"java-market-service\",\n                \"SampleName\": \"testSample\",\n                \"SampleRate\": 10,\n                \"OperationName\": \"asdsad\",\n                \"SpanNum\": 0,\n                \"Status\": 0,\n                \"Tags\": [\n                    {\n                        \"Key\": \"key1\",\n                        \"Value\": \"value1\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"test-test-test\"\n    }\n}",
+        "title": "查询采样配置"
       }
     ],
     "DescribeApmServiceMetric": [
@@ -126,12 +188,44 @@
         "title": "查询维度数据"
       }
     ],
+    "ModifyApmApplicationConfig": [
+      {
+        "document": "修改应用配置",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmApplicationConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"apm-1o8yMC47u\",\n    \"ServiceName\": \"java-market-service11\",\n    \"ExceptionFilter\": \"stock(.*?),ppp(.*?)\",\n    \"UrlConvergence\": \"stock(.*?),ppp(.*?)\",\n    \"ErrorCodeFilter\": \"500,400\",\n    \"UrlConvergenceSwitch\": 1,\n    \"UrlConvergenceThreshold\": 500,\n    \"UrlExclude\": \"33132\",\n    \"EnableSnapshot\": false,\n    \"SnapshotTimeout\": 2000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wcl-9esoxoii8t2exer215won26rkzc8\"\n    }\n}",
+        "title": "修改应用配置"
+      }
+    ],
+    "ModifyApmAssociation": [
+      {
+        "document": "修改apm业务系统与其他产品的关联关系",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmAssociation\n<公共请求参数>\n\n{\n    \"ProductName\": \"Prometheus\",\n    \"Status\": 2,\n    \"InstanceId\": \"apm-059oXBfTL\",\n    \"PeerId\": \"prom-26july28\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9f3e2957-bdf4-4485-98fa-fd7119ec6800\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "ModifyApmInstance": [
       {
         "document": "修改 APM 业务系统参数",
         "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"apm-CVfliqa8U\",\n    \"Tags\": [],\n    \"Description\": \"测试业务系统\",\n    \"TraceDuration\": 0,\n    \"Name\": \"测试业务系统\",\n    \"OpenBilling\": true,\n    \"SpanDailyCounters\": 1,\n    \"ErrRateThreshold\": 5,\n    \"SampleRate\": 50,\n    \"ErrorSample\": 1,\n    \"SlowRequestSavedThreshold\": 500,\n    \"IsRelatedLog\": 0,\n    \"LogRegion\": \"\",\n    \"LogTopicID\": \"\",\n    \"LogSet\": \"\",\n    \"LogSource\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-test-test\"\n    }\n}",
         "title": "成功事例"
+      }
+    ],
+    "ModifyApmPrometheusRule": [
+      {
+        "document": "修改apm业务系统与Prometheus实例的指标匹配规则",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmPrometheusRule\n<公共请求参数>\n\n{\n    \"Id\": 2,\n    \"Name\": \"MyRule\",\n    \"Status\": 2,\n    \"ServiceName\": \"profile-service\",\n    \"MetricMatchType\": 0,\n    \"MetricNameRule\": \"task.duration\",\n    \"InstanceId\": \"apm-059oXBfTL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be4c9cea-5b0f-4b96-93d6-59c840a4c096\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ModifyApmSampleConfig": [
+      {
+        "document": "修改采样配置",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApmSampleConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"apm-ewyzCXlxj\",\n    \"SampleName\": \"testc\",\n    \"SampleRate\": 100,\n    \"ServiceName\": \"\",\n    \"OperationName\": \"2\",\n    \"Tags\": [],\n    \"Status\": 0,\n    \"Id\": 156,\n    \"OperationType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f678ef4b-9947-4ec0-99b8-1e6bc8b8e477\"\n    }\n}",
+        "title": "修改采样配置"
       }
     ],
     "ModifyGeneralApmApplicationConfig": [

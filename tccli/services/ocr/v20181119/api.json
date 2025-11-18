@@ -393,11 +393,11 @@
       "status": "online"
     },
     "RecognizeHealthCodeOCR": {
-      "document": "本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖北、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。\n\n默认接口请求频率限制：10次/秒。",
+      "document": "产品规划\n\n本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖北、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。\n\n默认接口请求频率限制：10次/秒。",
       "input": "RecognizeHealthCodeOCRRequest",
       "name": "健康码识别",
       "output": "RecognizeHealthCodeOCRResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RecognizeMedicalInvoiceOCR": {
       "document": "医疗发票识别目前支持全国统一门诊发票、全国统一住院发票、以及部分地方的门诊和住院发票的识别。\n\n默认接口请求频率限制：5次/秒。",
@@ -449,11 +449,11 @@
       "status": "online"
     },
     "RecognizeTravelCardOCR": {
-      "document": "本接口支持通信大数据行程卡识别，包括行程卡颜色、更新时间、途经地、存在中高风险地区的城市、电话号码，五个字段的识别结果输出。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "产品规划\n\n本接口支持通信大数据行程卡识别，包括行程卡颜色、更新时间、途经地、存在中高风险地区的城市、电话号码，五个字段的识别结果输出。\n\n默认接口请求频率限制：20次/秒。",
       "input": "RecognizeTravelCardOCRRequest",
       "name": "通信行程卡识别",
       "output": "RecognizeTravelCardOCRResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RecognizeValidIDCardOCR": {
       "document": "本接口支持二代身份证、临时身份证、港澳台居住证、外国人永久居留证，字段内容识别功能，包括姓名、性别、民族、出生、出生日期、住址、公民身份号码、签发机关、有效期限、国籍、通行证号码、持证人持有号码；支持返回证件类型；支持翻拍、复印、边框不完整、遮挡、字段级反光和字段级完整性告警；支持卡片主体框裁剪和头像裁剪。\n\n默认接口请求频率限制：5次/秒。",
@@ -7416,7 +7416,7 @@
         },
         {
           "disabled": false,
-          "document": "告警码\n-9101 证件边框不完整告警\n-9102 证件复印件告警\n-9103 证件翻拍告警\n-9104 证件PS告警\n-9107 证件反光告警\n-9108 证件模糊告警\n-9109 告警能力未开通",
+          "document": "该字段仅对国际站请求起作用，国内站该字段将固定返回空数组。国际站告警码如下：    告警码-9101 证件边框不完整告警-9102 证件复印件告警-9103 证件翻拍告警-9104 证件PS告警-9107 证件反光告警-9108 证件模糊告警-9109 告警能力未开通",
           "example": "[-9101]",
           "member": "int64",
           "name": "WarnCardInfos",
@@ -8859,7 +8859,7 @@
       "usage": "out"
     },
     "ItemInfo": {
-      "document": "智能结构化元素组",
+      "document": "文档智能元素组",
       "members": [
         {
           "disabled": false,
@@ -8867,7 +8867,7 @@
           "example": "无",
           "member": "Key",
           "name": "Key",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8877,7 +8877,7 @@
           "example": "无",
           "member": "Value",
           "name": "Value",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -9498,7 +9498,7 @@
         },
         {
           "disabled": false,
-          "document": "告警码\n-9101 证件边框不完整告警\n-9102 证件复印件告警\n-9103 证件翻拍告警\n-9104 证件PS告警\n-9107 证件反光告警\n-9108 证件模糊告警\n-9109 告警能力未开通",
+          "document": "该字段仅对国际站请求起作用，国内站该字段将固定返回空数组。国际站告警码如下：  告警码-9101 证件边框不完整告警-9102 证件复印件告警-9103 证件翻拍告警-9104 证件PS告警-9107 证件反光告警-9108 证件模糊告警-9109 告警能力未开通",
           "example": "[-9101]",
           "member": "int64",
           "name": "WarnCardInfos",
@@ -17011,7 +17011,7 @@
       "usage": "out"
     },
     "StructuralItem": {
-      "document": "智能结构化识别",
+      "document": "文档智能识别",
       "members": [
         {
           "disabled": false,
@@ -17019,7 +17019,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17029,7 +17029,7 @@
           "example": "无",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17039,7 +17039,7 @@
           "example": "无",
           "member": "int64",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17049,7 +17049,7 @@
           "example": "无",
           "member": "ItemCoord",
           "name": "ItemCoord",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17059,7 +17059,7 @@
           "example": "1",
           "member": "int64",
           "name": "Row",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -21090,7 +21090,7 @@
         },
         {
           "disabled": false,
-          "document": "票种类型\n01：增值税专用发票，\n02：货运运输业增值税专用发票，\n03：机动车销售统一发票，\n04：增值税普通发票，\n08：增值税电子专用发票（含全电，全电仅新版接口支持），\n10：增值税电子普通发票（含全电，全电仅新版接口支持），\n11：增值税普通发票（卷式），\n14：增值税电子（通行费）发票，\n15：二手车销售统一发票，\n32：深圳区块链发票，\n102：通用机打电子发票\n61：电子发票（航空运输电子客票行程单）\n83：电子发票（铁路电子发票）\n0915：全电纸质（二手车统一销售发票）\n0903：全电纸质（机动车统一发票）",
+          "document": "票种类型\n01：增值税专用发票，\n02：货运运输业增值税专用发票，\n03：机动车销售统一发票，\n04：增值税普通发票，\n08：增值税电子专用发票（含全电，全电仅新版接口支持），\n09：全电发票，\n0901：全电纸质发票(增值税专用发票)，\n0903：全电纸质(机动车销售统一发票)，\n0904：全电纸质发票(增值税普通发票)，\n0910：电子发票(普通发票)，\n0915：全电纸质(二手车销售统一发票)，\n0920：电子发票(增值税专用发票)，\n0930：电子发票(机动车销售统一发票)，\n0940：电子发票(二手车销售统一发票)，\n10：增值税电子普通发票（含全电，全电仅新版接口支持），\n11：增值税普通发票（卷式），\n14：增值税电子（通行费）发票，\n15：二手车销售统一发票，\n32：深圳区块链发票，\n61：电子发票（航空运输电子客票行程单），\n8208：电子发票(通行费发票)，\n83：电子发票(铁路电子客票)，\n100：区块链发票，\n101：财政票据，\n102：通用电子发票，\n103：车辆通行费\n\n\n\n",
           "example": "01",
           "member": "string",
           "name": "Type",

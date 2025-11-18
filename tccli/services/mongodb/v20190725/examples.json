@@ -16,6 +16,14 @@
         "title": "自定义账号"
       }
     ],
+    "CreateAuditLogFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-qwer****\",\n    \"StartTime\": \"2021-07-12 10:29:20\",\n    \"EndTime\": \"2021-07-13 15:29:20\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FileName\": \"test.csv\"\n    }\n}",
+        "title": "创建审计日志文件"
+      }
+    ],
     "CreateBackupDBInstance": [
       {
         "document": "备份实例接口",
@@ -72,6 +80,14 @@
         "title": "删除实例账号"
       }
     ],
+    "DeleteAuditLogFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditLogFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-test1234\",\n    \"FileName\": \"test.csv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "删除审计日志文件"
+      }
+    ],
     "DeleteLogDownloadTask": [
       {
         "document": "删除日志下载任务",
@@ -94,6 +110,14 @@
         "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeAsyncRequestInfo\n&AsyncRequestId=4762\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e600a8d0-9014-11ea-84c1-01cccde830c6\",\n        \"Status\": \"success\"\n    }\n}",
         "title": "查询异步任务状态接口"
+      }
+    ],
+    "DescribeAuditInstanceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditInstanceList\n<公共请求参数>\n\n{\n    \"AuditSwitch\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"InstanceId\",\n            \"Values\": [\n                \"cmgo-f4twtt**\"\n            ]\n        }\n    ],\n    \"AuditMode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AuditAll\": true,\n                \"AuditStatus\": \"ON\",\n                \"AuditTask\": 1,\n                \"BillingAmount\": 0,\n                \"CreateAt\": \"2025-10-23 14:39:03\",\n                \"Deliver\": \"OFF\",\n                \"DeliverSummary\": [],\n                \"HighLogExpireDay\": 7,\n                \"HighRealStorage\": 0,\n                \"InstanceId\": \"cmgo-f4twtt**\",\n                \"InstanceInfo\": {\n                    \"AuditLogExpireDay\": 0,\n                    \"AuditStatus\": \"OFF\",\n                    \"InstanceId\": \"cmgo-f4twttpp\",\n                    \"InstanceName\": \"levi_test\",\n                    \"InstanceRole\": \"MASTER\",\n                    \"InstanceType\": \"REPLICATE\",\n                    \"MongodbVersion\": \"4.4 WT\",\n                    \"ProjectId\": 0,\n                    \"Region\": \"ap-guangzhou\",\n                    \"Status\": \"running\",\n                    \"SupportAudit\": true,\n                    \"TagList\": [\n                        {\n                            \"TagKey\": \"suri\",\n                            \"TagValue\": \"111111\"\n                        }\n                    ],\n                    \"Zone\": \"ap-guangzhou-3\"\n                },\n                \"LogExpireDay\": 1825,\n                \"LowLogExpireDay\": 1818,\n                \"LowRealStorage\": 0,\n                \"OldRule\": false,\n                \"RealStorage\": 0,\n                \"RuleTemplateIds\": []\n            }\n        ],\n        \"RequestId\": \"f09d8d49-62d7-4409-b55a-31f58d6db015\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询审计实例列表"
       }
     ],
     "DescribeBackupDownloadTask": [
@@ -342,6 +366,14 @@
         "title": "终止数据库实例特定操作"
       }
     ],
+    "ModifyAuditService": [
+      {
+        "document": "修改审计日志保存周期",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditService\n<公共请求参数>\n\n{\n    \"LogExpireDay\": 365,\n    \"InstanceId\": \"cmgo-xfts****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "更改审计服务配置"
+      }
+    ],
     "ModifyDBInstanceNetworkAddress": [
       {
         "document": "修改云数据库实例的VIP信息",
@@ -400,6 +432,14 @@
         "input": "https://mongodb.tencentcloudapi.com/?Action=OfflineIsolatedDBInstance\n&InstanceId=cmgo-f555zzzz\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"28920\"\n    }\n}",
         "title": "下线隔离状态的云数据库实例"
+      }
+    ],
+    "OpenAuditService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-l0w4****\",\n    \"LogExpireDay\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "开通审计服务"
       }
     ],
     "RenameInstance": [

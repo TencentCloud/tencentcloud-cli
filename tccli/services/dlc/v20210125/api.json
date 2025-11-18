@@ -8853,6 +8853,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MongoDB 数据源",
+          "example": "无",
+          "member": "DataSourceInfo",
+          "name": "MongoDB",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

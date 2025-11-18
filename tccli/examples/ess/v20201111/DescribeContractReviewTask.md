@@ -17,7 +17,7 @@ Output:
         "ChecklistId": "yDtCMxxxxIi",
         "CreatedOn": 1753417470,
         "FinishedOn": 1753417684,
-        "PolicyType": 2,
+        "PolicyType": 3,
         "RequestId": "s1753417731216986125",
         "ResourceId": "yDtG1UUxxxEsrBwa",
         "Risks": [
@@ -28,10 +28,26 @@ Output:
                 "RiskDescription": "保密条款未明确竞业限制期限，存在超出法定期限的法律风险，可能被认定为无效条款。",
                 "RiskId": "yDtIFUU2tnxxxKveWxm",
                 "RiskLevel": "NORMAL",
+                "RiskLevelId": 0,
                 "RiskName": "竞业限制期限缺失",
                 "RiskPresentation": [
                     "不符合清单要求"
                 ]
+            }
+        ],
+        "ApprovedLists": [
+            {
+                "CategoryName": "合同主体审查",
+                "Excerpts": [
+                    {
+                        "Content": "2.2注册腾讯云账号，甲方应依法具备必要、适当的权利能力和行为能力，已授予操作人足够的权利完成注册过程。甲方必须提交自身合法、真实、有效的身份信息完成真实身份的核验。甲方未提交真实身份信息的、未能通过真实身份核验的，腾讯云依法不对甲方提供服务。",
+                        "Position": null
+                    }
+                ],
+                "RiskBasis": "【通用商业合同审查清单】{合同主体审查}, 系统审查要求。",
+                "RiskDescription": "1）若签约人为代理人，建议审查需审查授权范围是否涵盖合同标的（如采购金额、租赁期限等）；2）建议审查授权书是否明确排除限制条款（如不得签署担保类协议）。",
+                "RiskId": "yDtzVUUHqHYnSLWte",
+                "RiskName": "授权权限匹配性"
             }
         ],
         "Role": {

@@ -9,7 +9,7 @@ tccli cvm DescribeInstanceTypeConfigs --cli-unfold-argument  \
     --Filters.0.Name zone \
     --Filters.0.Values ap-guangzhou-6 \
     --Filters.1.Name instance-family \
-    --Filters.1.Values I1
+    --Filters.1.Values S6
 ```
 
 Output: 
@@ -18,47 +18,37 @@ Output:
     "Response": {
         "InstanceTypeConfigSet": [
             {
-                "Zone": "ap-guangzhou-6",
-                "InstanceFamily": "I1",
-                "InstanceType": "I1.MEDIUM4",
-                "CPU": 2,
-                "GPU": 0,
-                "FPGA": 0,
-                "Memory": 4,
-                "GpuCount": 0
-            },
-            {
-                "Zone": "ap-guangzhou-6",
-                "InstanceFamily": "I1",
-                "InstanceType": "I1.MEDIUM8",
-                "CPU": 2,
-                "GPU": 0,
-                "FPGA": 0,
-                "Memory": 8,
-                "GpuCount": 0
-            },
-            {
-                "Zone": "ap-guangzhou-6",
-                "InstanceFamily": "I1",
-                "InstanceType": "I1.MEDIUM16",
-                "CPU": 2,
-                "GPU": 0,
-                "FPGA": 0,
-                "Memory": 16,
-                "GpuCount": 0
-            },
-            {
-                "Zone": "ap-guangzhou-6",
-                "InstanceFamily": "I1",
-                "InstanceType": "I1.LARGE8",
                 "CPU": 4,
-                "GPU": 0,
                 "FPGA": 0,
+                "GPU": 0,
+                "GpuCount": 0,
+                "InstanceFamily": "S6",
+                "InstanceType": "S6.LARGE8",
                 "Memory": 8,
-                "GpuCount": 0
+                "Zone": "ap-guangzhou-6"
+            },
+            {
+                "CPU": 2,
+                "FPGA": 0,
+                "GPU": 0,
+                "GpuCount": 0,
+                "InstanceFamily": "S6",
+                "InstanceType": "S6.MEDIUM8",
+                "Memory": 8,
+                "Zone": "ap-guangzhou-6"
+            },
+            {
+                "CPU": 8,
+                "FPGA": 0,
+                "GPU": 0,
+                "GpuCount": 0,
+                "InstanceFamily": "S6",
+                "InstanceType": "S6.2XLARGE16",
+                "Memory": 16,
+                "Zone": "ap-guangzhou-6"
             }
         ],
-        "RequestId": "2f1fd71e-95ab-4f10-8adb-895e99d33ff5"
+        "RequestId": "b809b32e-c2b9-4b71-84dd-b9ffaac904aa"
     }
 }
 ```

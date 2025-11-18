@@ -536,6 +536,14 @@
         "title": "修改密码"
       }
     ],
+    "PauseAutoCalloutTask": [
+      {
+        "document": "正常调用，暂停任务成功",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseAutoCalloutTask\n<公共请求参数>\n\n{\n    \"TaskId\": 16498,\n    \"SdkAppId\": 1400692008\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a1c5200-25be-4a80-8a45-9183745188ea\"\n    }\n}",
+        "title": "正常调用"
+      }
+    ],
     "PausePredictiveDialingCampaign": [
       {
         "document": "暂停预测式外呼任务",
@@ -558,6 +566,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreMemberOnline\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"UserId\": \"user@example.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896cd\"\n    }\n}",
         "title": "恢复客服上线"
+      }
+    ],
+    "ResumeAutoCalloutTask": [
+      {
+        "document": "正常调用，恢复任务成功",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeAutoCalloutTask\n<公共请求参数>\n\n{\n    \"TaskId\": 16497,\n    \"SdkAppId\": 1400692008\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9c840d7-6d6a-4300-8273-6e0a7f00276e\"\n    }\n}",
+        "title": "正常调用"
       }
     ],
     "ResumePredictiveDialingCampaign": [

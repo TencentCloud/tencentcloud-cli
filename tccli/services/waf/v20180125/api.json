@@ -5335,6 +5335,86 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量cc规则配置的批量域名",
+          "example": "",
+          "member": "string",
+          "name": "Domains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量cc规则使用的批量防护组",
+          "example": "",
+          "member": "uint64",
+          "name": "GroupIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定时任务类型",
+          "example": "",
+          "member": "string",
+          "name": "JobType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定时任务类型：month or week",
+          "example": "",
+          "member": "string",
+          "name": "CronType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否生效",
+          "example": "",
+          "member": "int64",
+          "name": "ValidStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源：批量还是单个规则",
+          "example": "",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5360,6 +5440,26 @@
           "name": "Res",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则限制总数",
+          "example": "",
+          "member": "int64",
+          "name": "Limit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则剩余多少可用",
+          "example": "",
+          "member": "int64",
+          "name": "Available",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -6922,6 +7022,15 @@
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "",
+          "member": "string",
+          "name": "LogicalOp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7053,7 +7162,7 @@
         {
           "disabled": false,
           "document": "开启访问日志某些字段是否投递",
-          "example": "{\"EnableBody\": 1,\"EnableHeaders\":1}",
+          "example": "无",
           "member": "FieldWriteConfig",
           "name": "WriteConfig",
           "required": false,
@@ -7156,7 +7265,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "19:21",
+          "example": "\"19:21\"",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -7167,7 +7276,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "21:00",
+          "example": "\"21:00\"",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -14794,7 +14903,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡型WAF域名LB监听器状态。\n0：操作成功 \n4：正在绑定LB \n6：正在解绑LB \n7：解绑LB失败 \n8：绑定LB失败 \n10：内部错误",
+          "document": "SAAS型WAF域名状态：\n-2：配置下发失败\n-1：配置下发中\n0：DNS解析中\n1：无DNS解析记录，请接入WAF\n10：DNS解析未知，域名启用了代理\n11：DNS解析异常，使用A记录接入WAF IP\n200：检测源站不可达\n220：源站不支持长连接\n311：证书过期\n312：证书即将过期\n310：证书异常\n316：备案异常\n5：WAF回源已变更\n负载均衡型WAF域名LB监听器状态：\n0：操作成功 \n4：正在绑定LB \n6：正在解绑LB \n7：解绑LB失败 \n8：绑定LB失败 \n10：内部错误",
           "example": "0",
           "member": "int64",
           "name": "State",
@@ -15691,6 +15800,16 @@
           "example": "1",
           "member": "int64",
           "name": "Gzip",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SAAS型WAF域名状态：\n-2：配置下发失败\n-1：配置下发中\n0：DNS解析中\n1：无DNS解析记录，请接入WAF\n10：DNS解析未知，域名启用了代理\n11：DNS解析异常，使用A记录接入WAF IP\n200：检测源站不可达\n220：源站不支持长连接\n311：证书过期\n312：证书即将过期\n310：证书异常\n316：备案异常\n5：WAF回源已变更\n负载均衡型WAF域名LB监听器状态：\n0：操作成功 \n4：正在绑定LB \n6：正在解绑LB \n7：解绑LB失败 \n8：绑定LB失败 \n10：内部错误",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -17707,7 +17826,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "admin.com",
+          "example": "\"admin.com\"",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -17718,7 +17837,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "ucb-rule",
+          "example": "\"ucb-rule\"",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -17740,7 +17859,7 @@
         {
           "disabled": false,
           "document": "处置动作",
-          "example": "intercept",
+          "example": "\"intercept\"",
           "member": "string",
           "name": "Action",
           "output_required": true,
@@ -17751,7 +17870,7 @@
         {
           "disabled": false,
           "document": "规则开关",
-          "example": "on",
+          "example": "\"on\"",
           "member": "string",
           "name": "OnOff",
           "output_required": true,
@@ -17795,7 +17914,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "bad bot",
+          "example": "\"bad bot\"",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -17806,7 +17925,7 @@
         {
           "disabled": false,
           "document": "入参ID",
-          "example": "3300000001",
+          "example": "\"3300000001\"",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -17817,7 +17936,7 @@
         {
           "disabled": false,
           "document": "场景ID",
-          "example": "3000000001",
+          "example": "\"3000000001\"",
           "member": "string",
           "name": "SceneId",
           "output_required": true,
@@ -17850,7 +17969,7 @@
         {
           "disabled": false,
           "document": "额外参数",
-          "example": "none",
+          "example": "\"none\"",
           "member": "string",
           "name": "AdditionArg",
           "output_required": true,
@@ -17861,7 +17980,7 @@
         {
           "disabled": false,
           "document": "规则描述",
-          "example": "nemo",
+          "example": "\"nemo\"",
           "member": "string",
           "name": "Desc",
           "output_required": true,
@@ -17872,7 +17991,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "330000001",
+          "example": "\"330000001\"",
           "member": "string",
           "name": "RuleId",
           "output_required": true,
@@ -17894,7 +18013,7 @@
         {
           "disabled": false,
           "document": "定时任务类型",
-          "example": "cronjob",
+          "example": "\"cronjob\"",
           "member": "string",
           "name": "JobType",
           "output_required": false,
@@ -17977,7 +18096,7 @@
         {
           "disabled": false,
           "document": "键",
-          "example": "avg_speed",
+          "example": "\"avg_speed\"",
           "member": "string",
           "name": "Key",
           "output_required": true,
@@ -17988,7 +18107,7 @@
         {
           "disabled": false,
           "document": "操作符",
-          "example": ">",
+          "example": "\">\"",
           "member": "string",
           "name": "Op",
           "output_required": true,
@@ -17999,7 +18118,7 @@
         {
           "disabled": false,
           "document": "值",
-          "example": "{\"basicvalue\":\"10\"}",
+          "example": "无",
           "member": "UCBEntryValue",
           "name": "Value",
           "output_required": true,
@@ -18010,7 +18129,7 @@
         {
           "disabled": false,
           "document": "可选的补充操作符",
-          "example": "none",
+          "example": "\"proportion\"",
           "member": "string",
           "name": "OpOp",
           "output_required": false,
@@ -18021,7 +18140,7 @@
         {
           "disabled": false,
           "document": "可选的补充参数",
-          "example": "none",
+          "example": "[\"name\"]",
           "member": "string",
           "name": "OpArg",
           "output_required": false,
@@ -18032,7 +18151,7 @@
         {
           "disabled": false,
           "document": "可选的补充值",
-          "example": "none",
+          "example": "0.0",
           "member": "float",
           "name": "OpValue",
           "output_required": false,
@@ -18043,7 +18162,7 @@
         {
           "disabled": false,
           "document": "Header参数值时使用",
-          "example": "post",
+          "example": "\"post\"",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -18054,7 +18173,7 @@
         {
           "disabled": false,
           "document": "区域选择",
-          "example": "[{\"Country\":\"china\"}]",
+          "example": "无",
           "member": "Area",
           "name": "Areas",
           "output_required": false,
@@ -18065,7 +18184,7 @@
         {
           "disabled": false,
           "document": "语言环境",
-          "example": "cn",
+          "example": "\"cn\"",
           "member": "string",
           "name": "Lang",
           "output_required": false,
@@ -18076,7 +18195,7 @@
         {
           "disabled": false,
           "document": "参数匹配",
-          "example": "[{\"Key\":\"ddp\",\"Value\":\"waf\"},{\"Key\":\"ddp2\",\"Value\":\"waf1\"}]",
+          "example": "无",
           "member": "ParamCompareList",
           "name": "ParamCompareList",
           "output_required": false,
@@ -18639,6 +18758,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预付费大模型安全信息包",
+          "example": "无",
+          "member": "LLMMonPkg",
+          "name": "LLMMonPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域id",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18983,7 +19124,7 @@
         {
           "disabled": false,
           "document": "定时执行的时间参数",
-          "example": "[{\"StartDateTime\":1711618518\t,\"EndDateTime\":1711918518}]",
+          "example": "无",
           "member": "TimedJob",
           "name": "Timed",
           "output_required": false,
@@ -18994,7 +19135,7 @@
         {
           "disabled": false,
           "document": "周期执行的时间参数",
-          "example": "[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}]",
+          "example": "无",
           "member": "CronJob",
           "name": "Cron",
           "output_required": false,
@@ -19005,7 +19146,7 @@
         {
           "disabled": false,
           "document": "时区",
-          "example": "UTC+8\t",
+          "example": "\"UTC+8\"",
           "member": "string",
           "name": "TimeTZone",
           "output_required": false,
@@ -19041,6 +19182,111 @@
         }
       ],
       "usage": "out"
+    },
+    "LLMMonPkg": {
+      "document": "有效预付费大模型安全包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "waf_2l15vum809zfe23n_0_llm_mon",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-11-10 14:19:20",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2025-12-10 14:19:20",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "sv_wsm_waf_llm_flag_mon",
+          "member": "string",
+          "name": "InquireKey",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预付费大模型安全续费标识\n0 手动续费；1自动续费；2 到期不续",
+          "example": "0",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大模型安全Token使用量",
+          "example": "0",
+          "member": "uint64",
+          "name": "UseToken",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "waf_2l15vum809zfe23n",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "LLMPkg": {
       "document": "有效大模型安全包信息",
@@ -20852,7 +21098,7 @@
         {
           "disabled": false,
           "document": "类别",
-          "example": "bot",
+          "example": "\"bot\"",
           "member": "string",
           "name": "Category",
           "required": true,
@@ -20861,7 +21107,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "1",
+          "example": "\"test.com\"",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -20870,7 +21116,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "test.com",
+          "example": "\"test.com\"",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -20879,7 +21125,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "waf_000000111",
+          "example": "\"waf_000000111\"",
           "member": "string",
           "name": "InstanceID",
           "required": false,
@@ -20897,7 +21143,7 @@
         {
           "disabled": false,
           "document": "传入Bot版本号，场景化版本为\"4.1.0\"",
-          "example": "4.1.0",
+          "example": "\"4.1.0\"",
           "member": "string",
           "name": "BotVersion",
           "required": false,
@@ -22683,6 +22929,15 @@
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "",
+          "member": "string",
+          "name": "LogicalOp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -24039,6 +24294,16 @@
           "name": "ValidStatus",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "",
+          "member": "string",
+          "name": "LogicalOp",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -26983,7 +27248,7 @@
         {
           "disabled": false,
           "document": "动作",
-          "example": "monitor",
+          "example": "\"monitor\"",
           "member": "string",
           "name": "Action",
           "output_required": false,
@@ -27403,6 +27668,15 @@
           "name": "ActionRatio",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则来源",
+          "example": "空值",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -28303,7 +28577,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CC",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28313,7 +28587,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CustomRule",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28323,7 +28597,7 @@
           "example": "0",
           "member": "uint64",
           "name": "IPControl",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28333,7 +28607,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AntiLeak",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28343,7 +28617,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AntiTamper",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28353,7 +28627,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AutoCC",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28363,7 +28637,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AreaBan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28373,7 +28647,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CCSession",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28383,7 +28657,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AI",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28393,7 +28667,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CustomWhite",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28403,7 +28677,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ApiSecurity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28413,7 +28687,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ClientMsg",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28423,7 +28697,27 @@
           "example": "0",
           "member": "uint64",
           "name": "TrafficMarking",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量cc",
+          "example": "",
+          "member": "uint64",
+          "name": "BatchCC",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量session",
+          "example": "",
+          "member": "uint64",
+          "name": "BatchSession",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }

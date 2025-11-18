@@ -16,6 +16,14 @@
         "title": "克隆实例"
       }
     ],
+    "CloseAccountCAM": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseAccountCAM\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-r95q23pn\",\n    \"UserName\": \"root\",\n    \"Password\": \"1359Qwe!\",\n    \"PasswordEncrypt\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12cc9ebc-6fc1-4f24-9ff2-5695c10e125d\"\n    }\n}",
+        "title": "关闭数据库账号的cam验证"
+      }
+    ],
     "CloseDBExtranetAccess": [
       {
         "document": "关闭实例postgres-apzvwncr外网。",
@@ -698,6 +706,20 @@
         "title": "postgres-apzvwncr修改计费模式"
       }
     ],
+    "ModifyDBInstanceDeletionProtection": [
+      {
+        "document": "开启实例删除保护，开启后无法通过控制台或API删除实例",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceDeletionProtection\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-iqmv0kaz\",\n    \"DeletionProtection\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea7ffcbb-57ae-471d-8388-a092015908c4\"\n    }\n}",
+        "title": "实例开启删除保护"
+      },
+      {
+        "document": "关闭实例删除保护，可通过控制台或API进行删除",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceDeletionProtection\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-j56ufjq9\",\n    \"DeletionProtection\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a546656c-aff7-4a4b-a3c5-c8a37529728d\"\n    }\n}",
+        "title": "实例关闭删除保护"
+      }
+    ],
     "ModifyDBInstanceDeployment": [
       {
         "document": "将实例postgres-abcd1234主节点可用区调整广州3区，备节点调整为广州3区。",
@@ -854,6 +876,14 @@
         "title": "立即切换"
       }
     ],
+    "OpenAccountCAM": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAccountCAM\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-r95q23pn\",\n    \"UserName\": \"root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c5791ea-6345-48d8-8f2e-fc637ad32543\"\n    }\n}",
+        "title": "为数据库账号开启CAM验证"
+      }
+    ],
     "OpenDBExtranetAccess": [
       {
         "document": "开通实例postgres-apzvwncr外网。",
@@ -868,6 +898,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebalanceReadOnlyGroup\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupId\": \"pgrogrp-e0tfm161\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
         "title": "只读组内实例流量重新负载"
+      }
+    ],
+    "RefreshAccountPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshAccountPassword\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-r95q23pn\",\n    \"UserName\": \"root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ed5066a-cfad-47e4-b4db-9681166db6e5\"\n    }\n}",
+        "title": "刷新启用CAM验证的账户密码"
       }
     ],
     "RemoveDBInstanceFromReadOnlyGroup": [

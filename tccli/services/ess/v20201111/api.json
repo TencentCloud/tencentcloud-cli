@@ -35,6 +35,20 @@
       "output": "CancelUserAutoSignEnableUrlResponse",
       "status": "online"
     },
+    "CreateBatchAdminChangeInvitations": {
+      "document": "本接口（CreateBatchAdminChangeInvitations）用于批量创建企业超管信息变更。\n该接口为提交任务接口,如果需要获得链接， 需要使用接口创建超管变更链接(CreateBatchAdminChangeInvitationsUrl)。\n\n批量创建链接有以下限制：\n\n1. 单次最多创建10个企业的超管变更。\n2. 同一批创建的企业不能重复,唯一值为企业 Id。\n\n注意：\n此接口创建的超管变更企业，必须是以下两种企业。\n1. 集团子企业，调用方必须是主企业。\n2. 代认证企业，此企业是由[创建企业认证链接](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthUrl)创建的",
+      "input": "CreateBatchAdminChangeInvitationsRequest",
+      "name": "批量创建变更超管任务",
+      "output": "CreateBatchAdminChangeInvitationsResponse",
+      "status": "online"
+    },
+    "CreateBatchAdminChangeInvitationsUrl": {
+      "document": "此接口用于获取企业批量变更超管链接，包含多条超管变更任务。\n\n前提条件：已调用 [CreateBatchAdminChangeInvitations生成批量变更超管任务接口](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchAdminChangeInvitations) 确保任务提交。\n此链接包含多条超管变更流程，使用该链接可以批量的对企业进行超管变更。",
+      "input": "CreateBatchAdminChangeInvitationsUrlRequest",
+      "name": "创建企业批量变更超管链接",
+      "output": "CreateBatchAdminChangeInvitationsUrlResponse",
+      "status": "online"
+    },
     "CreateBatchCancelFlowUrl": {
       "document": "指定需要批量撤回的签署流程Id，以获取批量撤销链接。\n客户需指定要撤回的签署流程Id，最多可指定100个，超过100则不处理。\n接口调用成功后，将返回批量撤回合同的链接。通过点击链接，可跳转至电子签小程序完成批量撤回操作。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n批量撤销结果可以通过接口返回的TaskId关联[批量撤销任务结果回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)或通过接口[查询批量撤销签署流程任务结果](https://qian.tencent.com/developers/companyApis/operateFlows/CreateBatchCancelFlowUrl)\n\n\n注：\n1. 如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同，签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateReleaseFlow\" target=\"_blank\">发起解除合同流程</a>接口。\n\n2. 有对应合同撤销权限的人:  <font color='red'>合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人</font>\n![image](https://qcloudimg.tencent-cloud.cn/raw/1f9f07fea6a70766cd286e0d58682ee2.png)\n\n3. <font color='red'>只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。</font>\n\n4. 撤销后可以看合同PDF内容的人员： 发起方的超管， 发起方自己，发起方撤销合同的操作人员，已经签署合同、已经填写合同、邀请填写已经补充信息的参与人员， 其他参与人员看不到合同的内容。",
       "input": "CreateBatchCancelFlowUrlRequest",
@@ -922,6 +936,66 @@
         }
       ],
       "usage": "out"
+    },
+    "AdminChangeInvitationInfo": {
+      "document": "企业变更超管信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要变更的企业Id。\n使用接口进行变更，所支持的企业有两种。\n1. 集团主企业替子企业进行超管变更。\n    子企业的企业 Id 可在更多-组织管理-集团组织管理处获取。如图位置![image](https://qcloudimg.tencent-cloud.cn/raw/3d4469c13ca9e66a847560fc4309c58b.png)\n2. 使用接口[创建企业认证链接](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthUrl) 创建的企业，企业 Id 可以从回调[企业引导企业实名认证后回调](https://qian.tencent.com/developers/company/callback_types_staffs#%E5%8D%81%E4%B8%80-%E4%BC%81%E4%B8%9A%E5%BC%95%E5%AF%BC%E4%BC%81%E4%B8%9A%E5%AE%9E%E5%90%8D%E8%AE%A4%E8%AF%81%E5%90%8E%E5%9B%9E%E8%B0%83)得到。",
+          "example": "",
+          "member": "string",
+          "name": "ChangeAdminOrganizationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构要变更的超管姓名。 \n跟超管变更的操作人保持一致。\n",
+          "example": "",
+          "member": "string",
+          "name": "NewAdminName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。\np.s. 如果上传授权书 ，需遵循以下条件\n1. 超管的信息（超管姓名，超管手机号）必须为必填参数。",
+          "example": "",
+          "member": "string",
+          "name": "AuthFiles",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构要变更的超管手机号。\n跟超管变更的操作人保持一致。\n超管变更的手机号和超管变更的证件号，必须要传递一个。",
+          "example": "",
+          "member": "string",
+          "name": "NewAdminMobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构要变更的超管证件类型支持以下类型\n- ID_CARD : 中国大陆居民身份证 (默认值)\n- HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证\n- HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)\n\n跟超管变更的操作人保持一致。\n",
+          "example": "",
+          "member": "string",
+          "name": "NewAdminIdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构新超管证件号。\n\n跟超管变更的操作人保持一致。\n\n超管变更的手机号和超管变更的证件号，必须要传递一个。",
+          "example": "",
+          "member": "string",
+          "name": "NewAdminIdCardNumber",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "Agent": {
       "document": "代理相关应用信息，如集团主企业代子企业操作",
@@ -2564,6 +2638,162 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateBatchAdminChangeInvitationsRequest": {
+      "document": "CreateBatchAdminChangeInvitations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管变更信息。\n一次最多支持10条超管变更信息。",
+          "example": "无",
+          "member": "AdminChangeInvitationInfo",
+          "name": "AdminChangeInvitationInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchAdminChangeInvitationsResponse": {
+      "document": "CreateBatchAdminChangeInvitations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量生成企业认证链接的详细错误信息，\n顺序与输入参数保持一致。\n若企业认证均成功生成，则不返回错误信息；\n若存在任何错误，则返回具体的错误描述。",
+          "example": "[\"第【1】条超管变更信息参数错误，当前企业的超管与指定的超管一致，不需要进行变更\"]",
+          "member": "string",
+          "name": "ErrorMessages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchAdminChangeInvitationsUrlRequest": {
+      "document": "CreateBatchAdminChangeInvitationsUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构要变更的超管姓名。 在超管变更流程中，必须是超管本人进行操作，需要更当前操作人的姓名保持一致。\n",
+          "example": "u6a31u6***1u9053",
+          "member": "string",
+          "name": "NewAdminName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构要变更的超管手机号。 \n在超管变更流程中，必须是超管本人进行操作，需要更当前操作人的手机号保持一致。\n\n超管手机号 和超管证件号 二选一 必填。\n\n注意：\n1. 如果新超管的个人身份在电子签进行了手机号的变更，之前提交的超管变更任务将无法获取。",
+          "example": "1320***007",
+          "member": "string",
+          "name": "NewAdminMobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构要变更的超管证件类型支持以下类型\n- ID_CARD : 中国大陆居民身份证 (默认值)\n-  HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证\n- HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)\n需要更当前操作人的证件类型保持一致。\n",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "NewAdminIdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构要变更的超管证件号。 \n在超管变更流程中，必须是超管本人进行操作，需要更当前操作人的证件号保持一致。\n\n超管手机号和超管证件号 二选一必填。",
+          "example": "640521***113278",
+          "member": "string",
+          "name": "NewAdminIdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知方式。\n NONE（默认）\n SMS  - 如果使用这个方式，则会给即将变更的超管发信息。\n注意：\n发送信息的手机号，是用户传递的手机号。\n如果用户同时传递了证件号，手机号会用用户在电子签注册的手机号进行覆盖。",
+          "example": "NONE",
+          "member": "string",
+          "name": "NotifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要跳转的链接类型<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li><li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式,  可以在页面展示适合此类型</li></ul>",
+          "example": "APP",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchAdminChangeInvitationsUrlResponse": {
+      "document": "CreateBatchAdminChangeInvitationsUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量企业注册链接-单链接包含多条认证流，根据Endpoint的不同设置，返回不同的链接地址。失效时间：7天\n跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表\n<table> <thead> <tr> <th>Endpoint</th> <th>示例</th> <th>链接有效期限</th> </tr> </thead>  <tbody>\n <tr> <td>HTTP</td> <td>https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=AUTHORIZATION_ENTERPRISE_FOR_BATCH_SUBMIT&shortKey=yDCHHURDfBxSB2rj2Bfa</td> <td>7天</td> </tr> \n<tr> <td>HTTP_SHORT_URL</td> <td>https://test.essurl.cn/8gDKUBAWK8</td> <td>7天</td> </tr> \n<tr> <td>APP</td> <td>pages/guide/index?to=AUTHORIZATION_ENTERPRISE_FOR_BATCH_SUBMIT&shortKey=yDCHpURDfR6iEkdpsDde</td> <td>7天</td> </tr><tr> <td>QR_CODE</td> <td>https://dyn.test.ess.tencent.cn/imgs/qrcode_urls/authorization_enterprise_for_batch_submit/yDCHHUUckpbdauq9UEjnoFDCCumAMmv1.png</td> <td>7天</td> </tr> </tbody> </table>\n注： \n`1.创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义`\n",
+          "example": "pages/guide/index?to=BATCH_CHANGE_SUPER_ADMIN&shortKey=yDtzZUX5uY7W5lPn8P47",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间，为 7 天后，创建时间，格式为Unix标准时间戳（秒）。",
+          "example": "1763963107",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateBatchCancelFlowUrlRequest": {
       "document": "CreateBatchCancelFlowUrl请求参数结构体",
@@ -5459,6 +5689,15 @@
           "name": "SignAfterStart",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发起过程中是否保存草稿",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedFlowDraft",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -7133,6 +7372,15 @@
           "name": "JumpEvents",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>",
+          "example": "USCC",
+          "member": "string",
+          "name": "OrganizationIdCardType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7750,7 +7998,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
+          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n<li>草稿Id（通过嵌入页面保存草稿后获取草稿Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
           "example": "yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw",
           "member": "string",
           "name": "ResourceId",
@@ -7768,7 +8016,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li></ul>",
+          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li>\n<li> **3**：草稿</li>\n</ul>",
           "example": "1",
           "member": "int64",
           "name": "ResourceType",
@@ -7950,6 +8198,16 @@
           "example": "yDwcCUUgyg3tgmvhUEVzyNa15Zayy6Sf",
           "member": "string",
           "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。",
+          "example": "yDwcCUUgyg3tgmvhUEVzyNa15Zayy6Sf",
+          "member": "string",
+          "name": "DraftId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -10793,6 +11051,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通过项信息(详细引文信息)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputReference",
+          "name": "ApprovedLists",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17023,6 +17291,78 @@
       ],
       "usage": "both"
     },
+    "OutputReference": {
+      "document": "审查通过项对应的引文信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同审查风险结果ID",
+          "example": "",
+          "member": "string",
+          "name": "RiskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险名称",
+          "example": "",
+          "member": "string",
+          "name": "RiskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险描述",
+          "example": "",
+          "member": "string",
+          "name": "RiskDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险要点分类名称",
+          "example": "",
+          "member": "string",
+          "name": "CategoryName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审查依据",
+          "example": "",
+          "member": "string",
+          "name": "RiskBasis",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引文内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "ReferenceExcerpt",
+          "name": "Excerpts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "OutputRisk": {
       "document": "合同审查任务识别出的风险结果信息",
       "members": [
@@ -17123,6 +17463,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级id",
+          "example": "0",
+          "member": "int64",
+          "name": "RiskLevelId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -17782,6 +18133,34 @@
         }
       ],
       "usage": "out"
+    },
+    "ReferenceExcerpt": {
+      "document": "引用的资料",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原文内容",
+          "example": "",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "坐标信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "PositionInfo",
+          "name": "Position",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "RegisterInfo": {
       "document": "发起流程快速注册相关信息",

@@ -3288,6 +3288,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂载COS存储时支持的挂载工具；当前可选值：COSFS、GooseFS-Lite。",
+          "example": "COSFS",
+          "member": "string",
+          "name": "MountType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

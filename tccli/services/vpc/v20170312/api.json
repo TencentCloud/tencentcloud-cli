@@ -1421,6 +1421,13 @@
       "output": "DescribeNatGatewaySourceIpTranslationNatRulesResponse",
       "status": "online"
     },
+    "DescribeNatGatewayZones": {
+      "document": "本接口(DescribeNatGatewayZones)用于查询NAT网关可售卖的可用区信息",
+      "input": "DescribeNatGatewayZonesRequest",
+      "name": "查询NAT网关可售卖的可用区信息",
+      "output": "DescribeNatGatewayZonesResponse",
+      "status": "online"
+    },
     "DescribeNatGateways": {
       "document": "本接口（DescribeNatGateways）用于查询 NAT 网关。",
       "input": "DescribeNatGatewaysRequest",
@@ -5006,7 +5013,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性IP可用区，自动分配弹性IP时传递。",
+          "document": "弹性IP可用区，自动分配弹性IP时传递。\n其中产品可用区查询接口为[查询产品可用区列表](https://cloud.tencent.com/document/product/1596/77929)",
           "example": "10003",
           "member": "string",
           "name": "Zone",
@@ -5037,6 +5044,15 @@
           "example": "true",
           "member": "bool",
           "name": "PublicIpFromSameZone",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "启用或者禁用NAT网关绑定的EIP",
+          "example": "true",
+          "member": "bool",
+          "name": "IpAddressEnableMode",
           "required": false,
           "type": "bool"
         }
@@ -9112,7 +9128,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "NAT网关名称",
+          "document": "NAT网关名称，限制60字符",
           "example": "test_name",
           "member": "string",
           "name": "NatGatewayName",
@@ -9720,7 +9736,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私网网关名称",
+          "document": "私网网关名称，限制60个字符",
           "example": "NATDemo",
           "member": "string",
           "name": "NatGatewayName",
@@ -9822,7 +9838,7 @@
         {
           "disabled": false,
           "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
-          "example": "\"intranat-0g3blj80\"",
+          "example": "intranat-0g3blj80",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -9830,8 +9846,8 @@
         },
         {
           "disabled": false,
-          "document": "转换规则目标，可选值\"LOCAL\"。",
-          "example": "\"LOCAL\"",
+          "document": "转换规则目标，可选值LOCAL。",
+          "example": "LOCAL",
           "member": "string",
           "name": "TranslationDirection",
           "required": true,
@@ -9839,8 +9855,8 @@
         },
         {
           "disabled": false,
-          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
-          "example": "\"TRANSPORT_LAYER",
+          "document": "转换规则类型，可选值NETWORK_LAYER、TRANSPORT_LAYER。分别对应三层、四层。",
+          "example": "TRANSPORT_LAYER",
           "member": "string",
           "name": "TranslationType",
           "required": true,
@@ -9848,8 +9864,8 @@
         },
         {
           "disabled": false,
-          "document": "转换`IP`,当转换规则类型为四层时为`IP`池。",
-          "example": "\"10.0.13.20\"",
+          "document": "映射后`IP`,当转换规则类型为四层时为`IP`池。",
+          "example": "10.0.13.20",
           "member": "string",
           "name": "TranslationIp",
           "required": true,
@@ -9866,8 +9882,8 @@
         },
         {
           "disabled": false,
-          "document": "源`IP`,当转换规则类型为三层时有效。",
-          "example": "\"10.0.13.19\"",
+          "document": "映射前`IP`,当转换规则类型为三层时有效。",
+          "example": "10.0.13.19",
           "member": "string",
           "name": "OriginalIp",
           "required": false,
@@ -9894,7 +9910,7 @@
         {
           "disabled": false,
           "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
-          "example": "\"intranat-0g3blj80\"",
+          "example": "intranat-0g3blj80",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -9912,7 +9928,7 @@
         {
           "disabled": false,
           "document": "跨域参数，当VPC为跨域时填写为True。",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "CrossDomain",
           "required": false,
@@ -9927,9 +9943,10 @@
         {
           "disabled": false,
           "document": "私网网关唯一`ID`。",
-          "example": "\"intranat-0g3blj80\"",
+          "example": "intranat-0g3blj80",
           "member": "string",
           "name": "NatGatewayId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13226,6 +13243,15 @@
           "name": "NatGatewayId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "忽略操作风险",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreOperationRisk",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -13257,7 +13283,7 @@
         {
           "disabled": false,
           "document": "NAT网关的SNAT ID列表，形如：`snat-df43254`。",
-          "example": "[\"snat-3ixd0hr0\\n\"]",
+          "example": "[\"snat-3ixd0hr0\"]",
           "member": "string",
           "name": "NatGatewaySnatIds",
           "required": true,
@@ -13508,8 +13534,8 @@
         },
         {
           "disabled": false,
-          "document": "转换规则目标，可选值\"LOCAL\"。",
-          "example": "\"LOCAL\"",
+          "document": "转换规则目标，可选值LOCAL。",
+          "example": "LOCAL",
           "member": "string",
           "name": "TranslationDirection",
           "required": true,
@@ -13517,8 +13543,8 @@
         },
         {
           "disabled": false,
-          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
-          "example": "\"NETWORK_LAYER\"",
+          "document": "转换规则类型，可选值NETWORK_LAYER、TRANSPORT_LAYER。分别对应三层、四层。",
+          "example": "NETWORK_LAYER",
           "member": "string",
           "name": "TranslationType",
           "required": true,
@@ -13526,8 +13552,8 @@
         },
         {
           "disabled": false,
-          "document": "转换`IP`,当转换规则类型为四层时为`IP`池",
-          "example": "\"10.0.13.20\"",
+          "document": "映射后`IP`,当转换规则类型为四层时为`IP`池",
+          "example": "10.0.13.20",
           "member": "string",
           "name": "TranslationIp",
           "required": true,
@@ -13544,8 +13570,8 @@
         },
         {
           "disabled": false,
-          "document": "源`IP`,当转换规则类型为三层时有效",
-          "example": "\"10.0.13.19\"",
+          "document": "映射前`IP`,当转换规则类型为三层时有效",
+          "example": "10.0.13.19",
           "member": "string",
           "name": "OriginalIp",
           "required": false,
@@ -13572,7 +13598,7 @@
         {
           "disabled": false,
           "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
-          "example": "\"intranat-0g3blj80\"",
+          "example": "intranat-0g3blj80",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -13590,7 +13616,7 @@
         {
           "disabled": false,
           "document": "跨域参数，当VPC为跨域时填写为True。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "CrossDomain",
           "required": false,
@@ -13605,10 +13631,10 @@
         {
           "disabled": false,
           "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
-          "example": "\"intranat-0g3blj80\"",
+          "example": "intranat-0g3blj80",
           "member": "string",
           "name": "NatGatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18026,13 +18052,40 @@
       ],
       "type": "object"
     },
+    "DescribeNatGatewayZonesRequest": {
+      "document": "DescribeNatGatewayZones请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeNatGatewayZonesResponse": {
+      "document": "DescribeNatGatewayZones返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可售卖可用区信息列表",
+          "example": "无",
+          "member": "NatZoneInfo",
+          "name": "ZoneSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNatGatewaysRequest": {
       "document": "DescribeNatGateways请求参数结构体",
       "members": [
         {
           "disabled": false,
           "document": "NAT网关统一 ID，形如：`nat-123xx454`。每次请求的实例上限为100。参数不支持同时指定NatGatewayIds和Filters。",
-          "example": "[\"nat-3isn9hr0\\r\\n\",\"nat-mxkohguo\\r\\n\"]",
+          "example": "[\"nat-3isn9hr0\",\"nat-mxkohguo\"]",
           "member": "string",
           "name": "NatGatewayIds",
           "required": false,
@@ -18040,8 +18093,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5。<li>nat-gateway-id - String - （过滤条件）NAT实例ID，形如：`nat-123xx454`。</li><li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li><li>nat-gateway-name - String - （过滤条件）协议端口模板实例名称，形如：`test_nat`。</li><li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li><li>nat-status - String - （过滤条件）NAT实例当前状态，形如：`AVAILABLE`。</li>",
-          "example": "{\"Name\": \"nat-gateway-id\", \"Values\":[\"nat-94cdyvfr\", \"nat-6eeis68f\", \"nat-dimeg9zd\"]}",
+          "document": "过滤条件，参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5。<li>nat-gateway-id - String - （过滤条件）NAT实例ID，形如：`nat-123xx454`。</li><li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li><li>nat-gateway-name - String - （过滤条件）协议端口模板实例名称，形如：`test_nat`。</li><li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li><li>nat-state - String - （过滤条件）NAT实例当前状态，形如：`AVAILABLE`。</li>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -18626,7 +18679,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Name可选值\"OriginalIp\",  \"TranslationIp\", \"OriginalPort\",\"TranslationPort\",  \"Protocol\", \"Description\"",
+          "document": "过滤条件，Name可选值：OriginalIp、TranslationIp、OriginalPort、TranslationPort、Protocol、Description，分别表示映射前IP、映射后IP、映射前端口、映射后端口、协议类型、描述",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -18663,7 +18716,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18673,7 +18726,7 @@
           "example": "无",
           "member": "PrivateNatDestinationIpPortTranslationNatRule",
           "name": "LocalDestinationIpPortTranslationNatRuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18794,7 +18847,7 @@
         {
           "disabled": false,
           "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
-          "example": "\"intranat-0g3blj80\"",
+          "example": "intranat-0g3blj80",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -18802,8 +18855,8 @@
         },
         {
           "disabled": false,
-          "document": "转换规则目标，可选值\"LOCAL\"。",
-          "example": "\"LOCAL\"",
+          "document": "转换规则目标，可选值LOCAL。",
+          "example": "LOCAL",
           "member": "string",
           "name": "TranslationDirection",
           "required": true,
@@ -18811,8 +18864,8 @@
         },
         {
           "disabled": false,
-          "document": "转换规则类型，可选值\"NETWORK_LAYER\",\"TRANSPORT_LAYER\"。",
-          "example": "\"NETWORK_LAYER\"",
+          "document": "转换规则类型，可选值NETWORK_LAYER、TRANSPORT_LAYER。分别对应三层、四层。",
+          "example": "NETWORK_LAYER",
           "member": "string",
           "name": "TranslationType",
           "required": true,
@@ -18820,8 +18873,8 @@
         },
         {
           "disabled": false,
-          "document": "转换`IP`,当转换规则类型为四层时为`IP`池。",
-          "example": "\"10.0.13.20\"",
+          "document": "映射后`IP`,当转换规则类型为四层时为`IP`池。",
+          "example": "10.0.13.20",
           "member": "string",
           "name": "TranslationIp",
           "required": true,
@@ -18829,8 +18882,8 @@
         },
         {
           "disabled": false,
-          "document": "源`IP`,当转换规则类型为三层时有效。",
-          "example": "\"10.0.13.19\"",
+          "document": "映射前`IP`,当转换规则类型为三层时有效。",
+          "example": "10.0.13.19",
           "member": "string",
           "name": "OriginalIp",
           "required": false,
@@ -18857,7 +18910,7 @@
         {
           "disabled": false,
           "document": "ACL规则描述",
-          "example": "\"ACL规则描述\"",
+          "example": "ACL规则描述",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -18907,7 +18960,7 @@
           "example": "[\"intranat-0g3blj80\"]",
           "member": "string",
           "name": "NatGatewayId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -18949,7 +19002,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18959,7 +19012,7 @@
           "example": "无",
           "member": "TranslationNatRule",
           "name": "TranslationNatRuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18977,7 +19030,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私网网关唯一`ID`，形如：`intranat-0g3blj80`。",
+          "document": "私网网关唯一`ID`，形如：`intranat-0g3blj80`。\n注意：NatGatewayIds和Filters参数互斥，不能同时传入。",
           "example": "[\"intranat-0g3blj80\"]",
           "member": "string",
           "name": "NatGatewayIds",
@@ -19013,8 +19066,8 @@
         },
         {
           "disabled": false,
-          "document": "排序字段。可选值：\"NatGatewayId\"、\"NatGatewayName\"、\"CreatedTime\"",
-          "example": "\"NatGatewayId\"",
+          "document": "排序字段。可选值：NatGatewayId、NatGatewayName、CreatedTime。",
+          "example": "NatGatewayId",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -19022,8 +19075,8 @@
         },
         {
           "disabled": false,
-          "document": "排序方式。可选值：\"ASC\"、\"DESC\"。",
-          "example": "\"ASC\"",
+          "document": "排序方式。可选值：ASC、DESC。分别表示升序、降序。",
+          "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -21263,7 +21316,7 @@
         {
           "disabled": false,
           "document": "过滤条件。当前支持如下过滤条件：\n<li> end-point-service-id- String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。\n</li>\n<li>end-point-name - String - （过滤条件）终端节点实例名称。</li>\n<li> end-point-id- String - （过滤条件）终端节点实例ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) \n接口获取。</li>\n<li> vpc-id- String - （过滤条件）VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。\n</li>",
-          "example": "[{\"Name\": \"vpc-id\", \"Values\": [\"vpc-ahnu4rv5\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -21298,10 +21351,28 @@
         },
         {
           "disabled": false,
-          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "document": "协议类型，支持 Ipv4，Ipv6， DualStack，默认 Ipv4。使用DualStack查询双栈的时候，必须要使用MaxResult配合NextToken查询。第1次查询的时候只需要携带MaxResult，如果返回NextToken非空，表示有更多可用数据。第2次查询的时候就需要携带NextToken进行分页查询。",
           "example": "Ipv4",
           "member": "string",
           "name": "IpAddressType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每次调用返回的最大结果数。如果查询返回的时候有NextToken返回，您可以使用NextToken值获取更多页结果， 当NextToke返回空或者返回的结果数量小于MaxResults时，表示没有更多数据了。允许的最大页面大小为 100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。",
+          "example": "\"无\"",
+          "member": "string",
+          "name": "NextToken",
           "required": false,
           "type": "string"
         }
@@ -21332,6 +21403,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。",
+          "example": "\"无\"",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -21346,7 +21427,7 @@
         {
           "disabled": false,
           "document": "过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。\n<li> service-id - String - （过滤条件）终端节点服务唯一ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。\n</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-dehd3e33。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；\nMYSQL可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；\nCRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；\nGWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。\n</li>\n<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡），不填默认查询类型为CLB。</li>",
-          "example": "[{\"Name\": \"service-type\", \"Values\": [\"CDB\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -21390,10 +21471,28 @@
         },
         {
           "disabled": false,
-          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "document": "协议类型，支持 Ipv4，Ipv6， DualStack，默认 Ipv4。使用DualStack查询双栈的时候，必须要使用MaxResult配合NextToken查询。第1次查询的时候只需要携带MaxResult，如果返回NextToken非空，表示有更多可用数据。第2次查询的时候就需要携带NextToken进行分页查询。",
           "example": "Ipv4",
           "member": "string",
           "name": "IpAddressType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每次调用返回的最大结果数。如果查询返回的时候有NextToken返回，您可以使用NextToken值获取更多页结果， 当NextToke返回空或者返回的结果数量小于MaxResults时，表示没有更多数据了。允许的最大页面大小为 100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "如果NextToken返回 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。",
+          "example": "\"无\"",
+          "member": "string",
+          "name": "NextToken",
           "required": false,
           "type": "string"
         }
@@ -21421,6 +21520,16 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。",
+          "example": "\"无\"",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -23641,7 +23750,7 @@
         {
           "disabled": false,
           "document": "待解绑NAT网关的弹性IP数组。",
-          "example": "[\"139.199.232.212\\n\"]",
+          "example": "[\"139.199.232.212\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "required": true,
@@ -29049,7 +29158,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关的SNAT转换规则。",
+          "document": "NAT网关的SNAT转换规则。仅支持根据指定的NatGatewaySnatId修改PublicIpAddresses或Description。",
           "example": "无",
           "member": "SourceIpTranslationNatRule",
           "name": "SourceIpTranslationNatRule",
@@ -29419,7 +29528,7 @@
         {
           "disabled": false,
           "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
-          "example": "\"intranat-0g3blj80\"",
+          "example": "intranat-0g3blj80",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -29428,7 +29537,7 @@
         {
           "disabled": false,
           "document": "私网网关名称，可任意命名，但不得超过60个字符。",
-          "example": "\"newtest\"",
+          "example": "newtest",
           "member": "string",
           "name": "NatGatewayName",
           "required": false,
@@ -29572,7 +29681,7 @@
         {
           "disabled": false,
           "document": "私网网关唯一`ID`，形如：`intranat-xxxxxxxx`。",
-          "example": "\"intranat-0g3blj80\"",
+          "example": "intranat-0g3blj80",
           "member": "string",
           "name": "NatGatewayId",
           "required": true,
@@ -29590,7 +29699,7 @@
         {
           "disabled": false,
           "document": "跨域参数，当VPC为跨域时填写为True。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "CrossDomain",
           "required": false,
@@ -31458,6 +31567,32 @@
       "members": [],
       "usage": "out"
     },
+    "NatZoneInfo": {
+      "document": "NAT网关可用区集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区名称",
+          "example": "\"ap-guangzhou-2\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区id",
+          "example": "100002",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "NetDetect": {
       "document": "网络探测对象。",
       "members": [
@@ -33220,8 +33355,8 @@
         },
         {
           "disabled": false,
-          "document": "是否是预刷新；True:是， False:否",
-          "example": "True",
+          "document": "是否是预刷新；true:是， false:否",
+          "example": "true",
           "member": "bool",
           "name": "DryRun",
           "required": true,

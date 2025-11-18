@@ -79,7 +79,6 @@ Input:
 
 ```
 tccli vpc CreateNatGateway --cli-unfold-argument  \
-    --SubnetId subnet-q1b8fsg \
     --AddressCount 1 \
     --NatGatewayName xiaooliang_test \
     --VpcId vpc-bohigpb7 \

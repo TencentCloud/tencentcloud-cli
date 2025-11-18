@@ -1237,7 +1237,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像状态。\n可选值：\nNORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。",
+          "document": "镜像状态。\n可选值：\nNORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。",
           "example": "NORMAL",
           "member": "string",
           "name": "BlueprintState",
@@ -10747,7 +10747,7 @@
         },
         {
           "disabled": false,
-          "document": "关机类型。\n取值范围： \n\n- SOFT：表示软关机\n- HARD：表示硬关机 \n- SOFT_FIRST：表示优先软关机，失败再执行硬关机  \n\n默认取值：SOFT_FIRST",
+          "document": "关机类型。取值范围： \n<li>SOFT：表示软关机</li>\n<li>HARD：表示硬关机 </li>\n<li>SOFT_FIRST：表示优先软关机，失败再执行硬关机 </li>\n\n默认取值：SOFT_FIRST",
           "example": "\"SOFT_FIRST\"",
           "member": "string",
           "name": "StopType",

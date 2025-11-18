@@ -1011,7 +1011,7 @@
         {
           "disabled": false,
           "document": "设备sn列表",
-          "example": "['chc001','chc002']",
+          "example": "[\"chc001\",\"chc002\"]",
           "member": "string",
           "name": "DeviceSnList",
           "required": true,
@@ -1070,6 +1070,51 @@
           "name": "CustomerReceipt",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "楼宇名",
+          "example": "上海青浦2号楼",
+          "member": "string",
+          "name": "Building",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机房管理单元id",
+          "example": "3",
+          "member": "string",
+          "name": "IdcUnitId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "TELECOM",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "放行邮件目的邮箱",
+          "example": "[\"godwinchen@tencent.com\"]",
+          "member": "string",
+          "name": "EmailSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "到访原因",
+          "example": "[\"OTHER\"]",
+          "member": "string",
+          "name": "FactorSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1651,7 +1696,7 @@
         },
         {
           "disabled": false,
-          "document": "自提人证件号码",
+          "document": "到访人证件号码",
           "example": "100000000000000005",
           "member": "string",
           "name": "PickUpStuffIDCard",
@@ -3671,6 +3716,36 @@
           "name": "LogisticsReceipt",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "涉及物资放行时的楼宇",
+          "example": "天津滨海1栋",
+          "member": "string",
+          "name": "Building",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物资放行抄送邮箱",
+          "example": "[\"sff@qq.com\"]",
+          "member": "string",
+          "name": "EmailSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物资放行到访原因",
+          "example": "[\"IT_OPERATION\"]",
+          "member": "string",
+          "name": "FactorSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

@@ -1381,7 +1381,7 @@
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1391,7 +1391,7 @@
           "example": "test_pgroup",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1401,7 +1401,7 @@
           "example": "test_pgroup_desc",
           "member": "string",
           "name": "DescInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1411,7 +1411,7 @@
           "example": "0",
           "member": "int64",
           "name": "BindCfsNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1421,7 +1421,7 @@
           "example": "2019-7-20 10:25:33",
           "member": "string",
           "name": "CDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5573,7 +5573,7 @@
           "example": "creating",
           "member": "string",
           "name": "CfsServiceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

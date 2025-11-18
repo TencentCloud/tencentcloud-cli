@@ -43,7 +43,7 @@ Output:
     "ResponseType": "TASK_RSP",
     "Progress": "100",
     "ProgressMessage": "完成文档解析",
-    "DocumentRecognizeResultUrl": "https://document-restruction-sse-1258344699.cos.ap-guangzhou.myqcloud.com/output_files%2F0c7bbfbc-641a-4321-bee2-545de1e046e9_parse.zip?q-sign-algorithm=sha1&q-ak=AKddFap6HLNbidLwPqOrAKGzXrx40scL7l&q-sign-time=1720006266%3B1720006866&q-key-time=1720006266%3B1720006866&q-header-list=host&q-url-param-list=&q-signature=e0e79876549e68f2ae9dbf5df1e516f8f1",
+    "DocumentRecognizeResultUrl": "https://document-restruction-sse-1258344699.cos.ap-guangzhou.myqcloud.com/output_files%2F0c7bbfbc-641a-4321-bee2-545de1e046e9_parse.zip?q-sign-algorithm=sha1&q-ak=xxxxxx&q-sign-time=1720006266%3B1720006866&q-key-time=1720006266%3B1720006866&q-header-list=host&q-url-param-list=&q-signature=xxxxxxxx",
     "FailedPages": []
 }
 ```

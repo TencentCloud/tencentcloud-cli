@@ -1,4 +1,4 @@
-**Example 1: Waf  CC V2 Upsert接口**
+**Example 1: 添加CC规则**
 
 
 
@@ -6,27 +6,36 @@ Input:
 
 ```
 tccli waf UpsertCCRule --cli-unfold-argument  \
-    --Status 0 \
+    --RuleId 0 \
+    --Domain www.testwaf.com \
+    --Edition sparta-waf \
+    --Name ccrule \
+    --Status 1 \
     --Advance 0 \
-    --Domain test.com \
-    --Name test2 \
-    --Url /test \
-    --Priority 50 \
-    --Interval 60 \
-    --MatchFunc 0 \
-    --ValidTime 600
- \
     --Limit 60 \
+    --Type 0 \
+    --Interval 60 \
+    --Url  \
+    --MatchFunc 0 \
     --ActionType 22 \
-    --OptionsArr [{"key":"get","args":["a=12"]}]
+    --Priority 50 \
+    --ValidTime 600 \
+    --OptionsArr [{"key":"URL","args":["=L2Nj"],"match":"0","encodeflag":true}] \
+    --EventId  \
+    --LogicalOp and \
+    --CelRule  \
+    --LimitMethod  \
+    --ActionRatio 100 \
+    --PageId 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "success",
-        "RequestId": "5029e2b0-493c-4dcc-9e4e-d53ab98ede99"
+        "RequestId": "8fb2ee72-103d-4d0f-b583-6af98aa2f442",
+        "Data": "",
+        "RuleId": 1900037990
     }
 }
 ```

@@ -7,7 +7,7 @@ Input:
 ```
 tccli cvm ModifyImageAttribute --cli-unfold-argument  \
     --ImageId img-6pb6lrmy \
-    --ImageName sample
+    --ImageName NewImageName
 ```
 
 Output: 

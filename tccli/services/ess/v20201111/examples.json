@@ -88,6 +88,22 @@
         "title": "未生成自动签链接，撤销链接失败"
       }
     ],
+    "CreateBatchAdminChangeInvitations": [
+      {
+        "document": "提交创建企业超管信息变更，\n将企业典子谦示例企业的超管变更为典子谦。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchAdminChangeInvitations\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"AdminChangeInvitationInfos\": [\n        {\n            \"ChangeAdminOrganizationId\": \"yDtGxUUckp95pwaeUxk6PqkRm1BjyJuK\",\n            \"NewAdminName\": \"典子谦\",\n            \"NewAdminMobile\": \"18800000000\",\n            \"AuthFiles\": [\n                \"授权书文件base64格式\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessages\": [\n            \"\"\n        ],\n        \"RequestId\": \"s1763366021328408736\"\n    }\n}",
+        "title": "成功提交批量创建变更超管信息"
+      }
+    ],
+    "CreateBatchAdminChangeInvitationsUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchAdminChangeInvitationsUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"\n    },\n    \"NewAdminName\": \"典子谦\",\n    \"NewAdminMobile\": \"1880***000\",\n    \"NewAdminIdCardType\": \"ID_CARD\",\n    \"NewAdminIdCardNumber\": \"640521***113278\",\n    \"NotifyType\": \"NONE\",\n    \"Endpoint\": \"APP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1763963107,\n        \"Url\": \"pages/guide/index?to=BATCH_CHANGE_SUPER_ADMIN&shortKey=yDtzZUX5uY7W5lPn8P47\",\n        \"RequestId\": \"e632a5a0-13aa-4ed1-afdc-5e5714a38fcd\"\n    }\n}",
+        "title": "生成批量变更超管链接"
+      }
+    ],
     "CreateBatchCancelFlowUrl": [
       {
         "document": "指定需要批量撤回三个签署流程Id，获取批量撤销链接\n接口调用成功返回批量撤回合同的链接，通过链接跳转到电子签小程序完成批量撤回",
@@ -1540,7 +1556,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractReviewTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwJGxxrmBe\"\n    },\n    \"TaskId\": \"yDtIFxxxq\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ChecklistId\": \"yDtCMxxxxIi\",\n        \"CreatedOn\": 1753417470,\n        \"FinishedOn\": 1753417684,\n        \"PolicyType\": 2,\n        \"RequestId\": \"s1753417731216986125\",\n        \"ResourceId\": \"yDtG1UUxxxEsrBwa\",\n        \"Risks\": [\n            {\n                \"Content\": \"第三十二条乙方应当保守甲方的商业秘密，商业秘密系指不为公众所知悉，能为甲方带来经济利益，具有实用性并经甲方采取保密措施的技术秘密和经营信息。包括但不限于下述内容:\",\n                \"RiskAdvice\": \"建议在第三十二条后增加：「乙方离职后的竞业限制期限不得超过两年，竞业限制补偿金标准为......」\",\n                \"RiskBasis\": \"【通用商业合同审查清单】{特殊类型合同补充要点}, 系统审查要求。\",\n                \"RiskDescription\": \"保密条款未明确竞业限制期限，存在超出法定期限的法律风险，可能被认定为无效条款。\",\n                \"RiskId\": \"yDtIFUU2tnxxxKveWxm\",\n                \"RiskLevel\": \"NORMAL\",\n                \"RiskName\": \"竞业限制期限缺失\",\n                \"RiskPresentation\": [\n                    \"不符合清单要求\"\n                ]\n            }\n        ],\n        \"Role\": {\n            \"Description\": \"\",\n            \"Name\": \"授权方\"\n        },\n        \"Status\": 4,\n        \"TaskId\": \"yDtIFxxxq\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ChecklistId\": \"yDtCMxxxxIi\",\n        \"CreatedOn\": 1753417470,\n        \"FinishedOn\": 1753417684,\n        \"PolicyType\": 3,\n        \"RequestId\": \"s1753417731216986125\",\n        \"ResourceId\": \"yDtG1UUxxxEsrBwa\",\n        \"Risks\": [\n            {\n                \"Content\": \"第三十二条乙方应当保守甲方的商业秘密，商业秘密系指不为公众所知悉，能为甲方带来经济利益，具有实用性并经甲方采取保密措施的技术秘密和经营信息。包括但不限于下述内容:\",\n                \"RiskAdvice\": \"建议在第三十二条后增加：「乙方离职后的竞业限制期限不得超过两年，竞业限制补偿金标准为......」\",\n                \"RiskBasis\": \"【通用商业合同审查清单】{特殊类型合同补充要点}, 系统审查要求。\",\n                \"RiskDescription\": \"保密条款未明确竞业限制期限，存在超出法定期限的法律风险，可能被认定为无效条款。\",\n                \"RiskId\": \"yDtIFUU2tnxxxKveWxm\",\n                \"RiskLevel\": \"NORMAL\",\n                \"RiskLevelId\": 0,\n                \"RiskName\": \"竞业限制期限缺失\",\n                \"RiskPresentation\": [\n                    \"不符合清单要求\"\n                ]\n            }\n        ],\n        \"ApprovedLists\": [\n            {\n                \"CategoryName\": \"合同主体审查\",\n                \"Excerpts\": [\n                    {\n                        \"Content\": \"2.2注册腾讯云账号，甲方应依法具备必要、适当的权利能力和行为能力，已授予操作人足够的权利完成注册过程。甲方必须提交自身合法、真实、有效的身份信息完成真实身份的核验。甲方未提交真实身份信息的、未能通过真实身份核验的，腾讯云依法不对甲方提供服务。\",\n                        \"Position\": null\n                    }\n                ],\n                \"RiskBasis\": \"【通用商业合同审查清单】{合同主体审查}, 系统审查要求。\",\n                \"RiskDescription\": \"1）若签约人为代理人，建议审查需审查授权范围是否涵盖合同标的（如采购金额、租赁期限等）；2）建议审查授权书是否明确排除限制条款（如不得签署担保类协议）。\",\n                \"RiskId\": \"yDtzVUUHqHYnSLWte\",\n                \"RiskName\": \"授权权限匹配性\"\n            }\n        ],\n        \"Role\": {\n            \"Description\": \"\",\n            \"Name\": \"授权方\"\n        },\n        \"Status\": 4,\n        \"TaskId\": \"yDtIFxxxq\"\n    }\n}",
         "title": "查询合同审查任务详情"
       }
     ],

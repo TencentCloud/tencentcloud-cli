@@ -14,6 +14,13 @@
       "output": "ActivateDeviceCertificateResponse",
       "status": "online"
     },
+    "AddClientSubscription": {
+      "document": "为MQTT客户端增加一条订阅",
+      "input": "AddClientSubscriptionRequest",
+      "name": "为MQTT客户端增加一条订阅",
+      "output": "AddClientSubscriptionResponse",
+      "status": "online"
+    },
     "ApplyRegistrationCode": {
       "document": "申请ca注册码",
       "input": "ApplyRegistrationCodeRequest",
@@ -117,6 +124,13 @@
       "input": "DeleteCaCertificateRequest",
       "name": "删除Ca证书",
       "output": "DeleteCaCertificateResponse",
+      "status": "online"
+    },
+    "DeleteClientSubscription": {
+      "document": "删除MQTT客户端下的一条订阅",
+      "input": "DeleteClientSubscriptionRequest",
+      "name": "为MQTT客户端删除一条订阅",
+      "output": "DeleteClientSubscriptionResponse",
       "status": "online"
     },
     "DeleteDeviceCertificate": {
@@ -490,6 +504,60 @@
     },
     "ActivateDeviceCertificateResponse": {
       "document": "ActivateDeviceCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddClientSubscriptionRequest": {
+      "document": "AddClientSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端id",
+          "example": "client1",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅",
+          "example": "humidity/+/",
+          "member": "string",
+          "name": "TopicFilter",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务质量:0,1,2",
+          "example": "1",
+          "member": "string",
+          "name": "Qos",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddClientSubscriptionResponse": {
+      "document": "AddClientSubscription返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1868,6 +1936,51 @@
     },
     "DeleteCaCertificateResponse": {
       "document": "DeleteCaCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClientSubscriptionRequest": {
+      "document": "DeleteClientSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端id",
+          "example": "client1",
+          "member": "string",
+          "name": "ClientId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅",
+          "example": "humidity/+/",
+          "member": "string",
+          "name": "TopicFilter",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClientSubscriptionResponse": {
+      "document": "DeleteClientSubscription返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3381,6 +3494,16 @@
           "name": "TransportLayerSecurity",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息属性增强规则配额",
+          "example": "10",
+          "member": "int64",
+          "name": "MessageEnrichmentRuleLimit",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

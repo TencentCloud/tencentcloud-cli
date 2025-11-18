@@ -64,7 +64,7 @@
       "status": "online"
     },
     "QueryChunkList": {
-      "document": "分配查询",
+      "document": "文档切片查询",
       "input": "QueryChunkListRequest",
       "name": "文档切片查询",
       "output": "QueryChunkListResponse",
@@ -91,7 +91,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-fje88",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -100,7 +100,7 @@
         {
           "disabled": false,
           "document": "文件ID",
-          "example": "nbnius",
+          "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -127,7 +127,7 @@
         {
           "disabled": false,
           "document": "chunk内容",
-          "example": "test",
+          "example": "this is  my test",
           "member": "string",
           "name": "Content",
           "required": false,
@@ -135,8 +135,8 @@
         },
         {
           "disabled": false,
-          "document": "\t 新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId",
-          "example": "xzcjjjij",
+          "document": "新 Chunk 插入到目标 Chunk ​之后的位置。插入位置的上一个 chunkId",
+          "example": "64bd3527-6ad9-4eda-a809-4e1a7ecaf86a",
           "member": "string",
           "name": "AfterChunkId",
           "required": false,
@@ -150,8 +150,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "新增的chunkid",
-          "example": "xzcjjjij",
+          "document": "新增的ChunkId",
+          "example": "4c49fb67-38c7-4dea-b61c-bb545c9cac67",
           "member": "string",
           "name": "ChunkId",
           "output_required": false,
@@ -182,7 +182,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-e5b6a2e4",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -191,7 +191,7 @@
         {
           "disabled": false,
           "document": "问题内容",
-          "example": "hello",
+          "example": "what are you doing ?",
           "member": "string",
           "name": "Question",
           "required": false,
@@ -200,7 +200,7 @@
         {
           "disabled": false,
           "document": "上下文",
-          "example": "{\\\"k\\\":\\\"v\\\"}",
+          "example": "{\\\"KnowledgeBases\\\":[{\\\"KnowledgeBaseId\\\":\\\"klbase-kSnxNtvrXI\\\",\\\"FileIds\\\":[],\\\"Databases\\\":[{\\\"MCP\\\":{\\\"DataSourceId\\\":\\\"datasource_tchoused_example\\\"},\\\"DbTables\\\":[]}]}],\\\"WhiteList\\\":[]}",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -227,7 +227,7 @@
         {
           "disabled": false,
           "document": "数据源id",
-          "example": "e5b6a2e4",
+          "example": "[\"cdb-8zau2hln\",\"cdwdoris-1yxlfzhj\"]",
           "member": "string",
           "name": "DataSourceIds",
           "required": false,
@@ -275,14 +275,73 @@
       ],
       "type": "object"
     },
+    "Chunk": {
+      "document": "文件分片",
+      "members": [
+        {
+          "disabled": false,
+          "document": "切片ID",
+          "example": "sdjfi",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切片内容",
+          "example": "test",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切片的字数",
+          "example": "10",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateDataAgentSessionRequest": {
       "document": "CreateDataAgentSession请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-haBKQxLt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateDataAgentSessionResponse": {
       "document": "CreateDataAgentSession返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "会话",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -298,7 +357,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-jdsf81",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -307,7 +366,7 @@
         {
           "disabled": false,
           "document": "文件ID",
-          "example": "sdfcjiej89",
+          "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -316,7 +375,7 @@
         {
           "disabled": false,
           "document": "切片ID",
-          "example": "dfjj8ew",
+          "example": "[\"4c49fb67-38c7-4dea-b61c-bb545c9cac67\"]",
           "member": "string",
           "name": "ChunkIds",
           "required": true,
@@ -339,12 +398,41 @@
     },
     "DeleteDataAgentSessionRequest": {
       "document": "DeleteDataAgentSession请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DeleteDataAgentSessionResponse": {
       "document": "DeleteDataAgentSession返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "删除的会话ID",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -393,12 +481,41 @@
     },
     "GetSessionDetailsRequest": {
       "document": "GetSessionDetails请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetSessionDetailsResponse": {
       "document": "GetSessionDetails返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "会话记录详情",
+          "example": "无",
+          "member": "Record",
+          "name": "RecordList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "记录总数",
@@ -517,7 +634,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "da-j8jfsk",
+          "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -526,7 +643,7 @@
         {
           "disabled": false,
           "document": "文件ID",
-          "example": "jf8829sd",
+          "example": "3fd5442a-2764-4f3d-a589-5399ce087284",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -535,7 +652,7 @@
         {
           "disabled": false,
           "document": "切片ID",
-          "example": "dsfn8u8",
+          "example": "4c49fb67-38c7-4dea-b61c-bb545c9cac67",
           "member": "string",
           "name": "ChunkId",
           "required": false,
@@ -544,7 +661,7 @@
         {
           "disabled": false,
           "document": "编辑后的文本",
-          "example": "文本",
+          "example": "this is  my test. hello world",
           "member": "string",
           "name": "Content",
           "required": false,
@@ -643,7 +760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "默认 1 表示第一页",
+          "document": "表示第一页",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -652,7 +769,7 @@
         },
         {
           "disabled": false,
-          "document": "\t 默认 10 一页展示 10 条",
+          "document": "默认一页展示 10 条",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -666,22 +783,25 @@
       "document": "QueryChunkList返回参数结构体",
       "members": [
         {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StopChatAIRequest": {
-      "document": "StopChatAI请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "StopChatAIResponse": {
-      "document": "StopChatAI返回参数结构体",
-      "members": [
+          "disabled": false,
+          "document": "总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分片信息",
+          "example": "无",
+          "member": "Chunk",
+          "name": "Chunks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -690,6 +810,395 @@
         }
       ],
       "type": "object"
+    },
+    "Record": {
+      "document": "问答结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "问题内容",
+          "example": "hello",
+          "member": "string",
+          "name": "Question",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回答内容",
+          "example": "hello",
+          "member": "string",
+          "name": "Answer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "思考内容",
+          "example": "think",
+          "member": "string",
+          "name": "Think",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "无",
+          "member": "Task",
+          "name": "TaskList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录创建时间",
+          "example": "2025-05-13 14:23:41",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录更新时间",
+          "example": "2025-05-13 14:23:41",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录id",
+          "example": "1j28j8-2j83e2-2312-xjax",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总结内容",
+          "example": "总结",
+          "member": "string",
+          "name": "FinalSummary",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "j28j8-2j83e2-2312-xazx",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1=赞，2=踩，0=无反馈",
+          "example": "1",
+          "member": "int64",
+          "name": "Feedback",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库信息",
+          "example": "\"{\\\"DbTable\\\":[{\\\"DbName\\\":\\\"database_name\\\",\\\"TableList\\\":[\\\"table1\\\"]}],\\\"DatasourceName\\\":\\\"test\\\"}\")",
+          "member": "string",
+          "name": "DbInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "error msg",
+          "member": "string",
+          "name": "ErrorContext",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TaskList的string字符串",
+          "example": "\"{\"TaskName\":\"task1\"}\"",
+          "member": "string",
+          "name": "TaskListStr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库id列表",
+          "example": "[\"dxjajkke\"]",
+          "member": "string",
+          "name": "KnowledgeBaseIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上下文",
+          "example": "\"sdfs\"",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StepExpand": {
+      "document": "步骤扩展结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "数据查询",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cellid数组",
+          "example": "无",
+          "member": "string",
+          "name": "CellIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StepInfo": {
+      "document": "任务步骤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "步骤id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤名称",
+          "example": "查询",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤状态",
+          "example": "待补充",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型(text/expand)",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总结",
+          "example": "总结内容",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤扩展结构",
+          "example": "无",
+          "member": "StepExpand",
+          "name": "Expand",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StopChatAIRequest": {
+      "document": "StopChatAI请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "dataagent-hLhMpd0H",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopChatAIResponse": {
+      "document": "StopChatAI返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话",
+          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Task": {
+      "document": "任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "查询db",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "processing",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务步骤列表",
+          "example": "无",
+          "member": "StepInfo",
+          "name": "StepInfoList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

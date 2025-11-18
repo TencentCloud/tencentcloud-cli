@@ -3629,7 +3629,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li></ul>",
+          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li>\n<li> **3**：草稿</li>\n</ul>",
           "example": "2",
           "member": "int64",
           "name": "ResourceType",
@@ -3656,7 +3656,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
+          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n<li>草稿Id（通过嵌入页面保存草稿后获取草稿Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
           "example": "yDwqFUUckp3em41rUwWPgIBjsYgG5bba",
           "member": "string",
           "name": "ResourceId",
@@ -3693,7 +3693,7 @@
         {
           "disabled": true,
           "document": "该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "NeedPreview",
           "required": false,
@@ -3758,6 +3758,16 @@
           "example": "yDC54UUckpyr7yh4UEfZcRRy3XMQvLvT",
           "member": "string",
           "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。",
+          "example": "yDC54UUckpyr7yh4UEfZcRRy3XMQvLvT",
+          "member": "string",
+          "name": "DraftId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7454,6 +7464,15 @@
           "name": "JumpEvents",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业证照类型：\n<ul>\n<li> **USCC** :(默认)工商组织营业执照</li>\n<li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li>\n</ul>\n",
+          "example": "USCC",
+          "member": "string",
+          "name": "ProxyOrganizationIdCardType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7958,6 +7977,15 @@
           "example": "false",
           "member": "bool",
           "name": "HideSignCodeAfterStart",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "发起过程中是否保存草稿\t",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedFlowDraft",
           "required": false,
           "type": "bool"
         }
@@ -10090,7 +10118,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。 - 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。 - 可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。 - <font color=\"red\">不建议继续使用</font>，请使用<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId指定合同\t",
+          "document": "合同流程ID，为32位字符串。 \n- FlowId 在通过[ChannelCreateFlowByFiles](https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles) 发起，可以在返回参数FlowId中获取。\n- 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。 \n- 可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",

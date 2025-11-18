@@ -214,8 +214,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文生3D，3D内容的描述，中文正向提示词。\n最多支持1024个 utf-8 字符。\n文生3D, image、image_url和 prompt必填其一，且prompt和image/image_url不能同时存在。",
-          "example": "1",
+          "document": "文生3D，3D内容的描述，中文正向提示词。\n最多支持1024个 utf-8 字符。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "example": "一只小猫",
           "member": "string",
           "name": "Prompt",
           "required": false,
@@ -223,8 +223,8 @@
         },
         {
           "disabled": false,
-          "document": "输入图 Base64 数据。\n大小：单边分辨率要求不小于128，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过6m）\n格式：jpg，png，jpeg，webp。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
-          "example": "1",
+          "document": "输入图 Base64 数据。\n大小：单边分辨率要求不小于128，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过5m）\n格式：jpg，png，jpeg，webp。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -232,8 +232,8 @@
         },
         {
           "disabled": false,
-          "document": "输入图Url。\n大小：单边分辨率要求不小于128，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过6m）\n格式：jpg，png，jpeg，webp。\nImageBase64/ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
-          "example": "1",
+          "document": "输入图Url。\n大小：单边分辨率要求不小于128，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过5m）\n格式：jpg，png，jpeg，webp。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -241,7 +241,7 @@
         },
         {
           "disabled": false,
-          "document": "多视角的模型图片，视角参考值：\nleft：左视图；\nright：右视图；\nback：后视图；\n\n每个视角仅限制一张图片。\n●图片大小限制：编码后大小不可超过8M。\n●图片分辨率限制：单边分辨率小于5000且大于128。\n●支持图片格式：支持jpg或png",
+          "document": "多视角的模型图片，视角参考值：\nleft：左视图；\nright：右视图；\nback：后视图；\n\n每个视角仅限制一张图片。\n●图片大小限制：编码后大小不可超过8M。（base64编码后会大30%左右，建议实际输入图片不超过5m）\n●图片分辨率限制：单边分辨率小于5000且大于128。\n●支持图片格式：支持jpg或png",
           "example": "无",
           "member": "ViewImage",
           "name": "MultiViewImages",

@@ -17,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 3,
+        "TotalCount": 2,
         "TranslationNatRuleSet": [
             {
                 "Description": "desc",
@@ -36,14 +36,6 @@ Output:
                 "TranslationType": "NETWORK_LAYER",
                 "TranslationIp": "10.0.0.56",
                 "OriginalIp": "10.0.0.34"
-            },
-            {
-                "Description": "desc",
-                "CreateTime": "2022-09-29 20:48:42",
-                "UpdateTime": "2022-09-29 20:48:42",
-                "TranslationDirection": "LOCAL",
-                "TranslationType": "TRANSPORT_LAYER",
-                "TranslationIp": "10.0.0.156-10.0.0.200"
             }
         ],
         "RequestId": "35dc4665-6c7a-474d-bd4a-8c0ed92f1d02"

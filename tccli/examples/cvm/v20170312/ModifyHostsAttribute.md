@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm ModifyHostsAttribute --cli-unfold-argument  \
-    --HostIds host-ey16rkyg \
-    --HostName webserver
+    --HostIds host-h4of75x4 \
+    --HostName webServer
 ```
 
 Output: 

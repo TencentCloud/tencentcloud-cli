@@ -35777,7 +35777,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n<li>mv-hevc：MV-HEVC 编码</li>\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。\n注意：MV-HEVC编码容器目前只支持mp4，hls，mov。其中hls格式只支持mp4分片格式。",
+          "document": "视频流的编码格式，可选值：\n<li>h264：H.264 编码</li>\n<li>h265：H.265 编码</li>\n<li>h266：H.266 编码</li>\n<li>av1：AOMedia Video 1 编码</li>\n<li>vp8：VP8 编码</li>\n<li>vp9：VP9 编码</li>\n<li>mpeg2：MPEG2 编码</li>\n<li>dnxhd：DNxHD 编码</li>\n<li>mv-hevc：MV-HEVC 编码</li>\n\n注意：av1 编码容器目前只支持 mp4 ，webm，mkv。\n注意：H.266 编码容器目前只支持 mp4 ，hls，ts，mov。\n注意：VP8、VP9编码容器目前只支持webm，mkv。\n注意：MPEG2、dnxhd 编码容器目前只支持mxf。\n注意：MV-HEVC编码容器目前只支持mp4，hls，mov。其中hls格式只支持mp4分片格式。且要求输入源为全景视频（带多视角）。",
           "example": "h264",
           "member": "string",
           "name": "Codec",

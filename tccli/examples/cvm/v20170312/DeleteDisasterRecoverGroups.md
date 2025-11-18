@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cvm DeleteDisasterRecoverGroups --cli-unfold-argument  \
-    --DisasterRecoverGroupIds ps-58l1hu01
+    --DisasterRecoverGroupIds ps-39lmgkht
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "8e50cdb5-56dc-408b-89b0-31818958d424"
+        "RequestId": "4f57ce54-4639-4daa-b29f-37ab55f82809"
     }
 }
 ```

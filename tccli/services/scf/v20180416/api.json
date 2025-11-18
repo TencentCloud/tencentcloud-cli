@@ -3592,7 +3592,7 @@
         {
           "disabled": false,
           "document": "函数状态失败原因",
-          "example": "[ ]",
+          "example": "无",
           "member": "StatusReason",
           "name": "StatusReasons",
           "output_required": true,
@@ -4070,7 +4070,7 @@
         {
           "disabled": false,
           "document": "镜像加速开关，默认False\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ContainerImageAccelerate",
           "output_required": false,

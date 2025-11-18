@@ -2,42 +2,42 @@
   "actions": {
     "AddChunk": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddChunk\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-haBKQxLt\",\n    \"FileId\": \"sdfa-sdf2qjij-dxcjljv\"\n}",
+        "document": "文档切片新增",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddChunk\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-hLhMpd0H\",\n    \"FileId\": \"3fd5442a-2764-4f3d-a589-5399ce087284\",\n    \"Content\": \"this is  my test.\",\n    \"AfterChunkId\": \"64bd3527-6ad9-4eda-a809-4e1a7ecaf86a\"\n}",
         "output": "{\n    \"Response\": {\n        \"ChunkId\": \"9b8f5ab2-70a8-49ee-a33a-08eef6ad2470\",\n        \"RequestId\": \"0b1fb527-a614-40f3-87dc-b58318fe7d24\"\n    }\n}",
-        "title": "示例"
+        "title": "文档切片新增"
       }
     ],
     "ChatAI": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatAI\n<公共请求参数>\n\n{\n    \"SessionId\": \"403f-839b-f4fca186eb66\",\n    \"InstanceId\": \"dataagent-haBKQxLt\",\n    \"Question\": \"hello\"\n}",
-        "output": "{\n  \"v\": \"c55d9637-7206-456b-8488-577e14fe3ac1\"\n}",
-        "title": "示例"
+        "document": "DataAgent问答",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatAI\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-hLhMpd0H\",\n    \"SessionId\": \"cabb4c9c-4c4f-45c9-94fc-b3061e503176\",\n    \"Model\": \"hunyuan\",\n    \"Question\": \"what are you doing ?\",\n    \"DeepThinking\": true,\n    \"Context\": \"{\\\"KnowledgeBases\\\":[{\\\"KnowledgeBaseId\\\":\\\"klbase-kSnxNtvrXI\\\",\\\"FileIds\\\":[],\\\"Databases\\\":[{\\\"MCP\\\":{\\\"DataSourceId\\\":\\\"datasource_tchoused_example\\\"},\\\"DbTables\\\":[]}]}],\\\"WhiteList\\\":[]}\"\n}",
+        "output": "{\n  \"v\": \"I'm here and ready to assist you with any data-related questions or tasks you might have!\"\n}",
+        "title": "DataAgent问答"
       }
     ],
     "CreateDataAgentSession": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataAgentSession\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"66c55156-0313-49ec-bdef-720f48324348\"\n    }\n}",
-        "title": "示例"
+        "document": "生成DataAgent",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataAgentSession\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-haBKQxLt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"66c55156-0313-49ec-bdef-720f48324348\",\n        \"SessionId\": \"f8723d03-8047-489c-bac7-f15e1c569afe\"\n    }\n}",
+        "title": "生成DataAgent"
       }
     ],
     "DeleteChunk": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteChunk\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-haBKQxLt\",\n    \"FileId\": \"abvc-sdfa\",\n    \"ChunkIds\": [\n        \"abc-SDF-SDFWS\"\n    ]\n}",
+        "document": "文档切片删除",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteChunk\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-hLhMpd0H\",\n    \"FileId\": \"3fd5442a-2764-4f3d-a589-5399ce087284\",\n    \"ChunkIds\": [\n        \"4c49fb67-38c7-4dea-b61c-bb545c9cac67\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b1ee974-6c9f-49e9-ac00-534e64493bd3\"\n    }\n}",
-        "title": "示例"
+        "title": "文档切片删除"
       }
     ],
     "DeleteDataAgentSession": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataAgentSession\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9e676d9-9fc9-4bcc-a866-8f0086ac629e\"\n    }\n}",
-        "title": "示例"
+        "document": "删除会话",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataAgentSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"ee8b5304-3ef0-4942-beb2-8c9354a3ed4e\",\n    \"InstanceId\": \"dataagent-hLhMpd0H\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3dab21f-66af-48c3-9212-c6ec967e91b3\",\n        \"SessionId\": \"ee8b5304-3ef0-4942-beb2-8c9354a3ed4e\"\n    }\n}",
+        "title": "删除会话"
       }
     ],
     "GetKnowledgeBaseList": [
@@ -50,18 +50,18 @@
     ],
     "GetSessionDetails": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSessionDetails\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"113ade2a-41d5-485c-9944-4d5a2d893351\"\n    }\n}",
-        "title": "示例"
+        "document": "获取会话详情",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSessionDetails\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-hLhMpd0H\",\n    \"SessionId\": \"ee8b5304-3ef0-4942-beb2-8c9354a3ed4e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"631bb90d-ea0f-4dfe-abd5-515d34e67ef6\",\n        \"RecordList\": [\n            {\n                \"Context\": \"{\\\"KnowledgeBases\\\":[{\\\"KnowledgeBaseId\\\":\\\"klbase-kSnxsssvrXI\\\",\\\"FileIds\\\":[],\\\"Databases\\\":[{\\\"MCP\\\":{\\\"Instance\\\":\\\"mcp-apssyb72s\\\",\\\"Type\\\":\\\"TCHouseD\\\",\\\"Url\\\":\\\"http://10.0.0.90:31234/sse?key=xxxxxx\\\",\\\"DataEngineName\\\":\\\"官方数据源\\\",\\\"IsSampling\\\":true,\\\"TCCatalogName\\\":\\\"官方数据源\\\",\\\"DataSourceId\\\":\\\"datasource_tchoused_example\\\",\\\"DataSourceInstanceId\\\":\\\"cdwdoris-62xxxxlnh\\\"}}]}]}\",\n                \"Question\": \"who are you\",\n                \"Answer\": \"Hello! I'm your data analysis assistant here to help with your data-related queries and tasks.\",\n                \"Think\": \"Analyzing your request... Detected small talk based on your input.\",\n                \"TaskList\": [],\n                \"FinalSummary\": \"{\\\"v\\\": \\\"\\\", \\\"cell_id\\\": \\\"\\\"}\",\n                \"CreateTime\": \"2025-11-14T02:45:43.369206+00:00\",\n                \"UpdateTime\": \"2025-11-14T02:45:43.369210+00:00\",\n                \"RecordId\": \"63eb66d2-a80a-4d57-9a80-68befed2f388\",\n                \"Feedback\": 0,\n                \"SessionId\": \"ee8b5304-3ef0-4942-beb2-8c9354a3ed4e\",\n                \"DbInfo\": \"\",\n                \"ErrorContext\": \"\",\n                \"TaskListStr\": \"\",\n                \"KnowledgeBaseIds\": [\n                    \"klbase-kSnxNtvrXI\"\n                ]\n            },\n            {\n                \"Context\": \"{\\\"KnowledgeBases\\\":[{\\\"KnowledgeBaseId\\\":\\\"klbase-kSnxsssvrXI\\\",\\\"FileIds\\\":[],\\\"Databases\\\":[{\\\"MCP\\\":{\\\"Instance\\\":\\\"mcp-apssyb72s\\\",\\\"Type\\\":\\\"TCHouseD\\\",\\\"Url\\\":\\\"http://10.0.0.90:31234/sse?key=xxxxxx\\\",\\\"DataEngineName\\\":\\\"官方数据源\\\",\\\"IsSampling\\\":true,\\\"TCCatalogName\\\":\\\"官方数据源\\\",\\\"DataSourceId\\\":\\\"datasource_tchoused_example\\\",\\\"DataSourceInstanceId\\\":\\\"cdwdoris-62xxxxlnh\\\"}}]}]}\",\n                \"Question\": \"what are you doing?\",\n                \"Answer\": \"I'm here and ready to assist you with any data analysis or related tasks you might have!\",\n                \"Think\": \"Analyzing your request... Detected small talk based on your input.\",\n                \"TaskList\": [],\n                \"FinalSummary\": \"{\\\"v\\\": \\\"\\\", \\\"cell_id\\\": \\\"\\\"}\",\n                \"CreateTime\": \"2025-11-14T02:46:51.806983+00:00\",\n                \"UpdateTime\": \"2025-11-14T02:46:51.806985+00:00\",\n                \"RecordId\": \"5b13dd3b-96cf-4d4d-a6f0-13555a1f9fb8\",\n                \"Feedback\": 0,\n                \"SessionId\": \"ee8b5304-3ef0-4942-beb2-8c9354a3ed4e\",\n                \"DbInfo\": \"\",\n                \"ErrorContext\": \"\",\n                \"TaskListStr\": \"\",\n                \"KnowledgeBaseIds\": [\n                    \"klbase-kSnxNtvrXI\"\n                ]\n            }\n        ],\n        \"RecordCount\": 2,\n        \"RunRecord\": \"\"\n    }\n}",
+        "title": "获取会话详情"
       }
     ],
     "ModifyChunk": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyChunk\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-xCclTuHf\",\n    \"FileId\": \"daf--sdf-sdf\"\n}",
+        "document": "编辑修改分片",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyChunk\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-hLhMpd0H\",\n    \"FileId\": \"3fd5442a-2764-4f3d-a589-5399ce087284\",\n    \"ChunkId\": \"4c49fb67-38c7-4dea-b61c-bb545c9cac67\",\n    \"Content\": \"this is  my test. hello world\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"edd7177f-79a5-4e1c-b3c3-4ffb1799657f\"\n    }\n}",
-        "title": "示例"
+        "title": "编辑修改分片"
       }
     ],
     "ModifyKnowledgeBase": [
@@ -74,18 +74,18 @@
     ],
     "QueryChunkList": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryChunkList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d82fc638-689c-46ef-8af5-5c917c4be506\"\n    }\n}",
-        "title": "示例"
+        "document": "文档切片查询",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryChunkList\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9c8fa705-43d3-4be4-b7fa-5593bd3dd6f4\",\n        \"Total\": 1,\n        \"Chunks\": [\n            {\n                \"Id\": \"f5d1714d-bbba-4e2c-bf48-1378cb5bafe1\",\n                \"Content\": \"2025-03-21-whitelist\",\n                \"Size\": 30\n            }\n        ]\n    }\n}",
+        "title": "文档切片查询"
       }
     ],
     "StopChatAI": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopChatAI\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0681ca0e-7917-4495-a2a7-be6ece8a706a\"\n    }\n}",
-        "title": "示例"
+        "document": "中断DataAgent的回答输出",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopChatAI\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-hLhMpd0H\",\n    \"SessionId\": \"cabb4c9c-4c4f-45c9-94fc-b3061e503176\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0681ca0e-7917-4495-a2a7-be6ece8a706a\",\n        \"SessionId\": \"cabb4c9c-4c4f-45c9-94fc-b3061e503176\"\n    }\n}",
+        "title": "中断DataAgent的回答输出"
       }
     ]
   },

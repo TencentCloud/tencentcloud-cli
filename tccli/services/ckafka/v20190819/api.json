@@ -19127,7 +19127,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "zone列表",
+          "document": "<p>zone列表</p>",
           "example": "无",
           "member": "ZoneInfo",
           "name": "ZoneList",
@@ -19137,7 +19137,7 @@
         },
         {
           "disabled": false,
-          "document": "最大购买实例个数",
+          "document": "<p>最大购买实例个数</p>",
           "example": "100",
           "member": "int64",
           "name": "MaxBuyInstanceNum",
@@ -19147,7 +19147,7 @@
         },
         {
           "disabled": false,
-          "document": "最大购买带宽 单位Mb/s",
+          "document": "<p>最大购买带宽 单位Mb/s</p>",
           "example": "9600",
           "member": "int64",
           "name": "MaxBandwidth",
@@ -19157,7 +19157,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费单位价格",
+          "document": "<p>后付费单位价格</p>",
           "example": "无",
           "member": "Price",
           "name": "UnitPrice",
@@ -19167,7 +19167,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费消息单价",
+          "document": "<p>后付费消息单价</p>",
           "example": "无",
           "member": "Price",
           "name": "MessagePrice",
@@ -19177,7 +19177,7 @@
         },
         {
           "disabled": false,
-          "document": "用户独占集群信息",
+          "document": "<p>用户独占集群信息</p>",
           "example": "无",
           "member": "ClusterInfo",
           "name": "ClusterInfo",
@@ -19187,7 +19187,7 @@
         },
         {
           "disabled": false,
-          "document": "购买标准版配置",
+          "document": "<p>购买标准版配置</p>",
           "example": "{\"standard\":{\"bandwidth\":{\"maximum\":200,\"minimal\":3,\"step\":3}}}",
           "member": "string",
           "name": "Standard",
@@ -19197,7 +19197,7 @@
         },
         {
           "disabled": false,
-          "document": "购买标准版S2配置",
+          "document": "<p>购买标准版S2配置</p>",
           "example": "{\"InstanceTypeConfigSet\":[],\"maximumTopicPartition\":2500,\"maximumInstanceConsumerGroup\":0}",
           "member": "string",
           "name": "StandardS2",
@@ -19207,7 +19207,7 @@
         },
         {
           "disabled": false,
-          "document": "购买专业版配置",
+          "document": "<p>购买专业版配置</p>",
           "example": "{\"BasicEdition\":{\"Bandwidth\":{\"Maximum\":1200,\"Minimal\":20,\"Step\":20},\"DiskCapacity\":{},\"DiskTypes\":[\"SSD\",\"CLOUD_BASIC\"],\"MessageRetention\":{\"Maximum\":2160,\"Minimal\":24,\"Step\":1},\"Partition\":{}}}",
           "member": "string",
           "name": "Profession",
@@ -19217,7 +19217,7 @@
         },
         {
           "disabled": false,
-          "document": "购买物理独占版配置",
+          "document": "<p>购买物理独占版配置</p>",
           "example": "{\"physicallyExclusive\":{\"bandwidth\":{\"maximum\":200,\"minimal\":3,\"step\":3}}}",
           "member": "string",
           "name": "Physical",
@@ -19227,7 +19227,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义",
+          "document": "<p>公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写   已废弃,无实际意义</p>",
           "example": "[{\\\"Maximum\\\":198,\\\"Minimal\\\":3,\\\"step\\\":3}]",
           "member": "string",
           "name": "PublicNetwork",
@@ -19237,7 +19237,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽配置",
+          "document": "<p>公网带宽配置</p>",
           "example": "{\\\"Maximum\\\":999,\\\"Minimal\\\":198,\\\"step\\\":3,\\\"minimalZoneIds\\\":[100001,100002,200001,300001,400001],\\\"unsupportedRegionId\\\":[54,57,32,78,45,35]}",
           "member": "string",
           "name": "PublicNetworkLimit",
@@ -19247,7 +19247,7 @@
         },
         {
           "disabled": false,
-          "document": "请求Id",
+          "document": "<p>请求Id</p>",
           "example": "a85846f2-95bd-454d-8edf-f4cfe618282f",
           "member": "string",
           "name": "RequestId",
@@ -19257,7 +19257,7 @@
         },
         {
           "disabled": false,
-          "document": "分页offset",
+          "document": "<p>分页offset</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -19267,7 +19267,7 @@
         },
         {
           "disabled": false,
-          "document": "分页limit",
+          "document": "<p>分页limit</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -19277,7 +19277,7 @@
         },
         {
           "disabled": false,
-          "document": "是否必须录入tag",
+          "document": "<p>是否必须录入tag</p>",
           "example": "false",
           "member": "bool",
           "name": "ForceCheckTag",

@@ -2801,7 +2801,7 @@
         },
         {
           "disabled": false,
-          "document": "日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file",
+          "document": "日志输入类型（<span style=\"color:red; font-weight:bold\">注：windows场景必填且仅支持file和windows_event类型</span>）\n- file: 文件类型采集\n- windows_event：windows事件采集\n- syslog：系统日志采集",
           "example": "file",
           "member": "string",
           "name": "InputType",
@@ -4499,7 +4499,7 @@
         },
         {
           "disabled": false,
-          "document": "日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file",
+          "document": "日志输入类型（<span style=\"color:red; font-weight:bold\">注：windows场景必填且仅支持file和windows_event类型</span>）\n- file: 文件类型采集\n- windows_event：windows事件采集\n- syslog：系统日志采集",
           "example": "file",
           "member": "string",
           "name": "InputType",
@@ -13090,7 +13090,7 @@
         },
         {
           "disabled": false,
-          "document": "日志输入类型，支持file、window_event、syslog、k8s_stdout、k8s_file",
+          "document": "日志输入类型（<span style=\"color:red; font-weight:bold\">注：windows场景必填且仅支持file和windows_event类型</span>）\n- file: 文件类型采集\n- windows_event：windows事件采集\n- syslog：系统日志采集",
           "example": "file",
           "member": "string",
           "name": "InputType",

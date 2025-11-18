@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm DescribeInstancesOperationLimit --cli-unfold-argument  \
-    --InstanceIds ins-r8hr2upy \
+    --InstanceIds ins-r7ov05ke \
     --Operation INSTANCE_DEGRADE
 ```
 
@@ -16,13 +16,13 @@ Output:
     "Response": {
         "InstanceOperationLimitSet": [
             {
-                "Operation": "INSTANCE_DEGRADE",
-                "InstanceId": "ins-r8hr2upy",
                 "CurrentCount": 0,
-                "LimitCount": 5
+                "InstanceId": "ins-r7ov05ke",
+                "LimitCount": 5,
+                "Operation": "INSTANCE_DEGRADE"
             }
         ],
-        "RequestId": "951caf78-580f-42f6-8b83-a902d051d672"
+        "RequestId": "ce7aeaa3-37c9-48e2-abbf-7c1264cf5e9c"
     }
 }
 ```

@@ -216,7 +216,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReconstructDocumentSSE\n<公共请求参数>\n\n{\n    \"FileType\": \"PDF\",\n    \"FileUrl\": \"https://ocr.example.pdf\"\n}",
-        "output": "{\n  \"RequestId\": \"0c7cabfbc-641a-4321-bee2-56b1e1adwq6e9\",\n  \"TaskId\": \"0c7bbfbc-641a-4321-bee2-5dds1e1e04fe9\",\n  \"ResponseType\": \"TASK_RSP\",\n  \"Progress\": \"100\",\n  \"ProgressMessage\": \"完成文档解析\",\n  \"DocumentRecognizeResultUrl\": \"https://document-restruction-sse-1258344699.cos.ap-guangzhou.myqcloud.com/output_files%2F0c7bbfbc-641a-4321-bee2-545de1e046e9_parse.zip?q-sign-algorithm=sha1&q-ak=AKddFap6HLNbidLwPqOrAKGzXrx40scL7l&q-sign-time=1720006266%3B1720006866&q-key-time=1720006266%3B1720006866&q-header-list=host&q-url-param-list=&q-signature=e0e79876549e68f2ae9dbf5df1e516f8f1\",\n  \"FailedPages\": []\n}",
+        "output": "{\n  \"RequestId\": \"0c7cabfbc-641a-4321-bee2-56b1e1adwq6e9\",\n  \"TaskId\": \"0c7bbfbc-641a-4321-bee2-5dds1e1e04fe9\",\n  \"ResponseType\": \"TASK_RSP\",\n  \"Progress\": \"100\",\n  \"ProgressMessage\": \"完成文档解析\",\n  \"DocumentRecognizeResultUrl\": \"https://document-restruction-sse-1258344699.cos.ap-guangzhou.myqcloud.com/output_files%2F0c7bbfbc-641a-4321-bee2-545de1e046e9_parse.zip?q-sign-algorithm=sha1&q-ak=xxxxxx&q-sign-time=1720006266%3B1720006866&q-key-time=1720006266%3B1720006866&q-header-list=host&q-url-param-list=&q-signature=xxxxxxxx\",\n  \"FailedPages\": []\n}",
         "title": "ReconstructDocumentSSE处理完成回包示例"
       }
     ],

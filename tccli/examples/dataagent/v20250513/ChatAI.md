@@ -1,20 +1,23 @@
-**Example 1: 示例**
+**Example 1: DataAgent问答**
 
-示例
+DataAgent问答
 
 Input: 
 
 ```
 tccli dataagent ChatAI --cli-unfold-argument  \
-    --SessionId 403f-839b-f4fca186eb66 \
-    --InstanceId dataagent-haBKQxLt \
-    --Question hello
+    --InstanceId dataagent-hLhMpd0H \
+    --SessionId cabb4c9c-4c4f-45c9-94fc-b3061e503176 \
+    --Model hunyuan \
+    --Question what are you doing ? \
+    --DeepThinking True \
+    --Context {"KnowledgeBases":[{"KnowledgeBaseId":"klbase-kSnxNtvrXI","FileIds":[],"Databases":[{"MCP":{"DataSourceId":"datasource_tchoused_example"},"DbTables":[]}]}],"WhiteList":[]}
 ```
 
 Output: 
 ```
 {
-    "v": "c55d9637-7206-456b-8488-577e14fe3ac1"
+    "v": "I'm here and ready to assist you with any data-related questions or tasks you might have!"
 }
 ```
 

@@ -1,14 +1,14 @@
-**Example 1: 示例**
+**Example 1: 文档切片删除**
 
-示例
+文档切片删除
 
 Input: 
 
 ```
 tccli dataagent DeleteChunk --cli-unfold-argument  \
-    --InstanceId dataagent-haBKQxLt \
-    --FileId abvc-sdfa \
-    --ChunkIds abc-SDF-SDFWS
+    --InstanceId dataagent-hLhMpd0H \
+    --FileId 3fd5442a-2764-4f3d-a589-5399ce087284 \
+    --ChunkIds 4c49fb67-38c7-4dea-b61c-bb545c9cac67
 ```
 
 Output: 

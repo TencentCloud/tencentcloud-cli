@@ -52,7 +52,7 @@
   },
   "metadata": {
     "apiVersion": "2018-08-13",
-    "api_brief": null,
+    "api_brief": "腾讯云STS（Security Token Service）是腾讯云提供的一种临时访问权限管理服务。CAM提供CAM用户和CAM角色两种身份。其中，CAM角色不具备永久身份凭证，而只能通过STS获取可以自定义时效和访问权限的临时身份凭证，即安全令牌（STS Token）。",
     "serviceNameCN": "安全凭证服务",
     "serviceShortName": "sts"
   },

@@ -14,6 +14,13 @@
       "output": "CloneDBInstanceResponse",
       "status": "online"
     },
+    "CloseAccountCAM": {
+      "document": "本接口用于关闭数据库账户的CAM验证服务。",
+      "input": "CloseAccountCAMRequest",
+      "name": "关闭数据库账户的CAM验证",
+      "output": "CloseAccountCAMResponse",
+      "status": "online"
+    },
     "CloseDBExtranetAccess": {
       "document": "本接口（CloseDBExtranetAccess）用于关闭实例公网地址。",
       "input": "CloseDBExtranetAccessRequest",
@@ -511,6 +518,13 @@
       "output": "ModifyDBInstanceChargeTypeResponse",
       "status": "online"
     },
+    "ModifyDBInstanceDeletionProtection": {
+      "document": "本接口（DeletionProtection）用于开启或关闭实例销毁保护",
+      "input": "ModifyDBInstanceDeletionProtectionRequest",
+      "name": "修改实例删除保护",
+      "output": "ModifyDBInstanceDeletionProtectionResponse",
+      "status": "online"
+    },
     "ModifyDBInstanceDeployment": {
       "document": "本接口（ModifyDBInstanceDeployment）用于修改节点可用区部署方式，仅支持主实例。",
       "input": "ModifyDBInstanceDeploymentRequest",
@@ -616,6 +630,13 @@
       "output": "ModifySwitchTimePeriodResponse",
       "status": "online"
     },
+    "OpenAccountCAM": {
+      "document": "本接口用于开启数据库账户的CAM验证服务。",
+      "input": "OpenAccountCAMRequest",
+      "name": "为数据库账户开启CAM验证",
+      "output": "OpenAccountCAMResponse",
+      "status": "online"
+    },
     "OpenDBExtranetAccess": {
       "document": "本接口（OpenDBExtranetAccess）用于开通实例公网地址。",
       "input": "OpenDBExtranetAccessRequest",
@@ -628,6 +649,13 @@
       "input": "RebalanceReadOnlyGroupRequest",
       "name": "均衡只读组内实例的负载",
       "output": "RebalanceReadOnlyGroupResponse",
+      "status": "online"
+    },
+    "RefreshAccountPassword": {
+      "document": "本接口用于对开启CAM验证的账户执行手动刷新密码。",
+      "input": "RefreshAccountPasswordRequest",
+      "name": "刷新启用CAM验证的账户密码",
+      "output": "RefreshAccountPasswordResponse",
       "status": "online"
     },
     "RemoveDBInstanceFromReadOnlyGroup": {
@@ -1650,6 +1678,60 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseAccountCAMRequest": {
+      "document": "CloseAccountCAM请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "postgres-4sfuv15b",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要关闭CAM服务的账号名称",
+          "example": "readonly_user",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关闭CAM后，登录该账号所需要的新密码",
+          "example": "1359Qwe!",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码是否加密",
+          "example": "false",
+          "member": "bool",
+          "name": "PasswordEncrypt",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseAccountCAMResponse": {
+      "document": "CloseAccountCAM返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8232,6 +8314,42 @@
       ],
       "type": "object"
     },
+    "ModifyDBInstanceDeletionProtectionRequest": {
+      "document": "ModifyDBInstanceDeletionProtection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "example": "postgres-6bwgamo3",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启或关闭实例删除保护。true - 开启 ；false - 关闭。",
+          "example": "true",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceDeletionProtectionResponse": {
+      "document": "ModifyDBInstanceDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceDeploymentRequest": {
       "document": "ModifyDBInstanceDeployment请求参数结构体",
       "members": [
@@ -9256,6 +9374,42 @@
       ],
       "usage": "out"
     },
+    "OpenAccountCAMRequest": {
+      "document": "OpenAccountCAM请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库实例ID",
+          "example": "postgres-4sfuv15b",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要开启CAM服务的账号名称",
+          "example": "readonly_user",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenAccountCAMResponse": {
+      "document": "OpenAccountCAM返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "OpenDBExtranetAccessRequest": {
       "document": "OpenDBExtranetAccess请求参数结构体",
       "members": [
@@ -10143,6 +10297,42 @@
     },
     "RebalanceReadOnlyGroupResponse": {
       "document": "RebalanceReadOnlyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefreshAccountPasswordRequest": {
+      "document": "RefreshAccountPassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "postgres-4sfuv15b",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号名称",
+          "example": "readonly_user",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefreshAccountPasswordResponse": {
+      "document": "RefreshAccountPassword返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
