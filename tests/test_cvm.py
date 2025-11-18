@@ -44,8 +44,10 @@ def test_create_image_dry_run():
     test_cli = TestCli()
     test_cli.equal(cmd, expect)
 
+
 def test_create_image_dry_run_with_unfold_argument():
     cmd = 'tccli cvm CreateImage --cli-unfold-argument --ImageName test-image --DryRun true'
     expect = "\"RequestId\": "
     test_cli = TestCli()
     test_cli.equal(cmd, expect)
+
