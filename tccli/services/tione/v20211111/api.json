@@ -3066,6 +3066,15 @@
           "name": "SanityCheckConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "网络暴露配置",
+          "example": "无",
+          "member": "ExposeNetworkConfig",
+          "name": "ExposeNetworkConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7030,6 +7039,34 @@
       ],
       "usage": "both"
     },
+    "ExposeNetworkConfig": {
+      "document": "暴露网络配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ssh配置",
+          "example": "无",
+          "member": "SSHConfig",
+          "name": "SSHConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器端口暴露到公网配置",
+          "example": "无",
+          "member": "ExposePortConfig",
+          "name": "ExposePortConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExposePortConfig": {
       "document": "暴露端口信息",
       "members": [
@@ -7932,6 +7969,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像入口",
+          "example": "bash -c /app/start.sh",
+          "member": "string",
+          "name": "EntryPoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像工作目录",
+          "example": "/app",
+          "member": "string",
+          "name": "WorkDir",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8390,6 +8449,154 @@
           "name": "ZoneName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "故障信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceFaultInfo",
+          "name": "FaultInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceFaultExtraInfo": {
+      "document": "资源组节点故障扩展信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩展信息名",
+          "example": "NetworkCondition",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展信息内容",
+          "example": "无",
+          "member": "InstanceFaultExtraInfoValue",
+          "name": "Value",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展信息描述",
+          "example": "网络配置异常",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceFaultExtraInfoValue": {
+      "document": "资源组节点故障扩展信息内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容",
+          "example": "Unreachable",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常内容类型，目前支持text和link",
+          "example": "link",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "只有当Type为link时生效，可选值为VPC",
+          "example": "vpc",
+          "member": "string",
+          "name": "LinkType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceFaultInfo": {
+      "document": "资源组节点故障信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "故障类型，可选值:\nInternal: 内部故障, Interactive: 需要协作的故障, External: 客户配置故障",
+          "example": "",
+          "member": "string",
+          "name": "FaultType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "故障码",
+          "example": "",
+          "member": "string",
+          "name": "FaultCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "故障时间",
+          "example": "",
+          "member": "string",
+          "name": "FaultTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "故障原因",
+          "example": "",
+          "member": "string",
+          "name": "FaultReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "故障解决时间",
+          "example": "",
+          "member": "string",
+          "name": "FaultSolveTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "故障扩展时间",
+          "example": "",
+          "member": "InstanceFaultExtraInfo",
+          "name": "ExtraInfo",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -11602,6 +11809,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否取消绑定 Clb",
+          "example": "false",
+          "member": "bool",
+          "name": "UnbindClb",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -16153,6 +16371,16 @@
           "name": "RestartInfos",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "暴露网络配置",
+          "example": "无",
+          "member": "ExposeNetworkConfig",
+          "name": "ExposeNetworkConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

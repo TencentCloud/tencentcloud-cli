@@ -17,7 +17,7 @@ Output:
         "RequestId": "631bb90d-ea0f-4dfe-abd5-515d34e67ef6",
         "RecordList": [
             {
-                "Context": "{\"KnowledgeBases\":[{\"KnowledgeBaseId\":\"klbase-kSnxNtvrXI\",\"FileIds\":[],\"Databases\":[{\"MCP\":{\"Instance\":\"mcp-aptyb72s\",\"Type\":\"TCHouseD\",\"Url\":\"http://10.0.0.90:31234/sse?key=wDfcy%2FM8j1QY55UeOkeP12UerMDseN0MesCdAjmfFKbsv8qgvjGGOs4H%2BV9DCQFKGFu5sYqX97n9elM8d5fzeg%3D%3D\",\"DataEngineName\":\"官方数据源\",\"IsSampling\":true,\"TCCatalogName\":\"官方数据源\",\"DataSourceId\":\"datasource_tchoused_example\",\"DataSourceInstanceId\":\"cdwdoris-62rxmlnh\"}}]}]}",
+                "Context": "{\"KnowledgeBases\":[{\"KnowledgeBaseId\":\"klbase-kSnxsssvrXI\",\"FileIds\":[],\"Databases\":[{\"MCP\":{\"Instance\":\"mcp-apssyb72s\",\"Type\":\"TCHouseD\",\"Url\":\"http://10.0.0.90:31234/sse?key=xxxxxx\",\"DataEngineName\":\"官方数据源\",\"IsSampling\":true,\"TCCatalogName\":\"官方数据源\",\"DataSourceId\":\"datasource_tchoused_example\",\"DataSourceInstanceId\":\"cdwdoris-62xxxxlnh\"}}]}]}",
                 "Question": "who are you",
                 "Answer": "Hello! I'm your data analysis assistant here to help with your data-related queries and tasks.",
                 "Think": "Analyzing your request... Detected small talk based on your input.",
@@ -36,7 +36,7 @@ Output:
                 ]
             },
             {
-                "Context": "{\"KnowledgeBases\":[{\"KnowledgeBaseId\":\"klbase-kSnxNtvrXI\",\"FileIds\":[],\"Databases\":[{\"MCP\":{\"Instance\":\"mcp-aptyb72s\",\"Type\":\"TCHouseD\",\"Url\":\"http://10.0.0.90:31234/sse?key=wDfcy%2FM8j1QY55UeOkeP12UerMDseN0MesCdAjmfFKbsv8qgvjGGOs4H%2BV9DCQFKGFu5sYqX97n9elM8d5fzeg%3D%3D\",\"DataEngineName\":\"官方数据源\",\"IsSampling\":true,\"TCCatalogName\":\"官方数据源\",\"DataSourceId\":\"datasource_tchoused_example\",\"DataSourceInstanceId\":\"cdwdoris-62rxmlnh\"}}]}]}",
+                "Context": "{\"KnowledgeBases\":[{\"KnowledgeBaseId\":\"klbase-kSnxsssvrXI\",\"FileIds\":[],\"Databases\":[{\"MCP\":{\"Instance\":\"mcp-apssyb72s\",\"Type\":\"TCHouseD\",\"Url\":\"http://10.0.0.90:31234/sse?key=xxxxxx\",\"DataEngineName\":\"官方数据源\",\"IsSampling\":true,\"TCCatalogName\":\"官方数据源\",\"DataSourceId\":\"datasource_tchoused_example\",\"DataSourceInstanceId\":\"cdwdoris-62xxxxlnh\"}}]}]}",
                 "Question": "what are you doing?",
                 "Answer": "I'm here and ready to assist you with any data analysis or related tasks you might have!",
                 "Think": "Analyzing your request... Detected small talk based on your input.",

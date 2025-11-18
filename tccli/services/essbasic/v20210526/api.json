@@ -3693,7 +3693,7 @@
         {
           "disabled": true,
           "document": "该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "NeedPreview",
           "required": false,
@@ -3758,6 +3758,16 @@
           "example": "yDC54UUckpyr7yh4UEfZcRRy3XMQvLvT",
           "member": "string",
           "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。",
+          "example": "yDC54UUckpyr7yh4UEfZcRRy3XMQvLvT",
+          "member": "string",
+          "name": "DraftId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7464,6 +7474,15 @@
           "name": "JumpEvents",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业证照类型：\n<ul>\n<li> **USCC** :(默认)工商组织营业执照</li>\n<li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li>\n</ul>\n",
+          "example": "USCC",
+          "member": "string",
+          "name": "ProxyOrganizationIdCardType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

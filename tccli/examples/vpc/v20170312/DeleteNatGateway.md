@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli vpc DeleteNatGateway --cli-unfold-argument  \
-    --NatGatewayId nat-3nptcfvp
+    --NatGatewayId nat-3nptcfvp \
+    --IgnoreOperationRisk False
 ```
 
 Output: 

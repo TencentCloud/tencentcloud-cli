@@ -1754,7 +1754,7 @@
         {
           "disabled": false,
           "document": "函数算力核数，最小0.05核，步长0.05",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "CpuSize",
           "required": false,
@@ -1763,7 +1763,7 @@
         {
           "disabled": false,
           "document": "插件信息",
-          "example": "空",
+          "example": "无",
           "member": "PluginConfig",
           "name": "Plugins",
           "required": false,
@@ -1772,7 +1772,7 @@
         {
           "disabled": false,
           "document": "CosFS配置参数，用于云函数挂载Cos文件系统",
-          "example": "{ \t\"CosFsInsList\": [{ \t\t\"CosRegion\": \"ap-guangzhou\", \t\t\"BucketName\": \"test-12345615\", \t\t\"BucketEndpoint\": \"cos.ap-guangzhou.myqcloud.com\", \t\t\"BucketMountDir\": \"/test/\", \t\t\"LocalMountDir\": \"/mnt/\", \t\t\"CosFsType\": \"CosFs\" \t}] }",
+          "example": "无",
           "member": "CosFsConfig",
           "name": "CosFsConfig",
           "required": false,
@@ -1790,11 +1790,29 @@
         {
           "disabled": false,
           "document": "GooseFS配置参数，用于云函数挂载goose文件系统",
-          "example": "[{\"GooseFsFuseJVMConfig\":\"\",\"GooseFsCluster\":\"\",\"GooseFsNamespace\":\"ns\",\"GooseFsEndpoint\":\"1.1.1.1:8888,2.2.2.2:8888,3.3.3.3:8888\",\"LocalMountDir\":\"/mnt/test\",\"RemoteMountPath\":\"/\",\"PluginConfig\":{\"PluginName\":\"GooseFsSystemPlugin\",\"PluginVersion\":1}}]",
+          "example": "无",
           "member": "GooseFsInfo",
           "name": "GooseFsConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "web 代码函数自定义端口号,镜像函数的自定义端口号在Code.ImageConfig.ImagePort中设置",
+          "example": "9000",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "就绪探测",
+          "example": "无",
+          "member": "ReadinessProbe",
+          "name": "ReadinessProbe",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4100,7 +4118,7 @@
         {
           "disabled": false,
           "document": "函数状态失败原因",
-          "example": "[ ]",
+          "example": "无",
           "member": "StatusReason",
           "name": "StatusReasons",
           "output_required": true,
@@ -4310,7 +4328,7 @@
         {
           "disabled": false,
           "document": "函数算力核数",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "CpuSize",
           "output_required": false,
@@ -4320,7 +4338,7 @@
         {
           "disabled": false,
           "document": "插件信息",
-          "example": "空",
+          "example": "无",
           "member": "PluginConfig",
           "name": "Plugins",
           "output_required": false,
@@ -4330,7 +4348,7 @@
         {
           "disabled": false,
           "document": "CosFS配置参数，用于云函数关联Cos文件系统",
-          "example": "{ \t\"CosFsInsList\": [{ \t\t\"CosRegion\": \"ap-guangzhou\", \t\t\"BucketName\": \"test-12345615\", \t\t\"BucketEndpoint\": \"cos.ap-guangzhou.myqcloud.com\", \t\t\"BucketMountDir\": \"/test/\", \t\t\"LocalMountDir\": \"/mnt/\", \t\t\"CosFsType\": \"CosFs\" \t}] }",
+          "example": "无",
           "member": "CosFsConfig",
           "name": "CosFsConfig",
           "output_required": false,
@@ -4350,11 +4368,31 @@
         {
           "disabled": false,
           "document": "GooseFs配置参数，用于云函数关联GooseFs",
-          "example": "[{\"GooseFsFuseJVMConfig\":\"\",\"GooseFsCluster\":\"\",\"GooseFsNamespace\":\"ns\",\"GooseFsEndpoint\":\"1.1.1.1:8888,2.2.2.2:8888,3.3.3.3:8888\",\"LocalMountDir\":\"/mnt/test\",\"RemoteMountPath\":\"/\",\"PluginConfig\":{\"PluginName\":\"GooseFsSystemPlugin\",\"PluginVersion\":1}}]",
+          "example": "无",
           "member": "GooseFsInfo",
           "name": "GooseFsConfigs",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "就绪探测",
+          "example": "无",
+          "member": "ReadinessProbe",
+          "name": "ReadinessProbe",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "web 代码函数自定义端口号,镜像函数的自定义端口号在Code.ImageConfig.ImagePort中设置",
+          "example": "9000",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4928,7 +4966,7 @@
         {
           "disabled": false,
           "document": "镜像加速开关，默认False\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ContainerImageAccelerate",
           "output_required": false,
@@ -7596,6 +7634,89 @@
       ],
       "type": "object"
     },
+    "ReadinessProbe": {
+      "document": "就绪检查",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启就绪探测，必传参数 True, False",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求路径,取值必须以 / 开头， 最多2048 长度限制",
+          "example": "/get",
+          "member": "string",
+          "name": "HTTPGetURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次探测延迟时间,可设置0 到120 之间，没传的话 默认0",
+          "example": "1",
+          "member": "uint64",
+          "name": "InitialDelaySeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单次探测超时时间,可设置1 到3 之间，没传的话 默认1",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeoutSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每次探测时间间隔,可设置1到120 之间，没传的话 默认3",
+          "example": "1",
+          "member": "uint64",
+          "name": "PeriodSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探测成功阈值,可设置1 到120 之间，没传的话 默认1",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探测失败阈值,可设置1 到120 之间，没传的话 默认3",
+          "example": "1",
+          "member": "uint64",
+          "name": "FailureThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RequestStatus": {
       "document": "函数运行状态",
       "members": [
@@ -8947,7 +9068,7 @@
         {
           "disabled": false,
           "document": "插件信息",
-          "example": "空",
+          "example": "无",
           "member": "PluginConfig",
           "name": "Plugins",
           "required": false,
@@ -8956,7 +9077,7 @@
         {
           "disabled": false,
           "document": "CosFS配置参数，用于云函数挂载Cos文件系统",
-          "example": "{ \"CosFsInsList\": [{ \"CosRegion\": \"ap-guangzhou\", \"BucketName\": \"test-12345615\", \"BucketEndpoint\": \"cos.ap-guangzhou.myqcloud.com\", \"BucketMountDir\": \"/test/\", \"LocalMountDir\": \"/mnt/\", \"CosFsType\": \"CosFs\" }] }",
+          "example": "无",
           "member": "CosFsConfig",
           "name": "CosFsConfig",
           "required": false,
@@ -8965,7 +9086,7 @@
         {
           "disabled": true,
           "document": "GooseFsConfig",
-          "example": "空",
+          "example": "已废弃",
           "member": "string",
           "name": "GooseFsConfig",
           "required": false,
@@ -8974,11 +9095,29 @@
         {
           "disabled": false,
           "document": "GooseFsConfig",
-          "example": "[{\"GooseFsFuseJVMConfig\":\"\",\"GooseFsCluster\":\"\",\"GooseFsNamespace\":\"ns\",\"GooseFsEndpoint\":\"1.1.1.1:8888,2.2.2.2:8888,3.3.3.3:8888\",\"LocalMountDir\":\"/mnt/test\",\"RemoteMountPath\":\"/\",\"PluginConfig\":{\"PluginName\":\"GooseFsSystemPlugin\",\"PluginVersion\":1}}]",
+          "example": "无",
           "member": "GooseFsInfo",
           "name": "GooseFsConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "web 代码函数自定义端口号,镜像函数的自定义端口号在Code.ImageConfig.ImagePort中设置",
+          "example": "9000",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "就绪探测",
+          "example": "无",
+          "member": "ReadinessProbe",
+          "name": "ReadinessProbe",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

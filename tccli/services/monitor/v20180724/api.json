@@ -1866,7 +1866,7 @@
         {
           "disabled": false,
           "document": "告警通知模板 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12345",
+          "example": "18565",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -1965,7 +1965,7 @@
         {
           "disabled": false,
           "document": "告警通知模板绑定的告警策略ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"policy-sdsd\"]",
           "member": "string",
           "name": "PolicyIds",
           "output_required": true,
@@ -2005,6 +2005,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否免登录，0-否，1-是",
+          "example": "1",
+          "member": "int64",
+          "name": "IsLoginFree",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3611,6 +3622,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否免登录，0-否，1-是",
+          "example": "0",
+          "member": "int64",
+          "name": "IsLoginFree",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -17535,11 +17555,20 @@
         {
           "disabled": false,
           "document": "告警通知模板绑定的告警策略ID列表",
-          "example": "无",
+          "example": "[\"policy-ssdd\"]",
           "member": "string",
           "name": "PolicyIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否免登录，0-否，1-是",
+          "example": "1",
+          "member": "int64",
+          "name": "IsLoginFree",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
