@@ -6,20 +6,15 @@ Input:
 
 ```
 tccli dlc CreateUser --cli-unfold-argument  \
-    --UserDescription Test User \
-    --UserAlias Testname \
-    --UserId 1248065439 \
-    --PolicySet.0.Table TableName \
-    --PolicySet.0.Catalog COSDataCatalog \
-    --PolicySet.0.Operation ALL \
-    --PolicySet.0.Database DatabaseName
+    --UserId 700099912413 \
+    --UserType COMMON
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1287310-badou889lodj-1231jk12"
+        "RequestId": "d6c92e4c-69b6-4f51-9043-d4646dca21fd"
     }
 }
 ```

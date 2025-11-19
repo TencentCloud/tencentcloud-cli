@@ -8,6 +8,34 @@
         "title": "成功激活示例"
       }
     ],
+    "BatchCreateTWeSeeRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"Inputs\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"InputURL\": \"https://example.qq.com/video.mp4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Outputs\": [\n            {\n                \"Created\": true,\n                \"TaskId\": \"019a0fb5-f039-740f-9e5f-1b01fce8a7da\"\n            }\n        ],\n        \"RequestId\": \"a1a9472e-4d48-4494-bfa5-c0b744173452\"\n    }\n}",
+        "title": "批量创建 TWeSee 语义理解任务 - 成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"Inputs\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"InputURL\": \"https://example.qq.com/video.mp4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Outputs\": [\n            {\n                \"Created\": false,\n                \"ErrorCode\": \"InvalidParameter\",\n                \"ErrorMessage\": \"参数错误:InputURL\"\n            }\n        ],\n        \"RequestId\": \"feb44033-42f2-4bb3-bb7a-ffa1fcec95d2\"\n    }\n}",
+        "title": "批量创建 TWeSee 语义理解任务 - 失败"
+      }
+    ],
+    "BatchInvokeTWeSeeRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchInvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"Inputs\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"InputURL\": \"https://example.qq.com/video.mp4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Outputs\": [\n            {\n                \"Completed\": true,\n                \"Result\": {\n                    \"DetectedClassifications\": [\n                        \"person\"\n                    ],\n                    \"Status\": 3,\n                    \"Summary\": \"穿白衣服的人在雨后路边行走\"\n                },\n                \"TaskId\": \"019a0bdb-1471-77c7-ad24-3962edda28cc\"\n            }\n        ],\n        \"RequestId\": \"79d19408-d4e8-467a-8e93-b6e164d1cb6f\"\n    }\n}",
+        "title": "批量同步执行 TWeSee 语义理解任务 - 成功"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchInvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"Inputs\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"InputURL\": \"https://example.qq.com/video.mp4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Outputs\": [\n            {\n                \"Completed\": false,\n                \"ErrorCode\": \"InvalidParameter\",\n                \"ErrorMessage\": \"参数错误:InputURL\"\n            }\n        ],\n        \"RequestId\": \"fa6f4dfb-45eb-4263-b889-e46b50bfcdbf\"\n    }\n}",
+        "title": "批量同步执行 TWeSee 语义理解任务 - 失败"
+      }
+    ],
     "BatchUpdateFirmware": [
       {
         "document": "",
@@ -348,12 +376,20 @@
         "title": "创建目标检测任务"
       }
     ],
+    "CreateTWeSeeRecognitionTaskWithFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeRecognitionTaskWithFile\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ChannelId\": 0,\n    \"CustomId\": \"event-1\",\n    \"EnableSearch\": true,\n    \"StartTimeMs\": 1761201772000,\n    \"EndTimeMs\": 1761201779000,\n    \"Config\": \"config_content\",\n    \"IsCustomDevice\": false,\n    \"InputType\": \"video\",\n    \"SummaryQOS\": \"minutely\",\n    \"ServiceType\": \"Summary\",\n    \"InputBase64\": \"AAAAIGZ0eXBpc29tAAAC...\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"019a0fdd-81ed-7f89-911a-43e2a0df1c2d\",\n        \"RequestId\": \"665a49ba-120b-4447-9a43-4f303d47b886\"\n    }\n}",
+        "title": "上传文件并创建 TWeSee 语义理解任务"
+      }
+    ],
     "CreateTWeSeeService": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeService\n<公共请求参数>\n\n{\n    \"Service\": \"VideoSummary\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"21d73508-3a88-41c7-927c-3952301b67c0\"\n    }\n}",
-        "title": "twesee开通"
+        "title": "开通 TWeSee 视频摘要"
       }
     ],
     "CreateTWeTalkProductConfig": [
@@ -510,6 +546,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteStudioProduct\n&ProductId=AVBRC1R7QS\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"98f624d5-922b-4b59-ba14-c498f79eee0e\"\n    }\n}",
         "title": "删除产品"
+      }
+    ],
+    "DeleteTWeTalkProductConfigV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeTalkProductConfigV2\n<公共请求参数>\n\n{\n    \"ProductId\": \"O0IJ89GD\",\n    \"TargetLanguage\": \"zh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"acb8a-730ffg-e9168a\"\n    }\n}",
+        "title": "删除配置示例"
       }
     ],
     "DeleteTopicPolicy": [
@@ -764,14 +808,6 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceFirmwares\n<公共请求参数>\n\n{\n    \"ProductId\": \"DMGFE2GWCG\",\n    \"DeviceName\": \"dev\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ef9ec631-7337-481b-a6c3-59a34b5f8502\",\n        \"Firmwares\": [\n            {\n                \"UpdateTime\": 1653893719,\n                \"FwType\": \"mcu\",\n                \"Version\": \"mm_3.0\"\n            },\n            {\n                \"UpdateTime\": 1653893651,\n                \"FwType\": \"module\",\n                \"Version\": \"module_v1.0.3\"\n            }\n        ]\n    }\n}",
         "title": "获取设备固件信息"
-      }
-    ],
-    "DescribeDeviceLocationSolve": [
-      {
-        "document": "获取实时位置解析",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceLocationSolve\n<公共请求参数>\n\n{\n    \"LocationType\": \"GNSSNavigation\",\n    \"DeviceName\": \"dev\",\n    \"ProductId\": \"ZUBPP0Y2G9\",\n    \"GNSSNavigation\": \"{\\\"captures\\\":[{\\\"payload\\\":\\\"82d3ef004114d419ecf7ef4ed40bbf4ab588f1a419b56a275264a6b8cd01\\\"},{\\\"payload\\\":\\\"82d3ef004114331ad480d459ab49d4787e67fdd2760bdb65e70c\\\"}]}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Longitude\": 113.93931,\n        \"Latitude\": 22.54099,\n        \"LocationType\": \"GNSSNavigation\",\n        \"Accuracy\": 54.5,\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
-        "title": "获取实时位置解析示例"
       }
     ],
     "DescribeDevicePackages": [
@@ -1330,6 +1366,14 @@
         "title": "创建视频摘要任务后任务执行超时的情况"
       }
     ],
+    "InvokeTWeSeeRecognitionTaskWithFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTaskWithFile\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"InputBase64\": \"/9j/4AAQSkZJRgABAQAA...\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"Result\": {\n            \"DetectedClassifications\": [\n                \"vehicle\"\n            ],\n            \"Status\": 3,\n            \"Summary\": \"一辆蓝色的货车在路边行驶\"\n        },\n        \"TaskId\": \"019a0fcc-0c9c-768f-9b7b-f2ff89972fd6\",\n        \"RequestId\": \"ca9ade22-c2ec-49d6-9502-6397751a65f5\"\n    }\n}",
+        "title": "上传文件并同步执行 TWeSee 语义理解任务 - 成功"
+      }
+    ],
     "InvokeVideosKeywordsAnalyzer": [
       {
         "document": "",
@@ -1490,10 +1534,22 @@
     ],
     "ModifyTWeSeeConfig": [
       {
-        "document": "修改 TWeSee 配置",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"MOU0U8SCZQ\",\n    \"DeviceName\": \"new_131296974_1\",\n    \"EnableSummary\": false,\n    \"EnableSearch\": false,\n    \"Config\": \"{\\\"type\\\":\\\"data\\\"}\"\n}",
+        "document": "已接入 IoT 云存的设备开启 TWeSee 摘要能力",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"EnableSummary\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6\"\n    }\n}",
-        "title": "修改 TWeSee 配置"
+        "title": "对指定设备开启 TWeSee 摘要能力"
+      },
+      {
+        "document": "已接入 IoT 云存的设备开启 TWeSee 摘要与搜索能力",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"EnableSummary\": true,\n    \"EnableSearch\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6\"\n    }\n}",
+        "title": "对指定设备开启 TWeSee 摘要与搜索能力"
+      },
+      {
+        "document": "已接入 IoT 云存的设备开启 TWeSee 摘要能力，并且传入扩展的事件/行为检测标签",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"EnableSummary\": true,\n    \"EnableSearch\": true,\n    \"SummaryConfig\": {\n        \"DetectTypes\": [\n            \"child_crying\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6\"\n    }\n}",
+        "title": "对指定设备开启 TWeSee 摘要能力并添加更多的检测标签"
       }
     ],
     "ModifyTWeTalkProductConfig": [

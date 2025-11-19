@@ -332,14 +332,6 @@
         "title": "枚举ACL"
       }
     ],
-    "DescribeAppInfo": [
-      {
-        "document": "",
-        "input": "https://ckafka.tencentcloudapi.com/?Action=DescribeAppInfo\r\n&Limit=10\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 11,\n            \"AppIdList\": [\n                1251000011,\n                1255426940,\n                251000873,\n                251000691,\n                251006545,\n                1251762227,\n                1256134262,\n                251006131,\n                1251006288,\n                1251006373\n            ]\n        },\n        \"RequestId\": \"8d7551b2-651e-4f47-80bc-13a478fda732\"\n    }\n}",
-        "title": "查询用户列表"
-      }
-    ],
     "DescribeCkafkaZone": [
       {
         "document": "",

@@ -75,8 +75,8 @@
     "AttachUserPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachUserPolicy\n<公共请求参数>\n\n{\n    \"UserId\": \"1248065439\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachUserPolicy\n<公共请求参数>\n\n{\n    \"UserId\": \"10401463674518\",\n    \"PolicySet\": [\n        {\n            \"Database\": \"create_test\",\n            \"Catalog\": \"DataLakeCatalog\",\n            \"Operation\": \"CREATE_TABLE\",\n            \"Table\": \"test_table\",\n            \"PolicyType\": \"TABLE\",\n            \"Mode\": \"SENIOR\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4e2a0b4b-6c0b-40de-9e39-0761ed1f6be4\"\n    }\n}",
         "title": "绑定鉴权策略到用户"
       }
     ],
@@ -371,8 +371,8 @@
     "CreateUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserDescription\": \"Test User\",\n    \"UserAlias\": \"Testname\",\n    \"UserId\": \"1248065439\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserId\": \"700099912413\",\n    \"UserType\": \"COMMON\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6c92e4c-69b6-4f51-9043-d4646dca21fd\"\n    }\n}",
         "title": "创建用户"
       }
     ],
@@ -1046,7 +1046,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserType\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"UserType\": \"ADMIN\",\n        \"RequestId\": \"1312-j1jf1920fl023na9sa-vanc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UserType\": \"ADMIN\",\n        \"RequestId\": \"b85d3d2e-70fe-406b-824a-2fca7eb38fc4\"\n    }\n}",
         "title": "获取用户类型"
       }
     ],
@@ -1061,8 +1061,8 @@
     "DescribeUsers": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Sorting\": \"create-time\",\n    \"UserId\": \"1248065439\",\n    \"SortBy\": \"desc\",\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"UserSet\": [\n            {\n                \"Creator\": \"1248065439\",\n                \"PolicySet\": [\n                    {\n                        \"Table\": \"TableName\",\n                        \"Catalog\": \"COSDataCatalog\",\n                        \"Operation\": \"ALL\",\n                        \"Database\": \"DatabaseName\"\n                    }\n                ],\n                \"UserId\": \"1248065439\",\n                \"UserType\": \"ADMIN\",\n                \"UserAlias\": \"xxxname\",\n                \"IsOwner\": true,\n                \"UserDescription\": \"Test User\",\n                \"WorkGroupSet\": [\n                    {\n                        \"WorkGroupId\": 0,\n                        \"WorkGroupName\": \"Group1\",\n                        \"CreateTime\": \"2021-07-28 16:19:32\",\n                        \"WorkGroupDescription\": \"test group\",\n                        \"Creator\": \"1248065439\"\n                    }\n                ],\n                \"CreateTime\": \"2021-07-28 16:19:32\"\n            }\n        ],\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 222,\n        \"UserSet\": [\n            {\n                \"AccountType\": \"UserAccount\",\n                \"CreateTime\": \"2025-11-08 12:04:14\",\n                \"Creator\": \"700002195687\",\n                \"IsOwner\": false,\n                \"PolicySet\": [],\n                \"UserAlias\": \"thea_004\",\n                \"UserDescription\": \"\",\n                \"UserId\": \"700002220057\",\n                \"UserType\": \"COMMON\",\n                \"WorkGroupSet\": []\n            }\n        ],\n        \"RequestId\": \"fe51b336-c33f-4c34-8334-eb4afe0ee127\"\n    }\n}",
         "title": "获取用户列表信息"
       }
     ],
@@ -1093,8 +1093,8 @@
     "DetachUserPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachUserPolicy\n<公共请求参数>\n\n{\n    \"UserId\": \"1248065439\",\n    \"PolicySet\": [\n        {\n            \"Table\": \"TableName\",\n            \"Catalog\": \"COSDataCatalog\",\n            \"Operation\": \"ALL\",\n            \"Database\": \"DatabaseName\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79a91d1b-c00d-4b4f-b1da-0fbf339efa9a\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachUserPolicy\n<公共请求参数>\n\n{\n    \"UserId\": \"100045074431\",\n    \"PolicySet\": [\n        {\n            \"Database\": \"test_ykz_db\",\n            \"Catalog\": \"DataLakeCatalog\",\n            \"Table\": \"*\",\n            \"Operation\": \"ALL\",\n            \"PolicyType\": \"TABLE\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d2cdc1f3-89cb-4719-a362-1cec464fbb78\"\n    }\n}",
         "title": "解绑用户鉴权策略"
       }
     ],
@@ -1237,8 +1237,8 @@
     "ModifyUserType": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserType\n<公共请求参数>\n\n{\n    \"UserId\": \"182xxxxx342\",\n    \"UserType\": \"ADMIN\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ks1141-dasd8ca1-acds81fa\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserType\n<公共请求参数>\n\n{\n    \"UserId\": \"1000****4431\",\n    \"UserType\": \"ADMIN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29533352-368a-49cb-932e-3d14800f7ea1\"\n    }\n}",
         "title": "修改用户类型"
       }
     ],

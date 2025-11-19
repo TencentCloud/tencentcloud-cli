@@ -1,4 +1,4 @@
-**Example 1: twesee开通**
+**Example 1: 开通 TWeSee 视频摘要**
 
 
 

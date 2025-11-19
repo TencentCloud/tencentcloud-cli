@@ -7018,6 +7018,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其他附加信息，对于特定数据类型可设置额外参数，比如针对Canal兼容的功能支持：\"canalOfficialFormat\":\"on\"表示打开Canal兼容功能，默认不带。",
+          "example": "无",
+          "member": "KeyValuePairOption",
+          "name": "DataOption",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

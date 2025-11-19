@@ -20,7 +20,7 @@
       {
         "document": "创建视频播放license",
         "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationAndVideo\n<公共请求参数>\n\n{\n    \"AppName\": \"QQ\",\n    \"BundleId\": \"com.company.appName\",\n    \"PackageName\": \"com.company.appName\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"LicenseId\": 23456\n    }\n}",
         "title": "创建视频播放license"
       }
     ],
@@ -28,7 +28,7 @@
       {
         "document": "web播发器需要签发license，这里可以创建基础版license",
         "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationAndWebPlayerLicense\n<公共请求参数>\n\n{\n    \"AppName\": \"我的应用\",\n    \"DomainList\": [\n        \"nengc.com\",\n        \"nengc.cn\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"LicenseId\": 123435\n    }\n}",
         "title": "创建 web 播放器基础版"
       }
     ],

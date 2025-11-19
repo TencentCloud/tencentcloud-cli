@@ -259,13 +259,6 @@
       "output": "DescribeAclRuleResponse",
       "status": "online"
     },
-    "DescribeAppInfo": {
-      "document": "查询用户列表",
-      "input": "DescribeAppInfoRequest",
-      "name": "查询用户列表",
-      "output": "DescribeAppInfoResponse",
-      "status": "online"
-    },
     "DescribeCkafkaZone": {
       "document": "用于查看ckafka的可用区列表",
       "input": "DescribeCkafkaZoneRequest",
@@ -983,32 +976,6 @@
         }
       ],
       "usage": "both"
-    },
-    "AppIdResponse": {
-      "document": "AppId的查询结果",
-      "members": [
-        {
-          "disabled": false,
-          "document": "符合要求的所有AppId数量",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "符合要求的App Id列表",
-          "example": "[1000000001]",
-          "member": "int64",
-          "name": "AppIdList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "Assignment": {
       "document": "存储着分配给该消费者的 partition 信息",
@@ -6140,52 +6107,6 @@
           "document": "返回的AclRule结果集对象",
           "example": "无",
           "member": "AclRuleResp",
-          "name": "Result",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAppInfoRequest": {
-      "document": "DescribeAppInfo请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "偏移位置",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "本次查询用户数目最大数量限制，最大值为50，默认50",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAppInfoResponse": {
-      "document": "DescribeAppInfo返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "返回的符合要求的App Id列表",
-          "example": "{\"TotalCount\":1,\"AppIdList\":[1000000001]}",
-          "member": "AppIdResponse",
           "name": "Result",
           "output_required": true,
           "type": "object",

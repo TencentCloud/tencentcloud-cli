@@ -7,6 +7,20 @@
       "output": "ActivateTWeCallLicenseResponse",
       "status": "online"
     },
+    "BatchCreateTWeSeeRecognitionTask": {
+      "document": "批量同步执行 TWeSee 语义理解任务",
+      "input": "BatchCreateTWeSeeRecognitionTaskRequest",
+      "name": "批量创建 TWeSee 语义理解任务",
+      "output": "BatchCreateTWeSeeRecognitionTaskResponse",
+      "status": "online"
+    },
+    "BatchInvokeTWeSeeRecognitionTask": {
+      "document": "批量同步执行 TWeSee 语义理解任务",
+      "input": "BatchInvokeTWeSeeRecognitionTaskRequest",
+      "name": "批量同步执行 TWeSee 语义理解任务",
+      "output": "BatchInvokeTWeSeeRecognitionTaskResponse",
+      "status": "online"
+    },
     "BatchUpdateFirmware": {
       "document": "本接口（BatchUpdateFirmware）用于批量更新设备固件",
       "input": "BatchUpdateFirmwareRequest",
@@ -210,6 +224,13 @@
       "output": "CreateTWeSeeRecognitionTaskResponse",
       "status": "online"
     },
+    "CreateTWeSeeRecognitionTaskWithFile": {
+      "document": "同步执行 TWeSee 语义理解任务",
+      "input": "CreateTWeSeeRecognitionTaskWithFileRequest",
+      "name": "上传文件并创建 TWeSee 语义理解任务",
+      "output": "CreateTWeSeeRecognitionTaskWithFileResponse",
+      "status": "online"
+    },
     "CreateTWeSeeService": {
       "document": "开通 TWeSee 后付费服务",
       "input": "CreateTWeSeeServiceRequest",
@@ -320,6 +341,13 @@
       "input": "DeleteStudioProductRequest",
       "name": "删除产品",
       "output": "DeleteStudioProductResponse",
+      "status": "online"
+    },
+    "DeleteTWeTalkProductConfigV2": {
+      "document": "用于删除配置TWeTalk服务连接产品配置信息。",
+      "input": "DeleteTWeTalkProductConfigV2Request",
+      "name": "删除WeTalk连接产品配置v2版",
+      "output": "DeleteTWeTalkProductConfigV2Response",
       "status": "online"
     },
     "DeleteTopicPolicy": {
@@ -538,13 +566,6 @@
       "name": "获取设备当前固件信息",
       "output": "DescribeDeviceFirmwaresResponse",
       "status": "online"
-    },
-    "DescribeDeviceLocationSolve": {
-      "document": "获取实时位置解析依赖于teg位置服务，近30天调用只有2个个人账号调用，产品推下线\n\n获取实时位置解析",
-      "input": "DescribeDeviceLocationSolveRequest",
-      "name": "获取实时位置解析",
-      "output": "DescribeDeviceLocationSolveResponse",
-      "status": "deprecated"
     },
     "DescribeDevicePackages": {
       "document": "根据设备信息拉取有效套餐列表",
@@ -978,6 +999,13 @@
       "input": "InvokeTWeSeeRecognitionTaskRequest",
       "name": "同步执行 TWeSee 语义理解任务",
       "output": "InvokeTWeSeeRecognitionTaskResponse",
+      "status": "online"
+    },
+    "InvokeTWeSeeRecognitionTaskWithFile": {
+      "document": "同步执行 TWeSee 语义理解任务",
+      "input": "InvokeTWeSeeRecognitionTaskWithFileRequest",
+      "name": "上传文件并同步执行 TWeSee 语义理解任务",
+      "output": "InvokeTWeSeeRecognitionTaskWithFileResponse",
       "status": "online"
     },
     "InvokeVideosKeywordsAnalyzer": {
@@ -1675,6 +1703,80 @@
         }
       ],
       "usage": "both"
+    },
+    "BatchCreateTWeSeeRecognitionTaskRequest": {
+      "document": "BatchCreateTWeSeeRecognitionTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待创建的 TWeSee 语义理解任务列表",
+          "example": "无",
+          "member": "CreateVisionRecognitionTaskInput",
+          "name": "Inputs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchCreateTWeSeeRecognitionTaskResponse": {
+      "document": "BatchCreateTWeSeeRecognitionTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TWeSee 语义理解任务的创建结果。与入参 Inputs 一一对应。",
+          "example": "无",
+          "member": "CreateVisionRecognitionTaskOutput",
+          "name": "Outputs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchInvokeTWeSeeRecognitionTaskRequest": {
+      "document": "BatchInvokeTWeSeeRecognitionTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待执行的 TWeSee 语义理解任务列表",
+          "example": "无",
+          "member": "CreateVisionRecognitionTaskInput",
+          "name": "Inputs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchInvokeTWeSeeRecognitionTaskResponse": {
+      "document": "BatchInvokeTWeSeeRecognitionTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TWeSee 语义理解任务的执行结果。与入参 Inputs 一一对应。",
+          "example": "无",
+          "member": "InvokeVisionRecognitionTaskOutput",
+          "name": "Outputs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BatchProductionInfo": {
       "document": "获取返回列表的详情。",
@@ -4804,6 +4906,169 @@
       ],
       "type": "object"
     },
+    "CreateTWeSeeRecognitionTaskWithFileRequest": {
+      "document": "CreateTWeSeeRecognitionTaskWithFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频 / 图片文件的 Base64 编码字符串",
+          "example": "AAAAIGZ0eXBpc29tAAAC...",
+          "member": "string",
+          "name": "InputBase64",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义事件 ID",
+          "example": "event-1",
+          "member": "string",
+          "name": "CustomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否保存该事件使其可被搜索",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSearch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "事件起始时间事件起始时间（毫秒级 UNIX 时间戳，若不传则默认为接口调用时间）",
+          "example": "1761201772000",
+          "member": "uint64",
+          "name": "StartTimeMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件结束时间事件起始时间（毫秒级 UNIX 时间戳，若不传则默认为接口调用时间）",
+          "example": "1761201779000",
+          "member": "uint64",
+          "name": "EndTimeMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "算法配置",
+          "example": "{\"config_key\": \"config_value\"}",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自定义设备，为 true 时不检查设备存在性，默认为 false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCustomDevice",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "输入类型。可选值：\n\n- `video`：视频（默认值）\n- `image`：图片",
+          "example": "video",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "摘要服务质量。可选值：\n\n- `minutely`：分钟级（默认值）\n- `immediate`：立即",
+          "example": "minutely",
+          "member": "string",
+          "name": "SummaryQOS",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "摘要输出配置",
+          "example": "无",
+          "member": "VisionSummaryConfig",
+          "name": "SummaryConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型，可能取值：\n- `Summary`：视频/图片摘要\n- `ObjectDetect`：目标检测",
+          "example": "Summary",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标检测配置",
+          "example": "无",
+          "member": "VisionObjectDetectConfig",
+          "name": "ObjectDetectConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTWeSeeRecognitionTaskWithFileResponse": {
+      "document": "CreateTWeSeeRecognitionTaskWithFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "019a0fdd-81ed-7f89-911a-43e2a0df1c2d",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTWeSeeServiceRequest": {
       "document": "CreateTWeSeeService请求参数结构体",
       "members": [
@@ -5082,6 +5347,202 @@
         }
       ],
       "type": "object"
+    },
+    "CreateVisionRecognitionTaskInput": {
+      "document": "批量创建的 TWeSee 语义理解任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "TRTC3ZCK4P",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输入视频 / 图片的 URL",
+          "example": "https://example.qq.com/video.mp4",
+          "member": "string",
+          "name": "InputURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频 / 图片文件的 Base64 编码字符串",
+          "example": "文件base64",
+          "member": "string",
+          "name": "InputBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义事件 ID",
+          "example": "event-1",
+          "member": "string",
+          "name": "CustomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否保存该事件使其可被搜索",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSearch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "事件起始时间事件起始时间（毫秒级 UNIX 时间戳，若不传则默认为接口调用时间）",
+          "example": "1761535261343",
+          "member": "uint64",
+          "name": "StartTimeMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件结束时间事件起始时间（毫秒级 UNIX 时间戳，若不传则默认为接口调用时间）",
+          "example": "1761535267343",
+          "member": "uint64",
+          "name": "EndTimeMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "算法配置",
+          "example": "{\"config_key\": \"config_value\"}",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自定义设备，为 true 时不检查设备存在性，默认为 false",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCustomDevice",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "输入类型。可选值：\n\n- `video`：视频（默认值）\n- `image`：图片",
+          "example": "video",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "摘要服务质量。可选值：\n\n- `minutely`：分钟级（默认值）\n- `immediate`：立即",
+          "example": "minutely",
+          "member": "string",
+          "name": "SummaryQOS",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "摘要输出配置",
+          "example": "无",
+          "member": "VisionSummaryConfig",
+          "name": "SummaryConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型，可能取值：\n- `Summary`：视频/图片摘要\n- `ObjectDetect`：目标检测",
+          "example": "Summary",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标检测配置",
+          "example": "无",
+          "member": "VisionObjectDetectConfig",
+          "name": "ObjectDetectConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateVisionRecognitionTaskOutput": {
+      "document": "批量创建 TWeSee 语义理解任务的响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建任务成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Created",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "019a0fb5-f039-740f-9e5f-1b01fce8a7da",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "InvalidParameter",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误消息",
+          "example": "参数错误:InputBase64",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DeleteCloudStorageEventRequest": {
       "document": "DeleteCloudStorageEvent请求参数结构体",
@@ -5509,6 +5970,51 @@
     },
     "DeleteStudioProductResponse": {
       "document": "DeleteStudioProduct返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTWeTalkProductConfigV2Request": {
+      "document": "DeleteTWeTalkProductConfigV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "O90JH87H",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支持的语言，zh-中文；en-英文；默认zh",
+          "example": "zh",
+          "member": "string",
+          "name": "TargetLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTWeTalkProductConfigV2Response": {
+      "document": "DeleteTWeTalkProductConfigV2返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7779,109 +8285,6 @@
           "name": "Firmwares",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDeviceLocationSolveRequest": {
-      "document": "DescribeDeviceLocationSolve请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "产品ID",
-          "example": "ZUBPP0Y2G9",
-          "member": "string",
-          "name": "ProductId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "设备名称",
-          "example": "dev",
-          "member": "string",
-          "name": "DeviceName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "定位解析类型，wifi或GNSSNavigation",
-          "example": "wifi",
-          "member": "string",
-          "name": "LocationType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "LoRaEdge卫星导航电文",
-          "example": "1",
-          "member": "string",
-          "name": "GNSSNavigation",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "wifi信息",
-          "example": "无",
-          "member": "WifiInfo",
-          "name": "WiFiInfo",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDeviceLocationSolveResponse": {
-      "document": "DescribeDeviceLocationSolve返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "经度",
-          "example": "22.54",
-          "member": "float",
-          "name": "Longitude",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "纬度",
-          "example": "22.54",
-          "member": "float",
-          "name": "Latitude",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "类型",
-          "example": "wifi",
-          "member": "string",
-          "name": "LocationType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "误差精度预估，单位为米",
-          "example": "22.54",
-          "member": "float",
-          "name": "Accuracy",
-          "output_required": true,
-          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -14043,6 +14446,189 @@
       ],
       "type": "object"
     },
+    "InvokeTWeSeeRecognitionTaskWithFileRequest": {
+      "document": "InvokeTWeSeeRecognitionTaskWithFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev002",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频 / 图片文件的 Base64 编码字符串",
+          "example": "/9j/4AAQSkZJRgABAQAA...",
+          "member": "string",
+          "name": "InputBase64",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义事件 ID",
+          "example": "event-1",
+          "member": "string",
+          "name": "CustomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否保存该事件使其可被搜索",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSearch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "事件起始时间事件起始时间（毫秒级 UNIX 时间戳，若不传则默认为接口调用时间）",
+          "example": "1761201763749",
+          "member": "uint64",
+          "name": "StartTimeMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件结束时间事件起始时间（毫秒级 UNIX 时间戳，若不传则默认为接口调用时间）",
+          "example": "1761201767749",
+          "member": "uint64",
+          "name": "EndTimeMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "算法配置",
+          "example": "{\"config_key\": \"config_value\"}",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自定义设备，为 true 时不检查设备存在性，默认为 false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCustomDevice",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "输入类型。可选值：\n\n- `video`：视频（默认值）\n- `image`：图片",
+          "example": "video",
+          "member": "string",
+          "name": "InputType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "摘要服务质量。可选值：\n\n- `minutely`：分钟级（默认值）\n- `immediate`：立即",
+          "example": "minutely",
+          "member": "string",
+          "name": "SummaryQOS",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "摘要输出配置",
+          "example": "无",
+          "member": "VisionSummaryConfig",
+          "name": "SummaryConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型，可能取值：\n- `Summary`：视频/图片摘要\n- `ObjectDetect`：目标检测",
+          "example": "Summary",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标检测配置",
+          "example": "无",
+          "member": "VisionObjectDetectConfig",
+          "name": "ObjectDetectConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeTWeSeeRecognitionTaskWithFileResponse": {
+      "document": "InvokeTWeSeeRecognitionTaskWithFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "019a0fcc-0c9c-768f-9b7b-f2ff89972fd6",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务是否执行完成",
+          "example": "true",
+          "member": "bool",
+          "name": "Completed",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语义理解任务结果（仅当 Completed 为 true 时包含该出参）",
+          "example": "无",
+          "member": "VisionRecognitionResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InvokeVideosKeywordsAnalyzerRequest": {
       "document": "InvokeVideosKeywordsAnalyzer请求参数结构体",
       "members": [
@@ -14115,6 +14701,62 @@
         }
       ],
       "type": "object"
+    },
+    "InvokeVisionRecognitionTaskOutput": {
+      "document": "批量同步执行 TWeSee 语义理解任务的响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务是否已完成",
+          "example": "true",
+          "member": "bool",
+          "name": "Completed",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "019a0bdb-1471-77c7-ad24-3962edda28cc",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "InvalidParameter",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误消息",
+          "example": "参数错误:InputURL",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务结果",
+          "example": "无",
+          "member": "VisionRecognitionResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "IotApplication": {
       "document": "应用信息",
@@ -15972,7 +16614,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "TEKJFE",
+          "example": "4AHMY9X89Y",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -15981,7 +16623,7 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "device",
+          "example": "dev001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -16026,7 +16668,7 @@
         {
           "disabled": false,
           "document": "配置参数，不传则不修改",
-          "example": "{\"type\":\"data\"}",
+          "example": "{\"config_key\": \"config_value\"}",
           "member": "string",
           "name": "Config",
           "required": false,
@@ -16035,7 +16677,7 @@
         {
           "disabled": false,
           "document": "视频摘要配置参数，不传则不修改",
-          "example": "{\"OutputLang\":\"zh\"}",
+          "example": "无",
           "member": "VisionSummaryConfig",
           "name": "SummaryConfig",
           "required": false,
@@ -19961,6 +20603,76 @@
       ],
       "usage": "out"
     },
+    "VisionCustomDetectQuery": {
+      "document": "TWeSee 语义理解自定义标签请求",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义标签的标识符",
+          "example": "query1",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义标签的描述文本",
+          "example": "快递员",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "VisionDetectedObject": {
+      "document": "目标检测算法检测到的目标详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标出现的媒体时间戳（以图片为输入时始终取值 0）",
+          "example": "1.5",
+          "member": "float",
+          "name": "Time",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标类别名",
+          "example": "person",
+          "member": "string",
+          "name": "ClassName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标边界框（坐标顺序为 x1, y1, x2, y2）",
+          "example": "[200.1,332.5,412.8,586.5]",
+          "member": "float",
+          "name": "BoundingBox",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "置信度（取值范围 0.0 至 1.0）",
+          "example": "0.88",
+          "member": "float",
+          "name": "Confidence",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "VisionObjectDetectConfig": {
       "document": "目标检测配置",
       "members": [
@@ -20027,6 +20739,16 @@
           "name": "ErrorCode",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标检测算法检测到的目标列表",
+          "example": "无",
+          "member": "VisionDetectedObject",
+          "name": "DetectedObjects",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -20193,7 +20915,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主输出语言\n\n支持列表如下：\nzh 中文\nen 英语\nja 日语\nko 韩文\npt-BR 葡萄牙语（巴西）\nth 泰语\n",
+          "document": "主输出语言，可选值包括：\n- `zh` 中文（默认值）\n- `en` 英语\n- `ja` 日语\n- `ko` 韩文\n- `pt-BR` 葡萄牙语（巴西）\n- `th` 泰语\n- `ms` 马来语",
           "example": "zh",
           "member": "string",
           "name": "OutputLang",
@@ -20202,7 +20924,7 @@
         },
         {
           "disabled": false,
-          "document": "可选输出语言\n\n支持列表如下：\nzh 中文\nen 英语\nja 日语\nko 韩文\npt-BR 葡萄牙语（巴西）\nth 泰语\n",
+          "document": "次选输出语言，可选值包括：\n- `zh` 中文\n- `en` 英语\n- `ja` 日语\n- `ko` 韩文\n- `pt-BR` 葡萄牙语（巴西）\n- `th` 泰语\n- `ms` 马来语\n",
           "example": "en",
           "member": "string",
           "name": "AlternativeOutputLang",
@@ -20211,12 +20933,30 @@
         },
         {
           "disabled": false,
-          "document": "多摄像头布局定义。可能取值：\n\n- 单摄（默认值）：`Single`\n\n- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`\n- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`\n- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`\n\n- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`\n- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`\n- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`\n- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`\n- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`\n- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`\n- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`",
+          "document": "多摄像头布局定义。可选值包括：\n\n- 单摄（默认值）：`Single`\n\n- 双摄（纵向排列）- 全部画面：`Vertical,Num=2,Index=0;1`\n- 双摄（纵向排列）- 画面1：`Vertical,Num=2,Index=0`\n- 双摄（纵向排列）- 画面2：`Vertical,Num=2,Index=1`\n\n- 三摄（纵向排列）- 全部画面：`Vertical,Num=3,Index=0;1;2`\n- 三摄（纵向排列）- 画面1：`Vertical,Num=3,Index=0`\n- 三摄（纵向排列）- 画面2：`Vertical,Num=3,Index=1`\n- 三摄（纵向排列）- 画面3：`Vertical,Num=3,Index=2`\n- 三摄（纵向排列）- 画面1+2：`Vertical,Num=3,Index=0;1`\n- 三摄（纵向排列）- 画面1+3：`Vertical,Num=3,Index=0;2`\n- 三摄（纵向排列）- 画面2+3：`Vertical,Num=3,Index=1;2`",
           "example": "Single",
           "member": "string",
           "name": "MultiCameraLayout",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拓展的目标及事件检测类别。可选值包括：\n\n**通用事件标签**\n- `person_enter` 有人进入\n- `vehicle_entering` 车辆进入\n- `vehicle_parking` 车辆停靠\n- `pet` 有宠物\n- `no_signal` 视频画面异常（无信号等）\n\n**看家护院**\n- `person_climbing_fence` 有人翻围墙\n- `door_window_open` 门窗被开启\n- `person_carrying_object` 有人搬运物品\n\n**商铺看管**\n- `person_at_cashier` 有人在收银台\n- `person_taking_goods` 有人拿商品\n- `person_night_moving` 夜间有人移动\n\n**公共及防火安全**\n- `person_stealing` 有人偷盗\n- `crowd` 多人聚集\n- `smoking` 有人吸烟\n- `safety_fire` 明火\n- `safety_smoke` 浓烟\n- `fireworks` 有人燃放烟花爆竹\n- `knife` 有人持刀\n- `gun` 有人持枪\n- `fight` 有人打架\n- `hurt` 有人受伤流血\n\n**养殖看护**\n- `person_feeding_animal` 有人投喂牲畜\n- `animal_lying` 有动物躺地上\n- `animal_wild_intrusion` 野生动物入侵\n\n**果园农田**\n- `person_picking_fruit` 有人采摘果实\n- `person_carrying_bag` 有人携带包裹\n\n**鱼塘看管**\n- `fishing` 有人钓鱼\n- `net_fishing` 有人撒网\n- `person_carrying_fishing_gear` 有人携带渔具\n- `loitering_near_water` 有人岸边逗留\n- `throwing_into_water` 有人投掷物品\n\n**婴儿看护**\n- `baby` 有婴儿\n- `baby_dropping` 婴儿跌落床铺\n- `person_holding_baby` 有人抱起婴儿\n- `baby_rolling` 婴儿翻滚\n- `baby_crying` 婴儿哭闹\n\n**儿童看护**\n- `child` 有小孩\n- `child_falling` 小孩摔倒\n- `child_entering_kitchen` 小孩进入厨房\n- `child_climbing_window` 小孩攀爬室内窗户\n- `child_near_water` 小孩靠近水域\n\n**老人看护**\n- `elderly` 有老人\n- `elderly_falling` 老人摔倒\n- `elderly_eating` 老人用餐\n- `elderly_using_stove` 老人使用灶具\n\n**宠物看护**\n- `pet_eating` 宠物进食\n- `pet_damaging` 宠物损坏家具\n- `pet_barking` 宠物吠叫\n- `pet_scratching_door` 宠物挠门\n\t",
+          "example": "[\"child_falling\", \"baby_crying\"]",
+          "member": "string",
+          "name": "DetectTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义检测标签",
+          "example": "无",
+          "member": "VisionCustomDetectQuery",
+          "name": "CustomDetectQueries",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -20285,32 +21025,6 @@
         }
       ],
       "usage": "both"
-    },
-    "WifiInfo": {
-      "document": "wifi定位信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "mac地址",
-          "example": "78a106a5b166",
-          "member": "string",
-          "name": "MAC",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "信号强度",
-          "example": "-1",
-          "member": "int64",
-          "name": "RSSI",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
     }
   },
   "version": "1.0"

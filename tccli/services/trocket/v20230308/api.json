@@ -493,7 +493,7 @@
   },
   "metadata": {
     "apiVersion": "2023-03-08",
-    "api_brief": "介绍如何使用云API 对消息队列 RocketMQ进行操作，包括消息回溯，修改主题，创建订阅关系等。",
+    "api_brief": "介绍如何使用云 API 对消息队列 RocketMQ进行操作，包括消息回溯，修改主题，创建订阅关系等。",
     "serviceNameCN": "消息队列 RocketMQ 版",
     "serviceShortName": "trocket"
   },

@@ -2253,7 +2253,7 @@
         {
           "disabled": false,
           "document": "用户Id，和子用户uin相同，需要先使用CreateUser接口创建用户。可以使用DescribeUsers接口查看。",
-          "example": "12345678",
+          "example": "10401463674518",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -2267,6 +2267,15 @@
           "name": "PolicySet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）",
+          "example": "EntraAccount",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6024,7 +6033,7 @@
         {
           "disabled": false,
           "document": "需要授权的子用户uin，可以通过腾讯云控制台右上角 → “账号信息” → “账号ID进行查看”。",
-          "example": "12345678",
+          "example": "700099912413",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -6060,7 +6069,7 @@
         {
           "disabled": false,
           "document": "绑定到用户的工作组ID集合。",
-          "example": "1",
+          "example": "[221636,213967]",
           "member": "int64",
           "name": "WorkGroupIds",
           "required": false,
@@ -6072,6 +6081,15 @@
           "example": "testname",
           "member": "string",
           "name": "UserAlias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号类型，UserAccount：用户账号 RoleAccount：角色账号，默认为用户账号",
+          "example": "UserAccount",
+          "member": "string",
+          "name": "AccountType",
           "required": false,
           "type": "string"
         }
@@ -9459,11 +9477,20 @@
         {
           "disabled": false,
           "document": "需要删除的用户的Id",
-          "example": "[12345678]",
+          "example": "[\"100****7401\"]",
           "member": "string",
           "name": "UserIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）",
+          "example": "EntraAccount",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14683,6 +14710,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）",
+          "example": "EntraAccount",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14844,9 +14880,18 @@
         {
           "disabled": false,
           "document": "用户ID（UIN），如果不填默认为调用方的子UIN",
-          "example": "12345678",
+          "example": "71109991241195",
           "member": "string",
           "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）",
+          "example": "EntraAccount",
+          "member": "string",
+          "name": "AccountType",
           "required": false,
           "type": "string"
         }
@@ -14936,7 +14981,7 @@
         {
           "disabled": false,
           "document": "指定查询的子用户uin，用户需要通过CreateUser接口创建。",
-          "example": "12345678",
+          "example": "71109991241195",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -14986,6 +15031,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）",
+          "example": "EntraAccount",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14999,7 +15053,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15009,7 +15063,7 @@
           "example": "无",
           "member": "UserInfo",
           "name": "UserSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15339,7 +15393,7 @@
         {
           "disabled": false,
           "document": "用户Id，和CAM侧Uin匹配",
-          "example": "12345678",
+          "example": "andr*****@tencent.com",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -15353,6 +15407,15 @@
           "name": "PolicySet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）",
+          "example": "EntraAccount",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17915,6 +17978,15 @@
           "name": "UserDescription",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）",
+          "example": "EntraAccount",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17950,6 +18022,15 @@
           "member": "string",
           "name": "UserType",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）",
+          "example": "EntraAccount",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
           "type": "string"
         }
       ],
@@ -19456,7 +19537,7 @@
         {
           "disabled": false,
           "document": "操作者，入参不填。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12345678",
+          "example": "600000563084",
           "member": "string",
           "name": "Operator",
           "output_required": true,
@@ -19514,6 +19595,17 @@
           "example": "SuperSQL/Native",
           "member": "string",
           "name": "EngineGeneration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要授权的Model名，填 * 代表当前Database下所有表。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别、数据库级别时只允许填空，其他类型下可以任意指定数据表。",
+          "example": "model1",
+          "member": "string",
+          "name": "Model",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -24953,6 +25045,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型权限集合",
+          "example": "无",
+          "member": "Policys",
+          "name": "ModelPolicyInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -25095,10 +25197,10 @@
         {
           "disabled": false,
           "document": "用户Id，和CAM侧子用户Uin匹配",
-          "example": "12345678",
+          "example": "7000****1851",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25108,7 +25210,7 @@
           "example": "test user",
           "member": "string",
           "name": "UserDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25118,7 +25220,7 @@
           "example": "Administrator",
           "member": "string",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25128,7 +25230,7 @@
           "example": "2021-07-28 16:19:32",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25138,7 +25240,17 @@
           "example": "testname",
           "member": "string",
           "name": "UserAlias",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户来源类型TencentAccount（普通腾讯云用户） / EntraAccount（微软用户）",
+          "example": "EntraAccount",
+          "member": "string",
+          "name": "AccountType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

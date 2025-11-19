@@ -55,7 +55,9 @@ Input:
 ```
 tccli cvm DescribeImages --cli-unfold-argument  \
     --Filters.0.Values PRIVATE_IMAGE \
-    --Filters.0.Name image-type
+    --Filters.0.Name image-type \
+    --Offset 0 \
+    --Limit 1
 ```
 
 Output: 

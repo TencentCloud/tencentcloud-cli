@@ -15880,6 +15880,15 @@
         },
         {
           "disabled": false,
+          "document": "智能擦除模板擦除类型过滤条件。\n- subtitle 去字幕\n- watermark 去水印\n- privacy 隐私保护",
+          "example": "擦除模板类型",
+          "member": "string",
+          "name": "EraseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "智能擦除模板名过滤条件，长度限制：64 个字符。",
           "example": "擦除模板1",
           "member": "string",
@@ -21126,6 +21135,98 @@
       ],
       "usage": "out"
     },
+    "LiveAiAnalysisDescriptionItem": {
+      "document": "直播摘要结果信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分段结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveAiParagraphInfo",
+          "name": "Paragraphs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveAiParagraphInfo": {
+      "document": "分段信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分段摘要",
+          "example": "summary",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分段标题",
+          "example": "title",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分段关键词",
+          "example": "[\"words1\",\"words2\"]",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分段起始时间点，秒",
+          "example": "10.05",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分段结束时间点，秒",
+          "example": "20.05",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "直播切片对应直播起始时间点，采用 ISO 日期格式。\t",
+          "example": "2025-11-06T15:54:21+08:00",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "直播切片对应直播结束时间点，采用 ISO 日期格式。\t",
+          "example": "2025-11-06T16:54:21+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LiveRecordFile": {
       "document": "直播录制输出文件信息",
       "members": [
@@ -21500,11 +21601,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "直播分析子任务结果，暂时只支持直播拆条。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "直播分析子任务结果，支持：\n<li>直播拆条</li>\n<li>直播高光集锦</li>\n<li>直播摘要</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LiveStreamAiAnalysisResultItem",
           "name": "ResultSet",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -21516,7 +21617,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果的类型，取值范围：\n<li>SegmentRecognition：拆条。</li>\n<li>Highlight ：集锦。</li>",
+          "document": "结果的类型，取值范围：\n<li>SegmentRecognition：拆条。</li>\n<li>Highlight ：集锦。</li>\n<li> Description：摘要。</li>",
           "example": "SegmentRecognition",
           "member": "string",
           "name": "Type",
@@ -21543,6 +21644,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "摘要结果，当Type 为 Description 时有效。",
+          "example": "无",
+          "member": "LiveAiAnalysisDescriptionItem",
+          "name": "DescriptionResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -27605,7 +27716,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "直播流处理结果类型，包含：\n<li>AiReviewResult：内容审核结果；</li>\n<li>AiRecognitionResult：内容识别结果；</li>\n<li>LiveRecordResult：直播录制结果；</li>\n<li>AiQualityControlResult：媒体质检结果；</li>\n<li>ProcessEof：直播流处理结束。</li>",
+          "document": "直播流处理结果类型，包含：\n<li>AiReviewResult：内容审核结果；</li>\n<li>AiRecognitionResult：内容识别结果；</li>\n<li>LiveRecordResult：直播录制结果；</li>\n<li>AiQualityControlResult：媒体质检结果；</li>\n<li>AiAnalysisResult：内容分析结果；</li>\n<li>ProcessEof：直播流处理结束。</li>",
           "example": "ProcessEof",
           "member": "string",
           "name": "NotificationType",

@@ -59,7 +59,7 @@
     "QueryTextToImageJob": {
       "document": "混元生图接口，基于混元大模型，根据输入的文本描述快速生成图片。\n默认提供0个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "QueryTextToImageJobRequest",
-      "name": "查询混元生图3.0任务",
+      "name": "查询混元生图（3.0）任务",
       "output": "QueryTextToImageJobResponse",
       "status": "online"
     },
@@ -122,7 +122,7 @@
     "SubmitTextToImageJob": {
       "document": "混元生图接口，基于混元大模型，根据输入的文本描述快速生成图片。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "SubmitTextToImageJobRequest",
-      "name": "提交混元生图3.0任务",
+      "name": "提交混元生图（3.0）任务",
       "output": "SubmitTextToImageJobResponse",
       "status": "online"
     },
@@ -477,7 +477,7 @@
         },
         {
           "disabled": false,
-          "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。",
+          "document": "返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。",
           "example": "url",
           "member": "string",
           "name": "RspImgType",
@@ -496,7 +496,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "无",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -559,7 +559,7 @@
         },
         {
           "disabled": false,
-          "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。",
+          "document": "返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。",
           "example": "url",
           "member": "string",
           "name": "RspImgType",
@@ -578,7 +578,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "无",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -1106,7 +1106,7 @@
         {
           "disabled": false,
           "document": "当前任务状态码：\n1：等待中、2：运行中、4：处理失败、5：处理完成。",
-          "example": "1",
+          "example": "5",
           "member": "string",
           "name": "JobStatusCode",
           "output_required": false,
@@ -1116,7 +1116,7 @@
         {
           "disabled": false,
           "document": "当前任务状态：排队中、处理中、处理失败或者处理完成。\n",
-          "example": "1",
+          "example": "处理完成",
           "member": "string",
           "name": "JobStatusMsg",
           "output_required": false,
@@ -1126,7 +1126,7 @@
         {
           "disabled": false,
           "document": "任务处理失败错误码。\n",
-          "example": "1",
+          "example": "ServerError",
           "member": "string",
           "name": "JobErrorCode",
           "output_required": false,
@@ -1136,7 +1136,7 @@
         {
           "disabled": false,
           "document": "任务处理失败错误信息。\n",
-          "example": "1",
+          "example": "处理失败",
           "member": "string",
           "name": "JobErrorMsg",
           "output_required": false,
@@ -1146,7 +1146,7 @@
         {
           "disabled": false,
           "document": "生成图 URL 列表，有效期1小时，请及时保存。\n",
-          "example": "[\"string\"]",
+          "example": "[\"https://myqcloud.com/result/fd7b5e60-b633-11f0-827b-52540087afa5\"]",
           "member": "string",
           "name": "ResultImage",
           "output_required": false,
@@ -1156,7 +1156,7 @@
         {
           "disabled": false,
           "document": "结果 detail 数组，Success 代表成功。\n",
-          "example": "[\"string\"]",
+          "example": "[\"Success\"]",
           "member": "string",
           "name": "ResultDetails",
           "output_required": false,
@@ -1166,7 +1166,7 @@
         {
           "disabled": false,
           "document": "对应 SubmitTextToImageProJob 接口中 Revise 参数。开启扩写时，返回扩写后的 prompt 文本。 如果关闭扩写，将直接返回原始输入的 prompt。",
-          "example": "[\"string\"]",
+          "example": "[\"一只金毛\"]",
           "member": "string",
           "name": "RevisedPrompt",
           "output_required": false,
@@ -1419,7 +1419,7 @@
         },
         {
           "disabled": false,
-          "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。 示例值：url",
+          "document": "返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。 示例值：url",
           "example": "url",
           "member": "string",
           "name": "RspImgType",
@@ -1975,7 +1975,7 @@
         {
           "disabled": false,
           "document": "生成图分辨率，仅支持以下分辨率：\n640:1408,704:1344,768:1280,832:1216,896:1152,960:1088,1024:1024,1088:960,1152:896,1216:832,1280:768,1344:704,1408:640",
-          "example": "1",
+          "example": "1024:1024",
           "member": "string",
           "name": "Resolution",
           "required": false,
@@ -1984,7 +1984,7 @@
         {
           "disabled": false,
           "document": "随机种子，默认随机。\n不传：随机种子生成。\n正数：固定种子生成。\n扩写开启时固定种子不生效，将保持随机。",
-          "example": "1",
+          "example": "148237123",
           "member": "int64",
           "name": "Seed",
           "required": false,
@@ -2010,7 +2010,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启prompt改写，默认开启，改写预计会增加20s左右耗时。\n\n如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)",
+          "document": "是否开启prompt改写，为空时默认开启，改写预计会增加20s左右耗时。\n0：关闭改写\n1：开启改写\n建议默认开启，如果关闭改写，需要调用方自己接改写，否则对生图效果有较大影响，改写方法可以参考：[改写](https://github.com/Tencent-Hunyuan/HunyuanImage-3.0/tree/main/PE)\n示例值：1",
           "example": "0",
           "member": "int64",
           "name": "Revise",
@@ -2026,7 +2026,7 @@
         {
           "disabled": false,
           "document": "任务 ID。",
-          "example": "jobid",
+          "example": "1259388371-1764399486-fd7b5e60-b633-11f0-827b-52540087afa5-0",
           "member": "string",
           "name": "JobId",
           "output_required": true,
@@ -2285,7 +2285,7 @@
         {
           "disabled": false,
           "document": "参考图。\n\n- Base64 和 Url 必须提供一个，如果都提供以 Url 为准。\n- 当传入Image参数时，Style和Resolution参数不生效，输出图分辨率将保持Image传入图分辨率。\n- 图片限制：单边分辨率大于128且小于2048；图片小于6M；格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "\"Image\":{\"Url\":\"https://cos.ap-guangzhou.myqcloud.com/image.jpg\", \"Base64\": \"\"}",
+          "example": "无",
           "member": "Image",
           "name": "Image",
           "required": false,
@@ -2312,7 +2312,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "{\"LogoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "example": "无",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -2320,7 +2320,7 @@
         },
         {
           "disabled": false,
-          "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。",
+          "document": "返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。",
           "example": "url",
           "member": "string",
           "name": "RspImgType",

@@ -193,8 +193,8 @@
     "DescribeDisasterRecoverGroups": [
       {
         "document": "查询分散置放群组信息",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeDisasterRecoverGroups\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DisasterRecoverGroupSet\": [\n            {\n                \"DisasterRecoverGroupId\": \"ps-21q9ibvr\",\n                \"Name\": \"数据库业务\",\n                \"Type\": \"RACK\",\n                \"CvmQuotaTotal\": 30,\n                \"CurrentNum\": 0,\n                \"InstanceIds\": [],\n                \"CreateTime\": \"2018-04-19T02:47:12Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c68ce193-be41-4d13-9a9b-2dc031db6477\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDisasterRecoverGroups\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"Filters\": [\n        {\n            \"Name\": \"tag:myTagKey\",\n            \"Values\": [\n                \"myTagVlue\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DisasterRecoverGroupSet\": [\n            {\n                \"Affinity\": 1,\n                \"CreateTime\": \"2024-08-28T10:04:56Z\",\n                \"CurrentNum\": 0,\n                \"CvmQuotaTotal\": 60,\n                \"DisasterRecoverGroupId\": \"ps-0f03mwkn\",\n                \"InstanceIds\": [],\n                \"Name\": \"HostDisasterRecoverGroup\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"myTagKey\",\n                        \"Value\": \"myTagVlue\"\n                    }\n                ],\n                \"Type\": \"HOST\"\n            },\n            {\n                \"Affinity\": 1,\n                \"CreateTime\": \"2024-08-13T04:16:19Z\",\n                \"CurrentNum\": 0,\n                \"CvmQuotaTotal\": 20,\n                \"DisasterRecoverGroupId\": \"ps-ali72vwj\",\n                \"InstanceIds\": [],\n                \"Name\": \"SWDisasterRecoverGroup\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"myTagKey\",\n                        \"Value\": \"myTagVlue\"\n                    }\n                ],\n                \"Type\": \"SW\"\n            }\n        ],\n        \"RequestId\": \"52eca90d-08c8-4887-abf0-78d8155cfcfd\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询分散置放群组信息"
       }
     ],
@@ -247,7 +247,7 @@
       },
       {
         "document": "查询账户下所有私有镜像。",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImages\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"PRIVATE_IMAGE\"\n            ],\n            \"Name\": \"image-type\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImages\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"PRIVATE_IMAGE\"\n            ],\n            \"Name\": \"image-type\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 408,\n        \"ImageSet\": [\n            {\n                \"LicenseType\": \"TencentCloud\",\n                \"OsName\": \"CentOS 7.4 64位\",\n                \"ImageSize\": 20,\n                \"ImageType\": \"PRIVATE_IMAGE\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ImageDescription\": \"test-image\",\n                \"ImageSource\": \"CREATE_IMAGE\",\n                \"ImageId\": \"img-qlzp4oea\",\n                \"ImageName\": \"test-image\",\n                \"ImageCreator\": \"3205597606\",\n                \"ImageState\": \"NORMAL\",\n                \"SyncPercent\": 20,\n                \"SnapshotSet\": [\n                    {\n                        \"SnapshotId\": \"snap-gqa37j2p\",\n                        \"DiskUsage\": \"SYSTEM_DISK\",\n                        \"DiskSize\": 20\n                    }\n                ],\n                \"Tags\": [\n                    {\n                        \"Key\": \"myKey\",\n                        \"Value\": \"myValue\"\n                    }\n                ],\n                \"Architecture\": \"x86_64\",\n                \"Platform\": \"CentOS\",\n                \"IsSupportCloudinit\": true\n            }\n        ],\n        \"RequestId\": \"5908394c-5b3f-42e0-a537-8410553890a5\"\n    }\n}",
         "title": "按镜像类型查询镜像"
       },
@@ -277,7 +277,7 @@
     "DescribeInstanceInternetBandwidthConfigs": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstanceInternetBandwidthConfigs\n&InstanceId=ins-6lafsaz0\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceInternetBandwidthConfigs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-6lafsaz0\"\n}",
         "output": "{\n    \"Response\": {\n        \"InternetBandwidthConfigSet\": [\n            {\n                \"StartTime\": \"2017-03-12T16:00:00Z\",\n                \"EndTime\": \"2017-04-12T16:00:00Z\",\n                \"InternetAccessible\": {\n                    \"InternetMaxBandwidthOut\": 50,\n                    \"InternetChargeType\": \"BANDWIDTH_PREPAID\"\n                }\n            }\n        ],\n        \"RequestId\": \"314161cd-ee40-4c37-921e-b10c4ed5607c\"\n    }\n}",
         "title": "查询实例带宽配置"
       }
@@ -386,7 +386,7 @@
       {
         "document": "查询实例启动模板",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLaunchTemplates\n<公共请求参数>\n\n{\n    \"LaunchTemplateIds\": [\n        \"lt-q9t8j8eg\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LaunchTemplateSet\": [\n            {\n                \"LatestVersionNumber\": 12,\n                \"LaunchTemplateId\": \"lt-q9t8j8eg\",\n                \"LaunchTemplateName\": \"未命名foo\\\"'\\\"'''\\\"\\\"\",\n                \"DefaultVersionNumber\": 5,\n                \"LaunchTemplateVersionCount\": 8,\n                \"CreatedBy\": \"251009920\",\n                \"CreationTime\": \"2020-12-16T08:05:02Z\"\n            }\n        ],\n        \"RequestId\": \"b2d70642-c69a-4115-ae4e-f6ddade68fea\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"LaunchTemplateSet\": [\n            {\n                \"LatestVersionNumber\": 12,\n                \"LaunchTemplateId\": \"lt-q9t8j8eg\",\n                \"LaunchTemplateName\": \"MyLaunchTemplateName\",\n                \"DefaultVersionNumber\": 5,\n                \"LaunchTemplateVersionCount\": 8,\n                \"CreatedBy\": \"251009920\",\n                \"CreationTime\": \"2020-12-16T08:05:02Z\"\n            }\n        ],\n        \"RequestId\": \"b2d70642-c69a-4115-ae4e-f6ddade68fea\"\n    }\n}",
         "title": "查询实例启动模板"
       }
     ],
@@ -503,8 +503,8 @@
     "InquiryPriceRenewHosts": [
       {
         "document": "续费CDH实例询价",
-        "input": "https://cvm.tencentcloudapi.com/?Action=InquiryPriceRenewHosts\r\n&HostChargePrepaid.Period=1\r\n&HostChargePrepaid.RenewFlag=NOTIFY_AND_AUTO_RENEW\r\n&HostIds.0=host-ey16rkyg\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"HostPrice\": {\n                \"OriginalPrice\": 37050.0,\n                \"DiscountPrice\": 37050.0\n            }\n        },\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewHosts\n<公共请求参数>\n\n{\n    \"HostIds\": [\n        \"host-ey16rkyg\"\n    ],\n    \"HostChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"HostPrice\": {\n                \"OriginalPrice\": 37050,\n                \"DiscountPrice\": 37050\n            }\n        },\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "续费CDH实例询价"
       }
     ],
@@ -673,14 +673,14 @@
     "ModifyInstancesRenewFlag": [
       {
         "document": "本示例用于修改两个实例的续费标识。",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-r8hr2upy\",\n        \"ins-5d8a23rs\"\n    ],\n    \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesRenewFlag\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-r8hr2upy\",\n        \"ins-5d8a23rs\"\n    ],\n    \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改两个实例的续费标识"
       }
     ],
     "ModifyInstancesVpcAttribute": [
       {
-        "document": "实例 r8hr2upy 和 5d8a23rs 迁移至私有网络 1urkhbj4 子网 dcs9x3gz 中，指定实例 r8hr2upy  的私有网络IP为 10.0.0.18，实例 5d8a23rs 的私有网络IP为 10.0.0.19。",
+        "document": "实例 in-r8hr2upy 和 ins-5d8a23rs 迁移至私有网络 vpc-1urkhbj4 子网 subnet-dcs9x3gz 中，指定实例 ins-r8hr2upy  的私有网络IP为 10.0.0.18，实例 ins-5d8a23rs 的私有网络IP为 10.0.0.19。",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesVpcAttribute\n<公共请求参数>\n\n{\n    \"VirtualPrivateCloud\": {\n        \"SubnetId\": \"subnet-dcs9x3gz\",\n        \"VpcId\": \"vpc-1urkhbj4\",\n        \"PrivateIpAddresses\": [\n            \"10.0.0.19\",\n            \"10.0.0.18\"\n        ]\n    },\n    \"InstanceIds\": [\n        \"ins-5d8a23rs\",\n        \"ins-r8hr2upy\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c14def19-cfes-470e-b241-90787u6jf5uj\"\n    }\n}",
         "title": "迁移实例私有网络且指定子网IP"
