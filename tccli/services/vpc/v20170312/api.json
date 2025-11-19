@@ -252,6 +252,13 @@
       "output": "CheckIpInSubnetInternalResponse",
       "status": "online"
     },
+    "CheckNatGatewayOperationRisk": {
+      "document": "本接口（CheckNatGatewayOperationRisk）用于查询NAT网关操作风险，根据网关使用情况返回相应的风险评估结果。\n\n- 只支持单个网关实例查询。即入参 `NatGatewayId` 最多只支持传一个，且必须传一个。",
+      "input": "CheckNatGatewayOperationRiskRequest",
+      "name": "检查NAT网关操作风险",
+      "output": "CheckNatGatewayOperationRiskResponse",
+      "status": "online"
+    },
     "CheckNetDetectState": {
       "document": "本接口（CheckNetDetectState）用于验证网络探测。",
       "input": "CheckNetDetectStateRequest",
@@ -1981,6 +1988,13 @@
       "output": "DescribeLocalGatewayResponse",
       "status": "online"
     },
+    "DescribeNatGatewayDeletionCheckFlag": {
+      "document": "查询是否开启地域粒度防误删开关",
+      "input": "DescribeNatGatewayDeletionCheckFlagRequest",
+      "name": "查询是否开启地域粒度防误删开关",
+      "output": "DescribeNatGatewayDeletionCheckFlagResponse",
+      "status": "online"
+    },
     "DescribeNatGatewayDestinationIpPortTranslationNatRules": {
       "document": "本接口（DescribeNatGatewayDestinationIpPortTranslationNatRules）用于查询NAT网关端口转发规则对象数组。",
       "input": "DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest",
@@ -2940,6 +2954,13 @@
       "output": "GetCcnRegionBandwidthLimitsResponse",
       "status": "online"
     },
+    "GetNatGatewayEstimatedCost": {
+      "document": "本接口（GetNatGatewayEstimatedCost）用于获取NAT网关估算费用。",
+      "input": "GetNatGatewayEstimatedCostRequest",
+      "name": "获取NAT网关估算费用",
+      "output": "GetNatGatewayEstimatedCostResponse",
+      "status": "online"
+    },
     "GetTradeBillingAuth": {
       "document": "预付费下单屏蔽余额支付场景-获取AUTH",
       "input": "GetTradeBillingAuthRequest",
@@ -3302,6 +3323,13 @@
       "input": "ModifyNatGatewayAttributeRequest",
       "name": "修改NAT网关的属性",
       "output": "ModifyNatGatewayAttributeResponse",
+      "status": "online"
+    },
+    "ModifyNatGatewayDeletionCheckFlag": {
+      "document": "修改地域粒度防误删开关",
+      "input": "ModifyNatGatewayDeletionCheckFlagRequest",
+      "name": "修改地域粒度防误删开关",
+      "output": "ModifyNatGatewayDeletionCheckFlagResponse",
       "status": "online"
     },
     "ModifyNatGatewayDestinationIpPortTranslationNatRule": {
@@ -4016,6 +4044,13 @@
       "input": "UpdateVpcPeerInternalRequest",
       "name": "更新vpc peer",
       "output": "UpdateVpcPeerInternalResponse",
+      "status": "online"
+    },
+    "UpgradeNatGatewayProductVersion": {
+      "document": "本接口（UpgradeNatGatewayProductVersion）用于升级NAT实例产品版本，将传统型NAT实例升级到标准型NAT。",
+      "input": "UpgradeNatGatewayProductVersionRequest",
+      "name": "升级NAT实例产品版本",
+      "output": "UpgradeNatGatewayProductVersionResponse",
       "status": "online"
     },
     "WithdrawNotifyRoutes": {
@@ -9722,6 +9757,82 @@
           "name": "CheckIpInSubnetResult",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckNatGatewayOperationRiskRequest": {
+      "document": "CheckNatGatewayOperationRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-6mjgm8ds",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "NAT 类型，NatGateway 表示公网 NAT，PrivateNatGateway 表示私网 NAT",
+          "example": "NatGateway",
+          "member": "string",
+          "name": "NatType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckNatGatewayOperationRiskResponse": {
+      "document": "CheckNatGatewayOperationRisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "NAT网关的ID，形如：`nat-df45454`。",
+          "example": "nat-6mjgm8ds",
+          "member": "string",
+          "name": "NatGatewayId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "nat实例是否存在路由。",
+          "example": "false",
+          "member": "bool",
+          "name": "HaveRoute",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出入带宽大小",
+          "example": "10.00",
+          "member": "float",
+          "name": "PeakBandwidth",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "HIGH",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -18132,6 +18243,15 @@
           "name": "NatGatewayId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "忽略操作风险",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreOperationRisk",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -25545,6 +25665,53 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatGatewayDeletionCheckFlagRequest": {
+      "document": "DescribeNatGatewayDeletionCheckFlag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "NAT 类型，NatGateway 表示公网 NAT，PrivateNatGateway 表示私网 NAT",
+          "example": "NatGateway",
+          "member": "string",
+          "name": "NatType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatGatewayDeletionCheckFlagResponse": {
+      "document": "DescribeNatGatewayDeletionCheckFlag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除检查标志",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionCheckFlag",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -38938,6 +39105,63 @@
       ],
       "type": "object"
     },
+    "GetNatGatewayEstimatedCostRequest": {
+      "document": "GetNatGatewayEstimatedCost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "NAT网关的ID，形如：`nat-ig8xpno8`。",
+          "example": "nat-ig8xpno8",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetNatGatewayEstimatedCostResponse": {
+      "document": "GetNatGatewayEstimatedCost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "币种，如CNY表示人民币，USD表示美元。",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "刊例价，即折扣前价格，精确到小数点后4位小数",
+          "example": "0.23",
+          "member": "float",
+          "name": "CuFee",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣价，即折扣后价格，精确到小数点后4位小数",
+          "example": "0.161",
+          "member": "float",
+          "name": "DiscountCuFee",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetTradeBillingAuth": {
       "document": "预付费下单屏蔽余额支付场景-AUTH对象",
       "members": [
@@ -43597,6 +43821,42 @@
     },
     "ModifyNatGatewayAttributeResponse": {
       "document": "ModifyNatGatewayAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNatGatewayDeletionCheckFlagRequest": {
+      "document": "ModifyNatGatewayDeletionCheckFlag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除检查标志，True表示开启，False表示关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionCheckFlag",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "NAT 类型，NatGateway 表示公网 NAT，PrivateNatGateway 表示私网 NAT",
+          "example": "NatGateway",
+          "member": "string",
+          "name": "NatType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNatGatewayDeletionCheckFlagResponse": {
+      "document": "ModifyNatGatewayDeletionCheckFlag返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -55950,6 +56210,60 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeNatGatewayProductVersionRequest": {
+      "document": "UpgradeNatGatewayProductVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "example": "vpc-oty76xyl",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "NAT网关的ID，形如：`nat-ig8xpno8`。",
+          "example": "nat-ig8xpno8",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否热迁移。1表示冷迁移，0表示热迁移，默认值是0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Force",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否仅校验迁移可能性。true表示仅校验能否迁移，不做实际迁移。false表示正常迁移。默认值为false。\n仅校验模式，不报错表示校验迁移成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "CheckOnlyMode",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeNatGatewayProductVersionResponse": {
+      "document": "UpgradeNatGatewayProductVersion返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

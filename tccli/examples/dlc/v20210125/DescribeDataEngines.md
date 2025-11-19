@@ -89,7 +89,8 @@ Output:
                         "DatasourceConnectionVpcId": "",
                         "DatasourceConnectionSubnetId": "",
                         "DatasourceConnectionCidrBlock": "",
-                        "DatasourceConnectionSubnetCidrBlock": ""
+                        "DatasourceConnectionSubnetCidrBlock": "",
+                        "EGSupport": 1
                     }
                 ],
                 "UiURL": "",

@@ -956,6 +956,14 @@
         "title": "获取 Group 堆积数量排序"
       }
     ],
+    "DescribeRocketMQTopic": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQTopic\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-zpz97455xwap\",\n    \"NamespaceId\": \"namespace\",\n    \"TopicName\": \"test_topic\",\n    \"ConsumerGroup\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"121e5b17-7e8b-4849-b168-c02b67ebfbba\",\n        \"Topic\": {\n            \"Name\": \"test_topic\",\n            \"Type\": \"Normal\",\n            \"GroupNum\": 0,\n            \"Remark\": null,\n            \"PartitionNum\": 3,\n            \"CreateTime\": 1696662165000,\n            \"UpdateTime\": 1696662165000,\n            \"InstanceId\": \"rocketmq-zpz97455xwap\",\n            \"Namespace\": \"namespace\",\n            \"LastUpdateTime\": 1696751238307,\n            \"SubscriptionCount\": 1,\n            \"SubscriptionData\": [\n                {\n                    \"Topic\": \"test_topic\",\n                    \"Type\": null,\n                    \"PartitionNum\": null,\n                    \"ExpressionType\": \"TAG\",\n                    \"SubString\": \"msgTag\",\n                    \"Status\": null,\n                    \"ConsumerLag\": 0,\n                    \"ClusterId\": \"rocketmq-zpz97455xwap\",\n                    \"ConsumerGroup\": \"test_group\",\n                    \"IsOnline\": true,\n                    \"ConsumeType\": 0,\n                    \"Consistency\": 0,\n                    \"LastUpdateTime\": 1696751238307,\n                    \"MaxRetryTimes\": 16\n                }\n            ]\n        }\n    }\n}",
+        "title": "获取主题详情"
+      }
+    ],
     "DescribeRocketMQTopicMsgs": [
       {
         "document": "",

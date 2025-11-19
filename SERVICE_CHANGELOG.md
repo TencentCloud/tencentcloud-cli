@@ -1,10 +1,10 @@
-# Release 3.0.1308.1
+# Release 3.0.1309.1
 
-## 云托付物理服务器(chc) 版本：2023-04-18
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 3 次发布
+### 第 137 次发布
 
-发布时间：2025-11-19 01:17:19
+发布时间：2025-11-20 01:26:54
 
 本次发布包含了以下内容：
 
@@ -12,25 +12,72 @@
 
 修改接口：
 
-* [CreateQuitWorkOrder](http://document.tencentcloudapi.woa.com/document/product/1790/87369)
+* [AttachUserPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/58468)
 
-	* 新增入参：Building, IdcUnitId, Isp, EmailSet, FactorSet
+	* 新增入参：AccountType
+
+* [CreateUser](http://document.tencentcloudapi.woa.com/document/product/1342/58465)
+
+	* 新增入参：AccountType, Creator
+
+* [DescribeUserInfo](http://document.tencentcloudapi.woa.com/document/product/1342/82059)
+
+	* 新增入参：AccountType
+
+* [DescribeUserType](http://document.tencentcloudapi.woa.com/document/product/1342/82058)
+
+	* 新增入参：AccountType
+
+* [DetachUserPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/58458)
+
+	* 新增入参：AccountType
+
+* [ModifyUserType](http://document.tencentcloudapi.woa.com/document/product/1342/82056)
+
+	* 新增入参：AccountType
 
 
 修改数据结构：
 
-* [DeviceOrderBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1790/87378#DeviceOrderBaseInfo)
+* [UserDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#UserDetailInfo)
 
-	* 新增成员：Building, EmailSet, FactorSet
+	* 新增成员：ModelPolicyInfo
+
+* [UserMessage](http://document.tencentcloudapi.woa.com/document/product/1342/53778#UserMessage)
+
+	* 新增成员：AccountType
 
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+## 数据传输服务(dts) 版本：2021-12-06
 
-### 第 213 次发布
+### 第 42 次发布
 
-发布时间：2025-11-19 01:32:28
+发布时间：2025-11-20 01:30:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KafkaOption](http://document.tencentcloudapi.woa.com/document/product/571/78340#KafkaOption)
+
+	* 新增成员：DataOption
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 126 次发布
+
+发布时间：2025-11-20 01:46:43
 
 本次发布包含了以下内容：
 
@@ -38,26 +85,34 @@
 
 修改接口：
 
-* [ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)
+* [DescribeSmartEraseTemplates](http://document.tencentcloudapi.woa.com/document/product/862/87775)
 
-	* 新增出参：DraftId
-
-* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
-
-	* 新增入参：ProxyOrganizationIdCardType
+	* 新增入参：EraseType
 
 
+新增数据结构：
+
+* [LiveAiAnalysisDescriptionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveAiAnalysisDescriptionItem)
+* [LiveAiParagraphInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveAiParagraphInfo)
+
+修改数据结构：
+
+* [LiveStreamAiAnalysisResultInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiAnalysisResultInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ResultSet
+
+* [LiveStreamAiAnalysisResultItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveStreamAiAnalysisResultItem)
+
+	* 新增成员：DescriptionResult
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
 
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+### 第 162 次发布
 
-### 第 48 次发布
-
-发布时间：2025-11-19 01:43:51
+发布时间：2025-11-20 01:59:51
 
 本次发布包含了以下内容：
 
@@ -65,146 +120,15 @@
 
 新增接口：
 
-* [CreateAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/240/88037)
-* [DeleteAuditLogFile](http://document.tencentcloudapi.woa.com/document/product/240/88036)
-* [DescribeAuditInstanceList](http://document.tencentcloudapi.woa.com/document/product/240/88035)
-* [ModifyAuditService](http://document.tencentcloudapi.woa.com/document/product/240/88034)
-* [OpenAuditService](http://document.tencentcloudapi.woa.com/document/product/240/88033)
-
-新增数据结构：
-
-* [AuditInstance](http://document.tencentcloudapi.woa.com/document/product/240/38576#AuditInstance)
-* [AuditLogFilter](http://document.tencentcloudapi.woa.com/document/product/240/38576#AuditLogFilter)
-* [DeliverSummary](http://document.tencentcloudapi.woa.com/document/product/240/38576#DeliverSummary)
-* [Filters](http://document.tencentcloudapi.woa.com/document/product/240/38576#Filters)
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/240/38576#InstanceInfo)
-* [LogFilter](http://document.tencentcloudapi.woa.com/document/product/240/38576#LogFilter)
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2023-06-16
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 114 次发布
-
-发布时间：2025-11-19 01:45:03
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAlarmNotice](http://document.tencentcloudapi.woa.com/document/product/248/51288)
-
-	* 新增入参：IsLoginFree
-
-* [ModifyAlarmNotice](http://document.tencentcloudapi.woa.com/document/product/248/51277)
-
-	* 新增入参：IsLoginFree
-
-
-修改数据结构：
-
-* [AlarmNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmNotice)
-
-	* 新增成员：IsLoginFree
-
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 67 次发布
-
-发布时间：2025-11-19 01:52:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/583/18586)
-
-	* 新增入参：Port, ReadinessProbe
-
-* [GetFunction](http://document.tencentcloudapi.woa.com/document/product/583/18584)
-
-	* 新增出参：ReadinessProbe, Port
-
-* [UpdateFunctionConfiguration](http://document.tencentcloudapi.woa.com/document/product/583/18580)
-
-	* 新增入参：Port, ReadinessProbe
-
-
-新增数据结构：
-
-* [ReadinessProbe](http://document.tencentcloudapi.woa.com/document/product/583/17244#ReadinessProbe)
-
-
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 112 次发布
-
-发布时间：2025-11-19 02:02:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateTrainingTask](http://document.tencentcloudapi.woa.com/document/product/851/74857)
-
-	* 新增入参：ExposeNetworkConfig
-
-
-新增数据结构：
-
-* [ExposeNetworkConfig](http://document.tencentcloudapi.woa.com/document/product/851/74915#ExposeNetworkConfig)
-* [InstanceFaultExtraInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#InstanceFaultExtraInfo)
-* [InstanceFaultExtraInfoValue](http://document.tencentcloudapi.woa.com/document/product/851/74915#InstanceFaultExtraInfoValue)
-* [InstanceFaultInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#InstanceFaultInfo)
-
-修改数据结构：
-
-* [ImageInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageInfo)
-
-	* 新增成员：EntryPoint, WorkDir
-
-* [Instance](http://document.tencentcloudapi.woa.com/document/product/851/74915#Instance)
-
-	* 新增成员：FaultInfo
-
-* [PortElement](http://document.tencentcloudapi.woa.com/document/product/851/74915#PortElement)
-
-	* 新增成员：UnbindClb
-
-* [TrainingTaskDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingTaskDetail)
-
-	* 新增成员：ExposeNetworkConfig
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2019-10-22
+* [DescribeRocketMQTopic](http://document.tencentcloudapi.woa.com/document/product/1179/88073)
 
 
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 227 次发布
+### 第 228 次发布
 
-发布时间：2025-11-19 02:07:30
+发布时间：2025-11-20 02:07:45
 
 本次发布包含了以下内容：
 
@@ -212,34 +136,18 @@
 
 新增接口：
 
-* [DescribeNatGatewayZones](http://document.tencentcloudapi.woa.com/document/product/215/88038)
+* [CheckNatGatewayOperationRisk](http://document.tencentcloudapi.woa.com/document/product/215/88078)
+* [DescribeNatGatewayDeletionCheckFlag](http://document.tencentcloudapi.woa.com/document/product/215/88077)
+* [GetNatGatewayEstimatedCost](http://document.tencentcloudapi.woa.com/document/product/215/88076)
+* [ModifyNatGatewayDeletionCheckFlag](http://document.tencentcloudapi.woa.com/document/product/215/88075)
+* [UpgradeNatGatewayProductVersion](http://document.tencentcloudapi.woa.com/document/product/215/88074)
 
 修改接口：
 
-* [CreateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/36721)
-
-	* 新增入参：EnableInstanceRouteTable
-
-* [DeleteNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/36719)
+* [DeletePrivateNatGateway](http://document.tencentcloudapi.woa.com/document/product/215/84096)
 
 	* 新增入参：IgnoreOperationRisk
 
-* [DescribeVpcEndPoint](http://document.tencentcloudapi.woa.com/document/product/215/54679)
-
-	* 新增入参：MaxResults, NextToken
-
-	* 新增出参：NextToken
-
-* [DescribeVpcEndPointService](http://document.tencentcloudapi.woa.com/document/product/215/54678)
-
-	* 新增入参：MaxResults, NextToken
-
-	* 新增出参：NextToken
-
-
-新增数据结构：
-
-* [NatZoneInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#NatZoneInfo)
 
 
 

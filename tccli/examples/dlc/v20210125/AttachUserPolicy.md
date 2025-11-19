@@ -6,18 +6,20 @@ Input:
 
 ```
 tccli dlc AttachUserPolicy --cli-unfold-argument  \
-    --UserId 1248065439 \
-    --PolicySet.0.Table TableName \
-    --PolicySet.0.Catalog COSDataCatalog \
-    --PolicySet.0.Operation ALL \
-    --PolicySet.0.Database DatabaseName
+    --UserId 10401463674518 \
+    --PolicySet.0.Database create_test \
+    --PolicySet.0.Catalog DataLakeCatalog \
+    --PolicySet.0.Operation CREATE_TABLE \
+    --PolicySet.0.Table test_table \
+    --PolicySet.0.PolicyType TABLE \
+    --PolicySet.0.Mode SENIOR
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1287310-badou889lodj-1231jk12"
+        "RequestId": "4e2a0b4b-6c0b-40de-9e39-0761ed1f6be4"
     }
 }
 ```

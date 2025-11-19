@@ -5,48 +5,28 @@
 Input: 
 
 ```
-tccli dlc DescribeUsers --cli-unfold-argument  \
-    --Limit 10 \
-    --Sorting create-time \
-    --UserId 1248065439 \
-    --SortBy desc \
-    --Offset 0
-```
+tccli dlc DescribeUsers --cli-unfold-argument ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 222,
         "UserSet": [
             {
-                "Creator": "1248065439",
-                "PolicySet": [
-                    {
-                        "Table": "TableName",
-                        "Catalog": "COSDataCatalog",
-                        "Operation": "ALL",
-                        "Database": "DatabaseName"
-                    }
-                ],
-                "UserId": "1248065439",
-                "UserType": "ADMIN",
-                "UserAlias": "xxxname",
-                "IsOwner": true,
-                "UserDescription": "Test User",
-                "WorkGroupSet": [
-                    {
-                        "WorkGroupId": 0,
-                        "WorkGroupName": "Group1",
-                        "CreateTime": "2021-07-28 16:19:32",
-                        "WorkGroupDescription": "test group",
-                        "Creator": "1248065439"
-                    }
-                ],
-                "CreateTime": "2021-07-28 16:19:32"
+                "AccountType": "UserAccount",
+                "CreateTime": "2025-11-08 12:04:14",
+                "Creator": "700002195687",
+                "IsOwner": false,
+                "PolicySet": [],
+                "UserAlias": "thea_004",
+                "UserDescription": "",
+                "UserId": "700002220057",
+                "UserType": "COMMON",
+                "WorkGroupSet": []
             }
         ],
-        "RequestId": "1287310-badou889lodj-1231jk12"
+        "RequestId": "fe51b336-c33f-4c34-8334-eb4afe0ee127"
     }
 }
 ```

@@ -348,6 +348,14 @@
         "title": "用于检查某个IP是否在子网里面"
       }
     ],
+    "CheckNatGatewayOperationRisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckNatGatewayOperationRisk\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"nat-3nptcfvp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NatGatewayId\": \"nat-3nptcfvp\",\n        \"HaveRoute\": true,\n        \"PeakBandwidth\": 150.75,\n        \"RiskLevel\": \"HIGH\",\n        \"RequestId\": \"req-12345678-1234-1234-1234-123456789012\"\n    }\n}",
+        "title": "查询NAT网关操作风险"
+      }
+    ],
     "CheckNetDetectState": [
       {
         "document": "根据网络探测ID验证探测参数",
@@ -1473,7 +1481,7 @@
     "DeletePrivateNatGateway": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateNatGateway\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateNatGateway\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"intranat-0g3blj80\",\n    \"IgnoreOperationRisk\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8877515-7b7a-4109-914d-957001d67eaf\"\n    }\n}",
         "title": "删除私网NAT网关"
       }
@@ -2520,6 +2528,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeLocalGateway\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"LocalGatewaySet\": [\n            {\n                \"CdcId\": \"cluster-1234dert\",\n                \"VpcId\": \"vpc-m0c2kcun\",\n                \"UniqLocalGwId\": \"lgw-1234edfr\",\n                \"LocalGatewayName\": \"TEST\",\n                \"LocalGwIp\": \"10.0.0.0\",\n                \"CreateTime\": \"2021-03-24 15:31:56\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查询本地网关"
+      }
+    ],
+    "DescribeNatGatewayDeletionCheckFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatGatewayDeletionCheckFlag\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Region\": \"ap-guangzhou\",\n        \"DeletionCheckFlag\": true,\n        \"RequestId\": \"12345678-1234-1234-1234-123456789012\"\n    }\n}",
+        "title": "查询是否开启地域粒度防误删开关"
       }
     ],
     "DescribeNatGatewayDestinationIpPortTranslationNatRules": [
@@ -3744,6 +3760,14 @@
         "title": "查询CCN地域间带宽详情"
       }
     ],
+    "GetNatGatewayEstimatedCost": [
+      {
+        "document": "获取NAT网关估算费用。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=GetNatGatewayEstimatedCost\n&NatGatewayId=nat-lz6rjk7n\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9b0cd80-3b86-4e03-8fc9-bc7de311bc73\",\n        \"Currency\": \"CNY\",\n        \"CuFee\": 0.23,\n        \"DiscountCuFee\": 0.161\n    }\n}",
+        "title": "获取NAT网关估算费用"
+      }
+    ],
     "GetTradeBillingAuth": [
       {
         "document": "预付费下单屏蔽余额支付场景-获取AUTH",
@@ -4206,6 +4230,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatGatewayAttribute\n<公共请求参数>\n\n{\n    \"NatGatewayId\": \"nat-owj32fec\",\n    \"StrictSnatMode\": \"true\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5acefde4-3be5-4582-a432-742081e1c904\"\n    }\n}",
         "title": "变更NAT实例的SNAT模式"
+      }
+    ],
+    "ModifyNatGatewayDeletionCheckFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatGatewayDeletionCheckFlag\n<公共请求参数>\n\n{\n    \"DeletionCheckFlag\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678-1234-1234-1234-123456789012\"\n    }\n}",
+        "title": "修改地域粒度防误删开关"
       }
     ],
     "ModifyNatGatewayDestinationIpPortTranslationNatRule": [
@@ -5082,6 +5114,20 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=UpdateVpcPeerInternal\n&VpcPeerRequestSet.0.VpcPeerId=2\n&VpcPeerRequestSet.0.Owner=251198225\n&VpcPeerRequestSet.0.State=0\n&VpcPeerRequestSet.0.Name=11\n&VpcPeerRequestSet.0.Bandwidth=0\n&VpcPeerRequestSet.0.OwedFlag=0\n&VpcPeerRequestSet.0.VirtualSafeGroupIp=1.2.3.5\n&VpcPeerRequestSet.0.NewAfcFlag=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"UpdatePeerSet\": [\n            {\n                \"SrcVpcSubnet\": \"172.16.0.0\",\n                \"DestVpcId\": 76644,\n                \"PublishDockerCidrFlag\": 0,\n                \"OldDestVpcSubnet\": \"10.0.0.0\",\n                \"OldNewAfcFlag\": 0,\n                \"OldVirtualSafeGroupIp\": \"0.0.0.0\",\n                \"UniqueDestVpcId\": \"vpc-n05ss3vl\",\n                \"OldLocalBandwidth\": 0,\n                \"OldName\": \"DDDD\",\n                \"SrcOwner\": \"251198225\",\n                \"Owner\": \"251198225\",\n                \"OldZoneVpcPeerFlag\": 0,\n                \"OldOwedFlag\": 0,\n                \"OldLastState\": 0,\n                \"SrcVpcId\": 78257,\n                \"State\": 1,\n                \"OldSrcVpcIntMask\": 16,\n                \"LocalBandwidth\": 0,\n                \"DestVpcIntMask\": 16,\n                \"DestOwner\": \"251198225\",\n                \"Type\": 0,\n                \"LastState\": 0,\n                \"OldDestExpireTime\": \"2021-12-31 19:41:49\",\n                \"OldDestVpcIntMask\": 16,\n                \"OldSrcVpcSubnet\": \"172.16.0.0\",\n                \"DestRegion\": 0,\n                \"OldState\": 1,\n                \"OldSrcExpireTime\": \"2021-12-31 19:41:49\",\n                \"WanOutLimit\": 0,\n                \"SrcViewFlag\": 1,\n                \"OldDestViewFlag\": 1,\n                \"ImageId\": \"\",\n                \"DestVpcSubnet\": \"10.0.0.0\",\n                \"CreateTime\": \"2021-12-31 19:41:49\",\n                \"SrcExpireTime\": \"2021-12-31 19:41:49\",\n                \"VpcPeerId\": 26574,\n                \"ZoneVpcPeerFlag\": 0,\n                \"UniqueSrcVpcId\": \"vpc-jmaywf6r\",\n                \"OwedFlag\": 0,\n                \"Name\": \"DDDD\",\n                \"NfvFlag\": 0,\n                \"VirtualSafeGroupIp\": \"0.0.0.0\",\n                \"NewAfcFlag\": 0,\n                \"SrcRegion\": 0,\n                \"Bandwidth\": 0,\n                \"UniqueVpcPeerId\": \"pcx-fh7xs34s\",\n                \"OldPublishDockerCidrFlag\": 0,\n                \"AfcVpcPeerGlobalId\": 0,\n                \"SrcVpcIntMask\": 16,\n                \"DestViewFlag\": 1,\n                \"OldBandwidth\": 0,\n                \"OldSrcViewFlag\": 1,\n                \"OldWanOutLimit\": 0,\n                \"DestExpireTime\": \"2021-12-31 19:41:49\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "更新vpc peer"
+      }
+    ],
+    "UpgradeNatGatewayProductVersion": [
+      {
+        "document": "传统型NAT实例升级到标准型NAT",
+        "input": "https://vpc.tencentcloudapi.com/?Action=MigrateTraditionalNatToStandard\n&VpcId=vpc-2d98uyh6\n&NatGatewayId=nat-lz6rjk7n\n&Force=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9b0cd80-3b86-4e03-8fc9-bc7de311bc73\"\n    }\n}",
+        "title": "传统型NAT实例升级到标准型NAT"
+      },
+      {
+        "document": "校验传统型NAT实例能否升级到标准型NAT\n返回值无报错，表示校验成功。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=MigrateTraditionalNatToStandard\n&VpcId=vpc-2d98uyh6\n&NatGatewayId=nat-lz6rjk7n\n&Force=1\n&CheckOnlyMode=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9b0cd80-3b86-4e03-8fc9-bc7de311bc73\"\n    }\n}",
+        "title": "校验传统型NAT实例能否升级到标准型NAT"
       }
     ],
     "WithdrawNotifyRoutes": [

@@ -826,6 +826,13 @@
       "output": "DescribeRocketMQTopUsagesResponse",
       "status": "online"
     },
+    "DescribeRocketMQTopic": {
+      "document": "获取RocketMQ主题详情",
+      "input": "DescribeRocketMQTopicRequest",
+      "name": "获取RocketMQ主题详情",
+      "output": "DescribeRocketMQTopicResponse",
+      "status": "online"
+    },
     "DescribeRocketMQTopicMsgs": {
       "document": "rocketmq 消息查询",
       "input": "DescribeRocketMQTopicMsgsRequest",
@@ -13481,6 +13488,88 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQTopicRequest": {
+      "document": "DescribeRocketMQTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rocketmq-4k4orqgq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "test_ns",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "test_topic",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "test_group",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅列表分页参数Offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "订阅列表分页参数Limit",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQTopicResponse": {
+      "document": "DescribeRocketMQTopic返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Topic详情",
+          "example": "无",
+          "member": "RocketMQTopic",
+          "name": "Topic",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

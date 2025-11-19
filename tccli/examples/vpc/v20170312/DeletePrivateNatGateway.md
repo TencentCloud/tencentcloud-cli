@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli vpc DeletePrivateNatGateway --cli-unfold-argument  \
-    --NatGatewayId intranat-0g3blj80
+    --NatGatewayId intranat-0g3blj80 \
+    --IgnoreOperationRisk False
 ```
 
 Output: 
