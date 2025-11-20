@@ -457,7 +457,7 @@ def doDescribeNetDisks(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeVulGroups(args, parsed_globals):
+def doDescribePocAssetData(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -489,11 +489,11 @@ def doDescribeVulGroups(args, parsed_globals):
     client = mod.CtemClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeVulGroupsRequest()
+    model = models.DescribePocAssetDataRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeVulGroups(model)
+        rsp = client.DescribePocAssetData(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -604,6 +604,61 @@ def doDescribeSeedHistory(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeSeedHistory(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeApiSecs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CtemClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeApiSecsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeApiSecs(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -952,7 +1007,7 @@ def doDescribeConfigs(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSecurityOverview(args, parsed_globals):
+def doDescribeSupplyChains(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -984,11 +1039,11 @@ def doDescribeSecurityOverview(args, parsed_globals):
     client = mod.CtemClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSecurityOverviewRequest()
+    model = models.DescribeSupplyChainsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeSecurityOverview(model)
+        rsp = client.DescribeSupplyChains(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1117,7 +1172,7 @@ def doDescribeFakeWebsites(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePocAssetData(args, parsed_globals):
+def doDescribeVulGroups(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1149,11 +1204,11 @@ def doDescribePocAssetData(args, parsed_globals):
     client = mod.CtemClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePocAssetDataRequest()
+    model = models.DescribeVulGroupsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribePocAssetData(model)
+        rsp = client.DescribeVulGroups(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2877,7 +2932,7 @@ def doDescribeEnterprises(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeSupplyChains(args, parsed_globals):
+def doDescribeSecurityOverview(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2909,11 +2964,11 @@ def doDescribeSupplyChains(args, parsed_globals):
     client = mod.CtemClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSupplyChainsRequest()
+    model = models.DescribeSecurityOverviewRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeSupplyChains(model)
+        rsp = client.DescribeSecurityOverview(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3152,7 +3207,7 @@ def doDescribeWeakPasswords(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeWechatApplets(args, parsed_globals):
+def doCreateEnterprise(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3184,11 +3239,11 @@ def doDescribeWechatApplets(args, parsed_globals):
     client = mod.CtemClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeWechatAppletsRequest()
+    model = models.CreateEnterpriseRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeWechatApplets(model)
+        rsp = client.CreateEnterprise(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3244,6 +3299,61 @@ def doDescribeHttpChanges(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeHttpChanges(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeWechatApplets(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.CtemClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeWechatAppletsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeWechatApplets(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3336,19 +3446,20 @@ ACTION_MAP = {
     "DescribeLeakageDatas": doDescribeLeakageDatas,
     "DescribeHttpTags": doDescribeHttpTags,
     "DescribeNetDisks": doDescribeNetDisks,
-    "DescribeVulGroups": doDescribeVulGroups,
+    "DescribePocAssetData": doDescribePocAssetData,
     "DescribeSecurityTop": doDescribeSecurityTop,
     "DescribeSeedHistory": doDescribeSeedHistory,
+    "DescribeApiSecs": doDescribeApiSecs,
     "DescribeDomains": doDescribeDomains,
     "DescribeReports": doDescribeReports,
     "DescribeVulAssetData": doDescribeVulAssetData,
     "DescribeVuls": doDescribeVuls,
     "DescribeManages": doDescribeManages,
     "DescribeConfigs": doDescribeConfigs,
-    "DescribeSecurityOverview": doDescribeSecurityOverview,
+    "DescribeSupplyChains": doDescribeSupplyChains,
     "DescribeJobRecordTaskInfo": doDescribeJobRecordTaskInfo,
     "DescribeFakeWebsites": doDescribeFakeWebsites,
-    "DescribePocAssetData": doDescribePocAssetData,
+    "DescribeVulGroups": doDescribeVulGroups,
     "DescribeAutoScanConfig": doDescribeAutoScanConfig,
     "DescribeFakeMiniPrograms": doDescribeFakeMiniPrograms,
     "DescribeBannerData": doDescribeBannerData,
@@ -3380,13 +3491,14 @@ ACTION_MAP = {
     "DescribeWechatOfficialAccounts": doDescribeWechatOfficialAccounts,
     "DescribeUserInfo": doDescribeUserInfo,
     "DescribeEnterprises": doDescribeEnterprises,
-    "DescribeSupplyChains": doDescribeSupplyChains,
+    "DescribeSecurityOverview": doDescribeSecurityOverview,
     "CreateCustomer": doCreateCustomer,
     "StopJobRecord": doStopJobRecord,
     "DescribeJobRecords": doDescribeJobRecords,
     "DescribeWeakPasswords": doDescribeWeakPasswords,
-    "DescribeWechatApplets": doDescribeWechatApplets,
+    "CreateEnterprise": doCreateEnterprise,
     "DescribeHttpChanges": doDescribeHttpChanges,
+    "DescribeWechatApplets": doDescribeWechatApplets,
     "DescribeSeedOverview": doDescribeSeedOverview,
 
 }

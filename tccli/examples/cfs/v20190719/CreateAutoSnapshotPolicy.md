@@ -1,21 +1,25 @@
-**Example 1: 创建文件系统快照策略**
+**Example 1: 创建快照策略**
 
-创建文件系统快照策略
+
 
 Input: 
 
 ```
 tccli cfs CreateAutoSnapshotPolicy --cli-unfold-argument  \
-    --DayOfWeek 1,2 \
-    --Hour 2,4
+    --Hour 1 \
+    --PolicyName abd \
+    --DayOfWeek 1 \
+    --AliveDays 1 \
+    --ResourceTags.0.TagKey u90e8u95e8 \
+    --ResourceTags.0.TagValue u4e91u4ea7u54c1u4e00u90e8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "fjo8aejo-fjei-32eu-2je9-fhue83nd81",
-        "AutoSnapshotPolicyId": "asp-12345"
+        "AutoSnapshotPolicyId": "asp-fglw8r91",
+        "RequestId": "0c37adaf-f6bc-4fca-b387-454ea93127e1"
     }
 }
 ```

@@ -3306,7 +3306,7 @@
           "disabled": false,
           "document": "当前分区id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
-          "member": "uint64",
+          "member": "int64",
           "name": "Partitions",
           "output_required": true,
           "type": "int",

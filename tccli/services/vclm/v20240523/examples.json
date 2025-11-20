@@ -8,6 +8,14 @@
         "title": "检测输入图成功案例"
       }
     ],
+    "DescribeHumanActorJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHumanActorJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1382369743251030016\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"49d3235d-0f60-4add-9fdf-662030c340f1\",\n        \"ResultVideoUrl\": \"https://cos.ap-guangzhou.tencentcos.cn/xxx.mp4\",\n        \"Status\": \"DONE\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "DescribeImageAnimateJob": [
       {
         "document": "调用成功示例",
@@ -46,6 +54,14 @@
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoStylizationJob\n<公共请求参数>\n\n{\n    \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"c5daf8f7077d41a69c13aab31a7164f3\",\n        \"RequestId\": \"c048e3cf-79b3-4080-9892-15bb96a680e5\",\n        \"ResultVideoUrl\": \"https://vcg-prod-xxx.cos.ap-guangzhou.tencentcos.cn/xxx.mp4\",\n        \"StatusCode\": \"JobSuccess\",\n        \"StatusMsg\": \"处理完成\"\n    }\n}",
         "title": "成功调用-任务完成"
+      }
+    ],
+    "SubmitHumanActorJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHumanActorJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"画面中的人物正在对着镜头讲话，偶尔做些手势匹配说话的内容\",\n    \"AudioUrl\": \"https://cos.ap-guangzhou.myqcloud.com/xxx.mp3\",\n    \"ImageUrl\": \"https://cos.ap-guangzhou.myqcloud.com/xxx.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1382369743251030016\",\n        \"RequestId\": \"6f70a522-09c8-46c9-9e22-e6c2ab23ac3c\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "SubmitImageAnimateJob": [
