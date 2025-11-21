@@ -1632,6 +1632,17 @@
         },
         {
           "disabled": false,
+          "document": "数字水印参数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BlindWatermarkInput",
+          "name": "BlindWatermark",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "转自适应码流后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskOutputStorage",
@@ -8169,6 +8180,23 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BlindWatermarkInput": {
+      "document": "媒体处理任务中的数字水印参数类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印模板ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -20300,7 +20328,7 @@
         },
         {
           "disabled": false,
-          "document": "图片框选区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。\n示例值：[101, 85, 111, 95]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片框选区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。注意：该字段最大值为4096。\n示例值：[101, 85, 111, 95]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[101, 85, 111, 95]",
           "member": "int64",
           "name": "AreaCoordSet",
@@ -20311,7 +20339,7 @@
         },
         {
           "disabled": false,
-          "document": "图片框选区域坐标，[x1, y1, x2, y2]，即左上角坐标、右下角坐标， 当AreaCoordSet未指定时生效。\n- [0.1, 0.1, 0.3, 0.3] :  表示比例 （数值小于1）\n- [50, 50, 350, 280] : 表示像素 （数值大于等于1）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片框选区域坐标，[x1, y1, x2, y2]，即左上角坐标、右下角坐标， 当AreaCoordSet未指定时生效。当表示像素时，该字段最大值为4096。\n- [0.1, 0.1, 0.3, 0.3] :  表示比例 （数值小于1）\n- [50, 50, 350, 280] : 表示像素 （数值大于等于1）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[0.1, 0.1, 0.2, 0.2]",
           "member": "float",
           "name": "BoundingBox",
@@ -20319,6 +20347,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "BoundingBox字段单位。设置为0时，按照该字段规则自动选择单位；设置为1时，单位为比例；设置为2时，单位为像素。",
+          "example": "0",
+          "member": "uint64",
+          "name": "BoundingBoxUnitType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -28642,6 +28681,24 @@
         },
         {
           "disabled": false,
+          "document": "图片处理模板唯一标识。",
+          "example": "20001",
+          "member": "uint64",
+          "name": "Definition",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。",
+          "example": "vts-24000-0",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "图片处理参数。",
           "example": "无",
           "member": "ImageTaskInput",
@@ -34675,6 +34732,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BlindWatermarkInput",
+          "name": "BlindWatermark",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "disabled": false,

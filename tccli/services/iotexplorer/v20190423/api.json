@@ -19126,6 +19126,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复刻音色ID，当不为空时，DefaultVoiceType为200000000",
+          "example": "wdc-wf45y25",
+          "member": "string",
+          "name": "FastVoiceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -48,6 +48,7 @@ tccli teo ModifyL7AccSetting --cli-unfold-argument  \
     --ZoneConfig.ClientIPCountry.HeaderName  \
     --ZoneConfig.ClientIPCountry.Switch off \
     --ZoneConfig.Grpc.Switch off \
+    --ZoneConfig.NetworkErrorLogging.Switch on \
     --ZoneConfig.AccelerateMainland.Switch off \
     --ZoneConfig.StandardDebug.Expires 1969-12-31T16:00:00Z \
     --ZoneConfig.StandardDebug.Switch off

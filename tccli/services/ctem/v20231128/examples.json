@@ -8,12 +8,28 @@
         "title": "添加企业"
       }
     ],
+    "CreateEnterprise": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnterprise\n<公共请求参数>\n\n{\n    \"Name\": \"测试\",\n    \"CreditCode\": \"test\",\n    \"Status\": \"存续\",\n    \"RegisteredCapital\": \"100元\",\n    \"ShareholdingRatio\": \"100%\",\n    \"LegalPerson\": \"张三\",\n    \"Type\": \"软件\",\n    \"Industry\": \"软件\",\n    \"CustomerId\": 100068\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd673644-6c6b-40c5-ba8c-f339a56a49e5\"\n    }\n}",
+        "title": "添加企业架构数据"
+      }
+    ],
     "CreateJobRecord": [
       {
         "document": "启动测绘",
         "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJobRecord\n<公共请求参数>\n\n{\n    \"CustomerId\": 100136,\n    \"Qps\": 55,\n    \"TaskType\": \"即时任务\"\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": 10000036,\n        \"RequestId\": \"1b2dcfec-80d6-4a5d-acec-aaea7c6caa14\"\n    }\n}",
         "title": "启动测绘"
+      }
+    ],
+    "DescribeApiSecs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiSecs\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"IsRiskAPI\",\n            \"Values\": [\n                \"1\"\n            ]\n        }\n    ],\n    \"CustomerId\": 100275\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Code\": 200,\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2025-08-11 16:32:20\",\n                    \"CustomerId\": 100275,\n                    \"CustomerName\": \"腾讯测试\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Labels\": \"{}\",\n                    \"Md5\": \"55e3de2116082d108358d1dbf3fbe4c4\",\n                    \"UpdateAt\": \"2025-08-11 16:33:40\"\n                },\n                \"Host\": \"http://test.com\",\n                \"Id\": 1006,\n                \"IsRiskAPI\": true,\n                \"Method\": \"POST\",\n                \"Path\": \"/v1/api\",\n                \"Request\": \"\",\n                \"Response\": \"\",\n                \"Status\": \"\",\n                \"Url\": \"http://test.com/v1/api\"\n            }\n        ],\n        \"RequestId\": \"302c99a9-5449-424d-b116-061a63977200\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看API安全数据"
       }
     ],
     "DescribeApps": [

@@ -22796,6 +22796,15 @@
         },
         {
           "disabled": false,
+          "document": "网络错误日志记录配置。不填写表示保持原有配置。",
+          "example": "无",
+          "member": "NetworkErrorLogging",
+          "name": "NetworkErrorLogging",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "图片优化配置。\n不填写表示关闭。",
           "example": "无",
           "member": "ImageOptimize",
@@ -23255,6 +23264,40 @@
         }
       ],
       "usage": "out"
+    },
+    "NetworkErrorLogging": {
+      "document": "网络错误日志记录配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启网络错误日志记录配置，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NetworkErrorLoggingParameters": {
+      "document": "网络错误日志记录配置项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络错误日志记录配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "NextOriginACL": {
       "document": "当回源 IP 网段发生更新时，该字段会返回下一个版本将要生效的回源 IP 网段，包含与当前生效的回源 IP 网段的对比。",
@@ -30124,6 +30167,17 @@
         },
         {
           "disabled": false,
+          "document": "网络错误日志记录配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetworkErrorLoggingParameters",
+          "name": "NetworkErrorLogging",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "中国大陆加速优化配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AccelerateMainlandParameters",
@@ -30411,6 +30465,16 @@
           "example": "无",
           "member": "Grpc",
           "name": "Grpc",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络错误日志记录配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetworkErrorLogging",
+          "name": "NetworkErrorLogging",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true

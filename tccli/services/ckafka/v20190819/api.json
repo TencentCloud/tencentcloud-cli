@@ -259,6 +259,13 @@
       "output": "DescribeAclRuleResponse",
       "status": "online"
     },
+    "DescribeCkafkaVersion": {
+      "document": "查询实例版本信息",
+      "input": "DescribeCkafkaVersionRequest",
+      "name": "查询实例版本信息",
+      "output": "DescribeCkafkaVersionResponse",
+      "status": "online"
+    },
     "DescribeCkafkaZone": {
       "document": "用于查看ckafka的可用区列表",
       "input": "DescribeCkafkaZoneRequest",
@@ -621,6 +628,13 @@
       "input": "SendMessageRequest",
       "name": "HTTP发送消息",
       "output": "SendMessageResponse",
+      "status": "online"
+    },
+    "UpgradeBrokerVersion": {
+      "document": "broker版本升级",
+      "input": "UpgradeBrokerVersionRequest",
+      "name": "broker版本升级接口",
+      "output": "UpgradeBrokerVersionResponse",
       "status": "online"
     }
   },
@@ -4532,6 +4546,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "消息保存的时间类型:CreateTime/LogAppendTime",
+          "example": "LogAppendTime",
+          "member": "string",
+          "name": "LogMsgTimestampType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6112,6 +6135,33 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCkafkaVersionRequest": {
+      "document": "DescribeCkafkaVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka集群实例Id",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCkafkaVersionResponse": {
+      "document": "DescribeCkafkaVersion返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8140,6 +8190,15 @@
           "name": "RouteId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否显示主路由，true时会在返回原路由列表的基础上,再额外展示实例创建时的主路由信息(且不被InternalFlag/UsedFor等参数过滤影响)\t",
+          "example": "true",
+          "member": "bool",
+          "name": "MainRouteFlag",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11823,6 +11882,26 @@
         },
         {
           "disabled": false,
+          "document": "系统维护时间",
+          "example": "2019-08-19 00:00:00",
+          "member": "string",
+          "name": "SystemMaintenanceTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例级别消息最大大小",
+          "example": "8388608",
+          "member": "uint64",
+          "name": "MaxMessageByte",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "实例计费类型  POSTPAID_BY_HOUR 按小时付费; PREPAID 包年包月",
           "example": "PREPAID",
           "member": "string",
@@ -14339,6 +14418,15 @@
           "name": "ReplicaNum",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消息保存的时间类型：CreateTime/LogAppendTime",
+          "example": "LogAppendTime",
+          "member": "string",
+          "name": "LogMsgTimestampType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18694,6 +18782,79 @@
         }
       ],
       "usage": "both"
+    },
+    "UpgradeBrokerVersionRequest": {
+      "document": "UpgradeBrokerVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka集群实例Id",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1.平滑升配.2.垂直升配",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "v2.8.1_r1.1.7",
+          "member": "string",
+          "name": "SourceVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "v2.8.1_r1.1.8",
+          "member": "string",
+          "name": "TargetVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "延迟时间",
+          "example": "2020-08-21 11:15:54",
+          "member": "string",
+          "name": "DelayTimeStamp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeBrokerVersionResponse": {
+      "document": "UpgradeBrokerVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "升配结果",
+          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UrlDecodeParam": {
       "document": "Url解析",

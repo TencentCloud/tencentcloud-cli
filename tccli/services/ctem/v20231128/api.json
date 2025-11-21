@@ -7,11 +7,25 @@
       "output": "CreateCustomerResponse",
       "status": "online"
     },
+    "CreateEnterprise": {
+      "document": "添加企业架构数据",
+      "input": "CreateEnterpriseRequest",
+      "name": "添加企业架构数据",
+      "output": "CreateEnterpriseResponse",
+      "status": "online"
+    },
     "CreateJobRecord": {
       "document": "启动测绘",
       "input": "CreateJobRecordRequest",
       "name": "启动测绘",
       "output": "CreateJobRecordResponse",
+      "status": "online"
+    },
+    "DescribeApiSecs": {
+      "document": "查看API安全数据",
+      "input": "DescribeApiSecsRequest",
+      "name": "查看API安全风险",
+      "output": "DescribeApiSecsResponse",
       "status": "online"
     },
     "DescribeApps": {
@@ -410,6 +424,123 @@
       ],
       "type": "object"
     },
+    "CreateEnterpriseRequest": {
+      "document": "CreateEnterprise请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "暴露面管理测试",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上一级企业",
+          "example": "d3cac1ea6a3e8d6208ca7da4013a3e25",
+          "member": "string",
+          "name": "ParentEnterpriseUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统一社会信用代码",
+          "example": "91500107MAAC121L5F",
+          "member": "string",
+          "name": "CreditCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "企业状态:存续、已注销",
+          "example": "存续",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "注册资本（单位:元）",
+          "example": "1000",
+          "member": "string",
+          "name": "RegisteredCapital",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "持股比例",
+          "example": "100%",
+          "member": "string",
+          "name": "ShareholdingRatio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "法人代表",
+          "example": "tencent",
+          "member": "string",
+          "name": "LegalPerson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "有限责任公司",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "行业类型",
+          "example": "软件和信息技术服务业",
+          "member": "string",
+          "name": "Industry",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子公司ID",
+          "example": "6512bd43d9caa6e02c990b0a82652dca",
+          "member": "string",
+          "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEnterpriseResponse": {
+      "document": "CreateEnterprise返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateJobRecordRequest": {
       "document": "CreateJobRecord请求参数结构体",
       "members": [
@@ -718,6 +849,170 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeApiSecsRequest": {
+      "document": "DescribeApiSecs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否聚合数据",
+          "example": "",
+          "member": "bool",
+          "name": "IsAggregation",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否显示被忽略的数据",
+          "example": "true",
+          "member": "bool",
+          "name": "Ignored",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间-结束",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateAtEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-结束",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间-开始",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateAtStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-开始",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据输出格式：json、file，默认不填为json",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否新增数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNew",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "子公司ID列表",
+          "example": "[\"7286dcdf1c6f6ec1e99a2317b2c960e0\"]",
+          "member": "string",
+          "name": "EnterpriseUidList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询数组",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "100",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApiSecsResponse": {
+      "document": "DescribeApiSecs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API安全数组",
+          "example": "无",
+          "member": "DisplayApiSec",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAppsRequest": {
       "document": "DescribeApps请求参数结构体",
@@ -4952,6 +5247,122 @@
         }
       ],
       "type": "object"
+    },
+    "DisplayApiSec": {
+      "document": "API安全详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID",
+          "example": "100",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公共字段",
+          "example": "无",
+          "member": "DisplayToolCommon",
+          "name": "DisplayToolCommon",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Url",
+          "example": "https://qq.com/v1/api",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Host地址",
+          "example": "https://qq.com",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Path路径",
+          "example": "/v1/api",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "方法：POST、GET、DELETE等",
+          "example": "POST",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修复状态：unrepaired:未修复，repaired:已修复, ignore:已忽略,checking:复测中",
+          "example": "unrepaired",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求体",
+          "example": "{\"domain\":\"qq.com\"}",
+          "member": "string",
+          "name": "Request",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应体",
+          "example": "{\"code\":200,\"data\":[]}",
+          "member": "string",
+          "name": "Response",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否风险API",
+          "example": "false",
+          "member": "bool",
+          "name": "IsRiskAPI",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DisplayApp": {
       "document": "移动资产详情",

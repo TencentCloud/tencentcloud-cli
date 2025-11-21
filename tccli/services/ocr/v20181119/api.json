@@ -4261,6 +4261,114 @@
       ],
       "usage": "out"
     },
+    "ElectronicTollSummary": {
+      "document": "其他发票",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发票名称",
+          "example": "",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "金额",
+          "example": "",
+          "member": "string",
+          "name": "Total",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "",
+          "member": "ElectronicTollSummaryItem",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表格",
+          "example": "",
+          "member": "ElectronicTollSummaryList",
+          "name": "TableItems",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发票日期",
+          "example": "",
+          "member": "string",
+          "name": "Date",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ElectronicTollSummaryItem": {
+      "document": "ElectronicTollSummaryItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "票面key值",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "票面value值",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段所在行，下标从0开始，非行字段或未能识别行号的返回-1",
+          "example": "",
+          "member": "int64",
+          "name": "Row",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ElectronicTollSummaryList": {
+      "document": "其他票Table",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "",
+          "member": "ElectronicTollSummaryItem",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ElectronicTrainTicket": {
       "document": "全电发票（铁路电子客票）",
       "members": [
@@ -16875,6 +16983,16 @@
           "example": "无",
           "member": "UsedCarPurchaseInvoice",
           "name": "UsedCarPurchaseInvoiceElectronic",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通行费电子票据汇总单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "ElectronicTollSummary",
+          "name": "ElectronicTollSummary",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true

@@ -16841,20 +16841,24 @@
           "example": "cluster",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
-          "example": "cls-qbc3zefo",
+          "example": "[]",
           "member": "string",
           "name": "Values",
+          "output_required": false,
           "required": true,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Flag": {
       "document": "参数描述",

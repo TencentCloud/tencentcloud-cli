@@ -71,7 +71,7 @@
       "status": "online"
     },
     "CreateScalingPolicy": {
-      "document": "本接口（CreateScalingPolicy）用于创建告警触发策略。",
+      "document": "本接口（CreateScalingPolicy）用于创建告警触发策略。\n- 目标追踪策略触发扩容的条件为，指定类型指标连续 3 个周期高于阈值（目标值），每个周期 1 分钟；触发缩容的条件为，指定类型指标连续 15 个周期低于阈值（目标值的80%），每个周期 1 分钟。",
       "input": "CreateScalingPolicyRequest",
       "name": "创建告警触发策略",
       "output": "CreateScalingPolicyResponse",
@@ -2254,7 +2254,7 @@
         {
           "disabled": false,
           "document": "告警监控指标，仅适用于简单策略，在简单策略场景下必填。",
-          "example": "{\"ComparisonOperator\": \"GREATER_THAN\", \"ContinuousTime\": 1, \"MetricName\": \"CPU_UTILIZATION\", \"Period\": 60, \"Statistic\": \"AVERAGE\", \"Threshold\": 15}",
+          "example": "无",
           "member": "MetricAlarm",
           "name": "MetricAlarm",
           "required": false,
@@ -7298,7 +7298,7 @@
         {
           "disabled": false,
           "document": "开启监控不健康替换服务。若开启则对于云监控标记为不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ReplaceMonitorUnhealthy",
           "output_required": true,
@@ -7320,7 +7320,7 @@
         {
           "disabled": false,
           "document": "开启负载均衡不健康替换服务。若开启则对于负载均衡健康检查判断不健康的实例，弹性伸缩服务会进行替换。若不指定该参数，则默认为 False。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ReplaceLoadBalancerUnhealthy",
           "output_required": true,
@@ -7342,7 +7342,7 @@
         {
           "disabled": false,
           "document": "自动更新实例标签。默认取值为 False，配置后如伸缩组标签发生更新，会同步更新（同步更新仅支持新增、修改标签，暂不支持删除标签）伸缩组内运行中状态实例的标签，同步更新非立即生效，存在一定延迟。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "AutoUpdateInstanceTags",
           "output_required": false,
@@ -7353,7 +7353,7 @@
         {
           "disabled": false,
           "document": "期望实例数同步最大最小值。默认值为 False。该参数仅对修改伸缩组接口未传入期望数的场景生效。\n<li>True: 修改最大值或最小值时，如与当前期望数存在冲突，则同步调整期望数。例如修改时传入最小值 2，当前期望数为 1，则同步调整期望数为 2。</li>\n<li>False: 修改最大值或最小值时，如与当前期望数存在冲突，报错提示不允许修改。</li>",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "DesiredCapacitySyncWithMaxMinSize",
           "output_required": true,

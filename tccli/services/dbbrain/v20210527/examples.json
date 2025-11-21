@@ -352,6 +352,14 @@
         "title": "DescribeMetricTopProxies test case"
       }
     ],
+    "DescribeMongoDBProcessList": [
+      {
+        "document": "DescribeMongoDbProcessList示例",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMongoDbProcessList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-3bfxr69z\",\n    \"Product\": \"mongodb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProcessList\": {\n            \"Data\": [\n                {\n                    \"Command\": \"{\\\"shard\\\": \\\"cmgo-8hnz2qj1_1\\\",\\\"type\\\": \\\"op\\\",\\\"host\\\": \\\"TENCENT64.site:7037\\\",\\\"desc\\\": \\\"conn15849513\\\",\\\"connectionId\\\": {\\\"$numberInt\\\":\\\"158\",\n                    \"DB\": \"follows_1600088807.$cmd\",\n                    \"Host\": \"9.222.21.122:53642\",\n                    \"ID\": 1798318411,\n                    \"InstanceNodeId\": \"mongos-3\",\n                    \"IsInternalIp\": true,\n                    \"ShardName\": \"cmgo-8hnz2qj1_1\",\n                    \"Time\": 97677.001,\n                    \"Type\": \"command\",\n                    \"User\": \"mongouser\"\n                }\n            ],\n            \"Names\": [\n                \"ID\",\n                \"Host\",\n                \"DB\",\n                \"Command\",\n                \"Time\",\n                \"Type\"\n            ]\n        },\n        \"RequestId\": \"96422ce1-7ffd-40c8-a8fd-304331bd7270\"\n    }\n}",
+        "title": "DescribeMongoDbProcessList示例"
+      }
+    ],
     "DescribeMySqlProcessList": [
       {
         "document": "",

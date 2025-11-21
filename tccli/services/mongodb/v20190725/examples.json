@@ -238,6 +238,14 @@
         "title": "InstanceEnumParam"
       }
     ],
+    "DescribeInstanceSSL": [
+      {
+        "document": "",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeInstanceSSL\n&InstanceId=cmgo-eqmoaxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"ExpiredTime\": \"2023-05-04 12:13:00\",\n        \"CertUrl\": \"http://sample/cert\",\n        \"RequestId\": \"12345-abcdef\"\n    }\n}",
+        "title": "查看实例SSL开启状态"
+      }
+    ],
     "DescribeLogDownloadTasks": [
       {
         "document": "日志下载任务查询",
@@ -348,6 +356,14 @@
         "input": "https://mongodb.tencentcloudapi.com/?Action=InquirePriceRenewDBInstances\n&InstanceIds.0=cmgo-8oij5631\n&InstanceChargePrepaid.Period=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"DiscountPrice\": 455.6,\n            \"OriginalPrice\": 670,\n            \"UnitPrice\": 0\n        },\n        \"RequestId\": \"d08f2a0f-4a69-451e-8ddb-753340d5fb34\"\n    }\n}",
         "title": "获取续费数据库实例价格"
+      }
+    ],
+    "InstanceEnableSSL": [
+      {
+        "document": "关闭SSL状态示例",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=InstanceEnableSSL\n&InstanceId=cmgo-eqmoaxxx\n&Enable=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CertUrl\": \"https://cert-****\",\n        \"ExpiredTime\": \"2024-03-29 13:40:56\",\n        \"RequestId\": \"5297ebe2-63f8-465f-be7d-41058ce438\",\n        \"Status\": 1\n    }\n}",
+        "title": "设置实例SSL状态"
       }
     ],
     "IsolateDBInstance": [

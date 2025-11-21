@@ -1875,7 +1875,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区。",
+          "document": "可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -1884,7 +1884,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群名称。",
+          "document": "高性能计算集群名称，长度限制[1-60]。",
           "example": "MyHpcCluster",
           "member": "string",
           "name": "Name",
@@ -1893,7 +1893,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群备注。",
+          "document": "高性能计算集群备注，长度[1-256]。",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -1902,7 +1902,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群类型。",
+          "document": "高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。",
           "example": "CDC/CHC/STANDARD",
           "member": "string",
           "name": "HpcClusterType",
@@ -1911,7 +1911,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群对应的业务场景标识，当前只支持CDC。",
+          "document": "高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。",
           "example": "例如cdc场景：cluster-iu5gustw，其他场景暂不支持。",
           "member": "string",
           "name": "HpcClusterBusinessId",
@@ -1920,8 +1920,8 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的HPC高性能集群。",
-          "example": "[{\"ResourceType\":\"hpc\",\"Tags\":[{\"Key\":\"tag-key\",\"Value\":\"tag-value\"}",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的HPC高性能集群。集群信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -1936,7 +1936,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群信息。",
-          "example": "[{\"HpcClusterId\":\"hpc-jtynq57p\",\"Name\":\"test\",\"Remark\":\"test\",\"InstanceIds\":[],\"Zone\":\"ap-guangzhou-2\",\"CvmQuotaTotal\":100,\"CurrentNum\":0,\"CreateTime\":\"2023-04-20T06:25:58Z\"}]",
+          "example": "无",
           "member": "HpcClusterInfo",
           "name": "HpcClusterSet",
           "output_required": true,
@@ -3507,7 +3507,7 @@
         {
           "disabled": false,
           "document": "本次请求量, 默认值20，范围限制为[1-100]。",
-          "example": "默认为20",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3543,7 +3543,7 @@
         {
           "disabled": false,
           "document": "<li><strong>tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-value</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。",
-          "example": "[{\"Name\": \"tag-key\",\"Values\": [\"myTag\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3558,7 +3558,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群信息。",
-          "example": "[{\"HpcClusterId\":\"hpc-jtynq57p\",\"Name\":\"test\",\"Remark\":\"test\",\"CvmQuotaTotal\":100,\"Zone\":\"ap-guangzhou-2\",\"CurrentNum\":0,\"InstanceIds\":[],\"CreateTime\":\"2023-04-20T06:25:58Z\"}]",
+          "example": "无",
           "member": "HpcClusterInfo",
           "name": "HpcClusterSet",
           "output_required": true,

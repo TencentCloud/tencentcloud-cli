@@ -308,6 +308,13 @@
       "output": "DescribeMetricTopProxiesResponse",
       "status": "online"
     },
+    "DescribeMongoDBProcessList": {
+      "document": "查询MongoDB实时会话列表",
+      "input": "DescribeMongoDBProcessListRequest",
+      "name": "查询MongoDB实时会话列表",
+      "output": "DescribeMongoDBProcessListResponse",
+      "status": "online"
+    },
     "DescribeMySqlProcessList": {
       "document": "查询关系型数据库的实时线程列表。",
       "input": "DescribeMySqlProcessListRequest",
@@ -3669,7 +3676,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。\n\n查询TDSQL MySQL分布式实例:Instanceld：填写集群ID&Shard实例ID，如：dcdbt-157xxxk&shard-qxxxx",
           "example": "cdb-test156",
           "member": "string",
           "name": "InstanceId",
@@ -3687,7 +3694,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"mariadb\"-mariadb;\"cynosdb\"-TDSQL-C for MySQL ;\"dcdb\"-TDSQL MySQL ;\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -3825,7 +3832,7 @@
         {
           "disabled": false,
           "document": "开始时间，如“2021-05-27 00:00:00”，支持的最早查询时间为当前时间的前30天。",
-          "example": "2021-05-27 00:00:00",
+          "example": "2025-09-03T10:41:59+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -3833,8 +3840,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，如“2021-05-27 01:00:00”，结束时间与开始时间的间隔最大可为7天。",
-          "example": "2021-05-27 01:00:00",
+          "document": "结束时间，如“2021-05-27 01:00:00”，支持的最早查询时间为当前时间的前30天。",
+          "example": "2025-09-03T10:41:59+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -3851,7 +3858,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID列表。",
+          "document": "实例ID列表。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。\n查询TDSQL MySQL分布式实例:Instanceld：填写集群ID&Shard实例ID，如：dcdbt-157xxxk&shard-qxxxx",
           "example": "[\"cdb-test\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -3860,7 +3867,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括：\"mysql\" - 云数据库 MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值包括：\"mysql\" - 云数据库 MySQL，\"redis\" - 云数据库 Redis，\"mariadb\"-数据库mariadb    默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -3925,7 +3932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。\n\n查询TDSQL MySQL分布式实例:Instanceld：填写集群ID&Shard实例ID，如：dcdbt-157xxxk&shard-qxxxx",
           "example": "cdb-test",
           "member": "string",
           "name": "InstanceId",
@@ -3952,7 +3959,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"mariadb\"-mariadb;\"cynosdb\"-TDSQL-C for MySQL ;\"dcdb\"-TDSQL MySQL ;\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -4915,6 +4922,106 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMongoDBProcessListRequest": {
+      "document": "DescribeMongoDBProcessList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "example": "cmgo-ag8kko4r",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值：mongodb",
+          "example": "mongodb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "线程的ID，用于筛选线程列表。",
+          "example": "123",
+          "member": "uint64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "线程的操作主机地址，用于筛选线程列表。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "线程的操作数据库，用于筛选线程列表,如果是多个 使用 ','  分割",
+          "example": "test_db",
+          "member": "string",
+          "name": "DB",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命令类型 ,如果是多个 使用 ','  分割",
+          "example": "update",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Time",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMongoDBProcessListResponse": {
+      "document": "DescribeMongoDBProcessList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MongoDBProcessList",
+          "name": "ProcessList",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7613,7 +7720,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "诊断类型。",
+          "document": "诊断类型。支持值包括\"高危账号\",\"自增键耗尽\",\"连接性检查\",\"CPU利用率\",\"死锁\",\"全表扫描\",\"高并发/压力请求\",\"预编译语句过多\",\"内存利用率\",\"Metadata lock\",\"磁盘超限\",\"内存超限\",\"只读锁\",\"只读实例剔除\",\"行锁\",\"活跃会话\",\"慢SQL\",\"数据库快照\",\"磁盘空间利用率\",\"执行计划变化\",\"主从切换\",\"Table open cache命中率低\",\"大表\",\"事务未提交\",\"事务导致复制延迟\"等。",
           "example": "事务未提交",
           "member": "string",
           "name": "DiagType",
@@ -9527,6 +9634,138 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MongoDBProcessItem": {
+      "document": "mongodb会话详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否内部IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsInternalIp",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语句类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "update",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语句详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{ \t\"shard\": \"cmgo-8hnz2qj1_1\", \t\"type\": \"op\", \t\"host\": \"TENCENT64.site:7037\", \t\"desc\": \"conn15849513\", \t\"connectionId\": { \t\t\"$numberInt\": \"15849513\" \t}",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mongos-3",
+          "member": "string",
+          "name": "InstanceNodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.222.22.122:53642",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "97677.001",
+          "member": "float",
+          "name": "Time",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话ID\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1798318411",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分片名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cmgo-9hnz2qj1_1",
+          "member": "string",
+          "name": "ShardName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mongouser",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "follows_1600088807.$cmd",
+          "member": "string",
+          "name": "DB",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MongoDBProcessList": {
+      "document": "mongodb 会话列表 返回数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列名字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ID\", \"Host\", \"DB\", \"Command\", \"Time\", \"Type\"]",
+          "member": "string",
+          "name": "Names",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接口返回数据详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MongoDBProcessItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -56,6 +56,13 @@
       "output": "CreateAndroidInstanceADBResponse",
       "status": "online"
     },
+    "CreateAndroidInstanceAcceleratorToken": {
+      "document": "创建安卓实例加速Token",
+      "input": "CreateAndroidInstanceAcceleratorTokenRequest",
+      "name": "创建安卓实例加速Token",
+      "output": "CreateAndroidInstanceAcceleratorTokenResponse",
+      "status": "online"
+    },
     "CreateAndroidInstanceImage": {
       "document": "使用指定的安卓实例创建镜像，创建镜像时指定的实例会关机，镜像创建完成后实例会自动开机。当镜像的 AndroidInstanceImageState 为 NORMAL 时，镜像创建完成处于可用状态。",
       "input": "CreateAndroidInstanceImageRequest",
@@ -250,6 +257,13 @@
       "input": "DisconnectAndroidInstanceRequest",
       "name": "断开安卓实例",
       "output": "DisconnectAndroidInstanceResponse",
+      "status": "online"
+    },
+    "DisconnectAndroidInstanceAccelerator": {
+      "document": "断开安卓实例加速节点",
+      "input": "DisconnectAndroidInstanceAcceleratorRequest",
+      "name": "断开安卓实例加速节点",
+      "output": "DisconnectAndroidInstanceAcceleratorResponse",
       "status": "online"
     },
     "DistributeAndroidInstanceImageToHosts": {
@@ -2084,6 +2098,62 @@
       ],
       "type": "object"
     },
+    "CreateAndroidInstanceAcceleratorTokenRequest": {
+      "document": "CreateAndroidInstanceAcceleratorToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户IP，用户客户端的公网IP，用于就近选择起始加速节点",
+          "example": "125.127.178.228",
+          "member": "string",
+          "name": "UserIP",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例 ID 列表。每次请求的实例的上限为 500。",
+          "example": "[ \"cai-a1b2c3d4\" ]",
+          "member": "string",
+          "name": "AndroidInstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndroidInstanceAcceleratorTokenResponse": {
+      "document": "CreateAndroidInstanceAcceleratorToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加速信息",
+          "example": "e30=",
+          "member": "string",
+          "name": "AcceleratorInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安卓实例错误列表。列表包含有问题的安卓实例 ID 以及发生的错误信息。",
+          "example": "无",
+          "member": "AndroidInstanceError",
+          "name": "AndroidInstanceErrors",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAndroidInstanceImageRequest": {
       "document": "CreateAndroidInstanceImage请求参数结构体",
       "members": [
@@ -3854,6 +3924,42 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisconnectAndroidInstanceAcceleratorRequest": {
+      "document": "DisconnectAndroidInstanceAccelerator请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cai-1a2b",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 ID。用户 ID 为空，将断开该实例的所有用户连接；用户 ID 不为空，只断开该用户的连接。",
+          "example": "user-001",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisconnectAndroidInstanceAcceleratorResponse": {
+      "document": "DisconnectAndroidInstanceAccelerator返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

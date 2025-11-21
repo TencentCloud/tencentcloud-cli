@@ -1978,6 +1978,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联镜像密钥",
+          "example": "ccr_xa13ada2",
+          "member": "string",
+          "name": "LinkImageRegistry",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

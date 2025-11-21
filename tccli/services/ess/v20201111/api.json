@@ -43,7 +43,7 @@
       "status": "online"
     },
     "CreateBatchAdminChangeInvitationsUrl": {
-      "document": "此接口用于获取企业批量变更超管链接，包含多条超管变更任务。\n\n前提条件：已调用 [CreateBatchAdminChangeInvitations生成批量变更超管任务接口](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchAdminChangeInvitations) 确保任务提交。\n此链接包含多条超管变更流程，使用该链接可以批量的对企业进行超管变更。",
+      "document": "此接口用于获取企业批量变更超管链接，包含多条超管变更任务。 \n一次性最多获取 500 条任务。\n\n前提条件：已调用 [CreateBatchAdminChangeInvitations生成批量变更超管任务接口](https://qian.tencent.com/developers/companyApis/organizations/CreateBatchAdminChangeInvitations) 确保任务提交。\n此链接包含多条超管变更流程，使用该链接可以批量的对企业进行超管变更。",
       "input": "CreateBatchAdminChangeInvitationsUrlRequest",
       "name": "创建企业批量变更超管链接",
       "output": "CreateBatchAdminChangeInvitationsUrlResponse",
@@ -99,7 +99,7 @@
       "status": "online"
     },
     "CreateBatchSignUrl": {
-      "document": "通过此接口，可以创建小程序批量签署链接，个人/企业员工可通过此链接跳转至小程序进行批量签署。请确保生成链接时的身份信息与签署合同参与方的信息保持一致。\n\n注意事项：\n- 使用此接口生成链接，需要贵企业先开通 <font color=\"red\">个人签署方仅校验手机号 </font>功能。您可以在 <b>【腾讯电子签网页端控制台】->【更多】->【高级签署能力】</b>中找到该功能。\n- 生成批量签署链接时，<font color=\"red\">合同目标参与方的状态必须为<b>待签署</b>状态</font>。签署人点击链接后需要输入短信验证码才能查看合同内容。\n- 企业员工批量签署链接：需要传入签署方所在企业名称，用户名字和手机号（或者身份证件信息）参数来生成签署链接。<font color=\"red\">该签署方企业必须已完成腾讯电子签企业认证</font>\n- 个人批量签署链接：需要传入签署方用户名字和手机号（或者身份证件信息）参数来生成签署链接。个人批量签署进行的合同的签名区， 全部变成<font color=\"red\">手写签名</font>（不管合同里边设置的签名限制）来进行。\n- 不支持签署方含有签批控件，或设置了签署方在签署时自行添加签署控件功能的合同进行批量签署。\n- 进行小程序批量签署必须指定待签署的流程id，<font color=\"red\">接口中FlowIds参数必传。</font>",
+      "document": "通过此接口，可以创建小程序批量签署链接，个人/企业员工可通过此链接跳转至小程序进行批量签署。请确保生成链接时的身份信息与签署合同参与方的信息保持一致。\n\n注意事项：\n- 使用此接口生成链接，需要贵企业先开通 <font color=\"red\">个人签署方仅校验手机号 </font>功能。您可以在 <b>【腾讯电子签网页端控制台】->【更多】->【高级签署能力】</b>中找到该功能。\n- 生成批量签署链接时，<font color=\"red\">合同目标参与方的状态必须为<b>待签署</b>状态</font>。签署人点击链接后需要输入短信验证码才能查看合同内容。\n- 企业员工批量签署链接：需要传入签署方所在企业名称，用户名字和手机号（或者身份证件信息）参数来生成签署链接。\n- 个人批量签署链接：需要传入签署方用户名字和手机号（或者身份证件信息）参数来生成签署链接。个人批量签署进行的合同的签名区， 全部变成<font color=\"red\">手写签名</font>（不管合同里边设置的签名限制）来进行。\n- 不支持签署方含有签批控件，或设置了签署方在签署时自行添加签署控件功能的合同进行批量签署。\n- 进行小程序批量签署必须指定待签署的流程id，<font color=\"red\">接口中FlowIds参数必传。</font>",
       "input": "CreateBatchSignUrlRequest",
       "name": "获取跳转至腾讯电子签小程序的批量签署链接",
       "output": "CreateBatchSignUrlResponse",
@@ -2639,6 +2639,56 @@
       ],
       "usage": "in"
     },
+    "ContractReviewWebUrlOption": {
+      "document": "合同审查个性化参数，用于控制页面的展示内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "禁用暂存。 默认 false，设置为 true 会隐藏界面上的临时保存按钮",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableTemporaryStore",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁用导出。默认 false，设置为 true 会隐藏界面上的导出按钮",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableExport",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁用重新审查。默认 false，设置为 true 会隐藏界面上的重新审查按钮",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableReviewAgain",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁用二维码分享。默认 false，设置为 true 会隐藏界面上的分享二维码",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableWxQrcode",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateBatchAdminChangeInvitationsRequest": {
       "document": "CreateBatchAdminChangeInvitations请求参数结构体",
       "members": [
@@ -2709,7 +2759,7 @@
         {
           "disabled": false,
           "document": "组织机构要变更的超管姓名。 在超管变更流程中，必须是超管本人进行操作，需要更当前操作人的姓名保持一致。\n",
-          "example": "u6a31u6***1u9053",
+          "example": "典子谦",
           "member": "string",
           "name": "NewAdminName",
           "required": true,
@@ -2744,7 +2794,7 @@
         },
         {
           "disabled": false,
-          "document": "通知方式。\n NONE（默认）\n SMS  - 如果使用这个方式，则会给即将变更的超管发信息。\n注意：\n发送信息的手机号，是用户传递的手机号。\n如果用户同时传递了证件号，手机号会用用户在电子签注册的手机号进行覆盖。",
+          "document": "通知方式。\n NONE（默认）\n SMS  - 如果使用这个方式，则会给即将变更的超管发信息。\n注意：\n发送信息的手机号，是用户传递的手机号。\n如果用户同时传递了证件号，手机号会被用户在电子签注册的手机号进行覆盖。",
           "example": "NONE",
           "member": "string",
           "name": "NotifyType",
@@ -2753,7 +2803,7 @@
         },
         {
           "disabled": false,
-          "document": "要跳转的链接类型<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li><li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式,  可以在页面展示适合此类型</li></ul>",
+          "document": "要跳转的链接类型\n<ul>\n<li> **HTTP**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型 ，此时返回长链 （默认类型）。</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url，短信通知或者H5跳转适合此类型，此时返回短链。</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path，APP或者小程序跳转适合此类型。</li>\n<li>**QR_CODE**： 跳转电子签小程序的http_url的二维码形式，可以在页面展示适合此类型。</li>\n</ul>",
           "example": "APP",
           "member": "string",
           "name": "Endpoint",
@@ -3608,7 +3658,7 @@
         },
         {
           "disabled": false,
-          "document": "目标签署人的企业名称，签署人如果是企业员工身份，需要传此参数。\n\n注：\n<ul>\n<li>请确认该名称与企业营业执照中注册的名称一致。</li>\n<li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>\n<li>请确保此企业已完成腾讯电子签企业认证。</li>\n</ul>",
+          "document": "目标签署人的企业名称，签署人如果是企业员工身份，需要传此参数。\n\n注：\n<ul>\n<li>请确认该名称与企业营业执照中注册的名称一致。</li>\n<li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>\n</ul>",
           "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
@@ -3937,6 +3987,15 @@
           "name": "UserData",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "个性化参数，用于控制页面展示内容",
+          "example": "无",
+          "member": "ContractReviewWebUrlOption",
+          "name": "Option",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

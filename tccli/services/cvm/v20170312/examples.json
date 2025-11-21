@@ -59,8 +59,8 @@
     "CreateHpcCluster": [
       {
         "document": "创建高性能计算集群。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=CreateHpcCluster\r\n&Name=test_cluster\r\n&Remark=my cluster\r\n&Zone=ap-guangzhou-3\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"HpcClusterSet\": [\n            {\n                \"HpcClusterId\": \"hpc-0eixl8xv\",\n                \"Name\": \"test_cluster\",\n                \"Remark\": \"my cluster\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceIds\": [],\n                \"CvmQuotaTotal\": 50,\n                \"CurrentNum\": 0,\n                \"CreateTime\": \"2020-06-02T07:36:04Z\"\n            }\n        ],\n        \"RequestId\": \"5834f1a5-cd9c-449d-acba-df1803a8583e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHpcCluster\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\",\n    \"Name\": \"MyHpcCluster\",\n    \"Remark\": \"my cluster\",\n    \"TagSpecification\": [\n        {\n            \"ResourceType\": \"hpc\",\n            \"Tags\": [\n                {\n                    \"Key\": \"tag_key\",\n                    \"Value\": \"tag_value\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"HpcClusterSet\": [\n            {\n                \"HpcClusterId\": \"hpc-0eixl8xv\",\n                \"Name\": \"MyHpcCluster\",\n                \"Remark\": \"my cluster\",\n                \"HpcClusterType\": \"STANDARD\",\n                \"HpcClusterBusinessId\": \"cluster-ax457mhr\",\n                \"HpcClusterNetMode\": 30,\n                \"Zone\": \"ap-guangzhou-3\",\n                \"InstanceIds\": [],\n                \"CvmQuotaTotal\": 50,\n                \"CurrentNum\": 0,\n                \"CreateTime\": \"2020-06-02T07:36:04Z\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"tag_key\",\n                        \"Value\": \"tag_value\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5834f1a5-cd9c-449d-acba-df1803a8583e\"\n    }\n}",
         "title": "创建高性能计算集群"
       }
     ],
@@ -209,7 +209,7 @@
     "DescribeHpcClusters": [
       {
         "document": "查询高性能集群信息",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeHpcClusters\r\n&Zone=ap-guangzhou-3\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHpcClusters\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"HpcClusterSet\": [\n            {\n                \"HpcClusterId\": \"hpc-dc4gcarp\",\n                \"Name\": \"test_33311\",\n                \"Remark\": \"remark 1\",\n                \"CvmQuotaTotal\": 50,\n                \"Zone\": \"ap-guangzhou-3\",\n                \"CurrentNum\": 0,\n                \"InstanceIds\": [],\n                \"HpcClusterNetMode\": 30,\n                \"HpcClusterType\": \"STANDARD\",\n                \"HpcClusterBusinessId\": \"cluster-ax457mhr\",\n                \"CreateTime\": \"2020-06-02T07:55:05Z\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"tag_key\",\n                        \"Value\": \"tag_value\"\n                    }\n                ]\n            },\n            {\n                \"HpcClusterId\": \"hpc-p64fdfa9\",\n                \"Name\": \"test_333333\",\n                \"Remark\": \"remark 2\",\n                \"CvmQuotaTotal\": 50,\n                \"Zone\": \"ap-guangzhou-3\",\n                \"CurrentNum\": 0,\n                \"InstanceIds\": [],\n                \"HpcClusterNetMode\": 30,\n                \"CreateTime\": \"2020-06-02T07:51:58Z\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"tag_key\",\n                        \"Value\": \"tag_value\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"5834f1a5-cd9c-449d-acba-df1803a8583e\"\n    }\n}",
         "title": "查询高性能集群信息"
       }
@@ -603,7 +603,7 @@
     "ModifyHpcClusterAttribute": [
       {
         "document": "修改高性能计算集群名称",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyHpcClusterAttribute\n&HpcClusterId=hpc-gzahhoy5\n&Name=MyHpcCluster\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHpcClusterAttribute\n<公共请求参数>\n\n{\n    \"HpcClusterId\": \"hpc-gzahhoy5\",\n    \"Name\": \"MyHpcCluster\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5834f1a5-cd9c-449d-acba-df1803a8583e\"\n    }\n}",
         "title": "修改高性能计算集群名称"
       }
