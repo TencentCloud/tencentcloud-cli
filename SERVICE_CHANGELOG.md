@@ -1,89 +1,10 @@
-# Release 3.0.1310.1
-
-## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
-
-### 第 24 次发布
-
-发布时间：2025-11-21 01:11:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateSyncUserTask](http://document.tencentcloudapi.woa.com/document/product/1780/88086)
-* [CreateUserDirectory](http://document.tencentcloudapi.woa.com/document/product/1780/88085)
-* [DeleteUserDirectory](http://document.tencentcloudapi.woa.com/document/product/1780/88084)
-* [DescribeAccountGroups](http://document.tencentcloudapi.woa.com/document/product/1780/88089)
-* [DescribeSourceTypes](http://document.tencentcloudapi.woa.com/document/product/1780/88088)
-* [DescribeUserDirectory](http://document.tencentcloudapi.woa.com/document/product/1780/88083)
-* [DescribeUserSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1780/88082)
-* [ModifyUserDirectory](http://document.tencentcloudapi.woa.com/document/product/1780/88081)
-* [SyncDevicesToIOA](http://document.tencentcloudapi.woa.com/document/product/1780/88079)
-* [SyncUserToIOA](http://document.tencentcloudapi.woa.com/document/product/1780/88080)
-
-新增数据结构：
-
-* [AccountGroup](http://document.tencentcloudapi.woa.com/document/product/1780/85236#AccountGroup)
-* [SourceType](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SourceType)
-* [UserDirectory](http://document.tencentcloudapi.woa.com/document/product/1780/85236#UserDirectory)
-* [UserOrg](http://document.tencentcloudapi.woa.com/document/product/1780/85236#UserOrg)
-
-
-
-## 文件存储(cfs) 版本：2019-07-19
-
-### 第 38 次发布
-
-发布时间：2025-11-21 01:18:08
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAutoSnapshotPolicy](http://document.tencentcloudapi.woa.com/document/product/582/75943)
-
-	* 新增入参：ResourceTags
-
-
-修改数据结构：
-
-* [AutoSnapshotPolicyInfo](http://document.tencentcloudapi.woa.com/document/product/582/38175#AutoSnapshotPolicyInfo)
-
-	* 新增成员：Tags
-
-
-
+# Release 3.0.1311.1
 
 ## 暴露面管理服务(ctem) 版本：2023-11-28
 
-### 第 9 次发布
+### 第 10 次发布
 
-发布时间：2025-11-21 01:22:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateEnterprise](http://document.tencentcloudapi.woa.com/document/product/1792/88091)
-* [DescribeApiSecs](http://document.tencentcloudapi.woa.com/document/product/1792/88090)
-
-新增数据结构：
-
-* [DisplayApiSec](http://document.tencentcloudapi.woa.com/document/product/1792/87475#DisplayApiSec)
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
-
-### 第 48 次发布
-
-发布时间：2025-11-21 01:29:21
+发布时间：2025-11-24 01:20:06
 
 本次发布包含了以下内容：
 
@@ -91,89 +12,59 @@
 
 新增接口：
 
-* [DescribeMongoDBProcessList](http://document.tencentcloudapi.woa.com/document/product/1130/88092)
-
-新增数据结构：
-
-* [MongoDBProcessItem](http://document.tencentcloudapi.woa.com/document/product/1130/57812#MongoDBProcessItem)
-* [MongoDBProcessList](http://document.tencentcloudapi.woa.com/document/product/1130/57812#MongoDBProcessList)
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 214 次发布
-
-发布时间：2025-11-21 01:40:08
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [CreateResultPageConfig](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CreateResultPageConfig)
-
-修改数据结构：
-
-* [CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CreateFlowOption)
-
-	* 新增成员：HideComponentTypes, ShowComponentTypes, ForbidAddApprover, ForbidEditFlowProperties, ResultPageConfig
+* [CreateApp](http://document.tencentcloudapi.woa.com/document/product/1792/88120)
+* [CreateAsset](http://document.tencentcloudapi.woa.com/document/product/1792/88119)
+* [CreateDomain](http://document.tencentcloudapi.woa.com/document/product/1792/88118)
+* [CreateHttp](http://document.tencentcloudapi.woa.com/document/product/1792/88117)
+* [CreateManage](http://document.tencentcloudapi.woa.com/document/product/1792/88116)
+* [CreatePort](http://document.tencentcloudapi.woa.com/document/product/1792/88115)
+* [CreateSeeds](http://document.tencentcloudapi.woa.com/document/product/1792/88123)
+* [CreateSubDomain](http://document.tencentcloudapi.woa.com/document/product/1792/88114)
+* [CreateSuspiciousAsset](http://document.tencentcloudapi.woa.com/document/product/1792/88113)
+* [CreateWechatApplet](http://document.tencentcloudapi.woa.com/document/product/1792/88112)
+* [CreateWechatOfficialAccount](http://document.tencentcloudapi.woa.com/document/product/1792/88111)
+* [DeleteApps](http://document.tencentcloudapi.woa.com/document/product/1792/88110)
+* [DeleteAssets](http://document.tencentcloudapi.woa.com/document/product/1792/88109)
+* [DeleteDomains](http://document.tencentcloudapi.woa.com/document/product/1792/88108)
+* [DeleteEnterprises](http://document.tencentcloudapi.woa.com/document/product/1792/88107)
+* [DeleteHttps](http://document.tencentcloudapi.woa.com/document/product/1792/88106)
+* [DeleteManages](http://document.tencentcloudapi.woa.com/document/product/1792/88105)
+* [DeletePorts](http://document.tencentcloudapi.woa.com/document/product/1792/88104)
+* [DeleteSeeds](http://document.tencentcloudapi.woa.com/document/product/1792/88122)
+* [DeleteSubDomains](http://document.tencentcloudapi.woa.com/document/product/1792/88103)
+* [DeleteSuspiciousAssets](http://document.tencentcloudapi.woa.com/document/product/1792/88102)
+* [DeleteWechatApplets](http://document.tencentcloudapi.woa.com/document/product/1792/88101)
+* [DeleteWechatOfficialAccounts](http://document.tencentcloudapi.woa.com/document/product/1792/88100)
+* [IgnoreData](http://document.tencentcloudapi.woa.com/document/product/1792/88099)
+* [ModifySeedStatus](http://document.tencentcloudapi.woa.com/document/product/1792/88121)
 
 
 
+## 人脸识别(iai) 版本：2020-03-03
 
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+### 第 6 次发布
 
-
-
-## 云游戏(gs) 版本：2019-11-18
-
-### 第 44 次发布
-
-发布时间：2025-11-21 01:42:51
+发布时间：2025-11-24 01:44:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+<font color="#dd0000">**删除接口**：</font>
 
-* [CreateAndroidInstanceAcceleratorToken](http://document.tencentcloudapi.woa.com/document/product/1162/88094)
-* [DisconnectAndroidInstanceAccelerator](http://document.tencentcloudapi.woa.com/document/product/1162/88093)
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
-
-### 第 49 次发布
-
-发布时间：2025-11-21 01:54:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeInstanceSSL](http://document.tencentcloudapi.woa.com/document/product/240/88096)
-* [InstanceEnableSSL](http://document.tencentcloudapi.woa.com/document/product/240/88095)
+* DetectLiveFace
 
 
 
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+## 人脸识别(iai) 版本：2018-03-01
 
 
 
 ## 媒体处理(mps) 版本：2019-06-12
 
-### 第 127 次发布
+### 第 128 次发布
 
-发布时间：2025-11-21 01:56:56
+发布时间：2025-11-24 01:53:54
 
 本次发布包含了以下内容：
 
@@ -181,79 +72,18 @@
 
 修改接口：
 
-* [ProcessImage](http://document.tencentcloudapi.woa.com/document/product/862/85380)
+* [ParseNotification](http://document.tencentcloudapi.woa.com/document/product/862/39228)
 
-	* 新增入参：Definition, ResourceId
-
-
-新增数据结构：
-
-* [BlindWatermarkInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#BlindWatermarkInput)
-
-修改数据结构：
-
-* [AdaptiveDynamicStreamingTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AdaptiveDynamicStreamingTaskInput)
-
-	* 新增成员：BlindWatermark
-
-* [ImageAreaBoxInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageAreaBoxInfo)
-
-	* 新增成员：BoundingBoxUnitType
-
-* [ImageEraseLogoConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEraseLogoConfig)
-
-	* 新增成员：SampleWidth, SampleHeight
-
-* [TranscodeTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#TranscodeTaskInput)
-
-	* 新增成员：BlindWatermark
+	* 新增出参：ExtractBlindWatermarkTask
 
 
 
 
-## 云托管 CloudBase Run(tcbr) 版本：2022-02-17
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
 
-### 第 16 次发布
+### 第 28 次发布
 
-发布时间：2025-11-21 02:08:06
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ServerBaseConfig](http://document.tencentcloudapi.woa.com/document/product/1711/80400#ServerBaseConfig)
-
-	* 新增成员：LinkImageRegistry
-
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 163 次发布
-
-发布时间：2025-11-21 02:11:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ConsumersSchedule](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ConsumersSchedule)
-
-	* <font color="#dd0000">**修改成员**：</font>Partitions
-
-
-
-
-## 腾讯混元生视频(vclm) 版本：2024-05-23
-
-### 第 4 次发布
-
-发布时间：2025-11-21 02:20:13
+发布时间：2025-11-24 01:58:40
 
 本次发布包含了以下内容：
 
@@ -261,19 +91,86 @@
 
 新增接口：
 
-* [DescribeHumanActorJob](http://document.tencentcloudapi.woa.com/document/product/1766/88098)
-* [SubmitHumanActorJob](http://document.tencentcloudapi.woa.com/document/product/1766/88097)
-
-修改接口：
-
-* [SubmitTemplateToVideoJob](http://document.tencentcloudapi.woa.com/document/product/1766/87506)
-
-	* 新增入参：ExtraParam
-
+* [CreatePrivateZoneList](http://document.tencentcloudapi.woa.com/document/product/1338/88127)
+* [CreatePrivateZoneRecordList](http://document.tencentcloudapi.woa.com/document/product/1338/88126)
+* [DescribeCreateRecordListResult](http://document.tencentcloudapi.woa.com/document/product/1338/88125)
+* [DescribeCreateZoneListResult](http://document.tencentcloudapi.woa.com/document/product/1338/88124)
 
 新增数据结构：
 
-* [ExtraParam](http://document.tencentcloudapi.woa.com/document/product/1766/87515#ExtraParam)
+* [RecordsInfo](http://document.tencentcloudapi.woa.com/document/product/1338/55947#RecordsInfo)
+* [RecordsInfoResult](http://document.tencentcloudapi.woa.com/document/product/1338/55947#RecordsInfoResult)
+* [RecordsInfoStatus](http://document.tencentcloudapi.woa.com/document/product/1338/55947#RecordsInfoStatus)
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/1338/55947#ZoneInfo)
+
+
+
+## 安全运营中心(ssa) 版本：2018-06-08
+
+### 第 22 次发布
+
+发布时间：2025-11-24 02:02:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeAlarmStat
+* DescribeAssetDetail
+* DescribeAssetDetailList
+* DescribeAssetList
+* DescribeAssetsMappingList
+* DescribeCheckConfigAssetList
+* DescribeCheckConfigDetail
+* DescribeComplianceAssetList
+* DescribeComplianceDetail
+* DescribeComplianceList
+* DescribeConfigList
+* DescribeDomainList
+* DescribeEventDetail
+* DescribeLeakDetectionList
+* DescribeMappingResults
+* DescribeSafetyEventList
+* DescribeSocAlertDetails
+* DescribeSocAlertList
+* DescribeSocCheckItemList
+* DescribeSocCheckResultList
+* DescribeSocCspmCompliance
+* DescribeVulDetail
+* DescribeVulList
+* SaDivulgeDataQueryPub
+* SaDivulgeScanRuleMutate
+
+
+
+## 高性能计算平台(thpc) 版本：2023-03-21
+
+### 第 23 次发布
+
+发布时间：2025-11-24 02:11:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GooseFSxOption](http://document.tencentcloudapi.woa.com/document/product/1701/80209#GooseFSxOption)
+
+	* 新增成员：FileSystemId
+
+	* <font color="#dd0000">**修改成员**：</font>Masters, LocalPath
+
+
+
+
+## 高性能计算平台(thpc) 版本：2022-04-01
+
+
+
+## 高性能计算平台(thpc) 版本：2021-11-09
 
 
 
