@@ -8126,6 +8126,24 @@
           "name": "WorkflowRunId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定的子工作流对应的NodePath。\n格式：`[<node_id>[<index>].]*<node_id>[<index>]`\n- 此路径用于定位一个具体的工作流实例（Workflow Run），可以是主工作流实例或某个子工作流节点产生的子实例。\n- 路径由点号（.）分隔的节点标识符组成，每个节点标识符格式为 `节点ID[实例索引]`。\n- **节点ID (node_id)**：子工作流所属的节点的ID。\n- **实例索引 (index)**：“实例索引” 在工作流节点的时候为空，循环、批处理节点非空，从1开始。\n示例：\n- \"\" 或 不设置 -> 查询主工作流实例 (父工作流)\n- \"node_id_a\" -> 查询由主工作流中工作流节点`node_id_a`对应的子工作流实例\n- \"node_id_a.node_id_b[1]\" -> 查询工作流节点`node_id_a`对应的子工作流的循环节点node_id_b的第1轮循环的子工作流运行状态",
+          "example": "8ad82e0553507b4c1ba771fb53029492.kdf8alj11357oupwfaw669164q3b[1]",
+          "member": "string",
+          "name": "SubWorkflowNodePath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要返回工作流的流程图配置",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeWorkflowGraph",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8151,6 +8169,16 @@
           "name": "NodeRuns",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子工作流对应的NodePath",
+          "example": "8ad82e0553507b4c1ba771fb53029492.kdf8alj11357oupwfaw669164q3b[1]",
+          "member": "string",
+          "name": "SubWorkflowNodePath",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -20002,7 +20030,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "工作流画布Json",
           "example": "{\"WorkflowID\":\"xxx\",\"WorkflowName\":\"qwe\",\"WorkflowDesc\":\"135\",\"Nodes\":[]}",
           "member": "string",
@@ -20043,6 +20071,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流的流程图",
+          "example": "{\"WorkflowID\":\"xxx\",\"WorkflowName\":\"qwe\",\"WorkflowDesc\":\"135\",\"Nodes\":[]}",
+          "member": "string",
+          "name": "WorkflowGraph",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

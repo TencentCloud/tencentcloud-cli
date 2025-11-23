@@ -1,4 +1,4 @@
-**Example 1: test**
+**Example 1: 查询apm业务系统与Prometheus实例的指标匹配规则**
 
 查询apm业务系统与Prometheus实例的指标匹配规则
 
@@ -18,7 +18,7 @@ Output:
                 "Id": 1,
                 "MetricMatchType": 1,
                 "MetricNameRule": "task",
-                "Name": "test",
+                "Name": "taskRule",
                 "ServiceName": "pro",
                 "Status": 1
             },

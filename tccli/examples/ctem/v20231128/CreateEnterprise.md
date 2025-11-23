@@ -1,4 +1,4 @@
-**Example 1: 添加企业架构数据**
+**Example 1: 添加企业架构资产**
 
 
 
@@ -21,6 +21,7 @@ Output:
 ```
 {
     "Response": {
+        "Id": 2077,
         "RequestId": "fd673644-6c6b-40c5-ba8c-f339a56a49e5"
     }
 }

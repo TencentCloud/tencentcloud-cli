@@ -164,6 +164,14 @@
         "title": "创建CLS投递流任务"
       }
     ],
+    "CreateRateLimitV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRateLimitV2\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Name\": \"testName\",\n    \"Priority\": 0,\n    \"Status\": 0,\n    \"LimitMethod\": {\n        \"Method\": \"GET\",\n        \"Type\": \"EXACT\"\n    },\n    \"LimitPaths\": {\n        \"Path\": \"/testurl\",\n        \"Type\": \"EXACT\"\n    },\n    \"LimitHeaders\": [\n        {\n            \"Key\": \"name\",\n            \"Value\": \"waf_value\",\n            \"Type\": \"EXACT\"\n        }\n    ],\n    \"LimitWindow\": {\n        \"Second\": 0,\n        \"Minute\": 10\n    },\n    \"LimitHeaderName\": {\n        \"ParamsName\": \"name\",\n        \"Type\": \"EXACT\"\n    },\n    \"LimitObject\": \"API\",\n    \"LimitStrategy\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseInfo\": {\n            \"Code\": 1,\n            \"Info\": \"success\"\n        },\n        \"RequestId\": \"546b2091-1a59-4bd9-818d-47ab565102d9\"\n    }\n}",
+        "title": "创建限流规则"
+      }
+    ],
     "DeleteAccessExport": [
       {
         "document": "",
@@ -298,6 +306,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOwaspWhiteRule\n<公共请求参数>\n\n{\n    \"Ids\": [\n        1\n    ],\n    \"Domain\": \"owasp.saas3.testwaf.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3223d5a-7dcc-4378-98dd-e4874b1c6f84\"\n    }\n}",
         "title": "删除白名单"
+      }
+    ],
+    "DeleteRateLimitsV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRateLimitsV2\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"LimitRuleIds\": [\n        4000003024,\n        4000003023\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseInfo\": {\n            \"Code\": 0,\n            \"Info\": \"success\"\n        },\n        \"RequestId\": \"546b2091-1a59-4bd9-818d-47ab565102d9\"\n    }\n}",
+        "title": "删除限流规则"
       }
     ],
     "DeleteSession": [
@@ -782,6 +798,14 @@
         "title": "查询Tiga引擎大类规则及其防护模式"
       }
     ],
+    "DescribeRateLimitsV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRateLimitsV2\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Id\": 0,\n    \"Name\": \"testname\",\n    \"Method\": \"\",\n    \"LimitObject\": \"API\",\n    \"Status\": 0,\n    \"Order\": \"desc\",\n    \"By\": \"\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"status\",\n            \"Values\": [\n                \"0\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"BaseInfo\": {\n            \"Code\": 1,\n            \"Info\": \"success\"\n        },\n        \"RateLimits\": [\n            {\n                \"LimitRuleID\": 400000023,\n                \"Name\": \"testname\",\n                \"Priority\": 50,\n                \"Status\": 0,\n                \"TsVersion\": 0,\n                \"LimitObject\": \"API\",\n                \"LimitMethod\": {\n                    \"Method\": \"GET\",\n                    \"Type\": \"EXACT\"\n                },\n                \"LimitPaths\": {\n                    \"Path\": \"/url\",\n                    \"Type\": \"EXACT\"\n                },\n                \"LimitHeaders\": [\n                    {\n                        \"Key\": \"\",\n                        \"Value\": \"v1,v2\",\n                        \"Type\": \"IN\"\n                    }\n                ],\n                \"LimitWindow\": {\n                    \"Second\": 0,\n                    \"Minute\": 10\n                },\n                \"LimitStrategy\": 0,\n                \"LimitHeaderName\": {}\n            }\n        ],\n        \"RequestId\": \"546b2091-1a59-4bd9-818d-47ab565102d9\"\n    }\n}",
+        "title": "DescribeLimitRules"
+      }
+    ],
     "DescribeRuleLimit": [
       {
         "document": "",
@@ -950,6 +974,14 @@
         "title": "销毁CLS投递流任务"
       }
     ],
+    "EnableRateLimitsV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableRateLimitsV2\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"EnableItems\": [\n        {\n            \"LimitRuleId\": 400000023,\n            \"Status\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseInfo\": {\n            \"Code\": 0,\n            \"Info\": \"success\"\n        },\n        \"RequestId\": \"104cf2f9-c733-4a18-8905-372553b6ed80\"\n    }\n}",
+        "title": "批量更改自研版限流规则开关"
+      }
+    ],
     "FreshAntiFakeUrl": [
       {
         "document": "",
@@ -1054,6 +1086,14 @@
         "title": "api安全状态变更接口"
       }
     ],
+    "ModifyApiSecSensitiveRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiSecSensitiveRule\n<公共请求参数>\n\n{\n    \"Domain\": \"hzh.qcloud.com\",\n    \"RuleName\": \"ddp1\",\n    \"Status\": 1,\n    \"CustomRule\": {\n        \"Position\": [\n            \"get\"\n        ],\n        \"MatchKey\": \"key1\",\n        \"MatchCond\": [\n            \"pent\"\n        ],\n        \"MatchValue\": [\n            \"waf\"\n        ],\n        \"Level\": \"get\"\n    },\n    \"RuleNameList\": [\n        \"ddptest\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfadb1fd-6008-4aa4-b7cf-6584f6cbdfb3\"\n    }\n}",
+        "title": "修改api安全敏感检测规则"
+      }
+    ],
     "ModifyAreaBanAreas": [
       {
         "document": "",
@@ -1092,6 +1132,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBatchIpAccessControl\n<公共请求参数>\n\n{\n    \"IpList\": [\n        \"1.1.1.1\"\n    ],\n    \"ActionType\": 42,\n    \"Domains\": [\n        \"www.testwaf.com\",\n        \"www.testwaf2.com\"\n    ],\n    \"Note\": \"\",\n    \"JobType\": \"TimedJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 0,\n                \"EndDateTime\": 0\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\"\n    },\n    \"RuleId\": 5500894817\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f03362ba-b50e-4581-88e8-76bdc1b332f5\"\n    }\n}",
         "title": "新增批量IP黑白名单"
+      }
+    ],
+    "ModifyBotIdRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBotIdRule\n<公共请求参数>\n\n{\n    \"Domain\": \"admin.com\",\n    \"SceneId\": \"3088902138\",\n    \"Data\": [\n        {\n            \"RuleId\": \"3309123111\",\n            \"BotId\": \"abot\",\n            \"Status\": true,\n            \"Action\": \"monitor\"\n        }\n    ],\n    \"GlobalSwitch\": 0,\n    \"Status\": true,\n    \"RuleAction\": \"redirect\",\n    \"GlobalRedirect\": \"/luffy\",\n    \"ProtectLevel\": \"normal\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a713f4cf-51ef-437f-8467-d4fdec061b78\"\n    }\n}",
+        "title": "sample"
       }
     ],
     "ModifyBotSceneStatus": [
@@ -1518,6 +1566,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProtectionModes\n<公共请求参数>\n\n{\n    \"Domain\": \"www.testwaf.com\",\n    \"Edition\": \"clb-waf\",\n    \"TypeIDs\": [\n        \"01000111\"\n    ],\n    \"Mode\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"CommonRsp\": {\n            \"Code\": 0,\n            \"Msg\": \"success\"\n        },\n        \"RequestId\": \"3bd023947880421b3662db4abe\"\n    }\n}",
         "title": "更新Tiga引擎下大类规则的防护模式"
+      }
+    ],
+    "UpdateRateLimitV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRateLimitV2\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"LimitRuleId\": 0,\n    \"Name\": \"testname\",\n    \"Priority\": 0,\n    \"Status\": 0,\n    \"LimitMethod\": {\n        \"Method\": \"GET\",\n        \"Type\": \"EXACT\"\n    },\n    \"LimitPaths\": {\n        \"Path\": \"/testurl\",\n        \"Type\": \"EXACT\"\n    },\n    \"LimitHeaders\": [\n        {\n            \"Key\": \"key_a\",\n            \"Value\": \"value_a,value_b\",\n            \"Type\": \"IN\"\n        }\n    ],\n    \"LimitWindow\": {\n        \"Second\": 0,\n        \"Minute\": 10\n    },\n    \"LimitHeaderName\": {\n        \"ParamsName\": \"keya,keyb\",\n        \"Type\": \"IN\"\n    },\n    \"LimitObject\": \"API\",\n    \"LimitStrategy\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseInfo\": {\n            \"Code\": 0,\n            \"Info\": \"success\"\n        },\n        \"RequestId\": \"546b2091-1a59-4bd9-818d-47ab565102d9\"\n    }\n}",
+        "title": "更新限流规则"
       }
     ],
     "UpsertCCAutoStatus": [

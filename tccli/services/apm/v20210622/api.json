@@ -178,7 +178,7 @@
     "TerminateApmInstance": {
       "document": "销毁 APM 业务系统",
       "input": "TerminateApmInstanceRequest",
-      "name": "销毁业务系统",
+      "name": "销毁APM业务系统",
       "output": "TerminateApmInstanceResponse",
       "status": "online"
     }
@@ -1940,7 +1940,7 @@
         {
           "disabled": false,
           "document": "采样的span数",
-          "example": "1111",
+          "example": "1000",
           "member": "int64",
           "name": "SpanNum",
           "output_required": true,
@@ -2592,7 +2592,7 @@
         {
           "disabled": false,
           "document": "关联的产品实例ID",
-          "example": "\"ApmAssociation\": {             \"PeerId\": \"\",             \"Status\": 0         }",
+          "example": "无",
           "member": "ApmAssociation",
           "name": "ApmAssociation",
           "output_required": true,
@@ -2711,7 +2711,7 @@
         {
           "disabled": false,
           "document": "指标匹配规则",
-          "example": "[             {                 \"Name\": \"use\",                 \"ServiceName\": \"\",                 \"Status\": 1,                 \"MetricNameRule\": \"task.duration\",                 \"MatchType\": 2             },             {                 \"Name\": \"qwe\",                 \"ServiceName\": \"\",                 \"Status\": 1,                 \"MetricNameRule\": \"task.\",                 \"MatchType\": 2             }         ]",
+          "example": "无",
           "member": "ApmPrometheusRules",
           "name": "ApmPrometheusRules",
           "output_required": true,
@@ -5122,7 +5122,7 @@
         {
           "disabled": false,
           "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "1251763868",
           "member": "int64",
           "name": "AppID",
           "output_required": false,
@@ -5133,7 +5133,7 @@
         {
           "disabled": false,
           "document": "主账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12",
+          "example": "1500000688",
           "member": "string",
           "name": "CreateUIN",
           "output_required": false,

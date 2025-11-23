@@ -1,5 +1,21 @@
 {
   "actions": {
+    "CreateApp": [
+      {
+        "document": "添加APP资产",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApp\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"Name\": \"test\",\n    \"Platform\": \"android\",\n    \"AppVersion\": \"v1.1.1\",\n    \"DownloadUrl\": \"http://a.test.com\",\n    \"PackageName\": \"com.test\",\n    \"Developer\": \"tester\",\n    \"ServerUrl\": \"http://test.com\",\n    \"Description\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 11,\n        \"RequestId\": \"6b4c2d18-d8e5-4a65-8eb4-0a90cb4c488b\"\n    }\n}",
+        "title": "添加APP资产"
+      }
+    ],
+    "CreateAsset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAsset\n<公共请求参数>\n\n{\n    \"Os\": \"linux\",\n    \"EnterpriseUid\": \"c546b0b87faf2f5ee93a9d0a069f5ed3\",\n    \"Ip\": \"1.1.1.1\",\n    \"Country\": \"中国\",\n    \"Province\": \"广东省\",\n    \"City\": \"深圳市\",\n    \"Isp\": \"电信\",\n    \"CustomerId\": 100068\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 6870,\n        \"RequestId\": \"1113211e-02ab-bee7-b6d0-1903c307aa5c\"\n    }\n}",
+        "title": "添加主机资产"
+      }
+    ],
     "CreateCustomer": [
       {
         "document": "添加企业",
@@ -8,12 +24,28 @@
         "title": "添加企业"
       }
     ],
+    "CreateDomain": [
+      {
+        "document": "添加主域名数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomain\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"Domain\": \"test.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 4436,\n        \"RequestId\": \"8496ec29-8046-4f89-bdb7-7aa46e578c94\"\n    }\n}",
+        "title": "添加主域名数据"
+      }
+    ],
     "CreateEnterprise": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEnterprise\n<公共请求参数>\n\n{\n    \"Name\": \"测试\",\n    \"CreditCode\": \"test\",\n    \"Status\": \"存续\",\n    \"RegisteredCapital\": \"100元\",\n    \"ShareholdingRatio\": \"100%\",\n    \"LegalPerson\": \"张三\",\n    \"Type\": \"软件\",\n    \"Industry\": \"软件\",\n    \"CustomerId\": 100068\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd673644-6c6b-40c5-ba8c-f339a56a49e5\"\n    }\n}",
-        "title": "添加企业架构数据"
+        "output": "{\n    \"Response\": {\n        \"Id\": 2077,\n        \"RequestId\": \"fd673644-6c6b-40c5-ba8c-f339a56a49e5\"\n    }\n}",
+        "title": "添加企业架构资产"
+      }
+    ],
+    "CreateHttp": [
+      {
+        "document": "添加http数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHttp\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"Url\": \"http://test.com\",\n    \"Title\": \"test\",\n    \"Code\": 200,\n    \"Ip\": \"1.1.1.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b83a04f-37c8-4ac4-9a4b-7343400508b4\"\n    }\n}",
+        "title": "添加网站资产"
       }
     ],
     "CreateJobRecord": [
@@ -22,6 +54,158 @@
         "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJobRecord\n<公共请求参数>\n\n{\n    \"CustomerId\": 100136,\n    \"Qps\": 55,\n    \"TaskType\": \"即时任务\"\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": 10000036,\n        \"RequestId\": \"1b2dcfec-80d6-4a5d-acec-aaea7c6caa14\"\n    }\n}",
         "title": "启动测绘"
+      }
+    ],
+    "CreateManage": [
+      {
+        "document": "添加后台数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateManage\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"Url\": \"http://test.cn\",\n    \"Title\": \"test\",\n    \"Code\": 200\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 31,\n        \"RequestId\": \"9c380cb4-2e80-47cf-be5a-8b9cb825d2e6\"\n    }\n}",
+        "title": "添加后台数据"
+      }
+    ],
+    "CreatePort": [
+      {
+        "document": "添加端口数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePort\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"Port\": 3306,\n    \"Asset\": \"db.test.com\",\n    \"IsHighRisk\": true,\n    \"Ip\": \"1.1.1.1\",\n    \"App\": \"mysql\",\n    \"Service\": \"mysql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 24838,\n        \"RequestId\": \"d4f06b4b-cc0c-431c-9314-75a0b6d4a760\"\n    }\n}",
+        "title": "添加端口服务资产"
+      }
+    ],
+    "CreateSeeds": [
+      {
+        "document": "创建种子",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSeeds\n<公共请求参数>\n\n{\n    \"CustomerId\": 100162,\n    \"Ips\": [\n        \"1.1.1.1\"\n    ],\n    \"SubDomains\": [\n        \"em.test.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa5e13e9-c138-4ac9-a890-d3a053649239\"\n    }\n}",
+        "title": "创建种子"
+      }
+    ],
+    "CreateSubDomain": [
+      {
+        "document": "添加子域名数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubDomain\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"SubDomain\": \"test.qq.com\",\n    \"Ip\": \"1.1.1.1\",\n    \"Country\": \"中国\",\n    \"Province\": \"广东\",\n    \"City\": \"深圳\",\n    \"Isp\": \"电信\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 63660,\n        \"RequestId\": \"b4870116-ef3c-45c8-a5c7-f6de921902c0\"\n    }\n}",
+        "title": "添加子域名数据"
+      }
+    ],
+    "CreateSuspiciousAsset": [
+      {
+        "document": "添加影子资产数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSuspiciousAsset\n<公共请求参数>\n\n{\n    \"CustomerId\": 100151,\n    \"Url\": \"test.com\",\n    \"Title\": \"test\",\n    \"Owner\": \"tester\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1730ee05-b0dc-4fd8-a6bf-ecff997246a1\"\n    }\n}",
+        "title": "添加影子资产"
+      }
+    ],
+    "CreateWechatApplet": [
+      {
+        "document": "添加微信小程序资产",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWechatApplet\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"Name\": \"测试\",\n    \"AccountId\": \"tester\",\n    \"Description\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 11,\n        \"RequestId\": \"007fea3c-3f70-4b86-b46f-2bc78a1774c4\"\n    }\n}",
+        "title": "添加微信小程序资产"
+      }
+    ],
+    "CreateWechatOfficialAccount": [
+      {
+        "document": "添加微信公众号资产",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWechatOfficialAccount\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"Name\": \"测试\",\n    \"AccountId\": \"wx123\",\n    \"Description\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 12,\n        \"RequestId\": \"4f8849b5-3feb-4894-97bc-41c6d4bbef31\"\n    }\n}",
+        "title": "添加微信公众号资产"
+      }
+    ],
+    "DeleteApps": [
+      {
+        "document": "删除APP数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApps\n<公共请求参数>\n\n{\n    \"Ids\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f347c41e-23d4-4fd9-b14d-198af2ffb921\"\n    }\n}",
+        "title": "删除APP数据"
+      }
+    ],
+    "DeleteAssets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAssets\n<公共请求参数>\n\n{\n    \"Ids\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1113211e-02ab-bee7-b6d0-1903c307aa5c\"\n    }\n}",
+        "title": "删除主机资产数据"
+      }
+    ],
+    "DeleteDomains": [
+      {
+        "document": "删除主域名数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomains\n<公共请求参数>\n\n{\n    \"Ids\": [\n        4436\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec89208c-c714-418a-88e3-9eef21d208f6\"\n    }\n}",
+        "title": "删除主域名数据"
+      }
+    ],
+    "DeleteEnterprises": [
+      {
+        "document": "删除企业架构数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEnterprises\n<公共请求参数>\n\n{\n    \"Ids\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c8193064-bac3-4ff8-ad18-9bc23b953815\"\n    }\n}",
+        "title": "删除企业架构数据"
+      }
+    ],
+    "DeleteHttps": [
+      {
+        "document": "删除网站资产数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteHttps\n<公共请求参数>\n\n{\n    \"Ids\": [\n        3248\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e536d776-60f6-4b9e-8aee-1fdf2bb51e44\"\n    }\n}",
+        "title": "删除网站资产数据"
+      }
+    ],
+    "DeleteManages": [
+      {
+        "document": "删除后台数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteManages\n<公共请求参数>\n\n{\n    \"Ids\": [\n        26\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"572e78ae-0af3-4bce-9504-c1fb31119de4\"\n    }\n}",
+        "title": "删除后台数据"
+      }
+    ],
+    "DeletePorts": [
+      {
+        "document": "删除端口数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePorts\n<公共请求参数>\n\n{\n    \"Ids\": [\n        24838\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9f31bc59-fe58-48f0-b5d3-d021426fa016\"\n    }\n}",
+        "title": "删除端口数据"
+      }
+    ],
+    "DeleteSeeds": [
+      {
+        "document": "删除种子",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSeeds\n<公共请求参数>\n\n{\n    \"Ids\": [\n        58\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3a32d271-02c5-4676-ad77-2fb12c6f5581\"\n    }\n}",
+        "title": "删除种子"
+      }
+    ],
+    "DeleteSubDomains": [
+      {
+        "document": "删除子域名数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSubDomains\n<公共请求参数>\n\n{\n    \"Ids\": [\n        63654\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2c7bcbd-cd25-4ebe-b5cd-038fb5781268\"\n    }\n}",
+        "title": "删除子域名数据"
+      }
+    ],
+    "DeleteSuspiciousAssets": [
+      {
+        "document": "删除影子资产数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSuspiciousAssets\n<公共请求参数>\n\n{\n    \"Ids\": [\n        1269\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f84f8478-cbcc-4625-8d2a-68266b9289ac\"\n    }\n}",
+        "title": "删除影子资产数据"
+      }
+    ],
+    "DeleteWechatApplets": [
+      {
+        "document": "删除微信小程序数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWechatApplets\n<公共请求参数>\n\n{\n    \"Ids\": [\n        7\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ee10dc8-60fd-4b14-afa4-227394d5b9e3\"\n    }\n}",
+        "title": "删除微信小程序数据"
+      }
+    ],
+    "DeleteWechatOfficialAccounts": [
+      {
+        "document": "删除微信公众号",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWechatOfficialAccounts\n<公共请求参数>\n\n{\n    \"Ids\": [\n        7\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f50deade-4402-451f-9a8b-4d1649afb5cc\"\n    }\n}",
+        "title": "删除微信公众号"
       }
     ],
     "DescribeApiSecs": [
@@ -200,6 +384,14 @@
         "title": "查看端口数据"
       }
     ],
+    "DescribeSeeds": [
+      {
+        "document": "查看种子列表",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSeeds\n<公共请求参数>\n\n{\n    \"CustomerId\": 100136\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Category\": \"ip\",\n                \"CreateAt\": \"2024-06-07 14:28:37\",\n                \"CustomerId\": 100136,\n                \"Id\": 58,\n                \"Md5\": \"\",\n                \"Source\": \"人工\",\n                \"Value\": \"1.1.1.1\"\n            }\n        ],\n        \"RequestId\": \"8a9e544c-6611-4364-ab0e-bea0f3d69928\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看种子列表"
+      }
+    ],
     "DescribeSensitiveInfos": [
       {
         "document": "查看敏感信息泄露数据",
@@ -256,6 +448,14 @@
         "title": "查看微信公众号"
       }
     ],
+    "IgnoreData": [
+      {
+        "document": "忽略数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IgnoreData\n<公共请求参数>\n\n{\n    \"Ids\": [\n        11\n    ],\n    \"Module\": \"http\",\n    \"Ignored\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"defdfb91-0ad8-4fed-ba7f-c209942d03f3\"\n    }\n}",
+        "title": "忽略数据"
+      }
+    ],
     "ModifyCustomer": [
       {
         "document": "编辑企业",
@@ -270,6 +470,14 @@
         "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLabel\n<公共请求参数>\n\n{\n    \"Module\": \"asset\",\n    \"CustomerIdList\": [\n        100275\n    ],\n    \"Labels\": \"{}\",\n    \"Ids\": [\n        10097\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"24b299a2-e517-4225-bdc8-b7c16b5626fd\"\n    }\n}",
         "title": "修改标签"
+      }
+    ],
+    "ModifySeedStatus": [
+      {
+        "document": "更新种子信任状态",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySeedStatus\n<公共请求参数>\n\n{\n    \"Id\": 75,\n    \"IsValid\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa67b753-aa09-4d90-8435-77f0e42705f8\"\n    }\n}",
+        "title": "修改种子状态"
       }
     ],
     "StopJobRecord": [

@@ -7,7 +7,7 @@ Input:
 ```
 tccli apm ModifyApmSampleConfig --cli-unfold-argument  \
     --InstanceId apm-ewyzCXlxj \
-    --SampleName testc \
+    --SampleName testSample \
     --SampleRate 100 \
     --ServiceName  \
     --OperationName 2 \

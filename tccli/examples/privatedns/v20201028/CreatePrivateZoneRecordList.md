@@ -1,0 +1,30 @@
+**Example 1: 批量添加私有域解析记录**
+
+
+
+Input: 
+
+```
+tccli privatedns CreatePrivateZoneRecordList --cli-unfold-argument  \
+    --ZoneIds zone-p0152fh2 zone-ads13fgh \
+    --RecordsInfo.0.RecordType A \
+    --RecordsInfo.0.SubDomain b \
+    --RecordsInfo.0.RecordValue 3.3.3.3 \
+    --RecordsInfo.0.Weight 100 \
+    --RecordsInfo.0.TTL 600 \
+    --RecordsInfo.1.RecordType CNAME \
+    --RecordsInfo.1.SubDomain www \
+    --RecordsInfo.1.RecordValue www.baidu.com \
+    --RecordsInfo.1.Weight 100 \
+    --RecordsInfo.1.TTL 600
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "a98891db-9d73-514a-8751422197b540cd"
+    }
+}
+```
+

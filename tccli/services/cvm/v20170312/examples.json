@@ -610,7 +610,7 @@
     ],
     "ModifyImageAttribute": [
       {
-        "document": "修改镜像img-6pb6lrmy的名称为sample",
+        "document": "修改镜像img-6pb6lrmy的名称为NewImageName",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageAttribute\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-6pb6lrmy\",\n    \"ImageName\": \"NewImageName\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "修改镜像名称"

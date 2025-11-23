@@ -1,17 +1,17 @@
 **Example 1: 创建采样配置**
 
-创建采样配置
+为指定服务的指定接口配置全采样
 
 Input: 
 
 ```
 tccli apm CreateApmSampleConfig --cli-unfold-argument  \
-    --InstanceId apm-ewyzCXlxj \
+    --InstanceId apm-eDyXPD6FF \
     --SampleRate 100 \
-    --SampleName testCreate \
-    --ServiceName test \
-    --OperationName 1 \
-    --OperationType 1
+    --ServiceName java-order-service \
+    --SampleName CreateOrderInterfaceAllSample \
+    --OperationName /order/create \
+    --OperationType 0
 ```
 
 Output: 
@@ -19,18 +19,18 @@ Output:
 {
     "Response": {
         "ApmSampleConfig": {
-            "Id": 159,
-            "InstanceKey": "apm-ewyzCXlxj",
-            "OperationName": "1",
-            "OperationType": 1,
-            "SampleName": "testCreate",
+            "Id": 2147483657,
+            "InstanceKey": "apm-eDyXPD6FF",
+            "OperationName": "/order/create",
+            "OperationType": 0,
+            "SampleName": "CreateOrderInterfaceAllSample",
             "SampleRate": 100,
-            "ServiceName": "test",
+            "ServiceName": "java-order-service",
             "SpanNum": 0,
             "Status": 0,
             "Tags": null
         },
-        "RequestId": "ba26351b-4ad0-404b-b138-c86e442cabd9"
+        "RequestId": "d8ac7f32-6e9c-4eaf-9b76-b388df988b36"
     }
 }
 ```

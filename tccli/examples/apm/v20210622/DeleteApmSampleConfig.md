@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli apm DeleteApmSampleConfig --cli-unfold-argument  \
-    --InstanceId 1o8yMC47u \
-    --SampleName testSample232
+    --InstanceId apm-1o8yMC47u \
+    --SampleName testSample
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "test-test-test"
+        "RequestId": "72346feb-be51-46a1-a6c8-c78b7914b6b9"
     }
 }
 ```

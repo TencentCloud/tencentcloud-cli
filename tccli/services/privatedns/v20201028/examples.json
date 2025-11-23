@@ -48,6 +48,14 @@
         "title": "创建私有域"
       }
     ],
+    "CreatePrivateZoneList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateZoneList\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"1.com\",\n        \"2.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\"\n    }\n}",
+        "title": "批量创建私有域"
+      }
+    ],
     "CreatePrivateZoneRecord": [
       {
         "document": "添加A记录",
@@ -66,6 +74,14 @@
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-p0152fh2\",\n    \"RecordType\": \"PTR\",\n    \"SubDomain\": \"1.1.1\",\n    \"RecordValue\": \"qq.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": \"15421\"\n    }\n}",
         "title": "私有域-添加PTR记录"
+      }
+    ],
+    "CreatePrivateZoneRecordList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateZoneRecordList\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        \"zone-p0152fh2\",\n        \"zone-ads13fgh\"\n    ],\n    \"RecordsInfo\": [\n        {\n            \"RecordType\": \"A\",\n            \"SubDomain\": \"b\",\n            \"RecordValue\": \"3.3.3.3\",\n            \"Weight\": 100,\n            \"TTL\": 600\n        },\n        {\n            \"RecordType\": \"CNAME\",\n            \"SubDomain\": \"www\",\n            \"RecordValue\": \"www.baidu.com\",\n            \"Weight\": 100,\n            \"TTL\": 600\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\"\n    }\n}",
+        "title": "批量添加私有域解析记录"
       }
     ],
     "DeleteEndPoint": [
@@ -141,7 +157,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountVpcList\n<公共请求参数>\n\n{\n    \"AccountUin\": \"10000000010\",\n    \"Limit\": 200,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"Region\",\n            \"Values\": [\n                \"ap-guangzhou\"\n            ]\n        },\n        {\n            \"Name\": \"VpcName\",\n            \"Values\": [\n                \"vpc-ofnocfe1\"\n            ]\n        },\n        {\n            \"Name\": \"VpcId\",\n            \"Values\": [\n                \"vpc-sdfwadf1\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"443f1f2b-9be4-4a2c-b1a6-0494c2d980ff\",\n        \"TotalCount\": 1,\n        \"VpcSet\": [\n            {\n                \"VpcId\": \"vpc-ofnocfe1\",\n                \"VpcName\": \"testname\",\n                \"Uin\": \"10000000010\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ]\n    }\n}",
-        "title": "获取私有域解析账号的VPC列表"
+        "title": "获取关联账号的VPC列表"
       }
     ],
     "DescribeAuditLog": [
@@ -150,6 +166,22 @@
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLog\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"ZoneId\",\n            \"Values\": [\n                \"zone-dw12dhy\"\n            ]\n        },\n        {\n            \"Name\": \"Domain\",\n            \"Values\": [\n                \"a.com\"\n            ]\n        },\n        {\n            \"Name\": \"OperatorUin\",\n            \"Values\": [\n                \"10023400189\"\n            ]\n        }\n    ],\n    \"TimeRangeBegin\": \"2020-11-22 00:00:00\",\n    \"TimeRangeEnd\": \"2020-11-23 23:59:59\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5471b753-7d7a-8742-6cb079c6472692f2\",\n        \"Data\": [\n            {\n                \"Resource\": \"all\",\n                \"Metric\": \"request_count\",\n                \"TotalCount\": 48,\n                \"DataSet\": [\n                    {\n                        \"Date\": \"2020-11-22 00:00:00\",\n                        \"OperatorUin\": \"100000009719\",\n                        \"Content\": \"www(11111111111111) A , zone(777777)\"\n                    },\n                    {\n                        \"Date\": \"2020-11-22 01:00:00\",\n                        \"OperatorUin\": \"100000009719\",\n                        \"Content\": \"www(11111111111111) A , zone(777777)\"\n                    },\n                    {\n                        \"Date\": \"2020-11-22 02:00:00\",\n                        \"OperatorUin\": \"100000009719\",\n                        \"Content\": \"www.baidu.com 600 TXT aaaaaaaaaaaaaaaaaaaaaaaa zone(666666)\"\n                    },\n                    {\n                        \"Date\": \"2020-11-22 03:00:00\",\n                        \"OperatorUin\": \"100000009719\",\n                        \"Content\": \"www.baidu.com 600 TXT aaaaaaaaaaaaaaaaaaaaaaaa zone(666666)\"\n                    },\n                    {\n                        \"Date\": \"2020-11-22 04:00:00\",\n                        \"OperatorUin\": \"100000009719\",\n                        \"Content\": \"[子域名递归解析：关闭 -> 开启  ][], zone(444444)\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "获取操作日志列表"
+      }
+    ],
+    "DescribeCreateRecordListResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCreateRecordListResult\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        \"zone-12345678\",\n        \"zone-abcdefgh\"\n    ],\n    \"RecordsInfo\": [\n        {\n            \"RecordType\": \"A\",\n            \"SubDomain\": \"b\",\n            \"RecordValue\": \"3.3.3.3\",\n            \"Weight\": 100,\n            \"TTL\": 600\n        },\n        {\n            \"RecordType\": \"CNAME\",\n            \"SubDomain\": \"www\",\n            \"RecordValue\": \"www.baidu.com\",\n            \"Weight\": 100,\n            \"TTL\": 600\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordsResult\": [\n            {\n                \"RecordsStatus\": [\n                    {\n                        \"Status\": 0,\n                        \"Message\": \"当前记录类型不支持权重\",\n                        \"RecordType\": \"A\",\n                        \"SubDomain\": \"b\",\n                        \"RecordValue\": \"3.3.3.3\",\n                        \"Weight\": 0,\n                        \"TTL\": 0\n                    }\n                ],\n                \"Domain\": \"test.com\",\n                \"Remark\": \"test\",\n                \"ZoneId\": \"zone-abs2dfs2\"\n            }\n        ]\n    }\n}",
+        "title": "查询批量添加解析记录结果"
+      }
+    ],
+    "DescribeCreateZoneListResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCreateZoneListResult\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"1.com\",\n        \"2.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\",\n        \"ZonesInfo\": [\n            {\n                \"Domain\": \"1.com\",\n                \"ZoneId\": \"zone-id1\",\n                \"Reason\": null\n            },\n            {\n                \"Domain\": \"2.com\",\n                \"ZoneId\": null,\n                \"Reason\": \"创建失败\"\n            }\n        ]\n    }\n}",
+        "title": "查询批量创建私有域结果"
       }
     ],
     "DescribeDashboard": [

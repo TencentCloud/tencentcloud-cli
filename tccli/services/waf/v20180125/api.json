@@ -133,6 +133,13 @@
       "output": "CreatePostCLSFlowResponse",
       "status": "online"
     },
+    "CreateRateLimitV2": {
+      "document": "创建限流规则",
+      "input": "CreateRateLimitV2Request",
+      "name": "创建自研版限流规则",
+      "output": "CreateRateLimitV2Response",
+      "status": "online"
+    },
     "DeleteAccessExport": {
       "document": "本接口用于删除访问日志导出",
       "input": "DeleteAccessExportRequest",
@@ -250,6 +257,13 @@
       "input": "DeleteOwaspWhiteRuleRequest",
       "name": "删除用户规则引擎白名单",
       "output": "DeleteOwaspWhiteRuleResponse",
+      "status": "online"
+    },
+    "DeleteRateLimitsV2": {
+      "document": "删除自研版限流规则",
+      "input": "DeleteRateLimitsV2Request",
+      "name": "删除自研版限流规则列表",
+      "output": "DeleteRateLimitsV2Response",
       "status": "online"
     },
     "DeleteSession": {
@@ -658,6 +672,13 @@
       "output": "DescribeProtectionModesResponse",
       "status": "online"
     },
+    "DescribeRateLimitsV2": {
+      "document": "查询限流规则列表接口",
+      "input": "DescribeRateLimitsV2Request",
+      "name": "查询限流规则列表接口",
+      "output": "DescribeRateLimitsV2Response",
+      "status": "online"
+    },
     "DescribeRuleLimit": {
       "document": "获取各个模块具体的规格限制",
       "input": "DescribeRuleLimitRequest",
@@ -805,6 +826,13 @@
       "output": "DestroyPostCLSFlowResponse",
       "status": "online"
     },
+    "EnableRateLimitsV2": {
+      "document": "批量更改自研版限流规则开关",
+      "input": "EnableRateLimitsV2Request",
+      "name": "批量更改自研版限流规则开关",
+      "output": "EnableRateLimitsV2Response",
+      "status": "online"
+    },
     "FreshAntiFakeUrl": {
       "document": "刷新防篡改url",
       "input": "FreshAntiFakeUrlRequest",
@@ -896,6 +924,13 @@
       "output": "ModifyApiSecEventChangeResponse",
       "status": "online"
     },
+    "ModifyApiSecSensitiveRule": {
+      "document": "修改api安全敏感检测规则",
+      "input": "ModifyApiSecSensitiveRuleRequest",
+      "name": "修改api安全配置规则",
+      "output": "ModifyApiSecSensitiveRuleResponse",
+      "status": "online"
+    },
     "ModifyAreaBanAreas": {
       "document": "修改地域封禁中的地域信息",
       "input": "ModifyAreaBanAreasRequest",
@@ -929,6 +964,13 @@
       "input": "ModifyBatchIpAccessControlRequest",
       "name": "批量IP黑白名单编辑接口",
       "output": "ModifyBatchIpAccessControlResponse",
+      "status": "online"
+    },
+    "ModifyBotIdRule": {
+      "document": "修改Bot-ID规则配置1",
+      "input": "ModifyBotIdRuleRequest",
+      "name": "修改Bot-ID规则配置",
+      "output": "ModifyBotIdRuleResponse",
       "status": "online"
     },
     "ModifyBotSceneStatus": {
@@ -1265,6 +1307,13 @@
       "input": "UpdateProtectionModesRequest",
       "name": "批量更新规则防护模式",
       "output": "UpdateProtectionModesResponse",
+      "status": "online"
+    },
+    "UpdateRateLimitV2": {
+      "document": "更新自研版限流规则",
+      "input": "UpdateRateLimitV2Request",
+      "name": "更新自研版限流规则",
+      "output": "UpdateRateLimitV2Response",
       "status": "online"
     },
     "UpsertCCAutoStatus": {
@@ -3144,6 +3193,95 @@
       ],
       "usage": "both"
     },
+    "ApiNameMethod": {
+      "document": "带有请求方式的apiname结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "api名称",
+          "example": "/ddp",
+          "member": "string",
+          "name": "ApiName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "api请求方式",
+          "example": "get",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "api近30天请求数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "api标签",
+          "example": "ddd",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ApiNameOp": {
+      "document": "带有匹配方式的apiname列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配值列表",
+          "example": "ddp",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配方式，如属于和正则等",
+          "example": "=",
+          "member": "string",
+          "name": "Op",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手动筛选的时候，要传该结构体",
+          "example": "{\"key\":\"val\"}",
+          "member": "ApiNameMethod",
+          "name": "ApiNameMethod",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ApiParameterType": {
       "document": "api请求参数类型",
       "members": [
@@ -3356,6 +3494,266 @@
       ],
       "usage": "both"
     },
+    "ApiSecCustomEventRule": {
+      "document": "api安全自定义事件规则结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "dd",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关，1：开，0:关",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "api匹配列表",
+          "example": "{\"Value\":[\"aaa\"],\"op\":\"contains\"}",
+          "member": "ApiNameOp",
+          "name": "ApiNameOp",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件详情",
+          "example": "cesh",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳，出参有该值，入参不需要传没有",
+          "example": "234243",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配规则列表",
+          "example": "{\"key\":\"value1\"}",
+          "member": "ApiSecSceneRuleEntry",
+          "name": "MatchRuleList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计规则列表",
+          "example": "{\"key\":\"value1\"}",
+          "member": "ApiSecSceneRuleEntry",
+          "name": "StatRuleList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问频次，第一个字段表示次数，第二个字段表示分钟",
+          "example": "[1,1]",
+          "member": "int64",
+          "name": "ReqFrequency",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级，取值为100,200,300，分别表示低位、中危、高危",
+          "example": "\"100\"",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则来源",
+          "example": "OS",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ApiSecCustomSensitiveRule": {
+      "document": "api安全客户自定义敏感检测规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数位置",
+          "example": "[\"headers\",\"body\"]",
+          "member": "string",
+          "name": "Position",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件",
+          "example": "匹配条件，三种取值：key_match,char_match, rematch",
+          "member": "string",
+          "name": "MatchKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配值",
+          "example": "匹配值",
+          "member": "string",
+          "name": "MatchValue",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "\"100\",\"200\",\"300\",表示低中高",
+          "member": "string",
+          "name": "Level",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配符号，当匹配条件为关键字匹配和字符匹配的时候传该值,可传多个",
+          "example": "匹配条件，and,or，lower，upper,num",
+          "member": "string",
+          "name": "MatchCond",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则是否泛化，默认0表示不泛化",
+          "example": "1",
+          "member": "int64",
+          "name": "IsPan",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ApiSecExtractRule": {
+      "document": "api提取规则内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "ddp1",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "api名称",
+          "example": "/waf/",
+          "member": "string",
+          "name": "ApiName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求方法列表",
+          "example": "[\"get\"]",
+          "member": "string",
+          "name": "Methods",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关状态，0是关，1是开",
+          "example": "0,1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正则匹配内容",
+          "example": "/ss",
+          "member": "string",
+          "name": "Regex",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "10更新时间戳",
+          "example": "12312313",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ApiSecKey": {
       "document": "api列表",
       "members": [
@@ -3388,6 +3786,222 @@
         }
       ],
       "usage": "in"
+    },
+    "ApiSecPrivilegeRule": {
+      "document": "自定义api鉴权规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称，不可重复",
+          "example": "waf",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1:开，0:关",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最多输入20个api",
+          "example": "api列表，为空表示为域名维度",
+          "member": "string",
+          "name": "ApiName",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "鉴权位置",
+          "example": "qeury",
+          "member": "string",
+          "name": "Position",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "鉴权参数列表",
+          "example": "waf1",
+          "member": "string",
+          "name": "ParameterList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间戳",
+          "example": "1730609155",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则来源",
+          "example": "custom",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带有匹配方式的api列表",
+          "example": "[{\"waf\":1}]",
+          "member": "ApiNameOp",
+          "name": "ApiNameOp",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用对象取值，1表示手动填写，2表示从api资产中获取",
+          "example": "32",
+          "member": "uint64",
+          "name": "Option",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ApiSecSceneRule": {
+      "document": "api安全自定义场景规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景名称",
+          "example": "场景名称",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关状态，1表示开，0表示关",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，10位时间戳",
+          "example": "12312231",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "[{\"waf\":1}]",
+          "member": "ApiSecSceneRuleEntry",
+          "name": "RuleList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则来源，系统内置:OS\n客户自定义：custom",
+          "example": "OS",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ApiSecSceneRuleEntry": {
+      "document": "api安全用户自定义场景规则结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配字段",
+          "example": "WAF",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配值",
+          "example": "WAF",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作符",
+          "example": "=",
+          "member": "string",
+          "name": "Operate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当匹配字段是get参数值，post参数值，cookie参数值，header参数值，rsp参数值的时候，可填充此字段",
+          "example": "WAF",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Area": {
       "document": "地域信息",
@@ -3984,6 +4598,57 @@
         }
       ],
       "usage": "both"
+    },
+    "BotIdConfig": {
+      "document": "BOT-ID规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "302342423",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则开关",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "动作配置",
+          "example": "intercept",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "abot",
+          "member": "string",
+          "name": "BotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "重定向路径",
+          "example": "/luffy",
+          "member": "string",
+          "name": "Redirect",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "BotPkg": {
       "document": "Bot资源信息",
@@ -7237,6 +7902,232 @@
       ],
       "type": "object"
     },
+    "CreateRateLimitV2Request": {
+      "document": "CreateRateLimitV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.xxx.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则名",
+          "example": "TestRule",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级",
+          "example": "50",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则开关，0关闭，1开启",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限流窗口",
+          "example": " {\"Second\": 3, \"Minute\": 0, \"Hour\": 0}",
+          "member": "LimitWindow",
+          "name": "LimitWindow",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "支持API或Domain，如果是基于API，则LimitPaths不能为空，否则LimitPaths为空",
+          "example": "API",
+          "member": "string",
+          "name": "LimitObject",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限流策略，0:观察,1:拦截，2:人机",
+          "example": "0",
+          "member": "int64",
+          "name": "LimitStrategy",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限流方法",
+          "example": "{ \"Method\":\"GET\", \"Type\":\"EXACT\" }",
+          "member": "LimitMethod",
+          "name": "LimitMethod",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "限流路径列表",
+          "example": "{\"Path\": \"/test1\", \"Type\": \"IN\" }",
+          "member": "LimitPath",
+          "name": "LimitPaths",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "限流Headers",
+          "example": "[{\"Type\": \"IN\", \"Key\": \"value\", \"Value\": \"v1,v2\"}]",
+          "member": "LimitHeader",
+          "name": "LimitHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "基于Header参数名限流",
+          "example": "{\"ParamsName\": \"keya,keyb\", \"Type\": \"IN\"} ",
+          "member": "LimitHeaderName",
+          "name": "LimitHeaderName",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "基于Get参数名限流",
+          "example": " {Content: \"getname\", Func: \"IN\"}",
+          "member": "MatchOption",
+          "name": "GetParamsName",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "基于Get参数值限流",
+          "example": "{\"Content\": \"valuea\", \"Func\": \"IN\", \"Params\": \"valuea\"}",
+          "member": "MatchOption",
+          "name": "GetParamsValue",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "基于Post参数名限流",
+          "example": " {Content: \"postname\", Func: \"IN\"}",
+          "member": "MatchOption",
+          "name": "PostParamsName",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "基于Post参数值限流",
+          "example": "{\"Content\": \"valuea\", \"Func\": \"IN\", \"Params\": \"valuea\"}",
+          "member": "MatchOption",
+          "name": "PostParamsValue",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "基于IP归属地限流",
+          "example": "{\"Lang\":\"cn\",\"Areas\":[{\"Country\":\"中国\",\"Region\":\"广西\",\"City\":\"南宁\"}]}",
+          "member": "MatchOption",
+          "name": "IpLocation",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "重定向信息,当LimitStrategy为重定向时，此字段必填",
+          "example": "{\"Protool\":\"http\",\"Domain\":\"www.test.com\",\"Url\":\"/testRedirect\"}",
+          "member": "RedirectInfo",
+          "name": "RedirectInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "拦截页面,0表示429，否则填写blockPageID",
+          "example": "0",
+          "member": "int64",
+          "name": "BlockPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限流对象来源，0：手动填写，1：API资产",
+          "example": "0",
+          "member": "int64",
+          "name": "ObjectSrc",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否共享配额，只有当对象为URL时有效，false表示URL独享配额，true表示所有URL共享配额",
+          "example": "false",
+          "member": "bool",
+          "name": "QuotaShare",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "路径选项,可配置每个路径的请求方法",
+          "example": "{\"Path\":\"/test\",\"Method\":\"GET\"}",
+          "member": "PathItem",
+          "name": "PathsOption",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "限流执行顺序，0：默认情况，限流优先，1：安全防护优先",
+          "example": "0",
+          "member": "int64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRateLimitV2Response": {
+      "document": "CreateRateLimitV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "example": "{\"Code\": 0,\"Info\": \"success\"}",
+          "member": "RateLimitCommonRsp",
+          "name": "BaseInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CronJob": {
       "document": "规则周期执行的数据结构",
       "members": [
@@ -8098,6 +8989,52 @@
     "DeleteOwaspWhiteRuleResponse": {
       "document": "DeleteOwaspWhiteRule返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRateLimitsV2Request": {
+      "document": "DeleteRateLimitsV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要删除的限流ID列表",
+          "example": "[4000003024,4000003023]",
+          "member": "int64",
+          "name": "LimitRuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRateLimitsV2Response": {
+      "document": "DeleteRateLimitsV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "example": "{\"Code\": 0,\"Info\": \"success\"}",
+          "member": "RateLimitCommonRsp",
+          "name": "BaseInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -13309,6 +14246,153 @@
       ],
       "type": "object"
     },
+    "DescribeRateLimitsV2Request": {
+      "document": "DescribeRateLimitsV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.xxxx.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限流规则ID",
+          "example": "400000001",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则名",
+          "example": "Test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限流接口名",
+          "example": "methodname",
+          "member": "string",
+          "name": "Method",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限流对象，可选API、Domain",
+          "example": "API",
+          "member": "string",
+          "name": "LimitObject",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则开关，0表示关闭，1表示开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，可选desc、asc",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，可选Priority、Timestamp、ID",
+          "example": "Priority",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页的起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页行数",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "[{\"Name\": \"Status\", \"Values\": [\"0\"], \"ExactMatch\": true}]",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRateLimitsV2Response": {
+      "document": "DescribeRateLimitsV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果中规则数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "example": "{\"Code\": 0,\"Info\": \"success\"}",
+          "member": "RateLimitCommonRsp",
+          "name": "BaseInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"LimitRuleID\": 400000023,\"Name\": \"testname\",\"Priority\": 50,\"Status\": 0,\"TsVersion\": 0,\"LimitObject\": \"API\",\"LimitMethod\": {\"Method\": \"GET\",\"Type\": \"EXACT\"},\"LimitPaths\": {\"Path\": \"/url\",\"Type\": \"EXACT\"},\"LimitHeaders\": [{\"Key\": \"\",\"Value\": \"v1,v2\",\"Type\": \"IN\"}],\"LimitWindow\": {\"Second\": 0,\"Minute\": 10},\"LimitStrategy\": 0,\"LimitHeaderName\": {}}]",
+          "member": "LimitRuleV2",
+          "name": "RateLimits",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRuleLimitRequest": {
       "document": "DescribeRuleLimit请求参数结构体",
       "members": [
@@ -15932,6 +17016,80 @@
         }
       ],
       "usage": "out"
+    },
+    "EnableLimitRuleItem": {
+      "document": "EnableLimitRuleItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "400000023",
+          "member": "int64",
+          "name": "LimitRuleId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开关，0开启，1关闭",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EnableRateLimitsV2Request": {
+      "document": "EnableRateLimitsV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "具体规则列表",
+          "example": "{\"LimitRuleId\": \"400000023\",\"Status\":0}",
+          "member": "EnableLimitRuleItem",
+          "name": "EnableItems",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableRateLimitsV2Response": {
+      "document": "EnableRateLimitsV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "example": "{\"Code\": 0,\"Info\": \"success\"}",
+          "member": "RateLimitCommonRsp",
+          "name": "BaseInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExportAccessInfo": {
       "document": "DescribeAccessExports接口",
@@ -19360,6 +20518,438 @@
       ],
       "usage": "both"
     },
+    "LimitHeader": {
+      "document": "限流Header数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key_a",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value_a",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配方式，支持EXACT(等于), REGEX（正则） , IN（属于） , NOT_IN（不属于）, CONTAINS（包含）, NOT_CONTAINS（不包含）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EXACT",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LimitHeaderName": {
+      "document": "限流Header参数名",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "params_a",
+          "member": "string",
+          "name": "ParamsName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作符号,支持REGEX(正则),IN(属于),NOT_IN(不属于), EACH(每个参数值)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IN",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LimitMethod": {
+      "document": "限流方法数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要限流的请求方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配方式，支持EXACT(等于), REGEX（正则） , IN（属于） , NOT_IN（不属于）, CONTAINS（包含）, NOT_CONTAINS（不包含）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EXACT",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LimitPath": {
+      "document": "限流Path",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限流路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/test",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EXACT",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LimitRuleV2": {
+      "document": "自研版限流规则数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "40000001",
+          "member": "int64",
+          "name": "LimitRuleID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名",
+          "example": "TestName",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "50",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开关，0表示关闭，1表示开启",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳",
+          "example": "0",
+          "member": "int64",
+          "name": "TsVersion",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限流对象，API或Domain",
+          "example": "API",
+          "member": "string",
+          "name": "LimitObject",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限流方法名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{ \"Method\":\"GET\", \"Type\":\"EXACT\" }",
+          "member": "LimitMethod",
+          "name": "LimitMethod",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Path\": \"/test1\", \"Type\": \"IN\" }",
+          "member": "LimitPath",
+          "name": "LimitPaths",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Header参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Type\": \"IN\", \"Key\": \"value\", \"Value\": \"v1,v2\"}]",
+          "member": "LimitHeader",
+          "name": "LimitHeaders",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "限流窗口",
+          "example": " {\"Second\": 3, \"Minute\": 0, \"Hour\": 0}",
+          "member": "LimitWindow",
+          "name": "LimitWindow",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限流策略，0:观察,1:拦截，2:人机",
+          "example": "{\"ParamsName\": \"keya,keyb\", \"Type\": \"IN\"} ",
+          "member": "int64",
+          "name": "LimitStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Header参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"ParamsName\": \"keya,keyb\", \"Type\": \"IN\"} ",
+          "member": "LimitHeaderName",
+          "name": "LimitHeaderName",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Get参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " {Content: \"getname\", Func: \"IN\"}",
+          "member": "MatchOption",
+          "name": "GetParamsName",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Get参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Content\": \"valuea\", \"Func\": \"IN\", \"Params\": \"valuea\"}",
+          "member": "MatchOption",
+          "name": "GetParamsValue",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Post参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " {Content: \"postname\", Func: \"IN\"}",
+          "member": "MatchOption",
+          "name": "PostParamsName",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Post参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Content\": \"valuea\", \"Func\": \"IN\", \"Params\": \"valuea\"}",
+          "member": "MatchOption",
+          "name": "PostParamsValue",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Ip属地\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Lang\":\"cn\",\"Areas\":[{\"Country\":\"中国\",\"Region\":\"广西\",\"City\":\"南宁\"}]}",
+          "member": "MatchOption",
+          "name": "IpLocation",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重定向信息，当LimitStrategy为2时，此字段不为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Protool\":\"http\",\"Domain\":\"www.test.com\",\"Url\":\"/testRedirect\"}",
+          "member": "RedirectInfo",
+          "name": "RedirectInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拦截页面，0表示429，否则为BlockPageID",
+          "example": "0",
+          "member": "int64",
+          "name": "BlockPage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限流对象来源，0：手动填写，1：API资产",
+          "example": "0",
+          "member": "int64",
+          "name": "ObjectSrc",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否共享配额，只有当对象为URL时有效，false表示URL独享配额，true表示所有URL共享配额",
+          "example": "false",
+          "member": "bool",
+          "name": "QuotaShare",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路径选项,可配置每个路径的请求方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{/abc/123:POST}",
+          "member": "PathItem",
+          "name": "PathsOption",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "574新增需求，限流执行顺序，0：默认情况，限流优先，1：安全防护优先",
+          "example": "0",
+          "member": "int64",
+          "name": "Order",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LimitWindow": {
+      "document": "限流窗口大小",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每秒允许通过的最大请求数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Second",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每分钟允许通过的最大请求数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Minute",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每小时允许通过的最大请求数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "Hour",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否共享配额，只有当对象为URL时有效，false表示URL独享配额，true表示所有URL共享配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "QuotaShare",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "LoadBalancer": {
       "document": "负载均衡的监听器",
       "members": [
@@ -20041,6 +21631,45 @@
       ],
       "usage": "both"
     },
+    "MatchOption": {
+      "document": "限流规则中匹配条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "params_a",
+          "member": "string",
+          "name": "Params",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "逻辑符号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EXACT",
+          "member": "string",
+          "name": "Func",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "content_a",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "MiniExtendPkg": {
       "document": "小程序安全接入ID扩展资源信息",
       "members": [
@@ -20611,6 +22240,141 @@
       ],
       "type": "object"
     },
+    "ModifyApiSecSensitiveRuleRequest": {
+      "document": "ModifyApiSecSensitiveRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1表示开，0表示关，3表示删除",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "id_card",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户自定义配置",
+          "example": "无",
+          "member": "ApiSecCustomSensitiveRule",
+          "name": "CustomRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "rulename列表，批量操作的时候填改值",
+          "example": "[\"rulename1\"]",
+          "member": "string",
+          "name": "RuleNameList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "api提取规则内容",
+          "example": "无",
+          "member": "ApiSecExtractRule",
+          "name": "CustomApiExtractRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "批量操作的时候的api提取规则",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "ApiExtractRuleName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义api鉴权规则",
+          "example": "无",
+          "member": "ApiSecPrivilegeRule",
+          "name": "ApiSecPrivilegeRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "匹配操作时候的api鉴权规则",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "ApiSecPrivilegeRuleName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "批量操作的时候的自定义场景列表",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "ApiSecSceneRuleNameList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "单条自定义api场景规则",
+          "example": "无",
+          "member": "ApiSecSceneRule",
+          "name": "ApiSecSceneRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "批量操作的时候的自定义事件规则列表",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "ApiSecCustomEventRuleNameList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义事件规则",
+          "example": "无",
+          "member": "ApiSecCustomEventRule",
+          "name": "ApiSecCustomEventRuleRule",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiSecSensitiveRuleResponse": {
+      "document": "ModifyApiSecSensitiveRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAreaBanAreasRequest": {
       "document": "ModifyAreaBanAreas请求参数结构体",
       "members": [
@@ -20964,6 +22728,96 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBotIdRuleRequest": {
+      "document": "ModifyBotIdRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "admin.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "场景ID",
+          "example": "3012342342",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置信息，支持批量",
+          "example": "[     {       \"RuleId\": \"abc\",       \"BotId\": \"abc\",       \"Status\": true,       \"Action\": \"abc\"     }   ]",
+          "member": "BotIdConfig",
+          "name": "Data",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0-全局设置不生效 1-全局开关配置字段生效 2-全局动作配置字段生效 3-全局开关和动作字段都生效 4-只修改全局重定向路径 5-只修改全局防护等级",
+          "example": "0",
+          "member": "int64",
+          "name": "GlobalSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "全局开关",
+          "example": "false",
+          "member": "bool",
+          "name": "Status",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "全局动作",
+          "example": "monitor",
+          "member": "string",
+          "name": "RuleAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全局重定向路径",
+          "example": "/luffy",
+          "member": "string",
+          "name": "GlobalRedirect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防护等级：normal-正常；strict-严格",
+          "example": "normal",
+          "member": "string",
+          "name": "ProtectLevel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBotIdRuleResponse": {
+      "document": "ModifyBotIdRule返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -24337,6 +26191,34 @@
       ],
       "usage": "both"
     },
+    "PathItem": {
+      "document": "指定限流path和对应的method",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求路径",
+          "example": "/test",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求方法",
+          "example": "POST",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PeakPointsItem": {
       "document": "PeakPoints数组项",
       "members": [
@@ -25301,6 +27183,73 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RateLimitCommonRsp": {
+      "document": "限流相关通用返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应码",
+          "example": "0",
+          "member": "uint64",
+          "name": "Code",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示信息",
+          "example": "success",
+          "member": "string",
+          "name": "Info",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RedirectInfo": {
+      "document": "重定向信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc.test.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "url路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/abc",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -27382,6 +29331,241 @@
           "example": "{\"Code\":0, \"Msg\":\"success\"}",
           "member": "CommonRspData",
           "name": "CommonRsp",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRateLimitV2Request": {
+      "document": "UpdateRateLimitV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "40000001",
+          "member": "int64",
+          "name": "LimitRuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则名",
+          "example": "TestName",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "50",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开关，0关闭，1开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "支持API，Domain。如果基于API，则LimitPaths不能为空，否则LimitPaths为空",
+          "example": "API",
+          "member": "string",
+          "name": "LimitObject",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限流策略，0:观察,1:拦截，2:人机",
+          "example": "0",
+          "member": "int64",
+          "name": "LimitStrategy",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "基于Header参数名限流",
+          "example": "{\"ParamsName\": \"keya,keyb\", \"Type\": \"IN\"} ",
+          "member": "LimitHeaderName",
+          "name": "LimitHeaderName",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "限流方法",
+          "example": "{ \"Method\":\"GET\", \"Type\":\"EXACT\" }",
+          "member": "LimitMethod",
+          "name": "LimitMethod",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "限流路径",
+          "example": "{\"Path\": \"/test1\", \"Type\": \"IN\" }",
+          "member": "LimitPath",
+          "name": "LimitPaths",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "限流Headers",
+          "example": "[{\"Type\": \"IN\", \"Key\": \"value\", \"Value\": \"v1,v2\"}]",
+          "member": "LimitHeader",
+          "name": "LimitHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "限流窗口",
+          "example": " {\"Second\": 3, \"Minute\": 0, \"Hour\": 0}",
+          "member": "LimitWindow",
+          "name": "LimitWindow",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "基于Get参数名限流",
+          "example": " {Content: \"getname\", Func: \"IN\"}",
+          "member": "MatchOption",
+          "name": "GetParamsName",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "基于Get参数值限流",
+          "example": "{\"Content\": \"valuea\", \"Func\": \"IN\", \"Params\": \"valuea\"}",
+          "member": "MatchOption",
+          "name": "GetParamsValue",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "基于Post参数名限流",
+          "example": " {Content: \"postname\", Func: \"IN\"}",
+          "member": "MatchOption",
+          "name": "PostParamsName",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "基于Post参数值限流",
+          "example": "{\"Content\": \"valuea\", \"Func\": \"IN\", \"Params\": \"valuea\"}",
+          "member": "MatchOption",
+          "name": "PostParamsValue",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "基于IP归属地限流",
+          "example": "{\"Lang\":\"cn\",\"Areas\":[{\"Country\":\"中国\",\"Region\":\"广西\",\"City\":\"南宁\"}]}",
+          "member": "MatchOption",
+          "name": "IpLocation",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "重定向信息,当LimitStrategy为重定向时，此字段必填",
+          "example": "{\"Protool\":\"http\",\"Domain\":\"www.test.com\",\"Url\":\"/testRedirect\"}",
+          "member": "RedirectInfo",
+          "name": "RedirectInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "拦截页面,0表示429，否则填写blockPageID",
+          "example": "0",
+          "member": "int64",
+          "name": "BlockPage",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限流对象来源，0：手动填写，1：API资产",
+          "example": "0",
+          "member": "int64",
+          "name": "ObjectSrc",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否共享配额，只有当对象为URL时有效，false表示URL独享配额，true表示所有URL共享配额",
+          "example": "false",
+          "member": "bool",
+          "name": "QuotaShare",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "路径选项,可配置每个路径的请求方法",
+          "example": "{\"Path\":\"/test\",\"Method\":\"GET\"}",
+          "member": "PathItem",
+          "name": "PathsOption",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "限流执行顺序，0：默认情况，限流优先，1：安全防护优先",
+          "example": "0",
+          "member": "int64",
+          "name": "Order",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateRateLimitV2Response": {
+      "document": "UpdateRateLimitV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "example": "{\"Code\": 0,\"Info\": \"success\"}",
+          "member": "RateLimitCommonRsp",
+          "name": "BaseInfo",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false

@@ -36,7 +36,7 @@
       "status": "online"
     },
     "ConvertOperatingSystems": {
-      "document": "本接口(ConvertOperatingSystem)用于转换实例的操作系统，仅支持源操作系统为 CentOS 7、CentOS 8 的实例。",
+      "document": "本接口(ConvertOperatingSystems)用于转换实例的操作系统，仅支持源操作系统为 CentOS 7、CentOS 8 的实例。",
       "input": "ConvertOperatingSystemsRequest",
       "name": "转换操作系统",
       "output": "ConvertOperatingSystemsResponse",
@@ -1696,7 +1696,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转换的目标操系统信息，仅在入参 DryRun 为 true 时返回。",
+          "document": "转换的目标操作系统信息，仅在入参 DryRun 为 true 时返回。",
           "example": "无",
           "member": "TargetOS",
           "name": "SupportTargetOSList",

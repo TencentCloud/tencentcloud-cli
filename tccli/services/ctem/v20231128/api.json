@@ -1,5 +1,19 @@
 {
   "actions": {
+    "CreateApp": {
+      "document": "添加APP资产",
+      "input": "CreateAppRequest",
+      "name": "添加APP资产",
+      "output": "CreateAppResponse",
+      "status": "online"
+    },
+    "CreateAsset": {
+      "document": "添加主机资产",
+      "input": "CreateAssetRequest",
+      "name": "添加主机资产",
+      "output": "CreateAssetResponse",
+      "status": "online"
+    },
     "CreateCustomer": {
       "document": "创建企业",
       "input": "CreateCustomerRequest",
@@ -7,11 +21,25 @@
       "output": "CreateCustomerResponse",
       "status": "online"
     },
+    "CreateDomain": {
+      "document": "添加主域名数据",
+      "input": "CreateDomainRequest",
+      "name": "添加主域名资产",
+      "output": "CreateDomainResponse",
+      "status": "online"
+    },
     "CreateEnterprise": {
-      "document": "添加企业架构数据",
+      "document": "添加企业架构资产",
       "input": "CreateEnterpriseRequest",
-      "name": "添加企业架构数据",
+      "name": "添加企业架构资产",
       "output": "CreateEnterpriseResponse",
+      "status": "online"
+    },
+    "CreateHttp": {
+      "document": "添加网站资产",
+      "input": "CreateHttpRequest",
+      "name": "添加网站资产",
+      "output": "CreateHttpResponse",
       "status": "online"
     },
     "CreateJobRecord": {
@@ -19,6 +47,139 @@
       "input": "CreateJobRecordRequest",
       "name": "启动测绘",
       "output": "CreateJobRecordResponse",
+      "status": "online"
+    },
+    "CreateManage": {
+      "document": "添加后台数据",
+      "input": "CreateManageRequest",
+      "name": "添加后台数据",
+      "output": "CreateManageResponse",
+      "status": "online"
+    },
+    "CreatePort": {
+      "document": "添加端口服务资产",
+      "input": "CreatePortRequest",
+      "name": "添加端口服务资产",
+      "output": "CreatePortResponse",
+      "status": "online"
+    },
+    "CreateSeeds": {
+      "document": "创建种子",
+      "input": "CreateSeedsRequest",
+      "name": "创建种子",
+      "output": "CreateSeedsResponse",
+      "status": "online"
+    },
+    "CreateSubDomain": {
+      "document": "添加子域名数据",
+      "input": "CreateSubDomainRequest",
+      "name": "添加子域名资产",
+      "output": "CreateSubDomainResponse",
+      "status": "online"
+    },
+    "CreateSuspiciousAsset": {
+      "document": "添加影子资产",
+      "input": "CreateSuspiciousAssetRequest",
+      "name": "添加影子资产",
+      "output": "CreateSuspiciousAssetResponse",
+      "status": "online"
+    },
+    "CreateWechatApplet": {
+      "document": "添加微信小程序资产",
+      "input": "CreateWechatAppletRequest",
+      "name": "添加微信小程序资产",
+      "output": "CreateWechatAppletResponse",
+      "status": "online"
+    },
+    "CreateWechatOfficialAccount": {
+      "document": "添加微信公众号资产",
+      "input": "CreateWechatOfficialAccountRequest",
+      "name": "添加微信公众号资产",
+      "output": "CreateWechatOfficialAccountResponse",
+      "status": "online"
+    },
+    "DeleteApps": {
+      "document": "删除APP数据",
+      "input": "DeleteAppsRequest",
+      "name": "删除APP数据",
+      "output": "DeleteAppsResponse",
+      "status": "online"
+    },
+    "DeleteAssets": {
+      "document": "删除主机资产数据",
+      "input": "DeleteAssetsRequest",
+      "name": "删除主机资产数据",
+      "output": "DeleteAssetsResponse",
+      "status": "online"
+    },
+    "DeleteDomains": {
+      "document": "删除主域名数据",
+      "input": "DeleteDomainsRequest",
+      "name": "删除主域名数据",
+      "output": "DeleteDomainsResponse",
+      "status": "online"
+    },
+    "DeleteEnterprises": {
+      "document": "删除企业架构数据",
+      "input": "DeleteEnterprisesRequest",
+      "name": "删除企业架构数据",
+      "output": "DeleteEnterprisesResponse",
+      "status": "online"
+    },
+    "DeleteHttps": {
+      "document": "删除网站资产数据",
+      "input": "DeleteHttpsRequest",
+      "name": "删除网站资产数据",
+      "output": "DeleteHttpsResponse",
+      "status": "online"
+    },
+    "DeleteManages": {
+      "document": "删除后台数据",
+      "input": "DeleteManagesRequest",
+      "name": "删除后台数据",
+      "output": "DeleteManagesResponse",
+      "status": "online"
+    },
+    "DeletePorts": {
+      "document": "删除端口数据",
+      "input": "DeletePortsRequest",
+      "name": "删除端口数据",
+      "output": "DeletePortsResponse",
+      "status": "online"
+    },
+    "DeleteSeeds": {
+      "document": "删除种子",
+      "input": "DeleteSeedsRequest",
+      "name": "删除种子",
+      "output": "DeleteSeedsResponse",
+      "status": "online"
+    },
+    "DeleteSubDomains": {
+      "document": "删除子域名数据",
+      "input": "DeleteSubDomainsRequest",
+      "name": "删除子域名数据",
+      "output": "DeleteSubDomainsResponse",
+      "status": "online"
+    },
+    "DeleteSuspiciousAssets": {
+      "document": "删除影子资产数据",
+      "input": "DeleteSuspiciousAssetsRequest",
+      "name": "删除影子资产数据",
+      "output": "DeleteSuspiciousAssetsResponse",
+      "status": "online"
+    },
+    "DeleteWechatApplets": {
+      "document": "删除微信小程序数据",
+      "input": "DeleteWechatAppletsRequest",
+      "name": "删除微信小程序数据",
+      "output": "DeleteWechatAppletsResponse",
+      "status": "online"
+    },
+    "DeleteWechatOfficialAccounts": {
+      "document": "删除微信公众号数据",
+      "input": "DeleteWechatOfficialAccountsRequest",
+      "name": "删除微信公众号数据",
+      "output": "DeleteWechatOfficialAccountsResponse",
       "status": "online"
     },
     "DescribeApiSecs": {
@@ -175,6 +336,13 @@
       "output": "DescribePortsResponse",
       "status": "online"
     },
+    "DescribeSeeds": {
+      "document": "查看种子列表",
+      "input": "DescribeSeedsRequest",
+      "name": "查看种子列表",
+      "output": "DescribeSeedsResponse",
+      "status": "online"
+    },
     "DescribeSensitiveInfos": {
       "document": "查看敏感信息泄露数据",
       "input": "DescribeSensitiveInfosRequest",
@@ -224,6 +392,13 @@
       "output": "DescribeWechatOfficialAccountsResponse",
       "status": "online"
     },
+    "IgnoreData": {
+      "document": "忽略数据",
+      "input": "IgnoreDataRequest",
+      "name": "忽略数据",
+      "output": "IgnoreDataResponse",
+      "status": "online"
+    },
     "ModifyCustomer": {
       "document": "编辑企业",
       "input": "ModifyCustomerRequest",
@@ -236,6 +411,13 @@
       "input": "ModifyLabelRequest",
       "name": "修改标签",
       "output": "ModifyLabelResponse",
+      "status": "online"
+    },
+    "ModifySeedStatus": {
+      "document": "修改种子状态",
+      "input": "ModifySeedStatusRequest",
+      "name": "修改种子状态",
+      "output": "ModifySeedStatusResponse",
       "status": "online"
     },
     "StopJobRecord": {
@@ -253,6 +435,233 @@
     "serviceShortName": "ctem"
   },
   "objects": {
+    "CreateAppRequest": {
+      "document": "CreateApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "移动端名称",
+          "example": "EM APP",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片地址",
+          "example": "http://test.com/a.png",
+          "member": "string",
+          "name": "Logo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台，ios或android",
+          "example": "ios",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "v1.1.1",
+          "member": "string",
+          "name": "AppVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下载地址",
+          "example": "http://test.com/",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安装包名",
+          "example": "com.test",
+          "member": "string",
+          "name": "PackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开发者",
+          "example": "CTEM",
+          "member": "string",
+          "name": "Developer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "移动端地址",
+          "example": "http://test.com",
+          "member": "string",
+          "name": "ServerUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "小程序",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子公司ID",
+          "example": "6512bd43d9caa6e02c990b0a82652dca",
+          "member": "string",
+          "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAppResponse": {
+      "document": "CreateApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAssetRequest": {
+      "document": "CreateAsset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP地址",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "企业Id",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "linux",
+          "member": "string",
+          "name": "Os",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国家",
+          "example": "中国",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "省份",
+          "example": "广东",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "城市",
+          "example": "深圳",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "电信",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子公司Id",
+          "example": "8668a2cdc29c962baaf96a54104af9ad",
+          "member": "string",
+          "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAssetResponse": {
+      "document": "CreateAsset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCustomerRequest": {
       "document": "CreateCustomer请求参数结构体",
       "members": [
@@ -424,6 +833,97 @@
       ],
       "type": "object"
     },
+    "CreateDomainRequest": {
+      "document": "CreateDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业Id",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ICP",
+          "example": "粤ICP备08111",
+          "member": "string",
+          "name": "ICP",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "注册时间",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "RegisteredTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "ExpiredTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司",
+          "example": "腾讯公司测试",
+          "member": "string",
+          "name": "Company",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子公司",
+          "example": "6512bd43d9caa6e02c990b0a82652dca",
+          "member": "string",
+          "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDomainResponse": {
+      "document": "CreateDomain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateEnterpriseRequest": {
       "document": "CreateEnterprise请求参数结构体",
       "members": [
@@ -533,6 +1033,152 @@
       "document": "CreateEnterprise返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHttpRequest": {
+      "document": "CreateHttp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业Id",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Url",
+          "example": "http://test.com/a.html",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子公司",
+          "example": "6512bd43d9caa6e02c990b0a82652dca",
+          "member": "string",
+          "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "测试网站",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "报文长度",
+          "example": "100",
+          "member": "int64",
+          "name": "ContentLength",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "报文内容",
+          "example": "<html>...</html>",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缩略图Url",
+          "example": "http://test.com/a.png",
+          "member": "string",
+          "name": "ScreenshotUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "http测试",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "解析的IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书信息",
+          "example": "{\\\"cipher\\\": \\\"TLS_AES_256_GCM_SHA384\\\", \\\"tls_version\\\": \\\"tls13\\\"}",
+          "member": "string",
+          "name": "Ssl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ssl证书过期时间",
+          "example": "2026-09-29T09:01:01Z",
+          "member": "string",
+          "name": "SslExpiredTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHttpResponse": {
+      "document": "CreateHttp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -599,6 +1245,705 @@
           "disabled": false,
           "document": "任务Id",
           "example": "1001",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateManageRequest": {
+      "document": "CreateManage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业Id",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Url",
+          "example": "http://test.com/a.html",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "CTEM-Test",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Screenshot",
+          "example": "http://test.com/a.png",
+          "member": "string",
+          "name": "Screenshot",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子公司",
+          "example": "0fa7ed04bbdf0eeea074edce69b396f0",
+          "member": "string",
+          "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateManageResponse": {
+      "document": "CreateManage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePortRequest": {
+      "document": "CreatePort请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业Id",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "22",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "IP或域名地址",
+          "example": "test.com",
+          "member": "string",
+          "name": "Asset",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否高危",
+          "example": "false",
+          "member": "bool",
+          "name": "IsHighRisk",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "子公司",
+          "example": "6512bd43d9caa6e02c990b0a82652dca",
+          "member": "string",
+          "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "base64编码后的指纹",
+          "example": "U1NILTIuMC1PcGVuU1NIXzUuMw0K",
+          "member": "string",
+          "name": "Banner",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "解析的IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "OpenSSH",
+          "member": "string",
+          "name": "App",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "ssh",
+          "member": "string",
+          "name": "Service",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePortResponse": {
+      "document": "CreatePort返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSeedsRequest": {
+      "document": "CreateSeeds请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "ip种子数组",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "Ips",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "icon种子数组",
+          "example": "[\"http://test.com/a.icon\"]",
+          "member": "string",
+          "name": "Icons",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "主域名种子数组",
+          "example": "[\"test.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "title种子数组",
+          "example": "[\"测试网站\"]",
+          "member": "string",
+          "name": "Titles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "子域名种子数组",
+          "example": "[\"a.test.com\"]",
+          "member": "string",
+          "name": "SubDomains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关键词种子数组",
+          "example": "[\"keyword1\"]",
+          "member": "string",
+          "name": "Keywords",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "母公司种子数组",
+          "example": "[\"tencent\"]",
+          "member": "string",
+          "name": "ParentCompanies",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSeedsResponse": {
+      "document": "CreateSeeds返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubDomainRequest": {
+      "document": "CreateSubDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业Id",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子域名",
+          "example": "doc.test.com",
+          "member": "string",
+          "name": "SubDomain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国家",
+          "example": "中国",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "省",
+          "example": "广东",
+          "member": "string",
+          "name": "Province",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "城市",
+          "example": "深圳",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Isp",
+          "example": "电信",
+          "member": "string",
+          "name": "Isp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子公司",
+          "example": "6512bd43d9caa6e02c990b0a82652dca",
+          "member": "string",
+          "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubDomainResponse": {
+      "document": "CreateSubDomain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSuspiciousAssetRequest": {
+      "document": "CreateSuspiciousAsset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业Id",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Url",
+          "example": "http://test.com/a.html",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子公司",
+          "example": "6512bd43d9caa6e02c990b0a82652dca",
+          "member": "string",
+          "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "test测试",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "tag1,tag2",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属者",
+          "example": "暴露面测试",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源类型",
+          "example": "F-Title",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源值",
+          "example": "xx银行",
+          "member": "string",
+          "name": "SourceValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否信任",
+          "example": "true",
+          "member": "bool",
+          "name": "Trusted",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSuspiciousAssetResponse": {
+      "document": "CreateSuspiciousAsset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWechatAppletRequest": {
+      "document": "CreateWechatApplet请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业Id",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "CTEM",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片地址",
+          "example": "http://test.com/a.png",
+          "member": "string",
+          "name": "Logo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "adsxxx",
+          "member": "string",
+          "name": "AccountId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "二维码",
+          "example": "http://test.com/code.png",
+          "member": "string",
+          "name": "QrCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "测试信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子公司",
+          "example": "6512bd43d9caa6e02c990b0a82652dca",
+          "member": "string",
+          "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号Appid",
+          "example": "adc",
+          "member": "string",
+          "name": "AccountAppid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证主体",
+          "example": "暴露面管理",
+          "member": "string",
+          "name": "RecordSubject",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWechatAppletResponse": {
+      "document": "CreateWechatApplet返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWechatOfficialAccountRequest": {
+      "document": "CreateWechatOfficialAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业Id",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "CTEM",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片地址",
+          "example": "https://test.com/a.png",
+          "member": "string",
+          "name": "Logo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "adscsxx",
+          "member": "string",
+          "name": "AccountId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "二维码",
+          "example": "https://test.com/b.png",
+          "member": "string",
+          "name": "QrCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "测试账号",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子公司",
+          "example": "6512bd43d9caa6e02c990b0a82652dca",
+          "member": "string",
+          "name": "EnterpriseUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证主体",
+          "example": "tencent",
+          "member": "string",
+          "name": "RecordSubject",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWechatOfficialAccountResponse": {
+      "document": "CreateWechatOfficialAccount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "1",
           "member": "int64",
           "name": "Id",
           "output_required": false,
@@ -849,6 +2194,420 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteAppsRequest": {
+      "document": "DeleteApps请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAppsResponse": {
+      "document": "DeleteApps返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAssetsRequest": {
+      "document": "DeleteAssets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAssetsResponse": {
+      "document": "DeleteAssets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDomainsRequest": {
+      "document": "DeleteDomains请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDomainsResponse": {
+      "document": "DeleteDomains返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnterprisesRequest": {
+      "document": "DeleteEnterprises请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEnterprisesResponse": {
+      "document": "DeleteEnterprises返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHttpsRequest": {
+      "document": "DeleteHttps请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否聚合数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAggregation",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHttpsResponse": {
+      "document": "DeleteHttps返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteManagesRequest": {
+      "document": "DeleteManages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否聚合数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAggregation",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteManagesResponse": {
+      "document": "DeleteManages返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePortsRequest": {
+      "document": "DeletePorts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否聚合数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAggregation",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePortsResponse": {
+      "document": "DeletePorts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSeedsRequest": {
+      "document": "DeleteSeeds请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSeedsResponse": {
+      "document": "DeleteSeeds返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSubDomainsRequest": {
+      "document": "DeleteSubDomains请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否聚合数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAggregation",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSubDomainsResponse": {
+      "document": "DeleteSubDomains返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSuspiciousAssetsRequest": {
+      "document": "DeleteSuspiciousAssets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否聚合数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAggregation",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSuspiciousAssetsResponse": {
+      "document": "DeleteSuspiciousAssets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWechatAppletsRequest": {
+      "document": "DeleteWechatApplets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWechatAppletsResponse": {
+      "document": "DeleteWechatApplets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWechatOfficialAccountsRequest": {
+      "document": "DeleteWechatOfficialAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWechatOfficialAccountsResponse": {
+      "document": "DeleteWechatOfficialAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeApiSecsRequest": {
       "document": "DescribeApiSecs请求参数结构体",
@@ -4113,6 +5872,98 @@
           "document": "数组",
           "example": "[ ]",
           "member": "DisplayPort",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSeedsRequest": {
+      "document": "DescribeSeeds请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-开始",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-结束",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询数组",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSeedsResponse": {
+      "document": "DescribeSeeds返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "种子列表",
+          "example": "无",
+          "member": "DisplaySeed",
           "name": "List",
           "output_required": false,
           "type": "list",
@@ -7647,6 +9498,92 @@
       ],
       "usage": "out"
     },
+    "DisplaySeed": {
+      "document": "种子详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1001",
+          "member": "int64",
+          "name": "CustomerId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类，包括：domain(主域名)、icon(图标)、ip(IP)、\nkeyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)",
+          "example": "domain",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "test.com",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "md5值",
+          "example": "数据的hash值",
+          "member": "string",
+          "name": "Md5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源",
+          "example": "人工",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可信",
+          "example": "true",
+          "member": "bool",
+          "name": "IsValid",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DisplaySensitiveInfo": {
       "document": "敏感信息泄露数据",
       "members": [
@@ -8745,6 +10682,78 @@
       ],
       "usage": "out"
     },
+    "IgnoreDataRequest": {
+      "document": "IgnoreData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID列表",
+          "example": "[1]",
+          "member": "int64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模块，包括：enterprise：企业架构，domain：主域名，sub_domain：子域名，asset：IP资产，port：端口服务，http：HTTP资产，vul：漏洞信息，app：APP，wechat_applet：微信小程序，wechat_official_account：微信公众号，github：Github信息泄露，manage：管理后台暴露，config：目录爆破，dark_web：暗网泄露，net_disk：文库网盘泄露，supply_chain：供应链，weak_password：弱口令，sensitive_info：敏感信息泄露",
+          "example": "domain",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID列表，可多选",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "CustomerIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否聚合数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAggregation",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否显示被忽略的数据",
+          "example": "true",
+          "member": "bool",
+          "name": "Ignored",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否忽略全部",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAffectOther",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "IgnoreDataResponse": {
+      "document": "IgnoreData返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "JobRecordProgress": {
       "document": "子任务进度",
       "members": [
@@ -9069,6 +11078,42 @@
     },
     "ModifyLabelResponse": {
       "document": "ModifyLabel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySeedStatusRequest": {
+      "document": "ModifySeedStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否可信",
+          "example": "true",
+          "member": "bool",
+          "name": "IsValid",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySeedStatusResponse": {
+      "document": "ModifySeedStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
