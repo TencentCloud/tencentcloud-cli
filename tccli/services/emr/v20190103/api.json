@@ -224,6 +224,13 @@
       "output": "DescribeInspectionTaskResultResponse",
       "status": "online"
     },
+    "DescribeInstanceOplog": {
+      "document": "获取实例操作日志",
+      "input": "DescribeInstanceOplogRequest",
+      "name": "获取实例操作日志",
+      "output": "DescribeInstanceOplogResponse",
+      "status": "online"
+    },
     "DescribeInstanceRenewNodes": {
       "document": "查询待续费节点信息",
       "input": "DescribeInstanceRenewNodesRequest",
@@ -6289,6 +6296,136 @@
           "name": "TypeInfo",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceOplogRequest": {
+      "document": "DescribeInstanceOplog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR实例ID",
+          "example": "emr-0sfuq468",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开头时间时间戳",
+          "example": "1708505169",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结尾时间时间戳",
+          "example": "1708505169",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索项数组",
+          "example": "[{SearchType: \"operation\", SearchValue: \"缩容|扩容\"}]",
+          "member": "SearchItem",
+          "name": "SearchFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群、节点、组件",
+          "example": "集群",
+          "member": "string",
+          "name": "Operand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一般、危险、高危",
+          "example": "一般",
+          "member": "string",
+          "name": "SecurityLevel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceOplogResponse": {
+      "document": "DescribeInstanceOplog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作日志数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作日志列表",
+          "example": "无",
+          "member": "OperationLog",
+          "name": "LogList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作对象筛选项数组",
+          "example": "[\"集群\",\"节点\",\"组件\"]",
+          "member": "string",
+          "name": "OperandList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全级别筛选数组",
+          "example": "[\"一般\",\"危险\",\"高危\"]",
+          "member": "string",
+          "name": "SecurityLevelList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -15382,6 +15519,102 @@
         }
       ],
       "usage": "both"
+    },
+    "OperationLog": {
+      "document": "操作日志描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR实例ID",
+          "example": "269553004",
+          "member": "int64",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作名称",
+          "example": "扩容",
+          "member": "string",
+          "name": "Operation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作类型",
+          "example": "3",
+          "member": "int64",
+          "name": "OperationType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户类型",
+          "example": "1",
+          "member": "int64",
+          "name": "UserType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作者",
+          "example": "700000446528",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作时间",
+          "example": "2025-11-05 15:02:27",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作对象",
+          "example": "集群",
+          "member": "string",
+          "name": "Operand",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作详情",
+          "example": "节点信息: S2.2XLARGE16*1(master), SA2.LARGE16*2(core)",
+          "member": "string",
+          "name": "OperationDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全级别",
+          "example": "一般",
+          "member": "string",
+          "name": "SecurityLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Order": {
       "document": "描述排序，用于排序.",

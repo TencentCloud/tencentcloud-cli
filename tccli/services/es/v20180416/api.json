@@ -1645,7 +1645,7 @@
         {
           "disabled": false,
           "document": "cdcId，使用cdc子网时传递",
-          "example": "cluster-xxxxxx\t",
+          "example": "cluster-xxxxxx",
           "member": "string",
           "name": "CdcId",
           "required": false,
@@ -1708,7 +1708,7 @@
         {
           "disabled": false,
           "document": "是否开启kibana公网访问，不传默认开启",
-          "example": "\"false\"",
+          "example": "false",
           "member": "string",
           "name": "EnableKibanaPublicAccess",
           "required": false,

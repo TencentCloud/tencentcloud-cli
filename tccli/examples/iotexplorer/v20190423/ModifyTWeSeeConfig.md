@@ -1,26 +1,4 @@
-**Example 1: 对指定设备开启 TWeSee 摘要能力**
-
-已接入 IoT 云存的设备开启 TWeSee 摘要能力
-
-Input: 
-
-```
-tccli iotexplorer ModifyTWeSeeConfig --cli-unfold-argument  \
-    --ProductId 4AHMY9X89Y \
-    --DeviceName dev001 \
-    --EnableSummary True
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6"
-    }
-}
-```
-
-**Example 2: 对指定设备开启 TWeSee 摘要与搜索能力**
+**Example 1: 对指定设备开启 TWeSee 摘要与搜索能力**
 
 已接入 IoT 云存的设备开启 TWeSee 摘要与搜索能力
 
@@ -32,6 +10,28 @@ tccli iotexplorer ModifyTWeSeeConfig --cli-unfold-argument  \
     --DeviceName dev001 \
     --EnableSummary True \
     --EnableSearch True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6"
+    }
+}
+```
+
+**Example 2: 对指定设备开启 TWeSee 摘要能力**
+
+已接入 IoT 云存的设备开启 TWeSee 摘要能力
+
+Input: 
+
+```
+tccli iotexplorer ModifyTWeSeeConfig --cli-unfold-argument  \
+    --ProductId 4AHMY9X89Y \
+    --DeviceName dev001 \
+    --EnableSummary True
 ```
 
 Output: 
@@ -55,7 +55,7 @@ tccli iotexplorer ModifyTWeSeeConfig --cli-unfold-argument  \
     --DeviceName dev001 \
     --EnableSummary True \
     --EnableSearch True \
-    --SummaryConfig.DetectTypes child_crying
+    --SummaryConfig.DetectTypes baby_crying
 ```
 
 Output: 

@@ -256,6 +256,14 @@
         "title": "【监控】获取巡检任务结果列表"
       }
     ],
+    "DescribeInstanceOplog": [
+      {
+        "document": "指定实例ID后获取实例的操作日志纪录",
+        "input": "https://emr.tencentcloudapi.com/?Action=DescribeInstanceOplog\n&InstanceId=emr-0sfuq468\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LogList\": [\n            {\n                \"CreateTime\": \"2020-02-19 20:58:11\",\n                \"InstanceId\": 59763,\n                \"Operand\": \"集群\",\n                \"Operation\": \"创建集群\",\n                \"OperationDesc\": \"---\",\n                \"OperationType\": 1,\n                \"Operator\": \"1875765535\",\n                \"SecurityLevel\": \"一般\",\n                \"UserType\": 1\n            }\n        ],\n        \"RequestId\": \"d7f5f443-f471-4970-85e3-419fb7f6e355\",\n        \"TotalCnt\": 1,\n        \"OperandList\": [\n            \"组件\",\n            \"节点\",\n            \"集群\"\n        ],\n        \"SecurityLevelList\": [\n            \"一般\",\n            \"危险\",\n            \"高危\"\n        ]\n    }\n}",
+        "title": "获取实例操作日志纪录"
+      }
+    ],
     "DescribeInstanceRenewNodes": [
       {
         "document": "预付费集群隔离后续费资源查询",

@@ -12,7 +12,7 @@
       {
         "document": "创建免费版套餐",
         "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"example-test-instance\",\n    \"Domain\": \"igtm.example.com\",\n    \"AccessType\": \"custom\",\n    \"AccessDomain\": \"example.com\",\n    \"AccessSubDomain\": \"access.igtm\",\n    \"GlobalTtl\": 300,\n    \"PackageType\": \"Free\",\n    \"Remark\": \"测试实例\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec040ddf-7c7d-4aef-9e0d-6f3105fa0a4c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"gtm-xxxxxxxx\",\n        \"RequestId\": \"ec040ddf-7c7d-4aef-9e0d-6f3105fa0a4c\"\n    }\n}",
         "title": "创建免费版套餐"
       }
     ],
@@ -133,7 +133,7 @@
     "DescribeInstanceDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceDetail\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-dsdd123xdo\"\n}",
         "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"gtm-dsdd123xdo\",\n            \"InstanceName\": \"测试实例\",\n            \"Domain\": \"gtmtest.com\",\n            \"AccessType\": \"CUSTOM\",\n            \"AccessSubDomain\": \"access-gtm\",\n            \"AccessDomain\": \"gtmtest.com\",\n            \"GlobalTtl\": 600,\n            \"PackageType\": \"ULTIMATE\",\n            \"WorkingStatus\": \"NORMAL\",\n            \"Status\": \"ENABLED\",\n            \"IsCnameConfigured\": false,\n            \"Remark\": \"备注信息\",\n            \"StrategyNum\": 0,\n            \"AddressPoolNum\": 0,\n            \"MonitorNum\": 0,\n            \"ResourceId\": \"ins-oxrvmnl4yrd\",\n            \"NotifyEventSet\": [],\n            \"CreatedOn\": \"2024-07-19 15:40:19\",\n            \"UpdatedOn\": \"2024-07-19 15:40:19\"\n        },\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\"\n    }\n}",
         "title": "实例详情"
       }
@@ -205,7 +205,7 @@
     "ModifyInstanceConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceConfig\n<公共请求参数>\n\n{\n    \"InstanceConfig\": {\n        \"InstanceName\": \"测试实例 1\",\n        \"Domain\": \"xxxx.xxxx.xxxxxxxx@exmaple.com\",\n        \"AccessType\": \"CUSTOM\",\n        \"AccessDomain\": \"exmaple-access.com\",\n        \"AccessSubDomain\": \"xxxx.xxxx.xxxxxxxx.access\",\n        \"Remark\": \"测试实例\",\n        \"GlobalTtl\": 300\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-xxxxxxxxxxx\",\n    \"InstanceConfig\": {\n        \"InstanceName\": \"测试实例 1\",\n        \"Domain\": \"xxxx.xxxx.xxxxxxxx@exmaple.com\",\n        \"AccessType\": \"CUSTOM\",\n        \"AccessDomain\": \"exmaple-access.com\",\n        \"AccessSubDomain\": \"xxxx.xxxx.xxxxxxxx.access\",\n        \"Remark\": \"测试实例\",\n        \"GlobalTtl\": 300\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceName\": \"测试实例 1\",\n            \"InstanceId\": \"gtm-xxxxxxxxxxx\",\n            \"ResourceId\": \"\",\n            \"Domain\": \"xxxx.xxxx.xxxxxxxx@exmaple.com\",\n            \"AccessType\": \"CUSTOM\",\n            \"AccessDomain\": \"exmaple-access.com\",\n            \"AccessSubDomain\": \"xxxx.xxxx.xxxxxxxx.access\",\n            \"GlobalTtl\": 300,\n            \"PackageType\": \"FREE\",\n            \"WorkingStatus\": \"NORMAL\",\n            \"Status\": \"ENABLED\",\n            \"Remark\": \"测试实例\",\n            \"StrategyNum\": 0,\n            \"AddressPoolNum\": 0,\n            \"MonitorNum\": 0,\n            \"CreatedOn\": \"2023-12-20 06:43:16\",\n            \"UpdatedOn\": \"2023-12-26 20:00:03\",\n            \"NotifyEventSet\": []\n        },\n        \"RequestId\": \"be7d3d39-82cf-41e8-9b60-151e9745c422\"\n    }\n}",
         "title": "修改实例配置"
       }

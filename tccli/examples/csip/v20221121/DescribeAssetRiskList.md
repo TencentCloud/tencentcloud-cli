@@ -13,7 +13,7 @@ Output:
     "Response": {
         "AssetRiskList": [
             {
-                "AppId": 1300448058,
+                "AppId": 1434332551,
                 "CheckType": "network_security",
                 "CloudAccountId": "12335421",
                 "CloudAccountName": "天空之城",
@@ -26,6 +26,7 @@ Output:
                 "RiskStatus": 2,
                 "RiskTitle": "安全组存在放通非业务端口全部网段的规则",
                 "Severity": "medium",
+                "Classify": "emergency",
                 "UpdateTime": "2025-05-07T01:51:28Z"
             }
         ],

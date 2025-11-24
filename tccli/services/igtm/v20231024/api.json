@@ -723,6 +723,16 @@
       "document": "CreateInstance返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "实例id",
+          "example": "gtm-Ul65AOsdfDvxVD",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1414,6 +1424,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "每页条数",
           "example": "10",
           "member": "uint64",
@@ -1424,7 +1443,7 @@
         {
           "disabled": false,
           "document": "探测任务过滤条件：ResourceId 探测任务的资源id，PeriodStart 最小过期时间,PeriodEnd 最大过期时间",
-          "example": "[{\"Name\": \"ResourceId\", \"Value\": [\"资源id\"]}]",
+          "example": "无",
           "member": "ResourceFilter",
           "name": "Filters",
           "required": false,
@@ -1531,7 +1550,17 @@
     },
     "DescribeInstanceDetailRequest": {
       "document": "DescribeInstanceDetail请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "gtm-Ul65AOsdfDvxVD",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeInstanceDetailResponse": {
@@ -1636,6 +1665,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "每页条数",
           "example": "10",
           "member": "uint64",
@@ -1646,7 +1684,7 @@
         {
           "disabled": false,
           "document": "InstanceId实例Id，InstanceName实例名称，ResourceId套餐Id，PackageType套餐类型 ",
-          "example": "[{\"Name\": \"InstanceName\", \"Value\": [\"未命名\"]}]",
+          "example": "无",
           "member": "ResourceFilter",
           "name": "Filters",
           "required": false,
@@ -1753,6 +1791,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤条件：MonitorName：监控器名称；MonitorId：监控器id",
+          "example": "无",
+          "member": "ResourceFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3076,6 +3123,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "实例id\t",
+          "example": "gtm-Ul65AOsdfDvxVD\t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "实例配置详情",
           "example": "无",
           "member": "InstanceConfig",
@@ -3092,7 +3148,7 @@
         {
           "disabled": false,
           "document": "实例详情",
-          "example": "实例详情",
+          "example": "无",
           "member": "InstanceDetail",
           "name": "Instance",
           "output_required": true,

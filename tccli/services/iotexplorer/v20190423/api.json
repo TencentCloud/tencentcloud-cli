@@ -4784,6 +4784,15 @@
         },
         {
           "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "自定义事件 ID",
           "example": "alarm",
           "member": "string",

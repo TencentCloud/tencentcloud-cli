@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli igtm ModifyInstanceConfig --cli-unfold-argument  \
+    --InstanceId gtm-xxxxxxxxxxx \
     --InstanceConfig.InstanceName 测试实例 1 \
     --InstanceConfig.Domain xxxx.xxxx.xxxxxxxx@exmaple.com \
     --InstanceConfig.AccessType CUSTOM \

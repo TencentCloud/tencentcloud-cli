@@ -119,6 +119,13 @@
       "output": "CreateDeliverCloudFunctionResponse",
       "status": "online"
     },
+    "CreateDlcDeliver": {
+      "document": "创建DLC投递任务",
+      "input": "CreateDlcDeliverRequest",
+      "name": "创建DLC投递任务",
+      "output": "CreateDlcDeliverResponse",
+      "status": "online"
+    },
     "CreateExport": {
       "document": "本接口仅创建下载任务。任务返回的下载地址，请用户调用[DescribeExports](https://cloud.tencent.com/document/product/614/56449)查看任务列表，其中有下载地址CosPath参数。",
       "input": "CreateExportRequest",
@@ -271,6 +278,13 @@
       "input": "DeleteDataTransformRequest",
       "name": "删除数据加工任务",
       "output": "DeleteDataTransformResponse",
+      "status": "online"
+    },
+    "DeleteDlcDeliver": {
+      "document": "删除DLC投递任务",
+      "input": "DeleteDlcDeliverRequest",
+      "name": "删除DLC投递任务",
+      "output": "DeleteDlcDeliverResponse",
       "status": "online"
     },
     "DeleteExport": {
@@ -446,6 +460,13 @@
       "input": "DescribeDataTransformInfoRequest",
       "name": "获取数据加工任务列表基本信息",
       "output": "DescribeDataTransformInfoResponse",
+      "status": "online"
+    },
+    "DescribeDlcDelivers": {
+      "document": "获取告警渠道回调配置列表。",
+      "input": "DescribeDlcDeliversRequest",
+      "name": "获取DLC投递任务列表",
+      "output": "DescribeDlcDeliversResponse",
       "status": "online"
     },
     "DescribeExports": {
@@ -670,6 +691,13 @@
       "input": "ModifyDataTransformRequest",
       "name": "修改数据加工任务",
       "output": "ModifyDataTransformResponse",
+      "status": "online"
+    },
+    "ModifyDlcDeliver": {
+      "document": "修改DLC投递任务",
+      "input": "ModifyDlcDeliverRequest",
+      "name": "修改DLC投递任务",
+      "output": "ModifyDlcDeliverResponse",
       "status": "online"
     },
     "ModifyIndex": {
@@ -5084,6 +5112,115 @@
       ],
       "type": "object"
     },
+    "CreateDlcDeliverRequest": {
+      "document": "CreateDlcDeliver请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。",
+          "example": "template_1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递类型。0:批投递,1:实时投递",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeliverType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递时间范围的开始时间",
+          "example": "1741005340",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "dlc配置信息",
+          "example": "无",
+          "member": "DlcInfo",
+          "name": "DlcInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "投递文件大小,单位MB。 DeliverType=0时必填，范围 5<= MaxSize <= 256。",
+          "example": "5",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递间隔，单位秒。 DeliverType=0时必填，范围 300<= Interval <=900。",
+          "example": "300",
+          "member": "uint64",
+          "name": "Interval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递时间范围的结束时间。 如果为空，则表示不限时。EndTime不为空时，需要大于StartTime。",
+          "example": "1741006340",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递服务日志。1关闭，2开启。默认开启",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDlcDeliverResponse": {
+      "document": "CreateDlcDeliver返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置id",
+          "example": "988259ca-598f-428c-8475-cf438d05468c",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateExportRequest": {
       "document": "CreateExport请求参数结构体",
       "members": [
@@ -7371,6 +7508,42 @@
       ],
       "type": "object"
     },
+    "DeleteDlcDeliverRequest": {
+      "document": "DeleteDlcDeliver请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务id。",
+          "example": "111024e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDlcDeliverResponse": {
+      "document": "DeleteDlcDeliver返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteExportRequest": {
       "document": "DeleteExport请求参数结构体",
       "members": [
@@ -8631,6 +8804,80 @@
           "example": "30",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDlcDeliversRequest": {
+      "document": "DescribeDlcDelivers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "- taskId\n按照【任务id】进行过滤。\n类型：String\n必选：否\n\n- name\n按照【任务名称】进行过滤。\n类型：String\n必选：否\n\n- tableName\n按照【数据表】进行过滤。\n类型：String\n必选：否\n\n- statusFlag\n按照【状态】进行过滤。支持：\"1\",\"2\",\"3\",\"4\"。含义：1：RUNNING，2：STOPPED，3：FINISHED，4：FAILED\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为10。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDlcDeliversResponse": {
+      "document": "DescribeDlcDelivers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警渠道回调配置列表。",
+          "example": "无",
+          "member": "DlcDeliverInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的通知内容配置总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -10081,6 +10328,389 @@
         }
       ],
       "type": "object"
+    },
+    "DlcDeliverInfo": {
+      "document": "投递DLC任务配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id。",
+          "example": "111024e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号id。",
+          "example": "198644793323",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名称。",
+          "example": "template_1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递类型，0：实时投递，1：历史投递",
+          "example": "0",
+          "member": "uint64",
+          "name": "DeliverType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递文件大小，单位MB",
+          "example": "5",
+          "member": "uint64",
+          "name": "MaxSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递间隔 单位秒",
+          "example": "300",
+          "member": "uint64",
+          "name": "Interval",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递时间范围的开始时间",
+          "example": "1741005340",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递时间范围的结束时间",
+          "example": "1741006340",
+          "member": "uint64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dlc配置信息",
+          "example": "无",
+          "member": "DlcInfo",
+          "name": "DlcInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递服务日志。1关闭，2开启",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度。历史投递任务生效。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题类型。0:标准主题，1:指标主题",
+          "example": "0",
+          "member": "uint64",
+          "name": "BizType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间。",
+          "example": "1741005340",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务修改时间。",
+          "example": "1741006340",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DlcFiledInfo": {
+      "document": "数据湖计算服务（Data Lake Compute，简称DLC）数据字段配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cls日志中的字段名",
+          "example": "table_name",
+          "member": "string",
+          "name": "ClsField",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据湖计算服务表的列名",
+          "example": "table_name",
+          "member": "string",
+          "name": "DlcField",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据湖计算服务字段类型",
+          "example": "string",
+          "member": "string",
+          "name": "DlcFieldType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析失败填充字段",
+          "example": "NULL",
+          "member": "string",
+          "name": "FillField",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用",
+          "example": "false",
+          "member": "bool",
+          "name": "Disable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DlcInfo": {
+      "document": "数据湖计算服务（Data Lake Compute，简称DLC）导入配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "dlc表信息",
+          "example": "无",
+          "member": "DlcTableInfo",
+          "name": "TableInfo",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dlc数据字段信息",
+          "example": "无",
+          "member": "DlcFiledInfo",
+          "name": "FieldInfos",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dlc分区信息",
+          "example": "无",
+          "member": "DlcPartitionInfo",
+          "name": "PartitionInfos",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dlc分区额外信息",
+          "example": "无",
+          "member": "DlcPartitionExtra",
+          "name": "PartitionExtra",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DlcPartitionExtra": {
+      "document": "数据湖计算服务（Data Lake Compute，简称DLC）数据分区额外信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间格式\teg: %Y-%m-%d %H:%M:%S.%f",
+          "example": "%Y-%m-%d %H:%M:%S.%f",
+          "member": "string",
+          "name": "TimeFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间时区",
+          "example": "UTC+08:00",
+          "member": "string",
+          "name": "TimeZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DlcPartitionInfo": {
+      "document": "数据湖计算服务（Data Lake Compute，简称DLC）数据分区配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cls日志中的字段名",
+          "example": "table_name",
+          "member": "string",
+          "name": "ClsField",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dlc表的列名",
+          "example": "table_name",
+          "member": "string",
+          "name": "DlcField",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dlc字段类型",
+          "example": "string",
+          "member": "string",
+          "name": "DlcFieldType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DlcTableInfo": {
+      "document": "数据湖计算服务（Data Lake Compute，简称DLC）数据表配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录",
+          "example": "data_directory",
+          "member": "string",
+          "name": "DataDirectory",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库",
+          "example": "database_name",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据表",
+          "example": "table_name",
+          "member": "string",
+          "name": "TableName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DynamicIndex": {
       "document": "键值索引自动配置，启用后自动将日志内的字段添加到键值索引中，包括日志中后续新增的字段。",
@@ -13516,6 +14146,123 @@
     },
     "ModifyDataTransformResponse": {
       "document": "ModifyDataTransform返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDlcDeliverRequest": {
+      "document": "ModifyDlcDeliver请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务id。",
+          "example": "111024e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。",
+          "example": "template_1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递类型。0:批投递,1:实时投递",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeliverType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递时间范围的开始时间",
+          "example": "1741005340",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递时间范围的结束时间。 如果为空，则表示不限时",
+          "example": "1741006340",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递文件大小,单位MB。 DeliverType=0时必填，范围 5<= MaxSize <= 256。",
+          "example": "5",
+          "member": "uint64",
+          "name": "MaxSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递间隔，单位秒。 DeliverType=0时必填，范围 300<= Interval <=900。",
+          "example": "300",
+          "member": "uint64",
+          "name": "Interval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "dlc配置信息",
+          "example": "无",
+          "member": "DlcInfo",
+          "name": "DlcInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递服务日志。1关闭，2开启。默认开启",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDlcDeliverResponse": {
+      "document": "ModifyDlcDeliver返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

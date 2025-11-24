@@ -1,7 +1,7 @@
 {
   "actions": {
     "ChatCompletions": {
-      "document": "本服务支持一系列高性能的大语言模型，包括DeepSeek以及腾讯自主研发的混元大模型，结合混合搜索等先进搜索技术，快速高效实现RAG，有效解决幻觉和知识更新问题。\n本接口有单账号调用上限控制，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。",
+      "document": "本服务支持一系列高性能的大语言模型，包括DeepSeek以及腾讯自主研发的混元大模型，结合混合搜索等先进搜索技术，快速高效实现RAG，有效解决幻觉和知识更新问题。\n本接口有模型维度调用上限控制，单个模型qps限制5，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。",
       "input": "ChatCompletionsRequest",
       "name": "大模型生成",
       "output": "ChatCompletionsResponse",
@@ -15,7 +15,7 @@
       "status": "online"
     },
     "ChunkDocumentAsync": {
-      "document": "文本切片是将长文本分割为短片段的技术，用于适配模型输入、提升处理效率或信息检索，平衡片段长度与语义连贯性，适用于NLP、数据分析等场景。\n本接口为异步接口，有单账号调用上限控制，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
+      "document": "文本切片是将长文本分割为短片段的技术，用于适配模型输入、提升处理效率或信息检索，平衡片段长度与语义连贯性，适用于NLP、数据分析等场景。\n本接口为异步接口，有模型维度调用上限控制，单个模型qps限制5，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
       "input": "ChunkDocumentAsyncRequest",
       "name": "文档切片（异步）",
       "output": "ChunkDocumentAsyncResponse",
@@ -36,7 +36,7 @@
       "status": "online"
     },
     "GetMultiModalEmbedding": {
-      "document": "Embedding是一种将高维数据映射到低维空间的技术，通常用于将非结构化数据，如文本、图像或音频转化为向量表示，使其更容易输入机器模型进行处理，并且向量之间的距离可以反映对象之间的相似性。 本接口有模型维度调用上限控制，单个模型qps限制10，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。",
+      "document": "Embedding是一种将高维数据映射到低维空间的技术，通常用于将非结构化数据，如文本、图像或音频转化为向量表示，使其更容易输入机器模型进行处理，并且向量之间的距离可以反映对象之间的相似性。 \n本接口有模型维度调用上限控制，单个模型qps限制10，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。",
       "input": "GetMultiModalEmbeddingRequest",
       "name": "获取多模态特征向量",
       "output": "GetMultiModalEmbeddingResponse",
@@ -50,14 +50,14 @@
       "status": "online"
     },
     "ParseDocument": {
-      "document": "本服务可将各类格式文档精准转换为标准格式，满足企业知识库建设、技术文档迁移、内容平台结构化存储等需求。\n本接口有单账号调用上限控制，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)。",
+      "document": "本服务可将各类格式文档精准转换为标准格式，满足企业知识库建设、技术文档迁移、内容平台结构化存储等需求。\n本接口有模型维度调用上限控制，单个模型qps限制5，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
       "input": "ParseDocumentRequest",
       "name": "实时文档解析",
       "output": "ParseDocumentResponse",
       "status": "online"
     },
     "ParseDocumentAsync": {
-      "document": "本服务可将各类格式文档精准转换为标准格式，满足企业知识库建设、技术文档迁移、内容平台结构化存储等需求。\n本接口为异步接口，有单账号调用上限控制，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。",
+      "document": "本服务可将各类格式文档精准转换为标准格式，满足企业知识库建设、技术文档迁移、内容平台结构化存储等需求。\n本接口为异步接口，有模型维度调用上限控制，单个模型qps限制5，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
       "input": "ParseDocumentAsyncRequest",
       "name": "文档解析（异步）",
       "output": "ParseDocumentAsyncResponse",
@@ -276,7 +276,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "最大分片长度",
+          "document": "按照分隔符切片后，对分片长度会进行校验，当超过最大分片长度时，则用下一级分隔符分割，如无下一级分隔符，则保留原长度；默认值：1000",
           "example": "4800",
           "member": "uint64",
           "name": "MaxChunkSize",
@@ -287,8 +287,8 @@
         },
         {
           "disabled": false,
-          "document": "分隔符列表",
-          "example": "[\"\\n\\n\", \"\\n\", \"。\", \"！\", \"？\", \"，\", \"\"]",
+          "document": "分隔符列表，优先靠前的分隔符；文件类型为TXT时，默认值：[\"\\n\\n\", \"\\n\", \"。\", \"！\", \"？\", \"，\", \"\"]",
+          "example": "[\"\\n\\n\", \"\\n\", \"。\", \"！\", \"？\", \"，\", \" \"]",
           "member": "string",
           "name": "Delimiters",
           "output_required": false,
@@ -298,8 +298,8 @@
         },
         {
           "disabled": false,
-          "document": "相邻切片重合字符数，需要小于分片长度",
-          "example": "4000",
+          "document": "相邻切片重合字符数，需要小于分片长度，若形成完全冗余的切片，则会自动过滤；默认值：0.2*MaxChunkSize",
+          "example": "1000",
           "member": "uint64",
           "name": "ChunkOverlap",
           "output_required": false,

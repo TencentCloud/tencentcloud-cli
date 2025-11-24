@@ -63,6 +63,13 @@
       "output": "CreateAsrHotwordsResponse",
       "status": "online"
     },
+    "CreateBlindWatermarkTemplate": {
+      "document": "创建用户自定义数字水印模板，数量上限：1000。",
+      "input": "CreateBlindWatermarkTemplateRequest",
+      "name": "创建数字水印模板",
+      "output": "CreateBlindWatermarkTemplateResponse",
+      "status": "online"
+    },
     "CreateContentReviewTemplate": {
       "document": "创建用户自定义内容审核模板，数量上限：50。",
       "input": "CreateContentReviewTemplateRequest",
@@ -96,6 +103,13 @@
       "input": "CreatePersonSampleRequest",
       "name": "创建素材样本",
       "output": "CreatePersonSampleResponse",
+      "status": "online"
+    },
+    "CreateProcessImageTemplate": {
+      "document": "创建图片处理模板",
+      "input": "CreateProcessImageTemplateRequest",
+      "name": "创建图片处理模板",
+      "output": "CreateProcessImageTemplateResponse",
       "status": "online"
     },
     "CreateQualityControlTemplate": {
@@ -252,6 +266,13 @@
       "output": "DeleteAsrHotwordsResponse",
       "status": "online"
     },
+    "DeleteBlindWatermarkTemplate": {
+      "document": "删除用户自定义数字水印模板。",
+      "input": "DeleteBlindWatermarkTemplateRequest",
+      "name": "删除数字水印模板",
+      "output": "DeleteBlindWatermarkTemplateResponse",
+      "status": "online"
+    },
     "DeleteContentReviewTemplate": {
       "document": "删除用户自定义内容审核模板。",
       "input": "DeleteContentReviewTemplateRequest",
@@ -278,6 +299,13 @@
       "input": "DeletePersonSampleRequest",
       "name": "删除素材样本",
       "output": "DeletePersonSampleResponse",
+      "status": "online"
+    },
+    "DeleteProcessImageTemplate": {
+      "document": "删除图片处理模板",
+      "input": "DeleteProcessImageTemplateRequest",
+      "name": "删除图片处理模板",
+      "output": "DeleteProcessImageTemplateResponse",
       "status": "online"
     },
     "DeleteQualityControlTemplate": {
@@ -427,6 +455,13 @@
       "output": "DescribeBatchTaskDetailResponse",
       "status": "online"
     },
+    "DescribeBlindWatermarkTemplates": {
+      "document": "查询用户自定义数字水印模板，支持根据条件，分页查询。",
+      "input": "DescribeBlindWatermarkTemplatesRequest",
+      "name": "获取数字水印模板列表",
+      "output": "DescribeBlindWatermarkTemplatesResponse",
+      "status": "online"
+    },
     "DescribeContentReviewTemplates": {
       "document": "根据智能审核模板唯一标识，获取智能审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及系统预置智能审核模板。",
       "input": "DescribeContentReviewTemplatesRequest",
@@ -474,6 +509,13 @@
       "input": "DescribePersonSamplesRequest",
       "name": "获取素材样本列表",
       "output": "DescribePersonSamplesResponse",
+      "status": "online"
+    },
+    "DescribeProcessImageTemplates": {
+      "document": "查询图片处理模板列表。",
+      "input": "DescribeProcessImageTemplatesRequest",
+      "name": "查询图片处理模板列表",
+      "output": "DescribeProcessImageTemplatesResponse",
       "status": "online"
     },
     "DescribeQualityControlTemplates": {
@@ -714,6 +756,13 @@
       "output": "ExecuteFunctionResponse",
       "status": "online"
     },
+    "ExtractBlindWatermark": {
+      "document": "用于发起提取视频数字水印任务，提取结果可以通过DescribeTaskDetail查询。",
+      "input": "ExtractBlindWatermarkRequest",
+      "name": "提取视频数字水印",
+      "output": "ExtractBlindWatermarkResponse",
+      "status": "online"
+    },
     "ManageTask": {
       "document": "对已发起的任务进行管理。",
       "input": "ManageTaskRequest",
@@ -756,6 +805,13 @@
       "output": "ModifyAsrHotwordsResponse",
       "status": "online"
     },
+    "ModifyBlindWatermarkTemplate": {
+      "document": "修改用户自定义数字水印模板，数字水印类型不允许修改。",
+      "input": "ModifyBlindWatermarkTemplateRequest",
+      "name": "修改数字水印模板",
+      "output": "ModifyBlindWatermarkTemplateResponse",
+      "status": "online"
+    },
     "ModifyContentReviewTemplate": {
       "document": "修改用户自定义内容审核模板。",
       "input": "ModifyContentReviewTemplateRequest",
@@ -782,6 +838,13 @@
       "input": "ModifyPersonSampleRequest",
       "name": "修改素材样本",
       "output": "ModifyPersonSampleResponse",
+      "status": "online"
+    },
+    "ModifyProcessImageTemplate": {
+      "document": "修改图片处理模板。",
+      "input": "ModifyProcessImageTemplateRequest",
+      "name": "修改图片处理模板",
+      "output": "ModifyProcessImageTemplateResponse",
       "status": "online"
     },
     "ModifyQualityControlTemplate": {
@@ -8201,6 +8264,82 @@
       ],
       "usage": "both"
     },
+    "BlindWatermarkTemplate": {
+      "document": "数字水印模板详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印模板唯一标识。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-nagra：NAGRA取证水印；</li>",
+          "example": "blind-basic",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板名称。",
+          "example": "数字水印模版1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板文本内容，长度不超过64个字符。",
+          "example": "水印文本内容",
+          "member": "string",
+          "name": "TextContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板描述信息。",
+          "example": "数字水印模版",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "2025-08-01T18:00:00+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "2025-08-01T18:00:00+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClassificationConfigureInfo": {
       "document": "智能分类任务控制参数",
       "members": [
@@ -9859,6 +9998,70 @@
       ],
       "type": "object"
     },
+    "CreateBlindWatermarkTemplateRequest": {
+      "document": "CreateBlindWatermarkTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-nagra：NAGRA水印；</li>",
+          "example": "blind-basic",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印文字内容，长度不超过64个字符，NAGRA水印类型的模板创建后不支持修改文字内容。",
+          "example": "数字水印文本",
+          "member": "string",
+          "name": "TextContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板名称，支持中文、英文、数字、_、-和. 六种格式，长度限制：64 个字符。",
+          "example": "数字水印模板1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板描述信息，长度限制：256 个字符。",
+          "example": "数字水印模板",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlindWatermarkTemplateResponse": {
+      "document": "CreateBlindWatermarkTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印模板唯一标识。",
+          "example": "20000",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateContentReviewTemplateRequest": {
       "document": "CreateContentReviewTemplate请求参数结构体",
       "members": [
@@ -11090,6 +11293,61 @@
           "name": "FailFaceInfoSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProcessImageTemplateRequest": {
+      "document": "CreateProcessImageTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片处理模板。",
+          "example": "无",
+          "member": "ImageTaskInput",
+          "name": "ProcessImageTemplate",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理模板名称，长度限制：64个字符。",
+          "example": "图片处理模板",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理模板描述信息，长度限制：256个字符。",
+          "example": "图片处理模板1",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProcessImageTemplateResponse": {
+      "document": "CreateProcessImageTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片处理模板唯一标识",
+          "example": "200043",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -12540,6 +12798,33 @@
       ],
       "type": "object"
     },
+    "DeleteBlindWatermarkTemplateRequest": {
+      "document": "DeleteBlindWatermarkTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印模板唯一标识。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBlindWatermarkTemplateResponse": {
+      "document": "DeleteBlindWatermarkTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteContentReviewTemplateRequest": {
       "document": "DeleteContentReviewTemplate请求参数结构体",
       "members": [
@@ -12638,6 +12923,33 @@
     },
     "DeletePersonSampleResponse": {
       "document": "DeletePersonSample返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProcessImageTemplateRequest": {
+      "document": "DeleteProcessImageTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片处理模板唯一标识。",
+          "example": "200043",
+          "member": "int64",
+          "name": "Definition",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProcessImageTemplateResponse": {
+      "document": "DeleteProcessImageTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13825,6 +14137,89 @@
           "name": "ExtInfo",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlindWatermarkTemplatesRequest": {
+      "document": "DescribeBlindWatermarkTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[10,20,30]",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板标识过滤条件，长度限制：64 个字符。",
+          "example": "数字水印模板1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-nagra：Nagra取证水印；</li>",
+          "example": "blind-basic",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数\n<li>默认值：10；</li>\n<li>最大值：100。</li>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlindWatermarkTemplatesResponse": {
+      "document": "DescribeBlindWatermarkTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板详情列表。",
+          "example": "无",
+          "member": "BlindWatermarkTemplate",
+          "name": "BlindWatermarkTemplateSet",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -15564,6 +15959,107 @@
           "member": "AiSamplePerson",
           "name": "PersonSet",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProcessImageTemplatesRequest": {
+      "document": "DescribeProcessImageTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片处理模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[1001]",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数 默认值：10；最大值：100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理模板标识过滤条件。",
+          "example": "图片处理模板1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，OrderBy设置后才有效，可选值：   0：升序   1：降序  默认 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，可选值：  \nDefinition：模板唯一标识； \n默认值：创建时间。",
+          "example": "Definition",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板类型过滤条件，可选值： <li>Preset：系统预置模板；</li> <li>Custom：用户自定义模板。</li>",
+          "example": "Preset",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProcessImageTemplatesResponse": {
+      "document": "DescribeProcessImageTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片处理模板详情列表。",
+          "example": "无",
+          "member": "ProcessImageTemplate",
+          "name": "ProcessImageTemplateSet",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -18845,6 +19341,79 @@
         }
       ],
       "usage": "both"
+    },
+    "ExtractBlindWatermarkRequest": {
+      "document": "ExtractBlindWatermark请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-abseq：ab序列版权数字水印；</li>",
+          "example": "blind-basic",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体处理的文件输入信息。",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "InputInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "任务的事件通知信息，不填代表不获取事件通知。",
+          "example": "无",
+          "member": "TaskNotifyConfig",
+          "name": "TaskNotifyConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "提取数字水印任务配置",
+          "example": "无",
+          "member": "ExtractBlindWatermarkTaskConfig",
+          "name": "ExtractBlindWatermarkConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。",
+          "example": "vts-240000xx-0",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExtractBlindWatermarkResponse": {
+      "document": "ExtractBlindWatermark返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "125xxx65-ExtractBlindWatermark-bffb15f07530b57bc1aabb01fac74bca",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExtractBlindWatermarkTask": {
       "document": "提取视频数字水印任务信息",
@@ -25571,6 +26140,60 @@
       ],
       "type": "object"
     },
+    "ModifyBlindWatermarkTemplateRequest": {
+      "document": "ModifyBlindWatermarkTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数字水印模板唯一标识。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板名称，支持 中文、英文、数字、_、-和. 六种格式，长度限制：64 个字符。",
+          "example": "数字水印模板1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印模板描述信息，长度限制：256 个字符。",
+          "example": "数字水印模板",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数字水印文字内容，长度不超过64个字符，NAGRA水印类型的模板不支持修改文字内容。",
+          "example": "数字水印文本",
+          "member": "string",
+          "name": "TextContent",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlindWatermarkTemplateResponse": {
+      "document": "ModifyBlindWatermarkTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyContentReviewTemplateRequest": {
       "document": "ModifyContentReviewTemplate请求参数结构体",
       "members": [
@@ -26251,6 +26874,60 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProcessImageTemplateRequest": {
+      "document": "ModifyProcessImageTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片处理模板唯一标识。",
+          "example": "200043",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理模板名称，长度限制：64个字符。",
+          "example": "图片处理模板1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息，长度限制256个字符。",
+          "example": "图片处理模板超分",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理模板参数。",
+          "example": "无",
+          "member": "ImageTaskInput",
+          "name": "ProcessImageTemplate",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProcessImageTemplateResponse": {
+      "document": "ModifyProcessImageTemplate返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -28740,6 +29417,82 @@
         }
       ],
       "type": "object"
+    },
+    "ProcessImageTemplate": {
+      "document": "图片处理模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片处理模板唯一标识。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片处理模板名称。",
+          "example": "图片处理模板1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片处理模板描述信息。",
+          "example": "图片处理使用超分",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板类型。",
+          "example": "Custom",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片处理模板配置参数。",
+          "example": "无",
+          "member": "ImageTaskInput",
+          "name": "ProcessImageConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板创建时间。",
+          "example": "2021-02-03T04:05:06Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板最后修改时间。",
+          "example": "\t2022-02-03T04:05:06Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ProcessLiveStreamRequest": {
       "document": "ProcessLiveStream请求参数结构体",

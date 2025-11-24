@@ -169,7 +169,7 @@
       "status": "online"
     },
     "DescribeCheckViewRisks": {
-      "document": "检查视角下云资源配置风险列表示例",
+      "document": "检查视角下云资源配置风险列表",
       "input": "DescribeCheckViewRisksRequest",
       "name": "检查项视角风险列表",
       "output": "DescribeCheckViewRisksResponse",
@@ -4060,6 +4060,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置分类",
+          "example": "",
+          "member": "string",
+          "name": "Classify",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7051,6 +7061,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置分类",
+          "example": "",
+          "member": "string",
+          "name": "Classify",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9139,7 +9159,7 @@
         {
           "disabled": false,
           "document": "过滤内容",
-          "example": "{\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"0\"],\"OperatorType\":7}]}",
+          "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -9825,7 +9845,7 @@
         {
           "disabled": false,
           "document": "过滤内容",
-          "example": "{\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"0\"],\"OperatorType\":7}]}",
+          "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -10638,7 +10658,7 @@
         {
           "disabled": false,
           "document": "过滤内容",
-          "example": "{\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"0\"],\"OperatorType\":7}]}",
+          "example": "无",
           "member": "Filters",
           "name": "Filters",
           "required": false,
@@ -15143,6 +15163,46 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "",
+          "member": "string",
+          "name": "Tag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待治理风险数量",
+          "example": "",
+          "member": "uint64",
+          "name": "ToGovernedRiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待治理风险内容",
+          "example": "",
+          "member": "string",
+          "name": "ToGovernedRiskContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15387,7 +15447,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "{\"Name\": \"tag-key\", \"Value\": \"tag-value\"}}",
+          "example": "无",
           "member": "Tag",
           "name": "Tag",
           "output_required": true,
@@ -15572,6 +15632,16 @@
           "name": "EngineRegion",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弱口令风险",
+          "example": "",
+          "member": "uint64",
+          "name": "WeakPasswordRisk",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

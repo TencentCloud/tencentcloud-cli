@@ -91,6 +91,13 @@
       "output": "CreateSubscribeCheckJobResponse",
       "status": "online"
     },
+    "CreateSyncCompareTask": {
+      "document": "本接口用于创建数据对比任务，创建成功后会返回数据对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9，创建成功后可通过StartSyncCompare启动一致性校验任务",
+      "input": "CreateSyncCompareTaskRequest",
+      "name": "创建同步一致性校验任务",
+      "output": "CreateSyncCompareTaskResponse",
+      "status": "online"
+    },
     "CreateSyncJob": {
       "document": "创建一个同步任务",
       "input": "CreateSyncJobRequest",
@@ -110,6 +117,13 @@
       "input": "DeleteConsumerGroupRequest",
       "name": "删除消费组",
       "output": "DeleteConsumerGroupResponse",
+      "status": "online"
+    },
+    "DeleteSyncCompareTask": {
+      "document": "删除一致性校验任务。当一致性校验任务状态为success、failed、canceled 时可以执行此操作。",
+      "input": "DeleteSyncCompareTaskRequest",
+      "name": "删除同步一致性校验任务",
+      "output": "DeleteSyncCompareTaskResponse",
       "status": "online"
     },
     "DescribeCheckSyncJobResult": {
@@ -208,6 +222,20 @@
       "input": "DescribeSubscribeReturnableRequest",
       "name": "查询订阅实例是否可以退换",
       "output": "DescribeSubscribeReturnableResponse",
+      "status": "online"
+    },
+    "DescribeSyncCompareReport": {
+      "document": "查询一致性校验任务详情",
+      "input": "DescribeSyncCompareReportRequest",
+      "name": "查询同步一致性校验任务详情",
+      "output": "DescribeSyncCompareReportResponse",
+      "status": "online"
+    },
+    "DescribeSyncCompareTasks": {
+      "document": "查询一致性校验任务列表。通过该接口可查看改任务下所有一致性校验任务。",
+      "input": "DescribeSyncCompareTasksRequest",
+      "name": "查询同步一致性校验任务列表",
+      "output": "DescribeSyncCompareTasksResponse",
       "status": "online"
     },
     "DescribeSyncJobs": {
@@ -343,6 +371,20 @@
       "output": "ModifySubscribeObjectsResponse",
       "status": "online"
     },
+    "ModifySyncCompareTask": {
+      "document": "修改一致性校验任务，在任务创建后启动之前，可修改一致性校验参数",
+      "input": "ModifySyncCompareTaskRequest",
+      "name": "修改同步一致性校验任务",
+      "output": "ModifySyncCompareTaskResponse",
+      "status": "online"
+    },
+    "ModifySyncCompareTaskName": {
+      "document": "修改同步一致性校验任务名称",
+      "input": "ModifySyncCompareTaskNameRequest",
+      "name": "修改同步一致性校验任务名称",
+      "output": "ModifySyncCompareTaskNameResponse",
+      "status": "online"
+    },
     "ModifySyncJobConfig": {
       "document": "该接口支持在同步任务启动后修改任务的配置\n修改同步配置的完整流程：修改同步任务配置->创建修改同步任务配置的校验任务->查询修改配置的校验任务的结果->启动修改配置任务",
       "input": "ModifySyncJobConfigRequest",
@@ -476,6 +518,13 @@
       "output": "StartSubscribeResponse",
       "status": "online"
     },
+    "StartSyncCompare": {
+      "document": "启动一致性校验任务，启动之前需要先通过接口`CreateSyncCompareTask` 创建一致性校验任务，启动后可通过接口`DescribeSyncCompareTasks` 查询一致性校验任务列表来获得启动后的状态",
+      "input": "StartSyncCompareRequest",
+      "name": "启动同步一致性校验任务",
+      "output": "StartSyncCompareResponse",
+      "status": "online"
+    },
     "StartSyncJob": {
       "document": "启动同步任务",
       "input": "StartSyncJobRequest",
@@ -495,6 +544,13 @@
       "input": "StopMigrateJobRequest",
       "name": "终止数据迁移任务",
       "output": "StopMigrateJobResponse",
+      "status": "online"
+    },
+    "StopSyncCompare": {
+      "document": "终止一致性校验任务",
+      "input": "StopSyncCompareRequest",
+      "name": "终止同步一致性校验任务",
+      "output": "StopSyncCompareResponse",
       "status": "online"
     },
     "StopSyncJob": {
@@ -1186,6 +1242,28 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "id>10",
+          "member": "string",
+          "name": "FilterCondition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时区选择。如 \"+08:00\", \"-08:00\", \"+00:00\"（空值等价于\"+00:00\"）\t",
+          "example": "+08:00",
+          "member": "string",
+          "name": "FilterTimeZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2291,6 +2369,79 @@
       ],
       "type": "object"
     },
+    "CreateSyncCompareTaskRequest": {
+      "document": "CreateSyncCompareTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-p1sposne",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据对比任务名称，若为空则默认给CompareTaskId相同值",
+          "example": "compare_test",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据对比对象模式，sameAsMigrate(全部迁移对象， 默认为此项配置)，custom(自定义模式)",
+          "example": "sameAsMigrate",
+          "member": "string",
+          "name": "ObjectMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比对象，当ObjectMode值为custom时，此项需要填写",
+          "example": "无",
+          "member": "CompareObject",
+          "name": "Objects",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "一致性校验选项",
+          "example": "无",
+          "member": "CompareOptions",
+          "name": "Options",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSyncCompareTaskResponse": {
+      "document": "CreateSyncCompareTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CompareTaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSyncJobRequest": {
       "document": "CreateSyncJob请求参数结构体",
       "members": [
@@ -3357,6 +3508,42 @@
     },
     "DeleteConsumerGroupResponse": {
       "document": "DeleteConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSyncCompareTaskRequest": {
+      "document": "DeleteSyncCompareTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9",
+          "example": "无",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSyncCompareTaskResponse": {
+      "document": "DeleteSyncCompareTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5113,6 +5300,227 @@
       ],
       "type": "object"
     },
+    "DescribeSyncCompareReportRequest": {
+      "document": "DescribeSyncCompareReport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-amm1jw5q",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "校验任务 Id",
+          "example": "sync-amm1jw5q-cmp-bmuum7jk",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "校验不一致结果的 limit",
+          "example": "10",
+          "member": "uint64",
+          "name": "DifferenceLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "不一致的 Offset",
+          "example": "0",
+          "member": "uint64",
+          "name": "DifferenceOffset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，不一致的库名",
+          "example": "db1",
+          "member": "string",
+          "name": "DifferenceDB",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，不一致的表名",
+          "example": "t1",
+          "member": "string",
+          "name": "DifferenceTable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "未校验的 Limit",
+          "example": "10",
+          "member": "uint64",
+          "name": "SkippedLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "未校验的 Offset",
+          "example": "0",
+          "member": "uint64",
+          "name": "SkippedOffset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，未校验的库名",
+          "example": "db1",
+          "member": "string",
+          "name": "SkippedDB",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索条件，未校验的表名",
+          "example": "t1",
+          "member": "string",
+          "name": "SkippedTable",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSyncCompareReportResponse": {
+      "document": "DescribeSyncCompareReport返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一致性校验摘要信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompareAbstractInfo",
+          "name": "Abstract",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "一致性校验详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompareDetailInfo",
+          "name": "Detail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "增量校验阶段的摘要",
+          "example": "无",
+          "member": "IncCompareAbstractInfo",
+          "name": "IncAbstract",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSyncCompareTasksRequest": {
+      "document": "DescribeSyncCompareTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-e7ukka6g",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页设置，表示每页显示多少条任务，默认为 20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "校验任务 ID",
+          "example": "sync-5ftw8366-compare-n0pee6pc",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止",
+          "example": "[\"running\"]",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSyncCompareTasksResponse": {
+      "document": "DescribeSyncCompareTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "一致性校验任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompareTaskItem",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSyncJobsRequest": {
       "document": "DescribeSyncJobs请求参数结构体",
       "members": [
@@ -6695,6 +7103,62 @@
       ],
       "usage": "out"
     },
+    "IncCompareAbstractInfo": {
+      "document": "增量校验阶段的摘要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "增量起始位点",
+          "example": "2025-06-03 12:00:00",
+          "member": "string",
+          "name": "StartPosition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量当前位点",
+          "example": "2025-06-03 12:00:00",
+          "member": "string",
+          "name": "CurrentPosition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已校验行数",
+          "example": "100",
+          "member": "uint64",
+          "name": "CheckedRecord",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不一致行数",
+          "example": "10",
+          "member": "uint64",
+          "name": "DiffRecord",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不一致表的数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "DiffTable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "IsolateMigrateJobRequest": {
       "document": "IsolateMigrateJob请求参数结构体",
       "members": [
@@ -7980,6 +8444,123 @@
     },
     "ModifySubscribeObjectsResponse": {
       "document": "ModifySubscribeObjects返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySyncCompareTaskNameRequest": {
+      "document": "ModifySyncCompareTaskName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-8yv4w2i1",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9",
+          "example": "sync-8yv4w2i1-cmp-37skmii9",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一致性校验任务名称",
+          "example": "cmp_test",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySyncCompareTaskNameResponse": {
+      "document": "ModifySyncCompareTaskName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySyncCompareTaskRequest": {
+      "document": "ModifySyncCompareTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9",
+          "example": "无",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据对比对象模式，sameAsMigrate(全部迁移对象， 默认为此项配置)、custom(自定义)，注意自定义对比对象必须是迁移对象的子集",
+          "example": "无",
+          "member": "string",
+          "name": "ObjectMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比对象，若CompareObjectMode取值为custom，则此项必填",
+          "example": "无",
+          "member": "CompareObject",
+          "name": "Objects",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "一致性校验选项",
+          "example": "无",
+          "member": "CompareOptions",
+          "name": "Options",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySyncCompareTaskResponse": {
+      "document": "ModifySyncCompareTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9514,6 +10095,42 @@
       ],
       "type": "object"
     },
+    "StartSyncCompareRequest": {
+      "document": "StartSyncCompare请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-8yv4w2i1",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9",
+          "example": "sync-8yv4w2i1-cmp-37skmii9",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartSyncCompareResponse": {
+      "document": "StartSyncCompare返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StartSyncJobRequest": {
       "document": "StartSyncJob请求参数结构体",
       "members": [
@@ -9854,6 +10471,51 @@
     },
     "StopMigrateJobResponse": {
       "document": "StopMigrateJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopSyncCompareRequest": {
+      "document": "StopSyncCompare请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "sync-amm1jw5q",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对比任务 ID，形如：sync-8yv4w2i1-cmp-37skmii9",
+          "example": "sync-8yv4w2i1-cmp-37skmii9",
+          "member": "string",
+          "name": "CompareTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否强制停止。如果填true，迁移任务增量阶段会跳过一致性校验产生的binlog，达到快速恢复任务的效果",
+          "example": "true",
+          "member": "bool",
+          "name": "ForceStop",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "StopSyncCompareResponse": {
+      "document": "StopSyncCompare返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

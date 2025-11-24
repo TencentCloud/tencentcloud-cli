@@ -117,7 +117,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectAIFakeFaces\n<公共请求参数>\n\n{\n    \"FaceInputType\": 1,\n    \"FaceInput\": \"VBORw0KGgoAAAANSUhEUgAAAkYAAAI9CAYAAADfOLduAAABQ2lDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSCwoyGFhYGDIzSspCnJ3UoiIjFJgf87AziDBwMcgwqCQmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsgsz5I1BWZcn/xff7Y4dPvimWmY6lEAV0pqcTKQ/gPEyckFRSUMDIwJQLZyeUkBiN0CZIsUAR0FZM8AsdMh7DUgdhKEfQCsJiTIGci+AmQLJGckpgDZT4BsnSQk8XQkNtReEOD0CFBwNTI3LiTgVpJBSWpFCYh2zi+oLMpMzyhRcASGUKqCZ16yno6CkYGRMQMDKLwhqj/fAIcjoxgHQqzwKgODhTyQ8RQhlniBgWH3OgYG4Z8IMWUDBgYeoGn7/AsSixLhDmD8xlKcZmwEYXNvZ2Bgnfb//+dwBgZ2TQaGv9f///+9/f//v8sYGJhvMTAc+AYADqxgzYM88zoAAAA4ZVhJZk1NACoAAAAIAAGHaQAEAAAAAQAAABoAAAAAAAKgAgAEAAAAAQAAAkagAwAEAAAAAQAAAj0AAAAAi/M5dAAAQABJREFUeAHsvWd35EiSbYsIRlCkViW6pmq6Wry71vz/fzEf3n2fpufd\"\n}",
         "output": "{\n    \"Response\": {\n        \"AttackRiskDetailList\": [\n            {\n                \"Type\": \"SuspectedWatermark\"\n            }\n        ],\n        \"AttackRiskLevel\": \"High\",\n        \"RequestId\": \"2dd93e6f-5121-4bac-8c64-d6ad646663d2\"\n    }\n}",
-        "title": " 不加密请求示例"
+        "title": "不加密请求示例"
       },
       {
         "document": "",
@@ -368,14 +368,6 @@
         "input": "https://faceid.tencentcloudapi.com/?Action=ImageRecognitionV2\n&IdCard=11204416541220243X\n&Name=韦小宝\n&ImageBase64=/9j/4AAQSkZJRg.....s97n//2Q==\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Description\": \"比对相似度未达到通过标准\",\n        \"RequestId\": \"e9e198e4-4fa8-49f0-a67e-f8053bc49201\",\n        \"Result\": \"FailedOperation.CompareLowSimilarity\",\n        \"Sim\": 26.04\n    }\n}",
         "title": "照片人脸核身比对相似度未达标示例"
-      }
-    ],
-    "Liveness": [
-      {
-        "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=Liveness\n&VideoBase64=<VideoBase64>\n&LivenessType=SILENT\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"<Imagebase64>\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
-        "title": "活体检测 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=Liveness&SignVersion=)"
       }
     ],
     "LivenessCompare": [

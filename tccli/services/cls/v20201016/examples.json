@@ -166,6 +166,14 @@
         "title": "创建投递SCF任务-失败"
       }
     ],
+    "CreateDlcDeliver": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDlcDeliver\n<公共请求参数>\n\n{\n    \"TopicId\": \"03334fb8-4d74-4dde-ada6-da4c0d0b2ff8\",\n    \"Name\": \"add_dlc_deliver_test1\",\n    \"DeliverType\": 0,\n    \"StartTime\": 1741005340,\n    \"DlcInfo\": {\n        \"TableInfo\": {\n            \"DataDirectory\": \"test_table\",\n            \"DatabaseName\": \"test_schema\",\n            \"TableName\": \"test_db\"\n        },\n        \"FieldInfos\": [\n            {\n                \"ClsField\": \"cls_test_field1\",\n                \"DlcField\": \"dlc_test_field1\",\n                \"DlcFieldType\": \"string\",\n                \"Disable\": true\n            }\n        ],\n        \"PartitionInfos\": [\n            {\n                \"ClsField\": \"cls_test_field2\",\n                \"DlcField\": \"dlc_test_field2\",\n                \"DlcFieldType\": \"int\"\n            }\n        ],\n        \"PartitionExtra\": {\n            \"TimeFormat\": \"/%Y/%m/%d/%H\",\n            \"TimeZone\": \"UTC+08:00\"\n        }\n    },\n    \"MaxSize\": 5,\n    \"Interval\": 300,\n    \"EndTime\": 1741006340,\n    \"HasServicesLog\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"ba05f9aa-432f-4ccc-9120-b60d1f3a0c20\",\n        \"RequestId\": \"d2ceec4a-1f59-4508-ae4c-e256c30dea1f\"\n    }\n}",
+        "title": "创建dlc投递任务"
+      }
+    ],
     "CreateExport": [
       {
         "document": "创建日志下载任务",
@@ -346,6 +354,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataTransform\n<公共请求参数>\n\n{\n    \"TaskId\": \"4c216645-01f2-414d-8a87-719b97ba205a\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除数据加工任务"
+      }
+    ],
+    "DeleteDlcDeliver": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDlcDeliver\n<公共请求参数>\n\n{\n    \"TopicId\": \"6bf3355c-3c88-4566-89c8-76c3ca37bae9\",\n    \"TaskId\": \"5945f9ba-51fe-490d-b778-4c35711fa98d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ece63345-6508-48f5-872c-077f1663baeb\"\n    }\n}",
+        "title": "删除投递dlc任务"
       }
     ],
     "DeleteExport": [
@@ -552,6 +568,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataTransformInfo\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"DataTransformTaskInfos\": [\n            {\n                \"BackupGiveUpData\": false,\n                \"BackupTopicID\": \"7557cd30-xxxx-xxxx-93d4-7-1254077820\",\n                \"CreateTime\": \"2024-11-29 03:46:57\",\n                \"DataTransformType\": 0,\n                \"DstResources\": [\n                    {\n                        \"Alias\": \"apilog\",\n                        \"TopicId\": \"7f670b29-xxxx-xxxx-a62a-dd026fe66a9f\"\n                    }\n                ],\n                \"EnableFlag\": 1,\n                \"EtlContent\": \"log_keep(op_or(op_str_eq(v(\\\"logtype\\\"), \\\"apilog\\\"), op_str_eq(v(\\\"logtype\\\"), \\\"ailog\\\"), op_str_eq(v(\\\"logtype\\\"), \\\"stlog\\\"), op_str_eq(v(\\\"logtype\\\"), \\\"ranklog\\\")))\\next_json(\\\"request\\\")\\next_json(\\\"messages\\\")\\next_json(\\\"response\\\")\\next_json(\\\"completion\\\")\",\n                \"FailureLogKey\": \"ETLParseFailure\",\n                \"HasServicesLog\": 2,\n                \"KeepFailureLog\": 1,\n                \"LastEnableTime\": \"2024-11-29 14:43:18\",\n                \"LogsetId\": \"6718ed86-xxxx-xxxx-95e1-24012ee15caf\",\n                \"Name\": \"提取 ClsAi Text2CQL API 访问日志\",\n                \"SrcTopicId\": \"0bb6b5e6-xxxx-469a-xxxx-ebbe250d083c\",\n                \"SrcTopicName\": \"[Test] Text2CQL - 全量日志\",\n                \"Status\": 2,\n                \"TaskDstCount\": 1,\n                \"TaskId\": \"5d368d4c-xxxx-xxxx-87a6-39802c1e0afe\",\n                \"Type\": 1,\n                \"UpdateTime\": \"2024-11-29 14:45:01\"\n            }\n        ],\n        \"RequestId\": \"bf128f9e-xxxx-xxxx-a591-185220479620\",\n        \"TotalCount\": 30\n    }\n}",
         "title": "获取数据加工任务基本信息"
+      }
+    ],
+    "DescribeDlcDelivers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDlcDelivers\n<公共请求参数>\n\n{\n    \"TopicId\": \"6bf3355c-3c88-4566-89c8-76c3ca37bae9\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"BizType\": 0,\n                \"CreateTime\": 1742466273,\n                \"DeliverType\": 0,\n                \"DlcInfo\": {\n                    \"FieldInfos\": [\n                        {\n                            \"ClsField\": \"cls_1\",\n                            \"DlcField\": \"dlc_1\",\n                            \"DlcFieldType\": \"string\"\n                        },\n                        {\n                            \"ClsField\": \"dlc_2\",\n                            \"Disable\": true,\n                            \"DlcField\": \"dlc_2\",\n                            \"DlcFieldType\": \"int\"\n                        }\n                    ],\n                    \"PartitionInfos\": [\n                        {\n                            \"ClsField\": \"cls_1\",\n                            \"DlcField\": \"dlc_1\",\n                            \"DlcFieldType\": \"string\"\n                        }\n                    ],\n                    \"TableInfo\": {\n                        \"DataDirectory\": \"/a/a/a/a\",\n                        \"DatabaseName\": \"database_name\",\n                        \"TableName\": \"table_name\"\n                    }\n                },\n                \"HasServicesLog\": 2,\n                \"Interval\": 300,\n                \"MaxSize\": 5,\n                \"Name\": \"test10\",\n                \"StartTime\": 1741005340,\n                \"Status\": 1,\n                \"TaskId\": \"b0266f31-3224-4a6d-856c-01ba021939b9\",\n                \"TopicId\": \"6bf3355c-3c88-4566-89c8-76c3ca37bae9\",\n                \"Uin\": 100001127589,\n                \"UpdateTime\": 1742466273\n            }\n        ],\n        \"RequestId\": \"4162c1e2-abaf-457e-b25c-4ba5b6a13bd8\",\n        \"Total\": 10\n    }\n}",
+        "title": "获取日志主题下的dlc投递任务"
       }
     ],
     "DescribeExports": [
@@ -820,6 +844,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataTransform\n<公共请求参数>\n\n{\n    \"DstResources\": [\n        {\n            \"TopicId\": \"81XXXXe5-e39e-4a1e-b2d4-a778df97d825\",\n            \"Alias\": \"别名\"\n        }\n    ],\n    \"EnableFlag\": 1,\n    \"EtlContent\": \"fields_set()\",\n    \"Name\": \"我的数据加工\",\n    \"TaskId\": \"e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改数据加工任务"
+      }
+    ],
+    "ModifyDlcDeliver": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDlcDeliver\n<公共请求参数>\n\n{\n    \"TopicId\": \"6bf3355c-3c88-4566-89c8-76c3ca37bae9\",\n    \"TaskId\": \"c56d2af7-9474-4603-80b8-2637d846f2ae\",\n    \"Name\": \"test2-update\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3085c6a1-f51b-45eb-b8ef-84a76a7cca09\"\n    }\n}",
+        "title": "修改投递dlc任务名称"
       }
     ],
     "ModifyIndex": [

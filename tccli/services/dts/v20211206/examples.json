@@ -110,6 +110,14 @@
         "title": "启动一个订阅任务的校验"
       }
     ],
+    "CreateSyncCompareTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSyncCompareTask\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-p1sposne\",\n    \"TaskName\": \"test_cmp\",\n    \"ObjectMode\": \"custom\",\n    \"Objects\": {\n        \"ObjectMode\": \"partial\",\n        \"ObjectItems\": [\n            {\n                \"DbName\": \"big100\",\n                \"DbMode\": \"partial\",\n                \"TableMode\": \"partial\",\n                \"Tables\": [\n                    {\n                        \"TableName\": \"sbtest1\"\n                    }\n                ]\n            },\n            {\n                \"DbName\": \"db1\",\n                \"DbMode\": \"all\",\n                \"TableMode\": \"all\",\n                \"ViewMode\": \"all\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CompareTaskId\": \"sync-8yv4w2i1-cmp-37skmii9\",\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "创建一致性校验任务"
+      }
+    ],
     "CreateSyncJob": [
       {
         "document": "创建一个同步任务",
@@ -132,6 +140,14 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumerGroup\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\",\n    \"ConsumerGroupName\": \"account-subs-9jyki7hniw-test\",\n    \"AccountName\": \"consumer-grp-subs-9jyki7hniw-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bef6a6f0-f3b1-11ed-b987-7301347aa36f\"\n    }\n}",
         "title": "删除消费组"
+      }
+    ],
+    "DeleteSyncCompareTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSyncCompareTask\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-amm1jw5q\",\n    \"CompareTaskId\": \"sync-amm1jw5q-cmp-bmuum7jk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "删除一致性校验任务"
       }
     ],
     "DescribeCheckSyncJobResult": [
@@ -244,6 +260,22 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubscribeReturnable\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\"\n}",
         "output": "{\n    \"Response\": {\n        \"IsReturnable\": true,\n        \"ReturnFailMessage\": \"\",\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "查询订阅实例是否可以退换"
+      }
+    ],
+    "DescribeSyncCompareReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSyncCompareReport\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-amm1jw5q\",\n    \"CompareTaskId\": \"dts-amm1jw5q-cmp-bmuum7jk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Abstract\": {\n            \"Options\": {\n                \"Method\": \"dataCheck\",\n                \"SampleRate\": 0,\n                \"ThreadCount\": 0\n            },\n            \"Objects\": {\n                \"ObjectMode\": \"partial\",\n                \"ObjectItems\": [\n                    {\n                        \"DbName\": \"db1\",\n                        \"SchemaName\": \"s1\",\n                        \"DbMode\": \"partial\",\n                        \"TableMode\": \"partial\",\n                        \"Tables\": [\n                            {\n                                \"TableName\": \"t1\",\n                                \"ColumnMode\": \"partial\",\n                                \"Columns\": [\n                                    {\n                                        \"ColumnName\": \"c1\"\n                                    }\n                                ]\n                            }\n                        ],\n                        \"ViewMode\": \"partial\",\n                        \"Views\": [\n                            {\n                                \"ViewName\": \"v1\"\n                            }\n                        ]\n                    }\n                ],\n                \"AdvancedObjects\": [\n                    \"test_t\"\n                ]\n            },\n            \"CheckedTables\": 4,\n            \"Conclusion\": \"same\",\n            \"DifferentRows\": 0,\n            \"DifferentTables\": 0,\n            \"SkippedTables\": 0,\n            \"Status\": \"success\",\n            \"TotalTables\": 4,\n            \"SrcSampleRows\": 1,\n            \"DstSampleRows\": 1,\n            \"StartedAt\": \"2023-11-02 10:20:30\",\n            \"FinishedAt\": \"2023-11-02 10:20:30\",\n            \"NearlyTableCount\": 1\n        },\n        \"Detail\": {\n            \"Difference\": {\n                \"Items\": [],\n                \"TotalCount\": 0\n            },\n            \"Skipped\": {\n                \"Items\": [],\n                \"TotalCount\": 0\n            }\n        },\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "查询一致性校验任务详情"
+      }
+    ],
+    "DescribeSyncCompareTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSyncCompareTasks\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-e7ukka6g\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CheckProcess\": {\n                    \"Message\": \"\",\n                    \"Status\": \"\",\n                    \"StepAll\": 0,\n                    \"StepNow\": 0,\n                    \"Percent\": 0,\n                    \"Steps\": []\n                },\n                \"CompareProcess\": {\n                    \"Message\": \"done\",\n                    \"Status\": \"\",\n                    \"StepAll\": 0,\n                    \"StepNow\": 0,\n                    \"Steps\": []\n                },\n                \"CompareTaskId\": \"sync-amm1jw5q-cmp-bmuum7jk\",\n                \"Conclusion\": \"same\",\n                \"Config\": {\n                    \"ObjectItems\": [\n                        {\n                            \"DbMode\": \"partial\",\n                            \"DbName\": \"big100\",\n                            \"SchemaName\": \"\",\n                            \"TableMode\": \"partial\",\n                            \"Tables\": null,\n                            \"ViewMode\": \"none\",\n                            \"Views\": null\n                        },\n                        {\n                            \"DbMode\": \"all\",\n                            \"DbName\": \"db1\",\n                            \"SchemaName\": \"\",\n                            \"TableMode\": \"all\",\n                            \"Tables\": null,\n                            \"ViewMode\": \"all\",\n                            \"Views\": null\n                        }\n                    ],\n                    \"ObjectMode\": \"partial\",\n                    \"AdvancedObjects\": [\n                        \"abc\"\n                    ]\n                },\n                \"CreatedAt\": \"2022-07-11 17:21:02\",\n                \"FinishedAt\": \"2022-07-11 17:24:54\",\n                \"Method\": \"dataCheck\",\n                \"Options\": {\n                    \"Method\": \"dataCheck\",\n                    \"SampleRate\": 100,\n                    \"ThreadCount\": 1\n                },\n                \"JobId\": \"sync-amm1jw5q\",\n                \"Message\": \"done\",\n                \"StartedAt\": \"2022-07-11 17:24:09\",\n                \"Status\": \"success\",\n                \"TaskName\": \"defaultCmpTask\"\n            }\n        ],\n        \"RequestId\": \"11d35c90-01bb-11ed-bad9-7b3bbe11abda\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询一致性校验任务列表"
       }
     ],
     "DescribeSyncJobs": [
@@ -410,6 +442,22 @@
         "title": "修改数据订阅通道的订阅规则"
       }
     ],
+    "ModifySyncCompareTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySyncCompareTask\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-p1sposne\",\n    \"CompareTaskId\": \"sync-8yv4w2i1-cmp-37skmii9\",\n    \"TaskName\": \"test_cmp\",\n    \"ObjectMode\": \"custom\",\n    \"Objects\": {\n        \"ObjectMode\": \"partial\",\n        \"ObjectItems\": [\n            {\n                \"DbName\": \"big100\",\n                \"DbMode\": \"partial\",\n                \"TableMode\": \"partial\",\n                \"Tables\": [\n                    {\n                        \"TableName\": \"sbtest1\"\n                    }\n                ]\n            },\n            {\n                \"DbName\": \"db1\",\n                \"DbMode\": \"all\",\n                \"TableMode\": \"all\",\n                \"ViewMode\": \"all\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "修改一致性校验任务"
+      }
+    ],
+    "ModifySyncCompareTaskName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySyncCompareTaskName\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-8yv4w2i1\",\n    \"CompareTaskId\": \"sync-8yv4w2i1-cmp-37skmii9\",\n    \"TaskName\": \"对比测试\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "修改一致性校验任务名称"
+      }
+    ],
     "ModifySyncJobConfig": [
       {
         "document": "在需要修改对象时、通过该接口开始配置修改对象的任务",
@@ -562,6 +610,14 @@
         "title": "开启数据订阅任务"
       }
     ],
+    "StartSyncCompare": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSyncCompare\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-1i9hna5e\",\n    \"CompareTaskId\": \"sync-1i9hna5e-cmp-kjqrl13s\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "启动同步一致性校验任务"
+      }
+    ],
     "StartSyncJob": [
       {
         "document": "",
@@ -584,6 +640,14 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopMigrateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-j7bt5sid\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"22f6b9ca-e94d-4a4d-b48f-a5133e791374\"\n    }\n}",
         "title": "停止数据迁移任务"
+      }
+    ],
+    "StopSyncCompare": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopSyncCompare\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-amm1jw5q\",\n    \"CompareTaskId\": \"sync-amm1jw5q-cmp-bmuum7jk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
+        "title": "终止一致性校验任务"
       }
     ],
     "StopSyncJob": [

@@ -12475,7 +12475,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "查询成员企业的企业名，模糊匹配",
           "example": "典子谦示例企业",
           "member": "string",

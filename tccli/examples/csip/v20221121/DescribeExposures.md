@@ -26,7 +26,7 @@ Output:
                 "Domain": "",
                 "HighRiskPortServiceCount": 0,
                 "InstanceName": "tke_cls-5q9sj52q_worker21",
-                "Ip": "175.178.22.29",
+                "Ip": "1.1.1.1",
                 "Port": "30000-32768",
                 "PortServiceCount": 0,
                 "Provider": "腾讯云",
@@ -40,7 +40,12 @@ Output:
                 "ScanTaskStatus": "running",
                 "Uuid": "sadsds",
                 "HasScan": "true",
-                "AppId": 12465129
+                "AppId": 12465129,
+                "Tag": "",
+                "ToGovernedRiskContent": "",
+                "ToGovernedRiskCount": 0,
+                "ExposureID": 1,
+                "PortDetectCount": 2
             }
         ],
         "RequestId": "0ce09587-eaba-4f70-ae9b-1a80b69ee21f",
