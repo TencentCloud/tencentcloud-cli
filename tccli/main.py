@@ -27,7 +27,6 @@ except NameError:
         from imp import reload  # Python 3.0 - 3.3
         reload(sys)
 from tccli.command import CLICommand
-from tencentcloud import __version__ as sdkVersion
 from tccli import __version__
 from tccli.exceptions import UnknownArgumentError, ConfigurationError, NoCredentialsError, NoRegionError, ClientError
 from tccli.error_msg import USAGE
@@ -36,10 +35,6 @@ log = init('tccli.main')
 
 
 def main():
-    cli_version = __version__.rsplit(".", 1)[0]
-    if int(sdkVersion.split(".")[-1]) < int(cli_version.split(".")[-1]):
-        sys.stderr.write("Version is inconsistent, python sdk version:%s tccli version:%s" % (sdkVersion, __version__))
-        return 255
     try:
         log.info("tccli %s" % ' '.join(sys.argv[1:]))
         CLICommand()()
