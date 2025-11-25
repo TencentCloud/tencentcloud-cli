@@ -13400,7 +13400,7 @@
         {
           "disabled": false,
           "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
-          "example": "[{\"Names\": [\"InstanceId\"],\"Values\": [\"acynosdbmysql-ins-d6l1z111\"],\"ExactMatch\": true}]",
+          "example": "无",
           "member": "QueryParamFilter",
           "name": "Filters",
           "required": false,
@@ -15247,7 +15247,7 @@
         },
         {
           "disabled": false,
-          "document": "从集群别名",
+          "document": "从集群名称",
           "example": "standbycluster",
           "member": "string",
           "name": "StandbyClusterName",
@@ -26998,6 +26998,24 @@
           "name": "ProxyZones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否滚动升级",
+          "example": "yes",
+          "member": "string",
+          "name": "IsRollUpgrade",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "滚动升级等待时间，单位：秒",
+          "example": "10",
+          "member": "int64",
+          "name": "RollUpgradeWaitingTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

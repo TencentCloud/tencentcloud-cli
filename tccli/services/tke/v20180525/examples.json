@@ -2030,6 +2030,14 @@
         "title": "给节点池中的节点设置移出保护"
       }
     ],
+    "SwitchClusterEndpoint": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=SwitchClusterEndpoint\n&ClusterId=cls-65r1c5nu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "切换集群网络访问链路为直连"
+      }
+    ],
     "SyncPrometheusTemp": [
       {
         "document": "",

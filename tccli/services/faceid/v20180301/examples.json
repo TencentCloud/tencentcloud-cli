@@ -524,14 +524,6 @@
         "title": "照片人脸核身比对相似度未达标示例"
       }
     ],
-    "Liveness": [
-      {
-        "document": "",
-        "input": "https://faceid.tencentcloudapi.com/?Action=Liveness\n&VideoBase64=<VideoBase64>\n&LivenessType=SILENT\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"<Imagebase64>\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
-        "title": "活体检测 [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=faceid&Version=2018-03-01&Action=Liveness&SignVersion=)"
-      }
-    ],
     "LivenessCompare": [
       {
         "document": "",

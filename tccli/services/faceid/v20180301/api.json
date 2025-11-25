@@ -301,13 +301,6 @@
       "output": "ImageRecognitionV2Response",
       "status": "online"
     },
-    "Liveness": {
-      "document": "活体检测",
-      "input": "LivenessRequest",
-      "name": "活体检测",
-      "output": "LivenessResponse",
-      "status": "online"
-    },
     "LivenessCompare": {
       "document": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。",
       "input": "LivenessCompareRequest",
@@ -629,6 +622,15 @@
           "name": "ActionList",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许过期证件，默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowExpiredDocument",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7318,96 +7320,6 @@
       ],
       "type": "object"
     },
-    "LivenessRequest": {
-      "document": "Liveness请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "用于活体检测的视频，视频的BASE64值；\nBASE64编码后的大小不超过8M，支持mp4、avi、flv格式。",
-          "example": "",
-          "member": "string",
-          "name": "VideoBase64",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "活体检测类型，取值：LIP/ACTION/SILENT。\nLIP为数字模式，ACTION为动作模式，SILENT为静默模式，三种模式选择一种传入。",
-          "example": "",
-          "member": "string",
-          "name": "LivenessType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "数字模式传参：数字验证码(1234)，需先调用接口获取数字验证码；\n动作模式传参：传动作顺序(2,1 or 1,2)，需先调用接口获取动作顺序；\n静默模式传参：不需要传递此参数。",
-          "example": "",
-          "member": "string",
-          "name": "ValidateData",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "额外配置，传入JSON字符串。\n{\n\"BestFrameNum\": 2  //需要返回多张最佳截图，取值范围1-10\n}",
-          "example": "",
-          "member": "string",
-          "name": "Optional",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "LivenessResponse": {
-      "document": "Liveness返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "验证通过后的视频最佳截图照片，照片为BASE64编码后的值，jpg格式。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "string",
-          "name": "BestFrameBase64",
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "业务错误码，成功情况返回Success, 错误情况请参考下方错误码 列表中FailedOperation部分",
-          "example": "",
-          "member": "string",
-          "name": "Result",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "业务结果描述。",
-          "example": "",
-          "member": "string",
-          "name": "Description",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "最佳最佳截图列表，仅在配置了返回多张最佳截图时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "string",
-          "name": "BestFrameList",
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "MLIDCard": {
       "document": "马来西亚身份证",
       "members": [
@@ -8272,7 +8184,7 @@
         {
           "disabled": false,
           "document": "中文姓名对应电码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "中文姓名对应电码",
           "member": "string",
           "name": "RegistrationNumber",
           "output_required": false,
@@ -8302,7 +8214,7 @@
         {
           "disabled": false,
           "document": "永久性居民身份证:0-非永久；1-永久；-1-未知\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Permanent",
           "output_required": false,
@@ -8322,7 +8234,7 @@
         {
           "disabled": false,
           "document": "证件符号，出生日期下的符号，例如\"***AZ\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "***AZ",
           "member": "string",
           "name": "Symbol",
           "output_required": false,
@@ -8332,7 +8244,7 @@
         {
           "disabled": false,
           "document": "首次签发日期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "无   ",
           "member": "string",
           "name": "IssuedDate",
           "output_required": false,
@@ -8342,9 +8254,19 @@
         {
           "disabled": false,
           "document": "最近领用日期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "16-06-06",
           "member": "string",
           "name": "CurrentIssueDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "香港身份证版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HKID-2003",
+          "member": "string",
+          "name": "HKIDVersion",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10609,6 +10531,15 @@
           "name": "SelectedWarningCodes",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许过期证件，默认为true",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowExpiredDocument",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
