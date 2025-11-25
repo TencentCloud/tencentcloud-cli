@@ -1,7 +1,7 @@
-# 命令行工具简介
-欢迎使用腾讯云命令行工具(TCCLI)，TCCLI是管理腾讯云资源的统一工具。通过腾讯云命令行工具，您可以快速轻松的调用腾讯云 API来管理您的腾讯云资源。您还可以基于腾讯云的命令行工具来做自动化和脚本处理，能够以更多样的方式进行组合和重用。
+# 腾讯云命令行工具简介
+欢迎使用腾讯云命令行工具(TCCLI)，TCCLI是管理腾讯云资源的统一工具。通过腾讯云命令行工具，您可以快速轻松的调用腾讯云 API来管理您的腾讯云资源。您还可以基于腾讯云命令行工具来做自动化和脚本处理，能够以更多样的方式进行组合和重用。
 # 安装TCCLI
-1. 安装 Python 环境和 Pip 工具，安装命令行工具前请确保您的系统已经安装了 Python 环境和 Pip 工具。**注意python版本必须为2.7及以上版本**,更多内容请参考[python主页](https://www.python.org/)和[pip主页](https://pypi.org/project/pip/)。
+1. 安装 Python 环境和 Pip 工具，安装腾讯云命令行工具前请确保您的系统已经安装了 Python 环境和 Pip 工具。**注意python版本必须为2.7及以上版本**,更多内容请参考[python主页](https://www.python.org/)和[pip主页](https://pypi.org/project/pip/)。
 2. TCCLI依赖于TencentCloudApi Python SDK，**如果TencentCloudApi Python SDK的版本号小于要安装TCCLI版本号，在安装TCCLI时会自动升级TencentCloudApi Python SDK**。
 3. 安装TCCLI，执行以下命令：
 ```bash
@@ -221,7 +221,7 @@ tccli cvm DescribeRegions --secretId xx --secretKey xx
 ```
 
 # 使用TCCLI
-命令行工具集成了腾讯云所有支持云 API 的产品，可以在命令行下完成对腾讯云产品的配置和管理。包括使用TCCLI创建云服务器，操作云服务器，通过TCCLI创建CBS盘、查看CBS盘使用情况，通过TCCLI创建VPC网络、往VPC网络中添加资源等等，所有在控制台页面能完成的操作，均能再命令行工具上执行命令实现。
+腾讯云命令行工具集成了腾讯云所有支持云 API 的产品，可以在命令行下完成对腾讯云产品的配置和管理。包括使用TCCLI创建云服务器，操作云服务器，通过TCCLI创建CBS盘、查看CBS盘使用情况，通过TCCLI创建VPC网络、往VPC网络中添加资源等等，所有在控制台页面能完成的操作，均能在腾讯云命令行工具上执行命令实现。
 * 通过tccli cvm DescribeInstances命令查看当前账号有哪些云服务器。
 * 通过tccli cbs DescribeDisks命令查看有CBS盘列表。
 
