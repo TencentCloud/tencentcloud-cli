@@ -26485,7 +26485,7 @@
         {
           "disabled": false,
           "document": "总的折扣，100表示100%不打折",
-          "example": "100",
+          "example": "100.0",
           "member": "float",
           "name": "Discount",
           "output_required": true,
@@ -26529,6 +26529,36 @@
           "member": "string",
           "name": "ChargeUnit",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高精度下不包含优惠价格",
+          "example": "100",
+          "member": "string",
+          "name": "UnitPriceHighPrecision",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高精度下优惠后价格",
+          "example": "50",
+          "member": "string",
+          "name": "UnitPriceDiscountHighPrecision",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "货币单位",
+          "example": "pent",
+          "member": "string",
+          "name": "AmountUnit",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

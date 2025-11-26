@@ -1343,7 +1343,7 @@
         },
         {
           "disabled": false,
-          "document": "证件照的文字识别结果，如果鉴伪失败或者ocr失败则该参数为空。url链接有效期10分钟。格式为json文本信息。\n（1）中国香港证件\nIdCardType为HK（香港身份证）时：\n\n- ChineseName string 中文姓名\n- FullName string 英文姓名\n- RegistrationNumber string 中文姓名对应电码\n- Sex string 性别 ：“男M”或“女F”\n- Birthday string 出生日期\n- Permanent int 永久性居民身份证。0：非永久； 1：永久； -1：未知。\n- LicenseNumber string 身份证号码\n- Symbol string 证件符号，出生日期下的符号，例如\"**AZ**\"\n- IssuedDate string 首次签发日期\n- CurrentIssueDate string 最近领用日期\n\n（2）马来西亚证件\nIdCardType为ML（马来西亚身份证）时：\n- Sex string 男：LELAKI 女：PEREMPUAN\n- Birthday  string 生日\n- LicenseNumber string 证号\n- FullName string 名字\n- FormattedAddress string 地址\n- Type string 证件类型\n\n（3）菲律宾证件\nIdCardType为PhilippinesVoteID时：\n- Birthday  string 生日\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 姓名\n- VIN string VIN号\n- CivilStatus string 婚姻状况\n- Citizenship string 国籍\n- PrecinctNo string 地区\n\nIdCardType为PhilippinesDrivingLicense时：\n- Sex string 性别\n- Birthday  string 生日\n- Name string 姓名\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 首姓名\n- MiddleName string 中间姓名\n- Nationality string 国籍\n- LicenseNo string 证号\n- ExpiresDate string 有效期\n- AgencyCode string 机构代码\n\nIdCardType为PhilippinesTinID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Address string 地址\n- Birthday string 生日\n- IssueDate string 发证日期\n\nIdCardType为PhilippinesSSSID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Birthday string 生日\n\nIdCardType为PhilippinesUMID时：\n- Surname string 姓\n- MiddleName string 中间名\n- GivenName string 名\n- Sex string 性别\n- Birthday string 生日\n- Address string 地址\n- CRN string CRN码\n\n（4）印度尼西亚证件\nIdCardType为IndonesiaIDCard时：\n- LicenseNumber string 证件号码\n- FullName string 姓名\n- Birthday string 出生地/出生时间\n- Sex string 性别\n- BloodType string 血型\n- FormattedAddress string 地址\n- Street string 街道\n- Village string 村\n- Area string 地区\n- Religion string 宗教信仰\n- MaritalStatus string 婚姻状况\n- Occupation string 职业\n- Nationality string 国籍\n- DueDate string 身份证有效期限\n- IssuedDate string 发证日期\n\n（5）通用证件\nIdCardType为MLIDPassport时：\n- FullName string 姓名\n- Surname string 姓\n- GivenName string 名\n- Birthday string 出生日期\n- Sex string 性别（F女，M男）\n- DateOfExpiration string 有效期\n- IssuingCountry string 发行国\n- NationalityCode string 国籍所属地区代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证件照的文字识别结果，如果鉴伪失败或者ocr失败则该参数为空。url链接有效期10分钟。格式为json文本信息。\n（1）中国香港证件\nIdCardType为HK（香港身份证）时：\n\n- ChineseName string 中文姓名\n- FullName string 英文姓名\n- RegistrationNumber string 中文姓名对应电码\n- Sex string 性别 ：“男M”或“女F”\n- Birthday string 出生日期\n- Permanent int 永久性居民身份证。0：非永久； 1：永久； -1：未知。\n- LicenseNumber string 身份证号码\n- Symbol string 证件符号，出生日期下的符号，例如\"**AZ**\"\n- IssuedDate string 首次签发日期\n- CurrentIssueDate string 最近领用日期\n- HKIDVersion string 香港身份证版本，HKID-2003：03版身份证，HKID-2018：18版身份证\n\n（2）马来西亚证件\nIdCardType为ML（马来西亚身份证）时：\n- Sex string 男：LELAKI 女：PEREMPUAN\n- Birthday  string 生日\n- LicenseNumber string 证号\n- FullName string 名字\n- FormattedAddress string 地址\n- Type string 证件类型\n\n（3）菲律宾证件\nIdCardType为PhilippinesVoteID时：\n- Birthday  string 生日\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 姓名\n- VIN string VIN号\n- CivilStatus string 婚姻状况\n- Citizenship string 国籍\n- PrecinctNo string 地区\n\nIdCardType为PhilippinesDrivingLicense时：\n- Sex string 性别\n- Birthday  string 生日\n- Name string 姓名\n- Address string 地址\n- LastName string 姓氏\n- FirstName string 首姓名\n- MiddleName string 中间姓名\n- Nationality string 国籍\n- LicenseNo string 证号\n- ExpiresDate string 有效期\n- AgencyCode string 机构代码\n\nIdCardType为PhilippinesTinID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Address string 地址\n- Birthday string 生日\n- IssueDate string 发证日期\n\nIdCardType为PhilippinesSSSID时：\n- LicenseNumber string 编码\n- FullName string 姓名\n- Birthday string 生日\n\nIdCardType为PhilippinesUMID时：\n- Surname string 姓\n- MiddleName string 中间名\n- GivenName string 名\n- Sex string 性别\n- Birthday string 生日\n- Address string 地址\n- CRN string CRN码\n\n（4）印度尼西亚证件\nIdCardType为IndonesiaIDCard时：\n- LicenseNumber string 证件号码\n- FullName string 姓名\n- Birthday string 出生地/出生时间\n- Sex string 性别\n- BloodType string 血型\n- FormattedAddress string 地址\n- Street string 街道\n- Village string 村\n- Area string 地区\n- Religion string 宗教信仰\n- MaritalStatus string 婚姻状况\n- Occupation string 职业\n- Nationality string 国籍\n- DueDate string 身份证有效期限\n- IssuedDate string 发证日期\n\n（5）通用证件\nIdCardType为MLIDPassport时：\n- FullName string 姓名\n- Surname string 姓\n- GivenName string 名\n- Birthday string 出生日期\n- Sex string 性别（F女，M男）\n- DateOfExpiration string 有效期\n- IssuingCountry string 发行国\n- NationalityCode string 国籍所属地区代码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileInfo",
           "name": "CardInfoOcrJson",
@@ -3748,7 +3748,7 @@
         {
           "disabled": false,
           "document": "证件号码",
-          "example": "无",
+          "example": "S7033777J",
           "member": "string",
           "name": "LicenseNumber",
           "output_required": true,
@@ -3758,7 +3758,7 @@
         {
           "disabled": false,
           "document": "个人号码，卡证类型为护照时返回",
-          "example": "无",
+          "example": "K2152143P",
           "member": "string",
           "name": "PersonalNumber",
           "output_required": true,
@@ -3768,7 +3768,7 @@
         {
           "disabled": false,
           "document": "护照机读码第一行",
-          "example": "无",
+          "example": "EM98767821CHN9302280F3407105LKMOLPMC<<<<A926",
           "member": "string",
           "name": "PassportCodeFirst",
           "output_required": true,
@@ -3778,7 +3778,7 @@
         {
           "disabled": false,
           "document": "护照机读码第二行",
-          "example": "无",
+          "example": "POCHNHE<<KE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
           "member": "string",
           "name": "PassportCodeSecond",
           "output_required": true,
@@ -3788,7 +3788,7 @@
         {
           "disabled": false,
           "document": "到期日期，按照YYYY-MM-DD格式",
-          "example": "无",
+          "example": "2026/09/11",
           "member": "string",
           "name": "ExpirationDate",
           "output_required": true,
@@ -3798,7 +3798,7 @@
         {
           "disabled": false,
           "document": "有效日期，按照YYYY-MM-DD格式",
-          "example": "无",
+          "example": "2021/03/09",
           "member": "string",
           "name": "DueDate",
           "output_required": true,
@@ -3808,7 +3808,7 @@
         {
           "disabled": false,
           "document": "签发日期，按照YYYY-MM-DD格式",
-          "example": "无",
+          "example": "2021/03/09",
           "member": "string",
           "name": "IssuedDate",
           "output_required": true,
@@ -3818,7 +3818,7 @@
         {
           "disabled": false,
           "document": "签发机构",
-          "example": "无",
+          "example": "MINISTRY OF HOME AFFAIRS",
           "member": "string",
           "name": "IssuedAuthority",
           "output_required": true,
@@ -3828,7 +3828,7 @@
         {
           "disabled": false,
           "document": "签发国家，遵循ISO 3166 国家编码规范返回",
-          "example": "MYS",
+          "example": "SGP",
           "member": "string",
           "name": "IssuedCountry",
           "output_required": true,
@@ -3838,7 +3838,7 @@
         {
           "disabled": false,
           "document": "姓名",
-          "example": "无",
+          "example": "LCY KAI LIM",
           "member": "string",
           "name": "FullName",
           "output_required": true,
@@ -3848,7 +3848,7 @@
         {
           "disabled": false,
           "document": "名",
-          "example": "无",
+          "example": "LCY",
           "member": "string",
           "name": "FirstName",
           "output_required": true,
@@ -3858,7 +3858,7 @@
         {
           "disabled": false,
           "document": "姓",
-          "example": "无",
+          "example": "LIM",
           "member": "string",
           "name": "LastName",
           "output_required": true,
@@ -3878,7 +3878,7 @@
         {
           "disabled": false,
           "document": "年龄，为0表示未取到有效信息",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Age",
           "output_required": true,
@@ -3898,7 +3898,7 @@
         {
           "disabled": false,
           "document": "出生地点",
-          "example": "无",
+          "example": "SINGAPORE",
           "member": "string",
           "name": "BirthPlace",
           "output_required": true,
@@ -3918,7 +3918,7 @@
         {
           "disabled": false,
           "document": "注册号",
-          "example": "无",
+          "example": "1140",
           "member": "string",
           "name": "RegistrationNumber",
           "output_required": true,
@@ -3938,7 +3938,7 @@
         {
           "disabled": false,
           "document": "本地化的姓名",
-          "example": "无",
+          "example": "刘洋",
           "member": "string",
           "name": "FullNameLocal",
           "output_required": false,
@@ -3948,7 +3948,7 @@
         {
           "disabled": false,
           "document": "本地化的名",
-          "example": "无",
+          "example": "洋",
           "member": "string",
           "name": "FirstNameLocal",
           "output_required": false,
@@ -3958,7 +3958,7 @@
         {
           "disabled": false,
           "document": "本地化的姓",
-          "example": "无",
+          "example": "刘",
           "member": "string",
           "name": "LastNameLocal",
           "output_required": false,
@@ -8263,7 +8263,7 @@
         },
         {
           "disabled": false,
-          "document": "香港身份证版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "香港身份证版本，HKID-2003：03版身份证，HKID-2018：18版身份证\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HKID-2003",
           "member": "string",
           "name": "HKIDVersion",

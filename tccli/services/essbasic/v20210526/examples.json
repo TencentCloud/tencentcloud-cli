@@ -1378,28 +1378,10 @@
     ],
     "OperateChannelTemplate": [
       {
-        "document": "1.ProxyOrganizationOpenIds为要删除的子企业的标识列表\n\n2.因为本模板是部分可见的AuthTag设置为part",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateChannelTemplate\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"OperateType\": \"DELETE\",\n    \"TemplateId\": \"yDwivUUckpo2g6ugUu4sxH2i15SY0OZY\",\n    \"ProxyOrganizationOpenIds\": \"org_zhangsan,org_lisi,org_wangwu\",\n    \"AuthTag\": \"part\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"TemplateId\": \"yDwivUUckpo2g6ugUu4sxH2i15SY0OZY\",\n        \"OperateResult\": \"all-success\",\n        \"AuthTag\": \"part\",\n        \"ProxyOrganizationOpenIds\": [\n            \"org_dianziqian\"\n        ],\n        \"FailMessageList\": [],\n        \"RequestId\": \"7ca39d89-2b6c-4fd9-9f32-735137d5a6e9\"\n    }\n}",
-        "title": "删除部分授权子企业"
-      },
-      {
-        "document": "因为org_fffffffffff不存在导致这个企业授权失败(其他的授权成功)",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateChannelTemplate\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"OperateType\": \"UPDATE\",\n    \"TemplateId\": \"yDwivUUckpo2g6ugUu4sxH2i15SY0OZY\",\n    \"ProxyOrganizationOpenIds\": \"org_zhangsan,org_lisi,org_fffffffffff\",\n    \"AuthTag\": \"part\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"TemplateId\": \"yDwivUUckpo2g6ugUu4sxH2i15SY0OZY\",\n        \"OperateResult\": \"part-success\",\n        \"AuthTag\": \"part\",\n        \"ProxyOrganizationOpenIds\": [\n            \"org_zhangsan\",\n            \"org_lisi\",\n            \"org_dianziqian\"\n        ],\n        \"FailMessageList\": [\n            {\n                \"ProxyOrganizationOpenId\": \"org_fffffffffff\",\n                \"Message\": \"非渠道合作企业openId\"\n            }\n        ],\n        \"RequestId\": \"8b9e9a6b-2730-4971-8c4d-7c12d3905cd7\"\n    }\n}",
-        "title": "授权部分失败的情况"
-      },
-      {
-        "document": "查询模板库中的模板信息",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateChannelTemplate\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"OperateType\": \"SELECT\",\n    \"TemplateId\": \"yDSLZUUckpot5i01UydF1AEvOMQiKaBG\",\n    \"ProxyOrganizationOpenIds\": \"\",\n    \"AuthTag\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"TemplateId\": \"yDSLZUUckpot5i01UydF1AEvOMQiKaBG\",\n        \"OperateResult\": \"all-success\",\n        \"AuthTag\": \"all\",\n        \"ProxyOrganizationOpenIds\": [\n            \"org_lisi\",\n            \"org_dianziqian\",\n            \"org_zhangsan\",\n            \"org_wangwu\",\n            \"org_liubo\"\n        ],\n        \"FailMessageList\": [],\n        \"RequestId\": \"75fffd24-3644-44eb-b7da-3849b942d69b\"\n    }\n}",
-        "title": "查询模板库中的模板信息"
-      },
-      {
-        "document": "1.ProxyOrganizationOpenIds为新增的子企业的标识列表\n\n2.因为本模板是部分可见的AuthTag设置为part",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateChannelTemplate\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"OperateType\": \"UPDATE\",\n    \"TemplateId\": \"yDwivUUckpo2g6ugUu4sxH2i15SY0OZY\",\n    \"ProxyOrganizationOpenIds\": \"org_zhangsan,org_lisi,org_wangwu\",\n    \"AuthTag\": \"part\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"TemplateId\": \"yDwivUUckpo2g6ugUu4sxH2i15SY0OZY\",\n        \"OperateResult\": \"all-success\",\n        \"AuthTag\": \"part\",\n        \"ProxyOrganizationOpenIds\": [\n            \"org_dianziqian\",\n            \"org_zhangsan\",\n            \"org_lisi\",\n            \"org_wangwu\"\n        ],\n        \"FailMessageList\": [],\n        \"RequestId\": \"7ca39d89-2b6c-4fd9-9f32-735137d5a6e9\"\n    }\n}",
-        "title": "增加部分可见的模板授权子企业列表"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateChannelTemplate\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\"\n    },\n    \"OperateType\": \"select\",\n    \"TemplateId\": \"yDSLOUUckpoqdttsUxPuHh1wkuixnkwj\",\n    \"Limit\": 1,\n    \"Offset\": 46\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"AuthTag\": \"all\",\n        \"FailMessageList\": [],\n        \"OperateResult\": \"all-success\",\n        \"ProxyOrganizationOpenIds\": [\n            \"Z912024120909230059\"\n        ],\n        \"TemplateId\": \"yDSLOUUckpoqdttsUxPuHh1wkuixnkwj\",\n        \"Total\": 210,\n        \"RequestId\": \"32ed5c17-83f1-4064-aa11-6d454c40d7a7\"\n    }\n}",
+        "title": "查询授权子客openids"
       }
     ],
     "OperateTemplate": [

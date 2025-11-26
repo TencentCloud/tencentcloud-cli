@@ -19,7 +19,7 @@ Output:
                 {
                     "DeviceId": "da238a8c-****-4a5b-****-************",
                     "Name": "rxxxxx2710",
-                    "Code": "xxxxx",
+                    "Code": "AE7YT98IOP",
                     "Status": 0,
                     "Region": "ap-shanghai",
                     "Type": 1,

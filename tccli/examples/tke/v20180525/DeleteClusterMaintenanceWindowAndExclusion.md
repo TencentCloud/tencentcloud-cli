@@ -1,0 +1,20 @@
+**Example 1: 删除集群维护窗口和排除项**
+
+删除一个集群维护窗口和排除项
+
+Input: 
+
+```
+tccli tke DeleteClusterMaintenanceWindowAndExclusion --cli-unfold-argument  \
+    --ClusterID cls-3n90hta2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "f1048559-c7e4-4a7b-9d12-bc0256be3e26"
+    }
+}
+```
+
