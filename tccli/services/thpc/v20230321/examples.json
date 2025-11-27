@@ -27,7 +27,7 @@
     "AttachNodes": [
       {
         "document": "往集群ID为hpc-2j8ntf9l的集群的compute队列绑定一个计算节点。",
-        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-2j8ntf9l\",\n    \"QueueName\": \"compute\",\n    \"ImageId\": \"img-39ywauzd\",\n    \"ResourceType\": \"CVM\",\n    \"ResourceSet\": [\n        \"ins-7i4yut4b\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"hpc-2j8ntf9l\",\n    \"QueueName\": \"compute\",\n    \"ImageId\": \"img-39ywauzd\",\n    \"ResourceType\": \"CVM\",\n    \"ResourceSet\": [\n        \"ins-7i4yut4b\"\n    ],\n    \"UserData\": \"IyEvYmluL2Jhc2gKZWNobyAiSGFwcHnvvIEgVGhlIHRpbWUgaXMgbm93ICQoZGF0ZSAtUikhIiA+ICAvdG1wL3Vzcl9kYXRhLnR4dA==\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e81d404b-4fa2-49de-bce7-6499a3529f04\"\n    }\n}",
         "title": "绑定计算节点到集群"
       }

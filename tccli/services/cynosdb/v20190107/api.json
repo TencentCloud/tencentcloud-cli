@@ -8043,7 +8043,7 @@
         {
           "disabled": false,
           "document": "用户AppId",
-          "example": "12510**243",
+          "example": "12510243",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -8122,7 +8122,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态",
+          "document": "实例状态\ncreating：创建中\nrunning：运行中\nisolating：隔离中\nisolated：已隔离\nactivating：解隔离中\nofflining：下线中\nofflined：已下线\ndeleting：删除中\ndeleted：已删除",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -22333,7 +22333,7 @@
         {
           "disabled": false,
           "document": "是否精确匹配",
-          "example": "1",
+          "example": "false",
           "member": "bool",
           "name": "ExactMatch",
           "required": false,
@@ -22349,7 +22349,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作符",
           "example": "1000****4352",
           "member": "string",

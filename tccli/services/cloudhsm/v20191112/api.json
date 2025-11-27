@@ -685,10 +685,10 @@
         {
           "disabled": false,
           "document": "安全组详情信息,如果未配置字段返回null",
-          "example": "[       {         \"CreateTime\": \"2024-02-02 16:53:18\",         \"InBound\": [           {             \"Action\": \"ACCEPT\",             \"AddressModule\": \"\",             \"Desc\": \"Default rule\",             \"Id\": \"\",             \"Ip\": \"0.0.0.0/0\",             \"Port\": \"ALL\",             \"Proto\": \"ALL\",             \"ServiceModule\": \"\"           }         ],         \"OutBound\": [           {             \"Action\": \"ACCEPT\",             \"AddressModule\": \"\",             \"Desc\": \"Default rule\",             \"Id\": \"\",             \"Ip\": \"0.0.0.0/0\",             \"Port\": \"ALL\",             \"Proto\": \"ALL\",             \"ServiceModule\": \"\"           }         ],         \"SgId\": \"sg-6tjv5yxb\",         \"SgName\": \"default\",         \"SgRemark\": \"System created security group\",         \"Version\": 0       }     ]",
+          "example": "无",
           "member": "UsgRuleDetail",
           "name": "SgList",
-          "output_required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -775,7 +775,7 @@
         {
           "disabled": false,
           "document": "资源所关联的标签Tag",
-          "example": " [       {         \"TagKey\": \"运营部门\",         \"TagValue\": \"测试\"       }     ]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -800,6 +800,16 @@
           "name": "Manufacturer",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0-关闭，1-开启",
+          "example": "1",
+          "member": "int64",
+          "name": "PqcFlag",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1449,7 +1459,7 @@
         {
           "disabled": false,
           "document": "实例的安全组列表",
-          "example": "[           {             \"CreateTime\": \"2023-06-05 10:59:39\",             \"SgId\": \"sg-f51mj0kl\",             \"SgName\": \"casb-proxy-2023060510592885829\",             \"SgRemark\": \"自定义\"           }         ]",
+          "example": "无",
           "member": "SgUnit",
           "name": "SgList",
           "output_required": false,
@@ -1519,7 +1529,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[           {             \"TagKey\": \"运营部门\",             \"TagValue\": \"测试\"           }         ]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": false,
@@ -1542,6 +1552,26 @@
           "example": "0",
           "member": "int64",
           "name": "AlarmStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0不支持\n1关闭\n2开启",
+          "example": "0",
+          "member": "int64",
+          "name": "PqcStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0关闭，1开启",
+          "example": "0",
+          "member": "int64",
+          "name": "PqcFlag",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1835,7 +1865,7 @@
         {
           "disabled": false,
           "document": "入站规则",
-          "example": "[           {             \"Action\": \"ACCEPT\",             \"AddressModule\": \"\",             \"Desc\": \"Default rule\",             \"Id\": \"\",             \"Ip\": \"0.0.0.0/0\",             \"Port\": \"ALL\",             \"Proto\": \"ALL\",             \"ServiceModule\": \"\"           }         ]",
+          "example": "无",
           "member": "UsgPolicy",
           "name": "InBound",
           "output_required": false,
@@ -1845,7 +1875,7 @@
         {
           "disabled": false,
           "document": "出站规则",
-          "example": "[           {             \"Action\": \"ACCEPT\",             \"AddressModule\": \"\",             \"Desc\": \"Default rule\",             \"Id\": \"\",             \"Ip\": \"0.0.0.0/0\",             \"Port\": \"ALL\",             \"Proto\": \"ALL\",             \"ServiceModule\": \"\"           }         ]",
+          "example": "无",
           "member": "UsgPolicy",
           "name": "OutBound",
           "output_required": false,

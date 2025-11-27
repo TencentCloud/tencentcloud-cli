@@ -22555,8 +22555,25 @@
       ],
       "usage": "both"
     },
+    "ResourceConf": {
+      "document": "数据治理资源配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当为TCLake优化资源时，优化任务的并行度",
+          "example": "16",
+          "member": "int64",
+          "name": "Parallelism",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ResourceInfo": {
-      "document": "ResourceInfo",
+      "document": "数据优化资源信息结构",
       "members": [
         {
           "disabled": false,
@@ -22633,6 +22650,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源配置信息",
+          "example": "无",
+          "member": "ResourceConf",
+          "name": "ResourceConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

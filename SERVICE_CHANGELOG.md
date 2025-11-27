@@ -1,29 +1,10 @@
-# Release 3.0.1313.1
+# Release 3.0.1314.1
 
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+## 云加密机(cloudhsm) 版本：2019-11-12
 
-### 第 144 次发布
+### 第 7 次发布
 
-发布时间：2025-11-27 01:14:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [TradePrice](http://document.tencentcloudapi.woa.com/document/product/1003/48097#TradePrice)
-
-	* 新增成员：UnitPriceHighPrecision, UnitPriceDiscountHighPrecision, AmountUnit
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 215 次发布
-
-发布时间：2025-11-27 01:18:06
+发布时间：2025-11-28 01:11:42
 
 本次发布包含了以下内容：
 
@@ -31,96 +12,25 @@
 
 修改接口：
 
-* [OperateChannelTemplate](http://document.tencentcloudapi.woa.com/document/product/1595/75243)
+* [DescribeVsmAttributes](http://document.tencentcloudapi.woa.com/document/product/639/41444)
 
-	* 新增入参：Limit, Offset
+	* 新增出参：PqcFlag
 
-	* 新增出参：Total
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 68 次发布
-
-发布时间：2025-11-27 01:26:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [MixNodeConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#MixNodeConfig)
-* [SessionConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#SessionConfig)
 
 修改数据结构：
 
-* [InstanceConcurrencyConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#InstanceConcurrencyConfig)
+* [ResourceInfo](http://document.tencentcloudapi.woa.com/document/product/639/41450#ResourceInfo)
 
-	* 新增成员：InstanceIsolationEnabled, Type, MixNodeConfig, SessionConfig
-
-
-
-
-## 容器服务(tke) 版本：2022-05-01
+	* 新增成员：PqcStatus, PqcFlag
 
 
 
-## 容器服务(tke) 版本：2018-05-25
 
-### 第 104 次发布
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-发布时间：2025-11-27 01:30:08
+### 第 145 次发布
 
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CancelUpgradePlan](http://document.tencentcloudapi.woa.com/document/product/457/88172)
-* [CreateClusterMaintenanceWindowAndExclusions](http://document.tencentcloudapi.woa.com/document/product/457/88171)
-* [CreateGlobalMaintenanceWindowAndExclusions](http://document.tencentcloudapi.woa.com/document/product/457/88170)
-* [CreateRollOutSequence](http://document.tencentcloudapi.woa.com/document/product/457/88169)
-* [DeleteClusterMaintenanceWindowAndExclusion](http://document.tencentcloudapi.woa.com/document/product/457/88168)
-* [DeleteGlobalMaintenanceWindowAndExclusion](http://document.tencentcloudapi.woa.com/document/product/457/88167)
-* [DeleteRollOutSequence](http://document.tencentcloudapi.woa.com/document/product/457/88166)
-* [DescribeClusterMaintenanceWindowAndExclusions](http://document.tencentcloudapi.woa.com/document/product/457/88165)
-* [DescribeClusterRollOutSequenceTags](http://document.tencentcloudapi.woa.com/document/product/457/88164)
-* [DescribeGlobalMaintenanceWindowAndExclusions](http://document.tencentcloudapi.woa.com/document/product/457/88163)
-* [DescribeRollOutSequences](http://document.tencentcloudapi.woa.com/document/product/457/88162)
-* [DescribeUpgradeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/457/88161)
-* [DescribeUpgradeTasks](http://document.tencentcloudapi.woa.com/document/product/457/88160)
-* [ModifyClusterMaintenanceWindowAndExclusions](http://document.tencentcloudapi.woa.com/document/product/457/88159)
-* [ModifyClusterRollOutSequenceTags](http://document.tencentcloudapi.woa.com/document/product/457/88158)
-* [ModifyGlobalMaintenanceWindowAndExclusions](http://document.tencentcloudapi.woa.com/document/product/457/88157)
-* [ModifyRollOutSequence](http://document.tencentcloudapi.woa.com/document/product/457/88156)
-
-新增数据结构：
-
-* [ClusterRollOutSequenceTag](http://document.tencentcloudapi.woa.com/document/product/457/31866#ClusterRollOutSequenceTag)
-* [GlobalMaintenanceWindowAndExclusion](http://document.tencentcloudapi.woa.com/document/product/457/31866#GlobalMaintenanceWindowAndExclusion)
-* [MaintenanceExclusion](http://document.tencentcloudapi.woa.com/document/product/457/31866#MaintenanceExclusion)
-* [MaintenanceWindowAndExclusion](http://document.tencentcloudapi.woa.com/document/product/457/31866#MaintenanceWindowAndExclusion)
-* [RollOutSequence](http://document.tencentcloudapi.woa.com/document/product/457/31866#RollOutSequence)
-* [SequenceFlow](http://document.tencentcloudapi.woa.com/document/product/457/31866#SequenceFlow)
-* [SequenceTag](http://document.tencentcloudapi.woa.com/document/product/457/31866#SequenceTag)
-* [UpgradePlan](http://document.tencentcloudapi.woa.com/document/product/457/31866#UpgradePlan)
-* [UpgradeTask](http://document.tencentcloudapi.woa.com/document/product/457/31866#UpgradeTask)
-
-
-
-## 实时音视频(trtc) 版本：2019-07-22
-
-### 第 112 次发布
-
-发布时间：2025-11-27 01:32:57
+发布时间：2025-11-28 01:14:21
 
 本次发布包含了以下内容：
 
@@ -128,10 +38,124 @@
 
 修改数据结构：
 
-* [ServerPushText](http://document.tencentcloudapi.woa.com/document/product/647/44055#ServerPushText)
+* [QueryFilter](http://document.tencentcloudapi.woa.com/document/product/1003/48097#QueryFilter)
 
-	* 新增成员：MetaInfo
 
+
+
+## 腾讯云数据分析智能体(dataagent) 版本：2025-05-13
+
+### 第 3 次发布
+
+发布时间：2025-11-28 01:14:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Chunk](http://document.tencentcloudapi.woa.com/document/product/1806/87994#Chunk)
+
+	* 新增成员：Summary
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 139 次发布
+
+发布时间：2025-11-28 01:15:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ResourceConf](http://document.tencentcloudapi.woa.com/document/product/1342/53778#ResourceConf)
+
+修改数据结构：
+
+* [ResourceInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#ResourceInfo)
+
+	* 新增成员：ResourceConf
+
+
+
+
+## 智能媒资托管(smh) 版本：2021-07-12
+
+### 第 6 次发布
+
+发布时间：2025-11-28 01:26:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateUser
+* CreateUserLifecycle
+* DeleteUser
+* DescribeUserLifecycle
+* ModifyUser
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* UserFilter
+
+
+
+## 安全凭证服务(sts) 版本：2018-08-13
+
+### 第 11 次发布
+
+发布时间：2025-11-28 01:27:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AssumeRole](http://document.tencentcloudapi.woa.com/document/product/1312/48197)
+
+	* 新增入参：ProvidedContexts
+
+
+新增数据结构：
+
+* [ProvidedContexts](http://document.tencentcloudapi.woa.com/document/product/1312/48198#ProvidedContexts)
+
+
+
+## 高性能计算平台(thpc) 版本：2023-03-21
+
+### 第 24 次发布
+
+发布时间：2025-11-28 01:29:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AttachNodes](http://document.tencentcloudapi.woa.com/document/product/1701/84301)
+
+	* 新增入参：UserData
+
+
+
+
+## 高性能计算平台(thpc) 版本：2022-04-01
+
+
+
+## 高性能计算平台(thpc) 版本：2021-11-09
 
 
 

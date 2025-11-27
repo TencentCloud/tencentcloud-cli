@@ -213,6 +213,15 @@
           "name": "TokenCode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用上下文信息",
+          "example": "无",
+          "member": "ProvidedContexts",
+          "name": "ProvidedContexts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1058,6 +1067,30 @@
         }
       ],
       "type": "object"
+    },
+    "ProvidedContexts": {
+      "document": "调用上下文",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上下文键，长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\\w+=,.@:/-]*",
+          "example": "email",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上下文值，长度在2到128之间，可包含大小写字符，数字以及特殊字符：=,.@:/-。 正则为：[\\w+=,.@:/-]*",
+          "example": "bob@qq.com",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "QueryApiKeyRequest": {
       "document": "QueryApiKey请求参数结构体",
