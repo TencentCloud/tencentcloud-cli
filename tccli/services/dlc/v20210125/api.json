@@ -791,6 +791,13 @@
       "output": "DescribeTablesNameResponse",
       "status": "online"
     },
+    "DescribeTaskList": {
+      "document": "该接口（DescribleTasks）用于查询任务列表",
+      "input": "DescribeTaskListRequest",
+      "name": "历史任务列表查询",
+      "output": "DescribeTaskListResponse",
+      "status": "online"
+    },
     "DescribeTaskLog": {
       "document": "本接口（DescribeTaskLog）用于获取spark 作业任务日志详情",
       "input": "DescribeTaskLogRequest",
@@ -13679,6 +13686,134 @@
       ],
       "type": "object"
     },
+    "DescribeTaskListRequest": {
+      "document": "DescribeTaskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为以下其中一个,其中task-id支持最大50个过滤个数，其他过滤参数支持的总数不超过5个。\ntask-id - String - （任务ID准确过滤）task-id取值形如：e386471f-139a-4e59-877f-50ece8135b99。\ntask-state - String - （任务状态过滤）取值范围 0(初始化)， 1(运行中)， 2(成功)， -1(失败)。\ntask-sql-keyword - String - （SQL语句关键字模糊过滤）取值形如：DROP TABLE。\ntask-operator- string （子uin过滤）\ntask-kind - string （任务类型过滤）",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，desc表示正序，asc表示反序， 默认为asc。",
+          "example": "desc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间点，格式为yyyy-mm-dd HH:MM:SS。默认为45天前的当前时刻",
+          "example": "2019-01-21 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间点，格式为yyyy-mm-dd HH:MM:SS时间跨度在(0,30天]，支持最近45天数据查询。默认为当前时刻",
+          "example": "2019-01-22 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据引擎名称，用于筛选",
+          "example": "shared_presto",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "spark引擎资源组名称",
+          "example": "ResourceGroupName1",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎id列表",
+          "example": "[\"DataEngine-18j7ot11\"]",
+          "member": "string",
+          "name": "HouseIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskListResponse": {
+      "document": "DescribeTaskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务对象列表。",
+          "example": "无",
+          "member": "TaskFullRespInfo",
+          "name": "TaskList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例总数。",
+          "example": "21",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTaskLogRequest": {
       "document": "DescribeTaskLog请求参数结构体",
       "members": [
@@ -20097,8 +20232,25 @@
       ],
       "type": "object"
     },
+    "ResourceConf": {
+      "document": "数据治理资源配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当为TCLake优化资源时，优化任务的并行度",
+          "example": "16",
+          "member": "int64",
+          "name": "Parallelism",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ResourceInfo": {
-      "document": "ResourceInfo",
+      "document": "数据优化资源信息结构",
       "members": [
         {
           "disabled": false,
@@ -20175,6 +20327,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源配置信息",
+          "example": "无",
+          "member": "ResourceConf",
+          "name": "ResourceConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -23013,6 +23176,692 @@
         }
       ],
       "usage": "in"
+    },
+    "TaskFullRespInfo": {
+      "document": "任务实例。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务所属Database的名称。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务数据量。",
+          "example": "1024",
+          "member": "int64",
+          "name": "DataAmount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务Id。",
+          "example": "89570c65-49de-4bbd-ac0a-a67c724fc80f",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计算耗时，单位： ms",
+          "example": "60000",
+          "member": "int64",
+          "name": "UsedTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务输出路径。",
+          "example": "cosn://test-bucket-123434324234/result/",
+          "member": "string",
+          "name": "OutputPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间。",
+          "example": "1611646962000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态：0 初始化， 1 执行中， 2 执行成功，3 数据写入中，4 排队中。-1 执行失败，-3 已取消。",
+          "example": "2",
+          "member": "int64",
+          "name": "State",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务SQL类型，DDL|DML等",
+          "example": "DDL",
+          "member": "string",
+          "name": "SQLType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务SQL语句",
+          "example": "U0VMRUNUICogRlJPTSBgdGVzdGA7",
+          "member": "string",
+          "name": "SQL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果是否过期。",
+          "example": "false",
+          "member": "bool",
+          "name": "ResultExpired",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据影响统计信息。",
+          "example": "500 rows selected (0.077 seconds)",
+          "member": "string",
+          "name": "RowAffectInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务结果数据表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Schema\":[\"name\",\"age\"],\"Data\":[{\"name\":\"29\",\"age\":\"Michael\"}]}",
+          "member": "string",
+          "name": "DataSet",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败信息, 例如：errorMessage。该字段已废弃。",
+          "example": "errorMessage",
+          "member": "string",
+          "name": "Error",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行进度num/100(%)",
+          "example": "100",
+          "member": "int64",
+          "name": "Percentage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行输出信息。",
+          "example": "Invalid compression codec: ,Available codecs are none,bzip2,gzip,deflate.",
+          "member": "string",
+          "name": "OutputMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行SQL的引擎类型",
+          "example": "SparkBatchSQL",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"jobId\":1,\"stages\":[{\"stageId\":1,\"numTasks\":3,\"numActiveTasks\"",
+          "member": "string",
+          "name": "ProgressDetail",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611646962000",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "resource-1gghpd1t",
+          "member": "string",
+          "name": "DataEngineId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行sql的子uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "****",
+          "member": "string",
+          "name": "OperateUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算资源名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "shared_presto",
+          "member": "string",
+          "name": "DataEngineName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导入类型是本地导入还是cos\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "local",
+          "member": "string",
+          "name": "InputType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导入配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Key\":\"paths\",\"Value\":\"lakefs://20000003366d155f79a522c8349496",
+          "member": "string",
+          "name": "InputConf",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "925",
+          "member": "int64",
+          "name": "DataNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询数据能不能下载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "CanDownload",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testname",
+          "member": "string",
+          "name": "UserAlias",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "spark应用作业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spark_app",
+          "member": "string",
+          "name": "SparkJobName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "spark应用作业Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "batch_sdafa",
+          "member": "string",
+          "name": "SparkJobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "spark应用入口jar文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "example.jar",
+          "member": "string",
+          "name": "SparkJobFile",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "spark ui url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://dlc-spark-ui.cloud.tencent.com/history/spark-893c606226b",
+          "member": "string",
+          "name": "UiUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务耗时，单位： ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80000",
+          "member": "int64",
+          "name": "TotalTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "spark app job执行task的程序入口参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spark.sql.shuffle.partitions",
+          "member": "string",
+          "name": "CmdArgs",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群镜像大版本名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SuperSQL P 1.0",
+          "member": "string",
+          "name": "ImageVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "driver规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "small",
+          "member": "string",
+          "name": "DriverSize",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "executor规格：small,medium,large,xlarge；内存型(引擎类型)：m.small,m.medium,m.large,m.xlarge\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "small",
+          "member": "string",
+          "name": "ExecutorSize",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定executor数量，最小值为1，最大值小于集群规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorNums",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定executor max数量（动态配置场景下），最小值为1，最大值小于集群规格（当ExecutorMaxNumbers小于ExecutorNums时，改值设定为ExecutorNums）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExecutorMaxNumbers",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务公共指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonMetrics",
+          "name": "CommonMetrics",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "spark任务指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SparkMonitorMetrics",
+          "name": "SparkMonitorMetrics",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "presto任务指标数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrestoMonitorMetrics",
+          "name": "PrestoMonitorMetrics",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果文件格式：默认为csv\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "csv",
+          "member": "string",
+          "name": "ResultFormat",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SparkSQL",
+          "member": "string",
+          "name": "EngineTypeDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "spark引擎资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ResourceGroupName1",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务来源信息,如thirdPartyApi,dataExploration, sparkAppTask等",
+          "example": "thirdPartyApi",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子渠道信息，一般由第三方调用定义",
+          "example": "4c022a43-9ed6-46cc-836c-44994a0bf959",
+          "member": "string",
+          "name": "SourceExtra",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人uin",
+          "example": "100039223798",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人名字",
+          "example": "小明",
+          "member": "string",
+          "name": "CreatorAlias",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎参数",
+          "example": "query_max_execution_time=6m",
+          "member": "string",
+          "name": "CustomizedConf",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单位秒，累计 CPU* 秒 ( 累计 CPU * 时 = 累计 CPU* 秒/ 3600)，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和\n示例值：4329",
+          "example": "215",
+          "member": "int64",
+          "name": "TaskTimeSum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎执行时间",
+          "example": "1736009241127",
+          "member": "int64",
+          "name": "StageStartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据扫描条数",
+          "example": "1210",
+          "member": "int64",
+          "name": "InputRecordsSum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康状态",
+          "example": "1",
+          "member": "int64",
+          "name": "AnalysisStatusType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出总行数",
+          "example": "2087",
+          "member": "int64",
+          "name": "OutputRecordsSum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出总大小",
+          "example": "24",
+          "member": "int64",
+          "name": "OutputBytesSum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件个数",
+          "example": "7",
+          "member": "int64",
+          "name": "OutputFilesNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出小文件个数",
+          "example": "5",
+          "member": "int64",
+          "name": "OutputSmallFilesNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据shuffle行数",
+          "example": "502",
+          "member": "int64",
+          "name": "ShuffleReadRecordsSum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据shuffle大小",
+          "example": "67",
+          "member": "int64",
+          "name": "ShuffleReadBytesSum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "spark作业id",
+          "example": "batch_8d1fa0f3-4da7-4bd2-a3d0-72e83582e70b",
+          "member": "string",
+          "name": "SparkAppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务大类，DLC2.0中任务区分为两大类，sql任务和作业任务",
+          "example": "SQL",
+          "member": "string",
+          "name": "TaskCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "import_20241126212510_f2a65wk1",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎类型，用做任务详情页跳转引擎tab",
+          "example": "spark",
+          "member": "string",
+          "name": "EngineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎是否支持洞察数据采集",
+          "example": "true",
+          "member": "bool",
+          "name": "EngineHasListenerConfig",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "spark引擎资源组id",
+          "example": "default-rg-js8kdi6xzt",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务计算耗时",
+          "example": "6000",
+          "member": "int64",
+          "name": "JobTimeSum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务启动耗时",
+          "example": "1min30s",
+          "member": "string",
+          "name": "LaunchTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Gpu Driver 规格",
+          "example": "1",
+          "member": "int64",
+          "name": "GpuDriverSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Gpu Executor 规格",
+          "example": "1",
+          "member": "int64",
+          "name": "GpuExecutorSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TaskMonitorInfo": {
       "document": "任务监控信息",

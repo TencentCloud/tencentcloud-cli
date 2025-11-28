@@ -7371,6 +7371,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先缩容不健康实例。若开启，缩容时会优先选择不健康实例。默认值为 False。",
+          "example": "false",
+          "member": "bool",
+          "name": "PriorityScaleInUnhealthy",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

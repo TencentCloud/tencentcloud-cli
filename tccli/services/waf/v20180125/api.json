@@ -28,6 +28,13 @@
       "output": "AddAttackWhiteRuleResponse",
       "status": "online"
     },
+    "AddBypassAllRule": {
+      "document": "添加一键bypass能力支持,直接添加APPID",
+      "input": "AddBypassAllRuleRequest",
+      "name": "添加一键bypass规则",
+      "output": "AddBypassAllRuleResponse",
+      "status": "online"
+    },
     "AddCustomRule": {
       "document": "增加访问控制（自定义策略）",
       "input": "AddCustomRuleRequest",
@@ -1260,11 +1267,25 @@
       "output": "PostAttackDownloadTaskResponse",
       "status": "online"
     },
+    "QueryBypassAllStatus": {
+      "document": "查询该用户是否被加入了全局的bypass列表",
+      "input": "QueryBypassAllStatusRequest",
+      "name": "查询该用户是否被加入了全局的bypass列表",
+      "output": "QueryBypassAllStatusResponse",
+      "status": "online"
+    },
     "RefreshAccessCheckResult": {
       "document": "刷新接入检查的结果，后台会生成接入检查任务",
       "input": "RefreshAccessCheckResultRequest",
       "name": "刷新接入检查的结果",
       "output": "RefreshAccessCheckResultResponse",
+      "status": "online"
+    },
+    "RemoveBypassAllRule": {
+      "document": "删除一键bypass规则",
+      "input": "RemoveBypassAllRuleRequest",
+      "name": "删除一键bypass规则",
+      "output": "RemoveBypassAllRuleResponse",
       "status": "online"
     },
     "SearchAccessLog": {
@@ -2049,6 +2070,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddBypassAllRuleRequest": {
+      "document": "AddBypassAllRule请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AddBypassAllRuleResponse": {
+      "document": "AddBypassAllRule返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -27082,6 +27120,33 @@
       ],
       "usage": "out"
     },
+    "QueryBypassAllStatusRequest": {
+      "document": "QueryBypassAllStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "QueryBypassAllStatusResponse": {
+      "document": "QueryBypassAllStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该用户是否被加入了全局的bypass列表",
+          "example": "True,False",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RCEPkg": {
       "document": "有效REC设备安全包信息",
       "members": [
@@ -27271,6 +27336,23 @@
     },
     "RefreshAccessCheckResultResponse": {
       "document": "RefreshAccessCheckResult返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveBypassAllRuleRequest": {
+      "document": "RemoveBypassAllRule请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RemoveBypassAllRuleResponse": {
+      "document": "RemoveBypassAllRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

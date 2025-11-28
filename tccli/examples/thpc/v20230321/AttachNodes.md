@@ -10,7 +10,8 @@ tccli thpc AttachNodes --cli-unfold-argument  \
     --QueueName compute \
     --ImageId img-39ywauzd \
     --ResourceType CVM \
-    --ResourceSet ins-7i4yut4b
+    --ResourceSet ins-7i4yut4b \
+    --UserData IyEvYmluL2Jhc2gKZWNobyAiSGFwcHnvvIEgVGhlIHRpbWUgaXMgbm93ICQoZGF0ZSAtUikhIiA+ICAvdG1wL3Vzcl9kYXRhLnR4dA==
 ```
 
 Output: 

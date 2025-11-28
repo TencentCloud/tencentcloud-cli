@@ -68,6 +68,14 @@
         "title": "批量绑定子产品"
       }
     ],
+    "BindTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1TzRAz42oi\",\n    \"ProductId\": \"LPIOACT1NG\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ab1ae9a-77b4-4958-b413-b5e0f3b2a6b0\"\n    }\n}",
+        "title": "智能体和产品绑定示例"
+      }
+    ],
     "CallDeviceActionAsync": [
       {
         "document": "异步调用设备行为，返回调用 Id 信息。",
@@ -398,6 +406,14 @@
         "title": "开通 TWeSee 视频摘要"
       }
     ],
+    "CreateTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"Name\": \"LPIOACT1NG\",\n    \"Description\": \"LPIOACT1NG\",\n    \"TargetLanguage\": \"zh\",\n    \"AgentConfig\": {\n        \"GreetingMessage\": \"u4f60u597d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BotId\": \"bot-1TzRAz42oi\",\n        \"RequestId\": \"46b67c1e-e60a-4128-95e1-c4b7ebd07121\"\n    }\n}",
+        "title": "创建智能体示例"
+      }
+    ],
     "CreateTWeTalkProductConfig": [
       {
         "document": "",
@@ -552,6 +568,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=DeleteStudioProduct\n&ProductId=AVBRC1R7QS\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"98f624d5-922b-4b59-ba14-c498f79eee0e\"\n    }\n}",
         "title": "删除产品"
+      }
+    ],
+    "DeleteTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1TzRAz42oi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7f5317d-25c4-42a8-ae76-8b7ed3eec25d\"\n    }\n}",
+        "title": "删除智能体示例"
       }
     ],
     "DeleteTWeTalkProductConfigV2": [
@@ -1032,6 +1056,14 @@
         "title": "查询 TWeSee 语义理解任务"
       }
     ],
+    "DescribeTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1TzRAz42oi\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AgentConfig\": {\n                \"GreetingMessage\": \"u4f60u597d\",\n                \"InterruptionEnabled\": true,\n                \"LongTermMemoryEnabled\": true\n            },\n            \"AppId\": 251198731,\n            \"BotId\": \"bot-1TzRAz42oi\",\n            \"CreateTime\": 1764211674,\n            \"Description\": \"LPIOACT1NG\",\n            \"InstanceId\": \"ins-DGAFvpuVF7\",\n            \"Name\": \"LPIOACT1NG\",\n            \"TargetLanguage\": \"zh\",\n            \"Uin\": 100000103009,\n            \"UpdateTime\": 1764211674\n        },\n        \"RequestId\": \"dc2335d2-9c70-4105-900e-60f281defd18\"\n    }\n}",
+        "title": "查询智能体详情"
+      }
+    ],
     "DescribeTWeTalkProductConfig": [
       {
         "document": "",
@@ -1244,6 +1276,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeCallActiveStatus\n<公共请求参数>\n\n{\n    \"DeviceList\": [\n        {\n            \"Sn\": \"productId_deviceName\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4rfv-6yhj-56hjsg\",\n        \"TWeCallActiveInfos\": [\n            {\n                \"ModelId\": \"1qaz\",\n                \"Sn\": \"productid_deviceName\",\n                \"ExpireTime\": 45674345567\n            }\n        ]\n    }\n}",
         "title": "成功获取激活状态"
+      }
+    ],
+    "GetTWeTalkAIBotList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeTalkAIBotList\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1U0eVzHLHc\",\n    \"IncludeCredentials\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AgentConfig\": {\n                    \"InterruptionEnabled\": true,\n                    \"LongTermMemoryEnabled\": true,\n                    \"SystemPrompt\": \"u4f60u597du554a\"\n                },\n                \"AppId\": 251198731,\n                \"BotId\": \"bot-1U0eVzHLHc\",\n                \"CreateTime\": 1764212694,\n                \"Description\": \"\",\n                \"InstanceId\": \"ins-DGAFvpuVF7\",\n                \"Name\": \"test2\",\n                \"TargetLanguage\": \"\",\n                \"Uin\": 100000103009,\n                \"UpdateTime\": 1764212694\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"303e2b99-f8e0-43c5-a2a5-2eed8139225a\"\n    }\n}",
+        "title": "查询智能体列表示例"
       }
     ],
     "GetTWeTalkProductConfigList": [
@@ -1558,6 +1598,14 @@
         "title": "对指定设备开启 TWeSee 摘要能力并添加更多的检测标签"
       }
     ],
+    "ModifyTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-0vVbAeOMxU\",\n    \"Name\": \"test003\",\n    \"Description\": \"test003\",\n    \"TargetLanguage\": \"zh\",\n    \"AgentConfig\": {\n        \"SystemPrompt\": \"u4f60u662fu6d77u6d0buff0cu53efu4ee5u4ecbu7ecdu5927u6d77u7684u77e5u8bc6\",\n        \"GreetingMessage\": \"u4f60u597du6d77u6d0buff1f\",\n        \"DefaultVoiceType\": 101016\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03089285-2bc2-4f57-b2cd-0b8c6e5fc810\"\n    }\n}",
+        "title": "修改智能体配置"
+      }
+    ],
     "ModifyTWeTalkProductConfig": [
       {
         "document": "",
@@ -1758,6 +1806,14 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=UnbindProducts\n&GatewayProductId=89FEGTES8\n&ProductIds.0=UJ8HE90G\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"GatewayDeviceNames\": [\n            \"gateway_test1\"\n        ],\n        \"RequestId\": \"32150866-743e-4a1b-ade5-c690ac2cc0b5\"\n    }\n}",
         "title": "批量解绑子产品"
+      }
+    ],
+    "UnbindTWeTalkAIBot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-0vVbAeOMxU\",\n    \"ProductId\": \"Q7MZK2V1QR\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b0b81f76-9050-4654-94f7-c215915dc7ac\"\n    }\n}",
+        "title": "解绑智能体示例"
       }
     ],
     "UpdateDeviceTWeCallAuthorizeStatus": [

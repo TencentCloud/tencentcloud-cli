@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateCloudRecording": {
-      "document": "接口说明：\n启动云端录制功能，完成房间内的音视频录制，并上传到指定的云存储。您可以通过此 API 接口把TRTC 房间中的每一路音视频流做单独的录制又或者多路视频画面合流混成一路。\n\n您可以通过此接口实现如下目标：\n* 指定订阅流参数（RecordParams）来指定需要录制的主播的黑名单或者白名单。\n* 指定录制存储参数（StorageParams）来指定上传到您希望的云存储，目前支持腾讯云（云点播VOD、对象存储COS）和第三方AWS\n* 指定合流模式下的音视频转码详细参数（MixTranscodeParams），包括视频分辨率、视频码率、视频帧率、以及声音质量等\n* 指定合流模式各路画面的位置和布局或者也可以指定自动模板的方式来配置。\n\n关键名词：\n* 单流录制：分别录制房间的订阅UserId的音频和视频，录制服务会实时将录制文件上传至您指定的云存储。\n* 合流录制：将房间内订阅UserId的音视频混录成一个视频文件，并将录制文件上传至您指定的云存储。（录制结束后可前往云点播控制台https://console.cloud.tencent.com/vod/media 或 对象存储COS控制台https://console.cloud.tencent.com/cos/bucket查看文件）。",
+      "document": "接口说明：\n启动云端录制功能，完成房间内的音视频录制，并上传到指定的云存储。您可以通过此 API 接口把TRTC 房间中的每一路音视频流做单独的录制又或者多路视频画面合流混成一路。\n在线上正式运营之前，请关注录制的最佳实践 [录制最佳实践](https://cloud.tencent.com/document/product/647/76497#e7e2f04c-6cde-43c9-9cd0-0f8d22dee68c)，配合最佳实践，可大大提高接口录制的可用性。\n\n您可以通过此接口实现如下目标：\n* 指定订阅流参数（RecordParams）来指定需要录制的主播的黑名单或者白名单。\n* 指定录制存储参数（StorageParams）来指定上传到您希望的云存储，目前支持腾讯云（云点播VOD、对象存储COS）和第三方AWS\n* 指定合流模式下的音视频转码详细参数（MixTranscodeParams），包括视频分辨率、视频码率、视频帧率、以及声音质量等\n* 指定合流模式各路画面的位置和布局或者也可以指定自动模板的方式来配置。\n\n关键名词：\n* 单流录制：分别录制房间的订阅UserId的音频和视频，录制服务会实时将录制文件上传至您指定的云存储。\n* 合流录制：将房间内订阅UserId的音视频混录成一个视频文件，并将录制文件上传至您指定的云存储。（录制结束后可前往云点播控制台https://console.cloud.tencent.com/vod/media 或 对象存储COS控制台https://console.cloud.tencent.com/cos/bucket查看文件）。",
       "input": "CreateCloudRecordingRequest",
       "name": "开始云端录制",
       "output": "CreateCloudRecordingResponse",
@@ -5678,7 +5678,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的url地址， 只支持jpg, png, jpeg，大小限制不超过5M。注意，url必须携带格式后缀，url内只支持特定的字符串, 范围是a-z A-Z 0-9 '-', '.', '_', '~', ':', '/', '?', '#', '[', ']' '@', '!', '&', '(', ')', '*', '+', ',', '%', '='",
+          "document": "图片的url地址， 只支持jpg, png, jpeg，图片分辨率限制不超过2K，图片大小限制不超过5MB。注意，url必须携带格式后缀，url内只支持特定的字符串, 范围是a-z A-Z 0-9 '-', '.', '_', '~', ':', '/', '?', '#', '[', ']' '@', '!', '&', '(', ')', '*', '+', ',', '%', '='",
           "example": "https://xxxx/image.jpg,  https://xxxx/image.jpg?token=xxx",
           "member": "string",
           "name": "SubBackgroundImage",
@@ -5738,7 +5738,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的url地址，只支持jpg, png, jpeg，大小限制不超过5M。注意，url必须携带格式后缀，url内只支持特定的字符串, 范围是a-z A-Z 0-9 '-', '.', '_', '~', ':', '/', '?', '#', '[', ']' '@', '!', '&', '(', ')', '*', '+', ',', '%', '='",
+          "document": "图片的url地址，只支持jpg, png, jpeg，图片分辨率限制不超过2K，图片大小限制不超过5MB。注意，url必须携带格式后缀，url内只支持特定的字符串, 范围是a-z A-Z 0-9 '-', '.', '_', '~', ':', '/', '?', '#', '[', ']' '@', '!', '&', '(', ')', '*', '+', ',', '%', '='",
           "example": "https://xxxx/image.jpg,  https://xxxx/image.jpg?token=xxx",
           "member": "string",
           "name": "BackgroundImageUrl",
@@ -5765,7 +5765,7 @@
         },
         {
           "disabled": false,
-          "document": "子画面占位图url地址，只支持jpg, png, jpeg，大小限制不超过5M。注意，url必须携带格式后缀，url内只支持特定的字符串, 范围是a-z A-Z 0-9 '-', '.', '_', '~', ':', '/', '?', '#', '[', ']' '@', '!', '&', '(', ')', '*', '+', ',', '%', '='",
+          "document": "子画面占位图url地址，只支持jpg, png, jpeg，图片分辨率限制不超过2K，图片大小限制不超过5MB。注意，url必须携带格式后缀，url内只支持特定的字符串, 范围是a-z A-Z 0-9 '-', '.', '_', '~', ':', '/', '?', '#', '[', ']' '@', '!', '&', '(', ')', '*', '+', ',', '%', '='",
           "example": "https://xxxx/image.jpg,  https://xxxx/image.jpg?token=xxx",
           "member": "string",
           "name": "DefaultSubBackgroundImage",
@@ -7369,6 +7369,15 @@
           "name": "AddHistory",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "如果填写，会和字幕绑定发送到端上，注意确保内容为json字符串",
+          "example": "\"{\\\"custom_msg\\\": 100}\"",
+          "member": "string",
+          "name": "MetaInfo",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

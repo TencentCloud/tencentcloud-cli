@@ -1369,7 +1369,7 @@
     "UpgradeProxy": [
       {
         "document": "升级数据库代理配置",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-dnofdr2d\",\n    \"ProxyCount\": 2,\n    \"Cpu\": 2,\n    \"Mem\": 4,\n    \"ProxyGroupId\": \"cynosdbmysql-proxy-4378e0kb\",\n    \"ReloadBalance\": \"auto\",\n    \"IsInMaintainPeriod\": \"no\",\n    \"ProxyZones\": [\n        {\n            \"ProxyNodeZone\": \"ap-guangzhou-3\",\n            \"ProxyNodeCount\": 2\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeProxy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-dnofdr2d\",\n    \"ProxyCount\": 2,\n    \"Cpu\": 2,\n    \"Mem\": 4,\n    \"ProxyGroupId\": \"cynosdbmysql-proxy-4378e0kb\",\n    \"ReloadBalance\": \"auto\",\n    \"IsInMaintainPeriod\": \"no\",\n    \"ProxyZones\": [\n        {\n            \"ProxyNodeZone\": \"ap-guangzhou-3\",\n            \"ProxyNodeCount\": 2\n        }\n    ],\n    \"IsRollUpgrade\": \"yes\",\n    \"RollUpgradeWaitingTime\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 127635,\n        \"TaskId\": 174673,\n        \"RequestId\": \"a5706353-296a-4992-ad07-ac4a48eeba43\"\n    }\n}",
         "title": "升级数据库代理配置"
       }

@@ -9,7 +9,7 @@ tccli tdmq DescribeRocketMQTopics --cli-unfold-argument  \
     --Offset 1 \
     --Limit 1 \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId test_namespace \
+    --NamespaceId test_ns \
     --FilterGroup test_group
 ```
 
@@ -27,7 +27,9 @@ Output:
                 "Remark": "测试主题",
                 "PartitionNum": 3,
                 "CreateTime": 1621308465000,
-                "UpdateTime": 1621308657000
+                "UpdateTime": 1621308657000,
+                "InstanceId": "rocketmq-2p9vx3ax9jxg",
+                "Namespace": "test_ns"
             }
         ]
     }

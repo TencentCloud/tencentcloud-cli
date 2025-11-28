@@ -707,13 +707,6 @@
       "output": "DescribeLiveEnhanceInfoListResponse",
       "status": "online"
     },
-    "DescribeLiveForbidStreamList": {
-      "document": "获取禁推流列表。\n\n注意：该接口仅作为直播辅助查询接口，重要业务场景不可强依赖该接口。",
-      "input": "DescribeLiveForbidStreamListRequest",
-      "name": "获取禁推流列表",
-      "output": "DescribeLiveForbidStreamListResponse",
-      "status": "online"
-    },
     "DescribeLivePackageInfo": {
       "document": "查询用户套餐包总量、使用量、剩余量、包状态、购买时间和过期时间等。",
       "input": "DescribeLivePackageInfoRequest",
@@ -10079,101 +10072,6 @@
       ],
       "type": "object"
     },
-    "DescribeLiveForbidStreamListRequest": {
-      "document": "DescribeLiveForbidStreamList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "取得第几页，默认1。",
-          "example": "1",
-          "member": "int64",
-          "name": "PageNum",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "每页大小，最大100。 \n取值：1~100之前的任意整数。\n默认值：10。",
-          "example": "10",
-          "member": "int64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "按流名称查询。",
-          "example": "stream_2021",
-          "member": "string",
-          "name": "StreamName",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeLiveForbidStreamListResponse": {
-      "document": "DescribeLiveForbidStreamList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "符合条件的总个数。",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总页数。",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalPage",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "分页的页码。",
-          "example": "1",
-          "member": "int64",
-          "name": "PageNum",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "每页显示的条数。",
-          "example": "10",
-          "member": "int64",
-          "name": "PageSize",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "禁推流列表。",
-          "example": "无",
-          "member": "ForbidStreamInfo",
-          "name": "ForbidStreamList",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeLivePackageInfoRequest": {
       "document": "DescribeLivePackageInfo请求参数结构体",
       "members": [
@@ -14981,62 +14879,6 @@
         }
       ],
       "type": "object"
-    },
-    "ForbidStreamInfo": {
-      "document": "禁推流列表",
-      "members": [
-        {
-          "disabled": false,
-          "document": "流名称。",
-          "example": "stream1",
-          "member": "string",
-          "name": "StreamName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "2020-01-01 12:12:12",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "禁推过期时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "2020-01-01 12:12:12",
-          "member": "string",
-          "name": "ExpireTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "推流路径。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "live",
-          "member": "string",
-          "name": "AppName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "推流域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "5000.livepush.com",
-          "member": "string",
-          "name": "DomainName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "GroupProIspDataInfo": {
       "document": "某省份某运营商在某段时间内的带宽，流量，请求数和并发数",

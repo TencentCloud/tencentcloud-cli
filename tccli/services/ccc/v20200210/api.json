@@ -2941,6 +2941,15 @@
           "name": "AIAgentId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务失败重试时间间隔，重试间隔 600秒～86400 秒",
+          "example": "600",
+          "member": "int64",
+          "name": "RetryInterval",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

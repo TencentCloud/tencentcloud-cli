@@ -12523,7 +12523,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业的唯一标识，支持批量(用,分割)，",
+          "document": "第三方平台子客企业的唯一标识，支持批量(用,分割) \n一次批量操作最多支持100个第三方平台子客",
           "example": "org_dianziqian,org_zhangsan",
           "member": "string",
           "name": "ProxyOrganizationOpenIds",
@@ -12556,6 +12556,24 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定分页每页返回的数据条数，单页最大支持 100。\n不传默认值为 20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -12605,7 +12623,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业标识列表",
+          "document": "第三方平台子客企业标识列表，仅在select 模式下返回",
           "example": "[\"org_zhangsan\"]",
           "member": "string",
           "name": "ProxyOrganizationOpenIds",
@@ -12621,6 +12639,16 @@
           "name": "FailMessageList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权的平台子企业数量，OperateType 为select 时返回。",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

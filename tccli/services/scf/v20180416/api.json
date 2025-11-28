@@ -3651,6 +3651,16 @@
         },
         {
           "disabled": false,
+          "document": "单实例多并发配置。只支持Web函数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceConcurrencyConfig",
+          "name": "InstanceConcurrencyConfig",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "是否开启DNS缓存",
           "example": "FALSE",
           "member": "string",
@@ -4116,6 +4126,50 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全隔离开关",
+          "example": "'FALSE'",
+          "member": "string",
+          "name": "InstanceIsolationEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基于会话：Session-Based ， 或者基于请求：Request-Based，二选一",
+          "example": "Session-Based",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动态并发参数",
+          "example": "无",
+          "member": "MixNodeConfig",
+          "name": "MixNodeConfig",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话配置参数",
+          "example": "无",
+          "member": "SessionConfig",
+          "name": "SessionConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5462,6 +5516,34 @@
       ],
       "usage": "both"
     },
+    "MixNodeConfig": {
+      "document": "动态并发配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GPU机型名",
+          "example": "gpu-dsdfsd",
+          "member": "string",
+          "name": "NodeSpec",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "并发个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Num",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Namespace": {
       "document": "命名空间",
       "members": [
@@ -6544,6 +6626,89 @@
         }
       ],
       "usage": "in"
+    },
+    "SessionConfig": {
+      "document": "会话参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "session 来源，三选一：'HEADER', 'COOKIE', 'QUERY_STRING' ",
+          "example": "HEADER",
+          "member": "string",
+          "name": "SessionSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "session 名称，以字母开头，非首字母可包含数字、字母、下划线、中划线，长度5-40个字符",
+          "example": "x-test-",
+          "member": "string",
+          "name": "SessionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大并发会话数",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaximumConcurrencySessionPerInstance",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命周期",
+          "example": "1800",
+          "member": "uint64",
+          "name": "MaximumTTLInSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空闲时长",
+          "example": "1800",
+          "member": "uint64",
+          "name": "MaximumIdleTimeInSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "session 对应的路径信息",
+          "example": "/mcp",
+          "member": "string",
+          "name": "SessionPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动销毁 FATAL、自动暂停PAUSE， 只有启动安全隔离的时候才会有",
+          "example": "FATAL",
+          "member": "string",
+          "name": "IdleTimeoutStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "StatusReason": {
       "document": "状态原因描述",

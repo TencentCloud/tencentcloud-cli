@@ -6550,7 +6550,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数，最大支持2000",
+          "document": "每页条数，最大支持1000",
           "example": "10",
           "member": "int64",
           "name": "Limit",

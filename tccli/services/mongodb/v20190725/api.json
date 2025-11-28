@@ -7831,7 +7831,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "document": "实例id，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
           "example": "cmgo-p8vn****",
           "member": "string",
           "name": "InstanceId",
@@ -7844,7 +7844,7 @@
           "example": "1",
           "member": "uint64",
           "name": "BackupMethod",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -7853,7 +7853,16 @@
           "example": "2",
           "member": "uint64",
           "name": "BackupTime",
-          "required": true,
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动备份频率，内部展示，默认取值为24h。",
+          "example": "2",
+          "member": "uint64",
+          "name": "BackupFrequency",
+          "required": false,
           "type": "int"
         },
         {
@@ -7871,6 +7880,69 @@
           "example": "7",
           "member": "uint64",
           "name": "BackupRetentionPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "周几备份，0-6，逗号分割。仅对高级备份生效",
+          "example": "0,1,2,3,4,5,6",
+          "member": "string",
+          "name": "ActiveWeekdays",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "长期保留周期，周weekly，月monthly，空不开启",
+          "example": "monthly",
+          "member": "string",
+          "name": "LongTermUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "长期保留哪些天的，周0-6，月1-31，逗号分割",
+          "example": "1,2",
+          "member": "string",
+          "name": "LongTermActiveDays",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "长期备份保留多少天",
+          "example": "30",
+          "member": "int64",
+          "name": "LongTermExpiredDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "增量保留多少天",
+          "example": "7",
+          "member": "int64",
+          "name": "OplogExpiredDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备份版本。旧版本备份为0，高级备份为1。开启高级备份此值传1",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupVersion",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警额度。50-300",
+          "example": "100",
+          "member": "int64",
+          "name": "AlarmWaterLevel",
           "required": false,
           "type": "int"
         }

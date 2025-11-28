@@ -76,8 +76,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessKeyAlarmDetail\n<公共请求参数>\n\n{\n    \"ID\": 10007\n}",
-        "output": "{\n    \"Response\": {\n        \"AlarmInfo\": {\n            \"AccessKey\": \"TEMP_AK\",\n            \"AccessKeyID\": 10093,\n            \"AccessKeyRemark\": \"飞快的云镜-临时密钥\",\n            \"AlarmRuleID\": 10969,\n            \"AlarmType\": 0,\n            \"AppID\": 1256299843,\n            \"Date\": \"2025-02-26\",\n            \"ID\": 10007,\n            \"LastAlarmTime\": \"2025-02-26 23:50:04\",\n            \"Level\": 4,\n            \"Name\": \"非控制台方式调用高危接口\",\n            \"Nickname\": \"飞快的云镜\",\n            \"Status\": 0,\n            \"SubNickname\": \"飞快的云镜\",\n            \"SubUin\": \"100004506473\",\n            \"Tag\": [],\n            \"Type\": 2,\n            \"Uin\": \"100004506473\"\n        },\n        \"CamCount\": 1111,\n        \"RequestId\": \"e33bc9ad-0496-49de-a76b-940f2d6027bb\",\n        \"RiskCount\": 0\n    }\n}",
-        "title": "1"
+        "output": "{\n    \"Response\": {\n        \"AlarmInfo\": {\n            \"AccessKey\": \"TEMP_AK\",\n            \"AccessKeyID\": 10093,\n            \"AccessKeyRemark\": \"临时密钥\",\n            \"AlarmRuleID\": 10969,\n            \"AlarmType\": 0,\n            \"AppID\": 100001,\n            \"Date\": \"2025-02-26\",\n            \"ID\": 10007,\n            \"LastAlarmTime\": \"2025-02-26 23:50:04\",\n            \"Level\": 4,\n            \"Name\": \"非控制台方式调用高危接口\",\n            \"Nickname\": \"name\",\n            \"Status\": 0,\n            \"SubNickname\": \"name\",\n            \"SubUin\": \"1000045***\",\n            \"Tag\": [],\n            \"Type\": 2,\n            \"Uin\": \"1000045***\"\n        },\n        \"CamCount\": 10,\n        \"RequestId\": \"e33bc9ad-0496-49de-a76b-940f2d6027bb\",\n        \"RiskCount\": 0\n    }\n}",
+        "title": "访问密钥告警记录详情"
       }
     ],
     "DescribeAccessKeyAsset": [

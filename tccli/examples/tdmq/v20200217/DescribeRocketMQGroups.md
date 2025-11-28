@@ -7,7 +7,7 @@ Input:
 ```
 tccli tdmq DescribeRocketMQGroups --cli-unfold-argument  \
     --ClusterId rocketmq-4k4orqgq \
-    --NamespaceId test_namespace \
+    --NamespaceId test_ns \
     --Offset 0 \
     --Limit 20 \
     --FilterTopic test_topic \

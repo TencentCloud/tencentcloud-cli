@@ -2282,6 +2282,16 @@
       "members": [
         {
           "disabled": false,
+          "document": "合同对比差异点唯一ID。",
+          "example": "fc*****f0",
+          "member": "string",
+          "name": "ComparisonPointId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "对比前后差异类型，具体如下：\n<ul><li> **add**：新增</li>\n<li> **change**：变更</li>\n<li> **delete**：删除</li>\n</ul>",
           "example": "add",
           "member": "string",
@@ -14067,7 +14077,7 @@
         },
         {
           "disabled": false,
-          "document": "补充企业签署人员工姓名\n<ul>\n<li>ApproverSource!=WEWORKAPP时，必传</li>\n</ul>",
+          "document": "企业签署人的员工姓名。除企业微信应用场景（ApproverSource设置为WEWORKAPP）外，本字段为必填。",
           "example": "张三",
           "member": "string",
           "name": "ApproverName",

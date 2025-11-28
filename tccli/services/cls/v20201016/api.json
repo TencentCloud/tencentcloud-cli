@@ -6151,6 +6151,15 @@
         },
         {
           "disabled": false,
+          "document": "加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。\n0或者不传： 不加密\n1：kms-cls 云产品密钥加密\n\n支持地域：ap-beijing,ap-guangzhou,ap-shanghai,ap-singapore,ap-bangkok,ap-jakarta,eu-frankfurt,ap-seoul,ap-tokyo",
+          "example": "0",
+          "member": "uint64",
+          "name": "Encryption",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "主题类型\n- 0:日志主题，默认值\n- 1:指标主题",
           "example": "0",
           "member": "uint64",

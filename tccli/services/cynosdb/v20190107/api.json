@@ -7731,7 +7731,7 @@
         {
           "disabled": false,
           "document": "用户AppId",
-          "example": "12510**243",
+          "example": "12510243",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -7810,7 +7810,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态",
+          "document": "实例状态\ncreating：创建中\nrunning：运行中\nisolating：隔离中\nisolated：已隔离\nactivating：解隔离中\nofflining：下线中\nofflined：已下线\ndeleting：删除中\ndeleted：已删除",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -12559,7 +12559,7 @@
         {
           "disabled": false,
           "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
-          "example": "[{\"Names\": [\"InstanceId\"],\"Values\": [\"acynosdbmysql-ins-d6l1z111\"],\"ExactMatch\": true}]",
+          "example": "无",
           "member": "QueryParamFilter",
           "name": "Filters",
           "required": false,
@@ -14132,7 +14132,7 @@
         },
         {
           "disabled": false,
-          "document": "从集群别名",
+          "document": "从集群名称",
           "example": "standbycluster",
           "member": "string",
           "name": "StandbyClusterName",
@@ -20858,7 +20858,7 @@
         {
           "disabled": false,
           "document": "是否精确匹配",
-          "example": "1",
+          "example": "false",
           "member": "bool",
           "name": "ExactMatch",
           "required": false,
@@ -20874,7 +20874,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作符",
           "example": "1000****4352",
           "member": "string",
@@ -23966,7 +23966,7 @@
         {
           "disabled": false,
           "document": "总的折扣，100表示100%不打折",
-          "example": "100",
+          "example": "100.0",
           "member": "float",
           "name": "Discount",
           "output_required": true,
@@ -24010,6 +24010,36 @@
           "member": "string",
           "name": "ChargeUnit",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高精度下不包含优惠价格",
+          "example": "100",
+          "member": "string",
+          "name": "UnitPriceHighPrecision",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高精度下优惠后价格",
+          "example": "50",
+          "member": "string",
+          "name": "UnitPriceDiscountHighPrecision",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "货币单位",
+          "example": "pent",
+          "member": "string",
+          "name": "AmountUnit",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -24370,6 +24400,24 @@
           "name": "ProxyZones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否滚动升级",
+          "example": "yes",
+          "member": "string",
+          "name": "IsRollUpgrade",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "滚动升级等待时间，单位：秒",
+          "example": "10",
+          "member": "int64",
+          "name": "RollUpgradeWaitingTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

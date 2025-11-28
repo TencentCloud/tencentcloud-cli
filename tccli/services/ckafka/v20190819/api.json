@@ -196,6 +196,13 @@
       "output": "DeleteGroupResponse",
       "status": "online"
     },
+    "DeleteGroupSubscribeTopic": {
+      "document": "删除消费分组订阅的topic(消费分组必须是Empty 状态)",
+      "input": "DeleteGroupSubscribeTopicRequest",
+      "name": "删除消费分组订阅的topic",
+      "output": "DeleteGroupSubscribeTopicResponse",
+      "status": "online"
+    },
     "DeleteInstancePost": {
       "document": "删除后付费实例，通过调用API删除不会对连接器和任务进行关联预检查，直接进行实例销毁。",
       "input": "DeleteInstancePostRequest",
@@ -376,6 +383,13 @@
       "input": "DescribeInstancesDetailRequest",
       "name": "获取实例集群列表详情",
       "output": "DescribeInstancesDetailResponse",
+      "status": "online"
+    },
+    "DescribeModifyType": {
+      "document": "查询实例变配类型",
+      "input": "DescribeModifyTypeRequest",
+      "name": "查询实例变配类型",
+      "output": "DescribeModifyTypeResponse",
       "status": "online"
     },
     "DescribePrometheus": {
@@ -5677,6 +5691,61 @@
       ],
       "type": "object"
     },
+    "DeleteGroupSubscribeTopicRequest": {
+      "document": "DeleteGroupSubscribeTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka集群实例Id",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费分组名称",
+          "example": "group-test",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名",
+          "example": "topic-test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupSubscribeTopicResponse": {
+      "document": "DeleteGroupSubscribeTopic返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "{\"ReturnCode\":\"0\",\"ReturnMessage\":\"success\"}",
+          "member": "JgwOperateResponse",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteInstancePostRequest": {
       "document": "DeleteInstancePost请求参数结构体",
       "members": [
@@ -5997,6 +6066,62 @@
         }
       ],
       "type": "object"
+    },
+    "DescModifyType": {
+      "document": "变配类型查询出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变配类型",
+          "example": "1",
+          "member": "int64",
+          "name": "ModifyType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否迁移标志",
+          "example": "true",
+          "member": "bool",
+          "name": "MigrateFlag",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "迁移预计耗时(稳定模式)秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1800",
+          "member": "int64",
+          "name": "MigrateCostTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "升配模式(1:稳定模式，2:高速模式)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "UpgradeStrategy",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "迁移预计耗时(高速模式)秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1800",
+          "member": "int64",
+          "name": "MigrateCostTimeHighSpeed",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeACLRequest": {
       "document": "DescribeACL请求参数结构体",
@@ -8055,6 +8180,106 @@
           "document": "返回的结果",
           "example": "无",
           "member": "InstanceResponse",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModifyTypeRequest": {
+      "document": "DescribeModifyType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka集群实例Id",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升配后的带宽，单位mb",
+          "example": "320",
+          "member": "int64",
+          "name": "BandWidth",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "升配后的磁盘，单位G",
+          "example": "1000",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘类型，例如 CLOUD_PREMIUM",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分区数量",
+          "example": "1200",
+          "member": "int64",
+          "name": "Partition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "topic数量",
+          "example": "120",
+          "member": "int64",
+          "name": "Topic",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型例如 sp_ckafka_profession",
+          "example": "sp_ckafka_profession",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变配入口",
+          "example": "OPEN_ELASTIC_BANDWIDTH_ENTRY",
+          "member": "string",
+          "name": "ModifyEntry",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModifyTypeResponse": {
+      "document": "DescribeModifyType返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的变配类型结构",
+          "example": "{\"ModifyType\":1,\"MigrateFlag\":true,\"MigrateCostTime\":17066}",
+          "member": "DescModifyType",
           "name": "Result",
           "output_required": true,
           "type": "object",

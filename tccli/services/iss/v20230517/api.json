@@ -5613,7 +5613,7 @@
         },
         {
           "disabled": false,
-          "document": "云录像回放时，是否需要开启时间戳矫正，主要解决时间戳反转，会退等问题导致无法播放",
+          "document": "云录像回放时，是否需要开启时间戳矫正，主要解决时间戳反转、回退等问题导致无法播放",
           "example": "false",
           "member": "bool",
           "name": "CorrectTimestamp",
@@ -6061,7 +6061,7 @@
         {
           "disabled": false,
           "document": "返回结果",
-          "example": " ",
+          "example": "无",
           "member": "DescribeDeviceListData",
           "name": "Data",
           "output_required": true,

@@ -292,7 +292,7 @@
         {
           "disabled": false,
           "document": "切片内容",
-          "example": "test",
+          "example": "content",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -309,6 +309,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切片概要",
+          "example": "summary",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

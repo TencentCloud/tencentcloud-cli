@@ -38,6 +38,14 @@
         "title": "查询示例"
       }
     ],
+    "AddBypassAllRule": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=AddBypassAllRule\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a16a333-76ac-42f5-8066-c0ea93cc8dc7\"\n    }\n}",
+        "title": "添加一键bypass规则"
+      }
+    ],
     "AddCustomRule": [
       {
         "document": "增加访问控制（自定义策略）",
@@ -1512,12 +1520,28 @@
         "title": "创建搜索下载攻击日志任务"
       }
     ],
+    "QueryBypassAllStatus": [
+      {
+        "document": "查询该用户是否被加入了全局的bypass列表",
+        "input": "https://waf.tencentcloudapi.com/?Action=QueryBypassAllStatus\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"261736d8cf924fc33217cf7f7ab83f19\",\n        \"Result\": false\n    }\n}",
+        "title": "查询该用户是否被加入了全局的bypass列表"
+      }
+    ],
     "RefreshAccessCheckResult": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshAccessCheckResult\n<公共请求参数>\n\n{\n    \"Domain\": \"randy.qcloudwaf.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ee8be5b-6caa-4c39-ab70-890e0e673515\"\n    }\n}",
         "title": "刷新接入配置检查结果"
+      }
+    ],
+    "RemoveBypassAllRule": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=RemoveBypassAllRule\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c20d0a3-9539-4ef8-aea1-06b5ce29e0c9\"\n    }\n}",
+        "title": "删除一键bypass规则"
       }
     ],
     "SearchAccessLog": [

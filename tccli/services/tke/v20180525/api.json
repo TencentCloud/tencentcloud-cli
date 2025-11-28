@@ -42,6 +42,13 @@
       "output": "CancelClusterReleaseResponse",
       "status": "online"
     },
+    "CancelUpgradePlan": {
+      "document": "取消升级计划",
+      "input": "CancelUpgradePlanRequest",
+      "name": "取消集群升级计划",
+      "output": "CancelUpgradePlanResponse",
+      "status": "online"
+    },
     "CheckEdgeClusterCIDR": {
       "document": "检查边缘计算集群的CIDR是否冲突",
       "input": "CheckEdgeClusterCIDRRequest",
@@ -96,6 +103,13 @@
       "input": "CreateClusterInstancesRequest",
       "name": "扩展集群节点",
       "output": "CreateClusterInstancesResponse",
+      "status": "online"
+    },
+    "CreateClusterMaintenanceWindowAndExclusions": {
+      "document": "创建集群维护时间窗口和排除项",
+      "input": "CreateClusterMaintenanceWindowAndExclusionsRequest",
+      "name": "创建集群维护时间窗口和排除项",
+      "output": "CreateClusterMaintenanceWindowAndExclusionsResponse",
       "status": "online"
     },
     "CreateClusterNodePool": {
@@ -182,6 +196,13 @@
       "output": "CreateEksLogConfigResponse",
       "status": "online"
     },
+    "CreateGlobalMaintenanceWindowAndExclusions": {
+      "document": "创建全局维护时间窗口和排除项",
+      "input": "CreateGlobalMaintenanceWindowAndExclusionsRequest",
+      "name": "创建全局维护时间窗口和排除项",
+      "output": "CreateGlobalMaintenanceWindowAndExclusionsResponse",
+      "status": "online"
+    },
     "CreateImageCache": {
       "document": "创建镜像缓存的接口。创建过程中，请勿删除EKSCI实例和云盘，否则镜像缓存将创建失败。",
       "input": "CreateImageCacheRequest",
@@ -259,6 +280,13 @@
       "output": "CreateReservedInstancesResponse",
       "status": "online"
     },
+    "CreateRollOutSequence": {
+      "document": "创建集群发布序列",
+      "input": "CreateRollOutSequenceRequest",
+      "name": "创建集群发布序列",
+      "output": "CreateRollOutSequenceResponse",
+      "status": "online"
+    },
     "CreateTKEEdgeCluster": {
       "document": "创建边缘计算集群",
       "input": "CreateTKEEdgeClusterRequest",
@@ -313,6 +341,13 @@
       "input": "DeleteClusterInstancesRequest",
       "name": "删除集群中的节点",
       "output": "DeleteClusterInstancesResponse",
+      "status": "online"
+    },
+    "DeleteClusterMaintenanceWindowAndExclusion": {
+      "document": "删除集群维护时间窗口和排除项",
+      "input": "DeleteClusterMaintenanceWindowAndExclusionRequest",
+      "name": "删除集群维护时间窗口和排除项",
+      "output": "DeleteClusterMaintenanceWindowAndExclusionResponse",
       "status": "online"
     },
     "DeleteClusterNodePool": {
@@ -383,6 +418,13 @@
       "input": "DeleteEdgeClusterInstancesRequest",
       "name": "删除边缘计算实例",
       "output": "DeleteEdgeClusterInstancesResponse",
+      "status": "online"
+    },
+    "DeleteGlobalMaintenanceWindowAndExclusion": {
+      "document": "删除全集维护时间窗口和排除项",
+      "input": "DeleteGlobalMaintenanceWindowAndExclusionRequest",
+      "name": "删除全局维护时间窗口和排除项",
+      "output": "DeleteGlobalMaintenanceWindowAndExclusionResponse",
       "status": "online"
     },
     "DeleteImageCaches": {
@@ -467,6 +509,13 @@
       "input": "DeleteReservedInstancesRequest",
       "name": "退还预留券实例",
       "output": "DeleteReservedInstancesResponse",
+      "status": "online"
+    },
+    "DeleteRollOutSequence": {
+      "document": "删除集群发布序列",
+      "input": "DeleteRollOutSequenceRequest",
+      "name": "删除集群发布序列",
+      "output": "DeleteRollOutSequenceResponse",
       "status": "online"
     },
     "DeleteTKEEdgeCluster": {
@@ -623,6 +672,13 @@
       "output": "DescribeClusterLevelChangeRecordsResponse",
       "status": "online"
     },
+    "DescribeClusterMaintenanceWindowAndExclusions": {
+      "document": "获取集群维护时间窗口和排除项",
+      "input": "DescribeClusterMaintenanceWindowAndExclusionsRequest",
+      "name": "获取集群维护时间窗口和排除项",
+      "output": "DescribeClusterMaintenanceWindowAndExclusionsResponse",
+      "status": "online"
+    },
     "DescribeClusterNodePoolDetail": {
       "document": "查询节点池详情",
       "input": "DescribeClusterNodePoolDetailRequest",
@@ -663,6 +719,13 @@
       "input": "DescribeClusterReleasesRequest",
       "name": "查询集群已安装应用列表",
       "output": "DescribeClusterReleasesResponse",
+      "status": "online"
+    },
+    "DescribeClusterRollOutSequenceTags": {
+      "document": "查询集群发布序列标签",
+      "input": "DescribeClusterRollOutSequenceTagsRequest",
+      "name": "查询集群发布序列标签",
+      "output": "DescribeClusterRollOutSequenceTagsResponse",
       "status": "online"
     },
     "DescribeClusterRouteTables": {
@@ -831,6 +894,13 @@
       "input": "DescribeExternalNodeSupportConfigRequest",
       "name": "查看开启第三方节点池配置信息",
       "output": "DescribeExternalNodeSupportConfigResponse",
+      "status": "online"
+    },
+    "DescribeGlobalMaintenanceWindowAndExclusions": {
+      "document": "获取全局维护时间窗口和排除项",
+      "input": "DescribeGlobalMaintenanceWindowAndExclusionsRequest",
+      "name": "获取全局维护时间窗口和排除项",
+      "output": "DescribeGlobalMaintenanceWindowAndExclusionsResponse",
       "status": "online"
     },
     "DescribeIPAMD": {
@@ -1085,6 +1155,13 @@
       "output": "DescribeResourceUsageResponse",
       "status": "online"
     },
+    "DescribeRollOutSequences": {
+      "document": "查询集群发布序列",
+      "input": "DescribeRollOutSequencesRequest",
+      "name": "查询集群发布序列",
+      "output": "DescribeRollOutSequencesResponse",
+      "status": "online"
+    },
     "DescribeRouteTableConflicts": {
       "document": "查询路由表冲突列表",
       "input": "DescribeRouteTableConflictsRequest",
@@ -1139,6 +1216,20 @@
       "input": "DescribeTasksRequest",
       "name": "查询任务相关信息",
       "output": "DescribeTasksResponse",
+      "status": "online"
+    },
+    "DescribeUpgradeTaskDetail": {
+      "document": "查询计划升级任务详情",
+      "input": "DescribeUpgradeTaskDetailRequest",
+      "name": "查询计划升级任务详情",
+      "output": "DescribeUpgradeTaskDetailResponse",
+      "status": "online"
+    },
+    "DescribeUpgradeTasks": {
+      "document": "查询计划升级任务",
+      "input": "DescribeUpgradeTasksRequest",
+      "name": "查询计划升级任务",
+      "output": "DescribeUpgradeTasksResponse",
       "status": "online"
     },
     "DescribeVersions": {
@@ -1358,11 +1449,25 @@
       "output": "ModifyClusterImageResponse",
       "status": "online"
     },
+    "ModifyClusterMaintenanceWindowAndExclusions": {
+      "document": "更新集群维护时间窗口和排除项",
+      "input": "ModifyClusterMaintenanceWindowAndExclusionsRequest",
+      "name": "更新集群维护时间窗口和排除项",
+      "output": "ModifyClusterMaintenanceWindowAndExclusionsResponse",
+      "status": "online"
+    },
     "ModifyClusterNodePool": {
       "document": "编辑节点池",
       "input": "ModifyClusterNodePoolRequest",
       "name": "编辑节点池",
       "output": "ModifyClusterNodePoolResponse",
+      "status": "online"
+    },
+    "ModifyClusterRollOutSequenceTags": {
+      "document": "更新集群发布序列标签",
+      "input": "ModifyClusterRollOutSequenceTagsRequest",
+      "name": "更新集群发布序列标签",
+      "output": "ModifyClusterRollOutSequenceTagsResponse",
       "status": "online"
     },
     "ModifyClusterRuntimeConfig": {
@@ -1384,6 +1489,13 @@
       "input": "ModifyClusterVirtualNodePoolRequest",
       "name": "修改超级节点池",
       "output": "ModifyClusterVirtualNodePoolResponse",
+      "status": "online"
+    },
+    "ModifyGlobalMaintenanceWindowAndExclusions": {
+      "document": "更新全局维护时间窗口和排除项",
+      "input": "ModifyGlobalMaintenanceWindowAndExclusionsRequest",
+      "name": "更新全局维护时间窗口和排除项",
+      "output": "ModifyGlobalMaintenanceWindowAndExclusionsResponse",
       "status": "online"
     },
     "ModifyMasterComponent": {
@@ -1477,6 +1589,13 @@
       "output": "ModifyReservedInstanceScopeResponse",
       "status": "online"
     },
+    "ModifyRollOutSequence": {
+      "document": "更新集群发布序列",
+      "input": "ModifyRollOutSequenceRequest",
+      "name": "更新集群发布序列",
+      "output": "ModifyRollOutSequenceResponse",
+      "status": "online"
+    },
     "RemoveNodeFromNodePool": {
       "document": "移出节点池节点，但保留在集群内",
       "input": "RemoveNodeFromNodePoolRequest",
@@ -1531,6 +1650,13 @@
       "input": "SetNodePoolNodeProtectionRequest",
       "name": "节点池节点设置移出保护",
       "output": "SetNodePoolNodeProtectionResponse",
+      "status": "online"
+    },
+    "SwitchClusterEndpoint": {
+      "document": "切换集群网络访问链路为直连",
+      "input": "SwitchClusterEndpointRequest",
+      "name": "切换集群网络访问链路为直连",
+      "output": "SwitchClusterEndpointResponse",
       "status": "online"
     },
     "SyncPrometheusTemp": {
@@ -2419,6 +2545,42 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelUpgradePlanRequest": {
+      "document": "CancelUpgradePlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-3n90hta2",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升级计划ID",
+          "example": "1",
+          "member": "int64",
+          "name": "PlanID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelUpgradePlanResponse": {
+      "document": "CancelUpgradePlan返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4170,6 +4332,56 @@
       ],
       "usage": "both"
     },
+    "ClusterRollOutSequenceTag": {
+      "document": "集群发布序列标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-ad23n4jj",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "测试集群",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群发布序列标签",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClusterStatus": {
       "document": "集群状态信息",
       "members": [
@@ -4917,6 +5129,69 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterMaintenanceWindowAndExclusionsRequest": {
+      "document": "CreateClusterMaintenanceWindowAndExclusions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-3n90hta2",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "维护开始时间",
+          "example": "18:00:00",
+          "member": "string",
+          "name": "MaintenanceTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "维护时长（小时）",
+          "example": "4",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "维护周期（一周中的哪几天）",
+          "example": "[\"MO\",\"TU\",\"WE\",\"TH\",\"FR\"]",
+          "member": "string",
+          "name": "DayOfWeek",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "维护排除项",
+          "example": "无",
+          "member": "MaintenanceExclusion",
+          "name": "Exclusions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterMaintenanceWindowAndExclusionsResponse": {
+      "document": "CreateClusterMaintenanceWindowAndExclusions返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6295,6 +6570,69 @@
       ],
       "type": "object"
     },
+    "CreateGlobalMaintenanceWindowAndExclusionsRequest": {
+      "document": "CreateGlobalMaintenanceWindowAndExclusions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维护开始时间",
+          "example": "18:00:00",
+          "member": "string",
+          "name": "MaintenanceTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "维护时长(小时)",
+          "example": "4",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "维护周期（一周中的哪几天）",
+          "example": "[\"MO\",\"TU\",\"WE\",\"TH\",\"FR\"]",
+          "member": "string",
+          "name": "DayOfWeek",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "TargetRegions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "维护排除项",
+          "example": "无",
+          "member": "MaintenanceExclusion",
+          "name": "Exclusions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalMaintenanceWindowAndExclusionsResponse": {
+      "document": "CreateGlobalMaintenanceWindowAndExclusions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateImageCacheRequest": {
       "document": "CreateImageCache请求参数结构体",
       "members": [
@@ -6950,6 +7288,51 @@
       ],
       "type": "object"
     },
+    "CreateRollOutSequenceRequest": {
+      "document": "CreateRollOutSequence请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发布序列名称",
+          "example": "发布序列1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发布序列步骤",
+          "example": "无",
+          "member": "SequenceFlow",
+          "name": "SequenceFlows",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRollOutSequenceResponse": {
+      "document": "CreateRollOutSequence返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTKEEdgeClusterRequest": {
       "document": "CreateTKEEdgeCluster请求参数结构体",
       "members": [
@@ -7533,6 +7916,33 @@
       ],
       "type": "object"
     },
+    "DeleteClusterMaintenanceWindowAndExclusionRequest": {
+      "document": "DeleteClusterMaintenanceWindowAndExclusion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-3n90hta2",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterMaintenanceWindowAndExclusionResponse": {
+      "document": "DeleteClusterMaintenanceWindowAndExclusion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteClusterNodePoolRequest": {
       "document": "DeleteClusterNodePool请求参数结构体",
       "members": [
@@ -7946,6 +8356,33 @@
     },
     "DeleteEdgeClusterInstancesResponse": {
       "document": "DeleteEdgeClusterInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalMaintenanceWindowAndExclusionRequest": {
+      "document": "DeleteGlobalMaintenanceWindowAndExclusion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全局维护时间窗口ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalMaintenanceWindowAndExclusionResponse": {
+      "document": "DeleteGlobalMaintenanceWindowAndExclusion返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8424,6 +8861,33 @@
     },
     "DeleteReservedInstancesResponse": {
       "document": "DeleteReservedInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRollOutSequenceRequest": {
+      "document": "DeleteRollOutSequence请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发布序列ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRollOutSequenceResponse": {
+      "document": "DeleteRollOutSequence返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9694,6 +10158,71 @@
       ],
       "type": "object"
     },
+    "DescribeClusterMaintenanceWindowAndExclusionsRequest": {
+      "document": "DescribeClusterMaintenanceWindowAndExclusions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条目数，默认为20",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤项",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterMaintenanceWindowAndExclusionsResponse": {
+      "document": "DescribeClusterMaintenanceWindowAndExclusions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维护时间窗口和排除项",
+          "example": "无",
+          "member": "MaintenanceWindowAndExclusion",
+          "name": "MaintenanceWindowAndExclusions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条目数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClusterNodePoolDetailRequest": {
       "document": "DescribeClusterNodePoolDetail请求参数结构体",
       "members": [
@@ -10136,6 +10665,71 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterRollOutSequenceTagsRequest": {
+      "document": "DescribeClusterRollOutSequenceTags请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条目数，默认为20",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤项",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterRollOutSequenceTagsResponse": {
+      "document": "DescribeClusterRollOutSequenceTags返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群发布序列标签",
+          "example": "无",
+          "member": "ClusterRollOutSequenceTag",
+          "name": "ClusterTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条目数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11781,6 +12375,71 @@
           "name": "PublicCustomDomain",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalMaintenanceWindowAndExclusionsRequest": {
+      "document": "DescribeGlobalMaintenanceWindowAndExclusions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条目数，默认为20",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "筛选项",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalMaintenanceWindowAndExclusionsResponse": {
+      "document": "DescribeGlobalMaintenanceWindowAndExclusions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条目数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护时间窗口",
+          "example": "无",
+          "member": "GlobalMaintenanceWindowAndExclusion",
+          "name": "MaintenanceWindowAndExclusions",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -14198,6 +14857,62 @@
       ],
       "type": "object"
     },
+    "DescribeRollOutSequencesRequest": {
+      "document": "DescribeRollOutSequences请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条目数，默认为20",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRollOutSequencesResponse": {
+      "document": "DescribeRollOutSequences返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发布序列",
+          "example": "无",
+          "member": "RollOutSequence",
+          "name": "Sequences",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条目数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRouteTableConflictsRequest": {
       "document": "DescribeRouteTableConflicts请求参数结构体",
       "members": [
@@ -14703,6 +15418,127 @@
           "member": "Task",
           "name": "Tasks",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpgradeTaskDetailRequest": {
+      "document": "DescribeUpgradeTaskDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "升级任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条目数，默认为20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpgradeTaskDetailResponse": {
+      "document": "DescribeUpgradeTaskDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "升级计划",
+          "example": "无",
+          "member": "UpgradePlan",
+          "name": "UpgradePlans",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条目数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpgradeTasksRequest": {
+      "document": "DescribeUpgradeTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大输出条目数，默认为20",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpgradeTasksResponse": {
+      "document": "DescribeUpgradeTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "升级任务",
+          "example": "无",
+          "member": "UpgradeTask",
+          "name": "UpgradeTasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条目数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -17322,6 +18158,78 @@
       ],
       "type": "object"
     },
+    "GlobalMaintenanceWindowAndExclusion": {
+      "document": "全局维护时间窗口和排除项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "TargetRegions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护开始时间",
+          "example": "20:00:00",
+          "member": "string",
+          "name": "MaintenanceTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护时长（小时）",
+          "example": "4",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护周期（一周中的哪几天）",
+          "example": "[\"MO\",\"TU\",\"WE\",\"TH\",\"FR\"]",
+          "member": "string",
+          "name": "DayOfWeek",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排除项",
+          "example": "无",
+          "member": "MaintenanceExclusion",
+          "name": "Exclusions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护窗口ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "HttpGet": {
       "document": "Probe中的HttpGet",
       "members": [
@@ -19012,6 +19920,150 @@
       ],
       "usage": "both"
     },
+    "MaintenanceExclusion": {
+      "document": "维护时间排除项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维护排除项名称",
+          "example": "促销封网",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护排除项开始时间",
+          "example": "2020-01-01 08:00:00",
+          "member": "string",
+          "name": "StartAt",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护排除项结束时间",
+          "example": "2020-01-01 20:00:00",
+          "member": "string",
+          "name": "EndAt",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护排除项ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MaintenanceWindowAndExclusion": {
+      "document": "维护时间窗口和排除项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维护开始时间",
+          "example": "18:00:00",
+          "member": "string",
+          "name": "MaintenanceTime",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护时长（小时）",
+          "example": "4",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护周期（一周中的哪几天）",
+          "example": "[\"MO\",\"TU\",\"WE\",\"TH\",\"FR\"]",
+          "member": "string",
+          "name": "DayOfWeek",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "测试集群",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群版本",
+          "example": "1.30.0",
+          "member": "string",
+          "name": "ClusterVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排除项",
+          "example": "无",
+          "member": "MaintenanceExclusion",
+          "name": "Exclusions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ManuallyAdded": {
       "document": "手动加入的节点",
       "members": [
@@ -19488,6 +20540,69 @@
       ],
       "type": "object"
     },
+    "ModifyClusterMaintenanceWindowAndExclusionsRequest": {
+      "document": "ModifyClusterMaintenanceWindowAndExclusions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-3n90hta2",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "维护开始时间",
+          "example": "18:00:00",
+          "member": "string",
+          "name": "MaintenanceTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "维护时长（小时）",
+          "example": "4",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "维护周期（一周中的哪几天）",
+          "example": "[\"MO\",\"TU\",\"WE\",\"TH\",\"FR\"]",
+          "member": "string",
+          "name": "DayOfWeek",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "维护排除项",
+          "example": "无",
+          "member": "MaintenanceExclusion",
+          "name": "Exclusions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterMaintenanceWindowAndExclusionsResponse": {
+      "document": "ModifyClusterMaintenanceWindowAndExclusions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyClusterNodePoolRequest": {
       "document": "ModifyClusterNodePool请求参数结构体",
       "members": [
@@ -19686,6 +20801,42 @@
       ],
       "type": "object"
     },
+    "ModifyClusterRollOutSequenceTagsRequest": {
+      "document": "ModifyClusterRollOutSequenceTags请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-3n90hta2",
+          "member": "string",
+          "name": "ClusterID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群发布序列标签（为空时表示移除集群标签）",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterRollOutSequenceTagsResponse": {
+      "document": "ModifyClusterRollOutSequenceTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyClusterRuntimeConfigRequest": {
       "document": "ModifyClusterRuntimeConfig请求参数结构体",
       "members": [
@@ -19866,6 +21017,78 @@
     },
     "ModifyClusterVirtualNodePoolResponse": {
       "document": "ModifyClusterVirtualNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalMaintenanceWindowAndExclusionsRequest": {
+      "document": "ModifyGlobalMaintenanceWindowAndExclusions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维护窗口ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "TargetRegions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "维护开始时间",
+          "example": "18:00:00",
+          "member": "string",
+          "name": "MaintenanceTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "维护时长（小时）",
+          "example": "4",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "维护周期（一周中的哪几天）",
+          "example": "[\"MO\",\"TU\",\"WE\",\"TH\",\"FR\"]",
+          "member": "string",
+          "name": "DayOfWeek",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "维护排除项",
+          "example": "无",
+          "member": "MaintenanceExclusion",
+          "name": "Exclusions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalMaintenanceWindowAndExclusionsResponse": {
+      "document": "ModifyGlobalMaintenanceWindowAndExclusions返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -20442,6 +21665,60 @@
     },
     "ModifyReservedInstanceScopeResponse": {
       "document": "ModifyReservedInstanceScope返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRollOutSequenceRequest": {
+      "document": "ModifyRollOutSequence请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发布序列ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "发布序列名称",
+          "example": "发布序列1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发布序列步骤",
+          "example": "无",
+          "member": "SequenceFlow",
+          "name": "SequenceFlows",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRollOutSequenceResponse": {
+      "document": "ModifyRollOutSequence返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -24843,6 +26120,56 @@
       ],
       "type": "object"
     },
+    "RollOutSequence": {
+      "document": "发布序列",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发布序列名称",
+          "example": "发布序列1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布序列步骤",
+          "example": "无",
+          "member": "SequenceFlow",
+          "name": "SequenceFlows",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布序列ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RollbackClusterReleaseRequest": {
       "document": "RollbackClusterRelease请求参数结构体",
       "members": [
@@ -25334,6 +26661,62 @@
       ],
       "usage": "both"
     },
+    "SequenceFlow": {
+      "document": "发布序列步骤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发布序列步骤标签",
+          "example": "无",
+          "member": "SequenceTag",
+          "name": "Tags",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "等待时间（秒）",
+          "example": "3600",
+          "member": "int64",
+          "name": "SoakTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SequenceTag": {
+      "document": "发布序列标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "Env",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "[\"Test\"]",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ServiceAccountAuthenticationOptions": {
       "document": "ServiceAccount认证相关配置",
       "members": [
@@ -25725,6 +27108,51 @@
         }
       ],
       "usage": "out"
+    },
+    "SwitchClusterEndpointRequest": {
+      "document": "SwitchClusterEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-65r1c5nu",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为外网访问（TRUE 外网访问 FALSE 内网访问，默认值： FALSE）",
+          "example": "false",
+          "member": "bool",
+          "name": "IsExtranet",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "切换回滚至非直连",
+          "example": "false",
+          "member": "bool",
+          "name": "Rollback",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchClusterEndpointResponse": {
+      "document": "SwitchClusterEndpoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SwitchInfo": {
       "document": "日志开关详细信息",
@@ -27325,6 +28753,183 @@
         }
       ],
       "usage": "in"
+    },
+    "UpgradePlan": {
+      "document": "升级计划",
+      "members": [
+        {
+          "disabled": false,
+          "document": "升级计划ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "测试集群",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预计开始时间",
+          "example": "2021-01-01 18:00:00",
+          "member": "string",
+          "name": "PlanedStartAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "升级开始时间",
+          "example": "2021-01-01 18:00:00",
+          "member": "string",
+          "name": "UpgradeStartAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "升级结束时间",
+          "example": "2021-01-01 18:00:00",
+          "member": "string",
+          "name": "UpgradeEndAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "升级状态",
+          "example": "Succeed",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原因",
+          "example": "升级预检失败",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpgradeTask": {
+      "document": "升级任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "组件基线化升级",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "coredns",
+          "member": "string",
+          "name": "Component",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联资源",
+          "example": "[\"coredns\"]",
+          "member": "string",
+          "name": "RelatedResources",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "升级影响",
+          "example": "域名解析延迟肯能有抖动",
+          "member": "string",
+          "name": "UpgradeImpact",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预计开始时间",
+          "example": "2021-01-01 18:00:00",
+          "member": "string",
+          "name": "PlanedStartAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-01-01 08:00:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VersionInstance": {
       "document": "版本信息",

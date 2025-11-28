@@ -672,6 +672,13 @@
       "output": "DescribeTranscodeTemplatesResponse",
       "status": "online"
     },
+    "DescribeUsageData": {
+      "document": "该接口返回查询时间范围内每天使用的媒体处理用量信息。\n   1. 可以查询最近365天内的媒体处理统计数据。\n   2. 查询时间跨度不超过90天。",
+      "input": "DescribeUsageDataRequest",
+      "name": "查询用量信息",
+      "output": "DescribeUsageDataResponse",
+      "status": "online"
+    },
     "DescribeVideoDatabaseEntryTaskDetail": {
       "document": "根据任务ID查询视频入库任务的状态。",
       "input": "DescribeVideoDatabaseEntryTaskDetailRequest",
@@ -17971,6 +17978,70 @@
       ],
       "type": "object"
     },
+    "DescribeUsageDataRequest": {
+      "document": "DescribeUsageData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "2019-07-02T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束日期，需大于等于起始日期。使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。",
+          "example": "2019-07-03T00:00:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询媒体处理任务类型，默认查询转码。\n<li>Transcode：转码</li>\n<li>Enhance：增强</li>\n<li>AIAnalysis：智能分析</li>\n<li>AIRecognition：智能识别</li>\n<li>AIReview：内容审核</li>\n<li>Snapshot：截图</li>\n<li>AnimatedGraphics：转动图</li>\n<li>AiQualityControl：质检</li>\n<li>Evaluation：视频评测</li>\n<li>ImageProcess: 图片处理</li>\n<li>AddBlindWatermark: 添加基础版权数字水印</li>\n<li>AddNagraWatermark: 添加NAGRA数字水印</li>\n<li>ExtractBlindWatermark: 提取基础版权数字水印</li>",
+          "example": "[\"Transcode\"]",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "媒体处理园区，默认返回 ap-guangzhou 园区。\n<li>ap-guangzhou：广州</li>\n<li>ap-hongkong：中国香港</li>\n<li>ap-taipei：中国台北</li>\n<li>ap-singapore：新加坡</li>\n<li>ap-mumbai：印度</li>\n<li>ap-jakarta：雅加达</li>\n<li>ap-seoul：首尔</li>\n<li>ap-bangkok：泰国</li>\n<li>ap-tokyo：日本</li>\n<li>na-siliconvalley：美国硅谷</li>\n<li>na-ashburn：弗吉尼亚</li>\n<li>na-toronto：多伦多</li>\n<li>sa-saopaulo：圣保罗</li>\n<li>eu-frankfurt：法兰克福</li>\n<li>eu-moscow：俄罗斯</li>\n<li>aws：AWS</li>",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "ProcessRegions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsageDataResponse": {
+      "document": "DescribeUsageData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体处理统计数据概览，展示所查询任务的概览以及详细数据。",
+          "example": "无",
+          "member": "TaskStatData",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVideoDatabaseEntryTaskDetailRequest": {
       "document": "DescribeVideoDatabaseEntryTaskDetail请求参数结构体",
       "members": [
@@ -34110,6 +34181,32 @@
       ],
       "usage": "out"
     },
+    "SpecificationDataItem": {
+      "document": "指定规格任务统计数据。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务规格。",
+          "example": "",
+          "member": "string",
+          "name": "Specification",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计数据。",
+          "example": "",
+          "member": "TaskStatDataItem",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SpekeDrm": {
       "document": "FairPlay，WideVine，PlayReady 等Drm加密方式。",
       "members": [
@@ -35008,6 +35105,78 @@
           "name": "SubTaskTypes",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskStatData": {
+      "document": "任务统计数据。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务类型。\n<li>Transcode: 转码</li>\n<li>Enhance: 增强</li>\n<li>AIAnalysis: 智能分析</li>\n<li>AIRecognition: 智能识别</li>\n<li>AIReview: 内容审核</li>\n<li>Snapshot: 截图</li>\n<li>AnimatedGraphics: 转动图</li>\n<li>ImageProcess: 图片处理</li>",
+          "example": "Transcode",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务数统计数据概览。\n<li>Transcode：用量单位为秒</li>\n<li>Enhance：用量单位为秒</li>\n<li>AIAnalysis：用量单位为秒</li>\n<li>AIRecognition：用量单位为秒</li>\n<li>AIReview：用量单位为秒</li>\n<li>Snapshot：用量单位为张</li>\n<li>AnimatedGraphics: 用量单位为秒</li>\n<li>ImageProcess: 用量单位为张</li>",
+          "example": "无",
+          "member": "TaskStatDataItem",
+          "name": "Summary",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不同规格任务统计数据详情。\n\n1、转码规格：\n<li>Audio：纯音频</li>\n<li>Remuxing：转封装</li>\n<li>其他转码规格：{TYPE}.{CODEC}.{SPECIFICATION}</li>  其中 TYPE 取值\n    Standard：普通转码\n    TESHD-10：视频极速高清\n    TESHD-20：音频极速高清\n    TESHD-30：音视频极速高清\n    TESHD-30-SDK：音视频极速高清SDK按时长计费\n    TESHD-30-SDKCores：音视频极速高清SDK按核心数计费\n    Edit：视频编辑\n  其中 CODEC 取值\n    H264：H.264 编码\n    H265：H.265 编码\n    AV1：AV1 编码\n    MV-HEVC：MV-HEVC 编码\n  其中 SPECIFICATION 取值\n    SD：标清\n    HD：高清\n    FHD：全高清\n    2K：2K\n    4K：4K\n例如 TESHD-10.H265.HD 表示 H.265 编码方式高清极速高清转码\n\n2、增强规格：视频增强格式：{TYPE}.{CODEC}.{SPECIFICATION}.{FPS}，其中 CODEC 和 SPECIFICATION 同转码，FPS在原子类型时才存在；音频增强格式：{TYPE}。\n增强TYPE 取值：\n<li>Enhance：通用增强类型，可能是任意一种原子增强类型</li>\n<li>原子增强类型</li>  视频原子增强类型取值：\n    Sdr2hdr：SDR2HDR\n    SuperResolution：超分\n    InsertFrame：插帧\n    ComprehensiveEnhancement：综合增强\n    NoiseReduction：视频降噪\n    ColorEnhancement：色彩增强\n    RemoveScratches：去划痕\n    Deburr：去毛刺\n    DetailEnhancement：细节增强\n    LightEnhancement：低光照增强\n    FaceEnhancement：人脸增强\n  音频原子增强类型取值：\n    AudioNoiseReduction\n    VolumeBalance\n    AudioBeautify\n    AudioSeparation\n\n3、截图规格：\n<li>ImageSprite：雪碧图</li>\n<li>SampleSnapshot：采样截图</li>\n<li>SnapshotByTime：时间点截图</li>\n4、图片处理规格：{TYPE}.{CODEC}.{SPECIFICATION}\n<li> ImageCompression：图片编码</li>\n<li> ImageSuperResolution：图片超分</li>\n<li> EnhanceImageColor：图片色彩增强</li>\n5、智能分析规格：\n<li>AIAnalysis：分析大类，对于未拆分的</li>\n<li>VideoTag：视频标签</li>\n<li>VideoClassification：视频分类</li>\n<li>SmartCover：智能封面</li>\n<li>FrameLabel：帧标签</li>\n<li>VideoSplit：视频拆条</li>\n<li>Highlights：精彩集锦</li>\n<li>OpeningAndEnding：片头片尾</li>\n6、智能识别规格：\n<li>AIRecognition：识别大类，对于未拆分的</li>\n<li>FaceRecognition：人脸识别</li>\n<li>TextRecognition：文字识别</li>\n<li>ObjectRecognition：物体识别</li>\n<li>VoiceRecognition：语音识别</li>\n<li>VoiceTranslation：语音翻译</li>\n7、内容审核、转动图无细分规格。",
+          "example": "无",
+          "member": "SpecificationDataItem",
+          "name": "Details",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskStatDataItem": {
+      "document": "任务统计数据，包括任务数和用量。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据所在时间区间的开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F)。如：当时间粒度为天，2018-12-01T00:00:00+08:00，表示2018年12月1日（含）到2018年12月2日（不含）区间。",
+          "example": "",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务数。",
+          "example": "",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务用量。",
+          "example": "",
+          "member": "int64",
+          "name": "Usage",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
