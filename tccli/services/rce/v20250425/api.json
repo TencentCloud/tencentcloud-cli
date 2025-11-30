@@ -265,6 +265,15 @@
           "name": "UserId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备IP",
+          "example": "198.100.***.***",
+          "member": "string",
+          "name": "DeviceIp",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

@@ -12,7 +12,8 @@ tccli rce DescribeDeviceRisk --cli-unfold-argument  \
     --BizData.SceneCode 1 \
     --BizData.FaceIdToken a24fr3g****b5de3 \
     --BizData.Source faceid \
-    --BizData.DeviceToken AYIAwde9ZhP4QUS***Ddqsr
+    --BizData.DeviceToken AYIAwde9ZhP4QUS***Ddqsr \
+    --BizData.DeviceIp 198.100.***.***
 ```
 
 Output: 
