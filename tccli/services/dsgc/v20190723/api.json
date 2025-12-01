@@ -3539,6 +3539,15 @@
           "type": "string"
         },
         {
+          "disabled": false,
+          "document": "必填，COS资源列表",
+          "example": "cosItem",
+          "member": "CosBucketItem",
+          "name": "CosBucketItems",
+          "required": true,
+          "type": "list"
+        },
+        {
           "disabled": true,
           "document": "资源所处地域。",
           "example": "ap-guangzhou",
@@ -3553,15 +3562,6 @@
           "example": "[\"cos-123\",\"cos-456\"]",
           "member": "string",
           "name": "Buckets",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "必填，COS资源列表",
-          "example": "cosItem",
-          "member": "CosBucketItem",
-          "name": "CosBucketItems",
           "required": false,
           "type": "list"
         }
@@ -3602,6 +3602,15 @@
           "type": "string"
         },
         {
+          "disabled": false,
+          "document": "必填，云数据库资源列表。",
+          "example": "[cloudResourceItem]",
+          "member": "CloudResourceItem",
+          "name": "CloudResourceItems",
+          "required": true,
+          "type": "list"
+        },
+        {
           "disabled": true,
           "document": "资源所处地域。",
           "example": "ap-guangzhou",
@@ -3634,15 +3643,6 @@
           "example": "[item]",
           "member": "DspaCloudResourceMeta",
           "name": "Items",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "必填，云数据库资源列表。",
-          "example": "[cloudResourceItem]",
-          "member": "CloudResourceItem",
-          "name": "CloudResourceItems",
           "required": false,
           "type": "list"
         }

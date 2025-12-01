@@ -1,0 +1,126 @@
+{
+  "actions": {
+    "CreateRoleUser": {
+      "document": "创建人员",
+      "input": "CreateRoleUserRequest",
+      "name": "创建人员",
+      "output": "CreateRoleUserResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-02-17",
+    "api_brief": "事件中心可支持“拖拉拽”方式生成页面表单，支持丰富的审批能力，支持API对接交互，支持多样的流程逻辑配置等。可以低代码方式实现较复杂业务流程的搭建、审批、数据流转等。",
+    "serviceNameCN": "事件中心",
+    "serviceShortName": "evt"
+  },
+  "objects": {
+    "CreateRoleUserRequest": {
+      "document": "CreateRoleUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色体系ID",
+          "example": "8012300044",
+          "member": "int64",
+          "name": "RoleSystemId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "人员ID",
+          "example": "U20440034",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "人员名称",
+          "example": "张大拿",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enabled",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "手机号",
+          "example": "15012341234",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "属性列表",
+          "example": "无",
+          "member": "UserAttribute",
+          "name": "Attributes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoleUserResponse": {
+      "document": "CreateRoleUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人员ID",
+          "example": "U20440034",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserAttribute": {
+      "document": "人员属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性键名",
+          "example": "Role_50034040404",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "属性值",
+          "example": "[50034040404, 50034040403]",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

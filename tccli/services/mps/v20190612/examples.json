@@ -34,6 +34,12 @@
     ],
     "CreateAIAnalysisTemplate": [
       {
+        "document": "创建一个自定义视频内容分析模板，开启全部智能分析任务。",
+        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\n&Name=智能分析模板\n&Comment=模板3\n&ClassificationConfigure.Switch=ON\n&TagConfigure.Switch=ON\n&CoverConfigure.Switch=NO\n&FrameTagConfigure.Switch=ON\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 33,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "创建开启全部内容分析任务的模板"
+      },
+      {
         "document": "创建一个自定义视频内容分析模板，开启智能分类任务。",
         "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\n&Name=智能分析模板\n&Comment=模板1\n&ClassificationConfigure.Switch=ON\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 30,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
@@ -44,21 +50,9 @@
         "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\n&Name=智能分析模板\n&Comment=模板2\n&ClassificationConfigure.Switch=ON\n&TagConfigure.Switch=ON\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 31,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建指定多项分析任务的模板"
-      },
-      {
-        "document": "创建一个自定义视频内容分析模板，开启全部智能分析任务。",
-        "input": "https://mps.tencentcloudapi.com/?Action=CreateAIAnalysisTemplate\n&Name=智能分析模板\n&Comment=模板3\n&ClassificationConfigure.Switch=ON\n&TagConfigure.Switch=ON\n&CoverConfigure.Switch=NO\n&FrameTagConfigure.Switch=ON\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 33,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "创建开启全部内容分析任务的模板"
       }
     ],
     "CreateAIRecognitionTemplate": [
-      {
-        "document": "创建语音翻译模板",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"TranslateConfigure\": {\n        \"Switch\": \"ON\",\n        \"SourceLanguage\": \"en\",\n        \"DestinationLanguage\": \"zh\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 278654,\n        \"RequestId\": \"62cca75c-7dd3-4819-ad9d-13b48a4b4018\"\n    }\n}",
-        "title": "创建语音翻译模板"
-      },
       {
         "document": "创建一个自定义视频内容识别模板，同时开启人脸识别任务，人脸库使用默认库，人脸识别过滤分数为 90 分。",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板2\",\n    \"FaceConfigure\": {\n        \"Switch\": \"ON\",\n        \"Score\": \"90\",\n        \"FaceLibrary\": \"Default\"\n    },\n    \"Name\": \"智能识别模板\"\n}",
@@ -70,6 +64,12 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Comment\": \"模板3\",\n    \"FaceConfigure\": {\n        \"Switch\": \"ON\",\n        \"FaceLibrary\": \"All\"\n    },\n    \"Name\": \"智能识别模板\"\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 32,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建支持多项识别任务的模板，同时指定截帧间隔"
+      },
+      {
+        "document": "创建语音翻译模板",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIRecognitionTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"recog\",\n    \"TranslateConfigure\": {\n        \"Switch\": \"ON\",\n        \"SourceLanguage\": \"en\",\n        \"DestinationLanguage\": \"zh\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 278654,\n        \"RequestId\": \"62cca75c-7dd3-4819-ad9d-13b48a4b4018\"\n    }\n}",
+        "title": "创建语音翻译模板"
       }
     ],
     "CreateAdaptiveDynamicStreamingTemplate": [
@@ -202,16 +202,16 @@
     ],
     "CreateSmartEraseTemplate": [
       {
-        "document": "创建带有提取和翻译功能的擦除字幕模板",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSmartEraseTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"擦除字幕模板2\",\n    \"EraseType\": \"subtitle\",\n    \"EraseSubtitleConfig\": {\n        \"SubtitleEraseMethod\": \"auto\",\n        \"SubtitleModel\": \"standard\",\n        \"OcrSwitch\": \"ON\",\n        \"SubtitleLang\": \"zh_en\",\n        \"SubtitleFormat\": \"vtt\",\n        \"TransSwitch\": \"ON\",\n        \"TransDstLang\": \"en\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Definition\": 200409,\n        \"RequestId\": \"ac14b422-1c7b-407d-9b95-530f1eea063d\"\n    }\n}",
-        "title": "创建带有提取和翻译功能的擦除字幕模板"
-      },
-      {
         "document": "创建具有对预设区域检测文本并擦除，同时对指定时间段内指定区域直接擦除能力的擦除字幕模板",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSmartEraseTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"擦除字幕模板2\",\n    \"EraseType\": \"subtitle\",\n    \"EraseSubtitleConfig\": {\n        \"SubtitleEraseMethod\": \"auto\",\n        \"SubtitleModel\": \"standard\",\n        \"CustomAreas\": [\n            {\n                \"BeginMs\": 200,\n                \"EndMs\": 3000,\n                \"Areas\": [\n                    {\n                        \"LeftTopX\": 0.05,\n                        \"LeftTopY\": 0.1,\n                        \"RightBottomX\": 0.75,\n                        \"RightBottomY\": 0.9,\n                        \"Unit\": 1\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 200410,\n        \"RequestId\": \"835f2ecd-8666-4717-998b-02680437a8ef\"\n    }\n}",
         "title": "创建同时具有自动擦除和区域擦除能力的擦除字幕模板"
+      },
+      {
+        "document": "创建带有提取和翻译功能的擦除字幕模板",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSmartEraseTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"擦除字幕模板2\",\n    \"EraseType\": \"subtitle\",\n    \"EraseSubtitleConfig\": {\n        \"SubtitleEraseMethod\": \"auto\",\n        \"SubtitleModel\": \"standard\",\n        \"OcrSwitch\": \"ON\",\n        \"SubtitleLang\": \"zh_en\",\n        \"SubtitleFormat\": \"vtt\",\n        \"TransSwitch\": \"ON\",\n        \"TransDstLang\": \"en\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 200409,\n        \"RequestId\": \"ac14b422-1c7b-407d-9b95-530f1eea063d\"\n    }\n}",
+        "title": "创建带有提取和翻译功能的擦除字幕模板"
       }
     ],
     "CreateSmartSubtitleTemplate": [
@@ -564,15 +564,9 @@
     ],
     "DescribeAIRecognitionTemplates": [
       {
-        "document": "获取序号从 0 开始，总共 10 个视频内容识别模板。",
-        "input": "https://mps.tencentcloudapi.com/?Action=DescribeAIRecognitionTemplates\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AIRecognitionTemplateSet\": [\n            {\n                \"Definition\": 0,\n                \"Name\": \"abc\",\n                \"Comment\": \"abc\",\n                \"FaceConfigure\": {\n                    \"Switch\": \"abc\",\n                    \"Score\": 0,\n                    \"DefaultLibraryLabelSet\": [\n                        \"abc\"\n                    ],\n                    \"UserDefineLibraryLabelSet\": [\n                        \"abc\"\n                    ],\n                    \"FaceLibrary\": \"abc\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"abc\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"abc\",\n                    \"LabelSet\": [\n                        \"abc\"\n                    ]\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"abc\",\n                    \"SubtitleFormat\": \"abc\",\n                    \"SourceLanguage\": \"abc\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"abc\",\n                    \"LabelSet\": [\n                        \"abc\"\n                    ]\n                },\n                \"TranslateConfigure\": {\n                    \"Switch\": \"abc\",\n                    \"SourceLanguage\": \"abc\",\n                    \"DestinationLanguage\": \"abc\",\n                    \"SubtitleFormat\": \"abc\"\n                },\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Type\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "获取指定个数的视频内容识别模板"
-      },
-      {
         "document": "",
         "input": "https://mps.tencentcloudapi.com/?Action=DescribeAIRecognitionTemplates\n&Definitions.0=30\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AIRecognitionTemplateSet\": [\n            {\n                \"Definition\": 0,\n                \"Name\": \"abc\",\n                \"Comment\": \"abc\",\n                \"FaceConfigure\": {\n                    \"Switch\": \"abc\",\n                    \"Score\": 0,\n                    \"DefaultLibraryLabelSet\": [\n                        \"abc\"\n                    ],\n                    \"UserDefineLibraryLabelSet\": [\n                        \"abc\"\n                    ],\n                    \"FaceLibrary\": \"abc\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"abc\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"abc\",\n                    \"LabelSet\": [\n                        \"abc\"\n                    ]\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"abc\",\n                    \"SubtitleFormat\": \"abc\",\n                    \"SourceLanguage\": \"abc\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"abc\",\n                    \"LabelSet\": [\n                        \"abc\"\n                    ]\n                },\n                \"TranslateConfigure\": {\n                    \"Switch\": \"abc\",\n                    \"SourceLanguage\": \"abc\",\n                    \"DestinationLanguage\": \"abc\",\n                    \"SubtitleFormat\": \"abc\"\n                },\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Type\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AIRecognitionTemplateSet\": [\n            {\n                \"Definition\": 30,\n                \"Name\": \"Presetting Template30\",\n                \"Comment\": \"默认模板，打开所有识别开关，只使用户自定义库且不带过滤标签\",\n                \"Type\": \"Preset\",\n                \"FaceConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"Score\": 95,\n                    \"DefaultLibraryLabelSet\": [],\n                    \"UserDefineLibraryLabelSet\": [],\n                    \"FaceLibrary\": \"UserDefine\"\n                },\n                \"OcrFullTextConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"OcrWordsConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"LabelSet\": []\n                },\n                \"AsrFullTextConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"SubtitleFormat\": \"vtt\",\n                    \"SourceLanguage\": \"zh\"\n                },\n                \"AsrWordsConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"LabelSet\": []\n                },\n                \"TranslateConfigure\": {\n                    \"Switch\": \"OFF\",\n                    \"SourceLanguage\": \"en\",\n                    \"DestinationLanguage\": \"zh\",\n                    \"SubtitleFormat\": \"vtt\"\n                },\n                \"CreateTime\": \"2019-06-13T11:07:07+08:00\",\n                \"UpdateTime\": \"2020-01-06T08:21:46+08:00\"\n            }\n        ],\n        \"RequestId\": \"9a12345af0-4a9c-ae02-704f3d5a8040\"\n    }\n}",
         "title": "获取模板 ID 为 30 的视频内容识别模板"
       }
     ],
@@ -1046,16 +1040,16 @@
         "title": "关闭智能封面任务"
       },
       {
-        "document": "修改自定义视频内容分析模板，开启智能封面任务。",
-        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&CoverConfigure.Switch=ON\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
-        "title": "开启智能封面任务"
-      },
-      {
         "document": "修改自定义视频内容分析模板，开启智能标签任务，关闭智能封面任务。",
         "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&TagConfigure.Switch=ON\n&CoverConfigure.Switch=OFF\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "同时开启一项和关闭一项内容分析任务"
+      },
+      {
+        "document": "修改自定义视频内容分析模板，开启智能封面任务。",
+        "input": "https://mps.tencentcloudapi.com/?Action=ModifyAIAnalysisTemplate\n&Definition=30\n&CoverConfigure.Switch=ON\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "title": "开启智能封面任务"
       }
     ],
     "ModifyAIRecognitionTemplate": [

@@ -1290,6 +1290,15 @@
           "name": "RegisterInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否不保存联系人\n默认 false 保存联系人  true 不保存联系人\n\n设置这个参数为保存联系人的时候,他方企业签署人会被保存进发起人的联系人中。\n联系人查看可登录[电子签控制台](https://test.qian.tencent.cn/console/) 进行查看。\n如下图位置：\n![](https://qcloudimg.tencent-cloud.cn/raw/fb8a22cd615d24c21acfa0e37e2cd873.png)",
+          "example": "false",
+          "member": "bool",
+          "name": "NotSaveContact",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -7453,12 +7462,30 @@
         },
         {
           "disabled": false,
-          "document": "企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>",
+          "document": "企业证照类型：<ul><li> **USCC** :(默认)工商组织营业执照</li><li> **PRACTICELICENSEOFMEDICALINSTITUTION** :医疗机构执业许可证</li></ul>\n\n注意 ：\n如果企业证照类型是医疗机构，则参数设置企业授权方式(AuthorizationTypes)和企业认证方式(AuthorizationMethods)都无效.\n医疗机构的企业授权方式  仅有授权书的方式。企业认证仅有上传营业执照的方式。",
           "example": "USCC",
           "member": "string",
           "name": "OrganizationIdCardType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许编辑企业注册时的证照类型\n\ntrue:不允许编辑。\n\nfalse:允许编辑（默认值）。\n\n\n注意：\n入参中的OrganizationIdCardType值不为空的时候，才可设置为不可编辑。",
+          "example": "true",
+          "member": "bool",
+          "name": "OrganizationIdCardTypeSame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "指定企业认证的授权方式 支持多选:\n\n<ul>\n<li><strong>1</strong>: 上传营业执照</li>\n<li><strong>2</strong>: 腾讯云快速认证</li>\n<li><strong>3</strong>: 腾讯商户号授权<font color=\"red\">（仅支持小程序端）</font></li>\n</ul>\n\n注意：\n1.如果没有指定，则默认是1,仅有上传营业执照。\n2.H5 仅支持上传营业执照。",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "AuthorizationMethod",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -14911,6 +14938,15 @@
           "name": "SignEndpoints",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否不保存联系人\n默认 false 保存联系人  true 不保存联系人\n\n设置这个参数为保存联系人的时候,他方企业签署人会被保存进发起人的联系人中。\n联系人查看可登录[电子签控制台](https://test.qian.tencent.cn/console/) 进行查看。\n如下图位置：\n![](https://qcloudimg.tencent-cloud.cn/raw/fb8a22cd615d24c21acfa0e37e2cd873.png)\n\n",
+          "example": "false",
+          "member": "bool",
+          "name": "NotSaveContact",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -18241,7 +18277,7 @@
       "usage": "both"
     },
     "RegisterInfo": {
-      "document": "发起流程快速注册相关信息",
+      "document": "创建合同，若对方签署人的企业信息还未在腾讯电子签注册。则在进行引导企业注册时控制企业填写的信息。\n具体可查看[视频](https://qian.tencent.com/developers/video/?menu=scene&id=6)",
       "members": [
         {
           "disabled": false,
@@ -18288,7 +18324,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": true,
+          "disabled": false,
           "document": "指定企业认证的授权方式 支持多选:\n\n<ul>\n<li><strong>2</strong>: 法人授权方式</li>\n<li><strong>5</strong>: 授权书+对公打款方式</li>\n</ul>",
           "example": "[2,5]",
           "member": "uint64",
@@ -18299,7 +18335,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "指定企业认证的授权方式:\n\n<ul>\n<li><strong>2</strong>: 法人授权方式</li>\n<li><strong>5</strong>: 授权书+对公打款方式</li>\n</ul>",
           "example": "2",
           "member": "int64",
@@ -18307,6 +18343,78 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定企业认证的授权方式 支持多选:\n\n<ul>\n<li><strong>1</strong>: 上传营业执照</li>\n<li><strong>2</strong>: 腾讯云快速认证</li>\n<li><strong>3</strong>: 腾讯商户号授权<font color=\"red\">（仅支持小程序端）</font></li>\n</ul>",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "AuthorizationMethods",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业证照类型：\n\nUSCC :(默认)工商组织营业执照\nPRACTICELICENSEOFMEDICALINSTITUTION :医疗机构执业许可证",
+          "example": "USCC",
+          "member": "string",
+          "name": "OrganizationIdCardType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业创建时候的个性化参数。\n其中，包括一下内容：\nLegalNameSame  是否可以编辑法人。\nUnifiedSocialCreditCodeSame  是否可以编辑证件号码。\nOrganizationIdCardTypeSame  是否可以更改证照类型。",
+          "example": "无",
+          "member": "RegisterInfoOption",
+          "name": "RegisterInfoOption",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RegisterInfoOption": {
+      "document": "创建合同，若对方签署人的企业信息还未在腾讯电子签注册。则在进行引导企业注册时控制企业填写信息的个性化参数。\n具体可查看[视频](https://qian.tencent.com/developers/video/?menu=scene&id=6)",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否允许编辑企业注册时的法人姓名。\n<br/>true：允许编辑<br/>false：不允许编辑（默认值）<br/>\n\n注意：\nRegisterInfo 中的LegalName值不为空的时候，才可设置为不可编辑。",
+          "example": "true",
+          "member": "bool",
+          "name": "LegalNameSame",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许编辑企业注册时统一社会信用代码。\n<br/>true:不允许编辑。\n<br/>false:允许编辑（默认值）。\n<br/>\n\n\n注意：\nRegisterInfo 中的UnifiedSocialCreditCode值不为空的时候，才可设置为不可编辑。\n",
+          "example": "true",
+          "member": "bool",
+          "name": "UnifiedSocialCreditCodeCNameSame",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许编辑企业注册时的证照类型\n<br/>true:不允许编辑。\n<br/>false:允许编辑（默认值）。\n<br/>\n\n注意：\nRegisterInfo 中的OrganizationIdCardType值不为空的时候，才可设置为不可编辑。",
+          "example": "true",
+          "member": "bool",
+          "name": "OrganizationIdCardTypeSame",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

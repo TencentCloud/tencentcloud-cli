@@ -166,6 +166,14 @@
         "title": "创建主题"
       }
     ],
+    "CreateRocketMQTopicV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQTopic\n<公共请求参数>\n\n{\n    \"Topic\": \"test_topic\",\n    \"Namespace\": \"test_namespace\",\n    \"Type\": \"Normal\",\n    \"ClusterId\": \"rocketmq-xj8kr5apevj7\",\n    \"Remark\": \"测试主题\",\n    \"PartitionNum\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f844f173-93ed-4d89-979e-86e4e1d63b8a\"\n    }\n}",
+        "title": "创建主题"
+      }
+    ],
     "CreateRocketMQVipInstance": [
       {
         "document": "购买RocketMQ专享实例",

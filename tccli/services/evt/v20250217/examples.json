@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "CreateRoleUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoleUser\n<公共请求参数>\n\n{\n    \"RoleSystemId\": 81764213873244,\n    \"UserId\": \"user\",\n    \"Username\": \"name\",\n    \"Enabled\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e56eec58-c446-44d0-917b-a0df066a4f50\",\n        \"UserId\": \"user\"\n    }\n}",
+        "title": "创建用户"
+      }
+    ]
+  },
+  "version": "1.0"
+}

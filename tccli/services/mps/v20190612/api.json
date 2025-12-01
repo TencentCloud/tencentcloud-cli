@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateBlindWatermarkTemplate": {
-      "document": "创建用户自定义数字水印模板，数量上限：1000。",
+      "document": "创建用户自定义数字水印模板。",
       "input": "CreateBlindWatermarkTemplateRequest",
       "name": "创建数字水印模板",
       "output": "CreateBlindWatermarkTemplateResponse",
@@ -13359,8 +13359,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频内容分析模板唯一标识过滤条件，数组长度限制：10。",
-          "example": "[\"30\\r\\n\"]",
+          "document": "视频内容分析模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[30]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -13387,7 +13387,7 @@
         {
           "disabled": false,
           "document": "模板类型过滤条件，不填则返回所有，可选值：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。",
-          "example": "\"\"",
+          "example": "Preset",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -13396,7 +13396,7 @@
         {
           "disabled": false,
           "document": "视频内容分析模板标识过滤条件，长度限制：64 个字符。",
-          "example": "“”",
+          "example": "内容分析模板",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -13442,8 +13442,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频内容识别模板唯一标识过滤条件，数组长度限制：10。",
-          "example": "[\"30\\r\\n\"]",
+          "document": "视频内容识别模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[30]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -13470,7 +13470,7 @@
         {
           "disabled": false,
           "document": "模板类型过滤条件，不填则返回所有，可选值：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。",
-          "example": "“”",
+          "example": "Preset",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -13479,7 +13479,7 @@
         {
           "disabled": false,
           "document": "视频内容识别模板标识过滤条件，长度限制：64 个字符。",
-          "example": "“”",
+          "example": "Presetting Template",
           "member": "string",
           "name": "Name",
           "required": false,

@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CreateChatCompletion": {
-      "document": "用于创建一次回话的SSE接口",
+      "document": "用于创建一次会话的SSE接口",
       "input": "CreateChatCompletionRequest",
       "name": "创建一个聊天会话",
       "output": "CreateChatCompletionResponse",
@@ -740,6 +740,15 @@
           "example": "false",
           "member": "bool",
           "name": "IsHidden",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏会话",
+          "example": "false",
+          "member": "bool",
+          "name": "IsChatHidden",
           "required": false,
           "type": "bool"
         }

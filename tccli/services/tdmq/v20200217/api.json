@@ -140,6 +140,13 @@
       "output": "CreateRocketMQTopicResponse",
       "status": "online"
     },
+    "CreateRocketMQTopicV2": {
+      "document": "创建RocketMQ主题",
+      "input": "CreateRocketMQTopicV2Request",
+      "name": "创建 RocketMQ 主题",
+      "output": "CreateRocketMQTopicV2Response",
+      "status": "online"
+    },
     "CreateRocketMQVipInstance": {
       "document": "创建RocketMQ专享实例",
       "input": "CreateRocketMQVipInstanceRequest",
@@ -4509,6 +4516,87 @@
     },
     "CreateRocketMQTopicResponse": {
       "document": "CreateRocketMQTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQTopicV2Request": {
+      "document": "CreateRocketMQTopicV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction, DelayScheduled。Transaction仅在专享版支持。",
+          "example": "Normal",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rocketmq-4k4orqgq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "test_ns",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "info-mark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分区数，全局顺序无效",
+          "example": "3",
+          "member": "int64",
+          "name": "PartitionNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRocketMQTopicV2Response": {
+      "document": "CreateRocketMQTopicV2返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
