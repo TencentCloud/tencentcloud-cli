@@ -9780,7 +9780,7 @@
         {
           "disabled": false,
           "document": "访问账号uin",
-          "example": "100*001",
+          "example": "100***01",
           "member": "string",
           "name": "AccUin",
           "required": false,

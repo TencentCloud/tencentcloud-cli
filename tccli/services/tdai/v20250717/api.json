@@ -1218,10 +1218,28 @@
         },
         {
           "disabled": false,
-          "document": "最后一条流式TokenID",
+          "document": "流ID",
+          "example": "strm-j92jbf9w",
+          "member": "string",
+          "name": "StreamingId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始拉取的流式TokenID。0表示从该流最早的TokenID开始获取",
           "example": "0",
+          "member": "string",
+          "name": "BeginStreamingTokenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "单次获取的token数量，默认2000",
+          "example": "2000",
           "member": "int64",
-          "name": "LastStreamingTokenId",
+          "name": "TokenLimit",
           "required": false,
           "type": "int"
         }

@@ -1,44 +1,49 @@
 **Example 1: 购买主实例**
 
-购买主实例
+
 
 Input: 
 
 ```
 tccli cdb CreateDBInstance --cli-unfold-argument  \
-    --ResourceTags.0.TagKey march \
-    --ResourceTags.0.TagValue march1 \
-    --Zone ap-guangzhou-3 \
-    --UniqVpcId vpc-0akbol5v \
-    --ProjectId 0 \
-    --InstanceRole master \
-    --GoodsNum 1 \
-    --Period 1 \
-    --Volume 25 \
-    --EngineVersion 5.6 \
-    --UniqSubnetId subnet-fyrtjbqw \
     --Memory 1000 \
-    --InstanceNodes 2
+    --Volume 200 \
+    --Period 12 \
+    --GoodsNum 1 \
+    --Zone ap-guangzhou-ziyan3 \
+    --UniqVpcId vpc-grpykq9v \
+    --UniqSubnetId subnet-aq06sf6a \
+    --Port 3306 \
+    --InstanceRole master \
+    --Password 190228bh \
+    --ProtectMode 1 \
+    --DeployMode 0 \
+    --SlaveZone ap-guangzhou-ziyan3 \
+    --SecurityGroup sg-9c3k3gtd \
+    --InstanceName test_create-api2 \
+    --InstanceNodes 2 \
+    --Cpu 1 \
+    --EngineType InnoDB
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "InstanceIds": [
-            "cdb-pn6gd5jp"
-        ],
         "DealIds": [
-            "20171201110011"
-        ]
+            "20251117217021754844851"
+        ],
+        "InstanceIds": [
+            "cdb-4wixd9pn"
+        ],
+        "RequestId": "bae642bd-305a-40fe-b64c-356dc809977b"
     }
 }
 ```
 
 **Example 2: 购买只读实例**
 
-购买只读实例
+
 
 Input: 
 
@@ -74,7 +79,7 @@ Output:
 
 **Example 3: 创建实例时设置表名大小写敏感**
 
-创建实例时设置表名大小写敏感
+
 
 Input: 
 

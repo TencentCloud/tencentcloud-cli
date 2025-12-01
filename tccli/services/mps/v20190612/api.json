@@ -21196,7 +21196,7 @@
         },
         {
           "disabled": false,
-          "document": "图片框选区域类型，可选值：\n<li>logo：图标；</li>\n<li>text：文字；</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片框选区域类型，可选值：\n<li>logo：图标；</li>\n<li>text：文字；</li>\n<li>watermark：水印；</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"logo\", \"text\"]",
           "member": "string",
           "name": "DetectTypes",
@@ -29439,7 +29439,7 @@
         },
         {
           "disabled": false,
-          "document": "图片处理模板唯一标识。",
+          "document": "图片处理模板唯一标识。\n图片模板功能内测中，如需使用请提交工单申请。",
           "example": "20001",
           "member": "uint64",
           "name": "Definition",
@@ -29448,7 +29448,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。",
+          "document": "资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。",
           "example": "vts-24000-0",
           "member": "string",
           "name": "ResourceId",

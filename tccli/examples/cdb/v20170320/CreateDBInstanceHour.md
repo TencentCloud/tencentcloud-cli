@@ -6,33 +6,39 @@ Input:
 
 ```
 tccli cdb CreateDBInstanceHour --cli-unfold-argument  \
-    --ResourceTags.0.TagKey march \
-    --ResourceTags.0.TagValue march1 \
-    --Zone ap-guangzhou-3 \
-    --UniqVpcId vpc-0akbol5v \
-    --ProjectId 0 \
-    --SlaveZone ap-guangzhou-3 \
-    --InstanceRole master \
     --GoodsNum 1 \
-    --DeployMode 0 \
-    --Volume 25 \
-    --EngineVersion 5.6 \
-    --UniqSubnetId subnet-fyrtjbqw \
     --Memory 1000 \
-    --ProtectMode 0
+    --Volume 200 \
+    --UniqVpcId vpc-grpykq9v \
+    --UniqSubnetId subnet-aq06sf6a \
+    --Zone ap-guangzhou-ziyan3 \
+    --InstanceRole master \
+    --MasterRegion ap-guangzhou \
+    --Port 3306 \
+    --Password 190228bh \
+    --ProtectMode 1 \
+    --DeployMode 0 \
+    --SlaveZone ap-guangzhou-ziyan3 \
+    --SecurityGroup sg-9c3k3gtd \
+    --RoGroup.RoGroupMode alone \
+    --InstanceName test_creat_api \
+    --InstanceNodes 2 \
+    --Cpu 1 \
+    --ParamTemplateType HIGH_STABILITY \
+    --EngineType InnoDB
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "InstanceIds": [
-            "cdb-03brtubb"
-        ],
         "DealIds": [
-            "20171201160000002670226599824833"
-        ]
+            "20251117217021754869911"
+        ],
+        "InstanceIds": [
+            "cdb-lw4ulca3"
+        ],
+        "RequestId": "0b330f82-f9a6-4f18-b048-cf7b42c8cec0"
     }
 }
 ```
