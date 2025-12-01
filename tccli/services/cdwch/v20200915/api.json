@@ -979,8 +979,7 @@
           "member": "string",
           "name": "FileName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -989,8 +988,7 @@
           "member": "string",
           "name": "OldConfValue",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -999,8 +997,7 @@
           "member": "string",
           "name": "NewConfValue",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1009,8 +1006,16 @@
           "member": "string",
           "name": "FilePath",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点ip信息，可选参数，当修改集群节点级配置（例如keeper_config.xml）时此参数必填；",
+          "example": "10.xx.xx.9",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3724,7 +3729,7 @@
         {
           "disabled": false,
           "document": "节点所属的分组信息",
-          "example": " [{\"GroupName\":\"test\",\"ShardName\":\"shard-1\",\"ReplicaName\":\"rep-1\"}]",
+          "example": "无",
           "member": "GroupInfo",
           "name": "NodeGroups",
           "output_required": true,
@@ -3743,7 +3748,7 @@
         },
         {
           "disabled": false,
-          "document": "ture的时候表示该节点上部署了chproxy进程",
+          "document": "ture的时候表示该节点上部署了chPROXY进程",
           "example": "true",
           "member": "bool",
           "name": "IsCHProxy",
@@ -3783,7 +3788,7 @@
         },
         {
           "disabled": false,
-          "document": "区描述",
+          "document": "去描述",
           "example": "广州七区",
           "member": "string",
           "name": "ZoneDesc",
@@ -3797,6 +3802,16 @@
           "example": "ins-379ozssh",
           "member": "string",
           "name": "RealResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网信息",
+          "example": "subnet-gyp9541s",
+          "member": "string",
+          "name": "SubnetId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
