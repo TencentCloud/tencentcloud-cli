@@ -11,6 +11,7 @@ Output:
 ```
 {
     "Response": {
+        "SecuritySetting": {},
         "RequestId": "b8ebf0b3-ecf5-49bf-9f9d-86341c4072f1"
     }
 }

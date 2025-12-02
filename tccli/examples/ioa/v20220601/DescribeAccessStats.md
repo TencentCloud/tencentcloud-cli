@@ -10,12 +10,8 @@ tccli ioa DescribeAccessStats --cli-unfold-argument  \
     --StartTime 0 \
     --AccessType 0 \
     --AccessStatus 0 \
-    --Step abc \
+    --Step day \
     --EndpointGroup 0 \
-    --Filters.0.Field abc \
-    --Filters.0.Operator abc \
-    --Filters.0.Values abc \
-    --Filters.0.Describe abc \
     --Department 0 \
     --EndTime 0
 ```
@@ -40,7 +36,7 @@ Output:
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "82c0cfcc-2859-4b00-878b-127c77aed664"
     }
 }
 ```

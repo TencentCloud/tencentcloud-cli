@@ -10587,7 +10587,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "1763550445",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -10596,7 +10596,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "1763636845",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -10605,7 +10605,7 @@
         {
           "disabled": false,
           "document": "统计类型",
-          "example": "无",
+          "example": "[1]",
           "member": "int64",
           "name": "StatsType",
           "required": false,
@@ -10614,7 +10614,7 @@
         {
           "disabled": false,
           "document": "访问类型",
-          "example": "无",
+          "example": "[1]",
           "member": "int64",
           "name": "AccessType",
           "required": false,
@@ -10623,7 +10623,7 @@
         {
           "disabled": false,
           "document": "访问状态",
-          "example": "无",
+          "example": "[1]",
           "member": "int64",
           "name": "AccessStatus",
           "required": false,
@@ -10632,7 +10632,7 @@
         {
           "disabled": false,
           "document": "统计步长",
-          "example": "无",
+          "example": "day",
           "member": "string",
           "name": "Step",
           "required": false,
@@ -10641,7 +10641,7 @@
         {
           "disabled": false,
           "document": "终端分组",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "EndpointGroup",
           "required": false,
@@ -10659,7 +10659,7 @@
         {
           "disabled": false,
           "document": "用户分组",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Department",
           "required": false,
@@ -10722,7 +10722,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "1763550445",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -10731,7 +10731,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "1763636845",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -10740,7 +10740,7 @@
         {
           "disabled": false,
           "document": "Top数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Size",
           "required": true,
@@ -10749,7 +10749,7 @@
         {
           "disabled": false,
           "document": "统计类型",
-          "example": "无",
+          "example": "[1]",
           "member": "int64",
           "name": "StatsType",
           "required": false,
@@ -10758,7 +10758,7 @@
         {
           "disabled": false,
           "document": "访问类型",
-          "example": "无",
+          "example": "[1]",
           "member": "int64",
           "name": "AccessType",
           "required": false,
@@ -10767,7 +10767,7 @@
         {
           "disabled": false,
           "document": "访问状态",
-          "example": "无",
+          "example": "[1]",
           "member": "int64",
           "name": "AccessStatus",
           "required": false,
@@ -10776,7 +10776,7 @@
         {
           "disabled": false,
           "document": "终端分组",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "EndpointGroup",
           "required": false,
@@ -10794,7 +10794,7 @@
         {
           "disabled": false,
           "document": "用户分组",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Department",
           "required": false,
@@ -11290,6 +11290,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏",
+          "example": "0",
+          "member": "int64",
+          "name": "Hidden",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -23027,7 +23038,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "134531543",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -23036,7 +23047,7 @@
         {
           "disabled": false,
           "document": "每页数目",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -23045,7 +23056,7 @@
         {
           "disabled": false,
           "document": "日志ID UserLogin-用户登录日志 IAMLogin-IAM登录日志 NGNAccess-终端访问日志 Access-代理访问日志 NGNTicket-NGN小票日志 DynamicAccess-动态访问日志",
-          "example": "无",
+          "example": "EndpointDisableDevice",
           "member": "string",
           "name": "LogId",
           "required": true,
@@ -23054,7 +23065,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": true,
@@ -23063,7 +23074,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "134531999",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -23081,7 +23092,7 @@
         {
           "disabled": false,
           "document": "用户分组",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Department",
           "required": false,
@@ -23090,7 +23101,7 @@
         {
           "disabled": false,
           "document": "终端分组",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "EndpointGroup",
           "required": false,
@@ -23108,9 +23119,27 @@
         {
           "disabled": false,
           "document": "终端类型",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新过滤条件",
+          "example": "无",
+          "member": "LogCondition",
+          "name": "RulePayload",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "过滤模式  1使用RulePayload",
+          "example": "1",
+          "member": "int64",
+          "name": "RulePayloadMode",
           "required": false,
           "type": "int"
         }
@@ -34852,6 +34881,50 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏",
+          "example": "0",
+          "member": "int64",
+          "name": "Hidden",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次同步时间",
+          "example": "2024-11-07T11:13:11+08:00\t",
+          "member": "string",
+          "name": "LatestSyncTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上一次同步结果",
+          "example": "Success",
+          "member": "string",
+          "name": "LatestSyncResult",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组路径",
+          "example": "[\"全网账户\"]\t",
+          "member": "string",
+          "name": "NamePathArr",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -34926,7 +34999,7 @@
         {
           "disabled": false,
           "document": "DLP RemoteAccess Terminal",
-          "example": "Terminal",
+          "example": "[\"Terminal\"]",
           "member": "string",
           "name": "InquireType",
           "required": false,
@@ -34961,8 +35034,8 @@
         },
         {
           "disabled": false,
-          "document": "关注点",
-          "example": "1 终端安全及集中管控 2 企业员工远程办公/移动办公 3 外部伙伴/外包/灵活用工远程访问 4 云上业务安全访问/远程运维",
+          "document": "关注点 1 终端安全及集中管控 2 企业员工远程办公/移动办公 3 外部伙伴/外包/灵活用工远程访问 4 云上业务安全访问/远程运维",
+          "example": "[1]",
           "member": "int64",
           "name": "Focus",
           "required": false,
@@ -34979,8 +35052,8 @@
         },
         {
           "disabled": false,
-          "document": "员工数量",
-          "example": "1 100人及以下 2 101-500人 3 501-1000人 4 1000-3000人 5 3000人以上",
+          "document": "员工数量 1 100人及以下 2 101-500人 3 501-1000人 4 1000-3000人 5 3000人以上 ",
+          "example": "1",
           "member": "int64",
           "name": "StaffNum",
           "required": false,
@@ -34988,8 +35061,8 @@
         },
         {
           "disabled": false,
-          "document": "渠道",
-          "example": "1 熟人介绍  2 与腾讯/渠道销售交流  3 腾讯云官网 4 网上搜索相关产品 5 电脑管家  6 市场活动/直播/公众号  7 AI搜索",
+          "document": "渠道 1 熟人介绍  2 与腾讯/渠道销售交流  3 腾讯云官网 4 网上搜索相关产品 5 电脑管家  6 市场活动/直播/公众号  7 AI搜索",
+          "example": "1",
           "member": "int64",
           "name": "Channel",
           "required": false,
@@ -35019,6 +35092,15 @@
           "example": "独立站",
           "member": "string",
           "name": "ChannelSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OneIDCode",
+          "example": "62f9109ad3c88945e8f7c752b6914feb",
+          "member": "string",
+          "name": "OneIDCode",
           "required": false,
           "type": "string"
         }
@@ -36452,6 +36534,106 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LogCondition": {
+      "document": "条件筛选",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件关系 or/and\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "or",
+          "member": "string",
+          "name": "RelateOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "条件组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogConditionItem",
+          "name": "Groups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LogConditionItem": {
+      "document": "条件组筛选",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "and",
+          "member": "string",
+          "name": "RelateOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "条件组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogConditionItem",
+          "name": "Groups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Name",
+          "member": "string",
+          "name": "FieldKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eq",
+          "member": "string",
+          "name": "Option",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"名称1\"]",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Value类型",
+          "example": "string",
+          "member": "string",
+          "name": "ValueType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -42021,102 +42203,142 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "Itime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "隐藏(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "Hide",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "硬件描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "Description",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "硬件唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "Mid",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "硬件类别标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "ClassGuid",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "类别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "ClassName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "string",
-          "name": "Instance",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "是否禁用(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "int64",
-          "name": "DisableAble",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "外设硬件列表ID(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "硬件名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "vad",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{71A27CDD-812A-11D0-BEC7-08002BE2092F}",
+          "member": "string",
+          "name": "ClassName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "硬件描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vad",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "硬件类别标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vad",
+          "member": "string",
+          "name": "ClassGuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dadaveasefefaafe",
+          "member": "string",
+          "name": "Instance",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "硬件唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mid1111111",
+          "member": "string",
+          "name": "Mid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DisableAble",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "隐藏(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Hide",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-11-10",
+          "member": "string",
+          "name": "Itime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{71A27CDD-812A-11D0-BEC7-08002BE2092F}_vad_xxxzxx",
+          "member": "string",
+          "name": "UniqueIdentifyKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "PID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xdvaeaaddaddaedaa",
+          "member": "string",
+          "name": "PID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aveasew135841vead",
+          "member": "string",
+          "name": "VID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备名称列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"设备1\",\"设备2\"]",
+          "member": "string",
+          "name": "DeviceNameList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -45501,36 +45723,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "上传URL\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "上传URL",
+          "example": "/capi/FileStorage/CreateUpload/on-premise/device/f5a69c2b-70ab-41ec-9b64-a4beabe8bd62.xlsx?signature=xxxxxxxxxxx",
           "member": "string",
           "name": "UploadURL",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上传token\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "上传token",
+          "example": "  ",
           "member": "string",
           "name": "UploadToken",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上传有效期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "上传有效期",
+          "example": "  ",
           "member": "string",
           "name": "ExpireAt",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件名（上传成功后的通知调用接口）",
+          "example": "b24tcHJlbWlzZS8xL2Y1YTY5YzJiLTcwYWItNDFlYy05YjY0LWE0YmVhYmU4YmQ2Mi54bHN4",
+          "member": "string",
+          "name": "SaveFileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

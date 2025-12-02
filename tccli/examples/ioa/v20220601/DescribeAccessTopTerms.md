@@ -11,10 +11,6 @@ tccli ioa DescribeAccessTopTerms --cli-unfold-argument  \
     --AccessType 0 \
     --AccessStatus 0 \
     --EndpointGroup 0 \
-    --Filters.0.Field abc \
-    --Filters.0.Operator abc \
-    --Filters.0.Values abc \
-    --Filters.0.Describe abc \
     --Department 0 \
     --EndTime 0 \
     --Size 0
@@ -34,17 +30,17 @@ Output:
                 "Data": [
                     {
                         "Rank": 0,
-                        "Key": "abc",
-                        "Group": "abc",
+                        "Key": "设计",
+                        "Group": "设计组",
                         "GroupNamePath": [
-                            "abc"
+                            "12.35"
                         ],
                         "Value": 0
                     }
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "82c0cfcc-2859-4b00-878b-127c77aed664"
     }
 }
 ```

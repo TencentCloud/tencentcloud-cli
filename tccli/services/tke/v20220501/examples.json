@@ -88,6 +88,14 @@
         "title": "查询 TKE 节点池列表"
       }
     ],
+    "ModifyClusterMachine": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterMachine\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-dg5wylw\",\n    \"MachineNames\": [\n        \"np-hg57ffaw-jkioi\"\n    ],\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7d6c3318-b802-4416-ba7a-eb527379eb31\"\n    }\n}",
+        "title": "修改节点自动续费标识"
+      }
+    ],
     "ModifyHealthCheckPolicy": [
       {
         "document": "",
