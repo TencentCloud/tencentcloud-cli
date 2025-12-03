@@ -1,45 +1,47 @@
 **Example 1: 查询独享集群详情**
 
-
+查询独享集群dbdc-dq8w02u5详情信息
 
 Input: 
 
 ```
 tccli dbdc DescribeInstanceDetail --cli-unfold-argument  \
-    --InstanceId dbdc-test
+    --InstanceId dbdc-dq8w02u5
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "22cb8292-b16d-11eb-8d13-525400542aa6",
-        "DbNum": 0,
+        "AssignStrategy": 1,
+        "AutoRenewFlag": 1,
+        "ClusterId": "devtest",
         "CpuAssignable": 64,
-        "HostType": 0,
-        "AutoRenewFlag": 0,
-        "Type": 0,
-        "Status": 1,
-        "InstanceId": "dbdc-56nsyijj",
-        "AssignStrategy": 0,
-        "PeriodEndTime": "2021-05-28 00:00:00",
-        "HostNum": 2,
-        "MemoryAssignable": 256,
-        "CpuSpec": 64,
-        "DiskSpec": 12000,
-        "MemorySpec": 256,
-        "MemoryAssigned": 0,
-        "StatusDesc": "运行中",
-        "InstanceName": "excluster-for-order",
         "CpuAssigned": 0,
+        "CpuSpec": 64,
+        "CreateTime": "2025-05-19 16:12:02",
+        "DbNum": 0,
+        "DiskAssignable": 10500,
+        "DiskAssigned": -12,
+        "DiskSpec": 14000,
+        "FenceId": "",
+        "HostNum": 2,
+        "HostType": 0,
+        "InstanceId": "dbdc-dq8w02u5",
+        "InstanceName": "ankersong",
+        "MemoryAssignable": 192,
+        "MemoryAssigned": -2,
+        "MemorySpec": 256,
+        "PeriodEndTime": "2025-06-19 16:12:02",
         "ProductId": 1,
-        "DiskAssignable": 6000,
-        "DiskAssigned": 0,
         "Region": "ap-guangzhou",
-        "Zone": "ap-guangzhou-3",
-        "FenceId": "cage-1-1",
-        "ClusterId": "",
-        "CreateTime": "2021-04-28 00:00:00"
+        "RequestId": "5a4e4e6b-f7a8-4494-92c1-a5adbcb8e656",
+        "ResourceTags": [],
+        "Status": 1,
+        "StatusDesc": "运行中",
+        "Type": 0,
+        "Zone": "ap-guangzhou-2",
+        "CpuType": "Intel/AMD"
     }
 }
 ```

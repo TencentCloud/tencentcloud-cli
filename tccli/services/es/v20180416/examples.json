@@ -168,6 +168,22 @@
         "title": "DescribeClusterSnapshot 查询快照列表"
       }
     ],
+    "DescribeDbTknPwdRules": [
+      {
+        "document": "查询 Dbtkn 数据库实例的密码规则",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDbTknPwdRules\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"es-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dfee0a60-ab2f-11f0-a752-5254001f3b6b\",\n        \"Rules\": [\n            {\n                \"CharacterType\": \"lowercase\",\n                \"Choices\": \"abcdefghijklmnopqrstuvwxyz\",\n                \"MinimumLength\": 4,\n                \"MustStart\": true\n            },\n            {\n                \"CharacterType\": \"uppercase\",\n                \"Choices\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                \"MinimumLength\": 2,\n                \"MustStart\": false\n            },\n            {\n                \"CharacterType\": \"numbers\",\n                \"Choices\": \"1234567890\",\n                \"MinimumLength\": 1,\n                \"MustStart\": false\n            },\n            {\n                \"CharacterType\": \"specialcharacter\",\n                \"Choices\": \"!@#$%()\",\n                \"MinimumLength\": 1,\n                \"MustStart\": false\n            }\n        ],\n        \"RequiredLength\": 12\n    }\n}",
+        "title": "查询 Dbtkn 数据库实例的密码规则"
+      }
+    ],
+    "DescribeDbTknResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDbTknResource\n<公共请求参数>\n\n{\n    \"InstanceType\": \"es\",\n    \"UserResourceId\": \"es-f90lqeug\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"test1\",\n    \"AccountHost\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnabledRotate\": true,\n        \"RequestId\": \"1dc0cfd8-674f-43c2-815a-0ae102e90cd0\"\n    }\n}",
+        "title": "获取实例账号是否开启cam授权"
+      }
+    ],
     "DescribeDiagnose": [
       {
         "document": "查询智能运维诊断结果报告",
@@ -430,6 +446,14 @@
         "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryIpTraceLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"StartTime\": \"2024-08-11 12:00:00\",\n    \"EndTime\": \"2024-08-11 12:10:00\",\n    \"Offset\": 1,\n    \"Limit\": 100,\n    \"RemoteIp\": [\n        \"127.0.0.1\"\n    ],\n    \"TraceType\": [\n        \"Request\"\n    ],\n    \"NetType\": [\n        \"Public\"\n    ],\n    \"ReqTypeOrRspStatus\": [\n        \"POST\"\n    ],\n    \"SearchKey\": \"idx-abc\",\n    \"NodeIp\": [\n        \"127.0.0.1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"IpTraceLogList\": [\n            {\n                \"Timestamp\": \"\",\n                \"RemoteIp\": \"127.0.0.1\",\n                \"TraceType\": \"req\",\n                \"NetType\": \"Public\",\n                \"Message\": \"\",\n                \"Uri\": \"message\",\n                \"PublicIp\": \"null\",\n                \"ReqTypeOrRspStatus\": \"\",\n                \"NodeIp\": \"127.0.0.1\"\n            }\n        ],\n        \"Total\": 12,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询IP溯源日志"
+      }
+    ],
+    "ResetInstancePassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstancePassword\n<公共请求参数>\n\n{\n    \"UserResourceId\": \"es-f90lqeug\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceAccount\": \"test2\",\n    \"Password\": \"elastic@123\",\n    \"AccountHost\": \"%\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResetTimestamp\": 1760694123,\n        \"TimeCost\": 120,\n        \"RequestId\": \"312a7ccb-c255-479d-b261-8563740abf8d\"\n    }\n}",
+        "title": "重置集群实例cam账号密码"
       }
     ],
     "RestartInstance": [

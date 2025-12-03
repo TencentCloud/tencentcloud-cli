@@ -147,6 +147,20 @@
       "output": "DescribeClusterSnapshotResponse",
       "status": "online"
     },
+    "DescribeDbTknPwdRules": {
+      "document": "查询 Dbtkn 数据库实例的密码规则",
+      "input": "DescribeDbTknPwdRulesRequest",
+      "name": "查询 Dbtkn 数据库实例的密码规则",
+      "output": "DescribeDbTknPwdRulesResponse",
+      "status": "online"
+    },
+    "DescribeDbTknResource": {
+      "document": "获取实例账号是否开启了密码轮转",
+      "input": "DescribeDbTknResourceRequest",
+      "name": "获取实例账号是否开启cam授权",
+      "output": "DescribeDbTknResourceResponse",
+      "status": "online"
+    },
     "DescribeDiagnose": {
       "document": "查询智能运维诊断结果报告",
       "input": "DescribeDiagnoseRequest",
@@ -376,6 +390,13 @@
       "input": "QueryIpTraceLogRequest",
       "name": "查询IP溯源日志",
       "output": "QueryIpTraceLogResponse",
+      "status": "online"
+    },
+    "ResetInstancePassword": {
+      "document": "重置实例账号开启了cam授权的密码",
+      "input": "ResetInstancePasswordRequest",
+      "name": "重置实例开启cam授权账号的密码",
+      "output": "ResetInstancePasswordResponse",
       "status": "online"
     },
     "RestartInstance": {
@@ -3417,6 +3438,153 @@
           "name": "RepositoryName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknPwdRulesRequest": {
+      "document": "DescribeDbTknPwdRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "es",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户资源",
+          "example": "es-test1",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源所处的地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源的账号",
+          "example": "test1",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknPwdRulesResponse": {
+      "document": "DescribeDbTknPwdRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "密码规则",
+          "example": "无",
+          "member": "Rules",
+          "name": "Rules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码最小长度",
+          "example": "12",
+          "member": "uint64",
+          "name": "RequiredLength",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknResourceRequest": {
+      "document": "DescribeDbTknResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "es",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户资源",
+          "example": "es-f90lqeug",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源所处的地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源的账号",
+          "example": "test1",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源的账号host",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDbTknResourceResponse": {
+      "document": "DescribeDbTknResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前是否开启了密码轮转",
+          "example": "true",
+          "member": "bool",
+          "name": "EnabledRotate",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -11791,6 +11959,89 @@
       ],
       "type": "object"
     },
+    "ResetInstancePasswordRequest": {
+      "document": "ResetInstancePassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户资源",
+          "example": "es-f90lqeug",
+          "member": "string",
+          "name": "UserResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源所处的地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ResourceRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源的账号",
+          "example": "test2",
+          "member": "string",
+          "name": "ResourceAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源的密码",
+          "example": "elastic@123",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户资源的账号host",
+          "example": "%",
+          "member": "string",
+          "name": "AccountHost",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancePasswordResponse": {
+      "document": "ResetInstancePassword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品侧重置密码耗时，毫秒维度",
+          "example": "120",
+          "member": "uint64",
+          "name": "TimeCost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品侧重置密码成功时的时间戳，按照毫秒时间戳返回",
+          "example": "1760694123",
+          "member": "uint64",
+          "name": "ResetTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RestartInstanceRequest": {
       "document": "RestartInstance请求参数结构体",
       "members": [
@@ -12133,6 +12384,52 @@
         }
       ],
       "type": "object"
+    },
+    "Rules": {
+      "document": "实例的密码规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可选：uppercase、lowercase、numbers、specialcharacter，分别表示大写字母、小写字母、数字、特殊字符",
+          "example": "specialcharacter",
+          "member": "string",
+          "name": "CharacterType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可选值，被调方注意去重，SSM 侧不会主动做去重检验，SSM 只会随机挑选字符",
+          "example": "!@#$%()",
+          "member": "string",
+          "name": "Choices",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "这种类型字符要求的最低长度，如果为 0 表示不允许这种字符，最小值为 0，最大值为密码最大长度",
+          "example": "1",
+          "member": "uint64",
+          "name": "MinimumLength",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码是否必须以这种字符开头",
+          "example": "true",
+          "member": "bool",
+          "name": "MustStart",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SQLColumn": {
       "document": "搜索接口SQL列",

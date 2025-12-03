@@ -1,6 +1,6 @@
-**Example 1: 获取Token成功**
+**Example 1: ApplySdkVerificationToken调用示例**
 
-获取核验 token
+
 
 Input: 
 
@@ -8,17 +8,21 @@ Input:
 tccli faceid ApplySdkVerificationToken --cli-unfold-argument  \
     --CheckMode 1 \
     --SecurityLevel 4 \
-    --NeedVerifyIdCard True \
-    --Extra fewfewf \
-    --IdCardType HK
+    --IdCardType HK \
+    --CompareImage /9j/4AAQSkZJRg.....s97n//2Q== \
+    --DisableChangeOcrResult True \
+    --DisableCheckOcrWarnings True \
+    --SdkVersion ENHANCED \
+    --ActionList blink \
+    --AllowExpiredDocument False
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "SdkToken": "A561B769-C347-4724-A69A-6C3B3483E107",
-        "RequestId": "d73c0c05-f7ff-419c-84cb-0756303b1925"
+        "SdkToken": "65474840-81919-014342-85A1-1F2B3E3DC7BF",
+        "RequestId": "319f2c60-09db-4120-aedb-90579e3f430a"
     }
 }
 ```

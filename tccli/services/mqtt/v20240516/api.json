@@ -77,6 +77,13 @@
       "output": "CreateJWTAuthenticatorResponse",
       "status": "online"
     },
+    "CreateMessageEnrichmentRule": {
+      "document": "创建一条消息属性增强规则",
+      "input": "CreateMessageEnrichmentRuleRequest",
+      "name": "创建消息属性增强规则",
+      "output": "CreateMessageEnrichmentRuleResponse",
+      "status": "online"
+    },
     "CreateTopic": {
       "document": "创建主题",
       "input": "CreateTopicRequest",
@@ -159,6 +166,13 @@
       "input": "DeleteInstanceRequest",
       "name": "删除MQTT实例",
       "output": "DeleteInstanceResponse",
+      "status": "online"
+    },
+    "DeleteMessageEnrichmentRule": {
+      "document": "删除消息属性增强规则",
+      "input": "DeleteMessageEnrichmentRuleRequest",
+      "name": "删除消息属性增强规则",
+      "output": "DeleteMessageEnrichmentRuleResponse",
       "status": "online"
     },
     "DeleteTopic": {
@@ -280,6 +294,13 @@
       "output": "DescribeMessageDetailsResponse",
       "status": "online"
     },
+    "DescribeMessageEnrichmentRules": {
+      "document": "查询消息属性增强规则",
+      "input": "DescribeMessageEnrichmentRulesRequest",
+      "name": "查询消息属性增强规则",
+      "output": "DescribeMessageEnrichmentRulesResponse",
+      "status": "online"
+    },
     "DescribeMessageList": {
       "document": "根据一级Topic查询消息列表",
       "input": "DescribeMessageListRequest",
@@ -385,6 +406,13 @@
       "output": "ModifyJWTAuthenticatorResponse",
       "status": "online"
     },
+    "ModifyMessageEnrichmentRule": {
+      "document": "修改消息属性增强规则\n注意：需要提交当前规则的所有属性，即使某些字段没有修改。",
+      "input": "ModifyMessageEnrichmentRuleRequest",
+      "name": "修改消息属性增强规则",
+      "output": "ModifyMessageEnrichmentRuleResponse",
+      "status": "online"
+    },
     "ModifyTopic": {
       "document": "修改主题属性",
       "input": "ModifyTopicRequest",
@@ -432,6 +460,13 @@
       "input": "UpdateAuthorizationPolicyPriorityRequest",
       "name": "更新授权策略优先级",
       "output": "UpdateAuthorizationPolicyPriorityResponse",
+      "status": "online"
+    },
+    "UpdateMessageEnrichmentRulePriority": {
+      "document": "修改消息属性增强规则优先级",
+      "input": "UpdateMessageEnrichmentRulePriorityRequest",
+      "name": "更新消息增强规则优先级",
+      "output": "UpdateMessageEnrichmentRulePriorityResponse",
       "status": "online"
     }
   },
@@ -1647,6 +1682,107 @@
       ],
       "type": "object"
     },
+    "CreateMessageEnrichmentRuleRequest": {
+      "document": "CreateMessageEnrichmentRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "rule1",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则匹配条件，JSON格式，需要Base64编码\n样例\n{\"clientId\":\"client-1\",\"username\":\"client-1\",\"topic\":\"home/room1\"}\nBase64后\neyJjbGllbnRJZCI6ImNsaWVudC0xIiwidXNlcm5hbWUiOiJjbGllbnQtMSIsInRvcGljIjoiaG9tZS9yb29tMSJ9",
+          "example": "eyJjbGllbnRJZCI6ImNsaWVudC0xIiwidXNlcm5hbWUiOiJjbGllbnQtMSIsInRvcGljIjoiaG9tZS9yb29tMSJ9",
+          "member": "string",
+          "name": "Condition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的动作，JSON格式，需要Base64编码\n样例\n{\"messageExpiryInterval\":360,\"responseTopic\":\"replies/devices/${clientid}\",\"correlationData\":\"${traceid}\",\"userProperty\":[{\"key\":\"trace-id\",\"value\":\"${traceid}\"}]}\nBASE64后\neyJtZXNzYWdlRXhwaXJ5SW50ZXJ2YWwiOjM2MCwicmVzcG9uc2VUb3BpYyI6InJlcGxpZXMvZGV2aWNlcy8ke2NsaWVudGlkfSIsImNvcnJlbGF0aW9uRGF0YSI6IiR7dHJhY2VpZH0iLCJ1c2VyUHJvcGVydHkiOlt7ImtleSI6InRyYWNlLWlkIiwidmFsdWUiOiIke3RyYWNlaWR9In1dfQ==",
+          "example": "eyJtZXNzYWdlRXhwaXJ5SW50ZXJ2YWwiOjM2MCwicmVzcG9uc2VUb3BpYyI6InJlcGxpZXMvZGV2aWNlcy8ke2NsaWVudGlkfSIsImNvcnJlbGF0aW9uRGF0YSI6IiR7dHJhY2VpZH0iLCJ1c2VyUHJvcGVydHkiOlt7ImtleSI6InRyYWNlLWlkIiwidmFsdWUiOiIke3RyYWNlaWR9In1dfQ==",
+          "member": "string",
+          "name": "Actions",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级，数字越小，优先级越高，高优先级覆盖低低优先级。UserPropertiy字段会合并",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略状态。 0:未定义；1:激活；2:不激活；默认不激活",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备注，长度不超过128个字符。",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMessageEnrichmentRuleResponse": {
+      "document": "CreateMessageEnrichmentRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTopicRequest": {
       "document": "CreateTopic请求参数结构体",
       "members": [
@@ -2107,6 +2243,42 @@
     },
     "DeleteInstanceResponse": {
       "document": "DeleteInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMessageEnrichmentRuleRequest": {
+      "document": "DeleteMessageEnrichmentRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息属性增强规则id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMessageEnrichmentRuleResponse": {
+      "document": "DeleteMessageEnrichmentRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3754,6 +3926,43 @@
       ],
       "type": "object"
     },
+    "DescribeMessageEnrichmentRulesRequest": {
+      "document": "DescribeMessageEnrichmentRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云MQTT实例ID，从 DescribeInstanceList接口或控制台获得。",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageEnrichmentRulesResponse": {
+      "document": "DescribeMessageEnrichmentRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息增强策略",
+          "example": "无",
+          "member": "MessageEnrichmentRuleItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMessageListRequest": {
       "document": "DescribeMessageList请求参数结构体",
       "members": [
@@ -5308,6 +5517,136 @@
       ],
       "usage": "out"
     },
+    "MessageEnrichmentRuleItem": {
+      "document": "MessageEnrichmentRuleItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略规则ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MQTT集群ID",
+          "example": "mqtt-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略规则名",
+          "example": "rule1",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则匹配条件，JSON格式，需要Base64编码 \n样例 {\"clientId\":\"client-1\",\"username\":\"client-1\",\"topic\":\"home/room1\"}\nBase64后 eyJjbGllbnRJZCI6ImNsaWVudC0xIiwidXNlcm5hbWUiOiJjbGllbnQtMSIsInRvcGljIjoiaG9tZS9yb29tMSJ9",
+          "example": "{\"clientId\":\"client-1\",\"username\":\"client-1\",\"topic\":\"home/room1\"}",
+          "member": "string",
+          "name": "Condition",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的动作，JSON格式，需要Base64编码\n 样例\n{\"messageExpiryInterval\":360,\"response Topic\":\"replies/devices/${clientid}\",\"correlationData\":\"${traceid}\",\"userProperty\":[{\"key\":\"trace-id\",\"value\":\"${traceid}\"},{\"key\":\"data-source\",\"value\":\"rule-engine\"}]}\nBASE64后 eyJtZXNzYWdlRXhwaXJ5SW50ZXJ2YWwiOjM2MCwicmVzcG9uc2UgVG9waWMiOiJyZXBsaWVzL2RldmljZXMvJHtjbGllbnRpZH0iLCJjb3JyZWxhdGlvbkRhdGEiOiIke3RyYWNlaWR9IiwidXNlclByb3BlcnR5IjpbeyJrZXkiOiJ0cmFjZS1pZCIsInZhbHVlIjoiJHt0cmFjZWlkfSJ9LHsia2V5IjoiZGF0YS1zb3VyY2UiLCJ2YWx1ZSI6InJ1bGUtZW5naW5lIn1dfQ==",
+          "example": "eyJtZXNzYWdlRXhwaXJ5SW50ZXJ2YWwiOjM2MCwicmVzcG9uc2UgVG9waWMiOiJyZXBsaWVzL2RldmljZXMvJHtjbGllbnRpZH0iLCJjb3JyZWxhdGlvbkRhdGEiOiIke3RyYWNlaWR9IiwidXNlclByb3BlcnR5IjpbeyJrZXkiOiJ0cmFjZS1pZCIsInZhbHVlIjoiJHt0cmFjZWlkfSJ9XX0=",
+          "member": "string",
+          "name": "Actions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级，数字越小，优先级越高，高优先级覆盖低优先级。UserProperty字段会合并",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略状态。 0:未定义；1:激活；2:不激活；默认不激活",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。毫秒级时间戳 。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。毫秒级时间戳 。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MessageEnrichmentRulePriority": {
+      "document": "消息属性增强规则优先级",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息属性增强规则id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "ModifyAuthorizationPolicyRequest": {
       "document": "ModifyAuthorizationPolicy请求参数结构体",
       "members": [
@@ -6028,6 +6367,96 @@
       ],
       "type": "object"
     },
+    "ModifyMessageEnrichmentRuleRequest": {
+      "document": "ModifyMessageEnrichmentRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息属性增强规则ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。\n",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略名称，不能为空，3-64个字符，支持中文、字母、数字、“-”及“_”。",
+          "example": "rule1",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则匹配条件，JSON格式，需要Base64编码\n样例\n{\"clientId\":\"client-1\",\"username\":\"client-1\",\"topic\":\"home/room1\"}\nBase64后\neyJjbGllbnRJZCI6ImNsaWVudC0xIiwidXNlcm5hbWUiOiJjbGllbnQtMSIsInRvcGljIjoiaG9tZS9yb29tMSJ9",
+          "example": "eyJjbGllbnRJZCI6ImNsaWVudC0xIiwidXNlcm5hbWUiOiJjbGllbnQtMSIsInRvcGljIjoiaG9tZS9yb29tMSJ9",
+          "member": "string",
+          "name": "Condition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的动作，JSON格式，需要Base64编码 \n样例\n{\"messageExpiryInterval\":360,\"responseTopic\":\"replies/${clientid}\",\"correlationData\":\"${traceid}\",\"userProperty\":[{\"key\":\"trace-id\",\"value\":\"${traceid}\"}]}\n BASE64后 eyJtZXNzYWdlRXhwaXJ5SW50ZXJ2YWwiOjM2MCwicmVzcG9uc2VUb3BpYyI6InJlcGxpZXMvJHtjbGllbnRpZH0iLCJjb3JyZWxhdGlvbkRhdGEiOiIke3RyYWNlaWR9IiwidXNlclByb3BlcnR5IjpbeyJrZXkiOiJ0cmFjZS1pZCIsInZhbHVlIjoiJHt0cmFjZWlkfSJ9XX0=",
+          "example": "eyJtZXNzYWdlRXhwaXJ5SW50ZXJ2YWwiOjM2MCwicmVzcG9uc2VUb3BpYyI6InJlcGxpZXMvJHtjbGllbnRpZH0iLCJjb3JyZWxhdGlvbkRhdGEiOiIke3RyYWNlaWR9IiwidXNlclByb3BlcnR5IjpbeyJrZXkiOiJ0cmFjZS1pZCIsInZhbHVlIjoiJHt0cmFjZWlkfSJ9XX0=",
+          "member": "string",
+          "name": "Actions",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级，数字越小，优先级越高，高优先级覆盖低优先级。UserProperty字段会合并",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略状态。 0:未定义；1:激活；2:不激活；默认不激活",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息，最长 128 字符",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMessageEnrichmentRuleResponse": {
+      "document": "ModifyMessageEnrichmentRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTopicRequest": {
       "document": "ModifyTopic请求参数结构体",
       "members": [
@@ -6733,6 +7162,42 @@
     },
     "UpdateAuthorizationPolicyPriorityResponse": {
       "document": "UpdateAuthorizationPolicyPriority返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateMessageEnrichmentRulePriorityRequest": {
+      "document": "UpdateMessageEnrichmentRulePriority请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略ID和优先级",
+          "example": "无",
+          "member": "MessageEnrichmentRulePriority",
+          "name": "Priorities",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateMessageEnrichmentRulePriorityResponse": {
+      "document": "UpdateMessageEnrichmentRulePriority返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

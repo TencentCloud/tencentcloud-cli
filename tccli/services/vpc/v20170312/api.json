@@ -3767,7 +3767,7 @@
       "status": "online"
     },
     "ResetNatGatewayConnection": {
-      "document": "本接口（ResetNatGatewayConnection）用来NAT网关并发连接上限。",
+      "document": "本接口（ResetNatGatewayConnection）用于调整传统型NAT网关并发连接数上限。",
       "input": "ResetNatGatewayConnectionRequest",
       "name": "调整NAT网关并发连接上限",
       "output": "ResetNatGatewayConnectionResponse",
@@ -12853,6 +12853,15 @@
           "name": "EnableInstanceRouteTable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1",
+          "example": "ExclusiveLarge1",
+          "member": "string",
+          "name": "ExclusiveType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -50209,6 +50218,15 @@
           "name": "MaxConcurrentConnection",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "独享实例规格。如果要变配到独享实例，此参数必选，取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1",
+          "example": "ExclusiveLarge1",
+          "member": "string",
+          "name": "ExclusiveType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -71867,7 +71885,7 @@
         {
           "disabled": false,
           "document": "网关带宽配额信息。",
-          "example": "[{'Bandwidth': 5, 'Cname': '微小型', 'Name': 'cdmini'}, {'Bandwidth': 10, 'Cname': '小型', 'Name': 'cdsmall'}, {'Bandwidth': 20, 'Cname': '中型', 'Name': 'cdmiddle'}, {'Bandwidth': 50, 'Cname': '大型', 'Name': 'cdlarge'}, {'Bandwidth': 100, 'Cname': '超大型', 'Name': 'cdsuperLarge'}]",
+          "example": "无",
           "member": "VpnGatewayQuota",
           "name": "VpnGatewayQuotaSet",
           "output_required": true,
@@ -71942,6 +71960,16 @@
           "name": "BgpAsn",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例关联CCN状态，未关联情况下展示为\"\"：\n<li>`PENDING`：申请中</li>\n<li>`ACTIVE`：已连接</li>\n<li>`EXPIRED`：已过期</li>\n<li>`REJECTED`：已拒绝</li>\n<li>`DELETED`：已删除</li>\n<li>`FAILED`：失败的（2小时后将异步强制解关联）</li>\n<li>`ATTACHING`：关联中</li>\n<li>`DETACHING`：解关联中</li>\n<li>`DETACHFAILED`：解关联失败（2小时后将异步强制解关联）</li>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "AssociationState",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

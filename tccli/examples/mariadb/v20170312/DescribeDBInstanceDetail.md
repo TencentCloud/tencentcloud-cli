@@ -88,7 +88,8 @@ Output:
         "WanVip": "",
         "WanVipv6": "",
         "Zone": "ap-guangzhou-2",
-        "ProtectedProperty": 1
+        "ProtectedProperty": 1,
+        "FlowId": 1251185408
     }
 }
 ```

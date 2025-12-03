@@ -10,7 +10,7 @@ tccli tdmq DescribeRocketMQPublicAccessMonitorData --cli-unfold-argument  \
     --StartTime 2024-12-04T15:06:49+08:00 \
     --EndTime 2024-12-04T16:06:49+08:00 \
     --Period 60 \
-    --MetricName RocketmqPublicNetworkIntrafficVipRatio
+    --MetricName ClientOuttraffic
 ```
 
 Output: 

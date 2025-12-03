@@ -18,7 +18,7 @@ Output:
             "CreateTime": 1730357927,
             "CreatorUin": 700001224419,
             "DeletionDate": 0,
-            "Description": "倒入外部密钥",
+            "Description": "导入外部密钥",
             "HsmClusterId": "cls-hsm-3dflmo9g",
             "KeyId": "93866e69-9755-11ef-8e65-52540089bc41",
             "KeyRotationEnabled": false,

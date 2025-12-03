@@ -1,11 +1,11 @@
 {
   "actions": {
     "MockNoAuthCommon": {
-      "document": "将提交的内容原封不动返回",
+      "document": "不再使用\n\n将提交的内容原封不动返回",
       "input": "MockNoAuthCommonRequest",
       "name": "模拟没有鉴权的接口",
       "output": "MockNoAuthCommonResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

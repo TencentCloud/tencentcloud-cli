@@ -625,7 +625,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许过期证件，默认为true",
+          "document": "是否允许过期身份证件进入活体检测流程。此参数仅在证件类型为香港身份证（HKID）时生效。\ntrue（默认值）：允许过期香港身份证进入活体检测流程。\nfalse：拒绝过期香港身份证，不可进入活体检测流程。",
           "example": "true",
           "member": "bool",
           "name": "AllowExpiredDocument",
@@ -10534,7 +10534,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许过期证件，默认为true",
+          "document": "是否允许过期身份证件进入活体检测流程。此参数仅在证件类型为香港身份证（HKID）时生效。\ntrue（默认值）：允许过期香港身份证进入活体检测流程。\nfalse：拒绝过期香港身份证，不可进入活体检测流程。",
           "example": "true",
           "member": "bool",
           "name": "AllowExpiredDocument",

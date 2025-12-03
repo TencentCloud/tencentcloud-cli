@@ -9025,7 +9025,7 @@
         },
         {
           "disabled": false,
-          "document": "域名状态，\"enable”\"、\"disable\" 分别代表启用和暂停",
+          "document": "域名状态，\"enable\"、\"disable\" 分别代表启用和暂停",
           "example": "enable",
           "member": "string",
           "name": "Status",
