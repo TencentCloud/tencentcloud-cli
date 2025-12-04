@@ -539,6 +539,13 @@
       "output": "DescribeDBInstanceLogToCLSResponse",
       "status": "online"
     },
+    "DescribeDBInstanceProcess": {
+      "document": "本接口（DescribeDBInstanceProcess）用于查询实例活动线程。",
+      "input": "DescribeDBInstanceProcessRequest",
+      "name": "查询实例活动线程",
+      "output": "DescribeDBInstanceProcessResponse",
+      "status": "online"
+    },
     "DescribeDBInstanceRebootTime": {
       "document": "本接口（DescribeDBInstanceRebootTime）用于查询云数据库实例重启预计所需的时间。",
       "input": "DescribeDBInstanceRebootTimeRequest",
@@ -670,6 +677,13 @@
       "input": "DescribeInstanceParamsRequest",
       "name": "查询实例的可设置参数列表",
       "output": "DescribeInstanceParamsResponse",
+      "status": "online"
+    },
+    "DescribeInstancePasswordComplexity": {
+      "document": "该接口（DescribeInstancePasswordComplexity）用于查询实例的密码复杂度参数列表。",
+      "input": "DescribeInstancePasswordComplexityRequest",
+      "name": "查询实例的密码复杂度",
+      "output": "DescribeInstancePasswordComplexityResponse",
       "status": "online"
     },
     "DescribeInstanceUpgradeCheckJob": {
@@ -875,6 +889,13 @@
       "output": "IsolateDBInstanceResponse",
       "status": "online"
     },
+    "KillDBProcessByIds": {
+      "document": "本接口（KillDBProcessByIds）用于终止MySQL的执行线程。",
+      "input": "KillDBProcessByIdsRequest",
+      "name": "终止MySQL实例执行线程",
+      "output": "KillDBProcessByIdsResponse",
+      "status": "online"
+    },
     "ModifyAccountDescription": {
       "document": "本接口(ModifyAccountDescription)用于修改云数据库账户的备注信息。",
       "input": "ModifyAccountDescriptionRequest",
@@ -992,6 +1013,13 @@
       "input": "ModifyDBInstanceLogToCLSRequest",
       "name": "开启或关闭CDB日志投递CLS",
       "output": "ModifyDBInstanceLogToCLSResponse",
+      "status": "online"
+    },
+    "ModifyDBInstanceModes": {
+      "document": "该接口（ModifyDBInstanceModes）用于更改云数据库的模式。",
+      "input": "ModifyDBInstanceModesRequest",
+      "name": "更改云数据库的模式",
+      "output": "ModifyDBInstanceModesResponse",
       "status": "online"
     },
     "ModifyDBInstanceName": {
@@ -1904,7 +1932,7 @@
         {
           "disabled": false,
           "document": "读写权重分配。如果 WeightMode 传的是 system ，则传入的权重不生效，由系统分配默认权重。",
-          "example": "[{\"Region\":\"ap-guangzhou\",\"Zone\":\"ap-guangzhou-2\",\"ProxyInstance\":[{\"InstanceId\":\"cdb-aykuksx3\",\"Weight\":100}]",
+          "example": "无",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
           "required": false,
@@ -1925,6 +1953,24 @@
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否将libra节点当作普通RO节点",
+          "example": "true",
+          "member": "string",
+          "name": "ApNodeAsRoNode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "libra节点故障，是否转发给其他节点",
+          "example": "true",
+          "member": "string",
+          "name": "ApQueryToOtherNode",
           "required": false,
           "type": "string"
         }
@@ -4058,11 +4104,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "售卖实例名称。Z3是高可用类型对应规格中的DeviceType包含UNIVERSAL,EXCLUSIVE；CVM是基础版类型对应规格中的DeviceType是BASIC；TKE是基础型v2类型对应规格中的DeviceType是BASIC_V2。",
+          "document": "售卖实例名称。\nZ3：是高可用类型，对应规格中的 DeviceType，包含 UNIVERSAL，EXCLUSIVE。\nCVM：是基础版类型，对应规格中的 DeviceType 是 BASIC（已下线）。\nTKE：是基础版v2类型，对应规格中的 DeviceType 是 BASIC_V2。\nCLOUD_NATIVE_CLUSTER：表示云盘版标准型。\nCLOUD_NATIVE_CLUSTER_EXCLUSIVE：表示云盘版加强型。\nECONOMICAL：表示经济型。",
           "example": "Z3",
           "member": "string",
           "name": "TypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4072,7 +4118,7 @@
           "example": "[\"5.6\",\"5.7\"]",
           "member": "string",
           "name": "EngineVersion",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4082,7 +4128,7 @@
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ConfigIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -4340,7 +4386,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示",
+          "document": "云盘版实例在当前可用区的售卖状态。可能的返回值为：1-上线；3-停售；4-不展示",
           "example": "1",
           "member": "int64",
           "name": "CloudNativeClusterStatus",
@@ -4350,7 +4396,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版或者单节点基础型支持的磁盘类型。",
+          "document": "云盘版或者单节点基础型支持的磁盘类型。",
           "example": "无",
           "member": "DiskTypeConfigItem",
           "name": "DiskTypeConf",
@@ -4614,7 +4660,7 @@
       "type": "object"
     },
     "CheckMigrateResult": {
-      "document": "迁移集群版校验结果",
+      "document": "迁移云盘版校验结果",
       "members": [
         {
           "disabled": false,
@@ -4956,7 +5002,7 @@
       "type": "object"
     },
     "ClusterInfo": {
-      "document": "集群版节点信息",
+      "document": "云盘版节点信息",
       "members": [
         {
           "disabled": false,
@@ -4995,7 +5041,7 @@
       "usage": "both"
     },
     "ClusterNodeInfo": {
-      "document": "集群版实例节点信息",
+      "document": "云盘版实例节点信息",
       "members": [
         {
           "disabled": false,
@@ -5056,7 +5102,7 @@
       "usage": "both"
     },
     "ClusterTopology": {
-      "document": "集群版的节点拓扑配置。",
+      "document": "云盘版的节点拓扑配置。",
       "members": [
         {
           "disabled": false,
@@ -5250,7 +5296,7 @@
         {
           "disabled": false,
           "document": "云数据库账号。",
-          "example": "[{\"Host\": \"127.0.0.1\",\"User\": \"ajnnw\"}]",
+          "example": "无",
           "member": "Account",
           "name": "Accounts",
           "required": true,
@@ -5300,6 +5346,15 @@
           "name": "EncryptMethod",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否跳过密码复杂度校验",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipValidatePassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6521,7 +6576,7 @@
         },
         {
           "disabled": false,
-          "document": "MySQL 版本，值包括：5.5、5.6、5.7和8.0，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的实例版本。\n说明：创建非集群版实例时，请根据需要指定实例版本（推荐5.7或8.0），若此参数不填，则默认值为5.6；若创建的是集群版实例，则此参数仅能指定为5.7或8.0。",
+          "document": "MySQL 版本，值包括：5.5、5.6、5.7和8.0，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的实例版本。\n说明：创建非云盘版实例时，请根据需要指定实例版本（推荐5.7或8.0），若此参数不填，则默认值为8.0；若创建的是云盘版实例，则此参数仅能指定为5.7或8.0。",
           "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
@@ -6530,7 +6585,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。若此项不填，则系统会选择默认的 VPC。",
+          "document": "私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是云盘版实例，此参数为必填且为私有网络类型。若此项不填，则系统会选择默认的 VPC。",
           "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqVpcId",
@@ -6557,7 +6612,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的可用区。\n说明：若您创建单节点、双节点、三节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建集群版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。",
+          "document": "可用区信息，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的可用区。\n说明：若您创建单节点、双节点、三节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建云盘版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
@@ -6612,7 +6667,7 @@
         {
           "disabled": false,
           "document": "参数列表，参数格式如 ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过 [查询默认的可设置参数列表](https://cloud.tencent.com/document/api/236/32662) 查询支持设置的参数。\n说明：表名大小写敏感的开启和关闭可通过参数 lower_case_table_names 进行设置，参数值为0表示开启，参数值为1表示关闭，若不设置则此参数默认值为0。若您创建的是 MySQL 8.0 版本的实例，则需要在创建实例时通过设置 lower_case_table_names 参数来开启或关闭表名大小写敏感，创建实例后无法修改参数，即创建后无法修改表名大小写敏感。其他数据库版本的实例支持在创建实例后修改 lower_case_table_names 参数。创建实例时设置表名大小写敏感的 API 调用方法请参见本文中的示例2。",
-          "example": "[{\"Name\": \"auto_increment_increment\",\"Value\": \"1\"}]",
+          "example": "无",
           "member": "ParamInfo",
           "name": "ParamList",
           "required": false,
@@ -6638,7 +6693,7 @@
         },
         {
           "disabled": false,
-          "document": "备库 1 的可用区信息。\n说明：双节点、三节点实例请指定此参数值，若不指定，则默认为 Zone 的值；集群版实例此参数可不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置；单节点实例为单可用区，无需指定此参数。",
+          "document": "备库 1 的可用区信息。\n说明：双节点、三节点实例请指定此参数值，若不指定，则默认为 Zone 的值；云盘版实例此参数可不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置；单节点实例为单可用区，无需指定此参数。",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "SlaveZone",
@@ -6666,7 +6721,7 @@
         {
           "disabled": false,
           "document": "只读实例信息。购买只读实例时，该参数必传。",
-          "example": "{\"RoGroupMode\": \"allinone\",\"RoGroupName\": \"jersey\",\"RoMaxDelayTime\": 5,\"MinRoInGroup\": 1,\"RoOfflineDelay\": 1}",
+          "example": "无",
           "member": "RoGroup",
           "name": "RoGroup",
           "required": false,
@@ -6693,7 +6748,7 @@
         {
           "disabled": false,
           "document": "实例标签信息。",
-          "example": "[{\"TagKey\": \"march\",\"TagValue\": [\"march1\"]}]",
+          "example": "无",
           "member": "TagInfo",
           "name": "ResourceTags",
           "required": false,
@@ -6719,7 +6774,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离类型。支持值包括：\"UNIVERSAL\" - 通用型实例，\"EXCLUSIVE\" - 独享型实例，\"BASIC_V2\" - ONTKE 单节点实例，\"CLOUD_NATIVE_CLUSTER\" - 集群版标准型，\"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 集群版加强型。不指定则默认为通用型实例。\n说明：如果创建的是集群版实例，此参数为必填。",
+          "document": "实例隔离类型。支持值包括：\"UNIVERSAL\" - 通用型实例，\"EXCLUSIVE\" - 独享型实例，\"BASIC_V2\" - ONTKE 单节点实例，\"CLOUD_NATIVE_CLUSTER\" - 云盘版标准型，\"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 云盘版加强型。不指定则默认为通用型实例。\n说明：如果创建的是云盘版实例，此参数为必填。",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -6827,7 +6882,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版实例的数据保护空间大小，单位 GB，设置范围1 - 10。",
+          "document": "云盘版实例的数据保护空间大小，单位 GB，设置范围1 - 10。",
           "example": "1",
           "member": "int64",
           "name": "DataProtectVolume",
@@ -6836,8 +6891,8 @@
         },
         {
           "disabled": false,
-          "document": "集群版节点拓扑配置。\n说明：若购买的是集群版实例，此参数为必填，需设置集群版实例的 RW 和 RO 节点拓扑，RO 节点范围是1 - 5个，请至少设置1个 RO 节点。",
-          "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
+          "document": "云盘版节点拓扑配置。\n说明：若购买的是云盘版实例，此参数为必填，需设置云盘版实例的 RW 和 RO 节点拓扑，RO 节点范围是1 - 5个，请至少设置1个 RO 节点。",
+          "example": "无",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
           "required": false,
@@ -6845,7 +6900,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘类型，单节点（云盘版）或者集群版实例可以指定此参数。CLOUD_SSD 表示 SSD 云硬盘，CLOUD_HSSD 表示增强型 SSD 云硬盘。\n说明：单节点（云盘版）、集群版实例硬盘类型所支持的地域略有不同，具体支持情况请参考 [地域和可用区](https://cloud.tencent.com/document/product/236/8458)。",
+          "document": "硬盘类型，单节点（云盘）或者云盘版实例可以指定此参数。CLOUD_SSD 表示 SSD 云硬盘，CLOUD_HSSD 表示增强型 SSD 云硬盘，CLOUD_PREMIUM 表示高性能云硬盘。\n说明：单节点（云盘）、云盘版实例硬盘类型所支持的地域略有不同，具体支持情况请参考 [地域和可用区](https://cloud.tencent.com/document/product/236/8458)。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -6864,7 +6919,7 @@
         {
           "disabled": false,
           "document": "加密算法版本号标识。",
-          "example": "134562",
+          "example": "RSA",
           "member": "string",
           "name": "EncryptMethod",
           "required": false,
@@ -6878,6 +6933,24 @@
           "name": "ClusterType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否对磁盘进行加密。仅云盘版实例支持该功能。 指定为 \"ON\" 表示开启加密， 否则不加密。 购买只读实例、灾备实例、新克隆实例时该参数自动和主实例保持一致。",
+          "example": "ON",
+          "member": "string",
+          "name": "DiskEncryption",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启或关闭实例销毁保护。on-开启，off-关闭",
+          "example": "on",
+          "member": "string",
+          "name": "DestroyProtect",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6888,7 +6961,7 @@
         {
           "disabled": false,
           "document": "短订单 ID。",
-          "example": "['20171201110011']",
+          "example": "[\"20171201110011\"]",
           "member": "string",
           "name": "DealIds",
           "output_required": true,
@@ -6898,7 +6971,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。",
-          "example": "['cdb-pn6gd5jp']",
+          "example": "[\"cdb-pn6gd5jp\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
@@ -6955,7 +7028,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区信息，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的可用区。\n说明：若您创建单节点、双节点、三节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建集群版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。",
+          "document": "可用区信息，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的可用区。\n说明：若您创建单节点、双节点、三节点实例，此参数为必填项，请指定可用区，若不指定可用区，则系统会自动选择一个可用区（可能不是您希望部署的可用区）；若您创建云盘版实例，此参数不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置。",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
@@ -6964,7 +7037,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。若此项不填，则系统会选择默认的 VPC。",
+          "document": "私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是云盘版实例，此参数为必填且为私有网络类型。若此项不填，则系统会选择默认的 VPC。",
           "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqVpcId",
@@ -7018,7 +7091,7 @@
         },
         {
           "disabled": false,
-          "document": "MySQL 版本，值包括：5.5、5.6、5.7和8.0，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的实例版本。\n说明：创建非集群版实例时，请根据需要指定实例版本（推荐5.7或8.0），若此参数不填，则默认值为5.6；若创建的是集群版实例，则此参数仅能指定为5.7或8.0。",
+          "document": "MySQL 版本，值包括：5.5、5.6、5.7和8.0，请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口获取可创建的实例版本。\n说明：创建非云盘版实例时，请根据需要指定实例版本（推荐5.7或8.0），若此参数不填，则默认值为8.0；若创建的是云盘版实例，则此参数仅能指定为5.7或8.0。",
           "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
@@ -7054,7 +7127,7 @@
         },
         {
           "disabled": false,
-          "document": "备库 1 的可用区信息。\n说明：双节点、三节点实例请指定此参数值，若不指定，则默认为 Zone 的值；集群版实例此参数可不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置；单节点实例为单可用区，无需指定此参数。",
+          "document": "备库 1 的可用区信息。\n说明：双节点、三节点实例请指定此参数值，若不指定，则默认为 Zone 的值；云盘版实例此参数可不填，请通过参数 ClusterTopology 进行读写节点和只读节点的可用区配置；单节点实例为单可用区，无需指定此参数。",
           "example": "ap-beijing-3",
           "member": "string",
           "name": "SlaveZone",
@@ -7064,7 +7137,7 @@
         {
           "disabled": false,
           "document": "参数列表，参数格式如 ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过 [查询默认的可设置参数列表](https://cloud.tencent.com/document/api/236/32662) 查询支持设置的参数。\n说明：表名大小写敏感的开启和关闭可通过参数 lower_case_table_names 进行设置，参数值为0表示开启，参数值为1表示关闭，若不设置则此参数默认值为0。若您创建的是 MySQL 8.0 版本的实例，则需要在创建实例时通过设置 lower_case_table_names 参数来开启或关闭表名大小写敏感，创建实例后无法修改参数，即创建后无法修改表名大小写敏感。其他数据库版本的实例支持在创建实例后修改 lower_case_table_names 参数。创建实例时设置表名大小写敏感的 API 调用方法请参见本文中的示例3。",
-          "example": "[{\"Name\": \"auto_increment_increment\",\"Value\": \"1\"}]",
+          "example": "无",
           "member": "ParamInfo",
           "name": "ParamList",
           "required": false,
@@ -7109,7 +7182,7 @@
         {
           "disabled": false,
           "document": "只读实例参数。购买只读实例时，该参数必传。",
-          "example": "{\"RoGroupMode\": \"allinone\",\"RoGroupName\": \"jersey\",\"RoMaxDelayTime\": 5,\"MinRoInGroup\": 1,\"RoOfflineDelay\": 1}",
+          "example": "无",
           "member": "RoGroup",
           "name": "RoGroup",
           "required": false,
@@ -7127,7 +7200,7 @@
         {
           "disabled": false,
           "document": "实例标签信息。",
-          "example": "[{\"TagKey\": \"march\",\"TagValue\": [\"march1\"]}]",
+          "example": "无",
           "member": "TagInfo",
           "name": "ResourceTags",
           "required": false,
@@ -7153,7 +7226,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离类型。支持值包括：\"UNIVERSAL\" - 通用型实例，\"EXCLUSIVE\" - 独享型实例，\"BASIC_V2\" - ONTKE 单节点实例，\"CLOUD_NATIVE_CLUSTER\" - 集群版标准型，\"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 集群版加强型。不指定则默认为通用型实例。\n说明：如果创建的是集群版实例，此参数为必填。",
+          "document": "实例隔离类型。支持值包括：\"UNIVERSAL\" - 通用型实例，\"EXCLUSIVE\" - 独享型实例，\"BASIC_V2\" - ONTKE 单节点实例，\"CLOUD_NATIVE_CLUSTER\" - 云盘版标准型，\"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 云盘版加强型。不指定则默认为通用型实例。\n说明：如果创建的是云盘版实例，此参数为必填。",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -7261,7 +7334,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版实例的数据保护空间大小，单位 GB，设置范围1 - 10。",
+          "document": "云盘版实例的数据保护空间大小，单位 GB，设置范围1 - 10。",
           "example": "1",
           "member": "int64",
           "name": "DataProtectVolume",
@@ -7270,8 +7343,8 @@
         },
         {
           "disabled": false,
-          "document": "集群版节点拓扑配置。\n说明：若购买的是集群版实例，此参数为必填，需设置集群版实例的 RW 和 RO 节点拓扑，RO 节点范围是1 - 5个，请至少设置1个 RO 节点。",
-          "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
+          "document": "云盘版节点拓扑配置。\n说明：若购买的是云盘版实例，此参数为必填，需设置云盘版实例的 RW 和 RO 节点拓扑，RO 节点范围是1 - 5个，请至少设置1个 RO 节点。",
+          "example": "无",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
           "required": false,
@@ -7279,7 +7352,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘类型，单节点（云盘版）或者集群版实例可以指定此参数。CLOUD_SSD 表示 SSD 云硬盘，CLOUD_HSSD 表示增强型 SSD 云硬盘。\n说明：单节点（云盘版）、集群版实例硬盘类型所支持的地域略有不同，具体支持情况请参考 [地域和可用区](https://cloud.tencent.com/document/product/236/8458)。",
+          "document": "磁盘类型，单节点（云盘版）或者云盘版实例可以指定此参数。CLOUD_SSD 表示 SSD 云硬盘，CLOUD_HSSD 表示增强型 SSD 云硬盘，CLOUD_PREMIUM 表示高性能云硬盘。\n说明：单节点（云盘版）、云盘版实例硬盘类型所支持的地域略有不同，具体支持情况请参考 [地域和可用区](https://cloud.tencent.com/document/product/236/8458)。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -7307,7 +7380,7 @@
         {
           "disabled": false,
           "document": "加密算法版本号标识。",
-          "example": "134524",
+          "example": "RSA",
           "member": "string",
           "name": "EncryptMethod",
           "required": false,
@@ -7321,6 +7394,24 @@
           "name": "ClusterType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否对磁盘进行加密。仅云盘版实例支持该功能。 指定为 \"ON\" 表示开启加密， 否则不加密。 购买只读实例、灾备实例、新克隆实例时该参数自动和主实例保持一致。",
+          "example": "ON",
+          "member": "string",
+          "name": "DiskEncryption",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启或关闭实例销毁保护。on-开启，off-关闭",
+          "example": "on",
+          "member": "string",
+          "name": "DestroyProtect",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7331,7 +7422,7 @@
         {
           "disabled": false,
           "document": "计费子订单 ID。",
-          "example": "['20230728051036129204961']",
+          "example": "[\"20230728051036129204961\"]",
           "member": "string",
           "name": "DealIds",
           "output_required": true,
@@ -7341,7 +7432,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。",
-          "example": "['cdb-pn6gd5jp']",
+          "example": "[\"cdb-pn6gd5jp\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
@@ -8439,6 +8530,24 @@
           "name": "OpenCam",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "默认无排序，支持：ASC、DESC、asc、desc",
+          "example": "desc",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8459,7 +8568,7 @@
         {
           "disabled": false,
           "document": "符合查询条件的账号详细信息。",
-          "example": "[{\"Notes\": \"andy1\",\"Host\": \"localhost\",\"User\": \"andy_user\",\"ModifyTime\": \"2020-11-10 01:00:00\",\"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\"CreateTime\": \"2020-11-10 01:00:00\",\"MaxUserConnections\": 20},{\"Notes\": \"andy2\",\"Host\": \"localhost\",\"User\": \"root\",\"ModifyTime\": \"2020-11-10 01:00:00\",\"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\"CreateTime\": \"2020-11-10 01:00:00\",\"MaxUserConnections\": 20}]",
+          "example": "无",
           "member": "AccountInfo",
           "name": "Items",
           "output_required": true,
@@ -8577,6 +8686,16 @@
           "member": "string",
           "name": "IsClosing",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否正在开启审计。目前支持的值包括：\"false\"-否，\"true\"-是",
+          "example": "\"true\"",
+          "member": "string",
+          "name": "IsOpening",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9606,7 +9725,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询备份概览的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点云盘版实例，mysql-cluster 指云盘版（原集群版）实例。",
+          "document": "需要查询备份概览的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点（云盘）实例，mysql-cluster 指云盘版实例。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -9703,7 +9822,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询备份实时统计的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点云盘版实例，mysql-cluster 指云盘版（原集群版）实例。",
+          "document": "需要查询备份实时统计的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点（云盘）实例，mysql-cluster 指云盘版实例。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -9755,7 +9874,7 @@
         {
           "disabled": false,
           "document": "实例备份统计条目。",
-          "example": "[{\"AutoBackupCount\": 5,\"AutoBackupVolume\": 10000,\"BackupVolume\": 50000,\"BinlogBackupCount\": 2,\"BinlogBackupVolume\": 20000,\"DataBackupCount\": 15,\"DataBackupVolume\": 30000,\"InstanceId\": \"cdb-01wa5l0v\",\"ManualBackupCount\": 10,\"ManualBackupVolume\": 20000}],",
+          "example": "无",
           "member": "BackupSummaryItem",
           "name": "Items",
           "output_required": true,
@@ -9851,7 +9970,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询日志备份概览的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点云盘版实例，mysql-cluster 指云盘版（原集群版）实例。",
+          "document": "需要查询日志备份概览的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点（云盘）实例，mysql-cluster 指云盘版实例。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -10499,7 +10618,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。",
+          "document": "查询的结束时间，默认为当前时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。",
           "example": "1750994218",
           "member": "int64",
           "name": "EndTime",
@@ -10517,7 +10636,7 @@
         },
         {
           "disabled": false,
-          "document": "分页入参",
+          "document": "分页入参，默认20",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -10533,7 +10652,7 @@
         {
           "disabled": false,
           "document": "满足查询要求的扩容历史",
-          "example": "[{\"OperationType\":\"extend\",\"...\"}]",
+          "example": "无",
           "member": "HistoryJob",
           "name": "Items",
           "output_required": false,
@@ -11109,6 +11228,52 @@
           "name": "SlowLog",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceProcessRequest": {
+      "document": "DescribeDBInstanceProcess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "example": "cdb-oy4pkaaa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件，以\"WHERE\", \"OREDER BY\", \"LIMIT\"等开头，如\"WHERE TIME > 119\"",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Where",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceProcessResponse": {
+      "document": "DescribeDBInstanceProcess返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "活动线程详情",
+          "example": "[]",
+          "member": "ProcessItem",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -11955,7 +12120,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要查询数据备份概览的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点云盘版实例，mysql-cluster 指云盘版（原集群版）实例。",
+          "document": "需要查询数据备份概览的云数据库产品类型。可取值为：mysql 指双节点/三节点的高可用实例，mysql-basic 指单节点（云盘）实例，mysql-cluster 指云盘版实例。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -12997,6 +13162,53 @@
           "disabled": false,
           "document": "参数详情。",
           "example": "无",
+          "member": "ParameterDetail",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancePasswordComplexityRequest": {
+      "document": "DescribeInstancePasswordComplexity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID ",
+          "example": "\"cdb-1urqrvpf\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancePasswordComplexityResponse": {
+      "document": "DescribeInstancePasswordComplexity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例的参数总数",
+          "example": "72",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数详情",
+          "example": "[ ]",
           "member": "ParameterDetail",
           "name": "Items",
           "output_required": true,
@@ -15318,7 +15530,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "磁盘对应的实例类型。仅支持单节点基础型和集群版。",
+          "document": "磁盘对应的实例类型。仅支持单节点（云盘）和云盘版。",
           "example": "CLOUD_NATIVE_CLUSTER",
           "member": "string",
           "name": "DeviceType",
@@ -16132,7 +16344,7 @@
         {
           "disabled": false,
           "document": "实例相关信息",
-          "example": "[{\"ProjectId\": \"23414\",\"TagList\": [{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}],\"DbType\": \"MYSQL\",\"DbVersion\": \"5.7\"}]",
+          "example": "无",
           "member": "AuditInstanceInfo",
           "name": "InstanceInfo",
           "output_required": true,
@@ -16167,6 +16379,56 @@
           "name": "RuleTemplateIds",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限免状态",
+          "example": "\"TRIAL/EXPIRED/NONE\"",
+          "member": "string",
+          "name": "TrialStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限免开启时间",
+          "example": "1",
+          "member": "int64",
+          "name": "TrialStartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限免持续时间",
+          "example": "1",
+          "member": "int64",
+          "name": "TrialDuration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限免关闭时间",
+          "example": "1",
+          "member": "int64",
+          "name": "TrialCloseTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限免期查询日志时长",
+          "example": "1",
+          "member": "int64",
+          "name": "TrialDescribeLogHours",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -16208,7 +16470,7 @@
         {
           "disabled": false,
           "document": "只读vip信息。单独开通只读实例访问的只读实例才有该字段",
-          "example": "{\"RoVip\":\"10.1.1.1\",\"RoVport\":3306,\"RoVpcId\":2123412,\"RoSubnetId\":123412,\"RoVipStatus\":2}",
+          "example": "无",
           "member": "RoVipInfo",
           "name": "RoVipInfo",
           "output_required": true,
@@ -16248,7 +16510,7 @@
         {
           "disabled": false,
           "document": "备机信息",
-          "example": "{\"First\":{\"Vport\":3306,\"Vip\":\"10.1.1.1\",\"Region\":\"ap-guangzhou\",\"Zone\":\"ap-guangzhou-1\"}}",
+          "example": "无",
           "member": "SlaveInfo",
           "name": "SlaveInfo",
           "output_required": true,
@@ -16298,7 +16560,7 @@
         {
           "disabled": false,
           "document": "只读组详细信息",
-          "example": "[{\"RoGroupId\":\"cdbrg-92zkeaq2\"}]",
+          "example": "无",
           "member": "RoGroup",
           "name": "RoGroups",
           "output_required": true,
@@ -16378,7 +16640,7 @@
         {
           "disabled": false,
           "document": "主实例详细信息",
-          "example": "{\"InstanceId\":\"cdb-xxx\"}",
+          "example": "无",
           "member": "MasterInfo",
           "name": "MasterInfo",
           "output_required": true,
@@ -16418,7 +16680,7 @@
         {
           "disabled": false,
           "document": "灾备实例详细信息",
-          "example": "{\"InstanceId\":\"cdb-xxx\"}",
+          "example": "无",
           "member": "DrInfo",
           "name": "DrInfo",
           "output_required": true,
@@ -16598,7 +16860,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[{\"TagKey\":\"tag\",\"TagValue\":\"value\"}]",
+          "example": "无",
           "member": "TagInfoItem",
           "name": "TagList",
           "output_required": true,
@@ -16608,7 +16870,7 @@
         {
           "disabled": false,
           "document": "支撑实例的北极星 Cl5 地址。",
-          "example": "123:456",
+          "example": "655:655",
           "member": "string",
           "name": "PolarisAddr",
           "output_required": true,
@@ -16687,7 +16949,7 @@
         },
         {
           "disabled": false,
-          "document": "实例磁盘类型，仅云盘版实例才返回该值。可能的值为 CLOUD_SSD：SSD云硬盘， CLOUD_HSSD：增强型SSD云硬盘",
+          "document": "实例磁盘类型，仅云盘版和单节点（云盘）实例才会返回有效值。\n说明：\n1. 若返回：\"DiskType\": \"CLOUD_HSSD\"，则表示该实例磁盘类型为增强型 SSD 云硬盘。\n2. 若返回：\"DiskType\": \"CLOUD_SSD\"，则表示该实例磁盘类型为 SSD 云硬盘。\n3. 若返回：\"DiskType\": \"\"，且参数 DeviceType 值为 UNIVERSAL 或 EXCLUSIVE，则表示该实例采用的是本地 SSD 盘。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -16708,7 +16970,7 @@
         {
           "disabled": false,
           "document": "实例扩展集群信息",
-          "example": "{\"ExtType\":\"cdc\", \"ExtId\":\"cluster_cdctest\",\"ExtName\":\"独享集群test\"}",
+          "example": "无",
           "member": "InstClusterExtInfo",
           "name": "InstClusterExtInfo",
           "output_required": false,
@@ -16717,8 +16979,8 @@
         },
         {
           "disabled": false,
-          "document": "实例集群版节点信息",
-          "example": "[{\"NodeId\":\"node\"}]",
+          "document": "云盘版实例节点信息",
+          "example": "无",
           "member": "ClusterInfo",
           "name": "ClusterInfo",
           "output_required": false,
@@ -16763,6 +17025,26 @@
           "name": "DeviceBandwidth",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例销毁保护状态，on表示开启保护，否则为关闭保护",
+          "example": "on",
+          "member": "string",
+          "name": "DestroyProtect",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云盘版实例才使用该值。 on表示磁盘加密，否则为不加密。",
+          "example": "on",
+          "member": "string",
+          "name": "DiskEncryption",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -17162,6 +17444,42 @@
       ],
       "type": "object"
     },
+    "KillDBProcessByIdsRequest": {
+      "document": "KillDBProcessByIds请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例执行线程的Id数组",
+          "example": "[\"145\"]",
+          "member": "int64",
+          "name": "ProcessIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同，可使用[查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值",
+          "example": "cdb-ieuwi38r",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "KillDBProcessByIdsResponse": {
+      "document": "KillDBProcessByIds返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LocalBinlogConfig": {
       "document": "本地 binlog 保留配置",
       "members": [
@@ -17493,7 +17811,7 @@
       "usage": "out"
     },
     "MigrateClusterRoInfo": {
-      "document": "一键迁移集群版只读实例信息",
+      "document": "一键迁移云盘版只读实例信息",
       "members": [
         {
           "disabled": false,
@@ -17551,7 +17869,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移实例类型。支持值包括： \"CLOUD_NATIVE_CLUSTER\" - 标准型集群版实例， \"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 加强型集群版实例。",
+          "document": "迁移实例类型。支持值包括： \"CLOUD_NATIVE_CLUSTER\" - 云盘版标准型实例， \"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 云盘版加强型实例。",
           "example": "CLOUD_NATIVE_CLUSTER",
           "member": "string",
           "name": "DeviceType",
@@ -17777,7 +18095,7 @@
         {
           "disabled": false,
           "document": "云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
-          "example": "andy",
+          "example": "无",
           "member": "Account",
           "name": "Accounts",
           "required": true,
@@ -17791,6 +18109,15 @@
           "name": "EncryptMethod",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否跳过校验密码复杂度",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipValidatePassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -18139,7 +18466,7 @@
         {
           "disabled": true,
           "document": "废弃。",
-          "example": "full",
+          "example": "无",
           "member": "AuditRuleFilters",
           "name": "AuditRuleFilters",
           "required": false,
@@ -18148,7 +18475,7 @@
         {
           "disabled": false,
           "document": "规则模板 ID。可通过 [DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811) 接口获取。",
-          "example": "cdb-art-nuf7e111",
+          "example": "[\"cdb-art-nuf7e111\"]",
           "member": "string",
           "name": "RuleTemplateIds",
           "required": false,
@@ -18486,6 +18813,15 @@
           "name": "EncryptionStatus",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设置实例新增的自动日志备份文件默认加密状态。可选值为 on或者off。",
+          "example": "on",
+          "member": "string",
+          "name": "BinlogEncryptionStatus",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18781,6 +19117,61 @@
       ],
       "type": "object"
     },
+    "ModifyDBInstanceModesRequest": {
+      "document": "ModifyDBInstanceModes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cdb-eb2w7dto",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云数据库的模式，目前仅支持传入 \"protectMode\" 表示修改主从同步方式。",
+          "example": "protectMode",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据同步方式，可选值：0-异步复制，1-半同步复制，2-强同步复制。",
+          "example": "1",
+          "member": "int64",
+          "name": "ProtectMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceModesResponse": {
+      "document": "ModifyDBInstanceModes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务的请求ID，可使用此ID查询异步任务的执行结果。",
+          "example": "9ad9c2d5-88007b27-7d2c8b8c-f2598f12",
+          "member": "string",
+          "name": "AsyncRequestId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceNameRequest": {
       "document": "ModifyDBInstanceName请求参数结构体",
       "members": [
@@ -18913,7 +19304,7 @@
         {
           "disabled": false,
           "document": "当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组， 需要将该入参置为 True。默认为 False。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ForReadonlyInstance",
           "required": false,
@@ -18921,7 +19312,7 @@
         },
         {
           "disabled": false,
-          "document": "变更集群版实例只读组时，InstanceId 传实例 ID，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。",
+          "document": "变更云盘版实例只读组时，InstanceId 传实例 ID，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。",
           "example": "cdb-xxx|readonly",
           "member": "string",
           "name": "OpResourceId",
@@ -19718,7 +20109,7 @@
         {
           "disabled": true,
           "document": "审计规则（该参数已废弃，不再生效）。",
-          "example": "[{\"RuleFilters\": [{\"Compare\": \"NEQ\",\"Type\": \"host\",\"Value\": [\"127.0.0.1\"]}]}]",
+          "example": "无",
           "member": "AuditRuleFilters",
           "name": "AuditRuleFilters",
           "required": false,
@@ -19739,6 +20130,24 @@
           "example": "true",
           "member": "bool",
           "name": "AuditAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否申请限免开通",
+          "example": "false",
+          "member": "bool",
+          "name": "IsTrial",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否申请开启sql分析",
+          "example": "false",
+          "member": "bool",
+          "name": "SqlAnalyse",
           "required": false,
           "type": "bool"
         }
@@ -20504,6 +20913,82 @@
       ],
       "usage": "both"
     },
+    "ProcessItem": {
+      "document": "实例活动线程详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命令",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库库名",
+          "example": "db1",
+          "member": "string",
+          "name": "Db",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "线程状态信息",
+          "example": "无",
+          "member": "string",
+          "name": "Info",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "线程状态",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "2024-11-04 11:55:48",
+          "member": "uint64",
+          "name": "Time",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库账号",
+          "example": "root",
+          "member": "string",
+          "name": "User",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ProxyAddress": {
       "document": "数据库代理地址信息",
       "members": [
@@ -20660,7 +21145,7 @@
         {
           "disabled": false,
           "document": "实例读权重分配",
-          "example": "[{\"Region\": \"ap-guangzhou\",\"Zone\": \"ap-guangzhou-1\",\"ProxyInstance\": [{\"InstanceId\": \"cdb-aykuksx3\"}]}]",
+          "example": "无",
           "member": "ProxyAllocation",
           "name": "ProxyAllocation",
           "output_required": true,
@@ -20695,6 +21180,26 @@
           "name": "PolarisAddr",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否把libra当作ro节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApNodeAsRoNode",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "libra节点故障，是否转发给其他节点",
+          "example": "false",
+          "member": "bool",
+          "name": "ApQueryToOtherNode",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -21083,7 +21588,7 @@
       "usage": "in"
     },
     "ReadWriteNode": {
-      "document": "集群版 RW 节点的配置。",
+      "document": "云盘版 RW 节点的配置。",
       "members": [
         {
           "disabled": false,
@@ -21096,7 +21601,7 @@
         },
         {
           "disabled": false,
-          "document": "升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。",
+          "document": "升级云盘版实例时，如果要调整只读节点可用区，需要指定节点 ID。",
           "example": "dbn-73ktfl1j",
           "member": "string",
           "name": "NodeId",
@@ -21107,7 +21612,7 @@
       "usage": "in"
     },
     "ReadonlyNode": {
-      "document": "集群版的 RO 节点配置。",
+      "document": "云盘版的 RO 节点配置。",
       "members": [
         {
           "disabled": false,
@@ -21129,7 +21634,7 @@
         },
         {
           "disabled": false,
-          "document": "升级集群版实例时，如果要调整只读节点可用区，需要指定节点id。",
+          "document": "升级云盘版实例时，如果要调整只读节点可用区，需要指定节点 ID。",
           "example": "dbn-h7erp111",
           "member": "string",
           "name": "NodeId",
@@ -24413,6 +24918,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启关联切换，true为开启，false为关闭，默认false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsRelatedSwitch",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -25277,8 +25791,8 @@
         },
         {
           "disabled": false,
-          "document": "集群版节点拓扑配置。",
-          "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
+          "document": "云盘版节点拓扑配置。",
+          "example": "无",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
           "required": false,

@@ -50,7 +50,7 @@
 | cbs | [云硬盘](http://document.tencentcloudapi.woa.com/document/product/362) | [查看](http://document.tencentcloudapi.woa.com/document/product/362/15640) | 2025-11-19 01:14:11 |
 | ccc | [云联络中心](http://document.tencentcloudapi.woa.com/document/product/679) | [查看](http://document.tencentcloudapi.woa.com/document/product/679/47725) | 2025-09-09 01:10:36 |
 | cdata | [企业罗盘](http://document.tencentcloudapi.woa.com/document/product/) | [查看](http://document.tencentcloudapi.woa.com/document/product/1645/78664) | 2025-11-19 01:14:28 |
-| cdb | [云数据库 MySQL](http://document.tencentcloudapi.woa.com/document/product/236) | [查看](http://document.tencentcloudapi.woa.com/document/product/236/16787) | 2025-08-22 01:15:16 |
+| cdb | [云数据库 MySQL](http://document.tencentcloudapi.woa.com/document/product/236) | [查看](http://document.tencentcloudapi.woa.com/document/product/236/16787) | 2025-12-04 17:03:24 |
 | cdc | [本地专用集群](http://document.tencentcloudapi.woa.com/document/product/1346) | [查看](http://document.tencentcloudapi.woa.com/document/product/1676/79513) | 2025-11-19 01:14:30 |
 | cdn | [内容分发网络 CDN](http://document.tencentcloudapi.woa.com/document/product/228) | [查看](http://document.tencentcloudapi.woa.com/document/product/228/30981) | 2025-11-20 01:14:40 |
 | cds | [T-Sec-数据安全审计（DSA）](http://document.tencentcloudapi.woa.com/document/product/856) | [查看](http://document.tencentcloudapi.woa.com/document/product/856/33906) | 2025-11-19 01:15:09 |

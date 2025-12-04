@@ -1,4 +1,4 @@
-**Example 1: 查询云数据库的所有账号信息**
+**Example 1: 查询用户所有账号信息**
 
 
 
@@ -6,28 +6,38 @@ Input:
 
 ```
 tccli cdb DescribeAccounts --cli-unfold-argument  \
-    --InstanceId cdb-f35wr6wj
+    --InstanceId cdb-b1airfvv
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "RequestId": "507f6863-2827-4c2c-9c3b-fbbcc32e1ed4",
         "Items": [
             {
-                "Notes": "andy1",
-                "Host": "172.1.1.1",
-                "User": "andy",
-                "ModifyTime": "2020-09-22 00:00:00",
-                "ModifyPasswordTime": "2020-09-22 00:00:00",
-                "CreateTime": "2020-09-22 00:00:00",
-                "MaxUserConnections": 20,
-                "OpenCam": true
+                "CreateTime": "2025-09-04 14:56:31",
+                "Host": "%",
+                "MaxUserConnections": 0,
+                "ModifyPasswordTime": "2025-09-04 14:56:31",
+                "ModifyTime": "2025-09-04 14:59:10",
+                "Notes": "",
+                "OpenCam": false,
+                "User": "ching"
+            },
+            {
+                "CreateTime": "2025-09-02 16:18:42",
+                "Host": "%",
+                "MaxUserConnections": 0,
+                "ModifyPasswordTime": "2025-09-02 16:18:42",
+                "ModifyTime": "2025-09-02 16:18:42",
+                "Notes": "",
+                "OpenCam": false,
+                "User": "root"
             }
         ],
-        "MaxUserConnections": 20,
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
+        "MaxUserConnections": 10240,
+        "TotalCount": 2
     }
 }
 ```

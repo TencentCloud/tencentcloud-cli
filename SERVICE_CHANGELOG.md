@@ -1,4 +1,85 @@
-# Release 3.0.1318.1
+# Release 3.0.1319.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 152 次发布
+
+发布时间：2025-12-04 17:03:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDBInstanceProcess](http://document.tencentcloudapi.woa.com/document/product/236/88194)
+* [DescribeInstancePasswordComplexity](http://document.tencentcloudapi.woa.com/document/product/236/88195)
+* [KillDBProcessByIds](http://document.tencentcloudapi.woa.com/document/product/236/88193)
+* [ModifyDBInstanceModes](http://document.tencentcloudapi.woa.com/document/product/236/88192)
+
+修改接口：
+
+* [AdjustCdbProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/77512)
+
+	* 新增入参：ApNodeAsRoNode, ApQueryToOtherNode
+
+* [CreateAccounts](http://document.tencentcloudapi.woa.com/document/product/236/17502)
+
+	* 新增入参：SkipValidatePassword
+
+* [CreateDBInstance](http://document.tencentcloudapi.woa.com/document/product/236/15871)
+
+	* 新增入参：DiskEncryption, DestroyProtect
+
+* [CreateDBInstanceHour](http://document.tencentcloudapi.woa.com/document/product/236/15865)
+
+	* 新增入参：DiskEncryption, DestroyProtect
+
+* [DescribeAccounts](http://document.tencentcloudapi.woa.com/document/product/236/17499)
+
+	* 新增入参：SortBy, OrderBy
+
+* [DescribeAuditConfig](http://document.tencentcloudapi.woa.com/document/product/236/45455)
+
+	* 新增出参：IsOpening
+
+* [ModifyAccountPassword](http://document.tencentcloudapi.woa.com/document/product/236/17497)
+
+	* 新增入参：SkipValidatePassword
+
+* [ModifyBackupEncryptionStatus](http://document.tencentcloudapi.woa.com/document/product/236/77063)
+
+	* 新增入参：BinlogEncryptionStatus
+
+* [OpenAuditService](http://document.tencentcloudapi.woa.com/document/product/236/75105)
+
+	* 新增入参：IsTrial, SqlAnalyse
+
+* [SwitchForUpgrade](http://document.tencentcloudapi.woa.com/document/product/236/15864)
+
+	* 新增入参：IsRelatedSwitch
+
+
+新增数据结构：
+
+* [ProcessItem](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProcessItem)
+
+修改数据结构：
+
+* [InstanceDbAuditStatus](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstanceDbAuditStatus)
+
+	* 新增成员：TrialStatus, TrialStartTime, TrialDuration, TrialCloseTime, TrialDescribeLogHours
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstanceInfo)
+
+	* 新增成员：DestroyProtect, DiskEncryption
+
+* [ProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAddress)
+
+	* 新增成员：ApNodeAsRoNode, ApQueryToOtherNode
+
+
+
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 

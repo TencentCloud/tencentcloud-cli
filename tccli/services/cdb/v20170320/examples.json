@@ -212,19 +212,19 @@
     ],
     "CreateDBInstance": [
       {
-        "document": "购买主实例",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"march\",\n            \"TagValue\": [\n                \"march1\"\n            ]\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"ProjectId\": 0,\n    \"InstanceRole\": \"master\",\n    \"GoodsNum\": 1,\n    \"Period\": 1,\n    \"Volume\": 25,\n    \"EngineVersion\": \"5.6\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": 1000,\n    \"InstanceNodes\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceIds\": [\n            \"cdb-pn6gd5jp\"\n        ],\n        \"DealIds\": [\n            \"20171201110011\"\n        ]\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"Memory\": 1000,\n    \"Volume\": 200,\n    \"Period\": 12,\n    \"GoodsNum\": 1,\n    \"Zone\": \"ap-guangzhou-ziyan3\",\n    \"UniqVpcId\": \"vpc-grpykq9v\",\n    \"UniqSubnetId\": \"subnet-aq06sf6a\",\n    \"Port\": 3306,\n    \"InstanceRole\": \"master\",\n    \"Password\": \"190228bh\",\n    \"ProtectMode\": 1,\n    \"DeployMode\": 0,\n    \"SlaveZone\": \"ap-guangzhou-ziyan3\",\n    \"SecurityGroup\": [\n        \"sg-9c3k3gtd\"\n    ],\n    \"InstanceName\": \"test_create-api2\",\n    \"InstanceNodes\": 2,\n    \"Cpu\": 1,\n    \"EngineType\": \"InnoDB\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealIds\": [\n            \"20251117217021754844851\"\n        ],\n        \"InstanceIds\": [\n            \"cdb-4wixd9pn\"\n        ],\n        \"RequestId\": \"bae642bd-305a-40fe-b64c-356dc809977b\"\n    }\n}",
         "title": "购买主实例"
       },
       {
-        "document": "购买只读实例",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"RoGroup\": {\n        \"RoGroupMode\": \"allinone\",\n        \"RoGroupName\": \"jersey\",\n        \"RoMaxDelayTime\": 5,\n        \"MinRoInGroup\": 1,\n        \"RoOfflineDelay\": 1\n    },\n    \"GoodsNum\": 1,\n    \"InstanceRole\": \"ro\",\n    \"MasterInstanceId\": \"cdb-fn3f9xpx\",\n    \"Period\": 1,\n    \"Volume\": 100,\n    \"Memory\": 4000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealIds\": [\n            \"20171205110051\"\n        ],\n        \"InstanceIds\": [\n            \"cdbro-hlpl4ik9\"\n        ]\n    }\n}",
         "title": "购买只读实例"
       },
       {
-        "document": "创建实例时设置表名大小写敏感",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"Memory\": 1000,\n    \"Volume\": 25,\n    \"Period\": 1,\n    \"GoodsNum\": 1,\n    \"Zone\": \"ap-beijing-3\",\n    \"UniqVpcId\": \"vpc-4pagx2lk\",\n    \"UniqSubnetId\": \"subnet-a2eaqb1t\",\n    \"InstanceRole\": \"master\",\n    \"EngineVersion\": \"8.0\",\n    \"ParamList\": [\n        {\n            \"Name\": \"lower_case_table_names\",\n            \"Value\": \"0\"\n        }\n    ],\n    \"DeviceType\": \"UNIVERSAL\",\n    \"Cpu\": 1,\n    \"EngineType\": \"InnoDB\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6166b535-64e8-4372-86fc-d6e25791f4fc\",\n        \"InstanceIds\": [\n            \"cdb-grq113rc\"\n        ],\n        \"DealIds\": [\n            \"20250519054092411681521\"\n        ]\n    }\n}",
         "title": "创建实例时设置表名大小写敏感"
@@ -233,8 +233,8 @@
     "CreateDBInstanceHour": [
       {
         "document": "创建云数据库实例（按量计费）",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"march\",\n            \"TagValue\": [\n                \"march1\"\n            ]\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"ProjectId\": 0,\n    \"SlaveZone\": \"ap-guangzhou-3\",\n    \"InstanceRole\": \"master\",\n    \"GoodsNum\": 1,\n    \"DeployMode\": 0,\n    \"Volume\": 25,\n    \"EngineVersion\": \"5.6\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": 1000,\n    \"ProtectMode\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceIds\": [\n            \"cdb-03brtubb\"\n        ],\n        \"DealIds\": [\n            \"20171201160000002670226599824833\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"GoodsNum\": 1,\n    \"Memory\": 1000,\n    \"Volume\": 200,\n    \"UniqVpcId\": \"vpc-grpykq9v\",\n    \"UniqSubnetId\": \"subnet-aq06sf6a\",\n    \"Zone\": \"ap-guangzhou-ziyan3\",\n    \"InstanceRole\": \"master\",\n    \"MasterRegion\": \"ap-guangzhou\",\n    \"Port\": 3306,\n    \"Password\": \"190228bh\",\n    \"ProtectMode\": 1,\n    \"DeployMode\": 0,\n    \"SlaveZone\": \"ap-guangzhou-ziyan3\",\n    \"SecurityGroup\": [\n        \"sg-9c3k3gtd\"\n    ],\n    \"RoGroup\": {\n        \"RoGroupMode\": \"alone\"\n    },\n    \"InstanceName\": \"test_creat_api\",\n    \"InstanceNodes\": 2,\n    \"Cpu\": 1,\n    \"ParamTemplateType\": \"HIGH_STABILITY\",\n    \"EngineType\": \"InnoDB\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealIds\": [\n            \"20251117217021754869911\"\n        ],\n        \"InstanceIds\": [\n            \"cdb-lw4ulca3\"\n        ],\n        \"RequestId\": \"0b330f82-f9a6-4f18-b048-cf7b42c8cec0\"\n    }\n}",
         "title": "创建云数据库实例（按量计费）"
       },
       {
@@ -383,9 +383,9 @@
     "DescribeAccounts": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAccounts\n&InstanceId=cdb-f35wr6wj\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Notes\": \"andy1\",\n                \"Host\": \"172.1.1.1\",\n                \"User\": \"andy\",\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"ModifyPasswordTime\": \"2020-09-22 00:00:00\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"MaxUserConnections\": 20,\n                \"OpenCam\": true\n            }\n        ],\n        \"MaxUserConnections\": 20,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
-        "title": "查询云数据库的所有账号信息"
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-b1airfvv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"507f6863-2827-4c2c-9c3b-fbbcc32e1ed4\",\n        \"Items\": [\n            {\n                \"CreateTime\": \"2025-09-04 14:56:31\",\n                \"Host\": \"%\",\n                \"MaxUserConnections\": 0,\n                \"ModifyPasswordTime\": \"2025-09-04 14:56:31\",\n                \"ModifyTime\": \"2025-09-04 14:59:10\",\n                \"Notes\": \"\",\n                \"OpenCam\": false,\n                \"User\": \"ching\"\n            },\n            {\n                \"CreateTime\": \"2025-09-02 16:18:42\",\n                \"Host\": \"%\",\n                \"MaxUserConnections\": 0,\n                \"ModifyPasswordTime\": \"2025-09-02 16:18:42\",\n                \"ModifyTime\": \"2025-09-02 16:18:42\",\n                \"Notes\": \"\",\n                \"OpenCam\": false,\n                \"User\": \"root\"\n            }\n        ],\n        \"MaxUserConnections\": 10240,\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询用户所有账号信息"
       }
     ],
     "DescribeAsyncRequestInfo": [
@@ -399,9 +399,9 @@
     "DescribeAuditConfig": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditConfig\n&InstanceId=cdb-txcniupi\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"LogExpireDay\": 365,\n        \"LogType\": \"storage\",\n        \"IsClosing\": \"false\",\n        \"CreateTime\": \"2021-07-13 11:34:35\"\n    }\n}",
-        "title": "查询审计服务配置"
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdbro-6zpy4ei1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"507f6863-2827-4c2c-9c3b-fbbcc32e1ed4\",\n        \"CreateTime\": \"2025-04-11 15:13:07\",\n        \"IsClosing\": \"false\",\n        \"IsOpening\": \"false\",\n        \"LogExpireDay\": 90,\n        \"LogType\": \"storage\"\n    }\n}",
+        "title": "查询实例配置"
       }
     ],
     "DescribeAuditInstanceList": [
@@ -664,6 +664,14 @@
         "title": "查询实例日志投递CLS配置"
       }
     ],
+    "DescribeDBInstanceProcess": [
+      {
+        "document": "无",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDBInstanceProcess\r\n&InstanceId=cdb-xdkw92\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Command\": \"abc\",\n                \"Db\": \"abc\",\n                \"Id\": 1,\n                \"Info\": \"abc\",\n                \"State\": \"abc\",\n                \"Time\": 1,\n                \"User\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询实例活动线程"
+      }
+    ],
     "DescribeDBInstanceRebootTime": [
       {
         "document": "",
@@ -820,6 +828,14 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ezq1vzem\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 72,\n        \"Items\": [\n            {\n                \"Name\": \"lower_case_table_names\",\n                \"ParamType\": \"integer\",\n                \"Default\": \"0\",\n                \"Description\": \"If set to 0, table names are stored as specified and comparisons are case sensitive. If set to 1, they are stored in lowercase on disk and comparisons are not case sensitive.\",\n                \"CurrentValue\": \"0\",\n                \"NeedReboot\": 1,\n                \"Max\": 1,\n                \"Min\": 0,\n                \"EnumValue\": [],\n                \"MaxFunc\": \"64\",\n                \"MinFunc\": \"1\",\n                \"SnapshotValue\": \"24\",\n                \"IsSnapshotExist\": true,\n                \"IsNotSupportEdit\": true\n            }\n        ],\n        \"RequestId\": \"92131c95-aa65-44db-8c3c-e8cd67883b58\"\n    }\n}",
         "title": "查询实例的可设置参数列表"
+      }
+    ],
+    "DescribeInstancePasswordComplexity": [
+      {
+        "document": "查询实例的密码复杂度",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancePasswordComplexity\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-1urqrvpf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CurrentValue\": \"8\",\n                \"Default\": \"0\",\n                \"Description\": \"The minimum number of characters that validate_password requires passwords to have.\",\n                \"EnumValue\": [],\n                \"FormulaCalcDefault\": \"0\",\n                \"IsFormulaCalc\": false,\n                \"IsFormulaFunc\": \"0\",\n                \"IsNotSupportEdit\": false,\n                \"IsSnapshotExist\": true,\n                \"Max\": 64,\n                \"MaxBigNumberString\": \"64\",\n                \"MaxFunc\": \"\",\n                \"Min\": 0,\n                \"MinBigNumberString\": \"0\",\n                \"MinFunc\": \"\",\n                \"Name\": \"validate_password_length\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\",\n                \"SnapshotValue\": \"8\"\n            },\n            {\n                \"CurrentValue\": \"1\",\n                \"Default\": \"0\",\n                \"Description\": \"The minimum number of lowercase and uppercase characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger.\",\n                \"EnumValue\": [],\n                \"FormulaCalcDefault\": \"0\",\n                \"IsFormulaCalc\": false,\n                \"IsFormulaFunc\": \"0\",\n                \"IsNotSupportEdit\": false,\n                \"IsSnapshotExist\": true,\n                \"Max\": 16,\n                \"MaxBigNumberString\": \"16\",\n                \"MaxFunc\": \"\",\n                \"Min\": 0,\n                \"MinBigNumberString\": \"0\",\n                \"MinFunc\": \"\",\n                \"Name\": \"validate_password_mixed_case_count\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\",\n                \"SnapshotValue\": \"1\"\n            },\n            {\n                \"CurrentValue\": \"2\",\n                \"Default\": \"0\",\n                \"Description\": \"The minimum number of numeric (digit) characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger.\",\n                \"EnumValue\": [],\n                \"FormulaCalcDefault\": \"0\",\n                \"IsFormulaCalc\": false,\n                \"IsFormulaFunc\": \"0\",\n                \"IsNotSupportEdit\": false,\n                \"IsSnapshotExist\": true,\n                \"Max\": 16,\n                \"MaxBigNumberString\": \"16\",\n                \"MaxFunc\": \"\",\n                \"Min\": 0,\n                \"MinBigNumberString\": \"0\",\n                \"MinFunc\": \"\",\n                \"Name\": \"validate_password_number_count\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\",\n                \"SnapshotValue\": \"2\"\n            },\n            {\n                \"CurrentValue\": \"MEDIUM\",\n                \"Default\": \"LOW\",\n                \"Description\": \"The password policy enforced by validate_password. The validate_password.policy value can be specified using numeric values 0, 1, 2.\",\n                \"EnumValue\": [\n                    \"LOW\",\n                    \"MEDIUM\",\n                    \"STRONG\"\n                ],\n                \"FormulaCalcDefault\": \"LOW\",\n                \"IsFormulaCalc\": false,\n                \"IsFormulaFunc\": \"LOW\",\n                \"IsNotSupportEdit\": false,\n                \"IsSnapshotExist\": true,\n                \"Max\": 0,\n                \"MaxBigNumberString\": \"\",\n                \"MaxFunc\": \"\",\n                \"Min\": 0,\n                \"MinBigNumberString\": \"\",\n                \"MinFunc\": \"\",\n                \"Name\": \"validate_password_policy\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"enum\",\n                \"SnapshotValue\": \"MEDIUM\"\n            },\n            {\n                \"CurrentValue\": \"3\",\n                \"Default\": \"0\",\n                \"Description\": \"The minimum number of nonalphanumeric characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger.\",\n                \"EnumValue\": [],\n                \"FormulaCalcDefault\": \"0\",\n                \"IsFormulaCalc\": false,\n                \"IsFormulaFunc\": \"0\",\n                \"IsNotSupportEdit\": false,\n                \"IsSnapshotExist\": true,\n                \"Max\": 16,\n                \"MaxBigNumberString\": \"16\",\n                \"MaxFunc\": \"\",\n                \"Min\": 0,\n                \"MinBigNumberString\": \"0\",\n                \"MinFunc\": \"\",\n                \"Name\": \"validate_password_special_char_count\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\",\n                \"SnapshotValue\": \"3\"\n            }\n        ],\n        \"RequestId\": \"103be0cb-4ca7-400b-a6b1-4c3fc7b7227c\",\n        \"TotalCount\": 5\n    }\n}",
+        "title": "查询实例的密码复杂度"
       }
     ],
     "DescribeInstanceUpgradeCheckJob": [
@@ -1054,6 +1070,14 @@
         "title": "隔离云数据库实例"
       }
     ],
+    "KillDBProcessByIds": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=KillDBProcessByIds\n&ProcessIds.0=145\n&InstanceId=cdb-ieuwi38r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85b295bb-8f43-ce01-e35f-5a02e2beeeac\"\n    }\n}",
+        "title": "终止MySQL实例执行线程"
+      }
+    ],
     "ModifyAccountDescription": [
       {
         "document": "",
@@ -1188,6 +1212,14 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceLogToCLS\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ewa3b\",\n    \"LogType\": \"error\",\n    \"Status\": \"ON\",\n    \"CreateLogset\": true,\n    \"Logset\": \"sub_fyrtjbqw\",\n    \"CreateLogTopic\": true,\n    \"LogTopic\": \"my_test\",\n    \"Period\": 1,\n    \"CreateIndex\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "开启或关闭CDB日志投递CLS"
+      }
+    ],
+    "ModifyDBInstanceModes": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceModes\n&InstanceId=cdb-xxxx\n&Mode=protectMode\n&ProtectMode=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"9ad9c2d5-88007b27-7d2c8b8c-f2598f12\"\n    }\n}",
+        "title": "更改云数据库的模式"
       }
     ],
     "ModifyDBInstanceName": [
