@@ -56,6 +56,14 @@
         "title": "获取会话详情"
       }
     ],
+    "GetUploadJobDetails": [
+      {
+        "document": "查询上传任务",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUploadJobDetails\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-G5XTaxnz\",\n    \"JobId\": \"job-9drpcx7eb7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Job\": {\n            \"CreateTime\": \"2025-11-19T14:23:35.384323792+08:00\",\n            \"Id\": 0,\n            \"InstanceId\": \"dataagent-G5XTaxnz\",\n            \"JobId\": \"job-9drpcx7eb7\",\n            \"KnowledgeBaseId\": \"\",\n            \"Message\": \"\",\n            \"Status\": \"Success\",\n            \"SubUin\": \"\",\n            \"Uin\": \"\",\n            \"UpdateTime\": \"2025-11-19T14:23:35.384323868+08:00\"\n        },\n        \"RequestId\": \"44545091-0bac-4260-adca-76dbd703614f\"\n    }\n}",
+        "title": "查询上传任务"
+      }
+    ],
     "ModifyChunk": [
       {
         "document": "编辑修改分片",
@@ -86,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopChatAI\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-hLhMpd0H\",\n    \"SessionId\": \"cabb4c9c-4c4f-45c9-94fc-b3061e503176\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0681ca0e-7917-4495-a2a7-be6ece8a706a\",\n        \"SessionId\": \"cabb4c9c-4c4f-45c9-94fc-b3061e503176\"\n    }\n}",
         "title": "中断DataAgent的回答输出"
+      }
+    ],
+    "UploadAndCommitFile": [
+      {
+        "document": "上传并提交文件",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadAndCommitFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"instance001\",\n    \"CosFiles\": [\n        {\n            \"FileName\": \"1.txt\",\n            \"FileType\": \"TXT\",\n            \"UserCosUrl\": \"https://xxxx.cos.ap-chongqing.myqcloud.com/1.txt\"\n        }\n    ],\n    \"KnowledgeBaseId\": \"kb001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"job001\",\n        \"RequestId\": \"162e94d1-97ef-452d-82df-600fa0f3e972\"\n    }\n}",
+        "title": "上传并提交文件"
       }
     ]
   },

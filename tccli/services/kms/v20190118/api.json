@@ -1112,6 +1112,16 @@
         },
         {
           "disabled": false,
+          "document": "CMK的名称",
+          "example": "测试根密钥",
+          "member": "string",
+          "name": "KeyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "作为密钥更容易辨识，更容易被人看懂的数据密钥名称",
           "example": "lzctest",
           "member": "string",
@@ -1515,7 +1525,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥属性信息",
+          "document": "密钥属性信息。",
           "example": "无",
           "member": "KeyMetadata",
           "name": "KeyMetadata",
@@ -2472,6 +2482,15 @@
           "name": "HsmClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表,当参数IsHostedByKms=1，数据密钥托管到kms时有效.",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2515,6 +2534,26 @@
           "example": "93866e69-9755-11ef-8e65-52540089547t",
           "member": "string",
           "name": "DataKeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误",
+          "example": "0",
+          "member": "uint64",
+          "name": "TagCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签操作的返回信息",
+          "example": "ok",
+          "member": "string",
+          "name": "TagMsg",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3116,6 +3155,15 @@
           "name": "HsmClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3140,6 +3188,26 @@
           "member": "string",
           "name": "DataKeyId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误",
+          "example": "0",
+          "member": "uint64",
+          "name": "TagCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签操作的返回信息",
+          "example": "ok",
+          "member": "string",
+          "name": "TagMsg",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3617,6 +3685,15 @@
           "name": "DataKeyLen",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤条件",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

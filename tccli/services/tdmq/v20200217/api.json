@@ -645,9 +645,9 @@
       "status": "online"
     },
     "DescribeRocketMQPublicAccessMonitorData": {
-      "document": "从腾讯云可观测平台拉取公网指标监控数据，目前仅支持客户端到 LB 的入带宽和出宽带指标。",
+      "document": "查询公网指标监控数据，目前仅支持客户端到 LB 的入带宽和出宽带指标。\n当前 API 适用集群：4.x 专享集群 和 4.x 通用集群。5.x 集群暂不支持该功能。",
       "input": "DescribeRocketMQPublicAccessMonitorDataRequest",
-      "name": "拉取公网指标监控数据",
+      "name": "查询 RocketMQ 集群公网指标监控数据",
       "output": "DescribeRocketMQPublicAccessMonitorDataResponse",
       "status": "online"
     },
@@ -10395,8 +10395,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "专享集群ID",
-          "example": "rocketmq-xxx",
+          "document": "集群 ID",
+          "example": "rocketmq-a52qova7x97b",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10404,7 +10404,7 @@
         },
         {
           "disabled": false,
-          "document": "指标名称，仅支持单指标拉取。目前仅支持：ClientIntraffic; ClientOuttraffic",
+          "document": "指标名称，仅支持单指标拉取。指标枚举如下：\n\n- ClientIntraffic：入流量\n- ClientOuttraffic：出流量",
           "example": "ClientOuttraffic",
           "member": "string",
           "name": "MetricName",
@@ -10487,7 +10487,7 @@
         {
           "disabled": false,
           "document": "数据点数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {         \"Timestamps\": [             1535079000,             1535079300,             1535079600,             1535079900,             1535080200,             1535080500         ],         \"Values\": [             2.566,             2.283,             6.316,             2.816,             2.7,             2.35         ]     } ]",
+          "example": "无",
           "member": "RocketMQDataPoint",
           "name": "DataPoints",
           "output_required": false,

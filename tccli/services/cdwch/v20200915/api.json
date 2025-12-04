@@ -832,6 +832,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点级配置的ip，当ConfigLevel取值为node时，此参数必选；",
+          "example": "10.xx.xx.9",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可选参数，参数取值：node,cluster; node: 节点级参数配置，cluster: 实例级参数配置；",
+          "example": "node",
+          "member": "string",
+          "name": "ConfigLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

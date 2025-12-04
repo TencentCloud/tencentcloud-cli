@@ -952,6 +952,14 @@
         "title": "创建数据库"
       }
     ],
+    "ModifyClusterGlobalEncryption": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterGlobalEncryption\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"IsOpenGlobalEncryption\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22f221ae-40d7-4b73-84bb-ae2d090a3beb\",\n        \"TaskId\": 177736\n    }\n}",
+        "title": "关闭全局加密"
+      }
+    ],
     "ModifyClusterName": [
       {
         "document": "",

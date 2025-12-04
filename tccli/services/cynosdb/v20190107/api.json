@@ -812,6 +812,13 @@
       "output": "ModifyClusterDatabaseResponse",
       "status": "online"
     },
+    "ModifyClusterGlobalEncryption": {
+      "document": "开关全局加密",
+      "input": "ModifyClusterGlobalEncryptionRequest",
+      "name": "开关全局加密",
+      "output": "ModifyClusterGlobalEncryptionResponse",
+      "status": "online"
+    },
     "ModifyClusterName": {
       "document": "本接口（ModifyClusterName）用于修改集群名称。",
       "input": "ModifyClusterNameRequest",
@@ -16671,6 +16678,52 @@
     "ModifyClusterDatabaseResponse": {
       "document": "ModifyClusterDatabase返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterGlobalEncryptionRequest": {
+      "document": "ModifyClusterGlobalEncryption请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cynosdbmysql-72xtubad",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启或关闭全局加密",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOpenGlobalEncryption",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterGlobalEncryptionResponse": {
+      "document": "ModifyClusterGlobalEncryption返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务id",
+          "example": "147263",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

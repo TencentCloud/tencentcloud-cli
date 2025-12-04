@@ -88,6 +88,14 @@
         "title": "示例"
       }
     ],
+    "CreateMessageEnrichmentRule": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMessageEnrichmentRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4wpne\",\n    \"RuleName\": \"rule1\",\n    \"Condition\": \"eyJjbGllbnRJZCI6ImNsaWVudC0xIiwidXNlcm5hbWUiOiJjbGllbnQtMSIsInRvcGljIjoiaG9tZS9yb29tMSJ9\",\n    \"Actions\": \"eyJtZXNzYWdlRXhwaXJ5SW50ZXJ2YWwiOjM2MCwicmVzcG9uc2VUb3BpYyI6InJlcGxpZXMvZGV2aWNlcy8ke2NsaWVudGlkfSIsImNvcnJlbGF0aW9uRGF0YSI6IiR7dHJhY2VpZH0iLCJ1c2VyUHJvcGVydHkiOlt7ImtleSI6InRyYWNlLWlkIiwidmFsdWUiOiIke3RyYWNlaWR9In1dfQ==\",\n    \"Priority\": 2,\n    \"Status\": 1,\n    \"Remark\": \"remark\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Id\": 6,\n        \"InstanceId\": \"mqtt-g4r4wpne\",\n        \"RequestId\": \"63e5ecf1-3d79-4f28-aef3-6e7396f78dcd\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateTopic": [
       {
         "document": "示例",
@@ -181,6 +189,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMQTTInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-wjgxr8jg\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"84afeb76-9175-47ec-a6f1-8d0af0c0aae6\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DeleteMessageEnrichmentRule": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMessageEnrichmentRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4wpne\",\n    \"Id\": 6\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"718a230c-f185-4d53-9cf7-2b2a324a2216\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -320,6 +336,14 @@
         "title": "示例"
       }
     ],
+    "DescribeMessageEnrichmentRules": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageEnrichmentRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4wpne\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Actions\": \"eyJ1c2VyUHJvcGVydHkiOiBbeyJrZXkiOiAidHJhY2UtaWQiLCAidmFsdWUiOiAiJHt0cmFjZWlkfSJ9XSwgInJlc3BvbnNlVG9waWMiOiAicmVwbGllcy9kZXZpY2VzLyR7Y2xpZW50aWR9IiwgImNvcnJlbGF0aW9uRGF0YSI6ICIke3RyYWNlaWR9IiwgIm1lc3NhZ2VFeHBpcnlJbnRlcnZhbCI6IDM2MH0=\",\n                \"Condition\": \"eyJ0b3BpYyI6ICJob21lL3Jvb20xIiwgImNsaWVudElkIjogImNsaWVudC0xIiwgInVzZXJuYW1lIjogImNsaWVudC0xIn0=\",\n                \"CreatedTime\": 1763347106093,\n                \"Id\": 5,\n                \"InstanceId\": \"mqtt-g4r4wpne\",\n                \"Priority\": 1,\n                \"Remark\": \"remark\",\n                \"RuleName\": \"rule1\",\n                \"Status\": 1,\n                \"UpdateTime\": 1763347106093\n            },\n            {\n                \"Actions\": \"eyJ1c2VyUHJvcGVydHkiOiBbeyJrZXkiOiAidHJhY2UtaWQiLCAidmFsdWUiOiAiJHt0cmFjZWlkfSJ9XSwgInJlc3BvbnNlVG9waWMiOiAicmVwbGllcy9kZXZpY2VzLyR7Y2xpZW50aWR9IiwgImNvcnJlbGF0aW9uRGF0YSI6ICIke3RyYWNlaWR9IiwgIm1lc3NhZ2VFeHBpcnlJbnRlcnZhbCI6IDM2MH0=\",\n                \"Condition\": \"eyJ0b3BpYyI6ICJob21lL3Jvb20xIiwgImNsaWVudElkIjogImNsaWVudC0xIiwgInVzZXJuYW1lIjogImNsaWVudC0xIn0=\",\n                \"CreatedTime\": 1763347249927,\n                \"Id\": 6,\n                \"InstanceId\": \"mqtt-g4r4wpne\",\n                \"Priority\": 2,\n                \"Remark\": \"remark\",\n                \"RuleName\": \"rule2\",\n                \"Status\": 1,\n                \"UpdateTime\": 1763347388148\n            }\n        ],\n        \"RequestId\": \"6e898343-e911-49de-8491-f23108edd157\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeMessageList": [
       {
         "document": "",
@@ -440,6 +464,14 @@
         "title": "示例"
       }
     ],
+    "ModifyMessageEnrichmentRule": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMessageEnrichmentRule\n<公共请求参数>\n\n{\n    \"Id\": 6,\n    \"InstanceId\": \"mqtt-g4r4wpne\",\n    \"RuleName\": \"rule2\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"018d5c6a-33bb-41b5-aa38-98cd4e226546\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ModifyTopic": [
       {
         "document": "示例",
@@ -493,6 +525,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAuthorizationPolicyPriority\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4x85z\",\n    \"Priorities\": [\n        {\n            \"Id\": 1,\n            \"Priority\": 3\n        },\n        {\n            \"Id\": 6,\n            \"Priority\": 1\n        },\n        {\n            \"Id\": 7,\n            \"Priority\": 2\n        }\n    ]\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"1186da0d-931d-47a3-80a1-885ea2c00067\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "UpdateMessageEnrichmentRulePriority": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateMessageEnrichmentRulePriority\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4wpne\",\n    \"Priorities\": [\n        {\n            \"Id\": 6,\n            \"Priority\": 10\n        }\n    ]\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"cf686c8f-edb9-46e5-9a4d-d45296e377f9\"\n    }\n}",
         "title": "示例"
       }
     ]

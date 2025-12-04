@@ -685,6 +685,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例标签",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU类型：Intel/AMD,Hygon",
+          "example": "Intel/AMD",
+          "member": "string",
+          "name": "CpuType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -963,6 +983,26 @@
           "example": "cluster-jlfwfew",
           "member": "string",
           "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "独享集群的标签信息",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "ResourceTags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU类型，Intel/AMD,Hygon",
+          "example": "Intel/AMD",
+          "member": "string",
+          "name": "CpuType",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1897,6 +1937,34 @@
         }
       ],
       "type": "object"
+    },
+    "ResourceTag": {
+      "document": "标签对象，包含tagKey & tagValue",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "env",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "prod",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

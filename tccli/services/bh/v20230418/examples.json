@@ -444,7 +444,7 @@
       {
         "document": "查询安全配置信息",
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecuritySetting\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8ebf0b3-ecf5-49bf-9f9d-86341c4072f1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SecuritySetting\": {},\n        \"RequestId\": \"b8ebf0b3-ecf5-49bf-9f9d-86341c4072f1\"\n    }\n}",
         "title": "查询安全配置信息"
       }
     ],

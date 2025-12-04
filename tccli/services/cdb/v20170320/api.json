@@ -4846,7 +4846,7 @@
         {
           "disabled": false,
           "document": "云数据库账号。",
-          "example": "[{\"Host\": \"127.0.0.1\",\"User\": \"ajnnw\"}]",
+          "example": "无",
           "member": "Account",
           "name": "Accounts",
           "required": true,
@@ -16064,6 +16064,15 @@
           "name": "Accounts",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否跳过校验密码复杂度",
+          "example": "false",
+          "member": "bool",
+          "name": "SkipValidatePassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -21623,6 +21632,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启关联切换，true为开启，false为关闭，默认false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsRelatedSwitch",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

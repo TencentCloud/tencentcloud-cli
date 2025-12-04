@@ -1075,6 +1075,23 @@
       ],
       "usage": "both"
     },
+    "AgentHandoffAdvancedSetting": {
+      "document": "Agent转交高级设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对话流转策略；0-由上一轮回复用户的 Agent 继续发起，1- 回到主Agent",
+          "example": "0",
+          "member": "int64",
+          "name": "ConversationPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AgentInput": {
       "document": "Agent输入值，支持直接赋值和引用",
       "members": [
@@ -2503,6 +2520,17 @@
           "example": "0",
           "member": "uint64",
           "name": "ToolSource",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费状态；0-不计费，1-限时免费，2-官方收费",
+          "example": "0",
+          "member": "int64",
+          "name": "FinanceType",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -5501,6 +5529,16 @@
           "name": "Agents",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent转交高级设置",
+          "example": "无",
+          "member": "AgentHandoffAdvancedSetting",
+          "name": "HandoffAdvancedSetting",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {

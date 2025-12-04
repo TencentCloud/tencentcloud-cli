@@ -48,6 +48,14 @@
         "title": "任务成功完成"
       }
     ],
+    "DescribeVideoFaceFusionJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoFaceFusionJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1383749921168539648\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"5c5a2a51-e8cc-4b41-8bea-6f6039cd6f09\",\n        \"ResultVideoUrl\": \"\",\n        \"Status\": \"RUN\"\n    }\n}",
+        "title": "查询人脸融合任务"
+      }
+    ],
     "DescribeVideoStylizationJob": [
       {
         "document": "成功调用查询任务接口，任务完成。",
@@ -118,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTemplateToVideoJob\n<公共请求参数>\n\n{\n    \"Template\": \"hug\",\n    \"Images\": [\n        {\n            \"Url\": \"https://test.jpg\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1305518294765740032\",\n        \"RequestId\": \"2392f73f-6436-4f79-85dc-6283d2ca78ef\"\n    }\n}",
         "title": "成功提交"
+      }
+    ],
+    "SubmitVideoFaceFusionJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitVideoFaceFusionJob\n<公共请求参数>\n\n{\n    \"VideoUrl\": \"https://cos.ap-guangzhou.myqcloud.com/facefusion/face/video2.mp4\",\n    \"TemplateInfos\": [\n        {\n            \"TemplateFaceID\": \"0\",\n            \"TemplateFaceImage\": {\n                \"Url\": \"https://cos.ap-guangzhou.myqcloud.com/facefusion/face/face.png\"\n            }\n        }\n    ],\n    \"MergeInfos\": [\n        {\n            \"MergeFaceImage\": {\n                \"Url\": \"https://cos.ap-guangzhou.myqcloud.com/facefusion/face/guodegang.jpg\"\n            },\n            \"TemplateFaceID\": \"0\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1383749921168539648\",\n        \"RequestId\": \"de9cc0c9-2acb-400f-8986-c29e22c92a60\"\n    }\n}",
+        "title": "提交视频人脸融合任务"
       }
     ],
     "SubmitVideoStylizationJob": [

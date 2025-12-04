@@ -4213,7 +4213,7 @@
         {
           "disabled": false,
           "document": "外网IPv6地址，公网可访问",
-          "example": "2402:4e00:1012:2c01:1:90cb:55fa:e4d3",
+          "example": "2402:4e00:1013:2c01:1:90cb:55fa:e4d3",
           "member": "string",
           "name": "WanVipv6",
           "output_required": true,
@@ -4456,6 +4456,16 @@
           "example": "1",
           "member": "int64",
           "name": "ProtectedProperty",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流程Id，标志实例当前所处的异步任务",
+          "example": "1351487408",
+          "member": "int64",
+          "name": "FlowId",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5510,7 +5520,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

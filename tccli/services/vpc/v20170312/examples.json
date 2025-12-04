@@ -3385,8 +3385,8 @@
     "ModifyVpcAttribute": [
       {
         "document": "修改VPC属性",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyVpcAttribute\n&VpcName=MyTest\n&VpcId=vpc-m7sr81gh\n&EnableMulticast=true\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"38b1a253-02b7-43d7-8524-7e07432ae31a\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcAttribute\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-nup3si95\",\n    \"VpcName\": \"vpc_dev\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b846cc46-e519-47f2-bc7d-c62ae2ddc66b\"\n    }\n}",
         "title": "修改VPC属性"
       }
     ],

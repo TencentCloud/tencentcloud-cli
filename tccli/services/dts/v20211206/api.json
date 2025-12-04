@@ -3177,6 +3177,56 @@
       ],
       "usage": "both"
     },
+    "DBOpFilter": {
+      "document": "库/表/视图级别的 DDL/DML 白名单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则生效的库名",
+          "example": "je***",
+          "member": "string",
+          "name": "DbName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "库级 DDL/DML 过滤规则",
+          "example": "无",
+          "member": "OpFilter",
+          "name": "OpFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表级 DDL/DML 过滤信息",
+          "example": "无",
+          "member": "TableFilter",
+          "name": "Tables",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视图级 DDL/DML 过滤信息",
+          "example": "无",
+          "member": "ViewFilter",
+          "name": "Views",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Database": {
       "document": "需要同步的库表对象",
       "members": [
@@ -8780,6 +8830,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "库/表/视图级 DML/DDL 白名单",
+          "example": "无",
+          "member": "DBOpFilter",
+          "name": "DatabasesOpFilter",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8822,6 +8883,34 @@
           "output_required": true,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OpFilter": {
+      "document": "DDL/DML 过滤规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DML 白名单",
+          "example": "[\"Insert\"]",
+          "member": "string",
+          "name": "OpTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DDL 白名单",
+          "example": "无",
+          "member": "DdlOption",
+          "name": "DdlOptions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -11600,6 +11689,34 @@
       ],
       "usage": "both"
     },
+    "TableFilter": {
+      "document": "表级 DDL/DML 过滤信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则生效的表名",
+          "example": "order_details",
+          "member": "string",
+          "name": "TableName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表级 DDL/DML 过滤规则",
+          "example": "无",
+          "member": "OpFilter",
+          "name": "OpFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TableItem": {
       "document": "表对象集合，当 TableMode 为 partial 时，此项需要填写",
       "members": [
@@ -11926,6 +12043,34 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ViewFilter": {
+      "document": "视图级 DDL/DML 过滤信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则生效的视图名",
+          "example": "order_full_details",
+          "member": "string",
+          "name": "ViewName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视图级 DDL/DML 过滤规则",
+          "example": "无",
+          "member": "OpFilter",
+          "name": "OpFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

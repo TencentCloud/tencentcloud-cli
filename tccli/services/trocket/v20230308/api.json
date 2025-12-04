@@ -267,7 +267,7 @@
       "status": "online"
     },
     "DescribeMessage": {
-      "document": "查询消息详情",
+      "document": "查询消息详情。\n当前 API 适用集群：5.x 集群。4.x 集群的查询消息详情接口文档见 [DescribeRocketMQMsg](https://cloud.tencent.com/document/product/1179/91055)。",
       "input": "DescribeMessageRequest",
       "name": "查询消息详情",
       "output": "DescribeMessageResponse",

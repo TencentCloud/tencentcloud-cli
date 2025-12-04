@@ -42,6 +42,13 @@
       "output": "DescribeTemplateToVideoJobResponse",
       "status": "online"
     },
+    "DescribeVideoFaceFusionJob": {
+      "document": "查询视频人脸融合任务",
+      "input": "DescribeVideoFaceFusionJobRequest",
+      "name": "查询视频人脸融合任务",
+      "output": "DescribeVideoFaceFusionJobResponse",
+      "status": "online"
+    },
     "DescribeVideoStylizationJob": {
       "document": "用于查询视频风格化任务。视频风格化支持将输入视频生成特定风格的视频。生成后的视频画面风格多样、流畅自然，能够满足社交娱乐、互动营销、视频素材制作等场景的需求。",
       "input": "DescribeVideoStylizationJobRequest",
@@ -82,6 +89,13 @@
       "input": "SubmitTemplateToVideoJobRequest",
       "name": "提交视频特效任务",
       "output": "SubmitTemplateToVideoJobResponse",
+      "status": "online"
+    },
+    "SubmitVideoFaceFusionJob": {
+      "document": "提交视频人脸融合任务",
+      "input": "SubmitVideoFaceFusionJobRequest",
+      "name": "提交视频人脸融合任务",
+      "output": "SubmitVideoFaceFusionJobResponse",
       "status": "online"
     },
     "SubmitVideoStylizationJob": {
@@ -537,6 +551,73 @@
       ],
       "type": "object"
     },
+    "DescribeVideoFaceFusionJobRequest": {
+      "document": "DescribeVideoFaceFusionJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1194931538865782784",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoFaceFusionJobResponse": {
+      "document": "DescribeVideoFaceFusionJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误码。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "FailedOperation.ModerationFailed",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误信息。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "审核失败",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果视频 URL。有效期 24 小时。",
+          "example": "http://cloud.com/result.mp4",
+          "member": "string",
+          "name": "ResultVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVideoStylizationJobRequest": {
       "document": "DescribeVideoStylizationJob请求参数结构体",
       "members": [
@@ -618,6 +699,134 @@
         }
       ],
       "usage": "in"
+    },
+    "FaceMergeInfo": {
+      "document": "人脸图片和待被融合的素材模板图的人脸位置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "融合图片",
+          "example": "无",
+          "member": "Image",
+          "name": "MergeFaceImage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传的图片人脸位置信息（人脸框）\nWidth、Height >= 30。",
+          "example": "无",
+          "member": "FaceRect",
+          "name": "MergeFaceRect",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "素材人脸ID，不填默认取上传图片中最大人脸。",
+          "example": "1",
+          "member": "string",
+          "name": "TemplateFaceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FaceRect": {
+      "document": "人脸框信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人脸框左上角横坐标。",
+          "example": "1",
+          "member": "int64",
+          "name": "X",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸框左上角纵坐标。",
+          "example": "1",
+          "member": "int64",
+          "name": "Y",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸框宽度。",
+          "example": "30",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸框高度。",
+          "example": "30",
+          "member": "int64",
+          "name": "Height",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FaceTemplateInfo": {
+      "document": "模板信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色ID。需要与MergeInfos中的TemplateFaceID依次对应。需要填数字，建议填\"0\"、\"1\"，依次累加。",
+          "example": "0",
+          "member": "string",
+          "name": "TemplateFaceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频模板中要替换的人脸图片",
+          "example": "无",
+          "member": "Image",
+          "name": "TemplateFaceImage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频模板中要替换的人脸图片的人脸框。不填默认取要替换的人脸图片中最大人脸。",
+          "example": "无",
+          "member": "FaceRect",
+          "name": "TemplateFaceRect",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Image": {
       "document": "图片",
@@ -1176,6 +1385,79 @@
           "disabled": false,
           "document": "任务ID。",
           "example": "1194931538865782784",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitVideoFaceFusionJobRequest": {
+      "document": "SubmitVideoFaceFusionJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频素材下载地址。用户自定义模版视频下载地址，使用前需要先调用视频审核接口进行内容审核。视频限制：分辨率≤4k，fps≤25，视频大小≤1G，时长≤20 秒，支持格式mp4。\n\n输入视频建议：\n姿态：人脸相对镜头水平方向角度转动不超过 90°,垂直方向角度转动不超过 20°。遮挡：脸部遮挡面积不超过 50%，不要完全遮挡五官，不要有半透明遮挡（强光，玻璃，透明眼镜等）、以及细碎离散的脸部遮挡（如飘落的花瓣）。妆容及光照：避免浓妆、复杂妆容，避免复杂光照、闪烁，这些属性无法完全恢复，并对稳定性有影响。针对特殊表情和微表情，针对局部肌肉控制下的微表情，以及过于夸张的特殊表情等不保证表情效果完全恢复。",
+          "example": "http://cloud.com/video.mp4",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频素材模板的人脸位置信息。\n目前最多支持融合视频素材中的 6 张人脸  \n输入图片要求：  \n1、用户图限制大小不超过 10MB  \n2、图片最大分辨率不超过 4k，建议最小为 128，  人脸框最小为 68\n3、支持格式 jpg，png  \n4、如果用户图中未指定人脸且有多张人脸，  默认融合最大人脸  \n输入图片建议：  包含上述视频中出现的人物的单人照，并且正面、清晰、无遮挡",
+          "example": "无",
+          "member": "FaceTemplateInfo",
+          "name": "TemplateInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户人脸图片位置信息。\n输入图片要求：\n1、用户图限制大小不超过 10MB\n2、图片最大分辨率不超过 4k，建议最小为 128，人脸框最小为 68\n3、支持格式 jpg，png\n4、如果未指定人脸且用户图中有多张人脸，\n默认融合最大人脸\n输入图建议：\n正脸无遮挡",
+          "example": "无",
+          "member": "FaceMergeInfo",
+          "name": "MergeInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "为生成视频添加标识的开关，默认为1。 \n1：添加标识。 0：不添加标识。 其他数值：默认按1处理。 \n建议您使用显著标识来提示，该视频是 AI 生成的视频。",
+          "example": "0",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "视频水印Logo参数标识内容设置。   \n默认在融合结果图右下角添加“AI生成”类似字样，您可根据自身需要替换为其他的Logo图片。   \n输入建议：输入水印图片宽高需小于视频宽高",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitVideoFaceFusionJobResponse": {
+      "document": "SubmitVideoFaceFusionJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频人脸融合任务的job id（job有效期24小时）",
+          "example": "1300653023995437056",
           "member": "string",
           "name": "JobId",
           "output_required": false,

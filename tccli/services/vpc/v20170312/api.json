@@ -2843,7 +2843,7 @@
       "status": "online"
     },
     "ResetNatGatewayConnection": {
-      "document": "本接口（ResetNatGatewayConnection）用来NAT网关并发连接上限。",
+      "document": "本接口（ResetNatGatewayConnection）用于调整传统型NAT网关并发连接数上限。",
       "input": "ResetNatGatewayConnectionRequest",
       "name": "调整NAT网关并发连接上限",
       "output": "ResetNatGatewayConnectionResponse",
@@ -4028,6 +4028,15 @@
         },
         {
           "disabled": false,
+          "document": "IP 资源计费模式，当前仅支持原生 IP。\n<ul style=\"margin:0\"><li>账号为标准账户类型的用户，可选值：<ul><li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li><li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li></ul></li></ul>",
+          "example": "IP_POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "IPChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "EIP出带宽上限，单位：Mbps。\n<ul style=\"margin:0\"><li>标准账户类型EIP出带宽上限，可选值范围取决于EIP计费方式：<ul><li>BANDWIDTH_PACKAGE：1 Mbps 至 2000 Mbps</li>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li>\n<li>BANDWIDTH_PREPAID_BY_MONTH：1 Mbps 至 200 Mbps</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li></ul>默认值：1 Mbps。</li>\n<li>传统账户类型无需传递此参数，EIP出带宽上限取决于与其绑定的实例的公网出带宽上限，无需传递此参数。</li></ul>",
           "example": "10",
           "member": "int64",
@@ -4046,7 +4055,7 @@
         },
         {
           "disabled": false,
-          "document": "EIP类型。各种EIP类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：EIP。\n<li>EIP：弹性公网 IP。 </li>\n<li>AnycastEIP：加速 IP，已开通 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)白名单的用户可选。仅部分地域支持加速IP，详情可见Anycast公网加速[购买指南](https://cloud.tencent.com/document/product/644/12617)。</li>\n<li>HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>\n<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见弹性公网IP[产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li>",
+          "document": "EIP类型。各种EIP类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：EIP。\n<li>EIP：弹性公网 IP。 </li>\n<li>AnycastEIP：加速 IP，已开通 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)白名单的用户可选。仅部分地域支持加速IP，详情可见Anycast公网加速[购买指南](https://cloud.tencent.com/document/product/644/12617)。</li>\n<li>HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。</li>\n<li>AntiDDoSEIP：高防 IP。仅部分地域支持高防IP。</li>\n<li>ResidentialEIP：原生 IP。仅部分地域支持原生IP。</li>\n关于弹性公网 IP 支持的 IP 类型，请见[产品概述](https://cloud.tencent.com/document/product/1199/41646)。",
           "example": "AnycastEIP",
           "member": "string",
           "name": "AddressType",
@@ -4149,15 +4158,6 @@
           "example": "123e4567-e89b-12d3-a456-426655440000",
           "member": "string",
           "name": "ClientToken",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "原生EIP IP资源的计费方式。\n<ul style=\"margin:0\"><li>账号为标准账户类型的用户，可选值：<ul>\n<li>IP_POSTPAID_BY_HOUR：IP资源按小时后付费</li>\n<li>IP_PREPAID_BY_MONTH：IP资源包月预付费</li>\n</ul></li>\n</ul>",
-          "example": "IP_POSTPAID_BY_HOUR",
-          "member": "string",
-          "name": "IPChargeType",
           "required": false,
           "type": "string"
         }
@@ -7630,6 +7630,42 @@
       ],
       "usage": "out"
     },
+    "ConnectionStateTimeouts": {
+      "document": "NAT网关超时时间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "UDP映射空闲时间，指多少秒以后UDP流停止向端点发送。取值范围为：3-7200秒，默认为10秒。",
+          "example": "180",
+          "member": "uint64",
+          "name": "UDPMappingTimeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TCP已建立的连接空闲超时，指多少秒以后连接变为空闲状态。取值范围为：40-10800秒，默认为10800秒。",
+          "example": "10800",
+          "member": "uint64",
+          "name": "TCPEstablishedConnectionTimeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TCP TIME_WAIT超时，指完全关闭的TCP连接在到期后保留在NAT映射中的秒数。取值范围为：10-600秒，默认为120秒。",
+          "example": "120",
+          "member": "uint64",
+          "name": "TcpTimeWaitTimeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateAddressTemplateGroupRequest": {
       "document": "CreateAddressTemplateGroup请求参数结构体",
       "members": [
@@ -9251,6 +9287,15 @@
           "name": "DeletionProtectionEnabled",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1",
+          "example": "ExclusiveLarge1",
+          "member": "string",
+          "name": "ExclusiveType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11376,7 +11421,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -11388,6 +11433,15 @@
           "example": "true",
           "member": "bool",
           "name": "EnableRouteVpcPublish",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableRouteVpcPublishIpv6",
           "required": false,
           "type": "bool"
         }
@@ -30349,6 +30403,15 @@
           "name": "EnableCdcPublish",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableRouteVpcPublishIpv6",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -31348,6 +31411,26 @@
           "name": "DeletionProtectionEnabled",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NAT实例连接超时时间",
+          "example": "无",
+          "member": "ConnectionStateTimeouts",
+          "name": "ConnectionStateTimeouts",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "独享实例规格。取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1",
+          "example": "ExclusiveLarge1",
+          "member": "string",
+          "name": "ExclusiveType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -34420,6 +34503,15 @@
           "name": "MaxConcurrentConnection",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "独享实例规格。如果要变配到独享实例，此参数必选，取值范围：ExclusiveSmall/ExclusiveMedium1/ExclusiveLarge1",
+          "example": "ExclusiveLarge1",
+          "member": "string",
+          "name": "ExclusiveType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -38471,17 +38563,6 @@
         },
         {
           "disabled": false,
-          "document": "源地址。支持`ip`或`cidr`格式\"xxx.xxx.xxx.000/xx\"",
-          "example": "\"127.0.0.1\"",
-          "member": "string",
-          "name": "SourceCidr",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "目的端口。",
           "example": "\"8081\"",
           "member": "string",
@@ -38504,12 +38585,23 @@
         },
         {
           "disabled": false,
+          "document": "源地址。支持`ip`或`cidr`格式\"xxx.xxx.xxx.000/xx\"",
+          "example": "\"127.0.0.1\"",
+          "member": "string",
+          "name": "SourceCidr",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "ACL规则`ID`。",
           "example": "1",
           "member": "uint64",
           "name": "AclRuleId",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -39159,7 +39251,7 @@
         {
           "disabled": false,
           "document": "`VPC`实例`ID`，例如：vpc-azd4dt1c。",
-          "example": " vpc-azd4dt1c",
+          "example": "vpc-azd4dt1c",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -39199,7 +39291,7 @@
         {
           "disabled": false,
           "document": "创建时间。",
-          "example": " 2021-01-03 22:25:45",
+          "example": "2021-01-03 22:25:45",
           "member": "string",
           "name": "CreatedTime",
           "output_required": true,
@@ -39294,6 +39386,16 @@
           "name": "Ipv6CidrBlockSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableRouteVpcPublishIpv6",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -39921,7 +40023,7 @@
         {
           "disabled": false,
           "document": "网关带宽配额信息。",
-          "example": "[{'Bandwidth': 5, 'Cname': '微小型', 'Name': 'cdmini'}, {'Bandwidth': 10, 'Cname': '小型', 'Name': 'cdsmall'}, {'Bandwidth': 20, 'Cname': '中型', 'Name': 'cdmiddle'}, {'Bandwidth': 50, 'Cname': '大型', 'Name': 'cdlarge'}, {'Bandwidth': 100, 'Cname': '超大型', 'Name': 'cdsuperLarge'}]",
+          "example": "无",
           "member": "VpnGatewayQuota",
           "name": "VpnGatewayQuotaSet",
           "output_required": true,

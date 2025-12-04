@@ -823,6 +823,45 @@
       ],
       "type": "object"
     },
+    "AvailableZoneAffinityInfo": {
+      "document": "可用区转发亲和信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启可用区转发亲和。true：开启可用区转发亲和；false：开启可用区转发亲和。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区转发亲和失效阈值，当可用区内后端服务健康比例小于该阈值时，负载均衡会退出可用区转发亲和，转为全可用区转发。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "65",
+          "member": "uint64",
+          "name": "ExitRatio",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区转发亲和的重新生效阈值，当处于全可用区转发，且负载均衡可用区内的后端服务健康比例大于等于该阈值时，负载均衡会重新进入可用区转发亲和。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "ReentryRatio",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Backend": {
       "document": "监听器绑定的后端服务的详细信息",
       "members": [
@@ -869,7 +908,7 @@
         {
           "disabled": false,
           "document": "后端服务的外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.1.1.1",
+          "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "output_required": true,
@@ -879,7 +918,7 @@
         {
           "disabled": false,
           "document": "后端服务的内网 IP",
-          "example": "10.0.0.1",
+          "example": "[\"10.0.0.1\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
           "output_required": true,
@@ -925,6 +964,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端服务所在的可用区，如ap-guangzhou-1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7651,7 +7700,7 @@
         {
           "disabled": false,
           "document": "负载均衡实例的 VIP 列表。",
-          "example": "[43.123.xx.xxx]",
+          "example": "[\"172.16.0.9\"]",
           "member": "string",
           "name": "LoadBalancerVips",
           "output_required": true,
@@ -7750,7 +7799,7 @@
         {
           "disabled": true,
           "document": "用户开启日志的信息，日志只有公网属性创建了 HTTP 、HTTPS 监听器的负载均衡才会有日志。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " null",
+          "example": "null",
           "member": "string",
           "name": "Log",
           "output_required": true,
@@ -7783,7 +7832,7 @@
         {
           "disabled": false,
           "document": "负载均衡实例的安全组",
-          "example": "sg-hx6dxxxx",
+          "example": "[\"sg-3ygfv5c5\"]",
           "member": "string",
           "name": "SecureGroups",
           "output_required": true,
@@ -7805,7 +7854,7 @@
         {
           "disabled": false,
           "document": "anycast负载均衡的发布域，对于非anycast的负载均衡，此字段返回为空字符串",
-          "example": " null",
+          "example": "null",
           "member": "string",
           "name": "AnycastZone",
           "output_required": true,
@@ -8047,7 +8096,7 @@
         {
           "disabled": false,
           "document": "性能容量型规格。<ul><li> clb.c1.small：简约型规格 </li><li> clb.c2.medium：标准型规格 </li><li> clb.c3.small：高阶型1规格 </li><li> clb.c3.medium：高阶型2规格 </li><li> clb.c4.small：超强型1规格 </li><li> clb.c4.medium：超强型2规格 </li><li> clb.c4.large：超强型3规格 </li><li> clb.c4.xlarge：超强型4规格 </li><li>\"\"：非性能容量型实例</li></ul>",
-          "example": " null",
+          "example": "null",
           "member": "string",
           "name": "SlaType",
           "output_required": true,
@@ -8113,7 +8162,7 @@
         {
           "disabled": false,
           "document": "私有网络内网负载均衡，就近接入模式下规则所落在的可用区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "Zones",
           "output_required": true,
@@ -8157,7 +8206,7 @@
         {
           "disabled": false,
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cluster-1234xxxx",
+          "example": "[\"cluster-1234xxxx\"]",
           "member": "string",
           "name": "ClusterIds",
           "output_required": true,
@@ -8229,6 +8278,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区转发亲和信息",
+          "example": "无",
+          "member": "AvailableZoneAffinityInfo",
+          "name": "AvailableZoneAffinityInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -8380,7 +8440,7 @@
         {
           "disabled": false,
           "document": "负载均衡实例的网络属性。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "NetworkAttributes",
           "output_required": true,
@@ -8390,7 +8450,7 @@
         {
           "disabled": false,
           "document": "负载均衡实例的预付费相关属性。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "LBChargePrepaid",
           "name": "PrepaidAttributes",
           "output_required": true,
@@ -8400,7 +8460,7 @@
         {
           "disabled": false,
           "document": "暂做保留，一般用户无需关注。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ZhitTong\":false,\"TgwGroupName\":null}",
+          "example": "无",
           "member": "ExtraInfo",
           "name": "ExtraInfo",
           "output_required": true,
@@ -8420,7 +8480,7 @@
         {
           "disabled": false,
           "document": "负载均衡实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"TagKey\":\"1\",\"TagValue\":\"2\"}]",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": true,
@@ -8630,7 +8690,7 @@
         {
           "disabled": false,
           "document": "负载均衡的属性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "DeleteProtect",
+          "example": "[\"DeleteProtect\"]",
           "member": "string",
           "name": "AttributeFlags",
           "output_required": false,
@@ -8655,6 +8715,16 @@
           "name": "Exclusive",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区转发亲和信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AvailableZoneAffinityInfo",
+          "name": "AvailableZoneAffinityInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

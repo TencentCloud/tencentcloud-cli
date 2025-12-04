@@ -1614,7 +1614,7 @@ def doModifyPrometheusAgentExternalLabels(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePodsBySpec(args, parsed_globals):
+def doModifyClusterMachine(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1646,11 +1646,11 @@ def doDescribePodsBySpec(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePodsBySpecRequest()
+    model = models.ModifyClusterMachineRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribePodsBySpec(model)
+        rsp = client.ModifyClusterMachine(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2329,7 +2329,7 @@ def doDeleteRollOutSequence(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeEdgeClusterExtraArgs(args, parsed_globals):
+def doCreateBackupStorageLocation(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2361,11 +2361,11 @@ def doDescribeEdgeClusterExtraArgs(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeEdgeClusterExtraArgsRequest()
+    model = models.CreateBackupStorageLocationRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeEdgeClusterExtraArgs(model)
+        rsp = client.CreateBackupStorageLocation(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2824,7 +2824,7 @@ def doEnableClusterAudit(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateBackupStorageLocation(args, parsed_globals):
+def doDescribeEdgeClusterExtraArgs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2856,11 +2856,11 @@ def doCreateBackupStorageLocation(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateBackupStorageLocationRequest()
+    model = models.DescribeEdgeClusterExtraArgsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateBackupStorageLocation(model)
+        rsp = client.DescribeEdgeClusterExtraArgs(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -10249,7 +10249,7 @@ def doUninstallLogAgent(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteClusterEndpointVip(args, parsed_globals):
+def doDescribePodsBySpec(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -10281,11 +10281,11 @@ def doDeleteClusterEndpointVip(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteClusterEndpointVipRequest()
+    model = models.DescribePodsBySpecRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteClusterEndpointVip(model)
+        rsp = client.DescribePodsBySpec(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -10781,6 +10781,61 @@ def doDescribeClusterReleaseDetails(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeClusterReleaseDetails(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateClusterVirtualNode(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateClusterVirtualNodeRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateClusterVirtualNode(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -12009,7 +12064,7 @@ def doCreateClusterEndpoint(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateClusterVirtualNode(args, parsed_globals):
+def doDeleteClusterEndpointVip(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -12041,11 +12096,11 @@ def doCreateClusterVirtualNode(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateClusterVirtualNodeRequest()
+    model = models.DeleteClusterEndpointVipRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateClusterVirtualNode(model)
+        rsp = client.DeleteClusterEndpointVip(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -14746,7 +14801,7 @@ ACTION_MAP = {
     "GetUpgradeInstanceProgress": doGetUpgradeInstanceProgress,
     "ModifyNodePoolDesiredCapacityAboutAsg": doModifyNodePoolDesiredCapacityAboutAsg,
     "ModifyPrometheusAgentExternalLabels": doModifyPrometheusAgentExternalLabels,
-    "DescribePodsBySpec": doDescribePodsBySpec,
+    "ModifyClusterMachine": doModifyClusterMachine,
     "DescribeReservedInstances": doDescribeReservedInstances,
     "ModifyHealthCheckPolicy": doModifyHealthCheckPolicy,
     "DeleteClusterVirtualNode": doDeleteClusterVirtualNode,
@@ -14759,7 +14814,7 @@ ACTION_MAP = {
     "DescribePodChargeInfo": doDescribePodChargeInfo,
     "DescribeVersions": doDescribeVersions,
     "DeleteRollOutSequence": doDeleteRollOutSequence,
-    "DescribeEdgeClusterExtraArgs": doDescribeEdgeClusterExtraArgs,
+    "CreateBackupStorageLocation": doCreateBackupStorageLocation,
     "DescribePodDeductionRate": doDescribePodDeductionRate,
     "DeleteEKSCluster": doDeleteEKSCluster,
     "AddNodeToNodePool": doAddNodeToNodePool,
@@ -14768,7 +14823,7 @@ ACTION_MAP = {
     "ModifyClusterTags": doModifyClusterTags,
     "CreateCLSLogConfig": doCreateCLSLogConfig,
     "EnableClusterAudit": doEnableClusterAudit,
-    "CreateBackupStorageLocation": doCreateBackupStorageLocation,
+    "DescribeEdgeClusterExtraArgs": doDescribeEdgeClusterExtraArgs,
     "ModifyClusterVirtualNodePool": doModifyClusterVirtualNodePool,
     "UpdateImageCache": doUpdateImageCache,
     "CreateClusterNodePool": doCreateClusterNodePool,
@@ -14903,7 +14958,7 @@ ACTION_MAP = {
     "ScaleInClusterMaster": doScaleInClusterMaster,
     "DescribeResourceUsage": doDescribeResourceUsage,
     "UninstallLogAgent": doUninstallLogAgent,
-    "DeleteClusterEndpointVip": doDeleteClusterEndpointVip,
+    "DescribePodsBySpec": doDescribePodsBySpec,
     "DescribeECMInstances": doDescribeECMInstances,
     "DeleteTKEEdgeCluster": doDeleteTKEEdgeCluster,
     "GetMostSuitableImageCache": doGetMostSuitableImageCache,
@@ -14913,6 +14968,7 @@ ACTION_MAP = {
     "ModifyRollOutSequence": doModifyRollOutSequence,
     "DescribeEKSClusterCredential": doDescribeEKSClusterCredential,
     "DescribeClusterReleaseDetails": doDescribeClusterReleaseDetails,
+    "CreateClusterVirtualNode": doCreateClusterVirtualNode,
     "DisableClusterAudit": doDisableClusterAudit,
     "ModifyClusterEndpointSP": doModifyClusterEndpointSP,
     "DescribeClusterRoutes": doDescribeClusterRoutes,
@@ -14935,7 +14991,7 @@ ACTION_MAP = {
     "DisableEventPersistence": doDisableEventPersistence,
     "DeleteClusterEndpoint": doDeleteClusterEndpoint,
     "CreateClusterEndpoint": doCreateClusterEndpoint,
-    "CreateClusterVirtualNode": doCreateClusterVirtualNode,
+    "DeleteClusterEndpointVip": doDeleteClusterEndpointVip,
     "DescribeClusterVirtualNodePools": doDescribeClusterVirtualNodePools,
     "GetClusterLevelPrice": doGetClusterLevelPrice,
     "RemoveNodeFromNodePool": doRemoveNodeFromNodePool,

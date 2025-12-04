@@ -50,7 +50,7 @@
       "status": "online"
     },
     "ChannelCreateBatchSignUrl": {
-      "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 使用此接口生成链接，需要提前开通 `个人签署方仅校验手机号` 功能，在 `腾讯电子签网页端-企业设置-拓展服务` 中可以找到。\n- 个人参与方点击链接后需短信验证码才能查看合同内容。\n- 个人用户批量签署，需要传Name，Mobile，IdCardNumber(IdCardType) 参数。\n- saas企业员工用户批量签署，在传递了姓名等基本信息参数的情况下，还需要传OrganizationName（参与方所在企业名称）参数生成签署链接，<font color=\"red\">请确保此企业已完成腾讯电子签企业认证</font>。\n- 子客企业员工用户批量签署，需要传递员工OpenId和子客企业的OrganizationOpenId，以及该员工的Name，Mobile等信息。如果此子客企业未认证，则除了上述参数之外，需要传递OrganizationName（子客企业名称）。\n- 生成批量签署链接时，合同目标参与方状态需为<font color=\"red\">待签署</font>状态。\n- 个人批量签署进行的合同的签名区， 全部变成<font color=\"red\">手写签名</font>（不管合同里边设置的签名限制）来进行。\n- 不支持签署方含有签批控件，或设置了签署方在签署时自行添加签署控件功能的合同进行批量签署。\n- 进行小程序批量签署必须指定待签署的流程id，<font color=\"red\">接口中FlowIds参数必传。</font>",
+      "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 使用此接口生成链接，需要提前开通 `个人签署方仅校验手机号` 功能，在 `腾讯电子签网页端-企业设置-拓展服务` 中可以找到。\n- 个人参与方点击链接后需短信验证码才能查看合同内容。\n- 个人用户批量签署，需要传Name，Mobile，IdCardNumber(IdCardType) 参数。\n- saas企业员工用户批量签署，在传递了姓名等基本信息参数的情况下，还需要传OrganizationName（参与方所在企业名称）参数生成签署链接，<font color=\"red\">请确保此企业已完成腾讯电子签企业认证</font>。\n- 子客企业员工用户批量签署，需要传递员工OpenId和子客企业的OrganizationOpenId，以及该员工的Name，Mobile等信息。如果此子客企业未认证，则除了上述参数之外，需要传递OrganizationName（子客企业名称）。\n- 生成批量签署链接时，合同目标参与方状态需为<font color=\"red\">待签署</font>状态。\n- 不支持签署方含有签批控件，或设置了签署方在签署时自行添加签署控件功能的合同进行批量签署。\n- 进行小程序批量签署必须指定待签署的流程id，<font color=\"red\">接口中FlowIds参数必传。</font>",
       "input": "ChannelCreateBatchSignUrlRequest",
       "name": "获取跳转至腾讯电子签小程序的批量签署链接",
       "output": "ChannelCreateBatchSignUrlResponse",
