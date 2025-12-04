@@ -120,11 +120,11 @@
       "status": "online"
     },
     "DescribePermissionForAppPage": {
-      "document": "查询应用页面权限列表",
+      "document": "180天无调用量\n\n查询应用页面权限列表",
       "input": "DescribePermissionForAppPageRequest",
       "name": "查询应用页面权限列表",
       "output": "DescribePermissionForAppPageResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribePermissions": {
       "document": "查询资源权限信息",

@@ -519,7 +519,7 @@
       "status": "online"
     },
     "DescribeMsgTrace": {
-      "document": "查询消息轨迹",
+      "document": "查询单条消息的消息轨迹",
       "input": "DescribeMsgTraceRequest",
       "name": "消息轨迹",
       "output": "DescribeMsgTraceResponse",
@@ -1914,6 +1914,16 @@
         },
         {
           "disabled": false,
+          "document": "旧的公网访问接入点",
+          "example": "http://pulsar-45epqe3j7jvz.sap-8iutas0k.tdmq.ap-gz.qcloud.tencenttdmq.com:8080",
+          "member": "string",
+          "name": "OldPublicEndPoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "VPC访问接入点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://pulsar-45epqe3j7jvz.sap-8iutas0k.tdmq.ap-gz.qcloud.tencenttdmq.com:8080",
           "member": "string",
@@ -1921,6 +1931,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旧的VPC访问接入点",
+          "example": "pulsar-4k4egjzp57md.tdmq-test.ap-cd.internal.tencenttdmq.com:8080",
+          "member": "string",
+          "name": "OldVpcEndPoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2034,6 +2054,16 @@
         },
         {
           "disabled": false,
+          "document": "旧的支撑网 Pulsar 接入点",
+          "example": "pulsar://11.141.142.108:6650",
+          "member": "string",
+          "name": "OldInternalPulsarEndPoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "支撑网 HTTP 接入点\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://tdmq.ap-gz.tencentyun.com:8080",
           "member": "string",
@@ -2041,6 +2071,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旧的支撑网 HTTP 接入点",
+          "example": "http://11.141.142.108:8080",
+          "member": "string",
+          "name": "OldInternalHttpEndPoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4203,7 +4243,7 @@
         {
           "disabled": false,
           "document": "是否开启自动创建订阅",
-          "example": "开启:true(default) false: 关闭",
+          "example": "true",
           "member": "bool",
           "name": "AutoSubscriptionCreation",
           "required": false,
@@ -4217,6 +4257,24 @@
           "name": "UnackPolicy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间",
+          "example": "1440",
+          "member": "uint64",
+          "name": "SubscriptionExpirationTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间开关",
+          "example": "false",
+          "member": "bool",
+          "name": "SubscriptionExpirationTimeEnable",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4262,6 +4320,26 @@
           "name": "NamespaceId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间",
+          "example": "1440",
+          "member": "uint64",
+          "name": "SubscriptionExpirationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间",
+          "example": "false",
+          "member": "bool",
+          "name": "SubscriptionExpirationTimeEnable",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -4350,15 +4428,6 @@
         },
         {
           "disabled": false,
-          "document": "存储规格\n参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)",
-          "example": "200",
-          "member": "int64",
-          "name": "StorageSize",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "1: true，开启自动按月续费\n\n0: false，关闭自动按月续费",
           "example": "1",
           "member": "int64",
@@ -4391,6 +4460,15 @@
           "member": "int64",
           "name": "AutoVoucher",
           "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "存储规格\n参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)",
+          "example": "200",
+          "member": "int64",
+          "name": "StorageSize",
+          "required": false,
           "type": "int"
         },
         {
@@ -6257,7 +6335,7 @@
         {
           "disabled": false,
           "document": "该入参将逐步弃用，可切换至PulsarTopicType参数\n0： 普通消息；\n1 ：全局顺序消息；\n2 ：局部顺序消息；\n3 ：重试队列；\n4 ：死信队列。",
-          "example": "TopicType 和 PulsarTopicType 两者不能同时为空，有一个必选",
+          "example": "0",
           "member": "uint64",
           "name": "TopicType",
           "required": false,
@@ -6266,7 +6344,7 @@
         {
           "disabled": false,
           "document": "Pulsar 主题类型\n0: 非持久非分区\n1: 非持久分区\n2: 持久非分区\n3: 持久分区",
-          "example": "TopicType 和 PulsarTopicType 两者不能同时为空，有一个必选",
+          "example": "0",
           "member": "int64",
           "name": "PulsarTopicType",
           "required": false,
@@ -6305,6 +6383,15 @@
           "example": "60",
           "member": "int64",
           "name": "AckTimeOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Pulsar主题消息类型0: 混合消息1:普通消息2:延迟消息",
+          "example": "0",
+          "member": "int64",
+          "name": "PulsarTopicMessageType",
           "required": false,
           "type": "int"
         }
@@ -8266,6 +8353,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间",
+          "example": "1440",
+          "member": "uint64",
+          "name": "SubscriptionExpirationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间开关",
+          "example": "false",
+          "member": "bool",
+          "name": "SubscriptionExpirationTimeEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -9043,7 +9150,7 @@
         {
           "disabled": false,
           "document": "消息生产时间。",
-          "example": "2020-08-1908:06:19",
+          "example": "2025-07-07 15:54:11,286",
           "member": "string",
           "name": "ProduceTime",
           "required": true,
@@ -9082,6 +9189,15 @@
           "example": "pulsar-pnvjp9mbd947",
           "member": "string",
           "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "topic 名字",
+          "example": "topicNameUser",
+          "member": "string",
+          "name": "TopicName",
           "required": false,
           "type": "string"
         }
@@ -9477,7 +9593,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群id",
           "example": "pulsar-x4r939zkwmm2",
           "member": "string",
           "name": "ClusterId",
@@ -9519,6 +9635,16 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群的证书列表",
+          "example": "无",
+          "member": "CertificateInfo",
+          "name": "CertificateList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14470,7 +14596,7 @@
         },
         {
           "disabled": false,
-          "document": "授权资源类型（Topic:主题; Group:消费组）",
+          "document": "授权资源类型，枚举值如下：\n- Topic：主题维度\n- Group：消费组维度\n- Cluster：集群维度（默认值）",
           "example": "Topic",
           "member": "string",
           "name": "ResourceType",
@@ -14649,6 +14775,26 @@
           "name": "UnackPolicy",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间",
+          "example": "1440",
+          "member": "uint64",
+          "name": "SubscriptionExpirationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间开关",
+          "example": "false",
+          "member": "bool",
+          "name": "SubscriptionExpirationTimeEnable",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -15663,6 +15809,26 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例标签列表",
+          "example": "[\"tag\"]",
+          "member": "string",
+          "name": "TagList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例规格",
+          "example": "PULSAR.P2.MINI1",
+          "member": "string",
+          "name": "TenantSpec",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16181,7 +16347,7 @@
         {
           "disabled": false,
           "document": "是否开启自动创建订阅",
-          "example": "true:开启 false:关闭",
+          "example": "true",
           "member": "bool",
           "name": "AutoSubscriptionCreation",
           "required": false,
@@ -16195,6 +16361,24 @@
           "name": "UnackPolicy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间",
+          "example": "1440",
+          "member": "uint64",
+          "name": "SubscriptionExpirationTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间开关",
+          "example": "false",
+          "member": "bool",
+          "name": "SubscriptionExpirationTimeEnable",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -16241,6 +16425,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间",
+          "example": "1440",
+          "member": "uint64",
+          "name": "SubscriptionExpirationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离线订阅过期自动清理时间开关",
+          "example": "false",
+          "member": "bool",
+          "name": "SubscriptionExpirationTimeEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18622,6 +18826,16 @@
           "name": "CustomUrl",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入点绑定的安全组id列表，仅限vpc接入点有效",
+          "example": "[\"group-dasda\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -25167,7 +25381,7 @@
         {
           "disabled": false,
           "document": "分区topic里面的子分区。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
+          "example": "无",
           "member": "PartitionsTopic",
           "name": "SubTopicSets",
           "output_required": true,
@@ -25320,6 +25534,16 @@
           "example": "60",
           "member": "int64",
           "name": "AckTimeOut",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pulsar主题消息类型0: 混合消息1:普通消息2:延迟消息",
+          "example": "0",
+          "member": "int64",
+          "name": "PulsarTopicMessageType",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

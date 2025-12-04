@@ -7296,7 +7296,7 @@
         {
           "disabled": false,
           "document": "key值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "regionId",
           "member": "string",
           "name": "PropertyKey",
           "output_required": false,
@@ -7307,7 +7307,7 @@
         {
           "disabled": false,
           "document": "value值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "PropertyValue",
           "output_required": false,
@@ -24995,7 +24995,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作动作。\n取值：\nreturn-退资源(已下线，需要走交易接口)\ndestroy-销毁资源\nrecover-恢复资源\nblock-合规冻结资源(仅支持通知)\nunblock-合规解冻资源(仅支持通知)",
+          "document": "操作动作。\n取值：\nreturn-退资源(**支持后付费产品**，预付费需要走交易接口)\ndestroy-销毁资源\n~~recover-恢复资源~~(**已下线**，需要走交易接口)\nblock-合规冻结资源(仅支持通知)\nunblock-合规解冻资源(仅支持通知)",
           "example": "destroy",
           "member": "string",
           "name": "ActionType",

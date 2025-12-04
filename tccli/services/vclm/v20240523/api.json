@@ -14,6 +14,13 @@
       "output": "DescribeHumanActorJobResponse",
       "status": "online"
     },
+    "DescribeHunyuanToVideoJob": {
+      "document": "查询混元生视频任务",
+      "input": "DescribeHunyuanToVideoJobRequest",
+      "name": "查询混元生视频任务",
+      "output": "DescribeHunyuanToVideoJobResponse",
+      "status": "online"
+    },
     "DescribeImageAnimateJob": {
       "document": "用于查询图片跳舞任务。图片跳舞能力支持舞蹈动作结合图片生成跳舞视频，满足社交娱乐、互动营销等场景的需求。",
       "input": "DescribeImageAnimateJobRequest",
@@ -56,11 +63,25 @@
       "output": "DescribeVideoStylizationJobResponse",
       "status": "online"
     },
+    "DescribeVideoVoiceJob": {
+      "document": "通过JobId提交请求，获取视频配音频任务的结果信息。",
+      "input": "DescribeVideoVoiceJobRequest",
+      "name": "查询视频配音效任务",
+      "output": "DescribeVideoVoiceJobResponse",
+      "status": "online"
+    },
     "SubmitHumanActorJob": {
       "document": "用于提交人像驱动任务\n支持提交音频和图文来生成对应视频，满足动态交互、内容生产等场景需求。",
       "input": "SubmitHumanActorJobRequest",
       "name": "提交人像驱动任务",
       "output": "SubmitHumanActorJobResponse",
+      "status": "online"
+    },
+    "SubmitHunyuanToVideoJob": {
+      "document": "●混元生视频接口，基于混元大模型，根据输入的文本或图片智能生成视频。\n\n●默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "SubmitHunyuanToVideoJobRequest",
+      "name": "提交混元生视频任务",
+      "output": "SubmitHunyuanToVideoJobResponse",
       "status": "online"
     },
     "SubmitImageAnimateJob": {
@@ -103,6 +124,13 @@
       "input": "SubmitVideoStylizationJobRequest",
       "name": "提交视频风格化任务",
       "output": "SubmitVideoStylizationJobResponse",
+      "status": "online"
+    },
+    "SubmitVideoVoiceJob": {
+      "document": "提交视频配音效任务，输入视频后提交请求，会返回一个JobId，用于查询视频配音效的处理进度。",
+      "input": "SubmitVideoVoiceJobRequest",
+      "name": "提交视频配音效任务",
+      "output": "SubmitVideoVoiceJobResponse",
       "status": "online"
     }
   },
@@ -240,6 +268,73 @@
           "example": "审核未通过",
           "member": "string",
           "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHunyuanToVideoJobRequest": {
+      "document": "DescribeHunyuanToVideoJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1350360280588853248",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHunyuanToVideoJobResponse": {
+      "document": "DescribeHunyuanToVideoJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "example": "RUN",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误码。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "FailedOperation.DriverFailed",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误信息。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "驱动失败",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果视频 URL。有效期 24 小时。",
+          "example": "https://console.cloud.tencent.com/result.mp4",
+          "member": "string",
+          "name": "ResultVideoUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -685,6 +780,73 @@
       ],
       "type": "object"
     },
+    "DescribeVideoVoiceJobRequest": {
+      "document": "DescribeVideoVoiceJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "1350360280588853248",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoVoiceJobResponse": {
+      "document": "DescribeVideoVoiceJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。  WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果视频URL。有效期 24 小时。",
+          "example": "https://console.cloud.tencent.com/result.mp4\t",
+          "member": "string",
+          "name": "ResultVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误码。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "FailedOperation.DriverFailed\t",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误信息。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "驱动失败\t",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ExtraParam": {
       "document": "扩展字段。",
       "members": [
@@ -1030,6 +1192,79 @@
           "disabled": false,
           "document": "任务ID。",
           "example": "1380069281965932544",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuanToVideoJobRequest": {
+      "document": "SubmitHunyuanToVideoJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频内容的描述，中文正向提示词。最多支持200个 utf-8 字符（首尾空格不计入字符数）。 示例值：一只猫在草原上奔跑，写实风格",
+          "example": "一只狗",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输入图片\n上传图url大小不超过 10M，base64不超过8M。\n支持jpg，png，jpeg，webp，bmp，tiff 格式\n单边分辨率不超过5000，不小于50，长宽限制1:4 ~ 4:1",
+          "example": "无",
+          "member": "Image",
+          "name": "Image",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "目前仅支持720p视频分辨率，默认720p。",
+          "example": "720p",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成视频添加标识的开关，默认为1，0 需前往 控制台 申请开启显示标识自主完成方可生效。\n 1：添加标识； 0：不添加标识； 其他数值：默认按1处理。",
+          "example": "0",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "默认在生成视频的右下角添加“ AI 生成”字样，如需替换为其他的标识图片，需前往 控制台 申请开启显示标识自主完成。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuanToVideoJobResponse": {
+      "document": "SubmitHunyuanToVideoJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1350360280588853248",
           "member": "string",
           "name": "JobId",
           "output_required": false,
@@ -1513,6 +1748,79 @@
           "disabled": false,
           "document": "任务ID。任务有效期为48小时。",
           "example": "c5daf8f7077d41a69c13aab31a7164f3",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitVideoVoiceJobRequest": {
+      "document": "SubmitVideoVoiceJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入视频的Url  上传视频时长限制：1-15s 视频格式：MP4，MOV 视频大小：不超过1 GB URL地址中不能包含中文字符。",
+          "example": "https://cos.ap-guangzhou.mycloud.com/1.mp4",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述音效内容的正向提示词。输入上限50个字符。",
+          "example": "海浪的声音",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音效内容的原始负向提示词。输入上限50个字符。",
+          "example": "模糊、音质差、不流畅",
+          "member": "string",
+          "name": "NegativePrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成视频添加标识的开关，默认为1。 1：添加标识。 0：不添加标识。 其他数值：默认按1处理。 建议您使用显著标识来提示，该视频是 AI 生成的视频。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。 默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitVideoVoiceJobResponse": {
+      "document": "SubmitVideoVoiceJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "1350360280588853248",
           "member": "string",
           "name": "JobId",
           "output_required": false,

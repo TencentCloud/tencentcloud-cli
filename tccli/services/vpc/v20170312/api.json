@@ -7885,7 +7885,7 @@
         {
           "disabled": false,
           "document": "标签键值对。",
-          "example": "[{'Key': 'key', 'Value': 'value'}]",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -7895,7 +7895,7 @@
         {
           "disabled": false,
           "document": "是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "RoutePriorityFlag",
           "output_required": true,
@@ -7915,7 +7915,7 @@
         {
           "disabled": false,
           "document": "是否开启云联网多路由表特性。`False`：未开启，`True`：开启。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "RouteTableFlag",
           "output_required": true,
@@ -7925,7 +7925,7 @@
         {
           "disabled": false,
           "document": "`true`：实例已被封禁，流量不通，`false`:解封禁。",
-          "example": "False",
+          "example": "true",
           "member": "bool",
           "name": "IsSecurityLock",
           "output_required": true,
@@ -7935,7 +7935,7 @@
         {
           "disabled": false,
           "document": "是否开启云联网路由传播策略。`False` 未开启，`True` 开启。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "RouteBroadcastPolicyFlag",
           "output_required": true,
@@ -7945,7 +7945,7 @@
         {
           "disabled": false,
           "document": "是否开启等价路由功能。`False` 未开启，`True` 开启。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "RouteECMPFlag",
           "output_required": false,
@@ -7955,7 +7955,7 @@
         {
           "disabled": false,
           "document": "是否开启路由重叠功能。`False` 未开启，`True` 开启。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "RouteOverlapFlag",
           "output_required": false,
@@ -7965,7 +7965,7 @@
         {
           "disabled": false,
           "document": "是否开启QOS。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "TrafficMarkingPolicyFlag",
           "output_required": false,
@@ -7975,7 +7975,7 @@
         {
           "disabled": false,
           "document": "是否开启路由表选择策略。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "RouteSelectPolicyFlag",
           "output_required": false,
@@ -7985,7 +7985,7 @@
         {
           "disabled": false,
           "document": "是否开启二层云联网通道。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "DirectConnectAccelerateChannelFlag",
           "output_required": false,
@@ -7995,7 +7995,7 @@
         {
           "disabled": false,
           "document": "是否支持ipv6路由表",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "Ipv6Flag",
           "output_required": false,
@@ -8005,7 +8005,7 @@
         {
           "disabled": false,
           "document": "是否支持路由表聚合策略",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "MrtbAggregatePolicyFlag",
           "output_required": false,
@@ -8014,10 +8014,30 @@
         },
         {
           "disabled": false,
-          "document": "是否支持策略值",
-          "example": "True",
+          "document": "是否支持AsPath策略值",
+          "example": "true",
           "member": "bool",
           "name": "MrtbPolicyValueFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持Community策略值",
+          "example": "true",
+          "member": "bool",
+          "name": "RouteTablePolicyValueCommunityFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持策略路由",
+          "example": "true",
+          "member": "bool",
+          "name": "PolicyBasedRoutingFlag",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -10304,7 +10324,7 @@
         {
           "disabled": false,
           "document": "公网IP的唯一 ID ",
-          "example": "无",
+          "example": "eip-ip9ongec",
           "member": "string",
           "name": "AddressId",
           "output_required": true,
@@ -10314,7 +10334,7 @@
         {
           "disabled": false,
           "document": "公网IP的 IP地址。",
-          "example": "无",
+          "example": "100.10.1.1",
           "member": "string",
           "name": "AddressIp",
           "output_required": true,
@@ -10324,7 +10344,7 @@
         {
           "disabled": false,
           "document": "公网IP所属地域信息。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "AddressGroup",
           "output_required": true,
@@ -10334,7 +10354,7 @@
         {
           "disabled": false,
           "document": "公网IP所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -10344,7 +10364,7 @@
         {
           "disabled": false,
           "document": "公网IP当前所属用户的Uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "700000376349",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -10354,7 +10374,7 @@
         {
           "disabled": false,
           "document": "公网IP绑定资源的内网IP",
-          "example": "无",
+          "example": "192.168.1.3",
           "member": "string",
           "name": "PrivateAddressIp",
           "output_required": false,
@@ -10364,7 +10384,7 @@
         {
           "disabled": false,
           "document": "Lighthouse场景下 表示 Lighthouse所属的真实用户的Uin;\n非Lighthouse场景下和UIn相同",
-          "example": "无",
+          "example": "700000376349",
           "member": "string",
           "name": "UserUin",
           "output_required": false,
@@ -10374,7 +10394,7 @@
         {
           "disabled": false,
           "document": "公网IP绑定的实例ID",
-          "example": "无",
+          "example": "ins-xxxxx",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -10384,7 +10404,7 @@
         {
           "disabled": false,
           "document": "Lighthouse实例的唯一ID",
-          "example": "无",
+          "example": "null",
           "member": "string",
           "name": "LighthouseId",
           "output_required": false,
@@ -10394,7 +10414,7 @@
         {
           "disabled": false,
           "document": "公网IP的创建时间",
-          "example": "无",
+          "example": "2025-03-31 15:59:12",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -10404,7 +10424,7 @@
         {
           "disabled": false,
           "document": "公网IP绑定的实例类型",
-          "example": "无",
+          "example": "null",
           "member": "string",
           "name": "InstanceType",
           "output_required": false,
@@ -10415,10 +10435,10 @@
           "disabled": false,
           "document": "公网IP绑定的标签信息",
           "example": "无",
-          "member": "string",
+          "member": "Tag",
           "name": "TagList",
           "output_required": false,
-          "type": "string",
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -51400,6 +51420,15 @@
           "name": "AddressIps",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "跳过流量校验",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipTrafficValidation",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
