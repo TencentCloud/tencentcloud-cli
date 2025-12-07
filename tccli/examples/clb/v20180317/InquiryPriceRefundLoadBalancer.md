@@ -20,7 +20,8 @@ Output:
                 "ChargeUnit": null,
                 "OriginalPrice": 79.02,
                 "DiscountPrice": null
-            }
+            },
+            "LcuPrice": null
         },
         "RequestId": "06cdb8b7-1d26-4195-9d41-f3fc861d9530"
     }

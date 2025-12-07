@@ -16,15 +16,25 @@ Output:
 {
     "Response": {
         "Price": {
-            "BandwidthPrice": null,
-            "InstancePrice": {
-                "OriginalPrice": 4494.57,
-                "DiscountPrice": 4494.57,
+            "BandwidthPrice": {
+                "ChargeUnit": null,
+                "Discount": 34.7841,
+                "DiscountPrice": 8,
+                "OriginalPrice": 23,
                 "UnitPrice": null,
-                "ChargeUnit": null
-            }
+                "UnitPriceDiscount": null
+            },
+            "InstancePrice": {
+                "ChargeUnit": null,
+                "Discount": 28.9198,
+                "DiscountPrice": 41.64,
+                "OriginalPrice": 144,
+                "UnitPrice": null,
+                "UnitPriceDiscount": null
+            },
+            "LcuPrice": null
         },
-        "RequestId": "4c588312-edeb-4ea0-b8a4-b3024d9b8043"
+        "RequestId": "52f22ea7-3592-4ff0-9d63-a5cc14b79859"
     }
 }
 ```

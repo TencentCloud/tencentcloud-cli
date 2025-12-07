@@ -119,13 +119,6 @@
       "output": "DescribeMaterialUploadUrlResponse",
       "status": "online"
     },
-    "DescribePermissionForAppPage": {
-      "document": "180天无调用量\n\n查询应用页面权限列表",
-      "input": "DescribePermissionForAppPageRequest",
-      "name": "查询应用页面权限列表",
-      "output": "DescribePermissionForAppPageResponse",
-      "status": "deprecated"
-    },
     "DescribePermissions": {
       "document": "查询资源权限信息",
       "input": "DescribePermissionsRequest",
@@ -286,62 +279,6 @@
           "name": "ErrMsg",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "AppPageDetail": {
-      "document": "应用页面详情",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用页面 ID",
-          "example": "无",
-          "member": "string",
-          "name": "PageId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "应用页面名称",
-          "example": "无",
-          "member": "string",
-          "name": "PageName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否可以访问",
-          "example": "无",
-          "member": "bool",
-          "name": "AccessAble",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "页面 key",
-          "example": "无",
-          "member": "string",
-          "name": "PageKey",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否为全局配置权限",
-          "example": "false",
-          "member": "bool",
-          "name": "IsGlobalConfig",
-          "output_required": false,
-          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -2598,79 +2535,6 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribePermissionForAppPageRequest": {
-      "document": "DescribePermissionForAppPage请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用 ID",
-          "example": "无",
-          "member": "string",
-          "name": "WeAppId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "角色 ID",
-          "example": "无",
-          "member": "uint64",
-          "name": "Role",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "环境ID",
-          "example": "无",
-          "member": "string",
-          "name": "EnvId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "应用类型",
-          "example": "无",
-          "member": "string",
-          "name": "AppType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "角色 ID",
-          "example": "无",
-          "member": "int64",
-          "name": "RoleId",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribePermissionForAppPageResponse": {
-      "document": "DescribePermissionForAppPage返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用页面权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "AppPageDetail",
-          "name": "Data",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

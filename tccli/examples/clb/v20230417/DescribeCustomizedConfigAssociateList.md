@@ -21,7 +21,7 @@ Output:
                 "ListenerId": "lbl-nppnktey",
                 "Domain": "www.aaa.com",
                 "LocationId": "loc-nppnktey",
-                "ListenerName": "test",
+                "ListenerName": "http-listener",
                 "Protocol": "http",
                 "Vport": 80,
                 "Url": "",

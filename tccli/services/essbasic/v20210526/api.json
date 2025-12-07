@@ -3826,7 +3826,7 @@
           "example": "aHR0cHM6Ly9jYXBpLndvYS5jb20vhaWwlM0ZpZCUzRGVzc2Jhc2ljJTI2dGFiJTNEYXBp..图片base64省略",
           "member": "string",
           "name": "SealImage",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -3868,7 +3868,7 @@
         {
           "disabled": false,
           "document": "该字段已不再使用",
-          "example": "该字段已不再使用",
+          "example": "false",
           "member": "bool",
           "name": "EnableAutoSign",
           "required": false,
@@ -3889,6 +3889,15 @@
           "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "SceneKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "印章图片文件 id取值：填写的FileId通过UploadFiles接口上传文件获取。",
+          "example": "yDtOJUUckpftturtURxNEFKShAukAd2b",
+          "member": "string",
+          "name": "FileId",
           "required": false,
           "type": "string"
         }
@@ -5086,11 +5095,11 @@
         },
         {
           "disabled": false,
-          "document": "指定分页每页返回的数据条数，单页最大支持 100。",
+          "document": "指定分页每页返回的数据条数，单页最大支持 100。默认值为20",
           "example": "10",
           "member": "int64",
           "name": "Limit",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {

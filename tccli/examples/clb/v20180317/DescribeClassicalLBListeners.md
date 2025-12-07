@@ -16,9 +16,9 @@ Output:
         "Listeners": [
             {
                 "ListenerId": "lbl-3jur3gei",
-                "ListenerPort": 111,
-                "InstancePort": 1111,
-                "ListenerName": "test",
+                "ListenerPort": 80,
+                "InstancePort": 8080,
+                "ListenerName": "HTTP-LISTENER",
                 "Protocol": "tcp",
                 "SessionExpire": 0,
                 "HealthSwitch": 1,

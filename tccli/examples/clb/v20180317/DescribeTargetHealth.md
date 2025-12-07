@@ -19,7 +19,7 @@ Output:
                     {
                         "Rules": [
                             {
-                                "Url": "/",
+                                "Url": "/service",
                                 "Domain": "www.123.com",
                                 "LocationId": "loc-5t7526km",
                                 "Targets": []
@@ -41,13 +41,15 @@ Output:
                                         "HealthStatus": false,
                                         "IP": "172.16.0.6",
                                         "TargetId": "ins-19425500",
-                                        "Port": 2020
+                                        "Port": 2020,
+                                        "HealthStatusDetail": "Dead"
                                     },
                                     {
                                         "HealthStatus": true,
                                         "IP": "172.16.0.12",
                                         "TargetId": "ins-19425y2y",
-                                        "Port": 80
+                                        "Port": 80,
+                                        "HealthStatusDetail": "Dead"
                                     }
                                 ]
                             }
@@ -60,7 +62,7 @@ Output:
                     {
                         "Rules": [
                             {
-                                "Url": "/",
+                                "Url": "/healthchk",
                                 "Domain": "www.456.com",
                                 "LocationId": "loc-8gdc4qcq",
                                 "Targets": []

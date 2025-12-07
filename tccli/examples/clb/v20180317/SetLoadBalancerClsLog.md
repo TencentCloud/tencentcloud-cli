@@ -29,8 +29,8 @@ Input:
 ```
 tccli clb SetLoadBalancerClsLog --cli-unfold-argument  \
     --LoadBalancerId lb-cuxw2r00 \
-    --LogSetId xxxx-xx-xx-xx-xxxxxxxx \
-    --LogTopicId xxxx-xx-xx-xx-yyyyyyyy
+    --LogSetId ac251c08-778c-4fbc-981b-4898dd48d928 \
+    --LogTopicId f43636fe-06fc-417b-9349-da4bc8a03745
 ```
 
 Output: 

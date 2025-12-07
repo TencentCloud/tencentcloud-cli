@@ -16,7 +16,7 @@ Output:
         "LoadBalancers": [
             {
                 "LoadBalancerId": "lb-xxxxxxxx",
-                "LoadBalancerName": "xxxxx",
+                "LoadBalancerName": "HEALTHCHK-LISTENER",
                 "Listeners": [
                     {
                         "ListenerId": "lbl-xxxxxxxx",
@@ -27,7 +27,7 @@ Output:
                             {
                                 "LocationId": "loc-xxxxxxxx",
                                 "Domain": "kq.xxxxxx.com.cn",
-                                "Url": "/",
+                                "Url": "/healthchk",
                                 "Targets": [
                                     {
                                         "TargetId": "cvm-xxxxxxxx",

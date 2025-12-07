@@ -17,6 +17,7 @@ Output:
             {
                 "LoadBalancerId": "lb-xxxxxx",
                 "LoadBalancerName": "lb-name1",
+                "Domain": "lb-name1.tencentclb.com",
                 "Region": "ap-guangzhou",
                 "Vip": "1.1.1.1",
                 "OutBandwidth": 177.083
@@ -24,6 +25,7 @@ Output:
             {
                 "LoadBalancerId": "lb-kxyz2",
                 "LoadBalancerName": "lb-xyzname",
+                "Domain": "lb-xyzname.tencentclb.com",
                 "Region": "ap-guangzhou",
                 "Vip": "2.2.2.2",
                 "OutBandwidth": 77.449

@@ -360,10 +360,10 @@
     ],
     "GetFaceIdResultIntl": [
       {
-        "document": "获取核身结果",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdResultIntl\n<公共请求参数>\n\n{\n    \"SdkToken\": \"aeee6d62-b2b2-4634-9662-919a5ac729ab\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"Success\",\n        \"BestFrame\": \"AAAAHGZ0eXBtcDQyAAAAAWlzb2...\",\n        \"Video\": \"/9j/4AAQSkZJRgABAQAASABIAAD/4QBMR...\",\n        \"ActionVideo\": \"AAAAHGZ0eXBtcDQyAAAAAWlzb21tcD...\",\n        \"Similarity\": 98.8,\n        \"Extra\": \"\",\n        \"RequestId\": \"aea12d62-b2b2-4634-9662-919a5ac729ab\"\n    }\n}",
-        "title": "获取结果成功"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdResultIntl\n<公共请求参数>\n\n{\n    \"SdkToken\": \"FA05EE15-53114-0143A5-AFCA-24F0338535B2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ActionVideo\": \"/9j/4AAQSkZJRg.....s97n//2Q==\",\n        \"BestFrame\": \"/9j/4AAQSkZJRg.....s97n//2Q==\",\n        \"Description\": \"Success\",\n        \"DeviceInfoLevel\": \"\",\n        \"Extra\": \"\",\n        \"LivenessInfoTag\": null,\n        \"RequestId\": \"7680b762-d1d3-4dd3-90e8-5d1c0030116b\",\n        \"Result\": \"0\",\n        \"Similarity\": 0,\n        \"Video\": \"/9j/4AAQSkZJRg.....s97n//2Q==\"\n    }\n}",
+        "title": "GetFaceIdResultIntl调用示例"
       }
     ],
     "GetFaceIdRiskInfo": [

@@ -41,7 +41,8 @@ Output:
                 "NumericalVpcId": 1111113,
                 "TargetRegionInfo": {
                     "Region": "ap-guangzhou",
-                    "VpcId": "vpc-1y****83"
+                    "VpcId": "vpc-1y****83",
+                    "NumericalVpcId": 1111113
                 },
                 "SubnetId": "",
                 "SecureGroups": [],
@@ -93,6 +94,7 @@ Output:
                 "HealthLogSetId": "",
                 "HealthLogTopicId": "",
                 "ClusterIds": null,
+                "Egress": "center_egress1",
                 "AttributeFlags": [
                     "SharedLimitFlag"
                 ],
@@ -151,7 +153,8 @@ Output:
                 "NumericalVpcId": 1111113,
                 "TargetRegionInfo": {
                     "Region": "ap-guangzhou",
-                    "VpcId": "vpc-1y****83"
+                    "VpcId": "vpc-1y****83",
+                    "NumericalVpcId": 1111113
                 },
                 "SubnetId": "",
                 "SecureGroups": [],
@@ -206,7 +209,8 @@ Output:
                 "AttributeFlags": [
                     "SharedLimitFlag"
                 ],
-                "VipIsp": "BGP"
+                "VipIsp": "BGP",
+                "Egress": "center_egress1"
             }
         ],
         "RequestId": "b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976"
@@ -258,7 +262,8 @@ Output:
                 "NumericalVpcId": 1111113,
                 "TargetRegionInfo": {
                     "Region": "ap-guangzhou",
-                    "VpcId": "vpc-1y****83"
+                    "VpcId": "vpc-1y****83",
+                    "NumericalVpcId": 1111113
                 },
                 "SubnetId": "",
                 "SecureGroups": [],
@@ -313,7 +318,8 @@ Output:
                 "AttributeFlags": [
                     "SharedLimitFlag"
                 ],
-                "VipIsp": "BGP"
+                "VipIsp": "BGP",
+                "Egress": "center_egress1"
             }
         ],
         "RequestId": "b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976"
@@ -364,7 +370,8 @@ Output:
                 "NumericalVpcId": 1111113,
                 "TargetRegionInfo": {
                     "Region": "ap-guangzhou",
-                    "VpcId": "vpc-1y****83"
+                    "VpcId": "vpc-1y****83",
+                    "NumericalVpcId": 1111113
                 },
                 "SubnetId": "",
                 "SecureGroups": [],
@@ -419,7 +426,8 @@ Output:
                 "AttributeFlags": [
                     "SharedLimitFlag"
                 ],
-                "VipIsp": "BGP"
+                "VipIsp": "BGP",
+                "Egress": "center_egress1"
             }
         ],
         "RequestId": "b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976"
@@ -473,7 +481,8 @@ Output:
                 "NumericalVpcId": 1111113,
                 "TargetRegionInfo": {
                     "Region": "ap-guangzhou",
-                    "VpcId": "vpc-1y****83"
+                    "VpcId": "vpc-1y****83",
+                    "NumericalVpcId": 1111113
                 },
                 "SubnetId": "",
                 "SecureGroups": [],
@@ -528,7 +537,8 @@ Output:
                 "AttributeFlags": [
                     "SharedLimitFlag"
                 ],
-                "VipIsp": "BGP"
+                "VipIsp": "BGP",
+                "Egress": "center_egress1"
             }
         ],
         "RequestId": "b0e9e810-01cc-4c12-8bd2-ca0a2ab1b976"

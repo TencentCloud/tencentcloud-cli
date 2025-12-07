@@ -132,7 +132,8 @@ Output:
         "WanStatusIpv6": 0,
         "WanVip": "",
         "WanVipv6": "",
-        "ProtectedProperty": 1
+        "ProtectedProperty": 1,
+        "FlowId": 1351487408
     }
 }
 ```

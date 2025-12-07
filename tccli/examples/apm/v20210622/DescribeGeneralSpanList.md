@@ -1,19 +1,21 @@
 **Example 1: 通用查询调用链列表**
 
-根据traceId列表批量查询span，Filters查询参数中将Type设置为in，将traceId列表通过,隔开。
+根据 Trace ID 列表批量查询 Span，Filters 查询参数中将 Type 设置为 in ，将 Trace ID 列表通过,隔开
 
 Input: 
 
 ```
 tccli apm DescribeGeneralSpanList --cli-unfold-argument  \
-    --OrderBy.Value xx \
-    --OrderBy.Key xx \
+    --OrderBy.Value startTime \
+    --OrderBy.Key desc \
     --Filters.0.Key traceID \
     --Filters.0.Type in \
     --Filters.0.Value 663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac \
     --Limit 0 \
     --Offset 10 \
-    --InstanceId 52Dpv13GR \
+    --InstanceId apm-52Dpv13GR \
+    --StartTime 1742374000 \
+    --EndTime 1742374331 \
     --BusinessName tdmq
 ```
 
@@ -22,51 +24,51 @@ Output:
 {
     "Response": {
         "TotalCount": 0,
-        "RequestId": "xx",
+        "RequestId": "test-test-test",
         "Spans": [
             {
-                "TraceID": "xx",
+                "TraceID": "663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac",
                 "Logs": [
                     {
                         "Timestamp": 0,
                         "Fields": [
                             {
-                                "Type": "xx",
-                                "Value": "xx",
-                                "Key": "xx"
+                                "Type": "service.name",
+                                "Value": "=",
+                                "Key": "java-order-service"
                             }
                         ]
                     }
                 ],
                 "Tags": [
                     {
-                        "Type": "xx",
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Type": "service.name",
+                        "Value": "=",
+                        "Key": "java-order-service"
                     }
                 ],
                 "Process": {
-                    "ServiceName": "xx",
+                    "ServiceName": "java-order-service",
                     "Tags": [
                         {
-                            "Type": "xx",
-                            "Value": "xx",
-                            "Key": "xx"
+                            "Type": "service.name",
+                            "Value": "=",
+                            "Key": "java-order-service"
                         }
                     ]
                 },
                 "Timestamp": 0,
-                "OperationName": "xx",
+                "OperationName": "/test",
                 "References": [
                     {
-                        "RefType": "xx",
-                        "SpanID": "xx",
-                        "TraceID": "xx"
+                        "RefType": "1",
+                        "SpanID": "4q6549c49aaa",
+                        "TraceID": "663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac"
                     }
                 ],
                 "StartTime": 0,
                 "Duration": 0,
-                "SpanID": "xx",
+                "SpanID": "1q23w1q32165",
                 "StartTimeMillis": 0
             }
         ]
@@ -76,14 +78,14 @@ Output:
 
 **Example 2: 通用查询调用链列表2**
 
-指定tag过滤条件拿到span列表。
+指定 Tag 过滤条件拿到 Span 列表
 
 Input: 
 
 ```
 tccli apm DescribeGeneralSpanList --cli-unfold-argument  \
-    --OrderBy.Value xx \
-    --OrderBy.Key xx \
+    --OrderBy.Value startTime \
+    --OrderBy.Key desce \
     --Filters.0.Key pulsar:sub_name \
     --Filters.0.Type = \
     --Filters.0.Value participants \
@@ -91,7 +93,8 @@ tccli apm DescribeGeneralSpanList --cli-unfold-argument  \
     --Offset 10 \
     --InstanceId 52Dpv13GR \
     --BusinessName tdmq \
-    --StartTime 1621923035
+    --StartTime 1621923035 \
+    --EndTime 1621923038
 ```
 
 Output: 
@@ -99,51 +102,51 @@ Output:
 {
     "Response": {
         "TotalCount": 0,
-        "RequestId": "xx",
+        "RequestId": "test-test-test",
         "Spans": [
             {
-                "TraceID": "xx",
+                "TraceID": "663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac",
                 "Logs": [
                     {
                         "Timestamp": 0,
                         "Fields": [
                             {
-                                "Type": "xx",
-                                "Value": "xx",
-                                "Key": "xx"
+                                "Type": "job",
+                                "Value": "=",
+                                "Key": "test1"
                             }
                         ]
                     }
                 ],
                 "Tags": [
                     {
-                        "Type": "xx",
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Type": "=",
+                        "Value": "java-order-service",
+                        "Key": "service.name"
                     }
                 ],
                 "Process": {
-                    "ServiceName": "xx",
+                    "ServiceName": "java-order-service",
                     "Tags": [
                         {
-                            "Type": "xx",
-                            "Value": "xx",
-                            "Key": "xx"
+                            "Type": "job",
+                            "Value": "=",
+                            "Key": "test2"
                         }
                     ]
                 },
                 "Timestamp": 0,
-                "OperationName": "xx",
+                "OperationName": "/testOperation",
                 "References": [
                     {
-                        "RefType": "xx",
-                        "SpanID": "xx",
-                        "TraceID": "xx"
+                        "RefType": "1",
+                        "SpanID": "qertuytw",
+                        "TraceID": "663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac"
                     }
                 ],
                 "StartTime": 0,
                 "Duration": 0,
-                "SpanID": "xx",
+                "SpanID": "xasfvava",
                 "StartTimeMillis": 0
             }
         ]

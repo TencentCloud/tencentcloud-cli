@@ -19,10 +19,10 @@ Output:
                 "LocalVpcId": "vpc-test1234",
                 "VpcId": "vpc-test4321",
                 "IP": "10.22.106.8",
-                "VpcName": "测试",
+                "VpcName": "VPC-BIZ-TEST",
                 "EniId": "eni-test1234",
                 "InstanceId": "ins-test1234",
-                "InstanceName": "test",
+                "InstanceName": "inf-node-test.com",
                 "Region": "ap-shanghai"
             }
         ],

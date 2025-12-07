@@ -1,26 +1,28 @@
-**Example 1: 获取结果成功**
+**Example 1: GetFaceIdResultIntl调用示例**
 
-获取核身结果
+
 
 Input: 
 
 ```
 tccli faceid GetFaceIdResultIntl --cli-unfold-argument  \
-    --SdkToken aeee6d62-b2b2-4634-9662-919a5ac729ab
+    --SdkToken FA05EE15-53114-0143A5-AFCA-24F0338535B2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": "0",
+        "ActionVideo": "/9j/4AAQSkZJRg.....s97n//2Q==",
+        "BestFrame": "/9j/4AAQSkZJRg.....s97n//2Q==",
         "Description": "Success",
-        "BestFrame": "AAAAHGZ0eXBtcDQyAAAAAWlzb2...",
-        "Video": "/9j/4AAQSkZJRgABAQAASABIAAD/4QBMR...",
-        "ActionVideo": "AAAAHGZ0eXBtcDQyAAAAAWlzb21tcD...",
-        "Similarity": 98.8,
+        "DeviceInfoLevel": "",
         "Extra": "",
-        "RequestId": "aea12d62-b2b2-4634-9662-919a5ac729ab"
+        "LivenessInfoTag": null,
+        "RequestId": "7680b762-d1d3-4dd3-90e8-5d1c0030116b",
+        "Result": "0",
+        "Similarity": 0,
+        "Video": "/9j/4AAQSkZJRg.....s97n//2Q=="
     }
 }
 ```

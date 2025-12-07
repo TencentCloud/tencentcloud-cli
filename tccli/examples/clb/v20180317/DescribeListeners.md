@@ -20,7 +20,7 @@ Output:
         "Listeners": [
             {
                 "ListenerId": "lbl-hd9nfp6o",
-                "ListenerName": "12345",
+                "ListenerName": "TCP-Listener",
                 "CreateTime": "2020-12-31 12:03:36",
                 "Protocol": "TCP",
                 "Port": 333,
@@ -59,7 +59,7 @@ Output:
                 "MaxCps": 100,
                 "IdleConnectTimeout": 0,
                 "AttrFlags": [
-                    "abc"
+                    "Stop"
                 ],
                 "TargetGroupList": null
             }
@@ -88,7 +88,7 @@ Output:
         "Listeners": [
             {
                 "ListenerId": "lbl-hd9nfp6o",
-                "ListenerName": "12345",
+                "ListenerName": "TCP-Listener",
                 "CreateTime": "2020-12-31 12:03:36",
                 "Protocol": "TCP",
                 "Port": 333,
@@ -127,7 +127,7 @@ Output:
                 "MaxCps": 100,
                 "IdleConnectTimeout": 0,
                 "AttrFlags": [
-                    "abc"
+                    "Stop"
                 ],
                 "TargetGroupList": null
             }

@@ -825,8 +825,8 @@
     "DescribeRocketMQEnvironmentRoles": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQEnvironmentRoles\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test_namespace\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"ClusterId\": \"rocketmq-2p9vx3ax9jxg\",\n    \"RoleName\": \"test_role_name\",\n    \"Filters\": []\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EnvironmentRoleSets\": [\n            {\n                \"EnvironmentId\": \"test_namespace\",\n                \"RoleName\": \"test_role_name\",\n                \"Permissions\": [\n                    \"produce\"\n                ],\n                \"RoleDescribe\": \"测试角色\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQEnvironmentRoles\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test_ns\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"ClusterId\": \"rocketmq-2p9vx3ax9jxg\",\n    \"RoleName\": \"test_role\",\n    \"Filters\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EnvironmentRoleSets\": [\n            {\n                \"EnvironmentId\": \"test_ns\",\n                \"RoleName\": \"test_role\",\n                \"Permissions\": [\n                    \"produce\"\n                ],\n                \"RoleDescribe\": \"测试角色\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\"\n    }\n}",
         "title": "获取RocketMQ命名空间角色列表"
       }
     ],

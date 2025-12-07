@@ -141,9 +141,9 @@
       "status": "online"
     },
     "CreateRocketMQEnvironmentRole": {
-      "document": "创建环境角色授权",
+      "document": "创建角色授权。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的创建角色接口文档见 [CreateRole](https://cloud.tencent.com/document/api/1493/98864)。",
       "input": "CreateRocketMQEnvironmentRoleRequest",
-      "name": "创建RocketMQ环境角色授权",
+      "name": "创建 RocketMQ 角色授权",
       "output": "CreateRocketMQEnvironmentRoleResponse",
       "status": "online"
     },
@@ -176,9 +176,9 @@
       "status": "online"
     },
     "CreateRocketMQRole": {
-      "document": "创建角色",
+      "document": "创建角色。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的创建角色接口文档见 [CreateRole](https://cloud.tencent.com/document/api/1493/98864)。",
       "input": "CreateRocketMQRoleRequest",
-      "name": "创建RocketMQ角色",
+      "name": "创建 RocketMQ 角色",
       "output": "CreateRocketMQRoleResponse",
       "status": "online"
     },
@@ -316,9 +316,9 @@
       "status": "online"
     },
     "DeleteRocketMQEnvironmentRoles": {
-      "document": "删除环境角色授权。",
+      "document": "批量删除角色授权。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的删除角色接口文档见 [DeleteRole](https://cloud.tencent.com/document/api/1493/98863)。",
       "input": "DeleteRocketMQEnvironmentRolesRequest",
-      "name": "批量删除RocketMQ环境角色授权",
+      "name": "批量删除 RocketMQ 角色授权",
       "output": "DeleteRocketMQEnvironmentRolesResponse",
       "status": "online"
     },
@@ -337,9 +337,9 @@
       "status": "online"
     },
     "DeleteRocketMQRoles": {
-      "document": "删除角色，支持批量。",
+      "document": "批量删除角色。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的删除角色接口文档见 [DeleteRole](https://cloud.tencent.com/document/api/1493/98863)。",
       "input": "DeleteRocketMQRolesRequest",
-      "name": "批量删除RocketMQ角色",
+      "name": "批量删除 RocketMQ 角色",
       "output": "DeleteRocketMQRolesResponse",
       "status": "online"
     },
@@ -715,9 +715,9 @@
       "status": "online"
     },
     "DescribeRocketMQEnvironmentRoles": {
-      "document": "获取命名空间角色列表",
+      "document": "查询角色授权列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的查询角色列表接口文档见 [DescribeRoleList](https://cloud.tencent.com/document/api/1493/98862)。",
       "input": "DescribeRocketMQEnvironmentRolesRequest",
-      "name": "获取RocketMQ命名空间角色列表",
+      "name": "查询 RocketMQ 角色授权列表",
       "output": "DescribeRocketMQEnvironmentRolesResponse",
       "status": "online"
     },
@@ -799,9 +799,9 @@
       "status": "online"
     },
     "DescribeRocketMQRoles": {
-      "document": "获取角色列表",
+      "document": "查询角色列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的查询角色列表接口文档见 [DescribeRoleList](https://cloud.tencent.com/document/api/1493/98862)。",
       "input": "DescribeRocketMQRolesRequest",
-      "name": "获取RocketMQ角色列表",
+      "name": "查询 RocketMQ 角色列表",
       "output": "DescribeRocketMQRolesResponse",
       "status": "online"
     },
@@ -1072,9 +1072,9 @@
       "status": "online"
     },
     "ModifyRocketMQEnvironmentRole": {
-      "document": "修改环境角色授权。",
+      "document": "修改角色授权。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的修改角色接口文档见 [ModifyRole](https://cloud.tencent.com/document/api/1493/98861)。",
       "input": "ModifyRocketMQEnvironmentRoleRequest",
-      "name": "修改RocketMQ环境角色授权",
+      "name": "修改 RocketMQ 角色授权",
       "output": "ModifyRocketMQEnvironmentRoleResponse",
       "status": "online"
     },
@@ -1107,9 +1107,9 @@
       "status": "online"
     },
     "ModifyRocketMQRole": {
-      "document": "角色修改",
+      "document": "修改角色。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的修改角色接口文档见 [ModifyRole](https://cloud.tencent.com/document/api/1493/98861)。",
       "input": "ModifyRocketMQRoleRequest",
-      "name": "RocketMQ角色修改",
+      "name": "修改 RocketMQ 角色",
       "output": "ModifyRocketMQRoleResponse",
       "status": "online"
     },
@@ -1163,9 +1163,9 @@
       "status": "online"
     },
     "ResetRocketMQConsumerOffSet": {
-      "document": "重置指定Group的消费位点到指定时间戳",
+      "document": "重置消费位点。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的重置消费位点接口文档见 [ResetConsumerGroupOffset](https://cloud.tencent.com/document/api/1493/116942)。",
       "input": "ResetRocketMQConsumerOffSetRequest",
-      "name": "重置RocketMQ消费位点",
+      "name": "重置 RocketMQ 消费位点",
       "output": "ResetRocketMQConsumerOffSetResponse",
       "status": "online"
     },
@@ -3816,7 +3816,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "队列名字，在单个地域同一账号下唯一。队列名称是一个不超过 64 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "document": "队列名字，在单个地域同一账号下唯一。队列名称以字母起始，只能包含字母、数字、“-”及“_”，最大64字符，不区分大小写。",
           "example": "testQueue",
           "member": "string",
           "name": "QueueName",
@@ -4015,7 +4015,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅名字，在单个地域同一账号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
+          "document": "订阅名字，在单个地域同一账号的同一主题下唯一。订阅名称以字母起始，只能包含字母、数字、“-”及“_”，最大64字符，创建后不能修改。",
           "example": "ConnSubQueue",
           "member": "string",
           "name": "SubscriptionName",
@@ -4106,7 +4106,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题名字，在单个地域同一账号下唯一。主题名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线（-）。",
+          "document": "主题名字，在单个地域同一账号下唯一。主题名称只能包含字母、数字、“-”及“_”，最大64字符，创建后不能修改，不区分大小写。",
           "example": "test-topic",
           "member": "string",
           "name": "TopicName",
@@ -5362,7 +5362,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "EnvironmentId",
@@ -7004,7 +7004,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境（命名空间）名称。",
+          "document": "命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "EnvironmentId",
@@ -11736,8 +11736,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
-          "example": "test_namespace",
+          "document": "命名空间，4.x 通用集群命名空间固定为: tdmq_default\n",
+          "example": "test_ns",
           "member": "string",
           "name": "EnvironmentId",
           "required": false,
@@ -11764,7 +11764,7 @@
         {
           "disabled": false,
           "document": "角色名称",
-          "example": "test_role_name",
+          "example": "test_role",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -11787,7 +11787,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录数。",
+          "document": "总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -11797,7 +11797,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间角色集合。",
+          "document": "角色授权列表",
           "example": "无",
           "member": "EnvironmentRole",
           "name": "EnvironmentRoleSets",
@@ -13058,7 +13058,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录数。",
+          "document": "总数",
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
@@ -13068,7 +13068,7 @@
         },
         {
           "disabled": false,
-          "document": "角色数组。",
+          "document": "角色列表",
           "example": "无",
           "member": "Role",
           "name": "RoleSets",
@@ -17273,7 +17273,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境（命名空间）名称。",
+          "document": "命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "EnvironmentId",
@@ -21500,7 +21500,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
+          "document": "命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "NamespaceId",
@@ -21536,7 +21536,7 @@
         },
         {
           "disabled": false,
-          "document": "重置指定的时间戳，仅在 Type 为1是生效，以毫秒为单位",
+          "document": "重置指定的时间戳，仅在 Type 为1时生效，以毫秒为单位",
           "example": "1697945990000",
           "member": "uint64",
           "name": "ResetTimestamp",

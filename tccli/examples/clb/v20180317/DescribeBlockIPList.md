@@ -21,7 +21,7 @@ Output:
                 "ExpireTime": "2019-01-10 11:12:19"
             }
         ],
-        "ClientIPField": "test",
+        "ClientIPField": "cdn_src_ip",
         "RequestId": "83329908-a282-4f9f-82ab-033a3025baff"
     }
 }

@@ -41,7 +41,8 @@ Output:
                 "NumericalVpcId": 1111113,
                 "TargetRegionInfo": {
                     "Region": "ap-guangzhou",
-                    "VpcId": "vpc-1y****83"
+                    "VpcId": "vpc-1y****83",
+                    "NumericalVpcId": 1111113
                 },
                 "SubnetId": "",
                 "SecureGroups": [],
@@ -152,7 +153,8 @@ Output:
                 "NumericalVpcId": 1111113,
                 "TargetRegionInfo": {
                     "Region": "ap-guangzhou",
-                    "VpcId": "vpc-1y****83"
+                    "VpcId": "vpc-1y****83",
+                    "NumericalVpcId": 1111113
                 },
                 "SubnetId": "",
                 "SecureGroups": [],
@@ -260,7 +262,8 @@ Output:
                 "NumericalVpcId": 1111113,
                 "TargetRegionInfo": {
                     "Region": "ap-guangzhou",
-                    "VpcId": "vpc-1y****83"
+                    "VpcId": "vpc-1y****83",
+                    "NumericalVpcId": 1111113
                 },
                 "SubnetId": "",
                 "SecureGroups": [],
@@ -367,7 +370,8 @@ Output:
                 "NumericalVpcId": 1111113,
                 "TargetRegionInfo": {
                     "Region": "ap-guangzhou",
-                    "VpcId": "vpc-1y****83"
+                    "VpcId": "vpc-1y****83",
+                    "NumericalVpcId": 1111113
                 },
                 "SubnetId": "",
                 "SecureGroups": [],
@@ -477,7 +481,8 @@ Output:
                 "NumericalVpcId": 1111113,
                 "TargetRegionInfo": {
                     "Region": "ap-guangzhou",
-                    "VpcId": "vpc-1y****83"
+                    "VpcId": "vpc-1y****83",
+                    "NumericalVpcId": 1111113
                 },
                 "SubnetId": "",
                 "SecureGroups": [],

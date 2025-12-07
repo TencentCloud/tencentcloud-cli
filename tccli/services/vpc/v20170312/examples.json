@@ -472,6 +472,22 @@
         "title": "创建一个CCN"
       }
     ],
+    "CreateCcnPolicyBasedRoutingNextHop": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCcnPolicyBasedRoutingNextHop\n<公共请求参数>\n\n{\n    \"InstanceType\": \"VPC\",\n    \"InstanceId\": \"vpc-hj0u9uv7\",\n    \"CcnId\": \"ccn-cop4h86j\",\n    \"NextHopResourceType\": \"HAVIP\",\n    \"NextHopResourceId\": \"havip-lmojafue\",\n    \"NextHopRegion\": \"ap-guangzhou\",\n    \"Name\": \"pbr-next-hop-1\",\n    \"State\": \"ENABLE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyBasedRoutingNextHopId\": \"pbrnh-dqr4ouw5\",\n        \"RequestId\": \"e50fc6f8-628a-4ab8-a441-d8772cd1f6f3\"\n    }\n}",
+        "title": "创建云联网策略路由下一跳"
+      }
+    ],
+    "CreateCcnPolicyBasedRoutingRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCcnPolicyBasedRoutingRules\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-cop4h86j\",\n    \"CcnPolicyBasedRoutingRuleSet\": [\n        {\n            \"InstanceType\": \"VPC\",\n            \"InstanceId\": \"vpc-hj0u9uv7\",\n            \"PolicyBasedRoutingNextHopId\": \"pbrnh-7coeebmp\",\n            \"SourceCidrBlock\": \"10.0.0.0/16\",\n            \"DestinationCidrBlock\": \"192.168.0.0/16\",\n            \"Priority\": 111,\n            \"Description\": \"pbr-desc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyBasedRoutingRuleIdSet\": [\n            \"pbrrule-h80ym58o\"\n        ],\n        \"RequestId\": \"de080ffb-d39e-4510-94d0-452c825e4b5c\"\n    }\n}",
+        "title": "创建云联网策略路由匹配规则"
+      }
+    ],
     "CreateCcnRouteTables": [
       {
         "document": "创建云联网路由表",
@@ -1198,6 +1214,22 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCcn\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-8j0phqix\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "删除一个CCN实例"
+      }
+    ],
+    "DeleteCcnPolicyBasedRoutingNextHop": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCcnPolicyBasedRoutingNextHop\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-7bw2xi31\",\n    \"PolicyBasedRoutingNextHopIds\": [\n        \"pbrnh-bbjdqarl\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除云联网策略路由下一跳"
+      }
+    ],
+    "DeleteCcnPolicyBasedRoutingRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCcnPolicyBasedRoutingRule\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-7bw2xi31\",\n    \"PolicyBasedRoutingRuleIds\": [\n        \"pbrrule-n6anb2js\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "DeleteCcnPolicyBasedRoutingRule"
       }
     ],
     "DeleteCcnRouteTables": [
@@ -1970,6 +2002,30 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnAttachedInstances\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"vpc-r1ckkpid\",\n                \"vpc-2u0s99fx\",\n                \"dcg-98qosdc3\",\n                \"vpc-3dr1zrr9\",\n                \"dcg-ni7ps9kb\"\n            ],\n            \"Name\": \"instance-id\"\n        },\n        {\n            \"Values\": [\n                \"ccn-gree226l\"\n            ],\n            \"Name\": \"ccn-id\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"InstanceSet\": [\n            {\n                \"CcnId\": \"ccn-ch28gexx\",\n                \"InstanceType\": \"VPC\",\n                \"InstanceId\": \"vpc-ch28gexx\",\n                \"InstanceName\": \"instance-name\",\n                \"InstanceRegion\": \"ap-guangzhou\",\n                \"InstanceUin\": \"1234611233\",\n                \"CidrBlock\": [\n                    \"10.0.0.0/24\"\n                ],\n                \"State\": \"ACTIVE\",\n                \"AttachedTime\": \"2020-09-22 00:00:00\",\n                \"CcnUin\": \"1234611233\",\n                \"InstanceArea\": \"CHINA_MAINLAND\",\n                \"Description\": \"desc\",\n                \"RouteTableId\": \"ccnr-xxxxxxxx\",\n                \"RouteTableName\": \"ccnr-name\"\n            }\n        ],\n        \"RequestId\": \"0227fa04-3298-470c-8477-149f309a386a\"\n    }\n}",
         "title": "查询云联网关联实例列表"
+      }
+    ],
+    "DescribeCcnInstanceNonDirectFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnInstanceNonDirectFlag\n<公共请求参数>\n\n{\n    \"BusinessType\": \"CFW\",\n    \"CcnId\": \"ccn-lwf3h36r\",\n    \"VpcRegion\": \"eu-frankfurt\",\n    \"VpcId\": \"vpc-ls127qdl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NonDirectFlag\": false,\n        \"RequestId\": \"8fc4cbb5-3dd1-4474-ab81-fb6dbfa330fb\"\n    }\n}",
+        "title": "查看云联网实例非直通标记"
+      }
+    ],
+    "DescribeCcnPolicyBasedRoutingNextHop": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnPolicyBasedRoutingNextHop\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-7bw2xi31\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"CcnPolicyBasedRoutingNextHopSet\": [\n            {\n                \"PolicyBasedRoutingNextHopId\": \"pbrnh-17zeoebp\",\n                \"Name\": \"test2222\",\n                \"NextHopRegion\": \"ap-guangzhou\",\n                \"InstanceType\": \"VPC\",\n                \"InstanceId\": \"vpc-hj0u9uv7\",\n                \"NextHopResourceType\": \"HAVIP\",\n                \"NextHopResourceId\": \"havip-lmojafue\",\n                \"NextHopIp\": \"192.168.0.7\",\n                \"Zone\": \"NONE\",\n                \"State\": \"ENABLE\",\n                \"Description\": \"\"\n            }\n        ],\n        \"RequestId\": \"8caaae43-c96c-4d07-8964-6f4831a7328f\"\n    }\n}",
+        "title": "DescribeCcnPolicyBasedRoutingNextHop"
+      }
+    ],
+    "DescribeCcnPolicyBasedRoutingRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnPolicyBasedRoutingRule\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-7bw2xi31\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"CcnPolicyBasedRoutingRuleSet\": [\n            {\n                \"PolicyBasedRoutingRuleId\": \"pbrrule-mtptovl2\",\n                \"PolicyBasedRoutingNextHopId\": \"pbrnh-rikj0itp\",\n                \"InstanceType\": \"VPC\",\n                \"InstanceId\": \"vpc-hj0u9uv7\",\n                \"SourceCidrBlock\": \"10.0.0.0/16\",\n                \"DestinationCidrBlock\": \"192.168.0.0/16\",\n                \"Priority\": 1,\n                \"Description\": \"pbr-1\"\n            }\n        ],\n        \"RequestId\": \"226bff7f-89b7-4c8d-8d04-fa6e607e60d8\"\n    }\n}",
+        "title": "DescribeCcnPolicyBasedRoutingRule"
       }
     ],
     "DescribeCcnRegionBandwidthLimits": [
@@ -3528,6 +3584,14 @@
         "title": "快照策略解关联实例"
       }
     ],
+    "DisableCcnInstanceNonDirectFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableCcnInstanceNonDirectFlag\n<公共请求参数>\n\n{\n    \"BusinessType\": \"CFW\",\n    \"CcnId\": \"ccn-2t2bneq1\",\n    \"VpcRegion\": \"ap-guangzhou\",\n    \"VpcId\": \"vpc-293oax59\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd58c581-9257-4ccb-a452-25b0794d93d2\"\n    }\n}",
+        "title": "关闭云联网实例非直通标记"
+      }
+    ],
     "DisableCcnRoutes": [
       {
         "document": "禁用多条路由策略",
@@ -3674,6 +3738,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DownloadVpnGatewaySslClientCert\n&SslVpnClientId=vpnc--84tby4k2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SslClientConfigsSet\": \"{\\\"SslVpnClientConfiguration\\\": \\\"-config-\\\"......}\",\n        \"SslClientConfig\": [\n            {\n                \"SslVpnClientConfiguration\": \"config...\",\n                \"SslVpnRootCert\": \"CERTIFICATE...\",\n                \"SslVpnKey\": \"PRIVATE KEY...\",\n                \"SslVpnCert\": \"CERTIFICATE...\",\n                \"SslVpnClientId\": \"vpnc-axa315c\"\n            }\n        ],\n        \"Authenticated\": 1,\n        \"RequestId\": \"8e08f027-048b-41e8-ac99-77e954ca15c5\"\n    }\n}",
         "title": "下载SSL-VPN-CLIENT配置"
+      }
+    ],
+    "EnableCcnInstanceNonDirectFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableCcnInstanceNonDirectFlag\n<公共请求参数>\n\n{\n    \"BusinessType\": \"CFW\",\n    \"CcnId\": \"ccn-2t2bneq1\",\n    \"VpcRegion\": \"ap-guangzhou\",\n    \"VpcId\": \"vpc-293oax59\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"05a9478d-6d57-4c34-bc97-9dda604bdc19\"\n    }\n}",
+        "title": "EnableCcnInstanceNonDirectFlag"
       }
     ],
     "EnableCcnRoutes": [
@@ -4040,6 +4112,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyCcnAttribute\n&CcnId=ccn-gjug0kul\n&CcnName=new+name\n&CcnDescription=new+description\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "修改一个CCN的名称和描述"
+      }
+    ],
+    "ModifyCcnPolicyBasedRoutingNextHopAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCcnPolicyBasedRoutingNextHopAttribute\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-cop4h86j\",\n    \"PolicyBasedRoutingNextHopId\": \"pbrnh-hows4a7d\",\n    \"Name\": \"test2222\",\n    \"State\": \"DISABLE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc3f9101-29bd-4749-9438-e5c70f6f248a\"\n    }\n}",
+        "title": "更新云联网策略路由下一跳参数"
+      }
+    ],
+    "ModifyCcnPolicyBasedRoutingRuleAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCcnPolicyBasedRoutingRuleAttribute\n<公共请求参数>\n\n{\n\n    \"CcnId\": \"ccn-7bw2xi31\",\n    \"PolicyBasedRoutingRuleId\": \"pbrrule-n6anb2js\",\n    \"Description\": \"new rule\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "ModifyCcnPolicyBasedRoutingRuleAttribute"
       }
     ],
     "ModifyCcnRegionBandwidthLimitsType": [

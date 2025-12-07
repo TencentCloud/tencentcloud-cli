@@ -32,6 +32,8 @@ Output:
             "SnapshotEnable": true,
             "SnapshotTimeout": 2000,
             "AgentEnable": true,
+            "DisableMemoryUsed": 90,
+            "DisableCpuUsed": 90,
             "InstrumentList": [
                 {
                     "Name": "dubbo",

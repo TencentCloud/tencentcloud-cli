@@ -47,8 +47,8 @@ Output:
                 "IdleResourceCount": 26,
                 "LoadBalanceDirectorCount": 4,
                 "DisasterRecoveryType": "DISASTER-RECOVERY",
-                "Egress": "abc",
-                "IPVersion": "abc"
+                "Egress": "center_egress1",
+                "IPVersion": "IPv4"
             }
         ],
         "RequestId": "49e44bf9-1357-420b-87ba-3c827209af67"

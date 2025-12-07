@@ -19160,7 +19160,7 @@
         },
         {
           "disabled": false,
-          "document": "实例只读权重。\n该参数必填。",
+          "document": "实例只读权重。\n",
           "example": "无",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",

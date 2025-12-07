@@ -1,6 +1,6 @@
 **Example 1: 添加SnatIp**
 
-
+创建Number个snat ip
 
 Input: 
 
@@ -22,7 +22,7 @@ Output:
 
 **Example 2: 指定snat ip添加SnatIp**
 
-
+指定ip添加snat ip
 
 Input: 
 

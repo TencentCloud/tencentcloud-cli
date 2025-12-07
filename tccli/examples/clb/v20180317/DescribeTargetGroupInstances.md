@@ -27,7 +27,8 @@ Output:
                 "PrivateIpAddresses": [
                     "172.16.0.32"
                 ],
-                "EniId": null,
+                "EniId": "",
+                "ZoneId": 100001,
                 "RegisteredTime": "2019-07-24 20:02:43"
             },
             {
@@ -41,7 +42,8 @@ Output:
                 "PrivateIpAddresses": [
                     "172.16.0.32"
                 ],
-                "EniId": null,
+                "EniId": "",
+                "ZoneId": 100001,
                 "RegisteredTime": "2019-07-23 21:01:08"
             }
         ],

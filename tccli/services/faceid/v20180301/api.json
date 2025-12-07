@@ -607,7 +607,7 @@
         },
         {
           "disabled": false,
-          "document": "ENHANCED：增强版\nBASIC：基础版（默认）",
+          "document": "PLUS：PLUS版\nENHANCED：增强版\nBASIC：基础版（默认）",
           "example": "ENHANCED",
           "member": "string",
           "name": "SdkVersion",
@@ -2204,7 +2204,7 @@
         {
           "disabled": false,
           "document": "本次活体SDK生成的活体算法数据包。",
-          "example": "{ \"MD5\": \"b2852d5..\", \"Size\": 972506, \"Url\": \"https://faceid-intl-test-1258344699...\" }",
+          "example": "无",
           "member": "FileInfo",
           "name": "LiveData",
           "output_required": true,
@@ -2214,7 +2214,7 @@
         {
           "disabled": false,
           "document": "本次用户认证视频文件的下载地址，下载链接有效期为10分钟。",
-          "example": "{ \"MD5\": \"24d2fde9b...\", \"Size\": 407308, \"Url\": \"https://faceid-intl-test-1258344699...\" }",
+          "example": "无",
           "member": "FileInfo",
           "name": "LiveVideo",
           "output_required": true,
@@ -2224,7 +2224,7 @@
         {
           "disabled": false,
           "document": "记录用户执行的特定动作文件的下载地址，用于AI人脸防护盾分析，下载链接有效期为10分钟。",
-          "example": "{ \"MD5\": \"ef179aa94f06b989...\", \"Size\": 191015, \"Url\": \"https://faceid-intl-test-1258344699.com....\" }",
+          "example": "无",
           "member": "FileInfo",
           "name": "ActionVideo",
           "output_required": true,
@@ -2254,7 +2254,7 @@
         {
           "disabled": false,
           "document": "用户认证过程中人像照片截图的下载地址，下载链接有效期为10分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{ \"MD5\": \"1c4a918dc..\", \"Size\": 243050, \"Url\": \"https://faceid-intl-test-1258344699...\" }",
+          "example": "无",
           "member": "FileInfo",
           "name": "BestFrame",
           "output_required": true,
@@ -2264,7 +2264,7 @@
         {
           "disabled": false,
           "document": "证件照头像截图的下载地址，下载地址链接有效期为10分钟。",
-          "example": "{ \"MD5\": \"\", \"Size\": 0, \"Url\": \"\" }",
+          "example": "无",
           "member": "FileInfo",
           "name": "ProfileImage",
           "output_required": true,
@@ -2314,7 +2314,7 @@
         {
           "disabled": false,
           "document": "用户编辑后的证件照信息。该参数暂不启用。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{ \"MD5\": \"\", \"Size\": 0, \"Url\": \"\" }",
+          "example": "无",
           "member": "FileInfo",
           "name": "CardInfoInputJson",
           "output_required": true,
@@ -2330,6 +2330,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因。  详情如下： 01-用户全程闭眼。 02-用户未完成指定动作。 03-疑似翻拍攻击。 04-疑似合成图片。 05-疑似合成视频。 06-疑似合成动作。 07-疑似黑产模板。 08-疑似存在水印。 09-反光校验未通过。 10-最佳帧校验未通过。 11-人脸质量过差。 12-人脸距离不匹配。 13-疑似对抗样本攻击。 null-无。 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"04\"]",
+          "member": "string",
+          "name": "LivenessInfoTag",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4839,6 +4849,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "plus版：描述当前请求活体阶段被拒绝的详细原因。  详情如下： 01-用户全程闭眼。 02-用户未完成指定动作。 03-疑似翻拍攻击。 04-疑似合成图片。 05-疑似合成视频。 06-疑似合成动作。 07-疑似黑产模板。 08-疑似存在水印。 09-反光校验未通过。 10-最佳帧校验未通过。 11-人脸质量过差。 12-人脸距离不匹配。 13-疑似对抗样本攻击。 null-无。 增强版：此字段不生效，默认为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"04\"]",
+          "member": "string",
+          "name": "LivenessInfoTag",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5187,7 +5207,7 @@
         },
         {
           "disabled": false,
-          "document": "ENHANCED：增强版，BASIC：基础版（默认）",
+          "document": "PLUS：PLUS版，ENHANCED：增强版，BASIC：基础版（默认）",
           "example": "BASIC",
           "member": "string",
           "name": "SdkVersion",

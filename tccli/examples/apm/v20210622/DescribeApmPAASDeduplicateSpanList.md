@@ -1,76 +1,25 @@
-**Example 1: 去重查询调用链列表**
+**Example 1: 调用失败示例**
 
-根据traceId列表批量查询去重span，Filters查询参数中将Type设置为in，将traceId列表通过,隔开。
+调用失败示例
 
 Input: 
 
 ```
 tccli apm DescribeApmPAASDeduplicateSpanList --cli-unfold-argument  \
-    --OrderBy.Key abc \
-    --OrderBy.Value abc \
-    --StartTime 0 \
-    --EndTime 0 \
-    --InstanceId abc \
-    --Filters.0.Type abc \
-    --Filters.0.Key abc \
-    --Filters.0.Value abc \
-    --BusinessName abc
+    --StartTime 1741246244000 \
+    --EndTime 1741246784000 \
+    --InstanceId apm-CVfliqa8U
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
-        "Spans": [
-            {
-                "TraceID": "abc",
-                "Logs": [
-                    {
-                        "Timestamp": 0,
-                        "Fields": [
-                            {
-                                "Type": "abc",
-                                "Key": "abc",
-                                "Value": "abc"
-                            }
-                        ]
-                    }
-                ],
-                "Tags": [
-                    {
-                        "Type": "abc",
-                        "Key": "abc",
-                        "Value": "abc"
-                    }
-                ],
-                "Process": {
-                    "ServiceName": "abc",
-                    "Tags": [
-                        {
-                            "Type": "abc",
-                            "Key": "abc",
-                            "Value": "abc"
-                        }
-                    ]
-                },
-                "Timestamp": 0,
-                "OperationName": "abc",
-                "References": [
-                    {
-                        "RefType": "abc",
-                        "SpanID": "abc",
-                        "TraceID": "abc"
-                    }
-                ],
-                "StartTime": 0,
-                "Duration": 0,
-                "SpanID": "abc",
-                "StartTimeMillis": 0,
-                "ParentSpanID": "abc"
-            }
-        ],
-        "RequestId": "abc"
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "post status code:400, result={\"code\":230000,\"msg\":\"java.lang.RuntimeException: 数据查询错误\",\"data\":null,\"request_id\":\"9f26a420183f9e3d137fedb9621824f3\"}"
+        },
+        "RequestId": "4c8f1ec7-5053-4688-b91f-687be243ed25"
     }
 }
 ```

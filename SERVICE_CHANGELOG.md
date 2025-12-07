@@ -1,26 +1,10 @@
-# Release 3.0.1320.1
+# Release 3.0.1321.1
 
-## 云开发低码(lowcode) 版本：2021-01-08
+## 腾讯混元生3D(ai3d) 版本：2025-05-13
 
-### 第 29 次发布
+### 第 6 次发布
 
-发布时间：2025-12-05 01:45:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* DescribePermissionForAppPage
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 165 次发布
-
-发布时间：2025-12-05 02:01:10
+发布时间：2025-12-08 01:07:47
 
 本次发布包含了以下内容：
 
@@ -28,127 +12,194 @@
 
 修改接口：
 
-* [CreateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1179/46081)
+* [SubmitHunyuanTo3DRapidJob](http://document.tencentcloudapi.woa.com/document/product/1800/87652)
 
-	* 新增入参：SubscriptionExpirationTime, SubscriptionExpirationTimeEnable
+	* 新增入参：EnableGeometry
 
-	* 新增出参：SubscriptionExpirationTime, SubscriptionExpirationTimeEnable
 
-* [CreateProCluster](http://document.tencentcloudapi.woa.com/document/product/1179/82556)
 
-	* <font color="#dd0000">**修改入参**：</font>StorageSize
 
-* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46088)
+## 腾讯云数据分析智能体(dataagent) 版本：2025-05-13
 
-	* 新增入参：PulsarTopicMessageType
+### 第 5 次发布
 
-* [DescribeEnvironmentAttributes](http://document.tencentcloudapi.woa.com/document/product/1179/46079)
+发布时间：2025-12-08 01:27:51
 
-	* 新增出参：SubscriptionExpirationTime, SubscriptionExpirationTimeEnable
+本次发布包含了以下内容：
 
-* [DescribeMsgTrace](http://document.tencentcloudapi.woa.com/document/product/1179/82543)
+改善已有的文档。
 
-	* 新增入参：TopicName
+新增接口：
 
-* [DescribePulsarProInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1179/77492)
+* [GetKnowledgeBaseFileList](http://document.tencentcloudapi.woa.com/document/product/1806/88233)
 
-	* 新增出参：CertificateList
+新增数据结构：
 
-* [ModifyEnvironmentAttributes](http://document.tencentcloudapi.woa.com/document/product/1179/46077)
+* [ColumnInfo](http://document.tencentcloudapi.woa.com/document/product/1806/87994#ColumnInfo)
+* [FileInfo](http://document.tencentcloudapi.woa.com/document/product/1806/87994#FileInfo)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1806/87994#Filter)
+* [KnowledgeTaskConfig](http://document.tencentcloudapi.woa.com/document/product/1806/87994#KnowledgeTaskConfig)
+* [Sort](http://document.tencentcloudapi.woa.com/document/product/1806/87994#Sort)
 
-	* 新增入参：SubscriptionExpirationTime, SubscriptionExpirationTimeEnable
 
-	* 新增出参：SubscriptionExpirationTime, SubscriptionExpirationTimeEnable
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 56 次发布
+
+发布时间：2025-12-08 01:30:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDCDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/557/77346)
+
+	* 新增出参：FlowId
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 60 次发布
+
+发布时间：2025-12-08 01:32:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyPackageDomain](http://document.tencentcloudapi.woa.com/document/product/1427/88234)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 216 次发布
+
+发布时间：2025-12-08 01:38:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreatePreparedPersonalEsign](http://document.tencentcloudapi.woa.com/document/product/1595/81620)
+
+	* 新增入参：FileId
+
+	* <font color="#dd0000">**修改入参**：</font>SealImage
+
+* [ChannelDescribeOrganizationSeals](http://document.tencentcloudapi.woa.com/document/product/1595/76535)
+
+	* <font color="#dd0000">**修改入参**：</font>Limit
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 90 次发布
+
+发布时间：2025-12-08 01:39:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetFaceIdResultIntl](http://document.tencentcloudapi.woa.com/document/product/1007/77455)
+
+	* 新增出参：LivenessInfoTag
 
 
 修改数据结构：
 
-* [Cluster](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Cluster)
+* [CompareResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CompareResult)
 
-	* 新增成员：OldPublicEndPoint, OldVpcEndPoint, OldInternalPulsarEndPoint, OldInternalHttpEndPoint
-
-* [Environment](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Environment)
-
-	* 新增成员：SubscriptionExpirationTime, SubscriptionExpirationTimeEnable
-
-* [InternalTenant](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InternalTenant)
-
-	* 新增成员：TagList, TenantSpec
-
-* [PulsarNetworkAccessPointInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarNetworkAccessPointInfo)
-
-	* 新增成员：SecurityGroupIds
-
-* [Topic](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Topic)
-
-	* 新增成员：PulsarTopicMessageType
+	* 新增成员：LivenessInfoTag
 
 
 
 
-## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+## 云开发低码(lowcode) 版本：2021-01-08
 
-### 第 54 次发布
+### 第 30 次发布
 
-发布时间：2025-12-05 02:07:36
+发布时间：2025-12-08 01:48:36
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+<font color="#dd0000">**删除接口**：</font>
 
-* [SendMessage](http://document.tencentcloudapi.woa.com/document/product/1739/88199)
-* [VerifyMessageConsumption](http://document.tencentcloudapi.woa.com/document/product/1739/88198)
+* DescribePermissionForAppPage
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* AppPageDetail
 
 
 
-## 腾讯混元生视频(vclm) 版本：2024-05-23
+## 媒体处理(mps) 版本：2019-06-12
 
-### 第 6 次发布
+### 第 131 次发布
 
-发布时间：2025-12-05 02:10:16
+发布时间：2025-12-08 01:52:11
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [DescribeHunyuanToVideoJob](http://document.tencentcloudapi.woa.com/document/product/1766/88203)
-* [DescribeVideoVoiceJob](http://document.tencentcloudapi.woa.com/document/product/1766/88202)
-* [SubmitHunyuanToVideoJob](http://document.tencentcloudapi.woa.com/document/product/1766/88201)
-* [SubmitVideoVoiceJob](http://document.tencentcloudapi.woa.com/document/product/1766/88200)
+* [MediaAiAnalysisDescriptionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisDescriptionItem)
+
+	* 新增成员：MindMapPath, SubtitlePath, OutputStorage
+
 
 
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 231 次发布
+### 第 232 次发布
 
-发布时间：2025-12-05 02:11:05
+发布时间：2025-12-08 02:14:24
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [ReturnNormalAddresses](http://document.tencentcloudapi.woa.com/document/product/215/76777)
+* [CreateCcnPolicyBasedRoutingNextHop](http://document.tencentcloudapi.woa.com/document/product/215/88245)
+* [CreateCcnPolicyBasedRoutingRules](http://document.tencentcloudapi.woa.com/document/product/215/88244)
+* [DeleteCcnPolicyBasedRoutingNextHop](http://document.tencentcloudapi.woa.com/document/product/215/88243)
+* [DeleteCcnPolicyBasedRoutingRule](http://document.tencentcloudapi.woa.com/document/product/215/88242)
+* [DescribeCcnInstanceNonDirectFlag](http://document.tencentcloudapi.woa.com/document/product/215/88241)
+* [DescribeCcnPolicyBasedRoutingNextHop](http://document.tencentcloudapi.woa.com/document/product/215/88240)
+* [DescribeCcnPolicyBasedRoutingRule](http://document.tencentcloudapi.woa.com/document/product/215/88239)
+* [DisableCcnInstanceNonDirectFlag](http://document.tencentcloudapi.woa.com/document/product/215/88238)
+* [EnableCcnInstanceNonDirectFlag](http://document.tencentcloudapi.woa.com/document/product/215/88237)
+* [ModifyCcnPolicyBasedRoutingNextHopAttribute](http://document.tencentcloudapi.woa.com/document/product/215/88236)
+* [ModifyCcnPolicyBasedRoutingRuleAttribute](http://document.tencentcloudapi.woa.com/document/product/215/88235)
 
-	* 新增入参：SkipTrafficValidation
+新增数据结构：
 
-
-修改数据结构：
-
-* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
-
-	* 新增成员：RouteTablePolicyValueCommunityFlag, PolicyBasedRoutingFlag
-
-* [ComplianceAddress](http://document.tencentcloudapi.woa.com/document/product/215/15824#ComplianceAddress)
-
-	* <font color="#dd0000">**修改成员**：</font>TagList
-
+* [CcnPolicyBasedRoutingNextHop](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnPolicyBasedRoutingNextHop)
+* [CcnPolicyBasedRoutingRule](http://document.tencentcloudapi.woa.com/document/product/215/15824#CcnPolicyBasedRoutingRule)
 
 
 

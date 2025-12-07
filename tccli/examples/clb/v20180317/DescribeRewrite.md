@@ -21,15 +21,15 @@ Output:
                 "DefaultServer": false,
                 "Certificate": {
                     "SSLMode": "UNIDIRECTIONAL",
-                    "CertCaId": "xx",
-                    "CertId": "xx",
+                    "CertCaId": "Fm8Wnpg8",
+                    "CertId": "Gp7qwVYB",
                     "ExtCertIds": [
-                        "xx"
+                        "ByYdJzpw"
                     ]
                 },
-                "TrpcCallee": "abc",
+                "TrpcCallee": "CLB",
                 "ListenerId": "lbl-xxxxxxxx",
-                "WafDomainId": "xx",
+                "WafDomainId": "waf-qI07Ou7A",
                 "HttpGzip": true,
                 "Scheduler": "WRR",
                 "TargetGroupList": [
@@ -42,9 +42,9 @@ Output:
                     "TargetGroupId": "lbtg-xxxxxxxx",
                     "TargetGroupName": "testGroup"
                 },
-                "Url": "/",
+                "Url": "/redirect",
                 "HealthCheck": {
-                    "RecvContext": "test",
+                    "RecvContext": "ping",
                     "HealthSwitch": 1,
                     "HttpCheckPath": "/check",
                     "HttpCheckMethod": "head",
@@ -59,7 +59,7 @@ Output:
                     "HealthNum": 3,
                     "TimeOut": 2,
                     "CheckType": "TCP ",
-                    "SendContext": "abc",
+                    "SendContext": "pong",
                     "HttpVersion": "HTTP/1.0"
                 },
                 "TrpcFunc": "trpcfunc_xxx",

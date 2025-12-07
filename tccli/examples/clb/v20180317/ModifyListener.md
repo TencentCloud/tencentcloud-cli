@@ -50,3 +50,29 @@ Output:
 }
 ```
 
+**Example 3: 修改监听器重新调度参数**
+
+
+
+Input: 
+
+```
+tccli clb ModifyListener --cli-unfold-argument  \
+    --LoadBalancerId lb-fd9kpk4s \
+    --ListenerId lbl-1sf4yxie \
+    --RescheduleTargetZeroWeight False \
+    --RescheduleUnhealthy False \
+    --RescheduleExpandTarget False \
+    --RescheduleStartTime 0 \
+    --RescheduleInterval 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "e5854a85-faee-485e-8892-0a7cbca45080"
+    }
+}
+```
+
