@@ -822,6 +822,14 @@
         "title": "编辑归集规则1"
       }
     ],
+    "ModifyMeasurePackageBindStrategy": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMeasurePackageBindStrategy\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_snapshot\",\n    \"BindProductCode\": \"p_snapshot\",\n    \"Operations\": [\n        {\n            \"Operate\": \"add\",\n            \"BindSubProductCode\": \"sp_snapshot_normal\",\n            \"ResourceId\": \"snap-j4d000ezWGZGU67\",\n            \"BindObjectId\": \"test-p_snapshot-12\",\n            \"RegionId\": \"2\",\n            \"BindProperties\": [\n                {\n                    \"PropertyKey\": \"regionId\",\n                    \"PropertyValue\": \"2\"\n                }\n            ]\n        }\n    ],\n    \"EventTime\": \"2025-12-04 17:30:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": 0\n        },\n        \"RequestId\": \"ce076ed0-3463-4344-a13d-5ce846854ff0\"\n    }\n}",
+        "title": "创建资源包绑定策略"
+      }
+    ],
     "ModifyMeasurePostPayState": [
       {
         "document": "无",
