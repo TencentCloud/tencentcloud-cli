@@ -7,6 +7,7 @@ Input:
 ```
 tccli tdmq DescribeMsgTrace --cli-unfold-argument  \
     --EnvironmentId devNs \
+    --TopicName topicName \
     --MsgId 16839:8:-1 \
     --ProduceTime 2020-08-1908:06:19
 ```
@@ -41,7 +42,7 @@ Output:
                 }
             ]
         },
-        "RequestId": "msgs"
+        "RequestId": "9dbc12b6-2463-4ab8-a1c2-018e99358aaa"
     }
 }
 ```

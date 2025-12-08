@@ -9800,7 +9800,7 @@
         },
         {
           "disabled": false,
-          "document": "分片类型，可选值： <li>ts-segment：HLS+TS 切片</li> <li>ts-byterange：HLS+TS byte range</li> <li>mp4-segment：HLS+MP4 切片</li> <li>mp4-byterange：HLS+MP4 byte range</li> <li>ts-packed-audio：TS+Packed Audio</li> <li>mp4-packed-audio：MP4+Packed Audio</li> 默认值：ts-segment \n注：自适应码流的分片格式以此字段为准",
+          "document": "分片类型，可选值： <li>ts-segment：HLS+TS 切片</li> <li>ts-byterange：HLS+TS byte range</li> <li>mp4-segment：HLS+MP4 切片</li> <li>mp4-byterange：HLS/DASH+MP4 byte range</li> <li>ts-packed-audio：TS+Packed Audio</li> <li>mp4-packed-audio：MP4+Packed Audio</li> 默认值：ts-segment\n \n注：自适应码流的分片格式以此字段为准。DASH格式下SegmentType只能为mp4-byterange。",
           "example": "ts-segment",
           "member": "string",
           "name": "SegmentType",
@@ -23739,7 +23739,7 @@
         {
           "disabled": false,
           "document": "智能描述的可信度，取值范围是 0 到 100。",
-          "example": "90",
+          "example": "90.0",
           "member": "float",
           "name": "Confidence",
           "output_required": true,
@@ -23779,12 +23779,42 @@
         {
           "disabled": false,
           "document": "摘要思维导图地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://xxxx.cos.myqcloud.com",
+          "example": "https://xxxx.cos.myqcloud.com/mindoutput/mindmap_4114033726.png",
           "member": "string",
           "name": "MindMapUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "摘要思维导图路径。",
+          "example": "/mindoutput/mindmap_4114033726.png",
+          "member": "string",
+          "name": "MindMapPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频字幕文件路径。",
+          "example": "/subtitleoutput/subtitle_149957943.vtt",
+          "member": "string",
+          "name": "SubtitlePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "摘要文件存储位置。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -26027,7 +26057,7 @@
         },
         {
           "disabled": false,
-          "document": "hls 分片类型，可选值： <li>ts-segment：HLS+TS 切片</li> <li>ts-byterange：HLS+TS byte range</li> <li>mp4-segment：HLS+MP4 切片</li> <li>mp4-byterange：HLS+MP4 byte range</li> <li>ts-packed-audio：TS+Packed Audio</li> <li>mp4-packed-audio：MP4+Packed Audio</li> 默认值：ts-segment \n注：自适应码流的hls分片格式已此字段为准",
+          "document": "分片类型，可选值： <li>ts-segment：HLS+TS 切片</li> <li>ts-byterange：HLS+TS byte range</li> <li>mp4-segment：HLS+MP4 切片</li> <li>mp4-byterange：HLS/DASH+MP4 byte range</li> <li>ts-packed-audio：TS+Packed Audio</li> <li>mp4-packed-audio：MP4+Packed Audio</li> 默认值：ts-segment \n注：自适应码流的hls分片格式已此字段为准。DASH格式下SegmentType只能为mp4-byterange。",
           "example": "ts-segment",
           "member": "string",
           "name": "SegmentType",

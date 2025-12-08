@@ -498,6 +498,12 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreatePreparedPersonalEsign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"UxSq3Yhw6lLHwsZd9RZTCOz69ewqFzXChxs3bMD\"\n    },\n    \"Agent\": {\n        \"AppId\": \"yDwJBUUckpkl05jrUuxCKSQvQxffCN28\",\n        \"ProxyOrganizationOpenId\": \"org_dianzqin\"\n    },\n    \"UserName\": \"印章归属个人姓名\",\n    \"IdCardType\": \"\",\n    \"IdCardNumber\": \"身份证件号码\",\n    \"SealImage\": \"印章图片Base64\",\n    \"SealName\": \"我的印章名称\",\n    \"Mobile\": \"135*111\",\n    \"EnableAutoSign\": true\n}",
         "output": "{\n    \"Response\": {\n        \"SealId\": \"yDCYIUUckp7t75mxUxAAGY1B8z3p0AIA\",\n        \"RequestId\": \"6e3eb9ef-61f9-4884-9874-465eaffc3d64\"\n    }\n}",
         "title": "通过准备好的个人印章图片创建印章"
+      },
+      {
+        "document": "通过已上传的印章FileId创建印章",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreatePreparedPersonalEsign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"UxSq3Yhw6lLHwsZd9RZTCOz69ewqFzXChxs3bMD\"\n    },\n    \"Agent\": {\n        \"AppId\": \"yDwJBUUckpkl05jrUuxCKSQvQxffCN28\",\n        \"ProxyOrganizationOpenId\": \"org_dianzqin\"\n    },\n    \"UserName\": \"印章归属个人姓名\",\n    \"IdCardType\": \"\",\n    \"IdCardNumber\": \"身份证件号码\",\n    \"SealImage\": \"印章图片Base64\",\n    \"SealName\": \"我的印章名称\",\n    \"Mobile\": \"135*111\",\n    \"FileId\": \"yDwJB******************ddskaSIs\",\n    \"EnableAutoSign\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"SealId\": \"yDtOJUUckpftturtURxNEFKShAukAd2b\",\n        \"RequestId\": \"39f18b2b-03fe-40b8-8d16-dbf4ead3685f\"\n    }\n}",
+        "title": "通过已上传的印章FileId创建印章"
       }
     ],
     "ChannelCreateReleaseFlow": [

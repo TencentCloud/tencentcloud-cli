@@ -311,7 +311,7 @@
         {
           "disabled": false,
           "document": "查询参数：支持通过实例ID（cluster_id）和实例名称（name）进行过滤查询",
-          "example": "[{\"Name\":\"name\", \"Values\":[\"test\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -320,7 +320,7 @@
         {
           "disabled": false,
           "document": "排序参数：支持通过创建时间字段（created_at）进行排序，Type可指定为DESC（降序）或ASC（升序）",
-          "example": "[{\"Name\": \"created_at\", \"Type\": \"DESC\"}]",
+          "example": "无",
           "member": "Order",
           "name": "Orders",
           "required": false,

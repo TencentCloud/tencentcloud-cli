@@ -1462,7 +1462,7 @@
         },
         {
           "disabled": false,
-          "document": "指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。",
+          "document": "指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
           "example": "MONGO_44_WT",
           "member": "string",
           "name": "MongoVersion",
@@ -1716,7 +1716,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模板版本号。当**MirrorTplId**为空时，该字段必填。参数模板支持的售卖版本，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/35767) 获取。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。",
+          "document": "参数模板版本号。当**MirrorTplId**为空时，该字段必填。参数模板支持的售卖版本，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/35767) 获取。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
           "example": "MONGO_42_WT",
           "member": "string",
           "name": "MongoVersion",
@@ -1816,7 +1816,7 @@
         },
         {
           "disabled": false,
-          "document": "指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。",
+          "document": "指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
           "example": "MONGO_44_WT",
           "member": "string",
           "name": "MongoVersion",
@@ -3493,7 +3493,7 @@
         },
         {
           "disabled": false,
-          "document": "模板适配的实例版本。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。",
+          "document": "模板适配的实例版本。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
           "example": "MONGO_50_WT",
           "member": "string",
           "name": "MongoVersion",
@@ -3553,7 +3553,7 @@
         },
         {
           "disabled": false,
-          "document": "指定所需查询的参数模板的数据库版本号。具体支持的版本信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。",
+          "document": "指定所需查询的参数模板的数据库版本号。具体支持的版本信息，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
           "example": "[\"MONGO_42_WT\"]",
           "member": "string",
           "name": "MongoVersion",
@@ -4958,7 +4958,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本信息。具体支持的版本，请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。版本信息与版本号对应关系如下：\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。",
+          "document": "实例版本信息。具体支持的版本，请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。版本信息与版本号对应关系如下：\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
           "example": "MONGO_50_WT",
           "member": "string",
           "name": "MongoVersion",
@@ -5396,7 +5396,7 @@
         },
         {
           "disabled": false,
-          "document": "实例存储引擎版本信息。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。",
+          "document": "实例存储引擎版本信息。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
           "example": "MONGO_42_WT",
           "member": "string",
           "name": "MongoVersion",
@@ -7305,7 +7305,7 @@
         },
         {
           "disabled": false,
-          "document": "参数模板适用的数据库版本。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。",
+          "document": "参数模板适用的数据库版本。\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
           "example": "MONGO_42_WT",
           "member": "string",
           "name": "MongoVersion",
@@ -8235,7 +8235,7 @@
         },
         {
           "disabled": false,
-          "document": "售卖规格有效标志，取值范围如下：\n- 0：停止售卖，\n- 1：开放售卖。",
+          "document": "售卖规格有效标志，取值范围如下：\n- 0：停止售卖。\n- 1：开放售卖。",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -8315,7 +8315,7 @@
         },
         {
           "disabled": false,
-          "document": "实例存储引擎版本信息。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。",
+          "document": "实例存储引擎版本信息。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。\n- MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。\n- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。\n- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。\n- MONGO_70_WT：MongoDB 7.0 WiredTiger存储引擎版本。\n- MONGO_80_WT：MongoDB 8.0 WiredTiger存储引擎版本。",
           "example": "MONGO_50_WT",
           "member": "string",
           "name": "MongoVersionCode",
@@ -8325,7 +8325,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本对应的数字版本。",
+          "document": "实例版本对应的数字版本。\n- MongoDB 3.2 版本：2。\n- MongoDB 3.6 版本：4。\n- MongoDB 4.0 版本：5。\n- MongoDB 4.2 版本：9。\n- MongoDB 4.4 版本：10。\n- MongoDB 5.0 版本：11。\n- MongoDB 6.0 版本：12。\n- MongoDB 7.0 版本：13。\n- MongoDB 8.0 版本：14。",
           "example": "4",
           "member": "uint64",
           "name": "MongoVersionValue",
@@ -8335,7 +8335,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本信息。支持：4.2、4.4、5.0、6.0、7.0。",
+          "document": "实例版本信息。支持：4.2、4.4、5.0、6.0、7.0、8.0。",
           "example": "3.6",
           "member": "string",
           "name": "Version",
@@ -8345,7 +8345,7 @@
         },
         {
           "disabled": false,
-          "document": "存储引擎。",
+          "document": "存储引擎，仅支持 WiredTiger。",
           "example": "WiredTiger",
           "member": "string",
           "name": "EngineName",

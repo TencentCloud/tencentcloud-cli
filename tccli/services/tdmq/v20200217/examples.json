@@ -473,9 +473,9 @@
     "DescribeEnvironmentAttributes": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironmentAttributes\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"devNs\",\n    \"ClusterId\": \"pulsar-5r59xd4vnx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MsgTTL\": 2000,\n        \"RateInByte\": 0,\n        \"RateInSize\": 0,\n        \"Replicas\": 2,\n        \"RetentionHours\": 0,\n        \"RetentionSize\": 0,\n        \"EnvironmentId\": \"test1\",\n        \"Remark\": \"备注\",\n        \"RequestId\": \"dec113a8-599a-4e70-b143-14425d48ffc4\"\n    }\n}",
-        "title": "列出指定命名空间属性"
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironmentAttributes\n<公共请求参数>\n\n{\n  \"EnvironmentId\": \"letsgo\",\n  \"ClusterId\": \"pulsar-zj9xr89m8rw7\"\n\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5074099e-7542-4e30-8b60-d1a6c9205d09\",\n        \"EnvironmentId\": null,\n        \"MsgTTL\": 43200,\n        \"RateInSize\": 10,\n        \"RateInByte\": 52428800,\n        \"RetentionHours\": 24,\n        \"RetentionSize\": 100,\n        \"Replicas\": 2,\n        \"Remark\": \"adsjamn\"\n    }\n}",
+        "title": "查询命名空间详情"
       }
     ],
     "DescribeEnvironmentRoles": [
@@ -513,8 +513,8 @@
     "DescribeMsgTrace": [
       {
         "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeMsgTrace\n&EnvironmentId=devNs\n&MsgId=16839:8:-1\n&ProduceTime=2020-08-1908:06:19\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ProducerLog\": {\n            \"MsgId\": \"16839:8:-1\",\n            \"ProducerName\": \"fisrtProducer\",\n            \"ProduceTime\": \"2020-08-19 08:06:19,211\",\n            \"ProducerAddr\": \"9.139.220.17:57234\",\n            \"ProduceUseTime\": 5309,\n            \"Status\": \"success\"\n        },\n        \"ServerLog\": {\n            \"SaveTime\": \"2020-08-19 08:06:19,211\",\n            \"Status\": \"success\"\n        },\n        \"ConsumerLogs\": {\n            \"TotalCount\": 1,\n            \"ConsumerLogSets\": [\n                {\n                    \"MsgId\": \"16839:8:-1\",\n                    \"ConsumerGroup\": \"sun_consumer\",\n                    \"ConsumerName\": \"7ef60\",\n                    \"ConsumeTime\": \"2020-08-19 08:06:22,563\",\n                    \"ConsumerAddr\": \"9.139.220.17:57241\",\n                    \"ConsumeUseTime\": 875,\n                    \"Status\": \"success\"\n                }\n            ]\n        },\n        \"RequestId\": \"msgs\"\n    }\n}",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeMsgTrace\n&EnvironmentId=devNs\n&TopicName=topicName\n&MsgId=16839:8:-1\n&ProduceTime=2020-08-1908:06:19\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProducerLog\": {\n            \"MsgId\": \"16839:8:-1\",\n            \"ProducerName\": \"fisrtProducer\",\n            \"ProduceTime\": \"2020-08-19 08:06:19,211\",\n            \"ProducerAddr\": \"9.139.220.17:57234\",\n            \"ProduceUseTime\": 5309,\n            \"Status\": \"success\"\n        },\n        \"ServerLog\": {\n            \"SaveTime\": \"2020-08-19 08:06:19,211\",\n            \"Status\": \"success\"\n        },\n        \"ConsumerLogs\": {\n            \"TotalCount\": 1,\n            \"ConsumerLogSets\": [\n                {\n                    \"MsgId\": \"16839:8:-1\",\n                    \"ConsumerGroup\": \"sun_consumer\",\n                    \"ConsumerName\": \"7ef60\",\n                    \"ConsumeTime\": \"2020-08-19 08:06:22,563\",\n                    \"ConsumerAddr\": \"9.139.220.17:57241\",\n                    \"ConsumeUseTime\": 875,\n                    \"Status\": \"success\"\n                }\n            ]\n        },\n        \"RequestId\": \"9dbc12b6-2463-4ab8-a1c2-018e99358aaa\"\n    }\n}",
         "title": "获取消息轨迹"
       }
     ],
@@ -689,8 +689,8 @@
     "DescribeRocketMQEnvironmentRoles": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQEnvironmentRoles\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test_namespace\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"ClusterId\": \"rocketmq-2p9vx3ax9jxg\",\n    \"RoleName\": \"test_role_name\",\n    \"Filters\": []\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EnvironmentRoleSets\": [\n            {\n                \"EnvironmentId\": \"test_namespace\",\n                \"RoleName\": \"test_role_name\",\n                \"Permissions\": [\n                    \"produce\"\n                ],\n                \"RoleDescribe\": \"测试角色\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQEnvironmentRoles\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"test_ns\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"ClusterId\": \"rocketmq-2p9vx3ax9jxg\",\n    \"RoleName\": \"test_role\",\n    \"Filters\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EnvironmentRoleSets\": [\n            {\n                \"EnvironmentId\": \"test_ns\",\n                \"RoleName\": \"test_role\",\n                \"Permissions\": [\n                    \"produce\"\n                ],\n                \"RoleDescribe\": \"测试角色\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\"\n    }\n}",
         "title": "获取RocketMQ命名空间角色列表"
       }
     ],
@@ -958,10 +958,10 @@
     ],
     "ModifyEnvironmentAttributes": [
       {
-        "document": "修改指定命名空间的属性值",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvironmentAttributes\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"devNs\",\n    \"MsgTTL\": \"100\",\n    \"ClusterId\": \"pulsar-5r59xd4vnx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EnvironmentId\": \"devNs\",\n        \"NamespaceId\": \"namespace-5r59xen74x\",\n        \"MsgTTL\": 100,\n        \"Remark\": \"devRemark\",\n        \"RequestId\": \"7db00a30-933c-4f6f-bba9-79cdf6be7d8c\"\n    }\n}",
-        "title": "修改指定命名空间的属性值"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvironmentAttributes\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"shanxuTest\",\n    \"MsgTTL\": 60,\n    \"ClusterId\": \"pulsar-zaxdmeegvgee\",\n    \"SubscriptionExpirationTime\": 1440,\n    \"SubscriptionExpirationTimeEnable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvironmentId\": \"shanxuTest\",\n        \"MsgTTL\": 60,\n        \"NamespaceId\": \"ns-jakba8kdbrno\",\n        \"Remark\": \"createSubscriptionExpirationtest\",\n        \"SubscriptionExpirationTime\": 1440,\n        \"SubscriptionExpirationTimeEnable\": true,\n        \"RequestId\": \"4664945f-0d01-4da7-8dd8-5274bb4d4c8a\"\n    }\n}",
+        "title": "修改名字空间"
       }
     ],
     "ModifyEnvironmentRole": [

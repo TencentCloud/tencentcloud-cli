@@ -35,6 +35,13 @@
       "output": "DeleteDataAgentSessionResponse",
       "status": "online"
     },
+    "GetKnowledgeBaseFileList": {
+      "document": "获取知识库文件信息列表",
+      "input": "GetKnowledgeBaseFileListRequest",
+      "name": "获取知识库文件列表",
+      "output": "GetKnowledgeBaseFileListResponse",
+      "status": "online"
+    },
     "GetKnowledgeBaseList": {
       "document": "获取知识库列表",
       "input": "GetKnowledgeBaseListRequest",
@@ -491,6 +498,60 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetKnowledgeBaseFileListRequest": {
+      "document": "GetKnowledgeBaseFileList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "dataagent-38jj82",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认 1 表示第一页，可以不填",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "默认 10 一页展示 10 条，可以不填",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "klbase-xjakxja",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetKnowledgeBaseFileListResponse": {
+      "document": "GetKnowledgeBaseFileList返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

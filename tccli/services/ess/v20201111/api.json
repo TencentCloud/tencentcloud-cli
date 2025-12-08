@@ -17515,7 +17515,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级。\n\n等级描述如下：\n<ul>\n    <li>**HIGH** - 高风险</li> \n    <li>**NORMAL** - 风险</li>   \n</ul>",
+          "document": "风险等级别名。\n\n等级描述如下：\n<ul>\n    <li>**HIGH** - 高风险</li> \n    <li>**NORMAL** - 风险</li>   \n</ul>",
           "example": "HIGH",
           "member": "string",
           "name": "RiskLevel",
@@ -17581,7 +17581,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级id",
+          "document": "风险等级id。1 为最高风险等级，0 为最低风险等级，从[2,n]数字越大风险等级逐渐降低。",
           "example": "0",
           "member": "int64",
           "name": "RiskLevelId",

@@ -489,6 +489,20 @@
       "name": "回滚主题迁移进度至上一阶段",
       "output": "RollbackMigratingTopicStageResponse",
       "status": "online"
+    },
+    "SendMessage": {
+      "document": "发送 RocketMQ 消息，该接口仅用于控制台发送少量测试消息，不保证SLA，且云 API 存在限流，在真实业务场景下，请使用 RocketMQ SDK 发送消息。",
+      "input": "SendMessageRequest",
+      "name": "发送消息",
+      "output": "SendMessageResponse",
+      "status": "online"
+    },
+    "VerifyMessageConsumption": {
+      "document": "消息消费验证",
+      "input": "VerifyMessageConsumptionRequest",
+      "name": "消息消费验证",
+      "output": "VerifyMessageConsumptionResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -8368,6 +8382,79 @@
       ],
       "type": "object"
     },
+    "SendMessageRequest": {
+      "document": "SendMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息内容",
+          "example": "无",
+          "member": "string",
+          "name": "MsgBody",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息Key",
+          "example": "无",
+          "member": "string",
+          "name": "MsgKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息Tag",
+          "example": "无",
+          "member": "string",
+          "name": "MsgTag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendMessageResponse": {
+      "document": "SendMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息ID",
+          "example": "无",
+          "member": "string",
+          "name": "MsgId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SmoothMigrationTaskItem": {
       "document": "平滑迁移任务",
       "members": [
@@ -9147,6 +9234,69 @@
         }
       ],
       "usage": "out"
+    },
+    "VerifyMessageConsumptionRequest": {
+      "document": "VerifyMessageConsumption请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息ID",
+          "example": "无",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "group_test",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyMessageConsumptionResponse": {
+      "document": "VerifyMessageConsumption返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VpcInfo": {
       "document": "VPC信息",

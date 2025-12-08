@@ -43,9 +43,9 @@
       "status": "online"
     },
     "CreateAIAgentCall": {
-      "document": "用于调用AI模型发起外呼通话，仅限自有电话号码使用，目前开通高级版座席**限时**免费体验。\n\n发起通话前，请先确认您的AI模型是否兼容 OpenAI、Azure 或 Minimax 协议，并前往模型服务商网站获取相关鉴权信息。 具体功能说明请参考文档 [腾讯云联络中心AI通话平台](https://cloud.tencent.com/document/product/679/112100)。",
+      "document": "用于创建**一次性的智能体外呼任务**。与直接调用原始AI模型的模型通话不同，此接口基于您在实例中预配置的、具备完整业务流程的智能体来发起通话，仅限自有电话号码使用，目前开通高级版座席**限时**免费体验。\n\n若需创建批量智能体外呼任务，请参考文档 [创建自动外呼任务](https://cloud.tencent.com/document/product/679/69194)。\n\n发起通话前，请先确认您的AI模型是否兼容 OpenAI、Azure 或 Minimax 协议，并前往模型服务商网站获取相关鉴权信息。 具体功能说明请参考文档 [腾讯云联络中心AI通话平台](https://cloud.tencent.com/document/product/679/112100)。",
       "input": "CreateAIAgentCallRequest",
-      "name": "创建智能体通话",
+      "name": "创建单次智能体通话任务",
       "output": "CreateAIAgentCallResponse",
       "status": "online"
     },
@@ -1414,20 +1414,20 @@
           "type": "string"
         },
         {
-          "disabled": true,
-          "document": "绑定技能组列表",
-          "example": "[1,2,3,4,5,6]",
-          "member": "int64",
-          "name": "SkillGroupList",
-          "required": false,
-          "type": "list"
-        },
-        {
           "disabled": false,
           "document": "绑定技能组列表(必填)",
           "example": "[{\"SkillGroupId\":100,\"Priority\":1},{\"SkillGroupId\":200,\"Priority\":2}]",
           "member": "StaffSkillGroupList",
           "name": "StaffSkillGroupList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "绑定技能组列表",
+          "example": "[1,2,3,4,5,6]",
+          "member": "int64",
+          "name": "SkillGroupList",
           "required": false,
           "type": "list"
         }
@@ -2248,7 +2248,7 @@
         {
           "disabled": true,
           "document": "提示词变量",
-          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "example": "无",
           "member": "Variable",
           "name": "PromptVariables",
           "required": false,
@@ -2257,7 +2257,7 @@
         {
           "disabled": false,
           "document": "通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  \n\n1. dify-inputs-xxx 为dify的inputs变量\n2.  dify-inputs-user 为dify的user值\n3.  dify-inputs-conversation_id 为dify的conversation_id值",
-          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "example": "无",
           "member": "Variable",
           "name": "Variables",
           "required": false,
@@ -3811,21 +3811,21 @@
         },
         {
           "disabled": false,
+          "document": "用户签名数据，必填字段，为标准 JSON 格式",
+          "example": "参考下文示例",
+          "member": "string",
+          "name": "ClientData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "有效期，单位秒，不超过 1 小时",
           "example": "3600",
           "member": "int64",
           "name": "ExpiredTime",
           "required": true,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "用户签名数据，必填字段，为标准 JSON 格式",
-          "example": "参考下文示例",
-          "member": "string",
-          "name": "ClientData",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"
@@ -6919,6 +6919,33 @@
           "type": "int"
         },
         {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页尺寸（必填），上限 100",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码（必填），从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
           "disabled": true,
           "document": "实例 ID（废弃）",
           "example": "11",
@@ -6942,33 +6969,6 @@
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
-          "example": "1400000000",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页尺寸（必填），上限 100",
-          "example": "100",
-          "member": "int64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页页码（必填），从 0 开始",
-          "example": "0",
-          "member": "int64",
-          "name": "PageNumber",
           "required": false,
           "type": "int"
         },
@@ -10347,7 +10347,7 @@
         },
         {
           "disabled": false,
-          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        **正常通话**\n\n电话呼入\t             102\t        ivrGiveUp\t        **IVR期间用户放弃**\n\n电话呼入\t             103\t        waitingGiveUp\t       **排队时用户放弃**\n\n电话呼入\t             104\t        ringingGiveUp\t       **振铃时用户放弃**\n\n电话呼入\t             105\t        noSeatOnline\t       **无座席在线**\n\n电话呼入              106\t       notWorkTime\t       **非工作时间**   \n\n电话呼入\t            107\t       ivrEnd\t               **IVR全自动结束(无人工介入)**\n\n电话呼入\t            100\t      blackList **黑名单(系统侧)**\n\n电话呼出             108\t        restrictedCallee\t**全局外呼风险号码拦截(系统侧)**\n\n电话呼出             109\t        tooManyRequest\t    **外呼频控拦截(系统侧)**\n\n电话呼出             110\t        restrictedArea\t    **外呼地域拦截(系统侧)**\n\n电话呼出             111\t        restrictedTime\t**外呼时段拦截(系统侧)**\n                         \n电话呼出             202            notAnswer\t **被叫未接听**\n\n电话呼出            203\t    userReject\t**被叫拒接挂断**\n\n电话呼出\t          204\t    powerOff\t**被叫关机**\n\n电话呼出           205            numberNotExist\t**被叫空号**\n\n电话呼出\t         206\t           busy\t**被叫忙**\n\n电话呼出   \t        207\t           outOfCredit\t**被叫欠费**\n\n电话呼出\t         208\t           operatorError\t**运营商线路异常**\n\n电话呼出         \t209\t           callerCancel\t**主叫取消**\n\n电话呼出\t        210\t           notInService\t**被叫不在服务区**\n\n电话呼入&呼出\t211    clientError    **座席客户端错误**\n\n电话呼出        212     carrierBlocked      **运营商拦截**\n\n电话呼出        213     callReminder      **提示来电提醒**\n\n电话呼出        215     numberInvalid      **被叫号码无效**\n\n电话呼出        216     callRestricted      **提示呼叫受限**\n\n电话呼出        217     calleeRestricted      **被叫黑名单受限**\n\n电话呼出        218     areaRestricted      **被叫区域受限**\n\n电话呼出        219     promptCallForwarding      **提示呼叫转移**\n\n电话呼出        220     callerCancelWhileRing      **振铃中主叫取消**\n\n电话呼出        221     callerCancelWithoutRing      **未振铃被叫号码异常**\n\n音频呼入        501     callConflict      **VoIP用户呼叫冲突终止**\n\n音频呼入        502     clientTimeout      **VoIP用户客户端超时**\n\n音频呼入        503     voipClientError      **VoIP用户客户端错误**\n\n中文详情[参考](https://www.tencentcloud.com/zh/document/product/1229/71847)\n\n英文详情[参考](https://www.tencentcloud.com/document/product/1229/71847?lang=en)",
+          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        **正常通话**\n\n电话呼入\t             102\t        ivrGiveUp\t        **IVR期间用户放弃**\n\n电话呼入\t             103\t        waitingGiveUp\t       **排队时用户放弃**\n\n电话呼入\t             104\t        ringingGiveUp\t       **振铃时用户放弃**\n\n电话呼入\t             105\t        noSeatOnline\t       **无座席在线**\n\n电话呼入              106\t       notWorkTime\t       **非工作时间**   \n\n电话呼入\t            107\t       ivrEnd\t               **IVR全自动结束(无人工介入)**\n\n电话呼入\t            100\t      blackList **黑名单(系统侧)**\n\n电话呼出             108\t        restrictedCallee\t**全局外呼风险号码拦截(系统侧)**\n\n电话呼出             109\t        tooManyRequest\t    **外呼频控拦截(系统侧)**\n\n电话呼出             110\t        restrictedArea\t    **外呼地域拦截(系统侧)**\n\n电话呼出             111\t        restrictedTime\t**外呼时段拦截(系统侧)**\n                         \n电话呼出             202            notAnswer\t **被叫未接听**\n\n电话呼出            203\t    userReject\t**被叫拒接挂断**\n\n电话呼出\t          204\t    powerOff\t**被叫关机**\n\n电话呼出           205            numberNotExist\t**被叫空号**\n\n电话呼出\t         206\t           busy\t**被叫忙**\n\n电话呼出   \t        207\t           outOfCredit\t**被叫欠费**\n\n电话呼出\t         208\t           operatorError\t**运营商线路异常**\n\n电话呼出         \t209\t           callerCancel\t**主叫取消**\n\n电话呼出\t        210\t           notInService\t**被叫不在服务区**\n\n电话呼入&呼出\t211    clientError    **座席客户端错误**\n\n电话呼出        212     carrierBlocked      **运营商拦截**\n\n电话呼出        213     callReminder      **提示来电提醒**\n\n电话呼出        215     numberInvalid      **被叫号码无效**\n\n电话呼出        216     callRestricted      **提示呼叫受限**\n\n电话呼出        217     calleeRestricted      **被叫黑名单受限**\n\n电话呼出        218     areaRestricted      **被叫区域受限**\n\n电话呼出        219     promptCallForwarding      **提示呼叫转移**\n\n电话呼出        220     callerCancelWhileRing      **振铃中主叫取消**\n\n电话呼出        221     callerCancelWithoutRing      **未振铃被叫号码异常**\n\n电话呼出        222     voiceMailReached      **语音信箱挂断**\n\n音频呼入        501     callConflict      **VoIP用户呼叫冲突终止**\n\n音频呼入        502     clientTimeout      **VoIP用户客户端超时**\n\n音频呼入        503     voipClientError      **VoIP用户客户端错误**\n\n中文详情[参考](https://www.tencentcloud.com/zh/document/product/1229/71847)\n\n英文详情[参考](https://www.tencentcloud.com/document/product/1229/71847?lang=en)",
           "example": "1",
           "member": "int64",
           "name": "EndStatus",

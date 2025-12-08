@@ -40,6 +40,20 @@
         "title": "删除会话"
       }
     ],
+    "GetKnowledgeBaseFileList": [
+      {
+        "document": "GetKnowledgeBaseFileList",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetKnowledgeBaseFileList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ry-123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f7640962-9ab6-46d9-8905-f05022ff542f\"\n    }\n}",
+        "title": "GetKnowledgeBaseFileList"
+      },
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetKnowledgeBaseFileList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-dfssj8sj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb3edecb-0405-4eea-b880-0bd4023dd274\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "GetKnowledgeBaseList": [
       {
         "document": "示例",

@@ -1,25 +1,29 @@
-**Example 1: 修改指定命名空间的属性值**
+**Example 1: 修改名字空间**
 
-修改指定命名空间的属性值
+
 
 Input: 
 
 ```
 tccli tdmq ModifyEnvironmentAttributes --cli-unfold-argument  \
-    --EnvironmentId devNs \
-    --MsgTTL 100 \
-    --ClusterId pulsar-5r59xd4vnx
+    --EnvironmentId shanxuTest \
+    --MsgTTL 60 \
+    --ClusterId pulsar-zaxdmeegvgee \
+    --SubscriptionExpirationTime 1440 \
+    --SubscriptionExpirationTimeEnable True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "EnvironmentId": "devNs",
-        "NamespaceId": "namespace-5r59xen74x",
-        "MsgTTL": 100,
-        "Remark": "devRemark",
-        "RequestId": "7db00a30-933c-4f6f-bba9-79cdf6be7d8c"
+        "EnvironmentId": "shanxuTest",
+        "MsgTTL": 60,
+        "NamespaceId": "ns-jakba8kdbrno",
+        "Remark": "createSubscriptionExpirationtest",
+        "SubscriptionExpirationTime": 1440,
+        "SubscriptionExpirationTimeEnable": true,
+        "RequestId": "4664945f-0d01-4da7-8dd8-5274bb4d4c8a"
     }
 }
 ```

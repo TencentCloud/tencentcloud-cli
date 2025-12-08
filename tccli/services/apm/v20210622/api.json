@@ -873,6 +873,26 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SQL参数获取",
+          "example": "true",
+          "member": "bool",
+          "name": "DbStatementParametersEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢SQL阈值",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "SlowSQLThresholds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -894,7 +914,7 @@
         {
           "disabled": false,
           "document": "应用名\t",
-          "example": "java-order-service\t",
+          "example": "java-order-service",
           "member": "string",
           "name": "ServiceName",
           "output_required": true,
@@ -916,7 +936,7 @@
         {
           "disabled": false,
           "document": "错误类型过滤",
-          "example": "io.grpc.StatusRuntimeException,java.sql.(.*?)\t",
+          "example": "io.grpc.StatusRuntimeException,java.sql.(.*?)",
           "member": "string",
           "name": "ExceptionFilter",
           "output_required": true,
@@ -927,7 +947,7 @@
         {
           "disabled": false,
           "document": "HTTP 状态码过滤",
-          "example": "400,500\t",
+          "example": "400,500",
           "member": "string",
           "name": "ErrorCodeFilter",
           "output_required": true,
@@ -971,7 +991,7 @@
         {
           "disabled": false,
           "document": "URL 收敛规则正则\t",
-          "example": "market.StockService.getStock(.*?),market.StockService.getPreDayS\t",
+          "example": "market.StockService.getStock(.*?),market.StockService.getPreDayS",
           "member": "string",
           "name": "UrlConvergence",
           "output_required": true,
@@ -982,7 +1002,7 @@
         {
           "disabled": false,
           "document": "URL 排除规则正则",
-          "example": "market.StockService.getStock(.*?),market.StockService.getPreDayS\t",
+          "example": "market.StockService.getStock(.*?),market.StockService.getPreDayS",
           "member": "string",
           "name": "UrlExclude",
           "output_required": true,
@@ -1109,6 +1129,28 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SQL参数获取",
+          "example": "false",
+          "member": "bool",
+          "name": "DbStatementParametersEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢SQL阈值",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "SlowSQLThresholds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -2207,6 +2249,16 @@
     "CreateApmPrometheusRuleResponse": {
       "document": "CreateApmPrometheusRule返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "指标匹配规则的ID",
+          "example": "438",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4327,6 +4379,24 @@
           "name": "DisableCpuUsed",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SQL参数获取",
+          "example": "false",
+          "member": "bool",
+          "name": "DbStatementParametersEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "慢SQL阈值",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "SlowSQLThresholds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4348,7 +4418,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关联的产品名，当前只支持Prometheus",
+          "document": "关联的产品名，当前只支持Prometheus、CKafka",
           "example": "Prometheus",
           "member": "string",
           "name": "ProductName",
@@ -4357,7 +4427,7 @@
         },
         {
           "disabled": false,
-          "document": "关联关系的状态：// 关联关系状态：1（启用）、2（不启用）、4（已删除）",
+          "document": "关联关系的状态：// 关联关系状态：1（启用）、2（不启用）",
           "example": "1",
           "member": "uint64",
           "name": "Status",

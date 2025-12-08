@@ -9,7 +9,7 @@ tccli tione ModifyModelServiceAuthToken --cli-unfold-argument  \
     --ServiceGroupId ms-n2f929h2 \
     --NeedReset False \
     --AuthToken.Base.Value MTc0NDgwMjgxMTU \
-    --AuthToken.Base.Name test \
+    --AuthToken.Base.Name 示例 \
     --AuthToken.Base.Description desc \
     --AuthToken.Base.CreateTime 2025-04-16T11:26:51Z \
     --AuthToken.Base.Status Enabled

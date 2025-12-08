@@ -3759,7 +3759,7 @@
         {
           "disabled": false,
           "document": "发票代码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "13578",
           "member": "string",
           "name": "Code",
           "output_required": false,
@@ -3769,7 +3769,7 @@
         {
           "disabled": false,
           "document": "发票号码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "13131313131313131313",
           "member": "string",
           "name": "Number",
           "output_required": false,
@@ -3779,7 +3779,7 @@
         {
           "disabled": false,
           "document": "开票日期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-10-12",
           "member": "string",
           "name": "Date",
           "output_required": false,
@@ -3789,7 +3789,7 @@
         {
           "disabled": false,
           "document": "金额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000",
           "member": "string",
           "name": "Amount",
           "output_required": false,
@@ -3799,7 +3799,7 @@
         {
           "disabled": false,
           "document": "校验码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1324",
           "member": "string",
           "name": "CheckCode",
           "output_required": false,
@@ -3809,7 +3809,7 @@
         {
           "disabled": false,
           "document": "价税合计\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000",
           "member": "string",
           "name": "Total",
           "output_required": false,
@@ -3819,7 +3819,7 @@
         {
           "disabled": false,
           "document": "抵扣标志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "DeductionMark",
           "output_required": false,
@@ -3829,7 +3829,7 @@
         {
           "disabled": false,
           "document": "发票状态代码，0正常 1 未更新  2作废 3已红冲\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "StateCode",
           "output_required": false,
@@ -3839,7 +3839,7 @@
         {
           "disabled": false,
           "document": "购方识别号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "913306043123412345",
           "member": "string",
           "name": "BuyerTaxCode",
           "output_required": false,
@@ -3849,7 +3849,7 @@
         {
           "disabled": false,
           "document": "购方名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "xx 公司",
           "member": "string",
           "name": "BuyerName",
           "output_required": false,
@@ -3859,7 +3859,7 @@
         {
           "disabled": false,
           "document": "合计税额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "string",
           "name": "Tax",
           "output_required": false,
@@ -3869,7 +3869,7 @@
         {
           "disabled": false,
           "document": "国内国际标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "国内",
           "member": "string",
           "name": "DomesticInternationalMark",
           "output_required": false,
@@ -3879,7 +3879,7 @@
         {
           "disabled": false,
           "document": "旅客姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "PassengerName",
           "output_required": false,
@@ -3889,7 +3889,7 @@
         {
           "disabled": false,
           "document": "有效身份证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "44500000000000000",
           "member": "string",
           "name": "PassengerNo",
           "output_required": false,
@@ -3899,7 +3899,7 @@
         {
           "disabled": false,
           "document": "电子客票号码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1266578",
           "member": "string",
           "name": "ElectronicNumber",
           "output_required": false,
@@ -3915,6 +3915,46 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "票价",
+          "example": "1100",
+          "member": "string",
+          "name": "Fare",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "燃油附加费",
+          "example": "100",
+          "member": "string",
+          "name": "FuelSurcharge",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增值税税额",
+          "example": "50",
+          "member": "string",
+          "name": "TaxAmount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "民航发展基金",
+          "example": "50",
+          "member": "string",
+          "name": "DevelopmentFund",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5326,7 +5366,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景\nOnlineTaxiItinerary -- 网约车行程单\nRideHailingDriverLicense -- 网约车驾驶证\nRideHailingTransportLicense -- 网约车运输证\nWayBill -- 快递运单\nAccountOpeningPermit -- 银行开户许可证\nInvoiceEng -- 国际发票模板\nCoin --钱币识别模板\nOnboardingDocuments -- 入职材料识别\nPropertyOwnershipCertificate -- 房产证识别\nRealEstateCertificate --不动产权证识别\nHouseEncumbranceCertificate -- 他权证识别\nCarInsurance -- 车险保单\nMultiRealEstateCertificate -- 房产证、不动产证、产权证等材料合一模板",
+          "document": "配置id支持：\nGeneral -- 通用场景\nGeneralNoDate -- 无后处理日期格式模版\nOnlineTaxiItinerary -- 网约车行程单\nRideHailingDriverLicense -- 网约车驾驶证\nRideHailingTransportLicense -- 网约车运输证\nWayBill -- 快递运单\nAccountOpeningPermit -- 银行开户许可证\nInvoiceEng -- 国际发票模板\nCoin --钱币识别模板\nOnboardingDocuments -- 入职材料识别\nPropertyOwnershipCertificate -- 房产证识别\nRealEstateCertificate --不动产权证识别\nHouseEncumbranceCertificate -- 他权证识别\nCarInsurance -- 车险保单\nMultiRealEstateCertificate -- 房产证、不动产证、产权证等材料合一模板",
           "example": "General",
           "member": "string",
           "name": "ConfigId",
@@ -14605,7 +14645,7 @@
         },
         {
           "disabled": false,
-          "document": "图片旋转角度（角度制），文本的水平方向为0°，统一以逆时针方向旋转，逆时针为负，角度范围为-360°至0°。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片旋转角度（角度制），文本的水平方向为0°。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.0",
           "member": "float",
           "name": "Angle",

@@ -22,7 +22,7 @@ Output:
             "Status": "Stopped",
             "UpdateTime": "2024-11-14T17:17:51+08",
             "DataSource": "CFS",
-            "Message": "test",
+            "Message": "",
             "VolumeSourceCFS": {
                 "Id": "cfs-9su5kqtv",
                 "Path": "/tione",
@@ -42,7 +42,7 @@ Output:
                 {
                     "MappingPath": "/home/tione/notebook",
                     "DataSourceType": "CFS",
-                    "DataSourceUsage": "test",
+                    "DataSourceUsage": "",
                     "HDFSSource": {
                         "Id": "hd-sds",
                         "Path": "/date"

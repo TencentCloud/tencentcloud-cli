@@ -668,6 +668,38 @@
         "title": "解析套餐开启自动续费"
       }
     ],
+    "ModifyPackageDomain": [
+      {
+        "document": " 成功1",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageDomain\n<公共请求参数>\n\n{\n    \"ResourceId\": \"64e4dbbd\",\n    \"Operation\": \"change\",\n    \"DomainId\": 12615187,\n    \"NewDomainId\": 12615183\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37ef03f4-f151-432e-b2db-f8664a4ee137\"\n    }\n}",
+        "title": "成功1"
+      },
+      {
+        "document": " 成功示例",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageDomain\n<公共请求参数>\n\n{\n    \"ResourceId\": \"6392cb9b\",\n    \"Operation\": \"change\",\n    \"DomainId\": 12600866,\n    \"NewDomainId\": 12611925\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"152ca659-d453-481e-8be3-f0f04d783a24\"\n    }\n}",
+        "title": "成功示例"
+      },
+      {
+        "document": " 套餐更换域名",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageDomain\n<公共请求参数>\n\n{\n    \"Operation\": \"change\",\n    \"DomainId\": 203232,\n    \"NewDomainId\": 4975354\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"561cdfcb-37a6-47de-b3c5-2b038e2c2276\"\n    }\n}",
+        "title": "套餐更换域名"
+      },
+      {
+        "document": " 套餐绑定域名",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageDomain\n<公共请求参数>\n\n{\n    \"Operation\": \"bind\",\n    \"ResourceId\": \"a4d4cec3\",\n    \"NewDomainId\": 4975354\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"561cdfcb-37a6-47de-b3c5-2b038e2c2276\"\n    }\n}",
+        "title": "套餐绑定域名"
+      },
+      {
+        "document": " 套餐解绑域名",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageDomain\n<公共请求参数>\n\n{\n    \"Operation\": \"unbind\",\n    \"ResourceId\": \"a4d4cec3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"561cdfcb-37a6-47de-b3c5-2b038e2c2276\"\n    }\n}",
+        "title": "套餐解绑域名"
+      }
+    ],
     "ModifyRecord": [
       {
         "document": " ",

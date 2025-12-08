@@ -553,6 +553,13 @@
       "output": "ModifyPackageAutoRenewResponse",
       "status": "online"
     },
+    "ModifyPackageDomain": {
+      "document": "套餐绑定、解绑、更换域名",
+      "input": "ModifyPackageDomainRequest",
+      "name": "套餐绑定、解绑、更换域名",
+      "output": "ModifyPackageDomainResponse",
+      "status": "online"
+    },
     "ModifyRecord": {
       "document": "修改记录",
       "input": "ModifyRecordRequest",
@@ -8549,6 +8556,60 @@
     },
     "ModifyPackageAutoRenewResponse": {
       "document": "ModifyPackageAutoRenew返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPackageDomainRequest": {
+      "document": "ModifyPackageDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型：change: 套餐换域名；unbind: 解绑套餐域名；bind: 套餐绑定域名。",
+          "example": "change",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID。Operation为change时必传，代表更换前的域名。",
+          "example": "49372",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID。Operation为change或bind时必传，代表更换后或要绑定的域名。",
+          "example": "548874",
+          "member": "uint64",
+          "name": "NewDomainId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "套餐资源ID。Operation为bind或unbind时必传，代表将要操作的套餐资源。",
+          "example": "4f83dbe5",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPackageDomainResponse": {
+      "document": "ModifyPackageDomain返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

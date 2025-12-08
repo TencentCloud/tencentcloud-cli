@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tdmq DescribeRocketMQEnvironmentRoles --cli-unfold-argument  \
-    --EnvironmentId test_namespace \
+    --EnvironmentId test_ns \
     --Offset 0 \
     --Limit 20 \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --RoleName test_role_name
+    --RoleName test_role
 ```
 
 Output: 
@@ -20,8 +20,8 @@ Output:
         "TotalCount": 1,
         "EnvironmentRoleSets": [
             {
-                "EnvironmentId": "test_namespace",
-                "RoleName": "test_role_name",
+                "EnvironmentId": "test_ns",
+                "RoleName": "test_role",
                 "Permissions": [
                     "produce"
                 ],

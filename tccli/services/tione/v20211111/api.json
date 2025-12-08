@@ -481,7 +481,7 @@
         {
           "disabled": false,
           "document": "token 别名",
-          "example": "这是 token 别名",
+          "example": "token别名",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -492,7 +492,7 @@
         {
           "disabled": false,
           "document": "token 描述",
-          "example": "这是 token 描述",
+          "example": "token别名",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -2026,7 +2026,7 @@
         },
         {
           "disabled": false,
-          "document": "算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION)",
+          "document": "算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION/ONNX)",
           "example": "a2",
           "member": "string",
           "name": "AlgorithmFramework",
@@ -2152,7 +2152,7 @@
         },
         {
           "disabled": false,
-          "document": "模型格式 （PYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE）",
+          "document": "模型格式 （PYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE_BERT/HUGGING_FACE_STABLE_DIFFUSION/HUGGING_FACE_STABLE_DIFFUSION_LORA/WEB_UI_STABLE_DIFFUSION）",
           "example": "SAVED_MODEL",
           "member": "string",
           "name": "ModelFormat",
@@ -3516,7 +3516,7 @@
           "example": "rodb7j1r20w",
           "member": "string",
           "name": "DatasetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3632,9 +3632,9 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务分类",
-          "example": "无",
+          "example": "Normal",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -4023,7 +4023,7 @@
         {
           "disabled": false,
           "document": "资源组节点运行中的任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "ResourceInstanceRunningJobInfo",
           "name": "ResourceInstanceRunningJobInfos",
           "output_required": false,
@@ -4692,7 +4692,7 @@
           "example": "无",
           "member": "ModelAccelerateTask",
           "name": "ModelAccelerateTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4702,7 +4702,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ModelAccRuntimeInSecond",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4712,7 +4712,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelAccStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4722,7 +4722,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelAccEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4840,9 +4840,9 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务分类",
-          "example": "无",
+          "example": "已废弃",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -4936,9 +4936,9 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务分类",
-          "example": "无",
+          "example": "normal",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -5027,9 +5027,9 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务分类",
-          "example": "无",
+          "example": "Normal",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -5138,9 +5138,9 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务分类",
-          "example": "无",
+          "example": "normal",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -5273,7 +5273,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "详情",
+          "document": "notebook详情",
           "example": "无",
           "member": "NotebookSetItem",
           "name": "NotebookSet",
@@ -5389,7 +5389,7 @@
           "example": "无",
           "member": "TrainingModelVersionDTO",
           "name": "TrainingModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5548,7 +5548,7 @@
         {
           "disabled": false,
           "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"train-23091792777383936\"] }]\n\n取值范围：\nName（名称）：task1\nId（task ID）：train-23091792777383936\nStatus（状态）：SUBMITTING/PENDING/STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED\nResourceGroupId（资源组 Id）：trsg-kvvfrwl7\nCreator（创建者 uin）：100014761913\nChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）\nCHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）",
-          "example": "[{ \"Name\": \"TaskStatus\", \"Values\": [\"Running\"] }]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5557,7 +5557,7 @@
         {
           "disabled": false,
           "document": "标签过滤器，eg：[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
-          "example": "[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -5776,6 +5776,11 @@
           "value_allowed_null": false
         }
       ],
+      "usage": "both"
+    },
+    "ExposePortConfig": {
+      "document": "暴露端口信息",
+      "members": [],
       "usage": "both"
     },
     "Filter": {
@@ -7837,7 +7842,7 @@
         {
           "disabled": false,
           "document": "是否开启鉴权,true表示开启",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "AuthorizationEnable",
           "required": false,
@@ -8207,7 +8212,7 @@
         {
           "disabled": false,
           "document": "Notebook修改标签集合",
-          "example": "[]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -9015,6 +9020,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器服务暴露端口配置",
+          "example": "无",
+          "member": "ExposePortConfig",
+          "name": "ExposePortConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12101,7 +12116,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelAccTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12111,7 +12126,7 @@
           "example": "无",
           "member": "string",
           "name": "AsyncTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12469,7 +12484,7 @@
         {
           "disabled": false,
           "document": "模型错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "未知错误",
           "member": "string",
           "name": "TrainingModelErrorMsg",
           "output_required": true,
@@ -12549,7 +12564,7 @@
         {
           "disabled": false,
           "document": "推理环境id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "pytorch1.9.0-py38(gpu)",
           "member": "string",
           "name": "ReasoningEnvironmentId",
           "output_required": true,
@@ -12559,7 +12574,7 @@
         {
           "disabled": false,
           "document": "训练任务版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "V1",
           "member": "string",
           "name": "TrainingJobVersion",
           "output_required": true,
@@ -12569,7 +12584,7 @@
         {
           "disabled": false,
           "document": "训练偏好\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "HIGH_SPEED",
           "member": "string",
           "name": "TrainingPreference",
           "output_required": true,
@@ -12579,7 +12594,7 @@
         {
           "disabled": false,
           "document": "自动学习任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ml-8jw4kzxm-v1",
           "member": "string",
           "name": "AutoMLTaskId",
           "output_required": true,
@@ -12589,7 +12604,7 @@
         {
           "disabled": false,
           "document": "是否QAT模型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsQAT",
           "output_required": true,

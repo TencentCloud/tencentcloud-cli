@@ -22027,6 +22027,84 @@
       ],
       "usage": "both"
     },
+    "MPSAiMediaInfo": {
+      "document": "使用MPS进行处理后的智能媒体信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MPS处理后的智能媒体信息列表",
+          "example": "无",
+          "member": "MPSAiMediaItem",
+          "name": "AiMediaList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MPSAiMediaItem": {
+      "document": "MPS AI媒资任务项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MPS智能处理任务类型",
+          "example": "AiAnalysis.HighlightTask",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MPS 智能媒资任务输出",
+          "example": "无",
+          "member": "MPSAiMediaTask",
+          "name": "AiMediaTasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MPSAiMediaTask": {
+      "document": "MPS智能任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MPS智能任务的模板 ID",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MPS智能任务输出文件集合",
+          "example": "无",
+          "member": "MPSOutputFileInfo",
+          "name": "OutputFile",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MPS智能任务输出",
+          "example": "Output",
+          "member": "string",
+          "name": "OutputText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MPSOutputFile": {
       "document": "用于描述 MPS 视频处理任务中的返回文件结果。",
       "members": [
@@ -22088,6 +22166,32 @@
           "name": "ExpiredTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MPSOutputFileInfo": {
+      "document": "MPS输出文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MPS输出文件类型",
+          "example": "Output",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MPS输出文件的URL",
+          "example": "https://26003000.vod-qcloud.com/xxxxxx/xxxxxx/f0.mp4",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -22170,6 +22274,16 @@
           "name": "OutputFiles",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务返回的结果JSON",
+          "example": "Output",
+          "member": "string",
+          "name": "OutputText",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -23482,6 +23596,16 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MPS智能媒资信息",
+          "example": "无",
+          "member": "MPSAiMediaInfo",
+          "name": "MPSAiMediaInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
