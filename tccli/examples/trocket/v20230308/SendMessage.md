@@ -7,10 +7,10 @@ Input:
 ```
 tccli trocket SendMessage --cli-unfold-argument  \
     --InstanceId rmq-72mo3a9o \
-    --Topic topic \
-    --MsgBody testBody \
-    --MsgKey testKey \
-    --MsgTag testTag
+    --Topic test_topic \
+    --MsgBody This is a normal message for Apache RocketMQ. \
+    --MsgKey test_key \
+    --MsgTag test_kag
 ```
 
 Output: 

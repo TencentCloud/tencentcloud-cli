@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DescribeRocketMQTopUsages --cli-unfold-argument  \
-    --ClusterId rocketmq-abc \
+    --ClusterId rocketmq-vvqb9emabapx \
     --MetricName consumeLag \
     --Limit 1
 ```

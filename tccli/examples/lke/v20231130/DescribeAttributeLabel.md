@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "AttrKey": "test",
+        "AttrKey": "attrkey",
         "AttrName": "诶皮爱标签",
         "AttributeBizId": "1734549420823662592",
         "LabelNumber": "1",

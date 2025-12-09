@@ -1,77 +1,10 @@
-# Release 3.0.1322.1
+# Release 3.0.1323.1
 
-## 费用中心(billing) 版本：2018-07-09
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 102 次发布
+### 第 147 次发布
 
-发布时间：2025-12-09 01:12:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ModifyMeasurePackageBindStrategy](http://document.tencentcloudapi.woa.com/document/product/555/88246)
-
-新增数据结构：
-
-* [MeasureBindOperation](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureBindOperation)
-* [ModifyMeasureBindStrategyData](http://document.tencentcloudapi.woa.com/document/product/555/19183#ModifyMeasureBindStrategyData)
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 217 次发布
-
-发布时间：2025-12-09 01:36:58
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateEmployeeQualificationSealQrCode](http://document.tencentcloudapi.woa.com/document/product/1595/84232)
-
-	* 新增入参：UserData
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 容器服务(tke) 版本：2022-05-01
-
-
-
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 105 次发布
-
-发布时间：2025-12-09 02:08:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateClusterVirtualNodePool](http://document.tencentcloudapi.woa.com/document/product/457/76934)
-
-	* <font color="#dd0000">**修改入参**：</font>SecurityGroupIds
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 233 次发布
-
-发布时间：2025-12-09 02:13:32
+发布时间：2025-12-10 01:26:16
 
 本次发布包含了以下内容：
 
@@ -79,9 +12,115 @@
 
 修改数据结构：
 
-* [Address](http://document.tencentcloudapi.woa.com/document/product/215/15824#Address)
+* [BinlogItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BinlogItem)
 
-	* 新增成员：TrafficValidationEnabled, EipVisibleOnEni
+	* 新增成员：CrossRegions
+
+
+
+
+## 腾讯混元大模型(hunyuan) 版本：2023-09-01
+
+### 第 19 次发布
+
+发布时间：2025-12-10 01:39:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1744/85790)
+
+
+新增数据结构：
+
+* [PromptTokensDetails](http://document.tencentcloudapi.woa.com/document/product/1744/85813#PromptTokensDetails)
+
+修改数据结构：
+
+* [Usage](http://document.tencentcloudapi.woa.com/document/product/1744/85813#Usage)
+
+	* 新增成员：PromptTokensDetails
+
+
+
+
+## 安全湖(securitylake) 版本：2024-01-17
+
+### 第 3 次发布
+
+发布时间：2025-12-10 01:57:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SecurityAlarmTable](http://document.tencentcloudapi.woa.com/document/product/1799/87130#SecurityAlarmTable)
+
+	* 新增成员：TotalGroupNum
+
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 55 次发布
+
+发布时间：2025-12-10 02:10:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateMQTTInsPublicEndpoint
+* CreateMQTTInstance
+* CreateMQTTTopic
+* CreateMQTTUser
+* DeleteMQTTInsPublicEndpoint
+* DeleteMQTTInstance
+* DeleteMQTTTopic
+* DeleteMQTTUser
+* DescribeMQTTClient
+* DescribeMQTTInsPublicEndpoints
+* DescribeMQTTInsVPCEndpoints
+* DescribeMQTTInstance
+* DescribeMQTTInstanceCert
+* DescribeMQTTInstanceList
+* DescribeMQTTMessage
+* DescribeMQTTMessageList
+* DescribeMQTTProductSKUList
+* DescribeMQTTTopic
+* DescribeMQTTTopicList
+* DescribeMQTTUserList
+* ModifyMQTTInsPublicEndpoint
+* ModifyMQTTInstance
+* ModifyMQTTInstanceCertBinding
+* ModifyMQTTTopic
+* ModifyMQTTUser
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 234 次发布
+
+发布时间：2025-12-10 02:14:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SecurityGroupPolicy](http://document.tencentcloudapi.woa.com/document/product/215/15824#SecurityGroupPolicy)
+
+	* 新增成员：Priority
 
 
 

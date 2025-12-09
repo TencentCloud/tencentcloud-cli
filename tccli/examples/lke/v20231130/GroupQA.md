@@ -1,28 +1,4 @@
-**Example 1: QA分组**
-
-
-
-Input: 
-
-```
-tccli lke GroupQA --cli-unfold-argument  \
-    --LoginUin abc \
-    --LoginSubAccountUin abc \
-    --BotBizId abc \
-    --QaBizIds abc \
-    --CateBizId abc
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 2: 分组QA**
+**Example 1: 分组QA**
 
 分组QA
 
@@ -33,7 +9,7 @@ tccli lke GroupQA --cli-unfold-argument  \
     --LoginUin 600000562455 \
     --LoginSubAccountUin 600000562455 \
     --BotBizId 1714970520775950336 \
-    --QaBizIds 162779 \
+    --QaBizIds 17341635094137912292 \
     --CateBizId 1734163509413793792
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb SetBackupRules --cli-unfold-argument  \
-    --InstanceId cmgo-abcede \
+    --InstanceId cmgo-******** \
     --BackupFrequency 24 \
     --BackupTime 22 \
     --BackupMethod 1 \

@@ -1,4 +1,4 @@
-**Example 1: 保存文档**
+**Example 1: 知识库文档录入**
 
 
 
@@ -13,7 +13,7 @@ tccli lke SaveDoc --cli-unfold-argument  \
     --ETag "58e88ad7665f11c4f66eba0eada383a5" \
     --CosHash xxxxxxxxx \
     --Size 643000 \
-    --Source 1 \
+    --Source 0 \
     --WebUrl  \
     --AttrRange 1 \
     --ReferUrlType 0

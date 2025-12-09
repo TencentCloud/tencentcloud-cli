@@ -37,7 +37,8 @@ Output:
         "StatusDesc": "学习失败",
         "FileType": "docx",
         "IsAllowRestart": true,
-        "IsRefer": false
+        "IsRefer": false,
+        "IsDownload": false
     }
 }
 ```

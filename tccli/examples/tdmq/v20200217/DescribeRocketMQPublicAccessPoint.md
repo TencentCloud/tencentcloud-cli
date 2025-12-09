@@ -18,7 +18,7 @@ Output:
         "PayStatus": 1,
         "AccessUrl": "rocketmq-jxj3wj5j8e7.mock-test.com",
         "PayMode": 0,
-        "Bandwidth": 0,
+        "Bandwidth": 2,
         "Rules": [
             {
                 "IpRule": "0.0.0.0/0",

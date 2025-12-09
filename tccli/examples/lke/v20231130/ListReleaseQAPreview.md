@@ -10,9 +10,9 @@ tccli lke ListReleaseQAPreview --cli-unfold-argument  \
     --PageNumber 1 \
     --PageSize 10 \
     --Query  \
-    --ReleaseBizId 0 \
-    --StartTime 0 \
-    --EndTime 0
+    --ReleaseBizId 1694923462777761792 \
+    --StartTime 1735056000 \
+    --EndTime 1735142399
 ```
 
 Output: 
@@ -92,7 +92,7 @@ Output:
                 "FileType": "",
                 "Message": "",
                 "QaBizId": "1731558661913706496",
-                "Question": "a",
+                "Question": "问题a",
                 "ReleaseStatus": 0,
                 "Source": 3,
                 "SourceDesc": "手动录入",

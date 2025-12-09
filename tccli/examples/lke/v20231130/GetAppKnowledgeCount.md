@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli lke GetAppKnowledgeCount --cli-unfold-argument  \
-    --AppBizId  \
-    --Type 
+    --AppBizId 1849805468254076912 \
+    --Type doc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": "abc",
-        "RequestId": "abc"
+        "Total": "12",
+        "RequestId": "7814bdbe-da7e-401e-95c4-3e861d52982"
     }
 }
 ```

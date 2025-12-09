@@ -7,7 +7,9 @@ Input:
 
 ```
 tccli lke ListModel --cli-unfold-argument  \
-    --AppType knowledge_qa
+    --AppType knowledge_qa \
+    --ModelCategory thought \
+    --Pattern agent
 ```
 
 Output: 
@@ -16,15 +18,29 @@ Output:
     "Response": {
         "List": [
             {
-                "ModelName": "Model-A",
-                "ModelDesc": "模型A"
-            },
-            {
-                "ModelName": "Model-B",
-                "ModelDesc": "模型B"
+                "AliasName": "精调知识大模型标准版",
+                "MaxTokens": {
+                    "Default": 4000,
+                    "Max": 8000,
+                    "Min": 1
+                },
+                "ModelDesc": "",
+                "ModelName": "cs-normal",
+                "PromptWordsLimit": "8K",
+                "ResourceStatus": 1,
+                "Temperature": {
+                    "Default": 0.7,
+                    "Max": 1,
+                    "Min": 0
+                },
+                "TopP": {
+                    "Default": 0.8,
+                    "Max": 1,
+                    "Min": 0
+                }
             }
         ],
-        "RequestId": "dwec-adsdsdsd-sfsfdsfsf"
+        "RequestId": "53b9fa7e-d4b5-4aec-8229-d56ea3965493"
     }
 }
 ```

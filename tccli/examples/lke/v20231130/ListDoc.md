@@ -23,6 +23,7 @@ Output:
                 "DocBizId": "1729099536210460672",
                 "DocCharSize": "5",
                 "FileName": "jkadslfjalkdfjaklsdfla.docx",
+                "NewName": "",
                 "FileType": "docx",
                 "IsAllowDelete": true,
                 "IsAllowEdit": true,

@@ -16,12 +16,12 @@ Output:
         "RequestId": "c6d158b6-89b2-40d1-b1f6-5973f0f00cd5",
         "ClusterInfo": {
             "ClusterId": "rocketmq-rd3545bkkj49",
-            "ClusterName": "test-example",
+            "ClusterName": "test-name",
             "Region": "ap-beijing",
             "CreateTime": 1620321019000,
-            "Remark": "modified",
-            "PublicEndPoint": "pulsar://xxxxx.com:6650",
-            "VpcEndPoint": "pulsar://xxxxx.com:6650",
+            "Remark": "test remark info.",
+            "PublicEndPoint": "",
+            "VpcEndPoint": "http://MQ_INST_rocketmqrd3545bkkj49_test_ns.tdmq-rocketmq.qcloud.tencenttdmq.com:3000",
             "Vpcs": [
                 {
                     "SubnetId": "subnet-123",
@@ -41,6 +41,7 @@ Output:
         },
         "ClusterConfig": {
             "MaxTpsPerNamespace": 8000,
+            "MaxTpsLimit": 8000,
             "UsedNamespaceNum": 1,
             "MaxTopicNum": 1000,
             "UsedTopicNum": 2,
