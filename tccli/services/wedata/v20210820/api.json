@@ -26613,6 +26613,24 @@
           "name": "PageIndex",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "状态列表  LAUNCHED:等待运行 RUNNING:运行中 KILLING:终止中 KILLED:已终止 SUCCESS:成功 FAILED:失败 SKIP_RUNNING 跳过运行 NEVER_RUN:未运行",
+          "example": "[\"RUNNING\"]",
+          "member": "string",
+          "name": "StatusList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序条件 排序的key：timeCost,startTime",
+          "example": "无",
+          "member": "OrderCondition",
+          "name": "OrderConditionList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -62878,6 +62896,15 @@
           "name": "GeneralTaskParams",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作流依赖，yes/no。开启后表示当前任务依赖本工作流上个周期的所有任务。仅支持当前任务所在工作流的任务全部为同周期的情况，如果非同周期则不生效，请在工作流-统一调度上进行配置。",
+          "example": "",
+          "member": "string",
+          "name": "DependencyWorkflow",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

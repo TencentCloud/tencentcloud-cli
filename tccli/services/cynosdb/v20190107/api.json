@@ -1579,7 +1579,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机器类型",
+          "document": "实例机器类型，支持值如下：\n- common：表示通用型\n- exclusive：表示独享型",
           "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
@@ -1679,7 +1679,7 @@
         {
           "disabled": false,
           "document": "参数列表，ParamTemplateId 传入时InstanceParams才有效",
-          "example": "[{\"ParamName\": \"auto_increment_increment\",\"CurrentValue\": \"2\",\"OldValue\": \"1\",\"Component\": \"libracdc\"}]",
+          "example": "无",
           "member": "ModifyParamItem",
           "name": "InstanceParams",
           "required": false,
@@ -1688,7 +1688,7 @@
         {
           "disabled": false,
           "document": "安全组ID，新建只读实例时可以指定安全组。",
-          "example": "sg-rgf3qgld",
+          "example": "[\"sg-rgf3qgld\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -1697,7 +1697,7 @@
         {
           "disabled": false,
           "document": "proxy同步升级",
-          "example": "{\"Cpu\": 4,\"Mem\": 8000,\"ReloadBalance\": \"auto\",\"ProxyZones\": [{\"ProxyNodeZone\": \"ap-guangzhou-3\",\"ProxyNodeCount\": 1}]}",
+          "example": "无",
           "member": "UpgradeProxy",
           "name": "UpgradeProxy",
           "required": false,
@@ -2890,6 +2890,16 @@
           "name": "BinlogId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "binlog所跨地域",
+          "example": "['ap-shanghai']",
+          "member": "string",
+          "name": "CrossRegions",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -6579,7 +6589,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，支持的值如下：\n- creating：创建中\n- running：运行中\n- isolating：隔离中\n- isolated：已隔离\n- activating：从回收站重新恢复\n- offlining：下线中\n- offlined：已下线\n- deleting：删除中\n- deleted：已删除",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -14399,7 +14409,7 @@
         },
         {
           "disabled": false,
-          "document": "实例设备类型",
+          "document": "实例设备类型，支持值如下：\n- common：表示通用型\n- exclusive：表示独享型",
           "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
@@ -14469,7 +14479,7 @@
         {
           "disabled": false,
           "document": "实例价格",
-          "example": "{\"ChargeUnit\":\"\",\"Discount\":100,\"TotalPrice\":200,\"TotalPriceDiscount\":200,\"UnitPrice\":0,\"UnitPriceDiscount\":0}",
+          "example": "无",
           "member": "TradePrice",
           "name": "InstancePrice",
           "output_required": true,
@@ -14479,7 +14489,7 @@
         {
           "disabled": false,
           "document": "存储价格",
-          "example": "{\"ChargeUnit\":\"GB*h\",\"Discount\":100,\"TotalPrice\":0,\"TotalPriceDiscount\":0,\"UnitPrice\":350,\"UnitPriceDiscount\":350}",
+          "example": "无",
           "member": "TradePrice",
           "name": "StoragePrice",
           "output_required": true,

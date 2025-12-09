@@ -971,7 +971,7 @@
         {
           "disabled": false,
           "document": "系统盘数据",
-          "example": "{\"DiskType\":\"CLOUD_PREMIUM\", \"DiskSize\":100}",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "output_required": true,
@@ -1071,7 +1071,7 @@
         {
           "disabled": false,
           "document": "实例包含的登录服务详情",
-          "example": "{\"ServiceName\":\"Jupyter\"}",
+          "example": "无",
           "member": "LoginService",
           "name": "LoginServices",
           "output_required": true,

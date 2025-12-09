@@ -148,9 +148,9 @@
       "status": "online"
     },
     "CreateRocketMQVipInstance": {
-      "document": "创建RocketMQ专享实例",
+      "document": "创建 RocketMQ 4.x 集群。\n当前 API 适用集群：4.x 专享集群 和 4.x 通用集群。创建 5.x 集群的接口文档见 [CreateInstance](https://cloud.tencent.com/document/api/1493/97868)。",
       "input": "CreateRocketMQVipInstanceRequest",
-      "name": "创建RocketMQ专享实例",
+      "name": "创建 RocketMQ 专享或通用集群",
       "output": "CreateRocketMQVipInstanceResponse",
       "status": "online"
     },
@@ -302,9 +302,9 @@
       "status": "online"
     },
     "DeleteRocketMQVipInstance": {
-      "document": "删除RocketMQ专享实例",
+      "document": "删除 RocketMQ 专享或通用集群。\n当前 API 适用集群：4.x 专享集群 和 4.x 通用集群。删除 5.x 集群的接口文档见 [DeleteInstance](https://cloud.tencent.com/document/api/1493/97867)。",
       "input": "DeleteRocketMQVipInstanceRequest",
-      "name": "删除RocketMQ专享实例",
+      "name": "删除 RocketMQ 专享或通用集群",
       "output": "DeleteRocketMQVipInstanceResponse",
       "status": "online"
     },
@@ -561,16 +561,16 @@
       "status": "online"
     },
     "DescribeRocketMQCluster": {
-      "document": "获取单个RocketMQ集群信息",
+      "document": "查询 RocketMQ 虚拟集群信息。\n当前 API 适用集群：4.x 虚拟集群。查询 4.x 专享或通用集群信息的接口文档见 [DescribeRocketMQVipInstanceDetail](https://cloud.tencent.com/document/api/1179/86725)，查询 5.x 集群信息的接口文档见 [DescribeInstance](https://cloud.tencent.com/document/api/1493/97866)。",
       "input": "DescribeRocketMQClusterRequest",
-      "name": "获取单个RocketMQ集群信息",
+      "name": "查询 RocketMQ 虚拟集群信息",
       "output": "DescribeRocketMQClusterResponse",
       "status": "online"
     },
     "DescribeRocketMQClusters": {
-      "document": "获取RocketMQ集群列表",
+      "document": "查询 RocketMQ 虚拟集群列表。\n当前 API 适用集群：4.x 虚拟集群。查询 5.x 集群列表接口文档见 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028)，或者使用 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口适用所有集群类型。",
       "input": "DescribeRocketMQClustersRequest",
-      "name": "获取RocketMQ的集群列表",
+      "name": "查询 RocketMQ 虚拟集群列表",
       "output": "DescribeRocketMQClustersResponse",
       "status": "online"
     },
@@ -617,9 +617,9 @@
       "status": "online"
     },
     "DescribeRocketMQMsg": {
-      "document": "rocketmq消息详情",
+      "document": "查询 RocketMQ 消息详情。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的查询消息详情接口文档见 [DescribeMessage](https://cloud.tencent.com/document/api/1493/114594)。",
       "input": "DescribeRocketMQMsgRequest",
-      "name": "rocketmq消息详情",
+      "name": "查询 RocketMQ 消息详情",
       "output": "DescribeRocketMQMsgResponse",
       "status": "online"
     },
@@ -638,9 +638,9 @@
       "status": "online"
     },
     "DescribeRocketMQProducers": {
-      "document": "查询 RocketMQ 指定主题下的生产者客户端列表。",
+      "document": "查询 RocketMQ 指定主题下的生产者客户端列表。\n当前 API 适用集群：4.x 专享集群 和 4.x 通用集群。查询 5.x 集群主题下的生产者客户端列表接口文档见 [DescribeProducerList](https://cloud.tencent.com/document/api/1493/122548)。",
       "input": "DescribeRocketMQProducersRequest",
-      "name": "查询生产者客户端列表",
+      "name": "查询 RocketMQ 主题生产者客户端列表",
       "output": "DescribeRocketMQProducersResponse",
       "status": "online"
     },
@@ -652,9 +652,9 @@
       "status": "online"
     },
     "DescribeRocketMQPublicAccessPoint": {
-      "document": "接口用于查询RocketMQ实例的公网接入信息",
+      "document": "查询 RocketMQ 集群的公网接入点信息。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。查询 5.x 集群的公网接入点信息接口文档见 [DescribeInstance](https://cloud.tencent.com/document/api/1493/97866)。",
       "input": "DescribeRocketMQPublicAccessPointRequest",
-      "name": "查询RocketMQ实例公网接入点信息",
+      "name": "查询 RocketMQ 集群公网接入点信息",
       "output": "DescribeRocketMQPublicAccessPointResponse",
       "status": "online"
     },
@@ -680,9 +680,9 @@
       "status": "online"
     },
     "DescribeRocketMQTopUsages": {
-      "document": "用于获取RocketMQ指标排序列表，比如集群实例下占用存储空间最多的主题排序。",
+      "document": "用于获取RocketMQ指标排序列表，比如集群实例下占用存储空间最多的主题排序。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群暂不支持该功能。",
       "input": "DescribeRocketMQTopUsagesRequest",
-      "name": "获取 RocketMQ 集群相关指标排序列表",
+      "name": "查询 RocketMQ 集群相关指标排序列表",
       "output": "DescribeRocketMQTopUsagesResponse",
       "status": "online"
     },
@@ -722,16 +722,16 @@
       "status": "online"
     },
     "DescribeRocketMQVipInstanceDetail": {
-      "document": "获取单个RocketMQ专享集群信息",
+      "document": "查询 RocketMQ 集群信息。\n当前 API 适用集群：4.x 专享集群 和 4.x 通用集群。查询 5.x 集群信息的接口文档见 [DescribeInstance](https://cloud.tencent.com/document/api/1493/97866)。",
       "input": "DescribeRocketMQVipInstanceDetailRequest",
-      "name": "获取单个RocketMQ专享集群信息",
+      "name": "查询 RocketMQ 专享或通用集群信息",
       "output": "DescribeRocketMQVipInstanceDetailResponse",
       "status": "online"
     },
     "DescribeRocketMQVipInstances": {
-      "document": "查询用户已购的RocketMQ专享实例列表",
+      "document": "查询 RocketMQ 4.x 集群列表。\n当前 API 适用集群：4.x 专享集群 和 4.x 通用集群。查询 5.x 集群列表接口文档见 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028)，或者使用 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口适用所有集群类型。",
       "input": "DescribeRocketMQVipInstancesRequest",
-      "name": "查询RocketMQ专享实例列表",
+      "name": "查询 RocketMQ 专享和通用集群列表",
       "output": "DescribeRocketMQVipInstancesResponse",
       "status": "online"
     },
@@ -876,9 +876,9 @@
       "status": "online"
     },
     "ModifyRocketMQCluster": {
-      "document": "更新RocketMQ集群信息",
+      "document": "修改 RocketMQ 集群属性。\n当前 API 适用集群：4.x 虚拟集群。修改 4.x 专享或通用集群属性接口文档见 [ModifyRocketMQInstance](https://cloud.tencent.com/document/api/1179/108862)，修改 5.x 集群属性的接口文档见 [ModifyInstance](https://cloud.tencent.com/document/api/1493/97865)。",
       "input": "ModifyRocketMQClusterRequest",
-      "name": "更新RocketMQ集群信息",
+      "name": "修改 RocketMQ 虚拟集群属性",
       "output": "ModifyRocketMQClusterResponse",
       "status": "online"
     },
@@ -897,16 +897,16 @@
       "status": "online"
     },
     "ModifyRocketMQInstance": {
-      "document": "修改RocketMQ专享实例",
+      "document": "修改 RocketMQ 专享或通用集群属性。\n当前 API 适用集群：4.x 专享集群 和 4.x 通用集群。修改 5.x 集群属性的接口文档见 [ModifyInstance](https://cloud.tencent.com/document/api/1493/97865)。",
       "input": "ModifyRocketMQInstanceRequest",
-      "name": "修改RocketMQ专享实例",
+      "name": "修改 RocketMQ 专享集群属性",
       "output": "ModifyRocketMQInstanceResponse",
       "status": "online"
     },
     "ModifyRocketMQInstanceSpec": {
-      "document": "本API用于修改RocketMQ专享实例配置，可以支持实例规格、节点数和存储的升配和实例规格的降配。本API发起订单并成功支付后进入实例配置变更的流程，可通过DescribeRocketMQVipInstances查询实例是否已变更完成。",
+      "document": "修改 RocketMQ 专享集群配置，可以支持实例规格、节点数和存储的升配和实例规格的降配。本 API 发起订单并成功支付后进入实例配置变更的流程，可通过 [DescribeRocketMQVipInstances](https://cloud.tencent.com/document/api/1179/80903) 查询实例是否已变更完成。\n当前 API 适用集群：4.x 专享集群 和 4.x 通用集群。修改 5.x 集群规格的接口文档见 [ModifyInstance](https://cloud.tencent.com/document/api/1493/97865)。",
       "input": "ModifyRocketMQInstanceSpecRequest",
-      "name": "修改RocketMQ专享实例配置",
+      "name": "修改 RocketMQ 专享集群规格",
       "output": "ModifyRocketMQInstanceSpecResponse",
       "status": "online"
     },
@@ -1023,7 +1023,7 @@
       "status": "online"
     },
     "SetRocketMQPublicAccessPoint": {
-      "document": "该接口用于开启关闭公网访问、设置安全访问策略",
+      "document": "开启或关闭公网访问、设置安全访问策略。\n当前 API 适用集群：4.x 专享集群 和 4.x 通用集群。设置 5.x 集群的公网接入点接口文档见 [ModifyInstanceEndpoint](https://cloud.tencent.com/document/api/1493/115981)。",
       "input": "SetRocketMQPublicAccessPointRequest",
       "name": "设置RocketMQ实例公网访问接入点",
       "output": "SetRocketMQPublicAccessPointResponse",
@@ -9339,7 +9339,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "rocketmq-xxxxx",
+          "example": "rocketmq-rd3545bkkj49",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9450,7 +9450,7 @@
         {
           "disabled": false,
           "document": "过滤器。目前支持标签过滤。",
-          "example": "[     {         \"Name\": \"test_key\",         \"Values\": [             \"test_value\"         ]     } ]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10075,8 +10075,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
-          "example": "test_namespace",
+          "document": "命名空间，4.x 通用集群命名空间固定为: tdmq_default",
+          "example": "test_ns",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -10183,7 +10183,7 @@
         {
           "disabled": false,
           "document": "生产时间",
-          "example": " 2021-11-23 21:21:26",
+          "example": "2021-11-23 21:21:26",
           "member": "string",
           "name": "ProduceTime",
           "output_required": true,
@@ -10213,7 +10213,7 @@
         {
           "disabled": false,
           "document": "消费组消费情况列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Group\":\"test_group\", \"ConsumeStatus\":\"CONSUMED\", \"TrackType\":\"CONSUMED\", \"ExceptionDesc\":\"\"}]",
+          "example": "无",
           "member": "RocketMQMessageTrack",
           "name": "MessageTracks",
           "output_required": true,
@@ -10438,7 +10438,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_ns",
           "member": "string",
           "name": "NamespaceId",
@@ -10690,7 +10690,7 @@
         {
           "disabled": false,
           "document": "安全访问规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[ { \"IpRule\": \"1.1.1.1\", \"Allow\": true, \"Remark\": \"\" } ]",
+          "example": "无",
           "member": "PublicAccessRule",
           "name": "Rules",
           "output_required": true,
@@ -11085,7 +11085,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "rocketmq-xxxxx",
+          "example": "rocketmq-vvqb9emabapx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -11701,7 +11701,7 @@
         {
           "disabled": false,
           "document": "查询条件过滤器，支持的查询条件如下：\ninstanceIds - 实例ID\ninstanceName - 实例名称\nstatus - 实例状态",
-          "example": "[ {\"Values\": [  \"rocketmq-1233\"], \"Name\": \"InstanceIds\"} ]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -14508,7 +14508,7 @@
         {
           "disabled": false,
           "document": "订单号",
-          "example": "TDMQ20121212312322",
+          "example": "20230720073017608094121",
           "member": "string",
           "name": "OrderId",
           "output_required": true,
@@ -20924,7 +20924,7 @@
         {
           "disabled": false,
           "document": "公网访问安全规则列表，Enabled为true时必须传入",
-          "example": "[         {             \"Remark\":\"remark info\",             \"IpRule\":\"0.0.0.0/0\",             \"Allow\":\"true\"         }     ]",
+          "example": "无",
           "member": "PublicAccessRule",
           "name": "Rules",
           "required": false,

@@ -569,7 +569,7 @@
     "SendMessage": [
       {
         "document": "发送消息",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"topic\",\n    \"MsgBody\": \"testBody\",\n    \"MsgKey\": \"testKey\",\n    \"MsgTag\": \"testTag\"\n}",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"MsgBody\": \"This is a normal message for Apache RocketMQ.\",\n    \"MsgKey\": \"test_key\",\n    \"MsgTag\": \"test_kag\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\",\n        \"RequestId\": \"256f8223-d0e2-4400-9481-763989799560\"\n    }\n}",
         "title": "发送消费"
       }
@@ -577,8 +577,8 @@
     "VerifyMessageConsumption": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyMessageConsumption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Topic\": \"abc\",\n    \"ConsumerGroup\": \"abc\",\n    \"ClientId\": \"abc\",\n    \"MsgId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyMessageConsumption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"ConsumerGroup\": \"test_group\",\n    \"ClientId\": \"10.185.22.31@7#782332544\",\n    \"MsgId\": \"1464F14500017DAF6ECC79CA6CAA0288\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"960dfb7a-44af-49f4-8172-22896c57a8be\"\n    }\n}",
         "title": "消息验证成功"
       }
     ]

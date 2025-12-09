@@ -303,7 +303,7 @@
         {
           "disabled": false,
           "document": "说明：\n1. 影响输出文本的多样性。模型已有默认参数，不传值时使用各模型推荐值，不推荐用户修改。\n2. 取值区间为 [0.0, 1.0]。取值越大，生成文本的多样性越强。",
-          "example": "无",
+          "example": "1.0",
           "member": "float",
           "name": "TopP",
           "required": false,
@@ -312,7 +312,7 @@
         {
           "disabled": false,
           "document": "说明：\n1. 影响模型输出多样性，模型已有默认参数，不传值时使用各模型推荐值，不推荐用户修改。\n2. 取值区间为 [0.0, 2.0]。较高的数值会使输出更加多样化和不可预测，而较低的数值会使其更加集中和确定。",
-          "example": "无",
+          "example": "0.6",
           "member": "float",
           "name": "Temperature",
           "required": false,
@@ -391,7 +391,7 @@
           "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否开启深度研究该问题，默认是false，在值为true且命中深度研究该问题时，会返回深度研究该问题信息。",
           "example": "false",
           "member": "bool",
@@ -420,7 +420,7 @@
         {
           "disabled": false,
           "document": "自定义结束生成字符串\n\n调用 OpenAI 的接口时，如果您指定了 `stop` 参数, 模型会停止在匹配到 `stop` 的内容之前。\n在调用混元接口时，会停止在匹配到 `stop` 的内容之后。\n\n**说明：**\n未来我们可能会修改此行为以便和 OpenAI 保持一致。\n但是目前有使用该参数的情况下，开发者需要注意该参数是否会对应用造成影响，以及未来该行为调整时带来的影响。",
-          "example": "无",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "Stop",
           "required": false,
@@ -436,7 +436,7 @@
           "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档",
           "example": "false",
           "member": "bool",
@@ -456,7 +456,7 @@
         {
           "disabled": false,
           "document": "用户传入Topic",
-          "example": "无",
+          "example": "闲聊",
           "member": "string",
           "name": "TopicChoice",
           "required": false,
@@ -570,7 +570,7 @@
         {
           "disabled": false,
           "document": "推荐问答。",
-          "example": "无",
+          "example": "[\"string\"]",
           "member": "string",
           "name": "RecommendedQuestions",
           "output_required": false,
@@ -2668,6 +2668,22 @@
       ],
       "usage": "out"
     },
+    "PromptTokensDetails": {
+      "document": "输入token的详细信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存 token 的数量。",
+          "example": "0",
+          "member": "string",
+          "name": "CachedTokens",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QueryHunyuanImageChatJobRequest": {
       "document": "QueryHunyuanImageChatJob请求参数结构体",
       "members": [
@@ -4165,6 +4181,16 @@
           "name": "TotalTokens",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入 token 的详情。",
+          "example": "无",
+          "member": "PromptTokensDetails",
+          "name": "PromptTokensDetails",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

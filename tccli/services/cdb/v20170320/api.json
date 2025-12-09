@@ -519,7 +519,7 @@
       "status": "online"
     },
     "DescribeDBInstances": {
-      "document": "本接口（DescribeDBInstances）用于查询云数据库实例列表，支持通过项目 ID、实例 ID、访问地址、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。",
+      "document": "本接口（DescribeDBInstances）用于查询云数据库实例列表，支持通过项目 ID、实例 ID、访问地址、实例状态等过滤条件来筛选实例。支持查询主实例、灾备实例和只读实例信息列表。\n说明：通过本接口返回的可用区情况为购买时的情况，不随主动 HA 切换变化。如需了解实时可用区情况，请通过 [DescribeDBInstanceConfig](https://cloud.tencent.com/document/product/236/17491) 接口进行查询。",
       "input": "DescribeDBInstancesRequest",
       "name": "查询实例列表",
       "output": "DescribeDBInstancesResponse",
@@ -10438,7 +10438,7 @@
         {
           "disabled": false,
           "document": "实例类型，可取值：1 - 主实例，2 - 灾备实例，3 - 只读实例。",
-          "example": "1",
+          "example": "[1]",
           "member": "uint64",
           "name": "InstanceTypes",
           "required": false,
@@ -10456,7 +10456,7 @@
         {
           "disabled": false,
           "document": "实例状态，可取值：<br>0 - 创建中<br>1 - 运行中<br>4 - 正在进行隔离操作<br>5 - 已隔离（可在回收站恢复开机）",
-          "example": "1",
+          "example": "[1]",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -10492,7 +10492,7 @@
         {
           "disabled": false,
           "document": "付费类型，可取值：0 - 包年包月，1 - 小时计费。",
-          "example": "1",
+          "example": "[1]",
           "member": "uint64",
           "name": "PayTypes",
           "required": false,
@@ -10510,7 +10510,7 @@
         {
           "disabled": false,
           "document": "实例任务状态，可能取值：<br>0 - 没有任务<br>1 - 升级中<br>2 - 数据导入中<br>3 - 开放Slave中<br>4 - 外网访问开通中<br>5 - 批量操作执行中<br>6 - 回档中<br>7 - 外网访问关闭中<br>8 - 密码修改中<br>9 - 实例名修改中<br>10 - 重启中<br>12 - 自建迁移中<br>13 - 删除库表中<br>14 - 灾备实例创建同步中<br>15 - 升级待切换<br>16 - 升级切换中<br>17 - 升级切换完成<br>19 - 参数设置待执行<br>34 - 原地升级待执行",
-          "example": "0",
+          "example": "[0]",
           "member": "uint64",
           "name": "TaskStatus",
           "required": false,
@@ -10528,7 +10528,7 @@
         {
           "disabled": false,
           "document": "私有网络的 ID。",
-          "example": "0",
+          "example": "[0]",
           "member": "uint64",
           "name": "VpcIds",
           "required": false,
@@ -10537,7 +10537,7 @@
         {
           "disabled": false,
           "document": "可用区的 ID。",
-          "example": "720001",
+          "example": "[720001]",
           "member": "uint64",
           "name": "ZoneIds",
           "required": false,
@@ -10546,7 +10546,7 @@
         {
           "disabled": false,
           "document": "子网 ID。",
-          "example": "0",
+          "example": "[0]",
           "member": "uint64",
           "name": "SubnetIds",
           "required": false,
@@ -10555,7 +10555,7 @@
         {
           "disabled": false,
           "document": "是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。",
-          "example": "0",
+          "example": "[0]",
           "member": "int64",
           "name": "CdbErrors",
           "required": false,
@@ -10563,8 +10563,8 @@
         },
         {
           "disabled": false,
-          "document": "返回结果集排序的字段，目前支持：\"InstanceId\"，\"InstanceName\"，\"CreateTime\"，\"DeadlineTime\"。",
-          "example": "InstanceId",
+          "document": "返回结果集排序的字段，目前支持：\"instanceId\"，\"instanceName\"，\"createTime\"，\"deadlineTime\"。",
+          "example": "instanceId",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -10708,7 +10708,7 @@
         {
           "disabled": false,
           "document": "标签键值\n请注意，创建中的实例无法查询到标签。",
-          "example": "[{\"TagKey\": \"name\",\"TagValue\": \"zhang\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -10743,7 +10743,7 @@
         },
         {
           "disabled": false,
-          "document": "是否获取集群版实例节点信息，可填：true 或 false。默认为 false。",
+          "document": "是否获取云盘版实例节点信息，可填：true 或 false。默认为 false。",
           "example": "false",
           "member": "bool",
           "name": "QueryClusterInfo",
@@ -11877,7 +11877,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的参数总数",
+          "document": "密码复杂度相关参数总数",
           "example": "72",
           "member": "int64",
           "name": "TotalCount",
@@ -11887,8 +11887,8 @@
         },
         {
           "disabled": false,
-          "document": "参数详情",
-          "example": "[ ]",
+          "document": "密码复杂度参数详情，policy取值范围[\"\",\"LOW\",\"MEDIUM\"],空或者LOW表示：密码复杂度关，MEDIUM表示：密码复杂度开；当policy参数值是MEDIUM时，以下参数才有意义，length:取值范围[8-64],表示：最少字符数；mixed_case_count：取值范围[1-16]，表示大写字母和小写字母的最少个数。number_count：取值范围[1-16]，表示数字字符的最少个数。special_char_count：取值范围[1-16]，表示特殊字符的最少个数。",
+          "example": "无",
           "member": "ParameterDetail",
           "name": "Items",
           "output_required": true,
