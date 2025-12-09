@@ -1,21 +1,21 @@
 {
   "actions": {
     "CreateFinancialLLMTask": {
-      "document": "创建金融大模型审校任务",
+      "document": "本接口适用于“金融大模型审校”服务。在对接前，请参考快速入门文档并配置好业务基础信息。\n- **快速入门**：[快速入门文档](https://cloud.tencent.com/document/product/1124/124604)\n\n### 接口功能说明：\n由于大模型审校服务耗时较长，通常达到分钟级，因此采用异步模式，整体流程分为两步：\n1. 创建金融大模型审校任务（详见本文档）。\n2. 查询审校结果（详见 [查询结果文档](https://cloud.tencent.com/document/product/1124/124463)）。\n\n### 接口调用说明：\n- **请求域名**：tms.tencentcloudapi.com\n- **并发限制**：每个账号最多可同时进行3个审校任务。\n- **支持的文件格式**：纯文本、PDF、DOC、DOCX。\n\n### 文件限制说明：\n- **文档大小限制**：PDF/DOC/DOCX 格式文件不超过 200M（该大小为Base64编码后）。\n- **文档下载时长**：不超过 15 秒（建议将文档存储在腾讯云 URL，以确保更高的下载稳定性）。",
       "input": "CreateFinancialLLMTaskRequest",
       "name": "创建金融大模型审校任务",
       "output": "CreateFinancialLLMTaskResponse",
       "status": "online"
     },
     "GetFinancialLLMTaskResult": {
-      "document": "获取金融大模型审校任务结果",
+      "document": "本接口适用于“金融大模型审校”服务的结果查询。",
       "input": "GetFinancialLLMTaskResultRequest",
       "name": "查询金融大模型审校任务结果",
       "output": "GetFinancialLLMTaskResultResponse",
       "status": "online"
     },
     "TextModeration": {
-      "document": "本接口（Text Moderation）用于提交文本内容进行智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通文本内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。\n\n### 接口使用说明\n- 前往“[内容安全控制台-文本内容安全](https://console.cloud.tencent.com/cms)”开启使用文本内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**3000条**文本识别额度，有效期为15天。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云文本内容安全定价](https://cloud.tencent.com/product/tms/pricing)。\n\n### 接口功能说明：\n- 支持对文本文件进行检测，通过深度学习技术，识别可能令人反感、不安全或不适宜的违规文本内容；\n- 支持识别多种违规场景，包括：低俗、谩骂、色情、广告等场景；\n- 支持根据不同的业务场景配置自定义的审核策略，可在控制台文本内容安全-策略管理中配置；\n- 支持用户自定义配置词库黑白名单，打击自定义识别类型的违规文本（目前仅支持黑名单配置）；\n- 支持在审核文本内容时同时关联账号或设备信息，可识别违规风险账号或设备；\n- 支持大模型、聊天室等场景下的流式上下文审核。\n\n### 接口调用说明：\n- 文本内容大小支持：文本原文长度不能超过unicode编码长度10000个字符；\n- 文本审核语言支持：目前支持中文、英文、阿拉伯数字的检测；\n- 默认接口请求频率限制：**1000次/秒**，超过该频率限制则接口会报错。",
+      "document": "本接口提供“内容安全”和“AI生成识别”服务。在对接之前，请先参考快速入门，以配置业务基础信息。\n- **内容安全**：[快速入门](https://cloud.tencent.com/document/product/1124/37119)\n- **AI生成识别**：[快速入门](https://cloud.tencent.com/document/product/1124/118694)\n\n### 接口功能说明：\n- **内容安全**：对输入的文本，识别其中是否存在色情、违法等风险，返回处置建议、风险标签及对应的模型阈值。\n- **AI生成识别**：对输入的文本，判断其是否为AI工具生成，返回AI生成的概率分数。\n\n### 接口调用说明：\n- **请求域名**：tms.tencentcloudapi.com\n- **文本长度限制**：最长10,000个字符（以Unicode编码计量）。\n- **请求频率**：内容安全默认1000次/秒，AI生成识别默认50次/秒。\n- **支持语言**：中文、英文。",
       "input": "TextModerationRequest",
       "name": "文本内容安全服务",
       "output": "TextModerationResponse",
@@ -34,7 +34,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审核策略BizType",
+          "document": "接口使用的识别策略 ID，请参考 [快速指引](https://cloud.tencent.com/document/product/1124/124604) 获取该值。  \n示例值：TencentCloudFinancialLLMDefault",
           "example": "finance",
           "member": "string",
           "name": "BizType",
@@ -43,16 +43,7 @@
         },
         {
           "disabled": false,
-          "document": "待审文件类型，目前支持：PDF, DOC, DOCX",
-          "example": "PDF",
-          "member": "string",
-          "name": "FileType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "送审内容类型：1-文档，2-文本",
+          "document": "送审内容的格式，有两个可选值：\n- 1：代表送审内容为**文档**，如DOC文档\n- 2：代表送审内容为**纯文本**\n\n示例值：1",
           "example": "1",
           "member": "int64",
           "name": "ContentType",
@@ -61,7 +52,16 @@
         },
         {
           "disabled": false,
-          "document": "送审内容，根据ContentType字段的取值，传入送审文档的Url链接，或送审文本的Base64编码\n\n文档限制：\n\n- 文件下载时间不超过15秒（文件存储于腾讯云的Url可保障更高的下载速度和稳定性，建议文件存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。）\n- 所下载文件经 Base64 编码后不超过支持的文件大小：PDF/DOC/DOCX - 200M\n- 文档解析后的纯文本长度不超过 10000字\n\n文本限制：Base64解码后的文本长度不超过10000字\n",
+          "document": "若送审内容为文档（ContentType=1），需要传入具体格式，当前支持：DOC、DOCX、PDF。  \n说明：若送审内容为纯文本（ContentType=2），则本字段传空（FileType=\"\"）。",
+          "example": "PDF",
+          "member": "string",
+          "name": "FileType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "送审内容的传入方式如下：\n- 若为文档类，需传入文档的URL（原文档文字数不超过10,000字），例如：http://xxxxxxxxxxxx/financial_test.doc\n- 若为纯文本类，请以UTF-8格式进行Base64编码后传入（编码后字符数不超过10,000字），例如：5piO5aSpNjAz5LiA5a6a5rao\n\n示例值：5piO5aSpNjAz5LiA5a6a5rao",
           "example": "http://xxx/test.pdf",
           "member": "string",
           "name": "Content",
@@ -76,7 +76,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "金融大模型审校任务ID",
+          "document": "本次请求返回的任务ID将用于后续查询接口，以获取对应的审校结果。\n示例值：3570106e-b156-45d9-8af5-99b46f7eb2f9。",
           "example": "aafcf232-e46b-43af-9c1e-02a9c5dac072",
           "member": "string",
           "name": "TaskId",
@@ -335,7 +335,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "金融大模型审校任务ID",
+          "document": "该值对应创建任务接口里返回的TaskId字段值，创建任务接口见[创建金融大模型审校任务](https://cloud.tencent.com/document/product/1124/124463)。\n示例值：3570106e-b156-45d9-8af5-99b46f7eb2f9",
           "example": "aafcf232-e46b-43af-9c1e-02a9c5dac072",
           "member": "string",
           "name": "TaskId",
@@ -350,7 +350,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审校任务状态：\n\n- Success: 成功\n- Processing: 处理中，请等待\n- Failed: 失败",
+          "document": "TaskId对应的任务的状态：\n- Success: 任务已完成\n- Processing: 任务进行中，建议10秒后再查询\n- Failed: 任务失败\n",
           "example": "Success",
           "member": "string",
           "name": "Status",
@@ -360,32 +360,12 @@
         },
         {
           "disabled": false,
-          "document": "大模型审校结果",
-          "example": "当前检测的原子能力：...",
-          "member": "string",
-          "name": "ModerationResult",
+          "document": "该字段标识服务检测到的违规点，具体内容参阅数据结构[FinancialLLMViolationDetail](https://cloud.tencent.com/document/api/1124/51861#FinancialLLMViolationDetail)",
+          "example": "无",
+          "member": "FinancialLLMViolationDetail",
+          "name": "Details",
           "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "审校任务失败原因，仅当任务失败时有值",
-          "example": "文档解析失败",
-          "member": "string",
-          "name": "FailureReason",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "审校任务开始时间",
-          "example": "2025-09-25 19:42:35",
-          "member": "string",
-          "name": "StartTime",
-          "output_required": false,
-          "type": "string",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -400,12 +380,32 @@
         },
         {
           "disabled": false,
-          "document": "违规明细",
-          "example": "无",
-          "member": "FinancialLLMViolationDetail",
-          "name": "Details",
+          "document": "审校任务的开始时间\n示例值：2025-09-25 19:42:35",
+          "example": "2025-09-25 19:42:35",
+          "member": "string",
+          "name": "StartTime",
           "output_required": false,
-          "type": "list",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "若审校任务失败（Status=\"Failed\"），该字段返回失败的具体原因。\n示例值：文档解析失败",
+          "example": "文档解析失败",
+          "member": "string",
+          "name": "FailureReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段为历史结构字段，不再推荐使用。",
+          "example": "当前检测的原子能力：...",
+          "member": "string",
+          "name": "ModerationResult",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -638,7 +638,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000个字符（按unicode编码计算），并进行 Base64加密",
+          "document": "待检测的文本内容，需为UTF-8编码并以Base64格式传入。\n示例值：5L2g55qE5Lil6LCo6K6p5L2g5Y+R546w77yM5Lqn5ZOB57uP55CG5Y+r5YmR6Z2S\n",
           "example": "5L2g5aW9",
           "member": "string",
           "name": "Content",
@@ -647,7 +647,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](https://console.cloud.tencent.com/cms/clouds/manage)中配置。\n备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。",
+          "document": "接口使用的识别策略编号，需在[控制台](https://console.cloud.tencent.com/cms/clouds/manage)获取。详细获取方式请参考以下链接：\n- **内容安全**（详见步骤四：策略配置）：[点击这里](https://cloud.tencent.com/document/product/1124/37119)\n- **AI生成识别**（详见服务对接->方式二）：[点击这里](https://cloud.tencent.com/document/product/1124/118694)\n\n示例值：TencentCloudDefault",
           "example": "TencentCloud",
           "member": "string",
           "name": "BizType",
@@ -656,7 +656,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。<br>取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，**长度不超过64个字符**",
+          "document": "该字段表示您为待检测文本分配的数据ID，作用是方便您对数据进行标识和管理。\n取值：可由英文字母、数字、四种特殊符号（_，-，@，#）组成，**长度不超过64个字符**。\n示例值：a6127dd-c2a0-43e7-a3da-d27022d39ba7",
           "example": "a6127dd-c2a0-43e7-a3da-d27022d39ba7",
           "member": "string",
           "name": "DataId",
@@ -665,7 +665,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示待检测对象对应的用户相关信息，传入后可便于甄别相应违规风险用户",
+          "document": "该字段标识用户信息，传入后可增强甄别有违规风险的发布者账号。",
           "example": "无",
           "member": "User",
           "name": "User",
@@ -674,7 +674,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段表示待检测对象对应的设备相关信息，传入后可便于甄别相应违规风险设备",
+          "document": "该字段标识设备信息，传入后可增强甄别有违规风险的发布者设备。",
           "example": "无",
           "member": "Device",
           "name": "Device",
@@ -683,7 +683,7 @@
         },
         {
           "disabled": false,
-          "document": "表示Content的原始语种，枚举值包括 \"en\" 和 \"zh\"。其中，\"en\" 表示英文，\"zh\" 表示中文。非中文场景的处理耗时较高，具体情况取决于送审文本长度，非中文场景需[反馈工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认。",
+          "document": "Content字段的原始语种，枚举值包括 zh 和 en：\n- 推荐使用 zh\n- en 适用于纯英文内容，耗时较高。若需使用 en，请先通过[反馈工单](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=1287&source=14&data_title=%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8&step=1)确认\n\n示例值：zh\n",
           "example": "zh",
           "member": "string",
           "name": "SourceLanguage",
@@ -692,7 +692,7 @@
         },
         {
           "disabled": false,
-          "document": "审核的业务类型，枚举值包括\"TEXT\"和\"TEXT_AIGC\"。其中\"TEXT\"表示传统文本审核，\"TEXT_AIGC\"表示AI生成检测（生成检测能力具体能力了解可[参见文档](https://cloud.tencent.com/document/product/1124/118694)）。",
+          "document": "服务类型，枚举值包括 TEXT 和 TEXT_AIGC：\nTEXT：内容安全\nTEXT_AIGC：AI生成识别",
           "example": "TEXT",
           "member": "string",
           "name": "Type",
@@ -701,7 +701,7 @@
         },
         {
           "disabled": false,
-          "document": "流式审核策略维度下的唯一会话ID",
+          "document": "适用于上下文关联审核场景，若多条文本内容需要联合审核，通过该字段关联会话。\n示例值：7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b",
           "example": "ZGxsLTE5OTgwNjAx",
           "member": "string",
           "name": "SessionId",
@@ -716,10 +716,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段用于返回请求参数中的BizType参数",
+          "document": "该字段用于回显检测对象请求参数中的 BizType，与输入的 BizType 值对应。\n示例值：TencentCloudDefault",
           "example": "TencentCloud",
           "member": "string",
           "name": "BizType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于标识对本次请求的处置建议，共三种返回值。\n返回值：**Block**: 建议直接做违规处置，**Review**: 建议人工二次确认，**Pass**: 未识别到风险。",
+          "example": "Block",
+          "member": "string",
+          "name": "Suggestion",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -736,77 +746,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
-          "example": "Block",
-          "member": "string",
-          "name": "Suggestion",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "该字段用于返回当前标签（Label）下被检测文本命中的关键词信息，用于标注文本违规的具体原因（如：*加我微信*）。该参数可能会有多个返回值，代表命中的多个关键词；如返回值为空且Score不为空，则代表识别结果所对应的恶意标签（Label）是来自于语义模型判断的返回值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"加好友\"]",
-          "member": "string",
-          "name": "Keywords",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "该字段用于返回当前标签（Label）下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容；*色情 0*，则表明该文本不属于色情内容",
-          "example": "99",
-          "member": "int64",
-          "name": "Score",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "该字段用于返回基于文本风险库审核的详细结果，返回值信息可参阅对应数据结构（DetailResults）的详细描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DetailResults",
-          "name": "DetailResults",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "该字段用于返回文本检测中存在违规风险的账号检测结果，主要包括违规风险类别和风险等级信息，具体内容可参阅对应数据结构（RiskDetails）的详细描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "RiskDetails",
-          "name": "RiskDetails",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理",
-          "example": "{ad}",
-          "member": "string",
-          "name": "Extra",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "该字段用于返回检测对象对应请求参数中的DataId，与输入的DataId字段中的内容对应",
-          "example": "a6127dd-c2a0-43e7-a3da-d27022d39ba7",
-          "member": "string",
-          "name": "DataId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "该字段用于返回当前标签（Label）下的二级标签。",
+          "document": "对应 Label 字段下的二级子标签，表示该 Label 下更细分的违规点。\n示例值：SexualBehavior（该值为 Porn 下的一个二级标签）",
           "example": "Contact",
           "member": "string",
           "name": "SubLabel",
@@ -816,7 +756,67 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回上下文关联文本",
+          "document": "该字段标识 SubLabel 的置信度，取值范围为 0 - 100，值越高代表置信度越高。\n示例值：85",
+          "example": "99",
+          "member": "int64",
+          "name": "Score",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段标识被检测文本所命中的关键词，可能返回0个或多个关键词。\n示例值：[\"优惠券\", \"线下兑换\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"加好友\"]",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段返回的检测的详细信息，返回值信息可参阅对应数据结构 DetailResults 的详细描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetailResults",
+          "name": "DetailResults",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段标识入参 User 的检测结果，具体内容参阅数据结构 RiskDetails。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RiskDetails",
+          "name": "RiskDetails",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回根据您的需求配置的附加信息（Extra），如未配置则默认返回值为空。\n备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理。",
+          "example": "{ad}",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于回显检测对象请求参数中的 DataId，与输入的 DataId 值对应。\n示例值：a6127dd-c2a0-43e7-a3da-d27022d39ba7",
+          "example": "a6127dd-c2a0-43e7-a3da-d27022d39ba7",
+          "member": "string",
+          "name": "DataId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "历史上下文关联的字段，不再推荐使用。上下文关联审核可通过入参的 SessionId 来实现。",
           "example": "加好友",
           "member": "string",
           "name": "ContextText",
@@ -826,7 +826,7 @@
         },
         {
           "disabled": false,
-          "document": "情感分析结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段为历史结构字段，不再推荐使用。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SentimentAnalysis",
           "name": "SentimentAnalysis",
@@ -836,7 +836,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于标识本次审核决策归因，比如text_nlp_tianji标识是由nlp tianji模型给出的审核决策，text_keyword_public标识命中了业务的关键词库",
+          "document": "该字段为历史结构字段，不再推荐使用。",
           "example": "text_nlp_tianji",
           "member": "string",
           "name": "HitType",
@@ -846,7 +846,7 @@
         },
         {
           "disabled": false,
-          "document": "流式审核策略维度下的唯一会话ID",
+          "document": "该字段用于回显检测对象请求参数中的 SessionId，与输入的 SessionId 值对应。\n示例值：7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b",
           "example": "ZGxsLTE5OTgwNjAx",
           "member": "string",
           "name": "SessionId",

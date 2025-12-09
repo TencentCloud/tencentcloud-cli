@@ -106,6 +106,22 @@
         "title": "创建转自适应码流模板"
       }
     ],
+    "CreateAigcImageTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcImageTask\n<公共请求参数>\n\n{\n    \"SubAppId\": 251007502,\n    \"ModelName\": \"GEM\",\n    \"ModelVersion\": \"2.5\",\n    \"FileInfos\": [\n        {\n            \"FileId\": \"3704211***509819\"\n        }\n    ],\n    \"Prompt\": \"generate a car\",\n    \"NegativePrompt\": \"red\",\n    \"EnhancePrompt\": \"Enabled\",\n    \"OutputConfig\": {\n        \"StorageMode\": \"Temporary\",\n        \"AspectRatio\": \"16:9\",\n        \"PersonGeneration\": \"AllowAdult\",\n        \"InputComplianceCheck\": \"Enabled\",\n        \"OutputComplianceCheck\": \"Enabled\"\n    },\n    \"SessionId\": \"mysession\",\n    \"SessionContext\": \"mySessionContext\",\n    \"TasksPriority\": \"10\",\n    \"ExtInfo\": \"myextinfo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"251007502-AigcImage***2782aff1e896673f1ft\",\n        \"RequestId\": \"f50d7667-72d8-46bb-a7e3-0613588971b6\"\n    }\n}",
+        "title": "发起生成 AIGC 图片的任务"
+      }
+    ],
+    "CreateAigcVideoTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcVideoTask\n<公共请求参数>\n\n{\n    \"SubAppId\": 251007502,\n    \"ModelName\": \"GV\",\n    \"ModelVersion\": \"3.1-fast\",\n    \"FileInfos\": [\n        {\n            \"FileId\": \"3704211***509819\"\n        }\n    ],\n    \"LastFrameFileId\": \"3704211***509911\",\n    \"Prompt\": \"generate a car\",\n    \"NegativePrompt\": \"red\",\n    \"EnhancePrompt\": \"Enabled\",\n    \"OutputConfig\": {\n        \"StorageMode\": \"Temporary\",\n        \"AspectRatio\": \"9:16\",\n        \"AudioGeneration\": \"Enabled\",\n        \"PersonGeneration\": \"AllowAdult\",\n        \"InputComplianceCheck\": \"Enabled\",\n        \"OutputComplianceCheck\": \"Enabled\"\n    },\n    \"SessionId\": \"mysession2\",\n    \"SessionContext\": \"mysessionContext\",\n    \"TasksPriority\": \"10\",\n    \"ExtInfo\": \"myextinfo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"251007502-AigcVideo***25dacdcef7dd2b20fdt\",\n        \"RequestId\": \"d68920a4-c989-4afe-ac4d-2f06de99368e\"\n    }\n}",
+        "title": "发起生成 AIGC 视频的任务"
+      }
+    ],
     "CreateAnimatedGraphicsTemplate": [
       {
         "document": "",

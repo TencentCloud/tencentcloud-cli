@@ -346,6 +346,67 @@
       ],
       "usage": "both"
     },
+    "ColumnInfo": {
+      "document": "知识库文档表列信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列名称",
+          "example": "username",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列类型：int, bigint, double, date, datetime, string，decimal",
+          "example": "int",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列名称描述",
+          "example": "用户名称",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列索引",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始字段名称",
+          "example": "name",
+          "member": "string",
+          "name": "OriginalName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CosFileInfo": {
       "document": "cos 文件信息",
       "members": [
@@ -507,6 +568,144 @@
       ],
       "type": "object"
     },
+    "FileInfo": {
+      "document": "知识库文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名称",
+          "example": "信息.txt",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，字节",
+          "example": "1231.1",
+          "member": "float",
+          "name": "FileSize",
+          "output_required": true,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件类型,0=文本,1=表格，默认0\n",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件ID",
+          "example": "xkewk9",
+          "member": "string",
+          "name": "FileId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，0：数据处理中  1：可用 -1：错误",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作者\n",
+          "example": "u8j8j",
+          "member": "string",
+          "name": "CreateUser",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-12-23 18:23:32",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分片策略",
+          "example": "无",
+          "member": "KnowledgeTaskConfig",
+          "name": "ChunkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件来源0=unknow,1=user_cos,2=local",
+          "example": "1",
+          "member": "int64",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件url",
+          "example": "http://abc/dcd",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否官方示例，0=否，1=是",
+          "example": "1",
+          "member": "int64",
+          "name": "IsShowCase",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档摘要",
+          "example": "sfsd",
+          "member": "string",
+          "name": "DocumentSummary",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GetKnowledgeBaseFileListRequest": {
       "document": "GetKnowledgeBaseFileList请求参数结构体",
       "members": [
@@ -552,6 +751,26 @@
     "GetKnowledgeBaseFileListResponse": {
       "document": "GetKnowledgeBaseFileList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "文件信息列表",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "FileList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件信息总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -788,6 +1007,100 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeTaskConfig": {
+      "document": "任务配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "切片类型  0:自定义切片，1：智能切片",
+          "example": "1",
+          "member": "int64",
+          "name": "ChunkType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "/智能切片：最小值 1000，默认 4800 自定义切片：正整数即可,默认值 1000",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxChunkSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 切片分隔符,自定义切片使用：默认值为：[\"\\n\\n\", \"\\n\", \"。\", \"！\", \"？\", \"，\", \"\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\",\",\"|\"]",
+          "member": "string",
+          "name": "Delimiters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义切片使用:默认0 可重叠字符长度",
+          "example": "100",
+          "member": "int64",
+          "name": "ChunkOverlap",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表格类文档解析",
+          "example": "无",
+          "member": "ColumnInfo",
+          "name": "Columns",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带检索的索引列表",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "Indexes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：不生成文档摘要，1：生成文档概要。默认0，当取1时，GenParaSummary必须也为1",
+          "example": "1",
+          "member": "int64",
+          "name": "GenDocSummary",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：不生成段落摘要，1：生成段落概要。默认0",
+          "example": "1",
+          "member": "int64",
+          "name": "GenParaSummary",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -56,6 +56,20 @@
       "output": "CreateAdaptiveDynamicStreamingTemplateResponse",
       "status": "online"
     },
+    "CreateAigcImageTask": {
+      "document": "该接口用于[生成 AIGC 图片](https://cloud.tencent.com/document/product/266/124473)。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用，</b>请参考点播 [AIGC 生图片计费文档](https://cloud.tencent.com/document/product/266/95125#9c4dc6ff-4b3f-4b25-bf2d-393889dfb9ac)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。",
+      "input": "CreateAigcImageTaskRequest",
+      "name": "创建 AIGC 生图任务",
+      "output": "CreateAigcImageTaskResponse",
+      "status": "online"
+    },
+    "CreateAigcVideoTask": {
+      "document": "该接口用于[生成 AIGC 视频](https://cloud.tencent.com/document/product/266/124474)。<b>接口处于内测阶段，如需使用请[联系我们](https://cloud.tencent.com/online-service?from=sales_sales&source=PRESALE)，接口调用会产生实际费用</b>，请参考点播 [AIGC 生视频计费文档](https://cloud.tencent.com/document/product/266/95125#96b3b59a-f9e1-49e9-966a-bedb70a4bf12)。该功能结算模式为[后付费](https://cloud.tencent.com/document/product/266/2838)，日结客户当天使用将在第二天出账，月结客户将在次月1日统一出上月使用费用。",
+      "input": "CreateAigcVideoTaskRequest",
+      "name": "创建 AIGC 生视频任务",
+      "output": "CreateAigcVideoTaskResponse",
+      "status": "online"
+    },
     "CreateAnimatedGraphicsTemplate": {
       "document": "创建用户自定义转动图模板，数量上限：16。",
       "input": "CreateAnimatedGraphicsTemplateRequest",
@@ -6916,6 +6930,905 @@
       ],
       "usage": "in"
     },
+    "AigcImageOutputConfig": {
+      "document": "AIGC 生图任务的输出媒体文件配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储模式。取值有： <li>Permanent：永久存储，生成的图片文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的图片文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li>\n默认值：Temporary",
+          "example": "Permanent",
+          "member": "string",
+          "name": "StorageMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "myfile",
+          "member": "string",
+          "name": "MediaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ClassId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "0000-00-00T00:00:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成图片的分辨率。可选值为 720P、1080P、2K、4K、1024x1024、2048x2048、2304x1728、2496x1664、2560x1440、3024x1296、4096x4096、4694x3520、4992x3328、5404x3040、6198x2656，其中使用模型 Jimeng 时，推荐通过 Prompt 指定图片分辨率和宽高比。",
+          "example": "1024x1024",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定所生成图片的宽高比。<li>当 ModelName 是 GEM，可选值是 1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9；</li><li>当 ModelName 是 Qwen、Jimeng，则暂不支持，其中 Jimeng 会结合 Prompt意图、参考图片尺寸，由模型智能判断输出图片的宽高比。</li>",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li> ",
+          "example": "AllowAdult",
+          "member": "string",
+          "name": "PersonGeneration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> ",
+          "example": "Enabled",
+          "member": "string",
+          "name": "InputComplianceCheck",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> ",
+          "example": "Enabled",
+          "member": "string",
+          "name": "OutputComplianceCheck",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcImageTask": {
+      "document": "AIGC 生图任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "251007502-AigcImageTask-ca5fdd3e74c6bd1b28974b6c136de507t",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>",
+          "example": "FINISH",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码。源异常时返回非0错误码，返回0时请使用各个具体任务的 ErrCode。",
+          "example": "70000",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "fail",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 生图任务的输入信息。",
+          "example": "无",
+          "member": "AigcImageTaskInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 生图任务的输出信息。",
+          "example": "无",
+          "member": "AigcImageTaskOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "mySessionId",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "mySessionContext",
+          "member": "string",
+          "name": "SessionContext",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AigcImageTaskInput": {
+      "document": "AIGC 生图任务的输入。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称。",
+          "example": "Seedream",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型版本。",
+          "example": "4.0",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC生图任务输入文件信息。",
+          "example": "无",
+          "member": "AigcImageTaskInputFileInfo",
+          "name": "FileInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。",
+          "example": "generate a car",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "要阻止模型生成图片的提示词。最大支持1000字符。",
+          "example": "red",
+          "member": "string",
+          "name": "NegativePrompt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> ",
+          "example": "Enabled",
+          "member": "string",
+          "name": "EnhancePrompt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li> ",
+          "example": "Professional",
+          "member": "string",
+          "name": "GenerationMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 生图输出结果文件输出。",
+          "example": "无",
+          "member": "AigcImageOutputConfig",
+          "name": "OutputConfig",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AigcImageTaskInputFileInfo": {
+      "document": "AIGC生图任务输入文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 URL；</li> ",
+          "example": "File",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片文件的媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。当 Type 取值为 File 时，本参数有效。\n说明：\n1. 推荐使用小于7M的图片；\n2. 图片格式的取值为：jpeg，jpg, png, webp。",
+          "example": "3704211***509819",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可访问的文件 URL。当 Type 取值为 Url 时，本参数有效。\n说明：\n1. 推荐使用小于7M的图片；\n2. 图片格式的取值为：jpeg，jpg, png, webp。",
+          "example": "https://test.com/1.png",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcImageTaskOutput": {
+      "document": "AIGC 生图任务的输出。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AIGC 生图任务的输出文件信息。",
+          "example": "无",
+          "member": "AigcImageTaskOutputFileInfo",
+          "name": "FileInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AigcImageTaskOutputFileInfo": {
+      "document": "AIGC 生图任务的输出文件信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li>\n",
+          "example": "Permanent",
+          "member": "string",
+          "name": "StorageMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。",
+          "example": "myfile",
+          "member": "string",
+          "name": "MediaName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。\n",
+          "example": "1",
+          "member": "int64",
+          "name": "ClassId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2025-12-28T00:35:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件类型，例如 mp4、flv 等。",
+          "example": "png",
+          "member": "string",
+          "name": "FileType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件播放地址。",
+          "example": "http://251007502.vod-qcloud.com/1a1***1510859450449/aigcImageGenFile.png",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件 ID。当 StorageMode 为 Permanent 时有效。",
+          "example": "3704211***450449",
+          "member": "string",
+          "name": "FileId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出视频的元信息。当 StorageMode 为 Permanent 时有效。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AigcVideoOutputConfig": {
+      "document": "AIGC 生视频任务的输出媒体文件配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储模式。取值有： <li>Permanent：永久存储，生成的视频文件将存储到云点播，可在事件通知中获取到 FileId；</li> <li>Temporary：临时存储，生成的视频文件不会存储到云点播，可在事件通知中获取到临时访问的 URL；</li>\n默认值：Temporary",
+          "example": "Permanent",
+          "member": "string",
+          "name": "StorageMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出媒体文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "myfile",
+          "member": "string",
+          "name": "MediaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "1",
+          "member": "int64",
+          "name": "ClassId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2025-12-28T00:35:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成视频的时长，单位：秒。<li>当 ModelName 是 Kling，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Jimeng，可选值为 5、10，默认为 5；</li><li>当 ModelName 是 Hailuo，可选值为 6、10，默认为 6；</li><li>当 ModelName 是 Vidu，可指定1-10；</li><li>当 ModelName 是 GV，可选值为 8，默认为 8；</li><li>当 ModelName 是 OS，可选值为 4、8、12，默认为 8；</li>",
+          "example": "8.0",
+          "member": "float",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成视频的分辨率。\n<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 Jimeng，可选值为 768P、1080P，默认为 768P；</li>\n<li>当 ModelName 是 Hailuo，可选值为 1080P；</li>\n<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 OS，可选值为 720P；</li>\n说明：除模型可支持的分辨率外，还支持 2K、4K分辨率。",
+          "example": "720P",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定所生成视频的宽高比。\n<li>当 ModelName 是 Kling，当文生视频时，则可选值为 16:9、9:16、 1:1，默认为16:9；</li>\n<li>当 ModelName 是 Jimeng，当文生视频时，则可选值为 16:9、4:3、1:1、3:4、9:16、21:9</li>\n<li>当 ModelName 是 Vidu，当文生视频时和使用参考图片生成时，则可选值为 16:9、9:16、4:3、3:4、1:1，其中仅版本q2支持4:3、3:4</li>\n<li>当 ModelName 是 GV，则可选值为 16:9、9:16，默认为 16:9；</li>\n<li>当 ModelName 是 OS，当文生视频时，则可选值为 16:9、9:16，默认为 16:9；</li>\n<li>当 ModelName 是 Hailuo，则暂不支持。</li>",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否生成音频。支持的模型包括 GV、OS。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li>\n默认值：Enabled",
+          "example": "Enabled",
+          "member": "string",
+          "name": "AudioGeneration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许人物或人脸生成。取值有： <li>AllowAdult：允许生成成人；</li> <li>Disallowed：禁止在图片中包含人物或人脸；</li> ",
+          "example": "AllowAdult",
+          "member": "string",
+          "name": "PersonGeneration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启输入内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> ",
+          "example": "Disabled",
+          "member": "string",
+          "name": "InputComplianceCheck",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启输出内容的合规性检查。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> ",
+          "example": "Disabled",
+          "member": "string",
+          "name": "OutputComplianceCheck",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用视频增强。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> \n说明：\n1. 对于选择的分辨率超过模型可生成分辨率时，默认会启用增强。\n2. 对于模型可以直出的分辨率，也可以主动选择模型直出低分辨率，使用增强获得指定分辨率。",
+          "example": "Disabled",
+          "member": "string",
+          "name": "EnhanceSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcVideoTask": {
+      "document": "AIGC 生视频任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "251007502-AigcVideoTask-ca5fdd3e74c6bd1b28974b6c136de507t",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>",
+          "example": "FINISH",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码。源异常时返回非0错误码，返回0时请使用各个具体任务的 ErrCode。",
+          "example": "70000",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "fail",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度，取值范围 [0-100] 。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 生视频任务的输入信息。",
+          "example": "无",
+          "member": "AigcVideoTaskInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 生视频任务的输出信息。",
+          "example": "无",
+          "member": "AigcVideoTaskOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "mySessionId",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "mySessionContext",
+          "member": "string",
+          "name": "SessionContext",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AigcVideoTaskInput": {
+      "document": "AIGC 生视频任务的输入。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称。",
+          "example": "GV",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型版本。",
+          "example": "3.1-fast",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC生图任务输入文件信息。",
+          "example": "无",
+          "member": "AigcVideoTaskInputFileInfo",
+          "name": "FileInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于作为尾帧画面来生成视频的媒体文件 ID。该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。",
+          "example": "3704211***509911",
+          "member": "string",
+          "name": "LastFrameFileId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成视频的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。",
+          "example": "generate a car",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "要阻止模型生成视频的提示词。最大支持1000字符。",
+          "example": "red",
+          "member": "string",
+          "name": "NegativePrompt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动优化提示词。开启时将自动优化传入的Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> ",
+          "example": "Enabled",
+          "member": "string",
+          "name": "EnhancePrompt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成模式。取值有： <li>Standard：标准模式；</li> <li>Professional：高品质模式；</li> ",
+          "example": "Professional",
+          "member": "string",
+          "name": "GenerationMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 生图输出结果文件输出。",
+          "example": "无",
+          "member": "AigcVideoOutputConfig",
+          "name": "OutputConfig",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AigcVideoTaskInputFileInfo": {
+      "document": "AIGC 生视频任务输入的图片文件信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入的视频文件类型。取值有： <li>File：点播媒体文件；</li> <li>Url：可访问的 URL；</li> ",
+          "example": "File",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。当 Type 取值为 File 时，本参数有效。说明：\n1. 推荐使用小于10M的图片；\n2. 图片格式的取值为：jpeg，jpg, png。",
+          "example": "3704211***509819",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可访问的文件 URL。当 Type 取值为 Url 时，本参数有效。\n说明：\n1. 推荐使用小于10M的图片；\n2. 图片格式的取值为：jpeg，jpg, png。",
+          "example": "https://test.com/1.png",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcVideoTaskOutput": {
+      "document": "AIGC 生视频任务的输出信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AIGC 生视频任务的输出文件信息。\t",
+          "example": "无",
+          "member": "AigcVideoTaskOutputFileInfo",
+          "name": "FileInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AigcVideoTaskOutputFileInfo": {
+      "document": "AIGC 生视频任务的输出文件信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储模式。取值有： <li>Permanent：永久存储；</li> <li>Temporary：临时存储；</li>\n默认值：Temporary",
+          "example": "Permanent",
+          "member": "string",
+          "name": "StorageMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。当 StorageMode 为 Permanent 时有效。",
+          "example": "myfile",
+          "member": "string",
+          "name": "MediaName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。当 StorageMode 为 Permanent 时有效。\n",
+          "example": "1",
+          "member": "int64",
+          "name": "ClassId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2025-12-28T00:35:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件类型，例如 mp4、flv 等。",
+          "example": "mp4",
+          "member": "string",
+          "name": "FileType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件播放地址。",
+          "example": "http://251007502.vod-qcloud.com/1a1***1510859450449/aigcVideoGenFile.mp4",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件 ID。当 StorageMode 为 Permanent 时有效。",
+          "example": "3704211***450449",
+          "member": "string",
+          "name": "FileId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出视频的元信息。当 StorageMode 为 Permanent 时有效。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AnimatedGraphicTaskInput": {
       "document": "转动图任务类型",
       "members": [
@@ -9897,6 +10810,287 @@
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcImageTaskRequest": {
+      "document": "CreateAigcImageTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "251007502",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称。取值：\n<li>GEM：Gemini；</li>\n<li>Jimeng：即梦；</li>\n<li>Qwen：千问。</li>",
+          "example": "GEM",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型版本。取值：\n<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>\n<li>当 ModelName 是 Jimeng，可选值为 4.0；</li>\n<li>当 ModelName 是 Qwen，可选值为 0925；</li>",
+          "example": "2.5",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 生图任务的输入图片的文件信息。默认只支持指定1个，使用模型 GEM 时最多指定3个。",
+          "example": "无",
+          "member": "AigcImageTaskInputFileInfo",
+          "name": "FileInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。",
+          "example": "generate a car",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要阻止模型生成图片的提示词。最大支持500个字符。",
+          "example": "red",
+          "member": "string",
+          "name": "NegativePrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> ",
+          "example": "Enabled",
+          "member": "string",
+          "name": "EnhancePrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生图任务的输出媒体文件配置。",
+          "example": "无",
+          "member": "AigcImageOutputConfig",
+          "name": "OutputConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "mysession",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。",
+          "example": "mySessionContext",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "10",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "保留字段，特殊用途时使用。",
+          "example": "myextinfo",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcImageTaskResponse": {
+      "document": "CreateAigcImageTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "251007502-AigcImage***2782aff1e896673f1ft",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcVideoTaskRequest": {
+      "document": "CreateAigcVideoTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "251007502",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称。取值：<li>Hailuo：海螺；</li><li>Kling：可灵；</li><li> Jimeng：即梦；</li><li>Vidu；</li><li>GV：Google Veo；</li><li>OS：OpenAI Sora。</li>",
+          "example": "GV",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型版本。取值：<li>当 ModelName 是 Hailuo，可选值为 02、2.3、2.3-fast；</li><li>当 ModelName 是 Kling，可选值为 1.6、2.0、2.1、2.5；</li><li>当 ModelName 是 Jimeng，可选值为 3.0pro；</li><li>当 ModelName 是 Vidu，可选值为 q2、q2-pro、q2-turbo；</li><li>当 ModelName 是 GV，可选值为 3.1；</li><li>当 ModelName 是 OS，可选值为 2.0；</li>",
+          "example": "3.1",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 生视频任务的输入图片的文件信息。说明\n1. 当 ModelName 是 GV 时，最大长度为 3；其他情况下最大长度为1。\n2. 当 ModelName 是 GV 时，并且长度大于1时，则不能再指定 LastFrameFileId 参数。",
+          "example": "无",
+          "member": "AigcVideoTaskInputFileInfo",
+          "name": "FileInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于作为尾帧画面来生成视频的媒体文件 ID。该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。说明：\n1. 只支持模型 GV 、Kling、Vidu，其他模型暂不支持。当 ModelName 为 GV 时，如果指定该参数，则需同时指定 FileInfos 作为待生成视频的首帧。当 ModelName 为 Kling 、ModelVersion 为 2.1 并且指定输出分辨率 Resolution 为 1080P 时，才能指定该参数。当 ModelName 为 Vidu、ModelVersion 为 q2-pro、q2-turbo 时，才能指定该参数。\n2. 图片大小需小于5M。\n3. 图片格式的取值为：jpeg，jpg, png, webp。",
+          "example": "3704211***509911",
+          "member": "string",
+          "name": "LastFrameFileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成图片的提示词。最大支持2000个字符，当 FileInfos 为空时，此参数必填。",
+          "example": "generate a car",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要阻止模型生成图片的提示词。最大支持500个字符。",
+          "example": "red",
+          "member": "string",
+          "name": "NegativePrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动优化提示词。开启时将自动优化传入的 Prompt，以提升生成质量。取值有： <li>Enabled：开启；</li> <li>Disabled：关闭；</li> ",
+          "example": "Enabled",
+          "member": "string",
+          "name": "EnhancePrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生视频任务的输出媒体文件配置。",
+          "example": "无",
+          "member": "AigcVideoOutputConfig",
+          "name": "OutputConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "mysession2",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。",
+          "example": "mysessionContext",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "10",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "保留字段，特殊用途时使用。",
+          "example": "myextinfo",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcVideoTaskResponse": {
+      "document": "CreateAigcVideoTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "251007502-AigcVideo***25dacdcef7dd2b20fdt",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -17510,6 +18704,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "AIGC 生图任务信息，仅当 TaskType 为 AigcImageTask，该字段有值。",
+          "example": "无",
+          "member": "AigcImageTask",
+          "name": "AigcImageTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 生视频任务信息，仅当 TaskType 为 AigcVideoTask，该字段有值。",
+          "example": "无",
+          "member": "AigcVideoTask",
+          "name": "AigcVideoTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -19127,7 +20341,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成；</li>\n<li>QualityEnhanceComplete：音画质重生任务完成；</li>\n<li>PersistenceComplete：剪辑固化完成；</li>\n<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>\n<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>\n<li>AigcImageComplete：AIGC 生图任务完成。</li>\n<li>AigcVideoComplete：AIGC 生视频任务完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成；</li>\n<li>QualityEnhanceComplete：音画质重生任务完成；</li>\n<li>PersistenceComplete：剪辑固化完成；</li>\n<li>ComplexAdaptiveDynamicStreamingComplete：复杂自适应码流任务完成。</li>\n<li>ProcessMediaByMPSComplete：MPS视频处理完成。</li>\n<li>AigcImageTaskComplete：AIGC 生图任务完成。</li>\n<li>AigcVideoTaskComplete：AIGC 生视频任务完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
@@ -19411,6 +20625,26 @@
           "example": "无",
           "member": "ProcessMediaByMPS",
           "name": "ProcessMediaByMPSCompleteEvent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 生图任务信息，仅当 EventType 为 AigcImageTaskComplete 时有效。",
+          "example": "无",
+          "member": "AigcImageTask",
+          "name": "AigcImageCompleteEvent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AIGC 生视频任务信息，仅当 EventType 为 AigcVideoTaskComplete 时有效。",
+          "example": "无",
+          "member": "AigcVideoTask",
+          "name": "AigcVideoCompleteEvent",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false

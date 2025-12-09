@@ -7,7 +7,7 @@ Input:
 ```
 tccli tdmq DescribeRocketMQMsgTrace --cli-unfold-argument  \
     --ClusterId rocketmq-4k4orqgq \
-    --EnvironmentId test_namespace \
+    --EnvironmentId test_ns \
     --TopicName test_topic \
     --MsgId 01963F0B14BAF0B5360728F44800000000 \
     --GroupName test_group \

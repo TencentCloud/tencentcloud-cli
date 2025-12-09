@@ -43,15 +43,9 @@
     "GetKnowledgeBaseFileList": [
       {
         "document": "GetKnowledgeBaseFileList",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetKnowledgeBaseFileList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ry-123456\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f7640962-9ab6-46d9-8905-f05022ff542f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetKnowledgeBaseFileList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ry-123456\",\n    \"KnowledgeBaseId\": \"klbase-xjakxja\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileList\": [\n            {\n                \"CreateTime\": \"2025-05-23T11:48:22.574738\",\n                \"FileName\": \"test.pdf\",\n                \"FileSize\": 100,\n                \"FileId\": \"1dsf1\",\n                \"Type\": 0,\n                \"Status\": 1\n            },\n            {\n                \"CreateTime\": \"2025-05-23T11:48:22.574761\",\n                \"FileName\": \"test.png\",\n                \"FileSize\": 120,\n                \"FileId\": \"1dsf2\",\n                \"Type\": 0,\n                \"Status\": 1\n            }\n        ],\n        \"Total\": 2,\n        \"RequestId\": \"f7640962-9ab6-46d9-8905-f05022ff542f\"\n    }\n}",
         "title": "GetKnowledgeBaseFileList"
-      },
-      {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetKnowledgeBaseFileList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-dfssj8sj\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb3edecb-0405-4eea-b880-0bd4023dd274\"\n    }\n}",
-        "title": "示例"
       }
     ],
     "GetKnowledgeBaseList": [

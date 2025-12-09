@@ -9,7 +9,7 @@ tccli tdmq DescribeRocketMQConsumerConnections --cli-unfold-argument  \
     --Limit 20 \
     --Offset 0 \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId test_namespace \
+    --NamespaceId test_ns \
     --GroupId test_group
 ```
 
@@ -43,7 +43,7 @@ Output:
             "GroupType": "TCP",
             "RetryMaxTimes": 16,
             "InstanceId": "rocketmq-2p9vx3ax9jxg",
-            "Namespace": "test_namespace",
+            "Namespace": "test_ns",
             "TPS": 10
         },
         "RequestId": "2823b88c-bc6c-412b-a6dd-18eb9682d233"

@@ -7958,7 +7958,7 @@
         },
         {
           "disabled": false,
-          "document": "K : kubeconfig, S : service account",
+          "document": "K : kubeconfig, S : service account (公有云不支持通过kubeconfig和service account的方式创建集群)",
           "example": "K",
           "member": "string",
           "name": "KuberneteNativeType",

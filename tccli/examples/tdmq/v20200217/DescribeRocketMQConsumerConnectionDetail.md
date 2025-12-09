@@ -7,7 +7,7 @@ Input:
 ```
 tccli tdmq DescribeRocketMQConsumerConnectionDetail --cli-unfold-argument  \
     --ClusterId rocketmq-2p9vx3ax9jxg \
-    --NamespaceId test_namespace \
+    --NamespaceId test_ns \
     --GroupId test_group \
     --ClientId local@23645@0@30ey5aef8w \
     --Offset 0 \

@@ -7817,7 +7817,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态\ncreating：创建中\nrunning：运行中\nisolating：隔离中\nisolated：已隔离\nactivating：解隔离中\nofflining：下线中\nofflined：已下线\ndeleting：删除中\ndeleted：已删除",
+          "document": "实例状态\ncreating：创建中\nrunning：运行中\nisolating：隔离中\nisolated：已隔离\nactivating：恢复中\nofflining：下线中\nofflined：已下线\n",
           "example": "running",
           "member": "string",
           "name": "Status",

@@ -99,9 +99,9 @@
       "status": "online"
     },
     "CreateRocketMQCluster": {
-      "document": "此接口用于创建一个RocketMQ集群",
+      "document": "创建 RocketMQ 集群。\n当前 API 适用集群：4.x 虚拟集群。创建 4.x 专享或通用集群的接口文档见 [CreateRocketMQVipInstance](https://cloud.tencent.com/document/api/1179/95721)，创建 5.x 集群接口文档见 [CreateInstance](https://cloud.tencent.com/document/api/1493/97868)。",
       "input": "CreateRocketMQClusterRequest",
-      "name": "创建RocketMQ集群",
+      "name": "创建 RocketMQ 虚拟集群",
       "output": "CreateRocketMQClusterResponse",
       "status": "online"
     },
@@ -113,16 +113,16 @@
       "status": "online"
     },
     "CreateRocketMQGroup": {
-      "document": "创建RocketMQ消费组",
+      "document": "创建 RocketMQ 消费组。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。创建 5.x 集群消费组的接口文档见 [CreateConsumerGroup](https://cloud.tencent.com/document/api/1493/97943)。",
       "input": "CreateRocketMQGroupRequest",
-      "name": "创建RocketMQ消费组",
+      "name": "批量创建 RocketMQ 消费组",
       "output": "CreateRocketMQGroupResponse",
       "status": "online"
     },
     "CreateRocketMQNamespace": {
-      "document": "创建RocketMQ命名空间",
+      "document": "创建 RocketMQ 命名空间。\n当前 API 适用集群：4.x 虚拟集群和 4.x 专享集群，其他集群类型均不支持该功能。",
       "input": "CreateRocketMQNamespaceRequest",
-      "name": "创建RocketMQ命名空间",
+      "name": "创建 RocketMQ 命名空间",
       "output": "CreateRocketMQNamespaceResponse",
       "status": "online"
     },
@@ -134,14 +134,14 @@
       "status": "online"
     },
     "CreateRocketMQTopic": {
-      "document": "创建RocketMQ主题",
+      "document": "批量创建 RocketMQ 主题。\n当前云 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的创建 Topic 接口文档见 [CreateTopic](https://cloud.tencent.com/document/api/1493/97947)。",
       "input": "CreateRocketMQTopicRequest",
-      "name": "创建RocketMQ主题",
+      "name": "批量创建 RocketMQ 主题",
       "output": "CreateRocketMQTopicResponse",
       "status": "online"
     },
     "CreateRocketMQTopicV2": {
-      "document": "创建RocketMQ主题",
+      "document": "创建 RocketMQ 主题。\n当前云 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的创建 Topic 接口文档见 [CreateTopic](https://cloud.tencent.com/document/api/1493/97947)。",
       "input": "CreateRocketMQTopicV2Request",
       "name": "创建 RocketMQ 主题",
       "output": "CreateRocketMQTopicV2Response",
@@ -260,9 +260,9 @@
       "status": "online"
     },
     "DeleteRocketMQCluster": {
-      "document": "删除RocketMQ集群",
+      "document": "删除 RocketMQ 集群。\n当前 API 适用集群：4.x 虚拟集群。删除 4.x 专享或通用集群的接口文档见 [DeleteRocketMQVipInstance](https://cloud.tencent.com/document/api/1179/95802)，删除 5.x 集群的接口文档见 [DeleteInstance](https://cloud.tencent.com/document/product/1493/97867)。",
       "input": "DeleteRocketMQClusterRequest",
-      "name": "删除RocketMQ集群",
+      "name": "删除 RocketMQ 虚拟集群",
       "output": "DeleteRocketMQClusterResponse",
       "status": "online"
     },
@@ -274,16 +274,16 @@
       "status": "online"
     },
     "DeleteRocketMQGroup": {
-      "document": "删除RocketMQ消费组",
+      "document": "删除 RocketMQ 消费组。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。删除 5.x 集群消费组的接口文档见 [DeleteConsumerGroup](https://cloud.tencent.com/document/api/1493/97942)。",
       "input": "DeleteRocketMQGroupRequest",
-      "name": "删除RocketMQ消费组",
+      "name": "删除 RocketMQ 消费组",
       "output": "DeleteRocketMQGroupResponse",
       "status": "online"
     },
     "DeleteRocketMQNamespace": {
-      "document": "删除RocketMQ命名空间",
+      "document": "删除 RocketMQ 命名空间。\n当前 API 适用集群：4.x 虚拟集群和 4.x 专享集群，其他集群类型均不支持该功能。",
       "input": "DeleteRocketMQNamespaceRequest",
-      "name": "删除RocketMQ命名空间",
+      "name": "删除 RocketMQ 命名空间",
       "output": "DeleteRocketMQNamespaceResponse",
       "status": "online"
     },
@@ -295,9 +295,9 @@
       "status": "online"
     },
     "DeleteRocketMQTopic": {
-      "document": "删除RocketMQ主题",
+      "document": "删除 RocketMQ 主题。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。删除 5.x 集群主题的接口文档见 [DeleteTopic](https://cloud.tencent.com/document/api/1493/97946)。",
       "input": "DeleteRocketMQTopicRequest",
-      "name": "删除RocketMQ主题",
+      "name": "删除 RocketMQ 主题",
       "output": "DeleteRocketMQTopicResponse",
       "status": "online"
     },
@@ -575,23 +575,23 @@
       "status": "online"
     },
     "DescribeRocketMQConsumeStats": {
-      "document": "获取消费详情列表",
+      "document": "查询 RocketMQ 消费详情列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。查询 5.x 集群消费详情的接口文档见 [DescribeConsumerGroup](https://cloud.tencent.com/document/api/1493/97941)。",
       "input": "DescribeRocketMQConsumeStatsRequest",
-      "name": "获取消费详情列表",
+      "name": "查询 RocketMQ 消费详情列表",
       "output": "DescribeRocketMQConsumeStatsResponse",
       "status": "online"
     },
     "DescribeRocketMQConsumerConnectionDetail": {
-      "document": "获取在线消费端详情",
+      "document": "查询 RocketMQ 消费者客户端详情。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的查询消费者客户端详情接口文档见 [DescribeConsumerClient](https://cloud.tencent.com/document/api/1493/115240)。",
       "input": "DescribeRocketMQConsumerConnectionDetailRequest",
-      "name": "获取在线消费端详情",
+      "name": "查询 RocketMQ 消费者客户端详情",
       "output": "DescribeRocketMQConsumerConnectionDetailResponse",
       "status": "online"
     },
     "DescribeRocketMQConsumerConnections": {
-      "document": "获取指定消费组下当前客户端的连接情况",
+      "document": "查询 RocketMQ 消费组下的客户端连接列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群查询消费组下的客户端连接列表接口文档见 [DescribeConsumerClientList](https://cloud.tencent.com/document/api/1493/120140)。",
       "input": "DescribeRocketMQConsumerConnectionsRequest",
-      "name": "获取指定消费组下当前客户端的连接情况",
+      "name": "查询 RocketMQ 消费组下的客户端连接列表",
       "output": "DescribeRocketMQConsumerConnectionsResponse",
       "status": "online"
     },
@@ -603,9 +603,9 @@
       "status": "online"
     },
     "DescribeRocketMQGroups": {
-      "document": "获取RocketMQ消费组列表",
+      "document": "查询 RocketMQ 消费组列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。查询 5.x 集群的消费组列表接口文档见 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535)。",
       "input": "DescribeRocketMQGroupsRequest",
-      "name": "获取RocketMQ消费组列表",
+      "name": "查询 RocketMQ 消费组列表",
       "output": "DescribeRocketMQGroupsResponse",
       "status": "online"
     },
@@ -624,16 +624,16 @@
       "status": "online"
     },
     "DescribeRocketMQMsgTrace": {
-      "document": "查询消息轨迹",
+      "document": "查询消息轨迹。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群查询消息轨迹的接口文档见 [DescribeMessageTrace](https://cloud.tencent.com/document/api/1493/114302)。",
       "input": "DescribeRocketMQMsgTraceRequest",
-      "name": "查询RocketMQ消息轨迹",
+      "name": "查询 RocketMQ 消息轨迹",
       "output": "DescribeRocketMQMsgTraceResponse",
       "status": "online"
     },
     "DescribeRocketMQNamespaces": {
-      "document": "获取RocketMQ命名空间列表",
+      "document": "获取 RocketMQ 命名空间列表。\n当前 API 适用集群：4.x 虚拟集群和 4.x 专享集群，其他集群类型均不支持该功能。",
       "input": "DescribeRocketMQNamespacesRequest",
-      "name": "获取RocketMQ命名空间列表",
+      "name": "查询 RocketMQ 命名空间列表",
       "output": "DescribeRocketMQNamespacesResponse",
       "status": "online"
     },
@@ -673,9 +673,9 @@
       "status": "online"
     },
     "DescribeRocketMQSubscriptions": {
-      "document": "用于获取RocketMQ消费组订阅关系数据",
+      "document": "查询 RocketMQ 消费组订阅关系列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群查询消费组订阅的主题列表接口文档见 [DescribeTopicListByGroup](https://cloud.tencent.com/document/api/1493/115314)。",
       "input": "DescribeRocketMQSubscriptionsRequest",
-      "name": "获取RocketMQ消费组订阅关系",
+      "name": "查询 RocketMQ 消费组订阅关系列表",
       "output": "DescribeRocketMQSubscriptionsResponse",
       "status": "online"
     },
@@ -694,30 +694,30 @@
       "status": "online"
     },
     "DescribeRocketMQTopicMsgs": {
-      "document": "rocketmq 消息查询",
+      "document": "查询 RocketMQ 消息列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的查询消息列表接口文档见 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593)。",
       "input": "DescribeRocketMQTopicMsgsRequest",
-      "name": "rocketmq 消息查询",
+      "name": "查询 RocketMQ 消息列表",
       "output": "DescribeRocketMQTopicMsgsResponse",
       "status": "online"
     },
     "DescribeRocketMQTopicStats": {
-      "document": "获取Topic生产详情列表",
+      "document": "查询 RocketMQ 主题生产详情列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群暂不支持该功能。",
       "input": "DescribeRocketMQTopicStatsRequest",
-      "name": "获取Topic生产详情列表",
+      "name": "查询 RocketMQ 主题生产详情列表",
       "output": "DescribeRocketMQTopicStatsResponse",
       "status": "online"
     },
     "DescribeRocketMQTopics": {
-      "document": "获取RocketMQ主题列表",
+      "document": "查询 RocketMQ 主题列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。查询 5.x 集群的主题列表接口文档见 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030)。",
       "input": "DescribeRocketMQTopicsRequest",
-      "name": "获取RocketMQ主题列表",
+      "name": "查询 RocketMQ 主题列表",
       "output": "DescribeRocketMQTopicsResponse",
       "status": "online"
     },
     "DescribeRocketMQTopicsByGroup": {
-      "document": "获取指定消费组下订阅的主题列表",
+      "document": "查询 RocketMQ 消费组订阅的主题列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群查询消费组订阅的主题列表接口文档见 [DescribeTopicListByGroup](https://cloud.tencent.com/document/api/1493/115314)。",
       "input": "DescribeRocketMQTopicsByGroupRequest",
-      "name": "获取指定消费组下订阅的主题列表",
+      "name": "查询 RocketMQ 消费组订阅的主题列表",
       "output": "DescribeRocketMQTopicsByGroupResponse",
       "status": "online"
     },
@@ -890,9 +890,9 @@
       "status": "online"
     },
     "ModifyRocketMQGroup": {
-      "document": "更新RocketMQ消费组信息",
+      "document": "修改 RocketMQ 消费组属性。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。修改 5.x 集群消费组属性的接口文档见 [ModifyConsumerGroup](https://cloud.tencent.com/document/api/1493/97940)。",
       "input": "ModifyRocketMQGroupRequest",
-      "name": "更新RocketMQ消费组信息",
+      "name": "修改 RocketMQ 消费组属性",
       "output": "ModifyRocketMQGroupResponse",
       "status": "online"
     },
@@ -911,9 +911,9 @@
       "status": "online"
     },
     "ModifyRocketMQNamespace": {
-      "document": "更新RocketMQ命名空间",
+      "document": "更新 RocketMQ 命名空间。\n当前 API 适用集群：4.x 虚拟集群和 4.x 专享集群，其他集群类型均不支持该功能。",
       "input": "ModifyRocketMQNamespaceRequest",
-      "name": "更新RocketMQ命名空间",
+      "name": "修改 RocketMQ 命名空间",
       "output": "ModifyRocketMQNamespaceResponse",
       "status": "online"
     },
@@ -925,9 +925,9 @@
       "status": "online"
     },
     "ModifyRocketMQTopic": {
-      "document": "更新RocketMQ主题信息",
+      "document": "修改 RocketMQ 主题属性。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。修改 5.x 集群主题属性的接口文档见 [ModifyTopic](https://cloud.tencent.com/document/api/1493/97944)。",
       "input": "ModifyRocketMQTopicRequest",
-      "name": "更新RocketMQ主题信息",
+      "name": "修改 RocketMQ 主题属性",
       "output": "ModifyRocketMQTopicResponse",
       "status": "online"
     },
@@ -974,9 +974,9 @@
       "status": "online"
     },
     "RetryRocketMQDlqMessage": {
-      "document": "重发RocketMQ死信消息",
+      "document": "重发 RocketMQ 死信消息。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。5.x 集群的重发死信消息接口文档见 [ResendDeadLetterMessage](https://cloud.tencent.com/document/api/1493/114592)。",
       "input": "RetryRocketMQDlqMessageRequest",
-      "name": "重发RocketMQ死信消息",
+      "name": "重发 RocketMQ 死信消息",
       "output": "RetryRocketMQDlqMessageResponse",
       "status": "online"
     },
@@ -4309,7 +4309,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间，目前只支持单个命名空间",
+          "document": "消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "[\"test_namespace\"]",
           "member": "string",
           "name": "Namespaces",
@@ -4400,7 +4400,7 @@
         {
           "disabled": false,
           "document": "命名空间名称，3-64个字符，只能包含字母、数字、“-”及“_”",
-          "example": "prod",
+          "example": "test_ns",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -4409,7 +4409,7 @@
         {
           "disabled": false,
           "document": "已废弃",
-          "example": "100000",
+          "example": "259200000",
           "member": "uint64",
           "name": "Ttl",
           "required": false,
@@ -4418,7 +4418,7 @@
         {
           "disabled": false,
           "document": "已废弃",
-          "example": "100000",
+          "example": "259200000",
           "member": "uint64",
           "name": "RetentionTime",
           "required": false,
@@ -4427,7 +4427,7 @@
         {
           "disabled": false,
           "document": "说明，最大128个字符",
-          "example": "info-remark",
+          "example": "test remark info.",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -4546,7 +4546,7 @@
         },
         {
           "disabled": false,
-          "document": "主题所在的命名空间，目前支持在单个命名空间下创建主题",
+          "document": "主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "[\"ns01\"]",
           "member": "string",
           "name": "Namespaces",
@@ -4636,7 +4636,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_ns",
           "member": "string",
           "name": "Namespace",
@@ -5771,7 +5771,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
+          "document": "消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "NamespaceId",
@@ -5898,7 +5898,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
+          "document": "主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "NamespaceId",
@@ -9505,7 +9505,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "NamespaceId",
@@ -9552,7 +9552,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "rocketmq-4k4orqgq",
+          "example": "rocketmq-2p9vx3ax9jxg",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9560,8 +9560,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
-          "example": "test_namespace",
+          "document": "消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
+          "example": "test_ns",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -9653,7 +9653,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "rocketmq-4k4orqgq",
+          "example": "rocketmq-2p9vx3ax9jxg",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9661,8 +9661,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
-          "example": "test_namespace",
+          "document": "消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
+          "example": "test_ns",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -9864,7 +9864,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_ns",
           "member": "string",
           "name": "NamespaceId",
@@ -10263,8 +10263,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
-          "example": "test_namespace",
+          "document": "命名空间，4.x 通用集群命名空间固定为: tdmq_default",
+          "example": "test_ns",
           "member": "string",
           "name": "EnvironmentId",
           "required": true,
@@ -10324,7 +10324,7 @@
         {
           "disabled": false,
           "document": "轨迹详情列表",
-          "example": "[     {         \"Stage\": \"produce\",         \"Data\": {             \"Status\": 1         }     },     {         \"Stage\": \"persist\",         \"Data\": {             \"Status\": 1         }     } ]",
+          "example": "无",
           "member": "TraceResult",
           "name": "Result",
           "output_required": true,
@@ -11010,7 +11010,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
+          "document": "消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "Namespace",
@@ -11158,7 +11158,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "EnvironmentId",
@@ -11414,7 +11414,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "NamespaceId",
@@ -11469,8 +11469,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
-          "example": "prod",
+          "document": "消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
+          "example": "test_ns",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -11522,7 +11522,7 @@
         {
           "disabled": false,
           "document": "主题列表",
-          "example": "[\"news\"]",
+          "example": "[\"test_topic\"]",
           "member": "string",
           "name": "Topics",
           "output_required": true,
@@ -11570,7 +11570,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_ns",
           "member": "string",
           "name": "NamespaceId",
@@ -14321,7 +14321,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "消费组所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "NamespaceId",
@@ -14684,7 +14684,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
+          "document": "主题所在的命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_namespace",
           "member": "string",
           "name": "NamespaceId",
@@ -18320,7 +18320,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间名称",
+          "document": "命名空间，4.x 通用集群命名空间固定为: tdmq_default",
           "example": "test_ns",
           "member": "string",
           "name": "NamespaceId",

@@ -5749,19 +5749,19 @@
         },
         {
           "disabled": false,
-          "document": "子网ID列表",
-          "example": "[\"subnet-e55paxnt\"]",
+          "document": "安全组ID列表",
+          "example": "[\"sg-e55paxnt\"]",
           "member": "string",
-          "name": "SubnetIds",
-          "required": false,
+          "name": "SecurityGroupIds",
+          "required": true,
           "type": "list"
         },
         {
           "disabled": false,
-          "document": "安全组ID列表，必选参数",
-          "example": "[\"sg-e55paxnt\"]",
+          "document": "子网ID列表",
+          "example": "[\"subnet-e55paxnt\"]",
           "member": "string",
-          "name": "SecurityGroupIds",
+          "name": "SubnetIds",
           "required": false,
           "type": "list"
         },

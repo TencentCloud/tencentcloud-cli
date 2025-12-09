@@ -2196,10 +2196,10 @@
     ],
     "RegisterEvent": [
       {
-        "document": "注册事件",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterEvent\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1492511691706699776\",\n    \"Name\": \"test_event_11\",\n    \"EventType\": \"TIME_SERIES\",\n    \"EventSubType\": \"DAY\",\n    \"EventBroadcastType\": \"SINGLE\",\n    \"DimensionFormat\": \"yyyyMMdd\",\n    \"TimeToLive\": 30,\n    \"TimeUnit\": \"DAYS\",\n    \"Owner\": \"micofywang\",\n    \"Description\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ErrorDesc\": null,\n            \"ErrorId\": null,\n            \"Result\": true\n        },\n        \"RequestId\": \"d43d2a97-0522-4917-a471-dbc0a8b3c318\"\n    }\n}",
-        "title": "注册事件"
+        "document": "成功示例",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterEvent\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"Name\": \"xxxxx2\",\n    \"EventSubType\": \"DAY\",\n    \"EventBroadcastType\": \"BROADCAST\",\n    \"TimeUnit\": \"DAYS\",\n    \"Owner\": \"jaydenjhu\",\n    \"EventType\": \"TIME_SERIES\",\n    \"DimensionFormat\": \"yyyyMMdd\",\n    \"TimeToLive\": 30,\n    \"Description\": \"ffdsafasdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ErrorDesc\": null,\n            \"ErrorId\": null,\n            \"Result\": true\n        },\n        \"RequestId\": \"ff9b1b3e-bf16-45d0-ac93-ab093dc2db8c\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "RegisterEventListener": [
