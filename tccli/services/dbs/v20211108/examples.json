@@ -1,11 +1,27 @@
 {
   "actions": {
+    "DescribeBackupCheckJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupCheckJob\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-qcloudtest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"finished\",\n        \"Progress\": 100,\n        \"CheckFlag\": 1,\n        \"ErrMessage\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询备份计划预校验结果"
+      }
+    ],
     "DescribeFullBackupSets": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFullBackupSets\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-qcloudtest\",\n    \"BackupSetId\": \"backupset-test\",\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"BackupMethod\": \"logical\",\n                \"BackupPool\": \"DefaultPool\",\n                \"BackupSetId\": \"backupset-test\",\n                \"BackupSize\": 722,\n                \"EndTime\": \"2022-05-19 14:58:19\",\n                \"ExpireTime\": \"2022-05-26 14:58:19\",\n                \"SourceInfo\": \"cdb-m4l1qwh3\",\n                \"StartTime\": \"2022-05-19 14:57:09\",\n                \"Status\": \"finished\",\n                \"StorageType\": \"DBSStorage\"\n            },\n            {\n                \"BackupMethod\": \"logical\",\n                \"BackupPool\": \"DefaultPool\",\n                \"BackupSetId\": \"backupset-gt1yxgic\",\n                \"BackupSize\": 0,\n                \"EndTime\": \"2022-05-19 14:58:49\",\n                \"ExpireTime\": \"2022-05-26 14:58:49\",\n                \"SourceInfo\": \"cdb-m4l1qwh3\",\n                \"StartTime\": \"2022-05-19 14:57:03\",\n                \"Status\": \"failed\",\n                \"StorageType\": \"DBSStorage\"\n            }\n        ],\n        \"RequestId\": \"6a7be250-dc9e-11ec-b8b3-d985aa28bfec\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询全量备份集列表"
+      }
+    ],
+    "StartBackupCheckJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartBackupCheckJob\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-qcloudtest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建备份计划预校验任务"
       }
     ]
   },
