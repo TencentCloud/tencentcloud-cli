@@ -766,6 +766,15 @@
           "name": "Describe",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户的当前密码",
+          "example": "",
+          "member": "string",
+          "name": "OriginalPassword",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

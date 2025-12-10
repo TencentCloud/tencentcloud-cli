@@ -6655,7 +6655,7 @@
         },
         {
           "disabled": false,
-          "document": "是否返回单字信息，默认关",
+          "document": "是否返回单字信息，默认值为false，注：仅ConfigID配置为OCR时支持。",
           "example": "false",
           "member": "bool",
           "name": "IsWords",
@@ -6700,7 +6700,7 @@
         },
         {
           "disabled": false,
-          "document": "配置ID支持：  OCR -- 通用场景  MulOCR--多语种场景，注：仅ConfigID配置为OCR时支持",
+          "document": "配置ID支持： OCR -- 通用场景 MulOCR--多语种场景，默认值为OCR",
           "example": "OCR",
           "member": "string",
           "name": "ConfigID",

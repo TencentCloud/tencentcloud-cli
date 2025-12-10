@@ -12120,26 +12120,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键",
-          "example": "sdf",
+          "document": "标签键。",
+          "example": "business",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值",
-          "example": "sdfss",
+          "document": "标签值。",
+          "example": "protection",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "WaterPrintConfig": {
       "document": "水印防护配置",

@@ -2457,6 +2457,15 @@
         },
         {
           "disabled": false,
+          "document": "系统盘的信息",
+          "example": "无",
+          "member": "Disk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "节点预付费信息",
           "example": "无",
           "member": "InstanceChargePrepaid",

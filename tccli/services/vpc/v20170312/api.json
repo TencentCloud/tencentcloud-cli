@@ -752,7 +752,7 @@
     "DeleteGlobalRoutes": {
       "document": "删除全局路由。",
       "input": "DeleteGlobalRoutesRequest",
-      "name": "删除全局路由。",
+      "name": "删除全局路由",
       "output": "DeleteGlobalRoutesResponse",
       "status": "online"
     },
@@ -35513,7 +35513,7 @@
         },
         {
           "disabled": false,
-          "document": "下一跳类型，目前我们支持的类型有：\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nHAVIP：高可用虚拟IP；\nNAT：公网NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nLOCAL_GATEWAY：CDC本地网关；\nINTRANAT：私网NAT网关；\nUSER_CCN；云联网（自定义路由）。\n",
+          "document": "下一跳类型，目前我们支持的类型有：\nCVM：公网网关类型的云服务器；\nVPN：VPN网关；\nDIRECTCONNECT：专线网关；\nPEERCONNECTION：对等连接；\nHAVIP：高可用虚拟IP；\nNAT：公网NAT网关; \nNORMAL_CVM：普通云服务器；\nEIP：云服务器的公网IP；\nLOCAL_GATEWAY：CDC本地网关；\nINTRANAT：私网NAT网关；\nUSER_CCN：云联网（自定义路由）；\nGWLB_ENDPOINT：网关负载均衡终端节点。",
           "example": "CCN",
           "member": "string",
           "name": "GatewayType",

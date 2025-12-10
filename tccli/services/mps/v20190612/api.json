@@ -11735,7 +11735,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕视频源语言\n当前支持以下语言：\n`zh`：简体中文\n`yue`：中文粵语\n`zh-PY`：中英粤\n`zh_medical`：中文医疗\n`zh_dialect`：中文方言\n`prime_zh`：中英方言\n`zh_en`：中英\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语\n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语\n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n`auto`：自动识别（仅在纯字幕翻译中支持）",
+          "document": "智能字幕视频源语言\nOCR识别仅支持以下语言：\n`zh_en`：中英\n`multi`：其他\nASR识别和纯字幕翻译当前支持以下语言：\n`auto`：自动识别（仅在纯字幕翻译中支持）\n`zh`：简体中文\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`zh-PY`：中英粤\n`zh_medical`：中文医疗\n`vi`：越南语\n`ms`：马来语\n`id`：印度尼西亚语\n`fil`：菲律宾语\n`th`：泰语\n`pt`：葡萄牙语\n`tr`：土耳其语\n`ar`：阿拉伯语\n`es`：西班牙语\n`hi`：印地语\n`fr`：法语\n`de`：德语\n`it`：意大利语\n`zh_dialect`：中文方言\n`zh_en`：中英\n`yue`：粤语\n`ru`：俄语\n`prime_zh`：中英方言\n`af-ZA`：南非荷兰语（南非）\n`sq-AL`：阿尔巴尼亚语（阿尔巴尼亚）\n`am-ET`：阿姆哈拉语（埃塞俄比亚）\n`ar-DZ`：阿拉伯语（阿尔及利亚）\n`ar-BH`：阿拉伯语（巴林）\n`ar-EG`：阿拉伯语（埃及）\n`ar-IQ`：阿拉伯语（伊拉克）\n`ar-IL`：阿拉伯语（以色列）\n`ar-JO`：阿拉伯语（约旦）\n`ar-KW`：阿拉伯语（科威特）\n`ar-LB`：阿拉伯语（黎巴嫩）\n`ar-MR`：阿拉伯语（毛里塔尼亚）\n`ar-MA`：阿拉伯语（摩洛哥）\n`ar-OM`：阿拉伯语（阿曼）\n`ar-QA`：阿拉伯语（卡塔尔）\n`ar-SA`：阿拉伯语（沙特阿拉伯）\n`ar-PS`：阿拉伯语（巴勒斯坦国）\n`ar-SY`：阿拉伯语（叙利亚）\n`ar-TN`：阿拉伯语（突尼斯）\n`ar-AE`：阿拉伯语（阿拉伯联合酋长国）\n`ar-YE`：阿拉伯语（也门）\n`hy-AM`：亚美尼亚语（亚美尼亚）\n`az-AZ`：阿塞拜疆语（阿塞拜疆）\n`eu-ES`：巴斯克语（西班牙）\n`bn-BD`：孟加拉语（孟加拉）\n`bn-IN`：孟加拉语（印度）\n`bs-BA`：波斯尼亚语（波斯尼亚和黑塞哥维那）\n`bg-BG`：保加利亚语（保加利亚）\n`my-MM`：缅甸语（缅甸）\n`ca-ES`：加泰罗尼亚语（西班牙）\n`hr-HR`：克罗地亚语（克罗地亚）\n`cs-CZ`：捷克语（捷克共和国）\n`da-DK`：丹麦语（丹麦）\n`nl-BE`：荷兰语（比利时）\n`nl-NL`：荷兰语（荷兰）\n`en-AU`：英语（澳大利亚）\n`en-CA`：英语（加拿大）\n`en-GH`：英语（加纳）\n`en-HK`：英语（香港）\n`en-IN`：英语（印度）\n`en-IE`：英语（爱尔兰）\n`en-KE`：英语（肯尼亚）\n`en-NZ`：英语（新西兰）\n`en-NG`：英语（尼日利亚）\n`en-PK`：英语（巴基斯坦）\n`en-PH`：英语（菲律宾）\n`en-SG`：英语（新加坡）\n`en-ZA`：英语（南非）\n`en-TZ`：英语（坦桑尼亚）\n`en-GB`：英语（英国）\n`en-US`：英语（美国）\n`et-EE`：爱沙尼亚语（爱沙尼亚）\n`fil-PH`：菲律宾语（菲律宾）\n`fi-FI`：芬兰语（芬兰）\n`fr-BE`：法语（比利时）\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fr-CH`：法语（瑞士）\n`gl-ES`：加利西亚语（西班牙）\n`ka-GE`：格鲁吉亚语（格鲁吉亚）\n`el-GR`：希腊语（希腊）\n`gu-IN`：古吉拉特语（印度）\n`iw-IL`：希伯来语（以色列）\n`hi-IN`：印地语（印度）\n`hu-HU`：匈牙利语（匈牙利）\n`is-IS`：冰岛语（冰岛）\n`id-ID`：印度尼西亚语（印度尼西亚）\n`it-IT`：意大利语（意大利）\n`it-CH`：意大利语（瑞士）\n`ja-JP`：日语（日本）\n`jv-ID`：爪哇语（印度尼西亚）\n`kn-IN`：卡纳达语（印度）\n`kk-KZ`：哈萨克语（哈萨克斯坦）\n`km-KH`：高棉语（柬埔寨）\n`rw-RW`：卢旺达语（卢旺达）\n`ko-KR`：韩语（韩国）\n`lo-LA`：老挝语（老挝）\n`lv-LV`：拉脱维亚语（拉脱维亚）\n`lt-LT`：立陶宛语（立陶宛）\n`mk-MK`：马其顿语（北马其顿）\n`ms-MY`：马来语（马来西亚）\n`ml-IN`：马拉雅拉姆语（印度）\n`mr-IN`：马拉地语（印度）\n`mn-MN`：蒙古语（蒙古）\n`ne-NP`：尼泊尔语（尼泊尔）\n`no-NO`：博克马尔挪威语（挪威）\n`fa-IR`：波斯语（伊朗）\n`pl-PL`：波兰语（波兰）\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`ro-RO`：罗马尼亚语（罗马尼亚）\n`ru-RU`：俄语（俄罗斯）\n`sr-RS`：塞尔维亚语（塞尔维亚）\n`si-LK`：僧伽罗语（斯里兰卡）\n`sk-SK`：斯洛伐克语（斯洛伐克）\n`sl-SI`：斯洛文尼亚语（斯洛文尼亚）\n`st-ZA`：南索托语（南非）\n`es-AR`：西班牙语（阿根廷）\n`es-BO`：西班牙语（玻利维亚）\n`es-CL`：西班牙语（智利）\n`es-CO`：西班牙语（哥伦比亚）\n`es-CR`：西班牙语（哥斯达黎加）\n`es-DO`：西班牙语（多米尼加共和国）\n`es-EC`：西班牙语（厄瓜多尔）\n`es-SV`：西班牙语（萨尔瓦多）\n`es-GT`：西班牙语（危地马拉）\n`es-HN`：西班牙语（洪都拉斯）\n`es-MX`：西班牙语（墨西哥）\n`es-NI`：西班牙语（尼加拉瓜）\n`es-PA`：西班牙语（巴拿马）\n`es-PY`：西班牙语（巴拉圭）\n`es-PE`：西班牙语（秘鲁）\n`es-PR`：西班牙语（波多黎各）\n`es-ES`：西班牙语（西班牙）\n`es-US`：西班牙语（美国）\n`es-UY`：西班牙语（乌拉圭）\n`es-VE`：西班牙语（委内瑞拉）\n`su-ID`：巽他语（印度尼西亚）\n`sw-KE`：斯瓦希里语（肯尼亚）\n`sw-TZ`：斯瓦希里语（坦桑尼亚）\n`sv-SE`：瑞典语（瑞典）\n`ta-IN`：泰米尔语（印度）\n`ta-MY`：泰米尔语（马来西亚）\n`ta-SG`：泰米尔语（新加坡）\n`ta-LK`：泰米尔语（斯里兰卡）\n`te-IN`：泰卢固语（印度）\n`th-TH`：泰语（泰国）\n`ts-ZA`：聪加语（南非）\n`tr-TR`：土耳其语（土耳其）\n`uk-UA`：乌克兰语（乌克兰）\n`ur-IN`：乌尔都语（印度）\n`ur-PK`：乌尔都语（巴基斯坦）\n`uz-UZ`：乌兹别克语（乌兹别克斯坦）\n`ve-ZA`：文达语（南非）\n`vi-VN`：越南语（越南）\n`xh-ZA`：科萨语（南非）\n`zu-ZA`：祖鲁语（南非）\n",
           "example": "zh",
           "member": "string",
           "name": "VideoSrcLanguage",
@@ -11762,7 +11762,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式:\n- ASR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n     - 不填或填空：不生成字幕文件\n- 纯字幕翻译处理类型下：\n    - original：与源文件一致\n    - vtt: WebVTT 格式字幕\n    - srt: SRT 格式字幕\n\n**注意**：\n- ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；\n- 纯字幕翻译方式下，不允许传空或不传",
+          "document": "智能字幕文件格式:\n- ASR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n     - 不填或填空：不生成字幕文件\n- 纯字幕翻译处理类型下：\n    - original：与源文件一致\n    - vtt: WebVTT 格式字幕\n    - srt: SRT 格式字幕\n- OCR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n\n**注意**：\n- ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；\n- 纯字幕翻译和OCR识别翻译方式下，不允许传空或不传",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -11789,7 +11789,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译目标语言，当TranslateSwitch为`ON`的时候生效\n当前支持以下语言：\n\n`zh`：简体中文\n`zh-TW`：繁体中文\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语 \n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语 \n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。",
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效，翻译语言列表：\n`ab`：阿布哈兹语\n`ace`：亚齐语\n`ach`：阿乔利语\n`af`：南非荷兰语\n`ak`：契维语（阿坎语）\n`am`：Amharic\n`ar`：阿拉伯语\n`as`：阿萨姆语\n`ay`：艾马拉语\n`az`：阿塞拜疆语\n`ba`：巴什基尔语\n`ban`：巴厘语\n`bbc`：巴塔克托巴语\n`bem`：Bemba\n`bew`：Betawi\n`bg`：保加利亚语\n`bho`：博杰普尔语\n`bik`：Bikol\n`bm`：班巴拉语\n`bn`：孟加拉语\n`br`：布列塔尼语\n`bs`：波斯尼亚语\n`btx`：巴塔克卡罗语\n`bts`：巴塔克西马隆贡语\n`bua`：布里亚特语\n`ca`：加泰罗尼亚语\n`ceb`：宿务语\n`cgg`：Kiga\n`chm`：草原马里语\n`ckb`：库尔德语（索拉尼语）\n`cnh`：哈卡钦语\n`co`：科西嘉语\n`crh`：克里米亚鞑靼语\n`crs`：塞舌尔克里奥尔语\n`cs`：捷克语\n`cv`：楚瓦什语\n`cy`：威尔士语\n`da`：丹麦语\n`de`：德语\n`din`：Dinka\n`doi`：多格来语\n`dov`：敦贝语\n`dv`：第维埃语\n`dz`：宗卡语\n`ee`：Ewe\n`el`：希腊语\n`en`：英语\n`eo`：世界语\n`es`：西班牙语\n`et`：爱沙尼亚语\n`eu`：巴斯克语\n`fa`：波斯语\n`ff`：富拉语\n`fi`：芬兰语\n`fil`：菲律宾语（塔加拉语）\n`fj`：斐济语\n`fr`：法语\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fy`：弗里斯兰语\n`ga`：爱尔兰语\n`gaa`：加 (Ga) 语\n`gd`：苏格兰盖尔语\n`gl`：加利西亚语\n`gn`：瓜拉尼语\n`gom`：贡根语\n`gu`：古吉拉特语\n`gv`：马恩岛语\n`ha`：Hausa\n`haw`：夏威夷语\n`he`：希伯来语\n`hi`：印地语\n`hil`：希利盖农语\n`hmn`：苗语\n`hr`：克罗地亚语\n`hrx`：洪斯吕克语\n`ht`：海地克里奥尔语\n`hu`：匈牙利语\n`hy`：亚美尼亚语\n`id`：印度尼西亚语\n`ig`：Igbo\n`ilo`：伊洛果语\n`is`：冰岛语\n`it`：意大利语\n`iw`：希伯来语\n`ja`：日语\n`jv`：爪哇语\n`jw`：爪哇语\n`ka`：格鲁吉亚语\n`kk`：哈萨克语\n`km`：高棉语\n`kn`：卡纳达语\n`ko`：韩语\n`kri`：Krio\n`ku`：库尔德语（库尔曼吉语）\n`ktu`：吉土巴语\n`ky`：吉尔吉斯语\n`la`：拉丁语\n`lb`：卢森堡语\n`lg`：干达语（卢干达语）\n`li`：林堡语\n`lij`：利古里亚语\n`lmo`：伦巴第语\n`ln`：林加拉语\n`lo`：老挝语\n`lt`：立陶宛语\n`ltg`：拉特加莱语\n`luo`：Luo\n`lus`：米佐语\n`lv`：拉脱维亚语\n`mai`：迈蒂利语\n`mak`：马卡萨\n`mg`：马尔加什语\n`mi`：毛利语\n`min`：米南语\n`mk`：马其顿语\n`ml`：马拉雅拉姆语\n`mn`：蒙古语\n`mr`：马拉地语\n`ms`：马来语\n`mt`：马耳他语\n`my`：缅甸语\n`ne`：尼泊尔语\n`new`：尼瓦尔语\n`nl`：荷兰语\n`no`：挪威语\n`nr`：恩德贝莱语（南部）\n`nso`：北索托语（塞佩蒂语）\n`nus`：努尔语\n`ny`：齐切瓦语（尼扬贾语）\n`oc`：奥克斯坦语\n`om`：Oromo\n`or`：奥里亚语\n`pa`：旁遮普语\n`pag`：邦阿西楠语\n`pam`：邦板牙语\n`pap`：Papiamento\n`pl`：波兰语\n`ps`：Pashto\n`pt`：葡萄牙语\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`qu`：克丘亚语\n`ro`：罗马尼亚语\n`rom`：罗姆语\n`rn`：Rundi\n`ru`：俄语\n`rw`：卢旺达语\n`sa`：梵语\n`scn`：西西里语\n`sd`：信德语\n`sg`：Sango\n`shn`：掸语\n`si`：僧伽罗语\n`sk`：斯洛伐克语\n`sl`：斯洛文尼亚语\n`sm`：萨摩亚语\n`sn`：修纳语\n`so`：索马里语\n`sq`：阿尔巴尼亚语\n`sr`：塞尔维亚语\n`ss`：斯瓦特语\n`st`：塞索托语\n`su`：巽他语\n`sv`：瑞典语\n`sw`：斯瓦希里语\n`szl`：西里西亚语\n`ta`：泰米尔语\n`te`：泰卢固语\n`tet`：德顿语\n`tg`：塔吉克语\n`th`：泰语\n`ti`：提格里尼亚语\n`tk`：土库曼语\n`tl`：菲律宾语（塔加拉语）\n`tn`：茨瓦纳语\n`tr`：土耳其语\n`ts`：聪加语\n`tt`：鞑靼语\n`ug`：维吾尔语\n`uk`：乌克兰语\n`ur`：乌尔都语\n`uz`：乌兹别克语\n`vi`：越南语\n`xh`：科萨语\n`yi`：意第绪语\n`yo`：约鲁巴语\n`yua`：尤卡坦玛雅语\n`yue`：粤语\n`zh`：简体中文\n`zh-TW`：中文（繁体）\n`zu`：祖鲁语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。",
           "example": "en",
           "member": "string",
           "name": "TranslateDstLanguage",
@@ -11798,7 +11798,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译\n\n**注意**：不传的情况下默认类型为 ASR识别字幕",
+          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译\n- 2：OCR识别字幕\n\n**注意**：不传的情况下默认类型为 ASR识别字幕",
           "example": "0",
           "member": "uint64",
           "name": "ProcessType",
@@ -27430,7 +27430,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕视频源语言\n当前支持以下语言：\n\n`zh`：简体中文\n`yue`：中文粵语\n`zh-PY`：中英粤\n`zh_medical`：中文医疗\n`zh_dialect`：中文方言\n`prime_zh`：中英方言\n`zh_en`：中英\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语\n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语\n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n`auto`：自动识别（仅在纯字幕翻译中支持）",
+          "document": "智能字幕视频源语言\nOCR识别仅支持以下语言：\n`zh_en`：中英\n`multi`：其他\nASR识别和纯字幕翻译当前支持以下语言：\n`auto`：自动识别（仅在纯字幕翻译中支持）\n`zh`：简体中文\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`zh-PY`：中英粤\n`zh_medical`：中文医疗\n`vi`：越南语\n`ms`：马来语\n`id`：印度尼西亚语\n`fil`：菲律宾语\n`th`：泰语\n`pt`：葡萄牙语\n`tr`：土耳其语\n`ar`：阿拉伯语\n`es`：西班牙语\n`hi`：印地语\n`fr`：法语\n`de`：德语\n`it`：意大利语\n`zh_dialect`：中文方言\n`zh_en`：中英\n`yue`：粤语\n`ru`：俄语\n`prime_zh`：中英方言\n`af-ZA`：南非荷兰语（南非）\n`sq-AL`：阿尔巴尼亚语（阿尔巴尼亚）\n`am-ET`：阿姆哈拉语（埃塞俄比亚）\n`ar-DZ`：阿拉伯语（阿尔及利亚）\n`ar-BH`：阿拉伯语（巴林）\n`ar-EG`：阿拉伯语（埃及）\n`ar-IQ`：阿拉伯语（伊拉克）\n`ar-IL`：阿拉伯语（以色列）\n`ar-JO`：阿拉伯语（约旦）\n`ar-KW`：阿拉伯语（科威特）\n`ar-LB`：阿拉伯语（黎巴嫩）\n`ar-MR`：阿拉伯语（毛里塔尼亚）\n`ar-MA`：阿拉伯语（摩洛哥）\n`ar-OM`：阿拉伯语（阿曼）\n`ar-QA`：阿拉伯语（卡塔尔）\n`ar-SA`：阿拉伯语（沙特阿拉伯）\n`ar-PS`：阿拉伯语（巴勒斯坦国）\n`ar-SY`：阿拉伯语（叙利亚）\n`ar-TN`：阿拉伯语（突尼斯）\n`ar-AE`：阿拉伯语（阿拉伯联合酋长国）\n`ar-YE`：阿拉伯语（也门）\n`hy-AM`：亚美尼亚语（亚美尼亚）\n`az-AZ`：阿塞拜疆语（阿塞拜疆）\n`eu-ES`：巴斯克语（西班牙）\n`bn-BD`：孟加拉语（孟加拉）\n`bn-IN`：孟加拉语（印度）\n`bs-BA`：波斯尼亚语（波斯尼亚和黑塞哥维那）\n`bg-BG`：保加利亚语（保加利亚）\n`my-MM`：缅甸语（缅甸）\n`ca-ES`：加泰罗尼亚语（西班牙）\n`hr-HR`：克罗地亚语（克罗地亚）\n`cs-CZ`：捷克语（捷克共和国）\n`da-DK`：丹麦语（丹麦）\n`nl-BE`：荷兰语（比利时）\n`nl-NL`：荷兰语（荷兰）\n`en-AU`：英语（澳大利亚）\n`en-CA`：英语（加拿大）\n`en-GH`：英语（加纳）\n`en-HK`：英语（香港）\n`en-IN`：英语（印度）\n`en-IE`：英语（爱尔兰）\n`en-KE`：英语（肯尼亚）\n`en-NZ`：英语（新西兰）\n`en-NG`：英语（尼日利亚）\n`en-PK`：英语（巴基斯坦）\n`en-PH`：英语（菲律宾）\n`en-SG`：英语（新加坡）\n`en-ZA`：英语（南非）\n`en-TZ`：英语（坦桑尼亚）\n`en-GB`：英语（英国）\n`en-US`：英语（美国）\n`et-EE`：爱沙尼亚语（爱沙尼亚）\n`fil-PH`：菲律宾语（菲律宾）\n`fi-FI`：芬兰语（芬兰）\n`fr-BE`：法语（比利时）\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fr-CH`：法语（瑞士）\n`gl-ES`：加利西亚语（西班牙）\n`ka-GE`：格鲁吉亚语（格鲁吉亚）\n`el-GR`：希腊语（希腊）\n`gu-IN`：古吉拉特语（印度）\n`iw-IL`：希伯来语（以色列）\n`hi-IN`：印地语（印度）\n`hu-HU`：匈牙利语（匈牙利）\n`is-IS`：冰岛语（冰岛）\n`id-ID`：印度尼西亚语（印度尼西亚）\n`it-IT`：意大利语（意大利）\n`it-CH`：意大利语（瑞士）\n`ja-JP`：日语（日本）\n`jv-ID`：爪哇语（印度尼西亚）\n`kn-IN`：卡纳达语（印度）\n`kk-KZ`：哈萨克语（哈萨克斯坦）\n`km-KH`：高棉语（柬埔寨）\n`rw-RW`：卢旺达语（卢旺达）\n`ko-KR`：韩语（韩国）\n`lo-LA`：老挝语（老挝）\n`lv-LV`：拉脱维亚语（拉脱维亚）\n`lt-LT`：立陶宛语（立陶宛）\n`mk-MK`：马其顿语（北马其顿）\n`ms-MY`：马来语（马来西亚）\n`ml-IN`：马拉雅拉姆语（印度）\n`mr-IN`：马拉地语（印度）\n`mn-MN`：蒙古语（蒙古）\n`ne-NP`：尼泊尔语（尼泊尔）\n`no-NO`：博克马尔挪威语（挪威）\n`fa-IR`：波斯语（伊朗）\n`pl-PL`：波兰语（波兰）\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`ro-RO`：罗马尼亚语（罗马尼亚）\n`ru-RU`：俄语（俄罗斯）\n`sr-RS`：塞尔维亚语（塞尔维亚）\n`si-LK`：僧伽罗语（斯里兰卡）\n`sk-SK`：斯洛伐克语（斯洛伐克）\n`sl-SI`：斯洛文尼亚语（斯洛文尼亚）\n`st-ZA`：南索托语（南非）\n`es-AR`：西班牙语（阿根廷）\n`es-BO`：西班牙语（玻利维亚）\n`es-CL`：西班牙语（智利）\n`es-CO`：西班牙语（哥伦比亚）\n`es-CR`：西班牙语（哥斯达黎加）\n`es-DO`：西班牙语（多米尼加共和国）\n`es-EC`：西班牙语（厄瓜多尔）\n`es-SV`：西班牙语（萨尔瓦多）\n`es-GT`：西班牙语（危地马拉）\n`es-HN`：西班牙语（洪都拉斯）\n`es-MX`：西班牙语（墨西哥）\n`es-NI`：西班牙语（尼加拉瓜）\n`es-PA`：西班牙语（巴拿马）\n`es-PY`：西班牙语（巴拉圭）\n`es-PE`：西班牙语（秘鲁）\n`es-PR`：西班牙语（波多黎各）\n`es-ES`：西班牙语（西班牙）\n`es-US`：西班牙语（美国）\n`es-UY`：西班牙语（乌拉圭）\n`es-VE`：西班牙语（委内瑞拉）\n`su-ID`：巽他语（印度尼西亚）\n`sw-KE`：斯瓦希里语（肯尼亚）\n`sw-TZ`：斯瓦希里语（坦桑尼亚）\n`sv-SE`：瑞典语（瑞典）\n`ta-IN`：泰米尔语（印度）\n`ta-MY`：泰米尔语（马来西亚）\n`ta-SG`：泰米尔语（新加坡）\n`ta-LK`：泰米尔语（斯里兰卡）\n`te-IN`：泰卢固语（印度）\n`th-TH`：泰语（泰国）\n`ts-ZA`：聪加语（南非）\n`tr-TR`：土耳其语（土耳其）\n`uk-UA`：乌克兰语（乌克兰）\n`ur-IN`：乌尔都语（印度）\n`ur-PK`：乌尔都语（巴基斯坦）\n`uz-UZ`：乌兹别克语（乌兹别克斯坦）\n`ve-ZA`：文达语（南非）\n`vi-VN`：越南语（越南）\n`xh-ZA`：科萨语（南非）\n`zu-ZA`：祖鲁语（南非）\n",
           "example": "zh",
           "member": "string",
           "name": "VideoSrcLanguage",
@@ -27439,7 +27439,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式:\n- ASR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n     - 不填或填空：不生成字幕文件\n- 纯字幕翻译处理类型下：\n    - original：与源文件一致\n    - vtt: WebVTT 格式字幕\n    - srt: SRT 格式字幕\n\n**注意**：\n- ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；\n- 纯字幕翻译方式下，不允许传空或不传",
+          "document": "智能字幕文件格式:\n- ASR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n     - 不填或填空：不生成字幕文件\n- 纯字幕翻译处理类型下：\n    - original：与源文件一致\n    - vtt: WebVTT 格式字幕\n    - srt: SRT 格式字幕\n- OCR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n\n**注意**：\n- ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；\n- 纯字幕翻译和OCR识别翻译方式下，不允许传空或不传",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -27466,7 +27466,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n当前支持以下语言：\n\n`zh`：简体中文\n`zh-TW`：繁体中文\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语 \n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语 \n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。",
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效，翻译语言列表：\n`ab`：阿布哈兹语\n`ace`：亚齐语\n`ach`：阿乔利语\n`af`：南非荷兰语\n`ak`：契维语（阿坎语）\n`am`：Amharic\n`ar`：阿拉伯语\n`as`：阿萨姆语\n`ay`：艾马拉语\n`az`：阿塞拜疆语\n`ba`：巴什基尔语\n`ban`：巴厘语\n`bbc`：巴塔克托巴语\n`bem`：Bemba\n`bew`：Betawi\n`bg`：保加利亚语\n`bho`：博杰普尔语\n`bik`：Bikol\n`bm`：班巴拉语\n`bn`：孟加拉语\n`br`：布列塔尼语\n`bs`：波斯尼亚语\n`btx`：巴塔克卡罗语\n`bts`：巴塔克西马隆贡语\n`bua`：布里亚特语\n`ca`：加泰罗尼亚语\n`ceb`：宿务语\n`cgg`：Kiga\n`chm`：草原马里语\n`ckb`：库尔德语（索拉尼语）\n`cnh`：哈卡钦语\n`co`：科西嘉语\n`crh`：克里米亚鞑靼语\n`crs`：塞舌尔克里奥尔语\n`cs`：捷克语\n`cv`：楚瓦什语\n`cy`：威尔士语\n`da`：丹麦语\n`de`：德语\n`din`：Dinka\n`doi`：多格来语\n`dov`：敦贝语\n`dv`：第维埃语\n`dz`：宗卡语\n`ee`：Ewe\n`el`：希腊语\n`en`：英语\n`eo`：世界语\n`es`：西班牙语\n`et`：爱沙尼亚语\n`eu`：巴斯克语\n`fa`：波斯语\n`ff`：富拉语\n`fi`：芬兰语\n`fil`：菲律宾语（塔加拉语）\n`fj`：斐济语\n`fr`：法语\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fy`：弗里斯兰语\n`ga`：爱尔兰语\n`gaa`：加 (Ga) 语\n`gd`：苏格兰盖尔语\n`gl`：加利西亚语\n`gn`：瓜拉尼语\n`gom`：贡根语\n`gu`：古吉拉特语\n`gv`：马恩岛语\n`ha`：Hausa\n`haw`：夏威夷语\n`he`：希伯来语\n`hi`：印地语\n`hil`：希利盖农语\n`hmn`：苗语\n`hr`：克罗地亚语\n`hrx`：洪斯吕克语\n`ht`：海地克里奥尔语\n`hu`：匈牙利语\n`hy`：亚美尼亚语\n`id`：印度尼西亚语\n`ig`：Igbo\n`ilo`：伊洛果语\n`is`：冰岛语\n`it`：意大利语\n`iw`：希伯来语\n`ja`：日语\n`jv`：爪哇语\n`jw`：爪哇语\n`ka`：格鲁吉亚语\n`kk`：哈萨克语\n`km`：高棉语\n`kn`：卡纳达语\n`ko`：韩语\n`kri`：Krio\n`ku`：库尔德语（库尔曼吉语）\n`ktu`：吉土巴语\n`ky`：吉尔吉斯语\n`la`：拉丁语\n`lb`：卢森堡语\n`lg`：干达语（卢干达语）\n`li`：林堡语\n`lij`：利古里亚语\n`lmo`：伦巴第语\n`ln`：林加拉语\n`lo`：老挝语\n`lt`：立陶宛语\n`ltg`：拉特加莱语\n`luo`：Luo\n`lus`：米佐语\n`lv`：拉脱维亚语\n`mai`：迈蒂利语\n`mak`：马卡萨\n`mg`：马尔加什语\n`mi`：毛利语\n`min`：米南语\n`mk`：马其顿语\n`ml`：马拉雅拉姆语\n`mn`：蒙古语\n`mr`：马拉地语\n`ms`：马来语\n`mt`：马耳他语\n`my`：缅甸语\n`ne`：尼泊尔语\n`new`：尼瓦尔语\n`nl`：荷兰语\n`no`：挪威语\n`nr`：恩德贝莱语（南部）\n`nso`：北索托语（塞佩蒂语）\n`nus`：努尔语\n`ny`：齐切瓦语（尼扬贾语）\n`oc`：奥克斯坦语\n`om`：Oromo\n`or`：奥里亚语\n`pa`：旁遮普语\n`pag`：邦阿西楠语\n`pam`：邦板牙语\n`pap`：Papiamento\n`pl`：波兰语\n`ps`：Pashto\n`pt`：葡萄牙语\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`qu`：克丘亚语\n`ro`：罗马尼亚语\n`rom`：罗姆语\n`rn`：Rundi\n`ru`：俄语\n`rw`：卢旺达语\n`sa`：梵语\n`scn`：西西里语\n`sd`：信德语\n`sg`：Sango\n`shn`：掸语\n`si`：僧伽罗语\n`sk`：斯洛伐克语\n`sl`：斯洛文尼亚语\n`sm`：萨摩亚语\n`sn`：修纳语\n`so`：索马里语\n`sq`：阿尔巴尼亚语\n`sr`：塞尔维亚语\n`ss`：斯瓦特语\n`st`：塞索托语\n`su`：巽他语\n`sv`：瑞典语\n`sw`：斯瓦希里语\n`szl`：西里西亚语\n`ta`：泰米尔语\n`te`：泰卢固语\n`tet`：德顿语\n`tg`：塔吉克语\n`th`：泰语\n`ti`：提格里尼亚语\n`tk`：土库曼语\n`tl`：菲律宾语（塔加拉语）\n`tn`：茨瓦纳语\n`tr`：土耳其语\n`ts`：聪加语\n`tt`：鞑靼语\n`ug`：维吾尔语\n`uk`：乌克兰语\n`ur`：乌尔都语\n`uz`：乌兹别克语\n`vi`：越南语\n`xh`：科萨语\n`yi`：意第绪语\n`yo`：约鲁巴语\n`yua`：尤卡坦玛雅语\n`yue`：粤语\n`zh`：简体中文\n`zh-TW`：中文（繁体）\n`zu`：祖鲁语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。",
           "example": "en",
           "member": "string",
           "name": "TranslateDstLanguage",
@@ -27475,7 +27475,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译\n\n**注意**：不传的情况下，默认是ASR方式",
+          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译\n- 2：OCR识别字幕\n\n**注意**：不传的情况下，默认是ASR方式",
           "example": "0",
           "member": "uint64",
           "name": "ProcessType",
@@ -30740,7 +30740,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕视频源语言\n当前支持以下语言：\n`zh`：简体中文\n`yue`：中文粵语\n`zh-PY`：中英粤\n`zh_medical`：中文医疗\n`zh_dialect`：中文方言\n`prime_zh`：中英方言\n`zh_en`：中英\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语\n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语\n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n`auto`：自动识别（仅在纯字幕翻译中支持）",
+          "document": "智能字幕视频源语言\nOCR识别仅支持以下语言：\n`zh_en`：中英\n`multi`：其他\nASR识别和纯字幕翻译当前支持以下语言：\n`auto`：自动识别（仅在纯字幕翻译中支持）\n`zh`：简体中文\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`zh-PY`：中英粤\n`zh_medical`：中文医疗\n`vi`：越南语\n`ms`：马来语\n`id`：印度尼西亚语\n`fil`：菲律宾语\n`th`：泰语\n`pt`：葡萄牙语\n`tr`：土耳其语\n`ar`：阿拉伯语\n`es`：西班牙语\n`hi`：印地语\n`fr`：法语\n`de`：德语\n`it`：意大利语\n`zh_dialect`：中文方言\n`zh_en`：中英\n`yue`：粤语\n`ru`：俄语\n`prime_zh`：中英方言\n`af-ZA`：南非荷兰语（南非）\n`sq-AL`：阿尔巴尼亚语（阿尔巴尼亚）\n`am-ET`：阿姆哈拉语（埃塞俄比亚）\n`ar-DZ`：阿拉伯语（阿尔及利亚）\n`ar-BH`：阿拉伯语（巴林）\n`ar-EG`：阿拉伯语（埃及）\n`ar-IQ`：阿拉伯语（伊拉克）\n`ar-IL`：阿拉伯语（以色列）\n`ar-JO`：阿拉伯语（约旦）\n`ar-KW`：阿拉伯语（科威特）\n`ar-LB`：阿拉伯语（黎巴嫩）\n`ar-MR`：阿拉伯语（毛里塔尼亚）\n`ar-MA`：阿拉伯语（摩洛哥）\n`ar-OM`：阿拉伯语（阿曼）\n`ar-QA`：阿拉伯语（卡塔尔）\n`ar-SA`：阿拉伯语（沙特阿拉伯）\n`ar-PS`：阿拉伯语（巴勒斯坦国）\n`ar-SY`：阿拉伯语（叙利亚）\n`ar-TN`：阿拉伯语（突尼斯）\n`ar-AE`：阿拉伯语（阿拉伯联合酋长国）\n`ar-YE`：阿拉伯语（也门）\n`hy-AM`：亚美尼亚语（亚美尼亚）\n`az-AZ`：阿塞拜疆语（阿塞拜疆）\n`eu-ES`：巴斯克语（西班牙）\n`bn-BD`：孟加拉语（孟加拉）\n`bn-IN`：孟加拉语（印度）\n`bs-BA`：波斯尼亚语（波斯尼亚和黑塞哥维那）\n`bg-BG`：保加利亚语（保加利亚）\n`my-MM`：缅甸语（缅甸）\n`ca-ES`：加泰罗尼亚语（西班牙）\n`hr-HR`：克罗地亚语（克罗地亚）\n`cs-CZ`：捷克语（捷克共和国）\n`da-DK`：丹麦语（丹麦）\n`nl-BE`：荷兰语（比利时）\n`nl-NL`：荷兰语（荷兰）\n`en-AU`：英语（澳大利亚）\n`en-CA`：英语（加拿大）\n`en-GH`：英语（加纳）\n`en-HK`：英语（香港）\n`en-IN`：英语（印度）\n`en-IE`：英语（爱尔兰）\n`en-KE`：英语（肯尼亚）\n`en-NZ`：英语（新西兰）\n`en-NG`：英语（尼日利亚）\n`en-PK`：英语（巴基斯坦）\n`en-PH`：英语（菲律宾）\n`en-SG`：英语（新加坡）\n`en-ZA`：英语（南非）\n`en-TZ`：英语（坦桑尼亚）\n`en-GB`：英语（英国）\n`en-US`：英语（美国）\n`et-EE`：爱沙尼亚语（爱沙尼亚）\n`fil-PH`：菲律宾语（菲律宾）\n`fi-FI`：芬兰语（芬兰）\n`fr-BE`：法语（比利时）\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fr-CH`：法语（瑞士）\n`gl-ES`：加利西亚语（西班牙）\n`ka-GE`：格鲁吉亚语（格鲁吉亚）\n`el-GR`：希腊语（希腊）\n`gu-IN`：古吉拉特语（印度）\n`iw-IL`：希伯来语（以色列）\n`hi-IN`：印地语（印度）\n`hu-HU`：匈牙利语（匈牙利）\n`is-IS`：冰岛语（冰岛）\n`id-ID`：印度尼西亚语（印度尼西亚）\n`it-IT`：意大利语（意大利）\n`it-CH`：意大利语（瑞士）\n`ja-JP`：日语（日本）\n`jv-ID`：爪哇语（印度尼西亚）\n`kn-IN`：卡纳达语（印度）\n`kk-KZ`：哈萨克语（哈萨克斯坦）\n`km-KH`：高棉语（柬埔寨）\n`rw-RW`：卢旺达语（卢旺达）\n`ko-KR`：韩语（韩国）\n`lo-LA`：老挝语（老挝）\n`lv-LV`：拉脱维亚语（拉脱维亚）\n`lt-LT`：立陶宛语（立陶宛）\n`mk-MK`：马其顿语（北马其顿）\n`ms-MY`：马来语（马来西亚）\n`ml-IN`：马拉雅拉姆语（印度）\n`mr-IN`：马拉地语（印度）\n`mn-MN`：蒙古语（蒙古）\n`ne-NP`：尼泊尔语（尼泊尔）\n`no-NO`：博克马尔挪威语（挪威）\n`fa-IR`：波斯语（伊朗）\n`pl-PL`：波兰语（波兰）\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`ro-RO`：罗马尼亚语（罗马尼亚）\n`ru-RU`：俄语（俄罗斯）\n`sr-RS`：塞尔维亚语（塞尔维亚）\n`si-LK`：僧伽罗语（斯里兰卡）\n`sk-SK`：斯洛伐克语（斯洛伐克）\n`sl-SI`：斯洛文尼亚语（斯洛文尼亚）\n`st-ZA`：南索托语（南非）\n`es-AR`：西班牙语（阿根廷）\n`es-BO`：西班牙语（玻利维亚）\n`es-CL`：西班牙语（智利）\n`es-CO`：西班牙语（哥伦比亚）\n`es-CR`：西班牙语（哥斯达黎加）\n`es-DO`：西班牙语（多米尼加共和国）\n`es-EC`：西班牙语（厄瓜多尔）\n`es-SV`：西班牙语（萨尔瓦多）\n`es-GT`：西班牙语（危地马拉）\n`es-HN`：西班牙语（洪都拉斯）\n`es-MX`：西班牙语（墨西哥）\n`es-NI`：西班牙语（尼加拉瓜）\n`es-PA`：西班牙语（巴拿马）\n`es-PY`：西班牙语（巴拉圭）\n`es-PE`：西班牙语（秘鲁）\n`es-PR`：西班牙语（波多黎各）\n`es-ES`：西班牙语（西班牙）\n`es-US`：西班牙语（美国）\n`es-UY`：西班牙语（乌拉圭）\n`es-VE`：西班牙语（委内瑞拉）\n`su-ID`：巽他语（印度尼西亚）\n`sw-KE`：斯瓦希里语（肯尼亚）\n`sw-TZ`：斯瓦希里语（坦桑尼亚）\n`sv-SE`：瑞典语（瑞典）\n`ta-IN`：泰米尔语（印度）\n`ta-MY`：泰米尔语（马来西亚）\n`ta-SG`：泰米尔语（新加坡）\n`ta-LK`：泰米尔语（斯里兰卡）\n`te-IN`：泰卢固语（印度）\n`th-TH`：泰语（泰国）\n`ts-ZA`：聪加语（南非）\n`tr-TR`：土耳其语（土耳其）\n`uk-UA`：乌克兰语（乌克兰）\n`ur-IN`：乌尔都语（印度）\n`ur-PK`：乌尔都语（巴基斯坦）\n`uz-UZ`：乌兹别克语（乌兹别克斯坦）\n`ve-ZA`：文达语（南非）\n`vi-VN`：越南语（越南）\n`xh-ZA`：科萨语（南非）\n`zu-ZA`：祖鲁语（南非）\n",
           "example": "zh",
           "member": "string",
           "name": "VideoSrcLanguage",
@@ -30751,7 +30751,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式:\n- ASR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n     - 不填或填空：不生成字幕文件\n- 纯字幕翻译处理类型下：\n    - original：与源文件一致\n    - vtt: WebVTT 格式字幕\n    - srt: SRT 格式字幕\n\n**注意**：\n- ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；\n- 纯字幕翻译方式下，不允许传空或不传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能字幕文件格式:\n- ASR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n     - 不填或填空：不生成字幕文件\n- 纯字幕翻译处理类型下：\n    - original：与源文件一致\n    - vtt: WebVTT 格式字幕\n    - srt: SRT 格式字幕\n- OCR识别翻译处理类型下：\n     - vtt: WebVTT 格式字幕\n     - srt: SRT 格式字幕\n\n**注意**：\n- ASR识别方式下，翻译大于等于2种语言时不允许传空或不传；\n- 纯字幕翻译和OCR识别翻译方式下，不允许传空或不传\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -30773,7 +30773,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效，翻译语言列表：\n`zh`：简体中文\n`zh-TW`：繁体中文\n`en`：英语\n`ja`：日语\n`ko`：韩语\n`fr`：法语\n`es`：西班牙语 \n`it`：意大利语\n`de`：德语\n`tr`：土耳其语\n`ru`：俄语\n`pt`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`vi`：越南语\n`id`：印度尼西亚语 \n`ms`：马来语\n`th`：泰语\n`ar`：阿拉伯语\n`hi`：印地语\n`fil`：菲律宾语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效，翻译语言列表：\n`ab`：阿布哈兹语\n`ace`：亚齐语\n`ach`：阿乔利语\n`af`：南非荷兰语\n`ak`：契维语（阿坎语）\n`am`：Amharic\n`ar`：阿拉伯语\n`as`：阿萨姆语\n`ay`：艾马拉语\n`az`：阿塞拜疆语\n`ba`：巴什基尔语\n`ban`：巴厘语\n`bbc`：巴塔克托巴语\n`bem`：Bemba\n`bew`：Betawi\n`bg`：保加利亚语\n`bho`：博杰普尔语\n`bik`：Bikol\n`bm`：班巴拉语\n`bn`：孟加拉语\n`br`：布列塔尼语\n`bs`：波斯尼亚语\n`btx`：巴塔克卡罗语\n`bts`：巴塔克西马隆贡语\n`bua`：布里亚特语\n`ca`：加泰罗尼亚语\n`ceb`：宿务语\n`cgg`：Kiga\n`chm`：草原马里语\n`ckb`：库尔德语（索拉尼语）\n`cnh`：哈卡钦语\n`co`：科西嘉语\n`crh`：克里米亚鞑靼语\n`crs`：塞舌尔克里奥尔语\n`cs`：捷克语\n`cv`：楚瓦什语\n`cy`：威尔士语\n`da`：丹麦语\n`de`：德语\n`din`：Dinka\n`doi`：多格来语\n`dov`：敦贝语\n`dv`：第维埃语\n`dz`：宗卡语\n`ee`：Ewe\n`el`：希腊语\n`en`：英语\n`eo`：世界语\n`es`：西班牙语\n`et`：爱沙尼亚语\n`eu`：巴斯克语\n`fa`：波斯语\n`ff`：富拉语\n`fi`：芬兰语\n`fil`：菲律宾语（塔加拉语）\n`fj`：斐济语\n`fr`：法语\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fy`：弗里斯兰语\n`ga`：爱尔兰语\n`gaa`：加 (Ga) 语\n`gd`：苏格兰盖尔语\n`gl`：加利西亚语\n`gn`：瓜拉尼语\n`gom`：贡根语\n`gu`：古吉拉特语\n`gv`：马恩岛语\n`ha`：Hausa\n`haw`：夏威夷语\n`he`：希伯来语\n`hi`：印地语\n`hil`：希利盖农语\n`hmn`：苗语\n`hr`：克罗地亚语\n`hrx`：洪斯吕克语\n`ht`：海地克里奥尔语\n`hu`：匈牙利语\n`hy`：亚美尼亚语\n`id`：印度尼西亚语\n`ig`：Igbo\n`ilo`：伊洛果语\n`is`：冰岛语\n`it`：意大利语\n`iw`：希伯来语\n`ja`：日语\n`jv`：爪哇语\n`jw`：爪哇语\n`ka`：格鲁吉亚语\n`kk`：哈萨克语\n`km`：高棉语\n`kn`：卡纳达语\n`ko`：韩语\n`kri`：Krio\n`ku`：库尔德语（库尔曼吉语）\n`ktu`：吉土巴语\n`ky`：吉尔吉斯语\n`la`：拉丁语\n`lb`：卢森堡语\n`lg`：干达语（卢干达语）\n`li`：林堡语\n`lij`：利古里亚语\n`lmo`：伦巴第语\n`ln`：林加拉语\n`lo`：老挝语\n`lt`：立陶宛语\n`ltg`：拉特加莱语\n`luo`：Luo\n`lus`：米佐语\n`lv`：拉脱维亚语\n`mai`：迈蒂利语\n`mak`：马卡萨\n`mg`：马尔加什语\n`mi`：毛利语\n`min`：米南语\n`mk`：马其顿语\n`ml`：马拉雅拉姆语\n`mn`：蒙古语\n`mr`：马拉地语\n`ms`：马来语\n`mt`：马耳他语\n`my`：缅甸语\n`ne`：尼泊尔语\n`new`：尼瓦尔语\n`nl`：荷兰语\n`no`：挪威语\n`nr`：恩德贝莱语（南部）\n`nso`：北索托语（塞佩蒂语）\n`nus`：努尔语\n`ny`：齐切瓦语（尼扬贾语）\n`oc`：奥克斯坦语\n`om`：Oromo\n`or`：奥里亚语\n`pa`：旁遮普语\n`pag`：邦阿西楠语\n`pam`：邦板牙语\n`pap`：Papiamento\n`pl`：波兰语\n`ps`：Pashto\n`pt`：葡萄牙语\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`qu`：克丘亚语\n`ro`：罗马尼亚语\n`rom`：罗姆语\n`rn`：Rundi\n`ru`：俄语\n`rw`：卢旺达语\n`sa`：梵语\n`scn`：西西里语\n`sd`：信德语\n`sg`：Sango\n`shn`：掸语\n`si`：僧伽罗语\n`sk`：斯洛伐克语\n`sl`：斯洛文尼亚语\n`sm`：萨摩亚语\n`sn`：修纳语\n`so`：索马里语\n`sq`：阿尔巴尼亚语\n`sr`：塞尔维亚语\n`ss`：斯瓦特语\n`st`：塞索托语\n`su`：巽他语\n`sv`：瑞典语\n`sw`：斯瓦希里语\n`szl`：西里西亚语\n`ta`：泰米尔语\n`te`：泰卢固语\n`tet`：德顿语\n`tg`：塔吉克语\n`th`：泰语\n`ti`：提格里尼亚语\n`tk`：土库曼语\n`tl`：菲律宾语（塔加拉语）\n`tn`：茨瓦纳语\n`tr`：土耳其语\n`ts`：聪加语\n`tt`：鞑靼语\n`ug`：维吾尔语\n`uk`：乌克兰语\n`ur`：乌尔都语\n`uz`：乌兹别克语\n`vi`：越南语\n`xh`：科萨语\n`yi`：意第绪语\n`yo`：约鲁巴语\n`yua`：尤卡坦玛雅语\n`yue`：粤语\n`zh`：简体中文\n`zh-TW`：中文（繁体）\n`zu`：祖鲁语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "en",
           "member": "string",
           "name": "TranslateDstLanguage",
@@ -30806,7 +30806,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译\n\n**注意**：不传的情况下默认类型为 ASR识别字幕",
+          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译\n- 2：OCR识别字幕\n\n**注意**：不传的情况下默认类型为 ASR识别字幕",
           "example": "0",
           "member": "uint64",
           "name": "ProcessType",
@@ -33525,6 +33525,82 @@
       ],
       "usage": "out"
     },
+    "SmartSubtitleTaskFullTextResult": {
+      "document": "智能字幕全文识别结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "InvalidInput",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "task fail",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕任务输入信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitleTaskResultInput",
+          "name": "Input",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitleTaskTextResultOutput",
+          "name": "Output",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SmartSubtitleTaskResultInput": {
       "document": "智能字幕翻译的输入。",
       "members": [
@@ -33544,6 +33620,42 @@
           "example": "自定义参数",
           "member": "RawSmartSubtitleParameter",
           "name": "RawParameter",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartSubtitleTaskTextResultOutput": {
+      "document": "智能字幕识别结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别字幕结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubtitleResult",
+          "name": "RecognizeSubtitleResult",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "翻译字幕结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubtitleResult",
+          "name": "TransSubtitleResult",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕文件存储位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -33910,7 +34022,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务的类型，取值范围：\n- AsrFullTextRecognition：语音全文识别\n- TransTextRecognition：语音翻译\n- PureSubtitleTrans:   纯字幕翻译",
+          "document": "任务的类型，取值范围：\n- AsrFullTextRecognition：语音全文识别\n- TransTextRecognition：语音翻译\n- PureSubtitleTrans:   纯字幕翻译\n- OcrFullTextRecognition：文字提取字幕",
           "example": "AsrFullTextRecognition",
           "member": "string",
           "name": "Type",
@@ -33944,6 +34056,16 @@
           "example": "无",
           "member": "PureSubtitleTransResult",
           "name": "PureSubtitleTransTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文字提取字幕结果，当 Type 为\n OcrFullTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitleTaskFullTextResult",
+          "name": "OcrFullTextTask",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -34458,6 +34580,45 @@
         }
       ],
       "usage": "out"
+    },
+    "SubtitleResult": {
+      "document": "智能字幕结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字幕文件语言",
+          "example": "zh",
+          "member": "string",
+          "name": "Language",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处理是否成功",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕文件地址",
+          "example": "/xx/310*****.vtt",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SubtitleTemplate": {
       "document": "字幕流配置参数。",

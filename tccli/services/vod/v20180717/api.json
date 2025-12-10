@@ -903,6 +903,13 @@
       "output": "HandleCurrentPlaylistResponse",
       "status": "online"
     },
+    "ImportMediaKnowledge": {
+      "document": "用于将智能分析的结果导入到知识库中。",
+      "input": "ImportMediaKnowledgeRequest",
+      "name": "导入媒体到知识库",
+      "output": "ImportMediaKnowledgeResponse",
+      "status": "online"
+    },
     "InspectMediaQuality": {
       "document": "对点播中的音视频媒体发起音画质检测任务。",
       "input": "InspectMediaQualityRequest",
@@ -1265,6 +1272,13 @@
       "input": "SearchMediaRequest",
       "name": "搜索媒体信息",
       "output": "SearchMediaResponse",
+      "status": "online"
+    },
+    "SearchMediaBySemantics": {
+      "document": "使用自然语言对媒体进行语义搜索。",
+      "input": "SearchMediaBySemanticsRequest",
+      "name": "按语义搜索媒体",
+      "output": "SearchMediaBySemanticsResponse",
       "status": "online"
     },
     "SetCLSPushTarget": {
@@ -7418,7 +7432,7 @@
         },
         {
           "disabled": false,
-          "document": "生成视频的分辨率。\n<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 Jimeng，可选值为 768P、1080P，默认为 768P；</li>\n<li>当 ModelName 是 Hailuo，可选值为 1080P；</li>\n<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 OS，可选值为 720P；</li>\n说明：除模型可支持的分辨率外，还支持 2K、4K分辨率。",
+          "document": "生成视频的分辨率。\n<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>\n<li>当 ModelName 是 Jimeng，可选值为 1080P；</li>\n<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 OS，可选值为 720P；</li>\n说明：除模型可支持的分辨率外，还支持 2K、4K分辨率。",
           "example": "720P",
           "member": "string",
           "name": "Resolution",
@@ -22750,6 +22764,61 @@
       ],
       "usage": "out"
     },
+    "ImportMediaKnowledgeRequest": {
+      "document": "ImportMediaKnowledge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。</b>",
+          "example": "1490012345",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。",
+          "example": "5285485487985271487",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要导入知识库任务类型，可选值有：\n- AiAnalysis.DescriptionTask\n- SmartSubtitle.AsrFullTextTask",
+          "example": "[\"AiAnalysis.DescriptionTask\"]",
+          "member": "string",
+          "name": "ImportTasks",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportMediaKnowledgeResponse": {
+      "document": "ImportMediaKnowledge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "125xxx65-ImportMediaKnowledge-bffb15f07530b57bc1aabb01fac74bca",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InspectMediaQualityRequest": {
       "document": "InspectMediaQuality请求参数结构体",
       "members": [
@@ -36723,6 +36792,88 @@
       ],
       "usage": "both"
     },
+    "SearchMediaBySemanticsRequest": {
+      "document": "SearchMediaBySemantics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "1500035838",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要进行搜索的内容",
+          "example": "包含夕阳的海边视频",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回的记录条数，默认值：20。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文件类型。匹配集合中的任意元素： <li>Video: 视频文件</li> <li>Audio: 音频文件</li> <li>Image: 图片文件</li>",
+          "example": "[\"Video\"]",
+          "member": "string",
+          "name": "Categories",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签集合，匹配集合中任意元素。 <li>单个标签长度限制：32个字符。</li> <li>数组长度限制：16。</li>",
+          "example": "[\"Sports\", \"Food\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "搜索的任务类型，可选值有： \n- AiAnalysis.DescriptionTask \n- SmartSubtitle.AsrFullTextTask",
+          "example": "[\"AiAnalysis.DescriptionTask \"]",
+          "member": "string",
+          "name": "TaskTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchMediaBySemanticsResponse": {
+      "document": "SearchMediaBySemantics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体列表。",
+          "example": "无",
+          "member": "SemanticsSearchResult",
+          "name": "SearchResults",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SearchMediaRequest": {
       "document": "SearchMedia请求参数结构体",
       "members": [
@@ -37062,6 +37213,52 @@
         }
       ],
       "usage": "in"
+    },
+    "SemanticsSearchResult": {
+      "document": "语义搜索结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体文件唯一标识 ID。",
+          "example": "327083******3604148",
+          "member": "string",
+          "name": "FileId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]",
+          "example": "0.8",
+          "member": "float",
+          "name": "Score",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频片段的开始时间，单位：秒",
+          "example": "10.0",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频片段的开始时间，单位：秒",
+          "example": "20.0",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SetCLSPushTargetRequest": {
       "document": "SetCLSPushTarget请求参数结构体",

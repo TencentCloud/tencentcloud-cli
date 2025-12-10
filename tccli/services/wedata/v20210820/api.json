@@ -15655,7 +15655,7 @@
         },
         {
           "disabled": false,
-          "document": "周期类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "周期类型D天周期\nH小时\nCcrontab类型\nI分钟\nO一次性\nY年\nR用户驱动\nW周\nM月\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CycleUnit",
@@ -15692,6 +15692,39 @@
           "example": "无",
           "member": "string",
           "name": "DatasourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-mlflow-spark-5",
+          "member": "string",
+          "name": "ComputeResource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "dlc地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-beijing-fsi",
+          "member": "string",
+          "name": "DlcRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组或自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IsInherit",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -15742,7 +15775,7 @@
         {
           "disabled": false,
           "document": "项目Id",
-          "example": "1460947878944567296",
+          "example": "1460947863944517296",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -15787,7 +15820,7 @@
         {
           "disabled": false,
           "document": "工作流列表",
-          "example": "[\"860a23d6-ea4a-11ed-8909-bc97e105ba60\"]",
+          "example": "[\"860a23d6-ea4a-11ed-7909-bc97e105ba60\"]",
           "member": "string",
           "name": "WorkflowIdList",
           "required": false,
@@ -15814,7 +15847,7 @@
         {
           "disabled": false,
           "document": "文件夹列表",
-          "example": "[\"860a23d6-ea4a-11ed-8909-bc97e105ba60\"]",
+          "example": "[\"860a23d6-ea4a-11ed-7909-bc97e105ba60\"]",
           "member": "string",
           "name": "FordIdList",
           "required": false,
@@ -15886,7 +15919,7 @@
         {
           "disabled": false,
           "document": "1",
-          "example": "2223344",
+          "example": "12546362",
           "member": "string",
           "name": "TenantId",
           "required": false,
@@ -15895,7 +15928,7 @@
         {
           "disabled": false,
           "document": "数据源ID列表",
-          "example": "8902",
+          "example": "[\"7902\"]",
           "member": "string",
           "name": "DatasourceIdList",
           "required": false,
@@ -15904,7 +15937,7 @@
         {
           "disabled": false,
           "document": "数据源类型列表",
-          "example": "mysql",
+          "example": "[\"mysql\"]",
           "member": "string",
           "name": "DatasourceTypeList",
           "required": false,
@@ -15913,7 +15946,7 @@
         {
           "disabled": false,
           "document": "调度单位类型列表",
-          "example": "D",
+          "example": "[\"D\"]",
           "member": "string",
           "name": "CycleUnitList",
           "required": false,
@@ -15927,6 +15960,33 @@
           "name": "CanSubmit",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "返回时间字段需要转换的时区",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务最后更新时间最小值，ISO8601格式，如2025-07-16T15:00:00+08:00",
+          "example": "2025-07-16T15:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "MinUpdateTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务最后更新时间最大值，ISO8601格式，如2025-07-17T15:00:00+08:00",
+          "example": "2025-07-17T15:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "MaxUpdateTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

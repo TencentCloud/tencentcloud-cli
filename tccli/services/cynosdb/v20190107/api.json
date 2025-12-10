@@ -3834,7 +3834,7 @@
         {
           "disabled": false,
           "document": "可以执行的时间，枚举值：[\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\", \"Sat\", \"Sun\"]",
-          "example": "Mon",
+          "example": "[\"Mon\"]",
           "member": "string",
           "name": "MaintainWeekDays",
           "output_required": false,
@@ -3873,7 +3873,7 @@
         },
         {
           "disabled": false,
-          "document": "实例存储类型",
+          "document": "实例存储类型\n说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。",
           "example": "CLOUD_TCS",
           "member": "string",
           "name": "InstanceStorageType",
@@ -3893,7 +3893,7 @@
         },
         {
           "disabled": false,
-          "document": "节点列表",
+          "document": "节点列表\n说明：仅当要查询的资源为 LibraDB 时，此参数才会返回值。",
           "example": "[\"libran-0\"]",
           "member": "string",
           "name": "NodeList",
@@ -10326,7 +10326,7 @@
         },
         {
           "disabled": false,
-          "document": "限制条数",
+          "document": "限制条数，默认值为20",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -10352,7 +10352,7 @@
         {
           "disabled": false,
           "document": "Binlog列表",
-          "example": " [{\"BinlogId\": 3364561,\"FileName\": \"1_mysql-bin.00**02\",\"FileSize\": 815,\"FinishTime\": \"2024-10-25 17:24:50\",\"StartTime\": \"2024-10-18 11:03:02\"}]",
+          "example": "无",
           "member": "BinlogItem",
           "name": "Binlogs",
           "output_required": true,

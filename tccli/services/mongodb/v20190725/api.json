@@ -7903,7 +7903,7 @@
         },
         {
           "disabled": false,
-          "document": "指定用于长期保留的具体备份日期。此设置仅在 **LongTermUnit** 被设为**weekly** 或 **monthly** 时生效。\n- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号 , 分隔。\n- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号 , 分隔。",
+          "document": "指定用于长期保留的具体备份日期。此设置仅在 **LongTermUnit** 被设为**weekly** 或 **monthly** 时生效。\n- 按周（weekly）保留：请输入 0-6 之间的数字来代表周日至周六。多个日期请用英文逗号分隔。\n- 按月（monthly）保留：请输入 1-31 之间的数字来代表月份中的具体日期。多个日期请用英文逗号分隔。",
           "example": "1,2",
           "member": "string",
           "name": "LongTermActiveDays",
@@ -7921,7 +7921,7 @@
         },
         {
           "disabled": false,
-          "document": "增量备份保留时长。\n- 单位：天。\n- 默认值：7天。\n- 取值范围：[7,365]。\n",
+          "document": "增量备份保留时长。\n- 单位：天。\n- 默认值：7天。\n- 取值范围：[7,365]。",
           "example": "7",
           "member": "int64",
           "name": "OplogExpiredDays",

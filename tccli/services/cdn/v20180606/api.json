@@ -3757,7 +3757,7 @@
         {
           "disabled": false,
           "document": "指定查询域名列表\n查询单域名：指定单个域名\n查询多个域名：指定多个域名，最多可一次性查询 30 个\n查询账号下所有域名：不传参，默认查询账号维度",
-          "example": "qq.com, tencent.com",
+          "example": "[\"qq.com\", \"tencent.com\"]",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -3810,7 +3810,7 @@
         },
         {
           "disabled": false,
-          "document": "指定协议查询，不填充表示查询所有协议\nall：所有协议\nhttp：指定查询 HTTP 对应指标\nhttps：指定查询 HTTPS 对应指标",
+          "document": "指定协议查询，不填充表示查询所有协议\nall：所有协议\nhttp：指定查询 HTTP 对应指标\nhttps：指定查询 HTTPS 对应指标\nquic：指定查询 QUIC 对应指标",
           "example": "all",
           "member": "string",
           "name": "Protocol",
@@ -3819,7 +3819,7 @@
         },
         {
           "disabled": false,
-          "document": "指定数据源查询，白名单功能",
+          "document": "指定数据源查询\nmonitor：监控数据",
           "example": "monitor",
           "member": "string",
           "name": "DataSource",
