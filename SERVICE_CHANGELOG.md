@@ -1,29 +1,10 @@
-# Release 3.0.1324.1
+# Release 3.0.1325.1
 
-## 腾讯云数据仓库TCHouse-C(cdwch) 版本：2020-09-15
+## 腾讯混元生3D(ai3d) 版本：2025-05-13
 
-### 第 25 次发布
+### 第 7 次发布
 
-发布时间：2025-12-11 01:17:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [CkUserAlterInfo](http://document.tencentcloudapi.woa.com/document/product/1667/79282#CkUserAlterInfo)
-
-	* 新增成员：OriginalPassword
-
-
-
-
-## 数据库备份服务(dbs) 版本：2021-11-08
-
-### 第 2 次发布
-
-发布时间：2025-12-11 01:29:48
+发布时间：2025-12-12 01:08:01
 
 本次发布包含了以下内容：
 
@@ -31,41 +12,28 @@
 
 新增接口：
 
-* [DescribeBackupCheckJob](http://document.tencentcloudapi.woa.com/document/product/1700/88294)
-* [StartBackupCheckJob](http://document.tencentcloudapi.woa.com/document/product/1700/88293)
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 132 次发布
-
-发布时间：2025-12-11 01:50:33
-
-本次发布包含了以下内容：
-
-改善已有的文档。
+* [Convert3DFormat](http://document.tencentcloudapi.woa.com/document/product/1800/88303)
+* [DescribeHunyuanTo3DUVJob](http://document.tencentcloudapi.woa.com/document/product/1800/88302)
+* [DescribeReduceFaceJob](http://document.tencentcloudapi.woa.com/document/product/1800/88301)
+* [DescribeTextureTo3DJob](http://document.tencentcloudapi.woa.com/document/product/1800/88300)
+* [QueryHunyuan3DPartJob](http://document.tencentcloudapi.woa.com/document/product/1800/88299)
+* [SubmitHunyuan3DPartJob](http://document.tencentcloudapi.woa.com/document/product/1800/88298)
+* [SubmitHunyuanTo3DUVJob](http://document.tencentcloudapi.woa.com/document/product/1800/88297)
+* [SubmitReduceFaceJob](http://document.tencentcloudapi.woa.com/document/product/1800/88296)
+* [SubmitTextureTo3DJob](http://document.tencentcloudapi.woa.com/document/product/1800/88295)
 
 新增数据结构：
 
-* [SmartSubtitleTaskFullTextResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitleTaskFullTextResult)
-* [SmartSubtitleTaskTextResultOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitleTaskTextResultOutput)
-* [SubtitleResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#SubtitleResult)
-
-修改数据结构：
-
-* [SmartSubtitlesResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitlesResult)
-
-	* 新增成员：OcrFullTextTask
+* [Image](http://document.tencentcloudapi.woa.com/document/product/1800/87325#Image)
+* [InputFile3D](http://document.tencentcloudapi.woa.com/document/product/1800/87325#InputFile3D)
 
 
 
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-## 容器服务(tke) 版本：2022-05-01
+### 第 153 次发布
 
-### 第 14 次发布
-
-发布时间：2025-12-11 02:07:46
+发布时间：2025-12-12 01:16:09
 
 本次发布包含了以下内容：
 
@@ -73,14 +41,74 @@
 
 修改接口：
 
-* [ModifyClusterMachine](http://document.tencentcloudapi.woa.com/document/product/457/88179)
-
-	* 新增入参：SystemDisk
+* [ModifyAccountPassword](http://document.tencentcloudapi.woa.com/document/product/236/17497)
 
 
 
 
-## 容器服务(tke) 版本：2018-05-25
+## 数据库备份服务(dbs) 版本：2021-11-08
+
+### 第 3 次发布
+
+发布时间：2025-12-12 01:29:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ConfigureBackupPlan](http://document.tencentcloudapi.woa.com/document/product/1700/88306)
+* [CreateConnectTestJob](http://document.tencentcloudapi.woa.com/document/product/1700/88305)
+* [StartBackupPlan](http://document.tencentcloudapi.woa.com/document/product/1700/88304)
+
+新增数据结构：
+
+* [BackupColumnItem](http://document.tencentcloudapi.woa.com/document/product/1700/80122#BackupColumnItem)
+* [BackupEndpoint](http://document.tencentcloudapi.woa.com/document/product/1700/80122#BackupEndpoint)
+* [BackupObject](http://document.tencentcloudapi.woa.com/document/product/1700/80122#BackupObject)
+* [BackupObjectItem](http://document.tencentcloudapi.woa.com/document/product/1700/80122#BackupObjectItem)
+* [BackupPeriod](http://document.tencentcloudapi.woa.com/document/product/1700/80122#BackupPeriod)
+* [BackupStrategy](http://document.tencentcloudapi.woa.com/document/product/1700/80122#BackupStrategy)
+* [BackupTableItem](http://document.tencentcloudapi.woa.com/document/product/1700/80122#BackupTableItem)
+* [BackupViewItem](http://document.tencentcloudapi.woa.com/document/product/1700/80122#BackupViewItem)
+* [StorageStrategy](http://document.tencentcloudapi.woa.com/document/product/1700/80122#StorageStrategy)
+
+
+
+## 游戏数据库 TcaplusDB(tcaplusdb) 版本：2019-08-23
+
+### 第 14 次发布
+
+发布时间：2025-12-12 02:00:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TableInfoNew](http://document.tencentcloudapi.woa.com/document/product/596/39686#TableInfoNew)
+
+	* 新增成员：ShardNum
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 113 次发布
+
+发布时间：2025-12-12 02:08:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TextToSpeechSSE](http://document.tencentcloudapi.woa.com/document/product/647/87564)
+
 
 
 
