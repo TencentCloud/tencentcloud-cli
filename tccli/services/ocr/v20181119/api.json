@@ -13957,7 +13957,7 @@
         {
           "disabled": false,
           "document": "卡证类型参数，包含以下范围： \nGeneral：通用卡证\nIDCard：身份证 \nPassport：护照 \nBankCard：银行卡\nVehicleLicense：行驶证\nDriverLicense：驾驶证\nBizLicense：营业执照 \nHmtResidentPermit：港澳台居住证\nForeignPermanentResident：外国人永居证\nMainlandPermit：港澳台来往内地通行证\nSocialSecurityCard：社保卡",
-          "example": "无",
+          "example": " 无",
           "member": "string",
           "name": "CardType",
           "output_required": false,
@@ -14060,6 +14060,16 @@
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "Watermark",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否电子证照（目前仅支持电子身份证、电子营业执照识别",
+          "example": "无",
+          "member": "GeneralCardWarnInfo",
+          "name": "Electron",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false

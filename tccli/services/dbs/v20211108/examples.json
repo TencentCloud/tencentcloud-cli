@@ -1,0 +1,45 @@
+{
+  "actions": {
+    "ConfigureBackupPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfigureBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-xxxxxx\",\n    \"SourceEndPoint\": {\n        \"Region\": \"ap-guangzhou\",\n        \"DatabaseType\": \"mysql\",\n        \"AccessType\": \"cdb\",\n        \"InstanceId\": \"cdb-xxxxxxxx\",\n        \"Supplier\": \"others\",\n        \"UserName\": \"root\",\n        \"Password\": \"xxxxxxxx\"\n    },\n    \"BackupObject\": {\n        \"ObjectMode\": \"all\",\n        \"ObjectItems\": []\n    },\n    \"BackupStrategy\": {\n        \"BackupPeriod\": {\n            \"PeriodType\": \"Weekly\",\n            \"Day\": [\n                \"Monday\"\n            ]\n        },\n        \"BackupMethod\": \"logical\",\n        \"StrategyType\": \"period\",\n        \"BackupStartTime\": \"02:00\",\n        \"EnableIncrement\": true,\n        \"StorageStrategy\": {\n            \"BackupRetentionPeriod\": 30,\n            \"StorageType\": \"system\"\n        }\n    },\n    \"BackupPlanName\": \"backupPlan\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "ConfigureBackupPlan"
+      }
+    ],
+    "CreateConnectTestJob": [
+      {
+        "document": "创建连通性检测任务",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConnectTestJob\n<公共请求参数>\n\n{\n    \"Endpoint\": {\n        \"DatabaseType\": \"mysql\",\n        \"AccessType\": \"ccn\",\n        \"UserName\": \"user1\",\n        \"Password\": \"qwer1234\",\n        \"Region\": \"ap-guangzhou\",\n        \"Supplier\": \"others\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnTaskId\": \"task-asdqerq\",\n        \"RequestId\": \"196f3f7d-ca09-4b1b-8bd8-62ef48cfe791\"\n    }\n}",
+        "title": "创建连通性检测任务"
+      }
+    ],
+    "DescribeBackupCheckJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupCheckJob\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-qcloudtest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"finished\",\n        \"Progress\": 100,\n        \"CheckFlag\": 1,\n        \"ErrMessage\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询备份计划预校验结果"
+      }
+    ],
+    "StartBackupCheckJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartBackupCheckJob\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-qcloudtest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建备份计划预校验任务"
+      }
+    ],
+    "StartBackupPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-qcloudtest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "启动备份计划"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -16066,7 +16066,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否跳过校验密码复杂度",
           "example": "false",
           "member": "bool",

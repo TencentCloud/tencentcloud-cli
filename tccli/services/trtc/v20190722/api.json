@@ -458,14 +458,14 @@
     "TextToSpeech": {
       "document": "语音合成接口",
       "input": "TextToSpeechRequest",
-      "name": "文本转语音",
+      "name": "实时文本转语音",
       "output": "TextToSpeechResponse",
       "status": "online"
     },
     "TextToSpeechSSE": {
       "document": "SSE流式文本转语音",
       "input": "TextToSpeechSSERequest",
-      "name": "SSE流式文本转语音",
+      "name": "实时SSE流式文本转语音",
       "output": "TextToSpeechSSEResponse",
       "status": "online"
     },
@@ -930,7 +930,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的音频格式，默认pcm，目前支持的格式列表：流式：[pcm]，非流式 [pcm，wav]",
+          "document": "生成的音频格式\n\n- TextToSpeech流式接口\n\n 支持 pcm, 默认: pcm\n\n- TextToSpeech非流式接口\n\n 支持 pcm,wav,  默认: pcm",
           "example": "pcm",
           "member": "string",
           "name": "Format",
@@ -941,7 +941,7 @@
         },
         {
           "disabled": false,
-          "document": "采样率，默认24000， 可选16000, 24000 ",
+          "document": "生成的音频采样率，默认24000\n可选\n- 16000\n- 24000 ",
           "example": "24000",
           "member": "uint64",
           "name": "SampleRate",
@@ -8948,7 +8948,7 @@
         {
           "disabled": false,
           "document": "需要转语音的文字内容，长度范围：[1, 255]",
-          "example": "你好呀",
+          "example": "你好呀，欢迎使用语音合成",
           "member": "string",
           "name": "Text",
           "required": true,
@@ -8966,7 +8966,7 @@
         {
           "disabled": false,
           "document": "TRTC的SdkAppId",
-          "example": "14600000000",
+          "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -8992,7 +8992,7 @@
         },
         {
           "disabled": false,
-          "document": "TTS的模型：flow_01_turbo，flow_01_ex",
+          "document": "TTS的模型，当前固定为：flow_01_turbo",
           "example": "flow_01_turbo",
           "member": "string",
           "name": "Model",
@@ -9001,7 +9001,7 @@
         },
         {
           "disabled": false,
-          "document": "语言参数，默认为空， 参考： (ISO 639-1) ",
+          "document": " 需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别",
           "example": "zh",
           "member": "string",
           "name": "Language",
@@ -9039,7 +9039,7 @@
         {
           "disabled": false,
           "document": "需要转语音的文字内容，长度范围：[1, 255]",
-          "example": "你好呀",
+          "example": "你好呀，欢迎使用语音合成",
           "member": "string",
           "name": "Text",
           "required": true,
@@ -9057,7 +9057,7 @@
         {
           "disabled": false,
           "document": "TRTC的SdkAppId",
-          "example": "14600000000",
+          "example": "140000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -9073,7 +9073,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "TTS的API密钥",
           "example": "sk-xxxxxxx",
           "member": "string",
@@ -9083,7 +9083,7 @@
         },
         {
           "disabled": false,
-          "document": "TTS的模型：flow_01_turbo，flow_01_ex",
+          "document": "TTS的模型，当前固定为：flow_01_turbo",
           "example": "flow_01_turbo",
           "member": "string",
           "name": "Model",
@@ -9092,7 +9092,7 @@
         },
         {
           "disabled": false,
-          "document": "语言参数，默认为空， 参考： (ISO 639-1) ",
+          "document": " 需要合成的语言（ISO 639-1），支持 zh（中文）、en（英文）、yue（粤语）、ja（日语）、ko（韩语），默认自动识别",
           "example": "zh",
           "member": "string",
           "name": "Language",
@@ -9934,12 +9934,12 @@
       "usage": "in"
     },
     "Voice": {
-      "document": "TTS的声音参数",
+      "document": "TTS的声音参数配置",
       "members": [
         {
           "disabled": false,
-          "document": "TTS的声音的ID",
-          "example": "256",
+          "document": " 音色 ID，可从音色列表获取，或使用声音克隆生成的自定义音色 ID",
+          "example": "v-female-R2s4N9qJ",
           "member": "string",
           "name": "VoiceId",
           "output_required": false,
@@ -9949,7 +9949,7 @@
         },
         {
           "disabled": false,
-          "document": "语速，范围 0.5-2.0，默认 1.0",
+          "document": "语速调节，0.5 为半速慢放，2.0 为两倍速快放，1.0 为正常语速，区间：[0.5, 2.0]，默认1.0",
           "example": "1.0",
           "member": "float",
           "name": "Speed",
@@ -9960,7 +9960,7 @@
         },
         {
           "disabled": false,
-          "document": "(0, 10]   默认值1.0 ",
+          "document": " 音量调节，0 为静音，10 为最大音量，建议保持默认值 1.0，区间：[0, 10]，默认1.0",
           "example": "1.0",
           "member": "float",
           "name": "Volume",
@@ -9971,7 +9971,7 @@
         },
         {
           "disabled": false,
-          "document": "取值[-12,12],默认0",
+          "document": " 音高调节，负值声音更低沉，正值声音更尖锐，0 为原始音高，区间 [-12, 12],  默认0",
           "example": "0",
           "member": "int64",
           "name": "Pitch",

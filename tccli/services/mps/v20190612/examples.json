@@ -1376,6 +1376,14 @@
         "title": "请求示例"
       }
     ],
+    "TextTranslation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextTranslation\n<公共请求参数>\n\n{\n    \"SourceText\": \"hello\",\n    \"Source\": \"zh\",\n    \"Target\": \"en\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6411c585-ee14-4a53-8642-dea0f16e161d\",\n        \"Source\": \"zh\",\n        \"Target\": \"en\",\n        \"TargetText\": \"hello\"\n    }\n}",
+        "title": "文本翻译请求示例"
+      }
+    ],
     "WithdrawsWatermark": [
       {
         "document": "提取视频中的暗水印。",

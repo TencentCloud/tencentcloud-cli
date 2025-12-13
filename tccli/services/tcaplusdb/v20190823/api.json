@@ -6296,7 +6296,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "1",
+          "example": "无",
           "member": "ErrorInfo",
           "name": "Error",
           "output_required": false,
@@ -6361,6 +6361,16 @@
           "name": "SyncTableInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表格分片数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "ShardNum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

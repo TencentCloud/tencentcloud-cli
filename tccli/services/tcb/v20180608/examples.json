@@ -72,14 +72,6 @@
         "title": "开通后付费资源"
       }
     ],
-    "CreateStandaloneGateway": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayAlias\": \"StandaloneGateway\",\n    \"VpcId\": \"vpc-nzmimmod\",\n    \"SubnetIds\": [\n        \"subnet-hpddq58c\"\n    ],\n    \"GatewayDesc\": \"gateway\",\n    \"PackageVersion\": \"starter\"\n}",
-        "output": "{\n    \"Response\": {\n        \"GatewayName\": \"x-tcb-cbr-gateway-9eba9lc1daaf2e\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
-        "title": "创建独立网关"
-      }
-    ],
     "CreateStaticStore": [
       {
         "document": "",
@@ -130,14 +122,6 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DeleteCloudBaseRunServerVersion\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&VersionName=ded\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"succ\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "示例"
-      }
-    ],
-    "DeleteEndUser": [
-      {
-        "document": "删除终端用户",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DeleteEndUser\n&EnvId=test-23\n&UserList.0=00000000963b4a85a9b34e2d1fe0c685\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
-        "title": "删除终端用户"
       }
     ],
     "DeleteGatewayVersion": [
@@ -348,30 +332,6 @@
         "title": "获取文件下载信息"
       }
     ],
-    "DescribeEndUserLoginStatistic": [
-      {
-        "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEndUserLoginStatistic\n&EnvId=envid\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"LoginStatistics\": [\n            {\n                \"StatisticalType\": \"NEWUSER\",\n                \"StatisticalCycle\": \"DAY\",\n                \"Count\": 9900,\n                \"UpdateTime\": \"2020-02-02 20:13:14\"\n            },\n            {\n                \"StatisticalType\": \"LOGIN\",\n                \"StatisticalCycle\": \"MONTH\",\n                \"Count\": 9900,\n                \"UpdateTime\": \"2020-02-02 20:13:14\"\n            }\n        ],\n        \"RequestId\": \"046cacfd-af90-4355-ac92-f56954bd1831\"\n    }\n}",
-        "title": "获取终端用户新增与登录信息"
-      }
-    ],
-    "DescribeEndUserStatistic": [
-      {
-        "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEndUserStatistic\n&EnvId=envid\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 19800,\n        \"PlatformStatistics\": [\n            {\n                \"Platform\": \"WECHAT-OPEN\",\n                \"Count\": 9900,\n                \"UpdateTime\": \"2020-02-02 20:13:14\"\n            },\n            {\n                \"Platform\": \"ANONYMOUS\",\n                \"Count\": 9900,\n                \"UpdateTime\": \"2020-02-02 20:13:14\"\n            }\n        ],\n        \"RequestId\": \"046cacfd-af90-4355-ac92-f56954bd1831\"\n    }\n}",
-        "title": "DescribeEndUserStatistic"
-      }
-    ],
-    "DescribeEndUsers": [
-      {
-        "document": "获取终端用户列表",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEndUsers\n&EnvId=envid\n&UUIds.0=00000000963b4a85a9b34e2d1fe0c685\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Users\": [\n            {\n                \"UserName\": \"admin\",\n                \"QQOpenId\": \"openid123\",\n                \"UpdateTime\": \"2025-01-01\",\n                \"UUId\": \"abc123\",\n                \"AvatarUrl\": \"https://www.baidu.com\",\n                \"Gender\": \"male\",\n                \"IsDisabled\": false,\n                \"IsAnonymous\": true,\n                \"CreateTime\": \"2025-01-01\",\n                \"HasPassword\": true,\n                \"Phone\": \"13092030921\",\n                \"WXOpenId\": \"openwx123\",\n                \"NickName\": \"steven\",\n                \"Email\": \"steven@tencent.com\"\n            }\n        ],\n        \"RequestId\": \"abc12345667\"\n    }\n}",
-        "title": "获取终端用户列表"
-      }
-    ],
     "DescribeEnvDealRegion": [
       {
         "document": "续费环境查询下单地域 ",
@@ -500,22 +460,6 @@
         "title": "查询1分钱抵扣详情"
       }
     ],
-    "DescribeStandaloneGateway": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"StandaloneGatewayList\": [\n            {\n                \"GatewayName\": \"x-tcb-reserved-gw-envoy-demo\",\n                \"CPU\": 0.25,\n                \"Mem\": 1,\n                \"PackageVersion\": \"starter\",\n                \"GatewayAlias\": \"StandaloneGateway\",\n                \"VpcId\": \"vpc-73afxxfa\",\n                \"SubnetIds\": [\n                    \"subnet-9xnlrqj5\"\n                ],\n                \"GatewayDesc\": \"gateway\",\n                \"GateWayStatus\": \"success\",\n                \"ServiceInfo\": {\n                    \"ServiceName\": \"gateway\",\n                    \"Status\": \"off\"\n                }\n            }\n        ],\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
-        "title": "查询小租户网关信息"
-      }
-    ],
-    "DescribeStandaloneGatewayPackage": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStandaloneGatewayPackage\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"PackageVersion\": \"starter\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"StandaloneGatewayPackageList\": [\n            {\n                \"CPU\": 0.25,\n                \"Mem\": 1,\n                \"PackageVersion\": \"starter\"\n            }\n        ],\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
-        "title": "查询小租户网关套餐信息"
-      }
-    ],
     "DescribeUserActivityInfo": [
       {
         "document": "查询用户活动信息",
@@ -562,14 +506,6 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=DestroyEnv\n&EnvId=yourenvid-2fb346\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
         "title": "销毁环境"
-      }
-    ],
-    "DestroyStandaloneGateway": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayName\": \"x-tcb-reserved-gw-envoy-demo\",\n    \"IsForce\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
-        "title": "销毁小租户网关"
       }
     ],
     "DestroyStaticStore": [
@@ -644,14 +580,6 @@
         "title": "示例"
       }
     ],
-    "ModifyEndUser": [
-      {
-        "document": "示例一",
-        "input": "https://tcb.tencentcloudapi.com/?Action=ModifyEndUser\n&EnvId=YourEnvId\n&UUId=8db291f521064c36943482cbd59ecd93\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cea0caaf-d9d9-4c85-910a-3898c1845a38\"\n    }\n}",
-        "title": "示例一"
-      }
-    ],
     "ModifyEnv": [
       {
         "document": "",
@@ -698,22 +626,6 @@
         "input": "https://tcb.tencentcloudapi.com/?Action=SearchClsLog\n&EnvId=test-12323\n&StartTime=2024-12-01 00:00:00\n&EndTime=2024-12-01 01:00:00\n&Limit=10\n&QueryString=my-function-name\n&Sort=desc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e22b381-93a3-44c4-85b7-456679a7b8cd\",\n        \"LogResults\": {\n            \"Context\": \"\",\n            \"ListOver\": true,\n            \"Results\": []\n        }\n    }\n}",
         "title": "搜索CLS日志"
-      }
-    ],
-    "TurnOffStandaloneGateway": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TurnOffStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayName\": \"x-tcb-reserved-gw-envoy-demo\",\n    \"ServiceNameList\": [\n        \"service-demo\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
-        "title": "关闭小租户网关"
-      }
-    ],
-    "TurnOnStandaloneGateway": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TurnOnStandaloneGateway\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-test-xxx\",\n    \"GatewayName\": \"x-tcb-reserved-gw-envoy-demo\",\n    \"ServiceNameList\": [\n        \"service-demo\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
-        "title": "开启小租户网关"
       }
     ],
     "UnfreezeCloudBaseRunServers": [
