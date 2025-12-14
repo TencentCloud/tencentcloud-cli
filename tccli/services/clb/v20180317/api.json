@@ -6986,7 +6986,7 @@
           "example": "[\"10.0.0.1\"]",
           "member": "string",
           "name": "TargetGroupInstanceIps",
-          "required": true,
+          "required": false,
           "type": "list"
         }
       ],
@@ -7001,6 +7001,7 @@
           "example": "null",
           "member": "TargetGroupInstanceStatus",
           "name": "TargetGroupInstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
