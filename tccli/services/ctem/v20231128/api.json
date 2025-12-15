@@ -8516,6 +8516,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "是否聚合数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAggregation",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "企业ID列表，可多选",
           "example": "[1,2]",
           "member": "int64",
@@ -8541,7 +8550,7 @@
         {
           "disabled": false,
           "document": "分类数组",
-          "example": "[  ]",
+          "example": "无",
           "member": "SensitiveInfoTypeCount",
           "name": "List",
           "output_required": false,

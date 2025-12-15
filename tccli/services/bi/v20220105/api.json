@@ -6360,7 +6360,7 @@
         },
         {
           "disabled": false,
-          "document": "首次登陆是否修改密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次登录是否修改密码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan",
           "member": "int64",
           "name": "FirstModify",
@@ -6415,7 +6415,7 @@
         },
         {
           "disabled": false,
-          "document": "更改人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan",
           "member": "string",
           "name": "UpdatedUser",
@@ -6437,7 +6437,7 @@
         },
         {
           "disabled": false,
-          "document": "全局角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统全局角色\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "zhangsan",
           "member": "string",
           "name": "GlobalUserName",
@@ -6448,7 +6448,7 @@
         },
         {
           "disabled": false,
-          "document": "全局角色编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统全局角色编码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sys_common_user",
           "member": "string",
           "name": "GlobalUserCode",

@@ -323,7 +323,53 @@ Output:
 }
 ```
 
-**Example 6: 多轮对话示例**
+**Example 6: 视频理解示例**
+
+推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明hunyuan-turbos-vision-video模型如何调用接口。
+
+
+Input: 
+
+```
+tccli hunyuan ChatCompletions --cli-unfold-argument  \
+    --Model hunyuan-turbos-vision-video \
+    --Messages.0.Role user \
+    --Messages.0.Contents.0.Type text \
+    --Messages.0.Contents.0.Text 视频上有什么内容？ \
+    --Messages.0.Contents.1.Type video_url \
+    --Messages.0.Contents.1.VideoUrl.Url https://xxxxxxx.mov \
+    --Messages.0.Contents.1.VideoUrl.Fps 1 \
+    --Stream False
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "3fd3d34f-8008-4240-b221-fec236c8584d",
+        "Note": "以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记",
+        "Choices": [
+            {
+                "Index": 0,
+                "Message": {
+                    "Role": "assistant",
+                    "Content": "视频展示了一个动画场景，其中有一个蓝发女孩和两只柴犬，背景是如画的秋季景色。"
+                },
+                "FinishReason": "stop"
+            }
+        ],
+        "Created": 1765807285,
+        "Id": "3fd3d34f-8008-4240-b221-fec236c8584d",
+        "Usage": {
+            "PromptTokens": 823,
+            "CompletionTokens": 23,
+            "TotalTokens": 846
+        }
+    }
+}
+```
+
+**Example 7: 多轮对话示例**
 
 推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明如何给模型传入多轮消息。
 
@@ -374,7 +420,7 @@ data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除
 data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记","Choices":[{"FinishReason":"stop","Delta":{"Role":"assistant","Content":""}}],"Created":1705634032,"Id":"9c772634-8824-43e8-bc24-8bc4c19b9151","Usage":{"PromptTokens":85,"CompletionTokens":7,"TotalTokens":92}}
 ```
 
-**Example 7: 流式请求成功示例**
+**Example 8: 流式请求成功示例**
 
 推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例给出接口正常调用时的响应例子。
 
@@ -413,7 +459,7 @@ data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除
 data: {"Note":"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记","Choices":[{"FinishReason":"stop","Delta":{"Role":"assistant","Content":""}}],"Created":1700549760,"Id":"148b89ef-14e1-489f-8e70-b767e5b27d56","Usage":{"PromptTokens":4,"CompletionTokens":5,"TotalTokens":9}}
 ```
 
-**Example 8: 请求失败示例**
+**Example 9: 请求失败示例**
 
 推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例给出接口调用失败时的响应例子。
 
@@ -441,7 +487,7 @@ Output:
 }
 ```
 
-**Example 9: 非流式请求成功示例**
+**Example 10: 非流式请求成功示例**
 
 推荐使用 API Explorer 调用接口，见本文档顶部说明。该示例说明如何用非流式方式调用接口。
 

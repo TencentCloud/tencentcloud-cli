@@ -15,6 +15,7 @@ Output:
     "Response": {
         "TopicInfo": {
             "AssumerName": "",
+            "AssumerUin": 0,
             "AutoSplit": true,
             "BizType": 0,
             "CreateTime": "2025-04-18 10:45:14",
@@ -31,6 +32,7 @@ Output:
             "MigrationStatus": 0,
             "PartitionCount": 1,
             "Period": 30,
+            "RoleName": "",
             "Status": true,
             "StorageType": "hot",
             "SubAssumerName": "",

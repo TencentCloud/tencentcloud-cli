@@ -18,6 +18,8 @@ tccli cls ModifyShipper --cli-unfold-argument  \
     --FilterRules.0.Value 172.16 \
     --Partition /%Y/%m/%d/%H/ \
     --Compress.Format none \
+    --RoleArn  \
+    --ExternalId  \
     --Content.Format json \
     --Content.Json.EnableTag True \
     --Content.Json.MetaFields __SOURCE__ __FILENAME__ __TIMESTAMP__ __HOSTNAME__ \
@@ -53,6 +55,8 @@ tccli cls ModifyShipper --cli-unfold-argument  \
     --FilterRules.0.Value 172.16 \
     --Partition /%Y/%m/%d/%H/ \
     --Compress.Format gzip \
+    --RoleArn qcs::cam::uin/123123123:roleName/uinA_writeCLS_to_COS \
+    --ExternalId 123123123123123 \
     --Content.Format json \
     --Content.Json.EnableTag True \
     --Content.Json.MetaFields __SOURCE__ __FILENAME__ __TIMESTAMP__ __HOSTNAME__ \

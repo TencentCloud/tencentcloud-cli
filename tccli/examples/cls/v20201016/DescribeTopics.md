@@ -18,6 +18,7 @@ Output:
         "Topics": [
             {
                 "AssumerName": "",
+                "AssumerUin": 0,
                 "AutoSplit": true,
                 "BizType": 0,
                 "CreateTime": "2024-12-26 19:28:55",
@@ -34,6 +35,7 @@ Output:
                 "MigrationStatus": 0,
                 "PartitionCount": 1,
                 "Period": 1,
+                "RoleName": "",
                 "Status": true,
                 "StorageType": "hot",
                 "SubAssumerName": "",
