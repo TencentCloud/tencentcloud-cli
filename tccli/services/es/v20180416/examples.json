@@ -552,6 +552,14 @@
         "title": "批量停止Logstash管道"
       }
     ],
+    "UpdateClusterStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateClusterStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-j***v9e\",\n    \"ActionType\": \"STOP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"4294***632\",\n        \"RequestId\": \"264c265a-919a-4d00-85b3-eab3174e3833\"\n    }\n}",
+        "title": "更新集群整体状态"
+      }
+    ],
     "UpdateDiagnoseSettings": [
       {
         "document": "开启智能运维",

@@ -10734,7 +10734,7 @@
         {
           "disabled": false,
           "document": "组件明细",
-          "example": "[           {             \"ComponentCodeName\": \"移动推送TPNS_预付费_境内资",
+          "example": "无",
           "member": "CostComponentSet",
           "name": "ComponentSet",
           "output_required": true,
@@ -10749,6 +10749,16 @@
           "name": "ProductCode",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签信息\t",
+          "example": "无",
+          "member": "BillTagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -25821,7 +25831,7 @@
         {
           "disabled": false,
           "document": "地域Ap代码",
-          "example": "ap-guagnzhou\t",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionApCode",
           "required": true,
@@ -26264,7 +26274,7 @@
         },
         {
           "disabled": false,
-          "document": "跟此次请求向关联的唯一ID",
+          "document": "跟此次请求相关联的唯一ID",
           "example": "20200916121300001",
           "member": "string",
           "name": "ReferenceId",
@@ -26295,6 +26305,15 @@
           "example": "m",
           "member": "string",
           "name": "AutoRenewTimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源维度续费策略key",
+          "example": "renewStrategy1",
+          "member": "string",
+          "name": "RenewStrategy",
           "required": false,
           "type": "string"
         },

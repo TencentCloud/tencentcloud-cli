@@ -17,61 +17,6 @@ from tencentcloud.es.v20180416 import models as models_v20180416
 from jmespath import search
 import time
 
-def doDescribeSecurityGroupBindEs(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeSecurityGroupBindEsRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeSecurityGroupBindEs(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDiagnoseInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -127,7 +72,7 @@ def doDiagnoseInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteLogstashInstance(args, parsed_globals):
+def doDescribeIndexList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -159,561 +104,11 @@ def doDeleteLogstashInstance(args, parsed_globals):
     client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteLogstashInstanceRequest()
+    model = models.DescribeIndexListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteLogstashInstance(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteInstance(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteInstanceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DeleteInstance(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGetRequestTargetNodeTypes(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetRequestTargetNodeTypesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.GetRequestTargetNodeTypes(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doStopLogstashPipelines(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StopLogstashPipelinesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.StopLogstashPipelines(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeServerlessSpaces(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeServerlessSpacesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeServerlessSpaces(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doExportIpTraceLog(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ExportIpTraceLogRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.ExportIpTraceLog(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doResetInstancePassword(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ResetInstancePasswordRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.ResetInstancePassword(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doInstallInstanceModel(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InstallInstanceModelRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.InstallInstanceModel(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeUserCosSnapshotList(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeUserCosSnapshotListRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeUserCosSnapshotList(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDiagnose(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDiagnoseRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeDiagnose(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeLogstashInstances(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLogstashInstancesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeLogstashInstances(model)
+        rsp = client.DescribeIndexList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -787,7 +182,7 @@ def doRestoreClusterSnapshot(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetDiagnoseSettings(args, parsed_globals):
+def doCreateIndex(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -819,11 +214,891 @@ def doGetDiagnoseSettings(args, parsed_globals):
     client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetDiagnoseSettingsRequest()
+    model = models.CreateIndexRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.GetDiagnoseSettings(model)
+        rsp = client.CreateIndex(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCheckMigrateIndexMetaData(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CheckMigrateIndexMetaDataRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CheckMigrateIndexMetaData(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteServerlessInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteServerlessInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteServerlessInstance(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDiagnose(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDiagnoseRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeDiagnose(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeClusterSnapshot(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeClusterSnapshotRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeClusterSnapshot(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeLogstashInstanceOperations(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLogstashInstanceOperationsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeLogstashInstanceOperations(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeServerlessMetrics(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeServerlessMetricsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeServerlessMetrics(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeUserCosSnapshotList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeUserCosSnapshotListRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeUserCosSnapshotList(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeInstanceBundleList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceBundleListRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeInstanceBundleList(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateClusterSnapshot(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateClusterSnapshotRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateClusterSnapshot(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDbTknPwdRules(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDbTknPwdRulesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeDbTknPwdRules(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSaveAndDeployLogstashPipeline(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SaveAndDeployLogstashPipelineRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.SaveAndDeployLogstashPipeline(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeInstancePluginList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstancePluginListRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeInstancePluginList(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeSecurityGroupBindEs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSecurityGroupBindEsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeSecurityGroupBindEs(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStopLogstashPipelines(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StopLogstashPipelinesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.StopLogstashPipelines(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doResetInstancePassword(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ResetInstancePasswordRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ResetInstancePassword(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doNotifyEsServerless(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.NotifyEsServerlessRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.NotifyEsServerless(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -879,61 +1154,6 @@ def doDeleteServerlessDi(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DeleteServerlessDi(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateIndex(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateIndexRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateIndex(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1117,171 +1337,6 @@ def doSmartAdvisorManage(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeServerlessInstanceUsers(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeServerlessInstanceUsersRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeServerlessInstanceUsers(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateCosMigrateToServerlessInstance(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCosMigrateToServerlessInstanceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateCosMigrateToServerlessInstance(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpgradeLicense(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpgradeLicenseRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UpgradeLicense(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doUpdatePlugins(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1319,171 +1374,6 @@ def doUpdatePlugins(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.UpdatePlugins(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateLogstashInstance(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateLogstashInstanceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UpdateLogstashInstance(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCheckMigrateIndexMetaData(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CheckMigrateIndexMetaDataRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CheckMigrateIndexMetaData(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateJdk(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateJdkRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UpdateJdk(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1557,226 +1447,6 @@ def doSmartAdvisorManageBatch(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRestartNodes(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RestartNodesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.RestartNodes(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSearchServerlessData(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SearchServerlessDataRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.SearchServerlessData(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteServerlessInstance(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteServerlessInstanceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DeleteServerlessInstance(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateServerlessSpaceV2(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateServerlessSpaceV2Request()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateServerlessSpaceV2(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doUpdateInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1814,61 +1484,6 @@ def doUpdateInstance(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.UpdateInstance(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateLogstashInstance(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateLogstashInstanceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateLogstashInstance(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1942,6 +1557,1216 @@ def doRestartInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doUpdateDictionaries(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateDictionariesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UpdateDictionaries(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeInstanceOperations(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstanceOperationsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeInstanceOperations(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeLogstashPipelines(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLogstashPipelinesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeLogstashPipelines(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateInstance(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateServerlessSpace(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateServerlessSpaceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UpdateServerlessSpace(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteIndex(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteIndexRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteIndex(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeLogstashInstanceLogs(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLogstashInstanceLogsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeLogstashInstanceLogs(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeServerlessSpaceUser(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeServerlessSpaceUserRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeServerlessSpaceUser(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doExportIpTraceLog(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ExportIpTraceLogRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ExportIpTraceLog(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpgradeLicense(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpgradeLicenseRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UpgradeLicense(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateServerlessInstanceUser(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateServerlessInstanceUserRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateServerlessInstanceUser(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInquirePriceRenewInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InquirePriceRenewInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.InquirePriceRenewInstance(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetRequestTargetNodeTypes(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetRequestTargetNodeTypesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.GetRequestTargetNodeTypes(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeServerlessSpaces(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeServerlessSpacesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeServerlessSpaces(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doInstallInstanceModel(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.InstallInstanceModelRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.InstallInstanceModel(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeServerlessInstances(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeServerlessInstancesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeServerlessInstances(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteInstance(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetDiagnoseSettings(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetDiagnoseSettingsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.GetDiagnoseSettings(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeServerlessInstanceUsers(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeServerlessInstanceUsersRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeServerlessInstanceUsers(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateDiagnoseSettings(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateDiagnoseSettingsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UpdateDiagnoseSettings(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRestartNodes(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RestartNodesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.RestartNodes(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateServerlessSpaceV2(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateServerlessSpaceV2Request()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateServerlessSpaceV2(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetIpTraceStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1997,7 +2822,7 @@ def doGetIpTraceStatus(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusterSnapshot(args, parsed_globals):
+def doCreateServerlessInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2029,11 +2854,1111 @@ def doDescribeClusterSnapshot(args, parsed_globals):
     client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClusterSnapshotRequest()
+    model = models.CreateServerlessInstanceRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeClusterSnapshot(model)
+        rsp = client.CreateServerlessInstance(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeLogstashInstances(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeLogstashInstancesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeLogstashInstances(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doModifyEsVipSecurityGroup(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyEsVipSecurityGroupRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyEsVipSecurityGroup(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSearchServerlessData(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SearchServerlessDataRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.SearchServerlessData(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCheckOperation(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CheckOperationRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CheckOperation(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateIndex(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateIndexRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UpdateIndex(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeInstances(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeInstancesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeInstances(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doStartLogstashPipelines(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.StartLogstashPipelinesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.StartLogstashPipelines(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRestartLogstashInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RestartLogstashInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.RestartLogstashInstance(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteServerlessSpaceUser(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteServerlessSpaceUserRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteServerlessSpaceUser(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doGetTaskFlow(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetTaskFlowRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.GetTaskFlow(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateIpTraceStatus(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateIpTraceStatusRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UpdateIpTraceStatus(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteLogstashInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteLogstashInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteLogstashInstance(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateServerlessDi(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateServerlessDiRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateServerlessDi(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateCosMigrateToServerlessInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateCosMigrateToServerlessInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateCosMigrateToServerlessInstance(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSearchServerlessInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SearchServerlessInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.SearchServerlessInstance(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateJdk(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateJdkRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UpdateJdk(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpdateClusterStatus(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpdateClusterStatusRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UpdateClusterStatus(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doQueryIpTraceLog(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.QueryIpTraceLogRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.QueryIpTraceLog(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeServerlessDi(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeServerlessDiRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeServerlessDi(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateLogstashInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateLogstashInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateLogstashInstance(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2217,7 +4142,7 @@ def doUpdateLogstashPipelineDesc(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateServerlessInstance(args, parsed_globals):
+def doUpdateLogstashInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2249,231 +4174,11 @@ def doCreateServerlessInstance(args, parsed_globals):
     client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateServerlessInstanceRequest()
+    model = models.UpdateLogstashInstanceRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateServerlessInstance(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeViews(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeViewsRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeViews(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeServerlessMetrics(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeServerlessMetricsRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeServerlessMetrics(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeInstanceOperations(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstanceOperationsRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeInstanceOperations(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doNotifyEsServerless(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.NotifyEsServerlessRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.NotifyEsServerless(model)
+        rsp = client.UpdateLogstashInstance(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2547,7 +4252,7 @@ def doDescribeSpaceKibanaTools(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeLogstashPipelines(args, parsed_globals):
+def doDescribeViews(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2579,1991 +4284,11 @@ def doDescribeLogstashPipelines(args, parsed_globals):
     client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLogstashPipelinesRequest()
+    model = models.DescribeViewsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeLogstashPipelines(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSearchServerlessInstance(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SearchServerlessInstanceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.SearchServerlessInstance(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeIndexList(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeIndexListRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeIndexList(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doModifyEsVipSecurityGroup(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyEsVipSecurityGroupRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.ModifyEsVipSecurityGroup(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateInstance(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateInstanceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateInstance(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeInstanceBundleList(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstanceBundleListRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeInstanceBundleList(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateDiagnoseSettings(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateDiagnoseSettingsRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UpdateDiagnoseSettings(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateNodesStatus(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateNodesStatusRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UpdateNodesStatus(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateClusterSnapshot(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateClusterSnapshotRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateClusterSnapshot(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateDictionaries(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateDictionariesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UpdateDictionaries(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCheckOperation(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CheckOperationRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CheckOperation(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateIndex(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateIndexRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UpdateIndex(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDbTknPwdRules(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDbTknPwdRulesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeDbTknPwdRules(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateServerlessSpace(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateServerlessSpaceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateServerlessSpace(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeInstances(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstancesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeInstances(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateServerlessSpace(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateServerlessSpaceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UpdateServerlessSpace(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doStartLogstashPipelines(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartLogstashPipelinesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.StartLogstashPipelines(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpgradeInstance(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpgradeInstanceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UpgradeInstance(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteServerlessSpaceUser(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteServerlessSpaceUserRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DeleteServerlessSpaceUser(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteClusterSnapshot(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteClusterSnapshotRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DeleteClusterSnapshot(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeLogstashInstanceLogs(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLogstashInstanceLogsRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeLogstashInstanceLogs(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateServerlessDi(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateServerlessDiRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateServerlessDi(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doGetTaskFlow(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetTaskFlowRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.GetTaskFlow(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeServerlessSpaceUser(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeServerlessSpaceUserRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeServerlessSpaceUser(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doRestartLogstashInstance(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RestartLogstashInstanceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.RestartLogstashInstance(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteIndex(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteIndexRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DeleteIndex(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doSaveAndDeployLogstashPipeline(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SaveAndDeployLogstashPipelineRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.SaveAndDeployLogstashPipeline(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDeleteLogstashPipelines(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteLogstashPipelinesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DeleteLogstashPipelines(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doUpdateIpTraceStatus(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UpdateIpTraceStatusRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.UpdateIpTraceStatus(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeServerlessDi(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeServerlessDiRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeServerlessDi(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeInstancePluginList(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeInstancePluginListRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeInstancePluginList(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeServerlessInstances(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeServerlessInstancesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeServerlessInstances(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeIndexMeta(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeIndexMetaRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeIndexMeta(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doQueryIpTraceLog(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.QueryIpTraceLogRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.QueryIpTraceLog(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeDbTknResource(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeDbTknResourceRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeDbTknResource(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateServerlessInstanceUser(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateServerlessInstanceUserRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateServerlessInstanceUser(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doDescribeLogstashInstanceOperations(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
-            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
-            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
-            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeLogstashInstanceOperationsRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.DescribeLogstashInstanceOperations(model)
+        rsp = client.DescribeViews(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4637,7 +4362,7 @@ def doUpdateServerlessInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doInquirePriceRenewInstance(args, parsed_globals):
+def doUpdateNodesStatus(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4669,11 +4394,341 @@ def doInquirePriceRenewInstance(args, parsed_globals):
     client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.InquirePriceRenewInstanceRequest()
+    model = models.UpdateNodesStatusRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.InquirePriceRenewInstance(model)
+        rsp = client.UpdateNodesStatus(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteLogstashPipelines(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteLogstashPipelinesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteLogstashPipelines(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateServerlessSpace(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateServerlessSpaceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateServerlessSpace(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doUpgradeInstance(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.UpgradeInstanceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.UpgradeInstance(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteClusterSnapshot(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteClusterSnapshotRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteClusterSnapshot(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeIndexMeta(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeIndexMetaRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeIndexMeta(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeDbTknResource(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EsClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeDbTknResourceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeDbTknResource(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4703,91 +4758,92 @@ MODELS_MAP = {
 }
 
 ACTION_MAP = {
-    "DescribeSecurityGroupBindEs": doDescribeSecurityGroupBindEs,
     "DiagnoseInstance": doDiagnoseInstance,
-    "DeleteLogstashInstance": doDeleteLogstashInstance,
-    "DeleteInstance": doDeleteInstance,
-    "GetRequestTargetNodeTypes": doGetRequestTargetNodeTypes,
-    "StopLogstashPipelines": doStopLogstashPipelines,
-    "DescribeServerlessSpaces": doDescribeServerlessSpaces,
-    "ExportIpTraceLog": doExportIpTraceLog,
-    "ResetInstancePassword": doResetInstancePassword,
-    "InstallInstanceModel": doInstallInstanceModel,
-    "DescribeUserCosSnapshotList": doDescribeUserCosSnapshotList,
-    "DescribeDiagnose": doDescribeDiagnose,
-    "DescribeLogstashInstances": doDescribeLogstashInstances,
+    "DescribeIndexList": doDescribeIndexList,
     "RestoreClusterSnapshot": doRestoreClusterSnapshot,
-    "GetDiagnoseSettings": doGetDiagnoseSettings,
-    "DeleteServerlessDi": doDeleteServerlessDi,
     "CreateIndex": doCreateIndex,
+    "CheckMigrateIndexMetaData": doCheckMigrateIndexMetaData,
+    "DeleteServerlessInstance": doDeleteServerlessInstance,
+    "DescribeDiagnose": doDescribeDiagnose,
+    "DescribeClusterSnapshot": doDescribeClusterSnapshot,
+    "DescribeLogstashInstanceOperations": doDescribeLogstashInstanceOperations,
+    "DescribeServerlessMetrics": doDescribeServerlessMetrics,
+    "DescribeUserCosSnapshotList": doDescribeUserCosSnapshotList,
+    "DescribeInstanceBundleList": doDescribeInstanceBundleList,
+    "CreateClusterSnapshot": doCreateClusterSnapshot,
+    "DescribeDbTknPwdRules": doDescribeDbTknPwdRules,
+    "SaveAndDeployLogstashPipeline": doSaveAndDeployLogstashPipeline,
+    "DescribeInstancePluginList": doDescribeInstancePluginList,
+    "DescribeSecurityGroupBindEs": doDescribeSecurityGroupBindEs,
+    "StopLogstashPipelines": doStopLogstashPipelines,
+    "ResetInstancePassword": doResetInstancePassword,
+    "NotifyEsServerless": doNotifyEsServerless,
+    "DeleteServerlessDi": doDeleteServerlessDi,
     "UpdateUserBundles": doUpdateUserBundles,
     "UpdateRequestTargetNodeTypes": doUpdateRequestTargetNodeTypes,
     "SmartAdvisorManage": doSmartAdvisorManage,
-    "DescribeServerlessInstanceUsers": doDescribeServerlessInstanceUsers,
-    "CreateCosMigrateToServerlessInstance": doCreateCosMigrateToServerlessInstance,
-    "UpgradeLicense": doUpgradeLicense,
     "UpdatePlugins": doUpdatePlugins,
-    "UpdateLogstashInstance": doUpdateLogstashInstance,
-    "CheckMigrateIndexMetaData": doCheckMigrateIndexMetaData,
-    "UpdateJdk": doUpdateJdk,
     "SmartAdvisorManageBatch": doSmartAdvisorManageBatch,
-    "RestartNodes": doRestartNodes,
-    "SearchServerlessData": doSearchServerlessData,
-    "DeleteServerlessInstance": doDeleteServerlessInstance,
-    "CreateServerlessSpaceV2": doCreateServerlessSpaceV2,
     "UpdateInstance": doUpdateInstance,
-    "CreateLogstashInstance": doCreateLogstashInstance,
     "RestartInstance": doRestartInstance,
+    "UpdateDictionaries": doUpdateDictionaries,
+    "DescribeInstanceOperations": doDescribeInstanceOperations,
+    "DescribeLogstashPipelines": doDescribeLogstashPipelines,
+    "CreateInstance": doCreateInstance,
+    "UpdateServerlessSpace": doUpdateServerlessSpace,
+    "DeleteIndex": doDeleteIndex,
+    "DescribeLogstashInstanceLogs": doDescribeLogstashInstanceLogs,
+    "DescribeServerlessSpaceUser": doDescribeServerlessSpaceUser,
+    "ExportIpTraceLog": doExportIpTraceLog,
+    "UpgradeLicense": doUpgradeLicense,
+    "CreateServerlessInstanceUser": doCreateServerlessInstanceUser,
+    "InquirePriceRenewInstance": doInquirePriceRenewInstance,
+    "GetRequestTargetNodeTypes": doGetRequestTargetNodeTypes,
+    "DescribeServerlessSpaces": doDescribeServerlessSpaces,
+    "InstallInstanceModel": doInstallInstanceModel,
+    "DescribeServerlessInstances": doDescribeServerlessInstances,
+    "DeleteInstance": doDeleteInstance,
+    "GetDiagnoseSettings": doGetDiagnoseSettings,
+    "DescribeServerlessInstanceUsers": doDescribeServerlessInstanceUsers,
+    "UpdateDiagnoseSettings": doUpdateDiagnoseSettings,
+    "RestartNodes": doRestartNodes,
+    "CreateServerlessSpaceV2": doCreateServerlessSpaceV2,
     "GetIpTraceStatus": doGetIpTraceStatus,
-    "DescribeClusterSnapshot": doDescribeClusterSnapshot,
+    "CreateServerlessInstance": doCreateServerlessInstance,
+    "DescribeLogstashInstances": doDescribeLogstashInstances,
+    "ModifyEsVipSecurityGroup": doModifyEsVipSecurityGroup,
+    "SearchServerlessData": doSearchServerlessData,
+    "CheckOperation": doCheckOperation,
+    "UpdateIndex": doUpdateIndex,
+    "DescribeInstances": doDescribeInstances,
+    "StartLogstashPipelines": doStartLogstashPipelines,
+    "RestartLogstashInstance": doRestartLogstashInstance,
+    "DeleteServerlessSpaceUser": doDeleteServerlessSpaceUser,
+    "GetTaskFlow": doGetTaskFlow,
+    "UpdateIpTraceStatus": doUpdateIpTraceStatus,
+    "DeleteLogstashInstance": doDeleteLogstashInstance,
+    "CreateServerlessDi": doCreateServerlessDi,
+    "CreateCosMigrateToServerlessInstance": doCreateCosMigrateToServerlessInstance,
+    "SearchServerlessInstance": doSearchServerlessInstance,
+    "UpdateJdk": doUpdateJdk,
+    "UpdateClusterStatus": doUpdateClusterStatus,
+    "QueryIpTraceLog": doQueryIpTraceLog,
+    "DescribeServerlessDi": doDescribeServerlessDi,
+    "CreateLogstashInstance": doCreateLogstashInstance,
     "DescribeInstanceLogs": doDescribeInstanceLogs,
     "RestartKibana": doRestartKibana,
     "UpdateLogstashPipelineDesc": doUpdateLogstashPipelineDesc,
-    "CreateServerlessInstance": doCreateServerlessInstance,
-    "DescribeViews": doDescribeViews,
-    "DescribeServerlessMetrics": doDescribeServerlessMetrics,
-    "DescribeInstanceOperations": doDescribeInstanceOperations,
-    "NotifyEsServerless": doNotifyEsServerless,
+    "UpdateLogstashInstance": doUpdateLogstashInstance,
     "DescribeSpaceKibanaTools": doDescribeSpaceKibanaTools,
-    "DescribeLogstashPipelines": doDescribeLogstashPipelines,
-    "SearchServerlessInstance": doSearchServerlessInstance,
-    "DescribeIndexList": doDescribeIndexList,
-    "ModifyEsVipSecurityGroup": doModifyEsVipSecurityGroup,
-    "CreateInstance": doCreateInstance,
-    "DescribeInstanceBundleList": doDescribeInstanceBundleList,
-    "UpdateDiagnoseSettings": doUpdateDiagnoseSettings,
-    "UpdateNodesStatus": doUpdateNodesStatus,
-    "CreateClusterSnapshot": doCreateClusterSnapshot,
-    "UpdateDictionaries": doUpdateDictionaries,
-    "CheckOperation": doCheckOperation,
-    "UpdateIndex": doUpdateIndex,
-    "DescribeDbTknPwdRules": doDescribeDbTknPwdRules,
-    "CreateServerlessSpace": doCreateServerlessSpace,
-    "DescribeInstances": doDescribeInstances,
-    "UpdateServerlessSpace": doUpdateServerlessSpace,
-    "StartLogstashPipelines": doStartLogstashPipelines,
-    "UpgradeInstance": doUpgradeInstance,
-    "DeleteServerlessSpaceUser": doDeleteServerlessSpaceUser,
-    "DeleteClusterSnapshot": doDeleteClusterSnapshot,
-    "DescribeLogstashInstanceLogs": doDescribeLogstashInstanceLogs,
-    "CreateServerlessDi": doCreateServerlessDi,
-    "GetTaskFlow": doGetTaskFlow,
-    "DescribeServerlessSpaceUser": doDescribeServerlessSpaceUser,
-    "RestartLogstashInstance": doRestartLogstashInstance,
-    "DeleteIndex": doDeleteIndex,
-    "SaveAndDeployLogstashPipeline": doSaveAndDeployLogstashPipeline,
-    "DeleteLogstashPipelines": doDeleteLogstashPipelines,
-    "UpdateIpTraceStatus": doUpdateIpTraceStatus,
-    "DescribeServerlessDi": doDescribeServerlessDi,
-    "DescribeInstancePluginList": doDescribeInstancePluginList,
-    "DescribeServerlessInstances": doDescribeServerlessInstances,
-    "DescribeIndexMeta": doDescribeIndexMeta,
-    "QueryIpTraceLog": doQueryIpTraceLog,
-    "DescribeDbTknResource": doDescribeDbTknResource,
-    "CreateServerlessInstanceUser": doCreateServerlessInstanceUser,
-    "DescribeLogstashInstanceOperations": doDescribeLogstashInstanceOperations,
+    "DescribeViews": doDescribeViews,
     "UpdateServerlessInstance": doUpdateServerlessInstance,
-    "InquirePriceRenewInstance": doInquirePriceRenewInstance,
+    "UpdateNodesStatus": doUpdateNodesStatus,
+    "DeleteLogstashPipelines": doDeleteLogstashPipelines,
+    "CreateServerlessSpace": doCreateServerlessSpace,
+    "UpgradeInstance": doUpgradeInstance,
+    "DeleteClusterSnapshot": doDeleteClusterSnapshot,
+    "DescribeIndexMeta": doDescribeIndexMeta,
+    "DescribeDbTknResource": doDescribeDbTknResource,
 
 }
 

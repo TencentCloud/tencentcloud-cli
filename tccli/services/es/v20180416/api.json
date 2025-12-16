@@ -483,6 +483,13 @@
       "output": "StopLogstashPipelinesResponse",
       "status": "online"
     },
+    "UpdateClusterStatus": {
+      "document": "用于集群整体开机或关机",
+      "input": "UpdateClusterStatusRequest",
+      "name": "更新集群运行状态",
+      "output": "UpdateClusterStatusResponse",
+      "status": "online"
+    },
     "UpdateDiagnoseSettings": {
       "document": "更新智能运维配置",
       "input": "UpdateDiagnoseSettingsRequest",
@@ -15060,6 +15067,52 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateClusterStatusRequest": {
+      "document": "UpdateClusterStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "es-j***v9e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "取值START进行开机操作，取值STOP进行关机操作",
+          "example": "STOP",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateClusterStatusResponse": {
+      "document": "UpdateClusterStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4294***632",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateDiagnoseSettingsRequest": {
       "document": "UpdateDiagnoseSettings请求参数结构体",
