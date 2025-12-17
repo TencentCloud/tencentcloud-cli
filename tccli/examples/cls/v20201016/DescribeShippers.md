@@ -48,6 +48,7 @@ Output:
                 "ShipperName": "shipper_task",
                 "StartTime": 0,
                 "Status": true,
+                "TaskStatus": 1,
                 "TopicId": "313f58b2-xxxx-xxxx-b9b8-08fa4b0bd260"
             }
         ],

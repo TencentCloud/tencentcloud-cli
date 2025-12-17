@@ -42,6 +42,26 @@
         "title": "监控器ping协议"
       }
     ],
+    "CreatePackageAndPay": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePackageAndPay\n<公共请求参数>\n\n{\n    \"DealType\": \"CREATE\",\n    \"GoodsType\": \"ULTIMATE\",\n    \"GoodsNum\": 1,\n    \"AutoRenew\": 1,\n    \"TimeSpan\": 1,\n    \"AutoVoucher\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"079d26c3-15a0-4ce0-836d-7307776860e1\",\n        \"ResourceIds\": [\n            \"ins-ojwefnyfigv\"\n        ]\n    }\n}",
+        "title": "购买套餐"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePackageAndPay\n<公共请求参数>\n\n{\n    \"DealType\": \"RENEW\",\n    \"GoodsType\": \"ULTIMATE\",\n    \"GoodsNum\": 1,\n    \"AutoRenew\": 1,\n    \"ResourceId\": \"ins-ojwefnyfigv\",\n    \"TimeSpan\": 1,\n    \"AutoVoucher\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"079d26c3-15a0-4ce0-836d-7307776860e1\",\n        \"ResourceIds\": [\n            \"ins-ojwefnyfigv\"\n        ]\n    }\n}",
+        "title": "续费套餐"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePackageAndPay\n<公共请求参数>\n\n{\n    \"DealType\": \"MODIFY\",\n    \"GoodsType\": \"STANDARD\",\n    \"GoodsNum\": 1,\n    \"AutoRenew\": 1,\n    \"ResourceId\": \"ins-lntftyrifqx\",\n    \"TimeSpan\": 1,\n    \"NewPackageType\": \"ULTIMATE\",\n    \"AutoVoucher\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"183a7455-6a2c-4e17-816d-e45e880230fe\",\n        \"ResourceIds\": [\n            \"ins-lntftyrifqx\"\n        ]\n    }\n}",
+        "title": "变配套餐"
+      }
+    ],
     "CreateStrategy": [
       {
         "document": "",
@@ -216,6 +236,14 @@
         "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": 1,\n    \"MonitorName\": \"测试监控器\",\n    \"CheckProtocol\": \"PING\",\n    \"CheckInterval\": 1,\n    \"Timeout\": 1,\n    \"FailTimes\": 1,\n    \"FailRate\": 1,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"PingNum\": 1,\n    \"TcpPort\": 1,\n    \"Host\": \"url\",\n    \"Path\": \"/path\",\n    \"ReturnCodeThreshold\": 1,\n    \"EnableRedirect\": \"DISABLED\",\n    \"EnableSni\": \"DISABLED\",\n    \"PacketLossRate\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\"\n    }\n}",
         "title": "修改监控器"
+      }
+    ],
+    "ModifyPackageAutoRenew": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPackageAutoRenew\n<公共请求参数>\n\n{\n    \"ResourceId\": \"task-muqyohplgqld\",\n    \"AutoRenew\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7f146a6-53b7-4647-80fe-cfc3df35e3ef\",\n        \"ResourceIds\": [\n            \"task-muqyohplgqld\"\n        ]\n    }\n}",
+        "title": "设置自动续费"
       }
     ],
     "ModifyStrategy": [

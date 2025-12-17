@@ -316,7 +316,7 @@
       "status": "online"
     },
     "ExportAttributeLabel": {
-      "document": "导出属性标签",
+      "document": "导出标签",
       "input": "ExportAttributeLabelRequest",
       "name": "导出标签",
       "output": "ExportAttributeLabelResponse",
@@ -547,7 +547,7 @@
       "status": "online"
     },
     "ListSelectDoc": {
-      "document": "文档生成问答时，可通过该接口获得当前支持生成问答的文档列表，当前不支持xlsx、xls、csv格式的文档生成问答，且文档需处于待发布或已发布状态才可生成问答。",
+      "document": "获取文档下拉列表。",
       "input": "ListSelectDocRequest",
       "name": "获取文档生成问答可选文档列表",
       "output": "ListSelectDocResponse",
@@ -3164,6 +3164,56 @@
       ],
       "usage": "both"
     },
+    "AppModelDetailInfo": {
+      "document": "模型详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型参数",
+          "example": "",
+          "member": "ModelParams",
+          "name": "ModelParams",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限制",
+          "example": "",
+          "member": "uint64",
+          "name": "HistoryLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型别名",
+          "example": "",
+          "member": "string",
+          "name": "AliasName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AttrLabel": {
       "document": "标签详情信息",
       "members": [
@@ -3226,7 +3276,7 @@
         {
           "disabled": false,
           "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1998645228471574272",
           "member": "string",
           "name": "AttrBizId",
           "output_required": false,
@@ -3234,9 +3284,9 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "标签标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "FyOgpuPs",
           "member": "string",
           "name": "AttrKey",
           "output_required": false,
@@ -3246,7 +3296,7 @@
         {
           "disabled": false,
           "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "部门名",
           "member": "string",
           "name": "AttrName",
           "output_required": false,
@@ -3256,7 +3306,7 @@
         {
           "disabled": false,
           "document": "标签值名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"lke\"]",
           "member": "string",
           "name": "LabelNames",
           "output_required": false,
@@ -3266,7 +3316,7 @@
         {
           "disabled": false,
           "document": "标签是否在更新中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsUpdating",
           "output_required": false,
@@ -3275,8 +3325,8 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "发布状态(1 待发布 2 发布中 3 已发布 4 发布失败)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -3286,7 +3336,7 @@
         {
           "disabled": false,
           "document": "状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "待发布",
           "member": "string",
           "name": "StatusDesc",
           "output_required": false,
@@ -3296,7 +3346,7 @@
         {
           "disabled": false,
           "document": "标签值总数",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "LabelTotalCount",
           "output_required": false,
@@ -3857,7 +3907,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1696822786072117248",
           "member": "string",
           "name": "BotBizId",
@@ -3866,8 +3916,8 @@
         },
         {
           "disabled": false,
-          "document": "属性名称",
-          "example": "属性修改",
+          "document": "标签名称",
+          "example": "标签修改",
           "member": "string",
           "name": "LabelName",
           "required": true,
@@ -3875,7 +3925,7 @@
         },
         {
           "disabled": false,
-          "document": "属性ID",
+          "document": "标签ID",
           "example": "208",
           "member": "string",
           "name": "AttributeBizId",
@@ -3902,7 +3952,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动加载，最后一个属性标签ID",
+          "document": "最后一个标签ID。用于滚动加载：是一种分批、滚动式的存在性检查机制。客户端需要持续调用接口，并每次传入上一次返回的最后一个记录的ID，直到接口明确返回“存在”或“已检查全部数据且不存在”为止。",
           "example": "204",
           "member": "string",
           "name": "LastLabelBizId",
@@ -3939,7 +3989,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID,获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1922557****89446528",
           "member": "string",
           "name": "BotBizId",
@@ -3966,7 +4016,7 @@
         },
         {
           "disabled": false,
-          "document": "属性标签",
+          "document": "属性标签ID",
           "example": "19229118842****0208",
           "member": "string",
           "name": "LabelBizId",
@@ -3975,7 +4025,7 @@
         },
         {
           "disabled": false,
-          "document": "属性ID",
+          "document": "标签ID",
           "example": "[\"19229118842****0208\"]",
           "member": "string",
           "name": "AttributeBizId",
@@ -4250,7 +4300,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1954559753310423232",
           "member": "string",
           "name": "BotBizId",
@@ -4648,7 +4698,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID, 获取方式参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1844287616635371520",
           "member": "string",
           "name": "BotBizId",
@@ -4666,7 +4716,7 @@
         },
         {
           "disabled": false,
-          "document": "拒答问题来源的数据源唯一id， - 拒答来源于不满意回复  2 - 拒答来源于手动添加",
+          "document": "拒答问题来源， 1- 来源于不满意回复;  2 - 来源于手动添加",
           "example": "2",
           "member": "uint64",
           "name": "BusinessSource",
@@ -5182,7 +5232,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1696822786072117248",
           "member": "string",
           "name": "BotBizId",
@@ -5380,8 +5430,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
-          "example": "无",
+          "document": "应用ID, 获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。",
+          "example": "1714970520775950336",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -5390,7 +5440,7 @@
         {
           "disabled": false,
           "document": "拒答问题来源的数据源唯一id\n\n\n",
-          "example": "无",
+          "example": "[ \"1732953678087585792\" ]",
           "member": "string",
           "name": "RejectedBizIds",
           "required": true,
@@ -5750,7 +5800,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1696822786072117248",
           "member": "string",
           "name": "BotBizId",
@@ -5759,7 +5809,7 @@
         },
         {
           "disabled": false,
-          "document": "属性ID",
+          "document": "标签ID",
           "example": "1734549420823662592",
           "member": "string",
           "name": "AttributeBizId",
@@ -5768,7 +5818,7 @@
         },
         {
           "disabled": false,
-          "document": "每次加载的数量 ",
+          "document": "每次请求返回的最大标签数量​，限制单次接口返回的标签数量，避免数据量过大。取值范围：大于0。\n",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -5795,7 +5845,7 @@
         },
         {
           "disabled": false,
-          "document": "查询标签或相似标签",
+          "document": "搜索关键词，用于查询标签标准词或相似词",
           "example": "相似标签",
           "member": "string",
           "name": "Query",
@@ -5804,7 +5854,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动加载游标的标签ID",
+          "document": "滚动加载游标，上一次请求返回的最后一个标签ID",
           "example": "1734549420823662593",
           "member": "string",
           "name": "LastLabelBizId",
@@ -8085,8 +8135,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
-          "example": "无",
+          "document": "应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
+          "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -8094,8 +8144,8 @@
         },
         {
           "disabled": false,
-          "document": "回复ID",
-          "example": "无",
+          "document": "回复ID，调用这个接口获得：[ListUnsatisfiedReply](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListUnsatisfiedReply) ",
+          "example": "1996602817111898368",
           "member": "string",
           "name": "ReplyBizId",
           "required": true,
@@ -8149,7 +8199,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。",
           "example": "1963140753734418240",
           "member": "string",
           "name": "AppBizId",
@@ -8191,7 +8241,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流的详情",
+          "document": "工作流运行实例详情",
           "example": "无",
           "member": "WorkflowRunDetail",
           "name": "WorkflowRun",
@@ -8457,7 +8507,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1696822786072117248",
           "member": "string",
           "name": "BotBizId",
@@ -8484,7 +8534,7 @@
         },
         {
           "disabled": false,
-          "document": "属性ID",
+          "document": "标签ID",
           "example": "[\"1734549420823662592\"]",
           "member": "string",
           "name": "AttributeBizIds",
@@ -8722,7 +8772,7 @@
         {
           "disabled": false,
           "document": "检索，用户问题或答案",
-          "example": "无",
+          "example": "不好",
           "member": "string",
           "name": "Query",
           "required": false,
@@ -8731,9 +8781,18 @@
         {
           "disabled": false,
           "document": "错误类型检索\n",
-          "example": "无",
+          "example": "[\"不满意\"]",
           "member": "string",
           "name": "Reasons",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "处理状态 0-待处理 1-已拒答 2-已忽略 3-已添加为新问答 4-已添加为相似问",
+          "example": "[0,1,2,3,4]",
+          "member": "uint64",
+          "name": "HandlingStatuses",
           "required": false,
           "type": "list"
         }
@@ -8745,7 +8804,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID,获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
@@ -8758,7 +8817,7 @@
           "example": "[\"1729099536210460672\"]",
           "member": "string",
           "name": "DocBizIds",
-          "required": false,
+          "required": true,
           "type": "list"
         }
       ],
@@ -9658,7 +9717,7 @@
         {
           "disabled": false,
           "document": "标签名",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -9667,7 +9726,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "[\"value\"]",
           "member": "string",
           "name": "Values",
           "required": false,
@@ -9709,7 +9768,7 @@
         {
           "disabled": false,
           "document": "知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。",
-          "example": "已废弃，请使用对话接口中的custom_variables",
+          "example": "无",
           "member": "GetWsTokenReq_Label",
           "name": "VisitorLabels",
           "required": false,
@@ -9734,7 +9793,7 @@
         {
           "disabled": false,
           "document": "余额; 余额大于 0 时表示有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "Balance",
           "output_required": false,
@@ -9764,12 +9823,22 @@
         {
           "disabled": false,
           "document": "SingleWorkflow",
-          "example": "{\"WorkflowDesc\":\"\",\"WorkflowId\":\"\",\"WorkflowName\":\"\",\"IsEnable\":false,\"Status\":\"\"}",
+          "example": "无",
           "member": "KnowledgeQaSingleWorkflow",
           "name": "SingleWorkflow",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用视觉模型时对话窗口输入字符限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3000",
+          "member": "int64",
+          "name": "VisionModelInputLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11157,7 +11226,7 @@
         {
           "disabled": false,
           "document": "工作流描述",
-          "example": "描述",
+          "example": "这是一个描述",
           "member": "string",
           "name": "WorkflowDesc",
           "output_required": false,
@@ -13698,7 +13767,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID,获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
@@ -13716,7 +13785,7 @@
         },
         {
           "disabled": false,
-          "document": "文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答",
+          "document": "文档状态筛选。文档状态对应码为7 审核中、8 审核失败、10 待发布、11 发布中、12 已发布、13 学习中、14 学习失败 20 已过期。其中仅状态为10 待发布、12 已发布的文档支持生成问答（未填写时默认值为空数组）",
           "example": "[10,12]",
           "member": "int64",
           "name": "Status",
@@ -13827,7 +13896,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1933045939331552830",
           "member": "string",
           "name": "BotBizId",
@@ -13836,7 +13905,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "页码，取值范围：大于0",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -13845,7 +13914,7 @@
         },
         {
           "disabled": false,
-          "document": "分页数量",
+          "document": "分页数量，取值范围：大于0",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -13872,7 +13941,7 @@
         },
         {
           "disabled": false,
-          "document": "用户请求(问题或答案)",
+          "document": "用户请求(问题或答案)，按关键词检索，可匹配用户问题或答案",
           "example": "你是谁",
           "member": "string",
           "name": "Query",
@@ -13881,7 +13950,7 @@
         },
         {
           "disabled": false,
-          "document": "错误类型检索",
+          "document": "按错误类型检索",
           "example": "[\"回答不准确\"]",
           "member": "string",
           "name": "Reasons",
@@ -13890,12 +13959,21 @@
         },
         {
           "disabled": false,
-          "document": "操作状态  0-全部 1-待处理  2-已处理【包括答案纠错，拒答，忽略】",
+          "document": "按操作状态检索  0-全部 1-待处理  2-已处理【包括答案纠错，拒答，忽略】，不填时默认值为0",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "处理状态 0-待处理 1-已拒答 2-已忽略 3-已添加为新问答 4-已添加为相似问",
+          "example": "[0,1,2,3,4]",
+          "member": "int64",
+          "name": "HandlingStatuses",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15802,6 +15880,23 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NL2SQLModelConfig": {
+      "document": "Nl2Sql模型配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppModelDetailInfo",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -18176,6 +18271,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "NL2SQL模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NL2SQLModelConfig",
+          "name": "NatureLanguageToSqlModelConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

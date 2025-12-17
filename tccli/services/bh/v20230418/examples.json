@@ -354,6 +354,14 @@
         "title": "查询命令模板列表"
       }
     ],
+    "DescribeDepartments": [
+      {
+        "document": "查询部门信息",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDepartments\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\",\n        \"Departments\": {\n            \"DepartmentSet\": [\n                {\n                    \"Managers\": [\n                        \"bh_admin_user\"\n                    ],\n                    \"Id\": \"1\",\n                    \"Name\": \"运维部\"\n                }\n            ],\n            \"Enabled\": true,\n            \"RootManager\": true\n        }\n    }\n}",
+        "title": "查询部门信息"
+      }
+    ],
     "DescribeDeviceAccounts": [
       {
         "document": "查询主机账号列表",

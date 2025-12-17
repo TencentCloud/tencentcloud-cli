@@ -482,6 +482,14 @@
         "title": "指定转发规则ID查询重定向关系"
       }
     ],
+    "DescribeTargetGroupInstanceStatus": [
+      {
+        "document": "批量查询gwlb目标组后端服务状态",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTargetGroupInstanceStatus\n<公共请求参数>\n\n{\n    \"TargetGroupId\": \"lbtg-3j3****\",\n    \"TargetGroupInstanceIps\": [\n        \"10.0.1.13\",\n        \"10.0.1.5\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3ba6587-1a1c-47eb-ac8b-0424bf3fdc86\",\n        \"TargetGroupInstanceSet\": [\n            {\n                \"InstanceIp\": \"10.0.1.13\",\n                \"Status\": \"on\"\n            },\n            {\n                \"InstanceIp\": \"10.0.1.5\",\n                \"Status\": \"on\"\n            }\n        ]\n    }\n}",
+        "title": "批量查询gwlb目标组后端服务状态"
+      }
+    ],
     "DescribeTargetGroupInstances": [
       {
         "document": "显示目标组绑定的服务器信息",

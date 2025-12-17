@@ -1309,6 +1309,13 @@
       "output": "DescribeTaskDetailDsResponse",
       "status": "online"
     },
+    "DescribeTaskInstancesStatus": {
+      "document": "分组获取编排空间调试任务实例状态信息",
+      "input": "DescribeTaskInstancesStatusRequest",
+      "name": "分组获取编排空间调试任务实例状态信息",
+      "output": "DescribeTaskInstancesStatusResponse",
+      "status": "online"
+    },
     "DescribeTaskLineage": {
       "document": "通过任务查询表的血缘关系",
       "input": "DescribeTaskLineageRequest",
@@ -25836,6 +25843,77 @@
       ],
       "type": "object"
     },
+    "DescribeTaskInstancesStatusDto": {
+      "document": "分组获取编排空间测试运行记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "根据任务信息获取实例状态信息实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamGetTaskInstancesStatusInfoResponseInstance",
+          "name": "Instances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeTaskInstancesStatusRequest": {
+      "document": "DescribeTaskInstancesStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "RecordIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作流id",
+          "example": "1",
+          "member": "string",
+          "name": "WorkflowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1460947872944267296",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskInstancesStatusResponse": {
+      "document": "DescribeTaskInstancesStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例列表",
+          "example": "无",
+          "member": "DescribeTaskInstancesStatusDto",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTaskLineageRequest": {
       "document": "DescribeTaskLineage请求参数结构体",
       "members": [
@@ -43360,6 +43438,52 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ParamGetTaskInstancesStatusInfoResponseInstance": {
+      "document": "根据任务信息获取实例状态信息实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11111",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UNKNOWN",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "记录编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

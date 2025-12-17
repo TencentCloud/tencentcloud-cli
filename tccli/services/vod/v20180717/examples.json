@@ -676,6 +676,14 @@
         "title": "查询转自适应码流模板列表"
       }
     ],
+    "DescribeAigcUsageData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcUsageData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2025-11-18T00:00:00+08:00\",\n    \"EndTime\": \"2025-11-19T23:59:00+08:00\",\n    \"AigcType\": \"Video\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AigcUsageDataSet\": [\n            {\n                \"DataSet\": [\n                    {\n                        \"Count\": 0,\n                        \"Time\": \"2025-11-17T00:00:00+08:00\",\n                        \"Usage\": 0\n                    },\n                    {\n                        \"Count\": 3,\n                        \"Time\": \"2025-11-18T00:00:00+08:00\",\n                        \"Usage\": 15\n                    },\n                    {\n                        \"Count\": 0,\n                        \"Time\": \"2025-11-19T00:00:00+08:00\",\n                        \"Usage\": 0\n                    }\n                ],\n                \"Specification\": \"Kling2.0&2.1std_720P\"\n            }\n        ],\n        \"RequestId\": \"2f47fc6d-c03a-49f7-b50b-xxxxxxxx\"\n    }\n}",
+        "title": "查询AI生成视频的用量数据"
+      }
+    ],
     "DescribeAllClass": [
       {
         "document": "",

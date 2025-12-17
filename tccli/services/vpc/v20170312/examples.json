@@ -2052,6 +2052,14 @@
         "title": "查询路由条目"
       }
     ],
+    "DescribeRoutePolicies": [
+      {
+        "document": "查询路由接收策略实例ID列表。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeRoutePolicies\n&RoutePolicyIds.0=rrp-r70ctaia",
+        "output": "{\n    \"Response\": {\n        \"RoutePolicySet\": [\n            {\n                \"RoutePolicyId\": \"rrp-r70ctaia\",\n                \"RoutePolicyDescription\": \"TEST\",\n                \"RoutePolicyName\": \"TEST\",\n                \"CreatedTime\": \"2023-05-20 15:21:54\",\n                \"RoutePolicyEntrySet\": [\n                    {\n                        \"RoutePolicyEntryId\": \"rrpi-aoh9t21x\",\n                        \"Description\": \"\",\n                        \"GatewayType\": \"CVM\",\n                        \"GatewayId\": \"172.16.16.37\",\n                        \"Priority\": 10,\n                        \"Action\": \"ACCEPT\",\n                        \"RouteType\": \"ANY\",\n                        \"CidrBlock\": \"192.168.0.0/16\",\n                        \"CreatedTime\": \"2023-05-12 10:00:00\",\n                        \"Region\": \"ap-guangzhou\"\n                    }\n                ],\n                \"RoutePolicyAssociationSet\": [\n                    {\n                        \"RoutePolicyId\": \"rrp-r70ctaia\",\n                        \"RouteTableId\": \"rtb-qk8eyn9g\",\n                        \"Priority\": 600\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"037e2d12-aea5-48f1-b8db-db1c08722102\"\n    }\n}",
+        "title": "查询路由接收策略实例ID列表"
+      }
+    ],
     "DescribeRoutePolicyEntries": [
       {
         "document": "查询路由策略规则列表。",

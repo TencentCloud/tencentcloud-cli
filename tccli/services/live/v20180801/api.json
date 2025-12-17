@@ -3067,7 +3067,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "布局Index。",
+          "document": "<p>布局Index。</p>取值范围：[1, 1000]",
           "example": "1",
           "member": "int64",
           "name": "LayoutIndex",
@@ -3078,7 +3078,7 @@
         },
         {
           "disabled": false,
-          "document": "布局模板Id。\n有效值[1，20，21，31，32，41]\n当使用布局模板时，无需LayoutParams参数，导播台将使用模板布局参数。\n",
+          "document": "<p>布局模板Id。有效值[1，20，21，31，32，41]当使用布局模板时，无需LayoutParams参数，导播台将使用模板布局参数。</p>",
           "example": "21",
           "member": "int64",
           "name": "LayoutTemplateId",
@@ -3089,7 +3089,7 @@
         },
         {
           "disabled": false,
-          "document": "布局绑定的输入列表。按布局LayerId从小到大，按顺序排列。\n已有两个画面的布局为例，输入1对应LayerId为1，输入2对应的LayerId为2，该字段应该填入\"1|2\"。",
+          "document": "<p>布局绑定的输入列表。按布局LayerId从小到大，按顺序排列。已有两个画面的布局为例，输入1对应LayerId为1，输入2对应的LayerId为2，该字段应该填入\"1|2\"。</p>",
           "example": "1|2",
           "member": "string",
           "name": "InputIndexList",
@@ -3100,7 +3100,7 @@
         },
         {
           "disabled": false,
-          "document": "详细的布局参数列表。",
+          "document": "<p>详细的布局参数列表。</p>",
           "example": "无",
           "member": "CasterLayoutParam",
           "name": "LayoutParams",
@@ -3111,7 +3111,7 @@
         },
         {
           "disabled": false,
-          "document": "布局输出的宽度，单位为像素。\n默认为1280像素。\n注：该值仅在画中画布局，且未设置PgmWidth时生效。",
+          "document": "<p>布局输出的宽度，单位为像素。默认为1280像素。注：该值仅在画中画布局，且未设置PgmWidth时生效。</p>",
           "example": "1080",
           "member": "uint64",
           "name": "LayoutWidth",
@@ -3122,7 +3122,7 @@
         },
         {
           "disabled": false,
-          "document": "布局输出的高度，单位为像素。\n注：该参数仅在画中画布局，且未设置PgmHeight时生效。",
+          "document": "<p>布局输出的高度，单位为像素。注：该参数仅在画中画布局，且未设置PgmHeight时生效。</p>",
           "example": "1920",
           "member": "uint64",
           "name": "LayoutHeight",

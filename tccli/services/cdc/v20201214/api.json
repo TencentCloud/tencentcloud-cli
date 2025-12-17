@@ -2085,7 +2085,7 @@
         {
           "disabled": false,
           "document": "vpn网关监控数据",
-          "example": "{\"InBandwidth\": {\"Timestamps\": [1730620800],\"Values\": [57513800]},\"OutBandwidth\": {\"Timestamps\": [1730620800],\"Values\": [36999115.2]}}",
+          "example": "无",
           "member": "VpngwBandwidthData",
           "name": "VpngwBandwidthData",
           "output_required": true,
@@ -2095,7 +2095,7 @@
         {
           "disabled": false,
           "document": "本地网关信息",
-          "example": "{       \"BGPRoute\": \"10.0.0.0/24\",       \"LocalIp\": \"10.0.0.0\",       \"Protocol\": \"BGP\",       \"VpcId\": \"vpc-0eyxjlsz\"     }",
+          "example": "无",
           "member": "LocalNetInfo",
           "name": "LocalNetInfo",
           "output_required": true,
@@ -2105,7 +2105,7 @@
         {
           "disabled": false,
           "document": "vpn网关通道监控数据",
-          "example": "{\"InBandwidth\": {\"Timestamps\": [1730620800],\"Values\": [57513800]},\"OutBandwidth\": {\"Timestamps\": [1730620800],\"Values\": [36999115.2]}}",
+          "example": "无",
           "member": "VpngwBandwidthData",
           "name": "VpnConnectionBandwidthData",
           "output_required": true,
@@ -2115,7 +2115,7 @@
         {
           "disabled": false,
           "document": "宿主机资源概览信息",
-          "example": "[         {             \"CpuAvailable\": 646,             \"CpuTotal\": 1008,             \"HostTypeFamily\": \"标准型S5\",             \"MemAvailable\": 54,             \"MemTotal\": 960         },     ]",
+          "example": "无",
           "member": "HostDetailInfo",
           "name": "HostDetailInfo",
           "output_required": false,
@@ -2128,7 +2128,7 @@
           "example": "1",
           "member": "uint64",
           "name": "HostStandbyCount",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2138,7 +2138,17 @@
           "example": "1",
           "member": "uint64",
           "name": "HostNormalCount",
-          "output_required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常宿主机数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "HostAbnormalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

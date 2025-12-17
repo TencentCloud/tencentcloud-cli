@@ -930,6 +930,34 @@
       ],
       "usage": "both"
     },
+    "AdvancedConsumerConfiguration": {
+      "document": "投递Ckafka 高级配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Ckafka分区hash状态。 默认 false\n\n- true：开启根据字段 Hash 值结果相等的信息投递到统一 ckafka 分区\n- false：关闭根据字段 Hash 值结果相等的信息投递到统一 ckafka 分区",
+          "example": "true",
+          "member": "bool",
+          "name": "PartitionHashStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要计算 hash 的字段列表。最大支持5个字段。",
+          "example": "[\"name\",\"address\"]",
+          "member": "string",
+          "name": "PartitionFields",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AlarmAnalysisConfig": {
       "document": "告警多维分析一些配置信息",
       "members": [
@@ -1332,6 +1360,46 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递日志开关。\n\n参数值：\n\n1：关闭\n\n2：开启 \n",
+          "example": "2",
+          "member": "uint64",
+          "name": "DeliverStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递日志标识。\n\n参数值：\n\n1：未启用\n\n2：已启用\n\n3：投递异常",
+          "example": "3",
+          "member": "uint64",
+          "name": "DeliverFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知渠道组配置的告警屏蔽统计状态数量信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlarmShieldCount",
+          "name": "AlarmShieldCount",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统一设定自定义回调参数。\n-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。\n-  false:优先使用告警策略中单独配置的请求头及请求内容。",
+          "example": "true",
+          "member": "bool",
+          "name": "CallbackPrioritize",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1357,6 +1425,52 @@
           "name": "ErrMsg",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AlarmShieldCount": {
+      "document": "告警屏蔽统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合检索条件的告警屏蔽总数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警屏蔽未生效数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "InvalidCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警屏蔽生效中数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "ValidCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警屏蔽已过期数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "ExpireCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3786,6 +3900,15 @@
           "name": "AlarmShieldStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "统一设定自定义回调参数。\n-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。\n-  false:优先使用告警策略中单独配置的请求头及请求内容。",
+          "example": "true",
+          "member": "bool",
+          "name": "CallbackPrioritize",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4653,6 +4776,33 @@
           "name": "Compression",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)",
+          "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
+          "member": "string",
+          "name": "RoleArn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "外部ID",
+          "example": "external_id_demo",
+          "member": "string",
+          "name": "ExternalId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置项",
+          "example": "无",
+          "member": "AdvancedConsumerConfiguration",
+          "name": "AdvancedConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5377,6 +5527,15 @@
           "name": "MetadataFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义日志解析异常存储字段。",
+          "example": "RAWLOG",
+          "member": "string",
+          "name": "CoverageField",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6028,6 +6187,24 @@
           "example": "STANDARD",
           "member": "string",
           "name": "StorageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)",
+          "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
+          "member": "string",
+          "name": "RoleArn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "外部ID",
+          "example": "external_id_demo",
+          "member": "string",
+          "name": "ExternalId",
           "required": false,
           "type": "string"
         }
@@ -7921,7 +8098,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li> name\n按照【通知渠道组名称】进行过滤。\n类型：String\n示例：\"Filters\":[{\"Key\":\"name\",\"Values\":[\"test-notice\"]}]\n必选：否</li>\n<li> alarmNoticeId\n按照【通知渠道组ID】进行过滤。\n类型：String\n示例：\"Filters\": [{Key: \"alarmNoticeId\", Values: [\"notice-5281f1d2-6275-4e56-9ec3-a1eb19d8bc2f\"]}]\n必选：否</li>\n<li> uid\n按照【接收用户ID】进行过滤。\n类型：String\n示例：\"Filters\": [{Key: \"uid\", Values: [\"1137546\"]}]\n必选：否</li>\n<li> groupId\n按照【接收用户组ID】进行过滤。\n类型：String\n示例：\"Filters\": [{Key: \"groupId\", Values: [\"344098\"]}]\n必选：否</li>\n\n<li> deliverFlag\n按照【投递状态】进行过滤。\n类型：String\n必选：否\n可选值： \"1\":未启用,  \"2\": 已启用, \"3\":投递异常</li>\n示例：\"Filters\":[{\"Key\":\"deliverFlag\",\"Values\":[\"2\"]}]\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "name\n按照【通知渠道组名称】进行过滤。\n类型：String\n示例：\"Filters\":[{\"Key\":\"name\",\"Values\":[\"test-notice\"]}]\n必选：否\nalarmNoticeId\n按照【通知渠道组ID】进行过滤。\n类型：String\n示例：\"Filters\": [{Key: \"alarmNoticeId\", Values: [\"notice-5281f1d2-6275-4e56-9ec3-a1eb19d8bc2f\"]}]\n必选：否\nuid\n按照【接收用户ID】进行过滤。\n类型：String\n示例：\"Filters\": [{Key: \"uid\", Values: [\"1137546\"]}]\n必选：否\ngroupId\n按照【接收用户组ID】进行过滤。\n类型：String\n示例：\"Filters\": [{Key: \"groupId\", Values: [\"344098\"]}]\n必选：否\n\ndeliverFlag\n按照【投递状态】进行过滤。\n类型：String\n必选：否\n可选值： \"1\":未启用,  \"2\": 已启用, \"3\":投递异常\n示例：\"Filters\":[{\"Key\":\"deliverFlag\",\"Values\":[\"2\"]}]\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7945,6 +8122,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要返回通知渠道组配置的告警屏蔽统计状态数量信息。\n- true：需要返回；\n- false：不返回（默认false）。",
+          "example": "false",
+          "member": "bool",
+          "name": "HasAlarmShieldCount",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9041,6 +9227,16 @@
           "name": "MetadataFlag",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义日志解析异常存储字段。",
+          "example": "ROWLOG",
+          "member": "string",
+          "name": "CoverageField",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -12602,6 +12798,16 @@
         },
         {
           "disabled": false,
+          "document": "若AssumerUin非空，则表示创建该日志集的服务方Uin",
+          "example": "1000945",
+          "member": "uint64",
+          "name": "AssumerUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE",
           "example": "TCB",
           "member": "string",
@@ -12638,6 +12844,16 @@
           "name": "RoleName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集下指标主题的数目",
+          "example": "10",
+          "member": "int64",
+          "name": "MetricTopicCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -13096,6 +13312,15 @@
           "name": "AlarmShieldStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "统一设定自定义回调参数。\n-  true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。\n-  false:优先使用告警策略中单独配置的请求头及请求内容。",
+          "example": "false",
+          "member": "bool",
+          "name": "CallbackPrioritize",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -13843,6 +14068,33 @@
           "name": "Compression",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)",
+          "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
+          "member": "string",
+          "name": "RoleArn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "外部ID",
+          "example": "external_id_demo",
+          "member": "string",
+          "name": "ExternalId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置",
+          "example": "无",
+          "member": "AdvancedConsumerConfiguration",
+          "name": "AdvancedConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -14329,6 +14581,15 @@
           "name": "MetadataFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义日志解析异常存储字段。",
+          "example": "ROWLOG",
+          "member": "string",
+          "name": "CoverageField",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14995,6 +15256,24 @@
           "name": "StorageType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)",
+          "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
+          "member": "string",
+          "name": "RoleArn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "外部ID",
+          "example": "external_id_demo",
+          "member": "string",
+          "name": "ExternalId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15016,7 +15295,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题ID\n- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。",
+          "document": " 主题ID- 通过[获取主题列表](https://cloud.tencent.com/document/product/614/56454)获取主题Id。",
           "example": "eb9ec10d-1343-4386-9a6e-75fd9d68726e",
           "member": "string",
           "name": "TopicId",
@@ -15079,6 +15358,15 @@
         },
         {
           "disabled": false,
+          "document": "存储类型：cold 低频存储，hot 标准存储",
+          "example": "cold",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "主题描述",
           "example": "xx部门xx业务topic",
           "member": "string",
@@ -15130,6 +15418,24 @@
           "name": "CancelTopicAsyncTaskID",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密相关参数。 支持加密地域并且开白用户可以传此参数，其他场景不能传递该参数。\n只支持传入1：kms-cls 云产品秘钥加密",
+          "example": "1",
+          "member": "uint64",
+          "name": "Encryption",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开启记录公网来源ip和服务端接收时间",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSourceFrom",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -17108,7 +17414,7 @@
         {
           "disabled": false,
           "document": "日志统计分析结果的列名\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\\\"action\\\"]",
+          "example": "[\"code\"]",
           "member": "string",
           "name": "ColNames",
           "output_required": true,
@@ -17128,7 +17434,7 @@
         {
           "disabled": false,
           "document": "日志统计分析结果\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"xxx\",\"yy\"]",
+          "example": "[\"{\\\"exist_pct\\\":0.8658,\\\"approx_distinct_cnt\\\":24,\\\"_col2\\\":\\\"_FAS_\\\"}\"]",
           "member": "string",
           "name": "AnalysisRecords",
           "output_required": true,
@@ -17401,6 +17707,36 @@
           "name": "StorageType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)",
+          "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
+          "member": "string",
+          "name": "RoleArn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外部ID",
+          "example": "external_id_demo",
+          "member": "string",
+          "name": "ExternalId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务运行状态。支持`0`,`1`,`2`\n\n- `0`: 停止\n- `1`: 运行中\n- `2`: 异常",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -17690,6 +18026,16 @@
         },
         {
           "disabled": false,
+          "document": "AssumerUin非空则表示创建该日志主题的服务方Uin",
+          "example": "12341231",
+          "member": "uint64",
+          "name": "AssumerUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE",
           "example": "CLS_bus",
           "member": "string",
@@ -17700,7 +18046,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n时间格式：yyyy-MM-dd HH:mm:ss",
+          "document": "创建时间。格式：yyyy-MM-dd HH:mm:ss",
           "example": "2024-11-13 14:48:23",
           "member": "string",
           "name": "CreateTime",
@@ -17726,6 +18072,16 @@
           "name": "Tags",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RoleName非空则表示创建该日志主题的服务方使用的角色",
+          "example": "CLB_QcsRole",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -17856,6 +18212,16 @@
           "name": "EffectiveDate",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IsSourceFrom 开启记录公网来源ip和服务端接收时间",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSourceFrom",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

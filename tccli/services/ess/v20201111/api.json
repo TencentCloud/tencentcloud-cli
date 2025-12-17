@@ -17429,7 +17429,7 @@
         {
           "disabled": false,
           "document": "合同审查风险结果ID",
-          "example": "",
+          "example": "01KC8ACZ92JX24GG5YCBF5H6BN",
           "member": "string",
           "name": "RiskId",
           "output_required": false,
@@ -17440,7 +17440,7 @@
         {
           "disabled": false,
           "document": "风险名称",
-          "example": "",
+          "example": "引用内容详情是否存在",
           "member": "string",
           "name": "RiskName",
           "output_required": false,
@@ -17451,7 +17451,7 @@
         {
           "disabled": false,
           "document": "风险描述",
-          "example": "",
+          "example": "合同文本中提到的各种引用，需要在合同全文中找到对应内容详情",
           "member": "string",
           "name": "RiskDescription",
           "output_required": false,
@@ -17462,7 +17462,7 @@
         {
           "disabled": false,
           "document": "风险要点分类名称",
-          "example": "",
+          "example": "引用内容详情是否存在",
           "member": "string",
           "name": "CategoryName",
           "output_required": false,
@@ -17473,7 +17473,7 @@
         {
           "disabled": false,
           "document": "审查依据",
-          "example": "",
+          "example": "引用内容详情是否存在-引用内容详情是否存在",
           "member": "string",
           "name": "RiskBasis",
           "output_required": false,
@@ -17484,7 +17484,7 @@
         {
           "disabled": false,
           "document": "引文内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ReferenceExcerpt",
           "name": "Excerpts",
           "output_required": false,

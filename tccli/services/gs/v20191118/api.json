@@ -2103,21 +2103,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户IP，用户客户端的公网IP，用于就近选择起始加速节点",
-          "example": "125.127.178.228",
-          "member": "string",
-          "name": "UserIP",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "实例 ID 列表。每次请求的实例的上限为 500。",
           "example": "[ \"cai-a1b2c3d4\" ]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户IP，可以根据该 IP 选择就近加速点。如果不填，将自动选择就近加速点。",
+          "example": "125.127.178.228",
+          "member": "string",
+          "name": "UserIP",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2125,6 +2125,16 @@
     "CreateAndroidInstanceAcceleratorTokenResponse": {
       "document": "CreateAndroidInstanceAcceleratorToken返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "token",
+          "example": "token",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "加速信息",

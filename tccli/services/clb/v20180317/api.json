@@ -343,6 +343,13 @@
       "output": "DescribeRewriteResponse",
       "status": "online"
     },
+    "DescribeTargetGroupInstanceStatus": {
+      "document": "查询目标组后端服务状态。目前仅支持网关负载均衡类型的目标组支持查询后端服务状态。",
+      "input": "DescribeTargetGroupInstanceStatusRequest",
+      "name": "查询目标组后端服务状态",
+      "output": "DescribeTargetGroupInstanceStatusResponse",
+      "status": "online"
+    },
     "DescribeTargetGroupInstances": {
       "document": "获取目标组绑定的服务器信息",
       "input": "DescribeTargetGroupInstancesRequest",
@@ -5727,6 +5734,52 @@
           "example": "无",
           "member": "RuleOutput",
           "name": "RewriteSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupInstanceStatusRequest": {
+      "document": "DescribeTargetGroupInstanceStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标组唯一id",
+          "example": "lbtg-xxx",
+          "member": "string",
+          "name": "TargetGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标组绑定的后端服务ip列表",
+          "example": "[\"10.0.0.1\"]",
+          "member": "string",
+          "name": "TargetGroupInstanceIps",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTargetGroupInstanceStatusResponse": {
+      "document": "DescribeTargetGroupInstanceStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检查后端rs状态列表",
+          "example": "null",
+          "member": "TargetGroupInstanceStatus",
+          "name": "TargetGroupInstanceSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -12406,6 +12459,62 @@
         }
       ],
       "usage": "in"
+    },
+    "TargetGroupInstanceStatus": {
+      "document": "用于目标组后端rs健康检查状态。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "后端rs的IP",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "InstanceIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查状态，参数值及含义如下：\n● on：表示探测中。\n● off：表示健康检查关闭。\n● health：表示健康。\n● unhealth：表示异常。",
+          "example": "health",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "90",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网卡ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eni-xxxxxxxx",
+          "member": "string",
+          "name": "EniId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TargetHealth": {
       "document": "描述一个Target的健康信息",

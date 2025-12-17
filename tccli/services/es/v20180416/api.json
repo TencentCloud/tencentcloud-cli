@@ -994,6 +994,17 @@
         },
         {
           "disabled": false,
+          "document": "备份快照前缀",
+          "example": "es-xxxx",
+          "member": "string",
+          "name": "SnapshotName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "0 腾讯云仓库; 1 客户仓库",
           "example": "0",
           "member": "uint64",
@@ -1001,6 +1012,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管快照仓库名称",
+          "example": "ES_AUTO_BACKUP",
+          "member": "string",
+          "name": "PaasEsRepository",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1034,6 +1056,94 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份锁定 0 不锁定; 1 锁定",
+          "example": "0",
+          "member": "uint64",
+          "name": "CosRetention",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "锁定截止日期 2022-12-10T08:34:48.000Z",
+          "example": "2022-12-10T08:34:48.000Z",
+          "member": "string",
+          "name": "RetainUntilDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "锁定宽限期",
+          "example": "2",
+          "member": "uint64",
+          "name": "RetentionGraceTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份 0 不跨地域; 1 跨地域",
+          "example": "0",
+          "member": "uint64",
+          "name": "RemoteCos",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份地域名称 ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RemoteCosRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "mypolicy",
+          "member": "string",
+          "name": "StrategyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份索引列表，如果不填表示备份所有索引",
+          "example": "*",
+          "member": "string",
+          "name": "Indices",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略创建时间",
+          "example": "2022-12-10 08:34:48",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1142,6 +1252,78 @@
           "example": "index1,index2",
           "member": "string",
           "name": "Indices",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0 腾讯云仓库; 1 客户仓库",
+          "example": "0",
+          "member": "uint64",
+          "name": "EsRepositoryType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户快照仓库名称",
+          "example": "UserEsRepository",
+          "member": "string",
+          "name": "UserEsRepository",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天",
+          "example": "3",
+          "member": "uint64",
+          "name": "StorageDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备份锁定 0 不锁定; 1 锁定",
+          "example": "0",
+          "member": "uint64",
+          "name": "CosRetention",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "锁定截止日期 2022-12-10T08:34:48.000Z",
+          "example": "2022-12-10T08:34:48.000Z",
+          "member": "string",
+          "name": "RetainUntilDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "锁定宽限期,单位天",
+          "example": "7",
+          "member": "uint64",
+          "name": "RetentionGraceTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份 0 不跨地域; 1 跨地域",
+          "example": "0",
+          "member": "uint64",
+          "name": "RemoteCos",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份地域名称 ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RemoteCosRegion",
           "required": false,
           "type": "string"
         }
@@ -11023,7 +11205,7 @@
         {
           "disabled": false,
           "document": "备份失败的索引分片和失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{...}]",
+          "example": "无",
           "member": "Failures",
           "name": "Failures",
           "output_required": false,
@@ -11037,6 +11219,160 @@
           "example": "true",
           "member": "string",
           "name": "UserBackUp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 腾讯云仓库; 1 客户仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "EsRepositoryType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "托管快照仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PaasEsRepository",
+          "member": "string",
+          "name": "PaasEsRepository",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户快照仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UserEsRepository",
+          "member": "string",
+          "name": "UserEsRepository",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "快照存储周期 单位天，范围[0, INF), 如果没有设置则默认7天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "uint64",
+          "name": "StorageDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动备份频率, 如果是0,则等效24\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "uint64",
+          "name": "AutoBackupInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份锁定 0 不锁定; 1 锁定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CosRetention",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "锁定截止日期 2022-12-10T08:34:48.000Z\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-12-10T08:34:48.000Z",
+          "member": "string",
+          "name": "RetainUntilDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "锁定宽限期,单位天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "RetentionGraceTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否已经备份锁定 0 不锁定; 1 锁定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsLocked",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份 0 不跨地域; 1 跨地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RemoteCos",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份地域名称 ap-guangzhou\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "RemoteCosRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份加密 0 不加密; 1 加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CosEncryption",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kms密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "das-asdasd-asda",
+          "member": "string",
+          "name": "KmsKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mypolicy",
+          "member": "string",
+          "name": "StrategyName",
           "output_required": false,
           "required": false,
           "type": "string",

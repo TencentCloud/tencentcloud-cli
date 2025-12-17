@@ -47,8 +47,17 @@ Output:
                         "Type": 1
                     }
                 ],
+                "DeliverStatus": 1,
+                "DeliverFlag": 1,
                 "AlarmNoticeDeliverConfig": null,
-                "AlarmShieldStatus": 2
+                "AlarmShieldStatus": 2,
+                "AlarmShieldCount": {
+                    "TotalCount": 0,
+                    "InvalidCount": 0,
+                    "ValidCount": 0,
+                    "ExpireCount": 0
+                },
+                "CallbackPrioritize": true
             }
         ],
         "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"

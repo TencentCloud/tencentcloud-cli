@@ -569,12 +569,32 @@
         },
         {
           "disabled": false,
+          "document": "环境ID",
+          "example": "cloud1-c934jltjdkjflsdui",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "活动id",
           "example": "114514",
           "member": "int64",
           "name": "ActivityId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "活动名称（唯一英文标识）",
+          "example": "la-inspire-activity",
+          "member": "string",
+          "name": "ActivityName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -609,12 +629,22 @@
         },
         {
           "disabled": false,
-          "document": "是否软删除",
+          "document": "是否已删除",
           "example": "true",
           "member": "bool",
           "name": "IsDeleted",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "活动参与时间",
+          "example": "2025-12-01T12:34:56+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

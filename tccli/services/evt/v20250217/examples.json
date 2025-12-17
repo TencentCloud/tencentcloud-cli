@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CompleteApproval": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteApproval\n<公共请求参数>\n\n{\n    \"ApprovalId\": \"A202507150000000000000\",\n    \"NodeId\": \"AN202507150000000000000\",\n    \"Result\": 1,\n    \"Opinion\": \"通过\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a057f127-ee97-43fc-9b60-07cd420c1111\"\n    }\n}",
+        "title": "完成审批任务"
+      }
+    ],
     "CreateRoleUser": [
       {
         "document": "",

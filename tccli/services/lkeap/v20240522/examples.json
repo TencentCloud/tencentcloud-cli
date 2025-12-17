@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CancelTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"09acd0b71761213495865\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be78765e-a8e2-4098-91c5-0e208fa5d6dc\"\n    }\n}",
+        "title": "取消任务"
+      }
+    ],
     "ChatCompletions": [
       {
         "document": "流式请求",

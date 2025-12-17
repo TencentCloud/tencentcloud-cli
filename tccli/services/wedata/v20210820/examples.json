@@ -1586,6 +1586,14 @@
         "title": "查询任务详情"
       }
     ],
+    "DescribeTaskInstancesStatus": [
+      {
+        "document": "获取运行状态",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskInstancesStatus\n<公共请求参数>\n\n{\n    \"RecordIdList\": [\n        \"10505\"\n    ],\n    \"WorkflowId\": \"a6557acf-1dc4-4251-84c2-c1210d5a6390\",\n    \"ProjectId\": \"1470547050521227264\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Instances\": [\n                    {\n                        \"InstanceId\": \"6820250728160909016_2025-07-28T16:09:07+08:00\",\n                        \"RecordId\": \"10505\",\n                        \"Status\": \"SUCCESS\",\n                        \"TaskId\": \"20250728154317627\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"d3da9408-65b5-4229-9ddf-070ad3cbc2ba\"\n    }\n}",
+        "title": "获取运行状态"
+      }
+    ],
     "DescribeTaskLineage": [
       {
         "document": "通过任务 ID 查询表血缘",

@@ -608,6 +608,15 @@
           "name": "AutomationService",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池密码",
+          "example": "Paas@123",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -636,7 +645,7 @@
         {
           "disabled": false,
           "document": "节点池类型",
-          "example": "Navite、External",
+          "example": "Native、External",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -4110,7 +4119,7 @@
         {
           "disabled": false,
           "document": "机型列表",
-          "example": "S2.4XLARGE48",
+          "example": "[\"S2.4XLARGE48\"]",
           "member": "string",
           "name": "InstanceTypes",
           "required": false,
@@ -4155,11 +4164,20 @@
         {
           "disabled": false,
           "document": "节点池 GPU 配置",
-          "example": "[{\"InstanceType\":\"GN7Large.32\",\"GPUParams\":{\"Driver\":\"450.104.51\"}}]",
+          "example": "无",
           "member": "GPUConfig",
           "name": "GPUConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池密码",
+          "example": "Paas@123",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

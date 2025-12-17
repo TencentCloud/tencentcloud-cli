@@ -8,14 +8,14 @@
       "status": "online"
     },
     "CreateConsumerGroup": {
-      "document": "创建消费组",
+      "document": "创建消费组。\n当前 API 适用集群：5.x 集群。4.x 集群的创建消费组接口文档见 [CreateRocketMQGroup](https://cloud.tencent.com/document/api/1179/63428)。",
       "input": "CreateConsumerGroupRequest",
       "name": "创建消费组",
       "output": "CreateConsumerGroupResponse",
       "status": "online"
     },
     "CreateInstance": {
-      "document": "创建 RocketMQ 5.x 集群",
+      "document": "创建 RocketMQ 5.x 集群。\n当前 API 适用集群：5.x 集群。创建 4.x 专享/通用集群的接口文档见 [CreateRocketMQVipInstance](https://cloud.tencent.com/document/product/1179/95721)。",
       "input": "CreateInstanceRequest",
       "name": "创建集群",
       "output": "CreateInstanceResponse",
@@ -50,28 +50,28 @@
       "status": "deprecated"
     },
     "CreateRole": {
-      "document": "添加角色",
+      "document": "添加角色。\n当前 API 适用集群：5.x 集群。4.x 集群的创建角色接口文档见 [CreateRocketMQRole](https://cloud.tencent.com/document/product/1179/107538)，给角色授权接口文档见 [CreateRocketMQEnvironmentRole](https://cloud.tencent.com/document/product/1179/107539)。",
       "input": "CreateRoleRequest",
       "name": "创建角色",
       "output": "CreateRoleResponse",
       "status": "online"
     },
     "CreateTopic": {
-      "document": "创建主题",
+      "document": "创建 RocketMQ 主题。\n当前 API 适用集群：5.x 集群。4.x 集群的创建主题接口文档见 [CreateRocketMQTopic](https://cloud.tencent.com/document/api/1179/63426)",
       "input": "CreateTopicRequest",
       "name": "创建主题",
       "output": "CreateTopicResponse",
       "status": "online"
     },
     "DeleteConsumerGroup": {
-      "document": "删除消费组。消费者组删除后，消费者组的所有配置和相关数据都会被清空，且无法找回。删除后，在线的消费者客户端会出现报错，建议您提前下线客户端。",
+      "document": "删除消费组。消费者组删除后，消费者组的所有配置和相关数据都会被清空，且无法找回。删除后，在线的消费者客户端会出现报错，建议您提前下线客户端。\n当前 API 适用集群：5.x 集群。4.x 集群的删除消费组接口文档见 [DeleteRocketMQGroup](https://cloud.tencent.com/document/api/1179/63424)。",
       "input": "DeleteConsumerGroupRequest",
       "name": "删除消费组",
       "output": "DeleteConsumerGroupResponse",
       "status": "online"
     },
     "DeleteInstance": {
-      "document": "删除 RocketMQ 5.x 集群，删除前请先删除正在使用的主题、消费组和角色信息。",
+      "document": "删除 RocketMQ 5.x 集群，删除前请先删除正在使用的主题、消费组和角色信息。\n当前 API 适用集群：5.x 集群。删除 4.x 集群接口文档见 [DeleteRocketMQVipInstance](https://cloud.tencent.com/document/product/1179/95802)。",
       "input": "DeleteInstanceRequest",
       "name": "删除集群",
       "output": "DeleteInstanceResponse",
@@ -106,7 +106,7 @@
       "status": "deprecated"
     },
     "DeleteRole": {
-      "document": "删除角色。请确保该角色相关信息不在当前代码中被使用。删除角色后，原先使用该角色进行生产或消费消息的密钥（AccessKey 和 SecretKey）将立即失效。",
+      "document": "删除角色。请确保该角色相关信息不在当前代码中被使用。删除角色后，原先使用该角色进行生产或消费消息的密钥（AccessKey 和 SecretKey）将立即失效。\n当前 API 适用集群：5.x 集群。4.x 集群的删除角色接口文档见 [DeleteRocketMQRoles](https://cloud.tencent.com/document/product/1179/107536)，删除角色授权接口文档见 [DeleteRocketMQEnvironmentRoles](https://cloud.tencent.com/document/product/1179/107537)。",
       "input": "DeleteRoleRequest",
       "name": "删除角色",
       "output": "DeleteRoleResponse",
@@ -120,42 +120,42 @@
       "status": "online"
     },
     "DeleteTopic": {
-      "document": "删除主题。主题删除后，主题的所有配置和相关数据都会被清空，且无法找回。",
+      "document": "删除主题。主题删除后，主题的所有配置和相关数据都会被清空，且无法找回。\n当前 API 适用集群：5.x 集群。4.x 集群的删除主题接口文档见 [DeleteRocketMQTopic](https://cloud.tencent.com/document/api/1179/63423)。",
       "input": "DeleteTopicRequest",
       "name": "删除主题",
       "output": "DeleteTopicResponse",
       "status": "online"
     },
     "DescribeConsumerClient": {
-      "document": "查询消费者客户端详情",
+      "document": "查询消费者客户端详情。\n当前 API 适用集群：5.x 集群。4.x 集群的查询消费者客户端详情接口文档见 [DescribeRocketMQConsumerConnectionDetail](https://cloud.tencent.com/document/product/1179/102490)。",
       "input": "DescribeConsumerClientRequest",
       "name": "查询消费者客户端详情",
       "output": "DescribeConsumerClientResponse",
       "status": "online"
     },
     "DescribeConsumerClientList": {
-      "document": "查询消费组下的客户端连接列表。",
+      "document": "查询消费组下的客户端连接列表。\n当前 API 适用集群：5.x 集群。4.x 集群的查询消费组下的客户端列表接口文档见 [DescribeRocketMQConsumerConnections](https://cloud.tencent.com/document/product/1179/100460)。",
       "input": "DescribeConsumerClientListRequest",
       "name": "查询消费组下的客户端连接列表",
       "output": "DescribeConsumerClientListResponse",
       "status": "online"
     },
     "DescribeConsumerGroup": {
-      "document": "查询消费组详情",
+      "document": "查询消费组详情。\n当前 API 适用集群：5.x 集群。4.x 集群的查询消费组详情接口文档见 [DescribeRocketMQConsumerConnections](https://cloud.tencent.com/document/product/1179/100460)。",
       "input": "DescribeConsumerGroupRequest",
       "name": "查询消费组详情",
       "output": "DescribeConsumerGroupResponse",
       "status": "online"
     },
     "DescribeConsumerGroupList": {
-      "document": "获取消费组列表，Filter参数使用说明如下：\n\n- ConsumerGroupName 消费组名称，支持模糊查询，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。\n- ConsumeMessageOrderly，投递顺序性，枚举值如下：\n    - true 顺序投递\n    - false 并发投递\n\nFilters示例： \n[{ \"Name\": \"ConsumeMessageOrderly\", \"Values\": [\"true\"] }]",
+      "document": "获取消费组列表，Filter参数使用说明如下：\n\n- ConsumerGroupName 消费组名称，支持模糊查询，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。\n- ConsumeMessageOrderly，投递顺序性，枚举值如下：\n    - true 顺序投递\n    - false 并发投递\n\nFilters示例： \n[{ \"Name\": \"ConsumeMessageOrderly\", \"Values\": [\"true\"] }]\n当前 API 适用集群：5.x 集群。4.x 集群的获取消费组列表接口文档见 [DescribeRocketMQGroups](https://cloud.tencent.com/document/api/1179/63420)。",
       "input": "DescribeConsumerGroupListRequest",
       "name": "查询消费组列表",
       "output": "DescribeConsumerGroupListResponse",
       "status": "online"
     },
     "DescribeConsumerLag": {
-      "document": "查询指定消费组堆积数。",
+      "document": "查询指定消费组堆积数。\n当前 API 适用集群：4.x 集群和 5.x 集群。",
       "input": "DescribeConsumerLagRequest",
       "name": "查询指定消费组堆积数",
       "output": "DescribeConsumerLagResponse",
@@ -169,7 +169,7 @@
       "status": "online"
     },
     "DescribeInstance": {
-      "document": "查询 RocketMQ 5.x 集群信息。",
+      "document": "查询 RocketMQ 5.x 集群信息。\n当前 API 适用集群：5.x 集群。查询 4.x 专享/通用集群信息的接口文档见 [DescribeRocketMQVipInstanceDetail](https://cloud.tencent.com/document/product/1179/86725)。",
       "input": "DescribeInstanceRequest",
       "name": "查询集群信息",
       "output": "DescribeInstanceResponse",
@@ -274,14 +274,14 @@
       "status": "online"
     },
     "DescribeMessageList": {
-      "document": "查询消息列表。如果查询死信消息，请设置ConsumerGroup参数。",
+      "document": "查询消息列表。如果查询死信消息，请设置ConsumerGroup参数。\n当前 API 适用集群：5.x 集群。4.x 集群的查询消息列表接口文档见 [DescribeRocketMQTopicMsgs](https://cloud.tencent.com/document/product/1179/97761)。",
       "input": "DescribeMessageListRequest",
       "name": "查询消息列表",
       "output": "DescribeMessageListResponse",
       "status": "online"
     },
     "DescribeMessageTrace": {
-      "document": "根据消息 ID 查询消息轨迹。",
+      "document": "根据消息 ID 查询消息轨迹。\n当前 API 适用集群：5.x 集群。4.x 集群查询消息轨迹接口文档见 [DescribeRocketMQMsgTrace](https://cloud.tencent.com/document/product/1179/97760)。",
       "input": "DescribeMessageTraceRequest",
       "name": "查询消息轨迹",
       "output": "DescribeMessageTraceResponse",
@@ -330,7 +330,7 @@
       "status": "online"
     },
     "DescribeRoleList": {
-      "document": "查询角色列表，Filter参数使用说明如下：\n\n- RoleName 角色名称，支持模糊搜索，从本接口返回值或控制台获得\n- AccessKey AccessKey，支持模糊搜索，从本接口返回值或控制台获得\n\nFilters示例： \n[{ \"Name\": \"RoleName\", \"Values\": [\"test_role\"] }]",
+      "document": "查询角色列表，Filter参数使用说明如下：\n\n- RoleName 角色名称，支持模糊搜索，从本接口返回值或控制台获得\n- AccessKey AccessKey，支持模糊搜索，从本接口返回值或控制台获得\n\nFilters示例： \n[{ \"Name\": \"RoleName\", \"Values\": [\"test_role\"] }]\n当前 API 适用集群：5.x 集群。4.x 集群的查询角色列表接口文档见 [DescribeRocketMQRoles](https://cloud.tencent.com/document/product/1179/107534)，查询角色授权列表接口文档见 [DescribeRocketMQEnvironmentRoles](https://cloud.tencent.com/document/product/1179/107535)。",
       "input": "DescribeRoleListRequest",
       "name": "查询角色列表",
       "output": "DescribeRoleListResponse",
@@ -358,7 +358,7 @@
       "status": "online"
     },
     "DescribeTopicList": {
-      "document": "获取主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，支持模糊搜索，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得\n- TopicType 主题类型查询，支持多选，参考 [DescribeTopic](https://cloud.tencent.com/document/api/1493/97945) 接口 TopicType 字段\n\nFilters示例：\n [{ \"Name\": \"TopicName\", \"Values\": [\"test_topic\"] }]",
+      "document": "获取主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，支持模糊搜索，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得\n- TopicType 主题类型查询，支持多选，参考 [DescribeTopic](https://cloud.tencent.com/document/api/1493/97945) 接口 TopicType 字段\n\nFilters示例：\n [{ \"Name\": \"TopicName\", \"Values\": [\"test_topic\"] }]\n当前 API 适用集群：5.x 集群。4.x 集群的获取主题列表接口文档见 [DescribeRocketMQTopics](https://cloud.tencent.com/document/api/1179/63418)。",
       "input": "DescribeTopicListRequest",
       "name": "查询主题列表",
       "output": "DescribeTopicListResponse",
@@ -393,14 +393,14 @@
       "status": "online"
     },
     "ModifyConsumerGroup": {
-      "document": "修改消费组属性",
+      "document": "修改消费组属性。\n当前 API 适用集群：5.x 集群。4.x 集群的修改消费组属性接口文档见 [ModifyRocketMQGroup](https://cloud.tencent.com/document/api/1179/63416)。",
       "input": "ModifyConsumerGroupRequest",
       "name": "修改消费组属性",
       "output": "ModifyConsumerGroupResponse",
       "status": "online"
     },
     "ModifyInstance": {
-      "document": "修改 RocketMQ 5.x 集群属性，仅支持修改运行中的集群。",
+      "document": "修改 RocketMQ 5.x 集群属性，仅支持修改运行中的集群。\n当前 API 适用集群：5.x 集群。修改 4.x 集群属性的接口文档见 [ModifyRocketMQInstance](https://cloud.tencent.com/document/product/1179/108862)。",
       "input": "ModifyInstanceRequest",
       "name": "修改集群属性",
       "output": "ModifyInstanceResponse",
@@ -449,14 +449,14 @@
       "status": "deprecated"
     },
     "ModifyRole": {
-      "document": "修改角色",
+      "document": "修改角色。\n当前 API 适用集群：5.x 集群。4.x 集群的修改角色接口文档见 [ModifyRocketMQRole](https://cloud.tencent.com/document/product/1179/107532)，修改角色的授权接口文档见 [ModifyRocketMQEnvironmentRole](https://cloud.tencent.com/document/product/1179/107533)。",
       "input": "ModifyRoleRequest",
       "name": "修改角色",
       "output": "ModifyRoleResponse",
       "status": "online"
     },
     "ModifyTopic": {
-      "document": "修改主题属性",
+      "document": "修改主题属性。\n当前 API 适用集群：5.x 集群。4.x 集群的修改主题属性接口文档见 [ModifyRocketMQTopic](https://cloud.tencent.com/document/api/1179/63414)。",
       "input": "ModifyTopicRequest",
       "name": "修改主题属性",
       "output": "ModifyTopicResponse",
@@ -477,7 +477,7 @@
       "status": "online"
     },
     "ResetConsumerGroupOffset": {
-      "document": "重置消费位点",
+      "document": "重置消费位点。\n当前 API 适用集群：5.x 集群。4.x 集群的重置消费位点接口文档见 [ResetRocketMQConsumerOffSet](https://cloud.tencent.com/document/api/1179/71662)。",
       "input": "ResetConsumerGroupOffsetRequest",
       "name": "重置消费位点",
       "output": "ResetConsumerGroupOffsetResponse",

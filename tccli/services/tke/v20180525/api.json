@@ -777,6 +777,13 @@
       "output": "DescribeClustersResponse",
       "status": "online"
     },
+    "DescribeControlPlaneLogs": {
+      "document": "查询插件日志采集配置",
+      "input": "DescribeControlPlaneLogsRequest",
+      "name": "查询用户托管组件日志采集开启状态",
+      "output": "DescribeControlPlaneLogsResponse",
+      "status": "online"
+    },
     "DescribeECMInstances": {
       "document": "获取ECM实例相关信息",
       "input": "DescribeECMInstancesRequest",
@@ -1260,6 +1267,13 @@
       "output": "DisableClusterDeletionProtectionResponse",
       "status": "online"
     },
+    "DisableControlPlaneLogs": {
+      "document": "删除插件日志采集配置",
+      "input": "DisableControlPlaneLogsRequest",
+      "name": "关闭用户托管组件日志采集",
+      "output": "DisableControlPlaneLogsResponse",
+      "status": "online"
+    },
     "DisableEncryptionProtection": {
       "document": "关闭加密信息保护",
       "input": "DisableEncryptionProtectionRequest",
@@ -1300,6 +1314,13 @@
       "input": "EnableClusterDeletionProtectionRequest",
       "name": "启用集群删除保护",
       "output": "EnableClusterDeletionProtectionResponse",
+      "status": "online"
+    },
+    "EnableControlPlaneLogs": {
+      "document": "创建插件日志采集配置",
+      "input": "EnableControlPlaneLogsRequest",
+      "name": "开启指定集群的托管组件日志采集",
+      "output": "EnableControlPlaneLogsResponse",
       "status": "online"
     },
     "EnableEncryptionProtection": {
@@ -4549,6 +4570,67 @@
         }
       ],
       "usage": "out"
+    },
+    "ComponentLogConfig": {
+      "document": "组件日志采集配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "kapenter",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志级别，对于支持动态调整日志级别的组件，开启日志时可指定该参数",
+          "example": "2",
+          "member": "int64",
+          "name": "LogLevel",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID。如果不指定，则自动创建",
+          "example": "2912eb16-a56c-4b9b-adb0-9828db1ad342",
+          "member": "string",
+          "name": "LogSetId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID。如果不指定，则自动创建",
+          "example": "2912eb16-a56c-4b9b-adb0-9828db1ad342",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "topic 所属region。 该参数可实现日志跨地域投递",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "TopicRegion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Container": {
       "document": "EKS Instance Container容器",
@@ -11195,6 +11277,52 @@
       ],
       "type": "object"
     },
+    "DescribeControlPlaneLogsRequest": {
+      "document": "DescribeControlPlaneLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-kaftesta",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型。当前只支持tke",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeControlPlaneLogsResponse": {
+      "document": "DescribeControlPlaneLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志采集配置查询结果",
+          "example": "无",
+          "member": "ComponentLogConfig",
+          "name": "Details",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeECMInstancesRequest": {
       "document": "DescribeECMInstances请求参数结构体",
       "members": [
@@ -15715,6 +15843,60 @@
       ],
       "type": "object"
     },
+    "DisableControlPlaneLogsRequest": {
+      "document": "DisableControlPlaneLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-kaftesta",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型。当前只支持tke",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件名称列表，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除日志集和topic。 如果日志集和topic被其他采集规则使用，则不会被删除",
+          "example": "false",
+          "member": "bool",
+          "name": "DeleteLogSetAndTopic",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableControlPlaneLogsResponse": {
+      "document": "DisableControlPlaneLogs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableEncryptionProtectionRequest": {
       "document": "DisableEncryptionProtection请求参数结构体",
       "members": [
@@ -17013,6 +17195,51 @@
     },
     "EnableClusterDeletionProtectionResponse": {
       "document": "EnableClusterDeletionProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableControlPlaneLogsRequest": {
+      "document": "EnableControlPlaneLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-kaftesta",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型。当前只支持tke",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "各组件日志采集配置，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter",
+          "example": "无",
+          "member": "ComponentLogConfig",
+          "name": "Components",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableControlPlaneLogsResponse": {
+      "document": "EnableControlPlaneLogs返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

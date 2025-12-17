@@ -21,6 +21,13 @@
       "output": "CreateMonitorResponse",
       "status": "online"
     },
+    "CreatePackageAndPay": {
+      "document": "购买套餐并支付，此接口会在余额扣费，谨慎调用",
+      "input": "CreatePackageAndPayRequest",
+      "name": "购买套餐并支付",
+      "output": "CreatePackageAndPayResponse",
+      "status": "online"
+    },
     "CreateStrategy": {
       "document": "新建策略接口",
       "input": "CreateStrategyRequest",
@@ -173,6 +180,13 @@
       "input": "ModifyMonitorRequest",
       "name": "修改监控器",
       "output": "ModifyMonitorResponse",
+      "status": "online"
+    },
+    "ModifyPackageAutoRenew": {
+      "document": "设置自动续费接口",
+      "input": "ModifyPackageAutoRenewRequest",
+      "name": "设置自动续费",
+      "output": "ModifyPackageAutoRenewResponse",
       "status": "online"
     },
     "ModifyStrategy": {
@@ -911,6 +925,106 @@
           "name": "MonitorId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePackageAndPayRequest": {
+      "document": "CreatePackageAndPay请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下单类型：CREATE 新购；RENEW 续费；MODIFY 变配",
+          "example": "CREATE",
+          "member": "string",
+          "name": "DealType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "套餐类型：STANDARD 标准版；ULTIMATE 旗舰版；TASK 任务探测",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "GoodsType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "商品数量：STANDARD和ULTIMATE固定为1，TASK为任务探测数量。取值范围：1～10000",
+          "example": "1",
+          "member": "uint64",
+          "name": "GoodsNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费：1 开启自动续费；2 关闭自动续费",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID，续费和变配的时候需要传",
+          "example": "gtm-cnxxpfvartb",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "套餐时长，以月为单位，创建和续费的时候需要传。取值范围：1～120",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "升级的套餐类型，暂时只支持传ULTIMATE，不支持降配",
+          "example": "ULTIMATE",
+          "member": "string",
+          "name": "NewPackageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动选择代金券，1 是；0否，默认为0",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePackageAndPayResponse": {
+      "document": "CreatePackageAndPay返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id列表，目前只会返回一个资源，取第一个值即可",
+          "example": "[\"gtm-cnxxpfvartb\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3343,6 +3457,52 @@
           "name": "Msg",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPackageAutoRenewRequest": {
+      "document": "ModifyPackageAutoRenew请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID，续费和变配的时候需要传",
+          "example": "gtm-dsdfshyfxv",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费：1 开启自动续费；2 关闭自动续费",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenew",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPackageAutoRenewResponse": {
+      "document": "ModifyPackageAutoRenew返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id列表，目前只会返回一个资源，取第一个值即可",
+          "example": "[\"gtm-dsdfshyfxv\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
