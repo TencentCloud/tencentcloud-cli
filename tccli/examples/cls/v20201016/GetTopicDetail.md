@@ -27,6 +27,7 @@ Output:
             "HotPeriod": 0,
             "Index": false,
             "IsWebTracking": false,
+            "KeyId": "",
             "LogsetId": "0af7e6bb-fc91-4ee8-ad24-1129e9c91c6c",
             "MaxSplitPartitions": 300,
             "MigrationStatus": 0,

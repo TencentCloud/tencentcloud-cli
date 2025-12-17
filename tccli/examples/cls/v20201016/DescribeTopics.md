@@ -30,6 +30,7 @@ Output:
                 "HotPeriod": 0,
                 "Index": true,
                 "IsWebTracking": false,
+                "KeyId": "",
                 "LogsetId": "fd0605ca-xxxx-xxxx-xxxx-592e5233c2db",
                 "MaxSplitPartitions": 50,
                 "MigrationStatus": 0,

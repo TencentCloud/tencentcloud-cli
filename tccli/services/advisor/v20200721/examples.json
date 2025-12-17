@@ -27,8 +27,8 @@
     "DescribeDownloadTask": [
       {
         "document": "",
-        "input": "https://advisor.tencentcloudapi.com/?Action=DescribeDownloadTask\n&ResultId=-1#Group#0f7c2fac-20ee-4da9-8e71-944577bf7616\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"CosUrl\": \"xx\",\n        \"CosUrlPdf\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaskStatus\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: advisor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDownloadTask\n<公共请求参数>\n\n{\n    \"ResultId\": \"-1#Group#0f7c2fac-20ee-4da9-8e71-944577bf7616\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CosUrl\": \"https://advisor-scan-pre-1258344699.cos-internal.ap-guangzhou.tencentcos.cn/AdvisorExcel/腾讯云智能顾问评估结果_2159973417_1251956900(2025-12-17 17_12_33).xlsx\",\n        \"CosUrlPdf\": \"https://advisor-scan-pre-1258344699.cos-internal.ap-guangzhou.tencentcos.cn/AdvisorExcel/腾讯云智能顾问评估结果_2159973417_1251956900(2025-12-17 17_12_40).pdf\",\n        \"RequestId\": \"615658e1-6720-43d4-bb2e-4efaadc7f94a\",\n        \"TaskStatus\": \"success\"\n    }\n}",
         "title": "获取扫描报告下载链接"
       }
     ],

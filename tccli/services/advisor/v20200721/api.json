@@ -779,7 +779,7 @@
           "example": "http://unchuguo-1259649581.cos.ap-nanjing.myqcloud.com",
           "member": "string",
           "name": "CosUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -789,7 +789,7 @@
           "example": "success",
           "member": "string",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -799,7 +799,7 @@
           "example": "http://unchuguo-1259649581.cos.ap-nanjing.myqcloud.com",
           "member": "string",
           "name": "CosUrlPdf",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1708,24 +1708,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "条件名",
+          "document": "条件名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Key",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "条件值",
+          "document": "条件值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Value",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "RiskFieldsDesc": {
       "document": "风险实例字段描述",
