@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli tccatalog ModifyUsersOfGroupSTD --cli-unfold-argument ```
+tccli tccatalog ModifyUsersOfGroupSTD --cli-unfold-argument  \
+    --Group test_create \
+    --Users 700002180075 \
+    --OperateAction ADD \
+    --UserType Cam
+```
 
 Output: 
 ```

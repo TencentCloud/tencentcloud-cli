@@ -1155,7 +1155,7 @@
     "ModifyUsersOfGroupSTD": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tccatalog.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUsersOfGroupSTD\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: tccatalog.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUsersOfGroupSTD\n<公共请求参数>\n\n{\n    \"Group\": \"test_create\",\n    \"Users\": [\n        \"700002180075\"\n    ],\n    \"OperateAction\": \"ADD\",\n    \"UserType\": \"Cam\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a982eea6-05db-462f-bf26-b329ca708c3c\"\n    }\n}",
         "title": "更换用户组"
       }

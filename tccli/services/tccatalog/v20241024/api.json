@@ -11426,7 +11426,44 @@
     },
     "ModifyUsersOfGroupSTDRequest": {
       "document": "ModifyUsersOfGroupSTD请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组名称",
+          "example": "group1",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于批量变更的用户信息",
+          "example": "[\"jack\"]",
+          "member": "string",
+          "name": "Users",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "枚举类, ADD, DELETE, SYNC",
+          "example": "ADD",
+          "member": "string",
+          "name": "OperateAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户体系类型",
+          "example": "Cam",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "ModifyUsersOfGroupSTDResponse": {

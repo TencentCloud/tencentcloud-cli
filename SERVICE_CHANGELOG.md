@@ -1,4 +1,4 @@
-# Release 3.0.1330.1
+# Release 3.0.1331.1
 
 ## 音频内容安全(ams) 版本：2020-12-29
 
@@ -166,6 +166,25 @@
 * [DataSourceDetail](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DataSourceDetail)
 
 	* 新增成员：PreviewDbInfo, ProdDbInfo, StagingSwitch
+
+
+
+
+## 统一Catalog服务(tccatalog) 版本：2024-10-24
+
+### 第 6 次发布
+
+发布时间：2025-12-18 15:13:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyUsersOfGroupSTD](http://document.tencentcloudapi.woa.com/document/product/1785/88485)
+
+	* 新增入参：Group, Users, OperateAction, UserType
 
 
 
