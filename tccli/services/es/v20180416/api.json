@@ -1038,6 +1038,17 @@
         },
         {
           "disabled": false,
+          "document": "cos存储文件夹目录",
+          "example": "/es_backup/es-xxxx",
+          "member": "string",
+          "name": "CosBasePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "快照存储周期 单位天",
           "example": "15",
           "member": "uint64",

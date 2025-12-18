@@ -14,6 +14,13 @@
       "output": "AssociateDDoSEipLoadBalancerResponse",
       "status": "online"
     },
+    "CreateBgpInstance": {
+      "document": "通过API 购买高防包接口",
+      "input": "CreateBgpInstanceRequest",
+      "name": "购买高防包",
+      "output": "CreateBgpInstanceResponse",
+      "status": "online"
+    },
     "CreateBlackWhiteIpList": {
       "document": "添加DDoS防护的IP黑白名单",
       "input": "CreateBlackWhiteIpListRequest",
@@ -278,6 +285,13 @@
       "input": "DescribeBgpBizTrendRequest",
       "name": "获取高防包流量折线图",
       "output": "DescribeBgpBizTrendResponse",
+      "status": "online"
+    },
+    "DescribeBgpInstances": {
+      "document": "购买后，查询购买的高防包实例信息",
+      "input": "DescribeBgpInstancesRequest",
+      "name": "查询高防包资源列表",
+      "output": "DescribeBgpInstancesResponse",
       "status": "online"
     },
     "DescribeBizHttpStatus": {
@@ -1885,6 +1899,112 @@
       ],
       "usage": "out"
     },
+    "BGPInstanceInfo": {
+      "document": "{\n    \"InstanceId\": \"bgp-00000436\",\n    \"InstanceChargePrepaid\": {\n        \"Period\": 3,\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    },\n    \"EnterprisePackageConfig\": null,\n    \"StandardPackageConfig\": null,\n    \"StandardPlusPackageConfig\": {\n        \"Region\": \"ap-guangzhou\",\n        \"ProtectCount\": \"TWO_TIMES\",\n        \"ProtectIpCount\": 1,\n        \"Bandwidth\": 100,\n        \"ElasticBandwidthFlag\": true\n    },\n    \"TagInfoList\": [\n    ],\n    \"PackageType\": \"StandardPlus\",\n    \"InstanceCount\": 1,\n    \"InstanceChargeType\": \"PREPAID\",\n    \"DryRun\": false\n}",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "bgp-000004rh",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "续费周期相关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企业版高防包配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnterprisePackageConfig",
+          "name": "EnterprisePackageConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标准版高防包配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StandardPackageConfig",
+          "name": "StandardPackageConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标准版2.0高防包配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StandardPlusPackageConfig",
+          "name": "StandardPlusPackageConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tag信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高防包类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Standard",
+          "member": "string",
+          "name": "PackageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数量1",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费方式",
+          "example": "POSTPAID_BY_MONTH",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无实际意义，创建时如果为true，只进行参数校验，默认为false",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BGPInstanceSpecification": {
       "document": "高防包资产实例的规格信息",
       "members": [
@@ -3061,6 +3181,115 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateBgpInstanceRequest": {
+      "document": "CreateBgpInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "付费类型：付费模式：PREPAID 预付费 POSTPAID_BY_MONTH 后付费",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高防包类型：高防包类型，Enterprise(企业版) Standard(标准版) StandardPlus(标准版2.0)",
+          "example": "Standard",
+          "member": "string",
+          "name": "PackageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买高防包的数量，一次购买数量不超过10",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "{ \"Period\": 3, \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\" }",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "{ \"Region\": \"ap-guangzhou\", \"ProtectIpCount\": 1, \"BasicProtectBandwidth\": 300, \"Bandwidth\": 100, \"ElasticProtectLimit\": 0, \"ElasticBandwidthFlag\": true }",
+          "example": "无",
+          "member": "EnterprisePackageConfig",
+          "name": "EnterprisePackageConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "{ \"Region\": \"ap-guangzhou\", \"ProtectIpCount\": 1, \"BasicProtectBandwidth\": 300, \"Bandwidth\": 100, \"ElasticProtectLimit\": 0, \"ElasticBandwidthFlag\": true }",
+          "example": "无",
+          "member": "StandardPackageConfig",
+          "name": "StandardPackageConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "{ \"Region\": \"ap-guangzhou\", \"ProtectCount\": \"TWO_TIMES\", \"ProtectIpCount\": 1, \"Bandwidth\": 100, \"ElasticBandwidthFlag\": true }",
+          "example": "无",
+          "member": "StandardPlusPackageConfig",
+          "name": "StandardPlusPackageConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "[ { \"TagKey\": \"beal-test\",                 \"TagValue\": \"beal-test\"               }             ]",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagInfoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为false,true表示只进行参数校验，不进行实际购买",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBgpInstanceResponse": {
+      "document": "CreateBgpInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "bgpIds",
+          "example": "[\"bgp-0000043i\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateBlackWhiteIpListRequest": {
       "document": "CreateBlackWhiteIpList请求参数结构体",
@@ -5125,6 +5354,89 @@
           "name": "MaxData",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBgpInstancesRequest": {
+      "document": "DescribeBgpInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "FilterRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "[\"bgp-0000041i\"]",
+          "example": "[\"bgp-000004rq\"]",
+          "member": "string",
+          "name": "FilterInstanceIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "[{}]",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "FilterTag",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBgpInstancesResponse": {
+      "document": "DescribeBgpInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回购买高防包信息",
+          "example": "无",
+          "member": "BGPInstanceInfo",
+          "name": "BGPInstanceList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -8897,6 +9209,78 @@
       ],
       "usage": "both"
     },
+    "EnterprisePackageConfig": {
+      "document": "{\n    \"Region\": \"ap-guangzhou\",\n    \"ProtectIpCount\": 1,\n    \"BasicProtectBandwidth\": 300,\n    \"Bandwidth\": 100,\n    \"ElasticProtectBandwidth\": 0,\n    \"ElasticBandwidthFlag\": true\n}",
+      "members": [
+        {
+          "disabled": false,
+          "document": "购买高防包所属地域",
+          "example": "ap-hongkong",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护IP数",
+          "example": "100",
+          "member": "uint64",
+          "name": "ProtectIpCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保底防护带宽",
+          "example": "1000",
+          "member": "uint64",
+          "name": "BasicProtectBandwidth",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务带宽规模",
+          "example": "50",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性带宽 Gbps，可选择的弹性带宽[0,400,500,600,800,1000]\n默认为0",
+          "example": "400",
+          "member": "uint64",
+          "name": "ElasticProtectBandwidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启弹性业务带宽\n默认为false",
+          "example": "true",
+          "member": "bool",
+          "name": "ElasticBandwidthFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ForwardListener": {
       "document": "转发监听器",
       "members": [
@@ -9218,6 +9602,34 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceChargePrepaid": {
+      "document": "{ \n        \"Period\": 12,\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n}",
+      "members": [
+        {
+          "disabled": false,
+          "document": "购买时长：单位月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "Period",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\nNOTIFY_AND_AUTO_RENEW：到期通知且自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n默认为：通知过期不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11960,6 +12372,117 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StandardPackageConfig": {
+      "document": "{\n    \"Region\": \"ap-guangzhou\",\n    \"ProtectIpCount\": 1,\n    \"Bandwidth\": 100,\n    \"ElasticBandwidthFlag\": true\n}",
+      "members": [
+        {
+          "disabled": false,
+          "document": "高防包购买地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-nanjing",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防护IP数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "ProtectIpCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防护业务带宽 50Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启弹性防护带宽 true 开启 \n默认为false 不开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ElasticBandwidthFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "StandardPlusPackageConfig": {
+      "document": "{\n    \"Region\": \"ap-guangzhou\",\n    \"ProtectCount\": \"TWO_TIMES\",\n    \"ProtectIpCount\": 1,\n    \"Bandwidth\": 50,\n    \"ElasticBandwidthFlag\": true\n}",
+      "members": [
+        {
+          "disabled": false,
+          "document": "购买高防包所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sg",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防护次数：TWO_TIMES:两次全力防 UNLIMITED无限次防\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UNLIMITED",
+          "member": "string",
+          "name": "ProtectCount",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防护IP数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "uint64",
+          "name": "ProtectIpCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防护带宽50Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启弹性业务带宽\ntrue 开启\nfalse 不开启 \n默认不开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ElasticBandwidthFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

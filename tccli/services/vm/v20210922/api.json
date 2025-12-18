@@ -228,6 +228,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ASR句子的起止时间",
+          "example": "无",
+          "member": "Sentence",
+          "name": "Sentences",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1742,6 +1752,42 @@
           "member": "string",
           "name": "AsrUrl",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Sentence": {
+      "document": "ASR识别结果在音频中的起止时间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ASR句子",
+          "example": "你。",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "0:0:0.150",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "0:0:0.400",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

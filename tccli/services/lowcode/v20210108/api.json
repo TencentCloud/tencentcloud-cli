@@ -457,7 +457,7 @@
         {
           "disabled": false,
           "document": "所属应用数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Id\":\"app-abc\"}",
+          "example": "无",
           "member": "DataSourceLinkApp",
           "name": "AppUsageList",
           "output_required": true,
@@ -477,7 +477,7 @@
         {
           "disabled": false,
           "document": "子数据源ids\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "jl_yy0gs84",
+          "example": "[\"jl_yy0gs84\"]",
           "member": "string",
           "name": "ChildDataSourceIds",
           "output_required": true,
@@ -487,7 +487,7 @@
         {
           "disabled": false,
           "document": "数据源发布信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"onlineVersion\": 1, \"previewVersion\": 1, \"onlinePublishAt\": 1704256751993, \"prviewPublishAt\": 1704256745583}",
+          "example": "f",
           "member": "string",
           "name": "Fun",
           "output_required": true,
@@ -537,7 +537,7 @@
         {
           "disabled": false,
           "document": "数据源视图id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "234233",
+          "example": "view",
           "member": "string",
           "name": "ViewId",
           "output_required": true,
@@ -577,7 +577,7 @@
         {
           "disabled": true,
           "document": "发布版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "published",
           "member": "string",
           "name": "PublishVersion",
           "output_required": true,
@@ -617,7 +617,7 @@
         {
           "disabled": false,
           "document": "数据源授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"AuthUser\":\"abc\"}",
+          "example": "无",
           "member": "TicketAuthInfo",
           "name": "AuthInfo",
           "output_required": true,
@@ -647,7 +647,7 @@
         {
           "disabled": false,
           "document": "模型关联关系字段列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Field\":\"abc\"}",
+          "example": "无",
           "member": "RelationField",
           "name": "RelationFieldList",
           "output_required": true,
@@ -693,6 +693,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型预览状态开关",
+          "example": "true",
+          "member": "bool",
+          "name": "StagingSwitch",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -220,7 +220,7 @@
         {
           "disabled": false,
           "document": "以数组形式列出标签信息。",
-          "example": "[{\"TagKey\": \"key1\",\"TagValue\": \"value1\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
@@ -292,7 +292,7 @@
         {
           "disabled": true,
           "document": "组件具体设置列表。",
-          "example": "{   \"Name\":\"master\",   \"Component\":\"master\",   \"Cpu\":4,   \"Memory\" :4,   \"StorageType\":\"CLOUD_PREMIUM\",   \"StorageSize\":20,  \"ReplicaNum\":3,   \"Params\":\"{'a':'b'}\" }",
+          "example": "无",
           "member": "CreateInstancesComponent",
           "name": "Components",
           "required": false,
@@ -346,7 +346,7 @@
         {
           "disabled": true,
           "document": "实例描述。",
-          "example": "测试",
+          "example": "备注1",
           "member": "string",
           "name": "Brief",
           "required": false,
@@ -373,7 +373,7 @@
         {
           "disabled": true,
           "document": "指定实例的节点类型。具体信息，请参见[选择节点类型](https://cloud.tencent.com/document/product/1709/113399)。\n- compute：计费型。\n- normal：标准型。\n- store：存储型。",
-          "example": "无",
+          "example": "compute",
           "member": "string",
           "name": "NodeType",
           "required": false,
@@ -711,7 +711,7 @@
         {
           "disabled": false,
           "document": "实例名称，支持模糊搜索。",
-          "example": "vdb-test",
+          "example": "[\"vdb-test\"]",
           "member": "string",
           "name": "InstanceNames",
           "required": false,
@@ -720,7 +720,7 @@
         {
           "disabled": false,
           "document": "实例模糊搜索字段。",
-          "example": "研发实例",
+          "example": "[\"研发实例\"]",
           "member": "string",
           "name": "InstanceKeys",
           "required": false,
@@ -729,7 +729,7 @@
         {
           "disabled": false,
           "document": "根据状态获取实例， 为空则获取全部非隔离和非下线的实例。",
-          "example": "online",
+          "example": "[\"online\"]",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -738,7 +738,7 @@
         {
           "disabled": true,
           "document": "按照引擎筛选实例。",
-          "example": "5.0",
+          "example": "[\"5.0\"]",
           "member": "string",
           "name": "EngineNames",
           "required": false,
@@ -747,7 +747,7 @@
         {
           "disabled": false,
           "document": "按照版本筛选实例。",
-          "example": "v1.6.0",
+          "example": "[\"v1.6.0\"]",
           "member": "string",
           "name": "EngineVersions",
           "required": false,
@@ -756,7 +756,7 @@
         {
           "disabled": false,
           "document": "按照api版本筛选实例",
-          "example": "v2.0",
+          "example": "[\"v2.0\"]",
           "member": "string",
           "name": "ApiVersions",
           "required": false,
@@ -774,7 +774,7 @@
         {
           "disabled": true,
           "document": "按照可用区筛选实例。",
-          "example": "160002",
+          "example": "[\"ap-chengdu-2\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -819,7 +819,7 @@
         {
           "disabled": false,
           "document": "按照标签筛选实例",
-          "example": "[{\"TagKey\":\"tag1\",\"TagValue\":\"tag_value1\"}]",
+          "example": "无",
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
@@ -1745,7 +1745,7 @@
         {
           "disabled": false,
           "document": "指定升级配置后的 CPU 核数。\n- 节点规格可选项（CPU & 内存）必须 >= 当前配置。\n- 可选择的规格信息，请参见[选择节点规格与数量](https://cloud.tencent.com/document/product/1709/113399)。",
-          "example": "4",
+          "example": "4.0",
           "member": "float",
           "name": "Cpu",
           "required": false,
@@ -1754,7 +1754,7 @@
         {
           "disabled": false,
           "document": "指定升级配置后的内存大小，单位为：GB。\n- 节点规格可选项（CPU & 内存）必须 >= 当前配置。\n- 不同实例类型对 CPU 与内存资源的配置比例有不同的要求。例如，计算型实例，CPU 与内存的分配比例要求为 1:2。CPU 被指定为 4 核，那么内存则应被指定为 8GB。节点规格的详细信息，请参见[选择节点规格与数量](https://cloud.tencent.com/document/product/1709/113399)。\n",
-          "example": "8",
+          "example": "8.0",
           "member": "float",
           "name": "Memory",
           "required": false,

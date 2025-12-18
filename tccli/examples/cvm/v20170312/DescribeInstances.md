@@ -85,7 +85,7 @@ Output:
                         "CdcId": "cdc-xxxxxxxx",
                         "DiskType": "CLOUD_SSD",
                         "ThroughputPerformance": 0,
-                        "KmsKeyId": null,
+                        "KmsKeyId": "b29c2f37-9f2d-11ef-8836-5254009ad364",
                         "DiskSize": 50,
                         "DiskId": "disk-bzsodtn1"
                     }
@@ -116,106 +116,7 @@ Output:
 }
 ```
 
-**Example 2: 查询绑定了标签的实例**
-
-查询绑定了标签键值对（city:shenzhen）的实例。
-
-Input: 
-
-```
-tccli cvm DescribeInstances --cli-unfold-argument  \
-    --Limit 1 \
-    --Filters.0.Values shenzhen \
-    --Filters.0.Name tag:city \
-    --Offset 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "InstanceSet": [
-            {
-                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
-                "Uuid": "68b510db-b4c1-4630-a62b-73d0c7c970f9",
-                "InstanceState": "RUNNING",
-                "DisableApiTermination": false,
-                "LatestOperationErrorMsg": "",
-                "DefaultLoginPort": 22,
-                "LicenseType": "TencentCloud",
-                "DefaultLoginUser": "root",
-                "LatestOperationState": "SUCCESS",
-                "OsName": "CentOS 7.6 64bit",
-                "CreatedTime": "2020-03-10T02:43:51Z",
-                "RestrictState": "NORMAL",
-                "ExpiredTime": "2020-04-10T02:47:36Z",
-                "DisasterRecoverGroupId": "",
-                "Memory": 1,
-                "IPv6Addresses": null,
-                "CPU": 1,
-                "CamRoleName": "",
-                "PublicIpAddresses": [
-                    "123.207.11.190"
-                ],
-                "Tags": [
-                    {
-                        "Value": "shenzhen",
-                        "Key": "city"
-                    }
-                ],
-                "InstanceId": "ins-9bxebleo",
-                "ImageId": "img-9qabwvbn",
-                "StopChargingMode": "NOT_APPLICABLE",
-                "InstanceChargeType": "PREPAID",
-                "InstanceType": "S1.SMALL1",
-                "SystemDisk": {
-                    "DiskSize": 50,
-                    "DiskId": "disk-nucurerk",
-                    "DiskType": "CLOUD_PREMIUM"
-                },
-                "IsolatedSource": "NOTISOLATED",
-                "Placement": {
-                    "ProjectId": 1174660,
-                    "Zone": "ap-guangzhou-3"
-                },
-                "PrivateIpAddresses": [
-                    "172.16.32.78"
-                ],
-                "LoginSettings": {
-                    "KeyIds": null
-                },
-                "SecurityGroupIds": [
-                    "sg-p1ezv4wz"
-                ],
-                "DedicatedClusterId": "",
-                "InstanceName": "测试实例",
-                "DataDisks": [],
-                "VirtualPrivateCloud": {
-                    "Ipv6AddressCount": 1,
-                    "PrivateIpAddresses": [
-                        "172.16.3.59"
-                    ],
-                    "SubnetId": "subnet-a2676p0e",
-                    "AsVpcGateway": false,
-                    "VpcId": "vpc-g7wzcv7n"
-                },
-                "LatestOperationRequestId": "3554eb5b-1cfa-471a-ae76-dc436c9d43e8",
-                "InternetAccessible": {
-                    "InternetMaxBandwidthOut": 1,
-                    "InternetChargeType": "BANDWIDTH_PREPAID"
-                },
-                "RdmaIpAddresses": [],
-                "HpcClusterId": "",
-                "LatestOperation": "RenewInstances"
-            }
-        ],
-        "TotalCount": 1,
-        "RequestId": "62DDFFC6-FDB5-44F7-20A6-59152E3D129A"
-    }
-}
-```
-
-**Example 3: 查询实例的最新操作情况**
+**Example 2: 查询实例的最新操作情况**
 
 当对实例发起 StopInstances 后，通过 DescribeInstances 可以查询到实例的 LatestOperation 为 StopInstances，LatestOperationState 为 OPERATING。
 
@@ -302,7 +203,7 @@ Output:
                         "CdcId": "cdc-xxxxxxxx",
                         "DiskType": "CLOUD_SSD",
                         "ThroughputPerformance": 0,
-                        "KmsKeyId": null,
+                        "KmsKeyId": "b29c2f37-9f2d-11ef-8836-5254009ad364",
                         "DiskSize": 50,
                         "DiskId": "disk-bzsodtn1"
                     }
@@ -329,6 +230,109 @@ Output:
         ],
         "TotalCount": 1,
         "RequestId": "d655191e-a39d-43d2-8349-8c3f2bf4b327"
+    }
+}
+```
+
+**Example 3: 查询绑定了标签的实例**
+
+查询绑定了标签键值对（city:shenzhen）的实例。
+
+Input: 
+
+```
+tccli cvm DescribeInstances --cli-unfold-argument  \
+    --Limit 1 \
+    --Filters.0.Values shenzhen \
+    --Filters.0.Name tag:city \
+    --Offset 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "InstanceSet": [
+            {
+                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
+                "Uuid": "68b510db-b4c1-4630-a62b-73d0c7c970f9",
+                "InstanceState": "RUNNING",
+                "DisableApiTermination": false,
+                "LatestOperationErrorMsg": "",
+                "DefaultLoginPort": 22,
+                "LicenseType": "TencentCloud",
+                "DefaultLoginUser": "root",
+                "LatestOperationState": "SUCCESS",
+                "OsName": "CentOS 7.6 64bit",
+                "CreatedTime": "2020-03-10T02:43:51Z",
+                "RestrictState": "NORMAL",
+                "ExpiredTime": "2020-04-10T02:47:36Z",
+                "DisasterRecoverGroupId": "",
+                "Memory": 1,
+                "IPv6Addresses": [
+                    "fd76:3600:71e:7800:6:461d:4e8:3add"
+                ],
+                "CPU": 1,
+                "CamRoleName": "",
+                "PublicIpAddresses": [
+                    "123.207.11.190"
+                ],
+                "Tags": [
+                    {
+                        "Value": "shenzhen",
+                        "Key": "city"
+                    }
+                ],
+                "InstanceId": "ins-9bxebleo",
+                "ImageId": "img-9qabwvbn",
+                "StopChargingMode": "NOT_APPLICABLE",
+                "InstanceChargeType": "PREPAID",
+                "InstanceType": "S1.SMALL1",
+                "SystemDisk": {
+                    "DiskSize": 50,
+                    "DiskId": "disk-nucurerk",
+                    "DiskType": "CLOUD_PREMIUM"
+                },
+                "IsolatedSource": "NOTISOLATED",
+                "Placement": {
+                    "ProjectId": 1174660,
+                    "Zone": "ap-guangzhou-3"
+                },
+                "PrivateIpAddresses": [
+                    "172.16.32.78"
+                ],
+                "LoginSettings": {
+                    "KeyIds": [
+                        "skey-0lqrhzz1"
+                    ]
+                },
+                "SecurityGroupIds": [
+                    "sg-p1ezv4wz"
+                ],
+                "DedicatedClusterId": "",
+                "InstanceName": "测试实例",
+                "DataDisks": [],
+                "VirtualPrivateCloud": {
+                    "Ipv6AddressCount": 1,
+                    "PrivateIpAddresses": [
+                        "172.16.3.59"
+                    ],
+                    "SubnetId": "subnet-a2676p0e",
+                    "AsVpcGateway": false,
+                    "VpcId": "vpc-g7wzcv7n"
+                },
+                "LatestOperationRequestId": "3554eb5b-1cfa-471a-ae76-dc436c9d43e8",
+                "InternetAccessible": {
+                    "InternetMaxBandwidthOut": 1,
+                    "InternetChargeType": "BANDWIDTH_PREPAID"
+                },
+                "RdmaIpAddresses": [],
+                "HpcClusterId": "",
+                "LatestOperation": "RenewInstances"
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "62DDFFC6-FDB5-44F7-20A6-59152E3D129A"
     }
 }
 ```

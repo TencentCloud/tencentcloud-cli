@@ -973,6 +973,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "desc",
+          "example": "false",
+          "member": "string",
+          "name": "IsSecondaryZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "desc",
+          "example": "[{\"SecondaryZone\":\"ap-nanjing-1\",\"SecondarySubnet\":\"\",\"ZoneDesc\":\"南京一区\"},{\"SecondaryZone\":\"ap-nanjing-3\",\"SecondarySubnet\":\"subnet-861hei6i\",\"ZoneDesc\":\"南京三区\"}]",
+          "member": "string",
+          "name": "SecondaryZoneInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

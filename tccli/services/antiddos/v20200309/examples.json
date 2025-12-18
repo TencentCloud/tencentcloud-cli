@@ -16,6 +16,32 @@
         "title": "绑定高防弹性公网IP到负载均衡上"
       }
     ],
+    "CreateBgpInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBgpInstance\n<公共请求参数>\n\n{\n    \"InstanceChargeType\": \"PREPAID\",\n    \"PackageType\": \"StandardPlus\",\n    \"InstanceCount\": 1,\n    \"InstanceChargePrepaid\": {\n        \"Period\": 3,\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    },\n    \"StandardPlusPackageConfig\": {\n        \"Region\": \"ap-guangzhou\",\n        \"ProtectCount\": \"TWO_TIMES\",\n        \"ProtectIpCount\": 1,\n        \"Bandwidth\": 10,\n        \"ElasticBandwidthFlag\": true\n    },\n    \"TagInfoList\": [],\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"bgp-00000451\"\n        ],\n        \"RequestId\": \"fe8e9c34-a2c0-4bb2-a874-2b7386adbd97\"\n    }\n}",
+        "title": "预付费标准版2.0-2次防护-1IP-业务带宽10Mbps"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBgpInstance\n<公共请求参数>\n\n{\n    \"InstanceChargeType\": \"PREPAID\",\n    \"PackageType\": \"Standard\",\n    \"InstanceCount\": 1,\n    \"InstanceChargePrepaid\": {\n        \"Period\": 3,\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n    },\n    \"StandardPackageConfig\": {\n        \"Region\": \"ap-guangzhou\",\n        \"ProtectIpCount\": 1,\n        \"Bandwidth\": 10,\n        \"ElasticBandwidthFlag\": true\n    },\n    \"TagInfoList\": [],\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"bgp-0000043i\"\n        ],\n        \"RequestId\": \"e122a577-1266-4193-b223-f8cb654b5209\"\n    }\n}",
+        "title": "预付费模式-广州地域-标准版购买10M-1IP"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBgpInstance\n<公共请求参数>\n\n{\n    \"InstanceChargeType\": \"PREPAID\",\n    \"PackageType\": \"Enterprise\",\n    \"InstanceCount\": 1,\n    \"InstanceChargePrepaid\": {\n        \"Period\": 3,\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    },\n    \"EnterprisePackageConfig\": {\n        \"Region\": \"ap-guangzhou\",\n        \"ProtectIpCount\": 1,\n        \"BasicProtectBandwidth\": 300,\n        \"Bandwidth\": 10,\n        \"ElasticBandwidthFlag\": true\n    },\n    \"TagInfoList\": [\n        {\n            \"TagKey\": \"beal-test\",\n            \"TagValue\": \"beal-test\"\n        }\n    ],\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"bgp-00000450\"\n        ],\n        \"RequestId\": \"dc81b4ff-730a-4907-a2eb-b08fc1e1e8b8\"\n    }\n}",
+        "title": "预付费模式-购买企业版高防包-保底带宽300Gbps业务带宽10Mbps防护IP数1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBgpInstance\n<公共请求参数>\n\n{\n    \"InstanceChargeType\": \"POSTPAID_BY_MONTH\",\n    \"PackageType\": \"Standard\",\n    \"InstanceCount\": 1,\n    \"StandardPackageConfig\": {\n        \"Region\": \"ap-shanghai\",\n        \"ProtectIpCount\": 10,\n        \"Bandwidth\": 100\n    },\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"bgp-000004ku\"\n        ],\n        \"RequestId\": \"340d95e7-4ea2-480c-958b-ca094141911f\"\n    }\n}",
+        "title": "后付费标准版防护IP10 业务带宽100Mbps"
+      }
+    ],
     "CreateBlackWhiteIpList": [
       {
         "document": "",
@@ -324,6 +350,20 @@
         "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBgpBizTrend\n<公共请求参数>\n\n{\n    \"Business\": \"bgp-multip\",\n    \"InstanceId\": \"bgp-00000001\",\n    \"Flag\": 1,\n    \"StartTime\": \"2022-11-29 00:00:00\",\n    \"EndTime\": \"2022-11-29 01:00:00\",\n    \"MetricName\": \"intraffic\"\n}",
         "output": "{\n    \"Response\": {\n        \"DataList\": [\n            1\n        ],\n        \"Total\": 1,\n        \"MaxData\": 1,\n        \"RequestId\": \"f4b3915e-c1bd-4ca4-aaef-e88eaa8aa66e\",\n        \"MetricName\": \"intraffic\"\n    }\n}",
         "title": "获取高防包流量折线图"
+      }
+    ],
+    "DescribeBgpInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBgpInstances\n<公共请求参数>\n\n{\n    \"FilterRegion\": \"ap-guangzhou\",\n    \"FilterInstanceIdList\": [\n        \"bgp-000004rq\"\n    ],\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"BGPInstanceList\": [\n            {\n                \"DryRun\": false,\n                \"EnterprisePackageConfig\": null,\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 3,\n                    \"RenewFlag\": null\n                },\n                \"InstanceChargeType\": \"POSTPAID_BY_MONTH\",\n                \"InstanceCount\": 1,\n                \"InstanceId\": \"bgp-000004rq\",\n                \"PackageType\": \"Standard\",\n                \"StandardPackageConfig\": {\n                    \"Bandwidth\": 50,\n                    \"ElasticBandwidthFlag\": false,\n                    \"ProtectIpCount\": 10,\n                    \"Region\": \"ap-guangzhou\"\n                },\n                \"StandardPlusPackageConfig\": null,\n                \"TagInfoList\": []\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"462f39bb-229b-40b1-9114-bd52e13eb5e7\"\n    }\n}",
+        "title": "后付费"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBgpInstances\n<公共请求参数>\n\n{\n    \"FilterRegion\": \"ap-guangzhou\",\n    \"FilterInstanceIdList\": [\n        \"bgp-000004rr\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BGPInstanceList\": [\n            {\n                \"DryRun\": false,\n                \"EnterprisePackageConfig\": null,\n                \"InstanceChargePrepaid\": {\n                    \"Period\": 1,\n                    \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n                },\n                \"InstanceChargeType\": \"PREPAID\",\n                \"InstanceCount\": 1,\n                \"InstanceId\": \"bgp-000004rr\",\n                \"PackageType\": \"StandardPlus\",\n                \"StandardPackageConfig\": null,\n                \"StandardPlusPackageConfig\": {\n                    \"Bandwidth\": 50,\n                    \"ElasticBandwidthFlag\": false,\n                    \"ProtectCount\": \"TWO_TIMES\",\n                    \"ProtectIpCount\": 10,\n                    \"Region\": \"ap-guangzhou\"\n                },\n                \"TagInfoList\": []\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"a7f80029-ea53-466e-ab7b-dd6e4262a895\"\n    }\n}",
+        "title": "预付费"
       }
     ],
     "DescribeBizHttpStatus": [

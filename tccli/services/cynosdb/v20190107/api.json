@@ -18104,7 +18104,7 @@
         {
           "disabled": false,
           "document": "cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
-          "example": "2",
+          "example": "2.0",
           "member": "float",
           "name": "MaxCpu",
           "required": false,
@@ -18122,7 +18122,7 @@
         {
           "disabled": false,
           "document": "只读cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
-          "example": "2",
+          "example": "2.0",
           "member": "float",
           "name": "MaxRoCpu",
           "required": false,
@@ -18154,6 +18154,15 @@
           "name": "AutoArchive",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升级类型。 默认值：upgradeImmediate。 可选值： upgradeImmediate：立即完成修改 upgradeInMaintain：在维护时间窗口内完成修改",
+          "example": "upgradeImmediate",
+          "member": "string",
+          "name": "UpgradeType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18162,12 +18171,22 @@
       "document": "ModifyServerlessStrategy返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "异步流程id",
           "example": "1008300",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "178153",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },

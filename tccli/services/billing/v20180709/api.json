@@ -9672,7 +9672,7 @@
         {
           "disabled": false,
           "document": "支付者",
-          "example": "1234567",
+          "example": "909619400",
           "member": "string",
           "name": "Payer",
           "output_required": true,
@@ -9692,7 +9692,7 @@
         {
           "disabled": false,
           "document": "创建人",
-          "example": "1234567",
+          "example": "909619400",
           "member": "string",
           "name": "Creator",
           "output_required": true,
@@ -9742,7 +9742,7 @@
         {
           "disabled": false,
           "document": "产品详情",
-          "example": "p_xxxx",
+          "example": "无",
           "member": "ProductInfo",
           "name": "ProductInfo",
           "output_required": true,
@@ -9752,7 +9752,7 @@
         {
           "disabled": false,
           "document": "时长",
-          "example": "1",
+          "example": "1.0",
           "member": "float",
           "name": "TimeSpan",
           "output_required": true,
@@ -9782,7 +9782,7 @@
         {
           "disabled": false,
           "document": "折扣率",
-          "example": "100",
+          "example": "10.1",
           "member": "float",
           "name": "Policy",
           "output_required": true,
@@ -9792,7 +9792,7 @@
         {
           "disabled": false,
           "document": "单价（分）",
-          "example": "10000",
+          "example": "10000.1",
           "member": "float",
           "name": "Price",
           "output_required": true,
@@ -9802,7 +9802,7 @@
         {
           "disabled": false,
           "document": "原价（分）",
-          "example": "10000",
+          "example": "10000.1",
           "member": "float",
           "name": "TotalCost",
           "output_required": true,
@@ -9908,6 +9908,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单对应的可用区Id",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14761,6 +14771,15 @@
           "name": "ResourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订单状态",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "StatusSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
