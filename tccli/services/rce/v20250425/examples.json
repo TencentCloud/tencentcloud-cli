@@ -23,6 +23,14 @@
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Uuid\": \"1746781657-*-*-*\",\n            \"Value\": {\n                \"DeviceId\": \"****043058\",\n                \"ExtraInfo\": [\n                    {\n                        \"Key\": \"app_version\",\n                        \"Value\": \"12.6.6\"\n                    },\n                    {\n                        \"Key\": \"brand\",\n                        \"Value\": \"apple\"\n                    },\n                    {\n                        \"Key\": \"client_ip\",\n                        \"Value\": \"58.*.*.*\"\n                    },\n                    {\n                        \"Key\": \"system_version\",\n                        \"Value\": \"18.3.2\"\n                    },\n                    {\n                        \"Key\": \"model\",\n                        \"Value\": \"iPhone13,2\"\n                    },\n                    {\n                        \"Key\": \"network_type\",\n                        \"Value\": \"2\"\n                    },\n                    {\n                        \"Key\": \"package_name\",\n                        \"Value\": \"test.*.*\"\n                    },\n                    {\n                        \"Key\": \"platform\",\n                        \"Value\": \"3\"\n                    },\n                    {\n                        \"Key\": \"sdk_buildno\",\n                        \"Value\": \"20076\"\n                    },\n                    {\n                        \"Key\": \"sign_token\",\n                        \"Value\": \"null\"\n                    }\n                ],\n                \"RiskType\": [\n                    5008,\n                    5011,\n                    5005\n                ],\n                \"TokenTime\": \"1743993419151\"\n            }\n        },\n        \"RequestId\": \"5ee8a0e9-*-*-*\"\n    }\n}",
         "title": "查询风险标签示例"
       }
+    ],
+    "ManageIPPortraitRisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ManageIPPortraitRisk\n<公共请求参数>\n\n{\n    \"PostTime\": 1686263179,\n    \"BusinessSecurityData\": {\n        \"UserIp\": \"203.***.***.118\",\n        \"Channel\": 6\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\"\n        },\n        \"RequestId\": \"be7d30aa-a824-4b5d-9b53-288e9dae2423\"\n    }\n}",
+        "title": " IP风险查询接口"
+      }
     ]
   },
   "version": "1.0"

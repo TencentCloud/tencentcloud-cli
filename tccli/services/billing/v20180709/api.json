@@ -19204,6 +19204,39 @@
           "name": "Function",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "额外聚合值",
+          "example": "[]",
+          "member": "DescribeMeasureDetailAggregationExtraValue",
+          "name": "ExtraValueAttribute",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeMeasureDetailAggregationExtraValue": {
+      "document": "聚合用量明细，支持自定义聚合值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "除dosage外聚合值",
+          "example": "flux",
+          "member": "string",
+          "name": "Attribute",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算函数",
+          "example": "sum",
+          "member": "string",
+          "name": "Function",
+          "required": true,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -20366,7 +20399,7 @@
         {
           "disabled": false,
           "document": "账户状态：0-有效 1-已退款 2-已过期 3-已用完， 非必须",
-          "example": "[]",
+          "example": "[0]",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -20402,7 +20435,7 @@
         {
           "disabled": false,
           "document": "资源包ID",
-          "example": "[]",
+          "example": "[\"test-1068325\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": false,
@@ -20420,7 +20453,7 @@
         {
           "disabled": false,
           "document": "资源包名称",
-          "example": "无",
+          "example": "语音通话包",
           "member": "string",
           "name": "PackageName",
           "required": false,
@@ -20429,7 +20462,7 @@
         {
           "disabled": false,
           "document": "生效日期起始查询时间，格式：\"yyyy-MM-dd HH:mm:ss\"",
-          "example": "\"\"",
+          "example": "\"2025-12-01 00:00:00\"",
           "member": "string",
           "name": "PackageStartTimeRangeBegin",
           "required": false,
@@ -20438,7 +20471,7 @@
         {
           "disabled": false,
           "document": "生效日期截止查询时间， 生效日期的查询起始时间和截止时间必须同时存在",
-          "example": "\"\"",
+          "example": "\"2025-12-30 00:00:00\"",
           "member": "string",
           "name": "PackageStartTimeRangeEnd",
           "required": false,
@@ -20447,7 +20480,7 @@
         {
           "disabled": false,
           "document": "失效日期起始查询时间",
-          "example": "\"\"",
+          "example": "\"2025-12-01 00:00:00\"",
           "member": "string",
           "name": "PackageEndTimeRangeBegin",
           "required": false,
@@ -20456,7 +20489,7 @@
         {
           "disabled": false,
           "document": "失效日期截止查询时间, 失效日期的查询起始时间和截止时间必须同时存在",
-          "example": "\"\"",
+          "example": "\"2025-12-30 00:00:00\"",
           "member": "string",
           "name": "PackageEndTimeRangeEnd",
           "required": false,
@@ -20465,7 +20498,7 @@
         {
           "disabled": false,
           "document": "排序方式：asc，desc，默认asc",
-          "example": "无",
+          "example": "\"asc\"",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -20474,7 +20507,7 @@
         {
           "disabled": false,
           "document": "排序字段：“buyTime” ”startTime“ ”endTime“ ",
-          "example": "无",
+          "example": "\"buyTime\"",
           "member": "string",
           "name": "SortBy",
           "required": false,
@@ -20488,6 +20521,51 @@
           "name": "IsDisplayHiddenPackage",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "商品码Code",
+          "example": "[\"TRADE_T_S_code_001_xfIvsFKugT\"]",
+          "member": "string",
+          "name": "PackageCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "费用类型：免费1/付费2",
+          "example": "1",
+          "member": "int64",
+          "name": "FeeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "订单号",
+          "example": "\"20221226556001271963881\"\t",
+          "member": "string",
+          "name": "DealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "切片/周期起始查询时间",
+          "example": "\"2024-10-01 00:00:00\"",
+          "member": "string",
+          "name": "SlicePeriodStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "切片/周期截止查询时间, 切片/周期日期的查询起始时间和截止时间必须同时存在",
+          "example": "\"2024-11-01 00:00:00\"",
+          "member": "string",
+          "name": "SlicePeriodEndTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -23974,7 +24052,7 @@
         {
           "disabled": false,
           "document": "抵扣结束时间戳（和资源有效期的区别）",
-          "example": "1627055999000",
+          "example": "1627055999000.0",
           "member": "float",
           "name": "DeductionEndTime",
           "output_required": true,
@@ -24184,7 +24262,7 @@
         {
           "disabled": false,
           "document": "地域Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
           "output_required": false,
@@ -24204,7 +24282,7 @@
         {
           "disabled": false,
           "document": "可用区Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100002",
           "member": "int64",
           "name": "ZoneId",
           "output_required": false,
@@ -24359,6 +24437,16 @@
           "name": "SupportManualRenew",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务自定义查询周期/切片详细信息\t",
+          "example": "无",
+          "member": "SlicePeriodResourcePackage",
+          "name": "SlicePeriodUsageDetails",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

@@ -26,7 +26,7 @@ tccli trtc CreateCloudModeration --cli-unfold-argument  \
     --ModerationParams.ModerationSupplierParam.SecretKey 637ae34f4069afb92xxxxxxx \
     --ModerationParams.ModerationSupplierParam.AudioBizType 2001 \
     --ModerationParams.ModerationSupplierParam.ImageBizType 2002 \
-    --ModerationParams.SaveModerationFile 0 \
+    --ModerationParams.SaveModerationFile 1 \
     --ModerationParams.CallbackAllResults 0 \
     --ModerationStorageParams.CloudModerationStorage.Vendor 0 \
     --ModerationStorageParams.CloudModerationStorage.Region ap-guangzhou \
