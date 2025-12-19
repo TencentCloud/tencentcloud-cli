@@ -4739,13 +4739,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "搜索字段，目前支持：\n\"InstanceId\"：实例Id，例如：cmgo-****）\n\"InstanceName\"：实例名称\n\"ClusterId\"：实例组Id，例如：cmgo-****",
+          "document": "搜索字段，目前支持：\n\"InstanceId\"：实例Id，例如：cmgo-****\n\"InstanceName\"：实例名称\n\"ClusterId\"：实例组Id，例如：cmgo-****",
           "example": "InstanceId",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4754,8 +4753,7 @@
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"

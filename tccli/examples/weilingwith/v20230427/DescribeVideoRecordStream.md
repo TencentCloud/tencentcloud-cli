@@ -19,7 +19,23 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "2beb0875-c859-4fde-a46e-5dbdf1421f14"
+        "RequestId": "2beb0875-c859-4fde-a46e-5dbdf1421f14",
+        "Result": {
+            "FLV": "",
+            "HLS": "https://t-video.twins.tencent.com:443/hls1935/xxx",
+            "RAW": {
+                "IP": "",
+                "InnerIP": "",
+                "NATIP": "",
+                "Port": 0,
+                "SM4Vector": "",
+                "StreamEnKey": "",
+                "StreamToken": ""
+            },
+            "RTMP": "",
+            "Stream": "c0e3f641-6ec6-444e-8ac9-3cfecc755cb0_2beb0875",
+            "WebRTC": ""
+        }
     }
 }
 ```

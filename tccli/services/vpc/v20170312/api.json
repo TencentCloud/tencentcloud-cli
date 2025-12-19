@@ -22951,7 +22951,7 @@
         {
           "disabled": false,
           "document": "要解关联网络实例列表",
-          "example": "无",
+          "example": "[{\"InstanceType\": \"VPC\", \"InstanceId\": \"vpc-rkxd3pgh\", \"InstanceRegion\": \"ap-guangzhou\"}]",
           "member": "CcnInstance",
           "name": "Instances",
           "required": true,

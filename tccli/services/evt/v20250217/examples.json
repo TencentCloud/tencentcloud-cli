@@ -15,6 +15,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e56eec58-c446-44d0-917b-a0df066a4f50\",\n        \"UserId\": \"user\"\n    }\n}",
         "title": "创建用户"
       }
+    ],
+    "DeleteRoleUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: evt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoleUser\n<公共请求参数>\n\n{\n    \"RoleSystemId\": 81761812481151,\n    \"UserId\": \"212121\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f7fff7b-d812-4779-891b-5f8385d3b433\"\n    }\n}",
+        "title": "删除自定义用户"
+      }
     ]
   },
   "version": "1.0"

@@ -483,6 +483,13 @@
       "output": "DescribeListPortAclListResponse",
       "status": "online"
     },
+    "DescribeListProtectThresholdConfigNew": {
+      "document": "获取防护阈值配置列表，包括DDoS的AI、等级、CC阈值开关等等",
+      "input": "DescribeListProtectThresholdConfigNewRequest",
+      "name": "获取防护阈值各个配置列表",
+      "output": "DescribeListProtectThresholdConfigNewResponse",
+      "status": "online"
+    },
     "DescribeListProtocolBlockConfig": {
       "document": "获取DDoS防护的协议封禁配置列表",
       "input": "DescribeListProtocolBlockConfigRequest",
@@ -8004,6 +8011,98 @@
       ],
       "type": "object"
     },
+    "DescribeListProtectThresholdConfigNewRequest": {
+      "document": "DescribeListProtectThresholdConfigNew请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "一页条数，当Limit=0时，默认一页条数为100;最大取值为100",
+          "example": "25",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源实例ID搜索, 支持资源实例前缀通配搜索，例如bgp-*表示获取高防包类型的资源实例",
+          "example": "bgpip-0000011x",
+          "member": "string",
+          "name": "FilterInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IP搜索",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "FilterIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名搜索(查询域名与协议的CC防护阈值时使用）",
+          "example": "无",
+          "member": "string",
+          "name": "FilterDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议搜索(查询域名与协议的CC防护阈值时使用）",
+          "example": "无",
+          "member": "string",
+          "name": "FilterProtocol",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeListProtectThresholdConfigNewResponse": {
+      "document": "DescribeListProtectThresholdConfigNew返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护阈值配置列表",
+          "example": "无",
+          "member": "ProtectThresholdRelationNew",
+          "name": "ConfigList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeListProtocolBlockConfigRequest": {
       "document": "DescribeListProtocolBlockConfig请求参数结构体",
       "members": [
@@ -10407,6 +10506,52 @@
       ],
       "usage": "both"
     },
+    "ListenerCcThresholdConfig": {
+      "document": "域名与协议纬度的CC防护阈值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.8cname.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议（可取值https）",
+          "example": "https",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关状态（0：关闭，1：开启）",
+          "example": "1",
+          "member": "int64",
+          "name": "CCEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cc防护阈值",
+          "example": "1",
+          "member": "int64",
+          "name": "CCThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyCCLevelPolicyRequest": {
       "document": "ModifyCCLevelPolicy请求参数结构体",
       "members": [
@@ -12001,6 +12146,182 @@
         }
       ],
       "usage": "both"
+    },
+    "ProtectThresholdRelationNew": {
+      "document": "防护阈值配置相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DDoS防护等级，取值[\nlow(宽松)\nmiddle(适中)\nhigh(严格)\n]",
+          "example": "无",
+          "member": "string",
+          "name": "DDoSLevel",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DDoS清洗阈值，单位Mbps",
+          "example": "无",
+          "member": "uint64",
+          "name": "DDoSThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DDoS的AI防护开关，取值[\non(开启)\noff(关闭)\n]",
+          "example": "无",
+          "member": "string",
+          "name": "DDoSAI",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CC清洗开关，取值[\n0(关闭)\n1(开启)\n]",
+          "example": "无",
+          "member": "uint64",
+          "name": "CCEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CC清洗阈值，单位QPS",
+          "example": "无",
+          "member": "uint64",
+          "name": "CCThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属的资源实例",
+          "example": "无",
+          "member": "InstanceRelation",
+          "name": "InstanceDetailList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名与协议纬度的防护阈值",
+          "example": "无",
+          "member": "ListenerCcThresholdConfig",
+          "name": "ListenerCcThresholdList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SYN FLOOD流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynFloodThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SYN FLOOD包量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynFloodPktThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "UDP FLOOD流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "UdpFloodThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "UDP FLOOD包量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "UdpFloodPktThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ACK FLOOD流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "AckFloodThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ACK FLOOD包量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "AckFloodPktThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SYNACK FLOOD流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynAckFloodThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SYNACK FLOOD包量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SynAckFloodPktThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RST FLOOD流量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "RstFloodThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RST FLOOD包量阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "RstFloodPktThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ProtocolBlockConfig": {
       "document": "协议封禁配置",

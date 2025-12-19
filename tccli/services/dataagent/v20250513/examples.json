@@ -40,6 +40,14 @@
         "title": "删除会话"
       }
     ],
+    "GetJobsByKnowledgeBaseId": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: dataagent.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetJobsByKnowledgeBaseId\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dataagent-lxy0akzR\",\n    \"KnowledgeBaseId\": \"klbase-ye1v2FukBu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Jobs\": [],\n        \"RequestId\": \"03cfa7a6-90c6-4e15-8a56-9e61bb39da56\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "GetKnowledgeBaseFileList": [
       {
         "document": "GetKnowledgeBaseFileList",

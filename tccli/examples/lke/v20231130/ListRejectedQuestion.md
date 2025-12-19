@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli lke ListRejectedQuestion --cli-unfold-argument  \
-    --BotBizId 1714970520775950336 \
+    --BotBizId 1995331832265990976 \
+    --Query 价 \
     --PageNumber 1 \
-    --PageSize 20
+    --PageSize 15
 ```
 
 Output: 
@@ -17,34 +18,37 @@ Output:
     "Response": {
         "List": [
             {
-                "IsAllowDelete": false,
-                "IsAllowEdit": false,
-                "Question": "北京天气如何呢",
-                "RejectedBizId": "0",
-                "Status": 2,
-                "StatusDesc": "发布中",
-                "UpdateTime": "1698930291"
-            },
-            {
-                "IsAllowDelete": false,
-                "IsAllowEdit": false,
-                "Question": "55555569",
-                "RejectedBizId": "0",
-                "Status": 2,
-                "StatusDesc": "发布中",
-                "UpdateTime": "1693407323"
+                "IsAllowDelete": true,
+                "IsAllowEdit": true,
+                "Operator": "coco测试11",
+                "Question": "内部员工价是多少？",
+                "RejectedBizId": "2001120585035292864",
+                "Status": 3,
+                "StatusDesc": "已发布",
+                "UpdateTime": "1765939321"
             },
             {
                 "IsAllowDelete": true,
                 "IsAllowEdit": true,
-                "Question": "55555568",
-                "RejectedBizId": "0",
-                "Status": 1,
-                "StatusDesc": "待发布",
-                "UpdateTime": "1693407323"
+                "Operator": "coco测试11",
+                "Question": "你们的价格能比拼多多便宜么?",
+                "RejectedBizId": "2001120437290934464",
+                "Status": 3,
+                "StatusDesc": "已发布",
+                "UpdateTime": "1765939321"
+            },
+            {
+                "IsAllowDelete": true,
+                "IsAllowEdit": true,
+                "Operator": "coco测试11",
+                "Question": "能告诉我进货价是多少么?",
+                "RejectedBizId": "2001120335801360576",
+                "Status": 3,
+                "StatusDesc": "已发布",
+                "UpdateTime": "1765939321"
             }
         ],
-        "RequestId": "bdc74947-8606-41e1-9a97-72690bf06bdd",
+        "RequestId": "6dd9b41d-9b7d-4b5b-a968-5ddfba77f3a7",
         "Total": "3"
     }
 }

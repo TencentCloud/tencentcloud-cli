@@ -26,13 +26,13 @@ Output:
                 "ClientIp": "1.1.1.1",
                 "Time": "2019-11-18 00:00:00",
                 "Request": 300,
-                "Count": "2"
+                "Count": 2
             },
             {
                 "ClientIp": "2.2.2.2",
                 "Time": "2019-11-18 00:00:01",
                 "Request": 200,
-                "Count": "1"
+                "Count": 1
             }
         ],
         "TotalCount": 3,

@@ -868,6 +868,13 @@
       "output": "DescribeIntegrationVersionNodesInfoResponse",
       "status": "online"
     },
+    "DescribeLineageInfo": {
+      "document": "通用血缘查询接口",
+      "input": "DescribeLineageInfoRequest",
+      "name": "通用血缘查询",
+      "output": "DescribeLineageInfoResponse",
+      "status": "online"
+    },
     "DescribeManualTriggerRecordPage": {
       "document": "查询手动任务触发记录",
       "input": "DescribeManualTriggerRecordPageRequest",
@@ -20130,6 +20137,124 @@
       ],
       "type": "object"
     },
+    "DescribeLineageInfoRequest": {
+      "document": "DescribeLineageInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实体原始唯一ID",
+          "example": "1",
+          "member": "string",
+          "name": "ResourceOriId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实体类型",
+          "example": "TABLE",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "血缘唯一ID",
+          "example": "2",
+          "member": "string",
+          "name": "QualifiedId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询方向",
+          "example": "INPUT",
+          "member": "string",
+          "name": "Direction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询入度",
+          "example": "1",
+          "member": "int64",
+          "name": "InputDepth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询出度",
+          "example": "1",
+          "member": "int64",
+          "name": "OutputDepth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据来源",
+          "example": "WEDATA",
+          "member": "string",
+          "name": "Platform",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "血缘类型（分页使用）",
+          "example": "TABLE",
+          "member": "string",
+          "name": "LineageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLineageInfoResponse": {
+      "document": "DescribeLineageInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "血缘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageCommonInfoVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeManualTriggerRecordPageRequest": {
       "document": "DescribeManualTriggerRecordPage请求参数结构体",
       "members": [
@@ -37508,6 +37633,148 @@
       ],
       "usage": "out"
     },
+    "LineageCommonInfoVO": {
+      "document": "LineageCommonInfoVO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageResouce",
+          "name": "CurrentResource",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上游节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageNodeInfoVO",
+          "name": "ParentSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下游节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageNodeInfoVO",
+          "name": "ChildSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下游数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DownStreamCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上游数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "UpStreamCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父/子节点是否展示上下游数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "StreamCountFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LineageNodeInfoVO": {
+      "document": "LineageNodeInfoVo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageResouce",
+          "name": "CurrentResource",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageRelationVO",
+          "name": "Relation",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上游数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DownStreamCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下游数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "UpStreamCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上游节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageNodeInfoVO",
+          "name": "ParentSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下游节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageNodeInfoVO",
+          "name": "ChildSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父/子节点是否展示上下游数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "StreamCountFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LineageParamRecord": {
       "document": "血缘参数记录",
       "members": [
@@ -37529,6 +37796,271 @@
           "name": "Value",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LineageProcessVO": {
+      "document": "LineageProcessVO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原始唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ProcessId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TABLE_MODEL",
+          "member": "string",
+          "name": "ProcessType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务子类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SQL_TASK",
+          "member": "string",
+          "name": "ProcessSubType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ProcessName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "QualifiedId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WEDATA",
+          "member": "string",
+          "name": "Platform",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外扩展参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageProperty",
+          "name": "ProcessProperties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LineageProperty": {
+      "document": "LineageProperty额外扩展参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "属性名称",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "属性值",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LineageRelationVO": {
+      "document": "LineageRelationVO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关联ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RelationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源端唯一血缘ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SourceQualifiedId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标端唯一血缘ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TargetQualifiedId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "血缘加工过程\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageProcessVO",
+          "name": "Processes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LineageResouce": {
+      "document": "血缘实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实体原始唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "110111121",
+          "member": "string",
+          "name": "ResourceOriId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务名称：库名.表名｜指标名称｜模型名称|字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx.table",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实体类型\nTABLE|METRIC|MODEL|SERVICE|COLUMN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TABLE",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "血缘全局唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "uuid",
+          "member": "string",
+          "name": "QualifiedId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述：表类型｜指标描述｜模型描述|字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这个是描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源：WEDATA|THIRD\n默认wedata\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "来源",
+          "member": "string",
+          "name": "Platform",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-07-31",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-07-31",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "resource 额外扩展参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineageProperty",
+          "name": "ResourceProperties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

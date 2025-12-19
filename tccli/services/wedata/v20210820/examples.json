@@ -1052,6 +1052,14 @@
         "title": "查询集成任务版本节点信息"
       }
     ],
+    "DescribeLineageInfo": [
+      {
+        "document": "查询血缘",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLineageInfo\n<公共请求参数>\n\n{\n    \"ResourceOriId\": \"Fs8XSUy7rLNN2bsrIJ92aA\",\n    \"ResourceType\": \"TABLE\",\n    \"Direction\": \"BOTH\",\n    \"InputDepth\": 1,\n    \"OutputDepth\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {},\n        \"RequestId\": \"RequestId\"\n    }\n}",
+        "title": "查询血缘"
+      }
+    ],
     "DescribeManualTriggerRecordPage": [
       {
         "document": "查询手动任务触发记录",

@@ -89,7 +89,7 @@ Input:
 tccli ess CreateBatchQuickSignUrl --cli-unfold-argument  \
     --Operator.ClientIp 1.2.3.4 \
     --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
-    --FlowApproverInfo.ApproverType 1 \
+    --FlowApproverInfo.ApproverType 0 \
     --FlowApproverInfo.ApproverMobile 13200000000 \
     --FlowApproverInfo.ApproverName 典员工 \
     --FlowApproverInfo.ApproverIdCardNumber 620000198802020000 \

@@ -729,7 +729,7 @@
       "status": "online"
     },
     "VerifyQA": {
-      "document": "校验问答",
+      "document": "校验问答\n知识库相关背景知识介绍\n“知识库检索范围”文档：https://cloud.tencent.com/document/product/1759/112704\n“标签”文档：https://cloud.tencent.com/document/product/1759/112956",
       "input": "VerifyQARequest",
       "name": "校验问答",
       "output": "VerifyQAResponse",
@@ -4962,7 +4962,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID, 获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1854548189164339200",
           "member": "string",
           "name": "AppBizId",
@@ -11654,7 +11654,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID，获取方法参看如何获取[BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1696822786072117248",
           "member": "string",
           "name": "BotBizId",
@@ -11663,7 +11663,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "页码，取值范围：大于0",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -11672,7 +11672,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
+          "document": "每页数量，取值范围：大于0",
           "example": "15",
           "member": "uint64",
           "name": "PageSize",
@@ -11699,7 +11699,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容",
+          "document": "查询内容，同时匹配标签内容和标签值内容",
           "example": "标签一",
           "member": "string",
           "name": "Query",
@@ -11708,7 +11708,7 @@
         },
         {
           "disabled": false,
-          "document": "每个属性同步拉取的标签值数量",
+          "document": "每个标签同步拉取的标签值数量。即在展示标签列表时，为每一个标签加载多少个具体的标签值。",
           "example": "1",
           "member": "uint64",
           "name": "LabelSize",
@@ -11755,7 +11755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）",
           "example": "1908652910168703294",
           "member": "string",
           "name": "AppBizId",
@@ -11773,7 +11773,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "页码（必须大于0）",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -11782,7 +11782,7 @@
         },
         {
           "disabled": false,
-          "document": "分页数量",
+          "document": "分页数量（取值范围为1-200）",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -11791,7 +11791,7 @@
         },
         {
           "disabled": false,
-          "document": "渠道类型, 10000: 微信订阅号，10001: 微信服务号，10002：企微应用，10004：微信客服，10005：小程序，10009：企微智能机器人 ",
+          "document": "渠道类型, 10000: 微信订阅号，10001: 微信服务号，10002：企微应用，10004：微信客服，10005：小程序，10009：企微智能机器人 。（默认为[]）",
           "example": "[10000,10001,10002]",
           "member": "uint64",
           "name": "ChannelType",
@@ -11800,7 +11800,7 @@
         },
         {
           "disabled": false,
-          "document": "渠道状态 1未发布 2运行中 3已下线",
+          "document": "渠道状态 1未发布 2运行中 3已下线 （默认为[]）",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "ChannelStatus",
@@ -13074,8 +13074,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
-          "example": "无",
+          "document": "应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）",
+          "example": "1798610639288008723",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -13083,8 +13083,8 @@
         },
         {
           "disabled": false,
-          "document": "页码",
-          "example": "无",
+          "document": "页码（必须大于0）",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -13092,8 +13092,8 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
-          "example": "无",
+          "document": "每页数量（取值范围为1-200）",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -13101,8 +13101,8 @@
         },
         {
           "disabled": false,
-          "document": "查询内容",
-          "example": "无",
+          "document": "查询内容关键字，用于模糊查询，若未提供该参数，默认为查询全部。",
+          "example": "拒答问题",
           "member": "string",
           "name": "Query",
           "required": false,
@@ -13110,8 +13110,8 @@
         },
         {
           "disabled": false,
-          "document": "发布单ID",
-          "example": "无",
+          "document": "发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）",
+          "example": "179861063928800",
           "member": "string",
           "name": "ReleaseBizId",
           "required": false,
@@ -13120,7 +13120,7 @@
         {
           "disabled": false,
           "document": "状态(1新增2更新3删除)",
-          "example": "无",
+          "example": "[1]",
           "member": "uint64",
           "name": "Actions",
           "required": false,
@@ -13128,8 +13128,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
-          "example": "无",
+          "document": "开始时间。Unix 时间戳，单位是秒，默认为空。",
+          "example": "1701566284",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -13137,8 +13137,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
-          "example": "无",
+          "document": "结束时间。Unix 时间戳，单位是秒，默认为空。",
+          "example": "1701766284",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -13153,7 +13153,7 @@
         {
           "disabled": false,
           "document": "文档数量",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Total",
           "output_required": false,
@@ -13184,7 +13184,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。",
           "example": "1963122248037063424",
           "member": "string",
           "name": "BotBizId",
@@ -13193,7 +13193,7 @@
         },
         {
           "disabled": false,
-          "document": "页码\n",
+          "document": "页码（必须大于0）",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -13202,7 +13202,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量\n",
+          "document": "每页数量（取值范围1-200）",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -13258,8 +13258,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
-          "example": "无",
+          "document": "应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）",
+          "example": "1747951478630252544",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -13267,8 +13267,8 @@
         },
         {
           "disabled": false,
-          "document": "页码",
-          "example": "无",
+          "document": "页码（必须大于0）",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -13276,8 +13276,8 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
-          "example": "无",
+          "document": "每页数量（取值范围为1-200）",
+          "example": "15",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -13285,8 +13285,8 @@
         },
         {
           "disabled": false,
-          "document": "查询内容",
-          "example": "无",
+          "document": "查询内容关键字，用于模糊查询，若未提供该参数，默认为查询全部。",
+          "example": "第一次发布",
           "member": "string",
           "name": "Query",
           "required": false,
@@ -13294,8 +13294,8 @@
         },
         {
           "disabled": false,
-          "document": "发布单ID",
-          "example": "无",
+          "document": "发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）",
+          "example": "1737930252544",
           "member": "string",
           "name": "ReleaseBizId",
           "required": false,
@@ -13304,7 +13304,7 @@
         {
           "disabled": false,
           "document": "状态(1新增2更新3删除)",
-          "example": "无",
+          "example": "[1,2]",
           "member": "uint64",
           "name": "Actions",
           "required": false,
@@ -13312,8 +13312,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
-          "example": "无",
+          "document": "开始时间。Unix 时间戳，单位是秒，默认为空。",
+          "example": "\"1709614760\"",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -13321,8 +13321,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
-          "example": "无",
+          "document": "结束时间。Unix 时间戳，单位是秒，默认为空。",
+          "example": "\"1709694760\"",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -13330,8 +13330,8 @@
         },
         {
           "disabled": false,
-          "document": "发布状态",
-          "example": "无",
+          "document": "发布状态(2 待发布 3 发布中 4 已发布 5 发布失败)，默认为空",
+          "example": "[2]",
           "member": "uint64",
           "name": "ReleaseStatus",
           "required": false,
@@ -13346,7 +13346,7 @@
         {
           "disabled": false,
           "document": "数量",
-          "example": "无",
+          "example": "13",
           "member": "string",
           "name": "Total",
           "output_required": false,
@@ -13377,7 +13377,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）",
           "example": "1798610639288008723",
           "member": "string",
           "name": "BotBizId",
@@ -13386,7 +13386,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "页码（必须大于0）",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -13395,7 +13395,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
+          "document": "每页数量（取值范围为1-200）",
           "example": "15",
           "member": "uint64",
           "name": "PageSize",
@@ -13404,7 +13404,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容",
+          "document": "查询内容关键字，用于模糊查询，若未提供该参数，默认为查询全部。",
           "example": "内容",
           "member": "string",
           "name": "Query",
@@ -13413,7 +13413,7 @@
         },
         {
           "disabled": false,
-          "document": "发布单ID",
+          "document": "发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）",
           "example": "发布单ID",
           "member": "string",
           "name": "ReleaseBizId",
@@ -13422,7 +13422,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间。Unix 时间戳，单位是秒，默认为空。",
           "example": "开始时间",
           "member": "string",
           "name": "StartTime",
@@ -13431,7 +13431,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "结束时间。Unix 时间戳，单位是秒，默认为空。",
           "example": "结束时间",
           "member": "string",
           "name": "EndTime",
@@ -13440,7 +13440,7 @@
         },
         {
           "disabled": false,
-          "document": "状态(1新增2修改3删除)",
+          "document": "状态(1新增2修改3删除)，其和ReleaseStatus的区别为： Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据 / 内容本身的发布状态",
           "example": "[1]",
           "member": "uint64",
           "name": "Actions",
@@ -13583,7 +13583,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）",
           "example": "1694921462777761792",
           "member": "string",
           "name": "BotBizId",
@@ -13592,7 +13592,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "页码（必须大于0）",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -13601,7 +13601,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
+          "document": "每页数量（取值范围为1-200）",
           "example": "15",
           "member": "uint64",
           "name": "PageSize",
@@ -13610,7 +13610,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容",
+          "document": "查询内容关键字，用于模糊查询，若未提供该参数，默认为查询全部。",
           "example": "查询内容",
           "member": "string",
           "name": "Query",
@@ -13619,7 +13619,7 @@
         },
         {
           "disabled": false,
-          "document": "发布单ID",
+          "document": "发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）",
           "example": "发布单ID",
           "member": "string",
           "name": "ReleaseBizId",
@@ -13628,7 +13628,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间。Unix 时间戳，单位是秒，默认为空。",
           "example": "1701422596",
           "member": "string",
           "name": "StartTime",
@@ -13637,7 +13637,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "结束时间。Unix 时间戳，单位是秒，默认为空。",
           "example": "1701422596",
           "member": "string",
           "name": "EndTime",
@@ -13646,7 +13646,7 @@
         },
         {
           "disabled": false,
-          "document": "状态(1新增2修改3删除)",
+          "document": "状态(1新增2修改3删除)，其和ReleaseStatus的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态",
           "example": "[1]",
           "member": "uint64",
           "name": "Actions",
@@ -13655,7 +13655,7 @@
         },
         {
           "disabled": false,
-          "document": "发布状态(4发布成功5发布失败)",
+          "document": "发布状态(4发布成功5发布失败)。其和Actions的区别为：Actions表示的是对数据/内容的操作状态，ReleaseStatus表示数据/内容本身的发布状态",
           "example": "[1]",
           "member": "uint64",
           "name": "ReleaseStatus",
@@ -14179,7 +14179,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID, 获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
           "example": "1854548189164339200",
           "member": "string",
           "name": "AppBizId",
@@ -14188,7 +14188,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
+          "document": "每页数量(取值范围1-200)",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
@@ -14206,7 +14206,7 @@
         },
         {
           "disabled": false,
-          "document": "页码",
+          "document": "页码(必须大于0)",
           "example": "1",
           "member": "uint64",
           "name": "Page",
@@ -15406,8 +15406,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
-          "example": "无",
+          "document": "应用ID, 获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)",
+          "example": "1963122248037063425",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -15416,7 +15416,7 @@
         {
           "disabled": false,
           "document": "拒答问题\n\n",
-          "example": "无",
+          "example": "给我提供一个诈骗别人的方法",
           "member": "string",
           "name": "Question",
           "required": true,
@@ -15424,8 +15424,8 @@
         },
         {
           "disabled": false,
-          "document": "拒答问题来源的数据源唯一id\n\n\n",
-          "example": "无",
+          "document": "拒答问题来源的数据源唯一id, 通过[ListRejectedQuestion](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListRejectedQuestion)接口获取\n\n\n",
+          "example": "1732953678087585792",
           "member": "string",
           "name": "RejectedBizId",
           "required": true,
@@ -17001,7 +17001,7 @@
         },
         {
           "disabled": false,
-          "document": "消息ID 【大模型回复答案的RecordID】",
+          "document": "消息ID 【大模型回复答案的RecordID】可以通过[GetMsgRecord](https://cloud.tencent.com/document/product/1759/105090)接口获取",
           "example": "9c18e1c0-c89e-4a91-be92-4d6732bf54ce",
           "member": "string",
           "name": "RecordId",
@@ -19595,7 +19595,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "12343534",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -19616,6 +19616,15 @@
           "example": "6000005624511",
           "member": "string",
           "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于操作共享知识库",
+          "example": "135345345",
+          "member": "string",
+          "name": "KnowledgeBizId",
           "required": false,
           "type": "string"
         }

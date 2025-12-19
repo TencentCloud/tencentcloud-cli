@@ -8,9 +8,9 @@ Input:
 tccli lke ListRejectedQuestionPreview --cli-unfold-argument  \
     --BotBizId 1798610639288008723 \
     --PageNumber 1 \
-    --PageSize 1 \
+    --PageSize 10 \
     --Query  \
-    --ReleaseBizId 1 \
+    --ReleaseBizId 179861063928800 \
     --Actions 1 \
     --StartTime 1701566284 \
     --EndTime 1701766284

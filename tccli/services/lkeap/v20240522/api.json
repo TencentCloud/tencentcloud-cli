@@ -2369,7 +2369,7 @@
         },
         {
           "disabled": false,
-          "document": "说明：文档的结束页码。\n备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。\n默认值：无",
+          "document": "说明：文档的结束页码。备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值，文档页码大于100页建议使用异步解析接入。默认值：无",
           "example": "100",
           "member": "int64",
           "name": "FileEndPageNumber",

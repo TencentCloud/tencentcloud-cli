@@ -40,7 +40,7 @@ Output:
                 "FwGroupName": "互联分组",
                 "BetaList": [
                     {
-                        "TaskId": "9001",
+                        "TaskId": 9001,
                         "TaskName": "autotest",
                         "LastTime": "1999-01-01 00:00:01"
                     }

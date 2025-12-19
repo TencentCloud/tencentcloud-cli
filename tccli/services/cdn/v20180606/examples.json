@@ -11,7 +11,7 @@
     "AddCdnDomain": [
       {
         "document": "新增加速域名",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCdnDomain\n<公共请求参数>\n\n{\n    \"Origin\": {\n        \"OriginType\": \"ip\",\n        \"Origins\": [\n            \"1.1.1.1\"\n        ]\n    },\n    \"ProjectId\": \"0\",\n    \"Domain\": \"www.test.com\",\n    \"ServiceType\": \"web\",\n    \"Area\": \"mainland\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCdnDomain\n<公共请求参数>\n\n{\n    \"Origin\": {\n        \"OriginType\": \"ip\",\n        \"Origins\": [\n            \"1.1.1.1\"\n        ]\n    },\n    \"ProjectId\": 0,\n    \"Domain\": \"www.test.com\",\n    \"ServiceType\": \"web\",\n    \"Area\": \"mainland\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4ac88a3-a159-47ac-9b87-19185d7deb09\"\n    }\n}",
         "title": "新增加速域名"
       }
@@ -324,7 +324,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=ListTopClsLogData\n&Channel=cdn\n&LogsetId=4242424-8723-45e3-9c75-a0599ef9143a\n&TopicIds=57460798-8723-45e3-9c75-a0599ef9143a,57460798-8723-45e3-9c75-22242141\n&StartTime=2019-11-18 00:00:00\n&EndTime=2019-11-18 00:10:00\n&Domain=www.test.com\n&Url=/abc/123.jpg\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"242144aeff-8723-45e3-9c75-a0599ef9143a\",\n        \"Data\": [\n            {\n                \"ClientIp\": \"1.1.1.1\",\n                \"Time\": \"2019-11-18 00:00:00\",\n                \"Request\": 300,\n                \"Count\": \"2\"\n            },\n            {\n                \"ClientIp\": \"2.2.2.2\",\n                \"Time\": \"2019-11-18 00:00:01\",\n                \"Request\": 200,\n                \"Count\": \"1\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"IpCount\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"242144aeff-8723-45e3-9c75-a0599ef9143a\",\n        \"Data\": [\n            {\n                \"ClientIp\": \"1.1.1.1\",\n                \"Time\": \"2019-11-18 00:00:00\",\n                \"Request\": 300,\n                \"Count\": 2\n            },\n            {\n                \"ClientIp\": \"2.2.2.2\",\n                \"Time\": \"2019-11-18 00:00:01\",\n                \"Request\": 200,\n                \"Count\": 1\n            }\n        ],\n        \"TotalCount\": 3,\n        \"IpCount\": 2\n    }\n}",
         "title": "通过CLS日志计算Top信息"
       }
     ],

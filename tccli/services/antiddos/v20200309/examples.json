@@ -582,6 +582,14 @@
         "title": "获取DDoS防护的端口acl策略列表"
       }
     ],
+    "DescribeListProtectThresholdConfigNew": [
+      {
+        "document": "获取防护阈值配置列表",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeListProtectThresholdConfigNew\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"FilterIp\": \"abc\",\n    \"FilterInstanceId\": \"abc\",\n    \"FilterDomain\": \"abc\",\n    \"FilterProtocol\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"ConfigList\": [\n            {\n                \"DDoSLevel\": \"abc\",\n                \"DDoSThreshold\": 1,\n                \"DDoSAI\": \"abc\",\n                \"CCEnable\": 1,\n                \"CCThreshold\": 1,\n                \"InstanceDetailList\": [\n                    {\n                        \"EipList\": [\n                            \"abc\"\n                        ],\n                        \"InstanceId\": \"abc\"\n                    }\n                ],\n                \"ListenerCcThresholdList\": [\n                    {\n                        \"Domain\": \"abc\",\n                        \"Protocol\": \"abc\",\n                        \"CCEnable\": 0,\n                        \"CCThreshold\": 0\n                    }\n                ],\n                \"SynFloodThreshold\": 1,\n                \"SynFloodPktThreshold\": 1,\n                \"UdpFloodThreshold\": 1,\n                \"UdpFloodPktThreshold\": 1,\n                \"AckFloodThreshold\": 1,\n                \"AckFloodPktThreshold\": 1,\n                \"SynAckFloodThreshold\": 1,\n                \"SynAckFloodPktThreshold\": 1,\n                \"RstFloodThreshold\": 1,\n                \"RstFloodPktThreshold\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取防护阈值配置列表"
+      }
+    ],
     "DescribeListProtocolBlockConfig": [
       {
         "document": "",
