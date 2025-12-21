@@ -1126,6 +1126,72 @@
       ],
       "usage": "both"
     },
+    "AndroidInstanceBackup": {
+      "document": "安卓实例备份",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份ID",
+          "example": "backup-1a2b",
+          "member": "string",
+          "name": "BackupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份状态",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大小，单位 Byte",
+          "example": "1024",
+          "member": "uint64",
+          "name": "Size",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份的安卓实例 ID",
+          "example": "cai-1a2b3c4d",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-07-02T10:15:36Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AndroidInstanceDevice": {
       "document": "安卓实例设备信息",
       "members": [
@@ -3318,6 +3384,26 @@
     "DescribeAndroidInstanceBackupsResponse": {
       "document": "DescribeAndroidInstanceBackups返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "备份列表",
+          "example": "无",
+          "member": "AndroidInstanceBackup",
+          "name": "Backups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

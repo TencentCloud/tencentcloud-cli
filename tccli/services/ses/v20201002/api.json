@@ -2898,7 +2898,7 @@
         {
           "disabled": false,
           "document": "收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。",
-          "example": "destination@mail.qcloud.com",
+          "example": "[\"destination@mail.qcloud.com\"]",
           "member": "string",
           "name": "Destination",
           "required": true,
@@ -2925,7 +2925,7 @@
         {
           "disabled": false,
           "document": "抄送人邮箱地址，最多支持抄送20人。",
-          "example": "cc@mail.qcloud.com",
+          "example": "[\"cc@mail.qcloud.com\"]",
           "member": "string",
           "name": "Cc",
           "required": false,
@@ -2934,7 +2934,7 @@
         {
           "disabled": false,
           "document": "密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。",
-          "example": "bcc@mail.qcloud.com",
+          "example": "[\"bcc@mail.qcloud.com\"]",
           "member": "string",
           "name": "Bcc",
           "required": false,

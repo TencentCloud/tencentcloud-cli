@@ -988,6 +988,9 @@ SERVICE_VERSIONS = {
     "weilingwith": [
         "2023-04-27"
     ],
+    "wimgs": [
+        "2025-11-06"
+    ],
     "yinsuda": [
         "2022-05-27"
     ],

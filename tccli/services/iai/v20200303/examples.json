@@ -287,15 +287,15 @@
     "GetPersonGroupInfo": [
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonGroupInfo\r\n&PersonId=2001\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"GroupNum\": \"1\",\n        \"PersonGroupInfos\": [\n            {\n                \"GroupId\": \"ZhuYuanDormitoryNo1\",\n                \"PersonExDescriptions\": [\n                    \"计算机学院\",\n                    \"软件工程\",\n                    \"15级\",\n                    \"3150108080\"\n                ]\n            }\n        ],\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"671f0a1d-2b35-47c4-b9d1-b18053f71a04\"\n    }\n}",
-        "title": "获取人员归属信息成功示例"
+        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonGroupInfo\n&PersonId=1002\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdNotExist\",\n            \"Message\": \"人员ID不存在。\"\n        },\n        \"RequestId\": \"98330f25-eb2e-432a-a30c-3830774210c1\"\n    }\n}",
+        "title": "获取人员归属信息失败示例"
       },
       {
         "document": "",
-        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonGroupInfo\r\n&PersonId=1002\r\n&Offset=0\r\n&Limit=10\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.PersonIdNotExist\",\n            \"Message\": \"人员ID不存在。\"\n        },\n        \"RequestId\": \"98330f25-eb2e-432a-a30c-3830774210c1\"\n    }\n}",
-        "title": "获取人员归属信息失败示例"
+        "input": "https://iai.tencentcloudapi.com/?Action=GetPersonGroupInfo\n&PersonId=2001\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"GroupNum\": 1,\n        \"PersonGroupInfos\": [\n            {\n                \"GroupId\": \"ZhuYuanDormitoryNo1\",\n                \"PersonExDescriptions\": [\n                    \"计算机学院\",\n                    \"软件工程\",\n                    \"15级\",\n                    \"3150108080\"\n                ]\n            }\n        ],\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"671f0a1d-2b35-47c4-b9d1-b18053f71a04\"\n    }\n}",
+        "title": "获取人员归属信息成功示例"
       }
     ],
     "GetPersonList": [
@@ -433,15 +433,15 @@
     "SearchFacesReturnsByGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchFacesReturnsByGroup\n<公共请求参数>\n\n{\n    \"Url\": \"http://test.image.myqcloud.com/testA.jpg\",\n    \"MaxPersonNumPerGroup\": \"5\",\n    \"GroupIds\": [\n        \"TencentShenZhenEmployee\"\n    ],\n    \"MaxFaceNum\": \"1\",\n    \"MinFaceSize\": \"40\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FaceNum\": 1,\n        \"ResultsReturnsByGroup\": [\n            {\n                \"GroupCandidates\": [\n                    {\n                        \"Candidates\": [\n                            {\n                                \"PersonGroupInfos\": [\n                                    {\n                                        \"GroupId\": \"1002\",\n                                        \"PersonExDescriptions\": [\n                                            \"年龄\",\n                                            \"性别\"\n                                        ]\n                                    }\n                                ],\n                                \"PersonId\": \"1002\",\n                                \"Gender\": 0,\n                                \"PersonName\": \"韦小宝\",\n                                \"Score\": 100,\n                                \"FaceId\": \"2875093635484912302\"\n                            }\n                        ],\n                        \"GroupId\": \"Group1\"\n                    }\n                ],\n                \"FaceRect\": {\n                    \"Y\": 46,\n                    \"X\": 370,\n                    \"Height\": 1,\n                    \"Width\": 1\n                },\n                \"RetCode\": 0\n            }\n        ],\n        \"RequestId\": \"57b42b73-b978-45b9-8095-8f50e9642d35\",\n        \"FaceModelVersion\": \"3.0\"\n    }\n}",
-        "title": "人脸搜索分库返回成功示例"
+        "input": "POST / HTTP/1.1\nHost: iai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchFacesReturnsByGroup\n<公共请求参数>\n\n{\n    \"Url\": \"http://test.image.myqcloud.com/testB.jpg\",\n    \"MaxPersonNumPerGroup\": 5,\n    \"GroupIds\": [\n        \"TencentShenZhenEmployee\"\n    ],\n    \"MaxFaceNum\": 1,\n    \"MinFaceSize\": 40\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ImageDecodeFailed\",\n            \"Message\": \"图片解码失败。\"\n        },\n        \"RequestId\": \"0e77ad29-ad65-4901-9efc-b49a6e0a357b\"\n    }\n}",
+        "title": "人脸搜索分库返回失败示例"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchFacesReturnsByGroup\n<公共请求参数>\n\n{\n    \"Url\": \"http://test.image.myqcloud.com/testB.jpg\",\n    \"MaxPersonNumPerGroup\": \"5\",\n    \"GroupIds\": [\n        \"TencentShenZhenEmployee\"\n    ],\n    \"MaxFaceNum\": \"1\",\n    \"MinFaceSize\": \"40\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ImageDecodeFailed\",\n            \"Message\": \"图片解码失败。\"\n        },\n        \"RequestId\": \"0e77ad29-ad65-4901-9efc-b49a6e0a357b\"\n    }\n}",
-        "title": "人脸搜索分库返回失败示例"
+        "input": "POST / HTTP/1.1\nHost: iai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchFacesReturnsByGroup\n<公共请求参数>\n\n{\n    \"Url\": \"http://test.image.myqcloud.com/testA.jpg\",\n    \"MaxPersonNumPerGroup\": 5,\n    \"GroupIds\": [\n        \"TencentShenZhenEmployee\"\n    ],\n    \"MaxFaceNum\": 1,\n    \"MinFaceSize\": 40\n}",
+        "output": "{\n    \"Response\": {\n        \"FaceNum\": 1,\n        \"ResultsReturnsByGroup\": [\n            {\n                \"GroupCandidates\": [\n                    {\n                        \"Candidates\": [\n                            {\n                                \"PersonGroupInfos\": [\n                                    {\n                                        \"GroupId\": \"1002\",\n                                        \"PersonExDescriptions\": [\n                                            \"年龄\",\n                                            \"性别\"\n                                        ]\n                                    }\n                                ],\n                                \"PersonId\": \"1002\",\n                                \"Gender\": 0,\n                                \"PersonName\": \"韦小宝\",\n                                \"Score\": 100,\n                                \"FaceId\": \"2875093635484912302\"\n                            }\n                        ],\n                        \"GroupId\": \"Group1\"\n                    }\n                ],\n                \"FaceRect\": {\n                    \"Y\": 46,\n                    \"X\": 370,\n                    \"Height\": 1,\n                    \"Width\": 1\n                },\n                \"RetCode\": 0\n            }\n        ],\n        \"RequestId\": \"57b42b73-b978-45b9-8095-8f50e9642d35\",\n        \"FaceModelVersion\": \"3.0\"\n    }\n}",
+        "title": "人脸搜索分库返回成功示例"
       }
     ],
     "SearchPersons": [

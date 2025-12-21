@@ -19,12 +19,12 @@ Output:
                 "Uin": "111111",
                 "RebateMonth": "2018-02",
                 "Amt": 2682133,
-                "MonthSales": "4873578",
-                "QuarterSales": "10756003",
+                "MonthSales": 4873578,
+                "QuarterSales": 10756003,
                 "ExceptionFlag": "NORMAL"
             }
         ],
-        "TotalCount": "8"
+        "TotalCount": 8
     }
 }
 ```

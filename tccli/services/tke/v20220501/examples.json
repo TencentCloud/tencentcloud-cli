@@ -48,6 +48,14 @@
         "title": "查询集群实例信息"
       }
     ],
+    "DescribeClusterMachines": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterMachines\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"ClusterId\": \"cls-123\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"789\"\n            ],\n            \"Name\": \"cls-123\"\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"1231\",\n        \"Machines\": [\n            {\n                \"ExpiredTime\": \"123\",\n                \"SystemDisk\": {\n                    \"AutoFormatAndMount\": true,\n                    \"MountTarget\": \"123\",\n                    \"DiskSize\": 0,\n                    \"FileSystem\": \"123\",\n                    \"DiskType\": \"123\"\n                },\n                \"LanIP\": \"123\",\n                \"DisplayName\": \"123\",\n                \"InstanceType\": \"123\",\n                \"Zone\": \"123\",\n                \"InstanceFamily\": \"123\",\n                \"MachineName\": \"123\",\n                \"IsProtectedFromScaleIn\": true,\n                \"InternetAccessible\": {\n                    \"BandwidthPackageId\": \"123\",\n                    \"MaxBandwidthOut\": 0,\n                    \"ChargeType\": \"123\"\n                },\n                \"PayMode\": \"123\",\n                \"InstanceChargeType\": \"123\",\n                \"RenewFlag\": \"123\",\n                \"LoginStatus\": \"123\",\n                \"Memory\": 1,\n                \"GPU\": 1,\n                \"MachineState\": \"123\",\n                \"CPU\": 1,\n                \"CreatedAt\": \"123\"\n            }\n        ]\n    }\n}",
+        "title": "查询原生节点列表"
+      }
+    ],
     "DescribeClusters": [
       {
         "document": "查询集群列表",

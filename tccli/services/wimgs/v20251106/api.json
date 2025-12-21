@@ -1,0 +1,111 @@
+{
+  "actions": {
+    "CheckUserResource": {
+      "document": "接口用于控制台用户开通权限时，前端提前检查用户是否已经开通，如果已开通则按钮不可点击",
+      "input": "CheckUserResourceRequest",
+      "name": "检查用户资源（控制台开通场景）",
+      "output": "CheckUserResourceResponse",
+      "status": "online"
+    },
+    "SearchByText": {
+      "document": "文搜图接口，以JSON形式向客户提供搜索结果数据，包含标题、宽高、缩略图、内容来源url等信息",
+      "input": "SearchByTextRequest",
+      "name": "文搜图",
+      "output": "SearchByTextResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-11-06",
+    "api_brief": "用户输入文本描述，模型通过计算文本向量与图像向量的相似度，精准匹配并返回相关图片URL等信息。",
+    "serviceNameCN": "联网图像搜索",
+    "serviceShortName": "wimgs"
+  },
+  "objects": {
+    "CheckUserResourceRequest": {
+      "document": "CheckUserResource请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CheckUserResourceResponse": {
+      "document": "CheckUserResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否已存在用户资源",
+          "example": "true",
+          "member": "bool",
+          "name": "Exists",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1-已开通；2-已隔离",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchByTextRequest": {
+      "document": "SearchByText请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询词",
+          "example": "北京故宫",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchByTextResponse": {
+      "document": "SearchByText返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原始查询词",
+          "example": "car",
+          "member": "string",
+          "name": "Query",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "搜索结果图片列表，格式为json字符串。",
+          "example": "[\"{\\\"siteName\\\":\\\"搜狗百科\\\",\\\"title\\\":\\\"the car book\\\"}\"]",
+          "member": "string",
+          "name": "Images",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

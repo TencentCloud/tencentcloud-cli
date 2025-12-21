@@ -186,14 +186,6 @@
         "title": "获取视频扩展信息"
       }
     ],
-    "DescribeCityWorkspaceList": [
-      {
-        "document": "成功返回示例",
-        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCityWorkspaceList\n<公共请求参数>\n\n{\n    \"AdministrativeCodeSet\": [\n        \"002\"\n    ],\n    \"ApplicationToken\": \"YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec9a85c9-b887-4481-a318-1c41f7d46733\",\n        \"Result\": {\n            \"WorkspaceSet\": [\n                {\n                    \"WorkspaceId\": 1016,\n                    \"ChineseName\": \"华南园区项目\",\n                    \"Description\": \"华南园区项目\",\n                    \"Status\": 0,\n                    \"ParkName\": \"园区简称\",\n                    \"ParkNum\": \"001\",\n                    \"AdministrativeDetailSet\": [\n                        {\n                            \"AdministrativeTypeCode\": \"QH01\",\n                            \"AdministrativeCode\": \"440000\",\n                            \"AdministrativeName\": \"广东省\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
-        "title": "通过行政区id获取项目空间信息"
-      }
-    ],
     "DescribeDeviceGroupList": [
       {
         "document": "测试环境demo",

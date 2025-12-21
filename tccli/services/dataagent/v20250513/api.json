@@ -443,6 +443,15 @@
           "name": "UserCosUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "元数据",
+          "example": "mytest",
+          "member": "string",
+          "name": "FileMetaData",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
