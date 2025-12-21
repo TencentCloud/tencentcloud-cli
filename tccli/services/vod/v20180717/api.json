@@ -7273,6 +7273,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入图片的描述信息，用于帮助模型理解图片。仅GEM 2.5、GEM 3.0 有效。",
+          "example": "任务背景：这是需要翻新的主建筑（图1），不得改变其几何结构。",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7384,7 +7395,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AIGC规格。\n取值有：\n<li>Qwen2.0</li>\n<li>Gem2.5</li>\n<li>Gem3.0_1K</li>\n<li>Gem3.0_2K</li>\n<li>Gem3.0_4K</li>\n<li>Seedream4.0</li>\n<li>Sora2</li>\n<li>Veo3.1Standard</li>\n<li>Veo3.1Fast</li>\n<li>Kling2.5pro_720P</li>\n<li>Kling2.5pro_1080P</li>\n<li>Kling2.0&2.1std_720P</li>\n<li>Kling2.0&2.1pro_1080P</li>\n<li>Hailuo02&2.3_1080P</li>\n<li>Hailuo02&2.3_768P</li>\n<li>Hailuo2.3fast_768P</li>\n<li>Hailuo2.3fast_1080P</li>\n<li>Seedance3.0pro</li>\n<li>Jimeng4.0</li>\n<li>Jimeng3.0pro</li>\n<li>Vidu2.0_720P</li>\n<li>Vidu2.0_1080P</li>\n<li>ViduQ2pro_720P</li>\n<li>ViduQ2pro_1080P</li>\n<li>ViduQ2turbo_720P</li>\n<li>ViduQ2turbo_1080P</li>\n<li> unknown</li>",
+          "document": "AIGC规格。\n取值有：\n<li>Qwen2.0</li>\n<li>Gem2.5</li>\n<li>Gem3.0_1K</li>\n<li>Gem3.0_2K</li>\n<li>Gem3.0_4K</li>\n<li>Sora2</li>\n<li>Veo3.1Standard</li>\n<li>Veo3.1Fast</li>\n<li>Kling2.5pro_720P</li>\n<li>Kling2.5pro_1080P</li>\n<li>Kling2.0&2.1std_720P</li>\n<li>Kling2.0&2.1pro_1080P</li>\n<li>Hailuo02&2.3_1080P</li>\n<li>Hailuo02&2.3_768P</li>\n<li>Hailuo2.3fast_768P</li>\n<li>Hailuo2.3fast_1080P</li>\n<li>Jimeng4.0</li>\n<li>Jimeng3.0pro</li>\n<li>Vidu2.0_720P</li>\n<li>Vidu2.0_1080P</li>\n<li>ViduQ2pro_720P</li>\n<li>ViduQ2pro_1080P</li>\n<li>ViduQ2turbo_720P</li>\n<li>ViduQ2turbo_1080P</li>\n<li> unknown</li>",
           "example": "Gem2.5",
           "member": "string",
           "name": "Specification",
@@ -7465,7 +7476,7 @@
         },
         {
           "disabled": false,
-          "document": "生成视频的分辨率。\n<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>\n<li>当 ModelName 是 Jimeng，可选值为 1080P；</li>\n<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 OS，可选值为 720P；</li>\n说明：除模型可支持的分辨率外，还支持 2K、4K分辨率。",
+          "document": "生成视频的分辨率。\n<li>当 ModelName 是 Kling，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 Hailuo，可选值为 768P、1080P，默认为 768P；</li>\n<li>当 ModelName 是 Jimeng，可选值为 1080P；</li>\n<li>当 ModelName 是 Vidu，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 GV，可选值为 720P、1080P，默认为 720P；</li>\n<li>当 ModelName 是 OS，可选值为 720P；</li>",
           "example": "720P",
           "member": "string",
           "name": "Resolution",
@@ -10882,7 +10893,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称。取值：\n<li>GEM：Gemini；</li>\n<li>Jimeng：即梦；</li>\n<li>Qwen：千问。</li>",
+          "document": "模型名称。取值：\n<li>GEM：Gemini；</li>\n<li>Jimeng：即梦；</li>\n<li>Qwen：千问。</li>\n<li>Hunyuan：混元。</li>\n<li>Mingmou：明眸。</li>",
           "example": "GEM",
           "member": "string",
           "name": "ModelName",
@@ -10891,7 +10902,7 @@
         },
         {
           "disabled": false,
-          "document": "模型版本。取值：\n<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>\n<li>当 ModelName 是 Jimeng，可选值为 4.0；</li>\n<li>当 ModelName 是 Qwen，可选值为 0925；</li>",
+          "document": "模型版本。取值：\n<li>当 ModelName 是 GEM，可选值为 2.5、3.0；</li>\n<li>当 ModelName 是 Jimeng，可选值为 4.0；</li>\n<li>当 ModelName 是 Qwen，可选值为 0925；</li>\n<li>当 ModelName 是 Hunyuan，可选值为 3.0；</li>\n<li>当 ModelName 是 Mingmou，可选值为 1.0；</li>",
           "example": "2.5",
           "member": "string",
           "name": "ModelVersion",
@@ -10909,7 +10920,7 @@
         },
         {
           "disabled": false,
-          "document": "生成图片的提示词。最大支持1000字符，当 FileInfos 为空时，此参数必填。",
+          "document": "生成图片的提示词。最大支持2000字符，当 FileInfos 为空时，此参数必填。",
           "example": "generate a car",
           "member": "string",
           "name": "Prompt",

@@ -3,23 +3,23 @@
     "AddCasterInputInfo": [
       {
         "document": "新增一个输入源",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCasterInputInfo\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Description\": \"for_example\",\n        \"InputIndex\": \"1\",\n        \"InputType\": \"1\",\n        \"InputUrl\": \"http://www.example.com/vod/example.mp4\"\n    },\n    \"CasterId\": 63501\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCasterInputInfo\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Description\": \"for_example\",\n        \"InputIndex\": 1,\n        \"InputType\": 1,\n        \"InputUrl\": \"http://www.example.com/vod/example.mp4\"\n    },\n    \"CasterId\": 63501\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"InputPlayUrl\": \"rtmp://domain/live/input_play\",\n        \"InputWebRTCPlayUrl\": \"webrtc://webrtc.domain/live/input_play\"\n    }\n}",
         "title": "请求示例"
       }
     ],
     "AddCasterLayoutInfo": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"LayoutInfo\": {\n        \"LayoutIndex\": \"1\",\n        \"InputIndexList\": \"1|2\",\n        \"LayoutTemplateId\": \"20\"\n    },\n    \"CasterId\": 63501\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "添加布局20，绑定输入1，输入2"
-      },
-      {
         "document": "示例中，代表将输入2进行AI抠图，输入1作为输入2AI抠图后的叠加背景",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"CasterId\": 63501,\n    \"LayoutInfo\": {\n        \"InputIndexList\": \"1|2\",\n        \"LayoutIndex\": 6,\n        \"LayoutParams\": [\n            {\n                \"LayerHeight\": 1,\n                \"LayerId\": 1,\n                \"LayerLocationX\": 0,\n                \"LayerLocationY\": 0,\n                \"LayerWidth\": 1,\n                \"UsePortraitSegment\": false\n            },\n            {\n                \"LayerHeight\": 0.5,\n                \"LayerId\": 2,\n                \"LayerLocationX\": 0.5,\n                \"LayerLocationY\": 0.5,\n                \"LayerWidth\": 0.5,\n                \"UsePortraitSegment\": true\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "增加虚拟背景布局"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"LayoutInfo\": {\n        \"LayoutIndex\": 1,\n        \"InputIndexList\": \"1|2\",\n        \"LayoutTemplateId\": 20\n    },\n    \"CasterId\": 63501\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "添加布局20，绑定输入1，输入2"
       }
     ],
     "AddCasterMarkPicInfo": [
@@ -353,7 +353,7 @@
     "DeleteCasterLayoutInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"CasterId\": 63501,\n    \"LayoutIndex\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"CasterId\": 63501,\n    \"LayoutIndex\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -1329,7 +1329,7 @@
     "ModifyCaster": [
       {
         "document": "请求修改导播台信息",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCaster\n<公共请求参数>\n\n{\n    \"RecordStatus\": \"1\",\n    \"RecordTemplateId\": \"1\",\n    \"CasterId\": 63501,\n    \"CasterName\": \"Modify Caster\"\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCaster\n<公共请求参数>\n\n{\n    \"RecordStatus\": 1,\n    \"RecordTemplateId\": 1,\n    \"CasterId\": 63501,\n    \"CasterName\": \"Modify Caster\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
       }
@@ -1337,7 +1337,7 @@
     "ModifyCasterInputInfo": [
       {
         "document": "将Index为1的输入源修改为一个导播台推流地址",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterInputInfo\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Description\": \"modify example\",\n        \"InputIndex\": \"1\",\n        \"InputType\": \"0\",\n        \"InputUrl\": \"rtmp://caster.push.example.com/live/example\"\n    },\n    \"CasterId\": 63501\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterInputInfo\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Description\": \"modify example\",\n        \"InputIndex\": 1,\n        \"InputType\": 0,\n        \"InputUrl\": \"rtmp://caster.push.example.com/live/example\"\n    },\n    \"CasterId\": 63501\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"InputPlayUrl\": \"http://play.example.com/live/example_stream_id\",\n        \"InputWebRTCPlayUrl\": \"webrtc://webrtc.play.example.com/live/example_stream_id\"\n    }\n}",
         "title": "请求示例"
       }
@@ -1345,7 +1345,7 @@
     "ModifyCasterLayoutInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"LayoutInfo\": {\n        \"LayoutIndex\": \"1\",\n        \"InputIndexList\": \"2|3\",\n        \"LayoutTemplateId\": \"20\"\n    },\n    \"CasterId\": 63501\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCasterLayoutInfo\n<公共请求参数>\n\n{\n    \"LayoutInfo\": {\n        \"LayoutIndex\": 1,\n        \"InputIndexList\": \"2|3\",\n        \"LayoutTemplateId\": 20\n    },\n    \"CasterId\": 63501\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改模板20的布局使用的布局为输入2，输入3"
       }

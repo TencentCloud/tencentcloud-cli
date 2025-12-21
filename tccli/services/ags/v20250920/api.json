@@ -200,6 +200,45 @@
       ],
       "type": "object"
     },
+    "CosStorageSource": {
+      "document": "沙箱实例对象存储挂载配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象存储访问域名",
+          "example": "test-123456789.cos.ap-guangzhou.myqcloud.com",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储桶名称",
+          "example": "test-123456789",
+          "member": "string",
+          "name": "BucketName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储桶路径，必须为以/起始的绝对路径",
+          "example": "/",
+          "member": "string",
+          "name": "BucketPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAPIKeyRequest": {
       "document": "CreateAPIKey请求参数结构体",
       "members": [
@@ -322,6 +361,24 @@
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色ARN",
+          "example": "qcs::cam::uin/100000001:roleName/test_role",
+          "member": "string",
+          "name": "RoleArn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具存储配置",
+          "example": "无",
+          "member": "StorageMount",
+          "name": "StorageMounts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -624,18 +681,79 @@
       ],
       "usage": "both"
     },
+    "MountOption": {
+      "document": "沙箱实例存储挂载配置可选项，用于覆盖沙箱工具的存储配置的部分选项，并提供子路径挂载配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定沙箱工具中的存储配置名称",
+          "example": "Storage1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例本地挂载路径（可选），默认继承工具中的存储配置",
+          "example": "/home/user",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例存储挂载子路径（可选）",
+          "example": "workspace1",
+          "member": "string",
+          "name": "SubPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例存储挂载读写权限（可选），默认继承工具存储配置",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "NetworkConfiguration": {
       "document": "沙箱网络配置",
       "members": [
         {
           "disabled": false,
-          "document": "网络模式（当前支持 PUBLIC）",
+          "document": "网络模式（当前支持 PUBLIC, VPC, SANDBOX）",
           "example": "PUBLIC",
           "member": "string",
           "name": "NetworkMode",
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC网络相关配置",
+          "example": "无",
+          "member": "VPCConfig",
+          "name": "VpcConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -741,6 +859,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储挂载选项",
+          "example": "无",
+          "member": "MountOption",
+          "name": "MountOptions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -858,6 +987,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具绑定角色ARN",
+          "example": "qcs::cam::uin/100000001:roleName/test_role",
+          "member": "string",
+          "name": "RoleArn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具中实例存储挂载配置",
+          "example": "无",
+          "member": "StorageMount",
+          "name": "StorageMounts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -900,6 +1051,15 @@
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例存储挂载配置",
+          "example": "无",
+          "member": "MountOption",
+          "name": "MountOptions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -952,6 +1112,73 @@
         }
       ],
       "type": "object"
+    },
+    "StorageMount": {
+      "document": "沙箱工具中实例存储挂载配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储挂载配置名称",
+          "example": "Storage1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储配置",
+          "example": "无",
+          "member": "StorageSource",
+          "name": "StorageSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例本地挂载路径",
+          "example": "/home/user",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储挂载读写权限配置，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "ReadOnly",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StorageSource": {
+      "document": "挂载存储配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象存储桶配置",
+          "example": "无",
+          "member": "CosStorageSource",
+          "name": "Cos",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Tag": {
       "document": "标签",
@@ -1070,6 +1297,34 @@
         }
       ],
       "type": "object"
+    },
+    "VPCConfig": {
+      "document": "沙箱工具VPC相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC子网ID列表",
+          "example": "[\"subnet-012abcde\", \"subnet-012edcba\"]",
+          "member": "string",
+          "name": "SubnetIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID列表",
+          "example": "[\"sg-abcde012\", \"sg-210edcba\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

@@ -273,6 +273,13 @@
       "output": "DeleteReplicationInstanceResponse",
       "status": "online"
     },
+    "DeleteReplicationRule": {
+      "document": "删除实例同步规则",
+      "input": "DeleteReplicationRuleRequest",
+      "name": "删除实例同步规则",
+      "output": "DeleteReplicationRuleResponse",
+      "status": "online"
+    },
     "DeleteRepository": {
       "document": "删除镜像仓库",
       "input": "DeleteRepositoryRequest",
@@ -516,6 +523,13 @@
       "input": "DescribeReplicationInstancesRequest",
       "name": "查询从实例列表",
       "output": "DescribeReplicationInstancesResponse",
+      "status": "online"
+    },
+    "DescribeReplicationPolicies": {
+      "document": "获取实例同步规则列表",
+      "input": "DescribeReplicationPoliciesRequest",
+      "name": "查询实例同步策略列表",
+      "output": "DescribeReplicationPoliciesResponse",
       "status": "online"
     },
     "DescribeRepositories": {
@@ -3065,6 +3079,51 @@
       ],
       "type": "object"
     },
+    "DeleteReplicationRuleRequest": {
+      "document": "DeleteReplicationRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源实例ID",
+          "example": "tcr-40s86s0j",
+          "member": "string",
+          "name": "SourceRegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步规则名称",
+          "example": "rule-1",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "删除同步规则rule-1",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReplicationRuleResponse": {
+      "document": "DeleteReplicationRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRepositoryPersonalRequest": {
       "document": "DeleteRepositoryPersonal请求参数结构体",
       "members": [
@@ -5081,6 +5140,71 @@
           "name": "ReplicationRegistries",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationPoliciesRequest": {
+      "document": "DescribeReplicationPolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页数，默认为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示个数，默认为100",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReplicationPoliciesResponse": {
+      "document": "DescribeReplicationPolicies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例同步策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReplicationPolicyInfo",
+          "name": "ReplicationPolicyInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -7799,6 +7923,32 @@
       ],
       "usage": "both"
     },
+    "PolicyFilter": {
+      "document": "策略过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略过滤类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略过滤值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Region": {
       "document": "地域信息",
       "members": [
@@ -8288,6 +8438,112 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReplicationPolicyInfo": {
+      "document": "实例复制/实例同步策略信息ID",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test policy describtion",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolicyFilter",
+          "name": "Filters",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否覆盖对端同名镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Override",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test/event-center/test:v1 ap-chengdu",
+          "member": "string",
+          "name": "SrcResource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcr-xxx/event-center/test ap-guangzhou",
+          "member": "string",
+          "name": "DestResource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-01T03:45:04.038408Z",
+          "member": "string",
+          "name": "CreationTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-01T03:45:04.038408Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

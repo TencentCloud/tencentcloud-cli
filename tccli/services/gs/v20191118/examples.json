@@ -218,7 +218,7 @@
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstanceBackups\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"249a2ab6-3259-4bec-8683-bbf03492e894\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Backups\": [\n            {\n                \"AndroidInstanceId\": \"cai-251006279-fe2d6u0dry4\",\n                \"BackupId\": \"cai-251006279-fe2d6u0dry4-20250814205012\",\n                \"CreateTime\": \"2025-08-14T12:50:12Z\",\n                \"Size\": 7137792,\n                \"State\": \"SUCCESS\",\n                \"Zone\": \"ap-hangzhou-ec-1\"\n            }\n        ],\n        \"RequestId\": \"249a2ab6-3259-4bec-8683-bbf03492e894\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "示例"
       }
     ],

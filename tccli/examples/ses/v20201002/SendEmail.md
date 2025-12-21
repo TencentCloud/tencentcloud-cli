@@ -1,4 +1,4 @@
-**Example 1: 发送模板邮件**
+**Example 1: 发送富文本邮件**
 
  
 
@@ -9,8 +9,8 @@ tccli ses SendEmail --cli-unfold-argument  \
     --FromEmailAddress QCLOUDTEAM <noreply@mail.qcloud.com> \
     --ReplyToAddresses qcloud@tencent.com \
     --Destination user@example.com \
-    --Template.TemplateID 100091 \
-    --Template.TemplateData {"code":"1234"} \
+    --Simple.Html PGh0bWw+PGRpdj5IZWxsb1dvcmxkPC9kaXY+PC9odG1sPg== \
+    --Simple.Text aGVsbG8gd29ybGQ= \
     --Subject YourTestSubject
 ```
 
@@ -24,7 +24,7 @@ Output:
 }
 ```
 
-**Example 2: 发送富文本邮件**
+**Example 2: 发送模板邮件**
 
  
 
@@ -35,8 +35,8 @@ tccli ses SendEmail --cli-unfold-argument  \
     --FromEmailAddress QCLOUDTEAM <noreply@mail.qcloud.com> \
     --ReplyToAddresses qcloud@tencent.com \
     --Destination user@example.com \
-    --Simple.Html PGh0bWw+PGRpdj5IZWxsb1dvcmxkPC9kaXY+PC9odG1sPg== \
-    --Simple.Text aGVsbG8gd29ybGQ= \
+    --Template.TemplateID 100091 \
+    --Template.TemplateData {"code":"1234"} \
     --Subject YourTestSubject
 ```
 

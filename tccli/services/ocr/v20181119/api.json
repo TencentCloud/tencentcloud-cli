@@ -10164,7 +10164,7 @@
         {
           "disabled": false,
           "document": "是否返回头像。默认不返回。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "RetProfile",
           "required": false,
@@ -10298,7 +10298,7 @@
         {
           "disabled": false,
           "document": "国籍",
-          "example": "无",
+          "example": "中国",
           "member": "string",
           "name": "Nationality",
           "output_required": false,
@@ -10308,7 +10308,7 @@
         {
           "disabled": false,
           "document": "背面字段信息",
-          "example": "{\"HistoryNumber\":\"\",\"IDNumber\":\"\",\"Name\":\"\",\"Type\":\"台湾居民来往大陆通行证\"}",
+          "example": "无",
           "member": "MainlandTravelPermitBackInfos",
           "name": "MainlandTravelPermitBackInfos",
           "output_required": false,
@@ -14903,7 +14903,7 @@
         {
           "disabled": false,
           "document": "检测到的文本信息，具体内容请点击左侧链接。",
-          "example": "\"Cells\": [ { \"AdvancedInfo\": \"\", \"ColBr\": -1, \"ColTl\": -1, \"Confidence\": 99.91646409034729, \"Contents\": [ { \"ParagNo\": 0, \"WordSize\": 164 } ], \"Polygon\": [ { \"X\": 3446, \"Y\": 335 }, { \"X\": 3446, \"Y\": 425 }, { \"X\": 3253, \"Y\": 425 }, { \"X\": 3253, \"Y\": 335 } ], \"RowBr\": -1, \"RowTl\": -1, \"Text\": \"签*:\", \"Type\": \"context\" }",
+          "example": "无",
           "member": "TableDetectInfo",
           "name": "TableDetections",
           "output_required": true,
@@ -14913,7 +14913,7 @@
         {
           "disabled": false,
           "document": "Base64 编码后的 Excel 数据。",
-          "example": "8HAABnHAAAFAAAAAAAAAAAAAAAAADMJAAAeGwvc2hhcmVkU3RyaW5ncy54bWxQSwECFAAUAAAACAAAAAAAcxSJldcBAAD9BQAADQAAAAAAAAAAAAAAAACtLAAAeGwvc3R5bGVzLnhtbFBLAQIUABQAAAAIAAAAAAC8TIYcSAYAAP4kAAATAAAAAAAAAAAAAAAAAK8uAAB4bC90aGVtZS90aGVtZTEueG1sUEsBAhQAFAAAAAgAAAAAANG5P9oECwAAUU0AABgAAAAAAAAAAAAAAAAAKDUAAHhsL3dvcmtzaGVldHMvc2hlZXQyLnhtbFBLAQIUABQAAAAIAAAAAADjsY7PqAMAAE8PAAAYAAAAAAAAAAAAAAAAAGJAAAB4bC93b3Jrc2hlZXRzL3NoZWV0MS54bWxQSwUGAAAAAAwADAALAwAAQEQAAAAA",
+          "example": "tZS90aGVtZTEueG1sUEsBAhQAFAAAAAgAAAAAANG5P9oECwAAUU0AABgAAAAAAAAAAAAAAAAAKDUAAHhsL3dvcmtzaGVldHMvc2hlZXQyLnhtbFBLAQIUABQAAAAIAAAAAADjsY7PqAMAAE8PAAAYAAAAAAAAAAAAAAAAAGJAAAB4bC93b3Jrc2hlZXRzL3NoZWV0MS54bWxQSwUGAAAAAAwADAALAwAAQEQAAAAA",
           "member": "string",
           "name": "Data",
           "output_required": true,

@@ -14397,7 +14397,7 @@
         },
         {
           "disabled": false,
-          "document": "显示的员工名\n注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息",
+          "document": "显示的员工名\n注意：该字段返回的是打码信息",
           "example": "张三",
           "member": "string",
           "name": "DisplayName",
@@ -14407,8 +14407,8 @@
         },
         {
           "disabled": false,
-          "document": "员工手机号\n注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息",
-          "example": "18888888888",
+          "document": "员工手机号\n注意：该字段返回的是打码信息",
+          "example": "188****8888",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -14417,8 +14417,8 @@
         },
         {
           "disabled": false,
-          "document": "员工邮箱",
-          "example": "zhansan@qq.com",
+          "document": "员工邮箱\n注意：该字段返回的是打码信息",
+          "example": "zh****@qq.com",
           "member": "string",
           "name": "Email",
           "output_required": true,

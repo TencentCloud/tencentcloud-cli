@@ -1887,7 +1887,7 @@ def doTerminateSLInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyPodNum(args, parsed_globals):
+def doSyncPodState(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1919,11 +1919,11 @@ def doModifyPodNum(args, parsed_globals):
     client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyPodNumRequest()
+    model = models.SyncPodStateRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyPodNum(model)
+        rsp = client.SyncPodState(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2107,7 +2107,7 @@ def doModifyAutoScaleStrategy(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSyncPodState(args, parsed_globals):
+def doModifyPodNum(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2139,11 +2139,11 @@ def doSyncPodState(args, parsed_globals):
     client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SyncPodStateRequest()
+    model = models.ModifyPodNumRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.SyncPodState(model)
+        rsp = client.ModifyPodNum(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2437,7 +2437,7 @@ def doDescribeYarnScheduleHistory(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeEmrOverviewMetrics(args, parsed_globals):
+def doStartStopServiceOrMonitor(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2469,11 +2469,11 @@ def doDescribeEmrOverviewMetrics(args, parsed_globals):
     client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeEmrOverviewMetricsRequest()
+    model = models.StartStopServiceOrMonitorRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeEmrOverviewMetrics(model)
+        rsp = client.StartStopServiceOrMonitor(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2932,6 +2932,61 @@ def doModifyInspectionSettings(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeHBaseTableStoreSizeMetric(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeHBaseTableStoreSizeMetricRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeHBaseTableStoreSizeMetric(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doInquiryPriceUpdateInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -3152,7 +3207,7 @@ def doInquiryPriceScaleOutInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doStartStopServiceOrMonitor(args, parsed_globals):
+def doDescribeEmrOverviewMetrics(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3184,11 +3239,11 @@ def doStartStopServiceOrMonitor(args, parsed_globals):
     client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.StartStopServiceOrMonitorRequest()
+    model = models.DescribeEmrOverviewMetricsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.StartStopServiceOrMonitor(model)
+        rsp = client.DescribeEmrOverviewMetrics(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3409,6 +3464,61 @@ def doModifyUserGroup(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.ModifyUserGroup(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeHBaseTableRequestMetric(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.EmrClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeHBaseTableRequestMetricRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeHBaseTableRequestMetric(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5012,17 +5122,17 @@ ACTION_MAP = {
     "DeleteUserManagerUserList": doDeleteUserManagerUserList,
     "ConvertPreToPostCluster": doConvertPreToPostCluster,
     "TerminateSLInstance": doTerminateSLInstance,
-    "ModifyPodNum": doModifyPodNum,
+    "SyncPodState": doSyncPodState,
     "CreateSLInstance": doCreateSLInstance,
     "DescribeSLInstanceList": doDescribeSLInstanceList,
     "ModifyAutoScaleStrategy": doModifyAutoScaleStrategy,
-    "SyncPodState": doSyncPodState,
+    "ModifyPodNum": doModifyPodNum,
     "ModifySLInstance": doModifySLInstance,
     "CreateInstance": doCreateInstance,
     "InquiryPriceCreateInstance": doInquiryPriceCreateInstance,
     "AddMetricScaleStrategy": doAddMetricScaleStrategy,
     "DescribeYarnScheduleHistory": doDescribeYarnScheduleHistory,
-    "DescribeEmrOverviewMetrics": doDescribeEmrOverviewMetrics,
+    "StartStopServiceOrMonitor": doStartStopServiceOrMonitor,
     "AddNodeResourceConfig": doAddNodeResourceConfig,
     "TerminateTasks": doTerminateTasks,
     "DescribeNodeDataDisks": doDescribeNodeDataDisks,
@@ -5031,15 +5141,17 @@ ACTION_MAP = {
     "ResizeDataDisks": doResizeDataDisks,
     "DescribeInsightList": doDescribeInsightList,
     "ModifyInspectionSettings": doModifyInspectionSettings,
+    "DescribeHBaseTableStoreSizeMetric": doDescribeHBaseTableStoreSizeMetric,
     "InquiryPriceUpdateInstance": doInquiryPriceUpdateInstance,
     "DescribeInstanceOplog": doDescribeInstanceOplog,
     "CreateCloudInstance": doCreateCloudInstance,
     "InquiryPriceScaleOutInstance": doInquiryPriceScaleOutInstance,
-    "StartStopServiceOrMonitor": doStartStopServiceOrMonitor,
+    "DescribeEmrOverviewMetrics": doDescribeEmrOverviewMetrics,
     "ModifySLInstanceBasic": doModifySLInstanceBasic,
     "TerminateClusterNodes": doTerminateClusterNodes,
     "ResetYarnConfig": doResetYarnConfig,
     "ModifyUserGroup": doModifyUserGroup,
+    "DescribeHBaseTableRequestMetric": doDescribeHBaseTableRequestMetric,
     "DescribeEmrApplicationStatics": doDescribeEmrApplicationStatics,
     "DescribeSLInstance": doDescribeSLInstance,
     "DescribeSparkQueries": doDescribeSparkQueries,

@@ -425,7 +425,7 @@
     "UpdateCfsFileSystemSizeLimit": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCfsFileSystemSizeLimit\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-abc12345\",\n    \"FsLimit\": \"1000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCfsFileSystemSizeLimit\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-abc12345\",\n    \"FsLimit\": 1000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
         "title": "更新文件系统存储容量限制"
       }

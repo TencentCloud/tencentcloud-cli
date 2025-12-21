@@ -16,7 +16,7 @@ tccli ess CreateFlow --cli-unfold-argument  \
     --Approvers.0.ApproverName 典子谦 \
     --DeadLine 1652931170 \
     --Operator.UserId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
-    --Unordered true
+    --Unordered True
 ```
 
 Output: 

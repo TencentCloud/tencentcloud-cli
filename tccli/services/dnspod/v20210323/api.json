@@ -3986,7 +3986,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "项目ID，\"帐号中心-项目管理\"拿到项目ID",
           "example": "-1",
           "member": "int64",
           "name": "ProjectId",
@@ -7036,7 +7036,7 @@
         },
         {
           "disabled": false,
-          "document": "域名默认的解析记录默认TTL值",
+          "document": "域名默认的解析记录默认TTL值，单位：秒",
           "example": "600",
           "member": "uint64",
           "name": "TTL",

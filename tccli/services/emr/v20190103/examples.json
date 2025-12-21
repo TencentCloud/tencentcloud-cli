@@ -216,6 +216,22 @@
         "title": "查询Hbase表监控概览信息"
       }
     ],
+    "DescribeHBaseTableRequestMetric": [
+      {
+        "document": "获取Hbase表维度读写请求指标",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHBaseTableRequestMetric\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-lvr4kbpk\",\n    \"TableName\": \"hbase_meta\",\n    \"StartTime\": 1764826199,\n    \"EndTime\": 1764828199\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricDataList\": [\n            {\n                \"MetricDesc\": \"read request rate\",\n                \"MetricName\": \"read_request_rate\",\n                \"Timestamps\": [\n                    1764826200,\n                    1764826500,\n                    1764826800,\n                    1764827100,\n                    1764827400,\n                    1764827700,\n                    1764828000\n                ],\n                \"Values\": [\n                    0.01,\n                    0.01,\n                    0.01,\n                    0.01,\n                    0.01,\n                    0.01,\n                    0.01\n                ]\n            },\n            {\n                \"MetricDesc\": \"write request rate\",\n                \"MetricName\": \"write_request_rate\",\n                \"Timestamps\": [\n                    1764826200,\n                    1764826500,\n                    1764826800,\n                    1764827100,\n                    1764827400,\n                    1764827700,\n                    1764828000\n                ],\n                \"Values\": [\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0,\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"fa272328-a8f8-4b00-ae01-d627d6c597d1\"\n    }\n}",
+        "title": "Hbase表维度读写请求指标"
+      }
+    ],
+    "DescribeHBaseTableStoreSizeMetric": [
+      {
+        "document": "获取Hbase表维度store size指标监控指标",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHBaseTableStoreSizeMetric\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-lvr4kbpk\",\n    \"TableName\": \"hbase_meta\",\n    \"StartTime\": 1764826199,\n    \"EndTime\": 1764828199\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricDataList\": [\n            {\n                \"MetricDesc\": \"hbase mem store size\",\n                \"MetricName\": \"mem_store_size\",\n                \"Timestamps\": [\n                    1764826200,\n                    1764826500,\n                    1764826800,\n                    1764827100,\n                    1764827400,\n                    1764827700,\n                    1764828000\n                ],\n                \"Values\": [\n                    768,\n                    768,\n                    768,\n                    768,\n                    768,\n                    768,\n                    768\n                ]\n            },\n            {\n                \"MetricDesc\": \"hbase storefile size\",\n                \"MetricName\": \"store_file_size\",\n                \"Timestamps\": [\n                    1764826200,\n                    1764826500,\n                    1764826800,\n                    1764827100,\n                    1764827400,\n                    1764827700,\n                    1764828000\n                ],\n                \"Values\": [\n                    10741,\n                    10741,\n                    10741,\n                    10741,\n                    10741,\n                    10741,\n                    10741\n                ]\n            }\n        ],\n        \"RequestId\": \"33c3389e-7d67-48d4-bb2f-1728a3201113\"\n    }\n}",
+        "title": "Hbase表维度store size指标监控指标"
+      }
+    ],
     "DescribeHDFSStorageInfo": [
       {
         "document": "",

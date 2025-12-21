@@ -1805,7 +1805,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1814,7 +1814,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目 最大200",
+          "document": "<p>限制数目 最大200</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -1823,7 +1823,7 @@
         },
         {
           "disabled": false,
-          "document": "下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】",
+          "document": "<p>下单时间范围起始点【*请必传并控制时间范围最大90天，避免出现超时】</p>",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",
@@ -1832,7 +1832,7 @@
         },
         {
           "disabled": false,
-          "document": "下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】",
+          "document": "<p>下单时间范围终止点【*请必传并控制时间范围最大90天，避免出现超时】</p>",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeEnd",
@@ -1841,7 +1841,7 @@
         },
         {
           "disabled": false,
-          "document": "0:下单时间降序；其他：下单时间升序",
+          "document": "<p>0:下单时间降序；其他：下单时间升序</p>",
           "example": "0",
           "member": "uint64",
           "name": "Order",
@@ -1850,7 +1850,7 @@
         },
         {
           "disabled": false,
-          "document": "子订单状态(1-待支付,2-已支付,3-发货中,4-已发货,5-发货失败,6-已退款,7-已取消,8-已过期,9-已失效,12-支付中,13-退款中,30-处理中)\n\n控制台订单状态为以上状态的组合：未支付(1) 处理中(2,3,5,12,13,30) 已取消(7) 交易成功(4) 已过期(8) 已退款(6) 订单错误(9)",
+          "document": "<p>子订单状态(1-待支付,2-已支付,3-发货中,4-已发货,5-发货失败,6-已退款,7-已取消,8-已过期,9-已失效,12-支付中,13-退款中,30-处理中)</p><p>控制台订单状态为以上状态的组合：未支付(1) 处理中(2,3,5,12,13,30) 已取消(7) 交易成功(4) 已过期(8) 已退款(6) 订单错误(9)</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -1859,7 +1859,7 @@
         },
         {
           "disabled": false,
-          "document": "下单人账号ID列表",
+          "document": "<p>下单人账号ID列表</p>",
           "example": "[\"100001\"]",
           "member": "string",
           "name": "OwnerUins",
@@ -1868,7 +1868,7 @@
         },
         {
           "disabled": false,
-          "document": "子订单号列表",
+          "document": "<p>子订单号列表</p>",
           "example": "[\"20250630941003020261651\", \"20250528341002900634981\"]",
           "member": "string",
           "name": "DealNames",
@@ -1877,7 +1877,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单号列表",
+          "document": "<p>大订单号列表</p>",
           "example": "[\"20250630941003020261641\", \"20250528341002900634971\"]",
           "member": "string",
           "name": "BigDealIds",
@@ -1886,7 +1886,7 @@
         },
         {
           "disabled": false,
-          "document": "支付方式，0：自付；1：代付",
+          "document": "<p>支付方式，0：自付；1：代付</p>",
           "example": "0",
           "member": "uint64",
           "name": "PayerMode",
@@ -1901,7 +1901,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单数组",
+          "document": "<p>订单数组</p>",
           "example": "无",
           "member": "AgentDealNewElem",
           "name": "AgentDealSet",
@@ -1911,7 +1911,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的订单总数量",
+          "document": "<p>符合条件的订单总数量</p>",
           "example": "401321",
           "member": "uint64",
           "name": "TotalCount",
@@ -1988,7 +1988,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -1997,7 +1997,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目 最大100",
+          "document": "<p>限制数目 最大100</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -2006,7 +2006,7 @@
         },
         {
           "disabled": false,
-          "document": "下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)",
+          "document": "<p>下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)</p>",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",
@@ -2015,7 +2015,7 @@
         },
         {
           "disabled": false,
-          "document": "下单时间范围终止点",
+          "document": "<p>下单时间范围终止点</p>",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeEnd",
@@ -2024,7 +2024,7 @@
         },
         {
           "disabled": false,
-          "document": "0:下单时间降序；其他：下单时间升序",
+          "document": "<p>0:下单时间降序；其他：下单时间升序</p>",
           "example": "0",
           "member": "uint64",
           "name": "Order",
@@ -2033,7 +2033,7 @@
         },
         {
           "disabled": false,
-          "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
+          "document": "<p>订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)</p>",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -2042,7 +2042,7 @@
         },
         {
           "disabled": false,
-          "document": "下单人账号ID列表",
+          "document": "<p>下单人账号ID列表</p>",
           "example": "[\"100001\",\"100002\"]",
           "member": "string",
           "name": "OwnerUins",
@@ -2051,7 +2051,7 @@
         },
         {
           "disabled": false,
-          "document": "子订单号列表",
+          "document": "<p>子订单号列表</p>",
           "example": "[\"2020101030303\"]",
           "member": "string",
           "name": "DealNames",
@@ -2060,7 +2060,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单号列表",
+          "document": "<p>大订单号列表</p>",
           "example": "[\"2020101030303\"]",
           "member": "string",
           "name": "BigDealIds",
@@ -2075,7 +2075,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单数组",
+          "document": "<p>订单数组</p>",
           "example": "无",
           "member": "AgentDealNewElem",
           "name": "AgentPayDealSet",
@@ -2085,7 +2085,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的订单总数量",
+          "document": "<p>符合条件的订单总数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -2144,7 +2144,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "下单人账号ID",
+          "document": "<p>下单人账号ID</p>",
           "example": "1000001",
           "member": "string",
           "name": "OwnerUin",
@@ -2153,7 +2153,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -2162,7 +2162,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目 最大100",
+          "document": "<p>限制数目 最大100</p>",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -2171,7 +2171,7 @@
         },
         {
           "disabled": false,
-          "document": "下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)",
+          "document": "<p>下单时间范围起始点(不传时会默认查最近15天内订单，传值时需要传最近15天内的起始时间)</p>",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeStart",
@@ -2180,7 +2180,7 @@
         },
         {
           "disabled": false,
-          "document": "下单时间范围终止点",
+          "document": "<p>下单时间范围终止点</p>",
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "CreatTimeRangeEnd",
@@ -2189,7 +2189,7 @@
         },
         {
           "disabled": false,
-          "document": "0:下单时间降序；其他：下单时间升序",
+          "document": "<p>0:下单时间降序；其他：下单时间升序</p>",
           "example": "0",
           "member": "uint64",
           "name": "Order",
@@ -2198,7 +2198,7 @@
         },
         {
           "disabled": false,
-          "document": "订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)",
+          "document": "<p>订单的状态(1：未支付;2：已支付;3：发货中;4：已发货;5：发货失败;6：已退款;7：已关单;8：订单过期;9：订单已失效;10：产品已失效;11：代付拒绝;12：支付中)</p>",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -2207,7 +2207,7 @@
         },
         {
           "disabled": false,
-          "document": "子订单号列表",
+          "document": "<p>子订单号列表</p>",
           "example": "[\"2022030303010\"]",
           "member": "string",
           "name": "DealNames",
@@ -2216,7 +2216,7 @@
         },
         {
           "disabled": false,
-          "document": "大订单号列表",
+          "document": "<p>大订单号列表</p>",
           "example": "[\"2022030303010\"]",
           "member": "string",
           "name": "BigDealIds",
@@ -2231,7 +2231,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单数组",
+          "document": "<p>订单数组</p>",
           "example": "无",
           "member": "AgentDealNewElem",
           "name": "AgentPayDealSet",
@@ -2241,7 +2241,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的订单总数量",
+          "document": "<p>符合条件的订单总数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -2433,7 +2433,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返佣月份，如2018-02",
+          "document": "<p>返佣月份，如2018-02</p>",
           "example": "2018-02",
           "member": "string",
           "name": "RebateMonth",
@@ -2442,7 +2442,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -2451,7 +2451,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目",
+          "document": "<p>限制数目</p>",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -2466,8 +2466,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返佣信息列表",
-          "example": "[{\"Uin\":\"111111\",\"RebateMonth\":\"2018-02\",\"Amt\":2682133,\"MonthSales\":\"4873578\",\"QuarterSales\":\"10756003\",\"ExceptionFlag\":\"NORMAL\"}]",
+          "document": "<p>返佣信息列表</p>",
+          "example": "无",
           "member": "RebateInfoElemNew",
           "name": "RebateInfoSet",
           "output_required": true,
@@ -2476,7 +2476,7 @@
         },
         {
           "disabled": false,
-          "document": "符合查询条件返佣信息数目",
+          "document": "<p>符合查询条件返佣信息数目</p>",
           "example": "8",
           "member": "int64",
           "name": "TotalCount",
@@ -2498,7 +2498,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返佣月份，如2018-02",
+          "document": "<p>返佣月份，如2018-02</p>",
           "example": "2018-02",
           "member": "string",
           "name": "RebateMonth",
@@ -2507,7 +2507,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -2516,7 +2516,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目",
+          "document": "<p>限制数目</p>",
           "example": "1",
           "member": "uint64",
           "name": "Limit",
@@ -2531,8 +2531,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返佣信息列表",
-          "example": "[{\"Uin\":\"111111\",\"RebateMonth\":\"2018-02\",\"Amt\":2682133,\"MonthSales\":\"4873578\",\"QuarterSales\":\"10756003\",\"ExceptionFlag\":\"NORMAL\"}]",
+          "document": "<p>返佣信息列表</p>",
+          "example": "无",
           "member": "RebateInfoElem",
           "name": "RebateInfoSet",
           "output_required": true,
@@ -2541,7 +2541,7 @@
         },
         {
           "disabled": false,
-          "document": "符合查询条件返佣信息数目",
+          "document": "<p>符合查询条件返佣信息数目</p>",
           "example": "8",
           "member": "uint64",
           "name": "TotalCount",

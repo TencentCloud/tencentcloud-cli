@@ -30,7 +30,7 @@ Output:
                 "TaskStatus": 1,
                 "ReceiverId": 1,
                 "RequestCount": 1,
-                "TaskId": "1",
+                "TaskId": 1,
                 "TaskType": 1,
                 "Template": {
                     "TemplateData": "{\"name\":\"name\"}",

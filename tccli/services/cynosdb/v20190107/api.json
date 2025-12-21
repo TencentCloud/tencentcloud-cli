@@ -5515,7 +5515,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群 ID。",
           "example": "cynosdbmysql-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
@@ -5524,7 +5524,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID，默认与集群私有网络ID保持一致",
+          "document": "私有网络 ID，默认与集群私有网络 ID 保持一致。",
           "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqueVpcId",
@@ -5533,7 +5533,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网ID，默认与集群子网ID保持一致",
+          "document": "私有网络子网 ID，默认与集群子网 ID 保持一致。",
           "example": "subnet-b5v6id11",
           "member": "string",
           "name": "UniqueSubnetId",
@@ -5542,7 +5542,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池类型：SessionConnectionPool(会话级别连接池 )",
+          "document": "连接池类型：SessionConnectionPool（会话级别连接池）。",
           "example": "SessionConnectionPool",
           "member": "string",
           "name": "ConnectionPoolType",
@@ -5551,7 +5551,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池,yes-开启，no-不开启",
+          "document": "是否开启连接池。\nyes：表示开启。\nno：表示不开启。",
           "example": "yes",
           "member": "string",
           "name": "OpenConnectionPool",
@@ -5560,7 +5560,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池阈值：单位（秒）",
+          "document": "连接池阈值：单位（秒），可选范围：0 - 300秒。",
           "example": "0",
           "member": "int64",
           "name": "ConnectionPoolTimeOut",
@@ -5569,8 +5569,8 @@
         },
         {
           "disabled": false,
-          "document": "绑定的安全组ID数组",
-          "example": "sg-asdqwe",
+          "document": "绑定的安全组 ID 数组。",
+          "example": "[\"sg-asdqwe\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -5578,7 +5578,7 @@
         },
         {
           "disabled": false,
-          "document": "描述说明",
+          "document": "描述说明。",
           "example": "代理1",
           "member": "string",
           "name": "Description",
@@ -5587,7 +5587,7 @@
         },
         {
           "disabled": false,
-          "document": "想要绑定的vip信息，需与UniqueVpcId对应。",
+          "document": "想要绑定的 vip 信息，需与 UniqueVpcId 对应。",
           "example": "192.168.0.0",
           "member": "string",
           "name": "Vip",
@@ -5596,7 +5596,7 @@
         },
         {
           "disabled": false,
-          "document": "权重模式：\nsystem-系统分配，custom-自定义",
+          "document": "权重模式：\nsystem：系统分配。\ncustom：自定义。",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -5605,7 +5605,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动添加只读实例，yes-是，no-不自动添加",
+          "document": "是否自动添加只读实例。\nyes：表示自动添加只读实例。\nno：表示不自动添加只读实例。",
           "example": "yes",
           "member": "string",
           "name": "AutoAddRo",
@@ -5614,7 +5614,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启故障转移。\nyes：开启\nno：不开启。\n数据库代理出现故障时，链接地址将会路由到主实例",
+          "document": "是否开启故障转移。\nyes：表示开启，开启后，当数据库代理出现故障时，连接地址将会路由到主实例。\nno：表示不开启。\n说明：\n仅当 RwType 参数值为 READWRITE 时，才支持设置此项。",
           "example": "yes",
           "member": "string",
           "name": "FailOver",
@@ -5623,7 +5623,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性类型：\neventual,global,session",
+          "document": "一致性类型：\neventual：最终一致性。\nglobal：全局一致性。\nsession：会话一致性。\n说明：\n仅当 RwType 参数值为 READWRITE 时，才支持设置此项。",
           "example": "session",
           "member": "string",
           "name": "ConsistencyType",
@@ -5632,7 +5632,7 @@
         },
         {
           "disabled": false,
-          "document": "读写属性：\nREADWRITE,READONLY",
+          "document": "读写属性：\nREADWRITE：表示读写分离。当此参数值为 READWRITE 时，才支持设置 FailOver、ConsistencyType 参数。\nREADONLY：表示只读。",
           "example": "READONLY",
           "member": "string",
           "name": "RwType",
@@ -5641,7 +5641,7 @@
         },
         {
           "disabled": false,
-          "document": "一致性超时时间。取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待",
+          "document": "一致性超时时间。取值范围：0 ~ 1000000（微秒）。设置为0时，表示若只读实例出现延迟导致一致性策略不满足时，请求将一直等待。",
           "example": "1000",
           "member": "int64",
           "name": "ConsistencyTimeOut",
@@ -5650,7 +5650,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启事务拆分。在一个事务中拆分读和写到不同的实例上去执行",
+          "document": "是否开启事务拆分。开启后，在一个事务中拆分读和写到不同的实例上去执行。",
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
@@ -5659,7 +5659,7 @@
         },
         {
           "disabled": false,
-          "document": "连接模式：\nnearby,balance",
+          "document": "接入模式：\nnearby：就近访问。\nbalance：均衡分配。",
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
@@ -5668,8 +5668,8 @@
         },
         {
           "disabled": false,
-          "document": "实例权重",
-          "example": "[{\"InstanceId\": \"cynosdbmysql-ins-ifq10f11\",\"Weight\": \"10\"}]",
+          "document": "实例权重。",
+          "example": "无",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",
           "required": false,
@@ -5683,7 +5683,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步流程ID",
+          "document": "异步流程 ID。",
           "example": "147189",
           "member": "int64",
           "name": "FlowId",
@@ -5693,7 +5693,7 @@
         },
         {
           "disabled": false,
-          "document": "异步任务ID",
+          "document": "异步任务 ID。",
           "example": "276387",
           "member": "int64",
           "name": "TaskId",
@@ -5703,7 +5703,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组ID",
+          "document": "数据库代理组 ID。",
           "example": "cynosdbmysql-proxy-lti34611",
           "member": "string",
           "name": "ProxyGroupId",

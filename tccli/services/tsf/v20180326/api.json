@@ -3629,25 +3629,25 @@
         },
         {
           "disabled": false,
-          "document": "配置项描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项描述",
           "example": "this is a desc",
           "member": "string",
           "name": "ConfigDesc",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置项标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项标签",
           "example": "tag1",
           "member": "string",
           "name": "ConfigTags",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3662,25 +3662,25 @@
         },
         {
           "disabled": false,
-          "document": "配置项创建时间，格式为yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项创建时间，格式为yyyy-MM-dd HH:mm:ss",
           "example": "2019-11-21 11:31:34",
           "member": "string",
           "name": "ConfigCreateTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置项更新时间，格式为yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项更新时间，格式为yyyy-MM-dd HH:mm:ss",
           "example": "2019-11-22 11:31:34",
           "member": "string",
           "name": "ConfigUpdateTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3779,6 +3779,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自定义pattern",
+          "example": "true",
+          "member": "bool",
+          "name": "CustomMultilinePattern",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -3927,36 +3938,36 @@
         },
         {
           "disabled": false,
-          "document": "解析规则内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析规则内容",
           "example": "spring-log-xxxxxxxxxx",
           "member": "string",
           "name": "SchemaContent",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "解析规则时间格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析规则时间格式",
           "example": "yy-MM-dd HH:mm:ss",
           "member": "string",
           "name": "SchemaDateFormat",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "解析规则对应的多行匹配规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析规则对应的多行匹配规则",
           "example": "/t/n",
           "member": "string",
           "name": "SchemaMultilinePattern",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3971,14 +3982,14 @@
         },
         {
           "disabled": false,
-          "document": "用户填写的解析规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户填写的解析规则",
           "example": ".*",
           "member": "string",
           "name": "SchemaPatternLayout",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

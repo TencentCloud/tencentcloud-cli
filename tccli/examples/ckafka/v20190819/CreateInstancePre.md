@@ -1,12 +1,12 @@
-**Example 1: 创建预付费实例**
+**Example 1: 创建一个预付费专业版实例**
 
-创建硬盘大小 200GB，峰值带宽 20MB/s 的专业版预付费实例
+创建一个预付费专业版实例
 
 Input: 
 
 ```
 tccli ckafka CreateInstancePre --cli-unfold-argument  \
-    --InstanceName test55 \
+    --InstanceName ckafka测试 \
     --VpcId vpc-rmcgxxxx \
     --SubnetId subnet-mnzcxxxx \
     --ZoneId 450001 \
@@ -19,83 +19,34 @@ tccli ckafka CreateInstancePre --cli-unfold-argument  \
     --BandWidth 20 \
     --Partition 400 \
     --DiskType CLOUD_BASIC \
-    --PublicNetworkMonthly 0
+    --PublicNetworkMonthly 0 \
+    --CustomSSLCertId TPNd2oBB
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "323c3bbe-db79-48c3-9b76-63aacd65b169",
         "Result": {
             "Data": {
                 "DealNameInstanceIdMapping": [
                     {
-                        "DealName": "20230608002033899990000",
+                        "DealName": "20251204581021815942281",
                         "InstanceIdList": [
-                            "ckafka-mom5xxxx"
+                            "ckafka-ma4ab5n5"
                         ]
                     }
                 ],
                 "DealNames": [
-                    "2023060800203389990000"
+                    "20251204581021815942281"
                 ],
                 "FlowId": 0,
-                "InstanceId": "ckafka-mom5xxxx"
+                "InstanceId": "ckafka-ma4ab5n5"
             },
             "ReturnCode": "0",
-            "ReturnMessage": "ok[apply ok]"
-        }
-    }
-}
-```
-
-**Example 2: 创建预付费标准版实例**
-
-创建预付费标准版实例，规格为入门型(general) ，周期为一个月
-
-Input: 
-
-```
-tccli ckafka CreateInstancePre --cli-unfold-argument  \
-    --InstanceName test57 \
-    --VpcId vpc-rmcgxxxx \
-    --SubnetId subnet-mnzcxxxx \
-    --ZoneId 450001 \
-    --Period 1m \
-    --RenewFlag 2 \
-    --InstanceType 1 \
-    --KafkaVersion 2.4.1 \
-    --SpecificationsType standard \
-    --DiskSize 200 \
-    --BandWidth 20 \
-    --Partition 400
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "2050ebf8-e255-4b90-ba0c-2fe8465e821a",
-        "Result": {
-            "Data": {
-                "DealNameInstanceIdMapping": [
-                    {
-                        "DealName": "20230608002033922780000",
-                        "InstanceIdList": [
-                            "ckafka-bz4dxxxx"
-                        ]
-                    }
-                ],
-                "DealNames": [
-                    "20230608002033922780000"
-                ],
-                "FlowId": 0,
-                "InstanceId": "ckafka-bz4dxxxx"
-            },
-            "ReturnCode": "0",
-            "ReturnMessage": "ok[apply ok]"
-        }
+            "ReturnMessage": "ok"
+        },
+        "RequestId": "8c8050a7-ea8d-44f1-a00e-c09cd673afa3"
     }
 }
 ```

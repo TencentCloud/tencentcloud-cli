@@ -324,6 +324,14 @@
         "title": "删除从实例"
       }
     ],
+    "DeleteReplicationRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReplicationRule\n<公共请求参数>\n\n{\n    \"SourceRegistryId\": \"tcr-40s86s0j\",\n    \"RuleName\": \"rule-1\",\n    \"Description\": \"u5220u9664u540cu6b65u89c4u5219rule-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"992f8d07-c68d-4a65-b81f-6509a69af032\"\n    }\n}",
+        "title": "删除实例同步规则"
+      }
+    ],
     "DeleteRepository": [
       {
         "document": "删除镜像仓库以及仓库内的镜像列表",
@@ -602,6 +610,14 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=DescribeReplicationInstances\n&RegistryId=tcr-12345\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"76e69894-670f-4440-8773-075763fbdb80\",\n        \"TotalCount\": 1,\n        \"ReplicationRegistries\": [\n            {\n                \"RegistryId\": \"tcr-06d62e1r\",\n                \"ReplicationRegistryId\": \"tcr-06d62e1r-5\",\n                \"ReplicationRegionId\": 5,\n                \"ReplicationRegionName\": \"ap-hongkong\",\n                \"Status\": \"Running\",\n                \"CreatedAt\": \"2020-09-28T15:34:59+08:00\"\n            }\n        ]\n    }\n}",
         "title": "查询从实例列表"
+      }
+    ],
+    "DescribeReplicationPolicies": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReplicationPolicies\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-xxx\",\n    \"Page\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ReplicationPolicyInfoList\": [\n            {\n                \"ID\": \"1\",\n                \"Name\": \"test\",\n                \"Description\": \"test\",\n                \"Filters\": [\n                    {\n                        \"Type\": \"tag\",\n                        \"Value\": \"v1\"\n                    }\n                ],\n                \"Override\": true,\n                \"Enabled\": true,\n                \"SrcResource\": \"test/event-center/eric:v1 ap-chengdu\",\n                \"DestResource\": \"tcr-e8pg46c6/event-center/eric ap-guangzhou\",\n                \"CreationTime\": \"2023-08-01T03:45:03+08:00\",\n                \"UpdateTime\": \"2023-08-01T03:45:03+08:00\"\n            }\n        ],\n        \"RequestId\": \"request-xxxxx\"\n    }\n}",
+        "title": "获取实例同步策略列表"
       }
     ],
     "DescribeRepositories": [
