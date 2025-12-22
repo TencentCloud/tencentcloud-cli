@@ -7683,12 +7683,21 @@
         },
         {
           "disabled": false,
-          "document": "要预热的资源列表，每个元素格式类似如下:\nhttp://www.example.com/example.txt。参数值当前必填。\n注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。",
+          "document": "要预热的资源列表，必填。每个元素格式类似如下:\nhttp://www.example.com/example.txt。\n注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。",
           "example": "[\"http://www.qq.com/1.txt\"]",
           "member": "string",
           "name": "Targets",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预热模式，取值有：\n<li>default：默认模式，即预热到中间层；</li>\n<li>edge：边缘预热模式，即预热到边缘和中间层。</li>不填写时，默认值为 default。\n注意事项：\n1.预热至边缘产生的边缘层流量，会计入计费流量；\n2.边缘预热默认分配单独的预热额度 1000 条/天，不消费常规预热额度。\n说明：\n该参数为白名单功能，如有需要，请联系腾讯云工程师处理。",
+          "example": "default",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": true,
@@ -7701,7 +7710,7 @@
         },
         {
           "disabled": false,
-          "document": "附带的http头部信息。",
+          "document": "若需要携带 HTTP 头部信息预热，可入参该参数，否则放空即可。",
           "example": "无",
           "member": "Header",
           "name": "Headers",
@@ -7710,7 +7719,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体分片预热控制，取值有：\n<li>on：开启分片预热，预热描述文件，并递归解析描述文件分片进行预热；</li>\n<li>off：仅预热提交的描述文件；</li>不填写时，默认值为 off。\n\n注意事项：\n1. 支持的描述文件为 M3U8，对应分片为 TS；\n2. 要求描述文件能正常请求，并按行业标准描述分片路径；\n3. 递归解析深度不超过 3 层；\n4. 解析获取的分片会正常累加每日预热用量，当用量超出配额时，会静默处理，不再执行预热。\n\n该参数为白名单功能，如有需要，请联系腾讯云工程师处理。",
+          "document": "媒体分片预热控制，取值有：\n<li>on：开启分片预热，预热描述文件，并递归解析描述文件分片进行预热；</li>\n<li>off：仅预热提交的描述文件；</li>不填写时，默认值为 off。\n注意事项：\n1. 支持的描述文件为 M3U8，对应分片为 TS；\n2. 要求描述文件能正常请求，并按行业标准描述分片路径；\n3. 递归解析深度不超过 3 层；\n4. 解析获取的分片会正常累加每日预热用量，当用量超出配额时，会静默处理，不再执行预热。\n说明：\n该参数为白名单功能，如有需要，请联系腾讯云工程师处理。",
           "example": "off",
           "member": "string",
           "name": "PrefetchMediaSegments",
@@ -19618,6 +19627,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡被引用实例的列表。",
+          "example": "无",
+          "member": "OriginGroupReference",
+          "name": "References",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -24052,7 +24071,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引用服务类型，取值有：\n<li>AccelerationDomain: 加速域名；</li>\n<li>RuleEngine: 规则引擎；</li>\n<li>Loadbalance: 负载均衡；</li>\n<li>ApplicationProxy: 四层代理。</li>",
+          "document": "引用服务类型，取值有：\n<li>acceleration-domain: 加速域名；</li>\n<li>rule-engine: 规则引擎；</li>\n<li>load-balancer: 负载均衡；</li>\n<li>application-proxy: 四层代理。</li>",
           "example": "AccelerationDomain",
           "member": "string",
           "name": "InstanceType",
@@ -24072,11 +24091,41 @@
         },
         {
           "disabled": false,
-          "document": "应用类型的实例名称。",
+          "document": "引用类型的实例名称。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引用站点ID。",
+          "example": "zone-1a3x56",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引用站点名称。",
+          "example": "example.com",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引用站点别名。",
+          "example": "zone-example",
+          "member": "string",
+          "name": "AliasZoneName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

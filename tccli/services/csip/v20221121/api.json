@@ -4064,11 +4064,21 @@
         {
           "disabled": false,
           "document": "处置分类",
-          "example": "",
+          "example": "expose",
           "member": "string",
           "name": "Classify",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "等保合规",
+          "example": "无",
+          "member": "StandardTerm",
+          "name": "StandardTerms",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -7065,11 +7075,21 @@
         {
           "disabled": false,
           "document": "处置分类",
-          "example": "",
+          "example": "expose",
           "member": "string",
           "name": "Classify",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cspm规范条款",
+          "example": "无",
+          "member": "StandardTerm",
+          "name": "StandardTerms",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -9228,6 +9248,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "等保规范名称集合",
+          "example": "无",
+          "member": "StandardItem",
+          "name": "StandardNameList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -9909,6 +9939,16 @@
           "example": "无",
           "member": "CheckViewRiskItem",
           "name": "CheckViewRiskList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查视角下cspm规范标签列表",
+          "example": "无",
+          "member": "StandardItem",
+          "name": "StandardNameList",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -19758,6 +19798,58 @@
           "name": "VpcName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StandardItem": {
+      "document": "CSPM规范",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规范ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规范名称",
+          "example": "等保三级",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StandardTerm": {
+      "document": "CSPM条款",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "等保三级",
+          "member": "string",
+          "name": "Tag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条款",
+          "example": "[\"tag1\", \"tag2\"]",
+          "member": "string",
+          "name": "Terms",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

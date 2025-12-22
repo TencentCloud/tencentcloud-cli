@@ -3825,7 +3825,7 @@
         {
           "disabled": false,
           "document": "审批id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "38179348",
           "member": "string",
           "name": "ApplyId",
           "output_required": false,
@@ -3834,13 +3834,33 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段",
-          "example": "123",
+          "document": "扩展字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4672837",
           "member": "string",
           "name": "Metadata",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3293819",
+          "member": "uint64",
+          "name": "CreateTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "461871",
+          "member": "uint64",
+          "name": "ApproveTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4444,7 +4464,7 @@
         {
           "disabled": false,
           "document": "集群存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test2",
           "member": "string",
           "name": "StorageType",
           "output_required": true,
@@ -4454,7 +4474,7 @@
         {
           "disabled": false,
           "document": "集群计算类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test3",
           "member": "string",
           "name": "ComputeType",
           "output_required": true,
@@ -4464,7 +4484,7 @@
         {
           "disabled": false,
           "document": "集群资源量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test1",
           "member": "string",
           "name": "ClusterResource",
           "output_required": true,
@@ -4474,7 +4494,7 @@
         {
           "disabled": false,
           "document": "集群付费方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "test1",
           "member": "string",
           "name": "ChargeType",
           "output_required": true,
@@ -4494,7 +4514,7 @@
         {
           "disabled": false,
           "document": "额外配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"a\":\"b\"}",
           "member": "string",
           "name": "ExtraConf",
           "output_required": true,
@@ -4519,6 +4539,26 @@
           "name": "CdwUserName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9384791",
+          "member": "uint64",
+          "name": "CreateTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "46283748",
+          "member": "uint64",
+          "name": "UpdateTimestamp",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4607,7 +4647,7 @@
         {
           "disabled": false,
           "document": "项目状态：0：禁用，1：启用，-3:禁用中，2：启用中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -4625,6 +4665,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目调度模式，task：任务模式 workflow：工作流模式",
+          "example": "task",
+          "member": "string",
+          "name": "ScheduleMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14823,6 +14874,45 @@
       ],
       "usage": "both"
     },
+    "DependencyConfigTimeoutDTO": {
+      "document": "超时弱依赖配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "超时类型\nWAIT_TOTAL_TIMEOUT 等待总时长\n\nRUNNING_TIMEOUT 运行时长\n\nWAIT_TIME_POINT_TIMEOUT 等待超过配置时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WAIT_TOTAL_TIMEOUT",
+          "member": "string",
+          "name": "TimeoutType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超时时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "120",
+          "member": "int64",
+          "name": "TimeoutValue",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "固定时间点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10:00",
+          "member": "string",
+          "name": "TimeoutPoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DependencyStrategyDs": {
       "document": "依赖配置策略",
       "members": [
@@ -14857,6 +14947,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超时依赖策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DependencyConfigTimeoutDTO",
+          "name": "DependencyConfigTimeoutTypeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -18469,6 +18570,15 @@
           "name": "Size",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "来源 studio(Studio脚本)/codeTemplate(代码模版)",
+          "example": "studio",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -44749,7 +44859,7 @@
         {
           "disabled": false,
           "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "flet",
+          "example": "无",
           "member": "BaseUser",
           "name": "Creator",
           "output_required": true,
@@ -44759,7 +44869,7 @@
         {
           "disabled": false,
           "document": "租户信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "124245566",
+          "example": "无",
           "member": "BaseTenant",
           "name": "Tenant",
           "output_required": true,
@@ -44769,7 +44879,7 @@
         {
           "disabled": false,
           "document": "项目的管理员\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "124245566",
+          "example": "无",
           "member": "BaseUser",
           "name": "AdminUsers",
           "output_required": true,
@@ -44779,7 +44889,7 @@
         {
           "disabled": false,
           "document": "项目关联的集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "124245566",
+          "example": "无",
           "member": "BaseClusterInfo",
           "name": "Clusters",
           "output_required": true,
@@ -44819,7 +44929,7 @@
         {
           "disabled": false,
           "document": "二级菜单\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[101101,101102]",
+          "example": "[\"101101\"]",
           "member": "string",
           "name": "SecondModuleList",
           "output_required": false,
@@ -44829,7 +44939,7 @@
         {
           "disabled": false,
           "document": "项目负责人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "124245566",
+          "example": "无",
           "member": "BaseUser",
           "name": "Owner",
           "output_required": false,
@@ -44839,11 +44949,21 @@
         {
           "disabled": false,
           "document": "项目扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "124245566",
+          "example": "无",
           "member": "WorkspaceExt",
           "name": "WorkspaceExt",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "124245566",
+          "member": "uint64",
+          "name": "CreateTimestamp",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -45003,7 +45123,7 @@
         {
           "disabled": false,
           "document": "显示名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test1",
           "member": "string",
           "name": "DisplayName",
           "output_required": true,
@@ -45013,7 +45133,7 @@
         {
           "disabled": false,
           "document": "是否项目管理员\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsProjectAdmin",
           "output_required": true,
@@ -45023,7 +45143,7 @@
         {
           "disabled": false,
           "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "PhoneNum",
           "output_required": false,
@@ -45033,7 +45153,7 @@
         {
           "disabled": false,
           "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1@1.com",
           "member": "string",
           "name": "Email",
           "output_required": false,
@@ -45043,7 +45163,7 @@
         {
           "disabled": false,
           "document": "主账号id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "137486",
           "member": "string",
           "name": "OwnerUin",
           "output_required": false,
@@ -45053,7 +45173,7 @@
         {
           "disabled": false,
           "document": "租户iD\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "23746",
           "member": "string",
           "name": "AppId",
           "output_required": false,
@@ -45068,6 +45188,26 @@
           "name": "IsProjectOwner",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4928349",
+          "member": "uint64",
+          "name": "CreateTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户状态 0:历史 1:正常 2:已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

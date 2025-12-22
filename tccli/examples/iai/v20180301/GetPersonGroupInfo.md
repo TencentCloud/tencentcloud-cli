@@ -50,7 +50,7 @@ Output:
 ```
 {
     "Response": {
-        "GroupNum": "1",
+        "GroupNum": 1,
         "PersonGroupInfos": [
             {
                 "GroupId": "TencentShenZhenEmployee",

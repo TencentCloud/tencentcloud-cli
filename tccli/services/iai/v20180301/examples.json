@@ -240,7 +240,7 @@
       {
         "document": "",
         "input": "https://iai.tencentcloudapi.com/?Action=GetPersonGroupInfo\n&PersonId=1001\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"GroupNum\": \"1\",\n        \"PersonGroupInfos\": [\n            {\n                \"GroupId\": \"TencentShenZhenEmployee\",\n                \"PersonExDescriptions\": [\n                    \"云与智慧产业事业群\",\n                    \"大数据及人工智能产品中心\",\n                    \"人脸识别产品组\"\n                ]\n            }\n        ],\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"b7a505ad-4a85-42da-97b3-886c7999fb76\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupNum\": 1,\n        \"PersonGroupInfos\": [\n            {\n                \"GroupId\": \"TencentShenZhenEmployee\",\n                \"PersonExDescriptions\": [\n                    \"云与智慧产业事业群\",\n                    \"大数据及人工智能产品中心\",\n                    \"人脸识别产品组\"\n                ]\n            }\n        ],\n        \"FaceModelVersion\": \"3.0\",\n        \"RequestId\": \"b7a505ad-4a85-42da-97b3-886c7999fb76\"\n    }\n}",
         "title": "获取人员归属信息接口-2"
       },
       {

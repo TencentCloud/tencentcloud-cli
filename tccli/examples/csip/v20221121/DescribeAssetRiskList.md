@@ -11,6 +11,7 @@ Output:
 ```
 {
     "Response": {
+        "StandardNameList": [],
         "AssetRiskList": [
             {
                 "AppId": 1434332551,

@@ -2046,6 +2046,45 @@
       ],
       "usage": "both"
     },
+    "AddOnImageInput": {
+      "document": "图片处理编排中使用的输入参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片路径。",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "Image",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "AddOnParameter": {
+      "document": "图片处理附加输入参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "附加图片输入。",
+          "example": "无",
+          "member": "AddOnImageInput",
+          "name": "ImageSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理输出配置。",
+          "example": "无",
+          "member": "ImageProcessOutputConfig",
+          "name": "OutputConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
     "AddOnSubtitle": {
       "document": "外挂字幕。",
       "members": [
@@ -21215,6 +21254,39 @@
       ],
       "usage": "both"
     },
+    "ImageProcessOutputConfig": {
+      "document": "图片处理编排输出配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出图片的宽高比。可以配合ImageWidth 和 ImageHeight 使用，规则如下：\n\n1. 仅指定 AspectRatio 时，根据原图输入进行自适应调整。\n2. 指定 AspectRatio 和 ImageWidth 时，ImageHeight  由两者计算得出，反亦是如此。\n3. 当AspectRatio、ImageWidth、ImageHeight 同时指定的时候，优先使用ImageWidth、ImageHeight。\n\n可取值：1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9、21:9\n\n支持该参数 ScheduleId: 30010(扩图)",
+          "example": "\"16:9\"",
+          "member": "string",
+          "name": "AspectRatio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片输出高度，单位：像素。",
+          "example": "1920",
+          "member": "int64",
+          "name": "ImageHeight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片输出宽度，单位：像素。",
+          "example": "1080",
+          "member": "int64",
+          "name": "ImageWidth",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "ImageProcessTaskOutput": {
       "document": "图片处理结果信息",
       "members": [
@@ -29498,6 +29570,24 @@
           "example": "无",
           "member": "ImageTaskInput",
           "name": "ImageTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理编排场景 ID。\n\n- 30000：文字水印擦除\n- 30010：图片扩展\n- 30100：换装场景",
+          "example": "30000",
+          "member": "uint64",
+          "name": "ScheduleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片处理附加参数。",
+          "example": "无",
+          "member": "AddOnParameter",
+          "name": "AddOnParameter",
           "required": false,
           "type": "object"
         }

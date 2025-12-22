@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "ManageIPPortraitRisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ManageIPPortraitRisk\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be7d30aa-a824-4b5d-9b53-288e9dae2423\"\n    }\n}",
+        "title": " IP风险查询接口"
+      }
+    ]
+  },
+  "version": "1.0"
+}

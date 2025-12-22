@@ -1245,10 +1245,10 @@
           "disabled": false,
           "document": "开始拉取的流式TokenID。0表示从该流最早的TokenID开始获取",
           "example": "0",
-          "member": "string",
+          "member": "int64",
           "name": "BeginStreamingTokenId",
           "required": false,
-          "type": "string"
+          "type": "int"
         },
         {
           "disabled": false,

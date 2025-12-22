@@ -49,6 +49,13 @@
       "output": "DescribeTemplateToVideoJobResponse",
       "status": "online"
     },
+    "DescribeVideoEditJob": {
+      "document": "用于提交视频编辑任务，支持上传视频、文本及图片素材开展编辑操作，涵盖风格迁移、元素替换、内容增减等核心能力。",
+      "input": "DescribeVideoEditJobRequest",
+      "name": "查询视频编辑任务",
+      "output": "DescribeVideoEditJobResponse",
+      "status": "online"
+    },
     "DescribeVideoFaceFusionJob": {
       "document": "查询视频人脸融合任务",
       "input": "DescribeVideoFaceFusionJobRequest",
@@ -110,6 +117,13 @@
       "input": "SubmitTemplateToVideoJobRequest",
       "name": "提交视频特效任务",
       "output": "SubmitTemplateToVideoJobResponse",
+      "status": "online"
+    },
+    "SubmitVideoEditJob": {
+      "document": "用于提交视频编辑任务，支持上传视频、文本及图片素材开展编辑操作，涵盖风格迁移、元素替换、内容增减等核心能力。",
+      "input": "SubmitVideoEditJobRequest",
+      "name": "提交视频编辑任务",
+      "output": "SubmitVideoEditJobResponse",
       "status": "online"
     },
     "SubmitVideoFaceFusionJob": {
@@ -633,6 +647,73 @@
           "example": "https://console.cloud.tencent.com/result.mp4",
           "member": "string",
           "name": "ResultVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoEditJobRequest": {
+      "document": "DescribeVideoEditJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "1390533681507581952",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoEditJobResponse": {
+      "document": "DescribeVideoEditJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。  WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果视频URL。有效期 24 小时。",
+          "example": "https://vcg-prod-xxx.cos.ap-guangzhou.tencentcos.cn/xxx.mp4",
+          "member": "string",
+          "name": "ResultVideoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误码。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "FailedOperation.ModerationFailed",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行错误信息。当任务状态不为 FAIL 时，该值为\"\"。",
+          "example": "审核未通过",
+          "member": "string",
+          "name": "ErrorMessage",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1620,6 +1701,79 @@
           "disabled": false,
           "document": "任务ID。",
           "example": "1194931538865782784",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitVideoEditJobRequest": {
+      "document": "SubmitVideoEditJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入视频\n\n- 视频格式：MP4\n- 视频时长：5s以内\n- 视频分辨率：无限制（待验证是否可以无损输出）",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/video.mp4",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频内容的描述，中文正向提示词。最多支持200个 utf-8 字符（首尾空格不计入字符数）。\n支持风格迁移、替换、元素增加、删除控制",
+          "example": "Edit the object in the video",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片base64或者图片url\n\n- Base64 和 Url 必须提供一个，如果都提供以Url为准。\n- 上传图url大小不超过 8M\n- 支持jpg，png，jpeg，webp，bmp，tiff 格式\n- 单边分辨率不超过5000，不小于50，长宽限制1:4 ~ 4:1",
+          "example": "无",
+          "member": "Image",
+          "name": "Image",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "为生成视频添加标识的开关，默认为1。 1：添加标识。 0：不添加标识。 其他数值：默认按1处理。 建议您使用显著标识来提示，该视频是 AI 生成的视频。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。 默认在生成视频的右下角添加“视频由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitVideoEditJobResponse": {
+      "document": "SubmitVideoEditJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "1390601287988002816",
           "member": "string",
           "name": "JobId",
           "output_required": false,

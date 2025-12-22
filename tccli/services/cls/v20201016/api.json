@@ -35,6 +35,13 @@
       "output": "CloseKafkaConsumerResponse",
       "status": "online"
     },
+    "CommitConsumerOffsets": {
+      "document": "提交消费点位",
+      "input": "CommitConsumerOffsetsRequest",
+      "name": "提交消费点位",
+      "output": "CommitConsumerOffsetsResponse",
+      "status": "online"
+    },
     "CreateAlarm": {
       "document": "本接口用于创建告警策略。",
       "input": "CreateAlarmRequest",
@@ -91,6 +98,13 @@
       "output": "CreateConsumerResponse",
       "status": "online"
     },
+    "CreateConsumerGroup": {
+      "document": "消费组心跳",
+      "input": "CreateConsumerGroupRequest",
+      "name": "创建消费组",
+      "output": "CreateConsumerGroupResponse",
+      "status": "online"
+    },
     "CreateCosRecharge": {
       "document": "本接口用于创建cos导入任务",
       "input": "CreateCosRechargeRequest",
@@ -126,11 +140,25 @@
       "output": "CreateDlcDeliverResponse",
       "status": "online"
     },
+    "CreateEsRecharge": {
+      "document": "创建es导入配置",
+      "input": "CreateEsRechargeRequest",
+      "name": "创建es导入任务",
+      "output": "CreateEsRechargeResponse",
+      "status": "online"
+    },
     "CreateExport": {
       "document": "本接口仅创建下载任务。任务返回的下载地址，请用户调用[DescribeExports](https://cloud.tencent.com/document/product/614/56449)查看任务列表，其中有下载地址CosPath参数。",
       "input": "CreateExportRequest",
       "name": "创建日志下载任务",
       "output": "CreateExportResponse",
+      "status": "online"
+    },
+    "CreateHostMetricConfig": {
+      "document": "创建主机指标采集配置",
+      "input": "CreateHostMetricConfigRequest",
+      "name": "创建主机指标采集配置",
+      "output": "CreateHostMetricConfigResponse",
       "status": "online"
     },
     "CreateIndex": {
@@ -161,6 +189,20 @@
       "output": "CreateMachineGroupResponse",
       "status": "online"
     },
+    "CreateMetricConfig": {
+      "document": "创建指标采集配置",
+      "input": "CreateMetricConfigRequest",
+      "name": "创建指标采集配置",
+      "output": "CreateMetricConfigResponse",
+      "status": "online"
+    },
+    "CreateMetricSubscribe": {
+      "document": "创建指标订阅配置",
+      "input": "CreateMetricSubscribeRequest",
+      "name": "创建指标订阅配置",
+      "output": "CreateMetricSubscribeResponse",
+      "status": "online"
+    },
     "CreateNoticeContent": {
       "document": "该接口用于创建通知内容。",
       "input": "CreateNoticeContentRequest",
@@ -180,6 +222,13 @@
       "input": "CreateShipperRequest",
       "name": "新建投递到COS的任务",
       "output": "CreateShipperResponse",
+      "status": "online"
+    },
+    "CreateSplunkDeliver": {
+      "document": "创建Splunk投递任务",
+      "input": "CreateSplunkDeliverRequest",
+      "name": "创建Splunk投递任务",
+      "output": "CreateSplunkDeliverResponse",
       "status": "online"
     },
     "CreateTopic": {
@@ -259,6 +308,13 @@
       "output": "DeleteConsumerResponse",
       "status": "online"
     },
+    "DeleteConsumerGroup": {
+      "document": "删除消费组",
+      "input": "DeleteConsumerGroupRequest",
+      "name": "删除消费组",
+      "output": "DeleteConsumerGroupResponse",
+      "status": "online"
+    },
     "DeleteCosRecharge": {
       "document": "本接口用于删除cos导入任务",
       "input": "DeleteCosRechargeRequest",
@@ -287,11 +343,25 @@
       "output": "DeleteDlcDeliverResponse",
       "status": "online"
     },
+    "DeleteEsRecharge": {
+      "document": "删除es导入配置",
+      "input": "DeleteEsRechargeRequest",
+      "name": "删除es导入配置",
+      "output": "DeleteEsRechargeResponse",
+      "status": "online"
+    },
     "DeleteExport": {
       "document": "本接口用于删除日志下载任务",
       "input": "DeleteExportRequest",
       "name": "删除日志下载任务",
       "output": "DeleteExportResponse",
+      "status": "online"
+    },
+    "DeleteHostMetricConfig": {
+      "document": "删除主机指标采集配置",
+      "input": "DeleteHostMetricConfigRequest",
+      "name": "删除主机指标采集配置",
+      "output": "DeleteHostMetricConfigResponse",
       "status": "online"
     },
     "DeleteIndex": {
@@ -329,6 +399,20 @@
       "output": "DeleteMachineGroupInfoResponse",
       "status": "online"
     },
+    "DeleteMetricConfig": {
+      "document": "删除指标采集配置",
+      "input": "DeleteMetricConfigRequest",
+      "name": "删除指标采集配置",
+      "output": "DeleteMetricConfigResponse",
+      "status": "online"
+    },
+    "DeleteMetricSubscribe": {
+      "document": "删除指标订阅配置",
+      "input": "DeleteMetricSubscribeRequest",
+      "name": "删除指标订阅配置",
+      "output": "DeleteMetricSubscribeResponse",
+      "status": "online"
+    },
     "DeleteNoticeContent": {
       "document": "该接口用于删除通知内容配置",
       "input": "DeleteNoticeContentRequest",
@@ -348,6 +432,13 @@
       "input": "DeleteShipperRequest",
       "name": "删除投递COS任务",
       "output": "DeleteShipperResponse",
+      "status": "online"
+    },
+    "DeleteSplunkDeliver": {
+      "document": "删除Splunk投递任务",
+      "input": "DeleteSplunkDeliverRequest",
+      "name": "删除Splunk投递任务",
+      "output": "DeleteSplunkDeliverResponse",
       "status": "online"
     },
     "DeleteTopic": {
@@ -399,6 +490,20 @@
       "output": "DescribeCloudProductLogTasksResponse",
       "status": "online"
     },
+    "DescribeClusterBaseMetricConfigs": {
+      "document": "获取指标订阅配置",
+      "input": "DescribeClusterBaseMetricConfigsRequest",
+      "name": "获取集群指标基础监控采集配置",
+      "output": "DescribeClusterBaseMetricConfigsResponse",
+      "status": "online"
+    },
+    "DescribeClusterMetricConfigs": {
+      "document": "获取指标订阅配置",
+      "input": "DescribeClusterMetricConfigsRequest",
+      "name": "获取集群指标采集配置",
+      "output": "DescribeClusterMetricConfigsResponse",
+      "status": "online"
+    },
     "DescribeConfigExtras": {
       "document": "本接口用于获取特殊采集配置，特殊采集配置应用于自建K8S环境的采集Agent",
       "input": "DescribeConfigExtrasRequest",
@@ -432,6 +537,34 @@
       "input": "DescribeConsumerRequest",
       "name": "获取投递配置",
       "output": "DescribeConsumerResponse",
+      "status": "online"
+    },
+    "DescribeConsumerGroups": {
+      "document": "获取消费组列表",
+      "input": "DescribeConsumerGroupsRequest",
+      "name": "获取消费组列表",
+      "output": "DescribeConsumerGroupsResponse",
+      "status": "online"
+    },
+    "DescribeConsumerOffsets": {
+      "document": "获取消费组点位信息",
+      "input": "DescribeConsumerOffsetsRequest",
+      "name": "获取消费组点位信息",
+      "output": "DescribeConsumerOffsetsResponse",
+      "status": "online"
+    },
+    "DescribeConsumerPreview": {
+      "document": "本接口用于kafka投递数据预览",
+      "input": "DescribeConsumerPreviewRequest",
+      "name": "投递kafka数据预览",
+      "output": "DescribeConsumerPreviewResponse",
+      "status": "online"
+    },
+    "DescribeConsumers": {
+      "document": "获取投递规则信息列表",
+      "input": "DescribeConsumersRequest",
+      "name": "获取投递到Ckafka的任务配置列表",
+      "output": "DescribeConsumersResponse",
       "status": "online"
     },
     "DescribeCosRecharges": {
@@ -469,11 +602,32 @@
       "output": "DescribeDlcDeliversResponse",
       "status": "online"
     },
+    "DescribeEsRechargePreview": {
+      "document": "es导入预览",
+      "input": "DescribeEsRechargePreviewRequest",
+      "name": "es导入预览",
+      "output": "DescribeEsRechargePreviewResponse",
+      "status": "online"
+    },
+    "DescribeEsRecharges": {
+      "document": "获取es导入配置",
+      "input": "DescribeEsRechargesRequest",
+      "name": "获取es导入配置",
+      "output": "DescribeEsRechargesResponse",
+      "status": "online"
+    },
     "DescribeExports": {
       "document": "本接口用于获取日志下载任务列表",
       "input": "DescribeExportsRequest",
       "name": "获取日志下载任务列表",
       "output": "DescribeExportsResponse",
+      "status": "online"
+    },
+    "DescribeHostMetricConfigs": {
+      "document": "获取指标订阅配置",
+      "input": "DescribeHostMetricConfigsRequest",
+      "name": "获取主机指标采集配置列表",
+      "output": "DescribeHostMetricConfigsResponse",
       "status": "online"
     },
     "DescribeIndex": {
@@ -502,6 +656,20 @@
       "input": "DescribeKafkaConsumerGroupListRequest",
       "name": "获取Kafka协议消费组列表",
       "output": "DescribeKafkaConsumerGroupListResponse",
+      "status": "online"
+    },
+    "DescribeKafkaConsumerPreview": {
+      "document": "kafka协议消费预览接口",
+      "input": "DescribeKafkaConsumerPreviewRequest",
+      "name": "kafka协议消费预览接口",
+      "output": "DescribeKafkaConsumerPreviewResponse",
+      "status": "online"
+    },
+    "DescribeKafkaConsumerTopics": {
+      "document": "本接口用于获取kafka协议消费主题信息列表",
+      "input": "DescribeKafkaConsumerTopicsRequest",
+      "name": "获取kafka协议消费主题信息列表",
+      "output": "DescribeKafkaConsumerTopicsResponse",
       "status": "online"
     },
     "DescribeKafkaRecharges": {
@@ -553,6 +721,27 @@
       "output": "DescribeMachinesResponse",
       "status": "online"
     },
+    "DescribeMetricCorrectDimension": {
+      "document": "获取指标订阅配置",
+      "input": "DescribeMetricCorrectDimensionRequest",
+      "name": "获取指标校准维度信息",
+      "output": "DescribeMetricCorrectDimensionResponse",
+      "status": "online"
+    },
+    "DescribeMetricSubscribePreview": {
+      "document": "创建指标订阅配置",
+      "input": "DescribeMetricSubscribePreviewRequest",
+      "name": "指标订阅数据预览",
+      "output": "DescribeMetricSubscribePreviewResponse",
+      "status": "online"
+    },
+    "DescribeMetricSubscribes": {
+      "document": "获取指标订阅配置",
+      "input": "DescribeMetricSubscribesRequest",
+      "name": "获取指标订阅配置",
+      "output": "DescribeMetricSubscribesResponse",
+      "status": "online"
+    },
     "DescribeNoticeContents": {
       "document": "获取通知内容列表",
       "input": "DescribeNoticeContentsRequest",
@@ -588,6 +777,34 @@
       "output": "DescribeShippersResponse",
       "status": "online"
     },
+    "DescribeSplunkDelivers": {
+      "document": "获取Splunk投递任务列表",
+      "input": "DescribeSplunkDeliversRequest",
+      "name": "获取Splunk投递任务列表",
+      "output": "DescribeSplunkDeliversResponse",
+      "status": "online"
+    },
+    "DescribeSplunkPreview": {
+      "document": "splunk投递任务预览",
+      "input": "DescribeSplunkPreviewRequest",
+      "name": "Splunk投递任务预览",
+      "output": "DescribeSplunkPreviewResponse",
+      "status": "online"
+    },
+    "DescribeTopicBaseMetricConfigs": {
+      "document": "获取指标订阅配置",
+      "input": "DescribeTopicBaseMetricConfigsRequest",
+      "name": "获取指标基础监控采集配置",
+      "output": "DescribeTopicBaseMetricConfigsResponse",
+      "status": "online"
+    },
+    "DescribeTopicMetricConfigs": {
+      "document": "获取指标订阅配置",
+      "input": "DescribeTopicMetricConfigsRequest",
+      "name": "获取指标采集配置",
+      "output": "DescribeTopicMetricConfigsResponse",
+      "status": "online"
+    },
     "DescribeTopics": {
       "document": "本接口用于获取日志或指标主题列表，支持分页",
       "input": "DescribeTopicsRequest",
@@ -607,6 +824,13 @@
       "input": "GetAlarmLogRequest",
       "name": "获取告警策略执行详情",
       "output": "GetAlarmLogResponse",
+      "status": "online"
+    },
+    "GetMetricLabelValues": {
+      "document": "获取时序label values列表",
+      "input": "GetMetricLabelValuesRequest",
+      "name": "获取指标标签列表",
+      "output": "GetMetricLabelValuesResponse",
       "status": "online"
     },
     "MergePartition": {
@@ -672,6 +896,13 @@
       "output": "ModifyConsumerResponse",
       "status": "online"
     },
+    "ModifyConsumerGroup": {
+      "document": "更新消费组信息",
+      "input": "ModifyConsumerGroupRequest",
+      "name": "更新消费组信息",
+      "output": "ModifyConsumerGroupResponse",
+      "status": "online"
+    },
     "ModifyCosRecharge": {
       "document": "本接口用于修改cos导入任务",
       "input": "ModifyCosRechargeRequest",
@@ -698,6 +929,20 @@
       "input": "ModifyDlcDeliverRequest",
       "name": "修改DLC投递任务",
       "output": "ModifyDlcDeliverResponse",
+      "status": "online"
+    },
+    "ModifyEsRecharge": {
+      "document": "修改es导入配置",
+      "input": "ModifyEsRechargeRequest",
+      "name": "修改es导入任务",
+      "output": "ModifyEsRechargeResponse",
+      "status": "online"
+    },
+    "ModifyHostMetricConfig": {
+      "document": "修改主机指标采集配置",
+      "input": "ModifyHostMetricConfigRequest",
+      "name": "修改主机指标采集配置",
+      "output": "ModifyHostMetricConfigResponse",
       "status": "online"
     },
     "ModifyIndex": {
@@ -742,6 +987,20 @@
       "output": "ModifyMachineGroupResponse",
       "status": "online"
     },
+    "ModifyMetricConfig": {
+      "document": "创建指标采集配置",
+      "input": "ModifyMetricConfigRequest",
+      "name": "修改指标采集配置",
+      "output": "ModifyMetricConfigResponse",
+      "status": "online"
+    },
+    "ModifyMetricSubscribe": {
+      "document": "修改指标订阅配置",
+      "input": "ModifyMetricSubscribeRequest",
+      "name": "修改指标订阅配置",
+      "output": "ModifyMetricSubscribeResponse",
+      "status": "online"
+    },
     "ModifyNoticeContent": {
       "document": "该接口用于修改通知内容配置",
       "input": "ModifyNoticeContentRequest",
@@ -761,6 +1020,13 @@
       "input": "ModifyShipperRequest",
       "name": "修改投递COS任务",
       "output": "ModifyShipperResponse",
+      "status": "online"
+    },
+    "ModifySplunkDeliver": {
+      "document": "修改splunk投递任务相关信息",
+      "input": "ModifySplunkDeliverRequest",
+      "name": "修改splunk任务投递信息",
+      "output": "ModifySplunkDeliverResponse",
       "status": "online"
     },
     "ModifyTopic": {
@@ -831,6 +1097,13 @@
       "input": "SearchLogRequest",
       "name": "检索分析日志",
       "output": "SearchLogResponse",
+      "status": "online"
+    },
+    "SendConsumerHeartbeat": {
+      "document": "消费组心跳",
+      "input": "SendConsumerHeartbeatRequest",
+      "name": "消费组心跳",
+      "output": "SendConsumerHeartbeatResponse",
       "status": "online"
     },
     "SplitPartition": {
@@ -2126,6 +2399,62 @@
       ],
       "type": "object"
     },
+    "AppointLabel": {
+      "document": "元数据Pod label标签结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定标签类型。\n\n- 0：所有Pod label，Keys字段无效\n- 1：指定Pod label，Keys字段不能为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元数据Pod标签的键。有效标签键有两个部分：可选前缀和名称，以斜杠 (/) 分隔。名称部分是必需的，并且必须不超过 63 个字符，以字母数字字符 ([a-z0-9A-Z]) 开头和结尾，中间有破折号(-)、下划线(_)、点(.) 和字母数字。前缀是可选的。如果指定，前缀必须是 DNS 子域：一系列以点 (.) 分隔的 DNS 标签，总长度不超过 253 个字符，后跟斜杠 ( /)。\n\n-  prefix 格式  `[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*`\n-  name 格式 `([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9]`\n- key不能重复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"k8s-key\"]",
+          "member": "string",
+          "name": "Keys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BaseMetricCollectConfig": {
+      "document": "指标采集配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "46ca047e-f015-45c9-9635-444bf4f31602",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "基础监控采集配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricCollectConfig",
+          "name": "Configs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CallBackInfo": {
       "document": "回调配置",
       "members": [
@@ -2546,6 +2875,60 @@
         }
       ],
       "usage": "out"
+    },
+    "CommitConsumerOffsetsRequest": {
+      "document": "CommitConsumerOffsets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费组标识",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费机器名称",
+          "example": "无",
+          "member": "string",
+          "name": "Consumer",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志集id",
+          "example": "无",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "topic分区点位信息",
+          "example": "无",
+          "member": "TopicPartitionOffsetInfo",
+          "name": "TopicPartitionOffsetsInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CommitConsumerOffsetsResponse": {
+      "document": "CommitConsumerOffsets返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CompressInfo": {
       "document": "投递日志的压缩配置",
@@ -3317,6 +3700,168 @@
           "name": "ProtocolName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumerGroupInfo": {
+      "document": "消费组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费组标识",
+          "example": "group21",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者心跳超时时间（秒）",
+          "example": "30",
+          "member": "uint64",
+          "name": "Timeout",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "topic列表",
+          "example": "[\"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"]",
+          "member": "string",
+          "name": "Topics",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumerInfo": {
+      "document": "投递规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递规则ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "ConsumerId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递任务是否生效",
+          "example": "true",
+          "member": "bool",
+          "name": "Effective",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CKafka的描述",
+          "example": "无",
+          "member": "Ckafka",
+          "name": "Ckafka",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否投递日志的元数据信息",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedContent",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果需要投递元数据信息，元数据信息的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsumerContent",
+          "name": "Content",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Compression",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "投递任务创建毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1662034960732",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色访问描述名 [创建角色](https://cloud.tencent.com/document/product/598/19381)\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qcs::cam::uin/${uin}:roleName/xxxtest",
+          "member": "string",
+          "name": "RoleArn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "external_id_demo",
+          "member": "string",
+          "name": "ExternalId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务运行状态。支持`0`,`1`,`2` - `0`: 停止 - `1`: 运行中 - `2`: 异常\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高级配置",
+          "example": "无",
+          "member": "AdvancedConsumerConfiguration",
+          "name": "AdvancedConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -4729,6 +5274,70 @@
       ],
       "type": "object"
     },
+    "CreateConsumerGroupRequest": {
+      "document": "CreateConsumerGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的消费者组标识\n限制： 字母数字下划线，不允许数字开头，长度限制256",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费者心跳超时时间（秒）",
+          "example": "无",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "创建的消费者组包含的日志主题列表",
+          "example": "无",
+          "member": "string",
+          "name": "Topics",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志集Id（日志主题所属的日志集）",
+          "example": "无",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsumerGroupResponse": {
+      "document": "CreateConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费组标识",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateConsumerRequest": {
       "document": "CreateConsumer请求参数结构体",
       "members": [
@@ -5371,6 +5980,106 @@
       ],
       "type": "object"
     },
+    "CreateEsRechargeRequest": {
+      "document": "CreateEsRecharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称：长度不超过64字符。",
+          "example": "template_1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引信息。不同索引可以通过英文逗号分隔，支持*通配符",
+          "example": "base-2026-01-*",
+          "member": "string",
+          "name": "Index",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "es查询语句。",
+          "example": "tags.service.name:session",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "es集群配置信息。",
+          "example": "无",
+          "member": "EsInfo",
+          "name": "EsInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "es导入信息。",
+          "example": "无",
+          "member": "EsImportInfo",
+          "name": "ImportInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "es导入时间字段信息。",
+          "example": "无",
+          "member": "EsTimeInfo",
+          "name": "TimeInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递服务日志。1：关闭，2：开启。默认开启。",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEsRechargeResponse": {
+      "document": "CreateEsRecharge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置id",
+          "example": "abcd-1234-xxxx-xxxx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateExportRequest": {
       "document": "CreateExport请求参数结构体",
       "members": [
@@ -5468,6 +6177,79 @@
           "member": "string",
           "name": "ExportId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHostMetricConfigRequest": {
+      "document": "CreateHostMetricConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称。\n\n- 长度不超过 64字符。",
+          "example": "template-1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机器组id列表。最多支持100个机器组。",
+          "example": "[\"81853bcf-67b4-4a4f-82c7-7882fd004613\"]",
+          "member": "string",
+          "name": "MachineGroupIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采集频率。单位:ms。 最小支持5000ms",
+          "example": "5000",
+          "member": "uint64",
+          "name": "Interval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "采集项。支持\"cpu\"，\"mem\"，\"net\"，\"disk\"，\"system\"。**目前仅支持:所有采集项都需配置**。\n- cpu：CPU\n- mem：内存\n- net：网络\n- disk：磁盘\n- system：系统",
+          "example": "无",
+          "member": "HostMetricItem",
+          "name": "HostMetricItems",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateHostMetricConfigResponse": {
+      "document": "CreateHostMetricConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主机指标采集配置id",
+          "example": "23986f8e-2cab-45e6-a5d3-b1d654681ce6",
+          "member": "string",
+          "name": "ConfigId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5861,6 +6643,233 @@
       ],
       "type": "object"
     },
+    "CreateMetricConfigRequest": {
+      "document": "CreateMetricConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集配置来源。支持 ：`0`、`1`\n- 0:自建k8s\n- 1:TKE",
+          "example": "0",
+          "member": "uint64",
+          "name": "Source",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "机器组id。",
+          "example": "[\"81853bcf-67b4-4a4f-82c7-7882fd004613\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "监控类型。支持 ：`0`、`1`，不支持修改\n- 0:基础监控\n- 1:自定义监控, ",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "采集配置方式。支持 ：`0`、`1`，不支持修改\n- 0:普通配置方式，Type字段只能为：``1`\n- 1:YAML导入方式， Type 可以是：`0`或者`1`",
+          "example": "0",
+          "member": "uint64",
+          "name": "Flag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "名称：长度不超过253字符，校验格式  ` [a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*`。",
+          "example": "template-1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集对象, Flag=0时生效",
+          "example": "无",
+          "member": "MetricSpec",
+          "name": "Spec",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标签处理, Flag=0时生效",
+          "example": "无",
+          "member": "Relabeling",
+          "name": "MetricRelabels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义元数据, Flag=0时生效",
+          "example": "无",
+          "member": "MetricConfigLabel",
+          "name": "MetricLabel",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "通信协议 http、https; Flag=0时生效",
+          "example": "http",
+          "member": "string",
+          "name": "Scheme",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集频率,  Flag=0时生效\n- 校验格式：`^(((\\d+)y)?((\\d+)w)?((\\d+)d)?((\\d+)h)?((\\d+)m)?((\\d+)s)?((\\d+)ms)?|0)$`\n- 默认：60s",
+          "example": "60s",
+          "member": "string",
+          "name": "ScrapeInterval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集超时时间， Flag=0时生效\n- 校验格式：`^(((\\d+)y)?((\\d+)w)?((\\d+)d)?((\\d+)h)?((\\d+)m)?((\\d+)s)?((\\d+)ms)?|0)$`\n- 默认：30s",
+          "example": "30s",
+          "member": "string",
+          "name": "ScrapeTimeout",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Prometheus如何处理标签之间的冲突。当Flag=0时生效，支持`true`,`false`\n- `false`:配置数据中冲突的标签重命名\n- `true`:忽略冲突的服务器端标签",
+          "example": "false",
+          "member": "bool",
+          "name": "HonorLabels",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "采集配置yaml格式字符串, Flag=1时必填",
+          "example": "无",
+          "member": "MetricYamlSpec",
+          "name": "YamlSpec",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetricConfigResponse": {
+      "document": "CreateMetricConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标采集配置id列表。",
+          "example": "[\"23986f8e-2cab-45e6-a5d3-b1d654681ce6\",\"c10ce223-4f2c-4832-a61b-2388a675a230\"]",
+          "member": "string",
+          "name": "ConfigIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetricSubscribeRequest": {
+      "document": "CreateMetricSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。",
+          "example": "template_1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品命名空间。",
+          "example": "QCE/CVM",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库配置信息。",
+          "example": "无",
+          "member": "MetricConfig",
+          "name": "Metrics",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例配置配置。",
+          "example": "无",
+          "member": "InstanceConfig",
+          "name": "InstanceInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMetricSubscribeResponse": {
+      "document": "CreateMetricSubscribe返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置id",
+          "example": "abcd-1234-xxxx-xxxx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNoticeContentRequest": {
       "document": "CreateNoticeContent请求参数结构体",
       "members": [
@@ -6233,6 +7242,124 @@
       ],
       "type": "object"
     },
+    "CreateSplunkDeliverRequest": {
+      "document": "CreateSplunkDeliver请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "splunk投递任务名称；\nname有如下限制：\n- 不能为空\n- 长度不大于64\n- 只能包含aA-zZ、下划线、-、0-9",
+          "example": "template-1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Splunk投递任务-目标配置-网络信息",
+          "example": "无",
+          "member": "NetInfo",
+          "name": "NetInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "Splunk投递任务元信息",
+          "example": "无",
+          "member": "MetadataInfo",
+          "name": "MetadataInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启服务日志 1:关闭；2:开启 ;默认开启",
+          "example": "2",
+          "member": "int64",
+          "name": "HasServiceLog",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-是否启用索引器；1-不启用；2-启用；\n默认：1",
+          "example": "1",
+          "member": "int64",
+          "name": "IndexAck",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-数据来源；不超过64个字符",
+          "example": "client-01",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-数据来源类型；不超过64个字符",
+          "example": "json",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-Splunk写入的索引；不超过64个字符",
+          "example": "main",
+          "member": "string",
+          "name": "Index",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-通道\n需满足限制：如果启用索引器，那么Channel必填",
+          "example": "template-1",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSplunkDeliverResponse": {
+      "document": "CreateSplunkDeliver返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "splunk投递任务id",
+          "example": "111024e3-01b0-4aeb-91f5-ee",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTopicRequest": {
       "document": "CreateTopic请求参数结构体",
       "members": [
@@ -6535,6 +7662,84 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomLabel": {
+      "document": "自定义标签结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签的键。\n- 必须以字母或下划线开头，但不可以双下划线（__）开头，后面可以跟任意字母，数字或下划线。\n- 最大支持256个字符。\n- key不能重复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签的值。\n- 最大支持256个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "k8s-x",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomMetricSpec": {
+      "document": "自定义指标采集对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口。取值范围 [1,65535]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Metric地址。校验格式：`^/[a-zA-Z0-9-_./]*$`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/metric",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间列表。\n- 最大支持100个\n- namespace 校验格式 `[a-z0-9]([-a-z0-9]*[a-z0-9])?` ， 长度不能超过63\n- namespace 不能重复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kebe-system",
+          "member": "string",
+          "name": "Namespaces",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pod标签。\n- 最大支持100个\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "PodLabel",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7577,6 +8782,42 @@
       ],
       "type": "object"
     },
+    "DeleteConsumerGroupRequest": {
+      "document": "DeleteConsumerGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要删除的消费者组标识",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志集id",
+          "example": "无",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConsumerGroupResponse": {
+      "document": "DeleteConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteConsumerRequest": {
       "document": "DeleteConsumer请求参数结构体",
       "members": [
@@ -7730,6 +8971,42 @@
       ],
       "type": "object"
     },
+    "DeleteEsRechargeRequest": {
+      "document": "DeleteEsRecharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务配置的日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "example": "1111c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEsRechargeResponse": {
+      "document": "DeleteEsRecharge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteExportRequest": {
       "document": "DeleteExport请求参数结构体",
       "members": [
@@ -7747,6 +9024,42 @@
     },
     "DeleteExportResponse": {
       "document": "DeleteExport返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHostMetricConfigRequest": {
+      "document": "DeleteHostMetricConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集配置id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteHostMetricConfigResponse": {
+      "document": "DeleteHostMetricConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7910,6 +9223,78 @@
       ],
       "type": "object"
     },
+    "DeleteMetricConfigRequest": {
+      "document": "DeleteMetricConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标采集配置id。",
+          "example": "81853bcf-67b4-4a4f-82c7-7882fd004613",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMetricConfigResponse": {
+      "document": "DeleteMetricConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMetricSubscribeRequest": {
+      "document": "DeleteMetricSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标采集任务id",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标采集任务配置的日志主题id。",
+          "example": "1111c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteMetricSubscribeResponse": {
+      "document": "DeleteMetricSubscribe返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNoticeContentRequest": {
       "document": "DeleteNoticeContent请求参数结构体",
       "members": [
@@ -7990,6 +9375,42 @@
     },
     "DeleteShipperResponse": {
       "document": "DeleteShipper返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSplunkDeliverRequest": {
+      "document": "DeleteSplunkDeliver请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "111024e3-01b0-4aeb-91f5-ee",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSplunkDeliverResponse": {
+      "document": "DeleteSplunkDeliver返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8454,6 +9875,154 @@
       ],
       "type": "object"
     },
+    "DescribeClusterBaseMetricConfigsRequest": {
+      "document": "DescribeClusterBaseMetricConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器组id",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<li> topicId按照【指标主题id】进行过滤。类型：String  必选：否</li>\n<li> 每次请求的Filters的上限为10，所有Filter.Values总和上限为100。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterBaseMetricConfigsResponse": {
+      "document": "DescribeClusterBaseMetricConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标采集配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BaseMetricCollectConfig",
+          "name": "Datas",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterMetricConfigsRequest": {
+      "document": "DescribeClusterMetricConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器组id",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<li> configId按照【指标采集配置id】进行过滤。类型：String  必选：否</li>\n<li> name按照【配置名称】进行过滤。类型：String 必选：否</li>\n<li> 每次请求的Filters的上限为10，所有Filter.Values总和上限为100。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterMetricConfigsResponse": {
+      "document": "DescribeClusterMetricConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标采集配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricCollectConfig",
+          "name": "Datas",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeConfigExtrasRequest": {
       "document": "DescribeConfigExtras请求参数结构体",
       "members": [
@@ -8658,6 +10227,152 @@
       ],
       "type": "object"
     },
+    "DescribeConsumerGroupsRequest": {
+      "document": "DescribeConsumerGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集Id（日志主题所属的日志集）",
+          "example": "无",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "topic列表",
+          "example": "无",
+          "member": "string",
+          "name": "Topics",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerGroupsResponse": {
+      "document": "DescribeConsumerGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费组详情列表",
+          "example": "无",
+          "member": "ConsumerGroupInfo",
+          "name": "ConsumerGroupsInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerOffsetsRequest": {
+      "document": "DescribeConsumerOffsets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题对应的消费组标识",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间戳(秒级时间戳)",
+          "example": "无",
+          "member": "string",
+          "name": "From",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志集id(日志主题对应的id)",
+          "example": "无",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id",
+          "example": "无",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分区id",
+          "example": "无",
+          "member": "string",
+          "name": "PartitionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerOffsetsResponse": {
+      "document": "DescribeConsumerOffsets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费者组标识",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费点位信息",
+          "example": "无",
+          "member": "TopicPartitionOffsetInfo",
+          "name": "TopicPartitionOffsetsInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerPreviewRequest": {
+      "document": "DescribeConsumerPreview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeConsumerPreviewResponse": {
+      "document": "DescribeConsumerPreview返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeConsumerRequest": {
       "document": "DescribeConsumer请求参数结构体",
       "members": [
@@ -8722,6 +10437,71 @@
           "example": "0",
           "member": "int64",
           "name": "Compression",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumersRequest": {
+      "document": "DescribeConsumers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "- consumerId\n按照【投递规则ID】进行过滤。\n类型：String\n必选：否\n\n- topicId\n按照【日志主题】进行过滤。\n类型：String\n必选：否\n\n- taskStatus\n按照【任务运行状态】进行过滤。 支持`0`：停止，`1`：运行中，`2`：异常\n类型：String\n必选：否\n\n\n每次请求的Filters的上限为10，Filter.Values的上限为10。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页的限制数目，默认值为20，最大值100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumersResponse": {
+      "document": "DescribeConsumers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsumerInfo",
+          "name": "Consumers",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本次查询获取到的总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9086,6 +10866,171 @@
       ],
       "type": "object"
     },
+    "DescribeEsRechargePreviewRequest": {
+      "document": "DescribeEsRechargePreview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称：长度不超过64字符。",
+          "example": "template_1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引信息。不同索引可以通过英文逗号分隔，支持*通配符",
+          "example": "base-2026-01-*",
+          "member": "string",
+          "name": "Index",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "es查询语句。",
+          "example": "tags.service.name:session",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "es集群配置信息。",
+          "example": "无",
+          "member": "EsInfo",
+          "name": "EsInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "es导入信息。",
+          "example": "无",
+          "member": "EsImportInfo",
+          "name": "ImportInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "es导入时间字段信息。",
+          "example": "无",
+          "member": "EsTimeInfo",
+          "name": "TimeInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEsRechargePreviewResponse": {
+      "document": "DescribeEsRechargePreview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预览数据信息",
+          "example": "[\"{\\\"@timestamp\\\":\\\"2025-11-24T16:14:00+08:00\\\"\\\"type\\\":\\\"mqtt_probe_metric\\\"}\"]",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEsRechargesRequest": {
+      "document": "DescribeEsRecharges请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "-  taskId按照【配置id】进行过滤。类型：String  必选：否\n-  name按照【配置名称】进行过滤。类型：String 必选：否\n-  statusFlag按照【配置状态标记】进行过滤。类型：String 必选：否\n-  每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEsRechargesResponse": {
+      "document": "DescribeEsRecharges返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "es导入配置信息",
+          "example": "无",
+          "member": "EsRechargeInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExportsRequest": {
       "document": "DescribeExports请求参数结构体",
       "members": [
@@ -9140,6 +11085,80 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostMetricConfigsRequest": {
+      "document": "DescribeHostMetricConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "- configId按照【配置id】进行过滤。类型：String  必选：否\n- name按照【配置名称】进行过滤。类型：String 必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为10。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostMetricConfigsResponse": {
+      "document": "DescribeHostMetricConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标订阅配置信息",
+          "example": "无",
+          "member": "HostMetricConfig",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -9418,6 +11437,23 @@
       ],
       "type": "object"
     },
+    "DescribeKafkaConsumerPreviewRequest": {
+      "document": "DescribeKafkaConsumerPreview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeKafkaConsumerPreviewResponse": {
+      "document": "DescribeKafkaConsumerPreview返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeKafkaConsumerRequest": {
       "document": "DescribeKafkaConsumer请求参数结构体",
       "members": [
@@ -9476,6 +11512,23 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKafkaConsumerTopicsRequest": {
+      "document": "DescribeKafkaConsumerTopics请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeKafkaConsumerTopicsResponse": {
+      "document": "DescribeKafkaConsumerTopics返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10072,6 +12125,192 @@
       ],
       "type": "object"
     },
+    "DescribeMetricCorrectDimensionRequest": {
+      "document": "DescribeMetricCorrectDimension请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeMetricCorrectDimensionResponse": {
+      "document": "DescribeMetricCorrectDimension返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricSubscribePreviewRequest": {
+      "document": "DescribeMetricSubscribePreview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云产品命名空间。",
+          "example": "QCE/CVM",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库配置信息。",
+          "example": "无",
+          "member": "MetricConfig",
+          "name": "Metrics",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例配置配置。",
+          "example": "无",
+          "member": "InstanceConfig",
+          "name": "InstanceInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricSubscribePreviewResponse": {
+      "document": "DescribeMetricSubscribePreview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "FailCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功实例数据",
+          "example": "无",
+          "member": "InstanceData",
+          "name": "SuccessInstances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败实例数据",
+          "example": "无",
+          "member": "InstanceData",
+          "name": "FailInstances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricSubscribesRequest": {
+      "document": "DescribeMetricSubscribes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<br><li> taskId按照【配置id】进行过滤。类型：String  必选：否</li>\n<br><li> name按照【配置名称】进行过滤。类型：String 必选：否</li>\n<br><li> status按照【配置状态标记】进行过滤。类型：String 必选：否</li>\n<br><li> 每次请求的Filters的上限为10，Filter.Values的上限为100。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMetricSubscribesResponse": {
+      "document": "DescribeMetricSubscribes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标订阅配置信息",
+          "example": "无",
+          "member": "MetricSubscribeInfo",
+          "name": "Datas",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNoticeContentsRequest": {
       "document": "DescribeNoticeContents请求参数结构体",
       "members": [
@@ -10386,6 +12625,274 @@
       ],
       "type": "object"
     },
+    "DescribeSplunkDeliversRequest": {
+      "document": "DescribeSplunkDelivers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题Id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "- taskId 按照【任务id】进行过滤。 类型：String 必选：否  \n- name 按照【任务名称】进行过滤。 类型：String 必选：否  \n- statusFlag 按照【状态】进行过滤。 类型：String 必选：否  \n 每次请求的Filters的上限为10，Filter.Values的上限为10。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSplunkDeliversResponse": {
+      "document": "DescribeSplunkDelivers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Splunk投递任务信息列表",
+          "example": "无",
+          "member": "SplunkDeliverInfo",
+          "name": "Infos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的任务总数。",
+          "example": "12",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSplunkPreviewRequest": {
+      "document": "DescribeSplunkPreview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "d1d7d473-827e-4dad-9a42-f0287ad42098",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "splunk投递任务-元信息",
+          "example": "无",
+          "member": "MetadataInfo",
+          "name": "MetadataInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSplunkPreviewResponse": {
+      "document": "DescribeSplunkPreview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预览结果",
+          "example": "[\"asdgf-12f3\",\"gdfku-yne5\"]",
+          "member": "string",
+          "name": "PreviewInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicBaseMetricConfigsRequest": {
+      "document": "DescribeTopicBaseMetricConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "groupId按照【机器组id】进行过滤。类型：String  必选：否\n每次请求的Filters的上限为10，所有Filter.Values总和上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicBaseMetricConfigsResponse": {
+      "document": "DescribeTopicBaseMetricConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标采集配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BaseMetricCollectConfig",
+          "name": "Datas",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicMetricConfigsRequest": {
+      "document": "DescribeTopicMetricConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "configId按照【指标采集配置id】进行过滤。类型：String  必选：否\nname按照【配置名称】进行过滤。类型：String 必选：否\n每次请求的Filters的上限为10，所有Filter.Values总和上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicMetricConfigsResponse": {
+      "document": "DescribeTopicMetricConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标采集配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricCollectConfig",
+          "name": "Datas",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopicsRequest": {
       "document": "DescribeTopics请求参数结构体",
       "members": [
@@ -10533,6 +13040,32 @@
         }
       ],
       "type": "object"
+    },
+    "Dimension": {
+      "document": "云产品实例维度信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例维度名称,此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo_name",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例维度值,此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo_value",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DlcDeliverInfo": {
       "document": "投递DLC任务配置信息",
@@ -10954,6 +13487,378 @@
           "example": "key_ubsgg_demo",
           "member": "string",
           "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EsImportInfo": {
+      "document": "Es导入信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导入模式。\n1. 导入历史数据\n2. 导入实时数据",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。 单位:秒级时间戳。\n",
+          "example": "1739783039",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。 单位：秒级时间戳。",
+          "example": "1739784039",
+          "member": "uint64",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大延迟时间。单位：s\n\n导入模式为 2: 导入实时数据时必填",
+          "example": "600",
+          "member": "uint64",
+          "name": "MaxDelay",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查间隔。单位：s\n\n导入模式为 2: 导入实时数据时必填",
+          "example": "60",
+          "member": "uint64",
+          "name": "CheckInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EsInfo": {
+      "document": "es集群配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "es类型。 1:云es, 2:自建es",
+          "example": "2",
+          "member": "uint64",
+          "name": "EsType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问方式 1:内网, 2:外网。自建es必填",
+          "example": "2",
+          "member": "uint64",
+          "name": "AccessMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id。云es实例必填",
+          "example": "es-fbs7gqxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名。",
+          "example": "user",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问地址。自建es必填",
+          "example": "10.0.0.10",
+          "member": "string",
+          "name": "Address",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问端口。自建es必填",
+          "example": "9200",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属网络。自建es且访问方式为内网访问时必填",
+          "example": "vpc-xymnt",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络服务类型。自建es且访问方式为内网访问时必填。\n负载均衡 CLB:1025 云服务器CVM:0",
+          "example": "1025",
+          "member": "uint64",
+          "name": "VirtualGatewayType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码。",
+          "example": "password",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EsRechargeInfo": {
+      "document": "es导入配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id。",
+          "example": "4cc398ff-a952-4318-abfa-b5a370017466",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号id。",
+          "example": "100000007129",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "example": "871710c5-35cd-4d1e-8e79-2fa92c35d612",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置名称。",
+          "example": "export_1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "es索引。",
+          "example": "base-2026-01-*",
+          "member": "string",
+          "name": "Index",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "es查询语句。",
+          "example": "tags.service.name:session",
+          "member": "string",
+          "name": "Query",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "es集群信息。",
+          "example": "无",
+          "member": "EsInfo",
+          "name": "EsInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "es导入信息。",
+          "example": "无",
+          "member": "EsImportInfo",
+          "name": "ImportInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "es导入时间配置信息。",
+          "example": "无",
+          "member": "EsTimeInfo",
+          "name": "TimeInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。\n1. 运行中\n2. 暂停\n3. 完成\n4. 异常",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度 0~100 百分比。100：表示完成。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号id。",
+          "example": "19745641",
+          "member": "uint64",
+          "name": "SubUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "1739784039",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间。",
+          "example": "1739784039",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递服务日志。1：关闭，2：开启。",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EsTimeInfo": {
+      "document": "Es导入时间字段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间类型 1: 日志采集时间 2: 指定日志字段",
+          "example": "2",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志时间字段。\n\n时间类型为 2: 指定日志字段时必填",
+          "example": "time_key",
+          "member": "string",
+          "name": "TimeKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志时间格式。\n\n时间类型为 2: 指定日志字段时必填",
+          "example": "%Y-%m-%d %H:%M:%S.%f",
+          "member": "string",
+          "name": "TimeFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间字段时区。\n\n时间类型为 2: 指定日志字段时必填",
+          "example": "UTC+08:00",
+          "member": "string",
+          "name": "TimeZone",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -11780,6 +14685,33 @@
       ],
       "type": "object"
     },
+    "GetMetricLabelValuesRequest": {
+      "document": "GetMetricLabelValues请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetMetricLabelValuesResponse": {
+      "document": "GetMetricLabelValues返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时序metric label values",
+          "example": "[\"123\",\"456\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GroupPartitionInfo": {
       "document": "kafka协议消费组区分信息",
       "members": [
@@ -11934,6 +14866,220 @@
         }
       ],
       "usage": "both"
+    },
+    "HostMetricConfig": {
+      "document": "主机指标采集配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集配置 id",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "ConfigId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集配置名称",
+          "example": "主机指标采集",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集频率,单位ms",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Interval",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集项.",
+          "example": "无",
+          "member": "HostMetricItem",
+          "name": "HostMetricItems",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器组 id 列表",
+          "example": "[\"715094e3-01b0-4aeb-91f5-ee9f46a4a13b\"]",
+          "member": "string",
+          "name": "MachineGroupIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1748505992",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "1748505992",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HostMetricItem": {
+      "document": "主机指标采集项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主机指标采集项类型。支持\"cpu\"，\"mem\"，\"net\"，\"disk\"，\"system\"。\n\n- cpu：CPU\n- mem：内存\n- net：网络\n- disk：磁盘\n- system：系统",
+          "example": "cpu",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Instance": {
+      "document": "实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例信息",
+          "example": "[\"key1-value\",\"key2-value\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceConfig": {
+      "document": "实例配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例维度",
+          "example": "[\"bucket\",\"appid\"]",
+          "member": "string",
+          "name": "InstanceDimension",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例值",
+          "example": "无",
+          "member": "Instance",
+          "name": "Instances",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceData": {
+      "document": "云产品指标订阅预览结果实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云监控指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MemUsed",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLS指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qce_cvm_memused_60_avg",
+          "member": "string",
+          "name": "CLSMetricName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云产品命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "QCE/CVM",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "周期,单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "uint64",
+          "name": "Period",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标统计值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90",
+          "member": "float",
+          "name": "Value",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "err_msg",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "JsonInfo": {
       "document": "JSON类型描述",
@@ -12303,6 +15449,45 @@
           "required": true,
           "type": "object",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Label": {
+      "document": "标签结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签的键。有效标签键有两个部分：可选前缀和名称，以斜杠 (/) 分隔。名称部分是必需的，并且必须不超过 63 个字符，以字母数字字符 ([a-z0-9A-Z]) 开头和结尾，中间有破折号(-)、下划线(_)、点(.) 和字母数字。前缀是可选的。如果指定，前缀必须是 DNS 子域：一系列以点 (.) 分隔的 DNS 标签，总长度不超过 253 个字符，后跟斜杠 ( /)。\n\n-  prefix 格式  `[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*`\n-  name 格式 `([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9]`\n- key不能重复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签键值直接的比较关系。 不同业务场景支持的比较符不同，具体支持那些参考接口业务描述。\n例如：`in`、`notin`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "in",
+          "member": "string",
+          "name": "Operate",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签的值.\n- 最大支持63个字符。\n- 格式：`([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9]`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"k8s-x\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -13183,6 +16368,338 @@
       ],
       "usage": "both"
     },
+    "MetadataInfo": {
+      "document": "Splunk任务投递元信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据格式,rawlog/json",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递字段，包括\\_\\_SOURCE\\_\\_、\\_\\_FILENAME\\_\\_\n、\\_\\_TIMESTAMP\\_\\_、\\_\\_HOSTNAME\\_\\_、\\_\\_PKG\\_ID\\_\\_",
+          "example": "[\"__SOURCE__\",\"__FILENAME__\",\"__TIMESTAMP__\",\"__HOSTNAME__\"]",
+          "member": "string",
+          "name": "MetaFields",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否投递__TAG__字段",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableTag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "JSON是否平铺，投递__TAG__字段时必填",
+          "example": "false",
+          "member": "bool",
+          "name": "TagJsonTiled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MetricCollectConfig": {
+      "document": "指标采集配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集配置id",
+          "example": "c10ce223-4f2c-4832-a61b-2388a675a230",
+          "member": "string",
+          "name": "ConfigId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id。",
+          "example": "[\"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\"]",
+          "member": "string",
+          "name": "TopicIds",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集配置来源。支持 ：`0`、`1`\n- 0:自建k8s\n- 1:TKE",
+          "example": "0",
+          "member": "uint64",
+          "name": "Source",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器组id。",
+          "example": "[\"47532156-1731-4163-84ef-50e96bf7c300\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控类型。支持 ：`0`、`1`，不支持修改\n\n- 0:基础监控\n- 1:自定义监控, ",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集配置方式。支持 ：`0`、`1`，不支持修改\n- 0:普通配置方式，Type字段只能为：`1`\n- 1:YAML导入方式，Type 可以是：`0`或者`1`",
+          "example": "0",
+          "member": "uint64",
+          "name": "Flag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称：长度不超过253字符，校验格式  ` [a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "template-1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集对象, Flag=0时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricSpec",
+          "name": "Spec",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签处理, Flag=0时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Relabeling",
+          "name": "MetricRelabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义元数据, Flag=0时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricConfigLabel",
+          "name": "MetricLabel",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通信协议 `http`、`https`；Flag=0时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http",
+          "member": "string",
+          "name": "Scheme",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集频率,  Flag=0时生效\n- 校验格式：`^(((\\d+)y)?((\\d+)w)?((\\d+)d)?((\\d+)h)?((\\d+)m)?((\\d+)s)?((\\d+)ms)?|0)$`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60s",
+          "member": "string",
+          "name": "ScrapeInterval",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集超时时间。  Flag=0 && Type=1时生效\n- format:`^(((\\d+)y)?((\\d+)w)?((\\d+)d)?((\\d+)h)?((\\d+)m)?((\\d+)s)?((\\d+)ms)?|0)$`\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30s",
+          "member": "string",
+          "name": "ScrapeTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Prometheus如何处理标签之间的冲突。当Flag=0生效，支持`true`,`false`\n\n- `false`:配置数据中冲突的标签重命名\n- `true`:忽略冲突的服务器端标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "HonorLabels",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集配置yaml格式字符串, Flag=1时必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricYamlSpec",
+          "name": "YamlSpec",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作状态,0:应用,1:暂停",
+          "example": "0",
+          "member": "uint64",
+          "name": "Operate",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间戳 秒级",
+          "example": "1722945389",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间戳 秒级",
+          "example": "1722945399",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MetricConfig": {
+      "document": "指标配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "metric_name",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计周期,单位:秒（s）",
+          "example": "[60,120]",
+          "member": "uint64",
+          "name": "Periods",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义指标标签",
+          "example": "无",
+          "member": "MetricLabel",
+          "name": "MetricLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MetricConfigLabel": {
+      "document": "指标采集label配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元数据。\n支持\n- `namespace`\n- `pod_name`\n- `pod_ip`\n- `pod_uid`\n- `container_name`\n- `container_id`\n- `image_name`\n- `cluster_id`\n- `node_id`\n- `node_ip`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"namespace\",\"pod_name\"]",
+          "member": "string",
+          "name": "Metadata",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元数据Pod Label信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppointLabel",
+          "name": "Label",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义label信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomLabel",
+          "name": "CustomLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "MetricLabel": {
       "document": "过滤器",
       "members": [
@@ -13207,6 +16724,167 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MetricSpec": {
+      "document": "采集对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义指标采集配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomMetricSpec",
+          "name": "CustomSpecs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MetricSubscribeInfo": {
+      "document": "指标订阅配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅任务id。",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅任务名称。",
+          "example": "template_name",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云产品命名空间。",
+          "example": "cvm",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标配置信息。",
+          "example": "无",
+          "member": "MetricConfig",
+          "name": "Metrics",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例配置信息。",
+          "example": "无",
+          "member": "InstanceConfig",
+          "name": "InstanceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅任务开关。1:暂停 2:启用",
+          "example": "2",
+          "member": "uint64",
+          "name": "Enable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅任务运行状态。0:创建中 1:暂停 2:运行中 3:异常",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅任务运行异常时的错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（秒级时间戳）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间（秒级时间戳）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MetricYamlSpec": {
+      "document": "指标采集yaml格式配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "yaml监控类型。\n支持：\n- PodMonitor\n- ServiceMonitor\n- ScrapeConfig\n- ScrapeConfig-prometheus\n\n`PodMonitor `,`ServiceMonitor `,`ScrapeConfig ` 属于prometheus-operator\n`ScrapeConfig-prometheus` 属于prometheus\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ServiceMonitor",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置yaml格式。\n例如：Type: ServiceMonitor\n\n\n```\napiVersion: monitoring.coreos.com/v1\nkind: ServiceMonitor\nmetadata:\n  name: test\n  namespace: test\n  labels:\n    k8s-app1: test\n    k8s-app2: test\nspec:\n  endpoints:\n    - interval: 15s\n      port: 8080-8080-tcp\n      path: /metrics\n      relabelings:\n        - action: replace\n          sourceLabels:\n            - __meta_kubernetes_pod_label_app\n          targetLabel: application\n  namespaceSelector:\n    matchNames:\n      - test\n  selector:\n    matchLabels:\n      app: test\n```\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " \"apiVersion: monitoring.coreos.com/v1\\nkind: ServiceMonitor\\nmetadata:\\n  name: test\\n  namespace: test\\n  labels:\\n    k8s-app1: test\\n    k8s-app2: test\\nspec:\\n  endpoints:\\n    - interval: 15s\\n      port: 8080-8080-tcp\\n      path: /metrics\\n      relabelings:\\n        - action: replace\\n          sourceLabels:\\n            - __meta_kubernetes_pod_label_app\\n          targetLabel: application\\n  namespaceSelector:\\n    matchNames:\\n      - test\\n  selector:\\n    matchLabels:\\n      app: test\"",
+          "member": "string",
+          "name": "Spec",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -14012,6 +17690,60 @@
       ],
       "type": "object"
     },
+    "ModifyConsumerGroupRequest": {
+      "document": "ModifyConsumerGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新的目标消费者组标识",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费者心跳超时时间（秒）",
+          "example": "无",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "更新的消费者组包含的日志主题列表",
+          "example": "无",
+          "member": "string",
+          "name": "Topics",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志集Id（日志主题所属的日志集）",
+          "example": "无",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConsumerGroupResponse": {
+      "document": "ModifyConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyConsumerRequest": {
       "document": "ModifyConsumer请求参数结构体",
       "members": [
@@ -14534,6 +18266,186 @@
       ],
       "type": "object"
     },
+    "ModifyEsRechargeRequest": {
+      "document": "ModifyEsRecharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导入任务id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称：长度不超过64字符。",
+          "example": "template_1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "索引信息。不同索引可以通过英文逗号分隔，支持*通配符",
+          "example": "base-2026-01-*",
+          "member": "string",
+          "name": "Index",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "es查询语句。",
+          "example": "tags.service.name:session",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "es集群配置信息。",
+          "example": "无",
+          "member": "EsInfo",
+          "name": "EsInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "es导入信息。",
+          "example": "无",
+          "member": "EsImportInfo",
+          "name": "ImportInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "es导入时间字段信息。",
+          "example": "无",
+          "member": "EsTimeInfo",
+          "name": "TimeInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。1:运行， 2:暂停",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递服务日志。1：关闭，2：开启。",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEsRechargeResponse": {
+      "document": "ModifyEsRecharge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostMetricConfigRequest": {
+      "document": "ModifyHostMetricConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集配置id",
+          "example": "e542d884-f08b-4be9-b700-2a99d9aa1545",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称。\n\n- 长度不超过 64字符。",
+          "example": "template-1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机器组id列表。最多支持100个机器组。",
+          "example": "[\"81853bcf-67b4-4a4f-82c7-7882fd004613\"]",
+          "member": "string",
+          "name": "MachineGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "采集频率。单位:ms。 最小支持5000ms",
+          "example": "5000",
+          "member": "uint64",
+          "name": "Interval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "采集项。支持\"cpu\"，\"mem\"，\"net\"，\"disk\"，\"system\"。**目前仅支持:所有采集项都需配置**。\n- cpu：CPU\n- mem：内存\n- net：网络\n- disk：磁盘\n- system：系统\n",
+          "example": "无",
+          "member": "HostMetricItem",
+          "name": "HostMetricItems",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyHostMetricConfigResponse": {
+      "document": "ModifyHostMetricConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyIndexRequest": {
       "document": "ModifyIndex请求参数结构体",
       "members": [
@@ -14966,6 +18878,222 @@
       ],
       "type": "object"
     },
+    "ModifyMetricConfigRequest": {
+      "document": "ModifyMetricConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标日志主题id。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。注意BizType 0:日志主题（默认值）， 1:指标主题",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标采集配置id",
+          "example": "47532156-1731-4163-84ef-50e96bf7c300",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集配置来源。支持 ：`0`、`1`\n- 0:自建k8s\n- 1:TKE",
+          "example": "0",
+          "member": "uint64",
+          "name": "Source",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "机器组id。",
+          "example": "[\"81853bcf-67b4-4a4f-82c7-7882fd004613\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作状态,0:应用,1:暂停",
+          "example": "1",
+          "member": "uint64",
+          "name": "Operate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "采集对象, Flag=0时生效",
+          "example": "无",
+          "member": "MetricSpec",
+          "name": "Spec",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标签处理, Flag=0时生效",
+          "example": "无",
+          "member": "Relabeling",
+          "name": "MetricRelabels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义元数据, Flag=0时生效",
+          "example": "无",
+          "member": "MetricConfigLabel",
+          "name": "MetricLabel",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "通信协议 `http`、`https`；Flag=0时生效",
+          "example": "http",
+          "member": "string",
+          "name": "Scheme",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集频率,  Flag=0时生效\n- 校验格式：`^(((\\d+)y)?((\\d+)w)?((\\d+)d)?((\\d+)h)?((\\d+)m)?((\\d+)s)?((\\d+)ms)?|0)$`\n- 默认：60s",
+          "example": "60s",
+          "member": "string",
+          "name": "ScrapeInterval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "采集超时时间。   Flag=0时生效\n- 校验格式：`^(((\\d+)y)?((\\d+)w)?((\\d+)d)?((\\d+)h)?((\\d+)m)?((\\d+)s)?((\\d+)ms)?|0)$`",
+          "example": "30s",
+          "member": "string",
+          "name": "ScrapeTimeout",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Prometheus如何处理标签之间的冲突。当Flag=0 && Type=1时生效，支持`true`,`false`\n- `false`:配置数据中冲突的标签重命名\n- `true`:忽略冲突的服务器端标签",
+          "example": "false",
+          "member": "bool",
+          "name": "HonorLabels",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "采集配置yaml格式字符串, Flag=1时必填",
+          "example": "无",
+          "member": "MetricYamlSpec",
+          "name": "YamlSpec",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMetricConfigResponse": {
+      "document": "ModifyMetricConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMetricSubscribeRequest": {
+      "document": "ModifyMetricSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标采集任务的日志主题id。必填字段",
+          "example": "715094e3-01b0-4aeb-91f5-ee9f46a4a13c",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标采集任务id。必填字段",
+          "example": "5871c48d-219b-4274-829b-5aa7fb24229b",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "名称：长度不超过64字符，以字母开头，接受0-9,a-z,A-Z, _,-,中文字符。",
+          "example": "template_1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云产品命名空间。",
+          "example": "QCE/CVM",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标配置信息。",
+          "example": "无",
+          "member": "MetricConfig",
+          "name": "Metrics",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例配置信息。",
+          "example": "无",
+          "member": "InstanceConfig",
+          "name": "InstanceInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。\n\n1： 未启用\n\n2： 启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enable",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMetricSubscribeResponse": {
+      "document": "ModifyMetricSubscribe返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyNoticeContentRequest": {
       "document": "ModifyNoticeContent请求参数结构体",
       "members": [
@@ -15280,6 +19408,132 @@
     },
     "ModifyShipperResponse": {
       "document": "ModifyShipper返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySplunkDeliverRequest": {
+      "document": "ModifySplunkDeliver请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "111024e3-01b0-4aeb-91f5-ee",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id\n- 通过[获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。",
+          "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递任务名称\nname有以下限制：\n- 不能为空\n- 长度不大于64\n- 只能包含aA-zZ、下划线、-、0-9",
+          "example": "template-1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递任务启用状态；0:禁用；1:启用",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "splunk投递任务-目标配置",
+          "example": "无",
+          "member": "NetInfo",
+          "name": "NetInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "splunk投递任务元信息",
+          "example": "无",
+          "member": "MetadataInfo",
+          "name": "MetadataInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用服务日志；1:关闭；2:开启",
+          "example": "1",
+          "member": "int64",
+          "name": "HasServiceLog",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-是否启用索引器;\n1-不开启；2-开启；默认为：1",
+          "example": "1",
+          "member": "int64",
+          "name": "IndexAck",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-数据来源；不超过64个字符",
+          "example": "client-1",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-数据来源类型；不超过64个字符",
+          "example": "json",
+          "member": "string",
+          "name": "SourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-Splunk写入的索引；不超过64个字符",
+          "example": "main",
+          "member": "string",
+          "name": "Index",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-通道。\n需满足限制：如果启用索引器，该值不能为空",
+          "example": "template-1",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySplunkDeliverResponse": {
+      "document": "ModifySplunkDeliver返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15672,6 +19926,89 @@
         }
       ],
       "usage": "in"
+    },
+    "NetInfo": {
+      "document": "Splunk投递任务-目标配置网络信息相关",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "8080",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证token",
+          "example": "abce",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络类型;1：内网；2:外网",
+          "example": "1",
+          "member": "uint64",
+          "name": "NetType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属网络；如果网络类型为内网，该字段必填",
+          "example": "vpc-ab12",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络服务类型；如果网络类型为内网，该字段必填\n- 0:云上cvm\n- 3:云上专线网关\n- 11:云联网\n- 1025:云上clb",
+          "example": "0",
+          "member": "uint64",
+          "name": "VirtualGatewayType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证机制，是否使用SSL，默认不使用",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSSL",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "NoticeContent": {
       "document": "通知内容模板详细配置",
@@ -16189,6 +20526,34 @@
       ],
       "usage": "out"
     },
+    "PartitionOffsetInfo": {
+      "document": "PartitionOffsetInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分区id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "PartitionId",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "offset点位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PreviewKafkaRechargeRequest": {
       "document": "PreviewKafkaRecharge请求参数结构体",
       "members": [
@@ -16545,6 +20910,89 @@
         }
       ],
       "type": "object"
+    },
+    "Relabeling": {
+      "document": "标签重新标记配置。\n允许动态重写目标、警报、抓取样本和远程写入样本的标签集。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "基于正则表达式匹配执行的动作。\n- replace: Label替换, 必填: SourceLabels, Separator, Regex, TargetLabel, Replacement\n- labeldrop: 丢弃Label, 必填: Regex\n- labelkeep: 保留Label, 必填: Regex\n- lowercase: 小写化, 必填: SourceLabels, Separator, TargetLabel\n- uppercase: 大写化, 必填: SourceLabels, Separator, TargetLabel\n- dropequal: 丢弃指标-完全匹配, 必填: SourceLabels, Separator, TargetLabel\n- keepequal: 保留指标-完全匹配, 必填: SourceLabels, Separator, TargetLabel\n- drop: 丢弃指标-正则匹配, 必填: SourceLabels, Separator, Regex\n- keep: 保留指标-正则匹配, 必填: SourceLabels, Separator, Regex\n- hashmod:哈希取模, 必填: SourceLabels, Separator, TargetLabel, Modulus\n- labelmap:Label映射, 必填: Regex, Replacement\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "replace",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"__meta_kubernetes_pod_label_app\"]",
+          "member": "string",
+          "name": "SourceLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始label连接符。 必填时不能为空串， 长度不能超过256\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": ";",
+          "member": "string",
+          "name": "Separator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标label。必填时不能为空串，校验格式：`^[a-zA-Z_][a-zA-Z0-9_]*$` ， 长度不能超过256\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "application",
+          "member": "string",
+          "name": "TargetLabel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "替换值。如果正则表达式匹配，则对其执行替换操作。\n- 必填时不能为空串，长度不能超过256\n- 当action为LabelMap时， Replacement 校验格式：`^(?:(?:[a-zA-Z_]|\\$(?:\\{\\w+\\}|\\w+))+\\w*)+$`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Replacement",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "正则表达式。提取与之匹配值。必填时不能为空串，校验必须是一个合法的 RE2 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "(.*)",
+          "member": "string",
+          "name": "Regex",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "获取源标签值的哈希值。必填时不能为空,不能为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Modulus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "RetryShipperTaskRequest": {
       "document": "RetryShipperTask请求参数结构体",
@@ -17506,6 +21954,80 @@
       ],
       "usage": "out"
     },
+    "SendConsumerHeartbeatRequest": {
+      "document": "SendConsumerHeartbeat请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上报心跳的消费组标识",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上报心跳的消费者名称\n（字母数字下划线，不允许数字、_开头， 长度小于256）",
+          "example": "无",
+          "member": "string",
+          "name": "Consumer",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID",
+          "example": "无",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "topic 分区信息",
+          "example": "无",
+          "member": "TopicPartitionInfo",
+          "name": "TopicPartitionsInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SendConsumerHeartbeatResponse": {
+      "document": "SendConsumerHeartbeat返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题对应的消费组标识",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区信息",
+          "example": "无",
+          "member": "TopicPartitionInfo",
+          "name": "TopicPartitionsInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ShipperInfo": {
       "document": "投递规则",
       "members": [
@@ -17902,6 +22424,172 @@
       ],
       "type": "object"
     },
+    "SplunkDeliverInfo": {
+      "document": "Splunk投递任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "111024e3-01b0-4aeb-91f5-ee",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "template-1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "198644793323",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题id",
+          "example": "06cc3d03-44a0-4d94-89c2-aeac27a1d9f1",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态；1.运行中；2:暂停；3：异常",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用状态；0:禁用；1:启用",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间；单位：秒",
+          "example": "1741005340",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间；单位：秒",
+          "example": "1741005340",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "splunk投递任务-目标配置",
+          "example": "无",
+          "member": "NetInfo",
+          "name": "NetInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "splunk投递任务元信息",
+          "example": "无",
+          "member": "MetadataInfo",
+          "name": "Metadata",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用服务日志；1:关闭；2:开启",
+          "example": "2",
+          "member": "int64",
+          "name": "HasServiceLog",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-数据来源；",
+          "example": "client-01",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-数据来源类型；",
+          "example": "json",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-Splunk写入的索引",
+          "example": "main",
+          "member": "string",
+          "name": "Index",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-是否启用索引器；1-不开启；2-开启；",
+          "example": "1",
+          "member": "int64",
+          "name": "IndexAck",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高级配置-通道",
+          "example": "template",
+          "member": "string",
+          "name": "Channel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Tag": {
       "document": "创建资源实例时同时绑定的标签对说明",
       "members": [
@@ -18236,6 +22924,62 @@
         }
       ],
       "usage": "out"
+    },
+    "TopicPartitionInfo": {
+      "document": "Partitions",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TopicID",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Partitions",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TopicPartitionOffsetInfo": {
+      "document": "TopicPartitionOffsetInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TopicID",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区点位信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PartitionOffsetInfo",
+          "name": "PartitionOffsets",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "UploadLogRequest": {
       "document": "UploadLog请求参数结构体",

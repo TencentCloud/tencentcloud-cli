@@ -5884,6 +5884,15 @@
           "name": "PreprocessOperation",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "静音开关，仅对视频类型媒体生效。取值有：\n<li>ON：视频媒体开启静音，该段媒体在导出中会屏蔽音频；</li>\n<li>OFF：视频媒体关闭静音；</li>\n\n注：默认为 OFF，即不对视频媒体的音频做静音处理。",
+          "example": "ON",
+          "member": "string",
+          "name": "MuteSwitch",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

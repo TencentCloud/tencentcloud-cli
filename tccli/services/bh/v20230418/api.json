@@ -7483,6 +7483,34 @@
       ],
       "type": "object"
     },
+    "EnvInternetAccessSetting": {
+      "document": "大区环境网络配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true：不能访问公网",
+          "example": "true",
+          "member": "bool",
+          "name": "DisableExternalAccess",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true：不能创建数据下载权限",
+          "example": "true",
+          "member": "bool",
+          "name": "DisableDownloadDataAcl",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExternalDevice": {
       "document": "主机参数，导入外部主机时使用",
       "members": [
@@ -10000,7 +10028,7 @@
         {
           "disabled": false,
           "document": "外部IP",
-          "example": "192.168.41.10",
+          "example": "[\"192.168.41.10\"]",
           "member": "string",
           "name": "PublicIpSet",
           "output_required": true,
@@ -10010,7 +10038,7 @@
         {
           "disabled": false,
           "document": "内部IP",
-          "example": "172.10.12.13",
+          "example": "[\"172.10.12.13\"]",
           "member": "string",
           "name": "PrivateIpSet",
           "output_required": true,
@@ -10080,7 +10108,7 @@
         {
           "disabled": false,
           "document": "堡垒机资源LB\t",
-          "example": "[{\"ClbIp\":\"192.177.15.21\"}]",
+          "example": "无",
           "member": "Clb",
           "name": "ClbSet",
           "output_required": false,
@@ -10173,6 +10201,16 @@
           "example": "vpc-se23s3rf",
           "member": "string",
           "name": "IntranetVpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开通内网访问的subnetId",
+          "example": "subnet-32dw32",
+          "member": "string",
+          "name": "IntranetSubnetId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12153,7 +12191,7 @@
         {
           "disabled": false,
           "document": "国密认证方式设置",
-          "example": "{\"AuthMode\": 3}",
+          "example": "无",
           "member": "AuthModeSetting",
           "name": "AuthModeGM",
           "output_required": false,
@@ -12164,9 +12202,20 @@
         {
           "disabled": false,
           "document": "资产重连次数",
-          "example": "{\"ReconnectionMaxCount\": 3}",
+          "example": "无",
           "member": "ReconnectionSetting",
           "name": "Reconnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大区环境网络设置",
+          "example": "无",
+          "member": "EnvInternetAccessSetting",
+          "name": "EnvInternetAccess",
           "output_required": false,
           "required": false,
           "type": "object",

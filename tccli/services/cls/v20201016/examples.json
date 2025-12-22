@@ -40,6 +40,14 @@
         "title": "关闭Kafka协议消费"
       }
     ],
+    "CommitConsumerOffsets": [
+      {
+        "document": "提交心跳信息",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitConsumerOffsets\n<公共请求参数>\n\n{\n    \"ConsumerGroup\": \"test-123\",\n    \"Consumer\": \"test-123-01\",\n    \"LogsetId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\",\n    \"TopicPartitionOffsetsInfo\": [\n        {\n            \"TopicID\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\",\n            \"PartitionOffsets\": [\n                {\n                    \"PartitionId\": 1,\n                    \"Offset\": 1\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n    }\n}",
+        "title": "提交心跳信息"
+      }
+    ],
     "CreateAlarm": [
       {
         "document": "创建告警策略",
@@ -128,6 +136,14 @@
         "title": "创建投递Ckafka任务"
       }
     ],
+    "CreateConsumerGroup": [
+      {
+        "document": "创建消费组",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsumerGroup\n<公共请求参数>\n\n{\n    \"ConsumerGroup\": \"test-123\",\n    \"Timeout\": 1,\n    \"Topics\": [\n        \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n    ],\n    \"LogsetId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsumerGroup\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\",\n        \"RequestId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1xx\"\n    }\n}",
+        "title": "创建消费组"
+      }
+    ],
     "CreateCosRecharge": [
       {
         "document": "创建cos导入任务",
@@ -174,12 +190,28 @@
         "title": "创建dlc投递任务"
       }
     ],
+    "CreateEsRecharge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEsRecharge\n<公共请求参数>\n\n{\n    \"Name\": \"template_1\",\n    \"TopicId\": \"0335dd94-e327-435c-938c-d9d7a4525d45\",\n    \"Query\": \"\",\n    \"Index\": \"65cdbbea-a06e-4e3b-a7a8-d8b365240f62_search\",\n    \"ImportInfo\": {\n        \"Type\": 2,\n        \"StartTime\": 1763367159,\n        \"MaxDelay\": 600,\n        \"CheckInterval\": 60\n    },\n    \"TimeInfo\": {\n        \"Type\": 2,\n        \"TimeKey\": \"@timestamp\",\n        \"TimeFormat\": \"%Y-%m-%d %H:%M:%S.%f\",\n        \"TimeZone\": \"UTC+08:00\"\n    },\n    \"EsInfo\": {\n        \"EsType\": 2,\n        \"AccessMode\": 1,\n        \"User\": \"elastic\",\n        \"Password\": \"abc@***0\",\n        \"Address\": \"127.0.0.1\",\n        \"Port\": 9200,\n        \"VpcId\": \"vpc-***k\",\n        \"VirtualGatewayType\": 1025\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"fc9170c0-95b9-4553-8f2d-32b12bf9d4d7\",\n        \"RequestId\": \"609a4b29-4e49-4f34-bbca-b01a1e04f0b5\"\n    }\n}",
+        "title": "创建es导入任务"
+      }
+    ],
     "CreateExport": [
       {
         "document": "创建日志下载任务",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExport\n<公共请求参数>\n\n{\n    \"TopicId\": \"ee20bb16-3025-4048-b81a-dd436373062e\",\n    \"Query\": \"status:200\",\n    \"Count\": 100,\n    \"Order\": \"desc\",\n    \"Format\": \"json\",\n    \"From\": 1607499107000,\n    \"To\": 1607499207000\n}",
         "output": "{\n    \"Response\": {\n        \"ExportId\": \"57196a6a-7622-47be-bc92-d2ebea959a0f\",\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "创建日志下载任务"
+      }
+    ],
+    "CreateHostMetricConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHostMetricConfig\n<公共请求参数>\n\n{\n    \"TopicId\": \"55fdd8a0-1a33-4ce3-8166-01f2361f0cdf\",\n    \"Name\": \"host_metric_config_test\",\n    \"MachineGroupIds\": [\n        \"c8bdead9-0170-4d69-ab08-5caa607b76d0\"\n    ],\n    \"Interval\": 50000,\n    \"HostMetricItems\": [\n        {\n            \"Type\": \"cpu\"\n        },\n        {\n            \"Type\": \"mem\"\n        },\n        {\n            \"Type\": \"net\"\n        },\n        {\n            \"Type\": \"disk\"\n        },\n        {\n            \"Type\": \"system\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigId\": \"e542d884-f08b-4be9-b700-2a99d9aa1545\",\n        \"RequestId\": \"2a1f4deb-c47a-46d4-bb7a-565a17e6aa38\"\n    }\n}",
+        "title": "创建主机指标采集配置"
       }
     ],
     "CreateIndex": [
@@ -214,6 +246,22 @@
         "title": "创建机器组"
       }
     ],
+    "CreateMetricConfig": [
+      {
+        "document": "创建基础监控指标采集配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetricConfig\n<公共请求参数>\n\n{\n    \"TopicId\": \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\",\n    \"Source\": 1,\n    \"GroupIds\": [\n        \"886bf7a8-7340-4314-8d64-b360da0ffd78\"\n    ],\n    \"Type\": 1,\n    \"Flag\": 1,\n    \"YamlSpec\": {\n        \"Type\": \"ScrapeConfig-prometheus\",\n        \"Spec\": \"scrape_configs:\\n- job_name: cadvisor\\n  honor_timestamps: false\\n  metrics_path: /metrics\\n  scheme: https\\n  kubernetes_sd_configs:\\n  - role: node\\n  bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\n  tls_config:\\n    ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt\\n  relabel_configs:\\n  - source_labels: [__meta_kubernetes_node_name]\\n    separator: ;\\n    regex: (.*)\\n    target_label: __address__\\n    replacement: kubernetes.default.svc:443\\n    action: replace\\n  - source_labels: [__meta_kubernetes_node_name]\\n    separator: ;\\n    regex: (.+)\\n    target_label: __metrics_path__\\n    replacement: /api/v1/nodes/${1}/proxy/metrics/cadvisor\\n    action: replace\\n  - separator: ;\\n    regex: __meta_kubernetes_node_label_(.+)\\n    replacement: $1\\n    action: labelmap\\n  - separator: ;\\n    regex: eks_tke_cloud_tencent_com_(.+)\\n    replacement: $1\\n    action: labeldrop\\n  metric_relabel_configs:\\n  - source_labels: [container_name]\\n    separator: ;\\n    regex: (.+)\\n    target_label: container\\n    replacement: $1\\n    action: replace\\n  - source_labels: [pod_name]\\n    separator: ;\\n    regex: (.+)\\n    target_label: pod\\n    replacement: $1\\n    action: replace\\n  - source_labels: [container]\\n    separator: ;\\n    regex: (.*)\\n    replacement: $1\\n    action: keep\\n---\\nscrape_configs:\\n- job_name: kube-state-metric\\n  honor_timestamps: true\\n  metrics_path: /metrics\\n  scheme: http\\n  kubernetes_sd_configs:\\n  - role: endpoints\\n    namespaces:\\n      names:\\n      - kube-system\\n    selectors:\\n      - label: \\\"app.kubernetes.io/name==kube-state-metrics\\\"\\n        role: endpoints\\n  bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\n  tls_config:\\n    insecure_skip_verify: true\\n  metric_relabel_configs:\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_requests;cpu;core\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_requests_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_limits;cpu;core\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_limits_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_requests;memory;byte\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_requests_memory_bytes\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_limits;memory;byte\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_limits_memory_bytes\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_capacity;cpu;core\\n    target_label: __name__\\n    replacement: kube_node_status_capacity_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_capacity;memory;byte\\n    target_label: __name__\\n    replacement: kube_node_status_capacity_memory_bytes\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_allocatable;cpu;core\\n    target_label: __name__\\n    replacement: kube_node_status_allocatable_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_allocatable;memory;byte\\n    target_label: __name__\\n    replacement: kube_node_status_allocatable_memory_bytes\\n    action: replace\\n---\\nscrape_configs:\\n- job_name: node-exporter\\n  honor_timestamps: true\\n  metrics_path: /metrics\\n  scheme: http\\n  kubernetes_sd_configs:\\n  - role: endpoints\\n    namespaces:\\n      names:\\n      - kube-system\\n    selectors:\\n    - label: \\\"app.kubernetes.io/name==node-exporter\\\"\\n      role: endpoints\\n  bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\n  tls_config:\\n    insecure_skip_verify: true\\n  relabel_configs:\\n  - separator: ;\\n    action: replace\\n    regex: (.*)\\n    replacement: $1\\n    source_labels: [__meta_kubernetes_pod_node_name]\\n    target_label: instance\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigIds\": [\n            \"1bfadff7-9c5d-48c2-b985-21670d9d007e\",\n            \"82182b27-7997-439d-bcc3-22a5c9da3bc4\",\n            \"b8c24595-6fce-489c-8488-9d2db440fd9d\"\n        ],\n        \"RequestId\": \"e163af1b-fd31-4cef-b820-cb897e4644cf\"\n    }\n}",
+        "title": "创建指标采集"
+      }
+    ],
+    "CreateMetricSubscribe": [
+      {
+        "document": "创建指标订阅配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMetricSubscribe\n<公共请求参数>\n\n{\n    \"Name\": \"metric_subscribe_name\",\n    \"TopicId\": \"715094e3-01b0-4aeb-91f5-ee9f46a4a13c\",\n    \"Namespace\": \"QCE/CVM\",\n    \"Metrics\": [\n        {\n            \"MetricName\": \"metric name\",\n            \"Periods\": [\n                60,\n                120\n            ],\n            \"MetricLabels\": [\n                {\n                    \"Key\": \"label_key\",\n                    \"Value\": \"label_value\"\n                }\n            ]\n        }\n    ],\n    \"InstanceInfo\": {\n        \"InstanceDimension\": [\n            \"bucket\",\n            \"appid\"\n        ],\n        \"Instances\": [\n            {\n                \"Values\": [\n                    \"bucket_asdfa-asdf-asdf-ads\",\n                    \"12325435\"\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"c03bf755-0482-4903-a210-2a318cde922e\",\n        \"RequestId\": \"4a3c7ea9-02fa-4d33-b626-6cd496d0e300\"\n    }\n}",
+        "title": "创建指标订阅配置"
+      }
+    ],
     "CreateNoticeContent": [
       {
         "document": "创建通知内容信息",
@@ -236,6 +284,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateShipper\n<公共请求参数>\n\n{\n    \"TopicId\": \"fadcc986-xxxx-xxxx-b766-9ce9c193da32\",\n    \"Bucket\": \"examplebucket-1250000000\",\n    \"Prefix\": \"bow-test-1250000000\",\n    \"ShipperName\": \"bow-投递任务\",\n    \"Interval\": 300,\n    \"MaxSize\": 5,\n    \"FilenameMode\": 1,\n    \"FilterRules\": [\n        {\n            \"Key\": \"http\",\n            \"Regex\": \"^(\\\\d+\\\\.\\\\d+)\\\\..*\",\n            \"Value\": \"172.16\"\n        }\n    ],\n    \"Partition\": \"/%Y/%m/%d/%H/\",\n    \"Compress\": {\n        \"Format\": \"none\"\n    },\n    \"RoleArn\": \"\",\n    \"ExternalId\": \"\",\n    \"Content\": {\n        \"Format\": \"json\",\n        \"Json\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\",\n                \"__FILENAME__\",\n                \"__HOSTNAME__\",\n                \"__TIMESTAMP__\"\n            ],\n            \"JsonType\": 1\n        }\n    },\n    \"StartTime\": 1735544418,\n    \"EndTime\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d8b7942-xxxx-xxxx-8c14-7c665344223c\",\n        \"ShipperId\": \"a851ee81-xxxx-xxxx-852d-55fa5ac58269\"\n    }\n}",
         "title": "创建投递规则"
+      }
+    ],
+    "CreateSplunkDeliver": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSplunkDeliver\n<公共请求参数>\n\n{\n    \"TopicId\": \"d1d7d473-827e-4dad-9a42-f0287ad43125\",\n    \"Name\": \"name-test15\",\n    \"NetInfo\": {\n        \"Host\": \"10.0.0.112\",\n        \"Port\": 8088,\n        \"Token\": \"59f9b80c-ae2f-43c1-8c93-436094343125\",\n        \"NetType\": 1,\n        \"VpcId\": \"vpc-k1bdf0ds\",\n        \"VirtualGatewayType\": 0,\n        \"IsSSL\": true\n    },\n    \"MetadataInfo\": {\n        \"Format\": \"json\"\n    },\n    \"IndexAck\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7006acf0-0b04-442d-a09e-1d2925cac79a\",\n        \"TaskId\": \"65a07eec-96ee-458d-850b-53dfe9b43125\"\n    }\n}",
+        "title": "创建Splun投递任务"
       }
     ],
     "CreateTopic": [
@@ -332,6 +388,14 @@
         "title": "删除投递Ckafka任务"
       }
     ],
+    "DeleteConsumerGroup": [
+      {
+        "document": "删除消费组",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumerGroup\n<公共请求参数>\n\n{\n    \"ConsumerGroup\": \"test-123\",\n    \"LogsetId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n    }\n}",
+        "title": "删除消费组"
+      }
+    ],
     "DeleteCosRecharge": [
       {
         "document": "删除COS导入任务",
@@ -364,12 +428,28 @@
         "title": "删除投递dlc任务"
       }
     ],
+    "DeleteEsRecharge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEsRecharge\n<公共请求参数>\n\n{\n    \"TaskId\": \"fc9170c0-95b9-4553-8f2d-32b12bf9d4d7\",\n    \"TopicId\": \"0335dd94-e327-435c-938c-d9d7a4525d45\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9be71a7b-6fb7-4eb1-9eb2-bd6e776176c6\"\n    }\n}",
+        "title": "删除es导入任务"
+      }
+    ],
     "DeleteExport": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExport\n<公共请求参数>\n\n{\n    \"ExportId\": \"57196a6a-7622-47be-bc92-d2ebea959a0f\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除日志导出"
+      }
+    ],
+    "DeleteHostMetricConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteHostMetricConfig\n<公共请求参数>\n\n{\n    \"TopicId\": \"55fdd8a0-1a33-4ce3-8166-01f2361f0cdf\",\n    \"ConfigId\": \"e542d884-f08b-4be9-b700-2a99d9aa1545\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d9b05ae-d6b6-406f-a354-c2def287d379\"\n    }\n}",
+        "title": "删除主机指标采集配置"
       }
     ],
     "DeleteIndex": [
@@ -412,6 +492,22 @@
         "title": "删除机器组ip或者label"
       }
     ],
+    "DeleteMetricConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMetricConfig\n<公共请求参数>\n\n{\n    \"TopicId\": \"715094e3-01b0-4aeb-91f5-ee9f46a4a13c\",\n    \"ConfigId\": \"81853bcf-67b4-4a4f-82c7-7882fd004613\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc094e3-01b0-4aeb-91f5-ee9f46a4aabc\"\n    }\n}",
+        "title": "删除采集配置"
+      }
+    ],
+    "DeleteMetricSubscribe": [
+      {
+        "document": "删除指标订阅配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMetricSubscribe\n<公共请求参数>\n\n{\n    \"TaskId\": \"5871c48d-219b-4274-829b-5aa7fb24229b\",\n    \"TopicId\": \"1111c48d-219b-4274-829b-5aa7fb24229b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"715094e3-01b0-4aeb-91f5-ee9f46a4a13c\"\n    }\n}",
+        "title": "删除指标订阅配置"
+      }
+    ],
     "DeleteNoticeContent": [
       {
         "document": "删除通知内容配置",
@@ -434,6 +530,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteShipper\n<公共请求参数>\n\n{\n    \"ShipperId\": \"xxxxxxx-xxx-xxx-xxx-xxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除投递COS任务"
+      }
+    ],
+    "DeleteSplunkDeliver": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSplunkDeliver\n<公共请求参数>\n\n{\n    \"TaskId\": \"65a07eec-96ee-458d-850b-53dfe9b43125\",\n    \"TopicId\": \"d1d7d473-827e-4dad-9a42-f0287ad43125\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eae3a601-6521-4e21-8a57-4cd4ea443125\"\n    }\n}",
+        "title": "删除Splunk投递任务"
       }
     ],
     "DeleteTopic": [
@@ -492,6 +596,22 @@
         "title": "DescribeCloudProductLogTasks"
       }
     ],
+    "DescribeClusterBaseMetricConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterBaseMetricConfigs\n<公共请求参数>\n\n{\n    \"GroupId\": \"886bf7a8-7340-4314-8d64-b360da0ffd78\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Datas\": [\n            {\n                \"Configs\": [\n                    {\n                        \"ConfigId\": \"6886a667-77eb-4363-ad5a-906d1481fe04\",\n                        \"CreateTime\": 1724244707,\n                        \"Flag\": 1,\n                        \"GroupIds\": [\n                            \"43948ea4-f286-4636-adfd-92aa0fc8344e\"\n                        ],\n                        \"HonorLabels\": false,\n                        \"Name\": \"node-exporter\",\n                        \"Operate\": 0,\n                        \"Scheme\": \"\",\n                        \"ScrapeInterval\": \"\",\n                        \"ScrapeTimeout\": \"\",\n                        \"Source\": 0,\n                        \"TopicIds\": [\n                            \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\"\n                        ],\n                        \"Type\": 0,\n                        \"UpdateTime\": 1724244707,\n                        \"YamlSpec\": {\n                            \"Spec\": \"job_name: node-exporter\\nhonor_timestamps: true\\ntrack_timestamps_staleness: false\\nmetrics_path: /metrics\\nscheme: http\\nenable_compression: true\\nauthorization:\\n  type: Bearer\\n  credentials_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\ntls_config:\\n  insecure_skip_verify: true\\nfollow_redirects: true\\nenable_http2: true\\nhttp_headers: null\\nrelabel_configs:\\n- source_labels: [__meta_kubernetes_pod_node_name]\\n  separator: ;\\n  regex: (.*)\\n  target_label: instance\\n  replacement: $1\\n  action: replace\\n\",\n                            \"Type\": \"ScrapeConfig-prometheus\"\n                        }\n                    },\n                    {\n                        \"ConfigId\": \"853fd8d1-77ec-4815-8696-5e2e029fba21\",\n                        \"CreateTime\": 1724244707,\n                        \"Flag\": 1,\n                        \"GroupIds\": [\n                            \"43948ea4-f286-4636-adfd-92aa0fc8344e\"\n                        ],\n                        \"HonorLabels\": false,\n                        \"Name\": \"kube-state-metric\",\n                        \"Operate\": 0,\n                        \"Scheme\": \"\",\n                        \"ScrapeInterval\": \"\",\n                        \"ScrapeTimeout\": \"\",\n                        \"Source\": 0,\n                        \"TopicIds\": [\n                            \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\"\n                        ],\n                        \"Type\": 0,\n                        \"UpdateTime\": 1724244707,\n                        \"YamlSpec\": {\n                            \"Spec\": \"job_name: kube-state-metric\\nhonor_timestamps: true\\ntrack_timestamps_staleness: false\\nmetrics_path: /metrics\\nscheme: http\\nenable_compression: true\\nauthorization:\\n  type: Bearer\\n  credentials_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\ntls_config:\\n  insecure_skip_verify: true\\nfollow_redirects: true\\nenable_http2: true\\nhttp_headers: null\\nmetric_relabel_configs:\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_pod_container_resource_requests;cpu;core\\n  target_label: __name__\\n  replacement: kube_pod_container_resource_requests_cpu_cores\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_pod_container_resource_limits;cpu;core\\n  target_label: __name__\\n  replacement: kube_pod_container_resource_limits_cpu_cores\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_pod_container_resource_requests;memory;byte\\n  target_label: __name__\\n  replacement: kube_pod_container_resource_requests_memory_bytes\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_pod_container_resource_limits;memory;byte\\n  target_label: __name__\\n  replacement: kube_pod_container_resource_limits_memory_bytes\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_node_status_capacity;cpu;core\\n  target_label: __name__\\n  replacement: kube_node_status_capacity_cpu_cores\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_node_status_capacity;memory;byte\\n  target_label: __name__\\n  replacement: kube_node_status_capacity_memory_bytes\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_node_status_allocatable;cpu;core\\n  target_label: __name__\\n  replacement: kube_node_status_allocatable_cpu_cores\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_node_status_allocatable;memory;byte\\n  target_label: __name__\\n  replacement: kube_node_status_allocatable_memory_bytes\\n  action: replace\\n\",\n                            \"Type\": \"ScrapeConfig-prometheus\"\n                        }\n                    },\n                    {\n                        \"ConfigId\": \"1bac0b5b-7bbe-4612-8831-5d445da9553d\",\n                        \"CreateTime\": 1724244707,\n                        \"Flag\": 1,\n                        \"GroupIds\": [\n                            \"43948ea4-f286-4636-adfd-92aa0fc8344e\"\n                        ],\n                        \"HonorLabels\": false,\n                        \"Name\": \"cadvisor\",\n                        \"Operate\": 0,\n                        \"Scheme\": \"\",\n                        \"ScrapeInterval\": \"\",\n                        \"ScrapeTimeout\": \"\",\n                        \"Source\": 0,\n                        \"TopicIds\": [\n                            \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\"\n                        ],\n                        \"Type\": 0,\n                        \"UpdateTime\": 1724244707,\n                        \"YamlSpec\": {\n                            \"Spec\": \"job_name: cadvisor\\nhonor_timestamps: false\\ntrack_timestamps_staleness: false\\nmetrics_path: /metrics\\nscheme: https\\nenable_compression: true\\nauthorization:\\n  type: Bearer\\n  credentials_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\ntls_config:\\n  ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt\\n  insecure_skip_verify: false\\nfollow_redirects: true\\nenable_http2: true\\nhttp_headers: null\\nrelabel_configs:\\n- source_labels: [__meta_kubernetes_node_name]\\n  separator: ;\\n  regex: (.*)\\n  target_label: __address__\\n  replacement: kubernetes.default.svc:443\\n  action: replace\\n- source_labels: [__meta_kubernetes_node_name]\\n  separator: ;\\n  regex: (.+)\\n  target_label: __metrics_path__\\n  replacement: /api/v1/nodes/${1}/proxy/metrics/cadvisor\\n  action: replace\\n- separator: ;\\n  regex: __meta_kubernetes_node_label_(.+)\\n  replacement: $1\\n  action: labelmap\\n- separator: ;\\n  regex: eks_tke_cloud_tencent_com_(.+)\\n  replacement: $1\\n  action: labeldrop\\nmetric_relabel_configs:\\n- source_labels: [container_name]\\n  separator: ;\\n  regex: (.+)\\n  target_label: container\\n  replacement: $1\\n  action: replace\\n- source_labels: [pod_name]\\n  separator: ;\\n  regex: (.+)\\n  target_label: pod\\n  replacement: $1\\n  action: replace\\n- source_labels: [container]\\n  separator: ;\\n  regex: (.*)\\n  replacement: $1\\n  action: keep\\n\",\n                            \"Type\": \"ScrapeConfig-prometheus\"\n                        }\n                    }\n                ],\n                \"GroupId\": \"43948ea4-f286-4636-adfd-92aa0fc8344e\"\n            }\n        ],\n        \"RequestId\": \"c8db920f-a681-44a6-a22b-c8d5d40a09fe\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取集群下的指标基础监控信息"
+      }
+    ],
+    "DescribeClusterMetricConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterMetricConfigs\n<公共请求参数>\n\n{\n    \"GroupId\": \"886bf7a8-7340-4314-8d64-b360da0ffd78\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Datas\": [\n            {\n                \"ConfigId\": \"1bfadff7-9c5d-48c2-b985-21670d9d007e\",\n                \"CreateTime\": 1724308693,\n                \"Flag\": 1,\n                \"GroupIds\": [\n                    \"886bf7a8-7340-4314-8d64-b360da0ffd78\"\n                ],\n                \"HonorLabels\": false,\n                \"Name\": \"test-test\",\n                \"Operate\": 0,\n                \"Scheme\": \"\",\n                \"ScrapeInterval\": \"\",\n                \"ScrapeTimeout\": \"\",\n                \"Source\": 0,\n                \"TopicIds\": [\n                    \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\"\n                ],\n                \"Type\": 1,\n                \"UpdateTime\": 1724308693,\n                \"YamlSpec\": {\n                    \"Spec\": \"typemeta:\\n  kind: ServiceMonitor\\n  apiversion: monitoring.coreos.com/v1\\nobjectmeta:\\n  name: test-test\\n  generatename: \\\"\\\"\\n  namespace: test\\n  selflink: \\\"\\\"\\n  uid: \\\"\\\"\\n  resourceversion: \\\"\\\"\\n  generation: 0\\n  creationtimestamp: \\\"0001-01-01T00:00:00Z\\\"\\n  deletiontimestamp: null\\n  deletiongraceperiodseconds: null\\n  labels: {}\\n  annotations: {}\\n  ownerreferences: []\\n  finalizers: []\\n  managedfields: []\\nspec:\\n  joblabel: \\\"\\\"\\n  targetlabels: []\\n  podtargetlabels: []\\n  endpoints:\\n  - port: 8080-8080-tcp\\n    targetport: null\\n    path: /metrics\\n    scheme: \\\"\\\"\\n    params: {}\\n    interval: 15s\\n    scrapetimeout: \\\"\\\"\\n    tlsconfig: null\\n    bearertokenfile: \\\"\\\"\\n    bearertokensecret: null\\n    authorization: null\\n    honorlabels: false\\n    honortimestamps: null\\n    tracktimestampsstaleness: null\\n    basicauth: null\\n    oauth2: null\\n    metricrelabelconfigs: []\\n    relabelconfigs:\\n    - sourcelabels:\\n      - __meta_kubernetes_pod_label_app\\n      separator: null\\n      targetlabel: application\\n      regex: \\\"\\\"\\n      modulus: 0\\n      replacement: null\\n      action: replace\\n    proxyurl: null\\n    followredirects: null\\n    enablehttp2: null\\n    filterrunning: null\\n  selector:\\n    matchlabels:\\n      app: test\\n    matchexpressions: []\\n  namespaceselector:\\n    any: false\\n    matchnames:\\n    - test\\n  samplelimit: null\\n  scrapeprotocols: []\\n  targetlimit: null\\n  labellimit: null\\n  labelnamelengthlimit: null\\n  labelvaluelengthlimit: null\\n  keepdroppedtargets: null\\n  attachmetadata: null\\n  scrapeclassname: null\\n  bodysizelimit: null\\n\",\n                    \"Type\": \"ServiceMonitor\"\n                }\n            },\n            {\n                \"ConfigId\": \"fd6dced0-5cc1-4d81-b0d3-c42ee56842cd\",\n                \"CreateTime\": 1723640091,\n                \"Flag\": 0,\n                \"GroupIds\": [\n                    \"886bf7a8-7340-4314-8d64-b360da0ffd78\"\n                ],\n                \"HonorLabels\": false,\n                \"MetricLabel\": {\n                    \"CustomLabels\": [],\n                    \"Label\": {\n                        \"Keys\": [],\n                        \"Type\": 0\n                    },\n                    \"Metadata\": [\n                        \"namespace\",\n                        \"pod_name\",\n                        \"pod_ip\",\n                        \"pod_uid\",\n                        \"container_name\",\n                        \"container_id\",\n                        \"image_name\"\n                    ]\n                },\n                \"Name\": \"test1\",\n                \"Operate\": 0,\n                \"Scheme\": \"http\",\n                \"ScrapeInterval\": \"60s\",\n                \"ScrapeTimeout\": \"30s\",\n                \"Source\": 0,\n                \"Spec\": {\n                    \"CustomSpecs\": [\n                        {\n                            \"Namespaces\": [\n                                \"\"\n                            ],\n                            \"Path\": \"/erq\",\n                            \"PodLabel\": [\n                                {\n                                    \"Key\": \"ab\",\n                                    \"Operate\": \"=\",\n                                    \"Values\": [\n                                        \"em\",\n                                        \"q\"\n                                    ]\n                                }\n                            ],\n                            \"Port\": \"8080\"\n                        }\n                    ]\n                },\n                \"TopicIds\": [\n                    \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\"\n                ],\n                \"Type\": 1,\n                \"UpdateTime\": 1723709068\n            }\n        ],\n        \"RequestId\": \"a725cc9c-2de7-4180-b1dc-b4bae8a79707\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "获取集群下的指标采集配置"
+      }
+    ],
     "DescribeConfigExtras": [
       {
         "document": "获取特殊采集配置",
@@ -530,6 +650,38 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumer\n<公共请求参数>\n\n{\n    \"TopicId\": \"871710c5-35cd-4d1e-8e79-2fa92c35d612\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ef9e67c9-8437-477a-8629-06555a3afbbc\",\n        \"Effective\": true,\n        \"Ckafka\": {\n            \"Vip\": \"127.0.0.1\",\n            \"Vport\": \"9092\",\n            \"InstanceId\": \"ckafka-8b4az591\",\n            \"InstanceName\": \"kafka协议消费监控\",\n            \"TopicId\": \"topic-jmpmwejg\",\n            \"TopicName\": \"businesstest000\"\n        },\n        \"Content\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\"\n            ],\n            \"TagJsonNotTiled\": true,\n            \"TimestampAccuracy\": 0,\n            \"JsonType\": 0\n        },\n        \"NeedContent\": true,\n        \"Compression\": 0\n    }\n}",
         "title": "获取投递配置"
+      }
+    ],
+    "DescribeConsumerGroups": [
+      {
+        "document": "查询消费组信息",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerGroups\n<公共请求参数>\n\n{\n    \"LogsetId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\",\n    \"Topics\": [\n        \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsumerGroupsInfo\": [\n            {\n                \"ConsumerGroup\": \"test-123\",\n                \"Timeout\": 1,\n                \"Topics\": [\n                    \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n                ]\n            }\n        ],\n        \"RequestId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n    }\n}",
+        "title": "查询消费组信息"
+      }
+    ],
+    "DescribeConsumerOffsets": [
+      {
+        "document": "获取消费组点位信息",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerOffsets\n<公共请求参数>\n\n{\n    \"ConsumerGroup\": \"test-123\",\n    \"TopicId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\",\n    \"PartitionId\": \"0\",\n    \"From\": \"1709708964\",\n    \"LogsetId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsumerGroup\": \"test-123\",\n        \"TopicPartitionOffsetsInfo\": [\n            {\n                \"TopicID\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\",\n                \"PartitionOffsets\": [\n                    {\n                        \"PartitionId\": 1,\n                        \"Offset\": 1\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n    }\n}",
+        "title": "获取消费组点位信息"
+      }
+    ],
+    "DescribeConsumerPreview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerPreview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
+        "title": "创建投递任务"
+      }
+    ],
+    "DescribeConsumers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumers\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"ConsumerId\",\n            \"Values\": [\n                \"xxxx-xxx-xxxx\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Consumers\": [\n            {\n                \"ConsumerId\": \"66f5808c-4a55-11eb-b378-0242ac131112\",\n                \"TopicId\": \"57f5808c-4a55-11eb-b378-0242ac130002\",\n                \"Effective\": true,\n                \"Ckafka\": {\n                    \"Vip\": \"10.111.1.123\",\n                    \"Vport\": \"8888\",\n                    \"InstanceId\": \"ckafka-8j111111\",\n                    \"InstanceName\": \"myname\",\n                    \"TopicId\": \"topic-icjnxxx\",\n                    \"TopicName\": \"125xxx-qwerty5-355a-492a-9dba-790271f5da27\"\n                },\n                \"NeedContent\": true,\n                \"Content\": {\n                    \"EnableTag\": true,\n                    \"MetaFields\": [\n                        \"abc\"\n                    ],\n                    \"TagJsonNotTiled\": true,\n                    \"TimestampAccuracy\": 0,\n                    \"JsonType\": 0\n                },\n                \"Compression\": 0,\n                \"CreateTime\": 1662034960,\n                \"RoleArn\": \"qcs::cam::uin/${uin}:roleName/xxxtest\",\n                \"ExternalId\": \"external_id_demo\",\n                \"TaskStatus\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"1235808c-4a55-11eb-b378-0242ac133212\"\n    }\n}",
+        "title": "获取投递规则"
       }
     ],
     "DescribeCosRecharges": [
@@ -578,12 +730,36 @@
         "title": "获取日志主题下的dlc投递任务"
       }
     ],
+    "DescribeEsRechargePreview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEsRechargePreview\n<公共请求参数>\n\n{\n    \"Name\": \"preview_test\",\n    \"TopicId\": \"d8f1bad5-80ad-427a-8dc9-3108778e39aa\",\n    \"Index\": \"louder_search\",\n    \"Query\": \"ab\",\n    \"EsInfo\": {\n        \"EsType\": 2,\n        \"AccessMode\": 2,\n        \"User\": \"es_user\",\n        \"Address\": \"127.0.0.1\",\n        \"Port\": 9200,\n        \"Password\": \"abc@syz\"\n    },\n    \"ImportInfo\": {\n        \"Type\": 1,\n        \"MaxDelay\": 120,\n        \"CheckInterval\": 60\n    },\n    \"TimeInfo\": {\n        \"Type\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"{\\\"@__TIMESTAMP__\\\":1747258435179,\\\"Label_index\\\":null}\"\n        ],\n        \"RequestId\": \"e0897b10-09df-49de-b0ec-8644f12972ec\"\n    }\n}",
+        "title": "es数据预览"
+      }
+    ],
+    "DescribeEsRecharges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEsRecharges\n<公共请求参数>\n\n{\n    \"TopicId\": \"6fd86d3d-705c-4f10-a901-0b32e8a50262\",\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"CreateTime\": 1747203160,\n                \"EsInfo\": {\n                    \"AccessMode\": 1,\n                    \"Address\": \"127.0.0.1\",\n                    \"EsType\": 2,\n                    \"Port\": 9200,\n                    \"User\": \"es_user\",\n                    \"VirtualGatewayType\": 0,\n                    \"VpcId\": \"vpc-k1xxx0px\"\n                },\n                \"ImportInfo\": {\n                    \"EndTime\": 1747203035,\n                    \"StartTime\": 1746079835,\n                    \"Type\": 1\n                },\n                \"Index\": \"my-index-000001\",\n                \"Name\": \"tt3\",\n                \"Progress\": 100,\n                \"Query\": \"\",\n                \"Status\": 3,\n                \"SubUin\": 100019612237,\n                \"TaskId\": \"2de853ac-56ee-4584-8bc2-00876203172e\",\n                \"TimeInfo\": {\n                    \"TimeFormat\": \"%Y%m%d%H%M%S\",\n                    \"TimeKey\": \"date\",\n                    \"TimeZone\": \"UTC+08:00\",\n                    \"Type\": 2\n                },\n                \"TopicId\": \"6fd86d3d-705c-4f10-a901-0b32e8a50262\",\n                \"Uin\": 100001127589,\n                \"UpdateTime\": 1747203284\n            }\n        ],\n        \"RequestId\": \"37615831-40b0-44bf-b402-03d71df4c7cb\",\n        \"TotalCount\": 4\n    }\n}",
+        "title": "获取es导入任务配置列表"
+      }
+    ],
     "DescribeExports": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExports\n<公共请求参数>\n\n{\n    \"TopicId\": \"ee20bb16-3025-4048-b81a-dd436373062e\",\n    \"Offset\": 0,\n    \"Limit\": 5\n}",
         "output": "{\n    \"Response\": {\n        \"Exports\": [\n            {\n                \"TopicId\": \"ee20bb16-3025-4048-b81a-dd436373062e\",\n                \"ExportId\": \"export-57196a6a-7622-47be-bc92-d2ebea959a0f\",\n                \"Query\": \"status:200\",\n                \"FileName\": \"log_2075178708_ee20bb16-3025-4048-b81a-dd436373062f_20210107_xxxxxx_1610001073.tar.gz\",\n                \"CosPath\": \"https://clstest01-xxxxxx.cos.ap-shanghai.myqcloud.com/xxxxxx\",\n                \"FileSize\": 6112993,\n                \"Order\": \"desc\",\n                \"Format\": \"json\",\n                \"Count\": 100000,\n                \"Status\": \"Completed\",\n                \"From\": 1607499207000,\n                \"To\": 1607499207000,\n                \"SyntaxRule\": 0,\n                \"CreateTime\": \"2020-08-08 12:12:12\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "获取日志导出列表"
+      }
+    ],
+    "DescribeHostMetricConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostMetricConfigs\n<公共请求参数>\n\n{\n    \"TopicId\": \"46c21ba9-b6ea-45f1-8710-5ad92b978b7a\",\n    \"Filters\": [\n        {\n            \"Key\": \"name\",\n            \"Values\": [\n                \"testxxx2\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"ConfigId\": \"b64d4365-0d37-4db0-a603-1412e8bb747c\",\n                \"CreateTime\": 1749800274,\n                \"HostMetricItems\": [\n                    {\n                        \"Type\": \"cpu\"\n                    },\n                    {\n                        \"Type\": \"mem\"\n                    },\n                    {\n                        \"Type\": \"net\"\n                    },\n                    {\n                        \"Type\": \"disk\"\n                    },\n                    {\n                        \"Type\": \"system\"\n                    }\n                ],\n                \"Interval\": 30000,\n                \"MachineGroupIds\": [\n                    \"4ca1de67-785b-4a0e-96d9-9d12c5c3ad18\"\n                ],\n                \"Name\": \"testxxx2\",\n                \"UpdateTime\": 1749800274\n            }\n        ],\n        \"RequestId\": \"72ecd45e-a95a-4803-98c7-32217fd722db\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取主机指标监控配置列表"
       }
     ],
     "DescribeIndex": [
@@ -616,6 +792,22 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaConsumerGroupList\n<公共请求参数>\n\n{\n    \"TopicId\": \"5023192e-1254139626\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"Group\": \"same_group_id\",\n                \"ProtocolName\": \"\",\n                \"State\": \"Empty\"\n            }\n        ],\n        \"LogsetId\": \"a8248746-c989-468e-b931-a9bf6c999c89\",\n        \"RequestId\": \"53ac1397-336a-4d4b-87ff-a2a16ff97519\",\n        \"TopicName\": \"1254139626-5023192e\",\n        \"Total\": 2\n    }\n}",
         "title": "获取Kafka协议消费组详情"
+      }
+    ],
+    "DescribeKafkaConsumerPreview": [
+      {
+        "document": "kafka协议消费预览接口",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaConsumerPreview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "kafka协议消费预览接口"
+      }
+    ],
+    "DescribeKafkaConsumerTopics": [
+      {
+        "document": "获取kafka协议消费主题信息列表",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaConsumerTopics\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"89b7b72e-xxxx-4090-xxxx-f72d7c230a3c\"\n    }\n}",
+        "title": "获取kafka协议消费主题信息列表"
       }
     ],
     "DescribeKafkaRecharges": [
@@ -674,6 +866,30 @@
         "title": "获取机器状态"
       }
     ],
+    "DescribeMetricCorrectDimension": [
+      {
+        "document": "指标校准维度信息",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCorrectDimension\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7d9036c4-358a-46d3-bcef-f50e083efef7\"\n    }\n}",
+        "title": "指标校准维度信息"
+      }
+    ],
+    "DescribeMetricSubscribePreview": [
+      {
+        "document": "指标订阅预览示例",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMetricSubscribePreview\n<公共请求参数>\n\n{\n    \"Namespace\": \"QCE/CVM\",\n    \"Metrics\": [\n        {\n            \"MetricName\": \"MemUsed\",\n            \"Periods\": [\n                60\n            ],\n            \"MetricLabels\": [\n                {\n                    \"Key\": \"key_demo\",\n                    \"Value\": \"value_demo\"\n                }\n            ]\n        }\n    ],\n    \"InstanceInfo\": {\n        \"InstanceDimension\": [\n            \"InstanceId\"\n        ],\n        \"Instances\": [\n            {\n                \"Values\": [\n                    \"ins-izop9bz6\"\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FailCount\": 0,\n        \"FailInstances\": [],\n        \"RequestId\": \"220fa7fb-9134-4dbc-84bb-00613636b45a\",\n        \"SuccessCount\": 1,\n        \"SuccessInstances\": [\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"InstanceId\",\n                        \"Value\": \"ins-izop9bz6\"\n                    }\n                ],\n                \"ErrMsg\": \"\",\n                \"MetricName\": \"MemUsed\",\n                \"Namespace\": \"QCE/CVM\",\n                \"Period\": 60,\n                \"CLSMetricName\": \"qce_cvm_memused_60_avg\",\n                \"Value\": 340.166\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "指标订阅预览示例"
+      }
+    ],
+    "DescribeMetricSubscribes": [
+      {
+        "document": "获取指标订阅配置信息",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMetricSubscribes\n<公共请求参数>\n\n{\n    \"TopicId\": \"715094e3-01b0-4aeb-91f5-ee9f46a4a13c\",\n    \"Filters\": [\n        {\n            \"Key\": \"name\",\n            \"Values\": [\n                \"template_1\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Datas\": [\n            {\n                \"TopicId\": \"715094e3-01b0-4aeb-91f5-ee9f46a4a13c\",\n                \"TaskId\": \"5871c48d-219b-4274-829b-5aa7fb24229b\",\n                \"Name\": \"metric_subscribe_name\",\n                \"Namespace\": \"QCE/CVM\",\n                \"Metrics\": [\n                    {\n                        \"MetricName\": \"metric name\",\n                        \"Periods\": [\n                            60,\n                            120\n                        ],\n                        \"MetricLabels\": [\n                            {\n                                \"Key\": \"label_key\",\n                                \"Value\": \"label_value\"\n                            }\n                        ]\n                    }\n                ],\n                \"InstanceInfo\": {\n                    \"InstanceDimension\": [\n                        \"bucket\",\n                        \"appid\"\n                    ],\n                    \"Instances\": [\n                        {\n                            \"Values\": [\n                                \"bucket_asdfa-asdf-asdf-ads\",\n                                \"12325435\"\n                            ]\n                        }\n                    ]\n                },\n                \"Enable\": 2,\n                \"Status\": 1,\n                \"ErrMsg\": \"\",\n                \"CreateTime\": 1700200000,\n                \"UpdateTime\": 1700200000\n            }\n        ],\n        \"RequestId\": \"1111c48d-219b-4274-829b-5aa7fb24229b\"\n    }\n}",
+        "title": "获取指标订阅配置信息"
+      }
+    ],
     "DescribeNoticeContents": [
       {
         "document": "获取通知内容配置列表。",
@@ -714,6 +930,38 @@
         "title": "获取投递到COS的任务配置信息"
       }
     ],
+    "DescribeSplunkDelivers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSplunkDelivers\n<公共请求参数>\n\n{\n    \"TopicId\": \"d1d7d473-827e-4dad-9a42-f0287ad43125\",\n    \"Filters\": [\n        {\n            \"Key\": \"taskId\",\n            \"Values\": [\n                \"46bb8292-1974-4663-8ce5-498256a42431\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"CreateTime\": 1757657329,\n                \"Enable\": 1,\n                \"HasServiceLog\": 2,\n                \"Index\": \"\",\n                \"IndexAck\": 1,\n                \"Metadata\": {\n                    \"Format\": \"json\"\n                },\n                \"Name\": \"name-test14\",\n                \"NetInfo\": {\n                    \"Host\": \"10.0.0.112\",\n                    \"IsSSL\": true,\n                    \"NetType\": 1,\n                    \"Port\": 8088,\n                    \"Token\": \"59f9b80c-ae2f-43c1-8c93-436094343125\",\n                    \"VirtualGatewayType\": 0,\n                    \"VpcId\": \"vpc-k1bdf0es\"\n                },\n                \"Source\": \"\",\n                \"SourceType\": \"\",\n                \"Status\": 1,\n                \"TaskId\": \"46bb8292-1974-4663-8ce5-498256a42431\",\n                \"TopicId\": \"d1d7d473-827e-4dad-9a42-f0287ad43125\",\n                \"Uin\": 100001127589,\n                \"UpdateTime\": 1757657329\n            }\n        ],\n        \"RequestId\": \"964ff3ff-ec82-40d2-90ab-bb9b8bc43125\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询Splunk投递任务"
+      }
+    ],
+    "DescribeSplunkPreview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSplunkPreview\n<公共请求参数>\n\n{\n    \"TopicId\": \"d1d7d473-827e-4dad-9a42-f0287ad43125\",\n    \"MetadataInfo\": {\n        \"Format\": \"json\",\n        \"MetaFields\": [\n            \"__TIMESTAMP__\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PreviewInfos\": [],\n        \"RequestId\": \"0c600166-11d3-46dd-b43f-09e1bb043125\"\n    }\n}",
+        "title": "Splunk日志投递预览"
+      }
+    ],
+    "DescribeTopicBaseMetricConfigs": [
+      {
+        "document": "获取指标采集基础监控配置信息",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicBaseMetricConfigs\n<公共请求参数>\n\n{\n    \"TopicId\": \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Datas\": [\n            {\n                \"Configs\": [\n                    {\n                        \"ConfigId\": \"6886a667-77eb-4363-ad5a-906d1481fe04\",\n                        \"CreateTime\": 1724244707,\n                        \"Flag\": 1,\n                        \"GroupIds\": [\n                            \"43948ea4-f286-4636-adfd-92aa0fc8344e\"\n                        ],\n                        \"HonorLabels\": false,\n                        \"Name\": \"node-exporter\",\n                        \"Operate\": 0,\n                        \"Scheme\": \"\",\n                        \"ScrapeInterval\": \"\",\n                        \"ScrapeTimeout\": \"\",\n                        \"Source\": 0,\n                        \"TopicIds\": [\n                            \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\"\n                        ],\n                        \"Type\": 0,\n                        \"UpdateTime\": 1724244707,\n                        \"YamlSpec\": {\n                            \"Spec\": \"job_name: node-exporter\\nhonor_timestamps: true\\ntrack_timestamps_staleness: false\\nmetrics_path: /metrics\\nscheme: http\\nenable_compression: true\\nauthorization:\\n  type: Bearer\\n  credentials_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\ntls_config:\\n  insecure_skip_verify: true\\nfollow_redirects: true\\nenable_http2: true\\nhttp_headers: null\\nrelabel_configs:\\n- source_labels: [__meta_kubernetes_pod_node_name]\\n  separator: ;\\n  regex: (.*)\\n  target_label: instance\\n  replacement: $1\\n  action: replace\\n\",\n                            \"Type\": \"ScrapeConfig-prometheus\"\n                        }\n                    },\n                    {\n                        \"ConfigId\": \"853fd8d1-77ec-4815-8696-5e2e029fba21\",\n                        \"CreateTime\": 1724244707,\n                        \"Flag\": 1,\n                        \"GroupIds\": [\n                            \"43948ea4-f286-4636-adfd-92aa0fc8344e\"\n                        ],\n                        \"HonorLabels\": false,\n                        \"Name\": \"kube-state-metric\",\n                        \"Operate\": 0,\n                        \"Scheme\": \"\",\n                        \"ScrapeInterval\": \"\",\n                        \"ScrapeTimeout\": \"\",\n                        \"Source\": 0,\n                        \"TopicIds\": [\n                            \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\"\n                        ],\n                        \"Type\": 0,\n                        \"UpdateTime\": 1724244707,\n                        \"YamlSpec\": {\n                            \"Spec\": \"job_name: kube-state-metric\\nhonor_timestamps: true\\ntrack_timestamps_staleness: false\\nmetrics_path: /metrics\\nscheme: http\\nenable_compression: true\\nauthorization:\\n  type: Bearer\\n  credentials_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\ntls_config:\\n  insecure_skip_verify: true\\nfollow_redirects: true\\nenable_http2: true\\nhttp_headers: null\\nmetric_relabel_configs:\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_pod_container_resource_requests;cpu;core\\n  target_label: __name__\\n  replacement: kube_pod_container_resource_requests_cpu_cores\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_pod_container_resource_limits;cpu;core\\n  target_label: __name__\\n  replacement: kube_pod_container_resource_limits_cpu_cores\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_pod_container_resource_requests;memory;byte\\n  target_label: __name__\\n  replacement: kube_pod_container_resource_requests_memory_bytes\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_pod_container_resource_limits;memory;byte\\n  target_label: __name__\\n  replacement: kube_pod_container_resource_limits_memory_bytes\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_node_status_capacity;cpu;core\\n  target_label: __name__\\n  replacement: kube_node_status_capacity_cpu_cores\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_node_status_capacity;memory;byte\\n  target_label: __name__\\n  replacement: kube_node_status_capacity_memory_bytes\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_node_status_allocatable;cpu;core\\n  target_label: __name__\\n  replacement: kube_node_status_allocatable_cpu_cores\\n  action: replace\\n- source_labels: [__name__, resource, unit]\\n  separator: ;\\n  regex: kube_node_status_allocatable;memory;byte\\n  target_label: __name__\\n  replacement: kube_node_status_allocatable_memory_bytes\\n  action: replace\\n\",\n                            \"Type\": \"ScrapeConfig-prometheus\"\n                        }\n                    },\n                    {\n                        \"ConfigId\": \"1bac0b5b-7bbe-4612-8831-5d445da9553d\",\n                        \"CreateTime\": 1724244707,\n                        \"Flag\": 1,\n                        \"GroupIds\": [\n                            \"43948ea4-f286-4636-adfd-92aa0fc8344e\"\n                        ],\n                        \"HonorLabels\": false,\n                        \"Name\": \"cadvisor\",\n                        \"Operate\": 0,\n                        \"Scheme\": \"\",\n                        \"ScrapeInterval\": \"\",\n                        \"ScrapeTimeout\": \"\",\n                        \"Source\": 0,\n                        \"TopicIds\": [\n                            \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\"\n                        ],\n                        \"Type\": 0,\n                        \"UpdateTime\": 1724244707,\n                        \"YamlSpec\": {\n                            \"Spec\": \"job_name: cadvisor\\nhonor_timestamps: false\\ntrack_timestamps_staleness: false\\nmetrics_path: /metrics\\nscheme: https\\nenable_compression: true\\nauthorization:\\n  type: Bearer\\n  credentials_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\ntls_config:\\n  ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt\\n  insecure_skip_verify: false\\nfollow_redirects: true\\nenable_http2: true\\nhttp_headers: null\\nrelabel_configs:\\n- source_labels: [__meta_kubernetes_node_name]\\n  separator: ;\\n  regex: (.*)\\n  target_label: __address__\\n  replacement: kubernetes.default.svc:443\\n  action: replace\\n- source_labels: [__meta_kubernetes_node_name]\\n  separator: ;\\n  regex: (.+)\\n  target_label: __metrics_path__\\n  replacement: /api/v1/nodes/${1}/proxy/metrics/cadvisor\\n  action: replace\\n- separator: ;\\n  regex: __meta_kubernetes_node_label_(.+)\\n  replacement: $1\\n  action: labelmap\\n- separator: ;\\n  regex: eks_tke_cloud_tencent_com_(.+)\\n  replacement: $1\\n  action: labeldrop\\nmetric_relabel_configs:\\n- source_labels: [container_name]\\n  separator: ;\\n  regex: (.+)\\n  target_label: container\\n  replacement: $1\\n  action: replace\\n- source_labels: [pod_name]\\n  separator: ;\\n  regex: (.+)\\n  target_label: pod\\n  replacement: $1\\n  action: replace\\n- source_labels: [container]\\n  separator: ;\\n  regex: (.*)\\n  replacement: $1\\n  action: keep\\n\",\n                            \"Type\": \"ScrapeConfig-prometheus\"\n                        }\n                    }\n                ],\n                \"GroupId\": \"43948ea4-f286-4636-adfd-92aa0fc8344e\"\n            }\n        ],\n        \"RequestId\": \"c8db920f-a681-44a6-a22b-c8d5d40a09fe\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取指标采集基础监控配置信息"
+      }
+    ],
+    "DescribeTopicMetricConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicMetricConfigs\n<公共请求参数>\n\n{\n    \"TopicId\": \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Datas\": [\n            {\n                \"ConfigId\": \"1bfadff7-9c5d-48c2-b985-21670d9d007e\",\n                \"CreateTime\": 1724308693,\n                \"Flag\": 1,\n                \"GroupIds\": [\n                    \"886bf7a8-7340-4314-8d64-b360da0ffd78\"\n                ],\n                \"HonorLabels\": false,\n                \"Name\": \"test-test\",\n                \"Operate\": 0,\n                \"Scheme\": \"\",\n                \"ScrapeInterval\": \"\",\n                \"ScrapeTimeout\": \"\",\n                \"Source\": 0,\n                \"TopicIds\": [\n                    \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\"\n                ],\n                \"Type\": 1,\n                \"UpdateTime\": 1724308693,\n                \"YamlSpec\": {\n                    \"Spec\": \"typemeta:\\n  kind: ServiceMonitor\\n  apiversion: monitoring.coreos.com/v1\\nobjectmeta:\\n  name: test-test\\n  generatename: \\\"\\\"\\n  namespace: test\\n  selflink: \\\"\\\"\\n  uid: \\\"\\\"\\n  resourceversion: \\\"\\\"\\n  generation: 0\\n  creationtimestamp: \\\"0001-01-01T00:00:00Z\\\"\\n  deletiontimestamp: null\\n  deletiongraceperiodseconds: null\\n  labels: {}\\n  annotations: {}\\n  ownerreferences: []\\n  finalizers: []\\n  managedfields: []\\nspec:\\n  joblabel: \\\"\\\"\\n  targetlabels: []\\n  podtargetlabels: []\\n  endpoints:\\n  - port: 8080-8080-tcp\\n    targetport: null\\n    path: /metrics\\n    scheme: \\\"\\\"\\n    params: {}\\n    interval: 15s\\n    scrapetimeout: \\\"\\\"\\n    tlsconfig: null\\n    bearertokenfile: \\\"\\\"\\n    bearertokensecret: null\\n    authorization: null\\n    honorlabels: false\\n    honortimestamps: null\\n    tracktimestampsstaleness: null\\n    basicauth: null\\n    oauth2: null\\n    metricrelabelconfigs: []\\n    relabelconfigs:\\n    - sourcelabels:\\n      - __meta_kubernetes_pod_label_app\\n      separator: null\\n      targetlabel: application\\n      regex: \\\"\\\"\\n      modulus: 0\\n      replacement: null\\n      action: replace\\n    proxyurl: null\\n    followredirects: null\\n    enablehttp2: null\\n    filterrunning: null\\n  selector:\\n    matchlabels:\\n      app: test\\n    matchexpressions: []\\n  namespaceselector:\\n    any: false\\n    matchnames:\\n    - test\\n  samplelimit: null\\n  scrapeprotocols: []\\n  targetlimit: null\\n  labellimit: null\\n  labelnamelengthlimit: null\\n  labelvaluelengthlimit: null\\n  keepdroppedtargets: null\\n  attachmetadata: null\\n  scrapeclassname: null\\n  bodysizelimit: null\\n\",\n                    \"Type\": \"ServiceMonitor\"\n                }\n            },\n            {\n                \"ConfigId\": \"fd6dced0-5cc1-4d81-b0d3-c42ee56842cd\",\n                \"CreateTime\": 1723640091,\n                \"Flag\": 0,\n                \"GroupIds\": [\n                    \"886bf7a8-7340-4314-8d64-b360da0ffd78\"\n                ],\n                \"HonorLabels\": false,\n                \"MetricLabel\": {\n                    \"CustomLabels\": [],\n                    \"Label\": {\n                        \"Keys\": [],\n                        \"Type\": 0\n                    },\n                    \"Metadata\": [\n                        \"namespace\",\n                        \"pod_name\",\n                        \"pod_ip\",\n                        \"pod_uid\",\n                        \"container_name\",\n                        \"container_id\",\n                        \"image_name\"\n                    ]\n                },\n                \"Name\": \"test1\",\n                \"Operate\": 0,\n                \"Scheme\": \"http\",\n                \"ScrapeInterval\": \"60s\",\n                \"ScrapeTimeout\": \"30s\",\n                \"Source\": 0,\n                \"Spec\": {\n                    \"CustomSpecs\": [\n                        {\n                            \"Namespaces\": [\n                                \"\"\n                            ],\n                            \"Path\": \"/erq\",\n                            \"PodLabel\": [\n                                {\n                                    \"Key\": \"ab\",\n                                    \"Operate\": \"=\",\n                                    \"Values\": [\n                                        \"em\",\n                                        \"q\"\n                                    ]\n                                }\n                            ],\n                            \"Port\": \"8080\"\n                        }\n                    ]\n                },\n                \"TopicIds\": [\n                    \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\"\n                ],\n                \"Type\": 1,\n                \"UpdateTime\": 1723709068\n            }\n        ],\n        \"RequestId\": \"a725cc9c-2de7-4180-b1dc-b4bae8a79707\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "获取指标主题的采集配置"
+      }
+    ],
     "DescribeTopics": [
       {
         "document": "获取日志主题列表",
@@ -742,6 +990,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAlarmLog\n<公共请求参数>\n\n{\n    \"From\": 1702569600000,\n    \"To\": 1702655999999,\n    \"Query\": \"alert_id:\\\"alarm-5ce45495-09e8-4d58-8f36-768134bf330c\\\" AND monitored_object:\\\"3c514e84-6f1f-46ec-afbf-05de6163f7fe\\\"\",\n    \"Limit\": 1,\n    \"Context\": \"Y29udGxxxxC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy\"\n}",
         "output": "{\n    \"Response\": {\n        \"Analysis\": false,\n        \"AnalysisRecords\": null,\n        \"AnalysisResults\": [],\n        \"ColNames\": [],\n        \"Columns\": null,\n        \"Context\": \"Y29udGV4dC0yNmJkYjY1ZS1lODdjLTQ5Y2ItODdiYy0xNmUwNWFlYTYwM2MxNzAyNjEyMzA4MTU1\",\n        \"ListOver\": false,\n        \"RequestId\": \"aefbd480-35c5-43b7-b1df-d625727abebf\",\n        \"Results\": [\n            {\n                \"FileName\": \"\",\n                \"HighLights\": [],\n                \"HostName\": \"\",\n                \"IndexStatus\": \"\",\n                \"LogJson\": \"{\\\"reach_trigger\\\":\\\"false\\\",\\\"label_string\\\":\\\"\\\",\\\"fire_time\\\":1702612278007,\\\"reach_notify\\\":\\\"false\\\",\\\"record_group_id\\\":\\\"\\\",\\\"topic_type\\\":\\\"log\\\",\\\"alert_threshold\\\":15,\\\"trigger_result\\\":\\\"success\\\",\\\"monitored_object\\\":\\\"3c514e84-6f1f-46ec-afbf-05de6163f7fe\\\",\\\"duration\\\":0,\\\"condition_evaluate_result\\\":\\\"QueryResultUnmatch\\\",\\\"notify_type\\\":2,\\\"summary_en\\\":\\\"The trigger condition is not met\\\",\\\"notification_send_result\\\":\\\"NotSend\\\",\\\"trigger_time\\\":1702612278,\\\"notify_template\\\":\\\"notice-8e0660a4-197d-46b0-b1ef-e63571b7a438\\\",\\\"summary_cn\\\":\\\"执行语句结果不满足触发条件\\\",\\\"alert_id\\\":\\\"alarm-5ce45495-09e8-4d58-8f36-768134bf330c\\\",\\\"notify_result\\\":\\\"success\\\",\\\"topic_name\\\":\\\"dyltest2\\\",\\\"process_result\\\":\\\"fail\\\",\\\"notify_failed_reason\\\":\\\"\\\",\\\"object_param\\\":\\\"[{\\\\\\\"EndTime\\\\\\\":1702612230000,\\\\\\\"StartTime\\\\\\\":1702608630000,\\\\\\\"TopicId\\\\\\\":\\\\\\\"3c514e84-6f1f-46ec-afbf-05de6163f7fe\\\\\\\",\\\\\\\"TopicName\\\\\\\":\\\\\\\"dyltest2\\\\\\\",\\\\\\\"TopicType\\\\\\\":\\\\\\\"log\\\\\\\",\\\\\\\"grammarVersion\\\\\\\":\\\\\\\"cql\\\\\\\"}]\\\",\\\"uin\\\":100001127589,\\\"topic_id\\\":\\\"3c514e84-6f1f-46ec-afbf-05de6163f7fe\\\",\\\"record_info\\\":\\\"\\\",\\\"notify_time\\\":1702612278,\\\"level\\\":\\\"Warn\\\",\\\"process_error_msg\\\":\\\"The conditions are not matched, no results\\\",\\\"trigger\\\":\\\"$1.hit_rate<50\\\",\\\"trigger_failed_reason\\\":\\\"The conditions are not matched, no results\\\",\\\"happen_threshold\\\":1,\\\"record_id\\\":\\\"9e35be9f-b617-4827-96c5-97a0383aad0f\\\",\\\"nick_name\\\":\\\"\\\",\\\"logset_id\\\":\\\"19b6cec0-b80f-4ffe-98de-239670e5b19d\\\",\\\"detail\\\":\\\"\\\",\\\"alert_name\\\":\\\"EdgeOne 缓存命中率告警策略_100001127589\\\",\\\"process_error_type\\\":\\\"QueryResultUnmatch\\\",\\\"status\\\":\\\"QueryResultUnmatch\\\"}\",\n                \"PkgId\": \"\",\n                \"PkgLogId\": \"\",\n                \"RawLog\": \"\",\n                \"Source\": \"\",\n                \"Time\": 1702612278007,\n                \"TopicId\": \"louder\",\n                \"TopicName\": \"louder\"\n            }\n        ]\n    }\n}",
         "title": "查询指定告警策略和告警对象的告警历史记录"
+      }
+    ],
+    "GetMetricLabelValues": [
+      {
+        "document": "获取时序label values列表",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:  GetMetricLabelValues\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"x20\",\n        \"Values\": [\n            \"123\",\n            \"456\"\n        ]\n    }\n}",
+        "title": "获取时序label values列表"
       }
     ],
     "MergePartition": [
@@ -822,6 +1078,14 @@
         "title": "关闭投递Ckafka任务"
       }
     ],
+    "ModifyConsumerGroup": [
+      {
+        "document": "修改消费组信息",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumerGroup\n<公共请求参数>\n\n{\n    \"ConsumerGroup\": \"test-123\",\n    \"Timeout\": 1,\n    \"Topics\": [\n        \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n    ],\n    \"LogsetId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n    }\n}",
+        "title": "修改消费组信息"
+      }
+    ],
     "ModifyCosRecharge": [
       {
         "document": "修改cos导入任务",
@@ -852,6 +1116,22 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDlcDeliver\n<公共请求参数>\n\n{\n    \"TopicId\": \"6bf3355c-3c88-4566-89c8-76c3ca37bae9\",\n    \"TaskId\": \"c56d2af7-9474-4603-80b8-2637d846f2ae\",\n    \"Name\": \"test2-update\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3085c6a1-f51b-45eb-b8ef-84a76a7cca09\"\n    }\n}",
         "title": "修改投递dlc任务名称"
+      }
+    ],
+    "ModifyEsRecharge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEsRecharge\n<公共请求参数>\n\n{\n    \"TaskId\": \"fc9170c0-95b9-4553-8f2d-32b12bf9d4d7\",\n    \"TopicId\": \"0335dd94-e327-435c-938c-d9d7a4525d45\",\n    \"Name\": \"es_update\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d9e8a696-a4d6-47f5-98ae-ffec0d32228e\"\n    }\n}",
+        "title": "修改es导入任务"
+      }
+    ],
+    "ModifyHostMetricConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHostMetricConfig\n<公共请求参数>\n\n{\n    \"TopicId\": \"46c21ba9-b6ea-45f1-8710-5ad92b978b7a\",\n    \"ConfigId\": \"b64d4365-0d37-4db0-a603-1412e8bb747c\",\n    \"Name\": \"metric_config_update\",\n    \"Interval\": 35000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12b800c1-123c-4148-8d16-bc816dc71ecc\"\n    }\n}",
+        "title": "修改主机监控采集配置"
       }
     ],
     "ModifyIndex": [
@@ -902,6 +1182,22 @@
         "title": "修改机器组"
       }
     ],
+    "ModifyMetricConfig": [
+      {
+        "document": "修改基础指标采集配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMetricConfig\n<公共请求参数>\n\n{\n    \"TopicId\": \"d7adf66d-88a7-4321-8b4b-6f2c7a9773b8\",\n    \"ConfigId\": \"b8c24595-6fce-489c-8488-9d2db440fd9d\",\n    \"YamlSpec\": {\n        \"Type\": \"ScrapeConfig-prometheus\",\n        \"Spec\": \"scrape_configs:\\n- job_name: cadvisor\\n  honor_timestamps: false\\n  metrics_path: /metrics\\n  scheme: https\\n  kubernetes_sd_configs:\\n  - role: node\\n  bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\n  tls_config:\\n    ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt\\n  relabel_configs:\\n  - source_labels: [__meta_kubernetes_node_name]\\n    separator: ;\\n    regex: (.*)\\n    target_label: __address__\\n    replacement: kubernetes.default.svc:443\\n    action: replace\\n  - source_labels: [__meta_kubernetes_node_name]\\n    separator: ;\\n    regex: (.+)\\n    target_label: __metrics_path__\\n    replacement: /api/v1/nodes/${1}/proxy/metrics/cadvisor\\n    action: replace\\n  - separator: ;\\n    regex: __meta_kubernetes_node_label_(.+)\\n    replacement: $1\\n    action: labelmap\\n  - separator: ;\\n    regex: eks_tke_cloud_tencent_com_(.+)\\n    replacement: $1\\n    action: labeldrop\\n  metric_relabel_configs:\\n  - source_labels: [container_name]\\n    separator: ;\\n    regex: (.+)\\n    target_label: container\\n    replacement: $1\\n    action: replace\\n  - source_labels: [pod_name]\\n    separator: ;\\n    regex: (.+)\\n    target_label: pod\\n    replacement: $1\\n    action: replace\\n  - source_labels: [container]\\n    separator: ;\\n    regex: (.*)\\n    replacement: $1\\n    action: keep\\n---\\nscrape_configs:\\n- job_name: kube-state-metric\\n  honor_timestamps: true\\n  metrics_path: /metrics\\n  scheme: http\\n  kubernetes_sd_configs:\\n  - role: endpoints\\n    namespaces:\\n      names:\\n      - kube-system\\n    selectors:\\n      - label: \\\"app.kubernetes.io/name==kube-state-metrics\\\"\\n        role: endpoints\\n  bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\n  tls_config:\\n    insecure_skip_verify: true\\n  metric_relabel_configs:\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_requests;cpu;core\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_requests_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_limits;cpu;core\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_limits_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_requests;memory;byte\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_requests_memory_bytes\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_pod_container_resource_limits;memory;byte\\n    target_label: __name__\\n    replacement: kube_pod_container_resource_limits_memory_bytes\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_capacity;cpu;core\\n    target_label: __name__\\n    replacement: kube_node_status_capacity_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_capacity;memory;byte\\n    target_label: __name__\\n    replacement: kube_node_status_capacity_memory_bytes\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_allocatable;cpu;core\\n    target_label: __name__\\n    replacement: kube_node_status_allocatable_cpu_cores\\n    action: replace\\n  - source_labels: [__name__, resource, unit]\\n    separator: ;\\n    regex: kube_node_status_allocatable;memory;byte\\n    target_label: __name__\\n    replacement: kube_node_status_allocatable_memory_bytes\\n    action: replace\\n---\\nscrape_configs:\\n- job_name: node-exporter\\n  honor_timestamps: true\\n  metrics_path: /metrics\\n  scheme: http\\n  kubernetes_sd_configs:\\n  - role: endpoints\\n    namespaces:\\n      names:\\n      - kube-system\\n    selectors:\\n    - label: \\\"app.kubernetes.io/name==node-exporter\\\"\\n      role: endpoints\\n  bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token\\n  tls_config:\\n    insecure_skip_verify: true\\n  relabel_configs:\\n  - separator: ;\\n    action: replace\\n    regex: (.*)\\n    replacement: $1\\n    source_labels: [__meta_kubernetes_pod_node_name]\\n    target_label: instance\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e163af1b-fd31-4cef-b820-cb897e4644cf\"\n    }\n}",
+        "title": "修改指标采集配置"
+      }
+    ],
+    "ModifyMetricSubscribe": [
+      {
+        "document": "修改指标订阅配置",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMetricSubscribe\n<公共请求参数>\n\n{\n    \"TopicId\": \"715094e3-01b0-4aeb-91f5-ee9f46a4a13c\",\n    \"TaskId\": \"5871c48d-219b-4274-829b-5aa7fb24229b\",\n    \"Name\": \"metric_subscribe_name\",\n    \"Namespace\": \"QCE/CVM\",\n    \"Metrics\": [\n        {\n            \"MetricName\": \"metric name\",\n            \"Periods\": [\n                60,\n                120\n            ],\n            \"MetricLabels\": [\n                {\n                    \"Key\": \"label_key\",\n                    \"Value\": \"label_value\"\n                }\n            ]\n        }\n    ],\n    \"InstanceInfo\": {\n        \"InstanceDimension\": [\n            \"bucket\",\n            \"appid\"\n        ],\n        \"Instances\": [\n            {\n                \"Values\": [\n                    \"bucket_asdfa-asdf-asdf-ads\",\n                    \"12325435\"\n                ]\n            }\n        ]\n    },\n    \"Enable\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a3c7ea9-02fa-4d33-b626-6cd496d0e300\"\n    }\n}",
+        "title": "修改指标订阅配置"
+      }
+    ],
     "ModifyNoticeContent": [
       {
         "document": "修改通知内容配置",
@@ -930,6 +1226,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyShipper\n<公共请求参数>\n\n{\n    \"ShipperId\": \"3f9562a7-xxxx-xxxx-b32a-d51a927226a7\",\n    \"Bucket\": \"examplebucket-1250000000\",\n    \"Prefix\": \"bowtest-1250000000\",\n    \"ShipperName\": \"bow-test-1250000000\",\n    \"Interval\": 300,\n    \"MaxSize\": 10,\n    \"FilenameMode\": 1,\n    \"FilterRules\": [\n        {\n            \"Key\": \"http\",\n            \"Regex\": \"^(\\\\d+\\\\.\\\\d+)\\\\..*\",\n            \"Value\": \"172.16\"\n        }\n    ],\n    \"Partition\": \"/%Y/%m/%d/%H/\",\n    \"Compress\": {\n        \"Format\": \"gzip\"\n    },\n    \"RoleArn\": \"qcs::cam::uin/123123123:roleName/uinA_writeCLS_to_COS\",\n    \"ExternalId\": \"123123123123123\",\n    \"Content\": {\n        \"Format\": \"json\",\n        \"Json\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\",\n                \"__FILENAME__\",\n                \"__TIMESTAMP__\",\n                \"__HOSTNAME__\"\n            ],\n            \"JsonType\": 0\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"25d826d2-xxxx-xxxx-a4b6-f5490e86ae81\"\n    }\n}",
         "title": "修改投递任务"
+      }
+    ],
+    "ModifySplunkDeliver": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySplunkDeliver\n<公共请求参数>\n\n{\n    \"TaskId\": \"65a07eec-96ee-458d-850b-53dfe9b43125\",\n    \"TopicId\": \"d1d7d473-827e-4dad-9a42-f0287ad43125\",\n    \"MetadataInfo\": {\n        \"Format\": \"json\",\n        \"MetaFields\": [\n            \"__SOURCE__\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"89b26245-ec3e-4b00-829a-bcc835d43125\"\n    }\n}",
+        "title": "修改Splun投递任务"
       }
     ],
     "ModifyTopic": [
@@ -1016,6 +1320,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchLog\n<公共请求参数>\n\n{\n    \"TopicId\": \"601c2a87-ca8e-49c9-xxxx-27286a970db5\",\n    \"From\": 1679901909686,\n    \"To\": 1679902809686,\n    \"Query\": \"http_code:\\\"200\\\"\",\n    \"Limit\": 1,\n    \"Sort\": \"desc\",\n    \"HighLight\": true,\n    \"UseNewAnalysis\": true,\n    \"SyntaxRule\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Context\": \"Y29udGV4dC0zZDVmZGI2NC1jNDZkLTQ2NzktYWM2OC1jYzg2NjUxYmVlMWExNjc5OTAyODEwNDM0\",\n        \"ListOver\": false,\n        \"Analysis\": false,\n        \"ColNames\": [],\n        \"Columns\": null,\n        \"Results\": [\n            {\n                \"Time\": 1679902806070,\n                \"TopicId\": \"601c2a87-ca8e-49c9-xxxx-27286a970db5\",\n                \"TopicName\": \"CDN Demo访问日志日志主题_10000100xxxx\",\n                \"Source\": \"\",\n                \"FileName\": \"\",\n                \"HostName\": \"\",\n                \"PkgId\": \"\",\n                \"PkgLogId\": \"\",\n                \"HighLights\": [],\n                \"LogJson\": \"{\\\"referer\\\":\\\"http://qwunsag.2022.qq.com/prizes?activity_code=AVGCHaQFX02Eb\\\",\\\"method\\\":\\\"GET\\\",\\\"isp\\\":\\\"中国联通\\\",\\\"remote_port\\\":\\\"45088\\\",\\\"ua\\\":\\\"Mozilla/5.0 (Linux; Android 9; INE-AL00 Build/HUAWEIINE-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/3211 MMWEBSDK/20210601 Mobile Safari/537.36 MMWEBID/6389 MicroMessenger/8.0.11.1980(0x28000B5B) Process/toolsmp WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64\\\",\\\"uuid\\\":\\\"acf1010c853f4a24bb3e92cc34e283e2\\\",\\\"version\\\":\\\"1\\\",\\\"file_size\\\":\\\"186358\\\",\\\"url\\\":\\\"/loxtxt/979884858.png\\\",\\\"request_range\\\":\\\"-\\\",\\\"rsp_size\\\":\\\"186830\\\",\\\"hit\\\":\\\"hit\\\",\\\"request_time\\\":\\\"2808\\\",\\\"http_code\\\":\\\"200\\\",\\\"param\\\":\\\"-\\\",\\\"sys_address\\\":\\\"9.130.154.208\\\",\\\"proto\\\":\\\"HTTPS\\\",\\\"host\\\":\\\"test.2022.cls.cn\\\",\\\"sys_datasource\\\":\\\"cq.3.4.v1.2.17\\\",\\\"client_ip\\\":\\\"116.116.247.167\\\",\\\"time\\\":\\\"1679902806070\\\",\\\"app_id\\\":\\\"1302700768\\\",\\\"prov\\\":\\\"内蒙古自治区\\\",\\\"timestamp\\\":\\\"2023-03-27T15:40:06+08:00\\\"}\",\n                \"RawLog\": \"\",\n                \"IndexStatus\": \"\"\n            }\n        ],\n        \"AnalysisResults\": [],\n        \"AnalysisRecords\": null,\n        \"RequestId\": \"79f593e5-1374-4463-xxxx-c49d0b3c5290\",\n        \"SamplingRate\": 0,\n        \"Topics\": null\n    }\n}",
         "title": "查询日志"
+      }
+    ],
+    "SendConsumerHeartbeat": [
+      {
+        "document": "SendConsumerHeartbeat",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendConsumerHeartbeat\n<公共请求参数>\n\n{\n    \"ConsumerGroup\": \"test-123\",\n    \"Consumer\": \"test-123-1\",\n    \"LogsetId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\",\n    \"TopicPartitionsInfo\": [\n        {\n            \"TopicID\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\",\n            \"Partitions\": [\n                1\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsumerGroup\": \"test-123\",\n        \"TopicPartitionsInfo\": [\n            {\n                \"TopicID\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\",\n                \"Partitions\": [\n                    1\n                ]\n            }\n        ],\n        \"RequestId\": \"6f6ded3f-948c-4616-9c7c-956a95d8c1a3\"\n    }\n}",
+        "title": "消费者心跳接口"
       }
     ],
     "SplitPartition": [

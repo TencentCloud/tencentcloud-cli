@@ -729,6 +729,149 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启安全锁",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableSecurityLock",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宽限期天数",
+          "example": "10",
+          "member": "uint64",
+          "name": "GracePeriod",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宽限期开始时间",
+          "example": "2025-11-11 16:50:37",
+          "member": "string",
+          "name": "GraceStartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否在宽限期内",
+          "example": "true",
+          "member": "bool",
+          "name": "IsWithinGracePeriod",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否使用托管桶",
+          "example": "true",
+          "member": "bool",
+          "name": "UseManagedBucket",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cdwdors",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "asf1",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "2",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态描述",
+          "example": "运行中",
+          "member": "string",
+          "name": "InstanceStatusDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份远程桶地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "DataRemoteRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶加密状态信息",
+          "example": "无",
+          "member": "BucketEncryptionInfo",
+          "name": "BucketEncryption",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份任务创建时记录的加密类型：SSE-COS/SSE-KMS/disabled",
+          "example": "SSE-KMS",
+          "member": "string",
+          "name": "Encryption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开通加密存储：0-未开通，1-已开通",
+          "example": "true",
+          "member": "bool",
+          "name": "EncryptionEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -945,6 +1088,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传大小",
+          "example": "",
+          "member": "int64",
+          "name": "UploadBytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1052,6 +1205,56 @@
           "example": "%",
           "member": "string",
           "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BucketEncryptionInfo": {
+      "document": "桶加密状态信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否已加密",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEncrypted",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密类型：SSE-COS/SSE-KMS/disabled",
+          "example": "SSE-COS",
+          "member": "string",
+          "name": "EncryptionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后操作类型：enable/disable",
+          "example": "enable",
+          "member": "string",
+          "name": "LastOperation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后更新时间",
+          "example": "2025-11-26 12:10:30",
+          "member": "string",
+          "name": "LastUpdateTime",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1696,7 +1899,7 @@
         {
           "disabled": false,
           "document": "备份表列表",
-          "example": "[\"123\"]",
+          "example": "无",
           "member": "BackupTableContent",
           "name": "BackUpTables",
           "required": false,
@@ -1714,7 +1917,7 @@
         {
           "disabled": true,
           "document": "远端doris集群的连接信息",
-          "example": "DorisSourceInfo",
+          "example": "无",
           "member": "DorisSourceInfo",
           "name": "DorisSourceInfo",
           "required": false,
@@ -1750,7 +1953,7 @@
         {
           "disabled": true,
           "document": "cos认证的信息",
-          "example": "1",
+          "example": "无",
           "member": "CosSourceInfo",
           "name": "CosSourceInfo",
           "required": false,
@@ -1809,6 +2012,33 @@
           "name": "DataRemoteRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "托管桶类型：standard-标准，maz-多可用区",
+          "example": "maz",
+          "member": "string",
+          "name": "BucketType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启安全锁：0-未开启，1-开启",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableSecurityLock",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "宽限期（天数）",
+          "example": "10",
+          "member": "uint64",
+          "name": "GracePeriod",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2680,6 +2910,15 @@
           "name": "JobIdFiltersStr",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0-未加密；1-已加密",
+          "example": "[0]",
+          "member": "int64",
+          "name": "EncryptionFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2690,7 +2929,7 @@
         {
           "disabled": false,
           "document": "任务列表",
-          "example": "[ ]",
+          "example": "无",
           "member": "BackUpJobDisplay",
           "name": "BackUpJobs",
           "output_required": true,
@@ -2718,6 +2957,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "当前时间",
+          "example": "2025-11-11 17:41:18",
+          "member": "string",
+          "name": "CurrentTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2737,6 +2986,15 @@
           "name": "ApplicationType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0-未加密；1-已加密",
+          "example": "[1]",
+          "member": "int64",
+          "name": "EncryptionFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2744,6 +3002,26 @@
     "DescribeBackUpSchedulesResponse": {
       "document": "DescribeBackUpSchedules返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "当前系统时间",
+          "example": "\"2025-11-11 11:06:16\"",
+          "member": "string",
+          "name": "CurrentTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶加密状态信息",
+          "example": "无",
+          "member": "BucketEncryptionInfo",
+          "name": "BucketEncryption",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5981,6 +6259,36 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型",
+          "example": "Master",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应主集群",
+          "example": "cdwdoris-demo",
+          "member": "string",
+          "name": "MasterInstance",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应备集群",
+          "example": "[\"cdwdoris-demo\"]",
+          "member": "string",
+          "name": "SlaveInstances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7107,6 +7415,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有fdb",
+          "example": "true",
+          "member": "bool",
+          "name": "HasFDB",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7244,6 +7562,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有fdb",
+          "example": "true",
+          "member": "bool",
+          "name": "HasFDB",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

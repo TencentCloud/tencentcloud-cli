@@ -2846,7 +2846,7 @@
         },
         {
           "disabled": false,
-          "document": "- 上传文件及手填两种方式只能选择其一，如果两者均提供，取值顺序为文件>手填值\n-   手填值必须是存在的cos路径, /datastudio/resource/ 为固定前缀, projectId 为项目ID,需传入具体值, parentFolderPath为父文件夹路径, name为文件名, 手填值取值示例:     /datastudio/resource/projectId/parentFolderPath/name \n",
+          "document": "- 上传文件及手填两种方式只能选择其一，如果两者均提供，取值顺序为文件>手填值\n-   手填值必须是存在的cos路径, parentFolderPath为父文件夹路径, name为文件名, 手填值取值示例:     /datastudio/resource/projectId/parentFolderPath/name \n",
           "example": "/path/to/localFile.txt",
           "member": "string",
           "name": "ResourceFile",
@@ -3269,6 +3269,15 @@
           "name": "TaskDescription",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务文件夹路径\n\n注意：\n- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；\n- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；\n",
+          "example": "/tf_01",
+          "member": "string",
+          "name": "TaskFolderPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3526,15 +3535,6 @@
         },
         {
           "disabled": false,
-          "document": "调度类型: 0 正常调度 1 空跑调度，默认为 0",
-          "example": "0",
-          "member": "string",
-          "name": "ScheduleRunType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "日历调度 取值为 0 和 1， 1为打开，0为关闭，默认为0",
           "example": "0",
           "member": "string",
@@ -3580,51 +3580,6 @@
         },
         {
           "disabled": false,
-          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6",
-          "example": "6",
-          "member": "string",
-          "name": "RunPriority",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "重试策略 重试等待时间,单位分钟: 默认: 5",
-          "example": "5",
-          "member": "string",
-          "name": "RetryWait",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "重试策略 最大尝试次数, 默认: 4",
-          "example": "4",
-          "member": "string",
-          "name": "MaxRetryAttempts",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1",
-          "example": "-1",
-          "member": "string",
-          "name": "ExecutionTTL",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1",
-          "example": "-1",
-          "member": "string",
-          "name": "WaitExecutionTotalTTL",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "重跑&补录配置, 默认为 ALL; , ALL 运行成功或失败后皆可重跑或补录, FAILURE 运行成功后不可重跑或补录，运行失败后可重跑或补录, NONE 运行成功或失败后皆不可重跑或补录;",
           "example": "ALL",
           "member": "string",
@@ -3667,6 +3622,114 @@
           "name": "InitStrategy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "调度类型: 0 正常调度 1 空跑调度，默认为 0",
+          "example": "0",
+          "member": "string",
+          "name": "ScheduleRunType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6",
+          "example": "6",
+          "member": "string",
+          "name": "RunPriority",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "重试策略 重试等待时间,单位分钟: 默认: 5",
+          "example": "5",
+          "member": "string",
+          "name": "RetryWait",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "重试策略 最大尝试次数, 默认: 4",
+          "example": "4",
+          "member": "string",
+          "name": "MaxRetryAttempts",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1",
+          "example": "-1",
+          "member": "string",
+          "name": "ExecutionTTL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1",
+          "example": "-1",
+          "member": "string",
+          "name": "WaitExecutionTotalTTL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调度类型: 0 正常调度 1 空跑调度，默认为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "ScheduleType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6",
+          "example": "6",
+          "member": "int64",
+          "name": "RunPriorityType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重试策略 重试等待时间,单位分钟: 默认: 5",
+          "example": "5",
+          "member": "int64",
+          "name": "RetryWaitMinute",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重试策略 最大尝试次数, 默认: 4",
+          "example": "4",
+          "member": "int64",
+          "name": "MaxRetryNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1",
+          "example": "-1",
+          "member": "int64",
+          "name": "ExecutionTTLMinute",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1",
+          "example": "-1",
+          "member": "int64",
+          "name": "WaitExecutionTotalTTLMinute",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -15588,6 +15651,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务文件夹路径\n\n注意：\n- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；\n- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/tf_01",
+          "member": "string",
+          "name": "TaskFolderPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -17066,17 +17140,6 @@
         },
         {
           "disabled": false,
-          "document": "调度类型: 0 正常调度 1 空跑调度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
-          "member": "int64",
-          "name": "ScheduleRunType",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "日历调度 取值为 0 和 1， 1为打开，0为关闭，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "string",
@@ -17135,7 +17198,7 @@
           "document": "下游依赖数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DependencyTaskBrief",
-          "name": "DownStreamDependencyConfigList",
+          "name": "DownstreamDependencyConfigList",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -17150,61 +17213,6 @@
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "6",
-          "member": "uint64",
-          "name": "RunPriority",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "重试策略 重试等待时间,单位分钟: 默认: 5\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "5",
-          "member": "int64",
-          "name": "RetryWait",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "重试策略 最大尝试次数, 默认: 4\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "4",
-          "member": "int64",
-          "name": "MaxRetryAttempts",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-1",
-          "member": "int64",
-          "name": "ExecutionTTL",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-1",
-          "member": "string",
-          "name": "WaitExecutionTotalTTL",
-          "output_required": false,
-          "required": false,
-          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -17260,6 +17268,149 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "调度类型: 0 正常调度 1 空跑调度，默认为 0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScheduleRunType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "（废弃，建议使用 DownstreamDependencyConfigList）下游依赖数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DependencyTaskBrief",
+          "name": "DownStreamDependencyConfigList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "uint64",
+          "name": "RunPriority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "重试策略 重试等待时间,单位分钟: 默认: 5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "RetryWait",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "重试策略 最大尝试次数, 默认: 4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "MaxRetryAttempts",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "ExecutionTTL",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "string",
+          "name": "WaitExecutionTotalTTL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度类型: 0 正常调度 1 空跑调度，默认为 0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScheduleType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务调度优先级 运行优先级 4高 5中 6低 , 默认:6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "RunPriorityType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重试策略 重试等待时间,单位分钟: 默认: 5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "RetryWaitMinute",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重试策略 最大尝试次数, 默认: 4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "MaxRetryNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超时处理策略 运行耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "ExecutionTTLMinute",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超时处理策略 等待总时长耗时超时（单位：分钟）默认为 -1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
+          "member": "int64",
+          "name": "WaitExecutionTotalTTLMinute",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -18095,7 +18246,7 @@
         },
         {
           "disabled": false,
-          "document": "- 上传文件及手填两种方式只能选择其一，如果两者均提供，取值顺序为文件>手填值\n-  手填值必须是存在的cos路径, /datastudio/resource/ 为固定前缀, projectId 为项目ID,需传入具体值, parentFolderPath为父文件夹路径, name为文件名, 手填值取值示例:\n     /datastudio/resource/projectId/parentFolderPath/name \n",
+          "document": "- 上传文件及手填两种方式只能选择其一，如果两者均提供，取值顺序为文件>手填值\n-  手填值必须是存在的cos路径, parentFolderPath为父文件夹路径, name为文件名, 手填值取值示例:\n     /datastudio/resource/projectId/parentFolderPath/name \n",
           "example": "/datastudio/resource/14609478xxxxxxx6/qxxxu/q2/once.sql",
           "member": "string",
           "name": "ResourceFile",
@@ -18454,6 +18605,15 @@
           "member": "string",
           "name": "TaskDescription",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "注意：\n- 路径上不要填写任务节点类型；例如，在 一个名为 wf01 的工作流，“通用” 分类下，现在想要在这个分类下的 tf_01 文件夹下，新建一个 shell 任务；则 填写 /tf_01 即可；\n- 如果 tf_01 文件夹不存在，则需要先创建这个文件夹（使用 CreateTaskFolder 接口）才能操作成功；",
+          "example": "/tf_01",
+          "member": "string",
+          "name": "TaskFolderPath",
+          "required": false,
           "type": "string"
         }
       ],
