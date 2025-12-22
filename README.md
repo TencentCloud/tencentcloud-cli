@@ -239,7 +239,7 @@ tccli cvm RunInstances --InstanceChargeType POSTPAID_BY_HOUR --InstanceChargePre
 
 # 高级功能
 ## 多版本接口访问
-某些产品可能存在多个版本的接口，TCCLI默认访问最新版本的接口。如果您想访问特定旧版本的接口，可以通过以下方式实现(以cvm举例)。
+某些产品可能存在多个版本的接口，TCCLI默认访问推荐版本的接口。如果您想访问其他版本的接口，可以通过以下方式实现(以cvm举例)。
 ```bash
 # 设置cvm产品默认使用版本:2017-03-12。
 tccli configure set cvm.version 2017-03-12
