@@ -1,4 +1,4 @@
-**Example 1: 查询环境基础信息**
+**Example 1: 查询环境信息**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcbr DescribeEnvBaseInfo --cli-unfold-argument  \
-    --EnvId prod-0g8ki95z117f177d
+    --EnvId lowcode-0g8ki95z1xxxxx
 ```
 
 Output: 
@@ -14,17 +14,18 @@ Output:
 {
     "Response": {
         "EnvBaseInfo": {
-            "EnvId": "en-sdf",
-            "PackageType": "package",
-            "VpcId": "vpc-sdff",
-            "CreateTime": "2023-12-12 10:00:00",
-            "Alias": "sdf",
-            "Status": "creating",
+            "EnvId": "lowcode-0g8ki95z1xxxxx",
+            "PackageType": "Trial",
+            "Alias": "default",
+            "Status": "normal",
+            "EnvType": "weda",
+            "CreateTime": "2025-03-12 15:04:00",
             "Region": "ap-shanghai",
-            "EnvType": "tcbr",
-            "SubnetIds": ""
+            "SubnetIds": "",
+            "VpcId": ""
         },
-        "RequestId": "sdfdsgdg"
+        "RequestId": "27bfe819-1497-49b0-b0ec-xxxxxx",
+        "IsExist": true
     }
 }
 ```

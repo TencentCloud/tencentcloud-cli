@@ -1172,6 +1172,14 @@
         "title": "查询套餐信息列表"
       }
     ],
+    "DescribePrefetchOriginLimit": [
+      {
+        "document": "查询加速域名 cn2.test-***a.online 的预热回源限速限制。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrefetchOriginLimit\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3***j8tqd\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"domain-name\",\n            \"Values\": [\n                \"cn2.test-***a.online\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Limits\": [\n            {\n                \"Area\": \"Overseas\",\n                \"Bandwidth\": 100,\n                \"CreateTime\": \"2025-12-16T07:08:40Z\",\n                \"DomainName\": \"cn2.test-***a.online\",\n                \"UpdateTime\": \"2025-12-16T07:08:40Z\",\n                \"ZoneId\": \"zone-3***j8tqd\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"7db71bfe-e735-4d1a-8f2d-90c085b7418d\"\n    }\n}",
+        "title": "查询预热限速限制"
+      }
+    ],
     "DescribePrefetchTasks": [
       {
         "document": "通过 CreatePrefetchTasks 提交预热任务后，用该查询接口查询预热任务记录及执行进度。",
@@ -1868,6 +1876,20 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlanRenewFlag\n<公共请求参数>\n\n{\n    \"PlanId\": \"edgeone-2unuvzjmmn2q\",\n    \"RenewFlag\": {\n        \"Switch\": \"on\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a617014-efc9-45c6-ba9d-c87d70472461\"\n    }\n}",
         "title": "修改预付费套餐自动续费标签"
+      }
+    ],
+    "ModifyPrefetchOriginLimit": [
+      {
+        "document": "创建 cn2.test-***a.online 的预热回源限制，配置预热的海外加速区域上回源带宽为100Mbps。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrefetchOriginLimit\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3***j8tqd\",\n    \"DomainName\": \"cn2.test-***a.online\",\n    \"Area\": \"Overseas\",\n    \"Bandwidth\": 100,\n    \"Enabled\": \"on\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"591c01a2-af21-4c09-af23-8f7d96832d01\"\n    }\n}",
+        "title": "创建回源限速带宽限制"
+      },
+      {
+        "document": "删除 cn2.test-***a.online 的限制。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrefetchOriginLimit\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3***j8tqd\",\n    \"DomainName\": \"cn2.test-***a.online\",\n    \"Area\": \"Overseas\",\n    \"Bandwidth\": 100,\n    \"Enabled\": \"off\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67a3d9f3-b852-4f6e-af7d-cc66ebc4fb08\"\n    }\n}",
+        "title": "删除回源限速带宽限制"
       }
     ],
     "ModifyRealtimeLogDeliveryTask": [

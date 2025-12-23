@@ -365,7 +365,7 @@
       "status": "online"
     },
     "DescribeTopicListByGroup": {
-      "document": "根据消费组获取主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。\n\nFilters示例： \n[{ \"Name\": \"TopicName\", \"Values\": [\"test_topic\"] }]",
+      "document": "查询消费组订阅的主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。\n\nFilters示例： \n[{ \"Name\": \"TopicName\", \"Values\": [\"test_topic\"] }]\n当前 API 适用集群：5.x 集群。4.x 集群的查询消费组订阅的主题列表接口文档见 [DescribeRocketMQTopicsByGroup](https://cloud.tencent.com/document/product/1179/108863)。",
       "input": "DescribeTopicListByGroupRequest",
       "name": "查询消费组订阅的主题列表",
       "output": "DescribeTopicListByGroupResponse",
@@ -6949,6 +6949,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费状态来源，枚举值如下：\n\n- DIFF_OFFSET：通过服务端offset计算\n- TRACE_REPORT：通过上报的轨迹判断",
+          "example": "DIFF_OFFSET",
+          "member": "string",
+          "name": "ConsumeStatusSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7139,20 +7149,11 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
-          "example": "test_group",
-          "member": "string",
-          "name": "ConsumerGroup",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "是否开启消费",
           "example": "true",
           "member": "bool",
           "name": "ConsumeEnable",
-          "required": false,
+          "required": true,
           "type": "bool"
         },
         {
@@ -7161,8 +7162,17 @@
           "example": "true",
           "member": "bool",
           "name": "ConsumeMessageOrderly",
-          "required": false,
+          "required": true,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
+          "example": "test_group",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,

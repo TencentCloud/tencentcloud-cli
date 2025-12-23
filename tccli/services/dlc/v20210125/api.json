@@ -11689,7 +11689,7 @@
         {
           "disabled": false,
           "document": "引擎ID",
-          "example": "DataEngine-xxxx",
+          "example": "DataEngine-a4wvak8f",
           "member": "string",
           "name": "DataEngineId",
           "required": false,
@@ -11698,9 +11698,27 @@
         {
           "disabled": false,
           "document": "资源组ID",
-          "example": "rg-xxxx",
+          "example": "rg-7w5ex1i20y",
           "member": "string",
           "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "3065409964877832192",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户Uin",
+          "example": "700002273047",
+          "member": "string",
+          "name": "UserUin",
           "required": false,
           "type": "string"
         }

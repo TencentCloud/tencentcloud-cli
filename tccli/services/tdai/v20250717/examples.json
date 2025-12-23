@@ -28,7 +28,7 @@
       {
         "document": "用于查询智能体后台值守任务详情",
         "input": "POST / HTTP/1.1\nHost: tdai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChats\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4744e0fa-7827-4ae6-8eda-f5de924e1adb\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentDutyTask\": {\n            \"TaskId\": \"task-x89ool0j\",\n            \"CreateTime\": \"2025-09-01 10:00:00\",\n            \"FinishTime\": \"0000-00-00 00:00:00\",\n            \"Status\": \"running\",\n            \"ResultExtraKey\": [],\n            \"Extra\": []\n        },\n        \"RequestId\": \"4744e0fa-7827-4ae6-8eda-f5de924e1adb\"\n    }\n}",
         "title": "查询值守任务详情"
       }
     ],

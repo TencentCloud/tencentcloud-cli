@@ -9882,7 +9882,7 @@
         },
         {
           "disabled": false,
-          "document": "限制条数",
+          "document": "单次查询最大条数。取值范围：[0~100]，默认值为20",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -19562,6 +19562,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费状态来源，枚举值如下：\n\n- DIFF_OFFSET：通过服务端offset计算\n- TRACE_REPORT：通过上报的轨迹判断",
+          "example": "TRACE_REPORT",
+          "member": "string",
+          "name": "ConsumeStatusSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

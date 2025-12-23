@@ -10116,7 +10116,17 @@
     },
     "DescribeAccountBalanceRequest": {
       "document": "DescribeAccountBalance请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否查询临时额度",
+          "example": "true",
+          "member": "bool",
+          "name": "TempCredit",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "DescribeAccountBalanceResponse": {
@@ -10250,6 +10260,26 @@
           "name": "RealCreditBalance",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时额度，单位 分",
+          "example": "1.0",
+          "member": "float",
+          "name": "TempCredit",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时额度详情",
+          "example": "无",
+          "member": "UinTempAmountModel",
+          "name": "TempAmountInfoList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -13958,8 +13988,8 @@
         },
         {
           "disabled": false,
-          "document": "周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通成本分析后，且距今 24 个月内的数据。",
-          "example": "2024-01-01 00:00:00",
+          "document": "周期开始时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。",
+          "example": "2025-01-01 00:00:00",
           "member": "datetime",
           "name": "BeginTime",
           "required": false,
@@ -13967,8 +13997,8 @@
         },
         {
           "disabled": false,
-          "document": "周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通成本分析后，且距今 24 个月内的数据。",
-          "example": "2024-01-31 00:00:00",
+          "document": "周期结束时间，查询粒度为天级别，需传入时分秒参数，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为同一月份，暂不支持跨月拉取。可拉取的数据是开通消耗账单后，且距今 18 个月内的数据。",
+          "example": "2025-01-31 23:59:59",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -13985,8 +14015,8 @@
         },
         {
           "disabled": false,
-          "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通成本分析的月份，最多可拉取24个月内的数据。",
-          "example": "\"2024-01-01 00:00:00\"",
+          "document": "月份，格式为yyyy-mm，Month和BeginTime&EndTime必传一个，如果有传BeginTime&EndTime则Month字段无效。不能早于开通消耗账单的月份，最多可拉取18个月内的数据。",
+          "example": "2025-01",
           "member": "string",
           "name": "Month",
           "required": false,
@@ -14004,7 +14034,7 @@
         {
           "disabled": false,
           "document": "付费模式 prePay/postPay",
-          "example": "\"postPay\"",
+          "example": "postPay",
           "member": "string",
           "name": "PayMode",
           "required": false,
@@ -14013,7 +14043,7 @@
         {
           "disabled": false,
           "document": "查询指定资源信息",
-          "example": "\"1400532488\"",
+          "example": "1400532488",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -17966,6 +17996,52 @@
         }
       ],
       "usage": "both"
+    },
+    "UinTempAmountModel": {
+      "document": "临时额度详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户uin",
+          "example": "600000561284",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时额度",
+          "example": "2000.00",
+          "member": "float",
+          "name": "TempAmount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-11-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2026-11-16 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UsageDetails": {
       "document": "购买商品信息",

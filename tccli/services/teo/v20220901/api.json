@@ -784,6 +784,13 @@
       "output": "DescribePlansResponse",
       "status": "online"
     },
+    "DescribePrefetchOriginLimit": {
+      "document": "本接口用于查询回源限速限制，该功能白名单内测中。",
+      "input": "DescribePrefetchOriginLimitRequest",
+      "name": "查询预热回源限速限制",
+      "output": "DescribePrefetchOriginLimitResponse",
+      "status": "online"
+    },
     "DescribePrefetchTasks": {
       "document": "DescribePrefetchTasks 用于查询预热任务提交历史记录及执行进度，通过 CreatePrefetchTasks 接口提交的任务可通过此接口进行查询。",
       "input": "DescribePrefetchTasksRequest",
@@ -1251,6 +1258,13 @@
       "input": "ModifyPlanRequest",
       "name": "修改套餐配置",
       "output": "ModifyPlanResponse",
+      "status": "online"
+    },
+    "ModifyPrefetchOriginLimit": {
+      "document": "本接口用于配置回源限速限制，该功能白名单内测中。\n可通过此接口创建、修改与删除预热回源限速限制，每个账号最多支持 100 条限制。",
+      "input": "ModifyPrefetchOriginLimitRequest",
+      "name": "配置预热回源限速限制",
+      "output": "ModifyPrefetchOriginLimitResponse",
       "status": "online"
     },
     "ModifyRealtimeLogDeliveryTask": {
@@ -13406,6 +13420,80 @@
       ],
       "type": "object"
     },
+    "DescribePrefetchOriginLimitRequest": {
+      "document": "DescribePrefetchOriginLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。",
+          "example": "zone-3***j8tqd",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目，默认值：20，上限：100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20。详细的过滤条件如下：\n<li>domain-name：按照域名过滤。domain-name 形如：www.qq.com，不支持模糊查询；</li>\n<li>area：按照限制加速区域过滤，不支持模糊查询。可选项：<br> Overseas：全球可用区（不含中国大陆）；<br> MainlandChina：中国大陆可用区。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrefetchOriginLimitResponse": {
+      "document": "DescribePrefetchOriginLimit返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源限速限制总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制详情List。",
+          "example": "无",
+          "member": "PrefetchOriginLimit",
+          "name": "Limits",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrefetchTasksRequest": {
       "document": "DescribePrefetchTasks请求参数结构体",
       "members": [
@@ -22010,6 +22098,69 @@
       ],
       "type": "object"
     },
+    "ModifyPrefetchOriginLimitRequest": {
+      "document": "ModifyPrefetchOriginLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3***j8tqd",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加速域名。",
+          "example": "cn2.test-***a.online",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制的加速区域。\n预热时，该加速区域将会受到配置的Bandwidth值限制。取值有：\n<li>Overseas：全球可用区（不含中国大陆）；</li>\n<li>MainlandChina：中国大陆可用区。</li>",
+          "example": "Overseas",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回源限速带宽。\n预热时回到源站的带宽上限值，取值范围 100 - 100,000，单位 Mbps。",
+          "example": "100",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制控制开关。\n用于启用/删除本条回源限速限制，取值有：\n<li>on：启用限制；</li>\n<li>off：删除限制。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrefetchOriginLimitResponse": {
+      "document": "ModifyPrefetchOriginLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRealtimeLogDeliveryTaskRequest": {
       "document": "ModifyRealtimeLogDeliveryTask请求参数结构体",
       "members": [
@@ -24899,6 +25050,72 @@
         }
       ],
       "usage": "both"
+    },
+    "PrefetchOriginLimit": {
+      "document": "回源限速限制详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-3***j8tqd",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加速域名。",
+          "example": "cn2.test-***a.online",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制的加速区域。\n预热时，该加速区域将会受到配置的Bandwidth值限制。取值有：\n<li>Overseas：全球可用区（不含中国大陆）；</li>\n<li>MainlandChina：中国大陆可用区。</li>",
+          "example": "Overseas",
+          "member": "string",
+          "name": "Area",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源限速带宽。\n预热时回到源站的带宽上限值，取值范围 100 - 100,000，单位 Mbps。",
+          "example": "100",
+          "member": "int64",
+          "name": "Bandwidth",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制创建的时间。",
+          "example": "2025-12-16T07:08:40Z",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源限速限制更新的时间。",
+          "example": "2025-12-16T07:08:40Z",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PrepaidPlanParam": {
       "document": "预付费套餐计费参数",

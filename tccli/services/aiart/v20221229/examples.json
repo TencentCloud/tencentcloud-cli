@@ -8,6 +8,14 @@
         "title": "成功"
       }
     ],
+    "DescribeTemplateToImageJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplateToImageJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1394637692053602304\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"ResultImage\": [\n            \"https://***.tencentcos.cn/imagestyle/results/***/b1759140-6951-4d6a-9f12-add42ca16b***ey-time=1766401936%3B1766488336&q-header-list=host&q-url-param-list=&q-signature=dfea613edc2ee44c44ee1c4be393ea355cfa5487\"\n        ],\n        \"Status\": \"DONE\",\n        \"RequestId\": \"1378c58c-f636-42c2-a5fd-814d3c24e594\"\n    }\n}",
+        "title": "调用成功示例"
+      }
+    ],
     "GenerateAvatar": [
       {
         "document": "",
@@ -134,6 +142,14 @@
         "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitMemeJob\n<公共请求参数>\n\n{\n    \"Pose\": \"aiyobudeliao\",\n    \"InputUrl\": \"https://cos.ap-guangzhou.myqcloud.com/image.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"251197749-1736402968-49025b63-ce50-11ef-9ce4-5254006b9705-0\",\n        \"RequestId\": \"97781219-f994-4169-b0a6-032b9fab4742\"\n    }\n}",
         "title": "调用示例"
+      }
+    ],
+    "SubmitTemplateToImageJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTemplateToImageJob\n<公共请求参数>\n\n{\n    \"Image\": {\n        \"Url\": \"https://test.com/1.png\"\n    },\n    \"Style\": \"gallerying\",\n    \"LogoAdd\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1394637692053602304\",\n        \"RequestId\": \"b1759140-6951-4d6a-9f12-add42ca16b25\"\n    }\n}",
+        "title": "调用成功示例"
       }
     ],
     "SubmitTextToImageJob": [

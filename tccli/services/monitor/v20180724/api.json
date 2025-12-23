@@ -2701,6 +2701,98 @@
       ],
       "usage": "both"
     },
+    "BindProgressResponse": {
+      "document": "绑定状态Response",
+      "members": [
+        {
+          "disabled": false,
+          "document": "绑定步骤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BindProgressStep",
+          "name": "Steps",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-pg4ft0gc",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群绑定状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "binding",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BindProgressStep": {
+      "document": "绑定进度参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-01-05T03:19:22Z",
+          "member": "datetime_iso",
+          "name": "EndAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "network error",
+          "member": "string",
+          "name": "FailedMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "success",
+          "member": "string",
+          "name": "LifeState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-01-05T03:19:22Z",
+          "member": "datetime_iso",
+          "name": "StartAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进程\n\"prepare_env\"   // 准备环境,安装instance EKS\n\"check_target\"  // 检查target是否为running\n\"install_crd\"   // 安装需要测crd\n\"install_rbac\"  // 安装rbac\n\"install_agent\" // 安装agent\n\"install_cr\"    // 安装prometheus CR\n\"install_basic\" // 安装基础采集信息，标记target状态为normal",
+          "example": "prepare_env",
+          "member": "string",
+          "name": "Step",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BindPrometheusManagedGrafanaRequest": {
       "document": "BindPrometheusManagedGrafana请求参数结构体",
       "members": [
@@ -8631,12 +8723,41 @@
     },
     "DescribeClusterAgentCreatingProgressRequest": {
       "document": "DescribeClusterAgentCreatingProgress请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "prom实例id",
+          "example": "prom-9llcjyz8",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群ids",
+          "example": "[\"cls-pg4ft0gc\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeClusterAgentCreatingProgressResponse": {
       "document": "DescribeClusterAgentCreatingProgress返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "绑定状态response",
+          "example": "无",
+          "member": "BindProgressResponse",
+          "name": "Response",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

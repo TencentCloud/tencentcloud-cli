@@ -94,10 +94,10 @@
     ],
     "DescribeAccountBalance": [
       {
-        "document": "",
-        "input": "https://billing.tencentcloudapi.com/?Action=DescribeAccountBalance\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Uin\": \"90961\",\n        \"RealBalance\": 9647442,\n        \"CashAccountBalance\": 1299806668,\n        \"IncomeIntoAccountBalance\": 0,\n        \"PresentAccountBalance\": 209512,\n        \"FreezeAmount\": 1290368738,\n        \"OweAmount\": 0,\n        \"RequestId\": \"1323\",\n        \"IsAllowArrears\": true,\n        \"IsCreditLimited\": true,\n        \"Balance\": -6188426,\n        \"CreditAmount\": 200,\n        \"CreditBalance\": -6188226,\n        \"RealCreditBalance\": -6188226\n    }\n}",
-        "title": "获取账户余额示例"
+        "document": "查余额返回临时额度验证",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountBalance\n<公共请求参数>\n\n{\n    \"TempCredit\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Balance\": 0,\n        \"CashAccountBalance\": 0,\n        \"CreditAmount\": 10000000000,\n        \"CreditBalance\": 10000000000,\n        \"FreezeAmount\": 0,\n        \"IncomeIntoAccountBalance\": 0,\n        \"IsAllowArrears\": true,\n        \"IsCreditLimited\": true,\n        \"OweAmount\": 0,\n        \"PresentAccountBalance\": 0,\n        \"RealBalance\": 0,\n        \"RealCreditBalance\": 10000000000,\n        \"TempAmountInfoList\": [\n            {\n                \"EndTime\": \"2026-11-16 00:00:00\",\n                \"StartTime\": \"2025-11-01 00:00:00\",\n                \"TempAmount\": 200000,\n                \"Uin\": \"600000561284\"\n            }\n        ],\n        \"TempCredit\": 0,\n        \"Uin\": 600000561284,\n        \"RequestId\": \"8590441d-6e17-4afe-8ca4-f75cec86e290\"\n    }\n}",
+        "title": "查余额用例返回验证"
       }
     ],
     "DescribeAllocateConditions": [

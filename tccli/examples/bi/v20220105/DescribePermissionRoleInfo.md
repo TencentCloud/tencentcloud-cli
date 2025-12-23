@@ -7,9 +7,9 @@ Input:
 ```
 tccli bi DescribePermissionRoleInfo --cli-unfold-argument  \
     --ProjectId 1 \
-    --PageNo 0 \
+    --PageNo 1 \
     --PageSize 10 \
-    --AllPage true
+    --AllPage True
 ```
 
 Output: 

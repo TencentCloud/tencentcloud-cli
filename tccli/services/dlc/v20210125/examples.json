@@ -711,7 +711,7 @@
     "DescribeNativeSparkSessions": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNativeSparkSessions\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-a4wvak8f\",\n    \"ResourceGroupId\": \"rg-xxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNativeSparkSessions\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-a4wvak8f\",\n    \"ResourceGroupId\": \"rg-7w5ex1i20y\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3cdfd934-10b7-402b-bacb-985d83c12aee\",\n        \"SparkSessionsList\": []\n    }\n}",
         "title": "示例"
       }

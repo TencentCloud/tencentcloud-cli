@@ -157,7 +157,7 @@
     "CreateNewL7Rules": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNewL7Rules\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"KeepTime\": \"300\",\n            \"Domain\": \"www.abc.com\",\n            \"Protocol\": \"http\",\n            \"SourceType\": \"2\",\n            \"CertType\": \"0\",\n            \"LbType\": \"1\",\n            \"SourceList\": [\n                {\n                    \"Source\": \"1.1.1.20\",\n                    \"Weight\": \"100\"\n                },\n                {\n                    \"Source\": \"1.1.1.10\",\n                    \"Weight\": \"100\"\n                }\n            ],\n            \"KeepEnable\": \"0\",\n            \"RuleName\": \"name\"\n        }\n    ],\n    \"VipList\": [\n        \"192.168.1.1\"\n    ],\n    \"IdList\": [\n        \"bgpip-000001\"\n    ],\n    \"Business\": \"bgpip\"\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNewL7Rules\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"KeepTime\": 300,\n            \"Domain\": \"www.abc.com\",\n            \"Protocol\": \"http\",\n            \"SourceType\": 2,\n            \"CertType\": 0,\n            \"LbType\": 1,\n            \"SourceList\": [\n                {\n                    \"Source\": \"1.1.1.20\",\n                    \"Weight\": 100\n                },\n                {\n                    \"Source\": \"1.1.1.10\",\n                    \"Weight\": 100\n                }\n            ],\n            \"KeepEnable\": 0,\n            \"RuleName\": \"name\"\n        }\n    ],\n    \"VipList\": [\n        \"192.168.1.1\"\n    ],\n    \"IdList\": [\n        \"bgpip-000001\"\n    ],\n    \"Business\": \"bgpip\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "添加7层转发规则"
       }
@@ -729,7 +729,7 @@
     "ModifyDDoSBlackWhiteIpList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDDoSBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-00023423\",\n    \"OldIp\": {\n        \"Ip\": \"1.1.1.1\",\n        \"Mask\": \"0\"\n    },\n    \"NewIp\": {\n        \"Ip\": \"1.1.1.2\",\n        \"Mask\": \"0\"\n    },\n    \"NewIpType\": \"black\",\n    \"OldIpType\": \"black\"\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDDoSBlackWhiteIpList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-00023423\",\n    \"OldIp\": {\n        \"Ip\": \"1.1.1.1\",\n        \"Mask\": 0\n    },\n    \"NewIp\": {\n        \"Ip\": \"1.1.1.2\",\n        \"Mask\": 0\n    },\n    \"NewIpType\": \"black\",\n    \"OldIpType\": \"black\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"63591603-c943-46eb-9b78-c5498072291a\"\n    }\n}",
         "title": "修改DDoS黑白名单列表"
       }

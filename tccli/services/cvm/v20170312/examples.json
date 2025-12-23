@@ -760,13 +760,13 @@
       {
         "document": "授权待授权的维修任务，允许立即进行处理",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RepairTaskControl\n<公共请求参数>\n\n{\n    \"Product\": \"CVM\",\n    \"InstanceIds\": [\n        \"ins-xxxxxxxx\"\n    ],\n    \"TaskId\": \"rep-xxxxxxxx\",\n    \"Operate\": \"AuthorizeRepair\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0436564c-1234-4f0f-a341-59e86338446\",\n        \"TaskId\": \"rep-xxxxxxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a2683e-dabe-4c42-b6b7-e7a209428f41\",\n        \"TaskId\": \"rep-xxxxxxxx\"\n    }\n}",
         "title": "授权维修任务立即进行处理"
       },
       {
         "document": "提前预约待授权的维修任务在`2023-01-02 12:00:00`授权进行处理",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RepairTaskControl\n<公共请求参数>\n\n{\n    \"Product\": \"CVM\",\n    \"InstanceIds\": [\n        \"ins-xxxxxxxx\"\n    ],\n    \"TaskId\": \"rep-xxxxxxxx\",\n    \"Operate\": \"AuthorizeRepair\",\n    \"OrderAuthTime\": \"2023-01-02 12:00:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0436564c-1234-4f0f-a341-59e86338446\",\n        \"TaskId\": \"rep-xxxxxxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a2683e-dabe-4c42-b6b7-e7a209428f41\",\n        \"TaskId\": \"rep-xxxxxxxx\"\n    }\n}",
         "title": "预约维修任务在指定时间进行处理"
       }
     ],

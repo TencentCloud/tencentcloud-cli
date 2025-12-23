@@ -3364,7 +3364,7 @@
         },
         {
           "disabled": false,
-          "document": "单页项目个数，默认为10000，合法取值范围为0～10000",
+          "document": "单页项目个数，默认为1000，合法取值范围为1～1000",
           "example": "15",
           "member": "int64",
           "name": "Limit",

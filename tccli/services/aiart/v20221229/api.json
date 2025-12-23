@@ -7,6 +7,13 @@
       "output": "ChangeClothesResponse",
       "status": "online"
     },
+    "DescribeTemplateToImageJob": {
+      "document": "查询图片特效任务",
+      "input": "DescribeTemplateToImageJobRequest",
+      "name": "查询图片特效任务",
+      "output": "DescribeTemplateToImageJobResponse",
+      "status": "online"
+    },
     "GenerateAvatar": {
       "document": "百变头像接口将根据输入的人像照片，生成风格百变的头像。\n百变头像默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "GenerateAvatarRequest",
@@ -117,6 +124,13 @@
       "input": "SubmitMemeJobRequest",
       "name": "提交表情动图生成任务",
       "output": "SubmitMemeJobResponse",
+      "status": "online"
+    },
+    "SubmitTemplateToImageJob": {
+      "document": "提交图片特效任务",
+      "input": "SubmitTemplateToImageJobRequest",
+      "name": "提交图片特效任务",
+      "output": "SubmitTemplateToImageJobResponse",
       "status": "online"
     },
     "SubmitTextToImageJob": {
@@ -240,6 +254,73 @@
           "name": "ResultImage",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateToImageJobRequest": {
+      "document": "DescribeTemplateToImageJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "1394637692053602304",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTemplateToImageJobResponse": {
+      "document": "DescribeTemplateToImageJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前任务状态码：\n1：等待中、2：运行中、4：处理失败、5：处理完成。",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误码。\n",
+          "example": "FailedOperation.Unknown",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误信息。\n",
+          "example": "未知错误。",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成图 URL 列表，有效期1小时，请及时保存。\n",
+          "example": "[\"https://***.cos.ap-guangzhou.tencentcos.cn/imagestyle/results/***/b1759140-6951-4d6a-9f12-add42ca16b***ey-time=1766401936%3B1766488336&q-header-list=host&q-url-param-list=&q-signature=dfea613edc2ee44c44ee1c4be393ea355cfa5487\"]",
+          "member": "string",
+          "name": "ResultImage",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1948,6 +2029,70 @@
           "member": "string",
           "name": "JobId",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitTemplateToImageJobRequest": {
+      "document": "SubmitTemplateToImageJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "算法将根据输入的图片，结合文本描述智能生成与之相关的图像。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
+          "example": "无",
+          "member": "Image",
+          "name": "Image",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "绘画风格当前仅支持美术馆风格（gallerying）。",
+          "example": "gallerying",
+          "member": "string",
+          "name": "Style",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成结果图添加显式水印标识的开关，默认为1。  \n1：添加。  \n0：不添加。  \n其他数值：默认按1处理。  \n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "无",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitTemplateToImageJobResponse": {
+      "document": "SubmitTemplateToImageJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "1394637692053602304",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

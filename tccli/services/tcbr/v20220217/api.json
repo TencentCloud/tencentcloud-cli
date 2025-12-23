@@ -253,7 +253,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Trial,Standard,Professional,Enterprise",
+          "document": "<p>Trial,Standard,Professional,Enterprise</p>",
           "example": "Enterprise",
           "member": "string",
           "name": "PackageType",
@@ -262,7 +262,7 @@
         },
         {
           "disabled": false,
-          "document": "环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符",
+          "document": "<p>环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符</p>",
           "example": "alias",
           "member": "string",
           "name": "Alias",
@@ -271,7 +271,7 @@
         },
         {
           "disabled": false,
-          "document": "用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。",
+          "document": "<p>用户享有的免费额度级别，目前只能为“basic”，不传该字段或该字段为空，标识不享受免费额度。</p>",
           "example": "basic",
           "member": "string",
           "name": "FreeQuota",
@@ -280,7 +280,7 @@
         },
         {
           "disabled": false,
-          "document": "订单标记。建议使用方统一转大小写之后再判断。\nQuickStart：快速启动来源\nActivity：活动来源",
+          "document": "<p>订单标记。建议使用方统一转大小写之后再判断。QuickStart：快速启动来源Activity：活动来源</p>",
           "example": "QuickStart",
           "member": "string",
           "name": "Flag",
@@ -289,7 +289,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络Id",
+          "document": "<p>私有网络Id</p>",
           "example": "vpc-45olnsxx",
           "member": "string",
           "name": "VpcId",
@@ -298,7 +298,7 @@
         },
         {
           "disabled": false,
-          "document": "子网列表",
+          "document": "<p>子网列表</p>",
           "example": "[\"subnet-n17bt4yb\",\"subnet-dw0xrh1b\",\"subnet-h5xm5f2x\"]",
           "member": "string",
           "name": "SubNetIds",
@@ -307,7 +307,7 @@
         },
         {
           "disabled": false,
-          "document": "请求key 用于防重",
+          "document": "<p>请求key 用于防重</p>",
           "example": "4045b63716e",
           "member": "string",
           "name": "ReqKey",
@@ -316,7 +316,7 @@
         },
         {
           "disabled": false,
-          "document": "来源：wechat | cloud | weda",
+          "document": "<p>来源：wechat | cloud | weda</p>",
           "example": "wechat",
           "member": "string",
           "name": "Source",
@@ -325,7 +325,7 @@
         },
         {
           "disabled": false,
-          "document": "渠道：wechat | cloud | weda",
+          "document": "<p>渠道：wechat | cloud | weda</p>",
           "example": "wechat",
           "member": "string",
           "name": "Channel",
@@ -334,7 +334,7 @@
         },
         {
           "disabled": false,
-          "document": "环境ID 云开发平台必填",
+          "document": "<p>环境ID 云开发平台必填</p>",
           "example": "env-sdjflskjfd",
           "member": "string",
           "name": "EnvId",
@@ -349,7 +349,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境Id",
+          "document": "<p>环境Id</p>",
           "example": "prod-3g69bdvme2ac11cb",
           "member": "string",
           "name": "EnvId",
@@ -359,7 +359,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费订单号",
+          "document": "<p>后付费订单号</p>",
           "example": "0ow89eea326",
           "member": "string",
           "name": "TranId",
@@ -381,7 +381,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境Id",
+          "document": "<p>环境Id</p>",
           "example": "env-example",
           "member": "string",
           "name": "EnvId",
@@ -390,7 +390,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名",
+          "document": "<p>服务名</p>",
           "example": "serverName",
           "member": "string",
           "name": "ServerName",
@@ -399,7 +399,7 @@
         },
         {
           "disabled": false,
-          "document": "部署信息",
+          "document": "<p>部署信息</p>",
           "example": "无",
           "member": "DeployParam",
           "name": "DeployInfo",
@@ -408,7 +408,7 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息(已废弃)",
+          "document": "<p>服务配置信息(已废弃)</p>",
           "example": "无",
           "member": "ServerBaseConfig",
           "name": "ServerConfig",
@@ -417,7 +417,7 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息",
+          "document": "<p>服务配置信息</p>",
           "example": "无",
           "member": "DiffConfigItem",
           "name": "Items",
@@ -426,7 +426,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc 信息",
+          "document": "<p>vpc 信息</p>",
           "example": "无",
           "member": "CreateVpcInfo",
           "name": "VpcInfo",
@@ -441,7 +441,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一键部署任务Id，微信云托管，暂时用不到",
+          "document": "<p>一键部署任务Id，微信云托管，暂时用不到</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskId",
@@ -1262,7 +1262,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境 Id",
+          "document": "<p>环境 Id</p>",
           "example": "test-1gbtbgkjf8f48e2c",
           "member": "string",
           "name": "EnvId",
@@ -1277,7 +1277,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境基础信息",
+          "document": "<p>环境基础信息</p>",
           "example": "无",
           "member": "EnvBaseInfo",
           "name": "EnvBaseInfo",
@@ -1287,7 +1287,7 @@
         },
         {
           "disabled": false,
-          "document": "是否存在",
+          "document": "<p>是否存在</p>",
           "example": "false",
           "member": "bool",
           "name": "IsExist",
@@ -3911,7 +3911,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境Id",
+          "document": "<p>环境Id</p>",
           "example": "env-example",
           "member": "string",
           "name": "EnvId",
@@ -3920,7 +3920,7 @@
         },
         {
           "disabled": false,
-          "document": "服务名",
+          "document": "<p>服务名</p>",
           "example": "serverName",
           "member": "string",
           "name": "ServerName",
@@ -3929,7 +3929,7 @@
         },
         {
           "disabled": false,
-          "document": "部署信息",
+          "document": "<p>部署信息</p>",
           "example": "无",
           "member": "DeployParam",
           "name": "DeployInfo",
@@ -3938,7 +3938,7 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息(已废弃)",
+          "document": "<p>服务配置信息(已废弃)</p>",
           "example": "无",
           "member": "ServerBaseConfig",
           "name": "ServerConfig",
@@ -3947,7 +3947,7 @@
         },
         {
           "disabled": false,
-          "document": "业务类型，默认tcr",
+          "document": "<p>业务类型，默认tcr</p>",
           "example": "tcb",
           "member": "string",
           "name": "Business",
@@ -3956,7 +3956,7 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息",
+          "document": "<p>服务配置信息</p>",
           "example": "无",
           "member": "DiffConfigItem",
           "name": "Items",
@@ -3971,7 +3971,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境Id",
+          "document": "<p>环境Id</p>",
           "example": "env-example",
           "member": "string",
           "name": "EnvId",
@@ -3981,7 +3981,7 @@
         },
         {
           "disabled": false,
-          "document": "一键部署任务Id，暂时用不到",
+          "document": "<p>一键部署任务Id，暂时用不到</p>",
           "example": "1",
           "member": "int64",
           "name": "TaskId",
