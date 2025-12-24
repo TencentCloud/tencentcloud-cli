@@ -6938,6 +6938,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨账号时，表示成员账号的appid",
+          "example": "251240572",
+          "member": "uint64",
+          "name": "MemberAppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨账号时，表示成员账号的uin",
+          "example": "700000670233",
+          "member": "string",
+          "name": "MemberUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨账号时，表示成员账号的昵称",
+          "example": "member-nickname",
+          "member": "string",
+          "name": "MemberNickName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13018,7 +13048,7 @@
         {
           "disabled": false,
           "document": "域名详情",
-          "example": "{   \"Domain\": \"txcloudwaf.qcloudwaf.com\",   \"DomainId\": \"waf-DhOzNw3D\",   \"MainDomain\": \"qcloudwaf.com\",   \"Mode\": 1,   \"Status\": 1,   \"State\": 1,   \"Engine\": 1,   \"IsCdn\": 1,   \"LoadBalancerSet\": [     {       \"LoadBalancerId\": \"lb-daiu3grtd\",       \"LoadBalancerName\": \"txlb\",       \"ListenerId\": \"lbl-daskhe2\",       \"ListenerName\": \"80httpport\",       \"Vip\": \"35.68.12.3\",       \"Vport\": 1,       \"Region\": \"gz\",       \"Protocol\": \"http\",       \"Zone\": \"ap-guangzhou\",       \"NumericalVpcId\": 3243,       \"LoadBalancerType\": \"open\",     }   ],   \"Region\": \"gz\",   \"Edition\": \"clb-waf\",   \"FlowMode\": 1,   \"ClsStatus\": 1,   \"Level\": 1,   \"CdcClusters\": [     \"cluster-o41khj88\"   ],   \"AlbType\": \"clb\",   \"IpHeaders\": [     \"x-myreal-ip\"   ],   \"EngineType\": 0,   \"CloudType\": \"public\",   \"Note\": \"备注\" }",
+          "example": "无",
           "member": "HostRecord",
           "name": "Host",
           "output_required": true,
@@ -13774,6 +13804,24 @@
           "name": "By",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集团成员列表",
+          "example": "[251254511, 251240572]",
+          "member": "uint64",
+          "name": "MemberAppIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "1代表跨账号情况，0代表单账号情况",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCrossAccount",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -21354,6 +21402,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器所属成员id",
+          "example": "251254511",
+          "member": "uint64",
+          "name": "MemberAppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器所属成员的uin",
+          "example": "700000916577",
+          "member": "string",
+          "name": "MemberUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21488,6 +21558,50 @@
           "example": "randy.qcloudwaf.com",
           "member": "string",
           "name": "LoadBalancerDomain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器所属appid",
+          "example": "251240572",
+          "member": "uint64",
+          "name": "MemberAppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器自身所属uin",
+          "example": "700000670233",
+          "member": "string",
+          "name": "MemberUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器被接入的waf账号",
+          "example": "251254511",
+          "member": "uint64",
+          "name": "Appid",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团账号昵称",
+          "example": "member-nickname",
+          "member": "string",
+          "name": "MemberNickName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -24738,6 +24852,24 @@
           "name": "IpHeaders",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "对象所属集团成员appid",
+          "example": "251240572",
+          "member": "uint64",
+          "name": "MemberAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "对象所属集团成员uin",
+          "example": "700000670233",
+          "member": "string",
+          "name": "MemberUin",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

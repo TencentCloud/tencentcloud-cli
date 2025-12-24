@@ -987,6 +987,13 @@
       "output": "ProcessMediaResponse",
       "status": "online"
     },
+    "RecognizeAudio": {
+      "document": "同步接口，返回语音识别结果",
+      "input": "RecognizeAudioRequest",
+      "name": "识别音频",
+      "output": "RecognizeAudioResponse",
+      "status": "online"
+    },
     "RecognizeMediaForZhiXue": {
       "document": "智能媒体识别，包含表情和动作识别。仅用于智学，其他调用无效。",
       "input": "RecognizeMediaForZhiXueRequest",
@@ -31080,6 +31087,136 @@
         }
       ],
       "usage": "both"
+    },
+    "RecognizeAudioRequest": {
+      "document": "RecognizeAudio请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "base64编码的音频数据",
+          "example": "KwDn/zIA5v///wUA0v8D",
+          "member": "string",
+          "name": "AudioData",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "识别目标语言，为空默认 auto 自动识别语种。\n注：如果自动识别语种识别效果不佳，可以指定语种提高准确率\n\n当前支持语言：\nauto: 自动识别\nzh: 简体中文\nen: 英语\nja: 日语\nko: 韩语\nvi: 越南语\nms: 马来语\nid: 印度尼西亚语\nfil: 菲律宾语\nth: 泰语\npt: 葡萄牙语\ntr: 土耳其语\nar: 阿拉伯语\nes: 西班牙语\nhi: 印地语\nfr: 法语\nde: 德语\nit: 意大利语\nyue: 粤语\nru: 俄语\naf: 南非荷兰语\nsq: 阿尔巴尼亚语\nam: 阿姆哈拉语\nhy: 亚美尼亚语\naz: 阿塞拜疆语\neu: 巴斯克语\nbn: 孟加拉语\nbs: 波斯尼亚语\nbg: 保加利亚语\nmy: 缅甸语\nca: 加泰罗尼亚语\nhr: 克罗地亚语\ncs: 捷克语\nda: 丹麦语\nnl: 荷兰语\net: 爱沙尼亚语\nfi: 芬兰语\ngl: 加利西亚语\nka: 格鲁吉亚语\nel: 希腊语\ngu: 古吉拉特语\niw: 希伯来语\nhu: 匈牙利语\nis: 冰岛语\njv: 爪哇语\nkn: 卡纳达语\nkk: 哈萨克语\nkm: 高棉语\nrw: 卢旺达语\nlo: 老挝语\nlv: 拉脱维亚语\nlt: 立陶宛语\nmk: 马其顿语\nml: 马拉雅拉姆语\nmr: 马拉地语\nmn: 蒙古语\nne: 尼泊尔语\nno: 博克马尔挪威语\nfa: 波斯语\npl: 波兰语\nro: 罗马尼亚语\nsr: 塞尔维亚语\nsi: 僧伽罗语\nsk: 斯洛伐克语\nsl: 斯洛文尼亚语\nst: 南索托语\nsu: 巽他语\nsw: 斯瓦希里语\nsv: 瑞典语\nta: 泰米尔语\nte: 泰卢固语\nts: 聪加语\nuk: 乌克兰语\nur: 乌尔都语\nuz: 乌兹别克语\nve: 文达语\nxh: 科萨语\nzu: 祖鲁语\n",
+          "example": "zh",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音频数据格式，默认为 pcm\n\n支持的格式：pcm (16k 采样率的单声道 16 位采样 pcm 数据)",
+          "example": "pcm",
+          "member": "string",
+          "name": "AudioFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩展参数，默认不填，特殊需求使用",
+          "example": "{\"key\":1}",
+          "member": "string",
+          "name": "UserExtPara",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeAudioResponse": {
+      "document": "RecognizeAudio返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "整段音频的识别结果",
+          "example": "腾讯云，媒体处理",
+          "member": "string",
+          "name": "Text",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频长度，单位秒",
+          "example": "4.1",
+          "member": "float",
+          "name": "AudioLength",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分句的识别结果",
+          "example": "无",
+          "member": "RecognizeAudioSentence",
+          "name": "Sentence",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeAudioSentence": {
+      "document": "识别音频单句结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "在音频中的起始时间，单位秒",
+          "example": "1.00",
+          "member": "float",
+          "name": "Start",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在音频中的截止时间，单位秒",
+          "example": "2.00",
+          "member": "float",
+          "name": "End",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频识别结果",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字词时间戳结果",
+          "example": "无",
+          "member": "WordResult",
+          "name": "WordsInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RecognizeMediaForZhiXueRequest": {
       "document": "RecognizeMediaForZhiXue请求参数结构体",

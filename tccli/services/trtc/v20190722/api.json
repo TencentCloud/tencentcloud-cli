@@ -2532,7 +2532,7 @@
         {
           "disabled": false,
           "document": "切片任务的唯一Id，在启动切片任务成功后会返回。",
-          "example": "123",
+          "example": "-nHwX3RU7h3eZ-9PYsqd+z8I1uU1tUnbTWClW4K-xuWiN6KipeCyXJ8ZJEFpWSZ5zZuyZUAuAQ..",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -8164,6 +8164,24 @@
           "name": "Volume",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开启播放进度回调, 默认false，当开启后，播放进度会通过trtc custom data 回调给播放端",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableProgress",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "播放倍速，默认1.0，可取[0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]",
+          "example": "1.5",
+          "member": "float",
+          "name": "Tempo",
+          "required": false,
+          "type": "float"
         }
       ],
       "type": "object"
@@ -9576,6 +9594,24 @@
           "name": "IsPause",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启播放进度回调, 默认false，当开启后，播放进度会通过trtc custom data 回调给播放端",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableProgress",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "播放倍速，默认1.0，可取[0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]",
+          "example": "1.5",
+          "member": "float",
+          "name": "Tempo",
+          "required": false,
+          "type": "float"
         }
       ],
       "type": "object"
@@ -10006,7 +10042,7 @@
         },
         {
           "disabled": false,
-          "document": "声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在5秒～12秒之间",
+          "document": "声音克隆的参考音频，必须为16k单声道的wav的base64字符串， 长度在10秒～180秒之间",
           "example": "ejiwnorinofnODSw",
           "member": "string",
           "name": "PromptAudio",

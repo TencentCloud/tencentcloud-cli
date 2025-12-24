@@ -1,26 +1,25 @@
-**Example 1: 启动输入在线媒体流**
+**Example 1: 开启在线输入媒体流**
 
-启动一个输入在线媒体流任务，将在线媒体流"https://a.b/test.mp4"输入TRTC房间，音视频编码采用默认编码值，转推成功后返回TaskId
+
 
 Input: 
 
 ```
 tccli trtc StartStreamIngest --cli-unfold-argument  \
-    --SdkAppId 1234567890 \
-    --RoomId room123 \
-    --UserId robot123 \
-    --UserSig xxxxxxxxxxxxxxx \
-    --PrivateMapKey xxxxxxxxxxxxxxx \
+    --SdkAppId 1400188366 \
+    --RoomId 9988101 \
     --RoomIdType 1 \
-    --StreamUrl https://a.b/test.mp4
+    --UserId u46618234 \
+    --UserSig eJw1jUsOgkAQBa9CZm1wej4Nmrjwu1AxEeQABAZsDTgBNBrj3RXFbb1UvSc7bCO3oYKNHabaeb6ZJRhcpo94EZkwPYFcjfLQrOUSStof092wqGxsgwkbOF-V3C3V5mOD1lpwznveZOfEWsq6RXEOvi8R**1m6u5OuPxfaan8NjxE5YHQ0HPKTNVSTj-hqhDBF1Kx1xv7mTKR \
+    --StreamUrl https://webrtc-backup-record-default-1258344699.cos.ap-nanjing.myqcloud.com/runningwang/output_f100040.mp4
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": "-gCTFWtU7t7DUlo7A8IswFszO9z2O-rbERqJAoK-4pycoZXKjIAAnasdcasdOEycyX4CnzhIm4RAQ..",
-        "RequestId": "71993312-6ab8-4768-9124-118e0a20c45f"
+        "RequestId": "b4096f81-8633-4475-9ee1-8ce4eab20849",
+        "TaskId": "CR6LqvF7KfFBEyRihlxDN5RBXjdLDEn-LZgRFr+rTEL2p6vnZV4vRaRm5zJS3tEiSir0mwHw-Y5itMY+Rcfy3QpDMCzfXWl5CXXrEFRHuOGHxJCzqSY."
     }
 }
 ```

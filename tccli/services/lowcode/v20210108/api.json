@@ -1609,7 +1609,7 @@
         {
           "disabled": false,
           "document": "角色id",
-          "example": "\"\"",
+          "example": "113123",
           "member": "int64",
           "name": "RoleId",
           "required": true,
@@ -1618,7 +1618,7 @@
         {
           "disabled": false,
           "document": "环境id",
-          "example": "\"\"",
+          "example": "\"lowcode-sdfs\"",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -1627,7 +1627,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "\"\"",
+          "example": "1",
           "member": "int64",
           "name": "PageNo",
           "required": true,
@@ -1636,7 +1636,7 @@
         {
           "disabled": false,
           "document": "页面含量",
-          "example": "\"\"",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -1645,9 +1645,18 @@
         {
           "disabled": false,
           "document": "环境类型",
-          "example": "\"\"",
+          "example": "\"prod\"",
           "member": "string",
           "name": "EnvType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新角色id",
+          "example": "\"weqr\"",
+          "member": "string",
+          "name": "RoleStringId",
           "required": false,
           "type": "string"
         }
@@ -1670,7 +1679,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Total",
           "output_required": true,

@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli vcube DeleteApplicationAndVideoLicense --cli-unfold-argument ```
+tccli vcube DeleteApplicationAndVideoLicense --cli-unfold-argument  \
+    --LicenseId 34744
+```
 
 Output: 
 ```

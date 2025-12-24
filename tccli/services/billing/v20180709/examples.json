@@ -436,6 +436,14 @@
         "title": "获取按资源汇总消耗详情"
       }
     ],
+    "DescribeCostSummaryByTag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCostSummaryByTag\n<公共请求参数>\n\n{\n    \"BeginTime\": \"2025-03-01 00:00:00\",\n    \"EndTime\": \"2025-03-31 23:59:59\",\n    \"TagKey\": \"olinatest\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Ready\": 1,\n        \"RequestId\": \"89e54575-dc13-4506-8aaf-7bab9c7e6242\",\n        \"SummaryOverview\": [\n            {\n                \"CashPayAmount\": \"0.03649794\",\n                \"IncentivePayAmount\": \"1.42589172\",\n                \"RealTotalCost\": \"1.46238966\",\n                \"RealTotalCostRatio\": \"0.01\",\n                \"TagValue\": \"选项4\",\n                \"TotalCost\": \"2.13082235\",\n                \"TransferPayAmount\": \"0.00000000\",\n                \"VoucherPayAmount\": \"0.00000000\"\n            },\n            {\n                \"CashPayAmount\": \"349.11233834\",\n                \"IncentivePayAmount\": \"26791.85486446\",\n                \"RealTotalCost\": \"27202.36063812\",\n                \"RealTotalCostRatio\": \"99.99\",\n                \"TagValue\": \"\",\n                \"TotalCost\": \"47452.01346118\",\n                \"TransferPayAmount\": \"0.00000000\",\n                \"VoucherPayAmount\": \"61.39343531\"\n            }\n        ],\n        \"SummaryTotal\": {\n            \"RealTotalCost\": \"27203.82302778\",\n            \"TotalCost\": \"47454.14428353\"\n        }\n    }\n}",
+        "title": "获取按标签汇总消耗详情"
+      }
+    ],
     "DescribeDealsByCond": [
       {
         "document": "获取订单示例",

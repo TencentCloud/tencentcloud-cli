@@ -2443,7 +2443,7 @@
         {
           "disabled": false,
           "document": "数组，数组成员是策略 id，支持批量删除策略",
-          "example": "1000",
+          "example": "[1000]",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,

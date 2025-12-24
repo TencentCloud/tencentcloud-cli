@@ -32339,7 +32339,7 @@
         {
           "disabled": false,
           "document": "所属项目",
-          "example": "{     \"ProjectName\":\"proj1\",     \"ProjectID\":1 }",
+          "example": "无",
           "member": "ProjectInfo",
           "name": "Project",
           "output_required": true,
@@ -32349,7 +32349,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "[{     \"TagKey\":\"business1\",     \"TagValue\":\"dev\" }]",
+          "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": true,
@@ -32414,6 +32414,16 @@
           "name": "CoresCnt",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近在线时间",
+          "example": "2025-12-24 08:37:11",
+          "member": "string",
+          "name": "LastOnlineTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

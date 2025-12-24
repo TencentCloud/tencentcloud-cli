@@ -7,6 +7,13 @@
       "output": "ConfigureBackupPlanResponse",
       "status": "online"
     },
+    "CreateBackupPlan": {
+      "document": "该接口用于创建备份计划。",
+      "input": "CreateBackupPlanRequest",
+      "name": "创建备份计划",
+      "output": "CreateBackupPlanResponse",
+      "status": "online"
+    },
     "CreateConnectTestJob": {
       "document": "该接口用于创建连通性检测任务，请在创建备份计划前，通过该接口来检测你的源端实例是否连通性正常。",
       "input": "CreateConnectTestJobRequest",
@@ -19,6 +26,20 @@
       "input": "DescribeBackupCheckJobRequest",
       "name": "查询备份计划预校验结果",
       "output": "DescribeBackupCheckJobResponse",
+      "status": "online"
+    },
+    "DescribeBackupPlans": {
+      "document": "本接口（DescribeBackupPlans）用于查询备份计划列表。",
+      "input": "DescribeBackupPlansRequest",
+      "name": "查询备份计划列表",
+      "output": "DescribeBackupPlansResponse",
+      "status": "online"
+    },
+    "DescribeConnectTestResult": {
+      "document": "该接口用于查询连通性检测任务的结果",
+      "input": "DescribeConnectTestResultRequest",
+      "name": "查询连通性检测任务结果",
+      "output": "DescribeConnectTestResultResponse",
       "status": "online"
     },
     "StartBackupCheckJob": {
@@ -373,6 +394,182 @@
       ],
       "usage": "both"
     },
+    "BackupPlanInfo": {
+      "document": "备份计划信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域信息。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份计划 ID。",
+          "example": "dbs-xxxxxxxx",
+          "member": "string",
+          "name": "BackupPlanId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份计划名称。",
+          "example": "name_test",
+          "member": "string",
+          "name": "BackupPlanName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份计划状态。可能的取值为：\n\"notStarted\" - 未启动;\n\"checking\" - 校验中;\n\"checkPass\" - 校验通过;\n\"checkNotPass\" - 校验未通过;\n\"running\" - 运行中;\n\"fullBacking\" - 全量备份中;\n\"isolating\" - 隔离中;\n\"isolated\" - 已隔离;\n\"offlining\" - 下线中;\n\"offlined\" - 已下线;\n\"paused\" - 已暂停。",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型。",
+          "example": "mysql",
+          "member": "string",
+          "name": "DatabaseType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问类型。可能的取值为：\n\"extranet\" - 外网;\n\"cvm\" - cvm 自建实例;\n\"dcg\" - 专线接入;\n\"vpncloud\" - 云vpn接入;\n\"cdb\" - 腾讯云数据库实例;\n\"ccn\" - 云联网。",
+          "example": "extranet",
+          "member": "string",
+          "name": "AccessType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源实例信息。",
+          "example": "[\"cdb-testcloud\"]",
+          "member": "string",
+          "name": "SourceInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2022-05-23 11:12:13",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间。",
+          "example": "2022-05-23 11:12:13",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下线时间。",
+          "example": "2022-05-23 11:12:13",
+          "member": "string",
+          "name": "OfflineTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例规格类型。可能的取值为：[\"micro\", \"small\", \"medium\", \"large\", \"xlarge\"]。",
+          "example": "micro",
+          "member": "string",
+          "name": "InstanceClass",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份方式。可能的取值为：\n\"logical\" - 逻辑备份;\n\"physical\" - 物理备份。",
+          "example": "logical",
+          "member": "string",
+          "name": "BackupMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"TagKey\":\"key\",\"TagValue\":\"value\"}]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标记。可能的取值为：\n0 - 未开启自动续费;\n1 - 已开启自动续费;\n2 - 已关闭自动续费。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启增量备份标记。",
+          "example": "1",
+          "member": "bool",
+          "name": "EnableIncrement",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费类型。可能的取值为：\n\"prePay\" - 预付费类型;\n\"postPay\" - 后付费类型。",
+          "example": "prePay",
+          "member": "string",
+          "name": "PayType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "SetSourceInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BackupStrategy": {
       "document": "备份策略",
       "members": [
@@ -498,6 +695,15 @@
         },
         {
           "disabled": false,
+          "document": "全量备份并发数上限。",
+          "example": "6",
+          "member": "int64",
+          "name": "UpperParallel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "备份源实例信息。",
           "example": "无",
           "member": "BackupEndpoint",
@@ -538,6 +744,182 @@
     "ConfigureBackupPlanResponse": {
       "document": "ConfigureBackupPlan返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ConnectTestResult": {
+      "document": "连通性检测结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "16794137",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p>",
+          "example": "finished",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否通过。0 表示未通过，1 表示通过。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsPass",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源端地址</p>",
+          "example": ":0",
+          "member": "string",
+          "name": "Addr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源地址转换IP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SNatIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测结果集</p>",
+          "example": "无",
+          "member": "TestItem",
+          "name": "TestItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateBackupPlanRequest": {
+      "document": "CreateBackupPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源端数据库类型。当前支持值为: [\"mysql\",\"cynosdbmysql\",\"percona\",\"mariadb\",\"tdsqlmysql\"]。",
+          "example": "mysql",
+          "member": "string",
+          "name": "DatabaseType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份方式。当前仅支持\"logical\"，即逻辑备份。",
+          "example": "logical",
+          "member": "string",
+          "name": "BackupMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规格。当前支持值为: [\"micro\",\"small\",\"medium\",\"large\",\"xlarge\"]。默认为\"small\"。",
+          "example": "large",
+          "member": "string",
+          "name": "InstanceClass",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长，单位为月，默认值为1。",
+          "example": "3",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式。当前仅支持\"prepay\"，即包年包月。",
+          "example": "prepay",
+          "member": "string",
+          "name": "PayType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买数量。取值范围为[1, 10]，默认值为1。",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。1 - 开启自动续费；0 - 不开启自动续费。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenew",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackupPlanResponse": {
+      "document": "CreateBackupPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单参数。",
+          "example": "20251216711021858208781",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源ID。",
+          "example": "[\"dbs-3enedogk\"]",
+          "member": "string",
+          "name": "BackupPlanIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -651,6 +1033,163 @@
       ],
       "type": "object"
     },
+    "DescribeBackupPlansRequest": {
+      "document": "DescribeBackupPlans请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件，备份计划 ID。",
+          "example": "dbs-xxxxxxxx",
+          "member": "string",
+          "name": "BackupPlanId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，备份计划状态。",
+          "example": "[\"checkPass\", \"running\"]",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，数据库类型。",
+          "example": "[\"mysql\",\"mariadb\"]",
+          "member": "string",
+          "name": "DatabaseType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，接入访问类型。",
+          "example": "[\"ccn\",\"cdb\"]",
+          "member": "string",
+          "name": "AccessType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，备份计划名称。",
+          "example": "name_test",
+          "member": "string",
+          "name": "BackupPlanName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，标签键值。",
+          "example": "{\"TagKey\":\"key\",\"TagValue\":[\"v1\", \"v2\"]}",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数。取值范围为(0, 100]，默认值为20。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数。默认值为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupPlansResponse": {
+      "document": "DescribeBackupPlans返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份计划数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份计划详情。",
+          "example": "无",
+          "member": "BackupPlanInfo",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectTestResultRequest": {
+      "document": "DescribeConnectTestResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>连通性检测任务 ID。</p>",
+          "example": "[123]",
+          "member": "int64",
+          "name": "TaskIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectTestResultResponse": {
+      "document": "DescribeConnectTestResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务总数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测结果详情。</p>",
+          "example": "无",
+          "member": "ConnectTestResult",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StartBackupCheckJobRequest": {
       "document": "StartBackupCheckJob请求参数结构体",
       "members": [
@@ -740,6 +1279,94 @@
         }
       ],
       "usage": "both"
+    },
+    "Tag": {
+      "document": "标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键。",
+          "example": "key",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值。",
+          "example": "value",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TagFilter": {
+      "document": "标签过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键。",
+          "example": "key",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值。",
+          "example": "[\"v1\",\"v2\"]",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "TestItem": {
+      "document": "检测步骤详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>检测步骤名称</p>",
+          "example": "Telnet",
+          "member": "string",
+          "name": "TestName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "ok",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

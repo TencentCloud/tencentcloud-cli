@@ -1259,7 +1259,17 @@
     },
     "DeleteApplicationAndVideoLicenseRequest": {
       "document": "DeleteApplicationAndVideoLicense请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "license唯一标识",
+          "example": "34750",
+          "member": "uint64",
+          "name": "LicenseId",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DeleteApplicationAndVideoLicenseResponse": {

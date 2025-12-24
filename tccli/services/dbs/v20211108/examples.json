@@ -3,9 +3,17 @@
     "ConfigureBackupPlan": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfigureBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-xxxxxx\",\n    \"SourceEndPoint\": {\n        \"Region\": \"ap-guangzhou\",\n        \"DatabaseType\": \"mysql\",\n        \"AccessType\": \"cdb\",\n        \"InstanceId\": \"cdb-xxxxxxxx\",\n        \"Supplier\": \"others\",\n        \"UserName\": \"root\",\n        \"Password\": \"xxxxxxxx\"\n    },\n    \"BackupObject\": {\n        \"ObjectMode\": \"all\",\n        \"ObjectItems\": []\n    },\n    \"BackupStrategy\": {\n        \"BackupPeriod\": {\n            \"PeriodType\": \"Weekly\",\n            \"Day\": [\n                \"Monday\"\n            ]\n        },\n        \"BackupMethod\": \"logical\",\n        \"StrategyType\": \"period\",\n        \"BackupStartTime\": \"02:00\",\n        \"EnableIncrement\": true,\n        \"StorageStrategy\": {\n            \"BackupRetentionPeriod\": 30,\n            \"StorageType\": \"system\"\n        }\n    },\n    \"BackupPlanName\": \"backupPlan\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "ConfigureBackupPlan"
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfigureBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-3enedogk\",\n    \"BackupPlanName\": \"dbs-test\",\n    \"UpperParallel\": 6\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f6dc02f-2eba-4f52-b016-c06f631a914e\"\n    }\n}",
+        "title": "配置备份计划"
+      }
+    ],
+    "CreateBackupPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackupPlan\n<公共请求参数>\n\n{\n    \"DatabaseType\": \"mysql\",\n    \"BackupMethod\": \"logical\",\n    \"InstanceClass\": \"large\",\n    \"Period\": 3,\n    \"PayType\": \"prepay\",\n    \"Count\": 1,\n    \"AutoRenew\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupPlanIds\": [\n            \"dbs-3enedogk\"\n        ],\n        \"OrderId\": \"20251216711021858208781\",\n        \"RequestId\": \"ce31a435-eb3d-4508-b6e9-1b96cf86c8c7\"\n    }\n}",
+        "title": "购买备份计划"
       }
     ],
     "CreateConnectTestJob": [
@@ -22,6 +30,22 @@
         "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupCheckJob\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-qcloudtest\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"finished\",\n        \"Progress\": 100,\n        \"CheckFlag\": 1,\n        \"ErrMessage\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询备份计划预校验结果"
+      }
+    ],
+    "DescribeBackupPlans": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupPlans\n<公共请求参数>\n\n{\n    \"Status\": [\n        \"running\",\n        \"checkPass\"\n    ],\n    \"AccessType\": [\n        \"extranet\"\n    ],\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"AccessType\": \"extranet\",\n                \"AutoRenewFlag\": 1,\n                \"BackupMethod\": \"logical\",\n                \"BackupPlanId\": \"dbs-testcloud\",\n                \"BackupPlanName\": \"dbs-nametest\",\n                \"CreateTime\": \"2022-03-15 17:49:31\",\n                \"DatabaseType\": \"percona\",\n                \"EnableIncrement\": false,\n                \"ExpireTime\": \"2022-05-15 17:49:31\",\n                \"InstanceClass\": \"micro\",\n                \"OfflineTime\": \"2022-05-31 09:36:18\",\n                \"PayType\": \"prePay\",\n                \"Region\": \"ap-guangzhou\",\n                \"SourceInfo\": [\n                    \"1.0.0.10:8888\"\n                ],\n                \"Status\": \"isolated\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key\",\n                        \"TagValue\": \"v\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询备份计划列表"
+      }
+    ],
+    "DescribeConnectTestResult": [
+      {
+        "document": "查询连通性检测任务结果",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConnectTestResult\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        123\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Addr\": \"\",\n                \"IsPass\": 0,\n                \"SNatIp\": \"\",\n                \"Status\": \"\",\n                \"TaskId\": 0,\n                \"TestItems\": []\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"cf6db42c-0eed-4aaf-a8aa-0b2e21e09573\"\n    }\n}",
+        "title": "查询连通性检测任务结果"
       }
     ],
     "StartBackupCheckJob": [

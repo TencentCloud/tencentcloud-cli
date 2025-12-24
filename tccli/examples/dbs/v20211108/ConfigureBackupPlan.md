@@ -1,4 +1,4 @@
-**Example 1: ConfigureBackupPlan**
+**Example 1: 配置备份计划**
 
 
 
@@ -6,31 +6,16 @@ Input:
 
 ```
 tccli dbs ConfigureBackupPlan --cli-unfold-argument  \
-    --BackupPlanId dbs-xxxxxx \
-    --SourceEndPoint.Region ap-guangzhou \
-    --SourceEndPoint.DatabaseType mysql \
-    --SourceEndPoint.AccessType cdb \
-    --SourceEndPoint.InstanceId cdb-xxxxxxxx \
-    --SourceEndPoint.Supplier others \
-    --SourceEndPoint.UserName root \
-    --SourceEndPoint.Password xxxxxxxx \
-    --BackupObject.ObjectMode all \
-    --BackupStrategy.BackupPeriod.PeriodType Weekly \
-    --BackupStrategy.BackupPeriod.Day Monday \
-    --BackupStrategy.BackupMethod logical \
-    --BackupStrategy.StrategyType period \
-    --BackupStrategy.BackupStartTime 02:00 \
-    --BackupStrategy.EnableIncrement True \
-    --BackupStrategy.StorageStrategy.BackupRetentionPeriod 30 \
-    --BackupStrategy.StorageStrategy.StorageType system \
-    --BackupPlanName backupPlan
+    --BackupPlanId dbs-3enedogk \
+    --BackupPlanName dbs-test \
+    --UpperParallel 6
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "RequestId": "0f6dc02f-2eba-4f52-b016-c06f631a914e"
     }
 }
 ```

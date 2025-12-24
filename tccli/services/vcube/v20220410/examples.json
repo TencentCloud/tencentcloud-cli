@@ -75,7 +75,7 @@
     "DeleteApplicationAndVideoLicense": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplicationAndVideoLicense\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vcube.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplicationAndVideoLicense\n<公共请求参数>\n\n{\n    \"LicenseId\": 34744\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除视频播放器 License 和相关应用"
       }

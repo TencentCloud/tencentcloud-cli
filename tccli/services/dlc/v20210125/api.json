@@ -19931,6 +19931,15 @@
           "name": "TableName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "catalog名称",
+          "example": "tb_catalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19944,7 +19953,7 @@
           "example": "lakefs/xxx/xxx",
           "member": "string",
           "name": "WarehousePath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

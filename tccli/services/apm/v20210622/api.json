@@ -133,6 +133,13 @@
       "output": "DescribeTagValuesResponse",
       "status": "online"
     },
+    "DescribeTopologyNew": {
+      "document": "根据应用名查询服务拓扑图",
+      "input": "DescribeTopologyNewRequest",
+      "name": "获取拓扑图",
+      "output": "DescribeTopologyNewResponse",
+      "status": "online"
+    },
     "ModifyApmApplicationConfig": {
       "document": "修改应用配置接口",
       "input": "ModifyApmApplicationConfigRequest",
@@ -2104,6 +2111,70 @@
       ],
       "usage": "both"
     },
+    "CVMMeta": {
+      "document": "CVM元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-test",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ComponentTopologyView": {
+      "document": "包含了视图中节点组件类型的数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务纬度的节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "Service",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "Database",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息队列节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MQ",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateApmInstanceRequest": {
       "document": "CreateApmInstance请求参数结构体",
       "members": [
@@ -3779,6 +3850,217 @@
       ],
       "type": "object"
     },
+    "DescribeTopologyNewRequest": {
+      "document": "DescribeTopologyNew请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务系统 ID",
+          "example": "apm-52Dpv13GR",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间",
+          "example": "1617163200",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间",
+          "example": "1617192000",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用名",
+          "example": "java-order-service",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上游层级",
+          "example": "2",
+          "member": "int64",
+          "name": "UpLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用实例信息",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "ServiceInstance",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下游层级",
+          "example": "2",
+          "member": "int64",
+          "name": "DownLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "视角",
+          "example": "db",
+          "member": "string",
+          "name": "View",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "[ { \"key\":\"TraceID\", \"operator\":\"eq\", \"value\":\"9c35b592750d5e0c15bd202bbae57a29\" } ]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "表示Topic（MQ拓扑图用）",
+          "example": "prod.ecommerce.order.created.v1",
+          "member": "string",
+          "name": "Topic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视图筛选列表",
+          "example": "{ \"Component\":[ \"Service\", \"MQ\", \"Database\" ] }",
+          "member": "Selectors",
+          "name": "Selectors",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "视图ID",
+          "example": "topo_apm-xxxxyzj_6d15af9600d6e8aefd739a2",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TraceID",
+          "example": "9c35b592750d5e0c15bd202bbae57a29",
+          "member": "string",
+          "name": "TraceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询top5慢响应节点",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSlowTopFive",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取资源层信息",
+          "example": "true",
+          "member": "bool",
+          "name": "GetResource",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "根据应用标签过滤",
+          "example": "[ { \"Key\": \"运营产品\", \"Value\": \"云监控产品\" } ]",
+          "member": "ApmTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "不显示的节点类型",
+          "example": "{ \"Component\":[ \"MQ\", \"Database\" ] }",
+          "member": "Selectors",
+          "name": "Hidden",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopologyNewResponse": {
+      "document": "DescribeTopologyNew返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TopologyNode",
+          "name": "Nodes",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "边集合",
+          "example": "无",
+          "member": "TopologyEdgeNew",
+          "name": "Edges",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拓扑图是否有修改\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TopologyModifyFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SelectorView",
+          "name": "Selectors",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "查询过滤参数",
       "members": [
@@ -5131,6 +5413,32 @@
       ],
       "usage": "in"
     },
+    "Position": {
+      "document": "节点位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点位置横坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "X",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点位置纵坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "float",
+          "name": "Y",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "QueryMetricItem": {
       "document": "查询",
       "members": [
@@ -5163,6 +5471,78 @@
         }
       ],
       "usage": "in"
+    },
+    "Resource": {
+      "document": "资源层信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Tke\"]",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke资源层信息",
+          "example": "[{\"Region\":\"ap-guangzhou\",\"ClusterID\":\"cls-pkask1w4\",\"PodName\":\"java-taw-mock-project-experience-log-test-5788578c94-lb29z\",\"Namespace\":\"taw-mock\",\"Deployment\":\"java-taw-mock-project-experience-log\",\"PodIP\":\"10.80.3.69\",\"NodeIP\":\"30.167.52.173\"}]",
+          "member": "TkeMeta",
+          "name": "TKEMeta",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cvm资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "CVMMeta",
+          "name": "CVMMeta",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SelectorView": {
+      "document": "包含了节点的组件数量和健康度数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ComponentTopologyView",
+          "name": "Component",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Selectors": {
+      "document": "视图方案勾选情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件勾选情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Component",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ServiceDetail": {
       "document": "应用详细信息",
@@ -5557,6 +5937,431 @@
         }
       ],
       "type": "object"
+    },
+    "TkeMeta": {
+      "document": "tke资源元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-pkask1w4",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod name",
+          "example": "java-taw-mock-project-experience-log-test-5788578c94-92tbv",
+          "member": "string",
+          "name": "PodName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "test",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作负载",
+          "example": "test",
+          "member": "string",
+          "name": "Deployment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod ip",
+          "example": "10.80.1.34",
+          "member": "string",
+          "name": "PodIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "node ip",
+          "example": "9.223.65.110",
+          "member": "string",
+          "name": "NodeIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TopologyEdgeNew": {
+      "document": "拓扑图边定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源节点",
+          "example": "customer",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "边ID",
+          "example": "customer_mysql",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "边权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "Weight",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标节点",
+          "example": "mysql",
+          "member": "string",
+          "name": "Target",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "Duration",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.36",
+          "member": "float",
+          "name": "ErrRate",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "吞吐量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "Qps",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "边类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "virtual",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "边颜色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "red",
+          "member": "string",
+          "name": "Color",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Sql调用数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.0",
+          "member": "float",
+          "name": "SqlRequestCount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Sql调用错误数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100.0",
+          "member": "float",
+          "name": "SqlErrorRequestCount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "边上源节点类型 应用/MQ/DB",
+          "example": "mq",
+          "member": "string",
+          "name": "SourceComp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "边上目标节点类型 应用/MQ/DB",
+          "example": "mq",
+          "member": "string",
+          "name": "TargetComp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopologyNode": {
+      "document": "拓扑图边节点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.36",
+          "member": "float",
+          "name": "ErrRate",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SPAN_KIND_SERVER",
+          "member": "string",
+          "name": "Kind",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点名",
+          "example": "Customer",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "Weight",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点颜色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "red",
+          "member": "string",
+          "name": "Color",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "Duration",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "吞吐量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "Qps",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "156",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "large",
+          "member": "string",
+          "name": "Size",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点是否为组件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsModule",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点位置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Position",
+          "name": "Position",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点是否可以下钻\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "CanDrillDown",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源层信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Resource",
+          "name": "Resource",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拓扑节点视图名字",
+          "example": "mq",
+          "member": "string",
+          "name": "NodeView",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MQ 消费者视角的响应时间 ms",
+          "example": "100",
+          "member": "float",
+          "name": "ConsumerDuration",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MQ 消费者视角的错误率 %",
+          "example": "0.36",
+          "member": "float",
+          "name": "ConsumerErrRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MQ 消费者视角的吞吐量",
+          "example": "100",
+          "member": "float",
+          "name": "ConsumerQps",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用 ID",
+          "example": "svc-1xfew23",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

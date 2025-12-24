@@ -245,6 +245,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切片请求ID",
+          "example": "91a0f0f6-fed1-41d7-98c8-237533cc1a17",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
