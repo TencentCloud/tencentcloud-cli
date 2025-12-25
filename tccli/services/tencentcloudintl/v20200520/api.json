@@ -218,7 +218,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类目ID",
+          "document": "<p>类目ID</p>",
           "example": "213",
           "member": "int64",
           "name": "CategoryId",
@@ -227,7 +227,7 @@
         },
         {
           "disabled": false,
-          "document": "语言",
+          "document": "<p>语言</p>",
           "example": "en",
           "member": "string",
           "name": "Lang",
@@ -236,7 +236,7 @@
         },
         {
           "disabled": false,
-          "document": "是否编辑模式",
+          "document": "<p>是否编辑模式</p>",
           "example": "false",
           "member": "bool",
           "name": "EditMode",
@@ -245,7 +245,7 @@
         },
         {
           "disabled": false,
-          "document": "是否预览",
+          "document": "<p>是否预览</p>",
           "example": "false",
           "member": "bool",
           "name": "IsPreview",
@@ -260,7 +260,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类目信息",
+          "document": "<p>类目信息</p>",
           "example": "无",
           "member": "GetCatalogueRspData",
           "name": "Data",
@@ -1526,7 +1526,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标题",
+          "document": "<p>标题</p>",
           "example": "Microservice and Serverless Microservice and Serverless",
           "member": "string",
           "name": "Title",
@@ -1537,7 +1537,7 @@
         },
         {
           "disabled": false,
-          "document": "语言",
+          "document": "<p>语言</p>",
           "example": "en",
           "member": "string",
           "name": "Lang",
@@ -1548,13 +1548,24 @@
         },
         {
           "disabled": false,
-          "document": "返回的类目列表数据",
+          "document": "<p>返回的类目列表数据</p>",
           "example": "无",
           "member": "CateInfo",
           "name": "List",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>概览页面配置</p>",
+          "example": "{\"key\":\"val\"}",
+          "member": "string",
+          "name": "OverviewPageConfig",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

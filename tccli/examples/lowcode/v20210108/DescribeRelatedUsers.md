@@ -7,10 +7,11 @@ Input:
 ```
 tccli lowcode DescribeRelatedUsers --cli-unfold-argument  \
     --RoleId 0 \
-    --EnvId abc \
+    --EnvId lowcode-xxx \
     --PageNo 0 \
     --PageSize 0 \
-    --EnvType abc
+    --EnvType prod \
+    --RoleStringId wer
 ```
 
 Output: 
@@ -20,50 +21,50 @@ Output:
         "Data": [
             {
                 "Uin": 0,
-                "Name": "abc",
+                "Name": "sdfqwer",
                 "Env": 0,
                 "Type": 0,
-                "NickName": "abc",
-                "Email": "abc",
-                "Phone": "abc",
+                "NickName": "sdfqwer",
+                "Email": "sdfqwer",
+                "Phone": "sdfqwer",
                 "ProjectId": 0,
-                "Uuid": "abc",
+                "Uuid": "sdfqwer",
                 "Source": 0,
-                "OpenId": "abc",
+                "OpenId": "sdfqwer",
                 "RelatedRoles": [
                     {
-                        "Name": "abc",
-                        "RoleIdentity": "abc",
+                        "Name": "sdfqwer",
+                        "RoleIdentity": "sdfqwer",
                         "Id": 0,
                         "ParentRoleId": 0,
                         "ChildRoleId": 0,
-                        "EnvIdentity": "abc",
+                        "EnvIdentity": "sdfqwer",
                         "IsReleased": true
                     }
                 ],
-                "WechatUserId": "abc",
+                "WechatUserId": "sdfqwer",
                 "InternalUserType": 0,
                 "UserId": 0,
-                "OrgName": "abc",
-                "UserSchema": "abc",
-                "UserExtend": "abc",
+                "OrgName": "sdfqwer",
+                "UserSchema": "sdfqwer",
+                "UserExtend": "sdfqwer",
                 "IsLicensed": true,
                 "RelatedRoleGroups": [
                     {
                         "Id": 0,
-                        "Name": "abc",
-                        "GroupIdentity": "abc",
-                        "GroupDesc": "abc",
-                        "CreateTime": "abc",
-                        "UpdateTime": "abc",
+                        "Name": "sdfqwer",
+                        "GroupIdentity": "sdfqwer",
+                        "GroupDesc": "sdfqwer",
+                        "CreateTime": "sdfqwer",
+                        "UpdateTime": "sdfqwer",
                         "RoleList": [
                             {
-                                "Name": "abc",
-                                "RoleIdentity": "abc",
+                                "Name": "sdfqwer",
+                                "RoleIdentity": "sdfqwer",
                                 "Id": 0,
                                 "ParentRoleId": 0,
                                 "ChildRoleId": 0,
-                                "EnvIdentity": "abc",
+                                "EnvIdentity": "sdfqwer",
                                 "IsReleased": true
                             }
                         ]
@@ -71,29 +72,29 @@ Output:
                 ],
                 "Orgs": [
                     {
-                        "OrgId": "abc",
-                        "OrgName": "abc",
-                        "OrgIdentity": "abc",
-                        "Level": "abc",
-                        "PrimaryColumn": "abc"
+                        "OrgId": "sdfqwer",
+                        "OrgName": "sdfqwer",
+                        "OrgIdentity": "sdfqwer",
+                        "Level": "sdfqwer",
+                        "PrimaryColumn": "sdfqwer"
                     }
                 ],
                 "MainOrg": [
                     {
-                        "OrgId": "abc",
-                        "OrgName": "abc",
-                        "OrgIdentity": "abc",
-                        "Level": "abc",
-                        "PrimaryColumn": "abc"
+                        "OrgId": "sdfqwer",
+                        "OrgName": "sdfqwer",
+                        "OrgIdentity": "sdfqwer",
+                        "Level": "sdfqwer",
+                        "PrimaryColumn": "sdfqwer"
                     }
                 ],
                 "ParentUserId": 0,
-                "PrimaryColumn": "abc",
-                "AvatarUrl": "abc"
+                "PrimaryColumn": "sdfqwer",
+                "AvatarUrl": "sdfqwer"
             }
         ],
-        "Total": 0,
-        "RequestId": "abc"
+        "Total": 3,
+        "RequestId": "sdfqwer"
     }
 }
 ```

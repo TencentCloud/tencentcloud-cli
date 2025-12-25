@@ -17,7 +17,7 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"ForwardLoadBalancers\": [\n        {\n            \"TargetAttributes\": [\n                {\n                    \"Port\": \"8080\",\n                    \"Weight\": \"10\"\n                }\n            ],\n            \"Region\": \"ap-guangzhou\",\n            \"LocationId\": \"loc-l3hmaev9\",\n            \"ListenerId\": \"lbl-ncw704sn\",\n            \"LoadBalancerId\": \"lb-23aejgcv\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachLoadBalancers\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-12wjuh0s\",\n    \"ForwardLoadBalancers\": [\n        {\n            \"TargetAttributes\": [\n                {\n                    \"Port\": 8080,\n                    \"Weight\": 10\n                }\n            ],\n            \"Region\": \"ap-guangzhou\",\n            \"LocationId\": \"loc-l3hmaev9\",\n            \"ListenerId\": \"lbl-ncw704sn\",\n            \"LoadBalancerId\": \"lb-23aejgcv\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-9asddelc\",\n        \"RequestId\": \"8d78668d-61eb-456d-855b-f34f91371089\"\n    }\n}",
         "title": "将应用型负载均衡器lb-23aejgcv（监听器为lbl-ncw704sn，转发路径为loc-l3hmaev9）添加到伸缩组"
       }
@@ -70,6 +70,18 @@
     ],
     "CreateLaunchConfiguration": [
       {
+        "document": "支持两种实例机型，分别是S2.SMALL2和S2.SMALL4",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchConfiguration\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceTypes\": [\n        \"S2.SMALL4\",\n        \"S2.SMALL2\"\n    ],\n    \"LaunchConfigurationName\": \"multi_instance_types\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LaunchConfigurationId\": \"asc-77mh1cho\",\n        \"RequestId\": \"2864c860-27a0-439e-a1e1-0003b76734e7\"\n    }\n}",
+        "title": "创建启动配置，支持多种实例机型"
+      },
+      {
+        "document": "启动配置名称为：spot-test，机型为：标准2型 2C4G（S2.MEDIUM4），计费配置为竞价（SPOTPAID），最高出价为0.99元/小时。",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchConfiguration\n<公共请求参数>\n\n{\n    \"SystemDisk\": {\n        \"DiskSize\": 50,\n        \"DiskType\": \"CLOUD_PREMIUM\"\n    },\n    \"InstanceMarketOptions\": {\n        \"SpotOptions\": {\n            \"SpotInstanceType\": \"one-time\",\n            \"MaxPrice\": \"0.99\"\n        },\n        \"MarketType\": \"spot\"\n    },\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceChargeType\": \"SPOTPAID\",\n    \"LaunchConfigurationName\": \"spot-test\",\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": true,\n        \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n        \"InternetMaxBandwidthOut\": 20\n    },\n    \"InstanceType\": \"S2.MEDIUM4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LaunchConfigurationId\": \"asc-hpzwe3o2\",\n        \"RequestId\": \"ccfe3052-e9c9-47ee-bf3d-5bc2dfd972c0\"\n    }\n}",
+        "title": "创建竞价实例配置"
+      },
+      {
         "document": "只传必传的启动配置名称，实例机型，镜像ID，其他均采用系统默认值，具体配置如下：启动配置名称为：as_test，实例机型为：标准2型 1C1G（S2.SMALL1），镜像ID为：img-8toqc6s3。",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchConfiguration\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceType\": \"S2.SMALL1\",\n    \"LaunchConfigurationName\": \"as_test\"\n}",
         "output": "{\n    \"Response\": {\n        \"LaunchConfigurationId\": \"asc-23h37kyn\",\n        \"RequestId\": \"d639dd64-9e46-4246-b13c-80954f81c11b\"\n    }\n}",
@@ -77,21 +89,9 @@
       },
       {
         "document": "启动配置名称为：as_test，镜像ID为：img-8toqc6s3，选择机型为：标准2型 1C1G（S2.SMALL1），系统盘选择 50G 本地硬盘，数据盘选择100G 普通云硬盘，实例销毁时不保留数据盘，数据盘不加密，公网付费模式为流量按小时后付费，外网带宽上限 5 Mbps，分配公网IP，选择密钥登录，安装云监控云安全。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchConfiguration\n<公共请求参数>\n\n{\n    \"SystemDisk\": {\n        \"DiskSize\": \"50\",\n        \"DiskType\": \"LOCAL_BASIC\"\n    },\n    \"LoginSettings\": {\n        \"KeyIds\": [\n            \"skey-k8eypc1l\"\n        ]\n    },\n    \"ImageId\": \"img-8toqc6s3\",\n    \"EnhancedService\": {\n        \"SecurityService\": {\n            \"Enabled\": \"TRUE\"\n        },\n        \"MonitorService\": {\n            \"Enabled\": \"TRUE\"\n        }\n    },\n    \"LaunchConfigurationName\": \"as_test\",\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": \"TRUE\",\n        \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n        \"InternetMaxBandwidthOut\": \"5\"\n    },\n    \"InstanceType\": \"S2.SMALL1\",\n    \"DataDisks\": [\n        {\n            \"Encrypt\": \"FALSE\",\n            \"DeleteWithInstance\": \"TRUE\",\n            \"DiskSize\": \"100\",\n            \"DiskType\": \"CLOUD_BASIC\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchConfiguration\n<公共请求参数>\n\n{\n    \"SystemDisk\": {\n        \"DiskSize\": 50,\n        \"DiskType\": \"LOCAL_BASIC\"\n    },\n    \"LoginSettings\": {\n        \"KeyIds\": [\n            \"skey-k8eypc1l\"\n        ]\n    },\n    \"ImageId\": \"img-8toqc6s3\",\n    \"EnhancedService\": {\n        \"SecurityService\": {\n            \"Enabled\": true\n        },\n        \"MonitorService\": {\n            \"Enabled\": true\n        }\n    },\n    \"LaunchConfigurationName\": \"as_test\",\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": true,\n        \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n        \"InternetMaxBandwidthOut\": 5\n    },\n    \"InstanceType\": \"S2.SMALL1\",\n    \"DataDisks\": [\n        {\n            \"Encrypt\": false,\n            \"DeleteWithInstance\": true,\n            \"DiskSize\": 100,\n            \"DiskType\": \"CLOUD_BASIC\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"LaunchConfigurationId\": \"asc-fdz8j7dh\",\n        \"RequestId\": \"9a7209d3-2260-49d7-952a-dfa2001f8822\"\n    }\n}",
         "title": "详细参数创建"
-      },
-      {
-        "document": "启动配置名称为：spot-test，机型为：标准2型 2C4G（S2.MEDIUM4），计费配置为竞价（SPOTPAID），最高出价为0.99元/小时。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchConfiguration\n<公共请求参数>\n\n{\n    \"SystemDisk\": {\n        \"DiskSize\": \"50\",\n        \"DiskType\": \"CLOUD_PREMIUM\"\n    },\n    \"InstanceMarketOptions\": {\n        \"SpotOptions\": {\n            \"SpotInstanceType\": \"one-time\",\n            \"MaxPrice\": \"0.99\"\n        },\n        \"MarketType\": \"spot\"\n    },\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceChargeType\": \"SPOTPAID\",\n    \"LaunchConfigurationName\": \"spot-test\",\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": \"true\",\n        \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n        \"InternetMaxBandwidthOut\": \"20\"\n    },\n    \"InstanceType\": \"S2.MEDIUM4\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LaunchConfigurationId\": \"asc-hpzwe3o2\",\n        \"RequestId\": \"ccfe3052-e9c9-47ee-bf3d-5bc2dfd972c0\"\n    }\n}",
-        "title": "创建竞价实例配置"
-      },
-      {
-        "document": "支持两种实例机型，分别是S2.SMALL2和S2.SMALL4",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchConfiguration\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-8toqc6s3\",\n    \"InstanceTypes\": [\n        \"S2.SMALL4\",\n        \"S2.SMALL2\"\n    ],\n    \"LaunchConfigurationName\": \"multi_instance_types\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LaunchConfigurationId\": \"asc-77mh1cho\",\n        \"RequestId\": \"2864c860-27a0-439e-a1e1-0003b76734e7\"\n    }\n}",
-        "title": "创建启动配置，支持多种实例机型"
       }
     ],
     "CreateLifecycleHook": [
@@ -397,7 +397,7 @@
     "ExecuteScalingPolicy": [
       {
         "document": "触发告警伸缩策略",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteScalingPolicy\n<公共请求参数>\n\n{\n    \"HonorCooldown\": \"false\",\n    \"AutoScalingPolicyId\": \"asp-f59pppuh\"\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteScalingPolicy\n<公共请求参数>\n\n{\n    \"HonorCooldown\": false,\n    \"AutoScalingPolicyId\": \"asp-f59pppuh\"\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-o4v87ae9\",\n        \"RequestId\": \"116213d6-2269-44cc-af76-c4a8dc7dbdf9\"\n    }\n}",
         "title": "触发伸缩策略"
       }
@@ -492,16 +492,16 @@
     ],
     "ModifyScalingPolicy": [
       {
-        "document": "指定策略ID，修改简单策略相关属性。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingPolicyId\": \"asp-iir70sxv\",\n    \"Cooldown\": 60,\n    \"ScalingPolicyName\": \"cpu_policy_test\",\n    \"AdjustmentType\": \"CHANGE_IN_CAPACITY\",\n    \"MetricAlarm\": {\n        \"Period\": 60,\n        \"ContinuousTime\": 5,\n        \"ComparisonOperator\": \"GREATER_THAN\",\n        \"Statistic\": \"AVERAGE\",\n        \"Threshold\": 50,\n        \"MetricName\": \"CPU_UTILIZATION\"\n    },\n    \"AdjustmentValue\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91413a64-9587-486b-aef4-9aba5e8a0068\"\n    }\n}",
-        "title": "修改简单类型告警触发策略"
-      },
-      {
         "document": "指定策略ID，修改目标追踪策略相关属性。",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingPolicyId\": \"asp-9uroe7ta\",\n    \"ScalingPolicyName\": \"target-trackiing-test-policy\",\n    \"DisableScaleIn\": false,\n    \"EstimatedInstanceWarmup\": 300,\n    \"TargetValue\": 60,\n    \"PredefinedMetricType\": \"ASG_AVG_CPU_UTILIZATION\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"881a6752-55e8-4485-878a-a80065732a9f\"\n    }\n}",
         "title": "修改目标追踪类型告警触发策略"
+      },
+      {
+        "document": "指定策略ID，修改简单策略相关属性。",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScalingPolicy\n<公共请求参数>\n\n{\n    \"AutoScalingPolicyId\": \"asp-iir70sxv\",\n    \"Cooldown\": 60,\n    \"ScalingPolicyName\": \"cpu_policy_test\",\n    \"AdjustmentType\": \"CHANGE_IN_CAPACITY\",\n    \"MetricAlarm\": {\n        \"Period\": 60,\n        \"ContinuousTime\": 5,\n        \"ComparisonOperator\": \"GREATER_THAN\",\n        \"Statistic\": \"AVERAGE\",\n        \"Threshold\": 50,\n        \"MetricName\": \"CPU_UTILIZATION\"\n    },\n    \"AdjustmentValue\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91413a64-9587-486b-aef4-9aba5e8a0068\"\n    }\n}",
+        "title": "修改简单类型告警触发策略"
       }
     ],
     "ModifyScheduledAction": [
@@ -555,7 +555,7 @@
     "SetInstancesProtection": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetInstancesProtection\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-2umy3jbd\",\n    \"ProtectedFromScaleIn\": \"true\",\n    \"InstanceIds\": [\n        \"ins-b2d33ywt\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetInstancesProtection\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-2umy3jbd\",\n    \"ProtectedFromScaleIn\": true,\n    \"InstanceIds\": [\n        \"ins-b2d33ywt\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5b7168d9-5709-4d69-bd32-880a2f565e33\"\n    }\n}",
         "title": "为实例设置保护"
       }
@@ -601,7 +601,7 @@
       },
       {
         "document": "启动配置名称为：as_test，镜像ID为：img-8toqc6s3，选择机型为：标准2型 1C1G（S2.SMALL1），系统盘选择 50G 本地硬盘，数据盘选择100G 普通云硬盘，公网付费模式为流量按小时后付费，外网带宽上限 5 Mbps，分配公网IP，选择密钥登录，安装云监控云安全。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeLaunchConfiguration\n<公共请求参数>\n\n{\n    \"SystemDisk\": {\n        \"DiskSize\": \"50\",\n        \"DiskType\": \"LOCAL_BASIC\"\n    },\n    \"LoginSettings\": {\n        \"KeyIds\": [\n            \"skey-k8eypc1l\"\n        ]\n    },\n    \"LaunchConfigurationId\": \"asc-gj14vczi\",\n    \"InstanceTypes\": [\n        \"S2.SMALL1\"\n    ],\n    \"ImageId\": \"img-8toqc6s3\",\n    \"EnhancedService\": {\n        \"SecurityService\": {\n            \"Enabled\": \"TRUE\"\n        },\n        \"MonitorService\": {\n            \"Enabled\": \"TRUE\"\n        }\n    },\n    \"LaunchConfigurationName\": \"as_test\",\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": \"TRUE\",\n        \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n        \"InternetMaxBandwidthOut\": \"5\"\n    },\n    \"DataDisks\": [\n        {\n            \"Encrypt\": \"FALSE\",\n            \"DeleteWithInstance\": \"TRUE\",\n            \"DiskSize\": \"1000\",\n            \"ThroughputPerformance\": \"100\",\n            \"DiskType\": \"CLOUD_HSSD\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeLaunchConfiguration\n<公共请求参数>\n\n{\n    \"SystemDisk\": {\n        \"DiskSize\": 50,\n        \"DiskType\": \"LOCAL_BASIC\"\n    },\n    \"LoginSettings\": {\n        \"KeyIds\": [\n            \"skey-k8eypc1l\"\n        ]\n    },\n    \"LaunchConfigurationId\": \"asc-gj14vczi\",\n    \"InstanceTypes\": [\n        \"S2.SMALL1\"\n    ],\n    \"ImageId\": \"img-8toqc6s3\",\n    \"EnhancedService\": {\n        \"SecurityService\": {\n            \"Enabled\": true\n        },\n        \"MonitorService\": {\n            \"Enabled\": true\n        }\n    },\n    \"LaunchConfigurationName\": \"as_test\",\n    \"InternetAccessible\": {\n        \"PublicIpAssigned\": true,\n        \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n        \"InternetMaxBandwidthOut\": 5\n    },\n    \"DataDisks\": [\n        {\n            \"Encrypt\": false,\n            \"DeleteWithInstance\": true,\n            \"DiskSize\": 1000,\n            \"ThroughputPerformance\": 100,\n            \"DiskType\": \"CLOUD_HSSD\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1430a2d3-eb73-44c6-8316-218c4562a85c\"\n    }\n}",
         "title": "详细参数升级启动配置"
       }
@@ -609,7 +609,7 @@
     "UpgradeLifecycleHook": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeLifecycleHook\n<公共请求参数>\n\n{\n    \"DefaultResult\": \"CONTINUE\",\n    \"LifecycleHookName\": \"hook-updated\",\n    \"LifecycleHookId\": \"ash-8azjzxj9\",\n    \"LifecycleTransition\": \"INSTANCE_LAUNCHING\",\n    \"HeartbeatTimeout\": \"240\"\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeLifecycleHook\n<公共请求参数>\n\n{\n    \"DefaultResult\": \"CONTINUE\",\n    \"LifecycleHookName\": \"hook-updated\",\n    \"LifecycleHookId\": \"ash-8azjzxj9\",\n    \"LifecycleTransition\": \"INSTANCE_LAUNCHING\",\n    \"HeartbeatTimeout\": 240\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"db656d36-ed6b-4795-bdc4-94e7a7e04acb\"\n    }\n}",
         "title": "升级生命周期挂钩"
       }

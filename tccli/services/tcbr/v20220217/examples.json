@@ -3,17 +3,65 @@
     "CreateCloudRunEnv": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRunEnv\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-sdfsdf\",\n    \"Alias\": \"sldfjkdlkj\",\n    \"SubNetIds\": [],\n    \"FreeQuota\": \"\",\n    \"EnvId\": \"env-sdfsdf\",\n    \"Source\": \"wechat\",\n    \"Flag\": \"\",\n    \"PackageType\": \"Trial\",\n    \"ReqKey\": \"seqId\",\n    \"Channel\": \"wechat\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EnvId\": \"env-test\",\n        \"RequestId\": \"c8b68d5a-d045-4740-b731-da71512be06e\",\n        \"TranId\": \"\"\n    }\n}",
-        "title": "success"
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRunEnv\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-xxxxxxxxxx\",\n    \"PackageType\": \"Trial\",\n    \"Source\": \"weda\",\n    \"Channel\": \"weda\",\n    \"Alias\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"lowcode-xxxxxxxxxx\",\n        \"RequestId\": \"c8b68d5a-d045-4740-b731-xxxxxxx\",\n        \"TranId\": \"\"\n    }\n}",
+        "title": "开通云托管环境"
       }
     ],
     "CreateCloudRunServer": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRunServer\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-sdfsdfdf\",\n    \"ServerName\": \"server-sdfsdf\",\n    \"DeployInfo\": {\n        \"DeployType\": \"package\",\n        \"ImageUrl\": \"\",\n        \"PackageName\": \"redis\",\n        \"PackageVersion\": \"234234\",\n        \"DeployRemark\": \"remark\",\n        \"RepoInfo\": {\n            \"Source\": \"source\",\n            \"Repo\": \"repo\",\n            \"Branch\": \"main\"\n        },\n        \"BuildPacks\": {\n            \"BaseImage\": \"\",\n            \"EntryPoint\": \"\",\n            \"RepoLanguage\": \"\",\n            \"UploadFilename\": \"\"\n        },\n        \"ReleaseType\": \"FULL\"\n    },\n    \"ServerConfig\": {\n        \"EnvId\": \"env-sdfsdf\",\n        \"ServerName\": \"server-sdfsf\",\n        \"OpenAccessTypes\": [\n            \"OA\"\n        ],\n        \"Cpu\": 0,\n        \"Mem\": 0,\n        \"MinNum\": 1,\n        \"MaxNum\": 1,\n        \"PolicyDetails\": [\n            {\n                \"PolicyType\": \"cpu\",\n                \"PolicyThreshold\": 60\n            }\n        ],\n        \"CustomLogs\": \"\",\n        \"EnvParams\": \"\",\n        \"InitialDelaySeconds\": 1,\n        \"CreateTime\": \"2022-12-12 12:00:00\",\n        \"Port\": 0,\n        \"HasDockerfile\": true,\n        \"Dockerfile\": \"Dockerfile\",\n        \"BuildDir\": \"\",\n        \"LogType\": \"none\",\n        \"LogSetId\": \"\",\n        \"LogTopicId\": \"\",\n        \"LogParseType\": \"\",\n        \"Tag\": \"\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1267757-ade0-42b5-9ea4-42229a580acd\",\n        \"TaskId\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRunServer\n<公共请求参数>\n\n{\n    \"ServerName\": \"nginx\",\n    \"DeployInfo\": {\n        \"DeployType\": \"image\",\n        \"ImageUrl\": \"nginx\"\n    },\n    \"EnvId\": \"lowcode-9g2o448axxxxx\",\n    \"Items\": [\n        {\n            \"Key\": \"Port\",\n            \"IntValue\": 80\n        },\n        {\n            \"Key\": \"AccessTypes\",\n            \"ArrayValue\": [\n                \"OA\",\n                \"PUBLIC\",\n                \"MINIAPP\"\n            ]\n        },\n        {\n            \"Key\": \"InternalAccess\",\n            \"Value\": \"close\"\n        },\n        {\n            \"Key\": \"CpuSpecs\",\n            \"FloatValue\": 1\n        },\n        {\n            \"Key\": \"MemSpecs\",\n            \"FloatValue\": 2\n        },\n        {\n            \"Key\": \"LogPath\",\n            \"Value\": \"stdout\"\n        },\n        {\n            \"Key\": \"OperationMode\",\n            \"Value\": \"alwaysScale\"\n        },\n        {\n            \"Key\": \"MinNum\",\n            \"IntValue\": 0\n        },\n        {\n            \"Key\": \"MaxNum\",\n            \"IntValue\": 5\n        },\n        {\n            \"Key\": \"PolicyDetails\",\n            \"PolicyDetails\": []\n        },\n        {\n            \"Key\": \"Cmd\",\n            \"ArrayValue\": []\n        },\n        {\n            \"Key\": \"EntryPoint\",\n            \"ArrayValue\": []\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1267757-ade0-42b5-9ea4-xxxxxxx\",\n        \"TaskId\": 0\n    }\n}",
+        "title": "基于镜像创建云托管服务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRunServer\n<公共请求参数>\n\n{\n    \"ServerName\": \"express\",\n    \"DeployInfo\": {\n        \"DeployType\": \"package\",\n        \"PackageName\": \"express.zip\",\n        \"PackageVersion\": \"1766482739\"\n    },\n    \"EnvId\": \"lowcode-9g2o448axxxxx\",\n    \"Items\": [\n        {\n            \"Key\": \"Port\",\n            \"IntValue\": 3000\n        },\n        {\n            \"Key\": \"Dockerfile\",\n            \"Value\": \"Dockerfile\"\n        },\n        {\n            \"Key\": \"AccessTypes\",\n            \"ArrayValue\": [\n                \"OA\",\n                \"PUBLIC\",\n                \"MINIAPP\"\n            ]\n        },\n        {\n            \"Key\": \"InternalAccess\",\n            \"Value\": \"close\"\n        },\n        {\n            \"Key\": \"CpuSpecs\",\n            \"FloatValue\": 1\n        },\n        {\n            \"Key\": \"MemSpecs\",\n            \"FloatValue\": 2\n        },\n        {\n            \"Key\": \"LogPath\",\n            \"Value\": \"stdout\"\n        },\n        {\n            \"Key\": \"OperationMode\",\n            \"Value\": \"alwaysScale\"\n        },\n        {\n            \"Key\": \"MinNum\",\n            \"IntValue\": 0\n        },\n        {\n            \"Key\": \"MaxNum\",\n            \"IntValue\": 5\n        },\n        {\n            \"Key\": \"PolicyDetails\",\n            \"PolicyDetails\": []\n        },\n        {\n            \"Key\": \"Cmd\",\n            \"ArrayValue\": []\n        },\n        {\n            \"Key\": \"EntryPoint\",\n            \"ArrayValue\": []\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1267757-ade0-42b5-9ea4-xxxxxxx\",\n        \"TaskId\": 0\n    }\n}",
+        "title": "基于zip包源码部署云托管服务"
+      }
+    ],
+    "DeleteCloudRunServer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudRunServer\n<公共请求参数>\n\n{\n    \"ServerName\": \"字符串\",\n    \"EnvId\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbbbff45-c033-4b5b-8ccf-92ba6041be99\",\n        \"Result\": \"\"\n    }\n}",
         "title": "success"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudRunServer\n<公共请求参数>\n\n{\n    \"ServerName\": \"字符串\",\n    \"EnvId\": \"字符串\",\n    \"OperatorRemark\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0db47e7b-3330-4ea7-bcde-7bd5e2bada7f\",\n        \"Result\": \"succ\"\n    }\n}",
+        "title": "success-1"
+      },
+      {
+        "document": "删除服务",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudRunServer\n<公共请求参数>\n\n{\n    \"EnvId\": \"envId\",\n    \"ServerName\": \"serverName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"success\",\n        \"RequestId\": \"57832ae4-e87d-4b85-aa6e-97b673aa994f\"\n    }\n}",
+        "title": "DeleteCloudRunServer"
+      }
+    ],
+    "DeleteCloudRunVersions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudRunVersions\n<公共请求参数>\n\n{\n    \"EnvId\": \"abc\",\n    \"IsDeleteServer\": true,\n    \"IsDeleteImage\": true,\n    \"OperatorRemark\": \"abc\",\n    \"SimpleVersions\": [\n        {\n            \"EnvId\": \"abc\",\n            \"ServerName\": \"abc\",\n            \"VersionName\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"abc\",\n        \"FailVersions\": [\n            {\n                \"Version\": {\n                    \"EnvId\": \"abc\",\n                    \"ServerName\": \"abc\",\n                    \"VersionName\": \"abc\"\n                },\n                \"ErrorCode\": 0,\n                \"ErrorMsg\": \"abc\",\n                \"RequestId\": \"abc\"\n            }\n        ],\n        \"SuccessVersions\": [\n            {\n                \"Version\": {\n                    \"EnvId\": \"abc\",\n                    \"ServerName\": \"abc\",\n                    \"VersionName\": \"abc\"\n                },\n                \"RequestId\": \"abc\",\n                \"Result\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "批量删除版本"
+      }
+    ],
+    "DescribeCloudRunDeployRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunDeployRecord\n<公共请求参数>\n\n{\n    \"ServerName\": \"字符串\",\n    \"EnvId\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecords\": [],\n        \"RequestId\": \"66038a58-061f-49a2-a5fd-b8cf00795ffb\"\n    }\n}",
+        "title": "success"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunDeployRecord\n<公共请求参数>\n\n{\n    \"EnvId\": \"abc\",\n    \"ServerName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecords\": [\n            {\n                \"DeployId\": \"abc\",\n                \"DeployTime\": \"abc\",\n                \"Status\": \"abc\",\n                \"RunId\": \"abc\",\n                \"BuildId\": 0,\n                \"FlowRatio\": 0,\n                \"ImageUrl\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeCloudRunDeployRecord"
       }
     ],
     "DescribeCloudRunEnvs": [
@@ -28,6 +76,28 @@
         "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunEnvs\n<公共请求参数>\n\n{\n    \"EnvId\": \"prod-6gvwy9lua50e9504\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvList\": [\n            {\n                \"EnvId\": \"yourenvid-2fb346\",\n                \"Source\": \"miniapp\",\n                \"Alias\": \"默认环境\",\n                \"Status\": \"NORMAL\",\n                \"PayMode\": \"postpaid\",\n                \"Tags\": [],\n                \"PackageId\": \"basic1\",\n                \"PackageName\": \"基础版1\",\n                \"IsAutoDegrade\": true,\n                \"EnvChannel\": \"channel\",\n                \"Region\": \"ap-shanghai\",\n                \"IsDefault\": true,\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"EnvType\": \"tcbr\",\n                \"LogServices\": [],\n                \"StaticStorages\": [\n                    {\n                        \"Status\": \"succ\",\n                        \"StaticDomain\": \"http://asdasda\",\n                        \"DefaultDirName\": \"default\",\n                        \"Bucket\": \"bucket\",\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ],\n                \"Databases\": [\n                    {\n                        \"InstanceId\": \"default\",\n                        \"Region\": \"ap-shanghai\",\n                        \"Status\": \"RUNNING\"\n                    }\n                ],\n                \"CustomLogServices\": [\n                    {\n                        \"ClsTopicId\": \"topic\",\n                        \"ClsRegion\": \"ap-shanghai\",\n                        \"ClsLogsetId\": \"setId\",\n                        \"CreateTime\": \"2020-09-22 00:00:00\"\n                    }\n                ],\n                \"Storages\": [\n                    {\n                        \"Region\": \"ap-shanghai\",\n                        \"Bucket\": \"yourenvid-2fb346-12532284\",\n                        \"CdnDomain\": \"yourenvid-2fb346.tcb.qcloud.la\",\n                        \"AppId\": \"123121\"\n                    }\n                ],\n                \"Functions\": [\n                    {\n                        \"Namespace\": \"yourenvid-2fb346\",\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"75ec26f6-b624-40f1-a3f4-fsdfdsfsfd\"\n    }\n}",
         "title": "DescribeCloudRunEnvs"
+      }
+    ],
+    "DescribeCloudRunPodList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunPodList\n<公共请求参数>\n\n{\n    \"EnvId\": \"esdfsdf\",\n    \"ServerName\": \"server\",\n    \"VersionName\": \"versfsdf\",\n    \"PageSize\": 0,\n    \"PageNum\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"PodList\": [\n            {\n                \"Webshell\": \"\",\n                \"PodId\": \"sdfsdf\",\n                \"Status\": \"running\",\n                \"CreateTime\": \"2025-07-25 19:00:00\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"sdfsdfdf\"\n    }\n}",
+        "title": "success 0630"
+      }
+    ],
+    "DescribeCloudRunProcessLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunProcessLog\n<公共请求参数>\n\n{\n    \"EnvId\": \"字符串\",\n    \"RunId\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Logs\": [\n            \"1\"\n        ],\n        \"RequestId\": \"c531c155-b4bc-4599-8ec3-ee12c403b34e\"\n    }\n}",
+        "title": "success"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudRunProcessLog\n<公共请求参数>\n\n{\n    \"EnvId\": \"test-1gbtbgkjf8f48e2c\",\n    \"RunId\": \"1nSHRvIblNiK4m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Logs\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询运行日志"
       }
     ],
     "DescribeCloudRunServerDetail": [
@@ -49,9 +119,17 @@
     "DescribeEnvBaseInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvBaseInfo\n<公共请求参数>\n\n{\n    \"EnvId\": \"prod-0g8ki95z117f177d\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EnvBaseInfo\": {\n            \"EnvId\": \"en-sdf\",\n            \"PackageType\": \"package\",\n            \"VpcId\": \"vpc-sdff\",\n            \"CreateTime\": \"2023-12-12 10:00:00\",\n            \"Alias\": \"sdf\",\n            \"Status\": \"creating\",\n            \"Region\": \"ap-shanghai\",\n            \"EnvType\": \"tcbr\",\n            \"SubnetIds\": \"\"\n        },\n        \"RequestId\": \"sdfdsgdg\"\n    }\n}",
-        "title": "查询环境基础信息"
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvBaseInfo\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-0g8ki95z1xxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvBaseInfo\": {\n            \"EnvId\": \"lowcode-0g8ki95z1xxxxx\",\n            \"PackageType\": \"Trial\",\n            \"Alias\": \"default\",\n            \"Status\": \"normal\",\n            \"EnvType\": \"weda\",\n            \"CreateTime\": \"2025-03-12 15:04:00\",\n            \"Region\": \"ap-shanghai\",\n            \"SubnetIds\": \"\",\n            \"VpcId\": \"\"\n        },\n        \"RequestId\": \"27bfe819-1497-49b0-b0ec-xxxxxx\",\n        \"IsExist\": true\n    }\n}",
+        "title": "查询环境信息"
+      }
+    ],
+    "DescribeReleaseOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReleaseOrder\n<公共请求参数>\n\n{\n    \"EnvId\": \"abc\",\n    \"ServerName\": \"abc\",\n    \"Status\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsExist\": true,\n        \"ReleaseOrderInfo\": {\n            \"Id\": 0,\n            \"ServerName\": \"abc\",\n            \"CurrentVersion\": {\n                \"VersionName\": \"abc\",\n                \"FlowRatio\": 0,\n                \"Status\": \"abc\",\n                \"CreatedTime\": \"abc\",\n                \"UpdatedTime\": \"abc\",\n                \"BuildId\": 0,\n                \"UploadType\": \"abc\",\n                \"Remark\": \"abc\",\n                \"UrlParam\": {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                },\n                \"Priority\": 0,\n                \"IsDefaultPriority\": true,\n                \"FlowParams\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\",\n                        \"Priority\": 0\n                    }\n                ],\n                \"MinReplicas\": 0,\n                \"MaxReplicas\": 0,\n                \"RunId\": \"abc\",\n                \"Percent\": 0,\n                \"CurrentReplicas\": 0,\n                \"Architecture\": \"abc\"\n            },\n            \"ReleaseVersion\": {\n                \"VersionName\": \"abc\",\n                \"FlowRatio\": 0,\n                \"Status\": \"abc\",\n                \"CreatedTime\": \"abc\",\n                \"UpdatedTime\": \"abc\",\n                \"BuildId\": 0,\n                \"UploadType\": \"abc\",\n                \"Remark\": \"abc\",\n                \"UrlParam\": {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                },\n                \"Priority\": 0,\n                \"IsDefaultPriority\": true,\n                \"FlowParams\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\",\n                        \"Priority\": 0\n                    }\n                ],\n                \"MinReplicas\": 0,\n                \"MaxReplicas\": 0,\n                \"RunId\": \"abc\",\n                \"Percent\": 0,\n                \"CurrentReplicas\": 0,\n                \"Architecture\": \"abc\"\n            },\n            \"GrayStatus\": \"abc\",\n            \"ReleaseStatus\": \"abc\",\n            \"TrafficTypeValues\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"TrafficType\": \"abc\",\n            \"FlowRatio\": 0,\n            \"CreateTime\": \"abc\",\n            \"IsReleasing\": true\n        },\n        \"LastReleasedSuccessTime\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询发布单"
       }
     ],
     "DescribeServerManageTask": [
@@ -60,6 +138,14 @@
         "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerManageTask\n<公共请求参数>\n\n{\n    \"EnvId\": \"prod-2g59lad002c864a6\",\n    \"ServerName\": \"golang-h7yv\",\n    \"TaskId\": 1000\n}",
         "output": "{\n    \"Response\": {\n        \"IsExist\": false,\n        \"RequestId\": \"f72cf9c7-e477-443e-98f5-19703abbd2af\",\n        \"Task\": {\n            \"ChangeType\": \"\",\n            \"CreateTime\": \"\",\n            \"DeployType\": \"\",\n            \"EnvId\": \"\",\n            \"FailReason\": \"\",\n            \"Id\": 0,\n            \"OperatorRemark\": \"\",\n            \"PipelineId\": 0,\n            \"PipelineTaskId\": 0,\n            \"PreVersionName\": \"\",\n            \"ReleaseId\": 0,\n            \"ReleaseType\": \"\",\n            \"ServerName\": \"\",\n            \"Status\": \"\",\n            \"Steps\": [],\n            \"VersionName\": \"\"\n        }\n    }\n}",
         "title": "查询服务管理任务信息"
+      }
+    ],
+    "DescribeVersionDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVersionDetail\n<公共请求参数>\n\n{\n    \"EnvId\": \"frederickli***clc930f66d\",\n    \"ServerName\": \"echos\",\n    \"VersionName\": \"echos-008\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BuildDir\": \".\",\n        \"BuildPacks\": {\n            \"BaseImage\": \"Python3\",\n            \"EntryPoint\": \"echo 1\",\n            \"LanguageVersion\": \"\",\n            \"RepoLanguage\": \"Python\",\n            \"UploadFilename\": \"\"\n        },\n        \"Cmd\": \"[\\\"/ap***ho\\\"]\",\n        \"Cpu\": 1,\n        \"CreatedTime\": \"2025-12-18 15:32:24\",\n        \"Dockerfile\": \"\",\n        \"EntryPoint\": \"[\\\"/ap***ho\\\"]\",\n        \"EnvParams\": \"\",\n        \"LogPath\": \"stdout\",\n        \"MaxNum\": 5,\n        \"Mem\": 2,\n        \"MinNum\": 0,\n        \"Name\": \"echos-008\",\n        \"PolicyDetails\": [\n            {\n                \"PolicyThreshold\": 50,\n                \"PolicyType\": \"cpu\"\n            }\n        ],\n        \"Port\": 0,\n        \"Status\": \"build_failed\",\n        \"UpdatedTime\": \"2025-12-18 16:04:43\",\n        \"VolumesConf\": [],\n        \"VpcConf\": {\n            \"SubnetCIDR\": \"\",\n            \"SubnetId\": \"\",\n            \"VpcCIDR\": \"\",\n            \"VpcId\": \"\"\n        },\n        \"RequestId\": \"1c148a2d-6d44-450e-a160-a097dbf4c63e\"\n    }\n}",
+        "title": "查询版本详情"
       }
     ],
     "OperateServerManage": [
@@ -78,12 +164,40 @@
         "title": "灰度发布"
       }
     ],
+    "SearchClsLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClsLog\n<公共请求参数>\n\n{\n    \"Sort\": \"字符串\",\n    \"EnvId\": \"字符串\",\n    \"Context\": \"字符串\",\n    \"UseLucene\": \"false\",\n    \"QueryString\": \"字符串\",\n    \"Limit\": \"1\",\n    \"StartTime\": \"字符串\",\n    \"EndTime\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogResults\": {\n            \"Context\": \"\",\n            \"ListOver\": false,\n            \"Results\": null\n        },\n        \"RequestId\": \"e5c883fb-ca6a-4481-9f3d-d28ebfee50c3\"\n    }\n}",
+        "title": "pass"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClsLog\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-id\",\n    \"StartTime\": \"2006-01-02 03:04:05\",\n    \"EndTime\": \"2006-01-02 03:04:05\",\n    \"QueryString\": \"QueryString\",\n    \"Context\": \"Context\",\n    \"Limit\": 1,\n    \"Sort\": \"Sort\",\n    \"UseLucene\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e22b381-93a3-44c4-85b7-456679a7b8cd\",\n        \"LogResults\": {\n            \"Context\": \"\",\n            \"ListOver\": true,\n            \"Results\": []\n        }\n    }\n}",
+        "title": "搜索CLS日志"
+      }
+    ],
+    "SubmitServerRollback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitServerRollback\n<公共请求参数>\n\n{\n    \"EnvId\": \"abc\",\n    \"ServerName\": \"abc\",\n    \"CurrentVersionName\": \"abc\",\n    \"RollbackVersionName\": \"abc\",\n    \"OperatorRemark\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "回滚版本"
+      }
+    ],
     "UpdateCloudRunServer": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCloudRunServer\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-sdsdf\",\n    \"ServerName\": \"server-sdfsdf\",\n    \"DeployInfo\": {\n        \"DeployType\": \"package\",\n        \"ImageUrl\": \"\",\n        \"PackageName\": \"redis\",\n        \"PackageVersion\": \"12324\",\n        \"DeployRemark\": \"remark\",\n        \"RepoInfo\": {\n            \"Source\": \"source\",\n            \"Repo\": \"repo\",\n            \"Branch\": \"main\"\n        },\n        \"BuildPacks\": {\n            \"BaseImage\": \"\",\n            \"EntryPoint\": \"\",\n            \"RepoLanguage\": \"\",\n            \"UploadFilename\": \"\"\n        },\n        \"ReleaseType\": \"FULL\"\n    },\n    \"ServerConfig\": {\n        \"EnvId\": \"env-sdfafa\",\n        \"ServerName\": \"server-sdfafd\",\n        \"OpenAccessTypes\": [\n            \"OA\"\n        ],\n        \"Cpu\": 0,\n        \"Mem\": 0,\n        \"MinNum\": 1,\n        \"MaxNum\": 1,\n        \"PolicyDetails\": [\n            {\n                \"PolicyType\": \"cpu\",\n                \"PolicyThreshold\": 60\n            }\n        ],\n        \"CustomLogs\": \"\",\n        \"EnvParams\": \"\",\n        \"InitialDelaySeconds\": 1,\n        \"CreateTime\": \"2024-12-12 12:22:00\",\n        \"Port\": 0,\n        \"HasDockerfile\": true,\n        \"Dockerfile\": \"Dockerfile\",\n        \"BuildDir\": \"\",\n        \"LogType\": \"none\",\n        \"LogSetId\": \"\",\n        \"LogTopicId\": \"\",\n        \"LogParseType\": \"\",\n        \"Tag\": \"\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"EnvId\": \"env-sdfsfddf\",\n        \"TaskId\": 0,\n        \"RequestId\": \"sdfjlskdflkf\"\n    }\n}",
-        "title": "UpdateCloudRunServer"
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCloudRunServer\n<公共请求参数>\n\n{\n    \"ServerName\": \"nginx\",\n    \"DeployInfo\": {\n        \"DeployType\": \"image\",\n        \"ImageUrl\": \"nginx\",\n        \"ReleaseType\": \"FULL\"\n    },\n    \"EnvId\": \"lowcode-9g2o448afxxxxxx\",\n    \"Items\": [\n        {\n            \"Key\": \"HasDockerfile\",\n            \"BoolValue\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"lowcode-9g2o448afxxxxxx\",\n        \"TaskId\": 0,\n        \"RequestId\": \"f205956f-7eee-4846-b4c4-xxxxxxx\"\n    }\n}",
+        "title": "通过镜像更新云托管服务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCloudRunServer\n<公共请求参数>\n\n{\n    \"ServerName\": \"express\",\n    \"DeployInfo\": {\n        \"DeployType\": \"package\",\n        \"PackageName\": \"express.zip\",\n        \"PackageVersion\": \"1766483290\",\n        \"ReleaseType\": \"FULL\"\n    },\n    \"EnvId\": \"lowcode-9g2o448afxxxxxx\",\n    \"Items\": [\n        {\n            \"Key\": \"HasDockerfile\",\n            \"BoolValue\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"lowcode-9g2o448afxxxxxx\",\n        \"TaskId\": 0,\n        \"RequestId\": \"f205956f-7eee-4846-b4c4-xxxxxxx\"\n    }\n}",
+        "title": "通过源码更新云托管服务"
       }
     ]
   },

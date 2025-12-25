@@ -15,14 +15,14 @@
       "status": "online"
     },
     "DescribeReduceFaceJob": {
-      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "document": "混元生3D接口，采用 Polygon 1.5模型，输入3D 高模后，可生成布线规整，较低面数的3D 模型。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "DescribeReduceFaceJobRequest",
       "name": "查询智能拓扑任务",
       "output": "DescribeReduceFaceJobResponse",
       "status": "online"
     },
     "DescribeTextureTo3DJob": {
-      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "document": "混元生3D接口，输入单几何模型和参考图或文字描述后，可生成对应的纹理贴图。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "DescribeTextureTo3DJobRequest",
       "name": "查询纹理生成任务",
       "output": "DescribeTextureTo3DJobResponse",
@@ -78,14 +78,14 @@
       "status": "online"
     },
     "SubmitReduceFaceJob": {
-      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "document": "混元生3D接口，采用 Polygon 1.5模型，输入3D 高模后，可生成布线规整，较低面数的3D 模型。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "SubmitReduceFaceJobRequest",
       "name": "提交智能拓扑任务",
       "output": "SubmitReduceFaceJobResponse",
       "status": "online"
     },
     "SubmitTextureTo3DJob": {
-      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "document": "混元生3D接口，输入单几何模型和参考图或文字描述后，可生成对应的纹理贴图。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "SubmitTextureTo3DJobRequest",
       "name": "提交纹理生成任务",
       "output": "SubmitTextureTo3DJobResponse",
@@ -104,7 +104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "3D文件url地址。",
+          "document": "3D文件url地址，模型文件大小≤60m，支持fbx，obj，glb格式3D文件输入。",
           "example": "url",
           "member": "string",
           "name": "File3D",
@@ -689,7 +689,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图 Base64 数据。\n大小：单边分辨率要求不小于128，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过5m）\n格式：jpg，png，jpeg，webp。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "document": "输入图 Base64 数据。\n大小: 单边分辨率要求不小于128，不大于5000，大小≤6m (因base64编码后会大30%左右)\n格式: jpg，png，jpeg，webp.\nlmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不能同时存在。",
           "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
           "member": "string",
           "name": "ImageBase64",
@@ -698,7 +698,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图Url。\n大小：单边分辨率要求不小于128，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过5m）\n格式：jpg，png，jpeg，webp。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "document": "输入图Url\n大小: 单边分辨率要求不小于128，不大于5000，大小≤8m\n格式: jpg，png，jpeg，webp.\nlmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不能同时存在。",
           "example": "https://cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -707,7 +707,7 @@
         },
         {
           "disabled": false,
-          "document": "多视角的模型图片，视角参考值：\nleft：左视图；\nright：右视图；\nback：后视图；\n\n每个视角仅限制一张图片。\n●图片大小限制：编码后大小不可超过8M。（base64编码后会大30%左右，建议实际输入图片不超过5m）\n●图片分辨率限制：单边分辨率小于5000且大于128。\n●支持图片格式：支持jpg或png",
+          "document": "多视角的模型图片，视角参考值：\nleft：左视图；\nright：右视图；\nback：后视图；\n\n每个视角仅限制一张图片。\n●图片大小限制：编码后所有图片大小总和不可超过8M。（base64编码下图片大小总和不超过6M，因base64编码后图片大小会大30%左右）\n●图片分辨率限制：单边分辨率小于5000且大于128。\n●支持图片格式：支持jpg或png",
           "example": "无",
           "member": "ViewImage",
           "name": "MultiViewImages",
@@ -789,7 +789,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图 Base64 数据。\n大小：单边分辨率要求不小于128，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过5m）\n格式：jpg，png，jpeg，webp。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "document": "输入图 Base64 数据。\n大小: 单边分辨率要求不小于128，不大于5000，大小≤6m (因base64编码后会大30%左右)\n格式: jpg，png，jpeg，webp.\nlmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不能同时存在。",
           "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
           "member": "string",
           "name": "ImageBase64",
@@ -798,7 +798,7 @@
         },
         {
           "disabled": false,
-          "document": "输入图Url。\n大小：单边分辨率要求不小于128，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过5m）\n格式：jpg，png，jpeg，webp。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "document": "输入图Url\n大小: 单边分辨率要求不小于128，不大于5000，大小≤8m\n格式: jpg，png，jpeg，webp.\nlmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不能同时存在。",
           "example": "https://***.cos.ap-guangzhou.myqcloud.com/***.jpg",
           "member": "string",
           "name": "ImageUrl",

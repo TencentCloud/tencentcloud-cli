@@ -1,4 +1,28 @@
-**Example 1: 获取视图详情**
+**Example 1: 获取不存在的视图详情**
+
+
+
+Input: 
+
+```
+tccli cloudrc GetView --cli-unfold-argument  \
+    --ViewId vw-notexits
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "ResourceNotFound.ViewIdNotFound",
+            "Message": "视图ID不存在"
+        },
+        "RequestId": "10ca642a-2a18-42ec-ae35-cb086c21f35a"
+    }
+}
+```
+
+**Example 2: 获取视图详情**
 
 
 
@@ -38,30 +62,6 @@ Output:
         "ViewCreateTime": "2024-03-24 16:36:54",
         "ViewUpdateTime": "2024-03-24 16:36:54",
         "RequestId": "52a404c5-fd9c-4f28-8ef4-54fda03b3b13"
-    }
-}
-```
-
-**Example 2: 获取不存在的视图详情**
-
-
-
-Input: 
-
-```
-tccli cloudrc GetView --cli-unfold-argument  \
-    --ViewId vw-notexits
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "ResourceNotFound.ViewIdNotFound",
-            "Message": "视图ID不存在"
-        },
-        "RequestId": "10ca642a-2a18-42ec-ae35-cb086c21f35a"
     }
 }
 ```

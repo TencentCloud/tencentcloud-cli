@@ -226,6 +226,16 @@
         },
         {
           "disabled": false,
+          "document": "与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效",
+          "example": "https://console.cloud.tencent.com/monitor/prometheus/detail/prom-h72esnds/alertRule?rid=19&policyId=alert-xx",
+          "member": "string",
+          "name": "PromeConsoleURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "告警的lable",
           "example": "无",
           "member": "AlarmLable",

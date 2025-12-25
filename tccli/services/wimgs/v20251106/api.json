@@ -8,7 +8,7 @@
       "status": "online"
     },
     "SearchByText": {
-      "document": "文搜图接口，以JSON形式向客户提供搜索结果数据，包含标题、宽高、缩略图、内容来源url等信息",
+      "document": "文搜图接口，本服务将针对您输入的搜索关键词，检索并以JSON形式返回相关图片的标题、宽高、缩略图、内容来源url等信息。",
       "input": "SearchByTextRequest",
       "name": "文搜图",
       "output": "SearchByTextResponse",
@@ -89,7 +89,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索结果图片列表，格式为json字符串。",
+          "document": "搜索结果图片列表，格式为json字符串。\n\n- thumbnailUrl：缩略图地址。\n- thumbnailWidth：缩略图宽度。\n- thumbnailHeight：缩略图高度。\n- origPicUrl：原图地址。\n-  origPicWidth：原图宽度。\n- siteUrl：站点地址，原图来源网页URL。\n- siteName：站点名称。\n- title：标题，原图标题或原图来源网页标题。\n- date：内容发布时间。",
           "example": "[\"{\\\"siteName\\\":\\\"搜狗百科\\\",\\\"title\\\":\\\"the car book\\\"}\"]",
           "member": "string",
           "name": "Images",

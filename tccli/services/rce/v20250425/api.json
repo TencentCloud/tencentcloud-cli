@@ -181,6 +181,15 @@
           "name": "DeviceToken",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "渠道号",
+          "example": "CH7X*****7P2B8KQ",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -291,7 +300,7 @@
         {
           "disabled": false,
           "document": "用户公网ip（仅支持IPv4）",
-          "example": "203.***.***.118",
+          "example": "123.***.**.2",
           "member": "string",
           "name": "UserIp",
           "output_required": false,
@@ -355,7 +364,7 @@
         {
           "disabled": false,
           "document": "请求秒级时间戳",
-          "example": "请求秒级时间戳",
+          "example": "1766558365",
           "member": "int64",
           "name": "PostTime",
           "required": true,
@@ -401,7 +410,7 @@
         {
           "disabled": false,
           "document": "对应的IP",
-          "example": "150.***.***.175",
+          "example": "123.***.**.2",
           "member": "string",
           "name": "UserIp",
           "output_required": true,
@@ -416,6 +425,16 @@
           "name": "RiskScore",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险类型",
+          "example": "[730002]",
+          "member": "int64",
+          "name": "RiskType",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

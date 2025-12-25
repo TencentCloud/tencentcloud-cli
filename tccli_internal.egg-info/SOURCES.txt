@@ -274,6 +274,8 @@ tccli/services/cloudhsm/__init__.py
 tccli/services/cloudhsm/cloudhsm_client.py
 tccli/services/cloudhsm/v20191112/api.json
 tccli/services/cloudhsm/v20191112/examples.json
+tccli/services/cloudmate/__init__.py
+tccli/services/cloudmate/cloudmate_client.py
 tccli/services/cloudrc/__init__.py
 tccli/services/cloudrc/cloudrc_client.py
 tccli/services/cloudstudio/__init__.py

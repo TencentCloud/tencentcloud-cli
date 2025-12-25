@@ -9004,7 +9004,17 @@
     },
     "GetGrantPrivilegesSTDRequest": {
       "document": "GetGrantPrivilegesSTD请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "catalog类型",
+          "example": "Relational",
+          "member": "string",
+          "name": "CatalogType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetGrantPrivilegesSTDResponse": {
@@ -12649,7 +12659,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "",
+          "example": "CREATE_MODEL_VERSION",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -12660,7 +12670,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "",
+          "example": "授予使用Schema权限",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -12671,9 +12681,20 @@
         {
           "disabled": false,
           "document": "英文描述",
-          "example": "",
+          "example": "Grant all privileges to the object",
           "member": "string",
           "name": "DescriptionEn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "展示名称",
+          "example": "ALL PRIVILEGES",
+          "member": "string",
+          "name": "DisplayName",
           "output_required": false,
           "required": false,
           "type": "string",

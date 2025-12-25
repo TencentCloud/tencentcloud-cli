@@ -3463,9 +3463,9 @@
     "ModifyAutoOpenProVersionConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoOpenProVersionConfig\n<公共请求参数>\n\n{\n    \"Status\": \"CLOSE\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "设置授权管理参数配置"
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoOpenProVersionConfig\n<公共请求参数>\n\n{\n    \"Status\": \"OPEN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe9763bf-1054-4fc3-8765-3a0273b8a769\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ModifyBanMode": [

@@ -48,31 +48,3 @@ Output:
 }
 ```
 
-**Example 2: 项目内-创建用户角色示例接口**
-
-
-
-Input: 
-
-```
-tccli bi CreateUserRoleProject --cli-unfold-argument  \
-    --UserList.0.UserName 张三 \
-    --UserList.0.UserId zhangsan \
-    --ProjectId 1 \
-    --RoleIdList 100090
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "ed4d2bd1-ee13-4b67-80cf-a8a2794a82ed",
-        "Extra": "",
-        "Data": {
-            "Id": 1
-        },
-        "Msg": "success"
-    }
-}
-```
-

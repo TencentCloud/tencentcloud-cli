@@ -1,4 +1,4 @@
-**Example 1: success**
+**Example 1: 开通云托管环境**
 
 
 
@@ -6,23 +6,19 @@ Input:
 
 ```
 tccli tcbr CreateCloudRunEnv --cli-unfold-argument  \
-    --VpcId vpc-sdfsdf \
-    --Alias sldfjkdlkj \
-    --FreeQuota  \
-    --EnvId env-sdfsdf \
-    --Source wechat \
-    --Flag  \
+    --EnvId lowcode-xxxxxxxxxx \
     --PackageType Trial \
-    --ReqKey seqId \
-    --Channel wechat
+    --Source weda \
+    --Channel weda \
+    --Alias default
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "EnvId": "env-test",
-        "RequestId": "c8b68d5a-d045-4740-b731-da71512be06e",
+        "EnvId": "lowcode-xxxxxxxxxx",
+        "RequestId": "c8b68d5a-d045-4740-b731-xxxxxxx",
         "TranId": ""
     }
 }

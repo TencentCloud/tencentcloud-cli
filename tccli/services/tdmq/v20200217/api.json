@@ -42,6 +42,13 @@
       "output": "CreateClusterOptResponse",
       "status": "online"
     },
+    "CreateClusterVpcAccessPoint": {
+      "document": "新增集群Vpc接入点",
+      "input": "CreateClusterVpcAccessPointRequest",
+      "name": "新增集群Vpc接入点",
+      "output": "CreateClusterVpcAccessPointResponse",
+      "status": "online"
+    },
     "CreateCmqQueue": {
       "document": "创建cmq队列接口",
       "input": "CreateCmqQueueRequest",
@@ -3802,6 +3809,78 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterVpcAccessPointRequest": {
+      "document": "CreateClusterVpcAccessPoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "pulsar-5r59xd4vnx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpc的id，创建VPC路由时此参数必填。",
+          "example": "vpc-8jjiuayds",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网id，创建VPC路由时此参数必填。",
+          "example": "subnet-aiuadezd",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启tls",
+          "example": "false",
+          "member": "bool",
+          "name": "Tls",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义接入点域名",
+          "example": "http://aaa.example.com:8443",
+          "member": "string",
+          "name": "CustomUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接入点绑定的安全组id列表，仅限vpc接入点有效",
+          "example": "[\"group-dsadm\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterVpcAccessPointResponse": {
+      "document": "CreateClusterVpcAccessPoint返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11846,7 +11925,7 @@
         },
         {
           "disabled": false,
-          "document": "限制条数",
+          "document": "单次查询最大条数。取值范围：[0~100]，默认值为20",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -23087,6 +23166,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费状态来源，枚举值如下：\n\n- DIFF_OFFSET：通过服务端offset计算\n- TRACE_REPORT：通过上报的轨迹判断",
+          "example": "TRACE_REPORT",
+          "member": "string",
+          "name": "ConsumeStatusSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

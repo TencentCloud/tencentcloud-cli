@@ -1,27 +1,4 @@
-**Example 1: 批量描述自定义人物**
-
-
-
-Input: 
-
-```
-tccli ivld DescribeCustomPersons --cli-unfold-argument  \
-    --PageNumber 1 \
-    --PageSize 15
-```
-
-Output: 
-```
-{
-    "Response": {
-        "PersonInfoSet": [],
-        "RequestId": "802f88a4-3c8f-4aff-8328-bc7591fdacc1",
-        "TotalCount": 0
-    }
-}
-```
-
-**Example 2: 成功批量描述人物信息**
+**Example 1: 成功批量描述人物信息**
 
 
 
@@ -57,6 +34,29 @@ Output:
         ],
         "RequestId": "9f5bc011-fa0b-4ad9-a4a1-2481343e9428",
         "TotalCount": 1
+    }
+}
+```
+
+**Example 2: 批量描述自定义人物**
+
+
+
+Input: 
+
+```
+tccli ivld DescribeCustomPersons --cli-unfold-argument  \
+    --PageNumber 1 \
+    --PageSize 15
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PersonInfoSet": [],
+        "RequestId": "802f88a4-3c8f-4aff-8328-bc7591fdacc1",
+        "TotalCount": 0
     }
 }
 ```

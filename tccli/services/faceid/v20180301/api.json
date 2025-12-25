@@ -10527,7 +10527,7 @@
         },
         {
           "disabled": false,
-          "document": "控制活体重试次数。取值范围1-99。",
+          "document": "控制活体重试次数。取值范围1-99。默认值为99",
           "example": "3",
           "member": "int64",
           "name": "LivenessRetryLimit",
@@ -10536,7 +10536,7 @@
         },
         {
           "disabled": false,
-          "document": "控制活体检测超时时间秒数，取值范围(0,600]",
+          "document": "控制活体检测超时时间秒数，取值范围(0,600]。默认45秒",
           "example": "45",
           "member": "uint64",
           "name": "LivenessTimeout",
@@ -10545,7 +10545,7 @@
         },
         {
           "disabled": false,
-          "document": "选择需要关注的OCR告警，当出现关注的OCR告警时身份认证流程会被中断，默认值为空，表示全部告警都关注。这功能需要参数 DisableCheckOcrWarnings=false，若关闭告警，本参数将不生效",
+          "document": "选择需要关注的OCR告警，当出现关注的OCR告警时身份认证流程会被中断，默认值为空，表示全部告警都关注。这功能需要参数 DisableCheckOcrWarnings=false，若关闭告警，本参数将不生效。\n\n告警码列表和释义：\n-9101 边框不完整告警\n-9102 复印件告警\n-9103 翻拍告警\n-9104 ps告警\n-9107 反光告警\n-9108 模糊告警\n-9109 告警未开通\n",
           "example": "-9104,-9105",
           "member": "string",
           "name": "SelectedWarningCodes",

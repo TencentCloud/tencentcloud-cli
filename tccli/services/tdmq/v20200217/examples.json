@@ -48,6 +48,14 @@
         "title": "test"
       }
     ],
+    "CreateClusterVpcAccessPoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterVpcAccessPoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"pulsar-5r59xd4vnx\",\n    \"VpcId\": \"vpc-8jjiuayds\",\n    \"SubnetId\": \"subnet-aiuadezd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"722558eb-36dc-4643-854f-aa7436b83125\"\n    }\n}",
+        "title": "创建接入点"
+      }
+    ],
     "CreateCmqQueue": [
       {
         "document": "创建队列",

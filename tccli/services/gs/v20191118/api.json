@@ -2924,7 +2924,7 @@
         },
         {
           "disabled": false,
-          "document": "【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
+          "document": "【推荐填写】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",
@@ -6319,7 +6319,7 @@
         },
         {
           "disabled": false,
-          "document": "【必选】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
+          "document": "【推荐填写】用户IP，用户客户端的公网IP，用于就近调度，不填将严重影响用户体验",
           "example": "125.127.178.228",
           "member": "string",
           "name": "UserIp",

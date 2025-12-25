@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli as ExecuteScalingPolicy --cli-unfold-argument  \
-    --HonorCooldown false \
+    --HonorCooldown False \
     --AutoScalingPolicyId asp-f59pppuh
 ```
 

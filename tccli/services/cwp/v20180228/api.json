@@ -15005,7 +15005,7 @@
         {
           "disabled": false,
           "document": "资源对象",
-          "example": "{\n            \"Id\":1,\n            \"ResourceId\":\"white_resource-01\",\n            \"BeginTime\":\"2022-05-31 00:00:00\",\n            \"EndTime\":\"2022-06-10 00:00:00\",\n            \"LicenseType\":1\n        }",
+          "example": "无",
           "member": "OrderResource",
           "name": "Resource",
           "output_required": true,
@@ -25736,7 +25736,7 @@
         {
           "disabled": false,
           "document": "PROVERSION_POSTPAY 专业版-后付费, PROVERSION_PREPAY 专业版-预付费, FLAGSHIP_PREPAY 旗舰版-预付费",
-          "example": "PROVERSION_POSTPAY ",
+          "example": "PROVERSION_POSTPAY",
           "member": "string",
           "name": "ProtectType",
           "output_required": true,
@@ -25869,6 +25869,16 @@
           "example": "false",
           "member": "bool",
           "name": "AutoOpenRaspSwitch",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动缩容开关开启",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoDowngradeSwitch",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -46414,6 +46424,15 @@
           "name": "AutoOpenRaspSwitch",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动缩容开关,0 关闭 1开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoDowngradeSwitch",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -49455,6 +49474,15 @@
           "name": "ExcludedQuuids",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "推送语言类型，中文zh，英文en",
+          "example": "zh",
+          "member": "string",
+          "name": "MsgLanguage",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -61571,7 +61599,7 @@
         {
           "disabled": false,
           "document": "事件类型",
-          "example": "[{'Type': 20, 'ControlBit': '1'}]",
+          "example": "无",
           "member": "WebHookEventKv",
           "name": "Events",
           "output_required": false,
@@ -61581,7 +61609,7 @@
         {
           "disabled": false,
           "document": "主机范围",
-          "example": "[{'Type': 4, 'Values': []}]",
+          "example": "无",
           "member": "WebHookHostLabel",
           "name": "HostLabels",
           "output_required": false,
@@ -61591,7 +61619,7 @@
         {
           "disabled": false,
           "document": "接收人",
-          "example": "[{\"Addr\":\"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=d0c2fc25-23a2-4285-ab98-d8a862146a73\",\"Id\":17,\"Name\":\"企微\"}]",
+          "example": "无",
           "member": "WebHookReceiver",
           "name": "Receivers",
           "output_required": false,
@@ -61611,7 +61639,7 @@
         {
           "disabled": false,
           "document": "自定义透传字段",
-          "example": "[{'Key': '这是腾讯云标签', 'Value': '111'}]",
+          "example": "无",
           "member": "WebHookCustomField",
           "name": "CustomFields",
           "output_required": false,
@@ -61631,7 +61659,7 @@
         {
           "disabled": false,
           "document": "主机列表",
-          "example": "['e7dd60a3-6d90-42a1-af72-cfe40dfc****']",
+          "example": "[\"e7dd60a3-6d90-42a1-af72-cfe40dfc****\"]",
           "member": "string",
           "name": "Quuids",
           "output_required": false,
@@ -61656,6 +61684,16 @@
           "name": "ExcludedQuuids",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推送语言类型，中文zh，英文en\t",
+          "example": "zh",
+          "member": "string",
+          "name": "MsgLanguage",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

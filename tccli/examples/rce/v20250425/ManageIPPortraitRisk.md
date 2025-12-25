@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli rce ManageIPPortraitRisk --cli-unfold-argument  \
-    --PostTime 1686263179 \
-    --BusinessSecurityData.UserIp 203.***.***.118 \
-    --BusinessSecurityData.Channel 6
+    --PostTime 1766633688 \
+    --BusinessSecurityData.UserIp 123.***.**.2 \
+    --BusinessSecurityData.Channel 1
 ```
 
 Output: 
@@ -17,9 +17,14 @@ Output:
     "Response": {
         "Data": {
             "Code": 0,
-            "Message": "OK"
+            "Message": "OK",
+            "Value": {
+                "RiskScore": 0,
+                "RiskType": [],
+                "UserIp": "123.***.**.2"
+            }
         },
-        "RequestId": "be7d30aa-a824-4b5d-9b53-288e9dae2423"
+        "RequestId": "42cd52a1-****-****-81c1-f40266b1dde6"
     }
 }
 ```

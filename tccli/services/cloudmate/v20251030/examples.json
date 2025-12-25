@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "CloudMateAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cloudmate.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloudMateAgent\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"bd225f0e-8a75-4bd7-8bc3-99b026b41256\",\n    \"Message\": \"你是谁\",\n    \"ScenarioId\": \"d824d96c-7c07-4f6a-aef6-2f14a9fafb1e\"\n}",
+        "output": "{\n  \"SessionId\": \"46be4923-6f58-4ccb-8a26-6f56aad4a17b\",\n  \"Timestamp\": 1766561543,\n  \"Content\": {\n    \"Role\": \"model_output\",\n    \"Parts\": [\n      {\n        \"Text\": \"我是 CloudMate，一个专注于帮助您解决云平台问题的 AI 助手。您可以随时向我描述您遇到的问题。\"\n      }\n    ]\n  },\n  \"Partial\": false,\n  \"TurnComplete\": true\n}",
+        "title": "发起智能诊断对话"
+      }
+    ]
+  },
+  "version": "1.0"
+}

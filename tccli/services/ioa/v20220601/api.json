@@ -1002,7 +1002,7 @@
       "status": "online"
     },
     "DescribeDLPDataLevel": {
-      "document": "数据安全查询数据分级的内容，私有化调用path为：/capi/DlpOpenApi/DescribeDLPDataLevel",
+      "document": "查询数据分级列表，私有化调用path为：/capi/DlpOpenApi/DescribeDLPDataLevel",
       "input": "DescribeDLPDataLevelRequest",
       "name": "查询数据分级列表",
       "output": "DescribeDLPDataLevelResponse",
@@ -3478,7 +3478,7 @@
         {
           "disabled": false,
           "document": "是否盗版\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0=无风险;1=有风险;2=未开启检查",
+          "example": "0",
           "member": "int64",
           "name": "PiracyRisk",
           "output_required": false,
@@ -3627,6 +3627,28 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "软件id",
+          "example": "123",
+          "member": "int64",
+          "name": "SoftwareId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0:win 2:mac",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -15183,12 +15205,32 @@
     },
     "DescribeDLPDataLevelRequest": {
       "document": "DescribeDLPDataLevel请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeDLPDataLevelResponse": {
       "document": "DescribeDLPDataLevel返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "规则等级数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeDLPDataLevelRspData",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -15197,6 +15239,111 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeDLPDataLevelRspData": {
+      "document": "业务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分级唯一id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分级名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S6",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "一般风险等级",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "级别颜色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "#AADDCC",
+          "member": "string",
+          "name": "Color",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关状态(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-08-19",
+          "member": "string",
+          "name": "Itime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-08-19",
+          "member": "string",
+          "name": "Utime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否有规则引用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsReferenced",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_1",
+          "member": "string",
+          "name": "ReferenceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DescribeDLPEdgeNodeGroupsRequest": {
       "document": "DescribeDLPEdgeNodeGroups请求参数结构体",
@@ -44994,6 +45141,26 @@
           "example": "0",
           "member": "int64",
           "name": "PiracyRisk",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备id",
+          "example": "1",
+          "member": "int64",
+          "name": "DeviceId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平台类型",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

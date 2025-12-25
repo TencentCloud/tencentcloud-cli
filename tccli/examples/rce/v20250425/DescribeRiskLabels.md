@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli rce DescribeRiskLabels --cli-unfold-argument  \
-    --DeviceToken v3:AAAAA****YyWjqZdo=
+    --DeviceToken v3:AAAAA****YyWjqZdo= \
+    --Channel CH7X*****7P2B8KQ
 ```
 
 Output: 

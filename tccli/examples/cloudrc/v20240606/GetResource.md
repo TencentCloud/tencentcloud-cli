@@ -1,4 +1,29 @@
-**Example 1: 查询资源详情**
+**Example 1: 查询的资源不存在**
+
+查询的资源不存在
+
+Input: 
+
+```
+tccli cloudrc GetResource --cli-unfold-argument  \
+    --ViewId vw-6wyborpx \
+    --ResourceUniqueId ZlIFm+oOQ3jLgwR3txrMYA==
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "ResourceNotFound.ResourceIdNotFound",
+            "Message": "资源ID不存在"
+        },
+        "RequestId": "2138d26f-fe46-4eb3-a0f6-fb3d86be3389"
+    }
+}
+```
+
+**Example 2: 查询资源详情**
 
 查询资源详情
 
@@ -121,31 +146,6 @@ Output:
                 "Value": "默认项目"
             }
         ],
-        "RequestId": "2138d26f-fe46-4eb3-a0f6-fb3d86be3389"
-    }
-}
-```
-
-**Example 2: 查询的资源不存在**
-
-查询的资源不存在
-
-Input: 
-
-```
-tccli cloudrc GetResource --cli-unfold-argument  \
-    --ViewId vw-6wyborpx \
-    --ResourceUniqueId ZlIFm+oOQ3jLgwR3txrMYA==
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "ResourceNotFound.ResourceIdNotFound",
-            "Message": "资源ID不存在"
-        },
         "RequestId": "2138d26f-fe46-4eb3-a0f6-fb3d86be3389"
     }
 }
