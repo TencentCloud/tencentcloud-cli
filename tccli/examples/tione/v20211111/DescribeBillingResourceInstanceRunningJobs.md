@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tione DescribeBillingResourceInstanceRunningJobs --cli-unfold-argument  \
-    --ResourceGroupId abc \
-    --ResourceInstanceId abc
+    --ResourceGroupId rsg-23d23 \
+    --ResourceInstanceId sm-f342u8
 ```
 
 Output: 

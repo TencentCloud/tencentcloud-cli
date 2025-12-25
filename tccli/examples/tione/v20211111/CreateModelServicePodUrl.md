@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tione CreateModelServicePodUrl --cli-unfold-argument  \
-    --ServiceId abc \
-    --PodName abc
+    --ServiceId ms-thisisatest \
+    --PodName ms-thisisatest-podname
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Url": "abc",
-        "RequestId": "abc"
+        "Url": "http://dfsdfxx",
+        "RequestId": "a-fake-id"
     }
 }
 ```

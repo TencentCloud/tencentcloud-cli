@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tione DescribeModelServiceHistory --cli-unfold-argument  \
-    --ServiceId xxxxxx
+    --ServiceId ms-fdsfsfes
 ```
 
 Output: 

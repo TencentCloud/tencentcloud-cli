@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tione DeleteCodeRepo --cli-unfold-argument  \
-    --Id test
+    --Id 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "test"
+        "RequestId": ""
     }
 }
 ```

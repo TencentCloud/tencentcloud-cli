@@ -238,6 +238,13 @@
       "output": "DescribeCodeReposResponse",
       "status": "online"
     },
+    "DescribeDataSources": {
+      "document": "获取数据源列表",
+      "input": "DescribeDataSourcesRequest",
+      "name": "获取数据源列表",
+      "output": "DescribeDataSourcesResponse",
+      "status": "online"
+    },
     "DescribeDatasets": {
       "document": "查询数据集列表",
       "input": "DescribeDatasetsRequest",
@@ -600,7 +607,7 @@
         {
           "disabled": false,
           "document": "token 别名",
-          "example": "这是 token 别名",
+          "example": "token别名",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -611,7 +618,7 @@
         {
           "disabled": false,
           "document": "token 描述",
-          "example": "这是 token 描述",
+          "example": "token别名",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -1047,7 +1054,7 @@
         {
           "disabled": false,
           "document": "代码仓库名称",
-          "example": "222",
+          "example": "testname",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -1109,6 +1116,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子账号",
+          "example": "0",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2617,7 +2635,7 @@
         },
         {
           "disabled": false,
-          "document": "算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION)",
+          "document": "算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION/ONNX)",
           "example": "a2",
           "member": "string",
           "name": "AlgorithmFramework",
@@ -2743,7 +2761,7 @@
         },
         {
           "disabled": false,
-          "document": "模型格式 （PYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE）",
+          "document": "模型格式 （PYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE_BERT/HUGGING_FACE_STABLE_DIFFUSION/HUGGING_FACE_STABLE_DIFFUSION_LORA/WEB_UI_STABLE_DIFFUSION）",
           "example": "SAVED_MODEL",
           "member": "string",
           "name": "ModelFormat",
@@ -3374,6 +3392,152 @@
         }
       ],
       "usage": "both"
+    },
+    "DataSourceInfo": {
+      "document": "数据源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源ID",
+          "example": "dse-cfs-abced",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源名称",
+          "example": "数据源abc",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者uin",
+          "example": "282833212",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者名称",
+          "example": "testname",
+          "member": "string",
+          "name": "CreatorName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型英文名",
+          "example": "Cfs",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源权限，取值有RW RO",
+          "example": "RW",
+          "member": "string",
+          "name": "Permission",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源所属存储实例ID",
+          "example": "cfs-abcdef",
+          "member": "string",
+          "name": "StorageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源所属存储实例名称",
+          "example": "测试名称",
+          "member": "string",
+          "name": "StorageName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源挂载配置",
+          "example": "无",
+          "member": "MountConfigureInfo",
+          "name": "MountConfigure",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间, 格式为yyyy-mm-dd hh:mm:ss",
+          "example": "2025-06-04 11:53:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间, 格式为yyyy-mm-dd hh:mm:ss",
+          "example": "2025-06-04 11:53:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限制开关是否开启，只有开启时才有限制",
+          "example": "true",
+          "member": "bool",
+          "name": "LimitMount",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签配置",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "额外配置,对应存储实例的额外配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StorageExtraConf",
+          "name": "ExtraConf",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DatasetGroup": {
       "document": "数据集组",
@@ -4171,7 +4335,7 @@
           "example": "rodb7j1r20w",
           "member": "string",
           "name": "DatasetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4287,9 +4451,9 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务分类",
-          "example": "无",
+          "example": "Normal",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -4505,7 +4669,7 @@
         {
           "disabled": false,
           "document": "过滤条件注意: 1. Filter.Name 只支持以下枚举值:    ResourceInstanceId (资源组节点id)    HealthCheckItem (检测项) TaskId (健康检测任务ID)2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询3. 每次请求的Filters的上限为10，Filter.Values的上限为100",
-          "example": "[{Name: \"TaskId\", Values: [\"jkjc-hs862dk2\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4755,6 +4919,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "创建时间: 注意：北京时间，比如: 2021-12-01 12:00:00",
+          "example": "2021-12-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点实例可用区枚举",
+          "example": "[\"ap-guangzhou-3\",\"ap-guangzhou-2\"]",
+          "member": "string",
+          "name": "ZoneNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4894,7 +5078,7 @@
         {
           "disabled": false,
           "document": "资源组节点运行中的任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "ResourceInstanceRunningJobInfo",
           "name": "ResourceInstanceRunningJobInfos",
           "output_required": false,
@@ -4925,7 +5109,7 @@
         {
           "disabled": false,
           "document": "过滤条件\n注意: \n1. Filter.Name 只支持以下枚举值:\n    InstanceId (资源组节点id)\n    InstanceStatus (资源组节点状态)\n2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询\n3. 每次请求的Filters的上限为10，Filter.Values的上限为100",
-          "example": "[{Name: \"InstanceStatus\", Values: [\"RUNNING\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5250,6 +5434,98 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataSourcesRequest": {
+      "document": "DescribeDataSources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤条件",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序的依据字段",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataSourcesResponse": {
+      "document": "DescribeDataSources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源列表",
+          "example": "无",
+          "member": "DataSourceInfo",
+          "name": "DataSourceInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "1000",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5784,7 +6060,7 @@
           "example": "无",
           "member": "ModelAccelerateTask",
           "name": "ModelAccelerateTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5794,7 +6070,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ModelAccRuntimeInSecond",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5804,7 +6080,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelAccStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5814,7 +6090,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelAccEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5932,9 +6208,9 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务分类",
-          "example": "无",
+          "example": "已废弃",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -6028,9 +6304,9 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务分类",
-          "example": "无",
+          "example": "normal",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -6119,9 +6395,9 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务分类",
-          "example": "无",
+          "example": "Normal",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -6186,7 +6462,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6196,7 +6472,7 @@
           "example": "无",
           "member": "ServiceHistory",
           "name": "ServiceHistory",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6258,7 +6534,7 @@
         {
           "disabled": false,
           "document": "热更新状态位的原因.\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "update",
           "member": "string",
           "name": "Reason",
           "output_required": true,
@@ -6297,9 +6573,9 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务分类",
-          "example": "无",
+          "example": "normal",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -6524,7 +6800,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "详情",
+          "document": "notebook详情",
           "example": "无",
           "member": "NotebookSetItem",
           "name": "NotebookSet",
@@ -6650,7 +6926,7 @@
           "example": "无",
           "member": "TrainingModelVersionDTO",
           "name": "TrainingModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6809,7 +7085,7 @@
         {
           "disabled": false,
           "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"train-23091792777383936\"] }]\n\n取值范围：\nName（名称）：task1\nId（task ID）：train-23091792777383936\nStatus（状态）：SUBMITTING/PENDING/STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED\nResourceGroupId（资源组 Id）：trsg-kvvfrwl7\nCreator（创建者 uin）：100014761913\nChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）\nCHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）",
-          "example": "[{ \"Name\": \"TaskStatus\", \"Values\": [\"Running\"] }]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -6818,7 +7094,7 @@
         {
           "disabled": false,
           "document": "标签过滤器，eg：[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
-          "example": "[{ \"TagKey\": \"TagKeyA\", \"TagValue\": [\"TagValueA\"] }]",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -7561,6 +7837,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对应的任务式建模任务所在工作空间ID",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7990,6 +8276,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持导出时指定entrypoint和workdir",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportEntryPointExport",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -8607,53 +8904,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点公网地址",
-          "example": "",
+          "document": "节点公网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"172.16.222.92\"]",
           "member": "string",
           "name": "PublicIpAddress",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "节点内网地址",
-          "example": "",
+          "document": "节点内网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"172.16.222.92\"]",
           "member": "string",
           "name": "PrivateIpAddress",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "节点网络VPC信息",
-          "example": "",
+          "document": "节点网络VPC信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "平台VPC信息",
-          "example": "",
+          "document": "平台VPC信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "PlatformVirtualPrivateCloud",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "节点网络状态码",
-          "example": "",
+          "document": "节点网络状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Reachable",
           "member": "string",
           "name": "NetworkConditionCode",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8817,6 +9114,7 @@
           "example": "cls-eeee",
           "member": "string",
           "name": "LogsetId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -8827,9 +9125,21 @@
           "example": "cls-topic-ccccc",
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志需要投递到cls的地域，只有跨地域投递时需要配置",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9548,14 +9858,14 @@
         },
         {
           "disabled": false,
-          "document": "GooseFSx的配置，ModelSource为GooseFSx时有效",
+          "document": "GooseFSx的配置，ModelSource为GooseFSx时有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GooseFSx",
           "name": "GooseFSx",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -9884,7 +10194,7 @@
         {
           "disabled": false,
           "document": "是否开启鉴权,true表示开启",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "AuthorizationEnable",
           "required": false,
@@ -10318,7 +10628,7 @@
         {
           "disabled": false,
           "document": "Notebook修改标签集合",
-          "example": "[]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -10372,7 +10682,7 @@
           "example": "无",
           "member": "ServiceGroup",
           "name": "ServiceGroup",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10407,7 +10717,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "服务分类, 默认不填,TAIJI_HY表示混元大模型服务",
           "example": "TAIJI_HY",
           "member": "string",
@@ -10429,6 +10739,23 @@
         }
       ],
       "type": "object"
+    },
+    "MountConfigureInfo": {
+      "document": "数据源挂载配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源的相对路径，支持<@subaccount>这样的占位符",
+          "example": "/dir1/<@subaccount>/",
+          "member": "string",
+          "name": "WorkDir",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MultiModalContent": {
       "document": "多模态对话内容,支持图片与文字信息",
@@ -11227,6 +11554,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器服务暴露端口配置",
+          "example": "无",
+          "member": "ExposePortConfig",
+          "name": "ExposePortConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12886,6 +13223,26 @@
           "example": "无",
           "member": "ResourceGroupSupervisor",
           "name": "Supervisors",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组创建时间",
+          "example": "2025-11-25 13:59:59",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组绑定的工作空间",
+          "example": "无",
+          "member": "WorkspaceBriefInfo",
+          "name": "WorkspaceBriefInfos",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -15372,7 +15729,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelAccTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15382,7 +15739,7 @@
           "example": "无",
           "member": "string",
           "name": "AsyncTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15448,6 +15805,32 @@
         }
       ],
       "type": "object"
+    },
+    "StorageExtraConf": {
+      "document": "存储额外配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cfs的存储类型\n  // HP:通用性能型\n  // SD:通用标准型\n  // TP:turbo性能型\n  // TB:turbo标准型\n  // THP:吞吐型",
+          "example": "HP",
+          "member": "string",
+          "name": "CFSStorageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cfs的协议",
+          "example": "NFS",
+          "member": "string",
+          "name": "CFSProtocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TCPSocketAction": {
       "document": "tcp socket 健康探针检查行为",
@@ -15740,7 +16123,7 @@
         {
           "disabled": false,
           "document": "模型错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "未知错误",
           "member": "string",
           "name": "TrainingModelErrorMsg",
           "output_required": true,
@@ -15820,7 +16203,7 @@
         {
           "disabled": false,
           "document": "推理环境id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "pytorch1.9.0-py38(gpu)",
           "member": "string",
           "name": "ReasoningEnvironmentId",
           "output_required": true,
@@ -15830,7 +16213,7 @@
         {
           "disabled": false,
           "document": "训练任务版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "V1",
           "member": "string",
           "name": "TrainingJobVersion",
           "output_required": true,
@@ -15840,7 +16223,7 @@
         {
           "disabled": false,
           "document": "训练偏好\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "HIGH_SPEED",
           "member": "string",
           "name": "TrainingPreference",
           "output_required": true,
@@ -15850,7 +16233,7 @@
         {
           "disabled": false,
           "document": "自动学习任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ml-8jw4kzxm-v1",
           "member": "string",
           "name": "AutoMLTaskId",
           "output_required": true,
@@ -15860,7 +16243,7 @@
         {
           "disabled": false,
           "document": "是否QAT模型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsQAT",
           "output_required": true,
@@ -16967,6 +17350,32 @@
         }
       ],
       "usage": "both"
+    },
+    "WorkspaceBriefInfo": {
+      "document": "工作空间简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "100043958315",
+          "member": "string",
+          "name": "TiProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间名",
+          "example": "推理算法组",
+          "member": "string",
+          "name": "TiProjectName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

@@ -1658,6 +1658,15 @@
           "name": "ProjectId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用类别（DESKTOP: 桌面端，MOBILE：移动端）",
+          "example": "DESKTOP",
+          "member": "string",
+          "name": "ApplicationCategory",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1770,7 +1779,17 @@
     },
     "DescribeConcurrentSummaryRequest": {
       "document": "DescribeConcurrentSummary请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用类别（DESKTOP: 桌面端，MOBILE：移动端）",
+          "example": "DESKTOP",
+          "member": "string",
+          "name": "ApplicationCategory",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeConcurrentSummaryResponse": {

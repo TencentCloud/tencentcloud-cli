@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tione ModifyCodeRepo --cli-unfold-argument  \
-    --Id test \
-    --GitSecret.Secret test \
+    --Id  \
+    --GitSecret.Secret  \
     --GitSecret.NoSecret True
 ```
 
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "test"
+        "RequestId": ""
     }
 }
 ```

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tione CreateCodeRepo --cli-unfold-argument  \
-    --GitConfig.RepositoryUrl abc \
+    --GitConfig.RepositoryUrl  \
     --GitConfig.Branch master \
-    --GitSecret.Secret test \
+    --GitSecret.Secret  \
     --GitSecret.NoSecret True \
-    --Name test
+    --Name 
 ```
 
 Output: 

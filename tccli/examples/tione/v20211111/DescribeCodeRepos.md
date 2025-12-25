@@ -7,12 +7,12 @@ Input:
 ```
 tccli tione DescribeCodeRepos --cli-unfold-argument  \
     --Filters.0.Fuzzy True \
-    --Filters.0.Values abcd \
+    --Filters.0.Values  \
     --Filters.0.Name cr-ewqnewq \
     --Filters.0.Negative True \
     --Limit 0 \
-    --Order test \
-    --OrderField test \
+    --Order  \
+    --OrderField  \
     --Offset 0
 ```
 
@@ -23,18 +23,18 @@ Output:
         "TotalCount": 0,
         "CodeRepoSet": [
             {
-                "UpdateTime": "test",
-                "Name": "test",
-                "Id": "test",
+                "UpdateTime": "",
+                "Name": "",
+                "Id": "",
                 "GitConfig": {
-                    "RepositoryUrl": "test",
-                    "Branch": "test"
+                    "RepositoryUrl": "",
+                    "Branch": ""
                 },
                 "NoSecret": true,
-                "CreateTime": "test"
+                "CreateTime": ""
             }
         ],
-        "RequestId": "test"
+        "RequestId": ""
     }
 }
 ```
