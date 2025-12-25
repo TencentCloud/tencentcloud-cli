@@ -505,7 +505,7 @@
       "status": "online"
     },
     "DescribeCDNUsageData": {
-      "document": "该接口用于查询点播 CDN 的流量、带宽等统计数据。\n   1. 可以查询最近365天内的 CDN 用量数据。\n   2. 查询时间跨度不超过90天。\n   3. 可以指定用量数据的时间粒度，支持5分钟、1小时、1天的时间粒度。\n   4. 流量为查询时间粒度内的总流量，带宽为查询时间粒度内的峰值带宽。\n   5. 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。",
+      "document": "该接口用于查询点播 CDN 的流量、带宽等统计数据。\n   1. CDN 用量数据系统侧保留 13 个月，您通过接口仅可查询最近 365 天内的用量数据。如需调取超出 365 天的历史用量数据，请联系我们。\n   2. 查询时间跨度不超过90天。\n   3. 可以指定用量数据的时间粒度，支持5分钟、1小时、1天的时间粒度。\n   4. 流量为查询时间粒度内的总流量，带宽为查询时间粒度内的峰值带宽。\n   5. 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。",
       "input": "DescribeCDNUsageDataRequest",
       "name": "查询点播 CDN 用量数据",
       "output": "DescribeCDNUsageDataResponse",
@@ -694,7 +694,7 @@
       "status": "online"
     },
     "DescribeMediaProcessUsageData": {
-      "document": "该接口返回查询时间范围内每天使用的视频处理用量信息。\n   1. 可以查询最近365天内的视频处理统计数据。\n   2. 查询时间跨度不超过90天。",
+      "document": "该接口返回查询时间范围内每天使用的视频处理用量信息。\n   1. 视频处理用量数据系统侧保留 13 个月，您通过接口仅可查询最近 365 天内的用量数据。如需调取超出 365 天的历史用量数据，请联系我们。\n   2. 查询时间跨度不超过90天。",
       "input": "DescribeMediaProcessUsageDataRequest",
       "name": "查询视频处理用量统计数据",
       "output": "DescribeMediaProcessUsageDataResponse",
@@ -778,7 +778,7 @@
       "status": "online"
     },
     "DescribeStorageDetails": {
-      "document": "该接口返回查询时间范围内使用的点播存储空间，单位：字节。\n    1. 可以查询最近365天内的存储空间数据；\n    2. 查询时间跨度不超过90天；\n    3. 分钟粒度查询跨度不超过7天；",
+      "document": "该接口返回查询时间范围内使用的点播存储空间，单位：字节。\n    1. 存储用量数据系统侧保留 13 个月，您通过接口仅可查询最近 365 天内的用量数据。如需调取超出 365 天的历史用量数据，请联系我们；\n    2. 查询时间跨度不超过90天；\n    3. 分钟粒度查询跨度不超过7天；",
       "input": "DescribeStorageDetailsRequest",
       "name": "查询存储空间数据详情",
       "output": "DescribeStorageDetailsResponse",
@@ -7395,7 +7395,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AIGC规格。\n取值有：\n<li>Qwen2.0</li>\n<li>Gem2.5</li>\n<li>Gem3.0_1K</li>\n<li>Gem3.0_2K</li>\n<li>Gem3.0_4K</li>\n<li>Sora2</li>\n<li>Veo3.1Fast</li>\n<li>Veo3.1Standard</li>\n<li>Kling2.5pro_720P</li>\n<li>Kling2.5pro_1080P</li>\n<li>KlingO1_1080P</li>\n<li>Kling2.0&2.1std_720P</li>\n<li>Kling2.0&2.1pro_1080P</li>\n<li>KlingO1_720P</li>\n<li>Hailuo02&2.3_1080P</li>\n<li>Hailuo02&2.3_768P</li>\n<li>Hailuo2.3fast_768P</li>\n<li>Hailuo2.3fast_1080P</li>\n<li>Jimeng4.0</li>\n<li>Jimeng3.0pro</li>\n<li>Vidu2.0_720P</li>\n<li>Vidu2.0_1080P</li>\n<li>ViduQ2pro_720P</li>\n<li>ViduQ2pro_1080P</li>\n<li>ViduQ2turbo_720P</li>\n<li>ViduQ2turbo_1080P</li>\n<li>Hunyuan1.5_720P</li>\n<li>Hunyuan1.5_1080P</li>\n<li>Hunyuan3.0_1K</li>\n<li>Hunyuan3.0_2K</li>\n<li>Hunyuan3.0_4K</li>\n<li>Mingmou1.0_1080P</li>\n<li>Mingmou1.0_1K</li>\n<li>Mingmou1.0_2K</li>\n<li>Mingmou1.0_4K</li>\n<li>Mingmou1.0_720P</li>\n<li> unknown</li>",
+          "document": "AIGC规格。\n取值有：\n<li>Qwen2.0</li>\n<li>Gem2.5</li>\n<li>Gem3.0_1K</li>\n<li>Gem3.0_2K</li>\n<li>Gem3.0_4K</li>\n<li>Sora2</li>\n<li>Veo3.1Fast</li>\n<li>Veo3.1Standard</li>\n<li>Kling2.5pro_720P</li>\n<li>Kling2.5pro_1080P</li>\n<li>KlingO1_1080P</li>\n<li>Kling2.0&2.1std_720P</li>\n<li>Kling2.0&2.1pro_1080P</li>\n<li>KlingO1_720P</li>\n<li>Hailuo02&2.3_1080P</li>\n<li>Hailuo02&2.3_768P</li>\n<li>Hailuo2.3fast_768P</li>\n<li>Hailuo2.3fast_1080P</li>\n<li>Jimeng4.0</li>\n<li>Jimeng3.0pro</li>\n<li>Vidu2.0_720P</li>\n<li>Vidu2.0_1080P</li>\n<li>ViduQ2pro_720P</li>\n<li>ViduQ2pro_1080P</li>\n<li>ViduQ2turbo_720P</li>\n<li>ViduQ2turbo_1080P</li>\n<li>Hunyuan1.5_720P</li>\n<li>Hunyuan1.5_1080P</li>\n<li>Hunyuan3.0_1K</li>\n<li>Hunyuan3.0_2K</li>\n<li>Hunyuan3.0_4K</li>\n<li>Mingmou1.0_1080P</li>\n<li>Mingmou1.0_1K</li>\n<li>Mingmou1.0_2K</li>\n<li>Mingmou1.0_4K</li>\n<li>Mingmou1.0_720P</li>\n<li>Seedance1.5ProAudioOn_480P</li>\n<li>Seedance1.5ProAudioOff_480P</li>\n<li>Seedance1.5ProAudioOn_720P</li>\n<li>Seedance1.5ProAudioOff_720P</li>\n<li>Seedance1.0Pro_480P</li>\n<li>Seedance1.0Pro_720P</li>\n<li>Seedance1.0Pro_1080P</li>\n<li>Seedance1.0ProFast480P</li>\n<li>Seedance1.0ProFast720P</li>\n<li>Seedance1.0ProFast1080P</li>\n<li>Seedance1.0Lite480P</li>\n<li>Seedance1.0Lite720P</li>\n<li>Seedance1.0Lite1080P</li>\n<li> unknown</li>",
           "example": "Gem2.5",
           "member": "string",
           "name": "Specification",
@@ -17317,7 +17317,7 @@
         {
           "disabled": false,
           "document": "视频处理统计数据概览，展示所查询任务的概览以及详细数据。",
-          "example": "[{\"TaskType\":\"JITEncryption\",\"Summary\":[{\"Time\":\"2025-07-20T00:00:00+08:00\",\"Count\":20,\"Usage\":50}],\"Details\":[{\"TaskType\":\"JITEncryption\",\"Specification\":\"JITEncryption\",\"Data\":[{\"Time\":\"2025-07-20T00:00:00+08:00\",\"Count\":20,\"Usage\":50}]}]}]",
+          "example": "无",
           "member": "TaskStatData",
           "name": "MediaProcessDataSet",
           "output_required": true,

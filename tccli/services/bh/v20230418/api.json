@@ -3033,7 +3033,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "同步资产类别，1 - 主机资产, 2 - 数据库资产",
+          "document": "同步资产类别，1 - 主机资产, 2 - 数据库资产，3-容器资产",
           "example": "1",
           "member": "uint64",
           "name": "Category",
@@ -7516,7 +7516,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作系统名称，只能是Linux、Windows或MySQL",
+          "document": "操作系统名称，只能是主机（Linux、Windows）、数据库（MySQL、SQL Server、MariaDB、PostgreSQL、MongoDBReplicaSet、MongoDBSharded、Redis）、容器（TKE、EKS）",
           "example": "Linux",
           "member": "string",
           "name": "OsName",

@@ -23,6 +23,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f7fff7b-d812-4779-891b-5f8385d3b433\"\n    }\n}",
         "title": "删除自定义用户"
       }
+    ],
+    "PutMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"EventId\": \"event-sdiq\",\n    \"Data\": \"{\\\"testkey\\\":\\\"testvalue\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TicketId\": \"ticket-sydinq\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "推送消息"
+      }
     ]
   },
   "version": "1.0"

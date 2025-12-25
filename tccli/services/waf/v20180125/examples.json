@@ -1372,6 +1372,14 @@
         "title": "修改防护对象"
       }
     ],
+    "ModifyObjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyObjects\n<公共请求参数>\n\n{\n    \"ObjectId\": [\n        \"lb-acvfds\"\n    ],\n    \"OpType\": \"InstanceId\",\n    \"InstanceId\": \"waf_000000111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "批量绑定实例ID"
+      }
+    ],
     "ModifyOwaspRuleStatus": [
       {
         "document": "",

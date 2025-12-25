@@ -4276,7 +4276,7 @@
         {
           "disabled": false,
           "document": "返回创建成功的集成名称列表",
-          "example": "kafka-name",
+          "example": "[\"kafka-name\"]",
           "member": "string",
           "name": "Names",
           "output_required": true,

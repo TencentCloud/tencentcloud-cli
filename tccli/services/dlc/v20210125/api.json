@@ -1155,6 +1155,13 @@
       "output": "RollbackDataEngineImageResponse",
       "status": "online"
     },
+    "SetOptimizerPolicy": {
+      "document": "设置优化策略的接口",
+      "input": "SetOptimizerPolicyRequest",
+      "name": "设置优化策略",
+      "output": "SetOptimizerPolicyResponse",
+      "status": "online"
+    },
     "SuspendResumeDataEngine": {
       "document": "本接口用于控制挂起或启动数据引擎",
       "input": "SuspendResumeDataEngineRequest",
@@ -20691,6 +20698,33 @@
         }
       ],
       "usage": "both"
+    },
+    "SetOptimizerPolicyRequest": {
+      "document": "SetOptimizerPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优化策略",
+          "example": "无",
+          "member": "SmartPolicy",
+          "name": "SmartPolicy",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SetOptimizerPolicyResponse": {
+      "document": "SetOptimizerPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SmartOptimizerChangeTablePolicy": {
       "document": "混合表中，change表的数据保存时间，单位为天",

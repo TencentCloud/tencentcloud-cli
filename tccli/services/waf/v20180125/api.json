@@ -1148,6 +1148,13 @@
       "output": "ModifyObjectResponse",
       "status": "online"
     },
+    "ModifyObjects": {
+      "document": "批量修改防护对象",
+      "input": "ModifyObjectsRequest",
+      "name": "批量修改防护对象",
+      "output": "ModifyObjectsResponse",
+      "status": "online"
+    },
     "ModifyOwaspRuleStatus": {
       "document": "更新规则的开关",
       "input": "ModifyOwaspRuleStatusRequest",
@@ -24886,6 +24893,60 @@
       ],
       "type": "object"
     },
+    "ModifyObjectsRequest": {
+      "document": "ModifyObjects请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改对象标识",
+          "example": "[\"lb-acvfds\"]",
+          "member": "string",
+          "name": "ObjectId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "改动作类型:InstanceId绑定实例；UnbindInstance解绑实例。",
+          "example": "InstanceId",
+          "member": "string",
+          "name": "OpType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的实例ID，如果和已绑定的实例相同认为修改成功",
+          "example": "waf_000000111",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对象列表，仅跨账号接入使用",
+          "example": "无",
+          "member": "Object",
+          "name": "Objects",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyObjectsResponse": {
+      "document": "ModifyObjects返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyOwaspRuleStatusRequest": {
       "document": "ModifyOwaspRuleStatus请求参数结构体",
       "members": [
@@ -26203,6 +26264,56 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Object": {
+      "document": "对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象id",
+          "example": "lb-d2lp6r6t",
+          "member": "string",
+          "name": "ObjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员appid",
+          "example": "1361890591",
+          "member": "uint64",
+          "name": "MemberAppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员uin",
+          "example": "100042632032",
+          "member": "string",
+          "name": "MemberUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员昵称",
+          "example": "测试账号",
+          "member": "string",
+          "name": "MemberNickName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

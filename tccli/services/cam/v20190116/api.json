@@ -1840,6 +1840,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略关联的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3678,7 +3687,7 @@
         {
           "disabled": false,
           "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "备注",
+          "example": "这是一个测试策略",
           "member": "string",
           "name": "PresetAlias",
           "output_required": true,
@@ -3693,6 +3702,16 @@
           "name": "IsServiceLinkedRolePolicy",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略关联的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -6641,13 +6660,13 @@
         },
         {
           "disabled": false,
-          "document": "策略创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略创建时间。",
           "example": "2016-06-02 19:40:09",
           "member": "datetime",
           "name": "AddTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6768,6 +6787,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6963,6 +6992,34 @@
         }
       ],
       "usage": "out"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "region",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TagRoleRequest": {
       "document": "TagRole请求参数结构体",

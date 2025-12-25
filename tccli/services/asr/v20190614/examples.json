@@ -234,7 +234,7 @@
       {
         "document": "比对两段音频的声纹相似度",
         "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintCompare\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 16000,\n    \"SrcAudioData\": \"AAAAADADAAAAA\",\n    \"DestAudioData\": \"AAAAADADAAAAA\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Score\": \"100.0\",\n            \"Decision\": \"1\"\n        },\n        \"RequestId\": \"dsadasdasdasdasad\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Score\": \"100.0\",\n            \"Decision\": 1\n        },\n        \"RequestId\": \"dsadasdasdasdasad\"\n    }\n}",
         "title": "音频声纹比对"
       }
     ],

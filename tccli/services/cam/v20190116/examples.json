@@ -91,7 +91,7 @@
     "CreatePolicy": [
       {
         "document": "以下示例将创建一个允许cos所有API访问所有的cos资源的策略",
-        "input": "https://cam.tencentcloudapi.com/?Action=CreatePolicy\r\n&PolicyName=test-2019-04-29\r\n&Description=策略描述\r\n&PolicyDocument={\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name/cos:*\"],\"resource\":[\"*\"]}]}\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=CreatePolicy\n&PolicyName=test-2019-04-29\n&Description=策略描述\n&PolicyDocument={\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name/cos:*\"],\"resource\":[\"*\"]}]}\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"PolicyId\": 17698703,\n        \"RequestId\": \"89360f78-b1dd-4e43-aa91-ecb2c8b8f282\"\n    }\n}",
         "title": "创建一个策略"
       }
@@ -370,10 +370,10 @@
     ],
     "GetPolicy": [
       {
-        "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=GetPolicy\r\n&PolicyId=17698703\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\",\n        \"UpdateTime\": \"2019-04-29 21:28:32\",\n        \"AddTime\": \"2019-04-29 21:18:40\",\n        \"PolicyName\": \"test-2019-04-29\",\n        \"Description\": \"测试策略\",\n        \"Type\": 1,\n        \"RequestId\": \"845b309d-e531-402d-a4f6-ec124f06738b\",\n        \"PresetAlias\": \"备注\",\n        \"IsServiceLinkedRolePolicy\": 0\n    }\n}",
-        "title": "查看一个策略的详情"
+        "document": "查看策略详情",
+        "input": "https://cam.tencentcloudapi.com/?Action=GetPolicy\n&PolicyId=17698703\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PolicyDocument\": \"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\",\n        \"UpdateTime\": \"2019-04-29 21:28:32\",\n        \"AddTime\": \"2019-04-29 21:18:40\",\n        \"PolicyName\": \"test-2019-04-29\",\n        \"Description\": \"测试策略\",\n        \"Type\": 1,\n        \"RequestId\": \"845b309d-e531-402d-a4f6-ec124f06738b\",\n        \"PresetAlias\": \"备注\",\n        \"IsServiceLinkedRolePolicy\": 0,\n        \"Tags\": [\n            {\n                \"Key\": \"region\",\n                \"Value\": \"ap-guangzhou\"\n            }\n        ]\n    }\n}",
+        "title": "查看策略详情"
       }
     ],
     "GetPolicyVersion": [

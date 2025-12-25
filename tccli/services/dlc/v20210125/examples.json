@@ -1338,6 +1338,14 @@
         "title": "升级引擎镜像版本"
       }
     ],
+    "SetOptimizerPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetOptimizerPolicy\n<公共请求参数>\n\n{\n    \"SmartPolicy\": {\n        \"BaseInfo\": {\n            \"Uin\": \"abc\",\n            \"PolicyType\": \"abc\",\n            \"Catalog\": \"abc\",\n            \"Database\": \"abc\",\n            \"Table\": \"abc\",\n            \"AppId\": \"abc\"\n        },\n        \"Policy\": {\n            \"Inherit\": \"abc\",\n            \"Resources\": [\n                {\n                    \"AttributionType\": \"abc\",\n                    \"ResourceType\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Instance\": \"abc\",\n                    \"Favor\": [\n                        {\n                            \"Priority\": 0,\n                            \"Catalog\": \"abc\",\n                            \"DataBase\": \"abc\",\n                            \"Table\": \"abc\"\n                        }\n                    ],\n                    \"Status\": 0\n                }\n            ],\n            \"Written\": {\n                \"WrittenEnable\": \"abc\"\n            },\n            \"Lifecycle\": {\n                \"LifecycleEnable\": \"abc\",\n                \"Expiration\": 0,\n                \"DropTable\": true\n            },\n            \"Index\": {\n                \"IndexEnable\": \"abc\"\n            }\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "SuspendResumeDataEngine": [
       {
         "document": "挂起或启动数据引擎",

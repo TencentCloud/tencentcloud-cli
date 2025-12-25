@@ -1458,8 +1458,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境Id",
-          "example": "fisher-pr***c0df14561",
+          "document": "<p>环境Id</p>",
+          "example": "frederickli***clc930f66d",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -1467,8 +1467,8 @@
         },
         {
           "disabled": false,
-          "document": "服务名",
-          "example": "test-cls",
+          "document": "<p>服务名</p>",
+          "example": "echos",
           "member": "string",
           "name": "ServerName",
           "required": true,
@@ -1476,8 +1476,8 @@
         },
         {
           "disabled": false,
-          "document": "版本名",
-          "example": "test-cls-003",
+          "document": "<p>版本名</p>",
+          "example": "echos-008",
           "member": "string",
           "name": "VersionName",
           "required": true,
@@ -1485,7 +1485,7 @@
         },
         {
           "disabled": false,
-          "document": "channel",
+          "document": "<p>channel</p>",
           "example": "gateway",
           "member": "string",
           "name": "Channel",
@@ -1500,8 +1500,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本名",
-          "example": "test-cls-003",
+          "document": "<p>版本名</p>",
+          "example": "echos-008",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -1510,7 +1510,7 @@
         },
         {
           "disabled": false,
-          "document": "端口号",
+          "document": "<p>端口号</p>",
           "example": "0",
           "member": "int64",
           "name": "Port",
@@ -1520,8 +1520,8 @@
         },
         {
           "disabled": false,
-          "document": "cpu 规格",
-          "example": "0.25",
+          "document": "<p>cpu 规格</p>",
+          "example": "1",
           "member": "float",
           "name": "Cpu",
           "output_required": true,
@@ -1530,8 +1530,8 @@
         },
         {
           "disabled": false,
-          "document": "mem 规格",
-          "example": "0.5",
+          "document": "<p>mem 规格</p>",
+          "example": "2",
           "member": "float",
           "name": "Mem",
           "output_required": true,
@@ -1540,7 +1540,7 @@
         },
         {
           "disabled": false,
-          "document": "最小副本数",
+          "document": "<p>最小副本数</p>",
           "example": "0",
           "member": "int64",
           "name": "MinNum",
@@ -1550,7 +1550,7 @@
         },
         {
           "disabled": false,
-          "document": "最大副本数",
+          "document": "<p>最大副本数</p>",
           "example": "5",
           "member": "int64",
           "name": "MaxNum",
@@ -1560,7 +1560,7 @@
         },
         {
           "disabled": false,
-          "document": "扩缩容策略",
+          "document": "<p>扩缩容策略</p>",
           "example": "无",
           "member": "HpaPolicy",
           "name": "PolicyDetails",
@@ -1570,7 +1570,7 @@
         },
         {
           "disabled": false,
-          "document": "Dockerfile path",
+          "document": "<p>Dockerfile path</p>",
           "example": "Dockerfile",
           "member": "string",
           "name": "Dockerfile",
@@ -1580,7 +1580,7 @@
         },
         {
           "disabled": false,
-          "document": "目标目录",
+          "document": "<p>目标目录</p>",
           "example": ".",
           "member": "string",
           "name": "BuildDir",
@@ -1590,7 +1590,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量",
+          "document": "<p>环境变量</p>",
           "example": "{\"key\":\"val\"}",
           "member": "string",
           "name": "EnvParams",
@@ -1600,8 +1600,8 @@
         },
         {
           "disabled": false,
-          "document": "状态",
-          "example": "deploy_failed",
+          "document": "<p>状态</p>",
+          "example": "build_failed",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -1610,8 +1610,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
-          "example": "2025-10-15 16:27:04",
+          "document": "<p>创建时间</p>",
+          "example": "2025-12-18 15:32:24",
           "member": "string",
           "name": "CreatedTime",
           "output_required": true,
@@ -1620,8 +1620,8 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
-          "example": "2025-10-15 16:30:37",
+          "document": "<p>更新时间</p>",
+          "example": "2025-12-18 16:04:43",
           "member": "string",
           "name": "UpdatedTime",
           "output_required": true,
@@ -1630,7 +1630,7 @@
         },
         {
           "disabled": false,
-          "document": "日志采集路径",
+          "document": "<p>日志采集路径</p>",
           "example": "stdout",
           "member": "string",
           "name": "LogPath",
@@ -1640,8 +1640,8 @@
         },
         {
           "disabled": false,
-          "document": "entryPoint\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[*",
+          "document": "<p>entryPoint</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/ap***ho\"]",
           "member": "string",
           "name": "EntryPoint",
           "output_required": false,
@@ -1650,8 +1650,8 @@
         },
         {
           "disabled": false,
-          "document": "Cmd\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[*",
+          "document": "<p>Cmd</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/ap***ho\"]",
           "member": "string",
           "name": "Cmd",
           "output_required": false,
@@ -1660,7 +1660,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc conf\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>vpc conf</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VpcConf",
           "name": "VpcConf",
@@ -1670,12 +1670,22 @@
         },
         {
           "disabled": false,
-          "document": "volume conf\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>volume conf</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VolumeConf",
           "name": "VolumesConf",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>buildpack 信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BuildPacksInfo",
+          "name": "BuildPacks",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {

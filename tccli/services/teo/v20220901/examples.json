@@ -1880,7 +1880,7 @@
     ],
     "ModifyPrefetchOriginLimit": [
       {
-        "document": "创建 cn2.test-***a.online 的预热回源限制，配置预热的海外加速区域上回源带宽为100Mbps。",
+        "document": "创建 cn2.test-***a.online 的预热回源限制，配置预热的全球可用区（不含中国大陆）加速区域上回源带宽为100Mbps。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrefetchOriginLimit\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3***j8tqd\",\n    \"DomainName\": \"cn2.test-***a.online\",\n    \"Area\": \"Overseas\",\n    \"Bandwidth\": 100,\n    \"Enabled\": \"on\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"591c01a2-af21-4c09-af23-8f7d96832d01\"\n    }\n}",
         "title": "创建回源限速带宽限制"

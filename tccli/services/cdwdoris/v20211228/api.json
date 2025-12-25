@@ -6289,6 +6289,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ccr服务部署节点ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "SyncerIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -1008,6 +1008,24 @@
       "members": [
         {
           "disabled": false,
+          "document": "agent实例ID",
+          "example": "agtinst-s7u9342",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "chat-xfwe24",
+          "member": "string",
+          "name": "ChatId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "查询开始位置",
           "example": "10",
           "member": "int64",
@@ -1023,6 +1041,42 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务启动时间",
+          "example": "2025-08-11 10:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间",
+          "example": "2025-08-12 10:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型",
+          "example": "sql_precheck",
+          "member": "string",
+          "name": "AgentTaskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务参数",
+          "example": "无",
+          "member": "Parameter",
+          "name": "Parameters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1038,6 +1092,16 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务详细信息",
+          "example": "无",
+          "member": "AgentDutyTask",
+          "name": "DutyTasks",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

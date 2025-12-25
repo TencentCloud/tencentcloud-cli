@@ -1,4 +1,4 @@
-**Example 1: DescribeVersionDetail**
+**Example 1: 查询版本详情**
 
 
 
@@ -6,10 +6,9 @@ Input:
 
 ```
 tccli tcbr DescribeVersionDetail --cli-unfold-argument  \
-    --EnvId fisher-pr***c0df14561 \
-    --ServerName test-cls \
-    --VersionName test-cls-003 \
-    --Channel gateway
+    --EnvId frederickli***clc930f66d \
+    --ServerName echos \
+    --VersionName echos-008
 ```
 
 Output: 
@@ -17,26 +16,33 @@ Output:
 {
     "Response": {
         "BuildDir": ".",
-        "Cmd": "[*",
-        "Cpu": 0.25,
-        "CreatedTime": "2025-10-15 16:27:04",
-        "Dockerfile": "Dockerfile",
-        "EntryPoint": "[*",
+        "BuildPacks": {
+            "BaseImage": "Python3",
+            "EntryPoint": "echo 1",
+            "LanguageVersion": "",
+            "RepoLanguage": "Python",
+            "UploadFilename": ""
+        },
+        "Cmd": "[\"/ap***ho\"]",
+        "Cpu": 1,
+        "CreatedTime": "2025-12-18 15:32:24",
+        "Dockerfile": "",
+        "EntryPoint": "[\"/ap***ho\"]",
         "EnvParams": "",
         "LogPath": "stdout",
         "MaxNum": 5,
-        "Mem": 0.5,
+        "Mem": 2,
         "MinNum": 0,
-        "Name": "test-cls-003",
+        "Name": "echos-008",
         "PolicyDetails": [
             {
-                "PolicyThreshold": 60,
+                "PolicyThreshold": 50,
                 "PolicyType": "cpu"
             }
         ],
         "Port": 0,
-        "Status": "deploy_failed",
-        "UpdatedTime": "2025-10-15 16:30:37",
+        "Status": "build_failed",
+        "UpdatedTime": "2025-12-18 16:04:43",
         "VolumesConf": [],
         "VpcConf": {
             "SubnetCIDR": "",
@@ -44,7 +50,7 @@ Output:
             "VpcCIDR": "",
             "VpcId": ""
         },
-        "RequestId": "d3b7befc-5afe-4aa8-8a5e-7aa9efa6c3c0"
+        "RequestId": "1c148a2d-6d44-450e-a160-a097dbf4c63e"
     }
 }
 ```

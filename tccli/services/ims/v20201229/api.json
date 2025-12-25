@@ -8,7 +8,7 @@
       "status": "online"
     },
     "ImageModeration": {
-      "document": "本接口（Image Moderation, IM）用于提交图片文件进行同步智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通图片内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。\n### 接口使用说明：\n- 前往“[内容安全控制台-图片内容安全](https://console.cloud.tencent.com/cms)”开启使用图片内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**3000张图片**识别额度，有效期为15天。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云图片内容安全定价](https://cloud.tencent.com/product/ims/pricing)。\n\n### 接口功能说明：\n- 支持对图片文件或链接进行检测，通过深度学习技术，识别可能令人反感、不安全或不适宜的违规图片内容；\n- 支持对GIF图/长图进行截帧或拆分检测；\n- 支持识别多种违规场景，包括：低俗、违法违规、色情、广告等场景；\n- 支持多种物体检测（实体、广告台标、二维码等）及图片中文本的OCR文本识别；\n- 支持根据不同的业务场景配置自定义的审核策略；\n- 支持用户自定义选择图片风险库，打击自定义识别类型的违规图片（目前仅支持黑名单配置）；\n- 支持在审核图片内容时同时关联账号或设备信息，可识别违规风险账号或设备。\n\n### 接口调用说明：\n- 文件大小限制：\n    - 文件大小的最小限制为16字节；\n    - Base64编码后的内容（仅限FileContent）应小于10MB； \n    - 通过FileURL可访问的源图大小应小于30MB；\n- 图片尺寸支持：长和宽需大于50像素且小于10000像素，并且图片长宽比需小于90:1；\n- 分辨率建议：为保证识别效果，建议图片分辨率大于256x256。\n- 文件格式支持：\n    - **静态图**：BMP、ICO、JPEG、JNG、PNG、TIFF、RAW、SVG、GIF、WEBP、HEIC、AVIF\n    - **动态图**：GIF、WEBP、HEIC（默认最多抽取5帧图像，每隔5帧进行一次采样）\n- 传输协议：仅支持HTTP和HTTPS协议的图片链接；\n- 并发请求与审核：每次仅能传输一条URL进行审核，支持多并发请求，默认并发量为100 QPS。超过此限制将返回`RequestLimitExceeded`错误；\n- 存储与缓存建议：为了保障图片的稳定性和可靠性，推荐使用腾讯云COS存储或CDN缓存服务存放图片文件。\n\n### 图片下载说明：\n请根据以下规则调整您的图片链接和下载逻辑，以确保最佳的下载体验。\n- 下载时间限制：图片的首次下载超时时间为3秒；如果首次下载超时，系统将自动重试一次，重试的超时时间同样是3秒；若重试后仍未能成功下载，系统将返回 `ImageDownloadError`（下载超时）；\n- 网络安全策略：由于网络安全策略的影响，带有HTTP 302重定向状态码的链接可能会导致下载失败。请尽量避免使用此类链接，以确保下载过程顺利进行；对于因重定向或其他原因导致的下载失败，可能返回 `ResourceUnavailable.ImageDownloadError`；\n- 异步回源支持：目前不支持通过异步回源方式获取图片源。请确保提供的链接为直接指向图片资源的链接，以避免因异步回源不支持而导致的下载失败。\n\n<div class=\"rno-api-explorer\" style=\"margin-bottom:20px\">\n    <div class=\"rno-api-explorer-inner\">\n        <div class=\"rno-api-explorer-hd\">\n            <div class=\"rno-api-explorer-title\">\n                关于版本迭代的描述\n            </div>\n        </div>\n        <div class=\"rno-api-explorer-body\">\n            <div class=\"rno-api-explorer-cont\">\n                <p>当前页面版本为图片内容安全2020版本，2020.11.3日前接入的图片内容安全接口为2019版本</p>\n                <p>2020版本相对2019版本进行了升级，支持更灵活的多场景业务策略配置以及更丰富的识别回调信息，满足不同业务的识别需求，建议按照2020版本接入指引进行接口升级。</p>\n            </div>\n        </div>\n    </div>\n</div>",
+      "document": "本接口（Image Moderation, IM）用于提交图片文件进行同步智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通图片内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。\n### 接口使用说明：\n- 前往“[内容安全控制台-图片内容安全](https://console.cloud.tencent.com/cms)”开启使用图片内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**3000张图片**识别额度，有效期为15天。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云图片内容安全定价](https://cloud.tencent.com/product/ims/pricing)。\n\n### 接口功能说明：\n- 支持对图片文件或链接进行检测，通过深度学习技术，识别可能令人反感、不安全或不适宜的违规图片内容；\n- 支持对GIF图/长图进行截帧或拆分检测；\n- 支持识别多种违规场景，包括：低俗、违法违规、色情、广告等场景；\n- 支持多种物体检测（实体、广告台标、二维码等）及图片中文本的OCR文本识别；\n- 支持根据不同的业务场景配置自定义的审核策略；\n- 支持用户自定义选择图片风险库，打击自定义识别类型的违规图片（目前仅支持黑名单配置）；\n- 支持在审核图片内容时同时关联账号或设备信息，可识别违规风险账号或设备。\n\n### 接口调用说明：\n- 文件大小限制：\n    - 文件大小的最小限制为16字节；\n    - Base64编码后的内容（仅限FileContent）应小于10MB； \n    - 通过FileURL可访问的源图大小应小于30MB；\n- 图片尺寸支持：长和宽需大于50像素且小于10000像素，并且图片长宽比需小于90:1；\n- 分辨率建议：为保证识别效果，建议图片分辨率大于256x256。\n- 文件格式支持：\n    - **静态图**：BMP、ICO、JPEG、JNG、PNG、TIFF、RAW、SVG、GIF、WEBP、HEIC、AVIF\n    - **动态图**：GIF、WEBP、HEIC（默认最多抽取5帧图像，每隔5帧进行一次采样）\n- 传输协议：仅支持HTTP和HTTPS协议的图片链接；\n- 并发请求与审核：每次仅能传输一条URL进行审核，支持多并发请求，默认并发量为100 QPS。超过此限制将返回`RequestLimitExceeded`错误；\n- 存储与缓存建议：为了保障图片的稳定性和可靠性，推荐使用腾讯云COS存储或CDN缓存服务存放图片文件。\n\n### 图片下载说明：\n请根据以下规则调整您的图片链接和下载逻辑，以确保图片下载顺畅。\n- 下载时间限制：图片的首次下载超时时间为3秒；如果首次下载超时，系统将自动重试一次，重试的超时时间同样是3秒；若重试后仍未能成功下载，系统将返回 `ImageDownloadError`（下载超时）；\n- 网络安全策略：由于网络安全策略的影响，带有HTTP 302重定向状态码的链接可能会导致下载失败。请尽量避免使用此类链接，以确保下载过程顺利进行；对于因重定向或其他原因导致的下载失败，可能返回 `ResourceUnavailable.ImageDownloadError`；\n- 异步回源支持：目前不支持通过异步回源方式获取图片源。请确保提供的链接为直接指向图片资源的链接，以避免因异步回源不支持而导致的下载失败。\n\n<div class=\"rno-api-explorer\" style=\"margin-bottom:20px\">\n    <div class=\"rno-api-explorer-inner\">\n        <div class=\"rno-api-explorer-hd\">\n            <div class=\"rno-api-explorer-title\">\n                关于版本迭代的描述\n            </div>\n        </div>\n        <div class=\"rno-api-explorer-body\">\n            <div class=\"rno-api-explorer-cont\">\n                <p>当前页面版本为图片内容安全2020版本，2020.11.3日前接入的图片内容安全接口为2019版本</p>\n                <p>2020版本相对2019版本进行了升级，支持更灵活的多场景业务策略配置以及更丰富的识别回调信息，满足不同业务的识别需求，建议按照2020版本接入指引进行接口升级。</p>\n            </div>\n        </div>\n    </div>\n</div>",
       "input": "ImageModerationRequest",
       "name": "图片同步检测",
       "output": "ImageModerationResponse",
@@ -269,7 +269,7 @@
         {
           "disabled": false,
           "document": "该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户。",
-          "example": "use1",
+          "example": "无",
           "member": "User",
           "name": "User",
           "required": false,
@@ -278,7 +278,7 @@
         {
           "disabled": false,
           "document": "该字段表示待检测对象对应的设备相关信息，若填入则可甄别相应违规风险设备。",
-          "example": "device1",
+          "example": "无",
           "member": "Device",
           "name": "Device",
           "required": false,
@@ -342,7 +342,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回分类检测模型的详细检测结果；表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。详细返回值信息可参阅对应的数据结构（LabelResults）描述。\n\n返回值标签示例：Normal:正常，Porn:色情，Abuse:谩骂，Ad:广告（说明：文档仅示例了部分风险类型，更多返回类型请以实际值为准或[提交工单](https://console.cloud.tencent.com/workorder/category)进行咨询）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[ \"Scene\": \"Terror\", \"Suggestion\": \"Review\", \"SubLabel\": \"Knife\", \"Score\": 93, \"Details\": [     {     \"Id\": 0,     \"Name\": \"Knife\",     \"Score\": 93     }   ] ]",
+          "example": "无",
           "member": "LabelResult",
           "name": "LabelResults",
           "output_required": true,
@@ -352,7 +352,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回物体检测模型的详细检测结果；包括：实体、广告台标、二维码等内容命中的标签名称、标签分数、坐标信息、场景识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（ObjectResults）描述。",
-          "example": "[ \"Scene\": \"AppLogo\", \"Suggestion\": \"Pass\",   \"Label\": \"Normal\", \"SubLabel\": \"\", \"Score\": 0, \"Names\": [], \"Details\": [] ]",
+          "example": "无",
           "member": "ObjectResult",
           "name": "ObjectResults",
           "output_required": true,
@@ -362,7 +362,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回OCR文本识别的详细检测结果；包括：文本坐标信息、文本识别结果、建议操作等内容审核信息；详细返回值信息可参阅对应的数据结构（OcrResults）描述。",
-          "example": "[ \"Scene\": \"OCR\", \"Suggestion\": \"Pass\", \"Label\": \"Normal\", \"SubLabel\": \"\", \"Score\": 0, \"Text\": \"\", \"Details\": [] ]",
+          "example": "无",
           "member": "OcrResult",
           "name": "OcrResults",
           "output_required": true,
@@ -372,7 +372,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回基于图片风险库（风险黑库与正常白库）识别的结果,详细返回值信息可参阅对应的数据结构（LibResults）描述。<br>备注：图片风险库目前**暂不支持自定义库**。",
-          "example": "[ \"Scene\": \"Similar\", \"Suggestion\": \"Pass\", \"Label\": \"Normal\", \"SubLabel\": \"\", \"Score\": 0, \"Details\": [] ]",
+          "example": "无",
           "member": "LibResult",
           "name": "LibResults",
           "output_required": true,
@@ -382,7 +382,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测对象对应请求参数中的DataId。",
-          "example": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
+          "example": "9756432",
           "member": "string",
           "name": "DataId",
           "output_required": true,
@@ -392,7 +392,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测对象对应请求参数中的BizType。",
-          "example": "182600012300002017",
+          "example": "tymod",
           "member": "string",
           "name": "BizType",
           "output_required": true,
@@ -422,7 +422,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回仅识别图片元素的模型结果；包括：场景模型命中的标签、置信度和位置信息",
-          "example": "[  \"Scene\": \"AppLogo\" ]",
+          "example": "无",
           "member": "RecognitionResult",
           "name": "RecognitionResults",
           "output_required": true,

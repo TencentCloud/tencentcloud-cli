@@ -2033,6 +2033,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流量防盗刷配置规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterRules",
+          "name": "FilterRules",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7364,6 +7375,45 @@
         }
       ],
       "usage": "out"
+    },
+    "FilterRules": {
+      "document": "防盗刷配置规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "封禁类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "forbidden",
+          "member": "string",
+          "name": "FilterType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "封禁规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "all",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "封禁规则路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"*\"]",
+          "member": "string",
+          "name": "RulePaths",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "FollowRedirect": {
       "document": "回源 301/302 状态码自动跟随配置，默认为关闭状态",

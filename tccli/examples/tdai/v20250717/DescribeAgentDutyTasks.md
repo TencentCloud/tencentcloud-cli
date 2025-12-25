@@ -5,12 +5,15 @@
 Input: 
 
 ```
-tccli tdai DescribeAgentDutyTasks --cli-unfold-argument ```
+tccli tdai DescribeAgentDutyTasks --cli-unfold-argument  \
+    --InstanceId agentins-fq9vp1md
+```
 
 Output: 
 ```
 {
     "Response": {
+        "DutyTasks": [],
         "RequestId": "4744e0fa-7827-4ae6-8eda-f5de924e1adb",
         "TotalCount": 0
     }
