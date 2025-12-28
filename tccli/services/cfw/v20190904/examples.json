@@ -188,14 +188,6 @@
         "title": "删除地址模板规则"
       }
     ],
-    "DeleteAllAccessControlRule": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAllAccessControlRule\n<公共请求参数>\n\n{\n    \"Area\": \"edge-e4geb\",\n    \"EdgeId\": \"ap-beijing\",\n    \"Direction\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
-        "title": "全部删除规则"
-      }
-    ],
     "DeleteBlockIgnoreRuleList": [
       {
         "document": "",

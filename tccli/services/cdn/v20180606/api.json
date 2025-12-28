@@ -21,13 +21,6 @@
       "output": "CreateClsLogTopicResponse",
       "status": "online"
     },
-    "CreateDiagnoseUrl": {
-      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nCreateDiagnoseUrl 用于添加域名诊断任务URL。",
-      "input": "CreateDiagnoseUrlRequest",
-      "name": "添加诊断URL(已废弃)",
-      "output": "CreateDiagnoseUrlResponse",
-      "status": "deprecated"
-    },
     "CreateEdgePackTask": {
       "document": "动态打包任务提交接口",
       "input": "CreateEdgePackTaskRequest",
@@ -97,13 +90,6 @@
       "name": "获取SSL证书中的可用域名",
       "output": "DescribeCertDomainsResponse",
       "status": "online"
-    },
-    "DescribeDiagnoseReport": {
-      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nDescribeDiagnoseReport 用于获取指定报告id的内容。",
-      "input": "DescribeDiagnoseReportRequest",
-      "name": "获取诊断报告(已废弃)",
-      "output": "DescribeDiagnoseReportResponse",
-      "status": "deprecated"
     },
     "DescribeDistrictIspData": {
       "document": "查询指定域名的区域、运营商明细数据\n注意事项：接口尚未全面开放，未在内测名单中的账号不支持调用",
@@ -272,13 +258,6 @@
       "name": "获取日志主题下绑定的域名",
       "output": "ListClsTopicDomainsResponse",
       "status": "online"
-    },
-    "ListDiagnoseReport": {
-      "document": "以上诊断报告, 域名版本管理相关接口功能均废弃,  已确认现网0调用, 申请预下线,(预下线不会影响调用, 只会在接口中添加提示信息, 正式下线仍需人工确认)\n\n### <font color=red>**该接口已废弃** </font><br>\nListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情。",
-      "input": "ListDiagnoseReportRequest",
-      "name": "获取诊断任务列表(已废弃)",
-      "output": "ListDiagnoseReportResponse",
-      "status": "deprecated"
     },
     "ListTopClsLogData": {
       "document": "通过CLS日志计算Top信息。支持近7天的日志数据。",
@@ -2943,52 +2922,6 @@
       ],
       "usage": "both"
     },
-    "ClientInfo": {
-      "document": "客户端信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "省份。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "guangdong",
-          "member": "string",
-          "name": "ProvName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "国家。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "china",
-          "member": "string",
-          "name": "Country",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "运营商。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "中国移动",
-          "member": "string",
-          "name": "IspName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "客户端IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.1.1.1",
-          "member": "string",
-          "name": "Ip",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "ClsLogIpData": {
       "document": "通过Cls日志，计算出来的IP每秒访问数量",
       "members": [
@@ -3352,52 +3285,6 @@
           "example": "2feewq3-g327-0457-a12m-2e22e5df1111",
           "member": "string",
           "name": "TopicId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateDiagnoseUrlRequest": {
-      "document": "CreateDiagnoseUrl请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "需诊断的url，形如：http://www.test.com/test.txt。",
-          "example": "http://www.test.com/test.txt",
-          "member": "string",
-          "name": "Url",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "请求源带协议头，形如：https://console.cloud.tencent.com",
-          "example": "https://console.cloud.tencent.com",
-          "member": "string",
-          "name": "Origin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateDiagnoseUrlResponse": {
-      "document": "CreateDiagnoseUrl返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "系统生成的诊断链接，一个诊断链接最多可访问10次，有效期为24h。",
-          "example": "http://cdn.cloud.tencent.com/self_diagnose/a49ecccd",
-          "member": "string",
-          "name": "DiagnoseLink",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4163,123 +4050,6 @@
           "name": "CertifiedDomains",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDiagnoseReportRequest": {
-      "document": "DescribeDiagnoseReport请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "报告ID",
-          "example": "9597132511111",
-          "member": "string",
-          "name": "ReportId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeDiagnoseReportResponse": {
-      "document": "DescribeDiagnoseReport返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "诊断报告基础信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "BaskInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "CNAME检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "CnameInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "客户端检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "ClientInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "DNS检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "DnsInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "网络检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "NetworkInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "边缘节点检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "OcNodeInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "中间源节点检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "MidNodeInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "源站检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "OriginInfo",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "刷新检测信息",
-          "example": "无",
-          "member": "DiagnoseData",
-          "name": "PurgeInfo",
-          "output_required": true,
-          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -6572,210 +6342,6 @@
       ],
       "usage": "out"
     },
-    "DiagnoseData": {
-      "document": "诊断报告内容数据",
-      "members": [
-        {
-          "disabled": false,
-          "document": "诊断报告内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DiagnoseUnit",
-          "name": "Data",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "当前诊断项是否正常。\n\"ok\"：正常\n\"error\"：异常\n\"warning\"：\"警告\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ok",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DiagnoseInfo": {
-      "document": "诊断信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "待诊断的URL。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://qq.com/diagnose",
-          "member": "string",
-          "name": "DiagnoseUrl",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "由系统生成的诊断链接。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://qq.com/diagnose/result",
-          "member": "string",
-          "name": "DiagnoseLink",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "诊断创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2025-04-01 02:00:00",
-          "member": "datetime",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "诊断链接过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2025-04-01 07:00:00",
-          "member": "datetime",
-          "name": "ExpireDate",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "诊断链接当前访问次数，一个诊断链接最多可访问10次。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "5",
-          "member": "int64",
-          "name": "VisitCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "访问诊断链接的客户端简易信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DiagnoseList",
-          "name": "ClientList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "域名加速区域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "mainland",
-          "member": "string",
-          "name": "Area",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DiagnoseList": {
-      "document": "客户端访问诊断URL信息列表",
-      "members": [
-        {
-          "disabled": false,
-          "document": "诊断任务标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "tag",
-          "member": "string",
-          "name": "DiagnoseTag",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "报告ID，用于获取详细诊断报告。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "id-2353956120",
-          "member": "string",
-          "name": "ReportId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "客户端信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ClientInfo",
-          "name": "ClientInfo",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "最终诊断结果。\n-1：已提交\n0  ：检测中\n1  ：检测正常\n2  ： 检测异常\n3  ： 诊断页面异常关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
-          "member": "int64",
-          "name": "FinalDiagnose",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "诊断任务创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2025-04-01 02:00:00",
-          "member": "datetime",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DiagnoseUnit": {
-      "document": "诊断报告单元信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "内容单元英文名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "unit-name",
-          "member": "string",
-          "name": "Key",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "内容单元中文名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "单元名称",
-          "member": "string",
-          "name": "KeyText",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "报告内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cotent",
-          "member": "string",
-          "name": "Value",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "报告内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "content",
-          "member": "string",
-          "name": "ValueText",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "DisableClsLogTopicRequest": {
       "document": "DisableClsLogTopic请求参数结构体",
       "members": [
@@ -8722,61 +8288,6 @@
           "name": "InheritDomainTags",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ListDiagnoseReportRequest": {
-      "document": "ListDiagnoseReport请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "用于搜索诊断URL的关键字，不填时返回用户所有的诊断任务。",
-          "example": "test.com/",
-          "member": "string",
-          "name": "KeyWords",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用于搜索诊断系统返回的诊断链接，形如：http://cdn.cloud.tencent.com/self_diagnose/xxxxx",
-          "example": "http://cdn.cloud.tencent.com/self_diagnose/xxxxx",
-          "member": "string",
-          "name": "DiagnoseLink",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "请求源带协议头，形如：https://console.cloud.tencent.com",
-          "example": "https://console.cloud.tencent.com",
-          "member": "string",
-          "name": "Origin",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ListDiagnoseReportResponse": {
-      "document": "ListDiagnoseReport返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "诊断信息。",
-          "example": "无",
-          "member": "DiagnoseInfo",
-          "name": "Data",
-          "output_required": true,
-          "type": "list",
           "value_allowed_null": false
         },
         {

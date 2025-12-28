@@ -114,7 +114,7 @@
       {
         "document": "创建托管集群外网访问端口",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterEndpointVip\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestFlowId\": \"100000\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestFlowId\": 100000,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建托管集群外网访问端口"
       }
     ],
@@ -271,14 +271,8 @@
     "CreatePrometheusClusterAgent": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusClusterAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Agents\": [\n        {\n            \"Region\": \"abc\",\n            \"ClusterType\": \"abc\",\n            \"ClusterId\": \"abc\",\n            \"InClusterPodConfig\": {\n                \"HostNet\": true,\n                \"NodeSelector\": [\n                    {\n                        \"Name\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"Tolerations\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Operator\": \"abc\",\n                        \"Effect\": \"abc\"\n                    }\n                ]\n            },\n            \"EnableExternal\": true,\n            \"ExternalLabels\": [\n                {\n                    \"Name\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"NotInstallBasicScrape\": true,\n            \"NotScrape\": true\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
-        "title": "关联集群"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusClusterAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-2tghe0lv\",\n    \"Agents\": [\n        {\n            \"Region\": \"ap-beijing\",\n            \"EnableExternal\": \"false\",\n            \"ClusterId\": \"cls-ou716dcp\",\n            \"NotScrape\": \"true\",\n            \"ClusterType\": \"eks\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"562197b9-5253-4981-ab2c-8c648fc5dec8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusClusterAgent\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-2tghe0lv\",\n    \"Agents\": [\n        {\n            \"Region\": \"ap-beijing\",\n            \"EnableExternal\": false,\n            \"ClusterId\": \"cls-ou716dcp\",\n            \"NotScrape\": true,\n            \"ClusterType\": \"eks\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"562197b9-5253-4981-yb2c-8c648fc5dec8\"\n    }\n}",
         "title": "关联eks集群"
       }
     ],
@@ -927,7 +921,7 @@
     "DescribeControlPlaneLogs": [
       {
         "document": "查询插件日志采集配置时调用",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddonLogConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kaftesta\",\n    \"ClusterType\": \"tke\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeControlPlaneLogs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kaftesta\",\n    \"ClusterType\": \"tke\"\n}",
         "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"Name\": \"karpenter\",\n                \"LogLevel\": 2,\n                \"LogSetId\": \"2912eb16-a56c-4b9b-adb0-9828db1ad342\",\n                \"TopicRegion\": \"ap-guangzhou\",\n                \"TopicId\": \"2912eb16-a56c-4b9b-adb0-9828db1ad342\"\n            }\n        ],\n        \"RequestId\": \"583e6c4b-ff24-42f8-87f1-37e4c00d81b7\"\n    }\n}",
         "title": "查询插件日志采集配置"
       }
@@ -1571,7 +1565,7 @@
     "DisableControlPlaneLogs": [
       {
         "document": "删除插件日志采集配置时调用",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAddonLogConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kaftesta\",\n    \"ClusterType\": \"tke\",\n    \"ComponentNames\": [\n        \"karpenter\"\n    ],\n    \"DeleteLogSetAndTopic\": false\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableControlPlaneLogs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kaftesta\",\n    \"ClusterType\": \"tke\",\n    \"ComponentNames\": [\n        \"karpenter\"\n    ],\n    \"DeleteLogSetAndTopic\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除插件日志采集配置"
       }
@@ -1627,7 +1621,7 @@
     "EnableControlPlaneLogs": [
       {
         "document": "创建插件日志采集配置时调用",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAddonLogConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kaftesta\",\n    \"ClusterType\": \"tke\",\n    \"Components\": [\n        {\n            \"LogLevel\": 2,\n            \"LogSetId\": \"2912eb16-a56c-4b9b-adb0-9828db1ad342\",\n            \"Name\": \"kube-scheduler\",\n            \"TopicId\": \"2912eb16-a56c-4b9b-adb0-9828db1ad342\",\n            \"TopicRegion\": \"ap-guangzhou\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableControlPlaneLogs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kaftesta\",\n    \"ClusterType\": \"tke\",\n    \"Components\": [\n        {\n            \"LogLevel\": 2,\n            \"LogSetId\": \"2912eb16-a56c-4b9b-adb0-9828db1ad342\",\n            \"Name\": \"kapenter\",\n            \"TopicId\": \"2912eb16-a56c-4b9b-adb0-9828db1ad342\",\n            \"TopicRegion\": \"ap-guangzhou\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f12a6e20-f950-4af9-8f8b-b6329a4961c2\"\n    }\n}",
         "title": "创建插件日志采集配置"
       }

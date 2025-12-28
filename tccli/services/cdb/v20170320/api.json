@@ -5609,7 +5609,7 @@
         },
         {
           "disabled": false,
-          "document": "如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。\n说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。",
+          "document": "如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 [查询数据备份文件列表](/document/api/236/15842)。\n说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、云盘版实例，备份文件为快照备份。",
           "example": "118127",
           "member": "int64",
           "name": "SpecifiedBackupId",
@@ -5664,7 +5664,7 @@
         {
           "disabled": false,
           "document": "安全组参数，可使用 [查询项目安全组信息](https://cloud.tencent.com/document/api/236/15850) 接口查询某个项目的安全组详情。",
-          "example": "[{\"CreateTime\": \"2024-09-26 10:25:05\",\"Inbound\": [{\"Action\": \"ACCEPT\",\"AddressModule\": \"\",\"CidrIp\": \"120.2.2.2\",\"Desc\": \"qta-HA\",\"Dir\": \"\",\"IpProtocol\": \"tcp\",\"PortRange\": \"36000,1,1,1\"}]}]",
+          "example": "[\"sg-xxx\"]",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
@@ -5673,7 +5673,7 @@
         {
           "disabled": false,
           "document": "实例标签信息。",
-          "example": "[{\"TagKey\": \"key1\",\"TagValue\": \"value2\"}]",
+          "example": "无",
           "member": "TagInfo",
           "name": "ResourceTags",
           "required": false,
@@ -5726,7 +5726,7 @@
         },
         {
           "disabled": false,
-          "document": "克隆实例类型。支持值包括：\"UNIVERSAL\" - 通用型实例，\"EXCLUSIVE\" - 独享型实例，\"CLOUD_NATIVE_CLUSTER\" - 集群版标准型，\"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 集群版加强型。不指定则默认为通用型。",
+          "document": "克隆实例类型。支持值包括：\"UNIVERSAL\" - 通用型实例，\"EXCLUSIVE\" - 独享型实例，\"CLOUD_NATIVE_CLUSTER\" - 云盘版标准型，\"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 云盘版加强型。不指定则默认为通用型。",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -5798,8 +5798,8 @@
         },
         {
           "disabled": false,
-          "document": "集群版节点拓扑配置。",
-          "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
+          "document": "云盘版节点拓扑配置。",
+          "example": "无",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
           "required": false,
@@ -5822,6 +5822,15 @@
           "name": "SpecifiedSubBackupId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新产生的克隆实例主库的可用区信息，默认同源实例 Zone 的值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "MasterZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9500,7 +9509,7 @@
         {
           "disabled": false,
           "document": "自动扩容策略。Type 为 auto 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ExpandSecondPeriod\": 15,\"ExpandThreshold\": 70,\"ShrinkSecondPeriod\": 300,\"ShrinkThreshold\": 30}",
+          "example": "无",
           "member": "AutoStrategy",
           "name": "AutoStrategy",
           "output_required": false,
@@ -9510,7 +9519,7 @@
         {
           "disabled": false,
           "document": "按周期扩容策略。当 Type 为 period 时有效。",
-          "example": "{\"TimeCycle\": {\"Friday\": true,\"Monday\": true,\"Saturday\": false,\"Sunday\": false,\"Thursday\": true,\"Tuesday\": false,\"Wednesday\": true},\"TimeInterval\": {\"EndTime\": \"00:00\",\"StartTime\": \"08:00\"}}",
+          "example": "无",
           "member": "PeriodStrategy",
           "name": "PeriodStrategy",
           "output_required": false,
@@ -9520,7 +9529,7 @@
         {
           "disabled": false,
           "document": "按时间段扩容策略。当 Type 为 timeInterval 时有效。",
-          "example": "{\"EndTime\": 1750348800,\"StartTime\": 1750338000}",
+          "example": "无",
           "member": "TimeIntervalStrategy",
           "name": "TimeIntervalStrategy",
           "output_required": false,
@@ -11482,7 +11491,7 @@
           "example": "无",
           "member": "DeviceCpuInfo",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11492,7 +11501,7 @@
           "example": "无",
           "member": "DeviceMemInfo",
           "name": "Mem",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11502,7 +11511,7 @@
           "example": "无",
           "member": "DeviceNetInfo",
           "name": "Net",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11512,7 +11521,7 @@
           "example": "无",
           "member": "DeviceDiskInfo",
           "name": "Disk",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12364,7 +12373,7 @@
         {
           "disabled": false,
           "document": "安全组详情。",
-          "example": "[{\"Outbound\": [],\"SecurityGroupName\": \"CDB\",\"Inbound\": [],\"ProjectId\": 11954,\"SecurityGroupId\": \"sg-disnd\",\"SecurityGroupRemark\": \"\",\"CreateTime\": \"2017-04-13 15:00:06\"}]",
+          "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
           "output_required": true,
@@ -19429,7 +19438,7 @@
         },
         {
           "disabled": false,
-          "document": "代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。如果不传则会对所有代理组地址进行负载均衡。",
+          "document": "代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。\n说明：\n1. 对于双节点实例而言，此参数为非必填，如果不传则会对所有代理组地址进行负载均衡。\n2. 对于云盘版实例而言，此参数为必填。",
           "example": " proxyaddr-kti9dddd",
           "member": "string",
           "name": "ProxyAddressId",

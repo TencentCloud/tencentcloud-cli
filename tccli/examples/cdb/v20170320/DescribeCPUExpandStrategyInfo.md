@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Type": "auto",
-        "ExpandCpu": "4",
+        "ExpandCpu": 4,
         "AutoStrategy": {
             "ExpandThreshold": 0,
             "ShrinkThreshold": 0,

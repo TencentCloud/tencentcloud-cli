@@ -4981,7 +4981,7 @@
         {
           "disabled": false,
           "document": "日志采集配置的json表达",
-          "example": "参考https://cloud.tencent.com/document/product/614/61244#18392ce7-9600-4f59-a62a-148e12335a37",
+          "example": "参考 https://cloud.tencent.com/document/product/457/48425",
           "member": "string",
           "name": "LogConfig",
           "required": true,
@@ -5125,7 +5125,7 @@
         {
           "disabled": false,
           "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)",
-          "example": "0.0.0.0/0",
+          "example": "[\"0.0.0.0/0\"]",
           "member": "string",
           "name": "SecurityPolicies",
           "required": false,
@@ -6976,7 +6976,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "prom-xxx",
+          "example": "prom-2tghe0lv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -15866,8 +15866,8 @@
         },
         {
           "disabled": false,
-          "document": "组件名称列表，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter",
-          "example": "无",
+          "document": "组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter",
+          "example": "[\"karpenter\"]",
           "member": "string",
           "name": "ComponentNames",
           "required": true,
@@ -17228,7 +17228,7 @@
         },
         {
           "disabled": false,
-          "document": "各组件日志采集配置，目前支持的组件有：kube-apiserver、kube-controller-manager、kube-scheduler、cluster-autoscaler、kapenter",
+          "document": "组件名称列表，目前支持的组件有：cluster-autoscaler、kapenter",
           "example": "无",
           "member": "ComponentLogConfig",
           "name": "Components",

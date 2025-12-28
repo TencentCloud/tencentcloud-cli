@@ -9234,7 +9234,7 @@
         {
           "disabled": false,
           "document": "识别出的车牌号码。",
-          "example": "无",
+          "example": "粤A·123AB",
           "member": "string",
           "name": "Number",
           "output_required": true,
@@ -9244,7 +9244,7 @@
         {
           "disabled": false,
           "document": "置信度，0 - 100 之间。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Confidence",
           "output_required": true,
@@ -9264,10 +9264,20 @@
         {
           "disabled": false,
           "document": "识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。",
-          "example": "无",
+          "example": "黄色",
           "member": "string",
           "name": "Color",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "车牌类别， 如： 实体车牌、非实体车牌",
+          "example": "实体车牌",
+          "member": "string",
+          "name": "LicensePlateCategory",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9324,7 +9334,7 @@
         {
           "disabled": false,
           "document": "文本行在原图片中的像素坐标框。",
-          "example": "{ Height: 66 Width: 134 X: 427 Y: 423 }",
+          "example": "无",
           "member": "Rect",
           "name": "Rect",
           "output_required": true,
@@ -9333,7 +9343,7 @@
         },
         {
           "disabled": false,
-          "document": "识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。",
+          "document": "识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿”、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。",
           "example": "蓝",
           "member": "string",
           "name": "Color",
@@ -9344,11 +9354,21 @@
         {
           "disabled": false,
           "document": "全部车牌信息。",
-          "example": "[ 0: { Color: \"蓝\" Confidence: 99 Number: \"京AF0236\" Rect: { Height: 66 Width: 134 X: 427 Y: 423 } } ]",
+          "example": "无",
           "member": "LicensePlateInfo",
           "name": "LicensePlateInfos",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "车牌类别， 如： 实体车牌、非实体车牌 示例值：实体车牌",
+          "example": "实体车牌",
+          "member": "string",
+          "name": "LicensePlateCategory",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

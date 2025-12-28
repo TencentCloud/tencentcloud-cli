@@ -10,7 +10,7 @@ tccli tke EnableControlPlaneLogs --cli-unfold-argument  \
     --ClusterType tke \
     --Components.0.LogLevel 2 \
     --Components.0.LogSetId 2912eb16-a56c-4b9b-adb0-9828db1ad342 \
-    --Components.0.Name kube-scheduler \
+    --Components.0.Name kapenter \
     --Components.0.TopicId 2912eb16-a56c-4b9b-adb0-9828db1ad342 \
     --Components.0.TopicRegion ap-guangzhou
 ```

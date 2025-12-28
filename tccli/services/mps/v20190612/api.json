@@ -2230,7 +2230,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务的类型，可以取的值有：\n<li>Classification：智能分类</li>\n<li>Cover：智能封面</li>\n<li>Tag：智能标签</li>\n<li>FrameTag：智能按帧标签</li>\n<li>Highlight：智能精彩集锦</li>\n<li>DeLogo：智能擦除</li>\n<li>Description：大模型摘要</li>\n<li>Dubbing：智能译制</li>\n<li>VideoRemake: 视频去重</li>\n<li>VideoComprehension: 视频（音频）理解</li>",
+          "document": "任务的类型，可以取的值有：\n<li>Classification：智能分类</li>\n<li>Cover：智能封面</li>\n<li>Tag：智能标签</li>\n<li>FrameTag：智能按帧标签</li>\n<li>Highlight：智能精彩集锦</li>\n<li>DeLogo：智能擦除</li>\n<li>Description：大模型摘要</li>\n<li>Dubbing：智能译制</li>\n<li>VideoRemake: 视频去重</li>\n<li>VideoComprehension: 视频（音频）理解</li>\n<li>Cutout：视频抠图</li>\n<li>Reel：智能成片</li>",
           "example": "Classification",
           "member": "string",
           "name": "Type",
@@ -2364,6 +2364,26 @@
           "example": "无",
           "member": "AiAnalysisTaskVideoComprehensionResult",
           "name": "VideoComprehensionTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频内容分析抠图任务的查询结果，当任务类型为Cutout时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskCutoutResult",
+          "name": "CutoutTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频内容分析成片任务的查询结果，当任务类型为Reel时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskReelResult",
+          "name": "ReelTask",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -2573,6 +2593,135 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskCutoutInput": {
+      "document": "智能抠图任务输入类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频智能抠图模板 ID。",
+          "example": "34",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AiAnalysisTaskCutoutOutput": {
+      "document": "视频抠图结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频智能抠图文件路径。",
+          "example": "/output/htv-process-result.mp4",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频智能抠图的存储位置。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskCutoutResult": {
+      "document": "视频抠图结果数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 `PROCESSING`，`SUCCESS` 和 `FAIL` 三种",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "InvalidInput",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抠图任务输入",
+          "example": "无",
+          "member": "AiAnalysisTaskCutoutInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抠图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskCutoutOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进度",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务开始执行的时间，采用 ISO 日期格式。",
+          "example": "2025-03-25T06:16:39Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务结束执行的时间，采用 ISO 日期格式。",
+          "example": "2025-03-25T06:17:10Z",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3350,6 +3499,154 @@
         }
       ],
       "usage": "both"
+    },
+    "AiAnalysisTaskReelInput": {
+      "document": "智能成片任务输入类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能成片模板 ID。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskReelOutput": {
+      "document": "智能成片结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成片视频路径。",
+          "example": "/output/dub-result-0.mp4",
+          "member": "string",
+          "name": "VideoPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "脚本文件路径\n",
+          "example": "/output/dub-result-0.json",
+          "member": "string",
+          "name": "ScriptPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成片视频存储位置。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskReelResult": {
+      "document": "智能成片结果类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0：成功，其他值：失败。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能成片任务输入。",
+          "example": "无",
+          "member": "AiAnalysisTaskReelInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能成片任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskReelOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 媒体处理类错误码 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InvalidInput",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务开始执行的时间，采用 ISO 日期格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-05-25T02:55:55Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务执行完毕的时间，采用 ISO 日期格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-05-25T02:56:19Z",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AiAnalysisTaskSegmentInput": {
       "document": "拆条任务输入类型",
@@ -30877,7 +31174,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效，翻译语言列表：\n`ab`：阿布哈兹语\n`ace`：亚齐语\n`ach`：阿乔利语\n`af`：南非荷兰语\n`ak`：契维语（阿坎语）\n`am`：Amharic\n`ar`：阿拉伯语\n`as`：阿萨姆语\n`ay`：艾马拉语\n`az`：阿塞拜疆语\n`ba`：巴什基尔语\n`ban`：巴厘语\n`bbc`：巴塔克托巴语\n`bem`：Bemba\n`bew`：Betawi\n`bg`：保加利亚语\n`bho`：博杰普尔语\n`bik`：Bikol\n`bm`：班巴拉语\n`bn`：孟加拉语\n`br`：布列塔尼语\n`bs`：波斯尼亚语\n`btx`：巴塔克卡罗语\n`bts`：巴塔克西马隆贡语\n`bua`：布里亚特语\n`ca`：加泰罗尼亚语\n`ceb`：宿务语\n`cgg`：Kiga\n`chm`：草原马里语\n`ckb`：库尔德语（索拉尼语）\n`cnh`：哈卡钦语\n`co`：科西嘉语\n`crh`：克里米亚鞑靼语\n`crs`：塞舌尔克里奥尔语\n`cs`：捷克语\n`cv`：楚瓦什语\n`cy`：威尔士语\n`da`：丹麦语\n`de`：德语\n`din`：Dinka\n`doi`：多格来语\n`dov`：敦贝语\n`dv`：第维埃语\n`dz`：宗卡语\n`ee`：Ewe\n`el`：希腊语\n`en`：英语\n`eo`：世界语\n`es`：西班牙语\n`et`：爱沙尼亚语\n`eu`：巴斯克语\n`fa`：波斯语\n`ff`：富拉语\n`fi`：芬兰语\n`fil`：菲律宾语（塔加拉语）\n`fj`：斐济语\n`fr`：法语\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fy`：弗里斯兰语\n`ga`：爱尔兰语\n`gaa`：加 (Ga) 语\n`gd`：苏格兰盖尔语\n`gl`：加利西亚语\n`gn`：瓜拉尼语\n`gom`：贡根语\n`gu`：古吉拉特语\n`gv`：马恩岛语\n`ha`：Hausa\n`haw`：夏威夷语\n`he`：希伯来语\n`hi`：印地语\n`hil`：希利盖农语\n`hmn`：苗语\n`hr`：克罗地亚语\n`hrx`：洪斯吕克语\n`ht`：海地克里奥尔语\n`hu`：匈牙利语\n`hy`：亚美尼亚语\n`id`：印度尼西亚语\n`ig`：Igbo\n`ilo`：伊洛果语\n`is`：冰岛语\n`it`：意大利语\n`iw`：希伯来语\n`ja`：日语\n`jv`：爪哇语\n`jw`：爪哇语\n`ka`：格鲁吉亚语\n`kk`：哈萨克语\n`km`：高棉语\n`kn`：卡纳达语\n`ko`：韩语\n`kri`：Krio\n`ku`：库尔德语（库尔曼吉语）\n`ktu`：吉土巴语\n`ky`：吉尔吉斯语\n`la`：拉丁语\n`lb`：卢森堡语\n`lg`：干达语（卢干达语）\n`li`：林堡语\n`lij`：利古里亚语\n`lmo`：伦巴第语\n`ln`：林加拉语\n`lo`：老挝语\n`lt`：立陶宛语\n`ltg`：拉特加莱语\n`luo`：Luo\n`lus`：米佐语\n`lv`：拉脱维亚语\n`mai`：迈蒂利语\n`mak`：马卡萨\n`mg`：马尔加什语\n`mi`：毛利语\n`min`：米南语\n`mk`：马其顿语\n`ml`：马拉雅拉姆语\n`mn`：蒙古语\n`mr`：马拉地语\n`ms`：马来语\n`mt`：马耳他语\n`my`：缅甸语\n`ne`：尼泊尔语\n`new`：尼瓦尔语\n`nl`：荷兰语\n`no`：挪威语\n`nr`：恩德贝莱语（南部）\n`nso`：北索托语（塞佩蒂语）\n`nus`：努尔语\n`ny`：齐切瓦语（尼扬贾语）\n`oc`：奥克斯坦语\n`om`：Oromo\n`or`：奥里亚语\n`pa`：旁遮普语\n`pag`：邦阿西楠语\n`pam`：邦板牙语\n`pap`：Papiamento\n`pl`：波兰语\n`ps`：Pashto\n`pt`：葡萄牙语\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`qu`：克丘亚语\n`ro`：罗马尼亚语\n`rom`：罗姆语\n`rn`：Rundi\n`ru`：俄语\n`rw`：卢旺达语\n`sa`：梵语\n`scn`：西西里语\n`sd`：信德语\n`sg`：Sango\n`shn`：掸语\n`si`：僧伽罗语\n`sk`：斯洛伐克语\n`sl`：斯洛文尼亚语\n`sm`：萨摩亚语\n`sn`：修纳语\n`so`：索马里语\n`sq`：阿尔巴尼亚语\n`sr`：塞尔维亚语\n`ss`：斯瓦特语\n`st`：塞索托语\n`su`：巽他语\n`sv`：瑞典语\n`sw`：斯瓦希里语\n`szl`：西里西亚语\n`ta`：泰米尔语\n`te`：泰卢固语\n`tet`：德顿语\n`tg`：塔吉克语\n`th`：泰语\n`ti`：提格里尼亚语\n`tk`：土库曼语\n`tl`：菲律宾语（塔加拉语）\n`tn`：茨瓦纳语\n`tr`：土耳其语\n`ts`：聪加语\n`tt`：鞑靼语\n`ug`：维吾尔语\n`uk`：乌克兰语\n`ur`：乌尔都语\n`uz`：乌兹别克语\n`vi`：越南语\n`xh`：科萨语\n`yi`：意第绪语\n`yo`：约鲁巴语\n`yua`：尤卡坦玛雅语\n`yue`：粤语\n`zh`：简体中文\n`zh-TW`：中文（繁体）\n`zu`：祖鲁语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效，翻译语言列表：\n`ab`：阿布哈兹语\n`ace`：亚齐语\n`ach`：阿乔利语\n`af`：南非荷兰语\n`ak`：契维语（阿坎语）\n`am`：Amharic\n`ar`：阿拉伯语\n`as`：阿萨姆语\n`ay`：艾马拉语\n`az`：阿塞拜疆语\n`ba`：巴什基尔语\n`ban`：巴厘语\n`bbc`：巴塔克托巴语\n`bem`：Bemba\n`bew`：Betawi\n`bg`：保加利亚语\n`bho`：博杰普尔语\n`bik`：Bikol\n`bm`：班巴拉语\n`bn`：孟加拉语\n`br`：布列塔尼语\n`bs`：波斯尼亚语\n`btx`：巴塔克卡罗语\n`bts`：巴塔克西马隆贡语\n`bua`：布里亚特语\n`ca`：加泰罗尼亚语\n`ceb`：宿务语\n`cgg`：Kiga\n`chm`：草原马里语\n`ckb`：库尔德语（索拉尼语）\n`cnh`：哈卡钦语\n`co`：科西嘉语\n`crh`：克里米亚鞑靼语\n`crs`：塞舌尔克里奥尔语\n`cs`：捷克语\n`cv`：楚瓦什语\n`cy`：威尔士语\n`da`：丹麦语\n`de`：德语\n`din`：Dinka\n`doi`：多格来语\n`dov`：敦贝语\n`dv`：第维埃语\n`dz`：宗卡语\n`ee`：Ewe\n`el`：希腊语\n`en`：英语\n`eo`：世界语\n`es`：西班牙语\n`et`：爱沙尼亚语\n`eu`：巴斯克语\n`fa`：波斯语\n`ff`：富拉语\n`fi`：芬兰语\n`fil`：菲律宾语（塔加拉语）\n`fj`：斐济语\n`fr`：法语\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fy`：弗里斯兰语\n`ga`：爱尔兰语\n`gaa`：加 (Ga) 语\n`gd`：苏格兰盖尔语\n`gl`：加利西亚语\n`gn`：瓜拉尼语\n`gom`：贡根语\n`gu`：古吉拉特语\n`gv`：马恩岛语\n`ha`：Hausa\n`haw`：夏威夷语\n`he`：希伯来语\n`hi`：印地语\n`hil`：希利盖农语\n`hmn`：苗语\n`hr`：克罗地亚语\n`hrx`：洪斯吕克语\n`ht`：海地克里奥尔语\n`hu`：匈牙利语\n`hy`：亚美尼亚语\n`id`：印度尼西亚语\n`ig`：Igbo\n`ilo`：伊洛果语\n`is`：冰岛语\n`it`：意大利语\n`iw`：希伯来语\n`ja`：日语\n`jv`：爪哇语\n`ka`：格鲁吉亚语\n`kk`：哈萨克语\n`km`：高棉语\n`kn`：卡纳达语\n`ko`：韩语\n`kri`：Krio\n`ku`：库尔德语（库尔曼吉语）\n`ktu`：吉土巴语\n`ky`：吉尔吉斯语\n`la`：拉丁语\n`lb`：卢森堡语\n`lg`：干达语（卢干达语）\n`li`：林堡语\n`lij`：利古里亚语\n`lmo`：伦巴第语\n`ln`：林加拉语\n`lo`：老挝语\n`lt`：立陶宛语\n`ltg`：拉特加莱语\n`luo`：Luo\n`lus`：米佐语\n`lv`：拉脱维亚语\n`mai`：迈蒂利语\n`mak`：马卡萨\n`mg`：马尔加什语\n`mi`：毛利语\n`min`：米南语\n`mk`：马其顿语\n`ml`：马拉雅拉姆语\n`mn`：蒙古语\n`mr`：马拉地语\n`ms`：马来语\n`mt`：马耳他语\n`my`：缅甸语\n`ne`：尼泊尔语\n`new`：尼瓦尔语\n`nl`：荷兰语\n`no`：挪威语\n`nr`：恩德贝莱语（南部）\n`nso`：北索托语（塞佩蒂语）\n`nus`：努尔语\n`ny`：齐切瓦语（尼扬贾语）\n`oc`：奥克斯坦语\n`om`：Oromo\n`or`：奥里亚语\n`pa`：旁遮普语\n`pag`：邦阿西楠语\n`pam`：邦板牙语\n`pap`：Papiamento\n`pl`：波兰语\n`ps`：Pashto\n`pt`：葡萄牙语\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`qu`：克丘亚语\n`ro`：罗马尼亚语\n`rom`：罗姆语\n`rn`：Rundi\n`ru`：俄语\n`rw`：卢旺达语\n`sa`：梵语\n`scn`：西西里语\n`sd`：信德语\n`sg`：Sango\n`shn`：掸语\n`si`：僧伽罗语\n`sk`：斯洛伐克语\n`sl`：斯洛文尼亚语\n`sm`：萨摩亚语\n`sn`：修纳语\n`so`：索马里语\n`sq`：阿尔巴尼亚语\n`sr`：塞尔维亚语\n`ss`：斯瓦特语\n`st`：塞索托语\n`su`：巽他语\n`sv`：瑞典语\n`sw`：斯瓦希里语\n`szl`：西里西亚语\n`ta`：泰米尔语\n`te`：泰卢固语\n`tet`：德顿语\n`tg`：塔吉克语\n`th`：泰语\n`ti`：提格里尼亚语\n`tk`：土库曼语\n`tn`：茨瓦纳语\n`tr`：土耳其语\n`ts`：聪加语\n`tt`：鞑靼语\n`ug`：维吾尔语\n`uk`：乌克兰语\n`ur`：乌尔都语\n`uz`：乌兹别克语\n`vi`：越南语\n`xh`：科萨语\n`yi`：意第绪语\n`yo`：约鲁巴语\n`yua`：尤卡坦玛雅语\n`yue`：粤语\n`zh`：简体中文\n`zh-TW`：中文（繁体）\n`zu`：祖鲁语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "en",
           "member": "string",
           "name": "TranslateDstLanguage",
@@ -30918,6 +31215,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕OCR提取框选区域配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SelectingSubtitleAreasConfig",
+          "name": "SelectingSubtitleAreasConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -33002,6 +33310,45 @@
       ],
       "usage": "both"
     },
+    "SelectingSubtitleAreasConfig": {
+      "document": "字幕OCR提取框选区域配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自动选择自定义区域。\n对选定区域，利用AI模型自动检测其中存在的选择目标并提取。",
+          "example": "无",
+          "member": "EraseArea",
+          "name": "AutoAreas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "示例视频或图片的宽，单位像素值",
+          "example": "200",
+          "member": "uint64",
+          "name": "SampleWidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "示例视频或图片的高，单位像素值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "SampleHeight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SharpEnhanceConfig": {
       "document": "细节增强配置",
       "members": [
@@ -34170,7 +34517,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕文件格式\n- vtt: WebVTT 格式\n- srt: SRT格式\n- original：与源字幕文件一致（用于纯字幕翻译模版）\n- 不填或填空：不生成字幕文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能字幕文件格式\n- vtt: WebVTT 格式\n- srt: SRT格式\n- original：与源字幕文件一致（用于纯字幕翻译模板）\n- 不填或填空：不生成字幕文件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
@@ -34240,13 +34587,23 @@
         },
         {
           "disabled": false,
-          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译",
+          "document": "字幕处理类型：\n- 0：ASR识别字幕\n- 1：纯字幕翻译\n- 2:  OCR识别字幕",
           "example": "0",
           "member": "uint64",
           "name": "ProcessType",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕OCR提取框选区域配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SelectingSubtitleAreasConfig",
+          "name": "SelectingSubtitleAreasConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

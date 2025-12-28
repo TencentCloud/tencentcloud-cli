@@ -900,6 +900,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启脱敏规则",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableDesensitizationRule",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "脱敏规则",
+          "example": "email,password",
+          "member": "string",
+          "name": "DesensitizationRule",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1158,6 +1178,28 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启脱敏规则",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableDesensitizationRule",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "脱敏规则",
+          "example": "email,password",
+          "member": "string",
+          "name": "DesensitizationRule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4679,6 +4721,24 @@
           "name": "SlowSQLThresholds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启脱敏规则",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableDesensitizationRule",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "脱敏规则",
+          "example": "email,password",
+          "member": "string",
+          "name": "DesensitizationRule",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

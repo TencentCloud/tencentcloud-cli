@@ -806,6 +806,14 @@
         "title": "绑定一个后端服务到传统型负载均衡"
       }
     ],
+    "RenewLoadBalancers": [
+      {
+        "document": "包年包月实例续费",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewLoadBalancers\n<公共请求参数>\n\n{\n    \"LoadBalancerIds\": [\n        \"lb-xxxxxxxx\"\n    ],\n    \"LBChargePrepaid\": {\n        \"Period\": 2,\n        \"RenewFlag\": \"AUTO_RENEW\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5b1357ae-8c0b-40f2-9b37-ceea95929668\",\n        \"DealName\": \"20250922514107782498591\"\n    }\n}",
+        "title": "包年包月实例续费"
+      }
+    ],
     "ReplaceCertForLoadBalancers": [
       {
         "document": "指定新证书ID，替换服务端证书",
