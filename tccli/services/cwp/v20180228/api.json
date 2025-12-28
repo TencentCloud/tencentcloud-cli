@@ -7,13 +7,6 @@
       "output": "AddLoginWhiteListsResponse",
       "status": "online"
     },
-    "CancelIgnoreVul": {
-      "document": "产品变动切换到了\\\\n切换到 AddVulIgnoreRule / ModifyVulIgnoreRule  CancelVulIgnoreRule\\\\n相关接口\n\n取消漏洞忽略",
-      "input": "CancelIgnoreVulRequest",
-      "name": "取消漏洞忽略",
-      "output": "CancelIgnoreVulResponse",
-      "status": "deprecated"
-    },
     "ChangeRuleEventsIgnoreStatus": {
       "document": "根据检测项id或事件id批量忽略事件或取消忽略",
       "input": "ChangeRuleEventsIgnoreStatusRequest",
@@ -2981,13 +2974,6 @@
       "name": "获取本地存储数据",
       "output": "GetLocalStorageItemResponse",
       "status": "online"
-    },
-    "IgnoreImpactedHosts": {
-      "document": "产品变动切换到了\\\\n切换到 AddVulIgnoreRule / ModifyVulIgnoreRule  CancelVulIgnoreRule\\\\n相关接口\n\n本接口 (IgnoreImpactedHosts) 用于忽略漏洞。",
-      "input": "IgnoreImpactedHostsRequest",
-      "name": "忽略漏洞",
-      "output": "IgnoreImpactedHostsResponse",
-      "status": "deprecated"
     },
     "KeysLocalStorage": {
       "document": "获取本地存储键值列表",
@@ -13267,33 +13253,6 @@
         }
       ],
       "usage": "out"
-    },
-    "CancelIgnoreVulRequest": {
-      "document": "CancelIgnoreVul请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "漏洞事件id串，多个用英文逗号分隔",
-          "example": "54564****",
-          "member": "string",
-          "name": "EventIds",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CancelIgnoreVulResponse": {
-      "document": "CancelIgnoreVul返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "ChangeRuleEventsIgnoreStatusRequest": {
       "document": "ChangeRuleEventsIgnoreStatus请求参数结构体",
@@ -42855,33 +42814,6 @@
         }
       ],
       "usage": "out"
-    },
-    "IgnoreImpactedHostsRequest": {
-      "document": "IgnoreImpactedHosts请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "漏洞ID数组。",
-          "example": "[545521374]",
-          "member": "uint64",
-          "name": "Ids",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "IgnoreImpactedHostsResponse": {
-      "document": "IgnoreImpactedHosts返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "IgnoreRuleEffectHostInfo": {
       "document": "忽略检测项影响主机信息",

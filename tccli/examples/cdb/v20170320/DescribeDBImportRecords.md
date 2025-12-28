@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "TotalCount": "4",
+        "TotalCount": 4,
         "Items": [
             {
                 "Status": 3,

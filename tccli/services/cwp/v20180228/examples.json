@@ -8,14 +8,6 @@
         "title": "批量添加异地登录白名单"
       }
     ],
-    "CancelIgnoreVul": [
-      {
-        "document": "取消漏洞忽略",
-        "input": "https://cwp.tencentcloudapi.com/?Action=CancelIgnoreVul\n&EventIds=2,3\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\"\n    }\n}",
-        "title": "取消漏洞忽略"
-      }
-    ],
     "ChangeRuleEventsIgnoreStatus": [
       {
         "document": "根据检测项id或事件id进行批量忽略操作",
@@ -3442,14 +3434,6 @@
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLocalStorageItem\n<公共请求参数>\n\n{\n    \"Key\": \"key\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf93077b-51f5-4428-b9de-7e33a0b9cc4a\",\n        \"Value\": \"value\"\n    }\n}",
         "title": "示例"
-      }
-    ],
-    "IgnoreImpactedHosts": [
-      {
-        "document": "忽略漏洞",
-        "input": "https://cwp.tencentcloudapi.com/?Action=IgnoreImpactedHosts\n&Ids.0=1\n&Ids.1=2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "忽略漏洞"
       }
     ],
     "KeysLocalStorage": [

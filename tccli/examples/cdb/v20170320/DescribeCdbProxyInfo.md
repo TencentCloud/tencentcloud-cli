@@ -34,7 +34,7 @@ Output:
                                     {
                                         "InstanceId": "cdb-aykuksx3",
                                         "InstanceName": "andydb",
-                                        "InstanceType": "1",
+                                        "InstanceType": 1,
                                         "Region": "ap-nanjing",
                                         "Status": 1,
                                         "Weight": 0,
