@@ -23,6 +23,14 @@ tccli dlc SetOptimizerPolicy --cli-unfold-argument  \
     --SmartPolicy.Policy.Resources.0.Favor.0.Table abc \
     --SmartPolicy.Policy.Resources.0.Status 0 \
     --SmartPolicy.Policy.Written.WrittenEnable abc \
+    --SmartPolicy.Policy.Written.AdvancePolicy.CompactEnable abc \
+    --SmartPolicy.Policy.Written.AdvancePolicy.DeleteEnable abc \
+    --SmartPolicy.Policy.Written.AdvancePolicy.MinInputFiles 0 \
+    --SmartPolicy.Policy.Written.AdvancePolicy.TargetFileSizeBytes 0 \
+    --SmartPolicy.Policy.Written.AdvancePolicy.RetainLast 0 \
+    --SmartPolicy.Policy.Written.AdvancePolicy.BeforeDays 0 \
+    --SmartPolicy.Policy.Written.AdvancePolicy.ExpiredSnapshotsIntervalMin 0 \
+    --SmartPolicy.Policy.Written.AdvancePolicy.RemoveOrphanIntervalMin 0 \
     --SmartPolicy.Policy.Lifecycle.LifecycleEnable abc \
     --SmartPolicy.Policy.Lifecycle.Expiration 0 \
     --SmartPolicy.Policy.Lifecycle.DropTable True \

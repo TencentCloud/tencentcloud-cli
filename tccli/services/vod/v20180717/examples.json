@@ -336,6 +336,14 @@
         "title": "创建采样截图模板（指定长边）"
       }
     ],
+    "CreateSceneAigcImageTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSceneAigcImageTask\n<公共请求参数>\n\n{\n    \"SubAppId\": 251440382,\n    \"SceneInfo\": {\n        \"Type\": \"change_clothes\",\n        \"ChangeClothesConfig\": {\n            \"ClothesFileInfos\": [\n                {\n                    \"FileId\": \"3704211***509819\"\n                }\n            ]\n        }\n    },\n    \"FileInfos\": [\n        {\n            \"FileId\": \"3704211***509820\"\n        }\n    ],\n    \"OutputConfig\": {\n        \"StorageMode\": \"Temporary\",\n        \"MediaName\": \"myfile\",\n        \"ClassId\": 0\n    },\n    \"SessionId\": \"mysession\",\n    \"SessionContext\": \"mySessionContext\",\n    \"TasksPriority\": 10,\n    \"ExtInfo\": \"myextinfo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3185a050-c13a-4119-83a2-ed55802034c7\",\n        \"TaskId\": \"251440382-SceneAigcImageTask-*****8a5d76bcacaaec9a6d823e4t\"\n    }\n}",
+        "title": "发起生成场景化 AIGC 图片的任务"
+      }
+    ],
     "CreateSnapshotByTimeOffsetTemplate": [
       {
         "document": "",

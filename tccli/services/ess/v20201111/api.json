@@ -7572,7 +7572,7 @@
         },
         {
           "disabled": false,
-          "document": "请指定需执行批量签署的流程ID，数量范围为1-100。\n您可登录腾讯电子签控制台，浏览 \"合同\"->\"合同中心\" 以查阅某一合同的FlowId（在页面中显示为合同ID）。\n用户将利用链接对这些合同实施批量操作。",
+          "document": "请指定需执行批量签署的流程ID，数量范围为1-100。您可登录腾讯电子签控制台，浏览 \"合同\"->\"合同中心\" 以查阅某一合同的FlowId（在页面中显示为合同ID）。用户将利用链接对这些合同实施批量操作。  注：生成动态签署方领取时此参数必传。 ",
           "example": "[\"yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw\"]",
           "member": "string",
           "name": "FlowIds",
@@ -7617,7 +7617,7 @@
         },
         {
           "disabled": false,
-          "document": "为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。\n您可以通过查询合同接口（DescribeFlowInfo）查询此参数。\n若传了此参数，则可以不传 UserId, Name, Mobile等参数",
+          "document": "为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。您可以通过查询合同接口（DescribeFlowInfo）查询此参数。若传了此参数，则可以不传 UserId, Name, Mobile等参数  注：生成动态签署方领取时此参数必传。",
           "example": "[\"yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E\"]",
           "member": "string",
           "name": "RecipientIds",
@@ -7641,6 +7641,15 @@
           "name": "CanBatchReject",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "动态签署方领取链接配置。",
+          "example": "无",
+          "member": "DynamicSignOption",
+          "name": "DynamicSignOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -13440,6 +13449,30 @@
       ],
       "usage": "both"
     },
+    "DynamicSignOption": {
+      "document": "动态签署领取链接配置，当全部签署方均为动态签署方时生效。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多份合同批量签署时，动态签署领取要求：<ul><li><b>0（默认值）</b>: 可以领取部分合同进入签署。</li><li><b>1 </b>: 必须全部领取进入签署，生成链接的所有合同必须相同经办人完成合同的领取签署。</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "DynamicReceiveType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "动态签署方时，预设的企业名称，预设企业名称后，只允许对应的企业员工进行领取签署。",
+          "example": "典子谦有限公司",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "EmbedUrlOption": {
       "document": "个性化参数",
       "members": [
@@ -15990,7 +16023,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当选择语音问答模式时，系统自动播报的问题文本，最大长度为150个字符。",
+          "document": "当选择语音问答模式时，系统自动播报的问题文本，最大长度为250个字符。",
           "example": "请问您本次业务是本人自愿办理吗？如是，请回复“我同意”。",
           "member": "string",
           "name": "Question",
@@ -16000,7 +16033,7 @@
         {
           "disabled": false,
           "document": " 当选择语音问答模式时，用于判断用户回答是否通过的标准答案列表，传入后可自动判断用户回答文本是否在标准文本列表中。",
-          "example": "“同意”，“我同意”，“确认”，“我确认”",
+          "example": "[\"同意\",\"我同意\",\"确认\",\"我确认\"]",
           "member": "string",
           "name": "Answers",
           "required": false,

@@ -49,6 +49,20 @@
       "output": "CreateAdaptiveDynamicStreamingTemplateResponse",
       "status": "online"
     },
+    "CreateAigcImageTask": {
+      "document": "调用该接口用于创建AIGC生图片任务。",
+      "input": "CreateAigcImageTaskRequest",
+      "name": "创建AIGC生图片任务",
+      "output": "CreateAigcImageTaskResponse",
+      "status": "online"
+    },
+    "CreateAigcVideoTask": {
+      "document": "调用该接口，用于创建AI生视频任务。",
+      "input": "CreateAigcVideoTaskRequest",
+      "name": "创建AIGC生视频任务",
+      "output": "CreateAigcVideoTaskResponse",
+      "status": "online"
+    },
     "CreateAnimatedGraphicsTemplate": {
       "document": "创建用户自定义转动图模板，数量上限：16。",
       "input": "CreateAnimatedGraphicsTemplateRequest",
@@ -425,6 +439,20 @@
       "input": "DescribeAdaptiveDynamicStreamingTemplatesRequest",
       "name": "获取转自适应码流模板列表",
       "output": "DescribeAdaptiveDynamicStreamingTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeAigcImageTask": {
+      "document": "调用该接口，查询AIGC生图片任务进度以及获取生成结果。",
+      "input": "DescribeAigcImageTaskRequest",
+      "name": "查询AIGC生图片任务",
+      "output": "DescribeAigcImageTaskResponse",
+      "status": "online"
+    },
+    "DescribeAigcVideoTask": {
+      "document": "调用该接口，用于查询AIGC生视频任务的进度以及获取生成结果。",
+      "input": "DescribeAigcVideoTaskRequest",
+      "name": "查询AIGC生视频任务",
+      "output": "DescribeAigcVideoTaskResponse",
       "status": "online"
     },
     "DescribeAnimatedGraphicsTemplates": {
@@ -7224,6 +7252,157 @@
       ],
       "usage": "in"
     },
+    "AigcImageExtraParam": {
+      "document": "用于AIGC创作图片时用到的扩展参数信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定所生成视频的宽高比。\n\n不同模型支持的宽高比:\n1. GEM支持：1:1、3:2、2:3、3:4、4:3、4:5、5:4、9:16、16:9 和 21:9。\n2. Jimeng：合用户prompt意图、参考图尺寸，由模型智能判断生图宽高比。\n\n注：具体模型的宽高比参数，可查看相应模型官网获取更完整描述。",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定图片输出分辨率。\n\n支持该参数的模型：\n支持选择: 720P, 1080P, 2K, 4K。\n\n1. Jimeng推荐通过prompt指定图片分辨率和宽高比。\n    2K\n    2048x2048 （1:1）\n    2304x1728（4:3）\n    2496x1664 （3:2）\n    2560x1440 （16:9）\n    3024x1296 （21:9）\n    4K\n    4096x4096 （1:1）\n    4694x3520（4:3）\n    4992x3328 （3:2）\n    5404x3040 （16:9）\n    6198x2656 （21:9）",
+          "example": "1080P",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcImageInfo": {
+      "document": "用于AIGC创作的图片信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于指导视频生成的图片 URL。该URL需外网可访问。同时允许爬虫拉取。",
+          "example": "https://1500039689.vod-qcloud.com/6cd2c44bvodcq1500039689/179cafb25145403699605999621/ClcdjoxE6jcA.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参考类型。\n注意：\n1. 当模型使用Vidu的q2多参考生图时，也可用于指定主体id。\n2. 当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。",
+          "example": "asset",
+          "member": "string",
+          "name": "ReferenceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcStoreCosParam": {
+      "document": "Aigc结果文件上传COS时，需传入的信息。 需创建并授权LVB_QCSRole角色。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储至 cos 的 bucket 桶名称。需要cos存储时，该值必填。 示例值：bucket。",
+          "example": "aigc-test-video-1303333058",
+          "member": "string",
+          "name": "CosBucketName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储至 cos 的 bucket 区域。与bucket所属区域相同，上传cos时必填。 示例值：ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CosBucketRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储至 cos 的 bucket 路径。\n可选。\n示例值：my_file",
+          "example": "my_cos_file",
+          "member": "string",
+          "name": "CosBucketPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcVideoExtraParam": {
+      "document": "用于AIGC创作视频时用到的扩展参数信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成视频的分辨率，分辨率与选择模型及设置的视频时长相关。 \n\n不同模型支持的分辨率选项:\n1. Kling 720P(默认), 1080P。\n2. Hailuo 768P(默认), 1080P。\n3. Jimeng 1080P(默认)。\n4. Vidu 720P(默认)，1080P。\n5. GV 720P(默认),1080P。\n6. OS 720P, 图片仅支持1280x720、720x1280，暂不支持指定。\n\n注意：除模型可支持的分辨率外，还可以生成 2K、4K分辨率。",
+          "example": "720P",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定所生成视频的宽高比。 \n\n不同模型对于此参数的支持：\n1. Kling 仅文生视频支持, 16:9(默认值)、9:16、 1:1。\n2. Hailuo 暂不支持。\n3. Jimeng [\"16:9\"、\"4:3\"、\"1:1\"、\"3:4\"、\"9:16\"、\"21:9\"]\n4. Vidu 仅文生和参考图生视频 支持[16:9、9:16、4:3、3:4、1:1]，其中仅q2支持4:3、3:4。\n5. GV 16:9(默认值)、9:16。\n6. OS 仅文生视频支持, 16:9(默认), 9:16。\n\n注：关于具体模型支持的宽高比例，可查看具体模型官网介绍获取更完整描述。",
+          "example": "16:9",
+          "member": "string",
+          "name": "AspectRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AigcVideoReferenceImageInfo": {
+      "document": "用于AIGC生视频创作的参考图片信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于指导视频生成的图片 URL。该URL需外网可访问。同时允许爬虫拉取。",
+          "example": "http://myimage.com/mps/image.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参考类型。\n注意：\n1. 当使用GV模型时，可作为参考方式,可选asset(素材)、style(风格)。",
+          "example": "asset",
+          "member": "string",
+          "name": "ReferenceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AnimatedGraphicTaskInput": {
       "document": "转动图任务类型。",
       "members": [
@@ -10182,6 +10361,251 @@
       ],
       "type": "object"
     },
+    "CreateAigcImageTaskRequest": {
+      "document": "CreateAigcImageTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称。\n当前支持的模型列表：\nGEM，\nJimeng，\nQwen。",
+          "example": "GEM",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。\n\n1. GEM， 可选[2.5,3.0]。\n2. Jimeng，可选[4.0]。",
+          "example": "2.0",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成图片的描述。(注：最大支持1000字符)。当未传入参考图片时，此参数必填。",
+          "example": "draw a cat",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于描述您想要阻止模型生成的内容。 注意：部分模型支持。 例如： 顶部照明、明亮的色彩 人物、动物 多辆汽车、风。",
+          "example": "adult face",
+          "member": "string",
+          "name": "NegativePrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnhancePrompt",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用于传入参考的资源图片信息，默认支持传入一张图片。\n\n支持多图输入的模型：\n1. GEM，可支持最多3张图片输入作为资源图。\n\n注意：\n1. 推荐图片小于7M，各模型限制不同。\n2. 图片格式支持：jpeg, png, webp。",
+          "example": "无",
+          "member": "AigcImageInfo",
+          "name": "ImageInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于传入模型要求的额外参数。",
+          "example": "无",
+          "member": "AigcImageExtraParam",
+          "name": "ExtraParameters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。",
+          "example": "无",
+          "member": "AigcStoreCosParam",
+          "name": "StoreCosParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "接口操作者名称。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcImageTaskResponse": {
+      "document": "CreateAigcImageTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的任务ID。",
+          "example": "2147483784",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcVideoTaskRequest": {
+      "document": "CreateAigcVideoTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称。\n当前支持的模型列表:\nHailuo，\nKling，\nJimeng，\nVidu，\nOS，\nGV。",
+          "example": "Hailuo",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。\n1. Hailuo， 可选[02、2.3]。\n2. Kling，可选[2.0、2.1、2.5]。\n3. Jimeng, 可选[3.0pro]。\n4. Vidu,可选[q2、q2-pro、q2-turbo]。\n4. GV, 可选[3.1]。\n5. OS，可选[2.0]。",
+          "example": "2.3",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成视频的描述。(注：最大支持2000字符)。当未传入图片时，此参数必填。",
+          "example": "move the picture",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于描述您想要阻止模型生成的内容。\n注意：部分模型支持。\n例如：\n顶部照明、明亮的色彩\n人物、动物\n多辆汽车、风。",
+          "example": "Top lighting, bright colors",
+          "member": "string",
+          "name": "NegativePrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认取值为False，模型会严格地遵循指令。如果需要更精细的prompt获得最佳效果，可将此参数设置为True，将自动优化传入的prompt，以提升生成质量。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnhancePrompt",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用于指导视频生成的图片 URL。该URL需外网可访问。\n注意：\n1. 推荐图片大小不超过10M，不同模型大小限制不相同。\n2. 支持的图片格式：jpeg、png。\n3. 使用OS模型时，需输入图片尺寸为: 1280x720、720x1280。",
+          "example": "https://1500039689.vod-xxx.com/6cd2c44bvodcq1500039689/179cafb25145403699605999621/xxdjoxE6jcA.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型将以此参数传入的图片作为尾帧画面来生成视频。\n支持此参数的模型：\n1. GV，传入尾帧图片时，必须同时传入ImageUrl作为首帧。\n2. Kling， 在Resolution:1080P的情况下 2.1版本支持首位帧。\n3. Vidu, q2-pro, q2-turbo 支持首尾帧。\n\n注意：\n1. 推荐图片大小不超过10M，各模型限制不同。\n2. 支持的图片格式：jpeg、png。",
+          "example": "https://aigc-xxx-image-1303333058.cos.ap-guangzhou.myqcloud.com/xxx_8655.png",
+          "member": "string",
+          "name": "LastImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "最多包含三张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。\n\n支持多图输入的模型：\n1. GV，使用多图输入时，不可使用ImageUrl和LastImageUrl。\n2. Vidu，支持多图参考生视频。q2模型1-7张图片，可通过ImageInfos里面的ReferenceType作为主体id来传入。\n\n注意：\n1. 图片大小不超过10M。\n2. 支持的图片格式：jpeg、png。",
+          "example": "无",
+          "member": "AigcVideoReferenceImageInfo",
+          "name": "ImageInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "生成视频的时长。\n注意：\n1. Kling支持 5、10秒。默认: 5秒。\n2. Jimeng支持5、10秒。 默认: 5秒。\n3. Hailuo的std模式可支持6、10秒，其他仅6秒。默认：6秒。\n4. Vidu支持1-10秒。\n4. GV支持 8秒。 默认：8秒。\n5. OS支持4、8、12秒。 默认：8秒。",
+          "example": "8",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于传入模型要求的额外参数。",
+          "example": "无",
+          "member": "AigcVideoExtraParam",
+          "name": "ExtraParameters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "文件结果指定存储Cos桶信息。 注意：需开通Cos，创建并授权MPS_QcsRole角色。",
+          "example": "无",
+          "member": "AigcStoreCosParam",
+          "name": "StoreCosParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "接口操作者名称。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAigcVideoTaskResponse": {
+      "document": "CreateAigcVideoTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务创建成功后，返回的任务ID。\n调用查询接口，轮询获取任务进度及生成结果。",
+          "example": "2147483792",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAnimatedGraphicsTemplateRequest": {
       "document": "CreateAnimatedGraphicsTemplate请求参数结构体",
       "members": [
@@ -12139,7 +12563,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效，翻译语言列表：\n`ab`：阿布哈兹语\n`ace`：亚齐语\n`ach`：阿乔利语\n`af`：南非荷兰语\n`ak`：契维语（阿坎语）\n`am`：Amharic\n`ar`：阿拉伯语\n`as`：阿萨姆语\n`ay`：艾马拉语\n`az`：阿塞拜疆语\n`ba`：巴什基尔语\n`ban`：巴厘语\n`bbc`：巴塔克托巴语\n`bem`：Bemba\n`bew`：Betawi\n`bg`：保加利亚语\n`bho`：博杰普尔语\n`bik`：Bikol\n`bm`：班巴拉语\n`bn`：孟加拉语\n`br`：布列塔尼语\n`bs`：波斯尼亚语\n`btx`：巴塔克卡罗语\n`bts`：巴塔克西马隆贡语\n`bua`：布里亚特语\n`ca`：加泰罗尼亚语\n`ceb`：宿务语\n`cgg`：Kiga\n`chm`：草原马里语\n`ckb`：库尔德语（索拉尼语）\n`cnh`：哈卡钦语\n`co`：科西嘉语\n`crh`：克里米亚鞑靼语\n`crs`：塞舌尔克里奥尔语\n`cs`：捷克语\n`cv`：楚瓦什语\n`cy`：威尔士语\n`da`：丹麦语\n`de`：德语\n`din`：Dinka\n`doi`：多格来语\n`dov`：敦贝语\n`dv`：第维埃语\n`dz`：宗卡语\n`ee`：Ewe\n`el`：希腊语\n`en`：英语\n`eo`：世界语\n`es`：西班牙语\n`et`：爱沙尼亚语\n`eu`：巴斯克语\n`fa`：波斯语\n`ff`：富拉语\n`fi`：芬兰语\n`fil`：菲律宾语（塔加拉语）\n`fj`：斐济语\n`fr`：法语\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fy`：弗里斯兰语\n`ga`：爱尔兰语\n`gaa`：加 (Ga) 语\n`gd`：苏格兰盖尔语\n`gl`：加利西亚语\n`gn`：瓜拉尼语\n`gom`：贡根语\n`gu`：古吉拉特语\n`gv`：马恩岛语\n`ha`：Hausa\n`haw`：夏威夷语\n`he`：希伯来语\n`hi`：印地语\n`hil`：希利盖农语\n`hmn`：苗语\n`hr`：克罗地亚语\n`hrx`：洪斯吕克语\n`ht`：海地克里奥尔语\n`hu`：匈牙利语\n`hy`：亚美尼亚语\n`id`：印度尼西亚语\n`ig`：Igbo\n`ilo`：伊洛果语\n`is`：冰岛语\n`it`：意大利语\n`iw`：希伯来语\n`ja`：日语\n`jv`：爪哇语\n`jw`：爪哇语\n`ka`：格鲁吉亚语\n`kk`：哈萨克语\n`km`：高棉语\n`kn`：卡纳达语\n`ko`：韩语\n`kri`：Krio\n`ku`：库尔德语（库尔曼吉语）\n`ktu`：吉土巴语\n`ky`：吉尔吉斯语\n`la`：拉丁语\n`lb`：卢森堡语\n`lg`：干达语（卢干达语）\n`li`：林堡语\n`lij`：利古里亚语\n`lmo`：伦巴第语\n`ln`：林加拉语\n`lo`：老挝语\n`lt`：立陶宛语\n`ltg`：拉特加莱语\n`luo`：Luo\n`lus`：米佐语\n`lv`：拉脱维亚语\n`mai`：迈蒂利语\n`mak`：马卡萨\n`mg`：马尔加什语\n`mi`：毛利语\n`min`：米南语\n`mk`：马其顿语\n`ml`：马拉雅拉姆语\n`mn`：蒙古语\n`mr`：马拉地语\n`ms`：马来语\n`mt`：马耳他语\n`my`：缅甸语\n`ne`：尼泊尔语\n`new`：尼瓦尔语\n`nl`：荷兰语\n`no`：挪威语\n`nr`：恩德贝莱语（南部）\n`nso`：北索托语（塞佩蒂语）\n`nus`：努尔语\n`ny`：齐切瓦语（尼扬贾语）\n`oc`：奥克斯坦语\n`om`：Oromo\n`or`：奥里亚语\n`pa`：旁遮普语\n`pag`：邦阿西楠语\n`pam`：邦板牙语\n`pap`：Papiamento\n`pl`：波兰语\n`ps`：Pashto\n`pt`：葡萄牙语\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`qu`：克丘亚语\n`ro`：罗马尼亚语\n`rom`：罗姆语\n`rn`：Rundi\n`ru`：俄语\n`rw`：卢旺达语\n`sa`：梵语\n`scn`：西西里语\n`sd`：信德语\n`sg`：Sango\n`shn`：掸语\n`si`：僧伽罗语\n`sk`：斯洛伐克语\n`sl`：斯洛文尼亚语\n`sm`：萨摩亚语\n`sn`：修纳语\n`so`：索马里语\n`sq`：阿尔巴尼亚语\n`sr`：塞尔维亚语\n`ss`：斯瓦特语\n`st`：塞索托语\n`su`：巽他语\n`sv`：瑞典语\n`sw`：斯瓦希里语\n`szl`：西里西亚语\n`ta`：泰米尔语\n`te`：泰卢固语\n`tet`：德顿语\n`tg`：塔吉克语\n`th`：泰语\n`ti`：提格里尼亚语\n`tk`：土库曼语\n`tl`：菲律宾语（塔加拉语）\n`tn`：茨瓦纳语\n`tr`：土耳其语\n`ts`：聪加语\n`tt`：鞑靼语\n`ug`：维吾尔语\n`uk`：乌克兰语\n`ur`：乌尔都语\n`uz`：乌兹别克语\n`vi`：越南语\n`xh`：科萨语\n`yi`：意第绪语\n`yo`：约鲁巴语\n`yua`：尤卡坦玛雅语\n`yue`：粤语\n`zh`：简体中文\n`zh-TW`：中文（繁体）\n`zu`：祖鲁语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。",
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效，翻译语言列表：\n`ab`：阿布哈兹语\n`ace`：亚齐语\n`ach`：阿乔利语\n`af`：南非荷兰语\n`ak`：契维语（阿坎语）\n`am`：Amharic\n`ar`：阿拉伯语\n`as`：阿萨姆语\n`ay`：艾马拉语\n`az`：阿塞拜疆语\n`ba`：巴什基尔语\n`ban`：巴厘语\n`bbc`：巴塔克托巴语\n`bem`：Bemba\n`bew`：Betawi\n`bg`：保加利亚语\n`bho`：博杰普尔语\n`bik`：Bikol\n`bm`：班巴拉语\n`bn`：孟加拉语\n`br`：布列塔尼语\n`bs`：波斯尼亚语\n`btx`：巴塔克卡罗语\n`bts`：巴塔克西马隆贡语\n`bua`：布里亚特语\n`ca`：加泰罗尼亚语\n`ceb`：宿务语\n`cgg`：Kiga\n`chm`：草原马里语\n`ckb`：库尔德语（索拉尼语）\n`cnh`：哈卡钦语\n`co`：科西嘉语\n`crh`：克里米亚鞑靼语\n`crs`：塞舌尔克里奥尔语\n`cs`：捷克语\n`cv`：楚瓦什语\n`cy`：威尔士语\n`da`：丹麦语\n`de`：德语\n`din`：Dinka\n`doi`：多格来语\n`dov`：敦贝语\n`dv`：第维埃语\n`dz`：宗卡语\n`ee`：Ewe\n`el`：希腊语\n`en`：英语\n`eo`：世界语\n`es`：西班牙语\n`et`：爱沙尼亚语\n`eu`：巴斯克语\n`fa`：波斯语\n`ff`：富拉语\n`fi`：芬兰语\n`fil`：菲律宾语（塔加拉语）\n`fj`：斐济语\n`fr`：法语\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fy`：弗里斯兰语\n`ga`：爱尔兰语\n`gaa`：加 (Ga) 语\n`gd`：苏格兰盖尔语\n`gl`：加利西亚语\n`gn`：瓜拉尼语\n`gom`：贡根语\n`gu`：古吉拉特语\n`gv`：马恩岛语\n`ha`：Hausa\n`haw`：夏威夷语\n`he`：希伯来语\n`hi`：印地语\n`hil`：希利盖农语\n`hmn`：苗语\n`hr`：克罗地亚语\n`hrx`：洪斯吕克语\n`ht`：海地克里奥尔语\n`hu`：匈牙利语\n`hy`：亚美尼亚语\n`id`：印度尼西亚语\n`ig`：Igbo\n`ilo`：伊洛果语\n`is`：冰岛语\n`it`：意大利语\n`iw`：希伯来语\n`ja`：日语\n`jv`：爪哇语\n`ka`：格鲁吉亚语\n`kk`：哈萨克语\n`km`：高棉语\n`kn`：卡纳达语\n`ko`：韩语\n`kri`：Krio\n`ku`：库尔德语（库尔曼吉语）\n`ktu`：吉土巴语\n`ky`：吉尔吉斯语\n`la`：拉丁语\n`lb`：卢森堡语\n`lg`：干达语（卢干达语）\n`li`：林堡语\n`lij`：利古里亚语\n`lmo`：伦巴第语\n`ln`：林加拉语\n`lo`：老挝语\n`lt`：立陶宛语\n`ltg`：拉特加莱语\n`luo`：Luo\n`lus`：米佐语\n`lv`：拉脱维亚语\n`mai`：迈蒂利语\n`mak`：马卡萨\n`mg`：马尔加什语\n`mi`：毛利语\n`min`：米南语\n`mk`：马其顿语\n`ml`：马拉雅拉姆语\n`mn`：蒙古语\n`mr`：马拉地语\n`ms`：马来语\n`mt`：马耳他语\n`my`：缅甸语\n`ne`：尼泊尔语\n`new`：尼瓦尔语\n`nl`：荷兰语\n`no`：挪威语\n`nr`：恩德贝莱语（南部）\n`nso`：北索托语（塞佩蒂语）\n`nus`：努尔语\n`ny`：齐切瓦语（尼扬贾语）\n`oc`：奥克斯坦语\n`om`：Oromo\n`or`：奥里亚语\n`pa`：旁遮普语\n`pag`：邦阿西楠语\n`pam`：邦板牙语\n`pap`：Papiamento\n`pl`：波兰语\n`ps`：Pashto\n`pt`：葡萄牙语\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`qu`：克丘亚语\n`ro`：罗马尼亚语\n`rom`：罗姆语\n`rn`：Rundi\n`ru`：俄语\n`rw`：卢旺达语\n`sa`：梵语\n`scn`：西西里语\n`sd`：信德语\n`sg`：Sango\n`shn`：掸语\n`si`：僧伽罗语\n`sk`：斯洛伐克语\n`sl`：斯洛文尼亚语\n`sm`：萨摩亚语\n`sn`：修纳语\n`so`：索马里语\n`sq`：阿尔巴尼亚语\n`sr`：塞尔维亚语\n`ss`：斯瓦特语\n`st`：塞索托语\n`su`：巽他语\n`sv`：瑞典语\n`sw`：斯瓦希里语\n`szl`：西里西亚语\n`ta`：泰米尔语\n`te`：泰卢固语\n`tet`：德顿语\n`tg`：塔吉克语\n`th`：泰语\n`ti`：提格里尼亚语\n`tk`：土库曼语\n`tn`：茨瓦纳语\n`tr`：土耳其语\n`ts`：聪加语\n`tt`：鞑靼语\n`ug`：维吾尔语\n`uk`：乌克兰语\n`ur`：乌尔都语\n`uz`：乌兹别克语\n`vi`：越南语\n`xh`：科萨语\n`yi`：意第绪语\n`yo`：约鲁巴语\n`yua`：尤卡坦玛雅语\n`yue`：粤语\n`zh`：简体中文\n`zh-TW`：中文（繁体）\n`zu`：祖鲁语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。",
           "example": "en",
           "member": "string",
           "name": "TranslateDstLanguage",
@@ -12154,6 +12578,15 @@
           "name": "ProcessType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字幕OCR提取框选区域配置",
+          "example": "无",
+          "member": "SelectingSubtitleAreasConfig",
+          "name": "SelectingSubtitleAreasConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -13951,6 +14384,130 @@
           "name": "AdaptiveDynamicStreamingTemplateSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcImageTaskRequest": {
+      "document": "DescribeAigcImageTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的AIGC生图片任务ID。",
+          "example": "2147483804",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcImageTaskResponse": {
+      "document": "DescribeAigcImageTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务当前状态。 WAIT：等待中， RUN：执行中， FAIL：任务失败， DONE：任务成功。",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当任务状态为 DONE时，返回的图片Url列表，图片存储12小时，请尽快取走使用。",
+          "example": "[\"https://live-aigc-image-2311402212.cos.ap-guangzhou.myqcloud.com/4_711361071160666119.png\"]",
+          "member": "string",
+          "name": "ImageUrls",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当任务状态为 FAIL时，返回失败信息。",
+          "example": "fail",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcVideoTaskRequest": {
+      "document": "DescribeAigcVideoTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建AIGC生视频任务时，返回的任务ID。",
+          "example": "2147483790",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAigcVideoTaskResponse": {
+      "document": "DescribeAigcVideoTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务当前状态。 WAIT：等待中， RUN：执行中， FAIL：任务失败， DONE：任务成功。",
+          "example": "DONE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当任务状态为 DONE时，返回视频Url列表，视频存储12小时，请尽快取走使用。",
+          "example": "[\"https://live-xxx-video-1311402212.cos.ap-guangzhou.myqcloud.com/251006278_2147483790_711361074106890375.mp4\"]",
+          "member": "string",
+          "name": "VideoUrls",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出视频的分辨率。示例：1080*720；",
+          "example": "1920x1088",
+          "member": "string",
+          "name": "Resolution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当任务状态为 FAIL时，返回失败信息。",
+          "example": "ok",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -27849,7 +28406,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效，翻译语言列表：\n`ab`：阿布哈兹语\n`ace`：亚齐语\n`ach`：阿乔利语\n`af`：南非荷兰语\n`ak`：契维语（阿坎语）\n`am`：Amharic\n`ar`：阿拉伯语\n`as`：阿萨姆语\n`ay`：艾马拉语\n`az`：阿塞拜疆语\n`ba`：巴什基尔语\n`ban`：巴厘语\n`bbc`：巴塔克托巴语\n`bem`：Bemba\n`bew`：Betawi\n`bg`：保加利亚语\n`bho`：博杰普尔语\n`bik`：Bikol\n`bm`：班巴拉语\n`bn`：孟加拉语\n`br`：布列塔尼语\n`bs`：波斯尼亚语\n`btx`：巴塔克卡罗语\n`bts`：巴塔克西马隆贡语\n`bua`：布里亚特语\n`ca`：加泰罗尼亚语\n`ceb`：宿务语\n`cgg`：Kiga\n`chm`：草原马里语\n`ckb`：库尔德语（索拉尼语）\n`cnh`：哈卡钦语\n`co`：科西嘉语\n`crh`：克里米亚鞑靼语\n`crs`：塞舌尔克里奥尔语\n`cs`：捷克语\n`cv`：楚瓦什语\n`cy`：威尔士语\n`da`：丹麦语\n`de`：德语\n`din`：Dinka\n`doi`：多格来语\n`dov`：敦贝语\n`dv`：第维埃语\n`dz`：宗卡语\n`ee`：Ewe\n`el`：希腊语\n`en`：英语\n`eo`：世界语\n`es`：西班牙语\n`et`：爱沙尼亚语\n`eu`：巴斯克语\n`fa`：波斯语\n`ff`：富拉语\n`fi`：芬兰语\n`fil`：菲律宾语（塔加拉语）\n`fj`：斐济语\n`fr`：法语\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fy`：弗里斯兰语\n`ga`：爱尔兰语\n`gaa`：加 (Ga) 语\n`gd`：苏格兰盖尔语\n`gl`：加利西亚语\n`gn`：瓜拉尼语\n`gom`：贡根语\n`gu`：古吉拉特语\n`gv`：马恩岛语\n`ha`：Hausa\n`haw`：夏威夷语\n`he`：希伯来语\n`hi`：印地语\n`hil`：希利盖农语\n`hmn`：苗语\n`hr`：克罗地亚语\n`hrx`：洪斯吕克语\n`ht`：海地克里奥尔语\n`hu`：匈牙利语\n`hy`：亚美尼亚语\n`id`：印度尼西亚语\n`ig`：Igbo\n`ilo`：伊洛果语\n`is`：冰岛语\n`it`：意大利语\n`iw`：希伯来语\n`ja`：日语\n`jv`：爪哇语\n`jw`：爪哇语\n`ka`：格鲁吉亚语\n`kk`：哈萨克语\n`km`：高棉语\n`kn`：卡纳达语\n`ko`：韩语\n`kri`：Krio\n`ku`：库尔德语（库尔曼吉语）\n`ktu`：吉土巴语\n`ky`：吉尔吉斯语\n`la`：拉丁语\n`lb`：卢森堡语\n`lg`：干达语（卢干达语）\n`li`：林堡语\n`lij`：利古里亚语\n`lmo`：伦巴第语\n`ln`：林加拉语\n`lo`：老挝语\n`lt`：立陶宛语\n`ltg`：拉特加莱语\n`luo`：Luo\n`lus`：米佐语\n`lv`：拉脱维亚语\n`mai`：迈蒂利语\n`mak`：马卡萨\n`mg`：马尔加什语\n`mi`：毛利语\n`min`：米南语\n`mk`：马其顿语\n`ml`：马拉雅拉姆语\n`mn`：蒙古语\n`mr`：马拉地语\n`ms`：马来语\n`mt`：马耳他语\n`my`：缅甸语\n`ne`：尼泊尔语\n`new`：尼瓦尔语\n`nl`：荷兰语\n`no`：挪威语\n`nr`：恩德贝莱语（南部）\n`nso`：北索托语（塞佩蒂语）\n`nus`：努尔语\n`ny`：齐切瓦语（尼扬贾语）\n`oc`：奥克斯坦语\n`om`：Oromo\n`or`：奥里亚语\n`pa`：旁遮普语\n`pag`：邦阿西楠语\n`pam`：邦板牙语\n`pap`：Papiamento\n`pl`：波兰语\n`ps`：Pashto\n`pt`：葡萄牙语\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`qu`：克丘亚语\n`ro`：罗马尼亚语\n`rom`：罗姆语\n`rn`：Rundi\n`ru`：俄语\n`rw`：卢旺达语\n`sa`：梵语\n`scn`：西西里语\n`sd`：信德语\n`sg`：Sango\n`shn`：掸语\n`si`：僧伽罗语\n`sk`：斯洛伐克语\n`sl`：斯洛文尼亚语\n`sm`：萨摩亚语\n`sn`：修纳语\n`so`：索马里语\n`sq`：阿尔巴尼亚语\n`sr`：塞尔维亚语\n`ss`：斯瓦特语\n`st`：塞索托语\n`su`：巽他语\n`sv`：瑞典语\n`sw`：斯瓦希里语\n`szl`：西里西亚语\n`ta`：泰米尔语\n`te`：泰卢固语\n`tet`：德顿语\n`tg`：塔吉克语\n`th`：泰语\n`ti`：提格里尼亚语\n`tk`：土库曼语\n`tl`：菲律宾语（塔加拉语）\n`tn`：茨瓦纳语\n`tr`：土耳其语\n`ts`：聪加语\n`tt`：鞑靼语\n`ug`：维吾尔语\n`uk`：乌克兰语\n`ur`：乌尔都语\n`uz`：乌兹别克语\n`vi`：越南语\n`xh`：科萨语\n`yi`：意第绪语\n`yo`：约鲁巴语\n`yua`：尤卡坦玛雅语\n`yue`：粤语\n`zh`：简体中文\n`zh-TW`：中文（繁体）\n`zu`：祖鲁语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。",
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效，翻译语言列表：\n`ab`：阿布哈兹语\n`ace`：亚齐语\n`ach`：阿乔利语\n`af`：南非荷兰语\n`ak`：契维语（阿坎语）\n`am`：Amharic\n`ar`：阿拉伯语\n`as`：阿萨姆语\n`ay`：艾马拉语\n`az`：阿塞拜疆语\n`ba`：巴什基尔语\n`ban`：巴厘语\n`bbc`：巴塔克托巴语\n`bem`：Bemba\n`bew`：Betawi\n`bg`：保加利亚语\n`bho`：博杰普尔语\n`bik`：Bikol\n`bm`：班巴拉语\n`bn`：孟加拉语\n`br`：布列塔尼语\n`bs`：波斯尼亚语\n`btx`：巴塔克卡罗语\n`bts`：巴塔克西马隆贡语\n`bua`：布里亚特语\n`ca`：加泰罗尼亚语\n`ceb`：宿务语\n`cgg`：Kiga\n`chm`：草原马里语\n`ckb`：库尔德语（索拉尼语）\n`cnh`：哈卡钦语\n`co`：科西嘉语\n`crh`：克里米亚鞑靼语\n`crs`：塞舌尔克里奥尔语\n`cs`：捷克语\n`cv`：楚瓦什语\n`cy`：威尔士语\n`da`：丹麦语\n`de`：德语\n`din`：Dinka\n`doi`：多格来语\n`dov`：敦贝语\n`dv`：第维埃语\n`dz`：宗卡语\n`ee`：Ewe\n`el`：希腊语\n`en`：英语\n`eo`：世界语\n`es`：西班牙语\n`et`：爱沙尼亚语\n`eu`：巴斯克语\n`fa`：波斯语\n`ff`：富拉语\n`fi`：芬兰语\n`fil`：菲律宾语（塔加拉语）\n`fj`：斐济语\n`fr`：法语\n`fr-CA`：法语（加拿大）\n`fr-FR`：法语（法国）\n`fy`：弗里斯兰语\n`ga`：爱尔兰语\n`gaa`：加 (Ga) 语\n`gd`：苏格兰盖尔语\n`gl`：加利西亚语\n`gn`：瓜拉尼语\n`gom`：贡根语\n`gu`：古吉拉特语\n`gv`：马恩岛语\n`ha`：Hausa\n`haw`：夏威夷语\n`he`：希伯来语\n`hi`：印地语\n`hil`：希利盖农语\n`hmn`：苗语\n`hr`：克罗地亚语\n`hrx`：洪斯吕克语\n`ht`：海地克里奥尔语\n`hu`：匈牙利语\n`hy`：亚美尼亚语\n`id`：印度尼西亚语\n`ig`：Igbo\n`ilo`：伊洛果语\n`is`：冰岛语\n`it`：意大利语\n`iw`：希伯来语\n`ja`：日语\n`jv`：爪哇语\n`ka`：格鲁吉亚语\n`kk`：哈萨克语\n`km`：高棉语\n`kn`：卡纳达语\n`ko`：韩语\n`kri`：Krio\n`ku`：库尔德语（库尔曼吉语）\n`ktu`：吉土巴语\n`ky`：吉尔吉斯语\n`la`：拉丁语\n`lb`：卢森堡语\n`lg`：干达语（卢干达语）\n`li`：林堡语\n`lij`：利古里亚语\n`lmo`：伦巴第语\n`ln`：林加拉语\n`lo`：老挝语\n`lt`：立陶宛语\n`ltg`：拉特加莱语\n`luo`：Luo\n`lus`：米佐语\n`lv`：拉脱维亚语\n`mai`：迈蒂利语\n`mak`：马卡萨\n`mg`：马尔加什语\n`mi`：毛利语\n`min`：米南语\n`mk`：马其顿语\n`ml`：马拉雅拉姆语\n`mn`：蒙古语\n`mr`：马拉地语\n`ms`：马来语\n`mt`：马耳他语\n`my`：缅甸语\n`ne`：尼泊尔语\n`new`：尼瓦尔语\n`nl`：荷兰语\n`no`：挪威语\n`nr`：恩德贝莱语（南部）\n`nso`：北索托语（塞佩蒂语）\n`nus`：努尔语\n`ny`：齐切瓦语（尼扬贾语）\n`oc`：奥克斯坦语\n`om`：Oromo\n`or`：奥里亚语\n`pa`：旁遮普语\n`pag`：邦阿西楠语\n`pam`：邦板牙语\n`pap`：Papiamento\n`pl`：波兰语\n`ps`：Pashto\n`pt`：葡萄牙语\n`pt-BR`：葡萄牙语（巴西）\n`pt-PT`：葡萄牙语（葡萄牙）\n`qu`：克丘亚语\n`ro`：罗马尼亚语\n`rom`：罗姆语\n`rn`：Rundi\n`ru`：俄语\n`rw`：卢旺达语\n`sa`：梵语\n`scn`：西西里语\n`sd`：信德语\n`sg`：Sango\n`shn`：掸语\n`si`：僧伽罗语\n`sk`：斯洛伐克语\n`sl`：斯洛文尼亚语\n`sm`：萨摩亚语\n`sn`：修纳语\n`so`：索马里语\n`sq`：阿尔巴尼亚语\n`sr`：塞尔维亚语\n`ss`：斯瓦特语\n`st`：塞索托语\n`su`：巽他语\n`sv`：瑞典语\n`sw`：斯瓦希里语\n`szl`：西里西亚语\n`ta`：泰米尔语\n`te`：泰卢固语\n`tet`：德顿语\n`tg`：塔吉克语\n`th`：泰语\n`ti`：提格里尼亚语\n`tk`：土库曼语\n`tn`：茨瓦纳语\n`tr`：土耳其语\n`ts`：聪加语\n`tt`：鞑靼语\n`ug`：维吾尔语\n`uk`：乌克兰语\n`ur`：乌尔都语\n`uz`：乌兹别克语\n`vi`：越南语\n`xh`：科萨语\n`yi`：意第绪语\n`yo`：约鲁巴语\n`yua`：尤卡坦玛雅语\n`yue`：粤语\n`zh`：简体中文\n`zh-TW`：中文（繁体）\n`zu`：祖鲁语\n\n**注意**：多语言方式，则使用 `/` 分割，如：`en/ja`，表示英语和日语。",
           "example": "en",
           "member": "string",
           "name": "TranslateDstLanguage",
@@ -27864,6 +28421,15 @@
           "name": "ProcessType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字幕OCR提取框选区域配置",
+          "example": "无",
+          "member": "SelectingSubtitleAreasConfig",
+          "name": "SelectingSubtitleAreasConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

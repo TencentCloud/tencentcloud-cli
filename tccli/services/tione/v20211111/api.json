@@ -1660,6 +1660,15 @@
           "name": "VolumeMounts",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用",
+          "example": "binpack",
+          "member": "string",
+          "name": "SchedulingStrategy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5780,7 +5789,52 @@
     },
     "ExposePortConfig": {
       "document": "暴露端口信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启暴露容器服务端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "clb id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "ClbId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "clb domain\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lb-xxx",
+          "member": "string",
+          "name": "ClbHost",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "both"
     },
     "Filter": {
@@ -8173,6 +8227,15 @@
           "name": "VolumeMounts",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用",
+          "example": "binpack",
+          "member": "string",
+          "name": "SchedulingStrategy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9325,7 +9388,7 @@
           "example": "无",
           "member": "Container",
           "name": "Containers",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -10180,6 +10243,28 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "root disk size(GB)",
+          "example": "100",
+          "member": "uint64",
+          "name": "RootDisk",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "data disk size(GB)",
+          "example": "200",
+          "member": "uint64",
+          "name": "DataDisk",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10605,23 +10690,23 @@
         },
         {
           "disabled": true,
-          "document": "已废弃,以ServiceInfo中的对应为准\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已废弃,以ServiceInfo中的对应为准",
           "example": "无",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": true,
-          "document": "已废弃,以ServiceInfo中的对应为准\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已废弃,以ServiceInfo中的对应为准",
           "example": "无",
           "member": "ScheduledAction",
           "name": "ScheduledAction",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11311,69 +11396,69 @@
         },
         {
           "disabled": false,
-          "document": "后付费实例对应的机型规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费实例对应的机型规格",
           "example": "TI.S.MEDIUM.POS",
           "member": "string",
           "name": "InstanceType",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模型信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模型信息",
           "example": "无",
           "member": "ModelInfo",
           "name": "ModelInfo",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否启用日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否启用日志",
           "example": "true",
           "member": "bool",
           "name": "LogEnable",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志配置",
           "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启鉴权",
           "example": "true",
           "member": "bool",
           "name": "AuthorizationEnable",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "hpa配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "hpa配置",
           "example": "无",
           "member": "HorizontalPodAutoscaler",
           "name": "HorizontalPodAutoscaler",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11524,7 +11609,7 @@
           "example": "无",
           "member": "Pod",
           "name": "Pods",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -11692,6 +11777,28 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度策略 [binpack] 优先占满整机，尽量避免碎卡（默认值）[spread] 优先分散在各个节点，确保服务高可用",
+          "example": "binpack",
+          "member": "string",
+          "name": "SchedulingStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务实际运行的节点数",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -13455,7 +13562,7 @@
         {
           "disabled": true,
           "document": "工作负载的状况信息",
-          "example": "{}",
+          "example": "无",
           "member": "StatefulSetCondition",
           "name": "StatefulSetCondition",
           "output_required": true,
@@ -13466,7 +13573,7 @@
         {
           "disabled": false,
           "document": "工作负载历史的状况信息",
-          "example": "[]",
+          "example": "无",
           "member": "StatefulSetCondition",
           "name": "Conditions",
           "output_required": true,
@@ -13477,7 +13584,7 @@
         {
           "disabled": false,
           "document": "状态异常时，展示原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " reason",
           "member": "string",
           "name": "Reason",
           "output_required": true,

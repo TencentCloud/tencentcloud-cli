@@ -21,6 +21,14 @@ tccli dlc CreateTcIcebergTable --cli-unfold-argument  \
     --TableBaseInfo.SmartPolicy.Policy.Resources.0.AttributionType group \
     --TableBaseInfo.SmartPolicy.Policy.Resources.0.ResourceGroupName test-277-group \
     --TableBaseInfo.SmartPolicy.Policy.Written.WrittenEnable enable \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.CompactEnable enable \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.DeleteEnable enable \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.BeforeDays 2 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.RetainLast 5 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.ExpiredSnapshotsIntervalMin 600 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.RemoveOrphanIntervalMin 1440 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.MinInputFiles 5 \
+    --TableBaseInfo.SmartPolicy.Policy.Written.AdvancePolicy.TargetFileSizeBytes 134217728 \
     --TableBaseInfo.SmartPolicy.Policy.Lifecycle.LifecycleEnable enable \
     --TableBaseInfo.SmartPolicy.Policy.Lifecycle.Expiration 30 \
     --TableBaseInfo.SmartPolicy.Policy.Lifecycle.ExpiredFieldFormat yyyy-MM-dd \

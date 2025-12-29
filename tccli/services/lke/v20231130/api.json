@@ -43,7 +43,7 @@
       "status": "online"
     },
     "CreateQACate": {
-      "document": "创建QA分类",
+      "document": "创建QA分类\n知识库相关背景知识介绍\n“知识库检索范围”文档：https://cloud.tencent.com/document/product/1759/112704\n“标签”文档：https://cloud.tencent.com/document/product/1759/112956",
       "input": "CreateQACateRequest",
       "name": "创建QA分类",
       "output": "CreateQACateResponse",
@@ -178,7 +178,7 @@
     "DescribeCallStatsGraph": {
       "document": "接口调用折线图",
       "input": "DescribeCallStatsGraphRequest",
-      "name": "接口调用折线图",
+      "name": "接口调用调用量统计",
       "output": "DescribeCallStatsGraphResponse",
       "status": "online"
     },
@@ -213,7 +213,7 @@
     "DescribeKnowledgeUsagePieGraph": {
       "document": "查询企业知识库容量饼图",
       "input": "DescribeKnowledgeUsagePieGraphRequest",
-      "name": "查询知识库容量饼图",
+      "name": "查询知识库容量分布统计",
       "output": "DescribeKnowledgeUsagePieGraphResponse",
       "status": "online"
     },
@@ -297,7 +297,7 @@
     "DescribeTokenUsageGraph": {
       "document": "接口调用token折线图",
       "input": "DescribeTokenUsageGraphRequest",
-      "name": "接口调用token折线图",
+      "name": "接口调用token调用量统计",
       "output": "DescribeTokenUsageGraphResponse",
       "status": "online"
     },
@@ -323,14 +323,14 @@
       "status": "online"
     },
     "ExportQAList": {
-      "document": "导出QA列表",
+      "document": "导出QA列表\n知识库相关背景知识介绍\n“知识库检索范围”文档：https://cloud.tencent.com/document/product/1759/112704\n“标签”文档：https://cloud.tencent.com/document/product/1759/112956",
       "input": "ExportQAListRequest",
       "name": "导出QA列表",
       "output": "ExportQAListResponse",
       "status": "online"
     },
     "ExportUnsatisfiedReply": {
-      "document": "导出不满意回复",
+      "document": "导出不满意回复\n知识库相关背景知识介绍\n“知识库检索范围”文档：https://cloud.tencent.com/document/product/1759/112704\n“标签”文档：https://cloud.tencent.com/document/product/1759/112956",
       "input": "ExportUnsatisfiedReplyRequest",
       "name": "导出不满意回复",
       "output": "ExportUnsatisfiedReplyResponse",
@@ -414,7 +414,7 @@
       "status": "online"
     },
     "GroupQA": {
-      "document": "QA分组",
+      "document": "用户将多个问答批量的分类到知识库的具体分类\n知识库相关背景知识介绍\n“知识库检索范围”文档：https://cloud.tencent.com/document/product/1759/112704\n“标签”文档：https://cloud.tencent.com/document/product/1759/112956",
       "input": "GroupQARequest",
       "name": "QA分组",
       "output": "GroupQAResponse",
@@ -491,7 +491,7 @@
       "status": "online"
     },
     "ListQACate": {
-      "document": "获取QA分类",
+      "document": "获取QA分类\n知识库相关背景知识介绍\n“知识库检索范围”文档：https://cloud.tencent.com/document/product/1759/112704\n“标签”文档：https://cloud.tencent.com/document/product/1759/112956",
       "input": "ListQACateRequest",
       "name": "获取QA分类",
       "output": "ListQACateResponse",
@@ -1032,6 +1032,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent输出配置",
+          "example": "无",
+          "member": "AgentOutputConfig",
+          "name": "AgentOutputConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "澄清询问配置",
+          "example": "无",
+          "member": "ClarificationConfig",
+          "name": "ClarificationConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1159,6 +1181,17 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工具参数",
+          "example": "query",
+          "member": "string",
+          "name": "ToolParam",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1615,6 +1648,45 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentOutputConfig": {
+      "document": "Agent输出配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出类型，1-文本 2-json 3-widget",
+          "example": "1",
+          "member": "int64",
+          "name": "OutputType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Json结构化输出参数列表",
+          "example": "无",
+          "member": "ParameterConfig",
+          "name": "StructuredOutputParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "widget id",
+          "example": "test-widget-id",
+          "member": "string",
+          "name": "WidgetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2534,6 +2606,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工具高级设置",
+          "example": "无",
+          "member": "ToolAdvanceConfig",
+          "name": "ToolAdvanceConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -4067,6 +4150,95 @@
       ],
       "type": "object"
     },
+    "ClarificationConfig": {
+      "document": "澄清询问配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出类型，1-文本 3-widget",
+          "example": "1",
+          "member": "int64",
+          "name": "OutputType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "澄清widget配置",
+          "example": "无",
+          "member": "ClarificationWidgetConfig",
+          "name": "WidgetConfigs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ClarificationWidgetConfig": {
+      "document": "澄清widget配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "widget id",
+          "example": "test-widget-id",
+          "member": "string",
+          "name": "WidgetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "澄清widget类型",
+          "example": "1",
+          "member": "int64",
+          "name": "ClarificationWidgetType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Widget名称",
+          "example": "widget-name",
+          "member": "string",
+          "name": "WidgetName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Widget预览",
+          "example": "widget-preview",
+          "member": "string",
+          "name": "WidgetPreview",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用该Widget作为澄清样式",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClassifyConfig": {
       "document": "标签提取配置",
       "members": [
@@ -4140,6 +4312,238 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Content": {
+      "document": "对话记录内容详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息内容类型\ntext：文本\nimage：图片\nfile：文件\noption_cards：选项卡\ncustom_params：用户自定义业务参数\nsandbox：云桌面\ncustom_variables：自定义输入参数\nweb_search: 网页搜索内容\nfile_collection：文件收集信息\nwidget：widget信息\nwidget_action：用户端widget动作信息",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文本内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QuoteInfo",
+          "name": "QuoteInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参考文献信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ContentReference",
+          "name": "References",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageInfoContent",
+          "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileInfoContent",
+          "name": "File",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "选项卡信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"选项1\",\"选项2\"]",
+          "member": "string",
+          "name": "OptionCards",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义业务参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"{\\\"name\\\":\\\"test\\\"}\"]",
+          "member": "string",
+          "name": "CustomParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"{\\\"name\\\":\\\"test\\\"}\"]",
+          "member": "string",
+          "name": "CustomVariables",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "沙盒信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SandboxContent",
+          "name": "Sandbox",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网页搜索内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WebSearchContent",
+          "name": "WebSearch",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件收集信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileCollection",
+          "name": "FileCollection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Widget信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Widget",
+          "name": "Widget",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Widget动作信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WidgetAction",
+          "name": "WidgetAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ContentReference": {
+      "document": "会话内容参考文献信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引用来源索引ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参考来源名称",
+          "example": "示例引文",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参考来源类型\n1：问答\n2：文档片段\n4：联网检索到的内容",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档片段参考信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DocReference",
+          "name": "DocRefer",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "问答参考信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QaReference",
+          "name": "QaRefer",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "联网检索内容参考信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WebSearchReference",
+          "name": "WebSearchRefer",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -4477,7 +4881,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID\n若要操作共享知识库，传KnowledgeBizId",
           "example": "1714970520775950336",
           "member": "string",
           "name": "BotBizId",
@@ -4495,7 +4899,7 @@
         },
         {
           "disabled": false,
-          "document": "分类名称\n",
+          "document": "创建的分类名称",
           "example": "分类一",
           "member": "string",
           "name": "Name",
@@ -4670,7 +5074,7 @@
         },
         {
           "disabled": false,
-          "document": "问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域",
+          "document": "问答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效\n默认值：应用内默认知识库为2，共享知识库为4。",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -5949,7 +6353,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "uin",
+          "document": "子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据",
           "example": "[\"uin:6000005624511\"]",
           "member": "string",
           "name": "UinAccount",
@@ -5976,7 +6380,7 @@
         },
         {
           "disabled": false,
-          "document": "子业务类型",
+          "document": "子业务类型，用于筛选不同业务场景的调用统计",
           "example": "\"biztype\"",
           "member": "string",
           "name": "SubBizType",
@@ -5993,7 +6397,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "开始时间戳, 单位为秒(废弃)",
           "example": "\"1754816440\"",
           "member": "string",
@@ -6002,7 +6406,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "结束时间戳, 单位为秒(废弃)",
           "example": "\"1754816440\"",
           "member": "string",
@@ -6039,7 +6443,7 @@
         },
         {
           "disabled": false,
-          "document": "空间id",
+          "document": "空间ID，用于限定查询范围。不填时查询所有空间的数据",
           "example": "space_1",
           "member": "string",
           "name": "SpaceId",
@@ -6048,7 +6452,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳, 单位为秒",
+          "document": "开始时间。Unix 时间戳，单位是秒，默认为空。",
           "example": "1754816440",
           "member": "int64",
           "name": "StatStartTime",
@@ -6057,7 +6461,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳, 单位为秒",
+          "document": "结束时间。Unix 时间戳，单位是秒，默认为空。",
           "example": "1754816440",
           "member": "int64",
           "name": "StatEndTime",
@@ -6676,7 +7080,7 @@
         },
         {
           "disabled": false,
-          "document": "文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域",
+          "document": "文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -6707,7 +7111,7 @@
         },
         {
           "disabled": false,
-          "document": "空间列表",
+          "document": "空间ID，用于限定查询范围。不填时查询所有空间的数据",
           "example": "space_1",
           "member": "string",
           "name": "SpaceId",
@@ -7191,7 +7595,7 @@
         },
         {
           "disabled": false,
-          "document": "问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "问答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -7201,7 +7605,7 @@
         },
         {
           "disabled": false,
-          "document": "问答关联的文档生效域",
+          "document": "问答关联的文档生效域:1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效.\n若问答未关联文档，则该字段值同问答生效域",
           "example": "1",
           "member": "int64",
           "name": "DocEnableScope",
@@ -7354,8 +7758,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
-          "example": "无",
+          "document": "应用ID。获取方法参看如何获取 [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)  ",
+          "example": "1727231073371148288",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -7363,8 +7767,8 @@
         },
         {
           "disabled": false,
-          "document": "发布详情",
-          "example": "无",
+          "document": "发布ID",
+          "example": "0",
           "member": "string",
           "name": "ReleaseBizId",
           "required": false,
@@ -7379,7 +7783,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "1700650168",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -7389,7 +7793,7 @@
         {
           "disabled": false,
           "document": "发布描述",
-          "example": "无",
+          "example": "第一次发布",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -7399,7 +7803,7 @@
         {
           "disabled": false,
           "document": "发布状态(1待发布 2发布中 3发布成功 4发布失败 5发布中(审核中) 6发布中(审核完成) 7发布失败(审核失败) 9发布暂停)",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -7409,7 +7813,7 @@
         {
           "disabled": false,
           "document": "发布状态描述",
-          "example": "无",
+          "example": "发布成功",
           "member": "string",
           "name": "StatusDesc",
           "output_required": false,
@@ -7831,7 +8235,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云主账号",
+          "document": "子账号标识列表，支持批量查询多个子账号。不填时查询主账号下所有子账号的汇总数据",
           "example": "[\"uin:11111111111\"]",
           "member": "string",
           "name": "UinAccount",
@@ -7857,7 +8261,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "开始时间戳, 单位为秒(废弃)",
           "example": "\"1754816440\"",
           "member": "string",
@@ -7866,7 +8270,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "结束时间戳, 单位为秒(废弃)",
           "example": "\"1754816440\"",
           "member": "string",
@@ -7876,7 +8280,7 @@
         },
         {
           "disabled": false,
-          "document": "应用id列表",
+          "document": "应用ID列表。不填时：若指定SpaceId则查该空间所有应用；否则查用户下所有应用",
           "example": "[\"appid\"]",
           "member": "string",
           "name": "AppBizIds",
@@ -7885,7 +8289,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)",
+          "document": "应用类型。可选值：knowledge_qa(知识问答)/plugin_parsing_qa(插件)/shared_knowledge(知识库)/evaluate_test(评测)。不填时查所有类型",
           "example": "knowledge_qa",
           "member": "string",
           "name": "AppType",
@@ -7903,7 +8307,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳, 单位为秒",
+          "document": "开始时间。Unix 时间戳，单位是秒，默认为空。",
           "example": "1754817316",
           "member": "int64",
           "name": "StatStartTime",
@@ -7912,7 +8316,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳, 单位为秒",
+          "document": "结束时间。Unix 时间戳，单位是秒，默认为空。",
           "example": "1754817316",
           "member": "int64",
           "name": "StatEndTime",
@@ -7969,7 +8373,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云主账号",
+          "document": "子账号标识列表，用于筛选指定子账号的统计数据，不填时查询主账号下所有子账号的汇总数据",
           "example": "[\"uin:6000005624511\"]",
           "member": "string",
           "name": "UinAccount",
@@ -8013,7 +8417,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "开始时间戳, 单位为秒(默认值0)(废弃)",
           "example": "\"7463235\"",
           "member": "string",
@@ -8022,7 +8426,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "结束时间戳, 单位为秒(默认值0， 必须大于开始时间戳)(废弃)",
           "example": "\"7463235\"",
           "member": "string",
@@ -8059,7 +8463,7 @@
         },
         {
           "disabled": false,
-          "document": "空间id",
+          "document": "空间ID，用于限定查询范围。不填时查询所有空间的数据",
           "example": "space1",
           "member": "string",
           "name": "SpaceId",
@@ -8068,8 +8472,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳, 单位为秒",
-          "example": "6000005624511",
+          "document": "开始时间。Unix 时间戳，单位是秒，默认为空。",
+          "example": "1758988800",
           "member": "int64",
           "name": "StatStartTime",
           "required": false,
@@ -8077,8 +8481,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳, 单位为秒",
-          "example": "6000005624511",
+          "document": "结束时间。Unix 时间戳，单位是秒，默认为空。",
+          "example": "1759075199",
           "member": "int64",
           "name": "StatEndTime",
           "required": false,
@@ -8223,7 +8627,7 @@
         },
         {
           "disabled": false,
-          "document": "回复ID，调用这个接口获得：[ListUnsatisfiedReply](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListUnsatisfiedReply) ",
+          "document": "回复ID",
           "example": "1996602817111898368",
           "member": "string",
           "name": "ReplyBizId",
@@ -8430,6 +8834,78 @@
         }
       ],
       "usage": "in"
+    },
+    "DocReference": {
+      "document": "文档类参考来源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档业务ID",
+          "example": "1982108829427482944",
+          "member": "uint64",
+          "name": "DocBizId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档片段参考ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1999472789655812224",
+          "member": "uint64",
+          "name": "ReferBizId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "讲师资料.txt",
+          "member": "string",
+          "name": "DocName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档所在知识库业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1999472789655812224",
+          "member": "uint64",
+          "name": "KnowledgeBizId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档所在知识库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认知识库",
+          "member": "string",
+          "name": "KnowledgeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DocSegment": {
       "document": "文档片段",
@@ -8659,7 +9135,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID\n若要操作共享知识库，传KnowledgeBizId",
           "example": "1714970520775950336",
           "member": "string",
           "name": "BotBizId",
@@ -8677,7 +9153,7 @@
         },
         {
           "disabled": false,
-          "document": "查询参数",
+          "document": "查询参数\nFilters.pageNumber范围是>0,0<Filters.pageSize<=200\nFilters.query用于内容检索，模糊匹配\nFilters.AcceptStatus默认值是0，表示不筛选，返回所有状态\nFilters.ReleaseStatus默认值是0，表示不筛选，返回所有状态\nFilters.Source默认值是0，表示不筛选，返回所有来源。表示来源(1 文档生成 2 批量导入 3 手动添加)。\nFilter.QueryType默认值是\"filename\"，表示查询类型。\nShowCurrCate表示，是否只展示当前分类的数据 0不是，1是",
           "example": "无",
           "member": "QAQuery",
           "name": "Filters",
@@ -8704,7 +9180,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID\n若要操作共享知识库，传KnowledgeBizId",
           "example": "1696822786072117248",
           "member": "string",
           "name": "BotBizId",
@@ -8713,7 +9189,7 @@
         },
         {
           "disabled": false,
-          "document": "勾选导出ID列表",
+          "document": "勾选导出不满意回复的ID列表",
           "example": "[\"29\"]",
           "member": "string",
           "name": "ReplyBizIds",
@@ -8773,6 +9249,34 @@
           "name": "EChartsInfo",
           "output_required": false,
           "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FileCollection": {
+      "document": "文件收集信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最大上传文件的数量",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxFileCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的上传文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"pnd\",\"txt\"]",
+          "member": "string",
+          "name": "SupportedFileTypes",
+          "output_required": false,
+          "required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -8844,6 +9348,67 @@
         }
       ],
       "usage": "out"
+    },
+    "FileInfoContent": {
+      "document": "文件信息内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实时文档解析接口返回的 DocBizId",
+          "example": "1982108829427482944",
+          "member": "uint64",
+          "name": "DocBizId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "讲师资料.txt",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "txt",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "FileSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件 URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://sample.com",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Filters": {
       "document": "不满意回复检索过滤",
@@ -9489,7 +10054,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型",
+          "document": "接入类型， 5-API 访客，目前仅支持传5",
           "example": "5",
           "member": "uint64",
           "name": "Type",
@@ -9507,7 +10072,7 @@
         },
         {
           "disabled": false,
-          "document": "会话sessionid",
+          "document": "会话sessionid。",
           "example": "27-ec29-441f-96c9-ec4fe463058c",
           "member": "string",
           "name": "SessionId",
@@ -9525,7 +10090,7 @@
         },
         {
           "disabled": false,
-          "document": "场景, 体验: 1; 正式: 2",
+          "document": "场景, 体验: 1; 正式: 2 。\n\n体验用于创建应用测试的时候使用，正式是应用发布后对外的时候使用",
           "example": "1",
           "member": "uint64",
           "name": "Scene",
@@ -9534,7 +10099,7 @@
         },
         {
           "disabled": false,
-          "document": "最后一条记录ID， 消息从后往前获取\n\nMidRecordId与LastRecordId只能选择一个\n",
+          "document": "最后一条记录ID， 消息从后往前获取\n\nMidRecordId与LastRecordId只能选择一个\n\nLastRecordId 和MidRecordId都不填的时候，默认从最新的消息ID开始取。",
           "example": "GqT_20250908_17005",
           "member": "string",
           "name": "LastRecordId",
@@ -9543,7 +10108,7 @@
         },
         {
           "disabled": false,
-          "document": "传该值，代表拉取该记录id的前后总共count条消息记录\n\nMidRecordId与LastRecordId只能选择一个\n",
+          "document": "传该值，代表拉取该记录id的前后总共count条消息记录\n\nMidRecordId与LastRecordId只能选择一个\n\nLastRecordId 和MidRecordId都不填的时候，默认从最新的消息Id开始取\n",
           "example": "MdM_202",
           "member": "string",
           "name": "MidRecordId",
@@ -9837,7 +10402,7 @@
         },
         {
           "disabled": false,
-          "document": "访客ID（外部输入，建议唯一，标识当前接入会话的用户）\n长度限制： string(64)",
+          "document": "访客ID（外部输入，建议唯一，标识当前接入会话的用户）\n长度限制： string(64)，即最长不超过64个字符",
           "example": "K18PFhu16oZe0rnxesOomORA7omXwrri",
           "member": "string",
           "name": "VisitorBizId",
@@ -9845,7 +10410,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。",
           "example": "无",
           "member": "GetWsTokenReq_Label",
@@ -9978,7 +10543,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID\n若要操作共享知识库，传KnowledgeBizId",
           "example": "1714970520775950336",
           "member": "string",
           "name": "BotBizId",
@@ -10138,6 +10703,23 @@
         }
       ],
       "type": "object"
+    },
+    "ImageInfoContent": {
+      "document": "图片信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片文件链接",
+          "example": "http://sample.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "InputBoxConfig": {
       "document": "输入框配置",
@@ -12594,7 +13176,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID\n若要操作共享知识库，传KnowledgeBizId",
           "example": "1951173265057644542",
           "member": "string",
           "name": "BotBizId",
@@ -13615,7 +14197,7 @@
         {
           "disabled": false,
           "document": "版本ID",
-          "example": "无",
+          "example": "1730138654150348800",
           "member": "string",
           "name": "ReleaseBizId",
           "output_required": false,
@@ -13625,7 +14207,7 @@
         {
           "disabled": false,
           "document": "发布人",
-          "example": "无",
+          "example": "zhangsan",
           "member": "string",
           "name": "Operator",
           "output_required": false,
@@ -13635,7 +14217,7 @@
         {
           "disabled": false,
           "document": "发布描述",
-          "example": "无",
+          "example": "修改检索配置",
           "member": "string",
           "name": "Desc",
           "output_required": false,
@@ -13645,7 +14227,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "1701332268",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -13655,7 +14237,7 @@
         {
           "disabled": false,
           "document": "发布状态，1：待发布，2：发布中，3：发布成功，5：发布失败",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -13665,7 +14247,7 @@
         {
           "disabled": false,
           "document": "发布状态描述",
-          "example": "无",
+          "example": "发布成功",
           "member": "string",
           "name": "StatusDesc",
           "output_required": false,
@@ -13675,7 +14257,7 @@
         {
           "disabled": false,
           "document": "失败原因",
-          "example": "无",
+          "example": "配置不合法",
           "member": "string",
           "name": "Reason",
           "output_required": false,
@@ -13685,7 +14267,7 @@
         {
           "disabled": false,
           "document": "发布成功数",
-          "example": "无",
+          "example": "8",
           "member": "int64",
           "name": "SuccessCount",
           "output_required": false,
@@ -13695,11 +14277,31 @@
         {
           "disabled": false,
           "document": "发布失败数",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "FailCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本号，格式是 v{date}{time}",
+          "example": "v20251225120056",
+          "member": "string",
+          "name": "ReleaseVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可还原",
+          "example": "true",
+          "member": "bool",
+          "name": "CanRollback",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -13829,8 +14431,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
-          "example": "无",
+          "document": "应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）",
+          "example": "1714970520775950336",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -13838,8 +14440,8 @@
         },
         {
           "disabled": false,
-          "document": "页码",
-          "example": "无",
+          "document": "页码(必须大于0)",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -13847,8 +14449,8 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
-          "example": "无",
+          "document": "每页数量（取值范围为1-200）",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -13863,7 +14465,7 @@
         {
           "disabled": false,
           "document": "发布列表数量",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Total",
           "output_required": false,
@@ -14690,8 +15292,52 @@
       "members": [
         {
           "disabled": false,
+          "document": "超参名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "temperature",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认值",
+          "example": "1",
+          "member": "string",
+          "name": "DefaultValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "枚举值",
+          "example": "[\"disable\",\"high\"]",
+          "member": "string",
+          "name": "EnumValues",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "默认值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3.2",
           "member": "float",
           "name": "Default",
           "output_required": false,
@@ -14702,7 +15348,7 @@
         {
           "disabled": false,
           "document": "最小值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2.3",
           "member": "float",
           "name": "Min",
           "output_required": false,
@@ -14713,23 +15359,12 @@
         {
           "disabled": false,
           "document": "最大值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3.4",
           "member": "float",
           "name": "Max",
           "output_required": false,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "超参名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Name",
-          "output_required": false,
-          "required": false,
-          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14836,6 +15471,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "深度思考值\ndisabled\nenabled\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "enabled",
+          "member": "string",
+          "name": "DeepThinking",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "效果 disabled low medium high\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "disabled",
+          "member": "string",
+          "name": "ReasoningEffort",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -14845,8 +15502,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 ID",
-          "example": "无",
+          "document": "应用ID, 获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)。",
+          "example": "1963140753734418240",
           "member": "string",
           "name": "AppBizId",
           "required": true,
@@ -14854,8 +15511,8 @@
         },
         {
           "disabled": false,
-          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取",
-          "example": "无",
+          "document": "应用类型；\"knowledge_qa\" 知识问答应用（包含标准模式 单工作流 Multi-Agent 等模式）",
+          "example": "knowledge_qa",
           "member": "string",
           "name": "AppType",
           "required": true,
@@ -14897,7 +15554,7 @@
         {
           "disabled": false,
           "document": "应用App\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1963140753734418240",
           "member": "string",
           "name": "AppBizId",
           "output_required": false,
@@ -14907,7 +15564,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2025-05-13 10:30:00",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -15281,7 +15938,7 @@
         },
         {
           "disabled": false,
-          "document": "文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域",
+          "document": "文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。\n若不传，则不会修改文档生效域。",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -15524,7 +16181,7 @@
         },
         {
           "disabled": false,
-          "document": "问答生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域",
+          "document": "问答生效范围: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。若不传该字段，则不修改问答的生效范围。",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -15569,7 +16226,7 @@
         },
         {
           "disabled": false,
-          "document": "拒答问题来源的数据源唯一id, 通过[ListRejectedQuestion](https://capi.woa.com/api/detail?product=lke&version=2023-11-30&action=ListRejectedQuestion)接口获取\n\n\n",
+          "document": "拒答问题来源的数据源唯一id, 通过调用ListRejectedQuestion接口获取\n\n\n",
           "example": "1732953678087585792",
           "member": "string",
           "name": "RejectedBizId",
@@ -15906,6 +16563,26 @@
           "example": "无",
           "member": "WorkflowInfo",
           "name": "WorkFlow",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Widget信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Widget",
+          "name": "Widgets",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Widget动作信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WidgetAction",
+          "name": "WidgetAction",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -16472,6 +17149,45 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OutputWidgetConfig": {
+      "document": "Widget输出参数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "widget id",
+          "example": "test-widget-id",
+          "member": "string",
+          "name": "WidgetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "widget名字",
+          "example": "test-widget-name",
+          "member": "string",
+          "name": "WidgetName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "展示结果",
+          "example": "无",
+          "member": "WidgetParam",
+          "name": "WidgetParam",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -17103,6 +17819,56 @@
         }
       ],
       "usage": "in"
+    },
+    "QaReference": {
+      "document": "问答对参考信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "问答业务ID",
+          "example": "1982108829427482944",
+          "member": "uint64",
+          "name": "QaBizId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档片段参考ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1999472789655812224",
+          "member": "uint64",
+          "name": "ReferBizId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "问答所在知识库业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1972219265921606848",
+          "member": "uint64",
+          "name": "KnowledgeBizId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "问答所在知识库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认知识库",
+          "member": "string",
+          "name": "KnowledgeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "QuoteInfo": {
       "document": "搜索引擎参考来源索引",
@@ -17983,8 +18749,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
-          "example": "无",
+          "document": "应用ID（获取方法参看如何获取   [BotBizId](https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa)）",
+          "example": "1798610639288008723",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -17992,8 +18758,8 @@
         },
         {
           "disabled": false,
-          "document": "发布业务ID",
-          "example": "无",
+          "document": "发布单ID（可以通过[ListRelease](https://cloud.tencent.com/document/product/1759/105077)获得）",
+          "example": "179861063928800",
           "member": "string",
           "name": "ReleaseBizId",
           "required": true,
@@ -18070,6 +18836,45 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SandboxContent": {
+      "document": "沙盒信息内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙盒的URL地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://sample.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "沙盒通过浏览器打开的URL地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://sample.com",
+          "member": "string",
+          "name": "DisplayUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "沙盒输出内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"content\":\"test\"}",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -18269,7 +19074,7 @@
         },
         {
           "disabled": false,
-          "document": "文档生效域: 1-停用；2-仅开发域；3-仅发布域；4-全域",
+          "document": "文档生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效\n默认值：应用内默认知识库为2，共享知识库为4。",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -19232,6 +20037,67 @@
       ],
       "usage": "both"
     },
+    "ToolAdvanceConfig": {
+      "document": "工具高级设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工具调用结果是否直接返回给用户",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableDirectResultReturn",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出样式 1-文本 2-json 3-widget",
+          "example": "1",
+          "member": "int64",
+          "name": "OutputType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始结构化JSON输出",
+          "example": "outputs",
+          "member": "string",
+          "name": "RawStructuredOutput",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义文本输出，多行展示",
+          "example": "text outputs",
+          "member": "string",
+          "name": "CustomTextOutputs",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Widget输出配置",
+          "example": "无",
+          "member": "OutputWidgetConfig",
+          "name": "OutputWidgetConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UnsatisfiedReply": {
       "document": "不满意回复",
       "members": [
@@ -19836,6 +20702,223 @@
       ],
       "usage": "both"
     },
+    "WebSearchContent": {
+      "document": "网页搜索内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网页搜索结果，json格式的string",
+          "example": "[{\"title\":\"测试页面\",\"link\":\"https://sample.com\",\"snippet\":\"这是一个测试页面\",\"position\":1}]",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WebSearchReference": {
+      "document": "联网检索内容参考详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网页URL",
+          "example": "http://sample.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Widget": {
+      "document": "对话端Widget结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Widget配置ID\n",
+          "example": "96317cc9-9628-82d5-8cb2-6232635d4ef2\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "member": "string",
+          "name": "WidgetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Widget实例ID",
+          "example": "210b4ce2-680a-87c7-eb40-2f3c9d49c456\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "member": "string",
+          "name": "WidgetRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Widget状态数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"message\":\"widget\"}",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Widget位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Position",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Base64编码的Widget信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eyJpZCI6ImU3Y2VmZjE3LTlhODEtNDJkZS05N2Q",
+          "member": "string",
+          "name": "EncodedWidget",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户最近一次提交的payload\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"message\":\"widget\"}",
+          "member": "string",
+          "name": "Payload",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WidgetAction": {
+      "document": "对话端Widget动作提交结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Widget配置ID",
+          "example": "96317cc9-9628-82d5-8cb2-6232635d4ef2",
+          "member": "string",
+          "name": "WidgetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Widget实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "210b4ce2-680a-87c7-eb40-2f3c9d49c456",
+          "member": "string",
+          "name": "WidgetRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Widget动作",
+          "example": "sys.chat",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Widget动作提交的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"message\":\"widget\"}",
+          "member": "string",
+          "name": "Payload",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WidgetParam": {
+      "document": "Widget参数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称",
+          "example": "param",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数类型",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子参数",
+          "example": "无",
+          "member": "WidgetParam",
+          "name": "SubParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认值, Input未指定时，使用该值",
+          "example": "value",
+          "member": "string",
+          "name": "DefaultValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入的值",
+          "example": "无",
+          "member": "AgentInput",
+          "name": "Input",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "WorkFlowSummary": {
       "document": "工作流程调试信息",
       "members": [
@@ -19937,6 +21020,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流多气泡输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Content",
+          "name": "Contents",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -20008,6 +21102,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流多气泡输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Content",
+          "name": "Contents",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

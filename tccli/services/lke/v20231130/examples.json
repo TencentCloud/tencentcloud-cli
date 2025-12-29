@@ -51,7 +51,7 @@
     "CreateQACate": [
       {
         "document": "新建QA分类",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQACate\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"ParentBizId\": \"1733053612030808064\",\n    \"Name\": \"哈哈哈哈\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQACate\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"ParentBizId\": \"1733053612030808064\",\n    \"Name\": \"创建QA分类\"\n}",
         "output": "{\n    \"Response\": {\n        \"CanAdd\": true,\n        \"CanDelete\": true,\n        \"CanEdit\": true,\n        \"CateBizId\": \"1734144647474577408\",\n        \"RequestId\": \"39db6689-ceab-4ae7-87a9-f926774255d7\"\n    }\n}",
         "title": "新建QA分类"
       }
@@ -276,7 +276,7 @@
       {
         "document": "查询最近一次发布详情",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRelease\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1727231073371148288\",\n    \"ReleaseBizId\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"1700650168\",\n        \"Description\": \"\",\n        \"RequestId\": \"bba35062-8508-4cb5-b5c7-526370171ab0\",\n        \"Status\": 3,\n        \"StatusDesc\": \"发布成功\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"1700650168\",\n        \"Description\": \"第一次发布\",\n        \"RequestId\": \"bba35062-8508-4cb5-b5c7-526370171ab0\",\n        \"Status\": 3,\n        \"StatusDesc\": \"发布成功\"\n    }\n}",
         "title": "查询发布详情"
       }
     ],

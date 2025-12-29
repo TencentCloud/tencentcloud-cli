@@ -483,6 +483,13 @@
       "output": "PausePredictiveDialingCampaignResponse",
       "status": "online"
     },
+    "PlaySoundCall": {
+      "document": "对与座席通话中的会话，进行放音",
+      "input": "PlaySoundCallRequest",
+      "name": "通话中放音",
+      "output": "PlaySoundCallResponse",
+      "status": "online"
+    },
     "ResetExtensionPassword": {
       "document": "重置话机注册密码",
       "input": "ResetExtensionPasswordRequest",
@@ -8802,6 +8809,60 @@
       ],
       "usage": "out"
     },
+    "PlaySoundCallRequest": {
+      "document": "PlaySoundCall请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400692008",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "f3be95fb-2786-466a-beab-5e3d8cb76272",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音频文件 ID，参见管理端-电话客服-放音文件管理",
+          "example": "27500",
+          "member": "int64",
+          "name": "FileId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "放音次数，默认 1 次",
+          "example": "1",
+          "member": "int64",
+          "name": "PlayTimes",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "PlaySoundCallResponse": {
+      "document": "PlaySoundCall返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResetExtensionPasswordRequest": {
       "document": "ResetExtensionPassword请求参数结构体",
       "members": [
@@ -10633,6 +10694,26 @@
           "name": "VoicemailAsrURL",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果是智能体相关通话，这里是智能体 ID",
+          "example": "9527",
+          "member": "int64",
+          "name": "AIAgentId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果是智能体相关通话，这里是智能体名称",
+          "example": "新款智能体销售",
+          "member": "string",
+          "name": "AIAgentName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

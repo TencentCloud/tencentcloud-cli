@@ -115,7 +115,7 @@
     "ModifyNodePool": [
       {
         "document": "用户更新节点池",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-6sukkvyx\",\n    \"Native\": {\n        \"EnableAutoscaling\": true,\n        \"Scaling\": {\n            \"CreatePolicy\": \"ZonePriority\",\n            \"MaxReplicas\": 1,\n            \"MinReplicas\": 0\n        }\n    },\n    \"NodePoolId\": \"np-00igpu9y\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-6sukkvyx\",\n    \"Native\": {\n        \"DeletePolicy\": \"Newest\",\n        \"EnableAutoscaling\": true,\n        \"Scaling\": {\n            \"CreatePolicy\": \"ZonePriority\",\n            \"MaxReplicas\": 1,\n            \"MinReplicas\": 0\n        }\n    },\n    \"NodePoolId\": \"np-00igpu9y\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd42c72-dd16-46bc-9d1e-b4020c59fab8\"\n    }\n}",
         "title": "更新 TKE 节点池"
       }

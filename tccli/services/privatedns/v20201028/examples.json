@@ -170,9 +170,9 @@
     ],
     "DescribeCreateRecordListResult": [
       {
-        "document": "",
+        "document": "查询批量添加解析记录结果",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCreateRecordListResult\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        \"zone-12345678\",\n        \"zone-abcdefgh\"\n    ],\n    \"RecordsInfo\": [\n        {\n            \"RecordType\": \"A\",\n            \"SubDomain\": \"b\",\n            \"RecordValue\": \"3.3.3.3\",\n            \"Weight\": 100,\n            \"TTL\": 600\n        },\n        {\n            \"RecordType\": \"CNAME\",\n            \"SubDomain\": \"www\",\n            \"RecordValue\": \"www.baidu.com\",\n            \"Weight\": 100,\n            \"TTL\": 600\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordsResult\": [\n            {\n                \"RecordsStatus\": [\n                    {\n                        \"Status\": 0,\n                        \"Message\": \"当前记录类型不支持权重\",\n                        \"RecordType\": \"A\",\n                        \"SubDomain\": \"b\",\n                        \"RecordValue\": \"3.3.3.3\",\n                        \"Weight\": 0,\n                        \"TTL\": 0\n                    }\n                ],\n                \"Domain\": \"test.com\",\n                \"Remark\": \"test\",\n                \"ZoneId\": \"zone-abs2dfs2\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordsResult\": [\n            {\n                \"RecordsStatus\": [\n                    {\n                        \"Status\": 0,\n                        \"Message\": \"当前记录类型不支持权重\",\n                        \"RecordType\": \"A\",\n                        \"SubDomain\": \"b\",\n                        \"RecordValue\": \"3.3.3.3\",\n                        \"Weight\": 0,\n                        \"TTL\": 0\n                    }\n                ],\n                \"Domain\": \"privatedns.com\",\n                \"Remark\": \"privatedns\",\n                \"ZoneId\": \"zone-abs2dfs2\"\n            }\n        ]\n    }\n}",
         "title": "查询批量添加解析记录结果"
       }
     ],
@@ -235,7 +235,7 @@
     "DescribePrivateZoneList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateZoneList\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateZoneList\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a92efb27-74e6-462a-9b92-c836468eb111\",\n        \"TotalCount\": 22,\n        \"PrivateZoneSet\": [\n            {\n                \"ZoneId\": \"zone-e1g2senm\",\n                \"OwnerUin\": 100000123998,\n                \"Domain\": \"b.ac.cn\",\n                \"CreatedOn\": \"2022-11-14 16:42:58\",\n                \"UpdatedOn\": \"2022-11-14 16:42:59\",\n                \"RecordCount\": 0,\n                \"Remark\": \"tag\",\n                \"VpcSet\": [\n                    {\n                        \"UniqVpcId\": \"vpc-39kkc543\",\n                        \"Region\": \"ap-taipei\"\n                    }\n                ],\n                \"AccountVpcSet\": [],\n                \"Status\": \"ENABLED\",\n                \"DnsForwardStatus\": \"ENABLED\",\n                \"CnameSpeedupStatus\": \"ENABLED\",\n                \"Tags\": [],\n                \"IsCustomTld\": false,\n                \"ForwardRuleName\": \"\",\n                \"ForwardRuleType\": \"\",\n                \"ForwardAddress\": \"\",\n                \"EndPointName\": \"\"\n            }\n        ]\n    }\n}",
         "title": "查询私有域详情列表"
       }
@@ -306,16 +306,16 @@
     ],
     "ModifyPrivateZoneRecord": [
       {
-        "document": "修改A记录",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-ewqw2131\",\n    \"RecordId\": \"289\",\n    \"RecordType\": \"A\",\n    \"SubDomain\": \"@\",\n    \"RecordValue\": \"8.8.8.8\",\n    \"TTL\": 600,\n    \"Weight\": \"100\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6f4fef6-8a3c-e2ee-792856f06fa696da\"\n    }\n}",
-        "title": "修改私有域解析记录（A记录）"
-      },
-      {
         "document": "修改MX记录",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-mao3y9jo\",\n    \"SubDomain\": \"mail\",\n    \"RecordType\": \"MX\",\n    \"RecordValue\": \"stmp.qq.com\",\n    \"TTL\": 300,\n    \"MX\": 10,\n    \"RecordId\": \"16125\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"660006f4-8531-46f0-a2ba-05daf4e7932e\"\n    }\n}",
         "title": "修改私有域解析记录（MX记录）"
+      },
+      {
+        "document": "修改A记录",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-ewqw2131\",\n    \"RecordId\": \"289\",\n    \"RecordType\": \"A\",\n    \"SubDomain\": \"@\",\n    \"RecordValue\": \"8.8.8.8\",\n    \"TTL\": 600,\n    \"Weight\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6f4fef6-8a3c-e2ee-792856f06fa696da\"\n    }\n}",
+        "title": "修改私有域解析记录（A记录）"
       }
     ],
     "ModifyPrivateZoneVpc": [

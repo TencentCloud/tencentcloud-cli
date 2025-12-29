@@ -2185,6 +2185,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容忍\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Toleration",
+          "name": "Tolerations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5156,7 +5167,7 @@
         {
           "disabled": false,
           "document": "用户所有的标签键列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"\\u6d4b\\u8bd5\\u4e00\\u4e0b\",\"alex_test\",\"beckwuxingjia\",\"ghghghg\",\"tag_auth_test\",\"test\",\"beckwu\",\"emr\",\"lg\",\"bk\"]",
+          "example": "[\"alex_test\",\"beckwuxingjia\"]",
           "member": "string",
           "name": "TagKeys",
           "output_required": true,
@@ -6918,7 +6929,7 @@
           "example": "JobFlowFinish",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6928,7 +6939,7 @@
           "example": "无",
           "member": "JobResult",
           "name": "Details",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7949,7 +7960,7 @@
         {
           "disabled": false,
           "document": "'配置状态，-2：配置失败，-1:配置过期，1：已同步', -99 '全部'",
-          "example": "null",
+          "example": "-99",
           "member": "int64",
           "name": "ConfStatus",
           "required": false,
@@ -7984,7 +7995,7 @@
         },
         {
           "disabled": false,
-          "document": "服务组件名称，都是大写例如YARN",
+          "document": "服务组件名称应采用全大写形式（例如：YARN），api调用时须与 ServiceGroupType 在两者之中任选其一并保证必填。",
           "example": "\"YARN\"",
           "member": "string",
           "name": "ServiceName",
@@ -8047,7 +8058,7 @@
         {
           "disabled": false,
           "document": "集群所有节点的别名序列化",
-          "example": "null",
+          "example": "eyJjb21tb24iOiJjb21tb24iLCJjb3JlIjoiY29yZSIsIm1hc3RlciI6Im1hc3RlciIsInRiOiJ0YXNrIn0=",
           "member": "string",
           "name": "AliasInfo",
           "output_required": true,
@@ -8057,7 +8068,7 @@
         {
           "disabled": false,
           "document": "支持的FlagNode列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "[ \t\t\"master\", \t\t\"core\", \t\t\"task\", \t\t\"common\", \t\t\"router\" \t] ",
           "member": "string",
           "name": "SupportNodeFlagFilterList",
           "output_required": true,
@@ -15868,6 +15879,34 @@
       ],
       "usage": "both"
     },
+    "OtherAccountInfo": {
+      "document": "其他账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "其他账号UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700000446533",
+          "member": "string",
+          "name": "OtherUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "其他账号授权角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EMR-CROSS-ACCOUNT-ROLE",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "OutterResource": {
       "document": "资源详情",
       "members": [
@@ -16389,7 +16428,7 @@
         {
           "disabled": false,
           "document": "Pod节点数据目录挂载信息。",
-          "example": "[\"/data\"]",
+          "example": "无",
           "member": "PodVolume",
           "name": "PodVolumes",
           "output_required": true,
@@ -16450,6 +16489,17 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其他账号授权信息",
+          "example": "无",
+          "member": "OtherAccountInfo",
+          "name": "OtherAccountInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -21461,6 +21511,67 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Toleration": {
+      "document": "Tolerations",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键",
+          "example": "key1",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "value1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作符",
+          "example": "Equal",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "污点排斥效果",
+          "example": "NoSchedule",
+          "member": "string",
+          "name": "Effect",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "驱逐等待时间",
+          "example": "300",
+          "member": "int64",
+          "name": "TolerationSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

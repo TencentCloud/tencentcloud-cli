@@ -3,8 +3,8 @@
     "ManageIPPortraitRisk": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ManageIPPortraitRisk\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"42cd52a1-****-****-81c1-f40266b1dde6\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ManageIPPortraitRisk\n<公共请求参数>\n\n{\n    \"PostTime\": 1766633688,\n    \"BusinessSecurityData\": {\n        \"UserIp\": \"123.***.**.2\",\n        \"Channel\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"RiskScore\": 0,\n                \"RiskType\": [],\n                \"UserIp\": \"123.***.**.2\"\n            }\n        },\n        \"RequestId\": \"42cd52a1-****-****-81c1-f40266b1dde6\"\n    }\n}",
         "title": " IP风险查询接口"
       }
     ]

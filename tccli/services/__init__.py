@@ -218,6 +218,9 @@ SERVICE_VERSIONS = {
     "cloudhsm": [
         "2019-11-12"
     ],
+    "cloudmate": [
+        "2025-10-30"
+    ],
     "cloudstudio": [
         "2023-05-08"
     ],

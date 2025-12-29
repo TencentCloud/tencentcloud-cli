@@ -23769,7 +23769,7 @@
           "example": "cynosdbmysql-proxy-lti34611",
           "member": "string",
           "name": "ProxyGroupId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],

@@ -1320,6 +1320,50 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "3.0 Workflow 完成时间（周期）告警策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "TimeOutStrategyInfo",
+          "name": "WorkflowCompletionTimeCycleExtInfo",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流执行触发告警条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "WorkflowExecutionTrigger",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流执行失败告警条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "WorkflowExecutionFailureTrigger",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流执行成功告警条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "WorkflowExecutionSuccessTrigger",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -17721,6 +17765,39 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "秒（用于 Spark Streaming 策略）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Second",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "次数（用于 Spark Streaming 重试次数超限策略，ruleType=10）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Times",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警触发频率（用于 Spark Streaming 策略 ruleType=8/9/10）\n         * 单位：分钟，范围：5-1440\n         * 告警触发后，在该时间内暂停检测，避免告警风暴\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "AlarmTriggerFrequency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

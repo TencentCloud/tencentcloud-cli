@@ -7618,7 +7618,7 @@
         {
           "disabled": false,
           "document": "引擎id",
-          "example": "02345495-cfe0-461c-8c3d-5715d03feda4",
+          "example": "025495-cfe0-461c-8c3d-5715d03feda4",
           "member": "string",
           "name": "DataEngineId",
           "output_required": true,
@@ -8097,6 +8097,83 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU 信息",
+          "example": "无",
+          "member": "GPUInfo",
+          "name": "GPUInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU 使用量",
+          "example": "1",
+          "member": "int64",
+          "name": "EngineResourceUsedGPU",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU 总规格",
+          "example": "1",
+          "member": "int64",
+          "name": "GPUTotalSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU 机型",
+          "example": "sv",
+          "member": "string",
+          "name": "InstanceModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点数量",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎规格，包含负载弹性或分时弹性",
+          "example": "16",
+          "member": "uint64",
+          "name": "SizeWithElastic",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大弹性值，包含负载弹性或分时弹性",
+          "example": "16",
+          "member": "uint64",
+          "name": "MaxElasticSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -15893,6 +15970,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分时弹性上限",
+          "example": "16",
+          "member": "int64",
+          "name": "ElasticLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -16243,6 +16331,100 @@
         }
       ],
       "usage": "in"
+    },
+    "GPUInfo": {
+      "document": "GPU 机型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "sv_dlc_gpu_gn10xp_10cu_1v100_32g",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "GN10P",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cu",
+          "example": "16",
+          "member": "int64",
+          "name": "CU",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gpu 机型",
+          "example": "v100",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Num",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "显存",
+          "example": "16",
+          "member": "int64",
+          "name": "GPUMemory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "GN10Xp.2XLARGE40",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "售卖情况（1-缺货，2-低库存，3-充足）",
+          "example": "",
+          "member": "int64",
+          "name": "SaleStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "GatewayInfo": {
       "document": "网关基础信息，包括id，名称，规格和状态",
@@ -20539,7 +20721,7 @@
         {
           "disabled": false,
           "document": "调度日期：WEEKLY传：1~7； MONTHLY传:1~31；其它类型不传",
-          "example": "1",
+          "example": "[1]",
           "member": "int64",
           "name": "ScheduleDays",
           "output_required": false,
@@ -20561,7 +20743,7 @@
         {
           "disabled": false,
           "document": "弹性伸缩计划",
-          "example": "复杂类型",
+          "example": "无",
           "member": "ElasticPlan",
           "name": "ElasticPlans",
           "output_required": false,
@@ -20906,6 +21088,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义高级参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WrittenAdvancePolicy",
+          "name": "AdvancePolicy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -21033,6 +21226,45 @@
         }
       ],
       "usage": "in"
+    },
+    "SortOrder": {
+      "document": "合并策略sort类型的规则定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "sort的数据表列名称",
+          "example": "id",
+          "member": "string",
+          "name": "Column",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "按照升序或者降序进行排序",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortDirection",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "null值放在开头或者末尾",
+          "example": "NULLS FIRST",
+          "member": "string",
+          "name": "NullOrder",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SparkJobInfo": {
       "document": "spark作业详情。",
@@ -26838,6 +27070,133 @@
         }
       ],
       "usage": "out"
+    },
+    "WrittenAdvancePolicy": {
+      "document": "Smart Optimizer高级参数配置数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用合并",
+          "example": "enable",
+          "member": "string",
+          "name": "CompactEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用历史数据清理",
+          "example": "enable",
+          "member": "string",
+          "name": "DeleteEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合并最新文件数量",
+          "example": "2",
+          "member": "int64",
+          "name": "MinInputFiles",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合并文件目录文件大小",
+          "example": "128",
+          "member": "int64",
+          "name": "TargetFileSizeBytes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保留过期时间的快照数量",
+          "example": "2",
+          "member": "int64",
+          "name": "RetainLast",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照过期时间",
+          "example": "2",
+          "member": "int64",
+          "name": "BeforeDays",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照过期执行周期",
+          "example": "600",
+          "member": "int64",
+          "name": "ExpiredSnapshotsIntervalMin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "移除孤立文件执行周期",
+          "example": "1400",
+          "member": "int64",
+          "name": "RemoveOrphanIntervalMin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启COW表合并",
+          "example": "enable",
+          "member": "string",
+          "name": "CowCompactEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件合并策略",
+          "example": "binpack",
+          "member": "string",
+          "name": "CompactStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "sort合并策略的规则定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SortOrder",
+          "name": "SortOrders",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

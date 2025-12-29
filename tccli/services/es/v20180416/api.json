@@ -6508,6 +6508,42 @@
           "name": "TaskTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "HuggingFace模型名称",
+          "example": "[\"BAAI/bge-base-zh-v1.5\"]",
+          "member": "string",
+          "name": "HuggingFaceModelNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型描述",
+          "example": "bge-v2-m3",
+          "member": "string",
+          "name": "ModelDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型来源：UserModel、HuggingFace和PlatformModel",
+          "example": "PlatformModel",
+          "member": "string",
+          "name": "ModelSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已上传的模型路径",
+          "example": "[\"/UserModels/common/bge-reranker-v2-m3.tar.gz\"]",
+          "member": "string",
+          "name": "UploadedCosPaths",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

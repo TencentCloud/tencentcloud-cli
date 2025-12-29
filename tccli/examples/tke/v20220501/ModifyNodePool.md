@@ -7,6 +7,7 @@ Input:
 ```
 tccli tke ModifyNodePool --cli-unfold-argument  \
     --ClusterId cls-6sukkvyx \
+    --Native.DeletePolicy Newest \
     --Native.EnableAutoscaling True \
     --Native.Scaling.CreatePolicy ZonePriority \
     --Native.Scaling.MaxReplicas 1 \

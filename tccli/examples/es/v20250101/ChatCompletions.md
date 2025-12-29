@@ -41,8 +41,8 @@ Output:
                 "Url": "https://m.toutiao.com/video/7340170115901932086/?upstream_biz=toutiao_pc",
                 "Time": "2024-02-27",
                 "Content": "大模型(Large Model)是AI人工智能领域中的一种重要模型,通常指的是参数量非常大、数据量也非常大的深度学习模型.大模型通常由数百万到数十亿的参数组成,需要大量的数据和计算资源进行训练和推理.",
-                "ChunkIndex": 0,
-                "Score": 0
+                "ChunkIndex": "0",
+                "Score": "0"
             }
         ]
     }

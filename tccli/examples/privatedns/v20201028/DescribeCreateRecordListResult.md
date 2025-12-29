@@ -1,6 +1,6 @@
 **Example 1: 查询批量添加解析记录结果**
 
-
+查询批量添加解析记录结果
 
 Input: 
 
@@ -37,8 +37,8 @@ Output:
                         "TTL": 0
                     }
                 ],
-                "Domain": "test.com",
-                "Remark": "test",
+                "Domain": "privatedns.com",
+                "Remark": "privatedns",
                 "ZoneId": "zone-abs2dfs2"
             }
         ]

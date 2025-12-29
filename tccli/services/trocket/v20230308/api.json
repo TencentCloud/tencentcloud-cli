@@ -4601,7 +4601,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询条件列表",
+          "document": "过滤查询条件列表，请在引用此参数的API说明中了解使用方法。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4610,7 +4610,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始位置",
+          "document": "查询起始位置，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4619,7 +4619,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果限制数量",
+          "document": "查询结果限制数量，默认20。",
           "example": "20",
           "member": "int64",
           "name": "Limit",

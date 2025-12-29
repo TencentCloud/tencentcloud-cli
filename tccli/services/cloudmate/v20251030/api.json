@@ -1,0 +1,220 @@
+{
+  "actions": {
+    "CloudMateAgent": {
+      "document": "发起智能诊断对话\n注意：使用该API时，请务必设置请求域名（Endpoint）为 cloudmate.ai.tencentcloudapi.com",
+      "input": "CloudMateAgentRequest",
+      "name": "发起智能诊断对话",
+      "output": "CloudMateAgentResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-10-30",
+    "api_brief": "可通过 API 发起异常诊断，对接各类运维系统及工具，实现自动化异常问题排查",
+    "serviceNameCN": "Cloud Mate",
+    "serviceShortName": "cloudmate"
+  },
+  "objects": {
+    "ChatContent": {
+      "document": "智能诊断结果内容结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色，可选值：\n - user\n - model_thinking\n - model_output\n - knowledge",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容分片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChatEventContentPart",
+          "name": "Parts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ChatEventContentPart": {
+      "document": "智能诊断时间内容分片结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本内容（流式或完整）",
+          "example": "分析内容",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数调用信息",
+          "example": "函数调用详情",
+          "member": "string",
+          "name": "FunctionCall",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数返回结果",
+          "example": "函数返回结果",
+          "member": "string",
+          "name": "FunctionResponse",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudMateAgentRequest": {
+      "document": "CloudMateAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "空间 ID",
+          "example": "fa5234dc-0663-4447-ab71-ed2776fc1137",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户提问内容",
+          "example": "帮我分析下最近30分钟的系统错误",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "场景 ID",
+          "example": "01248bc1-c11f-4683-a960-11c534572424",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话 ID\n\n- 填写上一次接口调用返回的会话 ID（SessionId），可在原有会话基础上继续对话\n- 未填写会话 ID 时，创建新会话",
+          "example": "ff9012c0-90d8-4bc2-9545-31fb5962bfb7",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用流式响应，默认为 false，不启用流式响应",
+          "example": "false",
+          "member": "bool",
+          "name": "Streaming",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CloudMateAgentResponse": {
+      "document": "CloudMateAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话ID，用于后续继续对话",
+          "example": "534a6323-f958-4250-a45c-bd3b3dac5303",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "unix时间戳",
+          "example": "1763034032",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断内容",
+          "example": "无",
+          "member": "ChatContent",
+          "name": "Content",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为部分内容（流式场景）",
+          "example": "true",
+          "member": "bool",
+          "name": "Partial",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本轮对话是否完成",
+          "example": "true",
+          "member": "bool",
+          "name": "TurnComplete",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误代码，无错误时无该字段",
+          "example": "NOT_FOUND",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误详细信息，无错误时无该字段",
+          "example": "资源未找到",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

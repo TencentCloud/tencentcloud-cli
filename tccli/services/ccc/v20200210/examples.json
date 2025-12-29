@@ -552,6 +552,14 @@
         "title": "暂停预测式外呼任务示例"
       }
     ],
+    "PlaySoundCall": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PlaySoundCall\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400692008,\n    \"SessionId\": \"f3be95fb-2786-466a-beab-5e3d8cb76272\",\n    \"FileId\": 275,\n    \"PlayTimes\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e9f09db3-c740-430d-8713-33b35bc9ae7f\"\n    }\n}",
+        "title": "通话中放音实例"
+      }
+    ],
     "ResetExtensionPassword": [
       {
         "document": "",
