@@ -1,4 +1,4 @@
-**Example 1: 安装模型调用示例**
+**Example 1: 模型安装接口调用样例**
 
 
 
@@ -6,18 +6,20 @@ Input:
 
 ```
 tccli es InstallInstanceModel --cli-unfold-argument  \
-    --InstanceId es-xxxxxxxx \
-    --UsrCosModelUrlList https://modeltestxxxx-sh-12560502xx.cos.ap-shanghai.myqcloud.com/bge-base-zh-v1.5.zip \
-    --ModelNames wit-test \
-    --TaskTypes text_embedding
+    --InstanceId es-ria27gbk \
+    --ModelNames bge-base-zh-v1.5 \
+    --TaskTypes text_embedding \
+    --ModelDescription test model \
+    --ModelSourceType PlatformModel \
+    --UploadedCosPaths /UserModels/common/bge-base-zh-v1.5.tar.gz
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "d6c1d15f-5eab-11ef-9b1d-525400a23f29",
-        "FlowId": "17219"
+        "FlowId": "4294967526",
+        "RequestId": "efbad3b5-5548-47bb-a88a-173adf833c26"
     }
 }
 ```

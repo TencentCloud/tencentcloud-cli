@@ -364,7 +364,7 @@
         {
           "disabled": false,
           "document": "请求秒级时间戳",
-          "example": "1766558365",
+          "example": "1766977948",
           "member": "int64",
           "name": "PostTime",
           "required": true,

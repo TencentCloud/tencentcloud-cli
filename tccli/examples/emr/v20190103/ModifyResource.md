@@ -7,7 +7,7 @@ Input:
 ```
 tccli emr ModifyResource --cli-unfold-argument  \
     --InstanceId emr-3ap64zl6 \
-    --ResourceId emr-vm-xxxxxx \
+    --ResourceId emr-vm-da1431 \
     --PayMode 0 \
     --NewCpu 8 \
     --NewMem 32

@@ -16777,6 +16777,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群模式七天峰值带宽",
+          "example": "100000000",
+          "member": "uint64",
+          "name": "ClusterVpcMaxFlow",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通用实例总个数",
+          "example": "10",
+          "member": "int64",
+          "name": "AllInsQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

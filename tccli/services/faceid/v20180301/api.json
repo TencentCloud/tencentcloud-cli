@@ -336,6 +336,13 @@
       "output": "MobileStatusResponse",
       "status": "online"
     },
+    "ModelMatch": {
+      "document": "接收一个包含图像数据（二进制格式，图像为最佳帧）和配置参数的请求，对图像进行解码和检测，检测该图像是否来源于当下手机设备摄像头实时拍摄，输出检测结果及置信度。",
+      "input": "ModelMatchRequest",
+      "name": "机型匹配",
+      "output": "ModelMatchResponse",
+      "status": "online"
+    },
     "ParseNfcData": {
       "document": "解析SDK获取到的证件NFC数据，接口传入SDK返回的ReqId，返回证件信息（个别字段为特定证件类型特有）。SDK生成的ReqId五分钟内有效，重复查询仅收一次费。支持身份证类证件（二代身份证、港澳居住证、台湾居住证、外国人永居证）以及旅行类证件（港澳通行证、台湾通行证、台胞证、回乡证）的NFC识别及核验。",
       "input": "ParseNfcDataRequest",
@@ -7809,6 +7816,90 @@
           "name": "StatusCode",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModelMatchRequest": {
+      "document": "ModelMatch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入图片（人脸最佳帧）的base64值",
+          "example": "/9j/4AAQAAAAAAAAAiwAAAoP/aAAgBAgEB",
+          "member": "string",
+          "name": "BestFrameBase64",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机型信息：\n\n- IOS机型格式：iPhone11;6\n\n- 安卓机型格式：STG-AL00",
+          "example": "iPhone11;6",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统版本信息：\n\n- IOS系统版本格式：iOS17.3.1  \n\n- 安卓系统版本格式：android-29",
+          "example": "iOS17.3.1",
+          "member": "string",
+          "name": "OsVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于判断结果的阈值，范围是[0,1]，由调用方传入，未传入时默认值为0.3。\n当机型匹配算法置信度小于阈值时会判定为攻击，出参result将返回false。",
+          "example": "0.2",
+          "member": "float",
+          "name": "Threshold",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "ModelMatchResponse": {
+      "document": "ModelMatch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机型匹配检测结果：\n\n- true：机型匹配通过（置信度大于等于阈值）  \n- false：机型匹配不通过，疑似劫持攻击（置信度小于阈值）",
+          "example": "false",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务结果说明",
+          "example": "OK",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型匹配算法输出的置信度，范围是[0,1]。",
+          "example": "0",
+          "member": "float",
+          "name": "Sim",
+          "output_required": true,
+          "type": "float",
           "value_allowed_null": false
         },
         {

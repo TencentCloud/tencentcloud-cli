@@ -4600,7 +4600,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "这是备注",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -4931,7 +4931,7 @@
         {
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "这是失败原因",
           "member": "string",
           "name": "Reason",
           "required": true,

@@ -517,7 +517,7 @@
         },
         {
           "disabled": false,
-          "document": "是否设置预置密钥",
+          "document": "是否设置预置密钥。\ntrue：设置预置密钥；\nfalse：不设置预置密钥。",
           "example": "true",
           "member": "bool",
           "name": "Encrypted",
@@ -2343,7 +2343,7 @@
         },
         {
           "disabled": false,
-          "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备\t",
+          "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备\t\n示例值：1\n",
           "example": "1",
           "member": "int64",
           "name": "PageSize",
@@ -2352,7 +2352,7 @@
         },
         {
           "disabled": false,
-          "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备\t",
+          "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备\t\n示例值：10\n",
           "example": "10",
           "member": "int64",
           "name": "PageNumber",
@@ -2428,7 +2428,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
+          "document": "每页显示记录数，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备\n示例值：10",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -2437,7 +2437,7 @@
         },
         {
           "disabled": false,
-          "document": "当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备",
+          "document": "当前查看页码，PageSize、PageNumber值均为-1 时，按照1页无限制条数匹配所有设备\n示例值：1",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",

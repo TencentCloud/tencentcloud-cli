@@ -4839,7 +4839,7 @@
         {
           "disabled": false,
           "document": "允许用户自定义JVM配置，部分配置项需根据当前函数规格校验是否允许配置\n只能包含字母、数字、符号，500个字符以内\n",
-          "example": "-Xms4g -Xmx4g -XX:MaxDirectMemorySize=2g ",
+          "example": "-Xms4g -Xmx4g -XX:MaxDirectMemorySize=2g",
           "member": "string",
           "name": "JVMConfig",
           "output_required": false,
@@ -4883,9 +4883,20 @@
         {
           "disabled": false,
           "document": "允许用户自定义JVM配置，部分配置项需根据当前函数规格校验是否允许配置\n只能包含字母、数字、符号，500个字符以内\n",
-          "example": "-Xms4g -Xmx4g -XX:MaxDirectMemorySize=2g ",
+          "example": "-Xms4g -Xmx4g -XX:MaxDirectMemorySize=2g",
           "member": "string",
           "name": "GooseFsFuseJVMConfig",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "goosefs 中Client 对应goosefs-site.properties 中对应goosefs.master.rpc.addresses信息",
+          "example": "xxx:9200,xxx:9200,xxx:9200",
+          "member": "string",
+          "name": "GooseFsEndpoint",
           "output_required": false,
           "required": false,
           "type": "string",

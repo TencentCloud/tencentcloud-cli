@@ -8539,7 +8539,7 @@
         {
           "disabled": false,
           "document": "引擎id",
-          "example": "02345495-cfe0-461c-8c3d-5715d03feda4",
+          "example": "025495-cfe0-461c-8c3d-5715d03feda4",
           "member": "string",
           "name": "DataEngineId",
           "output_required": true,
@@ -9018,6 +9018,83 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU 信息",
+          "example": "无",
+          "member": "GPUInfo",
+          "name": "GPUInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU 使用量",
+          "example": "1",
+          "member": "int64",
+          "name": "EngineResourceUsedGPU",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU 总规格",
+          "example": "1",
+          "member": "int64",
+          "name": "GPUTotalSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU 机型",
+          "example": "sv",
+          "member": "string",
+          "name": "InstanceModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点数量",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎规格，包含负载弹性或分时弹性",
+          "example": "16",
+          "member": "uint64",
+          "name": "SizeWithElastic",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大弹性值，包含负载弹性或分时弹性",
+          "example": "16",
+          "member": "uint64",
+          "name": "MaxElasticSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -17759,6 +17836,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分时弹性上限",
+          "example": "16",
+          "member": "int64",
+          "name": "ElasticLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18258,6 +18346,100 @@
         }
       ],
       "usage": "in"
+    },
+    "GPUInfo": {
+      "document": "GPU 机型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "sv_dlc_gpu_gn10xp_10cu_1v100_32g",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "GN10P",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cu",
+          "example": "16",
+          "member": "int64",
+          "name": "CU",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "gpu 机型",
+          "example": "v100",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Num",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "显存",
+          "example": "16",
+          "member": "int64",
+          "name": "GPUMemory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "GN10Xp.2XLARGE40",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "售卖情况（1-缺货，2-低库存，3-充足）",
+          "example": "",
+          "member": "int64",
+          "name": "SaleStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "GatewayInfo": {
       "document": "网关基础信息，包括id，名称，规格和状态",
@@ -23019,7 +23201,7 @@
         {
           "disabled": false,
           "document": "调度日期：WEEKLY传：1~7； MONTHLY传:1~31；其它类型不传",
-          "example": "1",
+          "example": "[1]",
           "member": "int64",
           "name": "ScheduleDays",
           "output_required": false,
@@ -23041,7 +23223,7 @@
         {
           "disabled": false,
           "document": "弹性伸缩计划",
-          "example": "复杂类型",
+          "example": "无",
           "member": "ElasticPlan",
           "name": "ElasticPlans",
           "output_required": false,

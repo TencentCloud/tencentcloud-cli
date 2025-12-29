@@ -10,7 +10,7 @@ tccli lke CreateQACate --cli-unfold-argument  \
     --LoginSubAccountUin 600000562455 \
     --BotBizId 1714970520775950336 \
     --ParentBizId 1733053612030808064 \
-    --Name 哈哈哈哈
+    --Name 创建QA分类
 ```
 
 Output: 

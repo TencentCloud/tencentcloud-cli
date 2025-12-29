@@ -80,6 +80,22 @@
         "title": "创建转自适应码流模板"
       }
     ],
+    "CreateAigcImageTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: CreateAigcImageTask\n<公共请求参数>\n\n{\n    \"Prompt\": \"draw a cat\",\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"TaskId\": \"2147483785\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateAigcVideoTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcVideoTask\n<公共请求参数>\n\n{\n    \"ModelName\": \"veo\",\n    \"Prompt\": \"move the picture\",\n    \"NegativePrompt\": \"Top lighting,bright colors\",\n    \"EnhancePrompt\": false,\n    \"ImageUrl\": \"https://1500039689.vod-xxx.com/6cd2c44bvodcq1500039689/179cafb25145403699605999621/CxxoxE6jcA.png\",\n    \"LastImageUrl\": \"https://aigc-xx-image-1303333058.cos.ap-guangzhou.myqcloud.com/xxx_8655.png\",\n    \"Duration\": 8,\n    \"ExtraParameters\": {\n        \"Resolution\": \"720*1280\",\n        \"AspectRatio\": \"16:9\"\n    },\n    \"StoreCosParam\": {\n        \"CosBucketName\": \"aigc-test-video-1303333058\",\n        \"CosBucketRegion\": \"ap-guangzhou\",\n        \"CosBucketPath\": \"my_cos_file\"\n    },\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"2147483792\",\n        \"RequestId\": \"643fb583-0032-44ac-bfa8-bef25e310998\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateAnimatedGraphicsTemplate": [
       {
         "document": "",
@@ -576,6 +592,22 @@
         "input": "https://mps.tencentcloudapi.com/?Action=DescribeAdaptiveDynamicStreamingTemplates\n&Definitions.0=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AdaptiveDynamicStreamingTemplateSet\": [\n            {\n                \"Comment\": \"转自适应码流模板1\",\n                \"Definition\": 1001,\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"DisableHigherVideoBitrate\": 1,\n                \"Name\": \"转自适应码流模板1\",\n                \"Format\": \"HLS\",\n                \"DisableHigherVideoResolution\": 1,\n                \"StreamInfos\": [\n                    {\n                        \"RemoveVideo\": 0,\n                        \"Audio\": {\n                            \"Codec\": \"libfdk_aac\",\n                            \"SampleRate\": 44100,\n                            \"AudioChannel\": 2,\n                            \"Bitrate\": 200\n                        },\n                        \"Video\": {\n                            \"Fps\": 25,\n                            \"Width\": 1080,\n                            \"Height\": 960,\n                            \"Vcrf\": 23,\n                            \"Codec\": \"libx264\",\n                            \"ResolutionAdaptive\": \"open\",\n                            \"FillType\": \"black\",\n                            \"Bitrate\": 1000,\n                            \"Gop\": 50\n                        },\n                        \"RemoveAudio\": 0\n                    }\n                ],\n                \"Type\": \"Preset\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "查询转自适应码流模板列表"
+      }
+    ],
+    "DescribeAigcImageTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLnstances\n<公共请求参数>\n\n{\n    \"TaskId\": \"2147483804\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"ok\",\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"Status\": \"DONE\",\n        \"ImageUrls\": [\n            \"https://test-aigc-video-2311402212.cos.ap-guangzhou.myqcloud.com/4_2147483784_711361071342794779.png\"\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeAigcVideoTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcVideoTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"2147483790\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"\",\n        \"Resolution\": \"1920x1088\",\n        \"Status\": \"DONE\",\n        \"VideoUrls\": [\n            \"https://live-xxx-video-1311402212.cos.ap-guangzhou.myqcloud.com/251006278_xxx_711361074106890375.mp4\"\n        ],\n        \"RequestId\": \"0b9ff3d7-959e-4b9d-8553-7c125305c868\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DescribeAnimatedGraphicsTemplates": [
