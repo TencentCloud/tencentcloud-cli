@@ -18,9 +18,9 @@
     ],
     "CreateTargetGroup": [
       {
-        "document": "创建目标组",
-        "input": "POST / HTTP/1.1\nHost: gwlb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTargetGroup\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-i1cnjuhx\",\n    \"Port\": 6081,\n    \"TargetGroupName\": \"czhtest\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TargetGroupId\": \"lbtg-81******\",\n        \"RequestId\": \"9a4096dd-45a1-4e03-be8e-482a2fb48b59\"\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gwlb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTargetGroup\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-ojtgv3oh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eab511f4-8f43-42ff-896b-0ee4cdf83493\",\n        \"TargetGroupId\": \"lbtg-fxh5qtdy\"\n    }\n}",
         "title": "创建目标组"
       }
     ],

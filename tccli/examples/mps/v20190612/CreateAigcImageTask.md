@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "1047d0dc-6dc8-4898-a7f3-03726a822b0e",
-        "TaskId": "2147483785"
+        "TaskId": "4-AigcImage-c3b145ec76****94ac55b9e63be17d"
     }
 }
 ```

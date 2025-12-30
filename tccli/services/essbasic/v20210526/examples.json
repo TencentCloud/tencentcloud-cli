@@ -444,16 +444,28 @@
     ],
     "ChannelCreateOrganizationBatchSignUrl": [
       {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"60exxxxxxxxxxxxxxxxxxxxxc16e9\",\n        \"ProxyOrganizationOpenId\": \"org_open_id\"\n    },\n    \"Name\": \"\",\n    \"Mobile\": \"\",\n    \"FlowGroupId\": \"yDxxxxxxxxxxxxxxxxxxxxxxxx\",\n    \"OpenId\": \"user_open_id\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SignUrl\": \"https://embed.test.qian.tencent.cn/console/?channel=PROXYCHANNEL&expiredTime=1695805069&code=xxxxx&menuStatus=ENABLE&token=xxxx\",\n        \"ExpiredTime\": 0,\n        \"RequestId\": \"s1695804769054178191\"\n    }\n}",
+        "title": "创建合同组签署链接"
+      },
+      {
         "document": "待签署的合同",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"60exxxxxxxxxxxxxxxxxxxxxc16e9\",\n        \"ProxyOrganizationOpenId\": \"org_open_id\"\n    },\n    \"Name\": \"\",\n    \"Mobile\": \"\",\n    \"FlowIds\": [\n        \"yDxxxxxxxxxxxxxxxxxxxxxxxx\"\n    ],\n    \"OpenId\": \"user_open_id\"\n}",
         "output": "{\n    \"Response\": {\n        \"SignUrl\": \"https://embed.test.qian.tencent.cn/console/?channel=PROXYCHANNEL&expiredTime=1695805069&code=xxxxx&menuStatus=ENABLE&token=xxxx\",\n        \"ExpiredTime\": 0,\n        \"RequestId\": \"s1695804769054178191\"\n    }\n}",
         "title": "创建签署链接"
       },
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"60exxxxxxxxxxxxxxxxxxxxxc16e9\",\n        \"ProxyOrganizationOpenId\": \"org_open_id\"\n    },\n    \"Name\": \"\",\n    \"Mobile\": \"\",\n    \"FlowGroupId\": \"yDxxxxxxxxxxxxxxxxxxxxxxxx\",\n    \"OpenId\": \"user_open_id\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SignUrl\": \"https://embed.test.qian.tencent.cn/console/?channel=PROXYCHANNEL&expiredTime=1695805069&code=xxxxx&menuStatus=ENABLE&token=xxxx\",\n        \"ExpiredTime\": 0,\n        \"RequestId\": \"s1695804769054178191\"\n    }\n}",
-        "title": "创建合同组签署链接"
+        "document": "发起合同指定B端企业员工为动态签署方，通过此接口获取动态领取链接。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevinlcheng\"\n        }\n    },\n    \"FlowIds\": [\n        \"yDtK2UUckpfmgingU1UyHCZxCSSvzgqj\"\n    ],\n    \"CanBatchReject\": true,\n    \"RecipientIds\": [\n        \"yDtK2UUckpfmgindUyHCZxCEZrJgOW8c\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1767619219,\n        \"SignUrl\": \"https://embed.test.qian.tencent.cn/contract-batchsign?embed=1&expiredOn=1767619219&code=yDtK2UUckpfmg5e1UyDuCxQBXaYPsgdA&shortKey=yDtK2UemxuuTcRfVpk7b&channel=PROXYCHANNEL\",\n        \"RequestId\": \"1e564965-8e7c-4a3e-bc8c-c35be86937ad\"\n    }\n}",
+        "title": "创建企业动态签署领取链接"
+      },
+      {
+        "document": "发起合同指定B端企业员工为动态签署方，通过此接口获取动态领取链接。\n\n1.预设企业OpenId，要求只能由对应企业员工点击领取链接进行领取\n2.指定要求全部合同领取进行签署。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateOrganizationBatchSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevinlcheng\"\n        }\n    },\n    \"FlowIds\": [\n        \"yDtK2UUckpfmgingU1UyHCZxCSSvzgqj\"\n    ],\n    \"RecipientIds\": [\n        \"yDtK2UUckpfmgindUyHCZxCEZrJgOW8c\"\n    ],\n    \"DynamicSignOption\": {\n        \"DynamicReceiveType\": 1,\n        \"OrganizationOpenId\": \"dian_zi_qian\"\n    },\n    \"CanBatchReject\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1767619145,\n        \"SignUrl\": \"https://embed.test.qian.tencent.cn/contract-batchsign?embed=1&expiredOn=1767619145&code=yDtK2UUckpfmpuhxUuyfSWJxqnEnA7KP&shortKey=yDtK2UemxQpCrgNgy100&channel=PROXYCHANNEL\",\n        \"RequestId\": \"b9f75514-0559-4699-be54-11019de12574\"\n    }\n}",
+        "title": "创建企业动态签署领取链接，并且预设企业OpenId"
       }
     ],
     "ChannelCreateOrganizationModifyQrCode": [

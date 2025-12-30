@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CallbackWorkflowToolNode": [
+      {
+        "document": "工作流工具节点异步回调",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallbackWorkflowToolNode\n<公共请求参数>\n\n{\n  \"CallbackToken\": \"wfrun.app.node.ts.sig...\",\n  \"Result\": \"{\\\"approval_result\\\":\\\"approved\\\",\\\"approver\\\":\\\"张三\\\",\\\"comment\\\":\\\"同意\\\"}\"\n}\n\n",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"925208e7-46fa-43b3-a429-ddcbccad24f6\",\n        \"Code\": 0,\n        \"Msg\": \"ok\"\n    }\n}",
+        "title": "工作流工具节点异步回调"
+      }
+    ],
     "CheckAttributeLabelExist": [
       {
         "document": "检查知识标签是否存在",

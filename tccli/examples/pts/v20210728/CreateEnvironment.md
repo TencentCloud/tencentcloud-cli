@@ -17,6 +17,7 @@ Output:
 ```
 {
     "Response": {
+        "EnvId": "env-1a2b3c4d",
         "RequestId": "abc-123-xyz"
     }
 }
