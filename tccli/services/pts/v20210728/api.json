@@ -1229,12 +1229,59 @@
     },
     "CreateEnvironmentRequest": {
       "document": "CreateEnvironment请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "project-xxx",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境名",
+          "example": "test-env",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "环境描述",
+          "example": "测试环境变量",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateEnvironmentResponse": {
       "document": "CreateEnvironment返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "env-xxx",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4223,6 +4270,56 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvVar": {
+      "document": "环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变量引用键，建议为 C_IDENTIFIER 全大写风格",
+          "example": "C_NAME",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认 NORMAL，支持 NORMAL、PASSWORD 类型",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "变量引用值",
+          "example": "value-xx",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述内容",
+          "example": "用于变量设置",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

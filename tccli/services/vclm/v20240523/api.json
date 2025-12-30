@@ -939,6 +939,15 @@
           "name": "UserDesignatedUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调地址\n需要您在创建任务时主动设置 CallbackUrl，请求方法为 POST，当视频生成结束时，我们将向此地址发送生成结果。\n数据格式如下：\n{\n    \"JobId\": \"1397428070633955328\",\n    \"Status\": \"DONE\",\n    \"ErrorCode\": \"\",\n    \"ErrorMessage\": \"\",\n    \"ResultVideoUrl\": \"https://vcg.cos.tencentcos.cn/template_to_video/fa80b846-b933-4981-afad-8a39b46ef2ca.mp4\"\n}",
+          "example": "http://vclm.tencent.com/template2video/callback",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -1740,11 +1749,20 @@
         {
           "disabled": false,
           "document": "视频内容的描述，中文正向提示词。最多支持200个 utf-8 字符（首尾空格不计入字符数）。\n支持风格迁移、替换、元素增加、删除控制",
-          "example": "Edit the object in the video",
+          "example": "将视频中的【裤子】替换为图片中的【裤子】",
           "member": "string",
           "name": "Prompt",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片数组",
+          "example": "无",
+          "member": "Image",
+          "name": "Images",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,

@@ -2708,6 +2708,73 @@
       ],
       "usage": "both"
     },
+    "ContractSummary": {
+      "document": "合同摘要",
+      "members": [
+        {
+          "disabled": false,
+          "document": "提取内容分类：\nBase 合同信息\nIdentity 主体信息\nPerformance 履约条款",
+          "example": "Identity",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详细信息",
+          "example": "无",
+          "member": "ContractSummaryInfo",
+          "name": "Infos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ContractSummaryInfo": {
+      "document": "合同摘要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段 key",
+          "example": "甲方（出租方）",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段值",
+          "example": "xx技术有限公司",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主体信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Identity",
+          "name": "Identity",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CreateBatchAdminChangeInvitationsRequest": {
       "document": "CreateBatchAdminChangeInvitations请求参数结构体",
       "members": [
@@ -11213,6 +11280,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "摘要信息",
+          "example": "无",
+          "member": "ContractSummary",
+          "name": "Summaries",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -15807,6 +15884,309 @@
       ],
       "usage": "both"
     },
+    "Identity": {
+      "document": "主体信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统一社会信用代码",
+          "example": "919400019203820006",
+          "member": "string",
+          "name": "CreditCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组织机构代码",
+          "example": "19228839021",
+          "member": "string",
+          "name": "OrgCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "营业执照注册编号",
+          "example": "440678110309744",
+          "member": "string",
+          "name": "RegNo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业名称",
+          "example": "xx技术有限公",
+          "member": "string",
+          "name": "EntName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改人法人代表姓名",
+          "example": "赵四",
+          "member": "string",
+          "name": "LegalRepName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "渠道经营状态",
+          "example": "在营（开业）",
+          "member": "string",
+          "name": "OpState",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经营期限自(格式YYYY-MM-DD)",
+          "example": "1987-09-16",
+          "member": "string",
+          "name": "OpFromDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经营期限至",
+          "example": "2090-04-09",
+          "member": "string",
+          "name": "OpToDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成立日期(格式YYYY-MM-DD)",
+          "example": "1987-09-12",
+          "member": "string",
+          "name": "EstabDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "核准日期(格式YYYY-MM-DD)",
+          "example": "2022-06-12",
+          "member": "string",
+          "name": "ApprDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "吊销日期(格式YYYY-MM-DD)",
+          "example": "2023-11-12",
+          "member": "string",
+          "name": "RevoDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注销日期(格式YYYY-MM-DD)",
+          "example": "2025-06-12",
+          "member": "string",
+          "name": "CancelDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "登记机关",
+          "example": "深圳市市场监督管理局",
+          "member": "string",
+          "name": "RegOrg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业类型编码",
+          "example": "xsokcgdsd",
+          "member": "string",
+          "name": "EntTypeCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业类型",
+          "example": "有限责任公司(自然人投资或控股的法人独资)",
+          "member": "string",
+          "name": "EntType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经营业务范围",
+          "example": "一般经营项目：程控交换机",
+          "member": "string",
+          "name": "BizScope",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "许可经营项目",
+          "example": "程控交换机",
+          "member": "string",
+          "name": "LicenseBizItem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注册地址行政编号",
+          "example": "440300",
+          "member": "string",
+          "name": "RegAreaCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注册地址",
+          "example": "深圳市龙岗区坂田",
+          "member": "string",
+          "name": "RegAddress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注册资本币种",
+          "example": "人民币元",
+          "member": "string",
+          "name": "RegCapitalCurtype",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注册资本（万元）",
+          "example": "4107113.182000",
+          "member": "string",
+          "name": "RegCapital",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实收资本（万元）",
+          "example": "0.000000",
+          "member": "string",
+          "name": "PaidCapital",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原注册号",
+          "example": "234556",
+          "member": "string",
+          "name": "OriRegNo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业英文名称",
+          "example": "xyz22",
+          "member": "string",
+          "name": "EntNameEng",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "曾用名",
+          "example": "yy 有限公司",
+          "member": "string",
+          "name": "OriEntName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业经营状态枚举。常见值如下：\n未定义的状态 = 0\n正常  = 1\n注销 = 2\n吊销 = 3\n吊销后注销 = 4\n撤销 = 5\n其他 = 99",
+          "example": "1",
+          "member": "int64",
+          "name": "OpStateCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询日期(格式YYYY-MM-DD)",
+          "example": "2025-11-10",
+          "member": "string",
+          "name": "SearchDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IntegrateRole": {
       "document": "企业角色数据信息",
       "members": [
@@ -17658,6 +18038,61 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险标签",
+          "example": "[\"财务风险\"]",
+          "member": "string",
+          "name": "RiskLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险来源 0:模型标注的风险 1:人工标注的风险",
+          "example": "0",
+          "member": "int64",
+          "name": "RiskOrigin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人",
+          "example": "xyyyy",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人ID",
+          "example": "xxtttt",
+          "member": "string",
+          "name": "CreatorId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "0",
+          "member": "int64",
+          "name": "CreatedOn",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18042,6 +18477,39 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Begin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束位置",
+          "example": "1",
+          "member": "int64",
+          "name": "End",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档类型，1：pdf，2：doc 文档",
+          "example": "1",
+          "member": "int64",
+          "name": "DocType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

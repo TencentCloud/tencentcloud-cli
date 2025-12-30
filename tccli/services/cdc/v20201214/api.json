@@ -454,7 +454,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点名称",
+          "document": "<p>站点名称</p>",
           "example": "my-site",
           "member": "string",
           "name": "Name",
@@ -463,7 +463,7 @@
         },
         {
           "disabled": false,
-          "document": "站点所在国家",
+          "document": "<p>站点所在国家</p>",
           "example": "China",
           "member": "string",
           "name": "Country",
@@ -472,7 +472,7 @@
         },
         {
           "disabled": false,
-          "document": "站点所在省份",
+          "document": "<p>站点所在省份</p>",
           "example": "Guangdong",
           "member": "string",
           "name": "Province",
@@ -481,7 +481,7 @@
         },
         {
           "disabled": false,
-          "document": "站点所在城市",
+          "document": "<p>站点所在城市</p>",
           "example": "Shenzhen",
           "member": "string",
           "name": "City",
@@ -490,7 +490,7 @@
         },
         {
           "disabled": false,
-          "document": "站点所在地区的详细地址信息",
+          "document": "<p>站点所在地区的详细地址信息</p>",
           "example": "Shennan Road 10000",
           "member": "string",
           "name": "AddressLine",
@@ -499,7 +499,7 @@
         },
         {
           "disabled": false,
-          "document": "站点描述",
+          "document": "<p>站点描述</p>",
           "example": "this site is good",
           "member": "string",
           "name": "Description",
@@ -508,7 +508,7 @@
         },
         {
           "disabled": false,
-          "document": "注意事项",
+          "document": "<p>注意事项</p>",
           "example": "the floor is not very good",
           "member": "string",
           "name": "Note",
@@ -517,7 +517,7 @@
         },
         {
           "disabled": false,
-          "document": "您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。取值范围：\"MM\",\"SM\"",
+          "document": "<p>您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。取值范围：\"MM\",\"SM\"</p>",
           "example": "MM",
           "member": "string",
           "name": "FiberType",
@@ -526,7 +526,7 @@
         },
         {
           "disabled": false,
-          "document": "您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。",
+          "document": "<p>您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。</p>",
           "example": "1000Base-SX",
           "member": "string",
           "name": "OpticalStandard",
@@ -535,7 +535,7 @@
         },
         {
           "disabled": false,
-          "document": "电源连接器类型",
+          "document": "<p>电源连接器类型</p>",
           "example": "380VAC3P",
           "member": "string",
           "name": "PowerConnectors",
@@ -544,7 +544,7 @@
         },
         {
           "disabled": false,
-          "document": "从机架上方还是下方供电。取值范围：[\"UP\",\"DOWN\"]",
+          "document": "<p>从机架上方还是下方供电。取值范围：[\"UP\",\"DOWN\"]</p>",
           "example": "UP",
           "member": "string",
           "name": "PowerFeedDrop",
@@ -553,7 +553,7 @@
         },
         {
           "disabled": false,
-          "document": "最大承重(KG)",
+          "document": "<p>最大承重(KG)</p>",
           "example": "5000",
           "member": "int64",
           "name": "MaxWeight",
@@ -562,7 +562,7 @@
         },
         {
           "disabled": false,
-          "document": "功耗(KW)",
+          "document": "<p>功耗(KW)</p>",
           "example": "4000",
           "member": "int64",
           "name": "PowerDrawKva",
@@ -571,7 +571,7 @@
         },
         {
           "disabled": false,
-          "document": "网络到腾讯云Region区域的上行链路速度(Gbps)",
+          "document": "<p>网络到腾讯云Region区域的上行链路速度(Gbps)</p>",
           "example": "10",
           "member": "int64",
           "name": "UplinkSpeedGbps",
@@ -580,7 +580,7 @@
         },
         {
           "disabled": false,
-          "document": "将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。",
+          "document": "<p>将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。</p>",
           "example": "2",
           "member": "int64",
           "name": "UplinkCount",
@@ -589,8 +589,8 @@
         },
         {
           "disabled": false,
-          "document": "是否满足下面环境条件：\n1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。\n2、确定的机架位置包含:\n温度范围为 41 到 104°F (5 到 40°C)。\n湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。\n机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)。CFM 必须是 CDC 配置的 kVA 功耗值的 145.8 倍。",
-          "example": "True",
+          "document": "<p>是否满足下面环境条件：1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。2、确定的机架位置包含:温度范围为 41 到 104°F (5 到 40°C)。湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)。CFM 必须是 CDC 配置的 kVA 功耗值的 145.8 倍。</p>",
+          "example": "true",
           "member": "bool",
           "name": "ConditionRequirement",
           "required": false,
@@ -598,8 +598,8 @@
         },
         {
           "disabled": false,
-          "document": "是否满足下面的尺寸条件：\n您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。\n您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。\n在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。",
-          "example": "True",
+          "document": "<p>是否满足下面的尺寸条件：您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。</p>",
+          "example": "true",
           "member": "bool",
           "name": "DimensionRequirement",
           "required": false,
@@ -607,8 +607,8 @@
         },
         {
           "disabled": false,
-          "document": "是否提供冗余的上游设备(交换机或路由器)，以便两台  网络设备都能连接到网络设备。",
-          "example": "True",
+          "document": "<p>是否提供冗余的上游设备(交换机或路由器)，以便两台  网络设备都能连接到网络设备。</p>",
+          "example": "true",
           "member": "bool",
           "name": "RedundantNetworking",
           "required": false,
@@ -616,7 +616,7 @@
         },
         {
           "disabled": false,
-          "document": "站点所在地区的邮编",
+          "document": "<p>站点所在地区的邮编</p>",
           "example": "518000",
           "member": "int64",
           "name": "PostalCode",
@@ -625,7 +625,7 @@
         },
         {
           "disabled": false,
-          "document": "站点所在地区的详细地址信息（补充）",
+          "document": "<p>站点所在地区的详细地址信息（补充）</p>",
           "example": "tengda",
           "member": "string",
           "name": "OptionalAddressLine",
@@ -634,8 +634,8 @@
         },
         {
           "disabled": false,
-          "document": "是否需要腾讯云团队协助完成机架支撑工作",
-          "example": "True",
+          "document": "<p>是否需要腾讯云团队协助完成机架支撑工作</p>",
+          "example": "true",
           "member": "bool",
           "name": "NeedHelp",
           "required": false,
@@ -643,8 +643,8 @@
         },
         {
           "disabled": false,
-          "document": "是否电源冗余",
-          "example": "True",
+          "document": "<p>是否电源冗余</p>",
+          "example": "true",
           "member": "bool",
           "name": "RedundantPower",
           "required": false,
@@ -652,8 +652,8 @@
         },
         {
           "disabled": false,
-          "document": "上游断路器是否具备",
-          "example": "True",
+          "document": "<p>上游断路器是否具备</p>",
+          "example": "true",
           "member": "bool",
           "name": "BreakerRequirement",
           "required": false,
@@ -667,7 +667,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建Site生成的id",
+          "document": "<p>创建Site生成的id</p>",
           "example": "site-98dj3kd",
           "member": "string",
           "name": "SiteId",
@@ -2166,7 +2166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模糊匹配专用集群配置名称",
+          "document": "<p>模糊匹配专用集群配置名称</p>",
           "example": "my-type",
           "member": "string",
           "name": "Name",
@@ -2175,7 +2175,7 @@
         },
         {
           "disabled": false,
-          "document": "待查询的专用集群配置id列表",
+          "document": "<p>待查询的专用集群配置id列表</p>",
           "example": "[\"dctype-lkm17jbu\"]",
           "member": "string",
           "name": "DedicatedClusterTypeIds",
@@ -2184,7 +2184,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "document": "<p>偏移量，默认为0。关于<code>Offset</code>的更进一步介绍请参考 API <a href=\"https://cloud.tencent.com/document/api/213/15688\">简介</a>中的相关小节。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2193,7 +2193,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "document": "<p>返回数量，默认为20，最大值为100。关于<code>Limit</code>的更进一步介绍请参考 API <a href=\"https://cloud.tencent.com/document/api/213/15688\">简介</a>中的相关小节。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -2202,7 +2202,7 @@
         },
         {
           "disabled": false,
-          "document": "是否只查询计算规格类型",
+          "document": "<p>是否只查询计算规格类型</p>",
           "example": "true",
           "member": "bool",
           "name": "IsCompute",
@@ -2217,8 +2217,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "专用集群配置列表",
-          "example": "[{ \t\t\t\"DedicatedClusterTypeId\": \"dctype-lkm17jbu\", \t\t\t\"Description\": \"first type\", \t\t\t\"Name\": \"yuan dedicated\", \t\t\t\"CreateTime\": \"2020-12-16T06:21:41Z\", \t\t\t\"SupportedStorageType\": [], \t\t\t\"SupportedUplinkGiB\": [40, 100], \t\t\t\"SupportedInstanceFamily\": [\"S5\"], \t\t\t\"Weight\": 3000, \t\t\t\"PowerDrawKva\": \"2000.800000\",                         \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\" \t\t}, { \t\t\t\"DedicatedClusterTypeId\": \"dctype-1yo16f1a\", \t\t\t\"Description\": \"seco type\", \t\t\t\"Name\": \"abc dedicated\", \t\t\t\"CreateTime\": \"2020-12-16T06:33:49Z\", \t\t\t\"SupportedStorageType\": [], \t\t\t\"SupportedUplinkGiB\": [13, 100], \t\t\t\"SupportedInstanceFamily\": [\"S1\", \"S5\"], \t\t\t\"Weight\": 3273, \t\t\t\"PowerDrawKva\": \"4156.700000\",                         \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\" \t\t}, { \t\t\t\"DedicatedClusterTypeId\": \"dctype-b38d7sl6\", \t\t\t\"Description\": \"heynew\", \t\t\t\"Name\": \"type und\", \t\t\t\"CreateTime\": \"2020-12-16T06:33:49Z\", \t\t\t\"SupportedStorageType\": [], \t\t\t\"SupportedUplinkGiB\": [10, 40], \t\t\t\"SupportedInstanceFamily\": [\"S3\"], \t\t\t\"Weight\": 3724, \t\t\t\"PowerDrawKva\": \"3829.100000\",                         \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\" \t\t}, { \t\t\t\"DedicatedClusterTypeId\": \"dctype-z387eu8j\", \t\t\t\"Description\": \"third one\", \t\t\t\"Name\": \"unknow\", \t\t\t\"CreateTime\": \"2020-12-16T06:33:49Z\", \t\t\t\"SupportedStorageType\": [], \t\t\t\"SupportedUplinkGiB\": [10, 40], \t\t\t\"SupportedInstanceFamily\": [], \t\t\t\"Weight\": 3724, \t\t\t\"PowerDrawKva\": \"3829.100000\",                         \"ComputeFormatDesc\": \"M5.21XLARGE700 4、S5.21XLARGE320 2\" \t\t}]",
+          "document": "<p>专用集群配置列表</p>",
+          "example": "无",
           "member": "DedicatedClusterType",
           "name": "DedicatedClusterTypeSet",
           "output_required": true,
@@ -2227,7 +2227,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的个数",
+          "document": "<p>符合条件的个数</p>",
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
@@ -3039,7 +3039,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机房ID",
+          "document": "<p>机房ID</p>",
           "example": "site-pjmtpk14",
           "member": "string",
           "name": "SiteId",
@@ -3048,7 +3048,7 @@
         },
         {
           "disabled": false,
-          "document": "您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。",
+          "document": "<p>您将使用光纤类型将CDC设备连接到网络。有单模和多模两种选项。</p>",
           "example": "SM",
           "member": "string",
           "name": "FiberType",
@@ -3057,7 +3057,7 @@
         },
         {
           "disabled": false,
-          "document": "您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。",
+          "document": "<p>您将CDC连接到网络时采用的光学标准。此字段取决于上行链路速度、光纤类型和到上游设备的距离。</p>",
           "example": "MM",
           "member": "string",
           "name": "OpticalStandard",
@@ -3066,7 +3066,7 @@
         },
         {
           "disabled": false,
-          "document": "电源连接器类型",
+          "document": "<p>电源连接器类型</p>",
           "example": "220VAC50HZ",
           "member": "string",
           "name": "PowerConnectors",
@@ -3075,7 +3075,7 @@
         },
         {
           "disabled": false,
-          "document": "从机架上方还是下方供电。取值范围：[\"UP\",\"DOWN\"]",
+          "document": "<p>从机架上方还是下方供电。取值范围：[\"UP\",\"DOWN\"]</p>",
           "example": "UP",
           "member": "string",
           "name": "PowerFeedDrop",
@@ -3084,7 +3084,7 @@
         },
         {
           "disabled": false,
-          "document": "最大承重(KG)",
+          "document": "<p>最大承重(KG)</p>",
           "example": "800",
           "member": "int64",
           "name": "MaxWeight",
@@ -3093,7 +3093,7 @@
         },
         {
           "disabled": false,
-          "document": "功耗(KW)",
+          "document": "<p>功耗(KW)</p>",
           "example": "5",
           "member": "int64",
           "name": "PowerDrawKva",
@@ -3102,7 +3102,7 @@
         },
         {
           "disabled": false,
-          "document": "网络到腾讯云Region区域的上行链路速度(Gbps)",
+          "document": "<p>网络到腾讯云Region区域的上行链路速度(Gbps)</p>",
           "example": "10",
           "member": "int64",
           "name": "UplinkSpeedGbps",
@@ -3111,7 +3111,7 @@
         },
         {
           "disabled": false,
-          "document": "将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。",
+          "document": "<p>将CDC连接到网络时，每台CDC网络设备(每个机架 2 台设备)使用的上行链路数量。</p>",
           "example": "3",
           "member": "int64",
           "name": "UplinkCount",
@@ -3120,7 +3120,7 @@
         },
         {
           "disabled": false,
-          "document": "是否满足下面环境条件：\n1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。\n2、确定的机架位置包含:\n温度范围为 41 到 104°F (5 到 40°C)。\n湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。\n机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。",
+          "document": "<p>是否满足下面环境条件：1、场地没有材料要求或验收标准会影响 CDC 设备配送和安装。2、确定的机架位置包含:温度范围为 41 到 104°F (5 到 40°C)。湿度范围为 10°F (-12°C)和 8% RH (相对湿度)到 70°F(21°C)和 80% RH。机架位置的气流方向为从前向后，且应具有足够的 CFM (每分钟立方英尺)，散热功率须达到CDC运行功率值的 145.8 倍以上。</p>",
           "example": "true",
           "member": "bool",
           "name": "ConditionRequirement",
@@ -3129,7 +3129,7 @@
         },
         {
           "disabled": false,
-          "document": "是否满足下面的尺寸条件：\n您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。\n您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。\n在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。",
+          "document": "<p>是否满足下面的尺寸条件：您的装货站台可以容纳一个机架箱(高 x 宽 x 深 = 94\" x 54\" x 48\")。您可以提供从机架(高 x 宽 x 深 = 80\" x 24\" x 48\")交货地点到机架最终安置位置的明确通道。测量深度时，应包括站台、走廊通道、门、转弯、坡道、货梯，并将其他通道限制考虑在内。在最终的 CDC安置位置，前部间隙可以为 48\" 或更大，后部间隙可以为 24\" 或更大。</p>",
           "example": "true",
           "member": "bool",
           "name": "DimensionRequirement",
@@ -3138,7 +3138,7 @@
         },
         {
           "disabled": false,
-          "document": "是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。",
+          "document": "<p>是否提供冗余的上游设备(交换机或路由器)，以便实现网络出口的高可用。</p>",
           "example": "true",
           "member": "bool",
           "name": "RedundantNetworking",
@@ -3147,7 +3147,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要腾讯云团队协助完成机架支撑工作",
+          "document": "<p>是否需要腾讯云团队协助完成机架支撑工作</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedHelp",
@@ -3156,7 +3156,7 @@
         },
         {
           "disabled": false,
-          "document": "是否电源冗余",
+          "document": "<p>是否电源冗余</p>",
           "example": "true",
           "member": "bool",
           "name": "RedundantPower",
@@ -3165,7 +3165,7 @@
         },
         {
           "disabled": false,
-          "document": "上游断路器是否具备",
+          "document": "<p>上游断路器是否具备</p>",
           "example": "true",
           "member": "bool",
           "name": "BreakerRequirement",

@@ -148,7 +148,7 @@
         },
         {
           "disabled": false,
-          "document": "unix时间戳",
+          "document": "Unix 时间戳",
           "example": "1763034032",
           "member": "uint64",
           "name": "Timestamp",

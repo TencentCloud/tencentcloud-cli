@@ -35,7 +35,7 @@
     "CreateInstance": [
       {
         "document": "根据输入参数创建ES集群实例",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"EsVersion\": \"6.4.3\",\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"NodeInfoList\": [\n        {\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"3\",\n            \"Type\": \"dedicatedMaster\"\n        },\n        {\n            \"DiskSize\": \"100\",\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"2\",\n            \"Type\": \"hotData\",\n            \"DiskType\": \"CLOUD_SSD\"\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"Password\": \"ascq23***********cjaw\",\n    \"InstanceName\": \"es_test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"EsVersion\": \"6.4.3\",\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"NodeInfoList\": [\n        {\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": 3,\n            \"Type\": \"dedicatedMaster\"\n        },\n        {\n            \"DiskSize\": 100,\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": 2,\n            \"Type\": \"hotData\",\n            \"DiskType\": \"CLOUD_SSD\"\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"Password\": \"ascq23***********cjaw\",\n    \"InstanceName\": \"es_test\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"es-abc234\",\n        \"RequestId\": \"ab\",\n        \"DealName\": \"ab\"\n    }\n}",
         "title": "创建ES集群实例"
       }
@@ -43,7 +43,7 @@
     "CreateLogstashInstance": [
       {
         "document": "根据输入参数创建Logstash实例",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLogstashInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"LogstashVersion\": \"6.8.13\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"DiskType\": \"CLOUD_SSD\",\n    \"NodeNum\": \"3\",\n    \"DiskSize\": \"100\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"NodeType\": \"LOGSTASH.S1.SMALL2\",\n    \"InstanceName\": \"logstash_test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLogstashInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"LogstashVersion\": \"6.8.13\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"DiskType\": \"CLOUD_SSD\",\n    \"NodeNum\": 3,\n    \"DiskSize\": 100,\n    \"ChargeType\": \"POSTPAID_BY_HOUR\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"NodeType\": \"LOGSTASH.S1.SMALL2\",\n    \"InstanceName\": \"logstash_test\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"ls-xxxxxx\",\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dxxxxxx\"\n    }\n}",
         "title": "创建Logstash实例"
       }
@@ -411,7 +411,7 @@
     "UpdateDiagnoseSettings": [
       {
         "document": "开启智能运维",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDiagnoseSettings\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxx\",\n    \"Status\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDiagnoseSettings\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxx\",\n    \"Status\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "开启智能运维"
       }
@@ -434,20 +434,14 @@
     ],
     "UpdateInstance": [
       {
-        "document": "重置指定ES集群实例Kibana密码",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"Password\": \"newPwd_123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
-        "title": "重置Kibana密码"
-      },
-      {
         "document": "用以对集群的节点规格（核数、内存大小）和磁盘大小进行扩缩容操作（当前仅支持纵向扩容）",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"DiskSize\": \"150\",\n    \"NodeType\": \"ES.S1.MEDIUM4\"\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"DiskSize\": 150,\n    \"NodeType\": \"ES.S1.MEDIUM4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
         "title": "ES集群纵向扩缩容"
       },
       {
         "document": "用以对指定ES集群实例进行横向扩缩容，纵向扩缩容，增加专用主节点，专用主节点横向扩缩容，纵向扩缩容等操作，NodeInfoList要传递目标的全量节点信息",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxx\",\n    \"NodeInfoList\": [\n        {\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"3\",\n            \"Type\": \"dedicatedMaster\"\n        },\n        {\n            \"DiskSize\": \"100\",\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": \"2\",\n            \"Type\": \"hotData\",\n            \"DiskType\": \"CLOUD_SSD\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxx\",\n    \"NodeInfoList\": [\n        {\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": 3,\n            \"Type\": \"dedicatedMaster\"\n        },\n        {\n            \"DiskSize\": 100,\n            \"NodeType\": \"ES.S1.SMALL2\",\n            \"NodeNum\": 2,\n            \"Type\": \"hotData\",\n            \"DiskType\": \"CLOUD_SSD\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
         "title": "ES集群节点规格变更"
       },
@@ -462,6 +456,12 @@
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"EsConfig\": \"{\\\"action.destructive_requires_name\\\":\\\"true\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
         "title": "修改ES集群实例配置"
+      },
+      {
+        "document": "重置指定ES集群实例Kibana密码",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"es-xxxxxxxx\",\n    \"Password\": \"newPwd_123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1\",\n        \"DealName\": \"1\"\n    }\n}",
+        "title": "重置Kibana密码"
       }
     ],
     "UpdateIpTraceStatus": [

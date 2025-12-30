@@ -7286,7 +7286,7 @@
         {
           "disabled": false,
           "document": "用于指导视频生成的图片 URL。该URL需外网可访问。同时允许爬虫拉取。",
-          "example": "https://1500039689.vod-qcloud.com/6cd2c44bvodcq1500039689/179cafb25145403699605999621/ClcdjoxE6jcA.png",
+          "example": "https://****.vod-qcloud.com/6cd2c44bvodcq1500039689/179cafb25145403699605999621/Clc***E6jcA.png",
           "member": "string",
           "name": "ImageUrl",
           "output_required": false,
@@ -10366,7 +10366,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称。\n当前支持的模型列表：\nGEM，\nJimeng，\nQwen。",
+          "document": "模型名称。\n当前支持的模型列表：\nHunyuan,\nGEM，\nJimeng，\nQwen。",
           "example": "GEM",
           "member": "string",
           "name": "ModelName",
@@ -10454,7 +10454,7 @@
         {
           "disabled": false,
           "document": "返回的任务ID。",
-          "example": "2147483784",
+          "example": "4-AigcImage-c3b145ec76****94ac55b9e63be17d",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -10475,7 +10475,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称。\n当前支持的模型列表:\nHailuo，\nKling，\nJimeng，\nVidu，\nOS，\nGV。",
+          "document": "模型名称。\n当前支持的模型列表:\nHunyuan,\nHailuo，\nKling，\nJimeng，\nVidu，\nOS，\nGV。",
           "example": "Hailuo",
           "member": "string",
           "name": "ModelName",
@@ -14401,7 +14401,7 @@
         {
           "disabled": false,
           "document": "创建的AIGC生图片任务ID。",
-          "example": "2147483804",
+          "example": "4-AigcImage-c3b145ec76****94ac55b9e63be17d",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -14426,7 +14426,7 @@
         {
           "disabled": false,
           "document": "当任务状态为 DONE时，返回的图片Url列表，图片存储12小时，请尽快取走使用。",
-          "example": "[\"https://live-aigc-image-2311402212.cos.ap-guangzhou.myqcloud.com/4_711361071160666119.png\"]",
+          "example": "[\"https://live-aigc-****.cos.ap-guangzhou.myqcloud.com/4_7113610711****.png\"]",
           "member": "string",
           "name": "ImageUrls",
           "output_required": false,
@@ -14458,7 +14458,7 @@
         {
           "disabled": false,
           "document": "创建AIGC生视频任务时，返回的任务ID。",
-          "example": "2147483790",
+          "example": "4-AigcVideo-c3b145******4ac55b699e63be17d",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -14483,7 +14483,7 @@
         {
           "disabled": false,
           "document": "当任务状态为 DONE时，返回视频Url列表，视频存储12小时，请尽快取走使用。",
-          "example": "[\"https://live-xxx-video-1311402212.cos.ap-guangzhou.myqcloud.com/251006278_2147483790_711361074106890375.mp4\"]",
+          "example": "[\"https://live-xxx-video-*****.cos.ap-guangzhou.myqcloud.com/251006278_2147483790_711361074106890375.mp4\"]",
           "member": "string",
           "name": "VideoUrls",
           "output_required": false,

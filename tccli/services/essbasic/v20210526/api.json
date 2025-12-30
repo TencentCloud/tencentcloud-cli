@@ -3467,6 +3467,24 @@
           "name": "CanBatchReject",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "动态签署方领取链接配置。",
+          "example": "无",
+          "member": "DynamicSignOption",
+          "name": "DynamicSignOption",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。 注：生成动态签署方领取时此参数必传。",
+          "example": "[\"yDtK2UUckpfmgindUyHCZxCEZrJgOW8c\"]",
+          "member": "string",
+          "name": "RecipientIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10282,6 +10300,30 @@
         }
       ],
       "usage": "out"
+    },
+    "DynamicSignOption": {
+      "document": "动态签署领取链接配置，当全部签署方均为动态签署方时生效。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多份合同批量签署时，动态签署领取要求：<ul><li><b>0（默认值）</b>: 可以领取部分合同进入签署。</li><li><b>1 </b>: 必须全部领取进入签署，生成链接的所有合同必须相同经办人完成合同的领取签署。</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "DynamicReceiveType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "动态签署方时，预设的企业OpenId，预设企业OpenId后，只允许对应的企业员工进行领取签署。",
+          "example": "ess_online_org_1",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "EmbedUrlOption": {
       "document": "创建嵌入式页面url个性化参数",

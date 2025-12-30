@@ -240,7 +240,7 @@
       {
         "document": "创建一个全局维护窗口和排除项",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlobalMaintenanceWindowAndExclusions\n<公共请求参数>\n\n{\n    \"TargetRegions\": [\n        \"*\"\n    ],\n    \"MaintenanceTime\": \"20:00:00\",\n    \"Duration\": 4,\n    \"DayOfWeek\": [\n        \"MO\",\n        \"TU\",\n        \"WE\",\n        \"TH\",\n        \"FR\"\n    ],\n    \"Exclusions\": []\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1048559-c7e4-4a7b-9d12-bc0256be3e26\",\n        \"ID\": 10\n    }\n}",
         "title": "创建全局维护窗口和排除项"
       }
     ],

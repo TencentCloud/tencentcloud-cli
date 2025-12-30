@@ -291,7 +291,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组名称，限定60个字符。",
+          "document": "<p>目标组名称，限定60个字符。</p>",
           "example": "test-name",
           "member": "string",
           "name": "TargetGroupName",
@@ -300,7 +300,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡后端目标组所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)  接口获取。 不填此参数则默认为DefaultVPC。",
+          "document": "<p>网关负载均衡后端目标组所属的网络 ID，如vpc-12345678，可以通过 <a href=\"https://cloud.tencent.com/document/product/215/15778\">DescribeVpcs</a>  接口获取。 不填此参数则默认为DefaultVPC。</p>",
           "example": "vpc-i1******",
           "member": "string",
           "name": "VpcId",
@@ -309,7 +309,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。仅支持6081。",
+          "document": "<p>目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。仅支持6081。</p>",
           "example": "6081",
           "member": "uint64",
           "name": "Port",
@@ -318,7 +318,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组绑定的后端服务器",
+          "document": "<p>目标组绑定的后端服务器</p>",
           "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
@@ -327,7 +327,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡目标组协议。\n- TENCENT_GENEVE ：GENEVE 标准协议\n- AWS_GENEVE：GENEVE 兼容协议",
+          "document": "<p>网关负载均衡目标组协议。- TENCENT_GENEVE ：GENEVE 标准协议- AWS_GENEVE：GENEVE 兼容协议</p>",
           "example": "TENCENT_GENEVE",
           "member": "string",
           "name": "Protocol",
@@ -336,7 +336,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查设置。",
+          "document": "<p>健康检查设置。</p>",
           "example": "无",
           "member": "TargetGroupHealthCheck",
           "name": "HealthCheck",
@@ -345,8 +345,8 @@
         },
         {
           "disabled": false,
-          "document": "均衡算法。\n- IP_HASH_3_ELASTIC：弹性哈希",
-          "example": "IP_HASH_3_ELASTIC",
+          "document": "<p>均衡算法。</p><ul><li>IP_HASH_2_CONSISTENT：二元组一致性哈希</li><li>IP_HASH_3_CONSISTENT：三元组一致性哈希</li><li>IP_HASH_5_CONSISTENT：五元组一致性哈希</li></ul>",
+          "example": "IP_HASH_5_CONSISTENT",
           "member": "string",
           "name": "ScheduleAlgorithm",
           "required": false,
@@ -354,7 +354,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持全死全活。默认支持。",
+          "document": "<p>是否支持全死全活。默认支持。</p>",
           "example": "true",
           "member": "bool",
           "name": "AllDeadToAlive",
@@ -363,7 +363,7 @@
         },
         {
           "disabled": false,
-          "document": "标签。",
+          "document": "<p>标签。</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -372,7 +372,7 @@
         },
         {
           "disabled": false,
-          "document": "流量分发方式\n\n- STATELESS：无状态\n- STATEFUL： 有状态",
+          "document": "<p>流量分发方式</p><ul><li>STATELESS：无状态</li><li>STATEFUL： 有状态</li></ul>",
           "example": "STATEFUL",
           "member": "string",
           "name": "ForwardingMode",
@@ -381,7 +381,7 @@
         },
         {
           "disabled": false,
-          "document": "TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。",
+          "document": "<p>TCP协议连接空闲超时时间，可配置60s-6000s，默认350s。</p>",
           "example": "100",
           "member": "int64",
           "name": "TcpIdleConnectTimeout",
@@ -390,7 +390,7 @@
         },
         {
           "disabled": false,
-          "document": "其他协议连接空闲超时时间，可配置5s-180s，默认120s",
+          "document": "<p>其他协议连接空闲超时时间，可配置5s-180s，默认120s</p>",
           "example": "100",
           "member": "int64",
           "name": "OthersIdleConnectTimeout",
@@ -399,8 +399,8 @@
         },
         {
           "disabled": false,
-          "document": "重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。",
-          "example": "True",
+          "document": "<p>重新调度功能内的解绑后端服务开关，开关打开后解绑后端服务会触发重新调度。</p>",
+          "example": "true",
           "member": "bool",
           "name": "RescheduleUnbindRs",
           "required": false,
@@ -408,7 +408,7 @@
         },
         {
           "disabled": false,
-          "document": "解绑RS后开启重调度的时间，可配置0s-3600s，默认0s",
+          "document": "<p>解绑RS后开启重调度的时间，可配置0s-3600s，默认0s</p>",
           "example": "200",
           "member": "int64",
           "name": "RescheduleUnbindRsStartTime",
@@ -417,8 +417,8 @@
         },
         {
           "disabled": false,
-          "document": "重新调度功能内的后端服务健康探测异常开关，开关打开后后端服务健康检查异常会触发重新调度。",
-          "example": "True",
+          "document": "<p>重新调度功能内的后端服务健康探测异常开关，开关打开后后端服务健康检查异常会触发重新调度。</p>",
+          "example": "true",
           "member": "bool",
           "name": "RescheduleUnhealthy",
           "required": false,
@@ -426,7 +426,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务健康探测异常后开启重调度的时间，可配置0s-3600s，默认0s",
+          "document": "<p>后端服务健康探测异常后开启重调度的时间，可配置0s-3600s，默认0s</p>",
           "example": "100",
           "member": "int64",
           "name": "RescheduleUnhealthyStartTime",
@@ -441,7 +441,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建目标组后生成的id",
+          "document": "<p>创建目标组后生成的id</p>",
           "example": "lbtg-81******",
           "member": "string",
           "name": "TargetGroupId",

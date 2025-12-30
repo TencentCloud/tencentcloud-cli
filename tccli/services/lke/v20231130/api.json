@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CallbackWorkflowToolNode": {
+      "document": "工作流工具节点异步回调",
+      "input": "CallbackWorkflowToolNodeRequest",
+      "name": "工作流工具节点异步调用回调",
+      "output": "CallbackWorkflowToolNodeResponse",
+      "status": "online"
+    },
     "CheckAttributeLabelExist": {
       "document": "检查属性下的标签名是否存在",
       "input": "CheckAttributeLabelExistRequest",
@@ -3793,6 +3800,89 @@
         }
       ],
       "usage": "out"
+    },
+    "CallbackWorkflowToolNodeRequest": {
+      "document": "CallbackWorkflowToolNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ADP调用外部API时,通过HTTP Header(X-ADP-Callback-Token)传递回调CallbackToken",
+          "example": "wfrun.app.node.ts.sig...",
+          "member": "string",
+          "name": "CallbackToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调结果,可选,为JSON字符串",
+          "example": "{\"approval_result\":\"approved\",\"approver\":\"张三\",\"comment\":\"同意\"}",
+          "member": "string",
+          "name": "Result",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1432",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CallbackWorkflowToolNodeResponse": {
+      "document": "CallbackWorkflowToolNode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态详情",
+          "example": "ok",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CateInfo": {
       "document": "分类信息",

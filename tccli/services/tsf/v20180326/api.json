@@ -28218,7 +28218,7 @@
           "member": "string",
           "name": "Type",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -28755,7 +28755,7 @@
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30962,23 +30962,23 @@
         },
         {
           "disabled": false,
-          "document": "游标ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "游标ID",
           "example": "scroll-6a79x94v",
           "member": "string",
           "name": "ScrollId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -31486,23 +31486,23 @@
         },
         {
           "disabled": false,
-          "document": "游标ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "游标ID",
           "example": "scroll-6a79x94v",
           "member": "string",
           "name": "ScrollId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询状态，SUCCESS：查询成功完成，ERROR_RANGE_EXCEED：查询范围过大异常，ERROR_COMPLEX_CONDITION：查询条件复杂异常，ERROR_OTHER_CAUSE：其他异常",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

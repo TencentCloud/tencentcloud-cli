@@ -40418,6 +40418,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由备注",
+          "example": "route-1",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -40440,7 +40451,16 @@
           "example": "ENABLE",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPN路由备注",
+          "example": "route-1",
+          "member": "string",
+          "name": "Description",
+          "required": false,
           "type": "string"
         }
       ],

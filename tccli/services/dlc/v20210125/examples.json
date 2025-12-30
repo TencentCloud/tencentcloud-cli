@@ -780,6 +780,14 @@
         "title": "示例"
       }
     ],
+    "DescribeResourceGroupUsageInfo": [
+      {
+        "document": "查询标准引擎资源CU使用情况",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGroupUsageInfo\n<公共请求参数>\n\n{\n    \"SessionId\": \"rg-5ga6u6gzxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Available\": 40,\n        \"RequestId\": \"6068a77d-5538-4e1d-a93f-cf5800c98e1b\",\n        \"Total\": 64,\n        \"Used\": 24\n    }\n}",
+        "title": "查询标准引擎资源组CU使用情况"
+      }
+    ],
     "DescribeResultDownload": [
       {
         "document": "",

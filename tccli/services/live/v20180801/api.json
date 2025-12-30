@@ -11933,7 +11933,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间，支持最近三个月的数据查询，起始时间和结束时间跨度不能超过三个月。接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "document": "<p>开始时间，支持最近三个月的数据查询，起始时间和结束时间跨度不能超过三个月。接口查询支持两种时间格式：1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 <a href=\"https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F\">ISO 日期格式说明</a>2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。</p>",
           "example": "2019-03-01 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -11942,7 +11942,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，支持最近三个月的数据查询，起始时间和结束时间跨度不能超过三个月。接口查询支持两种时间格式：\n1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F)\n2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。",
+          "document": "<p>结束时间，支持最近三个月的数据查询，起始时间和结束时间跨度不能超过三个月。接口查询支持两种时间格式：1）YYYY-MM-DDThh:mm:ssZ：UTC时间格式，详见 <a href=\"https://cloud.tencent.com/document/product/267/38543#:~:text=I-,ISO,-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F\">ISO 日期格式说明</a>2）YYYY-MM-DD hh:mm:ss：使用此格式时，默认代表北京时间。</p>",
           "example": "2019-03-01 12:00:00",
           "member": "string",
           "name": "EndTime",
@@ -11951,7 +11951,7 @@
         },
         {
           "disabled": false,
-          "document": "推流域名列表，若不填，表示查询所有域名总体数据。\n指定域名时返回1小时粒度数据。",
+          "document": "<p>推流域名列表，若不填，表示查询所有域名总体数据。指定域名时返回1小时粒度数据。</p>",
           "example": "[\"test.com\"]",
           "member": "string",
           "name": "PushDomains",
@@ -11960,7 +11960,7 @@
         },
         {
           "disabled": false,
-          "document": "可选值：\nMainland：查询中国大陆（境内）数据，\nOversea：则查询国际/港澳台（境外）数据，\n默认：查询全球地区（境内+境外）的数据。",
+          "document": "<p>可选值：Mainland：查询中国大陆（境内）数据，Oversea：则查询国际/港澳台（境外）数据，默认：查询全球地区（境内+境外）的数据。</p>",
           "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
@@ -11975,7 +11975,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计数据列表。",
+          "document": "<p>统计数据列表。</p>",
           "example": "无",
           "member": "TranscodeTotalInfo",
           "name": "DataInfoList",

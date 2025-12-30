@@ -141,7 +141,7 @@
       "status": "online"
     },
     "DescribeCertificateBindResourceTaskDetail": {
-      "document": "查询CreateCertificateBindResourceSyncTask任务结果， 返回证书关联云资源异步任务结果， 支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）、cos",
+      "document": "查询CreateCertificateBindResourceSyncTask任务结果， 返回证书关联云资源异步任务结果， 支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）、cos、gaap、mqtt、scf、tdmq",
       "input": "DescribeCertificateBindResourceTaskDetailRequest",
       "name": "查询证书关联云资源任务结果 - 返回关联详情",
       "output": "DescribeCertificateBindResourceTaskDetailResponse",
@@ -3577,7 +3577,7 @@
         },
         {
           "disabled": false,
-          "document": "证书部署的实例列表，不同云资源类型如下\n- clb：若监听器开启了SNI，则需要指定到域名LoadBalancerId|ListenerId|Domain，例：[\"lb-bid2fs4g|lbl-a8af11gs|tencent.com\"]，若监听器未开启SNI或者为四层监听器，则指定到监听器，例：[\"lb-bid2fs4g|lbl-1c6rp5eo\"]\n- cdn：Domain|计费开关，例：[\"cdn2.tencent.com|off\", \"cdn.tencent.com|on\"]\n- ddos：InsId|Domain|VirtualPort，例：[\"bgpip-000001ms|tencent.com|443\"]\n- live：Domain，例：[\"live1.tencent.com\", \"live2.tencent.com\"]\n- vod：Domain， 例：[\"vod1.tencent.com\", \"vod2.tencent.com\"]\n- waf：Domain， 例：[\"waf1.tencent.com\", \"waf2.tencent.com\"]\n- apigateway：ServiceId|Domain， 例：[\"service-8sk7cqmd|apigw1.tencent.com\", \"service-8sk7cqmd|apigw2.ninghhuang.online\"]\n- teo：Domain， 例：[\"edgeone1.tencent.com\", \"edgeone2.tencent.com\"]\n- tke：ClusterId|NameSpace|SecretName， 例：[\"cls-42sa0ae0|default|test-tencent\"]\n- cos：Region|Bucket|Domain， 例：[\"ap-hongkong|ssl-server-1251810746|tencent.com\"]\n- lighthouse：Region|InstanceId|Domain， 例：[\"ap-shanghai|lhins-nh7lql34|tencent.com\"]\n- tse：GatewayId|CertificateId， 例：[\"gateway-s1da9151|fa61bc05-cc54-4eea-c932-24de52577372\"]\n- tcb：Type|Region|EnvId|Domain， 例：[\"AccessService|ap-shanghai|ceshi-4s5h0ymg11c839c7|tencent.com\"]\n",
+          "document": "证书部署的实例列表，不同云资源类型如下\n- clb：若监听器开启了SNI，则需要指定到域名LoadBalancerId|ListenerId|Domain，例：[\"lb-bid2fs4g|lbl-a8af11gs|tencent.com\"]，若监听器未开启SNI或者为四层监听器，则指定到监听器，例：[\"lb-bid2fs4g|lbl-1c6rp5eo\"]\n- cdn：Domain|计费开关，例：[\"cdn2.tencent.com|off\", \"cdn.tencent.com|on\"]\n- ddos：InsId|Domain|VirtualPort，例：[\"bgpip-000001ms|tencent.com|443\"]\n- live：Domain，例：[\"live1.tencent.com\", \"live2.tencent.com\"]\n- vod：Domain， 例：[\"vod1.tencent.com\", \"vod2.tencent.com\"]\n- waf：Domain， 例：[\"waf1.tencent.com\", \"waf2.tencent.com\"]\n- apigateway：ServiceId|Domain， 例：[\"service-8sk7cqmd|apigw1.tencent.com\", \"service-8sk7cqmd|apigw2.minghuang.online\"]\n- teo：Domain， 例：[\"edgeone1.tencent.com\", \"edgeone2.tencent.com\"]\n- tke：ClusterId|NameSpace|SecretName， 例：[\"cls-42sa0ae0|default|test-tencent\"]\n- cos：Region|Bucket|Domain， 例：[\"ap-hongkong|ssl-server-1251810746|tencent.com\"]\n- lighthouse：Region|InstanceId|Domain， 例：[\"ap-shanghai|lhins-nh7lql34|tencent.com\"]\n- tse：GatewayId|CertificateId， 例：[\"gateway-s1da9151|fa61bc05-cc54-4eea-c932-24de52577372\"]\n- tcb：Type|Region|EnvId|Domain， 例：[\"AccessService|ap-shanghai|ceshi-4s5h0ymg11c839c7|tencent.com\"]\n- mqtt: InstanceId|CertId, 例：[\"mqtt-rdnwp7kb|gehs6jsx\"]\n- gaap: InstanceId|ListenerId 例：[\"ga-a3e4z3ae|lsr-a73amjob\"]\n",
           "example": "[\"lb-bid2fs4g|lbl-1c6rp5eo\", \"lb-bid2fs4g|lbl-a8af11gs|tencent.com\"]",
           "member": "string",
           "name": "InstanceIdList",
@@ -3586,7 +3586,7 @@
         },
         {
           "disabled": false,
-          "document": "证书部署云资源支持的云资源类型， 不传则默认部署clb：\n- clb\n- cdn\n- ddos\n- live\n- vod\n- waf\n- apigateway\n- teo\n- tke\n- cos\n- lighthouse\n- tse\n- tcb\n<dx-alert infotype=\"explain\" title=\"\">当云资源类型传入clb、waf、apigateway、cos、lighthouse、tke、tse、tcb 时，公共参数Region必传。</dx-alert>",
+          "document": "证书部署云资源支持的云资源类型， 不传则默认部署clb：\n- clb\n- cdn\n- ddos\n- live\n- vod\n- waf\n- apigateway\n- teo\n- tke\n- cos\n- lighthouse\n- tse\n- tcb\n- mqtt\n<dx-alert infotype=\"explain\" title=\"\">当云资源类型传入clb、waf、apigateway、cos、lighthouse、tke、tse、tcb、mqtt 时，公共参数Region必传。</dx-alert>",
           "example": "clb",
           "member": "string",
           "name": "ResourceType",
@@ -4067,6 +4067,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器状态",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "ListenerStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4460,7 +4470,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果",
+          "document": "<p>任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果</p>",
           "example": "178883",
           "member": "string",
           "name": "TaskId",
@@ -4469,7 +4479,7 @@
         },
         {
           "disabled": false,
-          "document": "每页展示数量， 默认10，最大值100; 分页总数为云资源地域下实例总数， 即第一页会拉群每个云资源的地域下面Limit数量实例",
+          "document": "<p>每页展示数量， 默认10，最大值100; 分页总数为云资源地域下实例总数， 即第一页会拉群每个云资源的地域下面Limit数量实例</p>",
           "example": "0",
           "member": "string",
           "name": "Limit",
@@ -4478,7 +4488,7 @@
         },
         {
           "disabled": false,
-          "document": "当前偏移量，默认为0",
+          "document": "<p>当前偏移量，默认为0</p>",
           "example": "10",
           "member": "string",
           "name": "Offset",
@@ -4487,7 +4497,7 @@
         },
         {
           "disabled": false,
-          "document": "查询资源类型的结果详情， 不传则查询所有，取值支持：\n- clb\n- cdn\n- ddos\n- live\n- vod\n- waf\n- apigateway\n- teo\n- tke\n- cos\n- tse\n- tcb",
+          "document": "<p>查询资源类型的结果详情， 不传则查询所有，取值支持：- clb- cdn- ddos- live- vod- waf- apigateway- teo- tke- cos- tse- tcb</p>",
           "example": "[\"clb\"]",
           "member": "string",
           "name": "ResourceTypes",
@@ -4496,7 +4506,7 @@
         },
         {
           "disabled": false,
-          "document": "查询地域列表的数据，clb、tke、waf、apigateway、tcb、cos、tse支持地域查询， 其他资源类型不支持",
+          "document": "<p>查询地域列表的数据，clb、tke、waf、apigateway、tcb、cos、tse支持地域查询， 其他资源类型不支持</p>",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "Regions",
@@ -4511,7 +4521,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关联clb资源详情\t",
+          "document": "<p>关联clb资源详情   </p>",
           "example": "无",
           "member": "ClbInstanceList",
           "name": "CLB",
@@ -4521,7 +4531,7 @@
         },
         {
           "disabled": false,
-          "document": "关联cdn资源详情\t",
+          "document": "<p>关联cdn资源详情   </p>",
           "example": "无",
           "member": "CdnInstanceList",
           "name": "CDN",
@@ -4531,7 +4541,7 @@
         },
         {
           "disabled": false,
-          "document": "关联waf资源详情\t",
+          "document": "<p>关联waf资源详情   </p>",
           "example": "无",
           "member": "WafInstanceList",
           "name": "WAF",
@@ -4541,7 +4551,7 @@
         },
         {
           "disabled": false,
-          "document": "关联ddos资源详情\t",
+          "document": "<p>关联ddos资源详情  </p>",
           "example": "无",
           "member": "DdosInstanceList",
           "name": "DDOS",
@@ -4551,7 +4561,7 @@
         },
         {
           "disabled": false,
-          "document": "关联live资源详情\t",
+          "document": "<p>关联live资源详情  </p>",
           "example": "无",
           "member": "LiveInstanceList",
           "name": "LIVE",
@@ -4561,7 +4571,7 @@
         },
         {
           "disabled": false,
-          "document": "关联vod资源详情\t",
+          "document": "<p>关联vod资源详情   </p>",
           "example": "无",
           "member": "VODInstanceList",
           "name": "VOD",
@@ -4571,7 +4581,7 @@
         },
         {
           "disabled": false,
-          "document": "关联tke资源详情\t",
+          "document": "<p>关联tke资源详情   </p>",
           "example": "无",
           "member": "TkeInstanceList",
           "name": "TKE",
@@ -4581,7 +4591,7 @@
         },
         {
           "disabled": false,
-          "document": "关联apigateway资源详情\t",
+          "document": "<p>关联apigateway资源详情    </p>",
           "example": "无",
           "member": "ApiGatewayInstanceList",
           "name": "APIGATEWAY",
@@ -4591,7 +4601,7 @@
         },
         {
           "disabled": false,
-          "document": "关联tcb资源详情\t",
+          "document": "<p>关联tcb资源详情   </p>",
           "example": "无",
           "member": "TCBInstanceList",
           "name": "TCB",
@@ -4601,7 +4611,7 @@
         },
         {
           "disabled": false,
-          "document": "关联teo资源详情\t",
+          "document": "<p>关联teo资源详情   </p>",
           "example": "无",
           "member": "TeoInstanceList",
           "name": "TEO",
@@ -4611,7 +4621,7 @@
         },
         {
           "disabled": false,
-          "document": "关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因",
+          "document": "<p>关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因</p>",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -4621,7 +4631,7 @@
         },
         {
           "disabled": false,
-          "document": "当前结果缓存时间",
+          "document": "<p>当前结果缓存时间</p>",
           "example": "2018-09-08 20:00:00",
           "member": "string",
           "name": "CacheTime",
@@ -4631,7 +4641,7 @@
         },
         {
           "disabled": false,
-          "document": "关联tse资源详情\t",
+          "document": "<p>关联tse资源详情   </p>",
           "example": "无",
           "member": "TSEInstanceList",
           "name": "TSE",
@@ -4641,10 +4651,50 @@
         },
         {
           "disabled": false,
-          "document": "关联的COS资源详情",
+          "document": "<p>关联的COS资源详情</p>",
           "example": "无",
           "member": "COSInstanceList",
           "name": "COS",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的TDMQ - Rabbit资源详情</p>",
+          "example": "无",
+          "member": "TDMQInstanceList",
+          "name": "TDMQ",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的MQTT资源详情</p>",
+          "example": "无",
+          "member": "MQTTInstanceList",
+          "name": "MQTT",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的GAAP资源详情</p>",
+          "example": "无",
+          "member": "GAAPInstanceList",
+          "name": "GAAP",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的SCF资源详情</p>",
+          "example": "无",
+          "member": "SCFInstanceList",
+          "name": "SCF",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -8477,6 +8527,144 @@
       ],
       "usage": "in"
     },
+    "GAAPInstanceDetail": {
+      "document": "GAAP实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "zrh-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器列表",
+          "example": "无",
+          "member": "GAAPListenerDetail",
+          "name": "ListenerList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加速实例名称",
+          "example": "加速实例",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GAAPInstanceList": {
+      "document": "GAAP实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例详情",
+          "example": "无",
+          "member": "GAAPInstanceDetail",
+          "name": "InstanceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\t",
+          "example": "wrong",
+          "member": "string",
+          "name": "Error",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GAAPListenerDetail": {
+      "document": "GAAP监听器详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监听器状态",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "ListenerStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器ID",
+          "example": "lsr-xxxx",
+          "member": "string",
+          "name": "ListenerId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器名称",
+          "example": "GAAP监听器",
+          "member": "string",
+          "name": "ListenerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不匹配的域名列表",
+          "example": "[\"www.qq.com\"]\t",
+          "member": "string",
+          "name": "NoMatchDomains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例绑定的证书列表\t",
+          "example": "[\"hehegts\"]",
+          "member": "string",
+          "name": "CertIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器协议",
+          "example": "HTTPS",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GatewayCertificate": {
       "document": "云原生网关证书信息",
       "members": [
@@ -8697,6 +8885,124 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MQTTInstanceDetail": {
+      "document": "MQTT实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "zrh-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "腾讯云Mqtt实例",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不匹配的域名列表",
+          "example": "[\"www.qq.com\"]",
+          "member": "string",
+          "name": "NoMatchDomains",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端证书列表",
+          "example": "[\"hdejkkk\",\"eydhens\"]",
+          "member": "string",
+          "name": "ServerCertIdList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ca证书列表",
+          "example": "[\"hdejkkk\",\"eydhens\"]",
+          "member": "string",
+          "name": "CaCertIdList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MQTTInstanceList": {
+      "document": "MQTT实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例详情",
+          "example": "['']",
+          "member": "MQTTInstanceDetail",
+          "name": "InstanceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域下总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "no region",
+          "member": "string",
+          "name": "Error",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9807,6 +10113,102 @@
       ],
       "usage": "out"
     },
+    "SCFInstanceDetail": {
+      "document": "SCF实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书ID",
+          "example": "Psjujsuh",
+          "member": "string",
+          "name": "CertificateId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "HTTP&HTTPS",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.ksk.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SCFInstanceList": {
+      "document": "SCF实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SCF实例详情</p>",
+          "example": "无",
+          "member": "SCFInstanceDetail",
+          "name": "InstanceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "fail",
+          "member": "string",
+          "name": "Error",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域下总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SubmitAuditManagerRequest": {
       "document": "SubmitAuditManager请求参数结构体",
       "members": [
@@ -10810,6 +11212,118 @@
       ],
       "usage": "out"
     },
+    "TDMQInstanceDetail": {
+      "document": "TDMQ - Rabbit实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "amqp-mmgev82b",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "腾讯云证书实例",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端证书ID",
+          "example": "23tco1AK",
+          "member": "string",
+          "name": "CertId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CA证书ID",
+          "example": "OMt8o1KK",
+          "member": "string",
+          "name": "CaCertId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不匹配的域名列表",
+          "example": "[\"www.qq.com\"]",
+          "member": "string",
+          "name": "NoMatchDomains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TDMQInstanceList": {
+      "document": "TDMQ - Rabbit实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例详情",
+          "example": "无",
+          "member": "TDMQInstanceDetail",
+          "name": "InstanceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域下总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "no region",
+          "member": "string",
+          "name": "Error",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TSEInstanceDetail": {
       "document": "tse实例详情",
       "members": [
@@ -11263,7 +11777,7 @@
         },
         {
           "disabled": false,
-          "document": "云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos",
+          "document": "云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos、mqtt",
           "example": "无",
           "member": "ResourceTypeRegions",
           "name": "ResourceTypesRegions",
@@ -11700,6 +12214,26 @@
           "example": "RSA",
           "member": "string",
           "name": "OldAlgorithm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态，不同云产品状态不一样\t",
+          "example": "HEALTHY",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监听器状态",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "ListenerStatus",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
