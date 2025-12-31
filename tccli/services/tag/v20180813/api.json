@@ -63,6 +63,13 @@
       "output": "CreateTagsResponse",
       "status": "online"
     },
+    "DeleteNoDistinctRegionResourceTag": {
+      "document": "本接口用于解绑不区分地域资源的历史标签（绑定标签的资源带有地域）",
+      "input": "DeleteNoDistinctRegionResourceTagRequest",
+      "name": "解绑不区分地域资源的历史标签（绑定标签的资源带有地域）",
+      "output": "DeleteNoDistinctRegionResourceTagResponse",
+      "status": "online"
+    },
     "DeletePolicy": {
       "document": "删除标签策略。",
       "input": "DeletePolicyRequest",
@@ -779,6 +786,42 @@
     },
     "CreateTagsResponse": {
       "document": "CreateTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNoDistinctRegionResourceTagRequest": {
+      "document": "DeleteNoDistinctRegionResourceTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签键</p>",
+          "example": "testKey",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源六段式</p>",
+          "example": "qcs::waf:ap-guangzhou:uin/100000005307:waf/waf_001",
+          "member": "string",
+          "name": "Resource",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNoDistinctRegionResourceTagResponse": {
+      "document": "DeleteNoDistinctRegionResourceTag返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

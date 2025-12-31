@@ -105,6 +105,13 @@
       "output": "ImageQuestionResponse",
       "status": "online"
     },
+    "QueryHunyuan3DPartJob": {
+      "document": "查询组件生成任务。",
+      "input": "QueryHunyuan3DPartJobRequest",
+      "name": "查询组件生成任务",
+      "output": "QueryHunyuan3DPartJobResponse",
+      "status": "online"
+    },
     "QueryHunyuanImageChatJob": {
       "document": "混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。\n提交任务：输入文本和前置对话 ID 等，提交一个混元生图多轮对话异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得在上一轮对话基础上继续生成的图像结果。\n混元生图（多轮对话）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "QueryHunyuanImageChatJobRequest",
@@ -124,6 +131,13 @@
       "input": "QueryHunyuanTo3DProJobRequest",
       "name": "查询混元生3D专业版任务",
       "output": "QueryHunyuanTo3DProJobResponse",
+      "status": "online"
+    },
+    "QueryHunyuanTo3DRapidJob": {
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "QueryHunyuanTo3DRapidJobRequest",
+      "name": "查询混元生3D极速版任务",
+      "output": "QueryHunyuanTo3DRapidJobResponse",
       "status": "online"
     },
     "ReportUsage": {
@@ -147,6 +161,13 @@
       "output": "SetPayModeResponse",
       "status": "online"
     },
+    "SubmitHunyuan3DPartJob": {
+      "document": "输入3D模型文件后，根据模型结构自动进行组件识别生成。",
+      "input": "SubmitHunyuan3DPartJobRequest",
+      "name": "提交组件生成任务",
+      "output": "SubmitHunyuan3DPartJobResponse",
+      "status": "online"
+    },
     "SubmitHunyuanImageChatJob": {
       "document": "混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。\n提交任务：输入文本和前置对话 ID 等，提交一个混元生图多轮对话异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得在上一轮对话基础上继续生成的图像结果。\n混元生图（多轮对话）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "SubmitHunyuanImageChatJobRequest",
@@ -166,6 +187,13 @@
       "input": "SubmitHunyuanTo3DProJobRequest",
       "name": "提交混元生3D专业版任务",
       "output": "SubmitHunyuanTo3DProJobResponse",
+      "status": "online"
+    },
+    "SubmitHunyuanTo3DRapidJob": {
+      "document": "混元生3D接口，基于混元大模型，根据输入的文本描述/图片智能生成3D。\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "SubmitHunyuanTo3DRapidJobRequest",
+      "name": "提交混元生3D极速版任务",
+      "output": "SubmitHunyuanTo3DRapidJobResponse",
       "status": "online"
     },
     "TextToImageLite": {
@@ -2449,6 +2477,30 @@
       ],
       "usage": "both"
     },
+    "InputFile3D": {
+      "document": "3D文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件的Url（有效期24小时）\t",
+          "example": "https://cos.ap-guangzhou.myqcloud.com/obj.obj\t",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件格式\t",
+          "example": "OBJ",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "Knowledge": {
       "document": "外部知识",
       "members": [
@@ -2891,6 +2943,73 @@
       ],
       "usage": "out"
     },
+    "QueryHunyuan3DPartJobRequest": {
+      "document": "QueryHunyuan3DPartJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。\t",
+          "example": "1376862528873414656",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryHunyuan3DPartJobResponse": {
+      "document": "QueryHunyuan3DPartJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功 示例值：RUN。\t",
+          "example": "WAIT",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码。\t",
+          "example": "InvalidParameter",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。\t",
+          "example": "参数错误。\t",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成文件的URL地址，有效期1天。\t",
+          "example": "无",
+          "member": "File3D",
+          "name": "ResultFile3Ds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryHunyuanImageChatJobRequest": {
       "document": "QueryHunyuanImageChatJob请求参数结构体",
       "members": [
@@ -3146,6 +3265,73 @@
         {
           "disabled": false,
           "document": "生成的3D文件数组。",
+          "example": "无",
+          "member": "File3D",
+          "name": "ResultFile3Ds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryHunyuanTo3DRapidJobRequest": {
+      "document": "QueryHunyuanTo3DRapidJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。\t",
+          "example": "1315932989749215232",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryHunyuanTo3DRapidJobResponse": {
+      "document": "QueryHunyuanTo3DRapidJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功\t",
+          "example": "RUN",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "InvalidParameter",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\t",
+          "example": "参数错误\t",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的3D文件数组。\t",
           "example": "无",
           "member": "File3D",
           "name": "ResultFile3Ds",
@@ -3820,6 +4006,43 @@
       ],
       "usage": "out"
     },
+    "SubmitHunyuan3DPartJobRequest": {
+      "document": "SubmitHunyuan3DPartJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "建议输入由AIGC生成的3D模型，建议文件大小≤100MB，面数≤1500000面，仅支持FBX格式输入。",
+          "example": "无",
+          "member": "InputFile3D",
+          "name": "File",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuan3DPartJobResponse": {
+      "document": "SubmitHunyuan3DPartJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id（有效期24小时）。",
+          "example": "1384898587778465792",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SubmitHunyuanImageChatJobRequest": {
       "document": "SubmitHunyuanImageChatJob请求参数结构体",
       "members": [
@@ -4096,6 +4319,79 @@
           "disabled": false,
           "document": "任务ID（有效期24小时）",
           "example": "1357237233311637504",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuanTo3DRapidJobRequest": {
+      "document": "SubmitHunyuanTo3DRapidJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文生3D，3D内容的描述，正向提示词。 最多支持200个 utf-8 字符。 ImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。\t",
+          "example": "一只小猫",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输入图 Base64 数据。 大小: 单边分辨率要求不小于128，不大于5000，大小≤6m (因base64编码后会大30%左右) 格式: jpg，png，jpeg，webp. lmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不能同时存在。\t",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI\t",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输入图Url 大小: 单边分辨率要求不小于128，不大于5000，大小≤8m 格式: jpg，png，jpeg，webp. lmageBase64、lmageUr和 Prompt必填其一，且Prompt和lmageBase64/mageUr不能同时存在。\t",
+          "example": "https://***.cos.ap-guangzhou.myqcloud.com/***.jpg\t",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启 PBR材质生成，默认 false。\t",
+          "example": "false",
+          "member": "bool",
+          "name": "EnablePBR",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启单几何生成选项，开启后会生成不带纹理的3D模型（白模）； 开启时，生成模型文件不支持OBJ格式，默认生成模型文件为GLB格式。\t",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableGeometry",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitHunyuanTo3DRapidJobResponse": {
+      "document": "SubmitHunyuanTo3DRapidJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID（有效期24小时）\t",
+          "example": "1315932989749215232",
           "member": "string",
           "name": "JobId",
           "output_required": false,

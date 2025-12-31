@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli cwp ModifyAutoOpenProVersionConfig --cli-unfold-argument  \
-    --Status OPEN
+    --Status OPEN \
+    --ProtectType FLAGSHIP_PREPAY
 ```
 
 Output: 

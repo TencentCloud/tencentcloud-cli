@@ -72,6 +72,14 @@
         "title": "创建标签"
       }
     ],
+    "DeleteNoDistinctRegionResourceTag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNoDistinctRegionResourceTag\n<公共请求参数>\n\n{\n    \"TagKey\": \"testKey\",\n    \"Resource\": \"qcs::waf:ap-guangzhou:uin/100000005307:waf/waf_001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16823c00-cbad-4e0c-8b8d-eececc59bb38\"\n    }\n}",
+        "title": "解绑不区分地域资源的历史标签（绑定标签的资源带有地域）"
+      }
+    ],
     "DeletePolicy": [
       {
         "document": "删除标签策略ID为1001的标签策略",
