@@ -1689,7 +1689,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "请求的图片宽度。",
+          "document": "，单位为：像素（px）。",
           "example": "640",
           "member": "int64",
           "name": "ImageWidth",
@@ -1699,7 +1699,7 @@
         },
         {
           "disabled": false,
-          "document": "请求的图片高度。",
+          "document": "，单位为：像素（px）。",
           "example": "440",
           "member": "int64",
           "name": "ImageHeight",

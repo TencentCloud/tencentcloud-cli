@@ -387,15 +387,15 @@
     "LivenessRecognition": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LivenessRecognition\n<公共请求参数>\n\n{\n    \"IdCard\": \"11204416541220243X\",\n    \"LivenessType\": \"SILENT\",\n    \"Name\": \"韦小宝\",\n    \"VideoBase64\": \"AAAAIGZ0eX...0tLS0tLS8=\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"/9j/4AAQSkZJRg.....s97n//2Q==\",\n        \"BestFrameList\": [\n            \"/9j/4AAQSk...ZpGq7an//Z\"\n        ],\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
-        "title": "静默活体人脸核身成功示例"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LivenessRecognition\n<公共请求参数>\n\n{\n    \"IdCard\": \"11204416541220243X\",\n    \"LivenessType\": \"LIP\",\n    \"Name\": \"韦小宝\",\n    \"VideoBase64\": \"AAAAIGZ0eX...0tLS0tLS8=\",\n    \"ValidateData\": \"4903\"\n}",
         "output": "{\n    \"Response\": {\n        \"BestFrameBase64\": \"/9j/4AAQSk...ZpGq7an//Z\",\n        \"BestFrameList\": [],\n        \"Description\": \"声音识别失败\",\n        \"RequestId\": \"0187d319-86ac-4687-807f-7733d54ba0c0\",\n        \"Result\": \"FailedOperation.LipVoiceRecognize\",\n        \"Sim\": 0\n    }\n}",
         "title": "数字活体人脸核身失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LivenessRecognition\n<公共请求参数>\n\n{\n    \"IdCard\": \"11204416541220243X\",\n    \"LivenessType\": \"SILENT\",\n    \"Name\": \"韦小宝\",\n    \"VideoBase64\": \"AAAAIGZ0eX...0tLS0tLS8=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"/9j/4AAQSkZJRg.....s97n//2Q==\",\n        \"BestFrameList\": [\n            \"/9j/4AAQSk...ZpGq7an//Z\"\n        ],\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
+        "title": "静默活体人脸核身成功示例"
       }
     ],
     "MinorsVerification": [

@@ -308,6 +308,36 @@
         "title": "DescribeBlockStaticList 告警中心柱形图"
       }
     ],
+    "DescribeCcnAssociatedInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnAssociatedInstances\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-iidlg5oh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CcnAssociatedInstances\": [\n            {\n                \"CidrLst\": [\n                    \"172.16.0.0/20\"\n                ],\n                \"InsType\": \"VPC\",\n                \"InstanceId\": \"vpc-o7irzxwt\",\n                \"InstanceName\": \"gwlb-dpdk-u6cd5u5170u514bu798f\",\n                \"InstanceRegion\": \"eu-frankfurt\"\n            }\n        ],\n        \"Total\": 3,\n        \"RequestId\": \"de54f1ed-5a43-47e7-b57b-4892526e4cf7\"\n    }\n}",
+        "title": "查询CCN关联的实例信息（返回结果排除掉了云防火墙在CCN中创建的引流网络实例）"
+      }
+    ],
+    "DescribeCcnInstanceRegionStatus": [
+      {
+        "document": "输入CcnId和要查询的实例ID列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnInstanceRegionStatus\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-iidlg5oh\",\n    \"InstanceIds\": [\n        \"vpc-p9qzo51x\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RegionFwStatus\": [\n            {\n                \"Cidr\": \"\",\n                \"Region\": \"na-siliconvalley\",\n                \"Status\": \"NotDeployed\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"bfc1cf67-5f2f-4253-864f-03be3d69777c\"\n    }\n}",
+        "title": "查询CCN关联实例的地域引流网络状态"
+      },
+      {
+        "document": "输入CcnId和要查询，实例ID列表为空则默认获取所有关联地域状态",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnInstanceRegionStatus\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-iidlg5oh\",\n    \"InstanceIds\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RegionFwStatus\": [\n            {\n                \"Cidr\": \"\",\n                \"Region\": \"na-siliconvalley\",\n                \"Status\": \"NotDeployed\"\n            }\n        ],\n        \"Total\": 2,\n        \"RequestId\": \"61b6a85c-dff4-4b28-9349-160037582096\"\n    }\n}",
+        "title": "查询CCN关联实例的地域引流网络状态（实例ID列表为空）"
+      }
+    ],
+    "DescribeCcnVpcFwSwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnVpcFwSwitch\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-c0qmm031\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InterconnectPairs\": [\n            {\n                \"GroupA\": [\n                    {\n                        \"AccessCidrList\": [\n                            \"33.224.32.0/20\"\n                        ],\n                        \"AccessCidrMode\": 1,\n                        \"InstanceId\": \"vpc-k5yzoiod\",\n                        \"InstanceRegion\": \"eu-frankfurt\",\n                        \"InstanceType\": \"VPC\"\n                    }\n                ],\n                \"GroupB\": [\n                    {\n                        \"AccessCidrList\": [\n                            \"10.70.0.0/22\"\n                        ],\n                        \"AccessCidrMode\": 1,\n                        \"InstanceId\": \"vpc-lvxgi7fi\",\n                        \"InstanceRegion\": \"ap-hongkong\",\n                        \"InstanceType\": \"VPC\"\n                    }\n                ],\n                \"InterconnectMode\": \"CrossConnect\"\n            }\n        ],\n        \"RequestId\": \"dff5ad62-9f79-44a3-ba36-3b66d85e739a\"\n    }\n}",
+        "title": "获取防火墙配置"
+      }
+    ],
     "DescribeCfwEips": [
       {
         "document": "",
@@ -516,6 +546,14 @@
         "title": "DescribeSourceAsset-查询全部资产信息"
       }
     ],
+    "DescribeSwitchError": [
+      {
+        "document": "互联网边界防火墙开关横幅错误信息",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSwitchError\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ErrIns\": \"118.24.220.13\",\n                \"ErrKey\": \"ERR_ENDPOINT_SUBNET\",\n                \"ErrMsg\": \"1个防火墙开关开启失败(118.24.220.13)，原因：需要指定引流子网和引流内网IP，请尝试逐个手动开启\",\n                \"InsertTime\": \"2023-07-27 18:07:17\"\n            }\n        ],\n        \"RequestId\": \"5f8b7455-6a61-40d6-94a9-d98e9d2f577f\"\n    }\n}",
+        "title": "互联网边界防火墙开关横幅错误信息"
+      }
+    ],
     "DescribeSwitchLists": [
       {
         "document": "开关列表枚举",
@@ -568,6 +606,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcAcRule\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"SrcIP\",\n            \"Values\": [\n                \"192.168.1.10\"\n            ],\n            \"OperatorType\": 9\n        },\n        {\n            \"Name\": \"IpVersion\",\n            \"Values\": [\n                \"0\"\n            ],\n            \"OperatorType\": 1\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Uuid\": 221579,\n                \"InternalUuid\": 1729666998976364,\n                \"OrderIndex\": 1,\n                \"SourceContent\": \"mb_1256532032_1666263807415\",\n                \"SourceType\": \"template\",\n                \"DestContent\": \"192.168.1.2\",\n                \"DestType\": \"net\",\n                \"Port\": \"-1/-1\",\n                \"Protocol\": \"TCP\",\n                \"RuleAction\": \"accept\",\n                \"Description\": \"用于测试的规则\",\n                \"Enable\": \"true\",\n                \"Deleted\": 0,\n                \"EdgeId\": \"ALL\",\n                \"EdgeName\": \"edge名称\",\n                \"DetectedTimes\": 0,\n                \"FwGroupId\": \"ALL\",\n                \"FwGroupName\": \"互联分组\",\n                \"BetaList\": [\n                    {\n                        \"TaskId\": \"9001\",\n                        \"TaskName\": \"autotest\",\n                        \"LastTime\": \"1999-01-01 00:00:01\"\n                    }\n                ],\n                \"ParamTemplateId\": \"pp-ie03er\",\n                \"ParamTemplateName\": \"常规端口模版\",\n                \"TargetName\": \"模版规则\",\n                \"SourceName\": \"模版规则\",\n                \"IpVersion\": 0\n            }\n        ],\n        \"RequestId\": \"9afc19d7-0036-4f3d-af1a-80088236f4ed\"\n    }\n}",
         "title": "查询内网间访问控制列表示例2"
+      }
+    ],
+    "DescribeVpcFwCcnPolicyWhiteList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcFwCcnPolicyWhiteList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SupportCcnPolicy\": [\n            \"ccn-ha7tt32f\"\n        ],\n        \"SupportCcnPolicyCidr\": [\n            \"ccn-ha7tt32f\"\n        ],\n        \"RequestId\": \"bf906fb6-c74e-4168-9da6-d2c27360ab2b\"\n    }\n}",
+        "title": "获取白名单列表"
       }
     ],
     "DescribeVpcFwGroupSwitch": [
@@ -678,6 +724,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlockTop\n<公共请求参数>\n\n{\n    \"OpeType\": \"2\",\n    \"UniqueId\": \"dsahjd********\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3a822d02-e5f0-4a87-9b77-f3da6912fea1\"\n    }\n}",
         "title": "ModifyBlockTop取消置顶接口"
+      }
+    ],
+    "ModifyClusterVpcFwSwitch": [
+      {
+        "document": "修改集群模式VPC防火墙开关",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterVpcFwSwitch\n<公共请求参数>\n\n{\n    \"Enable\": 1,\n    \"CcnSwitch\": [\n        {\n            \"CcnId\": \"ccn-a5z72txp\",\n            \"SwitchMode\": 2,\n            \"FwVpcCidr\": \"auto\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70ef6201-d73e-4b02-9645-dee6bf00fa66\"\n    }\n}",
+        "title": "修改集群模式VPC防火墙开关"
       }
     ],
     "ModifyEWRuleStatus": [
@@ -960,6 +1014,22 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncFwOperate\n<公共请求参数>\n\n{\n    \"SyncType\": \"Route\",\n    \"FwType\": \"ew\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"985187d2-9a80-4ee7-b519-ad48e75f6588\"\n    }\n}",
         "title": "同步防火墙操作"
+      }
+    ],
+    "UpdateCheckCcnNonDirectFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCheckCcnNonDirectFlag\n<公共请求参数>\n\n{\n    \"CcnId\": \"ccn-iidlg5oh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"Checked\",\n        \"RequestId\": \"d47819ef-89f5-40b8-87ef-98f3d7856a67\"\n    }\n}",
+        "title": "检测中"
+      }
+    ],
+    "UpdateClusterVpcFw": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateClusterVpcFw\n<公共请求参数>\n\n{\n    \"CcnSwitch\": {\n        \"CcnId\": \"ccn-hunqbq8z\",\n        \"SwitchMode\": 1,\n        \"RoutingMode\": 1,\n        \"RegionCidrConfigs\": [\n            {\n                \"Region\": \"eu-frankfurt\",\n                \"CidrMode\": 1,\n                \"CustomCidr\": \"\"\n            }\n        ],\n        \"InterconnectPairs\": [\n            {\n                \"GroupA\": [\n                    {\n                        \"InstanceId\": \"vpc-lo1oluf4\",\n                        \"InstanceType\": \"VPC\",\n                        \"InstanceRegion\": \"ap-seoul\",\n                        \"AccessCidrMode\": 1,\n                        \"AccessCidrList\": [\n                            \"10.24.0.0/16\"\n                        ]\n                    }\n                ],\n                \"GroupB\": [\n                    {\n                        \"InstanceId\": \"vpc-lo1oluf4\",\n                        \"InstanceType\": \"VPC\",\n                        \"InstanceRegion\": \"ap-seoul\",\n                        \"AccessCidrMode\": 1,\n                        \"AccessCidrList\": [\n                            \"10.24.0.0/16\"\n                        ]\n                    }\n                ],\n                \"InterconnectMode\": \"FullMesh\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6850583-1840-4d17-90d2-59d3fe8988c7\"\n    }\n}",
+        "title": "更新防火墙配置"
       }
     ]
   },

@@ -238,6 +238,27 @@
       "output": "DescribeBlockStaticListResponse",
       "status": "online"
     },
+    "DescribeCcnAssociatedInstances": {
+      "document": "查询云联网关联的实例信息",
+      "input": "DescribeCcnAssociatedInstancesRequest",
+      "name": "查询CCN关联实例信息（不包含云防火墙创建引流实例）",
+      "output": "DescribeCcnAssociatedInstancesResponse",
+      "status": "online"
+    },
+    "DescribeCcnInstanceRegionStatus": {
+      "document": "查询CCN关联实例的地域防火墙引流网络部署状态\n1.根据CCN ID和实例ID列表，返回实例对应地域的防火墙引流网络部署状态\n2.如果传入实例ID列表为空，则返回CCN关联的所有实例的地域防火墙引流网络部署状态",
+      "input": "DescribeCcnInstanceRegionStatusRequest",
+      "name": "查询CCN关联传入实例的地域防火墙引流网络部署状态",
+      "output": "DescribeCcnInstanceRegionStatusResponse",
+      "status": "online"
+    },
+    "DescribeCcnVpcFwSwitch": {
+      "document": "查询CCN VPC防火墙开关配置",
+      "input": "DescribeCcnVpcFwSwitchRequest",
+      "name": "查询CCN VPC防火墙开关配置",
+      "output": "DescribeCcnVpcFwSwitchResponse",
+      "status": "online"
+    },
     "DescribeCfwEips": {
       "document": "查询防火墙弹性公网IP",
       "input": "DescribeCfwEipsRequest",
@@ -420,6 +441,13 @@
       "output": "DescribeSourceAssetResponse",
       "status": "online"
     },
+    "DescribeSwitchError": {
+      "document": "互联网边界防火墙开关横幅错误信息",
+      "input": "DescribeSwitchErrorRequest",
+      "name": "互联网边界和VPC防火墙开关横幅错误信息",
+      "output": "DescribeSwitchErrorResponse",
+      "status": "online"
+    },
     "DescribeSwitchLists": {
       "document": "防火墙开关列表，请换用DescribeFwEdgeIps",
       "input": "DescribeSwitchListsRequest",
@@ -460,6 +488,13 @@
       "input": "DescribeVpcAcRuleRequest",
       "name": "查询内网间访问控制列表",
       "output": "DescribeVpcAcRuleResponse",
+      "status": "online"
+    },
+    "DescribeVpcFwCcnPolicyWhiteList": {
+      "document": "查询VPC防火墙策略路由功能开白的CCN列表",
+      "input": "DescribeVpcFwCcnPolicyWhiteListRequest",
+      "name": "VPC防火墙CCN策略路由白名单",
+      "output": "DescribeVpcFwCcnPolicyWhiteListResponse",
       "status": "online"
     },
     "DescribeVpcFwGroupSwitch": {
@@ -551,6 +586,13 @@
       "input": "ModifyBlockTopRequest",
       "name": "取消阻断记录置顶接口",
       "output": "ModifyBlockTopResponse",
+      "status": "online"
+    },
+    "ModifyClusterVpcFwSwitch": {
+      "document": "修改集群模式VPC防火墙开关",
+      "input": "ModifyClusterVpcFwSwitchRequest",
+      "name": "修改集群模式VPC防火墙开关",
+      "output": "ModifyClusterVpcFwSwitchResponse",
       "status": "online"
     },
     "ModifyEWRuleStatus": {
@@ -782,6 +824,20 @@
       "input": "SyncFwOperateRequest",
       "name": "同步防火墙操作",
       "output": "SyncFwOperateResponse",
+      "status": "online"
+    },
+    "UpdateCheckCcnNonDirectFlag": {
+      "document": "重新检测CCN中接入VPC防火墙的VPC实例非同城直通标记",
+      "input": "UpdateCheckCcnNonDirectFlagRequest",
+      "name": "重新检测CCN中接入VPC防火墙的VPC实例非同城直通标记",
+      "output": "UpdateCheckCcnNonDirectFlagResponse",
+      "status": "online"
+    },
+    "UpdateClusterVpcFw": {
+      "document": "修改更新CCN中VPC防火墙策略配置",
+      "input": "UpdateClusterVpcFwRequest",
+      "name": "修改更新CCN中VPC防火墙策略配置",
+      "output": "UpdateClusterVpcFwResponse",
       "status": "online"
     }
   },
@@ -1037,6 +1093,67 @@
         }
       ],
       "usage": "out"
+    },
+    "AccessInstanceInfo": {
+      "document": "接入防火墙实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "vpc-lw7v0igu",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型VPC or DIRECTCONNECT等类型",
+          "example": "DIRECTCONNECT",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所在地域",
+          "example": "ap-seoul",
+          "member": "string",
+          "name": "InstanceRegion",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入防火墙的网段模式：0-不接入，1-接入实例关联的所有网段，2-接入用户自定义的网段",
+          "example": "2",
+          "member": "int64",
+          "name": "AccessCidrMode",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入防火墙的网段列表",
+          "example": "[\"10.70.12.0/22\"]",
+          "member": "string",
+          "name": "AccessCidrList",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AddAclRuleRequest": {
       "document": "AddAclRule请求参数结构体",
@@ -1805,6 +1922,134 @@
         }
       ],
       "usage": "out"
+    },
+    "CcnAssociatedInstance": {
+      "document": "CCN关联的实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "vpc-92gxvdf1",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "策略路由测试1",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "VPC",
+          "member": "string",
+          "name": "InsType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例的网段列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"10.0.0.0/16\"]",
+          "member": "string",
+          "name": "CidrLst",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "InstanceRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CcnSwitchInfo": {
+      "document": "ccn实例开关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ccn的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccn-1dsx21ls",
+          "member": "string",
+          "name": "CcnId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关接入模式，1:自动接入,2:手动接入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SwitchMode",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引流路由方法 0:多路由表, 1:策略路由\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RoutingMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域级别CIDR配置",
+          "example": "无",
+          "member": "RegionCidrConfig",
+          "name": "RegionCidrConfigs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "互联集合对列表",
+          "example": "无",
+          "member": "InterconnectPair",
+          "name": "InterconnectPairs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引流通用CIDR(废弃)",
+          "example": "auto",
+          "member": "string",
+          "name": "FwVpcCidr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CfwInsStatus": {
       "document": "防火墙实例运行状态",
@@ -5430,6 +5675,155 @@
       ],
       "type": "object"
     },
+    "DescribeCcnAssociatedInstancesRequest": {
+      "document": "DescribeCcnAssociatedInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-iidlg5oh",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnAssociatedInstancesResponse": {
+      "document": "DescribeCcnAssociatedInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例总数",
+          "example": "3",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云联网关联的实例信息",
+          "example": "无",
+          "member": "CcnAssociatedInstance",
+          "name": "CcnAssociatedInstances",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnInstanceRegionStatusRequest": {
+      "document": "DescribeCcnInstanceRegionStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-iidlg5oh",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要查询引流网络部署状态的云联网关联的实例ID列表",
+          "example": "[\"vpc-p9qzo51x\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "引流路由方法 0:多路由表, 1:策略路由",
+          "example": "1",
+          "member": "uint64",
+          "name": "RoutingMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnInstanceRegionStatusResponse": {
+      "document": "DescribeCcnInstanceRegionStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域总数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域防火墙引流网络状态列表",
+          "example": "无",
+          "member": "RegionFwStatus",
+          "name": "RegionFwStatus",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnVpcFwSwitchRequest": {
+      "document": "DescribeCcnVpcFwSwitch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-c0qmm031",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCcnVpcFwSwitchResponse": {
+      "document": "DescribeCcnVpcFwSwitch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "互联对配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InterconnectPair",
+          "name": "InterconnectPairs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCfwEipsRequest": {
       "document": "DescribeCfwEips请求参数结构体",
       "members": [
@@ -7659,6 +8053,43 @@
       ],
       "type": "object"
     },
+    "DescribeSwitchErrorRequest": {
+      "document": "DescribeSwitchError请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EDGE_FW : 互联网边界防火墙 , NDR: 流量分析，VPC_FW：VPC边界防火墙",
+          "example": "EDGE_FW",
+          "member": "string",
+          "name": "FwType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSwitchErrorResponse": {
+      "document": "DescribeSwitchError返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SwitchError",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSwitchListsRequest": {
       "document": "DescribeSwitchLists请求参数结构体",
       "members": [
@@ -8175,6 +8606,43 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcFwCcnPolicyWhiteListRequest": {
+      "document": "DescribeVpcFwCcnPolicyWhiteList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVpcFwCcnPolicyWhiteListResponse": {
+      "document": "DescribeVpcFwCcnPolicyWhiteList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持自动接入和策略路由的CCN列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ccn-ha7tt32f\"]",
+          "member": "string",
+          "name": "SupportCcnPolicy",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动接入中支持自定义cidr的CCN列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ccn-ha7tt32f\"]",
+          "member": "string",
+          "name": "SupportCcnPolicyCidr",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9625,6 +10093,45 @@
       ],
       "usage": "out"
     },
+    "InterconnectPair": {
+      "document": "接入防火墙的互联集合对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集合A",
+          "example": "无",
+          "member": "AccessInstanceInfo",
+          "name": "GroupA",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集合B",
+          "example": "无",
+          "member": "AccessInstanceInfo",
+          "name": "GroupB",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "互联模式：\"CrossConnect\": 交叉互联（组A内每个实例和组B内每个实例互联），\"FullMesh\": 全互联（组A实际和组B内容一致，相当于组内两两互联）",
+          "example": "FullMesh",
+          "member": "string",
+          "name": "InterconnectMode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IntrusionDefenseRule": {
       "document": "入侵防御封禁列表、放通列表添加规则入参",
       "members": [
@@ -10581,6 +11088,42 @@
     },
     "ModifyBlockTopResponse": {
       "document": "ModifyBlockTop返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterVpcFwSwitchRequest": {
+      "document": "ModifyClusterVpcFwSwitch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开关，0：关闭，1：开启",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群模式vpc间防火墙ccn开关信息",
+          "example": "[{\"CcnId\":\"ccn-cs12dxd3\", \"SwitchMode\":\"auto\", \"FwVpcCidr\":\"auto\"}]",
+          "member": "CcnSwitchInfo",
+          "name": "CcnSwitch",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterVpcFwSwitchResponse": {
+      "document": "ModifyClusterVpcFwSwitch返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12465,6 +13008,81 @@
         }
       ],
       "usage": "in"
+    },
+    "RegionCidrConfig": {
+      "document": "引流地域CIDR配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引流地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eu-frankfurt",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CIDR模式：0-跳过，1-自动，2-自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "CidrMode",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义CIDR（CidrMode=2时必填），其它时候为空字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.189.0.0/26",
+          "member": "string",
+          "name": "CustomCidr",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RegionFwStatus": {
+      "document": "地域的防火墙引流网络状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引流网络部署状态\n1. \"NotDeployed\"  防火墙集群未部署\n2. \"Deployed\"        防火墙集群已部署，但未创建引流网络\n3. \"Auto\"                防火墙集群已部署，并自动选择网段创建了引流网络\n4. \"Custom\"            防火墙集群已部署，并根据用户自定义网段创建了引流网络",
+          "example": "Auto",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引流网络的cidr，如果没有部署引流网络则为空",
+          "example": "172.31.0.0/26",
+          "member": "string",
+          "name": "Cidr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RemoveAcRuleRequest": {
       "document": "RemoveAcRule请求参数结构体",
@@ -14568,6 +15186,52 @@
       ],
       "usage": "out"
     },
+    "SwitchError": {
+      "document": "开关切换错误",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开关唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "ErrIns",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3个防火墙开关开启失败(17.17.17.17, 18.18.18.18, 19.19.19.19)，原因：需要指定引流子网和引流内网IP，请尝试逐个手动开启",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误类型区分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ERR_ENDPOINT_SUBNET",
+          "member": "string",
+          "name": "ErrKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-07-26 22:46:00",
+          "member": "string",
+          "name": "InsertTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SwitchListsData": {
       "document": "防火墙开关列表对象",
       "members": [
@@ -15037,6 +15701,70 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateCheckCcnNonDirectFlagRequest": {
+      "document": "UpdateCheckCcnNonDirectFlag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网ID",
+          "example": "ccn-iidlg5oh",
+          "member": "string",
+          "name": "CcnId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCheckCcnNonDirectFlagResponse": {
+      "document": "UpdateCheckCcnNonDirectFlag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测更新状态\n\"Checked\"：重新检测完成\n\"Checking\": 正在重新检测中，请稍后刷新状态查看",
+          "example": "Checked",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateClusterVpcFwRequest": {
+      "document": "UpdateClusterVpcFw请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ccn防火墙开关配置信息",
+          "example": "无",
+          "member": "CcnSwitchInfo",
+          "name": "CcnSwitch",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateClusterVpcFwResponse": {
+      "document": "UpdateClusterVpcFw返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VpcDnsInfo": {
       "document": "nat防火墙 vpc dns 开关信息",

@@ -4178,7 +4178,7 @@
         {
           "disabled": false,
           "document": "用于活体检测的视频Url 地址。\n- 视频下载后经Base64编码不超过 8M，视频下载耗时不超过4S，支持mp4、avi、flv格式。\n- 视频的 VideoUrl、VideoBase64 必须提供一个，如果都提供，只使用 VideoBase64。\n- 建议视频存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议视频存储于腾讯云。\n- 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "http://www.qq.com/image.jpg",
+          "example": "http://www.qq.com/video.mp4",
           "member": "string",
           "name": "VideoUrl",
           "required": false,

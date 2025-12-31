@@ -310,7 +310,7 @@
         },
         {
           "disabled": false,
-          "document": "沙箱工具类型，目前支持：browser、code-interpreter",
+          "document": "沙箱工具类型，目前支持：browser、code-interpreter、custom",
           "example": "code-interpreter",
           "member": "string",
           "name": "ToolType",
@@ -379,6 +379,15 @@
           "name": "StorageMounts",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具自定义配置",
+          "example": "无",
+          "member": "CustomConfiguration",
+          "name": "CustomConfiguration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -404,6 +413,205 @@
         }
       ],
       "type": "object"
+    },
+    "CustomConfiguration": {
+      "document": "沙箱自定义配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "test.tencentcloudcr.com/example/nginx:latest",
+          "member": "string",
+          "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动命令",
+          "example": "[\"/bin/bash\", \"-c\"]",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动参数",
+          "example": "[\"-h\", \"0.0.0.0\", \"-p\", \"8000\"]",
+          "member": "string",
+          "name": "Args",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "Env",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口配置",
+          "example": "无",
+          "member": "PortConfiguration",
+          "name": "Ports",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源配置",
+          "example": "无",
+          "member": "ResourceConfiguration",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探针配置",
+          "example": "无",
+          "member": "ProbeConfiguration",
+          "name": "Probe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomConfigurationDetail": {
+      "document": "沙箱自定义配置详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "test.tencentcloudcr.com/example/nginx:latest",
+          "member": "string",
+          "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库类型：`TCR`、`CCR`。",
+          "example": "TCR",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像 Digest",
+          "example": "sha256:abc123def456...",
+          "member": "string",
+          "name": "ImageDigest",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动命令",
+          "example": "[\"/bin/bash\", \"-c\"]",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动参数",
+          "example": "[\"-h\", \"0.0.0.0\", \"-p\", \"8000\"]",
+          "member": "string",
+          "name": "Args",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "Env",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口配置",
+          "example": "无",
+          "member": "PortConfiguration",
+          "name": "Ports",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源配置",
+          "example": "无",
+          "member": "ResourceConfiguration",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探针配置",
+          "example": "无",
+          "member": "ProbeConfiguration",
+          "name": "Probe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DeleteAPIKeyRequest": {
       "document": "DeleteAPIKey请求参数结构体",
@@ -653,6 +861,34 @@
       ],
       "type": "object"
     },
+    "EnvVar": {
+      "document": "环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境变量名",
+          "example": "TEST_ENV",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量值",
+          "example": "ABD",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "过滤列表规则",
       "members": [
@@ -676,6 +912,95 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HttpGetAction": {
+      "document": "HTTP GET 探测动作配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路径",
+          "example": "/health",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "8000",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Scheme",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageStorageSource": {
+      "document": "镜像卷挂载源配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像地址",
+          "example": "ccr.ccs.tencentyun.com/example/nginx:latest",
+          "member": "string",
+          "name": "Reference",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库类型：`enterprise`、`personal`。",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像内部的路径",
+          "example": "/mnt/sub",
+          "member": "string",
+          "name": "SubPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像 Digest，请求时无需传入",
+          "example": "sha256:abcdefg123...",
+          "member": "string",
+          "name": "Digest",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -754,6 +1079,145 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PortConfiguration": {
+      "document": "端口配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口名",
+          "example": "http",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "8000",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProbeConfiguration": {
+      "document": "健康检查探针配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP GET 探测配置",
+          "example": "无",
+          "member": "HttpGetAction",
+          "name": "HttpGet",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查就绪超时",
+          "example": "30000",
+          "member": "int64",
+          "name": "ReadyTimeoutMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查单次探测超时",
+          "example": "1000",
+          "member": "int64",
+          "name": "ProbeTimeoutMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查间隔",
+          "example": "1000",
+          "member": "int64",
+          "name": "ProbePeriodMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查成功阈值",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查失败阈值",
+          "example": "3",
+          "member": "int64",
+          "name": "FailureThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceConfiguration": {
+      "document": "资源配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cpu 资源量",
+          "example": "500m",
+          "member": "string",
+          "name": "CPU",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存资源量",
+          "example": "1Gi",
+          "member": "string",
+          "name": "Memory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -870,6 +1334,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例自定义配置",
+          "example": "无",
+          "member": "CustomConfigurationDetail",
+          "name": "CustomConfiguration",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -1009,6 +1484,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具自定义配置",
+          "example": "无",
+          "member": "CustomConfigurationDetail",
+          "name": "CustomConfiguration",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1060,6 +1546,15 @@
           "name": "MountOptions",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱实例自定义配置",
+          "example": "无",
+          "member": "CustomConfiguration",
+          "name": "CustomConfiguration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1176,6 +1671,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像卷配置",
+          "example": "无",
+          "member": "ImageStorageSource",
+          "name": "Image",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1282,6 +1788,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱工具自定义配置",
+          "example": "无",
+          "member": "CustomConfiguration",
+          "name": "CustomConfiguration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
