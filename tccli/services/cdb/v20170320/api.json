@@ -11001,6 +11001,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "展示实例RS信息",
+          "example": "YES",
+          "member": "string",
+          "name": "NeedRsInfo",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11041,7 +11050,7 @@
         {
           "disabled": false,
           "document": "备库的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ReplicationMode\": \"async\",\"Zone\": \"ap-guangzhou-3\"}",
+          "example": "无",
           "member": "SlaveConfig",
           "name": "SlaveConfig",
           "output_required": true,
@@ -11051,7 +11060,7 @@
         {
           "disabled": false,
           "document": "强同步实例第二备库的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ReplicationMode\": \"sync\",\"Vip\": \"\",\"Vport\": 0,\"Zone\": \"ap-guangzhou-3\"}",
+          "example": "无",
           "member": "BackupConfig",
           "name": "BackupConfig",
           "output_required": true,
@@ -11066,6 +11075,26 @@
           "name": "Switched",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备的唯一标识",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "MasterIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备的端口",
+          "example": "3306",
+          "member": "int64",
+          "name": "MasterPort",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

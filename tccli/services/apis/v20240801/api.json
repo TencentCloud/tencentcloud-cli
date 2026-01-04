@@ -223,7 +223,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "mcpserver id",
+          "document": "mcp server id",
           "example": "mcp-0101010",
           "member": "string",
           "name": "ID",
@@ -234,25 +234,47 @@
         },
         {
           "disabled": false,
-          "document": "是否需要鉴权",
+          "document": "是否需要鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "NeedAuth",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "凭据代填的ID",
+          "document": "凭据代填的ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "agc-010101",
           "member": "string",
           "name": "AgentCredentialID",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用为OAuth2认证时，sse模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://127.0.0.1/_llmsgw_/sse/aga-05b85106/mcp-2fc41d77",
+          "member": "string",
+          "name": "SSEResourceIdentifier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用为OAuth2认证时，streamable模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://127.0.0.1/_llmsgw_/mcp/aga-05b85106/mcp-2fc41d77",
+          "member": "string",
+          "name": "StreamableResourceIdentifier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -319,6 +341,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用为OAuth2认证时，sse模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://127.0.0.1/_llmsgw_/sse/aga-05b85106/mcp-2fc41d77",
+          "member": "string",
+          "name": "SSEResourceIdentifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用为OAuth2认证时，streamable模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://127.0.0.1/_llmsgw_/mcp/aga-05b85106/mcp-2fc41d77",
+          "member": "string",
+          "name": "StreamableResourceIdentifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1069,6 +1111,15 @@
           "member": "string",
           "name": "AuthType",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OAuth2资源服务器ID",
+          "example": "ors-be1312ba",
+          "member": "string",
+          "name": "OAuth2ResourceServerID",
+          "required": false,
           "type": "string"
         },
         {
@@ -1883,7 +1934,7 @@
         {
           "disabled": false,
           "document": "secretKey列表，脱敏",
-          "example": "[{\"SecretID\":\"\",\"SecretKey\":\"\"}]",
+          "example": "无",
           "member": "AgentAppSecretKeyVO",
           "name": "SecretKeys",
           "output_required": false,
@@ -1892,12 +1943,32 @@
         },
         {
           "disabled": false,
-          "document": "关联的mcp列表",
+          "document": "OAuth2 Resource Server ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ors-be1312ba",
+          "member": "string",
+          "name": "OAuth2ResourceServerID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "关联的mcp列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AgentAppMcpServerVO",
           "name": "McpServers",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定mcpServer数量",
+          "example": "1",
+          "member": "int64",
+          "name": "McpServersNum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2001,7 +2072,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "关联的mcp",
           "example": "mcp-01010101",
           "member": "string",
@@ -2010,7 +2081,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "没有关联的mcp",
           "example": "mcp-01010101",
           "member": "string",
@@ -3226,7 +3297,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "应用id",
           "example": "aga-dbe4d418",
           "member": "string",
@@ -4382,6 +4453,15 @@
           "example": "name01",
           "member": "string",
           "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "OAuth2资源服务器ID",
+          "example": "ors-be1312ba",
+          "member": "string",
+          "name": "OAuth2ResourceServerID",
           "required": false,
           "type": "string"
         },

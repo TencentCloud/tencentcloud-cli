@@ -1,10 +1,73 @@
-# Release 3.0.1339.1
+# Release 3.0.1340.1
+
+## 大模型安全网关(apis) 版本：2024-08-01
+
+### 第 2 次发布
+
+发布时间：2026-01-05 01:09:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAgentApp](http://document.tencentcloudapi.woa.com/document/product/1805/87895)
+
+	* 新增入参：OAuth2ResourceServerID
+
+* [DescribeAgentApps](http://document.tencentcloudapi.woa.com/document/product/1805/87886)
+
+* [DescribeMcpServers](http://document.tencentcloudapi.woa.com/document/product/1805/87901)
+
+* [ModifyAgentApp](http://document.tencentcloudapi.woa.com/document/product/1805/87885)
+
+	* 新增入参：OAuth2ResourceServerID
+
+
+修改数据结构：
+
+* [AgentAppMcpServerDTO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#AgentAppMcpServerDTO)
+
+	* 新增成员：SSEResourceIdentifier, StreamableResourceIdentifier
+
+* [AgentAppMcpServerVO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#AgentAppMcpServerVO)
+
+	* 新增成员：SSEResourceIdentifier, StreamableResourceIdentifier
+
+* [DescribeAgentAppResp](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeAgentAppResp)
+
+	* 新增成员：OAuth2ResourceServerID, McpServersNum
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 155 次发布
+
+发布时间：2026-01-05 01:15:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstanceConfig](http://document.tencentcloudapi.woa.com/document/product/236/17491)
+
+	* 新增入参：NeedRsInfo
+
+	* 新增出参：MasterIp, MasterPort
+
+
+
 
 ## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 84 次发布
+### 第 85 次发布
 
-发布时间：2026-01-01 01:13:25
+发布时间：2026-01-05 01:19:28
 
 本次发布包含了以下内容：
 
@@ -12,64 +75,45 @@
 
 新增接口：
 
-* [DescribeCcnAssociatedInstances](http://document.tencentcloudapi.woa.com/document/product/1132/88611)
-* [DescribeCcnInstanceRegionStatus](http://document.tencentcloudapi.woa.com/document/product/1132/88610)
-* [DescribeCcnVpcFwSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/88609)
-* [DescribeSwitchError](http://document.tencentcloudapi.woa.com/document/product/1132/88604)
-* [DescribeVpcFwCcnPolicyWhiteList](http://document.tencentcloudapi.woa.com/document/product/1132/88608)
-* [ModifyClusterVpcFwSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/88612)
-* [UpdateCheckCcnNonDirectFlag](http://document.tencentcloudapi.woa.com/document/product/1132/88607)
-* [UpdateClusterVpcFw](http://document.tencentcloudapi.woa.com/document/product/1132/88606)
+* [DescribeCcnVpcFwPolicyLimit](http://document.tencentcloudapi.woa.com/document/product/1132/88620)
+* [DescribeClusterVpcFwSwitchs](http://document.tencentcloudapi.woa.com/document/product/1132/88621)
 
 新增数据结构：
 
-* [AccessInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#AccessInstanceInfo)
-* [CcnAssociatedInstance](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CcnAssociatedInstance)
-* [CcnSwitchInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CcnSwitchInfo)
-* [InterconnectPair](http://document.tencentcloudapi.woa.com/document/product/1132/49071#InterconnectPair)
-* [RegionCidrConfig](http://document.tencentcloudapi.woa.com/document/product/1132/49071#RegionCidrConfig)
-* [RegionFwStatus](http://document.tencentcloudapi.woa.com/document/product/1132/49071#RegionFwStatus)
-* [SwitchError](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SwitchError)
+* [AttachInsInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#AttachInsInfo)
+* [ClusterSwitchDetail](http://document.tencentcloudapi.woa.com/document/product/1132/49071#ClusterSwitchDetail)
+* [EndpointInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EndpointInfo)
 
 
 
-## 主机安全(cwp) 版本：2018-02-28
+## 云安全一体化平台(csip) 版本：2022-11-21
 
-### 第 136 次发布
+### 第 62 次发布
 
-发布时间：2026-01-01 01:16:42
+发布时间：2026-01-05 01:24:10
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**删除接口**：</font>
+修改数据结构：
 
-* DescribeAvailableExpertServiceDetail
-* DescribeExpertServiceList
-* DescribeExpertServiceOrderList
-* DescribeMonthInspectionReport
+* [AccessKeyAlarmCount](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AccessKeyAlarmCount)
 
-修改接口：
+	* 新增成员：AccessKeyStatus, AccessKeyCreateTime, LastAccessTime
 
-* [ModifyAutoOpenProVersionConfig](http://document.tencentcloudapi.woa.com/document/product/296/19863)
+* [AccessKeyRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AccessKeyRisk)
 
-	* 新增入参：ProtectType
-
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* ExpertServiceOrderInfo
-* MonthInspectionReport
-* SecurityButlerInfo
+	* 新增成员：CloudType, RelatedAK
 
 
 
-## 腾讯混元大模型(hunyuan) 版本：2023-09-01
 
-### 第 20 次发布
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
-发布时间：2026-01-01 01:23:19
+### 第 49 次发布
+
+发布时间：2026-01-05 01:30:52
 
 本次发布包含了以下内容：
 
@@ -77,22 +121,32 @@
 
 新增接口：
 
-* [QueryHunyuan3DPartJob](http://document.tencentcloudapi.woa.com/document/product/1744/88616)
-* [QueryHunyuanTo3DRapidJob](http://document.tencentcloudapi.woa.com/document/product/1744/88615)
-* [SubmitHunyuan3DPartJob](http://document.tencentcloudapi.woa.com/document/product/1744/88614)
-* [SubmitHunyuanTo3DRapidJob](http://document.tencentcloudapi.woa.com/document/product/1744/88613)
+* [DescribeRedisUnExpiredKeyStatistics](http://document.tencentcloudapi.woa.com/document/product/1130/88622)
+
+修改接口：
+
+* [DescribeRedisTopBigKeys](http://document.tencentcloudapi.woa.com/document/product/1130/72832)
+
+	* 新增入参：UnExpireKey
+
+	* <font color="#dd0000">**修改入参**：</font>Date
+
 
 新增数据结构：
 
-* [InputFile3D](http://document.tencentcloudapi.woa.com/document/product/1744/85813#InputFile3D)
+* [RedisGlobalKeyInfo](http://document.tencentcloudapi.woa.com/document/product/1130/57812#RedisGlobalKeyInfo)
 
 
 
-## 标签(tag) 版本：2018-08-13
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
 
-### 第 15 次发布
 
-发布时间：2026-01-01 01:31:50
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 168 次发布
+
+发布时间：2026-01-05 02:08:22
 
 本次发布包含了以下内容：
 
@@ -100,15 +154,43 @@
 
 新增接口：
 
-* [DeleteNoDistinctRegionResourceTag](http://document.tencentcloudapi.woa.com/document/product/651/88617)
+* [DescribeRocketMQGeneralSKUs](http://document.tencentcloudapi.woa.com/document/product/1179/88623)
+
+新增数据结构：
+
+* [GeneralSKU](http://document.tencentcloudapi.woa.com/document/product/1179/46089#GeneralSKU)
+* [PriceTag](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PriceTag)
 
 
 
-## 腾讯混元生视频(vclm) 版本：2024-05-23
+## 容器服务(tke) 版本：2022-05-01
 
-### 第 10 次发布
 
-发布时间：2026-01-01 01:37:03
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 108 次发布
+
+发布时间：2026-01-05 02:12:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SuperNodeResource](http://document.tencentcloudapi.woa.com/document/product/457/31866#SuperNodeResource)
+
+	* 新增成员：PriceType
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 115 次发布
+
+发布时间：2026-01-05 02:15:12
 
 本次发布包含了以下内容：
 
@@ -116,7 +198,16 @@
 
 修改接口：
 
-* [SubmitVideoEditJob](http://document.tencentcloudapi.woa.com/document/product/1766/88563)
+* [StartAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84215)
+
+	* 新增入参：SignalConfig
+
+
+修改数据结构：
+
+* [AudioFormat](http://document.tencentcloudapi.woa.com/document/product/647/44055#AudioFormat)
+
+	* 新增成员：Bitrate
 
 
 

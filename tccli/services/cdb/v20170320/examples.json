@@ -636,7 +636,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"SlaveConfig\": {\n            \"ReplicationMode\": \"async\",\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        \"BackupConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Vip\": \"172.1.1.1\",\n            \"Vport\": 3306,\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        \"ProtectMode\": 0,\n        \"Zone\": \"ap-guangzhou-3\",\n        \"DeployMode\": 1,\n        \"Switched\": false\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"SlaveConfig\": {\n            \"ReplicationMode\": \"async\",\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        \"BackupConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Vip\": \"172.1.1.1\",\n            \"Vport\": 3306,\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        \"ProtectMode\": 0,\n        \"Zone\": \"ap-guangzhou-3\",\n        \"DeployMode\": 1,\n        \"Switched\": false,\n        \"MasterIp\": \"0.0.0.0\",\n        \"MasterPort\": 3306\n    }\n}",
         "title": "查询云数据库实例的配置信息"
       }
     ],

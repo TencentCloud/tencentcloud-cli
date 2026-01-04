@@ -27,7 +27,9 @@ Output:
         "ProtectMode": 0,
         "Zone": "ap-guangzhou-3",
         "DeployMode": 1,
-        "Switched": false
+        "Switched": false,
+        "MasterIp": "0.0.0.0",
+        "MasterPort": 3306
     }
 }
 ```
