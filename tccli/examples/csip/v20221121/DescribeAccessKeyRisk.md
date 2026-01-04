@@ -17,7 +17,7 @@ Output:
             {
                 "AccessKey": "AKIDX***13DJ",
                 "AccessKeyID": 10075,
-                "AccessKeyRemark": "test",
+                "AccessKeyRemark": "产研AK",
                 "AppID": 1256299843,
                 "CheckStatus": 0,
                 "Description": "应该删除长期未使用AK密钥，即使AK被禁用了也应该删除",

@@ -413,6 +413,13 @@
       "output": "DescribeRedisTopKeyPrefixListResponse",
       "status": "online"
     },
+    "DescribeRedisUnExpiredKeyStatistics": {
+      "document": "查询Redis全量Key的内存分布情况。",
+      "input": "DescribeRedisUnExpiredKeyStatisticsRequest",
+      "name": "查询redis全量key统计分布",
+      "output": "DescribeRedisUnExpiredKeyStatisticsResponse",
+      "status": "online"
+    },
     "DescribeSecurityAuditLogDownloadUrls": {
       "document": "查询安全审计日志导出文件下载链接。目前日志文件下载仅提供腾讯云内网地址，请通过广州地域的腾讯云服务器进行下载。",
       "input": "DescribeSecurityAuditLogDownloadUrlsRequest",
@@ -5947,20 +5954,20 @@
         },
         {
           "disabled": false,
-          "document": "查询日期，如2021-05-27，最早可为前30天的日期。",
-          "example": "2022-04-12",
-          "member": "date",
-          "name": "Date",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "服务产品类型，支持值包括 \"redis\" - 云数据库 Redis。",
           "example": "redis",
           "member": "string",
           "name": "Product",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询某个日期最新的任务，如2021-05-27，最早可为前30天的日期。该参数与AsyncRequestId参数不可同时为空。",
+          "example": "2022-04-12",
+          "member": "date",
+          "name": "Date",
+          "required": false,
           "type": "string"
         },
         {
@@ -6007,6 +6014,15 @@
           "name": "ShardIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否仅查询未设置过期时间的大Key。\n当为true时，仅查询未设置过期时间的大Key，默认为false。",
+          "example": "false",
+          "member": "bool",
+          "name": "UnExpireKey",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6279,6 +6295,79 @@
           "name": "Timestamp",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisUnExpiredKeyStatisticsRequest": {
+      "document": "DescribeRedisUnExpiredKeyStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。可通过接口获取。",
+          "example": "crs-br63td53",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括 \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询某个日期最新的任务，如2021-05-27，最早可为前30天的日期。该参数与AsyncRequestId参数不可同时为空。",
+          "example": "2026-01-04",
+          "member": "date",
+          "name": "Date",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "异步任务ID。当为空时，选择最近任务的ID。",
+          "example": "7200449",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分片节点序号列表。当列表为空时，选择所有分片节点。",
+          "example": "[1]",
+          "member": "int64",
+          "name": "ShardIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisUnExpiredKeyStatisticsResponse": {
+      "document": "DescribeRedisUnExpiredKeyStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全量Key的聚合分布信息列表。",
+          "example": "无",
+          "member": "RedisGlobalKeyInfo",
+          "name": "SeriesData",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -10429,6 +10518,52 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RedisGlobalKeyInfo": {
+      "document": "Redis全量Key的聚合信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "占用内存大小，单位Byte。",
+          "example": "192",
+          "member": "int64",
+          "name": "Capacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Key个数。",
+          "example": "3",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余过期时间范围的结束时间，当小于0时，代表已过期时间，单位：小时。当RangeMin与RangeMax同时为空时，代表未设置过期时间。当RangeMax为空时，代表剩余过期时间大于等于RangeMin小时。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
+          "member": "int64",
+          "name": "RangeMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余过期时间范围的起始时间，当小于0时，代表已过期时间，单位：小时。当RangeMin与RangeMax同时为空时，代表未设置过期时间。当RangeMin为空时，代表已过期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "RangeMin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

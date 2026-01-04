@@ -10169,7 +10169,7 @@
         {
           "disabled": false,
           "document": "备库的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ReplicationMode\": \"async\",\"Zone\": \"ap-guangzhou-3\"}",
+          "example": "无",
           "member": "SlaveConfig",
           "name": "SlaveConfig",
           "output_required": true,
@@ -10179,7 +10179,7 @@
         {
           "disabled": false,
           "document": "强同步实例第二备库的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ReplicationMode\": \"sync\",\"Vip\": \"\",\"Vport\": 0,\"Zone\": \"ap-guangzhou-3\"}",
+          "example": "无",
           "member": "BackupConfig",
           "name": "BackupConfig",
           "output_required": true,

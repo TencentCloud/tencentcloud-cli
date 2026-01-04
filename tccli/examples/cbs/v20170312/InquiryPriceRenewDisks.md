@@ -17,16 +17,16 @@ Output:
         "RequestId": "2e7414a3-369f-4995-b708-80eb2e7414a3",
         "DiskPrice": {
             "UnitPriceDiscountHigh": null,
-            "DiscountPrice": 250.0,
+            "DiscountPrice": 250,
             "DetailPrices": [
                 {
                     "PriceTitle": "云硬盘备份点配额",
-                    "DiscountPrice": 0.0,
+                    "DiscountPrice": 0,
                     "ChargeUnit": null,
                     "UnitPriceHigh": null,
                     "OriginalPriceHigh": null,
                     "PriceName": "DiskBackupQuota",
-                    "OriginalPrice": 0.0,
+                    "OriginalPrice": 0,
                     "UnitPriceDiscountHigh": null,
                     "UnitPriceDiscount": null,
                     "DiscountPriceHigh": null,
@@ -34,12 +34,12 @@ Output:
                 },
                 {
                     "PriceTitle": "云硬盘空间",
-                    "DiscountPrice": 250.0,
+                    "DiscountPrice": 250,
                     "ChargeUnit": null,
                     "UnitPriceHigh": null,
                     "OriginalPriceHigh": null,
                     "PriceName": "DiskSpace",
-                    "OriginalPrice": 500.0,
+                    "OriginalPrice": 500,
                     "UnitPriceDiscountHigh": null,
                     "UnitPriceDiscount": null,
                     "DiscountPriceHigh": null,
@@ -49,7 +49,7 @@ Output:
             "UnitPriceHigh": null,
             "OriginalPriceHigh": "500",
             "ChargeUnit": null,
-            "OriginalPrice": 500.0,
+            "OriginalPrice": 500,
             "UnitPriceDiscount": null,
             "DiscountPriceHigh": "250",
             "UnitPrice": null

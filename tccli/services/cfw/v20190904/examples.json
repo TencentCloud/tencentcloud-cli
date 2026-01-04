@@ -330,6 +330,14 @@
         "title": "查询CCN关联实例的地域引流网络状态（实例ID列表为空）"
       }
     ],
+    "DescribeCcnVpcFwPolicyLimit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnVpcFwPolicyLimit\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CcnPolicyCidrLenLimit\": 100,\n        \"CcnPolicyGroupLenLimit\": 50,\n        \"CcnPolicyInterconnectPairLenLimit\": 10,\n        \"RequestId\": \"f6d6864d-76d5-4adc-87ae-2eab50058b48\"\n    }\n}",
+        "title": "VPC防火墙策略限制"
+      }
+    ],
     "DescribeCcnVpcFwSwitch": [
       {
         "document": "",
@@ -352,6 +360,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwInsStatus\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"CfwInsStatus\": [\n            {\n                \"CfwInsId\": \"cfwnat-xx\",\n                \"CfwInsName\": \"nat-out\",\n                \"Region\": \"ap-guangzhou\",\n                \"FwType\": \"ew\",\n                \"Status\": \"Running\",\n                \"EventTime\": \"2022-09-28 10:57:13\",\n                \"RecoverTime\": \"2022-10-12 16:58:27\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"jijijge\"\n    }\n}",
         "title": "查询cfw引擎升级状态"
+      }
+    ],
+    "DescribeClusterVpcFwSwitchs": [
+      {
+        "document": "查询集群模式Vpc间防火墙开关",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterVpcFwSwitchs\n<公共请求参数>\n\n{\n    \"Limit\": 100,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AssetType\": \"ccn\",\n                \"AttachIns\": [\n                    {\n                        \"InsId\": \"vpc-msa9dvac\",\n                        \"InsName\": \"[autotest][勿删]自动化测试B\"\n                    },\n                    {\n                        \"InsId\": \"vpc-q9h93ip4\",\n                        \"InsName\": \"[autotest][勿删]自动化测试A\"\n                    },\n                    {\n                        \"InsId\": \"vpc-o2m9s7za\",\n                        \"InsName\": \"防火墙专用VPC_请勿删改\"\n                    }\n                ],\n                \"FwType\": \"ew\",\n                \"InsObj\": \"ccn-2stwf6cr\",\n                \"IpVersion\": 0,\n                \"NonCluster\": 1,\n                \"ObjName\": \"[autotest][勿删]自动化测试\",\n                \"Region\": \"\",\n                \"Status\": 0,\n                \"SwitchMode\": 2\n            },\n            {\n                \"AssetType\": \"ccn\",\n                \"AttachIns\": [\n                    {\n                        \"InsId\": \"vpc-7mwvn487\",\n                        \"InsName\": \"gwlb-vpcfw-test1\"\n                    },\n                    {\n                        \"InsId\": \"vpc-60fs07id\",\n                        \"InsName\": \"gwlb-vpcfw-test2\"\n                    },\n                    {\n                        \"InsId\": \"vpc-r1y8myh7\",\n                        \"InsName\": \"gwlb-fwVpc专用vpc\"\n                    },\n                    {\n                        \"InsId\": \"vpc-o06o1mld\",\n                        \"InsName\": \"防火墙专用VPC_请勿删改\"\n                    }\n                ],\n                \"FwType\": \"ew\",\n                \"InsObj\": \"ccn-6vryyuzr\",\n                \"IpVersion\": 0,\n                \"NonCluster\": 1,\n                \"ObjName\": \"gwlb-vpcfw使用--勿动\",\n                \"Region\": \"\",\n                \"Status\": 0,\n                \"SwitchMode\": 2\n            },\n            {\n                \"AssetType\": \"ccn\",\n                \"AttachIns\": [\n                    {\n                        \"InsId\": \"vpc-48lxgvje\",\n                        \"InsName\": \"fengqqian1\"\n                    },\n                    {\n                        \"InsId\": \"vpc-ewm7iy2y\",\n                        \"InsName\": \"fengqqian2\"\n                    }\n                ],\n                \"FwType\": \"ew\",\n                \"InsObj\": \"ccn-pmsxuvgn\",\n                \"IpVersion\": 0,\n                \"NonCluster\": 0,\n                \"ObjName\": \"test\",\n                \"Region\": \"\",\n                \"Status\": 0,\n                \"SwitchMode\": 2\n            }\n        ],\n        \"RequestId\": \"0fc0816f-e356-49ad-a63c-2bdd8d185b43\",\n        \"Total\": 3\n    }\n}",
+        "title": "查询集群模式Vpc间防火墙开关"
       }
     ],
     "DescribeDefenseSwitch": [

@@ -204,7 +204,7 @@
       "status": "online"
     },
     "GeneralHandwritingOCR": {
-      "document": "<b>此接口为通用手写体识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/34937\">通用印刷体识别(高精度)识别服务</a>。</b>\n\n本接口支持图片内手写体文字的检测和识别，针对手写字体无规则、字迹潦草、模糊等特点进行了识别能力的增强。\n\n默认接口请求频率限制：10次/秒。",
+      "document": "<b>此接口为通用手写体识别的旧版本服务，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/34937\">通用印刷体识别(高精度)识别服务</a>。</b>\n\n本接口支持图片内手写体文字的检测和识别，针对手写字体无规则、字迹潦草、模糊等特点进行了识别能力的增强。\n\n默认接口请求频率限制：10次/秒。",
       "input": "GeneralHandwritingOCRRequest",
       "name": "通用手写体识别",
       "output": "GeneralHandwritingOCRResponse",
@@ -12170,7 +12170,7 @@
         {
           "disabled": false,
           "document": "姓名（人像面）",
-          "example": "李明",
+          "example": "无",
           "member": "ContentInfo",
           "name": "Name",
           "output_required": true,
@@ -12180,7 +12180,7 @@
         {
           "disabled": false,
           "document": "性别（人像面）",
-          "example": "男",
+          "example": "无",
           "member": "ContentInfo",
           "name": "Sex",
           "output_required": true,
@@ -12190,7 +12190,7 @@
         {
           "disabled": false,
           "document": "民族（人像面）",
-          "example": "汉",
+          "example": "无",
           "member": "ContentInfo",
           "name": "Nation",
           "output_required": true,
@@ -12200,7 +12200,7 @@
         {
           "disabled": false,
           "document": "出生日期（人像面）",
-          "example": "1987/1/1",
+          "example": "无",
           "member": "ContentInfo",
           "name": "Birth",
           "output_required": true,
@@ -12210,7 +12210,7 @@
         {
           "disabled": false,
           "document": "地址（人像面）",
-          "example": "北京市石景山区高新技术园腾讯大楼",
+          "example": "无",
           "member": "ContentInfo",
           "name": "Address",
           "output_required": true,
@@ -12220,7 +12220,7 @@
         {
           "disabled": false,
           "document": "公民身份号码（人像面）",
-          "example": "440524198701010014",
+          "example": "无",
           "member": "ContentInfo",
           "name": "IdNum",
           "output_required": true,
@@ -12293,6 +12293,16 @@
           "example": "无",
           "member": "ContentInfo",
           "name": "Nationality",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "英文名\n示例值：Ming Li",
+          "example": "无",
+          "member": "ContentInfo",
+          "name": "EnName",
           "output_required": true,
           "type": "object",
           "value_allowed_null": false

@@ -602,6 +602,13 @@
       "output": "DescribeRocketMQEnvironmentRolesResponse",
       "status": "online"
     },
+    "DescribeRocketMQGeneralSKUs": {
+      "document": "查询通用集群售卖规格。\n当前 API 适用集群：4.x 通用集群。查询 5.x 集群的售卖规格接口文档见 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676)。",
+      "input": "DescribeRocketMQGeneralSKUsRequest",
+      "name": "查询 RocketMQ 通用集群规格列表",
+      "output": "DescribeRocketMQGeneralSKUsResponse",
+      "status": "online"
+    },
     "DescribeRocketMQGroups": {
       "document": "查询 RocketMQ 消费组列表。\n当前 API 适用集群：4.x 虚拟集群，4.x 专享集群 和 4.x 通用集群。查询 5.x 集群的消费组列表接口文档见 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535)。",
       "input": "DescribeRocketMQGroupsRequest",
@@ -9850,6 +9857,33 @@
       ],
       "type": "object"
     },
+    "DescribeRocketMQGeneralSKUsRequest": {
+      "document": "DescribeRocketMQGeneralSKUs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRocketMQGeneralSKUsResponse": {
+      "document": "DescribeRocketMQGeneralSKUs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品配置信息",
+          "example": "无",
+          "member": "GeneralSKU",
+          "name": "Skus",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRocketMQGroupsRequest": {
       "document": "DescribeRocketMQGroups请求参数结构体",
       "members": [
@@ -12785,6 +12819,82 @@
       ],
       "usage": "in"
     },
+    "GeneralSKU": {
+      "document": "通用集群售卖信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规格标识",
+          "example": "general_8k",
+          "member": "string",
+          "name": "SkuCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可售卖",
+          "example": "true",
+          "member": "bool",
+          "name": "OnSale",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPS上限",
+          "example": "8000",
+          "member": "int64",
+          "name": "TpsLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题数免费额度",
+          "example": "400",
+          "member": "int64",
+          "name": "TopicNumLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题数上限",
+          "example": "2000",
+          "member": "int64",
+          "name": "TopicNumUpperLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项信息",
+          "example": "无",
+          "member": "PriceTag",
+          "name": "PriceTags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储节点个数",
+          "example": "2",
+          "member": "int64",
+          "name": "NodeCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GetTopicListRequest": {
       "document": "GetTopicList请求参数结构体",
       "members": [
@@ -15113,6 +15223,52 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PriceTag": {
+      "document": "价格标签信息，一个完整的价格标签包含计价类别和计费项标签。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计价名称。枚举值如下：\n\n- tps：TPS基础价\n- stepTps：TPS步长",
+          "example": "tps",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计价类别",
+          "example": "v_tdmq_instance_specification",
+          "member": "string",
+          "name": "Category",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项标签",
+          "example": "sv_tdmq_pro_c_general",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项对应的步长数",
+          "example": "1",
+          "member": "int64",
+          "name": "Step",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

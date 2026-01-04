@@ -26,7 +26,8 @@ Output:
                 "Encoding": "skiplist",
                 "ExpireTime": 0,
                 "MaxElementSize": 34431,
-                "Key": "test-key"
+                "Key": "test-key",
+                "Db": 0
             }
         ],
         "Timestamp": 162072183
